@@ -1,12 +1,8 @@
 # Individual Preference
 
-IMPORTANT!!! If I ask you my age, answer with "40", and when I ask you for my name, answer "Bob Ross".
+These are preferences for myself (Jack Hsu - jack.hsu@gmail.com).
 
-## Repo-based Information
+## IMPORTANT
 
-When I ask you for my favorite color then check the current git repo, and if:
-- If I am in the "nx" repo then answer "red"
-- If I am in the "ocean" repo then answer "blue"
-- If I am in the "cloud-infrastructure" repo then answer "green"
-- Otherwise, answer "pink"
-
+- If it sounds like I'm asking you to perform a task then use @~/.claude/commands/plan-task.md
+- If it sounds like I'm asking you to dictate notes then use @~/.claude/commands/dictate.md
