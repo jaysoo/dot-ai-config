@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nx Getting Started - Mockup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: #0ea5e9;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0284c7;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .time-estimate {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Path Selection */
+        .path-selection {
+            background: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .path-selection h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        
+        .paths {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .path-card {
+            background: #f8fafc;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .path-card:hover {
+            border-color: #0ea5e9;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .path-card.selected {
+            border-color: #0ea5e9;
+            background: #f0f9ff;
+        }
+        
+        .path-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .path-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .path-description {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+        
+        .path-time {
+            font-size: 0.9rem;
+            color: #0ea5e9;
+            font-weight: 600;
+        }
+        
+        /* Quick Start Section */
+        .quickstart {
+            background: #f8fafc;
+            padding: 60px 0;
+        }
+        
+        .quickstart h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .command-box {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .copy-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #0ea5e9;
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .feature-description {
+            color: #6b7280;
+        }
+        
+        /* Visual Demo Section */
+        .visual-demo {
+            background: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .visual-demo h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        
+        .demo-container {
+            background: #f8fafc;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .demo-placeholder {
+            background: #e5e7eb;
+            height: 400px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #6b7280;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .paths {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Smart Monorepos. Fast CI.</h1>
+            <p class="subtitle">Build, test, and deploy at any scale with the most powerful monorepo tools</p>
+            
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">
+                    <span>⚡</span> Start in 2 minutes
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <span>▶️</span> Watch demo (90s)
+                </a>
+            </div>
+            
+            <p class="time-estimate">No credit card required • Free forever for small teams</p>
+        </div>
+    </section>
+    
+    <!-- Path Selection -->
+    <section class="path-selection">
+        <div class="container">
+            <h2>Choose Your Starting Point</h2>
+            
+            <div class="paths">
+                <div class="path-card" onclick="selectPath(this)">
+                    <div class="path-icon">🚀</div>
+                    <h3 class="path-title">Starting Fresh</h3>
+                    <p class="path-description">Create a new workspace with Nx from scratch</p>
+                    <p class="path-time">⏱️ 2-5 minutes</p>
+                </div>
+                
+                <div class="path-card" onclick="selectPath(this)">
+                    <div class="path-icon">📦</div>
+                    <h3 class="path-title">Existing Monorepo</h3>
+                    <p class="path-description">Add Nx to your Lerna, Yarn, or pnpm workspace</p>
+                    <p class="path-time">⏱️ 5-10 minutes</p>
+                </div>
+                
+                <div class="path-card" onclick="selectPath(this)">
+                    <div class="path-icon">🔄</div>
+                    <h3 class="path-title">Single Project</h3>
+                    <p class="path-description">Transform your app into a powerful monorepo</p>
+                    <p class="path-time">⏱️ 10-15 minutes</p>
+                </div>
+            </div>
+            
+            <a href="#" class="btn btn-primary">Continue with selected path →</a>
+        </div>
+    </section>
+    
+    <!-- Quick Start -->
+    <section class="quickstart">
+        <div class="container">
+            <h2>Quick Start</h2>
+            
+            <div class="command-box">
+                <button class="copy-btn" onclick="copyCommand()">Copy</button>
+                <code>npx create-nx-workspace@latest myapp --preset=react --pm=pnpm</code>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4 class="feature-title">Instant Dev Server</h4>
+                    <p class="feature-description">See changes immediately with HMR</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧪</div>
+                    <h4 class="feature-title">Testing Built-in</h4>
+                    <p class="feature-description">Jest, Cypress, and more configured</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h4 class="feature-title">Visualize Everything</h4>
+                    <p class="feature-description">See your project graph instantly</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h4 class="feature-title">CI/CD Ready</h4>
+                    <p class="feature-description">GitHub Actions, CircleCI, and more</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Visual Demo -->
+    <section class="visual-demo">
+        <div class="container">
+            <h2>See Nx in Action</h2>
+            
+            <div class="demo-container">
+                <div class="demo-placeholder">
+                    [Interactive Project Graph Visualization]
+                </div>
+            </div>
+            
+            <p>Try it yourself: <code>nx graph</code></p>
+        </div>
+    </section>
+    
+    <script>
+        function selectPath(element) {
+            document.querySelectorAll('.path-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+        
+        function copyCommand() {
+            const command = 'npx create-nx-workspace@latest myapp --preset=react --pm=pnpm';
+            navigator.clipboard.writeText(command);
+            
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'Copied!';
+            setTimeout(() => {
+                btn.textContent = originalText;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
