@@ -1,0 +1,416 @@
+[
+  {
+    "source_url": "https://nx.dev/recipes/module-federation",
+    "target_url": "https://nx.dev/technologies/module-federation",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/module-federation/create-a-host",
+    "target_url": "https://nx.dev/technologies/module-federation/recipes/create-a-host",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/module-federation/create-a-remote",
+    "target_url": "https://nx.dev/technologies/module-federation/recipes/create-a-remote",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/module-federation/federate-a-module",
+    "target_url": "https://nx.dev/technologies/module-federation/recipes/federate-a-module",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/react",
+    "target_url": "https://nx.dev/technologies/react",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/react/react-native",
+    "target_url": "https://nx.dev/technologies/react/recipes/react-native",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/react/remix",
+    "target_url": "https://nx.dev/technologies/react/recipes/remix",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/react/react-router",
+    "target_url": "https://nx.dev/technologies/react/recipes/react-router",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/react/use-environment-variables-in-react",
+    "target_url": "https://nx.dev/technologies/react/recipes/use-environment-variables-in-react",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/react/using-tailwind-css-in-react",
+    "target_url": "https://nx.dev/technologies/react/recipes/using-tailwind-css-in-react",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/react/adding-assets-react",
+    "target_url": "https://nx.dev/technologies/react/recipes/adding-assets-react",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/react/module-federation-with-ssr",
+    "target_url": "https://nx.dev/technologies/angular/recipes/module-federation-with-ssr",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/react/deploy-nextjs-to-vercel",
+    "target_url": "https://nx.dev/technologies/react/recipes/deploy-nextjs-to-vercel",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/react/react-compiler",
+    "target_url": "https://nx.dev/technologies/react/recipes/react-compiler",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular",
+    "target_url": "https://nx.dev/technologies/angular",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/rspack",
+    "target_url": "https://nx.dev/technologies/build-tools/rspack",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/rspack/introduction",
+    "target_url": "https://nx.dev/technologies/typescript/introduction",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/rspack/getting-started",
+    "target_url": "https://nx.dev/technologies/angular/angular-rspack/recipes/getting-started",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/rspack/migrate-from-webpack",
+    "target_url": "https://nx.dev/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/rspack/handling-configurations",
+    "target_url": "https://nx.dev/technologies/angular/angular-rspack/recipes/handling-configurations",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/rspack/internationalization",
+    "target_url": "https://nx.dev/technologies/angular/angular-rspack/recipes/internationalization",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/migration",
+    "target_url": "https://nx.dev/technologies/angular/migration",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/migration/angular",
+    "target_url": "https://nx.dev/technologies/angular",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/migration/angular-multiple",
+    "target_url": "https://nx.dev/technologies/angular/migration/angular-multiple",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/use-environment-variables-in-angular",
+    "target_url": "https://nx.dev/technologies/angular/recipes/use-environment-variables-in-angular",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/using-tailwind-css-with-angular-projects",
+    "target_url": "https://nx.dev/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/module-federation-with-ssr",
+    "target_url": "https://nx.dev/technologies/angular/recipes/module-federation-with-ssr",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/dynamic-module-federation-with-angular",
+    "target_url": "https://nx.dev/technologies/angular/recipes/dynamic-module-federation-with-angular",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/angular/setup-incremental-builds-angular",
+    "target_url": "https://nx.dev/technologies/angular/recipes/setup-incremental-builds-angular",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/node",
+    "target_url": "https://nx.dev/technologies/node",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/node/node-server-fly-io",
+    "target_url": "https://nx.dev/technologies/node/recipes/node-server-fly-io",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/node/node-serverless-functions-netlify",
+    "target_url": "https://nx.dev/technologies/node/recipes/node-serverless-functions-netlify",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/node/node-aws-lambda",
+    "target_url": "https://nx.dev/technologies/node/recipes/node-aws-lambda",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/node/application-proxies",
+    "target_url": "https://nx.dev/technologies/node/recipes/application-proxies",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/node/wait-for-tasks",
+    "target_url": "https://nx.dev/technologies/node/recipes/wait-for-tasks",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/overview-react",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/overview-react",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/overview-angular",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/overview-angular",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/overview-vue",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/overview-vue",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/configuring-storybook",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/configuring-storybook",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/one-storybook-for-all",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/one-storybook-for-all",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/one-storybook-per-scope",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/one-storybook-per-scope",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/one-storybook-with-composition",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/one-storybook-with-composition",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/custom-builder-configs",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/custom-builder-configs",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/storybook-interaction-tests",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/storybook-interaction-tests",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/upgrading-storybook",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/upgrading-storybook",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/storybook-composition-setup",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/storybook-composition-setup",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/angular-storybook-compodoc",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/angular-storybook-compodoc",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/storybook/angular-configuring-styles",
+    "target_url": "https://nx.dev/technologies/test-tools/storybook/recipes/angular-configuring-styles",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/cypress",
+    "target_url": "https://nx.dev/technologies/test-tools/cypress",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/cypress/cypress-component-testing",
+    "target_url": "https://nx.dev/technologies/test-tools/cypress/recipes/cypress-component-testing",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/cypress/cypress-setup-node-events",
+    "target_url": "https://nx.dev/technologies/test-tools/cypress/recipes/cypress-setup-node-events",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/cypress/cypress-v11-migration",
+    "target_url": "https://nx.dev/technologies/test-tools/cypress/recipes/cypress-v11-migration",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/next",
+    "target_url": "https://nx.dev/technologies/react/next",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/next/next-config-setup",
+    "target_url": "https://nx.dev/technologies/react/next/recipes/next-config-setup",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/nuxt",
+    "target_url": "https://nx.dev/technologies/vue/nuxt",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/nuxt/deploy-nuxt-to-vercel",
+    "target_url": "https://nx.dev/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/vite",
+    "target_url": "https://nx.dev/technologies/build-tools/vite",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/vite/configure-vite",
+    "target_url": "https://nx.dev/technologies/build-tools/vite/recipes/configure-vite",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/webpack",
+    "target_url": "https://nx.dev/technologies/build-tools/webpack",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/webpack/webpack-config-setup",
+    "target_url": "https://nx.dev/technologies/build-tools/webpack/recipes/webpack-config-setup",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/webpack/webpack-plugins",
+    "target_url": "https://nx.dev/technologies/build-tools/webpack/recipes/webpack-plugins",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/tips-n-tricks/eslint",
+    "target_url": "https://nx.dev/technologies/eslint",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/tips-n-tricks/switch-to-workspaces-project-references",
+    "target_url": "https://nx.dev/technologies/typescript/recipes/switch-to-workspaces-project-references",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/tips-n-tricks/enable-tsc-batch-mode",
+    "target_url": "https://nx.dev/technologies/typescript/recipes/enable-tsc-batch-mode",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/tips-n-tricks/define-secondary-entrypoints",
+    "target_url": "https://nx.dev/technologies/typescript/recipes/define-secondary-entrypoints",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/tips-n-tricks/compile-multiple-formats",
+    "target_url": "https://nx.dev/technologies/typescript/recipes/compile-multiple-formats",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/tips-n-tricks/js-and-ts",
+    "target_url": "https://nx.dev/technologies/typescript/recipes/js-and-ts",
+    "status_code": 301,
+    "preserve_query_string": true
+  },
+  {
+    "source_url": "https://nx.dev/recipes/tips-n-tricks/flat-config",
+    "target_url": "https://nx.dev/technologies/eslint/recipes/flat-config",
+    "status_code": 301,
+    "preserve_query_string": true
+  }
+]

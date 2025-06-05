@@ -1,0 +1,3702 @@
+{
+  "urlMatches": {
+    "/recipes/module-federation": [
+      {
+        "oldUrl": "/recipes/module-federation",
+        "newUrl": "/technologies/module-federation",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 1,
+          "full": 0.73,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation",
+        "newUrl": "/technologies/module-federation/api",
+        "confidence": 0.57,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.12,
+          "path": 0.81,
+          "full": 0.65,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation",
+        "newUrl": "/technologies/module-federation/recipes",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.12,
+          "path": 0.68,
+          "full": 0.58,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation",
+        "newUrl": "/technologies/module-federation/concepts",
+        "confidence": 0.46,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.18,
+          "path": 0.65,
+          "full": 0.56,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation",
+        "newUrl": "/recipes/installation",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.29,
+          "path": 0.29,
+          "full": 0.52,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation",
+        "newUrl": "/recipes/enforce-module-boundaries",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.36,
+          "path": 0.36,
+          "full": 0.52,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation",
+        "newUrl": "/technologies/module-federation/introduction",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.29,
+          "path": 0.57,
+          "full": 0.51,
+          "keywords": 0.25
+        }
+      }
+    ],
+    "/recipes/module-federation/create-a-host": [
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/recipes/create-a-host",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.79,
+          "full": 0.69,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/recipes/create-a-remote",
+        "confidence": 0.48,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.67,
+          "path": 0.68,
+          "full": 0.61,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/concepts",
+        "confidence": 0.47,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.23,
+          "path": 0.68,
+          "full": 0.54,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/recipes",
+        "confidence": 0.47,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.23,
+          "path": 0.68,
+          "full": 0.54,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/recipes/federate-a-module",
+        "confidence": 0.44,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.47,
+          "path": 0.63,
+          "full": 0.57,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/api/generators",
+        "confidence": 0.44,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.31,
+          "path": 0.63,
+          "full": 0.56,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/api/migrations",
+        "confidence": 0.44,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.15,
+          "path": 0.63,
+          "full": 0.56,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/introduction",
+        "confidence": 0.43,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.08,
+          "path": 0.61,
+          "full": 0.53,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/api",
+        "confidence": 0.43,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.08,
+          "path": 0.61,
+          "full": 0.49,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/api/executors",
+        "confidence": 0.43,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.23,
+          "path": 0.61,
+          "full": 0.55,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-host",
+        "newUrl": "/technologies/module-federation/api/documents",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.15,
+          "path": 0.58,
+          "full": 0.52,
+          "keywords": 0.17
+        }
+      }
+    ],
+    "/recipes/module-federation/create-a-remote": [
+      {
+        "oldUrl": "/recipes/module-federation/create-a-remote",
+        "newUrl": "/technologies/module-federation/recipes/create-a-remote",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.8,
+          "full": 0.7,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-remote",
+        "newUrl": "/technologies/module-federation/recipes/create-a-host",
+        "confidence": 0.47,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.67,
+          "path": 0.67,
+          "full": 0.6,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-remote",
+        "newUrl": "/technologies/module-federation/concepts",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.64,
+          "full": 0.51,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-remote",
+        "newUrl": "/technologies/module-federation/recipes",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.64,
+          "full": 0.51,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-remote",
+        "newUrl": "/technologies/module-federation/api/generators",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.27,
+          "path": 0.64,
+          "full": 0.56,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-remote",
+        "newUrl": "/technologies/module-federation/recipes/federate-a-module",
+        "confidence": 0.44,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.47,
+          "path": 0.63,
+          "full": 0.57,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-remote",
+        "newUrl": "/technologies/module-federation/introduction",
+        "confidence": 0.42,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.13,
+          "path": 0.61,
+          "full": 0.51,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-remote",
+        "newUrl": "/technologies/module-federation/api/documents",
+        "confidence": 0.42,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.13,
+          "path": 0.61,
+          "full": 0.52,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-remote",
+        "newUrl": "/technologies/module-federation/api/executors",
+        "confidence": 0.42,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.61,
+          "full": 0.52,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/create-a-remote",
+        "newUrl": "/technologies/module-federation/api/migrations",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.13,
+          "path": 0.58,
+          "full": 0.51,
+          "keywords": 0.17
+        }
+      }
+    ],
+    "/recipes/module-federation/federate-a-module": [
+      {
+        "oldUrl": "/recipes/module-federation/federate-a-module",
+        "newUrl": "/technologies/module-federation/recipes/federate-a-module",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.81,
+          "full": 0.71,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/federate-a-module",
+        "newUrl": "/technologies/angular/api/generators/federate-module",
+        "confidence": 0.75,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.88,
+          "path": 0.55,
+          "full": 0.51,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/federate-a-module",
+        "newUrl": "/technologies/react/api/generators/federate-module",
+        "confidence": 0.75,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.88,
+          "path": 0.53,
+          "full": 0.49,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/federate-a-module",
+        "newUrl": "/technologies/module-federation/recipes/create-a-remote",
+        "confidence": 0.48,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.47,
+          "path": 0.68,
+          "full": 0.61,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/federate-a-module",
+        "newUrl": "/technologies/module-federation/recipes/create-a-host",
+        "confidence": 0.47,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.47,
+          "path": 0.67,
+          "full": 0.6,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/module-federation/federate-a-module",
+        "newUrl": "/technologies/module-federation/api/generators",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.35,
+          "path": 0.6,
+          "full": 0.51,
+          "keywords": 0.17
+        }
+      }
+    ],
+    "/recipes/react": [
+      {
+        "oldUrl": "/recipes/react",
+        "newUrl": "/technologies/react",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 1,
+          "full": 0.56,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/react",
+        "newUrl": "/technologies/react/recipes",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.29,
+          "path": 0.38,
+          "full": 0.38,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/react",
+        "newUrl": "/recipes/nx-release",
+        "confidence": 0.31,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.3,
+          "path": 0.3,
+          "full": 0.61,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/react",
+        "newUrl": "/recipes",
+        "confidence": 0.27,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.29,
+          "path": 0,
+          "full": 0.54,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/react/react-native": [
+      {
+        "oldUrl": "/recipes/react/react-native",
+        "newUrl": "/technologies/react/recipes/react-native",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.69,
+          "full": 0.59,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/react-native",
+        "newUrl": "/technologies/react/react-native",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 1,
+          "full": 0.74,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/react-native",
+        "newUrl": "/technologies/react/react-native/api",
+        "confidence": 0.57,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.82,
+          "full": 0.66,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/react-native",
+        "newUrl": "/technologies/react/react-native/recipes",
+        "confidence": 0.56,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.33,
+          "path": 0.69,
+          "full": 0.59,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/react-native",
+        "newUrl": "/technologies/react/react-native/introduction",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.58,
+          "full": 0.52,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/react-native",
+        "newUrl": "/technologies/react/react-native/api/executors",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.56,
+          "full": 0.51,
+          "keywords": 0.33
+        }
+      }
+    ],
+    "/recipes/react/remix": [
+      {
+        "oldUrl": "/recipes/react/remix",
+        "newUrl": "/technologies/react/recipes/remix",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.58,
+          "full": 0.5,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/remix",
+        "newUrl": "/technologies/react/remix",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 1,
+          "full": 0.67,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/remix",
+        "newUrl": "/technologies/react/remix/recipes",
+        "confidence": 0.56,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.43,
+          "path": 0.58,
+          "full": 0.5,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/remix",
+        "newUrl": "/technologies/react/remix/api",
+        "confidence": 0.51,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.73,
+          "full": 0.57,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/remix",
+        "newUrl": "/technologies/react/recipes",
+        "confidence": 0.48,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.43,
+          "path": 0.69,
+          "full": 0.54,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/remix",
+        "newUrl": "/technologies/react/api",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.64,
+          "full": 0.45,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/remix",
+        "newUrl": "/technologies/react/next",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.64,
+          "full": 0.48,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/remix",
+        "newUrl": "/technologies/react/expo",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.64,
+          "full": 0.48,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/remix",
+        "newUrl": "/recipes/adopting-nx",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.18,
+          "path": 0.18,
+          "full": 0.53,
+          "keywords": 0.25
+        }
+      }
+    ],
+    "/recipes/react/react-router": [
+      {
+        "oldUrl": "/recipes/react/react-router",
+        "newUrl": "/technologies/react/recipes/react-router",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.69,
+          "full": 0.59,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/react-router",
+        "newUrl": "/technologies/react/react-native",
+        "confidence": 0.47,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.5,
+          "path": 0.67,
+          "full": 0.55,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/react-router",
+        "newUrl": "/technologies/react/react-native/api",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.08,
+          "path": 0.59,
+          "full": 0.51,
+          "keywords": 0.17
+        }
+      }
+    ],
+    "/recipes/react/use-environment-variables-in-react": [
+      {
+        "oldUrl": "/recipes/react/use-environment-variables-in-react",
+        "newUrl": "/technologies/react/recipes/use-environment-variables-in-react",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.83,
+          "full": 0.74,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/use-environment-variables-in-react",
+        "newUrl": "/technologies/angular/recipes/use-environment-variables-in-angular",
+        "confidence": 0.68,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.81,
+          "path": 0.62,
+          "full": 0.57,
+          "keywords": 0.17
+        }
+      }
+    ],
+    "/recipes/react/using-tailwind-css-in-react": [
+      {
+        "oldUrl": "/recipes/react/using-tailwind-css-in-react",
+        "newUrl": "/technologies/react/recipes/using-tailwind-css-in-react",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.8,
+          "full": 0.7,
+          "keywords": 0.75
+        }
+      }
+    ],
+    "/recipes/react/adding-assets-react": [
+      {
+        "oldUrl": "/recipes/react/adding-assets-react",
+        "newUrl": "/technologies/react/recipes/adding-assets-react",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.76,
+          "full": 0.65,
+          "keywords": 0.75
+        }
+      }
+    ],
+    "/recipes/react/module-federation-with-ssr": [
+      {
+        "oldUrl": "/recipes/react/module-federation-with-ssr",
+        "newUrl": "/technologies/angular/recipes/module-federation-with-ssr",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.69,
+          "full": 0.62,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/module-federation-with-ssr",
+        "newUrl": "/technologies/react/recipes/module-federation-with-ssr",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.8,
+          "full": 0.7,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/module-federation-with-ssr",
+        "newUrl": "/technologies/angular/api/executors/module-federation-dev-ssr",
+        "confidence": 0.72,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.85,
+          "path": 0.55,
+          "full": 0.52,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/module-federation-with-ssr",
+        "newUrl": "/technologies/module-federation/recipes",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.12,
+          "path": 0.56,
+          "full": 0.53,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/module-federation-with-ssr",
+        "newUrl": "/technologies/react/api/executors/module-federation-static-server",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.71,
+          "path": 0.55,
+          "full": 0.52,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/module-federation-with-ssr",
+        "newUrl": "/technologies/react/api/executors/module-federation-dev-server",
+        "confidence": 0.25,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.71,
+          "path": 0.54,
+          "full": 0.51,
+          "keywords": 0.14
+        }
+      }
+    ],
+    "/recipes/react/deploy-nextjs-to-vercel": [
+      {
+        "oldUrl": "/recipes/react/deploy-nextjs-to-vercel",
+        "newUrl": "/technologies/react/recipes/deploy-nextjs-to-vercel",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.78,
+          "full": 0.68,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/deploy-nextjs-to-vercel",
+        "newUrl": "/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+        "confidence": 0.74,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.87,
+          "path": 0.55,
+          "full": 0.51,
+          "keywords": 0.14
+        }
+      }
+    ],
+    "/recipes/react/react-compiler": [
+      {
+        "oldUrl": "/recipes/react/react-compiler",
+        "newUrl": "/technologies/react/recipes/react-compiler",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.71,
+          "full": 0.61,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/react-compiler",
+        "newUrl": "/technologies/react/react-native",
+        "confidence": 0.49,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.57,
+          "path": 0.7,
+          "full": 0.55,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/react/react-compiler",
+        "newUrl": "/technologies/react/react-native/api",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.21,
+          "path": 0.59,
+          "full": 0.51,
+          "keywords": 0.17
+        }
+      }
+    ],
+    "/recipes/angular": [
+      {
+        "oldUrl": "/recipes/angular",
+        "newUrl": "/technologies/angular",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 1,
+          "full": 0.6,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular",
+        "newUrl": "/technologies/angular/migration/angular",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.28,
+          "full": 0.32,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular",
+        "newUrl": "/technologies/angular/recipes",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0,
+          "path": 0.47,
+          "full": 0.43,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular",
+        "newUrl": "/technologies/angular/api",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0.64,
+          "full": 0.5,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular",
+        "newUrl": "/recipes/installation",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.25,
+          "path": 0.25,
+          "full": 0.55,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular",
+        "newUrl": "/recipes/nx-release",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.2,
+          "full": 0.56,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular",
+        "newUrl": "/recipes/running-tasks",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.23,
+          "path": 0.23,
+          "full": 0.52,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular",
+        "newUrl": "/recipes/adopting-nx",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.18,
+          "path": 0.18,
+          "full": 0.53,
+          "keywords": 0.33
+        }
+      }
+    ],
+    "/recipes/angular/rspack": [
+      {
+        "oldUrl": "/recipes/angular/rspack",
+        "newUrl": "/technologies/build-tools/rspack",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.39,
+          "full": 0.39,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack",
+        "newUrl": "/technologies/build-tools/rspack/api/executors/rspack",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.26,
+          "full": 0.29,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack",
+        "newUrl": "/technologies/angular/api",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.64,
+          "full": 0.46,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack",
+        "newUrl": "/technologies/angular/angular-rspack",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.43,
+          "path": 0.64,
+          "full": 0.54,
+          "keywords": 0.2
+        }
+      }
+    ],
+    "/recipes/angular/rspack/introduction": [
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/typescript/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.56,
+          "full": 0.44,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/angular/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.74,
+          "full": 0.57,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/angular/angular-rspack/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.77,
+          "full": 0.67,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/react/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.59,
+          "full": 0.57,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/react/next/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.52,
+          "full": 0.44,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/react/remix/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.56,
+          "full": 0.46,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/react/react-native/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.48,
+          "full": 0.45,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/react/expo/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.56,
+          "full": 0.44,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/vue/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.52,
+          "full": 0.51,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/vue/nuxt/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.56,
+          "full": 0.43,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/node/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.52,
+          "full": 0.49,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/node/express/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.56,
+          "full": 0.47,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/node/nest/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.56,
+          "full": 0.43,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/java/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.56,
+          "full": 0.51,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/module-federation/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.53,
+          "full": 0.49,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/eslint/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.52,
+          "full": 0.51,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/build-tools/webpack/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.56,
+          "full": 0.51,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/build-tools/vite/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.48,
+          "full": 0.45,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/build-tools/rollup/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.48,
+          "full": 0.45,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/build-tools/esbuild/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.47,
+          "full": 0.44,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/build-tools/rspack/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.65,
+          "full": 0.57,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/build-tools/rsbuild/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.5,
+          "full": 0.47,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/test-tools/cypress/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.48,
+          "full": 0.45,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/test-tools/jest/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.5,
+          "full": 0.46,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/test-tools/playwright/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.47,
+          "full": 0.45,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/test-tools/storybook/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.48,
+          "full": 0.46,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/introduction",
+        "newUrl": "/technologies/test-tools/detox/introduction",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.48,
+          "full": 0.45,
+          "keywords": 0.14
+        }
+      }
+    ],
+    "/recipes/angular/rspack/getting-started": [
+      {
+        "oldUrl": "/recipes/angular/rspack/getting-started",
+        "newUrl": "/technologies/angular/angular-rspack/recipes/getting-started",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.65,
+          "full": 0.59,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/angular/rspack/migrate-from-webpack": [
+      {
+        "oldUrl": "/recipes/angular/rspack/migrate-from-webpack",
+        "newUrl": "/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.69,
+          "full": 0.63,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/angular/rspack/handling-configurations": [
+      {
+        "oldUrl": "/recipes/angular/rspack/handling-configurations",
+        "newUrl": "/technologies/angular/angular-rspack/recipes/handling-configurations",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.7,
+          "full": 0.64,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/rspack/handling-configurations",
+        "newUrl": "/recipes/running-tasks/reduce-repetitive-configuration",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.45,
+          "path": 0.44,
+          "full": 0.53,
+          "keywords": 0.17
+        }
+      }
+    ],
+    "/recipes/angular/rspack/internationalization": [
+      {
+        "oldUrl": "/recipes/angular/rspack/internationalization",
+        "newUrl": "/technologies/angular/angular-rspack/recipes/internationalization",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.69,
+          "full": 0.63,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/angular/migration": [
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/angular/migration",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 1,
+          "full": 0.73,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/angular/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.77,
+          "full": 0.63,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/test-tools/cypress/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.36,
+          "full": 0.37,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/test-tools/detox/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.39,
+          "full": 0.39,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/build-tools/esbuild/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.38,
+          "full": 0.38,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/eslint/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.52,
+          "full": 0.47,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/eslint/eslint-plugin/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.37,
+          "full": 0.4,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/react/expo/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.48,
+          "full": 0.45,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/node/express/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.41,
+          "full": 0.4,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/java/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.58,
+          "full": 0.5,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/test-tools/jest/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.4,
+          "full": 0.4,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/typescript/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.44,
+          "full": 0.45,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/module-federation/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.41,
+          "full": 0.4,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/node/nest/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.5,
+          "full": 0.46,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/react/next/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.52,
+          "full": 0.47,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/node/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.58,
+          "full": 0.5,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/vue/nuxt/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.52,
+          "full": 0.47,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/test-tools/playwright/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.36,
+          "full": 0.39,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/react/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.55,
+          "full": 0.48,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/react/react-native/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.39,
+          "full": 0.39,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/react/remix/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.46,
+          "full": 0.44,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/build-tools/rollup/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.36,
+          "full": 0.37,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/build-tools/rsbuild/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.38,
+          "full": 0.38,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/build-tools/rspack/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.36,
+          "full": 0.37,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/test-tools/storybook/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.34,
+          "full": 0.35,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/build-tools/vite/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.39,
+          "full": 0.39,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/vue/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.56,
+          "full": 0.48,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/build-tools/webpack/api/migrations",
+        "confidence": 0.77,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.9,
+          "path": 0.35,
+          "full": 0.36,
+          "keywords": 0
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/angular/migration/angular",
+        "confidence": 0.48,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.11,
+          "path": 0.68,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/angular/introduction",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.42,
+          "path": 0.65,
+          "full": 0.55,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/recipes/installation",
+        "confidence": 0.3,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.42,
+          "path": 0.41,
+          "full": 0.6,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration",
+        "newUrl": "/technologies/angular/api/generators",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.3,
+          "path": 0.59,
+          "full": 0.51,
+          "keywords": 0.17
+        }
+      }
+    ],
+    "/recipes/angular/migration/angular": [
+      {
+        "oldUrl": "/recipes/angular/migration/angular",
+        "newUrl": "/technologies/angular",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.28,
+          "full": 0.42,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration/angular",
+        "newUrl": "/technologies/angular/migration/angular",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 1,
+          "full": 0.79,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration/angular",
+        "newUrl": "/technologies/angular/migration/angular-multiple",
+        "confidence": 0.51,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.44,
+          "path": 0.74,
+          "full": 0.64,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration/angular",
+        "newUrl": "/technologies/angular/migration",
+        "confidence": 0.48,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.11,
+          "path": 0.68,
+          "full": 0.52,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/angular/migration/angular-multiple": [
+      {
+        "oldUrl": "/recipes/angular/migration/angular-multiple",
+        "newUrl": "/technologies/angular/migration/angular-multiple",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 1,
+          "full": 0.83,
+          "keywords": 0.6
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/migration/angular-multiple",
+        "newUrl": "/technologies/angular/migration/angular",
+        "confidence": 0.51,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.44,
+          "path": 0.74,
+          "full": 0.6,
+          "keywords": 0.4
+        }
+      }
+    ],
+    "/recipes/angular/use-environment-variables-in-angular": [
+      {
+        "oldUrl": "/recipes/angular/use-environment-variables-in-angular",
+        "newUrl": "/technologies/angular/recipes/use-environment-variables-in-angular",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.85,
+          "full": 0.75,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/use-environment-variables-in-angular",
+        "newUrl": "/technologies/react/recipes/use-environment-variables-in-react",
+        "confidence": 0.68,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.81,
+          "path": 0.6,
+          "full": 0.56,
+          "keywords": 0.17
+        }
+      }
+    ],
+    "/recipes/angular/using-tailwind-css-with-angular-projects": [
+      {
+        "oldUrl": "/recipes/angular/using-tailwind-css-with-angular-projects",
+        "newUrl": "/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.86,
+          "full": 0.77,
+          "keywords": 0.75
+        }
+      }
+    ],
+    "/recipes/angular/module-federation-with-ssr": [
+      {
+        "oldUrl": "/recipes/angular/module-federation-with-ssr",
+        "newUrl": "/technologies/angular/recipes/module-federation-with-ssr",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.81,
+          "full": 0.71,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/module-federation-with-ssr",
+        "newUrl": "/technologies/react/recipes/module-federation-with-ssr",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.7,
+          "full": 0.62,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/module-federation-with-ssr",
+        "newUrl": "/technologies/angular/api/executors/module-federation-dev-ssr",
+        "confidence": 0.72,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.85,
+          "path": 0.62,
+          "full": 0.57,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/module-federation-with-ssr",
+        "newUrl": "/technologies/angular/recipes/dynamic-module-federation-with-angular",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.63,
+          "path": 0.59,
+          "full": 0.55,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/module-federation-with-ssr",
+        "newUrl": "/technologies/module-federation/recipes",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.12,
+          "path": 0.53,
+          "full": 0.52,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/module-federation-with-ssr",
+        "newUrl": "/technologies/angular/api/executors/module-federation-dev-server",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.71,
+          "path": 0.56,
+          "full": 0.52,
+          "keywords": 0.14
+        }
+      }
+    ],
+    "/recipes/angular/dynamic-module-federation-with-angular": [
+      {
+        "oldUrl": "/recipes/angular/dynamic-module-federation-with-angular",
+        "newUrl": "/technologies/angular/recipes/dynamic-module-federation-with-angular",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.85,
+          "full": 0.76,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/dynamic-module-federation-with-angular",
+        "newUrl": "/technologies/angular/recipes/module-federation-with-ssr",
+        "confidence": 0.49,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.63,
+          "path": 0.7,
+          "full": 0.6,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/angular/dynamic-module-federation-with-angular",
+        "newUrl": "/technologies/angular/api/executors/module-federation-dev-server",
+        "confidence": 0.25,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.53,
+          "path": 0.54,
+          "full": 0.51,
+          "keywords": 0.14
+        }
+      }
+    ],
+    "/recipes/angular/setup-incremental-builds-angular": [
+      {
+        "oldUrl": "/recipes/angular/setup-incremental-builds-angular",
+        "newUrl": "/technologies/angular/recipes/setup-incremental-builds-angular",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.83,
+          "full": 0.74,
+          "keywords": 0.75
+        }
+      }
+    ],
+    "/recipes/node": [
+      {
+        "oldUrl": "/recipes/node",
+        "newUrl": "/technologies/node",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 1,
+          "full": 0.53,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/node",
+        "newUrl": "/technologies/typescript/api/executors/node",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.14,
+          "full": 0.26,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/node",
+        "newUrl": "/technologies/node/recipes",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0.33,
+          "full": 0.36,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/node",
+        "newUrl": "/recipes/nx-console",
+        "confidence": 0.31,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.3,
+          "path": 0.3,
+          "full": 0.61,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/node",
+        "newUrl": "/recipes",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/node",
+        "newUrl": "/recipes/nx-release",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.2,
+          "full": 0.56,
+          "keywords": 0.33
+        }
+      }
+    ],
+    "/recipes/node/node-server-fly-io": [
+      {
+        "oldUrl": "/recipes/node/node-server-fly-io",
+        "newUrl": "/technologies/node/recipes/node-server-fly-io",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.74,
+          "full": 0.64,
+          "keywords": 0.75
+        }
+      }
+    ],
+    "/recipes/node/node-serverless-functions-netlify": [
+      {
+        "oldUrl": "/recipes/node/node-serverless-functions-netlify",
+        "newUrl": "/technologies/node/recipes/node-serverless-functions-netlify",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.83,
+          "full": 0.73,
+          "keywords": 0.75
+        }
+      }
+    ],
+    "/recipes/node/node-aws-lambda": [
+      {
+        "oldUrl": "/recipes/node/node-aws-lambda",
+        "newUrl": "/technologies/node/recipes/node-aws-lambda",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.71,
+          "full": 0.61,
+          "keywords": 0.75
+        }
+      }
+    ],
+    "/recipes/node/application-proxies": [
+      {
+        "oldUrl": "/recipes/node/application-proxies",
+        "newUrl": "/technologies/node/recipes/application-proxies",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.75,
+          "full": 0.64,
+          "keywords": 0.75
+        }
+      }
+    ],
+    "/recipes/node/wait-for-tasks": [
+      {
+        "oldUrl": "/recipes/node/wait-for-tasks",
+        "newUrl": "/technologies/node/recipes/wait-for-tasks",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.7,
+          "full": 0.6,
+          "keywords": 0.75
+        }
+      },
+      {
+        "oldUrl": "/recipes/node/wait-for-tasks",
+        "newUrl": "/recipes/running-tasks",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.43,
+          "path": 0.37,
+          "full": 0.56,
+          "keywords": 0.25
+        }
+      }
+    ],
+    "/recipes/storybook": [
+      {
+        "oldUrl": "/recipes/storybook",
+        "newUrl": "/technologies/test-tools/storybook",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.45,
+          "full": 0.45,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/storybook",
+        "newUrl": "/technologies/react/react-native/api/executors/storybook",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.21,
+          "full": 0.31,
+          "keywords": 0.14
+        }
+      },
+      {
+        "oldUrl": "/recipes/storybook",
+        "newUrl": "/technologies/test-tools/storybook/api/executors/storybook",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.2,
+          "full": 0.28,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/storybook",
+        "newUrl": "/recipes/installation",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.25,
+          "path": 0.25,
+          "full": 0.55,
+          "keywords": 0.33
+        }
+      }
+    ],
+    "/recipes/storybook/overview-react": [
+      {
+        "oldUrl": "/recipes/storybook/overview-react",
+        "newUrl": "/technologies/test-tools/storybook/recipes/overview-react",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.56,
+          "full": 0.54,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/overview-angular": [
+      {
+        "oldUrl": "/recipes/storybook/overview-angular",
+        "newUrl": "/technologies/test-tools/storybook/recipes/overview-angular",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.58,
+          "full": 0.55,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/overview-vue": [
+      {
+        "oldUrl": "/recipes/storybook/overview-vue",
+        "newUrl": "/technologies/test-tools/storybook/recipes/overview-vue",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.54,
+          "full": 0.52,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/configuring-storybook": [
+      {
+        "oldUrl": "/recipes/storybook/configuring-storybook",
+        "newUrl": "/technologies/test-tools/storybook/recipes/configuring-storybook",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.62,
+          "full": 0.59,
+          "keywords": 0.6
+        }
+      },
+      {
+        "oldUrl": "/recipes/storybook/configuring-storybook",
+        "newUrl": "/technologies/test-tools/storybook/recipes/upgrading-storybook",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.62,
+          "path": 0.54,
+          "full": 0.52,
+          "keywords": 0.33
+        }
+      }
+    ],
+    "/recipes/storybook/one-storybook-for-all": [
+      {
+        "oldUrl": "/recipes/storybook/one-storybook-for-all",
+        "newUrl": "/technologies/test-tools/storybook/recipes/one-storybook-for-all",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.62,
+          "full": 0.59,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/one-storybook-per-scope": [
+      {
+        "oldUrl": "/recipes/storybook/one-storybook-per-scope",
+        "newUrl": "/technologies/test-tools/storybook/recipes/one-storybook-per-scope",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.63,
+          "full": 0.6,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/one-storybook-with-composition": [
+      {
+        "oldUrl": "/recipes/storybook/one-storybook-with-composition",
+        "newUrl": "/technologies/test-tools/storybook/recipes/one-storybook-with-composition",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.68,
+          "full": 0.64,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/custom-builder-configs": [
+      {
+        "oldUrl": "/recipes/storybook/custom-builder-configs",
+        "newUrl": "/technologies/test-tools/storybook/recipes/custom-builder-configs",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.63,
+          "full": 0.59,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/storybook-interaction-tests": [
+      {
+        "oldUrl": "/recipes/storybook/storybook-interaction-tests",
+        "newUrl": "/technologies/test-tools/storybook/recipes/storybook-interaction-tests",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.66,
+          "full": 0.62,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/upgrading-storybook": [
+      {
+        "oldUrl": "/recipes/storybook/upgrading-storybook",
+        "newUrl": "/technologies/test-tools/storybook/recipes/upgrading-storybook",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.6,
+          "full": 0.57,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/storybook-composition-setup": [
+      {
+        "oldUrl": "/recipes/storybook/storybook-composition-setup",
+        "newUrl": "/technologies/test-tools/storybook/recipes/storybook-composition-setup",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.66,
+          "full": 0.62,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/angular-storybook-compodoc": [
+      {
+        "oldUrl": "/recipes/storybook/angular-storybook-compodoc",
+        "newUrl": "/technologies/test-tools/storybook/recipes/angular-storybook-compodoc",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.65,
+          "full": 0.62,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/storybook/angular-configuring-styles": [
+      {
+        "oldUrl": "/recipes/storybook/angular-configuring-styles",
+        "newUrl": "/technologies/test-tools/storybook/recipes/angular-configuring-styles",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.65,
+          "full": 0.62,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/cypress": [
+      {
+        "oldUrl": "/recipes/cypress",
+        "newUrl": "/technologies/test-tools/cypress",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.39,
+          "full": 0.42,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/cypress",
+        "newUrl": "/technologies/test-tools/cypress/api/executors/cypress",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.18,
+          "full": 0.26,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/cypress",
+        "newUrl": "/recipes/nx-release",
+        "confidence": 0.31,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.3,
+          "path": 0.3,
+          "full": 0.61,
+          "keywords": 0.33
+        }
+      },
+      {
+        "oldUrl": "/recipes/cypress",
+        "newUrl": "/recipes/tips-n-tricks",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.23,
+          "path": 0.23,
+          "full": 0.52,
+          "keywords": 0.33
+        }
+      }
+    ],
+    "/recipes/cypress/cypress-component-testing": [
+      {
+        "oldUrl": "/recipes/cypress/cypress-component-testing",
+        "newUrl": "/technologies/test-tools/cypress/recipes/cypress-component-testing",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.63,
+          "full": 0.6,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/cypress/cypress-setup-node-events": [
+      {
+        "oldUrl": "/recipes/cypress/cypress-setup-node-events",
+        "newUrl": "/technologies/test-tools/cypress/recipes/cypress-setup-node-events",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.63,
+          "full": 0.6,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/cypress/cypress-v11-migration": [
+      {
+        "oldUrl": "/recipes/cypress/cypress-v11-migration",
+        "newUrl": "/technologies/test-tools/cypress/recipes/cypress-v11-migration",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.6,
+          "full": 0.57,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/next": [
+      {
+        "oldUrl": "/recipes/next",
+        "newUrl": "/technologies/react/next",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.4,
+          "full": 0.39,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/next",
+        "newUrl": "/recipes",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/next",
+        "newUrl": "/recipes/nx-release",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.2,
+          "full": 0.56,
+          "keywords": 0.33
+        }
+      }
+    ],
+    "/recipes/next/next-config-setup": [
+      {
+        "oldUrl": "/recipes/next/next-config-setup",
+        "newUrl": "/technologies/react/next/recipes/next-config-setup",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.61,
+          "full": 0.55,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/nuxt": [
+      {
+        "oldUrl": "/recipes/nuxt",
+        "newUrl": "/technologies/vue/nuxt",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.5,
+          "full": 0.43,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/nuxt",
+        "newUrl": "/recipes",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0,
+          "path": 0,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/nuxt/deploy-nuxt-to-vercel": [
+      {
+        "oldUrl": "/recipes/nuxt/deploy-nuxt-to-vercel",
+        "newUrl": "/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.68,
+          "full": 0.61,
+          "keywords": 0.6
+        }
+      },
+      {
+        "oldUrl": "/recipes/nuxt/deploy-nuxt-to-vercel",
+        "newUrl": "/technologies/react/recipes/deploy-nextjs-to-vercel",
+        "confidence": 0.74,
+        "matchType": "similar_last_part",
+        "similarities": {
+          "lastPart": 0.87,
+          "path": 0.59,
+          "full": 0.54,
+          "keywords": 0.17
+        }
+      }
+    ],
+    "/recipes/vite": [
+      {
+        "oldUrl": "/recipes/vite",
+        "newUrl": "/technologies/build-tools/vite",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.25,
+          "full": 0.31,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/vite",
+        "newUrl": "/recipes",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.29,
+          "path": 0,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/vite/configure-vite": [
+      {
+        "oldUrl": "/recipes/vite/configure-vite",
+        "newUrl": "/technologies/build-tools/vite/recipes/configure-vite",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.49,
+          "full": 0.46,
+          "keywords": 0.6
+        }
+      },
+      {
+        "oldUrl": "/recipes/vite/configure-vite",
+        "newUrl": "/recipes/running-tasks/configure-inputs",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.69,
+          "path": 0.47,
+          "full": 0.58,
+          "keywords": 0.2
+        }
+      },
+      {
+        "oldUrl": "/recipes/vite/configure-vite",
+        "newUrl": "/recipes/running-tasks/configure-outputs",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.65,
+          "path": 0.45,
+          "full": 0.56,
+          "keywords": 0.2
+        }
+      }
+    ],
+    "/recipes/webpack": [
+      {
+        "oldUrl": "/recipes/webpack",
+        "newUrl": "/technologies/build-tools/webpack",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.37,
+          "full": 0.38,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/webpack",
+        "newUrl": "/technologies/build-tools/webpack/api/executors/webpack",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.17,
+          "full": 0.26,
+          "keywords": 0.17
+        }
+      },
+      {
+        "oldUrl": "/recipes/webpack",
+        "newUrl": "/recipes/nx-release",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.2,
+          "full": 0.56,
+          "keywords": 0.33
+        }
+      }
+    ],
+    "/recipes/webpack/webpack-config-setup": [
+      {
+        "oldUrl": "/recipes/webpack/webpack-config-setup",
+        "newUrl": "/technologies/build-tools/webpack/recipes/webpack-config-setup",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.58,
+          "full": 0.54,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/webpack/webpack-plugins": [
+      {
+        "oldUrl": "/recipes/webpack/webpack-plugins",
+        "newUrl": "/technologies/build-tools/webpack/recipes/webpack-plugins",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.53,
+          "full": 0.5,
+          "keywords": 0.6
+        }
+      }
+    ],
+    "/recipes/tips-n-tricks/eslint": [
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/technologies/eslint",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.3,
+          "full": 0.39,
+          "keywords": 0.25
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/technologies/eslint/recipes/eslint",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.48,
+          "full": 0.44,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/recipes/tips-n-tricks",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.15,
+          "path": 0.65,
+          "full": 0.75,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/recipes/tips-n-tricks/yarn-pnp",
+        "confidence": 0.48,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.13,
+          "path": 0.68,
+          "full": 0.77,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/recipes/tips-n-tricks/browser-support",
+        "confidence": 0.34,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.2,
+          "path": 0.59,
+          "full": 0.68,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/recipes/tips-n-tricks/advanced-update",
+        "confidence": 0.32,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.13,
+          "path": 0.55,
+          "full": 0.65,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/recipes/tips-n-tricks/analyze-source-files",
+        "confidence": 0.3,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.15,
+          "path": 0.5,
+          "full": 0.6,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/recipes/tips-n-tricks/include-assets-in-build",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.49,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/recipes/tips-n-tricks/standalone-to-monorepo",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0.47,
+          "full": 0.57,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.47,
+          "full": 0.57,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/recipes/tips-n-tricks/include-all-packagejson",
+        "confidence": 0.27,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.09,
+          "path": 0.43,
+          "full": 0.53,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/eslint",
+        "newUrl": "/recipes/tips-n-tricks/define-environment-variables",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0.43,
+          "full": 0.52,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/tips-n-tricks/switch-to-workspaces-project-references": [
+      {
+        "oldUrl": "/recipes/tips-n-tricks/switch-to-workspaces-project-references",
+        "newUrl": "/technologies/typescript/recipes/switch-to-workspaces-project-references",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.81,
+          "full": 0.73,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/switch-to-workspaces-project-references",
+        "newUrl": "/recipes/tips-n-tricks",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.21,
+          "path": 0.25,
+          "full": 0.34,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/switch-to-workspaces-project-references",
+        "newUrl": "/recipes/tips-n-tricks/standalone-to-monorepo",
+        "confidence": 0.25,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.23,
+          "path": 0.43,
+          "full": 0.51,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/switch-to-workspaces-project-references",
+        "newUrl": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+        "confidence": 0.25,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.23,
+          "path": 0.43,
+          "full": 0.51,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/switch-to-workspaces-project-references",
+        "newUrl": "/recipes/tips-n-tricks/include-all-packagejson",
+        "confidence": 0.25,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.23,
+          "path": 0.43,
+          "full": 0.51,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/tips-n-tricks/enable-tsc-batch-mode": [
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/technologies/typescript/recipes/enable-tsc-batch-mode",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.73,
+          "full": 0.64,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0.37,
+          "full": 0.49,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks/analyze-source-files",
+        "confidence": 0.33,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.29,
+          "path": 0.57,
+          "full": 0.65,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks/standalone-to-monorepo",
+        "confidence": 0.3,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.18,
+          "path": 0.5,
+          "full": 0.59,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks/include-assets-in-build",
+        "confidence": 0.3,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.22,
+          "path": 0.51,
+          "full": 0.6,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks/include-all-packagejson",
+        "confidence": 0.3,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.22,
+          "path": 0.51,
+          "full": 0.6,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks/advanced-update",
+        "confidence": 0.3,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.19,
+          "path": 0.51,
+          "full": 0.6,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks/browser-support",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0.49,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.47,
+          "full": 0.57,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks/identify-dependencies-between-folders",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.3,
+          "path": 0.49,
+          "full": 0.56,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks/yarn-pnp",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.1,
+          "path": 0.46,
+          "full": 0.56,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+        "newUrl": "/recipes/tips-n-tricks/define-environment-variables",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0.43,
+          "full": 0.52,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/tips-n-tricks/define-secondary-entrypoints": [
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/technologies/typescript/recipes/define-secondary-entrypoints",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.77,
+          "full": 0.68,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.29,
+          "path": 0.31,
+          "full": 0.42,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks/define-environment-variables",
+        "confidence": 0.43,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.43,
+          "path": 0.62,
+          "full": 0.68,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks/standalone-to-monorepo",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.25,
+          "path": 0.5,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.25,
+          "path": 0.5,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks/browser-support",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.25,
+          "path": 0.5,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks/analyze-source-files",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.25,
+          "path": 0.5,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks/identify-dependencies-between-folders",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.3,
+          "path": 0.49,
+          "full": 0.56,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks/advanced-update",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.21,
+          "path": 0.48,
+          "full": 0.56,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks/include-assets-in-build",
+        "confidence": 0.27,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.18,
+          "path": 0.45,
+          "full": 0.54,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks/yarn-pnp",
+        "confidence": 0.27,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.18,
+          "path": 0.45,
+          "full": 0.54,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+        "newUrl": "/recipes/tips-n-tricks/include-all-packagejson",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0.43,
+          "full": 0.52,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/tips-n-tricks/compile-multiple-formats": [
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/technologies/typescript/recipes/compile-multiple-formats",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.74,
+          "full": 0.66,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.21,
+          "path": 0.34,
+          "full": 0.46,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks/browser-support",
+        "confidence": 0.3,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.25,
+          "path": 0.53,
+          "full": 0.61,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks/analyze-source-files",
+        "confidence": 0.3,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.25,
+          "path": 0.53,
+          "full": 0.61,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks/define-environment-variables",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.25,
+          "path": 0.5,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks/advanced-update",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.21,
+          "path": 0.5,
+          "full": 0.59,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.47,
+          "full": 0.57,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks/include-all-packagejson",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.47,
+          "full": 0.57,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks/standalone-to-monorepo",
+        "confidence": 0.27,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.13,
+          "path": 0.45,
+          "full": 0.54,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks/include-assets-in-build",
+        "confidence": 0.27,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.13,
+          "path": 0.45,
+          "full": 0.54,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks/yarn-pnp",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.08,
+          "path": 0.42,
+          "full": 0.52,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/compile-multiple-formats",
+        "newUrl": "/recipes/tips-n-tricks/identify-dependencies-between-folders",
+        "confidence": 0.25,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.22,
+          "path": 0.43,
+          "full": 0.51,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/tips-n-tricks/js-and-ts": [
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/technologies/typescript/recipes/js-and-ts",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.61,
+          "full": 0.54,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/recipes/tips-n-tricks",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.31,
+          "path": 0.57,
+          "full": 0.68,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/recipes/tips-n-tricks/advanced-update",
+        "confidence": 0.46,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.33,
+          "path": 0.66,
+          "full": 0.73,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/recipes/tips-n-tricks/yarn-pnp",
+        "confidence": 0.46,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.11,
+          "path": 0.65,
+          "full": 0.74,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/recipes/tips-n-tricks/browser-support",
+        "confidence": 0.32,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.13,
+          "path": 0.55,
+          "full": 0.65,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/recipes/tips-n-tricks/standalone-to-monorepo",
+        "confidence": 0.31,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.23,
+          "path": 0.53,
+          "full": 0.61,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/recipes/tips-n-tricks/analyze-source-files",
+        "confidence": 0.3,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.15,
+          "path": 0.5,
+          "full": 0.6,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/recipes/tips-n-tricks/include-assets-in-build",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.49,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/recipes/tips-n-tricks/include-all-packagejson",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.49,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.47,
+          "full": 0.57,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/js-and-ts",
+        "newUrl": "/recipes/tips-n-tricks/define-environment-variables",
+        "confidence": 0.26,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.14,
+          "path": 0.43,
+          "full": 0.52,
+          "keywords": 0.5
+        }
+      }
+    ],
+    "/recipes/tips-n-tricks/flat-config": [
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/technologies/eslint/recipes/flat-config",
+        "confidence": 0.95,
+        "matchType": "exact_last_part",
+        "similarities": {
+          "lastPart": 1,
+          "path": 0.58,
+          "full": 0.51,
+          "keywords": 0.4
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/recipes/tips-n-tricks",
+        "confidence": 0.5,
+        "matchType": "keyword_overlap",
+        "similarities": {
+          "lastPart": 0.15,
+          "path": 0.52,
+          "full": 0.64,
+          "keywords": 0.67
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/recipes/tips-n-tricks/yarn-pnp",
+        "confidence": 0.45,
+        "matchType": "path_similarity",
+        "similarities": {
+          "lastPart": 0.18,
+          "path": 0.64,
+          "full": 0.73,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/recipes/tips-n-tricks/analyze-source-files",
+        "confidence": 0.32,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.25,
+          "path": 0.56,
+          "full": 0.64,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/recipes/tips-n-tricks/advanced-update",
+        "confidence": 0.32,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.13,
+          "path": 0.55,
+          "full": 0.65,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/recipes/tips-n-tricks/standalone-to-monorepo",
+        "confidence": 0.31,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.23,
+          "path": 0.53,
+          "full": 0.61,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/recipes/tips-n-tricks/browser-support",
+        "confidence": 0.31,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.07,
+          "path": 0.52,
+          "full": 0.62,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/recipes/tips-n-tricks/include-assets-in-build",
+        "confidence": 0.3,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.22,
+          "path": 0.51,
+          "full": 0.6,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/recipes/tips-n-tricks/include-all-packagejson",
+        "confidence": 0.29,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.49,
+          "full": 0.58,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+        "confidence": 0.28,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.17,
+          "path": 0.47,
+          "full": 0.57,
+          "keywords": 0.5
+        }
+      },
+      {
+        "oldUrl": "/recipes/tips-n-tricks/flat-config",
+        "newUrl": "/recipes/tips-n-tricks/define-environment-variables",
+        "confidence": 0.27,
+        "matchType": "general_similarity",
+        "similarities": {
+          "lastPart": 0.18,
+          "path": 0.45,
+          "full": 0.54,
+          "keywords": 0.5
+        }
+      }
+    ]
+  },
+  "unmatchedUrls": [],
+  "statistics": {
+    "totalMissing": 69,
+    "matched": 69,
+    "unmatched": 0,
+    "matchRate": 100,
+    "timestamp": "2025-06-02T17:38:17.486Z"
+  }
+}

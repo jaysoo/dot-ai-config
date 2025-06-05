@@ -1,0 +1,347 @@
+[
+  {
+    "source": "/recipes/module-federation",
+    "destination": "/technologies/module-federation",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/module-federation/create-a-host",
+    "destination": "/technologies/module-federation/recipes/create-a-host",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/module-federation/create-a-remote",
+    "destination": "/technologies/module-federation/recipes/create-a-remote",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/module-federation/federate-a-module",
+    "destination": "/technologies/module-federation/recipes/federate-a-module",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/react",
+    "destination": "/technologies/react",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/react/react-native",
+    "destination": "/technologies/react/recipes/react-native",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/react/remix",
+    "destination": "/technologies/react/recipes/remix",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/react/react-router",
+    "destination": "/technologies/react/recipes/react-router",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/react/use-environment-variables-in-react",
+    "destination": "/technologies/react/recipes/use-environment-variables-in-react",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/react/using-tailwind-css-in-react",
+    "destination": "/technologies/react/recipes/using-tailwind-css-in-react",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/react/adding-assets-react",
+    "destination": "/technologies/react/recipes/adding-assets-react",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/react/module-federation-with-ssr",
+    "destination": "/technologies/angular/recipes/module-federation-with-ssr",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/react/deploy-nextjs-to-vercel",
+    "destination": "/technologies/react/recipes/deploy-nextjs-to-vercel",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/react/react-compiler",
+    "destination": "/technologies/react/recipes/react-compiler",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular",
+    "destination": "/technologies/angular",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/rspack",
+    "destination": "/technologies/build-tools/rspack",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/rspack/introduction",
+    "destination": "/technologies/typescript/introduction",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/rspack/getting-started",
+    "destination": "/technologies/angular/angular-rspack/recipes/getting-started",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/rspack/migrate-from-webpack",
+    "destination": "/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/rspack/handling-configurations",
+    "destination": "/technologies/angular/angular-rspack/recipes/handling-configurations",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/rspack/internationalization",
+    "destination": "/technologies/angular/angular-rspack/recipes/internationalization",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/migration",
+    "destination": "/technologies/angular/migration",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/migration/angular",
+    "destination": "/technologies/angular",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/migration/angular-multiple",
+    "destination": "/technologies/angular/migration/angular-multiple",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/use-environment-variables-in-angular",
+    "destination": "/technologies/angular/recipes/use-environment-variables-in-angular",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/using-tailwind-css-with-angular-projects",
+    "destination": "/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/module-federation-with-ssr",
+    "destination": "/technologies/angular/recipes/module-federation-with-ssr",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/dynamic-module-federation-with-angular",
+    "destination": "/technologies/angular/recipes/dynamic-module-federation-with-angular",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/angular/setup-incremental-builds-angular",
+    "destination": "/technologies/angular/recipes/setup-incremental-builds-angular",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/node",
+    "destination": "/technologies/node",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/node/node-server-fly-io",
+    "destination": "/technologies/node/recipes/node-server-fly-io",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/node/node-serverless-functions-netlify",
+    "destination": "/technologies/node/recipes/node-serverless-functions-netlify",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/node/node-aws-lambda",
+    "destination": "/technologies/node/recipes/node-aws-lambda",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/node/application-proxies",
+    "destination": "/technologies/node/recipes/application-proxies",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/node/wait-for-tasks",
+    "destination": "/technologies/node/recipes/wait-for-tasks",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook",
+    "destination": "/technologies/test-tools/storybook",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/overview-react",
+    "destination": "/technologies/test-tools/storybook/recipes/overview-react",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/overview-angular",
+    "destination": "/technologies/test-tools/storybook/recipes/overview-angular",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/overview-vue",
+    "destination": "/technologies/test-tools/storybook/recipes/overview-vue",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/configuring-storybook",
+    "destination": "/technologies/test-tools/storybook/recipes/configuring-storybook",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/one-storybook-for-all",
+    "destination": "/technologies/test-tools/storybook/recipes/one-storybook-for-all",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/one-storybook-per-scope",
+    "destination": "/technologies/test-tools/storybook/recipes/one-storybook-per-scope",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/one-storybook-with-composition",
+    "destination": "/technologies/test-tools/storybook/recipes/one-storybook-with-composition",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/custom-builder-configs",
+    "destination": "/technologies/test-tools/storybook/recipes/custom-builder-configs",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/storybook-interaction-tests",
+    "destination": "/technologies/test-tools/storybook/recipes/storybook-interaction-tests",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/upgrading-storybook",
+    "destination": "/technologies/test-tools/storybook/recipes/upgrading-storybook",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/storybook-composition-setup",
+    "destination": "/technologies/test-tools/storybook/recipes/storybook-composition-setup",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/angular-storybook-compodoc",
+    "destination": "/technologies/test-tools/storybook/recipes/angular-storybook-compodoc",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/storybook/angular-configuring-styles",
+    "destination": "/technologies/test-tools/storybook/recipes/angular-configuring-styles",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/cypress",
+    "destination": "/technologies/test-tools/cypress",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/cypress/cypress-component-testing",
+    "destination": "/technologies/test-tools/cypress/recipes/cypress-component-testing",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/cypress/cypress-setup-node-events",
+    "destination": "/technologies/test-tools/cypress/recipes/cypress-setup-node-events",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/cypress/cypress-v11-migration",
+    "destination": "/technologies/test-tools/cypress/recipes/cypress-v11-migration",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/next",
+    "destination": "/technologies/react/next",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/next/next-config-setup",
+    "destination": "/technologies/react/next/recipes/next-config-setup",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/nuxt",
+    "destination": "/technologies/vue/nuxt",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/nuxt/deploy-nuxt-to-vercel",
+    "destination": "/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/vite",
+    "destination": "/technologies/build-tools/vite",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/vite/configure-vite",
+    "destination": "/technologies/build-tools/vite/recipes/configure-vite",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/webpack",
+    "destination": "/technologies/build-tools/webpack",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/webpack/webpack-config-setup",
+    "destination": "/technologies/build-tools/webpack/recipes/webpack-config-setup",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/webpack/webpack-plugins",
+    "destination": "/technologies/build-tools/webpack/recipes/webpack-plugins",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/tips-n-tricks/eslint",
+    "destination": "/technologies/eslint",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/tips-n-tricks/switch-to-workspaces-project-references",
+    "destination": "/technologies/typescript/recipes/switch-to-workspaces-project-references",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/tips-n-tricks/enable-tsc-batch-mode",
+    "destination": "/technologies/typescript/recipes/enable-tsc-batch-mode",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/tips-n-tricks/define-secondary-entrypoints",
+    "destination": "/technologies/typescript/recipes/define-secondary-entrypoints",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/tips-n-tricks/compile-multiple-formats",
+    "destination": "/technologies/typescript/recipes/compile-multiple-formats",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/tips-n-tricks/js-and-ts",
+    "destination": "/technologies/typescript/recipes/js-and-ts",
+    "permanent": true
+  },
+  {
+    "source": "/recipes/tips-n-tricks/flat-config",
+    "destination": "/technologies/eslint/recipes/flat-config",
+    "permanent": true
+  }
+]
