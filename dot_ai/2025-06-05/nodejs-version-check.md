@@ -24,67 +24,91 @@ Currently, the nx Debian package has a hard dependency on `nodejs (>= 18.0.0)` i
 
 **Reasoning:** Removing the version constraint makes the package installable on more systems, particularly Ubuntu 22.04 LTS.
 
-### Step 2: Create Version Check Script
-**File:** `.ai/2025-06-05/check-node-version.mjs` (prototype)
-- Create a Node.js script that:
-  - Checks the current Node.js version
-  - Returns structured data about version compatibility
-  - Can be integrated into the nx wrapper script
+### Step 2: Update debian/rules to Include Version Check in Wrapper Script
+**File:** `debian/rules`
 
-### Step 3: Modify the nx Wrapper Script
-**File:** `debian/rules` (generates the wrapper script)
-- Update the wrapper script generation to include:
-  - Node.js version check before executing nx
-  - Warning message for Node.js < 20
-  - Guidance on upgrading Node.js
-  - Continue execution after warning
+Replace the current wrapper script generation (lines 19-22) with an expanded version that includes the version check:
 
-**Warning message should include:**
+```bash
+# Create binary wrapper with version check
+mkdir -p debian/tmp/usr/bin
+cat > debian/tmp/usr/bin/nx << 'EOF'
+#!/bin/bash
+
+# Check Node.js version and warn if < 20
+NODE_VERSION=$(node -v 2>/dev/null | grep -oE 'v[0-9]+' | cut -c2-)
+
+if [ -n "$NODE_VERSION" ] && [ "$NODE_VERSION" -lt 20 ]; then
+    cat >&2 << 'WARNING'
+╔══════════════════════════════════════════════════════════════════════╗
+║                         ⚠️  NODE.JS WARNING ⚠️                         ║
+╠══════════════════════════════════════════════════════════════════════╣
+║ You are using Node.js version v$NODE_VERSION                                ║
+║ Node.js >= 20 is recommended for optimal compatibility with nx.      ║
+║                                                                      ║
+║ Your current version may work but could encounter issues.            ║
+║                                                                      ║
+║ To upgrade Node.js:                                                  ║
+║ • Visit: https://nodejs.org/en/download/                             ║
+║ • Or use NodeSource: https://github.com/nodesource/distributions    ║
+║                                                                      ║
+║ For Ubuntu/Debian:                                                   ║
+║   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - ║
+║   sudo apt-get install -y nodejs                                     ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+WARNING
+fi
+
+# Execute nx with proper NODE_PATH
+NODE_PATH="/usr/lib/nx/node_modules" exec node /usr/lib/nx/node_modules/nx/bin/nx.js "$@"
+EOF
+chmod +x debian/tmp/usr/bin/nx
 ```
-WARNING: You are using Node.js version X.X.X
-Node.js >= 20 is recommended for optimal compatibility with nx.
-Your current version may work but could encounter issues.
 
-To upgrade Node.js, visit: https://nodejs.org/en/download/
-Or use NodeSource repository: https://github.com/nodesource/distributions
-```
+**Key changes:**
+- The wrapper script now checks Node.js version before executing nx
+- Uses simple bash commands to extract major version number
+- Displays formatted warning box for versions < 20
+- Continues execution after warning (non-blocking)
+- Uses a heredoc within a heredoc for clean formatting
 
-### Step 4: Test the Changes
-**File:** `.ai/2025-06-05/test-version-check.sh`
-- Create test script to verify:
-  - Package installs on systems with various Node.js versions
-  - Warning appears for Node.js < 20
-  - No warning for Node.js >= 20
-  - nx still executes after warning
-
-## Alternative Approaches Considered
-
-1. **Using a postinstall script**: Could check version during installation, but wouldn't help with Node.js upgrades after package installation
-2. **Creating a separate compatibility package**: Too complex for this use case
-3. **Using Recommends instead of Depends**: Still wouldn't provide runtime guidance
+### Step 3: Test the Changes
+Build and test the package:
+1. Build the Debian package with the modifications
+2. Install on systems with different Node.js versions:
+   - Ubuntu 22.04 (Node.js 12.x)
+   - Ubuntu 23.04 (Node.js 18.x) 
+   - System with Node.js 20+
+3. Verify:
+   - Package installs without errors
+   - Warning appears for Node.js < 20
+   - No warning for Node.js >= 20
+   - nx executes successfully after warning
 
 ## Expected Outcome
 
 After implementation:
 - The nx Debian package will install on Ubuntu 22.04 and other systems with older Node.js
-- Users with Node.js < 20 will see a clear warning with upgrade instructions
+- Users with Node.js < 20 will see a clear warning with upgrade instructions every time they run nx
 - The package will continue to work (with potential compatibility issues)
-- Users can upgrade Node.js at their convenience without reinstalling nx
+- No additional files or dependencies are needed
 
-## Potential Risks
+## Advantages of This Approach
 
-1. **Compatibility Issues**: nx may not work correctly with very old Node.js versions
-   - Mitigation: Clear warning message sets expectations
-   
-2. **Support Burden**: Users may report issues when using unsupported Node.js versions
-   - Mitigation: Warning message clearly states recommended version
+1. **Simplicity**: All logic contained in debian/rules, no extra files needed
+2. **Maintainability**: Version check is part of the build process
+3. **Performance**: Minimal overhead (simple bash version check)
+4. **User Experience**: Clear, formatted warning with actionable steps
 
-3. **Performance**: Adding version check to every nx invocation adds overhead
-   - Mitigation: Check should be minimal, can cache result if needed
+## Potential Considerations
 
-## Next Steps
+1. **Warning Frequency**: Users will see the warning on every nx invocation
+   - This is intentional to encourage upgrades
+   - Could be mitigated with a flag file if needed later
 
-1. Review this plan
-2. Implement the changes in order
-3. Test on various Ubuntu/Debian versions
-4. Update documentation if needed
+2. **Version Parsing**: The regex approach is simple but assumes standard Node.js version format
+   - Should work for all official Node.js releases
+
+3. **Formatting**: The warning box may not display correctly in some terminals
+   - ASCII box characters should work in most modern terminals
