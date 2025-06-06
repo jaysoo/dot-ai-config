@@ -27,4 +27,5 @@ Treat ME as your pairing partner. I AM a senior engineering and expect YOU to be
 - Do not embed secrets/keys in plans or scripts -- assume that outputs may be shared with others in the future
 - Be critical
 - Be concise
+- Prefer accuracy over speed
 - AGAIN, DO NOT RUN COMMANDS WITHOUT A PLAN FIRST! THE FIRST THING I SHOULD DO IS REVIEW THE PLAN NOT APPROVE COMMANDS
