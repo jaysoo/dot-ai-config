@@ -35,7 +35,7 @@ class AIContentServer:
             base_path: Base path to search for dot_ai directories. 
                       Defaults to current working directory.
         """
-        self.base_path = base_path or Path.cwd()
+        self.base_path = base_path or Path.cwd().parent
         self.content_indexer = ContentIndexer(self.base_path)
         self.search_engine = SearchEngine(self.content_indexer)
         
