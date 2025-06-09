@@ -8,6 +8,7 @@ An MCP (Model Context Protocol) server that provides intelligent access to AI-ge
 - Filename-based content categorization
 - Semantic search capabilities
 - Task continuation support
+- HTTP and stdio transport support
 
 ## Document Categories
 
@@ -24,9 +25,37 @@ pip install -e .
 
 ## Usage
 
+### HTTP Transport (Default)
+
 ```bash
 ./start.sh
 ```
+
+The server will start on `http://localhost:8888` by default.
+
+### Custom Port
+
+```bash
+PORT=9000 ./start.sh
+```
+
+### stdio Transport
+
+```bash
+TRANSPORT=stdio ./start.sh
+```
+
+### Environment Variables
+
+- `PORT`: HTTP server port (default: 8888)
+- `TRANSPORT`: Transport protocol - `streamable-http` or `stdio` (default: streamable-http)
+
+## HTTP Endpoints
+
+When running with HTTP transport, the server provides endpoints for:
+- Tool calls via POST requests
+- Server-sent events for streaming responses
+- Connection management and resumability
 
 ## Development
 

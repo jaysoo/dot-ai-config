@@ -9,6 +9,18 @@ fi
 
 export PYTHONPATH="${PYTHONPATH}:$(pwd)"
 
-pwd
+# Set default transport to HTTP
+export TRANSPORT="${TRANSPORT:-streamable-http}"
+
+# Set default port
+export PORT="${PORT:-8888}"
+
+echo "Starting MCP AI Content Server..."
+echo "Transport: $TRANSPORT"
+if [ "$TRANSPORT" = "streamable-http" ]; then
+  echo "Port: $PORT"
+  echo "Server will be available at: http://localhost:$PORT"
+fi
+echo ""
 
 python -m mcp_ai_content_server.server
