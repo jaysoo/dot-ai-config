@@ -179,7 +179,7 @@ function analyzeCommitMessages(messages) {
 
 function displayBanner(config) {
   console.log(`\n${colors.cyan}╭─────────────────────────────────────────────────────╮${colors.reset}`);
-  console.log(`${colors.cyan}│${colors.reset} ${colors.bright}🚀 ${config.name} Raw Docs Reminder${colors.reset}                      ${colors.cyan}│${colors.reset}`);
+  console.log(`${colors.cyan}│${colors.reset} ${colors.bright}🚀 ${config.name} Raw Docs Reminder${colors.reset}                             ${colors.cyan}│${colors.reset}`);
   console.log(`${colors.cyan}╰─────────────────────────────────────────────────────╯${colors.reset}\n`);
 }
 
@@ -228,12 +228,6 @@ function displayRawDocsGuidance(config) {
   console.log(`${colors.green}•${colors.reset} Link to relevant PRs and issues\n`);
 }
 
-function displaySkipInstructions() {
-  console.log(`${colors.yellow}💡 To skip this check in the future:${colors.reset}`);
-  console.log(`   Add ${colors.blue}--no-verify${colors.reset} to your push command`);
-  console.log(`   ${colors.blue}git push --no-verify${colors.reset}\n`);
-}
-
 function displayFooter() {
   console.log(`${colors.cyan}╭─────────────────────────────────────────────────────╮${colors.reset}`);
   console.log(`${colors.cyan}│${colors.reset} This is an advisory reminder - your push continues  ${colors.cyan}│${colors.reset}`);
@@ -274,7 +268,6 @@ function main() {
   
   displayCommitAnalysis(commitAnalysis);
   displayRawDocsGuidance(config);
-  displaySkipInstructions();
   displayFooter();
   
   // Exit successfully (non-blocking)
