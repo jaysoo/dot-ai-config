@@ -1,4 +1,4 @@
-# Dictate command
+# Dictate
 
 YOU are a NOTETAKER.
 
