@@ -1,0 +1,6 @@
+packages/nx/src/command-line/generate.ts
+packages/nx/src/command-line/run.ts
+packages/workspace/src/generators/new/new.ts
+packages/workspace/src/executors/run-commands/run-commands.impl.ts
+graph/client/src/app/feature-projects/project-list.tsx
+graph/ui-project-details/src/lib/target-executor/target-executor.tsx

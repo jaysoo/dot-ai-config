@@ -1,0 +1,16 @@
+# Sample CODEOWNERS file for testing
+
+# Global owners
+* @globalowner
+
+# CLI features
+/features-cli/ @cliowner @testuser1
+
+# Cloud features  
+/features-cloud/ @cloudowner @testuser2
+
+# Scripts
+/scripts/ @scriptowner @maintainer
+
+# Specific feature
+/features-cli/sample-feature.md @featureowner @testuser1 @testuser2
