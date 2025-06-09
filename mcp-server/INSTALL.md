@@ -4,7 +4,7 @@
 
 1. **Install dependencies:**
    ```bash
-   cd mcp-ai-content-server
+   cd mcp_ai_content_server
    pip install -e .
    ```
 

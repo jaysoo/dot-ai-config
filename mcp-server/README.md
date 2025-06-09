@@ -25,7 +25,7 @@ pip install -e .
 ## Usage
 
 ```bash
-mcp-ai-content-server
+./start.sh
 ```
 
 ## Development
