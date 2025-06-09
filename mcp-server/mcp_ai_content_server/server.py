@@ -4,13 +4,9 @@ import asyncio
 import logging
 import os
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Optional
 
-from mcp.server import FastMCP
-from mcp.types import (
-    Tool,
-    TextContent,
-)
+from fastmcp import FastMCP
 
 from .content_indexer import ContentIndexer
 from .search_engine import SearchEngine
@@ -30,7 +26,7 @@ class AIContentServer:
             base_path: Base path to search for dot_ai directories. 
                       Defaults to file-relative parent directory.
         """
-        self.base_path = base_path or Path(__file__).parent.parent
+        self.base_path = base_path or Path(__file__).parent.parent.parent
         self.content_indexer = ContentIndexer(self.base_path)
         self.search_engine = SearchEngine(self.content_indexer)
         
@@ -192,16 +188,10 @@ class AIContentServer:
         """Run the MCP server with specified transport."""
         logger.info(f"Starting AI Content Server with {transport} transport...")
         
-        # Initialize content indexer before starting server
         asyncio.run(self.initialize())
-        
-        # Run the server with specified transport
-        if transport == "streamable-http":
-            port = int(os.environ.get("PORT", 8888))
-            logger.info(f"Server running on http://localhost:{port}")
             
-        self.server.run(transport=transport)
-
+        port = int(os.environ.get("PORT", 8888))
+        self.server.run(transport="sse", host="127.0.0.1", port=port)
 
 def main():
     """Main entry point."""
