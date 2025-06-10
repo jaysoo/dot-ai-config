@@ -1,0 +1,96 @@
+{
+  "summary": {
+    "total": 125,
+    "pending": 123,
+    "completed": 2,
+    "files": 9
+  },
+  "todos": {
+    "2025-06-09/tasks/mcp-server-plan.md": {
+      "p": [
+        "Set up Python MCP server project structure",
+        "Implement basic MCP protocol handling",
+        "Build file system scanner and filename-based categorization",
+        "Create search functionality with keyword support and category filtering",
+        "Add semantic search capabilities"
+      ]
+    },
+    "2025-06-09/tasks/optimized-extract-todos.py": {
+      "p": [
+        "Implement feature X",
+        "Write tests"
+      ],
+      "c": 1
+    },
+    "2025-06-09/tasks/optimize-extract-todos-token-usage.md": {
+      "p": [
+        "Review `mcp-server/mcp_ai_content_server/content_extractors.py` to understand current extraction ...",
+        "Identify what extra content is being included beyond TODO items",
+        "Measure current token usage patterns",
+        "Investigate JSON vs. other formats for token efficiency",
+        "Research compression techniques suitable for AI consumption"
+      ]
+    },
+    "2025-06-05/tasks/node-version-check-feature.md": {
+      "p": [
+        "Node.js version detection works correctly",
+        "Warning message displays for versions < 20",
+        "Multiple upgrade paths are clearly documented in the warning",
+        "NX execution is not blocked",
+        "CI passes without any workflow changes"
+      ]
+    },
+    "2025-06-05/tasks/fix-debian-npm-dependency.md": {
+      "p": [
+        "CI build passes without npm-related errors",
+        "Debian package builds successfully",
+        "Package installation works",
+        "nx command functions correctly post-install"
+      ]
+    },
+    "2025-06-05/tasks/todays-analysis-checklist.md": {
+      "p": [
+        "**Run the analysis script**: `node .ai/2025-06-05/analyze-competitor-docs.mjs`",
+        "**Visit each competitor site** and document:",
+        "TurboRepo (turbo.build/repo/docs)",
+        "Moon (moonrepo.dev/docs)",
+        "SST (sst.dev/docs)"
+      ],
+      "c": 1
+    },
+    "2025-06-05/tasks/nx-getting-started-experience-improvement.md": {
+      "p": [
+        "Complete competitor analysis matrix",
+        "User journey mapping",
+        "Create mockup variations",
+        "Gather team feedback",
+        "Rewrite intro page copy"
+      ]
+    },
+    "2025-06-05/tasks/fix-launchpad-publish-pipeline.md": {
+      "p": [
+        "Publish workflow builds source packages successfully",
+        "Source packages upload to Launchpad PPA",
+        "Launchpad successfully builds the binary packages",
+        "End users can install and run nx from the PPA"
+      ]
+    },
+    "2025-06-04/tasks/content-migration-map.md": {
+      "p": [
+        "Create new simplified intro.md",
+        "Move Core Features to why-nx.md",
+        "Create supported-technologies.md for stack grid",
+        "Consolidate tutorials to single index",
+        "Update navigation menu"
+      ]
+    }
+  },
+  "meta": {
+    "verbosity": "minimal",
+    "status_filter": "pending",
+    "category": "tasks",
+    "date_filter": null,
+    "truncated": false,
+    "estimated_tokens": 611
+  }
+}

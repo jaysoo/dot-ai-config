@@ -6,6 +6,14 @@
 - **Reorganized dot_ai folder structure** (Completed): Successfully restructured all yyyy-mm-dd folders to have consistent subdirectories (tasks/, specs/, dictations/). Moved 86 files to their appropriate locations while preserving SUMMARY.md files at root level. This improves discoverability and organization of past work.
 
 ### MCP Server Enhancements
+- **Optimized extract_todos Token Usage** (Completed): Successfully reduced token usage by over 80% while maintaining functionality:
+  - Implemented configurable verbosity levels (minimal, standard, detailed) with different output formats
+  - Added status filtering to show only pending, completed, or all TODOs
+  - Created smart path abbreviation starting from date folders
+  - Implemented token monitoring and automatic truncation to stay within limits
+  - Test results: Minimal mode uses only 790 tokens (3.2% of limit), detailed mode uses 4,022 tokens (16.1% of limit)
+  - Backwards incompatible change: Function now returns structured dict instead of list
+
 - **Enhanced Search Engine with Date Ranges and Categories** (Completed): Implemented comprehensive improvements to MCP AI content server's search engine:
   - Added date range filtering with inclusive start..end syntax (e.g., 2025-01-01..2025-01-31)
   - Implemented flexible category matching for singular/plural forms (spec/specs, task/tasks, dictation/dictations)

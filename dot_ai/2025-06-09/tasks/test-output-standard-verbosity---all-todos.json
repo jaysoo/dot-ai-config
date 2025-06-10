@@ -1,0 +1,134 @@
+{
+  "summary": {
+    "total": 62,
+    "pending": 37,
+    "completed": 25,
+    "files": 5
+  },
+  "todos": {
+    "2025-06-09/SUMMARY.md": {
+      "pending": [
+        {
+          "l": 35,
+          "t": "Optimize extract_todos Token Usage (2025-06-09)"
+        },
+        {
+          "l": 41,
+          "t": "Phase 1: Raw Docs Implementation (2025-06-09)"
+        }
+      ]
+    },
+    "2025-06-09/tasks/mcp-server-plan.md": {
+      "pending": [
+        {
+          "l": 151,
+          "t": "Set up Python MCP server project structure"
+        },
+        {
+          "l": 152,
+          "t": "Implement basic MCP protocol handling"
+        },
+        {
+          "l": 153,
+          "t": "Build file system scanner and filename-based categorization"
+        },
+        {
+          "l": 154,
+          "t": "Create search functionality with keyword support and category filtering"
+        },
+        {
+          "l": 155,
+          "t": "Add semantic search capabilities"
+        },
+        {
+          "l": 156,
+          "t": "Implement specialized content extractors"
+        },
+        {
+          "l": 157,
+          "t": "Build task continuation support features"
+        },
+        {
+          "l": 158,
+          "t": "Add comprehensive testing"
+        },
+        {
+          "l": 159,
+          "t": "Create documentation and usage examples"
+        },
+        {
+          "l": 160,
+          "t": "Deploy and integration testing"
+        }
+      ]
+    },
+    "2025-06-09/tasks/phase-1-raw-docs-implementation.md": {
+      "completed_count": 24
+    },
+    "2025-06-09/tasks/optimized-extract-todos.py": {
+      "pending": [
+        {
+          "l": 322,
+          "t": "Implement feature X"
+        },
+        {
+          "l": 323,
+          "t": "Write tests"
+        }
+      ],
+      "completed_count": 1
+    },
+    "2025-06-09/tasks/optimize-extract-todos-token-usage.md": {
+      "pending": [
+        {
+          "l": 18,
+          "t": "Review `mcp-server/mcp_ai_content_server/content_extractors.py` to understand current extraction ..."
+        },
+        {
+          "l": 19,
+          "t": "Identify what extra content is being included beyond TODO items"
+        },
+        {
+          "l": 20,
+          "t": "Measure current token usage patterns"
+        },
+        {
+          "l": 23,
+          "t": "Investigate JSON vs. other formats for token efficiency"
+        },
+        {
+          "l": 24,
+          "t": "Research compression techniques suitable for AI consumption"
+        },
+        {
+          "l": 25,
+          "t": "Analyze how grouping affects token usage"
+        },
+        {
+          "l": 30,
+          "t": "Modify extraction logic to capture only TODO list items"
+        },
+        {
+          "l": 31,
+          "t": "Implement grouping by source task file"
+        },
+        {
+          "l": 32,
+          "t": "Remove unnecessary metadata and verbose content"
+        },
+        {
+          "l": 33,
+          "t": "Add token counting mechanism for monitoring"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "verbosity": "standard",
+    "status_filter": "all",
+    "category": "all",
+    "date_filter": "2025-06-09",
+    "truncated": false,
+    "estimated_tokens": 493
+  }
+}

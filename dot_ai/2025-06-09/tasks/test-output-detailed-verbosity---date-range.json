@@ -1,0 +1,635 @@
+{
+  "summary": {
+    "total": 151,
+    "pending": 125,
+    "completed": 26,
+    "files": 11
+  },
+  "todos": {
+    "2025-06-09/SUMMARY.md": {
+      "pending": [
+        {
+          "line": 35,
+          "text": "Optimize extract_todos Token Usage (2025-06-09)",
+          "status": "pending"
+        },
+        {
+          "line": 41,
+          "text": "Phase 1: Raw Docs Implementation (2025-06-09)",
+          "status": "pending"
+        }
+      ],
+      "completed": [],
+      "stats": {
+        "total": 2,
+        "pending": 2,
+        "completed": 0
+      }
+    },
+    "2025-06-09/tasks/mcp-server-plan.md": {
+      "pending": [
+        {
+          "line": 151,
+          "text": "Set up Python MCP server project structure",
+          "status": "pending"
+        },
+        {
+          "line": 152,
+          "text": "Implement basic MCP protocol handling",
+          "status": "pending"
+        },
+        {
+          "line": 153,
+          "text": "Build file system scanner and filename-based categorization",
+          "status": "pending"
+        },
+        {
+          "line": 154,
+          "text": "Create search functionality with keyword support and category filtering",
+          "status": "pending"
+        },
+        {
+          "line": 155,
+          "text": "Add semantic search capabilities",
+          "status": "pending"
+        },
+        {
+          "line": 156,
+          "text": "Implement specialized content extractors",
+          "status": "pending"
+        },
+        {
+          "line": 157,
+          "text": "Build task continuation support features",
+          "status": "pending"
+        },
+        {
+          "line": 158,
+          "text": "Add comprehensive testing",
+          "status": "pending"
+        },
+        {
+          "line": 159,
+          "text": "Create documentation and usage examples",
+          "status": "pending"
+        },
+        {
+          "line": 160,
+          "text": "Deploy and integration testing",
+          "status": "pending"
+        }
+      ],
+      "completed": [],
+      "stats": {
+        "total": 10,
+        "pending": 10,
+        "completed": 0
+      }
+    },
+    "2025-06-09/tasks/phase-1-raw-docs-implementation.md": {
+      "pending": [],
+      "completed": [
+        {
+          "line": 10,
+          "text": "1.1: Create root directory and basic folder structure",
+          "status": "completed"
+        },
+        {
+          "line": 11,
+          "text": "1.2: Create minimal README.md with project overview",
+          "status": "completed"
+        },
+        {
+          "line": 12,
+          "text": "1.3: Create empty ARCHIVED.md with structure",
+          "status": "completed"
+        },
+        {
+          "line": 13,
+          "text": "1.4: Create placeholder TEMPLATE.md",
+          "status": "completed"
+        },
+        {
+          "line": 14,
+          "text": "1.5: Create basic CONTRIBUTING.md",
+          "status": "completed"
+        }
+      ],
+      "stats": {
+        "total": 24,
+        "pending": 0,
+        "completed": 24
+      }
+    },
+    "2025-06-09/tasks/optimized-extract-todos.py": {
+      "pending": [
+        {
+          "line": 322,
+          "text": "Implement feature X",
+          "status": "pending"
+        },
+        {
+          "line": 323,
+          "text": "Write tests",
+          "status": "pending"
+        }
+      ],
+      "completed": [
+        {
+          "line": 324,
+          "text": "Design completed",
+          "status": "completed"
+        }
+      ],
+      "stats": {
+        "total": 3,
+        "pending": 2,
+        "completed": 1
+      }
+    },
+    "2025-06-09/tasks/optimize-extract-todos-token-usage.md": {
+      "pending": [
+        {
+          "line": 18,
+          "text": "Review `mcp-server/mcp_ai_content_server/content_extractors.py` to understand current extraction ...",
+          "status": "pending"
+        },
+        {
+          "line": 19,
+          "text": "Identify what extra content is being included beyond TODO items",
+          "status": "pending"
+        },
+        {
+          "line": 20,
+          "text": "Measure current token usage patterns",
+          "status": "pending"
+        },
+        {
+          "line": 23,
+          "text": "Investigate JSON vs. other formats for token efficiency",
+          "status": "pending"
+        },
+        {
+          "line": 24,
+          "text": "Research compression techniques suitable for AI consumption",
+          "status": "pending"
+        },
+        {
+          "line": 25,
+          "text": "Analyze how grouping affects token usage",
+          "status": "pending"
+        },
+        {
+          "line": 30,
+          "text": "Modify extraction logic to capture only TODO list items",
+          "status": "pending"
+        },
+        {
+          "line": 31,
+          "text": "Implement grouping by source task file",
+          "status": "pending"
+        },
+        {
+          "line": 32,
+          "text": "Remove unnecessary metadata and verbose content",
+          "status": "pending"
+        },
+        {
+          "line": 33,
+          "text": "Add token counting mechanism for monitoring",
+          "status": "pending"
+        },
+        {
+          "line": 44,
+          "text": "Design concise output format optimized for AI",
+          "status": "pending"
+        },
+        {
+          "line": 45,
+          "text": "Implement configurable verbosity levels",
+          "status": "pending"
+        },
+        {
+          "line": 46,
+          "text": "Add summary statistics instead of full content where appropriate",
+          "status": "pending"
+        },
+        {
+          "line": 47,
+          "text": "Create abbreviated file path representation",
+          "status": "pending"
+        },
+        {
+          "line": 57,
+          "text": "Add parameters for verbosity level (minimal, standard, detailed)",
+          "status": "pending"
+        },
+        {
+          "line": 58,
+          "text": "Add option to filter by status (pending only, completed only, all)",
+          "status": "pending"
+        },
+        {
+          "line": 59,
+          "text": "Add option to limit results by date range",
+          "status": "pending"
+        },
+        {
+          "line": 60,
+          "text": "Add token limit parameter with smart truncation",
+          "status": "pending"
+        },
+        {
+          "line": 63,
+          "text": "Create test cases with large TODO datasets",
+          "status": "pending"
+        },
+        {
+          "line": 64,
+          "text": "Measure token usage before and after optimization",
+          "status": "pending"
+        }
+      ],
+      "completed": [],
+      "stats": {
+        "total": 23,
+        "pending": 23,
+        "completed": 0
+      }
+    },
+    "2025-06-05/tasks/node-version-check-feature.md": {
+      "pending": [
+        {
+          "line": 98,
+          "text": "Node.js version detection works correctly",
+          "status": "pending"
+        },
+        {
+          "line": 99,
+          "text": "Warning message displays for versions < 20",
+          "status": "pending"
+        },
+        {
+          "line": 100,
+          "text": "Multiple upgrade paths are clearly documented in the warning",
+          "status": "pending"
+        },
+        {
+          "line": 101,
+          "text": "NX execution is not blocked",
+          "status": "pending"
+        },
+        {
+          "line": 102,
+          "text": "CI passes without any workflow changes",
+          "status": "pending"
+        },
+        {
+          "line": 103,
+          "text": "Feature works on fresh Ubuntu installations",
+          "status": "pending"
+        }
+      ],
+      "completed": [],
+      "stats": {
+        "total": 6,
+        "pending": 6,
+        "completed": 0
+      }
+    },
+    "2025-06-05/tasks/fix-debian-npm-dependency.md": {
+      "pending": [
+        {
+          "line": 89,
+          "text": "CI build passes without npm-related errors",
+          "status": "pending"
+        },
+        {
+          "line": 90,
+          "text": "Debian package builds successfully",
+          "status": "pending"
+        },
+        {
+          "line": 91,
+          "text": "Package installation works",
+          "status": "pending"
+        },
+        {
+          "line": 92,
+          "text": "nx command functions correctly post-install",
+          "status": "pending"
+        }
+      ],
+      "completed": [],
+      "stats": {
+        "total": 4,
+        "pending": 4,
+        "completed": 0
+      }
+    },
+    "2025-06-05/tasks/todays-analysis-checklist.md": {
+      "pending": [
+        {
+          "line": 23,
+          "text": "**Run the analysis script**: `node .ai/2025-06-05/analyze-competitor-docs.mjs`",
+          "status": "pending"
+        },
+        {
+          "line": 24,
+          "text": "**Visit each competitor site** and document:",
+          "status": "pending"
+        },
+        {
+          "line": 25,
+          "text": "TurboRepo (turbo.build/repo/docs)",
+          "status": "pending"
+        },
+        {
+          "line": 26,
+          "text": "Moon (moonrepo.dev/docs)",
+          "status": "pending"
+        },
+        {
+          "line": 27,
+          "text": "SST (sst.dev/docs)",
+          "status": "pending"
+        },
+        {
+          "line": 28,
+          "text": "Vite (vitejs.dev/guide)",
+          "status": "pending"
+        },
+        {
+          "line": 29,
+          "text": "Next.js (nextjs.org/docs)",
+          "status": "pending"
+        },
+        {
+          "line": 30,
+          "text": "Remix (remix.run/docs)",
+          "status": "pending"
+        },
+        {
+          "line": 31,
+          "text": "Astro (docs.astro.build)",
+          "status": "pending"
+        },
+        {
+          "line": 34,
+          "text": "**Time each getting started flow** (stopwatch from landing to first success)",
+          "status": "pending"
+        },
+        {
+          "line": 35,
+          "text": "**Screenshot key interactions** for reference",
+          "status": "pending"
+        },
+        {
+          "line": 36,
+          "text": "**Note mobile experience** quality",
+          "status": "pending"
+        },
+        {
+          "line": 37,
+          "text": "**Identify 3 best practices** per site",
+          "status": "pending"
+        },
+        {
+          "line": 40,
+          "text": "**Review the HTML mockup** (`.ai/2025-06-05/getting-started-mockup.html`)",
+          "status": "pending"
+        },
+        {
+          "line": 41,
+          "text": "**Create variations** based on competitor insights:",
+          "status": "pending"
+        },
+        {
+          "line": 42,
+          "text": "Version A: Current style improved",
+          "status": "pending"
+        },
+        {
+          "line": 43,
+          "text": "Version B: Path-focused approach",
+          "status": "pending"
+        },
+        {
+          "line": 44,
+          "text": "Version C: Interactive-first design",
+          "status": "pending"
+        },
+        {
+          "line": 45,
+          "text": "**Sketch mobile layouts** (can be hand-drawn photos)",
+          "status": "pending"
+        },
+        {
+          "line": 48,
+          "text": "**Current intro page analysis**:",
+          "status": "pending"
+        }
+      ],
+      "completed": [
+        {
+          "line": 6,
+          "text": "**Document the current Nx getting started structure**",
+          "status": "completed"
+        }
+      ],
+      "stats": {
+        "total": 49,
+        "pending": 48,
+        "completed": 1
+      }
+    },
+    "2025-06-05/tasks/nx-getting-started-experience-improvement.md": {
+      "pending": [
+        {
+          "line": 158,
+          "text": "Complete competitor analysis matrix",
+          "status": "pending"
+        },
+        {
+          "line": 159,
+          "text": "User journey mapping",
+          "status": "pending"
+        },
+        {
+          "line": 160,
+          "text": "Create mockup variations",
+          "status": "pending"
+        },
+        {
+          "line": 161,
+          "text": "Gather team feedback",
+          "status": "pending"
+        },
+        {
+          "line": 164,
+          "text": "Rewrite intro page copy",
+          "status": "pending"
+        },
+        {
+          "line": 165,
+          "text": "Create interactive examples",
+          "status": "pending"
+        },
+        {
+          "line": 166,
+          "text": "Record quickstart video",
+          "status": "pending"
+        },
+        {
+          "line": 167,
+          "text": "Design visual assets",
+          "status": "pending"
+        },
+        {
+          "line": 170,
+          "text": "Implement new page layouts",
+          "status": "pending"
+        },
+        {
+          "line": 171,
+          "text": "Add interactive components",
+          "status": "pending"
+        },
+        {
+          "line": 172,
+          "text": "Set up A/B testing",
+          "status": "pending"
+        },
+        {
+          "line": 173,
+          "text": "Mobile optimization",
+          "status": "pending"
+        },
+        {
+          "line": 176,
+          "text": "Internal team testing",
+          "status": "pending"
+        },
+        {
+          "line": 177,
+          "text": "Community preview",
+          "status": "pending"
+        },
+        {
+          "line": 178,
+          "text": "Iterate based on feedback",
+          "status": "pending"
+        },
+        {
+          "line": 179,
+          "text": "Gradual rollout",
+          "status": "pending"
+        }
+      ],
+      "completed": [],
+      "stats": {
+        "total": 16,
+        "pending": 16,
+        "completed": 0
+      }
+    },
+    "2025-06-05/tasks/fix-launchpad-publish-pipeline.md": {
+      "pending": [
+        {
+          "line": 82,
+          "text": "Publish workflow builds source packages successfully",
+          "status": "pending"
+        },
+        {
+          "line": 83,
+          "text": "Source packages upload to Launchpad PPA",
+          "status": "pending"
+        },
+        {
+          "line": 84,
+          "text": "Launchpad successfully builds the binary packages",
+          "status": "pending"
+        },
+        {
+          "line": 85,
+          "text": "End users can install and run nx from the PPA",
+          "status": "pending"
+        }
+      ],
+      "completed": [],
+      "stats": {
+        "total": 4,
+        "pending": 4,
+        "completed": 0
+      }
+    },
+    "2025-06-04/tasks/content-migration-map.md": {
+      "pending": [
+        {
+          "line": 96,
+          "text": "Create new simplified intro.md",
+          "status": "pending"
+        },
+        {
+          "line": 97,
+          "text": "Move Core Features to why-nx.md",
+          "status": "pending"
+        },
+        {
+          "line": 98,
+          "text": "Create supported-technologies.md for stack grid",
+          "status": "pending"
+        },
+        {
+          "line": 99,
+          "text": "Consolidate tutorials to single index",
+          "status": "pending"
+        },
+        {
+          "line": 100,
+          "text": "Update navigation menu",
+          "status": "pending"
+        },
+        {
+          "line": 101,
+          "text": "Add redirects for any URL changes",
+          "status": "pending"
+        },
+        {
+          "line": 102,
+          "text": "Update internal links",
+          "status": "pending"
+        },
+        {
+          "line": 103,
+          "text": "Test all moved content",
+          "status": "pending"
+        },
+        {
+          "line": 104,
+          "text": "Deploy to canary for testing",
+          "status": "pending"
+        },
+        {
+          "line": 105,
+          "text": "Monitor analytics for impact",
+          "status": "pending"
+        }
+      ],
+      "completed": [],
+      "stats": {
+        "total": 10,
+        "pending": 10,
+        "completed": 0
+      }
+    }
+  },
+  "meta": {
+    "verbosity": "detailed",
+    "status_filter": "all",
+    "category": "all",
+    "date_filter": "2025-06-01..2025-06-09",
+    "truncated": false,
+    "estimated_tokens": 2411
+  }
+}

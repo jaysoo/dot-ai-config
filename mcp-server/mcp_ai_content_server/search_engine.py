@@ -1,5 +1,6 @@
 """Search engine for AI-generated content with semantic and keyword search."""
 
+import json
 import logging
 import re
 from datetime import datetime
@@ -428,20 +429,26 @@ class SearchEngine:
     async def extract_todos(
         self, 
         category: str = "all",
-        date_filter: Optional[str] = None
-    ) -> List[Dict[str, Any]]:
-        """Extract TODO items from files.
+        date_filter: Optional[str] = None,
+        verbosity: str = "minimal",
+        status_filter: str = "pending",
+        max_tokens: int = 20000
+    ) -> Dict[str, Any]:
+        """Extract TODO items from files with optimized token usage.
         
         Args:
             category: Category to search in
             date_filter: Optional date filter
+            verbosity: Output verbosity ('minimal', 'standard', 'detailed')
+            status_filter: Filter by status ('pending', 'completed', 'all')
+            max_tokens: Maximum token limit (default: 20000 to stay well under 25000)
             
         Returns:
-            List of files with their TODO items
+            Optimized dictionary with TODO summary and items
         """
         # Normalize category
         normalized_category = self._normalize_category(category)
-        logger.debug(f"Extracting TODOs from category '{normalized_category}' (original: '{category}')")
+        logger.debug(f"Extracting TODOs from category '{normalized_category}' with verbosity '{verbosity}'")
         
         # Get files in category
         files = self.indexer.get_files_by_category(normalized_category)
@@ -456,30 +463,288 @@ class SearchEngine:
                 ]
             except ValueError as e:
                 logger.error(f"Invalid date filter: {e}")
-                return []
-            
-        # Extract TODOs from each file
-        results = []
+                return {"error": str(e)}
+        
+        # Initialize result structure
+        result = {
+            "summary": {
+                "total": 0,
+                "pending": 0,
+                "completed": 0,
+                "files": 0
+            },
+            "todos": {},
+            "meta": {
+                "verbosity": verbosity,
+                "status_filter": status_filter,
+                "category": normalized_category,
+                "date_filter": date_filter,
+                "truncated": False
+            }
+        }
+        
+        # Process files and extract TODOs
+        todos_by_file = {}
+        
         for item in files:
             if not item.content:
                 continue
+            
+            # Extract TODO items with status
+            file_todos = self._extract_todos_with_status(item.content, status_filter)
+            
+            if file_todos['items']:
+                # Use abbreviated path
+                path = self._abbreviate_path(str(item.path), self.indexer.base_path)
                 
-            todos = self.indexer.extract_todos_from_content(item.content)
-            if todos:
-                result = {
-                    'filename': item.filename,
-                    'path': str(item.path),
-                    'category': item.category,
+                todos_by_file[path] = {
                     'date': item.date,
-                    'todos': todos
+                    'category': item.category,
+                    'todos': file_todos
                 }
-                results.append(result)
                 
+                result['summary']['files'] += 1
+                result['summary']['total'] += file_todos['stats']['total']
+                result['summary']['pending'] += file_todos['stats']['pending']
+                result['summary']['completed'] += file_todos['stats']['completed']
+        
+        # Apply verbosity formatting and token limits
+        result['todos'] = self._format_todos_by_verbosity(
+            todos_by_file, 
+            verbosity, 
+            max_tokens,
+            result['summary']
+        )
+        
+        # Check token usage
+        import json
+        result_json = json.dumps(result, separators=(',', ':'))
+        estimated_tokens = len(result_json) // 4
+        result['meta']['estimated_tokens'] = estimated_tokens
+        
+        if estimated_tokens > max_tokens:
+            result = self._truncate_todos_to_limit(result, max_tokens)
+            result['meta']['truncated'] = True
+        
+        return result
+        
+    def _extract_todos_with_status(self, content: str, status_filter: str) -> Dict[str, Any]:
+        """Extract TODO items with status information.
+        
+        Args:
+            content: File content
+            status_filter: Status filter ('pending', 'completed', 'all')
+            
+        Returns:
+            Dict with items and statistics
+        """
+        result = {
+            "items": [],
+            "stats": {
+                "total": 0,
+                "pending": 0,
+                "completed": 0
+            }
+        }
+        
+        lines = content.split('\n')
+        
+        for i, line in enumerate(lines):
+            line_stripped = line.strip()
+            
+            # Match checkbox TODOs
+            match = re.match(r'^- \[([ x])\]\s*(.+)$', line_stripped)
+            if match:
+                status = 'completed' if match.group(1).lower() == 'x' else 'pending'
+                todo_text = match.group(2).strip()
+                
+                if status_filter == 'all' or status_filter == status:
+                    result['items'].append({
+                        "line": i + 1,
+                        "text": self._truncate_text(todo_text, 100),
+                        "status": status
+                    })
+                
+                result['stats']['total'] += 1
+                if status == 'pending':
+                    result['stats']['pending'] += 1
+                else:
+                    result['stats']['completed'] += 1
+                    
+            # Match TODO: format
+            else:
+                match = re.match(r'^TODO[:\s]+(.+)$', line_stripped, re.IGNORECASE)
+                if match and status_filter in ['all', 'pending']:
+                    result['items'].append({
+                        "line": i + 1,
+                        "text": self._truncate_text(match.group(1).strip(), 100),
+                        "status": "pending"
+                    })
+                    result['stats']['total'] += 1
+                    result['stats']['pending'] += 1
+                    
+        return result
+    
+    def _abbreviate_path(self, full_path: str, base_path) -> str:
+        """Create abbreviated path representation.
+        
+        Args:
+            full_path: Full file path
+            base_path: Base path to remove
+            
+        Returns:
+            Abbreviated path
+        """
+        try:
+            from pathlib import Path
+            path = Path(full_path)
+            # Get relative path from base
+            rel_path = path.relative_to(base_path)
+            parts = str(rel_path).split('/')
+            
+            # Find date folder (YYYY-MM-DD pattern)
+            for i, part in enumerate(parts):
+                if len(part) == 10 and part.count('-') == 2:
+                    # Return from date folder onwards
+                    return '/'.join(parts[i:])
+            
+            # If no date folder, return last 2 parts
+            return '/'.join(parts[-2:]) if len(parts) > 1 else str(rel_path)
+        except:
+            return full_path
+    
+    def _truncate_text(self, text: str, max_length: int) -> str:
+        """Truncate text to maximum length.
+        
+        Args:
+            text: Text to truncate
+            max_length: Maximum length
+            
+        Returns:
+            Truncated text
+        """
+        if len(text) <= max_length:
+            return text
+        return text[:max_length - 3] + "..."
+    
+    def _format_todos_by_verbosity(
+        self,
+        todos_by_file: Dict[str, Dict],
+        verbosity: str,
+        max_tokens: int,
+        summary: Dict[str, int]
+    ) -> Dict[str, Any]:
+        """Format TODOs based on verbosity level.
+        
+        Args:
+            todos_by_file: TODOs grouped by file
+            verbosity: Verbosity level
+            max_tokens: Token limit
+            summary: Summary statistics
+            
+        Returns:
+            Formatted TODOs
+        """
+        result = {}
+        
         # Sort by date (newest first)
-        results.sort(key=lambda x: x['date'], reverse=True)
+        sorted_files = sorted(
+            todos_by_file.items(), 
+            key=lambda x: x[1]['date'], 
+            reverse=True
+        )
         
-        return results
+        for path, file_data in sorted_files:
+            todos = file_data['todos']
+            
+            if verbosity == "minimal":
+                # Ultra-compact format
+                file_result = {}
+                
+                # Only show pending items (up to 5)
+                pending = [item['text'] for item in todos['items'] if item['status'] == 'pending'][:5]
+                if pending:
+                    file_result["p"] = pending
+                
+                # Show completed count if any
+                if todos['stats']['completed'] > 0:
+                    file_result["c"] = todos['stats']['completed']
+                    
+                if file_result:
+                    result[path] = file_result
+                    
+            elif verbosity == "standard":
+                # Balanced format with line numbers
+                file_result = {}
+                
+                # Pending items with line numbers (up to 10)
+                pending = [
+                    {"l": item['line'], "t": item['text']}
+                    for item in todos['items'] 
+                    if item['status'] == 'pending'
+                ][:10]
+                
+                if pending:
+                    file_result["pending"] = pending
+                    
+                # Completed count
+                if todos['stats']['completed'] > 0:
+                    file_result["completed_count"] = todos['stats']['completed']
+                    
+                if file_result:
+                    result[path] = file_result
+                    
+            else:  # detailed
+                # Full information
+                result[path] = {
+                    "pending": [
+                        item for item in todos['items'] 
+                        if item['status'] == 'pending'
+                    ][:20],  # Limit even in detailed mode
+                    "completed": [
+                        item for item in todos['items'] 
+                        if item['status'] == 'completed'
+                    ][:5],  # Show some completed items
+                    "stats": todos['stats']
+                }
+                
+        return result
+    
+    def _truncate_todos_to_limit(self, result: Dict[str, Any], max_tokens: int) -> Dict[str, Any]:
+        """Truncate result to fit within token limit.
         
+        Args:
+            result: Current result
+            max_tokens: Maximum tokens
+            
+        Returns:
+            Truncated result
+        """
+        import json
+        
+        # Start with just summary
+        truncated = {
+            "summary": result['summary'],
+            "todos": {},
+            "meta": result['meta']
+        }
+        
+        # Add files until we approach the limit
+        for path, todos in result['todos'].items():
+            test_result = truncated.copy()
+            test_result['todos'][path] = todos
+            test_json = json.dumps(test_result, separators=(',', ':'))
+            
+            if len(test_json) // 4 > max_tokens * 0.9:  # Leave 10% buffer
+                break
+                
+            truncated['todos'][path] = todos
+            
+        truncated['meta']['files_shown'] = len(truncated['todos'])
+        truncated['meta']['files_total'] = result['summary']['files']
+        
+        return truncated
+    
     def _get_item_by_path(self, path_str: str) -> Optional[ContentItem]:
         """Get a content item by its path string.
         

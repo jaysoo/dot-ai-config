@@ -161,26 +161,41 @@ class AIContentServer:
         )
         async def extract_todos(
             category: str = "all",
-            date_filter: Optional[str] = None
-        ) -> str:
-            """Extract TODO items."""
+            date_filter: Optional[str] = None,
+            verbosity: str = "minimal",
+            status_filter: str = "pending"
+        ):
+            """Extract TODO items with optimized token usage.
+            
+            Args:
+                category: Category to search ('spec', 'specs', 'task', 'tasks', 'dictation', 'dictations', 'all')
+                date_filter: Optional date filter (YYYY-MM-DD or YYYY-MM-DD..YYYY-MM-DD)
+                verbosity: Output detail level ('minimal', 'standard', 'detailed')
+                status_filter: Filter by status ('pending', 'completed', 'all')
+            
+            Returns:
+                Optimized TODO summary and items
+            """
             valid_categories = ["spec", "specs", "task", "tasks", "dictation", "dictations", "all"]
             if category not in valid_categories:
-                return f"Error: category must be one of: {', '.join(valid_categories)}"
+                return {"error": f"category must be one of: {', '.join(valid_categories)}"}
+            
+            valid_verbosities = ["minimal", "standard", "detailed"]
+            if verbosity not in valid_verbosities:
+                return {"error": f"verbosity must be one of: {', '.join(valid_verbosities)}"}
+            
+            valid_status_filters = ["pending", "completed", "all"]
+            if status_filter not in valid_status_filters:
+                return {"error": f"status_filter must be one of: {', '.join(valid_status_filters)}"}
                 
-            results = await self.search_engine.extract_todos(category, date_filter)
+            result = await self.search_engine.extract_todos(
+                category=category,
+                date_filter=date_filter,
+                verbosity=verbosity,
+                status_filter=status_filter
+            )
             
-            if not results:
-                return f"No TODO items found in category: {category}"
-            
-            response_text = f"TODO items found in category '{category}':\n\n"
-            for result in results:
-                response_text += f"**{result['filename']}**:\n"
-                for todo in result['todos']:
-                    response_text += f"  - {todo}\n"
-                response_text += "\n"
-            
-            return response_text
+            return result
 
     async def initialize(self):
         """Initialize content indexer."""
