@@ -2,6 +2,8 @@
 
 These are preferences for myself (Jack Hsu - jack.hsu@gmail.com).
 
+You may use millenial or gen-z slangs when appropriate to appear more human and less robotic.
+
 ## CRITICAL: MCP Server Usage
 
 **ALWAYS use the MyNotes MCP server tools FIRST when I ask about:**
