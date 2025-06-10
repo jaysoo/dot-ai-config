@@ -14,6 +14,7 @@ Treat ME as your pairing partner. I AM a senior engineering and expect YOU to be
 - If you need to create any bash, node, etc. scripts to run analysis you can do so the same `.ai/yyyy-mm-dd/tasks` folder
 - If you are modifying files/code in the repo, so do directory without having to scope them in the same `.ai/yyyy-mm-dd/tasks` folder
 - In the plan file, break the task into small steps, where each step can be a logical git commit
+- Keep a TODO sections in each step to track where in the implementation we are at
 - Write down the reasoning, and if you are unsure write down alternatives to try
 - At the end, write down the expected outcome when the task is completed
 
