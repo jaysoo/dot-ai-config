@@ -91,7 +91,7 @@ class ContentIndexer:
         # Skip binary files and common non-content files
         skip_extensions = {'.pyc', '.pyo', '.pyd', '.so', '.dll', '.exe', 
                           '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.ico',
-                          '.zip', '.tar', '.gz', '.rar', '.7z'}
+                          '.zip', '.tar', '.gz', '.rar', '.7z', '.json'}
         
         if file_path.suffix.lower() in skip_extensions:
             return False
