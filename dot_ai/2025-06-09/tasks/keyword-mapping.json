@@ -1,0 +1,165 @@
+{
+  "keyword_mappings": {
+    "search_ai_content": {
+      "primary_triggers": [
+        "my notes",
+        "my dictations",
+        "my specs",
+        "my tasks",
+        "my todos",
+        "my work",
+        "my content",
+        "my documentation"
+      ],
+      "action_phrases": [
+        "find my",
+        "search my",
+        "get my",
+        "show my",
+        "list my",
+        "retrieve my",
+        "look up my",
+        "fetch my"
+      ],
+      "temporal_queries": [
+        "what did i work on",
+        "what tasks did i",
+        "previous work",
+        "past tasks",
+        "earlier work",
+        "yesterday's work",
+        "last week's notes",
+        "recent tasks"
+      ],
+      "memory_queries": [
+        "remember when I",
+        "did I mention",
+        "have I worked on",
+        "was there a time when I",
+        "do I have notes about"
+      ],
+      "content_types": {
+        "notes": ["note", "notes", "personal notes", "saved notes"],
+        "tasks": ["task", "tasks", "work items", "activities"],
+        "specs": ["spec", "specs", "specification", "specifications", "requirements"],
+        "dictations": ["dictation", "dictations", "voice note", "voice notes", "recording"],
+        "todos": ["todo", "todos", "to-do", "to-dos", "action items"]
+      }
+    },
+    "get_task_context": {
+      "primary_triggers": [
+        "continue working on",
+        "resume",
+        "pick up where",
+        "left off",
+        "get back to",
+        "continue with"
+      ],
+      "context_requests": [
+        "get context for",
+        "what was I doing with",
+        "show me the context of",
+        "where did I leave off",
+        "status of"
+      ]
+    },
+    "find_specs": {
+      "primary_triggers": [
+        "specs do i have",
+        "what specs",
+        "find spec",
+        "get specification",
+        "show specification",
+        "specification for",
+        "spec document"
+      ],
+      "document_types": [
+        "design document",
+        "requirements document",
+        "technical spec",
+        "feature spec",
+        "API spec"
+      ]
+    },
+    "get_summaries": {
+      "primary_triggers": [
+        "daily summary",
+        "project summary",
+        "work summary",
+        "summary of",
+        "summarize my"
+      ],
+      "temporal_summaries": [
+        "what happened",
+        "overview of",
+        "recap of",
+        "review of",
+        "summary for"
+      ]
+    },
+    "extract_todos": {
+      "primary_triggers": [
+        "my todos",
+        "todo list",
+        "to-do list",
+        "action items",
+        "pending items"
+      ],
+      "status_queries": [
+        "what needs to be done",
+        "outstanding items",
+        "pending tasks",
+        "incomplete tasks",
+        "checklist"
+      ]
+    }
+  },
+  "priority_rules": {
+    "use_mcp_when": {
+      "personal_pronouns": ["my", "I", "I've", "I'm"],
+      "ownership_indicators": ["personal", "saved", "stored", "previous", "past"],
+      "content_indicators": ["notes", "tasks", "specs", "dictations", "todos", "work"]
+    },
+    "skip_mcp_when": {
+      "external_indicators": ["documentation", "API docs", "library", "framework"],
+      "code_indicators": ["function", "class", "method", "variable", "syntax"],
+      "system_indicators": ["install", "configure", "setup", "command"]
+    }
+  },
+  "fuzzy_matching_rules": {
+    "pluralization": {
+      "note": "notes",
+      "task": "tasks",
+      "spec": "specs",
+      "dictation": "dictations",
+      "todo": "todos"
+    },
+    "synonyms": {
+      "notes": ["documentation", "docs", "writings", "records"],
+      "tasks": ["work", "activities", "projects", "assignments"],
+      "specs": ["specifications", "requirements", "designs"],
+      "dictations": ["recordings", "voice notes", "audio notes"],
+      "todos": ["action items", "to-dos", "checklist", "pending items"]
+    },
+    "abbreviations": {
+      "spec": "specification",
+      "docs": "documentation",
+      "reqs": "requirements",
+      "prev": "previous"
+    }
+  },
+  "confidence_scoring": {
+    "high_confidence": {
+      "score": 0.9,
+      "indicators": ["exact_match", "personal_pronoun", "explicit_mcp_mention"]
+    },
+    "medium_confidence": {
+      "score": 0.6,
+      "indicators": ["fuzzy_match", "synonym_match", "temporal_indicator"]
+    },
+    "low_confidence": {
+      "score": 0.3,
+      "indicators": ["partial_match", "context_dependent", "ambiguous_query"]
+    }
+  }
+}

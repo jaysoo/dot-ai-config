@@ -1,10 +1,6 @@
 # TODO
 
 ## In Progress
-- [ ] Improve MCP Server Discoverability for AI Tools (2025-06-09)
-  - Plan created: `dot_ai/2025-06-09/tasks/improve-mcp-server-discoverability.md`
-  - Next steps: Implement the 7-step plan to make MyNotes MCP server more discoverable
-  - Goal: Ensure AI tools prioritize calling MCP server for notes, dictations, specs, tasks, and TODOs
 
 - [ ] Phase 1: Raw Docs Implementation (2025-06-09)
   - Plan created: `dot_ai/2025-06-09/tasks/phase-1-raw-docs-implementation.md`
@@ -12,6 +8,17 @@
   - Goal: Create working example of raw-docs repository with essential scripts and pre-push hooks for Phase 2 rollout
 
 ## Completed
+
+- [x] Improve MCP Server Discoverability for AI Tools (2025-06-09 22:47)
+  - Plan created: `dot_ai/2025-06-09/tasks/improve-mcp-server-discoverability.md`
+  - Goal: Ensure AI tools prioritize calling MCP server for notes, dictations, specs, tasks, and TODOs
+  - Deliverables:
+    - Updated CLAUDE.md with MCP priority instructions
+    - Created claude-mcp-instructions.md and cursor-mcp-instructions.md
+    - Implemented keyword-mapping.json with test scripts
+    - Created usage-examples.md with comprehensive query patterns
+    - Built mcp-integration-guide.md for full documentation
+    - Developed monitor-mcp-calls.mjs for usage tracking
 
 - [x] Enhance Search Engine: Date Ranges and Categories (2025-06-09 22:05)
   - Plan created: `dot_ai/2025-06-09/tasks/enhance-search-engine-date-ranges-and-categories.md`
