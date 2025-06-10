@@ -38,6 +38,7 @@ Staleness:
 - There are not much engagements in terms of reactions or comments (less than 5 reactions and less than 5 comments). 
 - There is an open pull-request attached to the issue.
 
-## CRITICAL:
+## CRITICAL: Where to store files
 
 Store a file `.ai/yyyy-mm-dd/tasks/nx-easy-issues-[theme].md` where `yyyy-mm-dd` is today's datestamp. You can use `dot_ai` if `.ai` is not a folder under current repo root. Replace `[theme]` with the general them, like `react-issues`, `stale-issues`, or whatever you can come up with. If you cannot find a theme, just leave it off. ALSO, keep ALL files under teh same tasks folder so we don't pollute the repo.
+
