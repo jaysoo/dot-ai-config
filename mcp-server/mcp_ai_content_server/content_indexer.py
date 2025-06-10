@@ -7,6 +7,8 @@ from typing import Dict, List, Optional, Set, Tuple
 from dataclasses import dataclass
 from datetime import datetime
 
+from .directory_monitor import DirectoryMonitor
+
 logger = logging.getLogger(__name__)
 
 
@@ -37,11 +39,17 @@ class ContentIndexer:
             "tasks": self._is_task_file,
             "dictations": self._is_dictation_file,
         }
+        self.directory_monitor = DirectoryMonitor()
+        self.last_hash: Optional[str] = None
+        self.dot_ai_path = self.base_path / "dot_ai"
         
     async def initialize(self):
         """Initialize the indexer by scanning and categorizing files."""
         logger.info("Initializing content indexer...")
         await self._scan_directories()
+        # Store initial hash after scanning
+        if self.dot_ai_path.exists():
+            self.last_hash = self.directory_monitor.calculate_directory_hash(self.dot_ai_path)
         logger.info(f"Indexed {len(self.index)} files")
         
     async def _scan_directories(self):
@@ -387,3 +395,45 @@ class ContentIndexer:
                     break
                     
         return todos
+    
+    def needs_reindex(self) -> bool:
+        """Check if the content needs to be reindexed.
+        
+        Returns:
+            True if reindexing is needed
+        """
+        if not self.dot_ai_path.exists():
+            return False
+            
+        if self.last_hash is None:
+            return True
+            
+        return self.directory_monitor.has_changes(self.dot_ai_path, self.last_hash)
+    
+    async def refresh(self) -> int:
+        """Refresh the index if needed.
+        
+        Returns:
+            Number of files indexed (0 if no refresh needed)
+        """
+        if not self.needs_reindex():
+            logger.debug("No reindexing needed")
+            return 0
+            
+        logger.info("Refreshing content index...")
+        
+        # Clear existing index
+        old_count = len(self.index)
+        self.index.clear()
+        
+        # Rescan directories
+        await self._scan_directories()
+        
+        # Update hash
+        if self.dot_ai_path.exists():
+            self.last_hash = self.directory_monitor.calculate_directory_hash(self.dot_ai_path)
+            
+        new_count = len(self.index)
+        logger.info(f"Reindexed: {old_count} -> {new_count} files")
+        
+        return new_count

@@ -11,6 +11,7 @@ An MCP (Model Context Protocol) server that provides intelligent access to AI-ge
 - Semantic search capabilities
 - Task continuation support
 - HTTP and stdio transport support
+- **Auto-reindexing**: Automatically detects and indexes new content without server restart
 
 ## Document Categories
 
@@ -105,6 +106,15 @@ When running with HTTP transport, the server provides endpoints for:
 - Tool calls via POST requests
 - Server-sent events for streaming responses
 - Connection management and resumability
+
+## Auto-Reindexing
+
+The server automatically detects changes in the `dot_ai/` directory structure and reindexes content as needed. This happens transparently before each search operation:
+
+- Uses lightweight directory hashing to detect changes
+- Only reindexes when files are added, removed, or modified
+- Minimal performance impact (< 100ms for typical checks)
+- No server restart required when adding new content
 
 ## Development
 

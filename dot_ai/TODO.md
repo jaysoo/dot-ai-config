@@ -4,6 +4,13 @@
 
 ## Completed
 
+- [x] MCP Server Auto-Reindexing (2025-06-10 10:45)
+  - Plan created: `dot_ai/2025-06-10/tasks/mcp-server-auto-reindex.md`
+  - Goal: Implement automatic re-indexing when content changes in dot_ai folder
+  - Approach: Hash-based change detection before search operations
+  - Implementation complete: Directory monitor, content indexer integration, server integration
+  - Tests passing, documentation updated
+
 - [x] Phase 1: Raw Docs Implementation (2025-06-09 12:30)
   - Plan created: `dot_ai/2025-06-09/tasks/phase-1-raw-docs-implementation.md`
   - Status: Working example repository created at `dot_ai/2025-06-09/tasks/raw-docs-example/`

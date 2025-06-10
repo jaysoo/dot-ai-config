@@ -57,6 +57,9 @@ class AIContentServer:
             if max_results < 1 or max_results > 50:
                 return "Error: max_results must be between 1 and 50"
                 
+            # Check for index refresh
+            await self.check_and_refresh_index()
+                
             results = await self.search_engine.search(
                 query=query,
                 category=category,
@@ -87,6 +90,9 @@ class AIContentServer:
             include_related: bool = True
         ) -> str:
             """Get task context."""
+            # Check for index refresh
+            await self.check_and_refresh_index()
+            
             results = await self.search_engine.get_task_context(task_name, include_related)
             
             if not results:
@@ -111,6 +117,9 @@ class AIContentServer:
             date_filter: Optional[str] = None
         ) -> str:
             """Find specification files."""
+            # Check for index refresh
+            await self.check_and_refresh_index()
+            
             results = await self.search_engine.find_specs(spec_name, date_filter)
             
             if not results:
@@ -138,6 +147,9 @@ class AIContentServer:
             """Get summary files."""
             if max_results < 1 or max_results > 20:
                 return "Error: max_results must be between 1 and 20"
+                
+            # Check for index refresh
+            await self.check_and_refresh_index()
                 
             results = await self.search_engine.get_summaries(date_filter, max_results)
             
@@ -188,6 +200,9 @@ class AIContentServer:
             if status_filter not in valid_status_filters:
                 return {"error": f"status_filter must be one of: {', '.join(valid_status_filters)}"}
                 
+            # Check for index refresh
+            await self.check_and_refresh_index()
+                
             result = await self.search_engine.extract_todos(
                 category=category,
                 date_filter=date_filter,
@@ -200,6 +215,15 @@ class AIContentServer:
     async def initialize(self):
         """Initialize content indexer."""
         await self.content_indexer.initialize()
+        
+    async def check_and_refresh_index(self):
+        """Check if index needs refresh and update if necessary."""
+        try:
+            refreshed = await self.content_indexer.refresh()
+            if refreshed > 0:
+                logger.info(f"Auto-reindexed {refreshed} files")
+        except Exception as e:
+            logger.error(f"Error during auto-reindex: {e}")
 
     def run(self, transport: str = "streamable-http"):
         """Run the MCP server with specified transport."""

@@ -10,7 +10,12 @@
 
 ## Tasks
 
-*No tasks recorded yet*
+- **MCP Server Auto-Reindexing** (`tasks/mcp-server-auto-reindex.md`)
+  - Status: Completed ✅
+  - Feature enhancement to automatically re-index content when changes are detected
+  - Using hash-based change detection for efficient updates
+  - Implementation includes: directory monitor, content indexer updates, server integration
+  - Tests passing, documentation updated
 
 ## Specs
 
