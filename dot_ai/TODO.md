@@ -2,12 +2,13 @@
 
 ## In Progress
 
-- [ ] Phase 1: Raw Docs Implementation (2025-06-09)
-  - Plan created: `dot_ai/2025-06-09/tasks/phase-1-raw-docs-implementation.md`
-  - Next steps: Execute 7 main tasks with 28 subtasks to create working raw-docs example repository
-  - Goal: Create working example of raw-docs repository with essential scripts and pre-push hooks for Phase 2 rollout
-
 ## Completed
+
+- [x] Phase 1: Raw Docs Implementation (2025-06-09)
+  - Plan created: `dot_ai/2025-06-09/tasks/phase-1-raw-docs-implementation.md`
+  - Status: Working example repository created at `dot_ai/2025-06-09/tasks/raw-docs-example/`
+  - Next steps: Integration and testing will be a separate task
+  - Goal: Create working example of raw-docs repository with essential scripts and pre-push hooks
 
 - [x] Optimize extract_todos Token Usage (2025-06-09 13:15)
   - Plan created: `dot_ai/2025-06-09/tasks/optimize-extract-todos-token-usage.md`
