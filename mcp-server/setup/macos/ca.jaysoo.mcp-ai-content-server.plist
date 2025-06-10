@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ca.jaysoo.mcp-ai-content-server</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>__MCP_SERVER_PATH__/start.sh</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>__MCP_SERVER_PATH__</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>__HOME__/Library/Logs/mcp-ai-content-server.log</string>
+    <key>StandardErrorPath</key>
+    <string>__HOME__/Library/Logs/mcp-ai-content-server.error.log</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>__PYTHON_PATH__:/usr/local/bin:/usr/bin:/bin</string>
+        <key>TRANSPORT</key>
+        <string>sse</string>
+        <key>PORT</key>
+        <string>8888</string>
+        <key>PYTHONPATH</key>
+        <string>__MCP_SERVER_PATH__</string>
+    </dict>
+</dict>
+</plist>

@@ -23,4 +23,4 @@ if [ "$TRANSPORT" = "streamable-http" ]; then
 fi
 echo ""
 
-python -m mcp_ai_content_server.server
+python3 -m mcp_ai_content_server.server
