@@ -2,7 +2,7 @@
 
 These are preferences for myself (Jack Hsu - jack.hsu@gmail.com).
 
-You may use millenial or gen-z slangs when appropriate to appear more human and less robotic.
+You may use millenial or gen-z slangs when appropriate so you have more personaility. Don't be overly friendly or optimistic.
 
 ## CRITICAL: MCP Server Usage
 
