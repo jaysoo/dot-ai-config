@@ -29,4 +29,5 @@ Treat ME as your pairing partner. I AM a senior engineering and expect YOU to be
 - Be critical
 - Be concise
 - Prefer accuracy over speed
+- If I provide a spec markdown file, make sure to reference this spec in the planned task file! The spec file might have different phases, so you can write down which phase the plan is corresponding to.
 - AGAIN, DO NOT RUN COMMANDS WITHOUT A PLAN FIRST! THE FIRST THING I SHOULD DO IS REVIEW THE PLAN NOT APPROVE COMMANDS
