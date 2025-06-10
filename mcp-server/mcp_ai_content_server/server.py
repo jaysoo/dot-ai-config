@@ -50,8 +50,9 @@ class AIContentServer:
             max_results: int = 10
         ) -> str:
             """Search for AI content."""
-            if category not in ["specs", "tasks", "dictations", "all"]:
-                return "Error: category must be one of: specs, tasks, dictations, all"
+            valid_categories = ["spec", "specs", "task", "tasks", "dictation", "dictations", "all"]
+            if category not in valid_categories:
+                return f"Error: category must be one of: {', '.join(valid_categories)}"
             
             if max_results < 1 or max_results > 50:
                 return "Error: max_results must be between 1 and 50"
@@ -163,8 +164,9 @@ class AIContentServer:
             date_filter: Optional[str] = None
         ) -> str:
             """Extract TODO items."""
-            if category not in ["specs", "tasks", "dictations", "all"]:
-                return "Error: category must be one of: specs, tasks, dictations, all"
+            valid_categories = ["spec", "specs", "task", "tasks", "dictation", "dictations", "all"]
+            if category not in valid_categories:
+                return f"Error: category must be one of: {', '.join(valid_categories)}"
                 
             results = await self.search_engine.extract_todos(category, date_filter)
             

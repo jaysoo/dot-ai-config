@@ -2,7 +2,8 @@
 
 import logging
 import re
-from typing import Dict, List, Optional, Any
+from datetime import datetime
+from typing import Dict, List, Optional, Any, Union
 from dataclasses import asdict
 
 from .content_indexer import ContentIndexer, ContentItem
@@ -14,6 +15,18 @@ logger = logging.getLogger(__name__)
 class SearchEngine:
     """Search engine for AI-generated content."""
     
+    # Category aliases for normalization
+    CATEGORY_ALIASES = {
+        'dictation': 'dictations',
+        'dictations': 'dictations',
+        'task': 'tasks', 
+        'tasks': 'tasks',
+        'spec': 'specs',
+        'specs': 'specs',
+        'all': 'all',
+        'other': 'other'
+    }
+    
     def __init__(self, content_indexer: ContentIndexer):
         """Initialize the search engine.
         
@@ -22,6 +35,74 @@ class SearchEngine:
         """
         self.indexer = content_indexer
         self.semantic_engine = SemanticSearchEngine()
+        
+    def _normalize_category(self, category: str) -> str:
+        """Normalize category to handle singular/plural forms.
+        
+        Args:
+            category: User-provided category string
+            
+        Returns:
+            Normalized category name
+        """
+        return self.CATEGORY_ALIASES.get(category.lower(), 'all')
+        
+    def _parse_date_filter(self, date_input: str) -> Dict[str, Any]:
+        """Parse date input supporting both exact dates and ranges.
+        
+        Args:
+            date_input: Date string in format YYYY-MM-DD or YYYY-MM-DD..YYYY-MM-DD
+            
+        Returns:
+            Dict with 'type' ('exact' or 'range') and date info
+            
+        Raises:
+            ValueError: If date format is invalid
+        """
+        if '..' in date_input:
+            # Date range format
+            parts = date_input.split('..', 1)
+            if len(parts) != 2:
+                raise ValueError("Invalid date range format. Use YYYY-MM-DD..YYYY-MM-DD")
+                
+            start_str, end_str = parts
+            try:
+                start_date = datetime.strptime(start_str.strip(), '%Y-%m-%d').date()
+                end_date = datetime.strptime(end_str.strip(), '%Y-%m-%d').date()
+            except ValueError as e:
+                raise ValueError(f"Invalid date format in range: {e}")
+                
+            if start_date > end_date:
+                raise ValueError("Start date must be before or equal to end date")
+                
+            return {'type': 'range', 'start': start_date, 'end': end_date}
+        else:
+            # Exact date format
+            try:
+                exact_date = datetime.strptime(date_input.strip(), '%Y-%m-%d').date()
+                return {'type': 'exact', 'date': exact_date}
+            except ValueError as e:
+                raise ValueError(f"Invalid date format. Use YYYY-MM-DD: {e}")
+                
+    def _is_date_in_filter(self, item_date: str, date_filter: Dict[str, Any]) -> bool:
+        """Check if an item's date matches the date filter.
+        
+        Args:
+            item_date: Date string from the item (YYYY-MM-DD)
+            date_filter: Parsed date filter dict
+            
+        Returns:
+            True if date matches filter
+        """
+        try:
+            date = datetime.strptime(item_date, '%Y-%m-%d').date()
+        except ValueError:
+            return False
+            
+        if date_filter['type'] == 'exact':
+            return date == date_filter['date']
+        else:  # range
+            return date_filter['start'] <= date <= date_filter['end']
         
     async def search(
         self, 
@@ -35,26 +116,40 @@ class SearchEngine:
         Args:
             query: Search query
             category: Category filter ('specs', 'tasks', 'dictations', 'all')
-            date_filter: Optional date filter (YYYY-MM-DD)
+            date_filter: Optional date filter (YYYY-MM-DD or YYYY-MM-DD..YYYY-MM-DD)
             max_results: Maximum number of results
             
         Returns:
             List of search results with metadata
         """
-        logger.debug(f"Searching for '{query}' in category '{category}'")
+        # Normalize category
+        normalized_category = self._normalize_category(category)
+        logger.debug(f"Searching for '{query}' in category '{normalized_category}' (original: '{category}')")
         
         # Get base results from filename search
-        filename_results = self.indexer.search_by_filename(query, category)
+        filename_results = self.indexer.search_by_filename(query, normalized_category)
         
         # Get content search results
-        content_results = self.indexer.search_content(query, category)
+        content_results = self.indexer.search_content(query, normalized_category)
+        
+        # Parse date filter if provided
+        parsed_date_filter = None
+        if date_filter:
+            try:
+                parsed_date_filter = self._parse_date_filter(date_filter)
+            except ValueError as e:
+                logger.error(f"Invalid date filter: {e}")
+                return []
         
         # Get semantic search results if available
         semantic_results = []
         if self.semantic_engine.is_available():
-            available_items = self.indexer.get_files_by_category(category)
-            if date_filter:
-                available_items = [item for item in available_items if item.date == date_filter]
+            available_items = self.indexer.get_files_by_category(normalized_category)
+            if parsed_date_filter:
+                available_items = [
+                    item for item in available_items 
+                    if self._is_date_in_filter(item.date, parsed_date_filter)
+                ]
             semantic_results = await self.semantic_engine.semantic_search(
                 query, available_items, max_results=max_results * 2
             )
@@ -103,10 +198,10 @@ class SearchEngine:
                 }
                 
         # Apply date filter
-        if date_filter:
+        if parsed_date_filter:
             all_results = {
                 k: v for k, v in all_results.items() 
-                if v['item'].date == date_filter
+                if self._is_date_in_filter(v['item'].date, parsed_date_filter)
             }
             
         # Sort by score and limit results
@@ -303,7 +398,15 @@ class SearchEngine:
         
         # Apply date filter
         if date_filter:
-            summary_items = [item for item in summary_items if item.date == date_filter]
+            try:
+                parsed_filter = self._parse_date_filter(date_filter)
+                summary_items = [
+                    item for item in summary_items 
+                    if self._is_date_in_filter(item.date, parsed_filter)
+                ]
+            except ValueError as e:
+                logger.error(f"Invalid date filter: {e}")
+                return []
             
         # Limit results
         summary_items = summary_items[:max_results]
@@ -336,14 +439,24 @@ class SearchEngine:
         Returns:
             List of files with their TODO items
         """
-        logger.debug(f"Extracting TODOs from category '{category}'")
+        # Normalize category
+        normalized_category = self._normalize_category(category)
+        logger.debug(f"Extracting TODOs from category '{normalized_category}' (original: '{category}')")
         
         # Get files in category
-        files = self.indexer.get_files_by_category(category)
+        files = self.indexer.get_files_by_category(normalized_category)
         
         # Apply date filter
         if date_filter:
-            files = [f for f in files if f.date == date_filter]
+            try:
+                parsed_filter = self._parse_date_filter(date_filter)
+                files = [
+                    f for f in files 
+                    if self._is_date_in_filter(f.date, parsed_filter)
+                ]
+            except ValueError as e:
+                logger.error(f"Invalid date filter: {e}")
+                return []
             
         # Extract TODOs from each file
         results = []

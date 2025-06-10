@@ -144,7 +144,7 @@ class ContentIndexer:
             logger.error(f"Error indexing file {file_path}: {e}")
             
     def _categorize_file(self, file_path: Path) -> str:
-        """Categorize a file based on its filename and path.
+        """Categorize a file based on its folder structure.
         
         Args:
             file_path: Path to the file
@@ -152,15 +152,23 @@ class ContentIndexer:
         Returns:
             Category string: 'specs', 'tasks', 'dictations', or 'other'
         """
-        filename = file_path.name.lower()
         path_parts = [part.lower() for part in file_path.parts]
         
-        # Check each category
-        for category, check_func in self.categories.items():
-            if check_func(filename, path_parts):
-                return category
-                
-        return "other"
+        # Check for category folders in path
+        if 'dictations' in path_parts:
+            return 'dictations'
+        elif 'tasks' in path_parts:
+            return 'tasks'  
+        elif 'specs' in path_parts:
+            return 'specs'
+        else:
+            # Fallback to filename-based detection for backward compatibility
+            filename = file_path.name.lower()
+            for category, check_func in self.categories.items():
+                if check_func(filename, path_parts):
+                    return category
+                    
+            return "other"
         
     def _is_spec_file(self, filename: str, path_parts: List[str]) -> bool:
         """Check if file is a specification.

@@ -162,3 +162,108 @@ class TestSearchEngine:
         assert "API" in snippet
         assert len(snippet) <= 60  # Should include "..." markers
         assert "..." in snippet  # Should have truncation markers
+        
+    def test_date_range_parsing(self, mock_indexer):
+        """Test date range parsing functionality."""
+        engine = SearchEngine(mock_indexer)
+        
+        # Test exact date parsing
+        exact_filter = engine._parse_date_filter("2025-06-09")
+        assert exact_filter['type'] == 'exact'
+        assert str(exact_filter['date']) == '2025-06-09'
+        
+        # Test date range parsing
+        range_filter = engine._parse_date_filter("2025-06-01..2025-06-30")
+        assert range_filter['type'] == 'range'
+        assert str(range_filter['start']) == '2025-06-01'
+        assert str(range_filter['end']) == '2025-06-30'
+        
+        # Test invalid date formats
+        with pytest.raises(ValueError):
+            engine._parse_date_filter("invalid-date")
+            
+        with pytest.raises(ValueError):
+            engine._parse_date_filter("2025-06-01..invalid")
+            
+        # Test invalid range (start > end)
+        with pytest.raises(ValueError):
+            engine._parse_date_filter("2025-06-30..2025-06-01")
+            
+    def test_date_filter_matching(self, mock_indexer):
+        """Test date filter matching logic."""
+        engine = SearchEngine(mock_indexer)
+        
+        # Test exact date matching
+        exact_filter = {'type': 'exact', 'date': engine._parse_date_filter("2025-06-09")['date']}
+        assert engine._is_date_in_filter("2025-06-09", exact_filter) == True
+        assert engine._is_date_in_filter("2025-06-08", exact_filter) == False
+        
+        # Test range matching
+        range_filter = engine._parse_date_filter("2025-06-01..2025-06-30")
+        assert engine._is_date_in_filter("2025-06-01", range_filter) == True  # Start inclusive
+        assert engine._is_date_in_filter("2025-06-15", range_filter) == True  # Middle
+        assert engine._is_date_in_filter("2025-06-30", range_filter) == True  # End inclusive
+        assert engine._is_date_in_filter("2025-05-31", range_filter) == False  # Before range
+        assert engine._is_date_in_filter("2025-07-01", range_filter) == False  # After range
+        
+    @pytest.mark.asyncio
+    async def test_search_with_date_range(self, mock_indexer):
+        """Test search with date range filtering."""
+        engine = SearchEngine(mock_indexer)
+        
+        # Add more test items with different dates
+        mock_indexer.index["item_3"] = ContentItem(
+            path=mock_indexer.base_path / "task2.md",
+            filename="task2.md",
+            category="tasks",
+            date="2025-06-01",
+            content="Another task"
+        )
+        mock_indexer.index["item_4"] = ContentItem(
+            path=mock_indexer.base_path / "task3.md",
+            filename="task3.md",
+            category="tasks",
+            date="2025-06-15",
+            content="Task in the middle"
+        )
+        
+        # Search with date range
+        results = await engine.search("task", category="all", date_filter="2025-06-01..2025-06-10")
+        
+        # Should find tasks within the date range
+        found_dates = [r['date'] for r in results]
+        assert "2025-06-01" in found_dates
+        assert "2025-06-09" in found_dates
+        assert "2025-06-15" not in found_dates  # Outside range
+        
+    def test_category_normalization(self, mock_indexer):
+        """Test category normalization."""
+        engine = SearchEngine(mock_indexer)
+        
+        # Test singular to plural normalization
+        assert engine._normalize_category("spec") == "specs"
+        assert engine._normalize_category("task") == "tasks"
+        assert engine._normalize_category("dictation") == "dictations"
+        
+        # Test that plurals remain unchanged
+        assert engine._normalize_category("specs") == "specs"
+        assert engine._normalize_category("tasks") == "tasks"
+        assert engine._normalize_category("dictations") == "dictations"
+        
+        # Test special cases
+        assert engine._normalize_category("all") == "all"
+        assert engine._normalize_category("ALL") == "all"  # Case insensitive
+        assert engine._normalize_category("unknown") == "all"  # Default to all
+        
+    @pytest.mark.asyncio
+    async def test_search_with_normalized_categories(self, mock_indexer):
+        """Test search with category normalization."""
+        engine = SearchEngine(mock_indexer)
+        
+        # Search with singular category name
+        results_singular = await engine.search("API", category="spec")
+        results_plural = await engine.search("API", category="specs")
+        
+        # Should return same results
+        assert len(results_singular) == len(results_plural)
+        assert results_singular[0]['filename'] == results_plural[0]['filename']
