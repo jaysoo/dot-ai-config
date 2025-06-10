@@ -12,16 +12,19 @@
 - **Specified Raw Docs System**: Created detailed specification for internal documentation workflow to capture developer knowledge during feature development. System bridges gap between feature development and user-facing documentation.
 - **Phase 1 Implementation Started**: Created working example of raw-docs repository with essential scripts, templates, and pre-push hooks for tracking feature documentation.
 
+### MCP Search Engine Enhancements
+- **Enhanced Search Engine with Date Ranges and Categories**: Implemented comprehensive improvements to MCP AI content server's search engine:
+  - Added date range filtering with inclusive start..end syntax (e.g., 2025-01-01..2025-01-31)
+  - Implemented flexible category matching for singular/plural forms (spec/specs, task/tasks, dictation/dictations)
+  - Changed category detection from filename-based to folder-based with backward compatibility
+  - Added comprehensive tests and updated documentation
+
 ## Pending Tasks
 
 - [ ] Improve MCP Server Discoverability for AI Tools (2025-06-09)
   - Plan created: `dot_ai/2025-06-09/tasks/improve-mcp-server-discoverability.md`
   - Next steps: Implement the 7-step plan to make MyNotes MCP server more discoverable
   - Goal: Ensure AI tools prioritize calling MCP server for notes, dictations, specs, tasks, and TODOs
-
-- [ ] Enhance Search Engine: Date Ranges and Categories (2025-06-09)
-  - Plan created: `dot_ai/2025-06-09/tasks/enhance-search-engine-date-ranges-and-categories.md`
-  - Goal: Support date range filtering, flexible category matching, and folder-based filtering
 
 - [ ] Phase 1: Raw Docs Implementation (2025-06-09)
   - Plan created: `dot_ai/2025-06-09/tasks/phase-1-raw-docs-implementation.md`
