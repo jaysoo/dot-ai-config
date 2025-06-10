@@ -6,6 +6,8 @@ The ideal candidates are stale issues that can be closed without code changes.
 
 You can use the `gh` CLI command to find **open** issues. Note, do not care about closed issues (i.e. state is closed).
 
+_I'll_ provide _YOU_ with a date range to check and you should convert it to `yyyy-mm-dd..yyyy-mm-dd` so `gh` can filter from it. If I do not provide a date range, then assume it is for the past year.
+
 ## Criteria for "easiness" of issues
 
 An issue is easy if it fits the following criteria:
