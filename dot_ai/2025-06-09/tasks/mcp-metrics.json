@@ -1,16 +1,16 @@
 {
-  "totalCalls": 5,
+  "totalCalls": 10,
   "functionCalls": {
-    "search_ai_content": 2,
-    "get_task_context": 1,
-    "find_specs": 1,
-    "extract_todos": 1
+    "search_ai_content": 4,
+    "get_task_context": 2,
+    "find_specs": 2,
+    "extract_todos": 2
   },
   "successRate": 100,
   "avgResponseTime": 0,
   "categoryCounts": {
-    "notes": 1,
-    "tasks": 1
+    "notes": 2,
+    "tasks": 2
   },
   "hourlyDistribution": [
     0,
@@ -35,8 +35,8 @@
     0,
     0,
     0,
-    5,
+    10,
     0
   ],
-  "lastUpdated": "2025-06-10T02:47:51.874Z"
+  "lastUpdated": "2025-06-10T02:51:24.983Z"
 }
