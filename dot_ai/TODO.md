@@ -4,6 +4,12 @@
 
 ## Completed
 
+- [x] Create Curl-based Installation Script for Raw Docs (2025-06-11 1:05)
+  - Plan created: `.ai/2025-06-11/tasks/curl-install-script.md`
+  - Status: All 7 steps complete (Step 6 manually verified)
+  - Goal: Enable one-line installation via GitHub CLI
+  - Result: Fully functional install.sh script with GitHub CLI integration
+
 - [x] MCP Server Auto-Reindexing (2025-06-10 10:45)
   - Plan created: `dot_ai/2025-06-10/tasks/mcp-server-auto-reindex.md`
   - Goal: Implement automatic re-indexing when content changes in dot_ai folder
