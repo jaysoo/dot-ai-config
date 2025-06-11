@@ -2,7 +2,7 @@
 
 ## Overview
 
-Successfully created a one-line installation system for the Raw Docs project, enabling developers to quickly set up documentation tracking in their repositories using GitHub CLI.
+Completed two major development tasks today: Created a one-line installation system for the Raw Docs project using GitHub CLI, and built a comprehensive documentation-feature correlation tool to help the Nx documentation team track and update docs based on feature changes.
 
 ## Tasks Completed
 
@@ -31,6 +31,32 @@ Successfully created a one-line installation system for the Raw Docs project, en
 gh api repos/nrwl/raw-docs/contents/install.sh --jq '.content' | base64 -d | bash
 ```
 
+### Documentation-Feature Correlation Tool ✅
+- **Type**: New Feature
+- **Plan**: `tasks/docs-feature-correlation-tool.md`
+- **Status**: All 6 implementation steps completed
+
+**Key Accomplishments:**
+- Built a comprehensive tool to analyze feature changes and correlate them with documentation that needs updates
+- Implemented 5 core components working together:
+  - `analyze-feature-changes.mjs` - Extracts git diff changes from features/ directory
+  - `scan-nx-docs.mjs` - Scans and indexes Nx documentation
+  - `correlate-features-docs.mjs` - Matches features to relevant docs using multiple strategies
+  - `generate-update-plan.mjs` - Creates AI-consumable update plans
+  - `docs-correlation-tool.mjs` - Main CLI orchestrator
+
+**Technical Highlights:**
+- Multi-strategy correlation engine (package matching, keyword analysis, path patterns, content similarity)
+- Confidence scoring system for correlation accuracy
+- AI-optimized markdown output format for Claude consumption
+- Smart change impact analysis and context extraction
+- Support for new features, updates, and removals
+
+**Usage:**
+```bash
+node docs-correlation-tool.mjs --since <SHA> --nx-path ../nx --output update-plan.md
+```
+
 ## Additional Work
 
 - **Installation Methods Research**: Documented 5 different approaches for accessing private GitHub repositories (`tasks/installation-methods.md`)
@@ -38,7 +64,30 @@ gh api repos/nrwl/raw-docs/contents/install.sh --jq '.content' | base64 -d | bas
 
 ## Impact
 
-This work significantly reduces the barrier to entry for developers adopting the Raw Docs system. What previously required multiple manual steps and repository cloning can now be accomplished with a single command, improving developer experience and adoption rates.
+Today's work significantly improves two critical developer workflows:
+
+1. **Raw Docs Adoption**: The one-line installer reduces setup friction from multiple manual steps to a single command, improving developer experience and adoption rates.
+
+2. **Documentation Maintenance**: The correlation tool automates the tedious process of tracking feature changes and identifying documentation updates, enabling the docs team to maintain more accurate and up-to-date documentation with AI assistance.
+
+## Tasks In Progress
+
+### NX CLI Heap Usage Logging - Phase 1 🚧
+- **Started**: 18:35
+- **Type**: New Feature
+- **Plan**: `tasks/nx-heap-usage-logging-phase1.md`
+- **Spec**: `specs/heap-usage-logging.md`
+
+**Objective:**
+Implement memory tracking functionality for NX CLI to display peak RSS (Resident Set Size) for each task during execution, activated via `NX_LOG_HEAP_USAGE=true` environment variable.
+
+**Planned Steps:**
+1. Add pidusage dependency for cross-platform memory tracking
+2. Enhance Task interface with peakRss field
+3. Create memory tracking service with 500ms polling
+4. Integrate tracking into process execution
+5. Update terminal output formatting
+6. Build and test with canary version
 
 ## Notes
 

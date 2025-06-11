@@ -2,6 +2,12 @@
 
 ## In Progress
 
+- [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35)
+  - Plan created: `dot_ai/2025-06-11/tasks/nx-heap-usage-logging-phase1.md`
+  - Spec reference: `dot_ai/2025-06-11/specs/heap-usage-logging.md`
+  - Goal: Implement memory tracking to display peak RSS for each task via NX_LOG_HEAP_USAGE environment variable
+  - Next steps: Add pidusage dependency, enhance Task interface, create memory tracking service
+
 ## Completed
 
 - [x] Create Curl-based Installation Script for Raw Docs (2025-06-11 1:05)
