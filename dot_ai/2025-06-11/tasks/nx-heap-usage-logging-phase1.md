@@ -131,6 +131,22 @@ This plan implements Phase 1 of the heap usage logging feature as specified in `
 
 **Reasoning**: The feature should never cause tasks to fail and should degrade gracefully.
 
+## CRITICAL: Verification
+
+A few things need to be verified before marking Phase 1 as completed.
+
+1. `nx build nx` must succeed
+2. `pnpm nx-release 22.0.0-canary.i --local` must succeed (where i is currrent timestamp)
+  a) Make sure local registry is running by checking `lsof -i tcp:4873`
+  b) if local registry is not runnign on port 4873 then start it using `nx local-registry` (it will not exit as it is a long-running process)
+3. If 1 & 2 fail, DO NOT CONTINUE, otherwise
+  a) go to `/tmp` and run `npx -y create-nx-workspace@22.0.0-canary.i mytest-j --preset=ts --formatter=none --nx-cloud=skip` where i is the timestamp used previously in (2) and j is the latest timestamp that is recalculated
+  b) Run `nx g @nx/js:lib libs/foo --no-interactive`
+  c) Run `NX_LOG_HEAP_USAGE=true NX_TUI=false nx run-many -t build` and record output to a file under `/tmp` like `/tmp/nx-run-output-j.txt`
+  d) check that the nx run output file has memory info as expected, like either KB, MB, GB, etc. -- it'll likely be MB
+
+If any step or substep fails, go back an fix the implementation then try again from the beginning of verification steps (1).
+
 ## Alternatives to Consider
 
 1. **Memory tracking granularity**: We could track memory per executor instead of per process, but this would miss child processes
