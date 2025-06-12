@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-gemini"
+version = "0.1.0"
+description = "MCP Gemini integration"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "google-generativeai>=0.8.5",
+]
+
+[project.optional-dependencies]
+dev = []
+
+[tool.setuptools]
+packages = ["mcp_gemini"]

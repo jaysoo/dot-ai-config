@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+mcp_gemini/server.py
+mcp_gemini.egg-info/PKG-INFO
+mcp_gemini.egg-info/SOURCES.txt
+mcp_gemini.egg-info/dependency_links.txt
+mcp_gemini.egg-info/requires.txt
+mcp_gemini.egg-info/top_level.txt
