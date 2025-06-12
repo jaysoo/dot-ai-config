@@ -1,0 +1,15 @@
+{
+  "gemini": {
+    "model": "gemini-2.0-flash",
+    "default_temperature": 0.5,
+    "max_output_tokens": 8192
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  "server": {
+    "name": "claude-gemini-mcp",
+    "protocol_version": "2024-11-05"
+  }
+}

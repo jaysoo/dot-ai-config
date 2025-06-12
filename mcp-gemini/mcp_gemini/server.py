@@ -7,27 +7,40 @@ Enables Claude Code to collaborate with Google's Gemini AI
 import json
 import sys
 import os
+import logging
 from typing import Dict, Any, Optional
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stderr)
+    ]
+)
+logger = logging.getLogger(__name__)
 
 # Ensure unbuffered output
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 1)
 sys.stderr = os.fdopen(sys.stderr.fileno(), 'w', 1)
 
 # Server version
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 # Initialize Gemini
 try:
     import google.generativeai as genai
+    logger.info("Attempting to initialize Gemini...")
     
-    # Get API key from environment or use the one provided during setup
-    API_KEY = os.environ.get("GEMINI_API_KEY", "YOUR_API_KEY_HERE")
-    if API_KEY == "YOUR_API_KEY_HERE":
+    # Get API key from environment - no fallback to prevent security issues
+    API_KEY = os.environ.get("GEMINI_API_KEY")
+    if not API_KEY:
+        logger.error("GEMINI_API_KEY environment variable not found")
         print(json.dumps({
             "jsonrpc": "2.0",
             "error": {
                 "code": -32603,
-                "message": "Please set your Gemini API key in the server.py file or GEMINI_API_KEY environment variable"
+                "message": "GEMINI_API_KEY environment variable is required but not set"
             }
         }), file=sys.stdout, flush=True)
         sys.exit(1)
@@ -35,13 +48,42 @@ try:
     genai.configure(api_key=API_KEY)
     model = genai.GenerativeModel('gemini-2.0-flash')
     GEMINI_AVAILABLE = True
+    logger.info("Gemini initialized successfully")
+except ImportError as e:
+    GEMINI_AVAILABLE = False
+    GEMINI_ERROR = f"Failed to import google.generativeai: {str(e)}"
+    logger.error(f"Import error: {GEMINI_ERROR}")
 except Exception as e:
     GEMINI_AVAILABLE = False
-    GEMINI_ERROR = str(e)
+    GEMINI_ERROR = f"Failed to initialize Gemini: {str(e)}"
+    logger.error(f"Initialization error: {GEMINI_ERROR}")
 
 def send_response(response: Dict[str, Any]):
     """Send a JSON-RPC response"""
     print(json.dumps(response), flush=True)
+
+def validate_temperature(temperature: float) -> float:
+    """Validate temperature parameter is within valid range"""
+    try:
+        temp = float(temperature)
+        if not 0.0 <= temp <= 1.0:
+            raise ValueError("Temperature must be between 0.0 and 1.0")
+        return temp
+    except (TypeError, ValueError) as e:
+        raise ValueError(f"Invalid temperature value: {temperature}. {str(e)}")
+
+def validate_string_param(param: Any, param_name: str, max_length: Optional[int] = None) -> str:
+    """Validate a string parameter"""
+    if not isinstance(param, str):
+        raise TypeError(f"{param_name} must be a string, got {type(param).__name__}")
+    
+    if not param.strip():
+        raise ValueError(f"{param_name} cannot be empty")
+    
+    if max_length and len(param) > max_length:
+        raise ValueError(f"{param_name} exceeds maximum length of {max_length} characters")
+    
+    return param
 
 def handle_initialize(request_id: Any) -> Dict[str, Any]:
     """Handle initialization"""
@@ -144,49 +186,40 @@ def handle_tools_list(request_id: Any) -> Dict[str, Any]:
         }
     }
 
-def call_gemini(prompt: str, temperature: float = 0.5) -> str:
-    """Call Gemini and return response"""
-    try:
-        response = model.generate_content(
-            prompt,
-            generation_config=genai.GenerationConfig(
-                temperature=temperature,
-                max_output_tokens=8192,
-            )
-        )
-        return response.text
-    except Exception as e:
-        return f"Error calling Gemini: {str(e)}"
+def handle_server_info() -> str:
+    """Handle server_info tool call"""
+    if GEMINI_AVAILABLE:
+        return f"Server v{__version__} - Gemini connected and ready!"
+    else:
+        return f"Server v{__version__} - Gemini error: {GEMINI_ERROR}"
 
-def handle_tool_call(request_id: Any, params: Dict[str, Any]) -> Dict[str, Any]:
-    """Handle tool execution"""
-    tool_name = params.get("name")
-    arguments = params.get("arguments", {})
+def handle_ask_gemini(arguments: Dict[str, Any]) -> str:
+    """Handle ask_gemini tool call"""
+    if not GEMINI_AVAILABLE:
+        return f"Gemini not available: {GEMINI_ERROR}"
     
     try:
-        result = ""
+        prompt = validate_string_param(arguments.get("prompt", ""), "prompt")
+        temperature = validate_temperature(arguments.get("temperature", 0.5))
+        return call_gemini(prompt, temperature)
+    except (ValueError, TypeError) as e:
+        return f"Parameter validation error: {str(e)}"
+
+def handle_gemini_code_review(arguments: Dict[str, Any]) -> str:
+    """Handle gemini_code_review tool call"""
+    if not GEMINI_AVAILABLE:
+        return f"Gemini not available: {GEMINI_ERROR}"
+    
+    try:
+        code = validate_string_param(arguments.get("code", ""), "code", max_length=50000)
+        focus = validate_string_param(arguments.get("focus", "general"), "focus", max_length=100)
         
-        if tool_name == "server_info":
-            if GEMINI_AVAILABLE:
-                result = f"Server v{__version__} - Gemini connected and ready!"
-            else:
-                result = f"Server v{__version__} - Gemini error: {GEMINI_ERROR}"
+        # Validate focus parameter against allowed values
+        allowed_focus_areas = ["general", "security", "performance", "style", "bugs", "architecture"]
+        if focus.lower() not in allowed_focus_areas:
+            focus = "general"
         
-        elif tool_name == "ask_gemini":
-            if not GEMINI_AVAILABLE:
-                result = f"Gemini not available: {GEMINI_ERROR}"
-            else:
-                prompt = arguments.get("prompt", "")
-                temperature = arguments.get("temperature", 0.5)
-                result = call_gemini(prompt, temperature)
-            
-        elif tool_name == "gemini_code_review":
-            if not GEMINI_AVAILABLE:
-                result = f"Gemini not available: {GEMINI_ERROR}"
-            else:
-                code = arguments.get("code", "")
-                focus = arguments.get("focus", "general")
-                prompt = f"""Please review this code with a focus on {focus}:
+        prompt = f"""Please review this code with a focus on {focus}:
 
 ```
 {code}
@@ -198,22 +231,76 @@ Provide specific, actionable feedback on:
 3. Performance optimizations
 4. Best practices
 5. Code clarity and maintainability"""
-                result = call_gemini(prompt, 0.2)
-            
-        elif tool_name == "gemini_brainstorm":
-            if not GEMINI_AVAILABLE:
-                result = f"Gemini not available: {GEMINI_ERROR}"
-            else:
-                topic = arguments.get("topic", "")
-                context = arguments.get("context", "")
-                prompt = f"Let's brainstorm about: {topic}"
-                if context:
-                    prompt += f"\n\nContext: {context}"
-                prompt += "\n\nProvide creative ideas, alternatives, and considerations."
-                result = call_gemini(prompt, 0.7)
-            
-        else:
-            raise ValueError(f"Unknown tool: {tool_name}")
+        return call_gemini(prompt, 0.2)
+    except (ValueError, TypeError) as e:
+        return f"Parameter validation error: {str(e)}"
+
+def handle_gemini_brainstorm(arguments: Dict[str, Any]) -> str:
+    """Handle gemini_brainstorm tool call"""
+    if not GEMINI_AVAILABLE:
+        return f"Gemini not available: {GEMINI_ERROR}"
+    
+    try:
+        topic = validate_string_param(arguments.get("topic", ""), "topic", max_length=1000)
+        context = arguments.get("context", "")
+        if context:
+            context = validate_string_param(context, "context", max_length=5000)
+        
+        prompt = f"Let's brainstorm about: {topic}"
+        if context:
+            prompt += f"\n\nContext: {context}"
+        prompt += "\n\nProvide creative ideas, alternatives, and considerations."
+        return call_gemini(prompt, 0.7)
+    except (ValueError, TypeError) as e:
+        return f"Parameter validation error: {str(e)}"
+
+def call_gemini(prompt: str, temperature: float = 0.5) -> str:
+    """Call Gemini and return response"""
+    try:
+        # Validate inputs
+        prompt = validate_string_param(prompt, "prompt", max_length=32000)
+        temperature = validate_temperature(temperature)
+        
+        logger.debug(f"Calling Gemini with temperature={temperature}, prompt_length={len(prompt)}")
+        
+        response = model.generate_content(
+            prompt,
+            generation_config=genai.GenerationConfig(
+                temperature=temperature,
+                max_output_tokens=8192,
+            )
+        )
+        
+        logger.info(f"Gemini response received, length={len(response.text)}")
+        return response.text
+    except ValueError as e:
+        logger.warning(f"Validation error in call_gemini: {str(e)}")
+        return f"Validation error: {str(e)}"
+    except Exception as e:
+        logger.error(f"Error calling Gemini: {str(e)}", exc_info=True)
+        return f"Error calling Gemini: {str(e)}"
+
+def handle_tool_call(request_id: Any, params: Dict[str, Any]) -> Dict[str, Any]:
+    """Handle tool execution"""
+    tool_name = params.get("name")
+    arguments = params.get("arguments", {})
+    
+    logger.info(f"Handling tool call: {tool_name}")
+    
+    try:
+        # Map tool names to their handler functions
+        tool_handlers = {
+            "server_info": lambda args: handle_server_info(),
+            "ask_gemini": handle_ask_gemini,
+            "gemini_code_review": handle_gemini_code_review,
+            "gemini_brainstorm": handle_gemini_brainstorm
+        }
+        
+        if tool_name not in tool_handlers:
+            raise ValueError(f"Unknown tool: {tool_name}. Available tools: {', '.join(tool_handlers.keys())}")
+        
+        # Call the appropriate handler
+        result = tool_handlers[tool_name](arguments)
         
         return {
             "jsonrpc": "2.0",
@@ -228,6 +315,7 @@ Provide specific, actionable feedback on:
             }
         }
     except Exception as e:
+        logger.error(f"Error in tool call {tool_name}: {str(e)}", exc_info=True)
         return {
             "jsonrpc": "2.0",
             "id": request_id,
@@ -239,16 +327,23 @@ Provide specific, actionable feedback on:
 
 def main():
     """Main server loop"""
+    logger.info(f"Starting MCP Gemini server v{__version__}")
+    
     while True:
         try:
             line = sys.stdin.readline()
             if not line:
                 break
             
+            # Initialize request_id early to ensure it's available for error handling
+            request_id = None
+            
             request = json.loads(line.strip())
             method = request.get("method")
             request_id = request.get("id")
             params = request.get("params", {})
+            
+            logger.debug(f"Received request: method={method}, id={request_id}")
             
             if method == "initialize":
                 response = handle_initialize(request_id)
@@ -257,6 +352,7 @@ def main():
             elif method == "tools/call":
                 response = handle_tool_call(request_id, params)
             else:
+                logger.warning(f"Unknown method requested: {method}")
                 response = {
                     "jsonrpc": "2.0",
                     "id": request_id,
@@ -268,20 +364,24 @@ def main():
             
             send_response(response)
             
-        except json.JSONDecodeError:
+        except json.JSONDecodeError as e:
+            # Skip malformed JSON lines
             continue
         except EOFError:
+            # Normal termination
             break
         except Exception as e:
-            if 'request_id' in locals():
-                send_response({
-                    "jsonrpc": "2.0",
-                    "id": request_id,
-                    "error": {
-                        "code": -32603,
-                        "message": f"Internal error: {str(e)}"
-                    }
-                })
+            # Send error response with request_id if available
+            error_response = {
+                "jsonrpc": "2.0",
+                "error": {
+                    "code": -32603,
+                    "message": f"Internal error: {str(e)}"
+                }
+            }
+            if request_id is not None:
+                error_response["id"] = request_id
+            send_response(error_response)
 
 if __name__ == "__main__":
     main()

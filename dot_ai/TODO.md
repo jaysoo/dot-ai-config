@@ -2,6 +2,11 @@
 
 ## In Progress
 
+- [ ] MCP-Gemini Code Review and Improvement (2025-06-12 10:30)
+  - Plan created: `dot_ai/2025-06-12/tasks/mcp-gemini-improvements.md`
+  - Next steps: Fix critical security issues, improve error handling, add validation
+  - Goal: Make the mcp-gemini server production-ready with proper security and best practices
+
 - [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35)
   - Plan created: `dot_ai/2025-06-11/tasks/nx-heap-usage-logging-phase1.md`
   - Spec reference: `dot_ai/2025-06-11/specs/heap-usage-logging.md`
