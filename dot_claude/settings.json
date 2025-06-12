@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__MyNotes__search_ai_content",
+      "mcp__MyNotes__get_task_context",
+      "mcp__MyNotes__find_specs",
+      "mcp__MyNotes__get_summaries",
+      "mcp__MyNotes__extract_todos",
+      "mcp__gemini-collab__ask_gemini",
+      "mcp__gemini-collb__gemini_code_review",
+      "mcp__gemini-collab__gemini_brainstorm"
+    ],
+    "deny": []
+  }
+}

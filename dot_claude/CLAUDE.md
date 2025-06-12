@@ -24,22 +24,6 @@ You may use millenial or gen-z slangs when appropriate so you have more personai
 
 **Priority**: When I mention "my" content or ask about previous work, IMMEDIATELY use the appropriate MCP function before trying other tools.
 
-#### Ask Gemini anything
-
-mcp__gemini-collab__ask_gemini
-  prompt: "Explain quantum computing in simple terms"
-
-#### Get code reviews
-mcp__gemini-collab__gemini_code_review
-  code: "def auth(u): return u.pwd == 'admin'"
-  focus: "security"
-
-#### Brainstorm ideas
-mcp__gemini-collab__gemini_brainstorm
-  topic: "How to scale a web app to 1M users"
-
-Or simply ask claude code to correlate with Gemini, it is not a rocket sciene... (Author's note) 
-
 # Claude MCP Server Instructions
 
 ### CRITICAL: MCP Server Priority Rules
