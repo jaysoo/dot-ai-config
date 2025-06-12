@@ -70,6 +70,14 @@ Today's work significantly improves two critical developer workflows:
 
 2. **Documentation Maintenance**: The correlation tool automates the tedious process of tracking feature changes and identifying documentation updates, enabling the docs team to maintain more accurate and up-to-date documentation with AI assistance.
 
+## Dictations
+
+### Nx Parallel Worktree Registry Conflicts
+- **File**: `dictations/nx-parallel-worktree-registry-conflicts.md`
+- **Topic**: Development Environment Issue
+
+Documented a race condition issue that occurs with the local Verdaccio registry when working with multiple Nx features simultaneously using AI assistants. The conflict centers around `create-nx-workspace@22.0.0` when multiple processes attempt to publish packages to the local registry simultaneously from different git worktrees. Proposed solutions include registry isolation, dynamic port allocation, synchronization mechanisms, or sequential processing of Nx tasks when registry interaction is required.
+
 ## Tasks In Progress
 
 ### NX CLI Heap Usage Logging - Phase 1 🚧
@@ -89,9 +97,23 @@ Implement memory tracking functionality for NX CLI to display peak RSS (Resident
 5. Update terminal output formatting
 6. Build and test with canary version
 
+**Technical Specification Highlights:**
+- Cross-platform support using `pidusage` npm package
+- Track aggregate memory usage of parent task process + all child processes
+- Display format: `✓ my-app:build [local cache] 2.5s (peak: 512MB)`
+- Auto-scale units (MB for <1GB, GB for ≥1GB)
+- Comprehensive verification process including canary builds and e2e testing
+
+## Additional Tools Created
+
+- **analyze-generators.mjs**: Analyzes React and Vite generator schemas for configuration options
+- **analyze-e2e-tests.mjs**: Analyzes e2e test patterns and configurations
+- **add-port-option-react-generator.md**: Documentation for adding port configuration to React generators
+
 ## Notes
 
-- All 7 planned implementation steps were completed successfully
+- All 7 planned implementation steps were completed successfully for the curl installation script
 - Manual testing verified functionality across different scenarios
 - The solution maintains backward compatibility while adding new convenience features
 - GitHub CLI was chosen as the primary method due to its widespread adoption and seamless authentication handling
+- The documentation-feature correlation tool represents a significant productivity enhancement for the Nx documentation team
