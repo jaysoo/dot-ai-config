@@ -4,12 +4,14 @@ import asyncio
 import logging
 import os
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Dict, Any
 
 from fastmcp import FastMCP
 
 from .content_indexer import ContentIndexer
 from .search_engine import SearchEngine
+from .synchronization import RefreshCoordinator, SearchOperationGuard
+from .validation import RequestValidator, ValidationError
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -29,6 +31,10 @@ class AIContentServer:
         self.base_path = base_path or Path(__file__).parent.parent.parent
         self.content_indexer = ContentIndexer(self.base_path)
         self.search_engine = SearchEngine(self.content_indexer)
+        
+        # Initialize synchronization components
+        self.refresh_coordinator = RefreshCoordinator()
+        self.operation_guard = SearchOperationGuard(self.refresh_coordinator)
         
         # Initialize FastMCP server
         self.server = FastMCP("ai-content-server")
@@ -50,27 +56,34 @@ class AIContentServer:
             max_results: int = 10
         ) -> str:
             """Search for AI content."""
-            valid_categories = ["spec", "specs", "task", "tasks", "dictation", "dictations", "all"]
-            if category not in valid_categories:
-                return f"Error: category must be one of: {', '.join(valid_categories)}"
-            
-            if max_results < 1 or max_results > 50:
-                return "Error: max_results must be between 1 and 50"
+            try:
+                # Validate inputs
+                validated = RequestValidator.validate_search_request(
+                    query=query,
+                    category=category,
+                    date_filter=date_filter,
+                    max_results=max_results
+                )
+            except ValidationError as e:
+                logger.warning(f"Validation error in search_ai_content: {e}")
+                return f"Error: {str(e)}"
                 
             # Check for index refresh
             await self.check_and_refresh_index()
-                
-            results = await self.search_engine.search(
-                query=query,
-                category=category,
-                date_filter=date_filter,
-                max_results=max_results
-            )
+            
+            # Perform search within operation guard
+            async with self.operation_guard.guard_operation():
+                results = await self.search_engine.search(
+                    query=validated['query'],
+                    category=validated['category'],
+                    date_filter=validated['date_filter'],
+                    max_results=validated['max_results']
+                )
             
             if not results:
-                return f"No results found for query: {query}"
+                return f"No results found for query: {validated['query']}"
             
-            response_text = f"Found {len(results)} results for '{query}' in category '{category}':\n\n"
+            response_text = f"Found {len(results)} results for '{validated['query']}' in category '{validated['category']}':\n\n"
             for i, result in enumerate(results, 1):
                 response_text += f"{i}. **{result['filename']}** ({result['category']})\n"
                 response_text += f"   Path: {result['path']}\n"
@@ -90,15 +103,30 @@ class AIContentServer:
             include_related: bool = True
         ) -> str:
             """Get task context."""
+            try:
+                # Validate inputs
+                validated = RequestValidator.validate_task_context_request(
+                    task_name=task_name,
+                    include_related=include_related
+                )
+            except ValidationError as e:
+                logger.warning(f"Validation error in get_task_context: {e}")
+                return f"Error: {str(e)}"
+                
             # Check for index refresh
             await self.check_and_refresh_index()
             
-            results = await self.search_engine.get_task_context(task_name, include_related)
+            # Perform search within operation guard
+            async with self.operation_guard.guard_operation():
+                results = await self.search_engine.get_task_context(
+                    validated['task_name'], 
+                    validated['include_related']
+                )
             
             if not results:
-                return f"No task context found for: {task_name}"
+                return f"No task context found for: {validated['task_name']}"
             
-            response_text = f"Task context for '{task_name}':\n\n"
+            response_text = f"Task context for '{validated['task_name']}':\n\n"
             for result in results:
                 response_text += f"**{result['filename']}** ({result['category']})\n"
                 response_text += f"Path: {result['path']}\n"
@@ -120,7 +148,9 @@ class AIContentServer:
             # Check for index refresh
             await self.check_and_refresh_index()
             
-            results = await self.search_engine.find_specs(spec_name, date_filter)
+            # Perform search within operation guard
+            async with self.operation_guard.guard_operation():
+                results = await self.search_engine.find_specs(spec_name, date_filter)
             
             if not results:
                 return f"No specifications found for: {spec_name}"
@@ -150,8 +180,10 @@ class AIContentServer:
                 
             # Check for index refresh
             await self.check_and_refresh_index()
-                
-            results = await self.search_engine.get_summaries(date_filter, max_results)
+            
+            # Perform search within operation guard
+            async with self.operation_guard.guard_operation():
+                results = await self.search_engine.get_summaries(date_filter, max_results)
             
             if not results:
                 return "No summary files found"
@@ -202,13 +234,15 @@ class AIContentServer:
                 
             # Check for index refresh
             await self.check_and_refresh_index()
-                
-            result = await self.search_engine.extract_todos(
-                category=category,
-                date_filter=date_filter,
-                verbosity=verbosity,
-                status_filter=status_filter
-            )
+            
+            # Perform search within operation guard
+            async with self.operation_guard.guard_operation():
+                result = await self.search_engine.extract_todos(
+                    category=category,
+                    date_filter=date_filter,
+                    verbosity=verbosity,
+                    status_filter=status_filter
+                )
             
             return result
 
@@ -217,13 +251,22 @@ class AIContentServer:
         await self.content_indexer.initialize()
         
     async def check_and_refresh_index(self):
-        """Check if index needs refresh and update if necessary."""
-        try:
-            refreshed = await self.content_indexer.refresh()
-            if refreshed > 0:
-                logger.info(f"Auto-reindexed {refreshed} files")
-        except Exception as e:
-            logger.error(f"Error during auto-reindex: {e}")
+        """Check if index needs refresh and update if necessary.
+        
+        Uses coordination to prevent race conditions between concurrent refresh attempts.
+        """
+        async def _do_refresh():
+            try:
+                refreshed = await self.content_indexer.refresh()
+                if refreshed > 0:
+                    logger.info(f"Auto-reindexed {refreshed} files")
+                return refreshed
+            except Exception as e:
+                logger.error(f"Error during auto-reindex: {e}")
+                raise
+                
+        refreshed, result = await self.refresh_coordinator.coordinate_refresh(_do_refresh)
+        return result if refreshed else 0
 
     def run(self, transport: str = "streamable-http"):
         """Run the MCP server with specified transport."""
