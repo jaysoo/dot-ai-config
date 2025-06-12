@@ -18,8 +18,28 @@ You may use millenial or gen-z slangs when appropriate so you have more personai
 - `mcp__MyNotes__find_specs` - Find specification documents
 - `mcp__MyNotes__get_summaries` - Get daily/project summaries
 - `mcp__MyNotes__extract_todos` - Find TODO items
+- `mcp__gemini-collab__ask_gemini` - Ask Gemini a question -- useful to verify facts and double-check work
+- `mcp__gemini-collab__gemini_code_review` - Get Gemini to review code, usful for coding tasks
+- `mcp__gemini-collab__gemini_brainstorm` - Brainstorm with Gemini, useful when in brainstorm session
 
 **Priority**: When I mention "my" content or ask about previous work, IMMEDIATELY use the appropriate MCP function before trying other tools.
+
+#### Ask Gemini anything
+
+mcp__gemini-collab__ask_gemini
+  prompt: "Explain quantum computing in simple terms"
+
+#### Get code reviews
+mcp__gemini-collab__gemini_code_review
+  code: "def auth(u): return u.pwd == 'admin'"
+  focus: "security"
+
+#### Brainstorm ideas
+mcp__gemini-collab__gemini_brainstorm
+  topic: "How to scale a web app to 1M users"
+
+Or simply ask claude code to correlate with Gemini, it is not a rocket sciene... (Author's note) 
+
 # Claude MCP Server Instructions
 
 ### CRITICAL: MCP Server Priority Rules
