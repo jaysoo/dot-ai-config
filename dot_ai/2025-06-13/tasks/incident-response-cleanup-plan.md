@@ -32,10 +32,16 @@ We're going to:
 2. Incidents page - DELETE (redundant)
 3. Incident reports - UPDATE (consolidation target)
 4. Incident Report Template - UPDATE (move from Google Docs)
+ - Maybe Steve added something, double-check
+ - External communication should be DPES + Joe
 5. Incident management process setup - MERGE (into main page)
 6. Incidents database - UPDATE (add severity, SLA fields)
+ - https://www.notion.so/nxnrwl/326f8c5b6c1741cdb14ff2d680200e8a?v=889df13df1c2459b96a9f0cbf2bd265f 
+ - ^ this should just be postmortem
 7. Postmortems main - UPDATE (move to Nx Cloud)
+ - 7 & 6 are the same
 8. Prior Postmortems database - UPDATE (link to incidents)
+ - i think it's fine but check
 9. 5 individual postmortems - UPDATE (standardize names)
 10. 3 incident reports - UPDATE (ensure no BetterStack)
 11. 3 disaster recovery pages - UPDATE (bring back from Linear)
