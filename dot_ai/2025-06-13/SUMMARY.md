@@ -77,6 +77,7 @@ Today's audit provides a clear roadmap for improving incident response documenta
 
 ## Pending Tasks
 
+- [ ] Implement heap usage logging feature - Enable `NX_LOG_HEAP_USAGE=true` to display peak RSS memory usage
 - [ ] Retrieve Notion Incident Response Pages - Export 19 Notion pages to local markdown for cleanup analysis
 - [ ] Track Nx Docs Restructure Issue - Monitor GitHub issue #31546 for community feedback and new ideas
 
@@ -103,3 +104,24 @@ Performed initial scan of console repository with 6 months of commit history, fo
 - 2 commits from last 6 months (undo-migration feature, Nx upgrade)
 - 13 migrate-related TypeScript files in libs/vscode/migrate/
 - Existing .ai directory structure with daily summaries and tasks
+
+### 5. Heap Usage Logging Implementation Plan (16:00)
+Created comprehensive implementation plan for adding memory tracking to Nx task execution.
+
+**Plan Deliverables:**
+- **implement-heap-logging.md** - Detailed 9-step implementation plan with TODO tracking
+- **test-heap-logging.mjs** - Automated test script for verifying implementation
+- **memory-test-script.mjs** - Helper script for creating memory-intensive test scenarios
+
+**Implementation Approach:**
+- Use pidusage library for cross-platform memory tracking
+- Add peakRss field to Task interface
+- Integrate tracking in RunningNodeProcess class
+- Thread memory data through task orchestrator to terminal output
+- Display format: `✔ nx run myapp:build (2.5s) (peak: 256MB)`
+
+**Testing Strategy:**
+- Publish test versions (23.0.0-test.1, test.2, etc.)
+- Create test workspace with memory-intensive tasks
+- Verify peak RSS displays with NX_LOG_HEAP_USAGE=true
+- Ensure no impact when environment variable not set

@@ -2,6 +2,12 @@
 
 ## In Progress
 
+- [ ] Debug Migrate UI Module Resolution Issue (2025-06-13 17:05)
+  - Plan created: `.ai/2025-06-13/tasks/debug-migrate-ui-module-resolution.md`
+  - Debug scripts: `debug-module-paths.mjs`, `test-migration.js`, `compare-execution-contexts.mjs`
+  - Goal: Fix module resolution failures when migrations import packages from node_modules
+  - Issue: Migrations fail with "module not found" in UI but work in terminal
+
 - [ ] Implement heap usage logging feature (2025-06-13 16:00)
   - Plan created: `.ai/2025-06-13/tasks/implement-heap-logging.md`
   - Next steps: Review analysis at `.ai/2025-06-13/tasks/heap-logging-complete-analysis.md` then follow implementation plan
