@@ -32,8 +32,8 @@ We're going to:
 2. Incidents page - DELETE (redundant)
 3. Incident reports - UPDATE (consolidation target)
 4. Incident Report Template - UPDATE (move from Google Docs)
- - Maybe Steve added something, double-check
- - External communication should be DPES + Joe
+ - https://www.notion.so/nxnrwl/Incident-Report-Template-1fd69f3c2387801f9006df95056ec69d
+ - Talk to Joe about keeping everything in one place
 5. Incident management process setup - MERGE (into main page)
 6. Incidents database - UPDATE (add severity, SLA fields)
  - https://www.notion.so/nxnrwl/326f8c5b6c1741cdb14ff2d680200e8a?v=889df13df1c2459b96a9f0cbf2bd265f 
