@@ -74,3 +74,7 @@ Developed comprehensive cleanup plan to transition from BetterStack to Grafana I
 ## Impact Summary
 
 Today's audit provides a clear roadmap for improving incident response documentation, addressing years of organic growth that led to fragmentation and inconsistencies. The structured analysis will enable systematic improvements rather than ad-hoc fixes.
+
+## Pending Tasks
+
+- [ ] Track Nx Docs Restructure Issue - Monitor GitHub issue #31546 for community feedback and new ideas
