@@ -8,7 +8,26 @@
       "mcp__MyNotes__extract_todos",
       "mcp__gemini-collab__ask_gemini",
       "mcp__gemini-collb__gemini_code_review",
-      "mcp__gemini-collab__gemini_brainstorm"
+      "mcp__gemini-collab__gemini_brainstorm",
+      "mcp__Notion__API-get-user",
+      "mcp__Notion__API-get-users",
+      "mcp__Notion__API-get-self",
+      "mcp__Notion__API-post-search",
+      "mcp__Notion__API-get-block-children",
+      "mcp__Notion__API-patch-block-children",
+      "mcp__Notion__API-retrieve-a-block",
+      "mcp__Notion__API-update-a-block",
+      "mcp__Notion__API-delete-a-block",
+      "mcp__Notion__API-retrieve-a-page",
+      "mcp__Notion__API-patch-page",
+      "mcp__Notion__API-post-page",
+      "mcp__Notion__API-retrieve-a-page-property",
+      "mcp__Notion__API-post-database-query",
+      "mcp__Notion__API-create-a-database",
+      "mcp__Notion__API-update-a-database",
+      "mcp__Notion__API-retrieve-a-database",
+      "mcp__Notion__API-retrieve-a-comment",
+      "mcp__Notion__API-create-a-comment"
     ],
     "deny": []
   }
