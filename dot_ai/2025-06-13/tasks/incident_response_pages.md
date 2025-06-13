@@ -1,5 +1,13 @@
 # Incident Response Documentation Inventory
 
+## Backup Location
+All pages have been backed up locally at: `dot_ai/2025-06-13/tasks/notion-incident-pages/`
+- Pages: `/pages/`
+- Databases: `/databases/`
+- Postmortems: `/postmortems/`
+- Disaster Recovery: `/disaster-recovery/`
+- Metadata: `/metadata/`
+
 ## Executive Summary
 - **Total Pages Found:** 19
 - **Total Databases Found:** 3
@@ -65,6 +73,7 @@ Nx CLI/
 
 ### Incidents (internal only)
 - **URL:** https://www.notion.so/326f8c5b6c1741cdb14ff2d680200e8a
+- **Backup:** [databases/incidents-database.md](notion-incident-pages/databases/incidents-database.md)
 - **Hierarchy:** `Nx Cloud > RESOURCES > Incident reports > Incidents (internal only)`
 - **Author:** Nicole Oliver
 - **Type:** Database
@@ -78,6 +87,7 @@ Nx CLI/
 
 ### Prior Postmortems
 - **URL:** https://www.notion.so/14369f3c2387809e9346f511114e8f68
+- **Backup:** [databases/prior-postmortems-database.md](notion-incident-pages/databases/prior-postmortems-database.md)
 - **Hierarchy:** `Nx CLI > RESOURCE > Resource Database > Postmortems > Prior Postmortems`
 - **Author:** Unknown
 - **Type:** Database (inline within Postmortems page)
@@ -90,6 +100,7 @@ Nx CLI/
 
 ### Disaster recovery findings
 - **URL:** https://www.notion.so/5bec516032f04129b73ed1652a1ffb5b
+- **Backup:** [databases/disaster-recovery-findings-database.md](notion-incident-pages/databases/disaster-recovery-findings-database.md)
 - **Hierarchy:** `Nx Cloud > AREAS > Disaster recovery > Disaster recovery findings`
 - **Author:** Nicole Oliver
 - **Type:** Database
@@ -106,6 +117,7 @@ Nx CLI/
 
 ### Incident Management
 - **URL:** https://www.notion.so/Incident-Management-462453a4546340b8820c5d9d9ba74892
+- **Backup:** [pages/incident-management.md](notion-incident-pages/pages/incident-management.md)
 - **Hierarchy:** `Nx Cloud > AREAS > Incident Management`
 - **Author:** Nicole Oliver (created), Joe (last editor)
 - **Type:** Process Documentation
@@ -120,6 +132,7 @@ Nx CLI/
 
 ### Incidents
 - **URL:** https://www.notion.so/Incidents-20369f3c238780abbbbff21cd4950208
+- **Backup:** [pages/incidents.md](notion-incident-pages/pages/incidents.md)
 - **Hierarchy:** `Nx Cloud > RESOURCES > Incidents`
 - **Author:** Unknown
 - **Type:** Page
@@ -131,6 +144,7 @@ Nx CLI/
 
 ### Incident reports
 - **URL:** https://www.notion.so/Incident-reports-32b976699d5f4933811118bacfda1b00
+- **Backup:** [pages/incident-reports.md](notion-incident-pages/pages/incident-reports.md)
 - **Hierarchy:** `Nx Cloud > RESOURCES > Incident reports`
 - **Author:** Unknown (Nicole Oliver last editor)
 - **Type:** Page
@@ -143,6 +157,7 @@ Nx CLI/
 
 ### Incident Report Template
 - **URL:** https://www.notion.so/Incident-Report-Template-1fd69f3c2387801f9006df95056ec69d
+- **Backup:** [pages/incident-report-template.md](notion-incident-pages/pages/incident-report-template.md)
 - **Hierarchy:** `Nx Cloud > RESOURCES > Support Processes > Incident Report Template`
 - **Author:** Joe
 - **Type:** Page
@@ -155,6 +170,7 @@ Nx CLI/
 
 ### Incident management process setup
 - **URL:** https://www.notion.so/Incident-management-process-setup-5a09175f9b574789a492cabbfac63cfd
+- **Backup:** [pages/incident-management-process-setup.md](notion-incident-pages/pages/incident-management-process-setup.md)
 - **Hierarchy:** `Nx Cloud > AREAS > Incident Management > Incident management process setup`
 - **Author:** Nicole Oliver
 - **Type:** Page
@@ -171,6 +187,7 @@ Nx CLI/
 
 ### Postmortems
 - **URL:** https://www.notion.so/Postmortems-8a92d254d42546b7916f12e34c4ec251
+- **Backup:** [pages/postmortems.md](notion-incident-pages/pages/postmortems.md)
 - **Hierarchy:** `Nx CLI > RESOURCE > Resource Database > Postmortems`
 - **Author:** Unknown
 - **Type:** Page
@@ -183,6 +200,7 @@ Nx CLI/
 
 ### PostMortem: Artemis queue backups
 - **URL:** https://www.notion.so/PostMortem-Artemis-queue-backups-1c969f3c23878014b2effb3c74c6c3ec
+- **Backup:** [postmortems/postmortem-artemis-queue-backups.md](notion-incident-pages/postmortems/postmortem-artemis-queue-backups.md)
 - **Hierarchy:** `Nx CLI > RESOURCE > Resource Database > Postmortems > PostMortem: Artemis queue backups`
 - **Author:** Unknown
 - **Type:** Page
@@ -195,6 +213,7 @@ Nx CLI/
 
 ### PostMortem: vcsAccounts full table scan
 - **URL:** https://www.notion.so/PostMortem-vcsAccounts-full-table-scan-1c969f3c238780cfacb8f1010dfd9e59
+- **Backup:** [postmortems/postmortem-vcsaccounts-full-table-scan.md](notion-incident-pages/postmortems/postmortem-vcsaccounts-full-table-scan.md)
 - **Hierarchy:** `Nx CLI > RESOURCE > Resource Database > Postmortems > PostMortem: vcsAccounts full table scan`
 - **Author:** Unknown
 - **Type:** Page
@@ -207,6 +226,7 @@ Nx CLI/
 
 ### Postmortem - 2024-11-20: Daemon + Plugin Worker Fork Bomb
 - **URL:** https://www.notion.so/Postmortem-2024-11-20-Daemon-Plugin-Worker-Fork-Bomb-14669f3c23878009ab97d57f6722fef1
+- **Backup:** [postmortems/postmortem-2024-11-20-daemon-plugin-worker-fork-bomb.md](notion-incident-pages/postmortems/postmortem-2024-11-20-daemon-plugin-worker-fork-bomb.md)
 - **Hierarchy:** `Nx CLI > RESOURCE > Resource Database > Postmortems > Postmortem - 2024-11-20: Daemon + Plugin Worker Fork Bomb`
 - **Author:** Unknown
 - **Type:** Page
@@ -219,6 +239,7 @@ Nx CLI/
 
 ### Postmortem - Mar 4th, 2024: Unintentional Release of Nx 18.1.0 to latest tag on npm
 - **URL:** https://www.notion.so/Postmortem-Mar-4th-2024-Unintentional-Release-of-Nx-18-1-0-to-latest-tag-on-npm-336ac41f7fae4c0ea68a08b2713817d2
+- **Backup:** [postmortems/postmortem-mar-4th-2024-unintentional-release.md](notion-incident-pages/postmortems/postmortem-mar-4th-2024-unintentional-release.md)
 - **Hierarchy:** `Nx CLI > RESOURCE > Resource Database > Postmortems > Postmortem - Mar 4th, 2024: Unintentional Release of Nx 18.1.0 to latest tag on npm`
 - **Author:** Unknown
 - **Type:** Page
@@ -231,6 +252,7 @@ Nx CLI/
 
 ### PostMortem: NxAgents executor not found error
 - **URL:** https://www.notion.so/PostMortem-NxAgents-executor-not-found-error-2238e662f09446bc95ee835ec3e2f214
+- **Backup:** [postmortems/postmortem-nxagents-executor-not-found-error.md](notion-incident-pages/postmortems/postmortem-nxagents-executor-not-found-error.md)
 - **Hierarchy:** `Nx CLI > RESOURCE > Resource Database > Postmortems > PostMortem: NxAgents executor not found error`
 - **Author:** Unknown
 - **Type:** Page
@@ -247,6 +269,7 @@ Nx CLI/
 
 ### Incident & Mitigation Report: ClickUp Deployment Rate Limit Crash Loop
 - **URL:** https://www.notion.so/Incident-Mitigation-Report-ClickUp-Deployment-Rate-Limit-Crash-Loop-21069f3c238780f1bf96c477ddf2cb88
+- **Backup:** [pages/incident-mitigation-report-clickup-deployment-rate-limit.md](notion-incident-pages/pages/incident-mitigation-report-clickup-deployment-rate-limit.md)
 - **Hierarchy:** `Nx Cloud > RESOURCES > Incident reports > Incidents (internal only) > Incident & Mitigation Report: ClickUp Deployment Rate Limit Crash Loop`
 - **Author:** Unknown
 - **Type:** Page
@@ -260,6 +283,7 @@ Nx CLI/
 
 ### Incident & Mitigation Report: Agent Bucket Security Issue
 - **URL:** https://www.notion.so/Incident-Mitigation-Report-Agent-Bucket-Security-Issue-20369f3c2387800bb1aef594a98428a5
+- **Backup:** [pages/incident-mitigation-report-agent-bucket-security-issue.md](notion-incident-pages/pages/incident-mitigation-report-agent-bucket-security-issue.md)
 - **Hierarchy:** `Nx Cloud > RESOURCES > Incident reports > Incidents (internal only) > Incident & Mitigation Report: Agent Bucket Security Issue`
 - **Author:** Unknown
 - **Type:** Page
@@ -273,6 +297,7 @@ Nx CLI/
 
 ### 2024-02-22 Incident-Prod: Workflow Not Found
 - **URL:** https://www.notion.so/2024-02-22-Incident-Prod-Workflow-Not-Found-21e98524ebb741a8ad7e9a9c8af4347e
+- **Backup:** [pages/2024-02-22-incident-prod-workflow-not-found.md](notion-incident-pages/pages/2024-02-22-incident-prod-workflow-not-found.md)
 - **Hierarchy:** `Nx Cloud > RESOURCES > Incident reports > Incidents (internal only) > 2024-02-22 Incident-Prod: Workflow Not Found`
 - **Author:** Unknown
 - **Type:** Page
@@ -289,6 +314,7 @@ Nx CLI/
 
 ### Disaster recovery exercise plan
 - **URL:** https://www.notion.so/Disaster-recovery-exercise-plan-da32d46ec28b4554b9491dbfc9409de5
+- **Backup:** [disaster-recovery/disaster-recovery-exercise-plan.md](notion-incident-pages/disaster-recovery/disaster-recovery-exercise-plan.md)
 - **Hierarchy:** `Nx Cloud > AREAS > Disaster recovery > Disaster recovery exercise plan`
 - **Author:** Nicole Oliver
 - **Type:** Page
@@ -302,6 +328,7 @@ Nx CLI/
 
 ### Disaster recovery scenario
 - **URL:** https://www.notion.so/Disaster-recovery-scenario-543e10ee34df4807935d3e2121291181
+- **Backup:** [disaster-recovery/disaster-recovery-scenario.md](notion-incident-pages/disaster-recovery/disaster-recovery-scenario.md)
 - **Hierarchy:** `Nx Cloud > AREAS > Disaster recovery > Disaster recovery scenario`
 - **Author:** Nicole Oliver
 - **Type:** Page
@@ -318,6 +345,7 @@ Nx CLI/
 
 ### New Incident
 - **URL:** https://www.notion.so/New-Incident-ac7dda43b89245689d2bd4bf4e297eab
+- **Backup:** [pages/new-incident.md](notion-incident-pages/pages/new-incident.md)
 - **Hierarchy:** `Nx Cloud > RESOURCES > Incident reports > Incidents (internal only) > New Incident`
 - **Author:** Nicole Oliver
 - **Type:** Page

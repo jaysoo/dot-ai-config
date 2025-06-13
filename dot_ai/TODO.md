@@ -2,6 +2,16 @@
 
 ## In Progress
 
+- [ ] Implement heap usage logging feature (2025-06-13 16:00)
+  - Plan created: `.ai/2025-06-13/tasks/implement-heap-logging.md`
+  - Next steps: Review analysis at `.ai/2025-06-13/tasks/heap-logging-complete-analysis.md` then follow implementation plan
+  - Goal: Enable `NX_LOG_HEAP_USAGE=true nx run <project>:<target>` to display peak RSS memory usage
+
+- [ ] Retrieve Notion Incident Response Pages (2025-06-13 15:30)
+  - Plan created: `dot_ai/2025-06-13/tasks/retrieve-notion-incident-pages.md`
+  - Related to: Incident Response Documentation Cleanup Plan
+  - Goal: Retrieve and store locally the content of 19 Notion pages related to incident response documentation
+
 - [ ] Track Nx Docs Restructure Issue (2025-06-13 14:30)
   - GitHub Issue: https://github.com/nrwl/nx/issues/31546
   - Status: Intentional change, user already answered
