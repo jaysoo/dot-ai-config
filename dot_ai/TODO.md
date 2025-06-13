@@ -2,6 +2,12 @@
 
 ## In Progress
 
+- [ ] Track Nx Docs Restructure Issue (2025-06-13 14:30)
+  - GitHub Issue: https://github.com/nrwl/nx/issues/31546
+  - Status: Intentional change, user already answered
+  - Goal: Monitor for a few days to see if addressed or new ideas emerge
+  - Notes: `.ai/2025-06-13/dictations/nx-docs-restructure-tracking.md`
+
 - [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35)
   - Plan created: `dot_ai/2025-06-11/tasks/nx-heap-usage-logging-phase1.md`
   - Spec reference: `dot_ai/2025-06-11/specs/heap-usage-logging.md`
