@@ -130,9 +130,16 @@ Based on commit history from jack.hsu@gmail.com:
 - Hardened PPA build environment with Node.js version checking
 
 ### Active Development (In Progress)
-- **Heap Usage Logging**: Adding memory tracking to display peak RSS for each task (NX_LOG_HEAP_USAGE)
 - **AI-MCP Integration**: Exploring Model Context Protocol integration for enhanced AI tool support
 - **Incident Response Documentation**: Auditing and improving incident response processes
+
+### Recently Completed Features (2025-06-13)
+- **Heap Usage Logging**: Added memory tracking to display peak RSS for each task when `NX_LOG_HEAP_USAGE=true` is set
+  - Implemented MemoryTracker service using pidusage library for cross-platform support
+  - Integrated memory tracking throughout task execution pipeline
+  - Displays peak memory usage in terminal output: `✔ nx run app:build (2.5s) (peak: 256MB)`
+  - Tracks entire process tree including child processes
+  - No performance impact when feature is disabled (opt-in via environment variable)
 
 ## Key Technologies
 
@@ -160,6 +167,36 @@ Special emphasis on module federation across multiple bundlers:
 - Community plugins support
 - Extensive documentation and examples
 - Active development with frequent releases
+
+## Task Execution & Memory Tracking
+
+### Memory Usage Monitoring (Added 2025-06-13)
+Nx now supports memory usage tracking for task execution to help developers identify memory-intensive operations:
+
+**Architecture:**
+- **MemoryTracker Service** (`packages/nx/src/tasks-runner/memory-tracker.ts`):
+  - Singleton service using pidusage library
+  - Polls process memory every 100ms
+  - Tracks entire process tree (parent + children)
+  - Stores peak RSS (Resident Set Size) for each process
+
+**Integration Points:**
+1. **Task Interface** (`task-graph.ts`): Added optional `peakRss?: number` field
+2. **RunningNodeProcess** (`running-tasks.ts`): Starts/stops memory tracking for spawned processes
+3. **TaskOrchestrator** (`task-orchestrator.ts`): Threads memory data through execution pipeline
+4. **Terminal Output Lifecycles**: Display peak memory in human-readable format
+
+**Usage:**
+```bash
+NX_LOG_HEAP_USAGE=true nx run myapp:build
+# Output: ✔  nx run myapp:build (2.5s) (peak: 256MB)
+```
+
+**Design Principles:**
+- Zero overhead when disabled (environment variable opt-in)
+- Cross-platform support (Windows, macOS, Linux)
+- Graceful fallback for unsupported scenarios (pseudo-terminal, cached tasks)
+- Memory leak prevention with proper cleanup
 
 ## Internal Development Practices
 

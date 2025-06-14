@@ -140,10 +140,43 @@ When complete, the Migrate UI should successfully run migrations that import pac
 **CRITICAL: When implementing this task, keep track of all changes, findings, and test results in sections below:**
 
 ### Findings Log
-<!-- Add findings as discovered during implementation -->
+
+#### Root Cause Identified (2025-06-13 17:20)
+
+**Issue:** VS Code Migrate UI doesn't set NODE_PATH before running migrations, while Nx CLI does.
+
+**Key Discovery:**
+1. In `node_modules/nx/src/command-line/migrate/migrate.js`, the Nx CLI explicitly adds to NODE_PATH:
+   ```javascript
+   // Set NODE_PATH so that these modules can be used for module resolution
+   addToNodePath(join(tmpDir, 'node_modules'));
+   addToNodePath(join(workspaceRoot, 'node_modules'));
+   ```
+
+2. The `addToNodePath` function properly handles OS-specific path delimiters (`:` on Unix, `;` on Windows)
+
+3. VS Code's migrate UI (`libs/vscode/migrate/`) has no NODE_PATH handling
+
+**Migration Execution Flow:**
+- Migrations are loaded via `require()` from their actual location in node_modules
+- Example: `node_modules/@nx/angular/src/migrations/update-21-0-0/do-something.js`
+- When this migration tries to `require('@angular/core')`, Node.js can't find it because:
+  - The migration file is deep in `@nx/angular` directory
+  - Node's default resolution doesn't look in workspace root's node_modules
+  - NODE_PATH is not set to help with resolution
+
+**Why it works in terminal:**
+- Nx CLI sets NODE_PATH before running migrations
+- This allows migrations to find packages in workspace's node_modules
 
 ### Code Changes
-<!-- Track all code modifications with file paths and reasoning -->
+
+#### Proposed Fix Location
+**File:** `libs/vscode/migrate/src/lib/commands/run-migration.ts`
+
+**Change Required:** Add NODE_PATH configuration before calling migrate UI API
+
+**Implementation:** See `proposed-fix-node-path.ts` for complete solution
 
 ### Test Results
 <!-- Document test scenarios and outcomes -->

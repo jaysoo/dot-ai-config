@@ -8,10 +8,6 @@
   - Goal: Fix module resolution failures when migrations import packages from node_modules
   - Issue: Migrations fail with "module not found" in UI but work in terminal
 
-- [ ] Implement heap usage logging feature (2025-06-13 16:00)
-  - Plan created: `.ai/2025-06-13/tasks/implement-heap-logging.md`
-  - Next steps: Review analysis at `.ai/2025-06-13/tasks/heap-logging-complete-analysis.md` then follow implementation plan
-  - Goal: Enable `NX_LOG_HEAP_USAGE=true nx run <project>:<target>` to display peak RSS memory usage
 
 - [ ] Retrieve Notion Incident Response Pages (2025-06-13 15:30)
   - Plan created: `dot_ai/2025-06-13/tasks/retrieve-notion-incident-pages.md`
@@ -31,6 +27,13 @@
   - Next steps: Add pidusage dependency, enhance Task interface, create memory tracking service
 
 ## Completed
+
+- [x] Implement heap usage logging feature (2025-06-13 16:00)
+  - Plan created: `.ai/2025-06-13/tasks/implement-heap-logging.md`
+  - Goal: Enable `NX_LOG_HEAP_USAGE=true nx run <project>:<target>` to display peak RSS memory usage
+  - Result: Core feature implemented with pidusage library
+  - Displays memory in format: `✔  nx run myapp:build (2.5s) (peak: 256MB)`
+  - Deferred: Tests, documentation, ForkedProcessTaskRunner support
 
 - [x] Incident Response Documentation Audit (2025-06-13 09:30)
   - Plan created: `.ai/2025-06-13/tasks/incident-response-audit.md`

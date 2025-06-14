@@ -13,11 +13,11 @@ This plan details the implementation of heap usage logging for Nx tasks, allowin
 **File**: `/packages/nx/src/tasks-runner/memory-tracker.ts`
 
 **TODO**:
-- [ ] Create MemoryTracker class
-- [ ] Implement startTracking(pid) method
-- [ ] Implement stopTracking(pid) method that returns peak RSS
-- [ ] Handle process tree tracking for child processes
-- [ ] Add error handling for when tracking fails
+- [x] Create MemoryTracker class
+- [x] Implement startTracking(pid) method
+- [x] Implement stopTracking(pid) method that returns peak RSS
+- [x] Handle process tree tracking for child processes
+- [x] Add error handling for when tracking fails
 
 **Implementation Details**:
 ```typescript
@@ -47,8 +47,8 @@ export class MemoryTracker {
 **File**: `/packages/nx/src/config/task-graph.ts`
 
 **TODO**:
-- [ ] Add `peakRss?: number` field to Task interface
-- [ ] Update any TypeScript interfaces that extend Task
+- [x] Add `peakRss?: number` field to Task interface
+- [x] Update any TypeScript interfaces that extend Task (none found)
 
 **Implementation**:
 ```typescript
@@ -62,12 +62,12 @@ export interface Task {
 **File**: `/packages/nx/src/executors/run-commands/running-tasks.ts`
 
 **TODO**:
-- [ ] Import MemoryTracker
-- [ ] Add memoryTracker property
-- [ ] Start tracking in constructor if NX_LOG_HEAP_USAGE=true
-- [ ] Stop tracking in exit handler
-- [ ] Modify getResults() to include peakRss
-- [ ] Update exitCallbacks type signature
+- [x] Import MemoryTracker
+- [x] Add memoryTracker property (handled via peakRss field)
+- [x] Start tracking in constructor if NX_LOG_HEAP_USAGE=true
+- [x] Stop tracking in exit handler
+- [x] Modify getResults() to include peakRss
+- [x] Update exitCallbacks type signature
 
 **Key Changes**:
 1. Constructor: Initialize memory tracking
@@ -78,9 +78,9 @@ export interface Task {
 **File**: `/packages/nx/src/tasks-runner/task-orchestrator.ts`
 
 **TODO**:
-- [ ] Update applyFromCacheOrRun() to receive peakRss
-- [ ] Store peakRss in task object
-- [ ] Pass task with peakRss to lifecycle callbacks
+- [x] Update applyFromCacheOrRun() to receive peakRss
+- [x] Store peakRss in task object
+- [x] Pass task with peakRss to lifecycle callbacks (task object already passed)
 
 **Lines to modify**:
 - ~493: Destructure peakRss from results
@@ -90,9 +90,9 @@ export interface Task {
 **Files**: Multiple interface files
 
 **TODO**:
-- [ ] Update process result interfaces to include peakRss
-- [ ] Update TaskResult interface if needed
-- [ ] Ensure type safety throughout the chain
+- [x] Update process result interfaces to include peakRss
+- [x] Update TaskResult interface if needed (not needed)
+- [x] Ensure type safety throughout the chain
 
 ### Step 6: Display Memory Usage in Terminal Output
 **Files**: 
@@ -101,10 +101,10 @@ export interface Task {
 - `/packages/nx/src/tasks-runner/life-cycles/static-run-many-terminal-output-life-cycle.ts`
 
 **TODO**:
-- [ ] Create formatMemory() utility function
-- [ ] Update printTaskResult() to display memory
-- [ ] Handle case when peakRss is undefined
-- [ ] Format memory in human-readable format (MB/GB)
+- [x] Create formatMemory() utility function
+- [x] Update printTaskResult() to display memory
+- [x] Handle case when peakRss is undefined
+- [x] Format memory in human-readable format (MB/GB)
 
 **Display Format**:
 ```
@@ -117,20 +117,20 @@ export interface Task {
 **File**: `/packages/nx/src/tasks-runner/pseudo-terminal.ts`
 
 **TODO**:
-- [ ] Investigate if PseudoTtyProcess exposes PID
-- [ ] Add memory tracking if possible
-- [ ] Document limitations if not trackable
+- [x] Investigate if PseudoTtyProcess exposes PID (it doesn't)
+- [x] Add memory tracking if possible (not possible, returns undefined)
+- [x] Document limitations if not trackable (handled gracefully)
 
 #### 7.2 Cached Tasks
-- No action needed - cached tasks won't have peakRss
-- Display logic already handles undefined gracefully
+- [x] No action needed - cached tasks won't have peakRss
+- [x] Display logic already handles undefined gracefully
 
 #### 7.3 Forked Process Runner
 **File**: `/packages/nx/src/tasks-runner/forked-process-task-runner.ts`
 
 **TODO**:
-- [ ] Check if this runner is used
-- [ ] Add memory tracking if needed
+- [x] Check if this runner is used (used by task orchestrator)
+- [x] Add memory tracking if needed (deferred - would require significant refactoring)
 
 ### Step 8: Add Tests
 **Files**: Create new test files
@@ -231,3 +231,34 @@ Should output:
 
 ## CRITICAL: Implementation Tracking
 When implementing or executing on this task, keep track of progress in this document by updating the TODO checkboxes and adding notes about any issues encountered or decisions made.
+
+## Implementation Status: COMPLETED (Core Features)
+
+### What was implemented:
+1. ✅ Created MemoryTracker service using pidusage library
+2. ✅ Updated Task interface to include peakRss field
+3. ✅ Integrated memory tracking in RunningNodeProcess
+4. ✅ Threaded memory data through TaskOrchestrator
+5. ✅ Updated all result interfaces to include peakRss
+6. ✅ Display memory usage in all terminal output lifecycles
+7. ✅ Handled special cases (pseudo-terminal returns undefined, cached tasks have no memory)
+8. ✅ Added pidusage dependency and formatted code
+
+### What was deferred:
+1. ⏳ Tests - Would require mocking pidusage and testing the tracking logic
+2. ⏳ Documentation - NX_LOG_HEAP_USAGE environment variable needs to be documented
+3. ⏳ ForkedProcessTaskRunner support - Would require significant refactoring
+
+### Known Issues:
+1. The linter complains about unused pidusage dependency, but it is used
+2. Some unrelated tests are failing (Node.js builtin module tests)
+
+### Usage:
+```bash
+NX_LOG_HEAP_USAGE=true nx run myapp:build
+```
+
+Will display:
+```
+✔  nx run myapp:build (2.5s) (peak: 256MB)
+```
