@@ -1,0 +1,280 @@
+{
+  "totalFound": 20,
+  "issues": [
+    {
+      "number": 31546,
+      "title": "The layout of the new website (Nx 21) is definitely worse.",
+      "url": "https://github.com/nrwl/nx/issues/31546",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": true,
+      "createdAt": "2025-06-11T17:46:13Z",
+      "updatedAt": "2025-06-13T14:42:19Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [ ] Documentation improvement\n- [x] Documentation feedback\n\n<!--\n..."
+    },
+    {
+      "number": 31574,
+      "title": "Need to clarify how gitignore would affect nx inputs",
+      "url": "https://github.com/nrwl/nx/issues/31574",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": true,
+      "createdAt": "2025-06-13T09:21:02Z",
+      "updatedAt": "2025-06-13T14:19:58Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n..."
+    },
+    {
+      "number": 31575,
+      "title": "Docs: suggest terminating the Nx daemon before testing lifecycle hooks",
+      "url": "https://github.com/nrwl/nx/issues/31575",
+      "labels": [
+        "type: bug",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": true,
+      "createdAt": "2025-06-13T09:21:10Z",
+      "updatedAt": "2025-06-13T14:11:55Z",
+      "bodyPreview": "### Current Behavior\n\nLifecycle hooks' [documentation](https://nx.dev/extending-nx/recipes/task-running-lifecycle#creating-task-execution-hooks) shows an example of setting environment variables.\n```t..."
+    },
+    {
+      "number": 31551,
+      "title": "projectsAffectedByDependencyUpdates auto errors with undefined project name",
+      "url": "https://github.com/nrwl/nx/issues/31551",
+      "labels": [
+        "type: bug",
+        "scope: core",
+        "priority: medium"
+      ],
+      "hasComments": false,
+      "createdAt": "2025-06-11T23:36:17Z",
+      "updatedAt": "2025-06-13T14:11:51Z",
+      "bodyPreview": "### Current Behavior\n\nEnabling `projectsAffectedByDependencyUpdates: auto` in nx.json results in\n\n```\n NX   Affected criteria defaulted to --base=develop --head=HEAD\n\n\n NX   Invalid project name is de..."
+    },
+    {
+      "number": 31529,
+      "title": "NX release patch bumps dependents of prereleases",
+      "url": "https://github.com/nrwl/nx/issues/31529",
+      "labels": [
+        "type: bug",
+        "scope: release",
+        "priority: medium"
+      ],
+      "hasComments": false,
+      "createdAt": "2025-06-10T15:01:21Z",
+      "updatedAt": "2025-06-13T14:11:51Z",
+      "bodyPreview": "### Current Behavior\n\nRunning `nx release` bumps `lib` to `1.1.0-0`, and `app` to `1.0.1`\n\n### Expected Behavior\n\nRunning `nx release` should instead bump `app` to `1.0.1-0` (a prepatch)\n\n### GitHub R..."
+    },
+    {
+      "number": 20347,
+      "title": "In Nx Cloud, on a remote cache hit, link to the task that created the cache",
+      "url": "https://github.com/nrwl/nx/issues/20347",
+      "labels": [
+        "type: feature",
+        "stale",
+        "scope: nx-cloud"
+      ],
+      "hasComments": true,
+      "createdAt": "2023-11-21T02:58:31Z",
+      "updatedAt": "2025-06-10T00:32:54Z",
+      "bodyPreview": "<!-- Please do your best to fill out all of the sections below! -->\r\n<!-- Use this issue type for concrete suggestions, otherwise, open a discussion type issue instead. -->\r\n\r\n- [ ] I'd be willing to ..."
+    },
+    {
+      "number": 30008,
+      "title": "Update documentation for Tailwind v4",
+      "url": "https://github.com/nrwl/nx/issues/30008",
+      "labels": [
+        "type: docs",
+        "scope: react",
+        "scope: docs"
+      ],
+      "hasComments": true,
+      "createdAt": "2025-02-12T17:49:14Z",
+      "updatedAt": "2025-06-05T01:35:34Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [x] Reporting a documentation bug\n- [x] Documentation improvement\n- [x] Documentation feedback\n\n<!--\n..."
+    },
+    {
+      "number": 31431,
+      "title": "Bun is supported, but missing from the CI deployment documentation.",
+      "url": "https://github.com/nrwl/nx/issues/31431",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": false,
+      "createdAt": "2025-06-03T08:44:21Z",
+      "updatedAt": "2025-06-03T13:27:36Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n### I..."
+    },
+    {
+      "number": 30649,
+      "title": "Meaning of \"*\" version in project package.json",
+      "url": "https://github.com/nrwl/nx/issues/30649",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": false,
+      "createdAt": "2025-04-09T17:43:22Z",
+      "updatedAt": "2025-06-02T21:48:40Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n..."
+    },
+    {
+      "number": 30768,
+      "title": "Where to put @nx/plugin",
+      "url": "https://github.com/nrwl/nx/issues/30768",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": false,
+      "createdAt": "2025-04-17T10:06:45Z",
+      "updatedAt": "2025-06-02T21:32:09Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [ ] Documentation improvement\n- [x] Documentation feedback\n\n<!--\n..."
+    },
+    {
+      "number": 30810,
+      "title": "How to tell if End to End Encryption is enabled correctly?",
+      "url": "https://github.com/nrwl/nx/issues/30810",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": false,
+      "createdAt": "2025-04-22T13:13:57Z",
+      "updatedAt": "2025-06-02T21:32:07Z",
+      "bodyPreview": "### Documentation issue\n\n- [x] Documentation improvement\n- [x] Documentation feedback\n\n### Is there a specific documentation page you are reporting?\n\n[Enable End to End Encryption](https://nx.dev/ci/r..."
+    },
+    {
+      "number": 30831,
+      "title": "`@nx/angular:webpack-browser` has incorrect documentation for `indexhtmltransformer`",
+      "url": "https://github.com/nrwl/nx/issues/30831",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": false,
+      "createdAt": "2025-04-23T15:50:36Z",
+      "updatedAt": "2025-06-02T21:32:06Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [x] Reporting a documentation bug\n- [ ] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n..."
+    },
+    {
+      "number": 20949,
+      "title": "Make NX_PROJECT_ROOT environment variable available to runtime cache inputs",
+      "url": "https://github.com/nrwl/nx/issues/20949",
+      "labels": [
+        "type: feature",
+        "scope: core"
+      ],
+      "hasComments": true,
+      "createdAt": "2023-12-29T15:42:51Z",
+      "updatedAt": "2025-06-02T20:22:20Z",
+      "bodyPreview": "- [ ] I'd be willing to implement this feature ([contributing guide](https://github.com/nrwl/nx/blob/master/CONTRIBUTING.md))\r\n\r\n## Description\r\n\r\nI'd love it if runtime cache input commands had acces..."
+    },
+    {
+      "number": 31037,
+      "title": "Next.js documentation needs to be revisited",
+      "url": "https://github.com/nrwl/nx/issues/31037",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": false,
+      "createdAt": "2025-05-05T12:52:06Z",
+      "updatedAt": "2025-06-02T19:52:39Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [x] Reporting a documentation bug\n- [ ] Documentation improvement\n- [x] Documentation feedback\n\n### I..."
+    },
+    {
+      "number": 30914,
+      "title": "How to use targetDefaults specifically for an inferred task executor and not the general target name?",
+      "url": "https://github.com/nrwl/nx/issues/30914",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": false,
+      "createdAt": "2025-04-29T06:27:49Z",
+      "updatedAt": "2025-06-02T19:52:39Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [ ] Documentation improvement\n- [x] Documentation feedback\n\nIs it..."
+    },
+    {
+      "number": 31111,
+      "title": "Undocumented environment variable on Nx Docs",
+      "url": "https://github.com/nrwl/nx/issues/31111",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": true,
+      "createdAt": "2025-05-07T18:15:48Z",
+      "updatedAt": "2025-06-02T19:35:40Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n..."
+    },
+    {
+      "number": 31398,
+      "title": "Not clear how to enable \"ciMode\" for self-hosted remote cache packages",
+      "url": "https://github.com/nrwl/nx/issues/31398",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "hasComments": false,
+      "createdAt": "2025-05-30T20:01:47Z",
+      "updatedAt": "2025-05-31T00:25:38Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n### I..."
+    },
+    {
+      "number": 30058,
+      "title": "Supplemental addition for troubleshooting global installs of nx",
+      "url": "https://github.com/nrwl/nx/issues/30058",
+      "labels": [
+        "type: docs",
+        "scope: docs"
+      ],
+      "hasComments": true,
+      "createdAt": "2025-02-15T12:52:48Z",
+      "updatedAt": "2025-02-24T20:02:19Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n### I..."
+    },
+    {
+      "number": 30137,
+      "title": "Wrong hint about --dry-run in react-monorepo.md",
+      "url": "https://github.com/nrwl/nx/issues/30137",
+      "labels": [
+        "type: docs",
+        "scope: docs"
+      ],
+      "hasComments": true,
+      "createdAt": "2025-02-21T20:11:29Z",
+      "updatedAt": "2025-02-24T19:57:51Z",
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [x] Reporting a documentation bug\n- [ ] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n..."
+    },
+    {
+      "number": 29384,
+      "title": "Have more clear Docker documentation",
+      "url": "https://github.com/nrwl/nx/issues/29384",
+      "labels": [
+        "scope: docs"
+      ],
+      "hasComments": true,
+      "createdAt": "2024-12-17T07:04:44Z",
+      "updatedAt": "2025-01-30T19:51:08Z",
+      "bodyPreview": "In the docs for NX Daemon it gets very short when it comes to Dockerization, now the NX Daemon is the main engine for hot reloading our apps, it gets a little confusing with Docker installations, as e..."
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "analyzed": 8,
+  "issues": [
+    {
+      "number": 31431,
+      "title": "Bun is supported, but missing from the CI deployment documentation.",
+      "url": "https://github.com/nrwl/nx/issues/31431",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Simple typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n### Is there a specific documentation page you are reporting?\n\nhttps://nx.dev/ci/recipes/other/ci-deploym...",
+      "comments": 0
+    },
+    {
+      "number": 30649,
+      "title": "Meaning of \"*\" version in project package.json",
+      "url": "https://github.com/nrwl/nx/issues/30649",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Simple typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n  If your issue is not regarding the documentation, please choose an issue type:\n  https://github.co...",
+      "comments": 0
+    },
+    {
+      "number": 30768,
+      "title": "Where to put @nx/plugin",
+      "url": "https://github.com/nrwl/nx/issues/30768",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Simple typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [ ] Documentation improvement\n- [x] Documentation feedback\n\n<!--\n  If your issue is not regarding the documentation, please choose an issue type:\n  https://github.co...",
+      "comments": 0
+    },
+    {
+      "number": 30831,
+      "title": "`@nx/angular:webpack-browser` has incorrect documentation for `indexhtmltransformer`",
+      "url": "https://github.com/nrwl/nx/issues/30831",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Simple typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [x] Reporting a documentation bug\n- [ ] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n  If your issue is not regarding the documentation, please choose an issue type:\n  https://github.co...",
+      "comments": 0
+    },
+    {
+      "number": 30137,
+      "title": "Wrong hint about --dry-run in react-monorepo.md",
+      "url": "https://github.com/nrwl/nx/issues/30137",
+      "labels": [
+        "type: docs",
+        "scope: docs"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Simple typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [x] Reporting a documentation bug\n- [ ] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n  If your issue is not regarding the documentation, please choose an issue type:\n  https://github.co...",
+      "comments": 1
+    },
+    {
+      "number": 31574,
+      "title": "Need to clarify how gitignore would affect nx inputs",
+      "url": "https://github.com/nrwl/nx/issues/31574",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Simple typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n  If your issue is not regarding the documentation, please choose an issue type:\n  https://github.co...",
+      "comments": 2
+    },
+    {
+      "number": 31111,
+      "title": "Undocumented environment variable on Nx Docs",
+      "url": "https://github.com/nrwl/nx/issues/31111",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 5,
+        "complexity": "easy",
+        "reasoning": [
+          "Simple typo fix",
+          "Documenting environment variable"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n  If your issue is not regarding the documentation, please choose an issue type:\n  https://github.co...",
+      "comments": 1
+    },
+    {
+      "number": 31575,
+      "title": "Docs: suggest terminating the Nx daemon before testing lifecycle hooks",
+      "url": "https://github.com/nrwl/nx/issues/31575",
+      "labels": [
+        "type: bug",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 20,
+        "complexity": "moderate",
+        "reasoning": [
+          "General documentation update"
+        ]
+      },
+      "bodyPreview": "### Current Behavior\n\nLifecycle hooks' [documentation](https://nx.dev/extending-nx/recipes/task-running-lifecycle#creating-task-execution-hooks) shows an example of setting environment variables.\n```ts\n// You can modify environment variables\nif (process.env.QA_ENV) {\n  process.env.NX_SKIP_NX_CACHE =...",
+      "comments": 1
+    }
+  ]
+}

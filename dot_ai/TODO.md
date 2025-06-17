@@ -28,6 +28,37 @@
 
 ## Completed
 
+- [x] Fix GitHub Issues Batch (2025-06-17 11:00)
+  - Plan created: `.ai/2025-06-17/tasks/fix-github-issues-batch.md`
+  - Goal: Fix up to 10 GitHub documentation issues identified in previous analysis
+  - Result: Successfully fixed 3 documentation issues:
+    - #31431: Added Bun to CI deployment docs (branch: `issue/31431`)
+    - #31111: Documented NX_TUI environment variables (branch: `issue/31111`)
+    - #30649: Explained "*" version meaning in project package.json (branch: `issue/30649`)
+  - Skipped 1 issue (#30831) and reverted 1 issue (#30137) per user request
+
+- [x] Find 5 More Easy GitHub Issues (< 100 LOC) (2025-06-17 10:45)
+  - Plan created: `.ai/2025-06-17/tasks/find-5-more-easy-issues.md`
+  - Goal: Find 5 additional GitHub issues beyond the first batch
+  - Result: Successfully identified 5 more documentation issues totaling 85-135 LOC:
+    - #30137: Fix --dryRun flag documentation
+    - #30810: Add E2E encryption verification guide
+    - #31398: Clarify ciMode enablement
+    - #30058: Add Homebrew troubleshooting
+    - #30008: Update Tailwind v4 docs
+  - Deliverables: `5-more-easy-github-issues-summary.md`
+
+- [x] Find 5 Easy GitHub Issues (< 100 LOC) (2025-06-17 10:30)
+  - Plan created: `.ai/2025-06-17/tasks/find-easy-github-issues.md`
+  - Goal: Identify 5 GitHub issues that can be fixed with minimal code changes
+  - Result: Successfully identified 5 documentation issues totaling 50-80 LOC:
+    - #31431: Add Bun to CI deployment docs
+    - #30649: Explain "*" version meaning
+    - #30768: Standardize plugin location guidance
+    - #30831: Fix indexHtmlTransformer docs
+    - #31111: Document NX_TUI environment variables
+  - Deliverables: `5-easy-github-issues-summary.md`
+
 - [x] Implement heap usage logging feature (2025-06-13 16:00)
   - Plan created: `.ai/2025-06-13/tasks/implement-heap-logging.md`
   - Goal: Enable `NX_LOG_HEAP_USAGE=true nx run <project>:<target>` to display peak RSS memory usage

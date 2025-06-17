@@ -1,0 +1,105 @@
+{
+  "analyzed": 8,
+  "selectedCount": 5,
+  "issues": [
+    {
+      "number": 30137,
+      "title": "Wrong hint about --dry-run in react-monorepo.md",
+      "url": "https://github.com/nrwl/nx/issues/30137",
+      "labels": [
+        "type: docs",
+        "scope: docs"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Simple correction of incorrect information",
+          "Typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [x] Reporting a documentation bug\n- [ ] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n  If your issue is not regarding the documentation, please choose an issue type:\n  https://github.co...",
+      "comments": 1
+    },
+    {
+      "number": 31574,
+      "title": "Need to clarify how gitignore would affect nx inputs",
+      "url": "https://github.com/nrwl/nx/issues/31574",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Clarifying existing documentation",
+          "Typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n<!--\n  If your issue is not regarding the documentation, please choose an issue type:\n  https://github.co...",
+      "comments": 2
+    },
+    {
+      "number": 31037,
+      "title": "Next.js documentation needs to be revisited",
+      "url": "https://github.com/nrwl/nx/issues/31037",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Documentation section needs rework",
+          "Typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [x] Reporting a documentation bug\n- [ ] Documentation improvement\n- [x] Documentation feedback\n\n### Is there a specific documentation page you are reporting?\n\nhttps://nx.dev/nx-api/next#building-projec...",
+      "comments": 0
+    },
+    {
+      "number": 30914,
+      "title": "How to use targetDefaults specifically for an inferred task executor and not the general target name?",
+      "url": "https://github.com/nrwl/nx/issues/30914",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Adding how-to documentation",
+          "Typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [ ] Documentation improvement\n- [x] Documentation feedback\n\nIs it possible to set `targetDefaults` for a specific inferred task? Currently I'm able to set `targetDef...",
+      "comments": 0
+    },
+    {
+      "number": 31398,
+      "title": "Not clear how to enable \"ciMode\" for self-hosted remote cache packages",
+      "url": "https://github.com/nrwl/nx/issues/31398",
+      "labels": [
+        "type: docs",
+        "scope: docs",
+        "priority: low"
+      ],
+      "analysis": {
+        "estimatedLOC": 1,
+        "complexity": "trivial",
+        "reasoning": [
+          "Adding how-to documentation",
+          "Typo fix"
+        ]
+      },
+      "bodyPreview": "### Documentation issue\n\n<!-- (Update \"[ ]\" to \"[x]\" to check a box) -->\n\n- [ ] Reporting a typo\n- [ ] Reporting a documentation bug\n- [x] Documentation improvement\n- [ ] Documentation feedback\n\n### Is there a specific documentation page you are reporting?\n\nhttps://nx.dev/nx-api/gcs-cache\n\n### Addit...",
+      "comments": 0
+    }
+  ]
+}
