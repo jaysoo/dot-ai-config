@@ -23,12 +23,6 @@
   - Related to: Incident Response Documentation Cleanup Plan
   - Goal: Retrieve and store locally the content of 19 Notion pages related to incident response documentation
 
-- [ ] Track Nx Docs Restructure Issue (2025-06-13 14:30)
-  - GitHub Issue: https://github.com/nrwl/nx/issues/31546
-  - Status: Intentional change, user already answered
-  - Goal: Monitor for a few days to see if addressed or new ideas emerge
-  - Notes: `.ai/2025-06-13/dictations/nx-docs-restructure-tracking.md`
-
 - [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35)
   - Plan created: `dot_ai/2025-06-11/tasks/nx-heap-usage-logging-phase1.md`
   - Spec reference: `dot_ai/2025-06-11/specs/heap-usage-logging.md`
@@ -36,6 +30,13 @@
   - Next steps: Add pidusage dependency, enhance Task interface, create memory tracking service
 
 ## Completed
+
+- [x] Track Nx Docs Restructure Issue (2025-06-13 14:30)
+  - GitHub Issue: https://github.com/nrwl/nx/issues/31546
+  - Status: Intentional change, user already answered
+  - Goal: Monitor for a few days to see if addressed or new ideas emerge
+  - Notes: `.ai/2025-06-13/dictations/nx-docs-restructure-tracking.md`
+  - Completed: 2025-06-14 (Last Friday)
 
 - [x] Fix GitHub Issues Batch (2025-06-17 11:00)
   - Plan created: `.ai/2025-06-17/tasks/fix-github-issues-batch.md`
