@@ -64,16 +64,19 @@ const path = require('path');
 const config = {
   repo: 'nrwl/nx',
   outputDir: '/tmp', // Base directory for temporary files
-  minScoreForEasy: 2,
+  minScoreForEasy: 4, // Increased from 2 to filter out more false positives
   // Scoring weights
   scores: {
     hasReproduction: 3,
-    documentationIssue: 2,
+    hasVerifiedWorkaround: 5, // NEW: Higher score for verified workarounds
+    documentationIssue: 3, // Increased from 2 - these are typically easier
     hasWorkaround: 2,
-    dependencyUpdate: 2,
+    simpleConfigFix: 3, // NEW: For clear config fixes
+    dependencyUpdate: 1, // Reduced from 2 - often complex
     olderThanSixMonths: 1,
     lowEngagement: 1,
     configurationIssue: 1,
+    userProvidedFix: 4, // NEW: User has provided code fix
   },
   // Negative scoring/exclusion criteria
   negativeScores: {
@@ -81,15 +84,30 @@ const config = {
     complexDiscussion: -5,
     highEmotionalReaction: -5, // Needs sentiment analysis integration
     botCommentedNeedsRepro: -3,
+    architecturalChange: -8, // NEW: Requires architectural changes
+    upstreamDependency: -6, // NEW: Issue in upstream dependency
+    nativeModuleRequired: -8, // NEW: Requires native module compilation
+    packageManagerIssue: -6, // NEW: npm/yarn/pnpm specific issues
+    migrationIssue: -4, // NEW: Complex migration issues
+    moduleSystemMismatch: -5, // NEW: ESM/CommonJS conflicts
+    multipleFailedAttempts: -4, // NEW: Multiple PRs closed without merge
   },
   // Keywords for detection
   keywords: {
     repro: ['repro', 'reproduction', 'repository', 'repo'],
-    docs: ['doc', 'documentation', 'docs'],
-    workaround: ['workaround'],
+    docs: ['doc', 'documentation', 'docs', 'readme', 'guide', 'tutorial'],
+    workaround: ['workaround', 'works if', 'fixed by', 'solution is'],
+    verifiedWorkaround: ['this works', 'confirmed working', 'tested and works', '✓', '✅', 'works for me'],
     dependency: ['update', 'upgrade', 'bump', 'dependency', 'dependencies'],
     config: ['config', 'configuration', 'setup', 'install'],
     breakingChange: ['breaking change', 'breaking changes', 'breaking-change'],
+    architectural: ['requires', 'architectural', 'refactor', 'redesign', 'major change'],
+    upstream: ['upstream', 'third-party', 'external dependency', '@module-federation', 'webpack issue'],
+    nativeModule: ['native', 'wasm', 'node-gyp', 'binding', 'compile', 'platform-specific'],
+    packageManager: ['npm error', 'yarn error', 'pnpm error', 'ENOTEMPTY', 'ENOENT', 'node_modules'],
+    migration: ['migration', 'migrate', 'upgrade from', 'breaking in', 'after update'],
+    moduleSystem: ['ESM', 'CommonJS', 'require', 'import', 'module.exports', 'export default'],
+    userFix: ['here\'s the fix', 'i fixed it', 'pr:', 'pull request:', 'patch:', 'diff:'],
   }
 };
 
@@ -226,6 +244,35 @@ function hasBotCommented(comments) {
       criteria.potentialActions.push('Close with workaround comment');
     }
 
+    // Has verified workaround (higher priority)
+    if (config.keywords.verifiedWorkaround.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
+      criteria.reasons.push('Has VERIFIED workaround');
+      criteria.score += config.scores.hasVerifiedWorkaround;
+      criteria.potentialActions.push('Implement verified workaround as fix');
+    }
+
+    // User provided fix
+    if (config.keywords.userFix.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
+      criteria.reasons.push('User provided code fix');
+      criteria.score += config.scores.userProvidedFix;
+      criteria.potentialActions.push('Review and implement user-provided fix');
+    }
+
+    // Simple config fix (check for specific patterns)
+    const configPatterns = [
+      /dependsOn.*:\s*\[.*\]/i,
+      /\"scripts\".*:.*{/i,
+      /\"targets\".*:.*{/i,
+      /project\.json/i,
+      /nx\.json/i
+    ];
+    if (configPatterns.some(pattern => bodyAndComments.match(pattern)) && 
+        config.keywords.config.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
+      criteria.reasons.push('Simple configuration fix');
+      criteria.score += config.scores.simpleConfigFix;
+      criteria.potentialActions.push('Apply configuration fix');
+    }
+
     // Dependency update
     if (config.keywords.dependency.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
       criteria.reasons.push('Dependency update related');
@@ -284,6 +331,56 @@ function hasBotCommented(comments) {
     if (hasBotCommented(issue.comments)) {
       criteria.reasons.push('Bot has commented asking for reproduction');
       criteria.score += config.negativeScores.botCommentedNeedsRepro;
+    }
+
+    // Architectural change required
+    if (config.keywords.architectural.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
+      criteria.reasons.push('Requires architectural changes');
+      criteria.score += config.negativeScores.architecturalChange;
+    }
+
+    // Upstream dependency issue
+    if (config.keywords.upstream.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
+      criteria.reasons.push('Issue in upstream dependency');
+      criteria.score += config.negativeScores.upstreamDependency;
+    }
+
+    // Native module required
+    if (config.keywords.nativeModule.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
+      criteria.reasons.push('Requires native module compilation');
+      criteria.score += config.negativeScores.nativeModuleRequired;
+    }
+
+    // Package manager specific issue
+    if (config.keywords.packageManager.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
+      criteria.reasons.push('Package manager specific issue');
+      criteria.score += config.negativeScores.packageManagerIssue;
+    }
+
+    // Migration issue
+    if (config.keywords.migration.some(kw => bodyAndComments.toLowerCase().includes(kw)) &&
+        !criteria.reasons.includes('Simple configuration fix')) {
+      criteria.reasons.push('Complex migration issue');
+      criteria.score += config.negativeScores.migrationIssue;
+    }
+
+    // Module system mismatch
+    if (config.keywords.moduleSystem.some(kw => bodyAndComments.toLowerCase().includes(kw)) &&
+        (bodyAndComments.toLowerCase().includes('error') || bodyAndComments.toLowerCase().includes('cannot'))) {
+      criteria.reasons.push('Module system mismatch (ESM/CommonJS)');
+      criteria.score += config.negativeScores.moduleSystemMismatch;
+    }
+
+    // Multiple failed attempts (check for closed PRs or multiple "tried" mentions)
+    const failedAttemptPatterns = [
+      /tried.*didn't work/i,
+      /attempted.*failed/i,
+      /pr.*closed/i,
+      /multiple attempts/i
+    ];
+    if (failedAttemptPatterns.filter(pattern => bodyAndComments.match(pattern)).length >= 2) {
+      criteria.reasons.push('Multiple failed fix attempts');
+      criteria.score += config.negativeScores.multipleFailedAttempts;
     }
 
     // --- Code Change Analysis (placeholder for future integration) ---
