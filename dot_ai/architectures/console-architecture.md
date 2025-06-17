@@ -53,6 +53,7 @@ console/
 - Added undo-migration functionality (2025-04-25) - Allows reverting specific migrations
 - Automatic refresh when migrate view opens (2025-06-03)
 - Removed legacy migrate commands (2025-05-08)
+- Fixed module resolution for Angular migrations (2025-06-17) - Migrations now run with proper working directory context
 
 ### 2. Nx Graph Integration
 *Last updated: 2025-06-13*
@@ -78,6 +79,14 @@ console/
 
 ## Personal Work History
 
+### 2025-06-17
+**Feature**: Angular Migration Module Resolution Fix
+- Fixed module resolution errors when running Angular migrations through VS Code Migrate UI
+  - Modified `libs/vscode/migrate/src/lib/commands/run-migration.ts` to change working directory
+  - Single fix resolved both "Cannot find module '@angular/core'" and file path issues
+  - Simple solution: `process.chdir(workspacePath)` with proper restoration
+- Related task: `.ai/2025-06-17/tasks/fix-angular-module-resolution-migrate-ui.md`
+
 ### 2025-04-25 to 2025-04-28
 **Feature**: Migration UI Improvements
 - Added undo-migration action when approving current migration (#2483)
@@ -100,6 +109,12 @@ console/
 - Migrations can be auto-committed
 - Cancel functionality includes git reset capabilities
 - Diff viewing integrated with VS Code's git extension
+
+### Migration Execution Context
+- Migrations run in VS Code's extension host process, not in the workspace directory
+- Must explicitly set working directory with `process.chdir()` for proper module resolution
+- Angular migrations specifically require correct cwd to find project files
+- Always restore original cwd in finally block to avoid side effects
 
 ## Technology Stack
 

@@ -1,6 +1,6 @@
 /**
  * Proposed fix for module resolution in VS Code Migrate UI
- * 
+ *
  * The issue: Migrations fail to find packages because NODE_PATH is not set
  * The solution: Set NODE_PATH before running migrations, similar to Nx CLI
  */
@@ -16,15 +16,15 @@ function addToNodePath(dir: string): void {
   // NODE_PATH is a delimited list of paths.
   // The delimiter is different for windows.
   const delimiter = platform() === 'win32' ? ';' : ':';
-  const paths = process.env.NODE_PATH 
-    ? process.env.NODE_PATH.split(delimiter) 
+  const paths = process.env.NODE_PATH
+    ? process.env.NODE_PATH.split(delimiter)
     : [];
-  
+
   // Add the directory if not already present
   if (!paths.includes(dir)) {
     paths.push(dir);
   }
-  
+
   // Update the env variable.
   process.env.NODE_PATH = paths.join(delimiter);
 }
@@ -36,7 +36,7 @@ function addToNodePath(dir: string): void {
 export function configureMigrationEnvironment(workspacePath: string): void {
   // Add workspace node_modules to NODE_PATH
   addToNodePath(join(workspacePath, 'node_modules'));
-  
+
   // If there's a temporary node_modules (for specific version), add it too
   // This handles cases where migrations install specific package versions
   const tmpNodeModules = process.env.NX_MIGRATE_TEMP_NODE_MODULES;
@@ -85,13 +85,13 @@ export async function runSingleMigration(
 /*
 import { spawn } from 'child_process';
 
-export async function runMigrationInChildProcess(
+export async function InChildProcess(
   workspacePath: string,
   migration: MigrationDetailsWithId,
   configuration: { createCommits: boolean }
 ): Promise<void> {
   const env = { ...process.env };
-  
+
   // Set NODE_PATH for the child process
   const delimiter = platform() === 'win32' ? ';' : ':';
   const paths = [
