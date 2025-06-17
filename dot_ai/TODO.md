@@ -2,6 +2,15 @@
 
 ## In Progress
 
+- [ ] Record RawDocs Tool Loom Video for Team (2025-06-17 15:30)
+  - Plan created: Notes saved at `/Users/jack/Downloads/rawdocs-developer-guide.md`
+  - Goal: Create a short Loom video (5-7 minutes) explaining the RawDocs tool workflow
+  - Key points to cover:
+    - 2-3 minute developer workflow
+    - Demo of git push → AI analysis → doc update
+    - Show the feature-docs structure
+    - Emphasize non-blocking nature and time savings
+
 - [ ] Debug Migrate UI Module Resolution Issue (2025-06-13 17:05)
   - Plan created: `.ai/2025-06-13/tasks/debug-migrate-ui-module-resolution.md`
   - Debug scripts: `debug-module-paths.mjs`, `test-migration.js`, `compare-execution-contexts.mjs`
