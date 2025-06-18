@@ -2,6 +2,17 @@
 
 ## In Progress
 
+- [ ] Review PR for Nicholas for Migrate UI
+  - https://github.com/nrwl/nx/pull/31626
+  - https://github.com/nrwl/nx-console/pull/2567
+  - https://www.loom.com/share/843154739c5d40b2b1554d097314977a
+  - https://nrwl.slack.com/archives/C04J01JPC4Q/p1750193240507379
+
+- [ ] Investigate Docker + Nx + cache
+
+- [ ] Sync with Caleb on docs rework
+  - https://linear.app/nxdev/issue/NXC-2781/propose-frameworks-and-solutions
+
 - [ ] Record RawDocs Tool Loom Video for Team (2025-06-17 15:30)
   - Plan created: Notes saved at `/Users/jack/Downloads/rawdocs-developer-guide.md`
   - Goal: Create a short Loom video (5-7 minutes) explaining the RawDocs tool workflow
@@ -11,13 +22,6 @@
     - Show the feature-docs structure
     - Emphasize non-blocking nature and time savings
 
-
-
-- [ ] Retrieve Notion Incident Response Pages (2025-06-13 15:30)
-  - Plan created: `dot_ai/2025-06-13/tasks/retrieve-notion-incident-pages.md`
-  - Related to: Incident Response Documentation Cleanup Plan
-  - Goal: Retrieve and store locally the content of 19 Notion pages related to incident response documentation
-
 - [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35)
   - Plan created: `dot_ai/2025-06-11/tasks/nx-heap-usage-logging-phase1.md`
   - Spec reference: `dot_ai/2025-06-11/specs/heap-usage-logging.md`
@@ -25,6 +29,16 @@
   - Next steps: Add pidusage dependency, enhance Task interface, create memory tracking service
 
 ## Completed
+
+- [x] Add author filtering to analyze-changes.mjs (2025-06-18 10:30)
+  - Plan created: `.ai/2025-06-18/tasks/add-author-filter-to-analyze-changes.md`
+  - Goal: Filter commits by author with default showing only current user's commits
+  - Result: Successfully implemented with --author CLI flag, wildcard "*" support, and current user as default
+
+- [x] Retrieve Notion Incident Response Pages (2025-06-13 15:30)
+  - Plan created: `dot_ai/2025-06-13/tasks/retrieve-notion-incident-pages.md`
+  - Related to: Incident Response Documentation Cleanup Plan
+  - Goal: Retrieve and store locally the content of 19 Notion pages related to incident response documentation
 
 - [x] Debug Migrate UI Module Resolution Issue (2025-06-13 17:05)
   - Plan created: `.ai/2025-06-13/tasks/debug-migrate-ui-module-resolution.md`

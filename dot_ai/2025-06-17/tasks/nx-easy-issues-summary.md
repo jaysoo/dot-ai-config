@@ -1,94 +1,71 @@
-# Nx Easy Issues Analysis - Last 3 Months
+# Nx Easy Issues Analysis Summary
 
-**Date Range**: 2025-03-17 to 2025-06-17  
-**Total Easy Issues Found**: 129
+Generated: 2025-06-17
 
-## Summary by Theme
+## Overview
+
+Analyzed 537 open issues from the past year (2024-06-17 to 2025-06-17) in the nrwl/nx repository.
+
+## Results
+
+- **Total easy issues found**: 54 (10% of open issues)
+- **Minimum score threshold**: 4 points
+
+## Issues by Theme
 
 | Theme | Count | Description |
 |-------|-------|-------------|
-| Low Engagement | 93 | Issues with <5 reactions and <5 comments |
-| Documentation | 26 | Documentation-related issues |
-| Workaround | 5 | Issues with workarounds already posted |
-| Dependencies | 3 | Dependency update related |
-| Configuration | 1 | Configuration/setup issues |
-| Reproduction | 1 | Issues with reproduction repos |
+| Documentation | 37 | Issues related to docs, guides, tutorials |
+| Stale | 3 | Issues older than 6 months with low engagement |
+| Workaround | 5 | Issues with verified workarounds posted |
+| Dependencies | 2 | Dependency update related issues |
+| Configuration | 4 | Configuration/setup issues |
+| Reproduction | 3 | Issues with reproduction repositories |
 
-## Top High-Score Issues (Score ≥ 7)
+## Top 5 Easiest Issues
 
-### 1. Issue #30995 - nx release version - file refs for dependencies not updated - npm
-- **Score**: 8
-- **URL**: https://github.com/nrwl/nx/issues/30995
-- **Reasons**: Has reproduction repository, Low engagement (0 reactions, 3 comments), Dependency update related, Configuration/setup issue, Version-specific issue
+1. **#30914** - Targetdefaults documentation issue (Score: 14)
+   - Has reproduction, documentation issue, verified workaround
+   - Actions: Generate PR for docs fix or implement workaround
 
-### 2. Issue #31292 - @nx/storybook:configuration with --uiFramework=@storybook/web-components-vite fails
-- **Score**: 8
-- **URL**: https://github.com/nrwl/nx/issues/31292
-- **Reasons**: Documentation issue, Has workaround posted, Low engagement (0 reactions, 0 comments), Dependency update related, Configuration/setup issue
+2. **#29143** - `passWithNoTests` configuration issue (Score: 13)
+   - Has reproduction, simple config fix, >6 months old
+   - Actions: Apply configuration fix or close as stale
 
-### 3. Issue #30980 - Cannot exclude an imported file from cache inputs
-- **Score**: 7
-- **URL**: https://github.com/nrwl/nx/issues/30980
-- **Reasons**: Has reproduction repository, Low engagement (0 reactions, 0 comments), Dependency update related, Configuration/setup issue
+3. **#28715** - Project configuration documentation (Score: 13)
+   - package.json vs project.json clarification needed
+   - Actions: Generate documentation PR
 
-### 4. Issue #31495 - nx:run-commands does not honor readyWhen
-- **Score**: 7
-- **URL**: https://github.com/nrwl/nx/issues/31495
-- **Reasons**: Has reproduction repository, Has workaround posted, Low engagement (0 reactions, 0 comments), Configuration/setup issue
+4. **#30589** - Dependency version mismatch handling (Score: 11)
+   - Has verified workaround available
+   - Actions: Implement workaround as permanent fix
 
-### 5. Issue #31286 - @nx/enforce-module-boundaries doesn't work with workspace linking
-- **Score**: 7
-- **URL**: https://github.com/nrwl/nx/issues/31286
-- **Reasons**: Has reproduction repository, Low engagement (0 reactions, 4 comments), Dependency update related, Configuration/setup issue
+5. **#30163** - Missing nx release/publish documentation (Score: 11)
+   - Documentation gap identified
+   - Actions: Create comprehensive docs for nx release
 
 ## Recommended Actions
 
-### Quick Wins - Issues with Workarounds (5 issues)
-These can be closed immediately as solutions exist:
-- #31292 - Storybook configuration issue
-- #31495 - run-commands readyWhen issue
-- #31496 - readyWhen not honored on continuous target
-- #31556 - UnhandledSchemeError after upgrade
-- #31104 - Nx Cloud client download issue
+### Immediate Actions (High Impact, Low Effort)
 
-### Documentation Issues (26 issues)
-Many documentation issues that could be resolved quickly:
-- #31111 - Undocumented environment variable
-- #31037 - Next.js documentation needs revisiting
-- #30831 - Angular webpack-browser incorrect docs
-- #30768 - Where to put @nx/plugin
-- #30914 - How to use targetDefaults
+1. **Documentation Batch PR**: Combine all 37 documentation issues into a single comprehensive docs update
+2. **Stale Issue Closure**: Close 3 stale issues with appropriate messaging
+3. **Workaround Implementation**: Convert 5 verified workarounds into permanent fixes
 
-### Low Engagement Issues (93 issues)
-These issues have minimal community interaction and might be:
-- Edge cases
-- Already resolved in newer versions
-- Duplicates of other issues
-- Missing critical information
+### Batch Commands Available
 
-## Bulk Closure Commands
+- Close stale issues: `gh issue close -R nrwl/nx 29143 28715 26651`
+- Close workaround issues: `gh issue close -R nrwl/nx 30914 30589 27849 31496 29373`
 
-### Close Issues with Workarounds
-```bash
-gh issue close -R nrwl/nx 31292 31495 31496 31556 31104 \
-  -c "Closing this issue as a workaround has been provided. Please try the latest version of Nx and reopen if the issue persists."
-```
+## Analysis Details
 
-### Close Low Engagement Documentation Issues
-```bash
-gh issue close -R nrwl/nx 31111 31037 30831 30768 30914 30649 31354 30614 \
-  -c "Closing this documentation issue due to low engagement. Please feel free to reopen with updated information if this is still relevant in the latest version of Nx."
-```
+- Full JSON analysis: `/tmp/easy-issues-analysis.json`
+- Theme-specific reports: `.ai/2025-06-17/tasks/nx-easy-issues-[theme].md`
 
-### Close Version-Specific Issues
-```bash
-gh issue close -R nrwl/nx 30995 31068 31180 31556 31104 \
-  -c "Closing this version-specific issue. Please update to the latest version of Nx and reopen if the issue persists."
-```
+## Next Steps
 
-## Notes
-
-- Many issues appear to be configuration or setup problems that may have been resolved in newer versions
-- Documentation issues are good candidates for quick fixes or closure if outdated
-- Issues with reproduction repos but low engagement might indicate edge cases
-- Consider batch processing by theme for efficiency
+1. Review theme-specific reports for detailed issue lists
+2. Prioritize documentation issues for maximum impact
+3. Consider automated PR generation for simple fixes
+4. Close truly stale issues to reduce noise
+EOF < /dev/null

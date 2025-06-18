@@ -64,6 +64,16 @@ The repository contains official plugins for major frameworks:
   - Tutorial system
   - Blog and community content
 
+#### Documentation Structure (Updated 2025-06-18)
+- **docs/map.json**: Central routing configuration for documentation hierarchy
+- **docs/shared/packages/**: Plugin documentation files
+  - Each plugin has introduction/overview pages with consistent H1 titles (e.g., `# @nx/angular`)
+  - Core API packages under `reference/core-api` section
+  - Technology-specific docs under `technologies` section
+- **docs/blog/**: Blog posts and announcements
+- **docs/shared/guides/**: How-to guides and tutorials
+- **docs/shared/recipes/**: Code recipes and examples
+
 ### 5. Graph Visualization (`graph/`)
 - **Technology**: React with Tailwind CSS
 - **Purpose**: Interactive project graph visualization
@@ -111,6 +121,10 @@ Based on commit history from jack.hsu@gmail.com:
 - Improved blog content and navigation
 - Simplified getting started experience (60% complexity reduction)
 - Created comprehensive URL redirect mapping for documentation migration
+- **2025-06-18**: Standardized H1 titles across all plugin introduction/overview pages
+  - Added consistent package name titles to 29 documentation files
+  - Updated links to point directly to overview pages for better navigation
+  - Created reusable scripts for bulk documentation updates
 
 ### Feature Development
 - Node.js Docker multi-stage builds for better layer caching
@@ -227,5 +241,5 @@ NX_LOG_HEAP_USAGE=true nx run myapp:build
 
 ---
 
-*Generated on: 2025-06-13*
+*Last updated: 2025-06-18*
 *Based on analysis of repository structure and recent commits*
