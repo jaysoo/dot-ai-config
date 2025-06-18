@@ -13,6 +13,29 @@
 - [ ] Sync with Caleb on docs rework
   - https://linear.app/nxdev/issue/NXC-2781/propose-frameworks-and-solutions
 
+- [ ] Verify and push AI fixes for Nx CLI
+  1. Branch: issues/30914 - ✅ Fixed
+    - Added documentation for setting target defaults on inferred tasks
+    - Clarified how to use plugin-specific identifiers vs general target names
+    - Test: View updated docs at docs/shared/reference/nx-json.md
+
+  2. Branch: issues/29143 - ⏭️ Skipped (Jest-specific)
+    - passWithNoTests configuration issue (Jest limitation)
+
+  3. Branch: issues/28715 - ✅ Fixed
+    - Clarified package.json vs project.json usage
+    - Documented that both support executors through the 'nx' property
+    - Test: View updated docs at docs/shared/reference/project-configuration.md
+
+  4. Branch: issues/30589 - ✅ Fixed
+    - Updated dependency-checks rule to detect pre-release to stable upgrades
+    - Test: Run eslint with @nx/dependency-checks rule on projects with pre-release deps
+
+  5. Branch: issues/30163 - ✅ Fixed
+    - Created comprehensive nx release/verdaccio documentation
+    - Added guide at docs/shared/recipes/nx-release/publish-with-verdaccio.md
+    - Test: View new documentation and check navigation in docs site
+
 - [ ] Record RawDocs Tool Loom Video for Team (2025-06-17 15:30)
   - Plan created: Notes saved at `/Users/jack/Downloads/rawdocs-developer-guide.md`
   - Goal: Create a short Loom video (5-7 minutes) explaining the RawDocs tool workflow
