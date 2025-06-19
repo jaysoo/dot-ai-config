@@ -1,0 +1,40 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "dockerfile": {
+        "type": "string"
+      },
+      "context": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "push": {
+        "type": "boolean",
+        "default": false
+      },
+      "cache": {
+        "type": "boolean",
+        "default": true
+      },
+      "cacheFrom": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "cacheTo": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "implementation": "./docker-build.impl.ts"
+}

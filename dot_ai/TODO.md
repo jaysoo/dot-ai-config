@@ -2,18 +2,34 @@
 
 ## In Progress
 
-- [ ] Review PR for Nicholas for Migrate UI
+- [ ] Raw-docs for the trial (2025-06-18 10:51)
+  - Node.js backend (already merged and we'll iterate)
+  - Java: https://github.com/nrwl/raw-docs/pull/1 (Emily to review and update)
+  - MCP
+
+- [ ] Ensure Nicholas' PRs are merged for Migrate UI (2025-06-18 10:48)
   - https://github.com/nrwl/nx/pull/31626
   - https://github.com/nrwl/nx-console/pull/2567
-  - https://www.loom.com/share/843154739c5d40b2b1554d097314977a
-  - https://nrwl.slack.com/archives/C04J01JPC4Q/p1750193240507379
 
-- [ ] Investigate Docker + Nx + cache
+- [ ] Investigate Docker + Nx + cache (2025-06-18 9:40)
+  - Using `--cache-to` and `--cache-from` might help https://docs.docker.com/build/cache/backends/gha/
+  - 
 
-- [ ] Sync with Caleb on docs rework
-  - https://linear.app/nxdev/issue/NXC-2781/propose-frameworks-and-solutions
+- [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35)
+  - Plan created: `dot_ai/2025-06-11/tasks/nx-heap-usage-logging-phase1.md`
+  - Spec reference: `dot_ai/2025-06-11/specs/heap-usage-logging.md`
+  - Goal: Implement memory tracking to display peak RSS for each task via NX_LOG_HEAP_USAGE environment variable
+  - Next steps: Add pidusage dependency, enhance Task interface, create memory tracking service
 
-- [ ] Verify and push AI fixes for Nx CLI
+## Completed
+
+- [x] Create Nx AI Strategy Session brainstorm spec (2025-06-18 17:45)
+  - Plan created: `dot_ai/2025-06-18/specs/nx-ai-strategy-session-agenda.md`
+  - Goal: Develop comprehensive agenda for two-day AI strategy session
+  - Result: Created detailed spec covering current state, user workflows, documentation strategy, partnerships, and session agenda
+
+- [x] Verify and push AI fixes for Nx CLI (2025-06-18 16:05)
+  ```
   1. Branch: issues/30914 - ✅ Fixed
     - Added documentation for setting target defaults on inferred tasks
     - Clarified how to use plugin-specific identifiers vs general target names
@@ -35,8 +51,12 @@
     - Created comprehensive nx release/verdaccio documentation
     - Added guide at docs/shared/recipes/nx-release/publish-with-verdaccio.md
     - Test: View new documentation and check navigation in docs site
+  ```
 
-- [ ] Record RawDocs Tool Loom Video for Team (2025-06-17 15:30)
+- [x] Sync with Caleb and Ben on docs rework (2025-06-18 3:06)
+  - https://linear.app/nxdev/issue/NXC-2781/propose-frameworks-and-solutions
+
+- [x] Record RawDocs Tool Loom Video for Team (2025-06-18 14:45)
   - Plan created: Notes saved at `/Users/jack/Downloads/rawdocs-developer-guide.md`
   - Goal: Create a short Loom video (5-7 minutes) explaining the RawDocs tool workflow
   - Key points to cover:
@@ -45,13 +65,11 @@
     - Show the feature-docs structure
     - Emphasize non-blocking nature and time savings
 
-- [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35)
-  - Plan created: `dot_ai/2025-06-11/tasks/nx-heap-usage-logging-phase1.md`
-  - Spec reference: `dot_ai/2025-06-11/specs/heap-usage-logging.md`
-  - Goal: Implement memory tracking to display peak RSS for each task via NX_LOG_HEAP_USAGE environment variable
-  - Next steps: Add pidusage dependency, enhance Task interface, create memory tracking service
-
-## Completed
+- [x] Review PR for Nicholas for Migrate UI (2025-06-18 10:48)
+  - https://github.com/nrwl/nx/pull/31626
+  - https://github.com/nrwl/nx-console/pull/2567
+  - https://www.loom.com/share/843154739c5d40b2b1554d097314977a
+  - https://nrwl.slack.com/archives/C04J01JPC4Q/p1750193240507379
 
 - [x] Add author filtering to analyze-changes.mjs (2025-06-18 10:30)
   - Plan created: `.ai/2025-06-18/tasks/add-author-filter-to-analyze-changes.md`

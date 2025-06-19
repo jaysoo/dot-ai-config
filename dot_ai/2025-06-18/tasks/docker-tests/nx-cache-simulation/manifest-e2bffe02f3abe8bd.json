@@ -1,0 +1,16 @@
+{
+  "baseImage": "node:18-alpine",
+  "layers": [
+    {
+      "id": "workdir",
+      "command": "WORKDIR /app",
+      "hash": "3bf9b6bbcf67ed4d"
+    },
+    {
+      "id": "copy",
+      "command": "COPY app.js .",
+      "hash": "c03178acf5720bf3"
+    }
+  ],
+  "finalHash": "e2bffe02f3abe8bd"
+}

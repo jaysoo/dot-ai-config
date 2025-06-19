@@ -1,0 +1,16 @@
+FROM node:18-alpine
+WORKDIR /app
+
+# Layer that won't change often
+RUN apk add --no-cache curl
+
+# Simulate package.json (would cache this layer)
+RUN echo '{"name":"test","version":"1.0.0"}' > package.json
+RUN npm install express
+
+# App code that changes frequently
+COPY app.js .
+RUN echo "Build timestamp: 1750285569688" > build-info.txt
+
+EXPOSE 3000
+CMD ["node", "app.js"]
