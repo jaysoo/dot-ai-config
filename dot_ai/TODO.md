@@ -2,10 +2,9 @@
 
 ## In Progress
 
-- [ ] Review Nx AI Strategy Document (2025-06-19 16:30)
-  - Spec created: `dot_ai/2025-06-19/specs/nx-ai-strategy.md`
-  - Goal: Review strategic suggestions for Nx's AI-first platform
-  - Topics: Business growth, user experience, operationalization, and 1-3-6 month strategy
+- [ ] Triage during cooldown (Week of June 23rd)
+  - MF stuff
+  - ESLint + local path aliases (need repro)
 
 - [ ] Raw-docs for the trial (2025-06-18 10:51)
   - Node.js backend (already merged and we'll iterate)
@@ -16,10 +15,6 @@
   - https://github.com/nrwl/nx/pull/31626
   - https://github.com/nrwl/nx-console/pull/2567
 
-- [ ] Investigate Docker + Nx + cache (2025-06-18 9:40)
-  - Using `--cache-to` and `--cache-from` might help https://docs.docker.com/build/cache/backends/gha/
-  - 
-
 - [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35)
   - Plan created: `dot_ai/2025-06-11/tasks/nx-heap-usage-logging-phase1.md`
   - Spec reference: `dot_ai/2025-06-11/specs/heap-usage-logging.md`
@@ -27,6 +22,20 @@
   - Next steps: Add pidusage dependency, enhance Task interface, create memory tracking service
 
 ## Completed
+
+- [x] Investigate Docker + Nx + cache (2025-06-19 8:52)
+  - Using `--cache-to` and `--cache-from` might help https://docs.docker.com/build/cache/backends/gha/
+
+- [x] Review Nx AI Strategy Document (2025-06-19 9:30)
+  - Spec created: `dot_ai/2025-06-19/specs/nx-ai-strategy.md`
+  - Goal: Review strategic suggestions for Nx's AI-first platform
+  - Topics: Business growth, user experience, operationalization, and 1-3-6 month strategy
+
+- [x] Fix React Generator Tailwind Styles Filename Mismatch (2025-06-19 16:45)
+  - Plan created: `.ai/2025-06-19/tasks/fix-react-tailwind-styles-filename.md`
+  - Goal: Fix bug where project.json references styles.tailwind but generated file is styles.css
+  - Result: Fixed in add-project.ts for both webpack and rspack, added tests
+  - Commit: 8f15779d65
 
 - [x] Create Nx AI Strategy Session brainstorm spec (2025-06-18 17:45)
   - Plan created: `dot_ai/2025-06-18/specs/nx-ai-strategy-session-agenda.md`

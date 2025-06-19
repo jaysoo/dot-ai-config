@@ -2,6 +2,13 @@
 
 ## Completed Tasks
 
+- [x] Fix React Generator Tailwind Styles Filename Mismatch (2025-06-19 16:45)
+  - Plan created: `tasks/fix-react-tailwind-styles-filename.md`
+  - Goal: Fix bug where project.json references styles.tailwind but generated file is styles.css
+  - Result: Fixed styles configuration for both webpack and rspack bundlers
+  - Added tests to prevent regression
+  - Commit: 8f15779d65
+
 ## In Progress
 
 - [ ] Review Nx AI Strategy Document (2025-06-19 16:30)
