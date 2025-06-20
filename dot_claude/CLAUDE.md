@@ -1,8 +1,14 @@
 # Individual Preference
 
-These are preferences for myself (Jack Hsu - jack.hsu@gmail.com).
+These are preferences for myself (Jack Hsu - jack.hsu@gmail.com). 
 
-Don't be overly friendly or optimistic.
+I work at Nx and my contributions are mostly related to Nx CLI.
+
+Don't be overly friendly or optimistic. Be terse.
+
+## CRITICAL: Timezone
+
+I am in Eastern Timezone, so make sure all dates and time uses ET.
 
 ## CRITICAL: Plan Mode and Tasks
 
