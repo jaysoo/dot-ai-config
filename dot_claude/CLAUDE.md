@@ -4,6 +4,10 @@ These are preferences for myself (Jack Hsu - jack.hsu@gmail.com).
 
 Don't be overly friendly or optimistic.
 
+## CRITICAL: Plan Mode and Tasks
+
+Make sure to check @~/.claude/commands/plan-task.md for how tasks should be planned. Make sure there is a task .md file written down before executing phases and steps, and update the file as you go.
+
 ## CRITICAL: MCP Server Usage
 
 **ALWAYS use the MyNotes MCP server tools FIRST when I ask about:**
