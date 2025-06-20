@@ -2,9 +2,21 @@
 
 ## In Progress
 
+- [ ] Generator to migrate integrated to ts solution
+  - Hilton, Norark (Steven)
+  - AXO-19 Extract TS solution migrator from Ocean repo into a public package
+  - https://nrwl.slack.com/archives/C08AYQG4PNV/p1740077759167189
+
+- [ ] Provide Johan with @nx/php/laravel initial implementation
+
+- [ ] Tailwind stylesheet
+
 - [ ] Triage during cooldown (Week of June 23rd)
   - MF stuff
   - ESLint + local path aliases (need repro)
+
+- [ ] Slow ESLINT graph calculation
+  - https://github.com/nrwl/nx/issues/27849
 
 - [ ] Raw-docs for the trial (2025-06-18 10:51)
   - Node.js backend (already merged and we'll iterate)
@@ -22,6 +34,11 @@
   - Next steps: Add pidusage dependency, enhance Task interface, create memory tracking service
 
 ## Completed
+
+- [x] Review Tailwind v4 support changes (2025-01-20 15:00)
+  - Plan created: `.ai/2025-01-20/tasks/review-tailwind-v4-support.md`
+  - Goal: Review feat/tailwind-4 branch changes for React and Vue bundler support
+  - Result: Implementation is solid and production-ready, createGlobPatternsForDependencies works correctly
 
 - [x] Implement Tailwind v4 support for React and Vue (2025-06-20 17:23)
   - Plan created: `.ai/2025-06-20/tasks/tailwind-v4-implementation.md`

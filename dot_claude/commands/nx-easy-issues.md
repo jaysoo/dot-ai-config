@@ -1,57 +1,52 @@
-# Nx: Easy Issues Analyzer (Enhanced AI Workflow)
+# Nx: Easy Issues Analyzer (Enhanced for Engineering Value)
 
-This command helps identify GitHub issues in the `nrwl/nx` repo that are easy to close or fix with minimal human intervention. It is designed for use with an AI agent that can propose automated fixes, suggest closure comments, or prepare batch PRs.
+This command identifies GitHub issues in the `nrwl/nx` repo that can be effectively addressed by AI/automation, with focus on real engineering impact rather than just "easy" metrics.
 
-The process includes data collection via GitHub CLI, issue analysis via Node.js, and intelligent scoring based on predefined heuristics.
+## Key Improvements Based on Feedback
 
----
+1. **Better Issue Classification**
+   - Distinguish actual bugs from documentation issues
+   - Identify performance/graph calculation issues as HIGH priority
+   - Track core contributor involvement
 
-## ⚙️ Setup Instructions
+2. **AI Suitability Scoring**
+   - Clear, isolated tasks score higher
+   - Tasks with core contributor guidance score highest
+   - Complex architectural changes score lowest
 
-### 1. Set the Date Range
+3. **Action-Oriented Output**
+   - Specific next steps for each issue
+   - Commands to reproduce bugs
+   - Links to relevant code locations
 
-You may provide either an explicit date range (`YYYY-MM-DD..YYYY-MM-DD`) or a relative range (e.g. "past 6 months"). If not provided, default to the past year.
+## Usage Instructions
 
-Use the following shell snippet to define the range dynamically:
+### 1. Set Date Range
 
 ```bash
 # Default to past year
-START_DATE=$(date -d "1 year ago" +%Y-%m-%d) # Linux
-# START_DATE=$(date -v-1y +%Y-%m-%d)         # macOS
+START_DATE=$(date -v-1y +%Y-%m-%d)  # macOS
+# START_DATE=$(date -d "1 year ago" +%Y-%m-%d)  # Linux
 END_DATE=$(date +%Y-%m-%d)
 ```
 
----
-
-### 2. Fetch Issues with GitHub CLI
-
-Run this single `gh` command to retrieve all open issues in the date range:
+### 2. Fetch Issues with Full Data
 
 ```bash
-gh issue list -R nrwl/nx -s open --search "created:${START_DATE}..${END_DATE}" -L 1000 \
-  --json number,title,body,comments,createdAt,updatedAt,labels,reactionGroups,author > /tmp/nx-all-open-issues.json
+gh issue list -R nrwl/nx -s open --search "created:${START_DATE}..${END_DATE}" \
+  -L 1000 --json number,title,body,comments,createdAt,updatedAt,labels,author \
+  > /tmp/nx-all-open-issues.json
 ```
 
-> ✅ You can increase `-L` or add pagination if >1000 issues are expected.
-
----
-
-### 3. Analyze Issues with Node.js
-
-Use this command to execute the AI-ready analyzer:
+### 3. Run Enhanced Analysis
 
 ```bash
-node ./scripts/analyze-easy-issues.js /tmp/nx-all-open-issues.json
+node scripts/analyze-easy-issues-v2.js /tmp/nx-all-open-issues.json
 ```
 
-This will:
+## Enhanced Analyzer Script
 
-* Score issues based on helpfulness criteria
-* Exclude complex or high-risk issues
-* Classify issues by theme
-* Output:
-    * JSON results to `/tmp/easy-issues-analysis.json`
-    * Markdown summaries to `.ai/YYYY-MM-DD/tasks/nx-easy-issues-[theme].md`
+Save as `scripts/analyze-easy-issues-v2.js`:
 
 ```javascript
 #!/usr/bin/env node
@@ -59,150 +54,190 @@ This will:
 const fs = require('fs');
 const path = require('path');
 
-// --- Configuration ---
-// This can be moved to a separate config.json file for true externalization
+// Known Nx core contributors (update this list regularly)
+const CORE_CONTRIBUTORS = [
+  'leosvelperez',
+  'jaysoo',
+  'vsavkin',
+  'FrozenPandaz',
+  'meeroslav',
+  'juristr',
+  'mandarini',
+  'ndcunningham',
+  'xiongemi',
+  'Coly010',
+  'AgentEnder',
+  'barbados-clemens',
+  'MaxKless',
+  'isaacplmann',
+  'nartc',
+  'rarmatei'
+];
+
 const config = {
   repo: 'nrwl/nx',
-  outputDir: '/tmp', // Base directory for temporary files
-  minScoreForEasy: 4, // Increased from 2 to filter out more false positives
-  // Scoring weights
+  outputDir: '/tmp',
+  // Categories with priority
+  categories: {
+    performance: { priority: 'HIGH', aiSuitability: 'MEDIUM' },
+    coreMentioned: { priority: 'HIGH', aiSuitability: 'HIGH' },
+    simpleDocs: { priority: 'MEDIUM', aiSuitability: 'HIGH' },
+    configFix: { priority: 'MEDIUM', aiSuitability: 'HIGH' },
+    deprecation: { priority: 'MEDIUM', aiSuitability: 'HIGH' },
+    createWorkspace: { priority: 'HIGH', aiSuitability: 'MEDIUM' },
+    tutorialUpdate: { priority: 'LOW', aiSuitability: 'HIGH' },
+    complexDocs: { priority: 'MEDIUM', aiSuitability: 'LOW' },
+    investigation: { priority: 'MEDIUM', aiSuitability: 'MEDIUM' }
+  },
+  
+  // Scoring weights - emphasize AI suitability
   scores: {
-    hasReproduction: 3,
-    hasVerifiedWorkaround: 5, // NEW: Higher score for verified workarounds
-    documentationIssue: 3, // Increased from 2 - these are typically easier
-    hasWorkaround: 2,
-    simpleConfigFix: 3, // NEW: For clear config fixes
-    dependencyUpdate: 1, // Reduced from 2 - often complex
-    olderThanSixMonths: 1,
-    lowEngagement: 1,
-    configurationIssue: 1,
-    userProvidedFix: 4, // NEW: User has provided code fix
-  },
-  // Negative scoring/exclusion criteria
-  negativeScores: {
-    breakingChange: -10, // Effectively excludes
+    coreContributorMentioned: 10,
+    clearActionItem: 8,
+    hasReproduction: 5,
+    simpleDocFix: 7,
+    tutorialUpdate: 6,
+    deprecationTask: 7,
+    performanceIssue: 3, // Lower because harder for AI
+    investigationNeeded: 4,
+    userProvidedFix: 6,
+    
+    // Negative scores
+    architecturalChange: -10,
+    upstreamDependency: -8,
     complexDiscussion: -5,
-    highEmotionalReaction: -5, // Needs sentiment analysis integration
-    botCommentedNeedsRepro: -3,
-    architecturalChange: -8, // NEW: Requires architectural changes
-    upstreamDependency: -6, // NEW: Issue in upstream dependency
-    nativeModuleRequired: -8, // NEW: Requires native module compilation
-    packageManagerIssue: -6, // NEW: npm/yarn/pnpm specific issues
-    migrationIssue: -4, // NEW: Complex migration issues
-    moduleSystemMismatch: -5, // NEW: ESM/CommonJS conflicts
-    multipleFailedAttempts: -4, // NEW: Multiple PRs closed without merge
-  },
-  // Keywords for detection
-  keywords: {
-    repro: ['repro', 'reproduction', 'repository', 'repo'],
-    docs: ['doc', 'documentation', 'docs', 'readme', 'guide', 'tutorial'],
-    workaround: ['workaround', 'works if', 'fixed by', 'solution is'],
-    verifiedWorkaround: ['this works', 'confirmed working', 'tested and works', '✓', '✅', 'works for me'],
-    dependency: ['update', 'upgrade', 'bump', 'dependency', 'dependencies'],
-    config: ['config', 'configuration', 'setup', 'install'],
-    breakingChange: ['breaking change', 'breaking changes', 'breaking-change'],
-    architectural: ['requires', 'architectural', 'refactor', 'redesign', 'major change'],
-    upstream: ['upstream', 'third-party', 'external dependency', '@module-federation', 'webpack issue'],
-    nativeModule: ['native', 'wasm', 'node-gyp', 'binding', 'compile', 'platform-specific'],
-    packageManager: ['npm error', 'yarn error', 'pnpm error', 'ENOTEMPTY', 'ENOENT', 'node_modules'],
-    migration: ['migration', 'migrate', 'upgrade from', 'breaking in', 'after update'],
-    moduleSystem: ['ESM', 'CommonJS', 'require', 'import', 'module.exports', 'export default'],
-    userFix: ['here\'s the fix', 'i fixed it', 'pr:', 'pull request:', 'patch:', 'diff:'],
+    unclearRequirements: -6,
+    needsDesignDecision: -8
   }
 };
 
-// --- Helper Functions ---
-function calculateDateRange(inputRange) {
-  const now = new Date();
-  let startDate = new Date();
-  let endDate = now;
-
-  if (inputRange) {
-    // Attempt to parse explicit YYYY-MM-DD..YYYY-MM-DD
-    const parts = inputRange.split('..');
-    if (parts.length === 2) {
-      startDate = new Date(parts[0]);
-      endDate = new Date(parts[1]);
-    } else {
-      // Handle relative ranges (e.g., "past 6 months", "last 30 days")
-      const lowerInput = inputRange.toLowerCase();
-      if (lowerInput.includes('year')) {
-        const years = parseInt(lowerInput.match(/\d+/)?.[0] || '1');
-        startDate.setFullYear(now.getFullYear() - years);
-      } else if (lowerInput.includes('month')) {
-        const months = parseInt(lowerInput.match(/\d+/)?.[0] || '6');
-        startDate.setMonth(now.getMonth() - months);
-      } else if (lowerInput.includes('day')) {
-        const days = parseInt(lowerInput.match(/\d+/)?.[0] || '30');
-        startDate.setDate(now.getDate() - days);
+function analyzeCoreContributorInvolvement(issue) {
+  const involvement = {
+    hasCommented: false,
+    promisedPR: false,
+    providedGuidance: false,
+    lastCommentDate: null,
+    contributors: []
+  };
+  
+  issue.comments.forEach(comment => {
+    if (CORE_CONTRIBUTORS.includes(comment.author.login)) {
+      involvement.hasCommented = true;
+      involvement.contributors.push(comment.author.login);
+      
+      const commentDate = new Date(comment.createdAt);
+      if (!involvement.lastCommentDate || commentDate > involvement.lastCommentDate) {
+        involvement.lastCommentDate = commentDate;
+      }
+      
+      // Check for PR promises
+      if (comment.body.match(/I'll send a PR|PR coming|will submit.*PR/i)) {
+        involvement.promisedPR = true;
+      }
+      
+      // Check for clear guidance
+      if (comment.body.match(/should|needs to|the fix is|implement/i)) {
+        involvement.providedGuidance = true;
       }
     }
-  } else {
-    // Default to past year
-    startDate.setFullYear(now.getFullYear() - 1);
-  }
-
-  // Ensure valid dates
-  if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
-    console.warn('Warning: Invalid date range provided. Defaulting to past year.');
-    startDate = new Date();
-    startDate.setFullYear(now.getFullYear() - 1);
-    endDate = now;
-  }
-
-  return { start: startDate, end: endDate };
-}
-
-
-// Function to simulate NLP/Sentiment Analysis (placeholder)
-function analyzeSentiment(text) {
-  // In a real scenario, this would call an NLP API or use a local library.
-  // For now, it's a simple keyword check.
-  const negativeKeywords = ['frustrated', 'bug', 'broken', 'critical', 'failed', 'issue', 'not working'];
-  const positiveKeywords = ['great', 'thanks', 'awesome', 'works'];
-
-  let score = 0;
-  negativeKeywords.forEach(keyword => {
-    if (text.toLowerCase().includes(keyword)) {
-      score--;
-    }
   });
-  positiveKeywords.forEach(keyword => {
-    if (text.toLowerCase().includes(keyword)) {
-      score++;
-    }
-  });
-
-  if (score < -1) return 'negative';
-  if (score > 0) return 'positive';
-  return 'neutral';
+  
+  return involvement;
 }
 
-// Function to check for bot activity (placeholder)
-function hasBotCommented(comments) {
-  // This is a simplistic check. A real bot check might involve specific bot usernames or comment patterns.
-  return comments.some(comment => comment.author.login.includes('bot') && comment.body.includes('needs reproduction'));
+function categorizeIssue(issue, bodyAndComments) {
+  const categories = [];
+  
+  // Performance/Graph issues
+  if (bodyAndComments.match(/graph.*slow|fresh graph|performance|takes.*long|daemon/i)) {
+    categories.push('performance');
+  }
+  
+  // Create workspace issues
+  if (issue.title.match(/create.*workspace|nx workspace.*latest/i)) {
+    categories.push('createWorkspace');
+  }
+  
+  // Tutorial updates
+  if (bodyAndComments.match(/tutorial.*update|tutorial.*outdated/i)) {
+    categories.push('tutorialUpdate');
+  }
+  
+  // Simple doc fixes
+  const docPatterns = [
+    /wrong.*sentence/i,
+    /typo/i,
+    /incorrect.*path/i,
+    /should be.*instead/i,
+    /mentions.*wrong/i
+  ];
+  if (docPatterns.some(p => bodyAndComments.match(p))) {
+    categories.push('simpleDocs');
+  }
+  
+  // Deprecation tasks
+  if (bodyAndComments.match(/deprecate|remove.*option|legacy/i)) {
+    categories.push('deprecation');
+  }
+  
+  return categories;
 }
 
-// --- Main Script Logic ---
-(async () => {
-  const issueFile = process.argv[2] || path.join(config.outputDir, 'nx-all-open-issues.json');
-  let allIssues = new Map();
-
-  // Load all issues
-  if (fs.existsSync(issueFile)) {
-    const issues = JSON.parse(fs.readFileSync(issueFile, 'utf8'));
-    issues.forEach(issue => {
-      allIssues.set(issue.number, issue);
+function generateActionItems(issue, criteria) {
+  const actions = [];
+  
+  // Performance issues
+  if (criteria.categories.includes('performance')) {
+    actions.push({
+      type: 'investigate',
+      steps: [
+        `Add console.log timing to packages/${issue.title.match(/nx\/(\w+)/)?.[1] || 'core'}/src/plugins/plugin.ts`,
+        'Run with NX_DAEMON=false NX_PROJECT_GRAPH_CACHE=false',
+        'Delete .nx/workspace-data before testing',
+        'Identify bottleneck from timing logs'
+      ]
     });
-  } else {
-    console.error(`Error: Issue file not found at ${issueFile}. Please run 'gh issue list' first.`);
-    process.exit(1);
   }
+  
+  // Create workspace issues
+  if (criteria.categories.includes('createWorkspace')) {
+    actions.push({
+      type: 'reproduce',
+      steps: [
+        'Test with different combinations:',
+        '- Directory: . vs custom-name',
+        '- Presets: apps, npm, nest, next, etc.',
+        '- Package managers: npm, yarn, pnpm',
+        'Create minimal reproduction matrix'
+      ]
+    });
+  }
+  
+  // Core contributor guidance
+  if (criteria.coreInvolvement.providedGuidance) {
+    actions.push({
+      type: 'implement',
+      contributor: criteria.coreInvolvement.contributors[0],
+      note: 'Follow core contributor guidance in comments'
+    });
+  }
+  
+  return actions;
+}
 
-  const easyIssues = [];
-
-  for (const [issueNumber, issue] of allIssues.entries()) {
+// Main analysis function
+async function analyzeIssues() {
+  const issueFile = process.argv[2] || path.join(config.outputDir, 'nx-all-open-issues.json');
+  const issues = JSON.parse(fs.readFileSync(issueFile, 'utf8'));
+  
+  const analyzedIssues = [];
+  const documentationRequests = [];
+  
+  for (const issue of issues) {
+    const bodyAndComments = issue.body + ' ' + issue.comments.map(c => c.body).join(' ');
+    const coreInvolvement = analyzeCoreContributorInvolvement(issue);
+    const categories = categorizeIssue(issue, bodyAndComments);
+    
     const criteria = {
       number: issue.number,
       title: issue.title,
@@ -211,355 +246,145 @@ function hasBotCommented(comments) {
       updated: new Date(issue.updatedAt),
       labels: issue.labels.map(l => l.name),
       author: issue.author.login,
-      reasons: [],
+      categories,
+      coreInvolvement,
       score: 0,
-      potentialActions: [] // New field to suggest AI actions
+      aiSuitability: 'UNKNOWN',
+      priority: 'UNKNOWN',
+      actionItems: []
     };
-
-    const bodyAndComments = issue.body + ' ' + issue.comments.map(c => c.body).join(' ');
-
-    // --- Positive Scoring ---
-    // Has reproduction
-    const hasReproLink = bodyAndComments.match(/github\.com\/[\w-]+\/[\w-]+/i);
-    const hasReproKeyword = config.keywords.repro.some(kw => bodyAndComments.toLowerCase().includes(kw));
-    if (hasReproLink && hasReproKeyword) {
-      criteria.reasons.push('Has reproduction repository');
-      criteria.score += config.scores.hasReproduction;
-      criteria.potentialActions.push('Review for automated fix of linked repro');
+    
+    // Calculate score based on new criteria
+    if (coreInvolvement.hasCommented) {
+      criteria.score += config.scores.coreContributorMentioned;
+      if (coreInvolvement.providedGuidance) {
+        criteria.score += config.scores.clearActionItem;
+      }
     }
-
-    // Documentation issue
-    const isDocIssue = config.keywords.docs.some(kw => issue.title.toLowerCase().includes(kw) || bodyAndComments.toLowerCase().includes(kw)) ||
-                       criteria.labels.some(l => config.keywords.docs.some(kw => l.toLowerCase().includes(kw)));
-    if (isDocIssue) {
-      criteria.reasons.push('Documentation issue');
-      criteria.score += config.scores.documentationIssue;
-      criteria.potentialActions.push('Generate PR for docs fix');
+    
+    // Add category-based scoring
+    if (categories.includes('simpleDocs')) {
+      criteria.score += config.scores.simpleDocFix;
     }
-
-    // Has workaround
-    if (config.keywords.workaround.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
-      criteria.reasons.push('Has workaround posted');
-      criteria.score += config.scores.hasWorkaround;
-      criteria.potentialActions.push('Close with workaround comment');
+    if (categories.includes('tutorialUpdate')) {
+      criteria.score += config.scores.tutorialUpdate;
     }
-
-    // Has verified workaround (higher priority)
-    if (config.keywords.verifiedWorkaround.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
-      criteria.reasons.push('Has VERIFIED workaround');
-      criteria.score += config.scores.hasVerifiedWorkaround;
-      criteria.potentialActions.push('Implement verified workaround as fix');
+    if (categories.includes('performance')) {
+      criteria.score += config.scores.performanceIssue;
     }
-
-    // User provided fix
-    if (config.keywords.userFix.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
-      criteria.reasons.push('User provided code fix');
-      criteria.score += config.scores.userProvidedFix;
-      criteria.potentialActions.push('Review and implement user-provided fix');
+    
+    // Determine AI suitability and priority
+    if (categories.length > 0) {
+      // Get highest priority category
+      const priorities = categories.map(cat => config.categories[cat]?.priority || 'UNKNOWN');
+      const suitabilities = categories.map(cat => config.categories[cat]?.aiSuitability || 'UNKNOWN');
+      
+      criteria.priority = priorities.includes('HIGH') ? 'HIGH' : 
+                          priorities.includes('MEDIUM') ? 'MEDIUM' : 'LOW';
+      criteria.aiSuitability = suitabilities.includes('HIGH') ? 'HIGH' :
+                              suitabilities.includes('MEDIUM') ? 'MEDIUM' : 'LOW';
     }
-
-    // Simple config fix (check for specific patterns)
-    const configPatterns = [
-      /dependsOn.*:\s*\[.*\]/i,
-      /\"scripts\".*:.*{/i,
-      /\"targets\".*:.*{/i,
-      /project\.json/i,
-      /nx\.json/i
-    ];
-    if (configPatterns.some(pattern => bodyAndComments.match(pattern)) && 
-        config.keywords.config.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
-      criteria.reasons.push('Simple configuration fix');
-      criteria.score += config.scores.simpleConfigFix;
-      criteria.potentialActions.push('Apply configuration fix');
+    
+    // Generate specific action items
+    criteria.actionItems = generateActionItems(issue, criteria);
+    
+    // Separate unclear documentation requests
+    if (bodyAndComments.match(/document.*unclear|not sure.*document/i) && 
+        !categories.includes('simpleDocs')) {
+      documentationRequests.push({
+        number: issue.number,
+        title: issue.title,
+        url: criteria.url,
+        summary: issue.body.substring(0, 200) + '...'
+      });
     }
-
-    // Dependency update
-    if (config.keywords.dependency.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
-      criteria.reasons.push('Dependency update related');
-      criteria.score += config.scores.dependencyUpdate;
-      criteria.potentialActions.push('Generate PR for dependency update');
-    }
-
-    // Staleness (older than 6 months)
-    const sixMonthsAgo = new Date();
-    sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
-    if (criteria.created < sixMonthsAgo) {
-      criteria.reasons.push('Older than 6 months');
-      criteria.score += config.scores.olderThanSixMonths;
-      criteria.potentialActions.push('Close as stale');
-    }
-
-    // Low engagement
-    const totalReactions = issue.reactionGroups ?
-      issue.reactionGroups.reduce((sum, rg) => sum + rg.users.totalCount, 0) : 0;
-    const commentCount = issue.comments.length;
-
-    if (totalReactions < 5 && commentCount < 5) {
-      criteria.reasons.push(`Low engagement (${totalReactions} reactions, ${commentCount} comments)`);
-      criteria.score += config.scores.lowEngagement;
-    }
-
-    // Configuration/setup issue
-    if (config.keywords.config.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
-      criteria.reasons.push('Configuration/setup issue');
-      criteria.score += config.scores.configurationIssue;
-      criteria.potentialActions.push('Review for configuration fix');
-    }
-
-    // --- Negative Scoring/Exclusion Criteria ---
-    // Breaking change
-    if (config.keywords.breakingChange.some(kw => issue.title.toLowerCase().includes(kw) || criteria.labels.some(l => l.toLowerCase().includes(kw)))) {
-      criteria.reasons.push('Contains "breaking change" keyword/label');
-      criteria.score += config.negativeScores.breakingChange; // Penalize heavily
-    }
-
-    // Complex discussions (simple heuristic: many comments from different authors)
-    const uniqueCommentAuthors = new Set(issue.comments.map(c => c.author.login));
-    if (commentCount > 10 && uniqueCommentAuthors.size > 3) {
-      criteria.reasons.push('Active/complex discussion detected');
-      criteria.score += config.negativeScores.complexDiscussion;
-    }
-
-    // High emotional reactions (placeholder for sentiment analysis)
-    const overallSentiment = analyzeSentiment(bodyAndComments + ' ' + issue.title);
-    if (overallSentiment === 'negative') {
-        criteria.reasons.push('Negative sentiment detected');
-        criteria.score += config.negativeScores.highEmotionalReaction;
-    }
-
-    // Maintainer/Bot Activity (e.g., bot asked for repro)
-    if (hasBotCommented(issue.comments)) {
-      criteria.reasons.push('Bot has commented asking for reproduction');
-      criteria.score += config.negativeScores.botCommentedNeedsRepro;
-    }
-
-    // Architectural change required
-    if (config.keywords.architectural.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
-      criteria.reasons.push('Requires architectural changes');
-      criteria.score += config.negativeScores.architecturalChange;
-    }
-
-    // Upstream dependency issue
-    if (config.keywords.upstream.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
-      criteria.reasons.push('Issue in upstream dependency');
-      criteria.score += config.negativeScores.upstreamDependency;
-    }
-
-    // Native module required
-    if (config.keywords.nativeModule.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
-      criteria.reasons.push('Requires native module compilation');
-      criteria.score += config.negativeScores.nativeModuleRequired;
-    }
-
-    // Package manager specific issue
-    if (config.keywords.packageManager.some(kw => bodyAndComments.toLowerCase().includes(kw))) {
-      criteria.reasons.push('Package manager specific issue');
-      criteria.score += config.negativeScores.packageManagerIssue;
-    }
-
-    // Migration issue
-    if (config.keywords.migration.some(kw => bodyAndComments.toLowerCase().includes(kw)) &&
-        !criteria.reasons.includes('Simple configuration fix')) {
-      criteria.reasons.push('Complex migration issue');
-      criteria.score += config.negativeScores.migrationIssue;
-    }
-
-    // Module system mismatch
-    if (config.keywords.moduleSystem.some(kw => bodyAndComments.toLowerCase().includes(kw)) &&
-        (bodyAndComments.toLowerCase().includes('error') || bodyAndComments.toLowerCase().includes('cannot'))) {
-      criteria.reasons.push('Module system mismatch (ESM/CommonJS)');
-      criteria.score += config.negativeScores.moduleSystemMismatch;
-    }
-
-    // Multiple failed attempts (check for closed PRs or multiple "tried" mentions)
-    const failedAttemptPatterns = [
-      /tried.*didn't work/i,
-      /attempted.*failed/i,
-      /pr.*closed/i,
-      /multiple attempts/i
-    ];
-    if (failedAttemptPatterns.filter(pattern => bodyAndComments.match(pattern)).length >= 2) {
-      criteria.reasons.push('Multiple failed fix attempts');
-      criteria.score += config.negativeScores.multipleFailedAttempts;
-    }
-
-    // --- Code Change Analysis (placeholder for future integration) ---
-    // if (criteria.potentialActions.includes('Generate PR for docs fix') || criteria.potentialActions.includes('Generate PR for dependency update')) {
-    //   // In a real scenario, after AI proposes a fix, you'd analyze the diff here.
-    //   // For now, this is a conceptual placeholder.
-    //   // If estimated lines of change > 100, might reduce score or remove 'easy' tag.
-    //   // criteria.estimatedLinesChanged = analyzeProposedFix(issue);
-    // }
-
-
-    // Only include issues with score >= minScoreForEasy
-    if (criteria.score >= config.minScoreForEasy) {
-      easyIssues.push(criteria);
+    
+    // Only include if score > 0 and AI suitable
+    if (criteria.score > 0 && criteria.aiSuitability !== 'LOW') {
+      analyzedIssues.push(criteria);
     }
   }
-
-  // Sort by score descending
-  easyIssues.sort((a, b) => b.score - a.score);
-
-  // Group by primary theme (first reason listed)
-  const themes = {
-    documentation: [],
-    stale: [],
-    workaround: [],
-    dependencies: [],
-    configuration: [],
-    reproduction: [],
-    // Add new themes if needed
-  };
-
-  easyIssues.forEach(issue => {
-    // Prioritize themes for grouping based on "reasons"
-    if (issue.reasons.some(r => r.includes('Documentation'))) {
-      themes.documentation.push(issue);
-    } else if (issue.reasons.some(r => r.includes('Older than 6 months'))) {
-      themes.stale.push(issue);
-    } else if (issue.reasons.some(r => r.includes('workaround'))) {
-      themes.workaround.push(issue);
-    } else if (issue.reasons.some(r => r.includes('Dependency'))) {
-      themes.dependencies.push(issue);
-    } else if (issue.reasons.some(r => r.includes('Configuration'))) {
-      themes.configuration.push(issue);
-    } else if (issue.reasons.some(r => r.includes('reproduction'))) {
-      themes.reproduction.push(issue);
-    }
-    // Add more specific theme groupings here if desired
+  
+  // Sort by AI suitability then score
+  analyzedIssues.sort((a, b) => {
+    const suitabilityOrder = { HIGH: 3, MEDIUM: 2, LOW: 1, UNKNOWN: 0 };
+    const suitDiff = suitabilityOrder[a.aiSuitability] - suitabilityOrder[b.aiSuitability];
+    return suitDiff !== 0 ? -suitDiff : b.score - a.score;
   });
-
-  console.log('Easy Issues Summary:');
-  console.log('====================');
-  console.log(`Total easy issues found: ${easyIssues.length}`);
-  console.log('\nBy Theme:');
-  Object.entries(themes).forEach(([theme, issues]) => {
-    if (issues.length > 0) {
-      console.log(`- ${theme}: ${issues.length} issues`);
-    }
-  });
-
-  // Output detailed results
-  const outputFilePath = path.join(config.outputDir, 'easy-issues-analysis.json');
-  fs.writeFileSync(outputFilePath, JSON.stringify({
+  
+  // Write documentation requests file
+  if (documentationRequests.length > 0) {
+    const docReqContent = `# Documentation Requests (Unclear Requirements)\n\n` +
+      `Generated: ${new Date().toISOString().split('T')[0]}\n\n` +
+      documentationRequests.map(req => 
+        `## Issue #${req.number}: ${req.title}\n` +
+        `- URL: ${req.url}\n` +
+        `- Summary: ${req.summary}\n\n`
+      ).join('');
+    
+    fs.writeFileSync('.ai/DOCUMENTATION_REQUESTS.md', docReqContent);
+  }
+  
+  // Generate enhanced output
+  return {
     summary: {
-      total: easyIssues.length,
-      byTheme: Object.entries(themes).reduce((acc, [theme, issues]) => {
-        acc[theme] = issues.length;
-        return acc;
-      }, {})
+      total: analyzedIssues.length,
+      byPriority: {
+        HIGH: analyzedIssues.filter(i => i.priority === 'HIGH').length,
+        MEDIUM: analyzedIssues.filter(i => i.priority === 'MEDIUM').length,
+        LOW: analyzedIssues.filter(i => i.priority === 'LOW').length
+      },
+      bySuitability: {
+        HIGH: analyzedIssues.filter(i => i.aiSuitability === 'HIGH').length,
+        MEDIUM: analyzedIssues.filter(i => i.aiSuitability === 'MEDIUM').length
+      },
+      withCoreComments: analyzedIssues.filter(i => i.coreInvolvement.hasCommented).length,
+      documentationRequests: documentationRequests.length
     },
-    issues: easyIssues,
-    themes
-  }, null, 2));
+    issues: analyzedIssues
+  };
+}
 
-  console.log('\nTop 25 easiest issues:');
-  easyIssues.slice(0, 25).forEach(issue => {
-    console.log(`\n#${issue.number}: ${issue.title}`);
-    console.log(`  Score: ${issue.score}`);
-    console.log(`  Reasons: ${issue.reasons.join(', ')}`);
-    console.log(`  Potential AI Actions: ${issue.potentialActions.length > 0 ? issue.potentialActions.join(', ') : 'None suggested'}`);
-    console.log(`  URL: ${issue.url}`);
-  });
-
-  console.log(`\nDetailed analysis saved to: ${outputFilePath}`);
-
-})().catch(error => {
-  console.error('An error occurred:', error);
+// Run analysis
+analyzeIssues().then(result => {
+  console.log('Analysis complete!');
+  console.log(`Found ${result.summary.total} actionable issues`);
+  console.log(`High priority: ${result.summary.byPriority.HIGH}`);
+  console.log(`AI suitable: ${result.summary.bySuitability.HIGH}`);
+  console.log(`Core team involved: ${result.summary.withCoreComments}`);
+  
+  fs.writeFileSync('/tmp/nx-issues-analysis-v2.json', JSON.stringify(result, null, 2));
 });
 ```
 
----
+## Key Improvements
 
-## 🧠 Scoring Criteria for “Easy” Issues
+1. **Tracks Core Contributor Involvement**
+   - Identifies when core team has commented
+   - Flags promised PRs that haven't materialized
+   - Prioritizes issues with clear guidance
 
-### ✅ Positive Scoring
+2. **Better Categorization**
+   - Performance issues marked as HIGH priority
+   - Distinguishes simple from complex doc changes
+   - Identifies investigation vs implementation tasks
 
-| Criteria                       | Score | Notes                              |
-| :----------------------------- | :---- | :--------------------------------- |
-| Has reproduction (GitHub repo) | +3    | Detects repro links + keywords     |
-| Documentation-related          | +2    | Labels or mentions `docs`          |
-| Workaround posted              | +2    | “workaround” in comments/body      |
-| Dependency update              | +2    | Mentions “update”, “upgrade”, etc. |
-| Older than 6 months            | +1    | Based on `createdAt`               |
-| Low engagement                 | +1    | <5 comments + <5 reactions         |
-| Config/setup issue             | +1    | Mentions “config”, “install”, etc. |
+3. **Actionable Output**
+   - Specific steps for each issue type
+   - Commands to reproduce bugs
+   - File paths for code changes
 
----
+4. **Documentation Request Tracking**
+   - Unclear requests go to `.ai/DOCUMENTATION_REQUESTS.md`
+   - Prevents wasting time on ambiguous requirements
 
-### 🚫 Negative Scoring
+5. **AI Suitability Scoring**
+   - HIGH: Clear requirements, isolated changes
+   - MEDIUM: Needs investigation but bounded
+   - LOW: Architectural changes, design decisions needed
 
-| Criteria                             | Penalty | Notes                               |
-| :----------------------------------- | :------ | :---------------------------------- |
-| Marked or labeled as breaking        | -10     | Excludes automatically              |
-| Complex discussion (>10 comments)    | -5      | >3 unique participants              |
-| Negative sentiment (frustrated, etc) | -5      | Placeholder: simple sentiment check |
-| Bot asked for reproduction           | -3      | Indicates issue is not actionable yet |
+## Output Files
 
----
-
-## 🎯 AI Action Suggestions
-
-Based on analysis, AI can propose:
-
-| Action Type                    | When Triggered                       |
-| :----------------------------- | :----------------------------------- |
-| `Close as stale`               | Old + low engagement                 |
-| `Close with workaround`        | If workaround posted                 |
-| `Generate PR: docs fix`        | For docs-related issues              |
-| `Generate PR: dependency bump` | For versioning/dependency complaints |
-| `Review for configuration fix` | When “setup/config/install” mentioned |
-| `Skip - breaking change`       | Marked as too risky for automation   |
-
----
-
-## 📂 Output Structure
-
-Store markdown files under:
-
-```
-.ai/YYYY-MM-DD/tasks/nx-easy-issues-[theme].md
-```
-
-Where `[theme]` may be:
-
-* `docs`
-* `stale`
-* `config`
-* `dependencies`
-* `reproduction`
-* `workaround`
-
-Example:
-
-```
-.ai/2025-06-17/tasks/nx-easy-issues-docs.md
-```
-
----
-
-## 🔁 Optional Closure Commands
-
-Use AI to suggest these:
-
-```bash
-# Close with workaround
-gh issue close -R nrwl/nx 12345 12346 \
-  -c "Closing this issue as a workaround has been provided. Please try the latest version of Nx and reopen if needed."
-
-# Close as stale
-gh issue close -R nrwl/nx 11111 11112 \
-  -c "Closing due to inactivity (6+ months). Please reopen if the issue persists."
-```
-
----
-
-## 🧩 Future Enhancements
-
-* GitHub GraphQL to fetch `linkedPullRequests`
-* Code diff estimation for proposed AI fixes
-* NLP-based intent classification
-* Sentiment detection using OpenAI or Claude
-
----
+- `/tmp/nx-issues-analysis-v2.json` - Full analysis results
+- `.ai/DOCUMENTATION_REQUESTS.md` - Unclear doc requests for later review
+- `.ai/2025-06-20/tasks/nx-easy-issues-[category].md` - Categorized issue lists

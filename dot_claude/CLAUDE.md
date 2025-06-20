@@ -10,6 +10,10 @@ Don't be overly friendly or optimistic. Be terse.
 
 I am in Eastern Timezone, so make sure all dates and time uses ET.
 
+## CRITICAL: main branches
+
+Never commit directly to `master` or `main` branch. Always work in a new branch.
+
 ## CRITICAL: Plan Mode and Tasks
 
 Make sure to check @~/.claude/commands/plan-task.md for how tasks should be planned. Make sure there is a task .md file written down before executing phases and steps, and update the file as you go.
