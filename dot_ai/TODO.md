@@ -23,6 +23,12 @@
 
 ## Completed
 
+- [x] Implement Tailwind v4 support for React and Vue (2025-06-20 17:23)
+  - Plan created: `.ai/2025-06-20/tasks/tailwind-v4-implementation.md`
+  - Next steps: Documentation updates and migration guide
+  - Goal: Support Tailwind v4 with Vite plugin while maintaining backward compatibility
+  - Result: Successfully implemented v4 support with version detection, bundler detection, and full backward compatibility
+
 - [x] Investigate Docker + Nx + cache (2025-06-19 8:52)
   - Using `--cache-to` and `--cache-from` might help https://docs.docker.com/build/cache/backends/gha/
 
