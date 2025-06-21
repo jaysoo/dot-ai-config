@@ -24,6 +24,8 @@ The repository contains official plugins for major frameworks:
 - **@nx/react**: React applications and libraries with various bundler support
 - **@nx/vue**: Vue.js applications with Vite integration
 - **@nx/next**: Next.js applications with custom server support
+- **@nx/nuxt**: Nuxt.js support
+- **@nx/remix**: Remix framework support
 
 #### Backend Frameworks
 - **@nx/node**: Node.js applications and libraries
@@ -44,16 +46,23 @@ The repository contains official plugins for major frameworks:
 - **@nx/playwright**: Playwright testing support
 - **@nx/detox**: React Native testing with Detox
 - **@nx/eslint**: ESLint linting with custom rules
+- **@nx/eslint-plugin**: Nx-specific ESLint rules
 - **@nx/storybook**: Storybook integration
 
 #### Mobile & Native
 - **@nx/react-native**: React Native application support
 - **@nx/expo**: Expo framework integration
 
+#### Enterprise & Organizational Tools
+- **@nx/conformance**: Enforce organizational standards
+- **@nx/owners**: Code ownership management
+- **@nx/gradle**: Java/Kotlin project support
+
 ### 3. Development Tools
 - **@nx/devkit**: SDK for building Nx plugins
 - **@nx/plugin**: Generator for creating custom Nx plugins
 - **@nx/workspace**: Core workspace utilities and generators
+- **@nx/create-nx-workspace**: Workspace creation tooling
 
 ### 4. Documentation & Website (`nx-dev/`)
 - **Technology**: Next.js application
@@ -81,6 +90,7 @@ The repository contains official plugins for major frameworks:
   - Project dependency visualization
   - Task graph display
   - Migration UI
+  - Project details UI
 
 ### 6. Testing Infrastructure (`e2e/`)
 Comprehensive E2E test suites for each plugin and major feature:
@@ -93,6 +103,9 @@ Comprehensive E2E test suites for each plugin and major feature:
 ### Plugin Architecture
 Each plugin follows a consistent structure:
 - `generators/`: Code generators for scaffolding
+  - Schema files (`schema.json`) define available options
+  - Generator implementation files handle code generation logic
+  - Support deprecation via `x-deprecated` property
 - `executors/`: Task executors for build, test, serve operations
 - `migrations/`: Automated code migrations
 - `src/utils/`: Shared utilities
@@ -110,7 +123,57 @@ Each plugin follows a consistent structure:
 - Daemon process for persistent caching
 - Incremental builds and affected commands
 
-## Recent Development Focus (Last 3 Months)
+## Recent Feature Development (2024-2025)
+
+### 1. **TypeScript Solution Setup (TS Solution)**
+- Added comprehensive support for TypeScript project references
+- Improved monorepo performance with better type checking
+- Enhanced support across all framework plugins (React, Vue, Angular, etc.)
+
+### 2. **Migration UI Enhancement**
+- Created visual migration interface for better developer experience
+- Added timeline view for migration progress
+- Automatic migration support with state management
+- Console integration for VS Code users
+
+### 3. **ESLint Flat Config Migration**
+- Comprehensive migration from legacy ESLint config to flat config
+- Automated conversion tools and generators
+- Updated all plugins to support flat config format
+- Added file extension support to overrides
+
+### 4. **Framework Updates**
+- **Next.js**: Support for Next 14 and 15
+- **Angular**: RSPack integration, improved state management
+- **React**: Babel loose mode configuration, router plugin improvements
+- **Vue**: Enhanced library generation with Vite
+- **Remix**: TypeScript solution support
+
+### 5. **Bundler Improvements**
+- **RSPack**: Full integration as alternative to Webpack
+- **Vite**: Enhanced configuration and plugin system
+- **Webpack**: Removed isolated config, improved plugin architecture
+- **Rollup**: Updated executor schemas
+
+### 6. **Testing Enhancements**
+- **Playwright**: E2E CI target defaults
+- **Jest**: Improved configuration and TypeScript support
+- **Cypress**: Component testing improvements
+- **Detox**: React Native testing updates
+
+### 7. **Nx Cloud and CI**
+- Pipeline execution improvements
+- Conformance rules publishing
+- Split E2E task support
+- Enhanced caching and distribution
+
+### 8. **Developer Experience**
+- Improved `nx init` command with better framework detection
+- Enhanced project graph visualization
+- Better error messages and debugging
+- Streamlined workspace creation
+
+## Recent Development Focus (Jack Hsu's Contributions)
 
 Based on commit history from jack.hsu@gmail.com:
 
@@ -146,6 +209,15 @@ Based on commit history from jack.hsu@gmail.com:
 ### Active Development (In Progress)
 - **AI-MCP Integration**: Exploring Model Context Protocol integration for enhanced AI tool support
 - **Incident Response Documentation**: Auditing and improving incident response processes
+
+### Library Generator Improvements (2025-06-20)
+- **simpleName Option Deprecation**: Deprecated the `simpleName` option across all library generators
+  - Affected generators: Angular, React, Nest, JS
+  - Added `x-deprecated` to schema.json files
+  - Added runtime warnings when option is used
+  - Updated users to use `--name` option for exact library names
+  - Related to issue #29508
+  - Will be removed in Nx v22
 
 ### Recently Completed Features (2025-06-13)
 - **Heap Usage Logging**: Added memory tracking to display peak RSS for each task when `NX_LOG_HEAP_USAGE=true` is set
@@ -239,7 +311,23 @@ NX_LOG_HEAP_USAGE=true nx run myapp:build
 - **@monodon/rust**: Rust compilation within Nx workspace
 - **Nx Cloud**: Distributed caching and CI optimization
 
+## Key Architectural Decisions
+
+1. **TypeScript Project References**: Moving towards better type safety and performance in large monorepos
+2. **Flat ESLint Config**: Modernizing linting configuration for better maintainability
+3. **Visual Migration Tools**: Making updates more accessible and less error-prone
+4. **Framework Agnostic**: Continued support for all major frameworks with consistent APIs
+5. **Performance Focus**: RSPack integration and build optimization improvements
+
+## Recent Focus Areas
+
+- **AI Integration**: Blog posts and features about AI-friendly monorepo structures
+- **Performance**: Test splitting, parallel execution, and caching improvements
+- **Developer Experience**: Visual tools, better error messages, and streamlined workflows
+- **Modern Tooling**: Support for latest versions of frameworks and build tools
+- **Enterprise Features**: Conformance rules, code ownership, and organizational tools
+
 ---
 
-*Last updated: 2025-06-18*
+*Last updated: 2025-06-20*
 *Based on analysis of repository structure and recent commits*

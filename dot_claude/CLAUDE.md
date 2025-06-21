@@ -14,6 +14,16 @@ I am in Eastern Timezone, so make sure all dates and time uses ET.
 
 Never commit directly to `master` or `main` branch. Always work in a new branch.
 
+## CRITICAL: Commit Messages and PR Templates
+
+When creating commits that will be used for pull requests:
+1. Check if the repository has a `.github/PULL_REQUEST_TEMPLATE.md` file
+2. If it exists, ensure your commit message body follows the template structure
+3. Include all required sections from the PR template in your commit message
+4. This allows the PR description to be auto-populated correctly when creating the PR
+
+Example: If the PR template has "Current Behavior", "Expected Behavior", and "Related Issue(s)" sections, include these in your commit body.
+
 ## CRITICAL: Plan Mode and Tasks
 
 Make sure to check @~/.claude/commands/plan-task.md for how tasks should be planned. Make sure there is a task .md file written down before executing phases and steps, and update the file as you go.

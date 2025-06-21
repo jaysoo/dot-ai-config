@@ -7,10 +7,6 @@
   - AXO-19 Extract TS solution migrator from Ocean repo into a public package
   - https://nrwl.slack.com/archives/C08AYQG4PNV/p1740077759167189
 
-- [ ] Provide Johan with @nx/php/laravel initial implementation
-
-- [ ] Tailwind stylesheet
-
 - [ ] Triage during cooldown (Week of June 23rd)
   - MF stuff
   - ESLint + local path aliases (need repro)
@@ -27,13 +23,53 @@
   - https://github.com/nrwl/nx/pull/31626
   - https://github.com/nrwl/nx-console/pull/2567
 
-- [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35)
+- [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35) (migrated)
   - Plan created: `dot_ai/2025-06-11/tasks/nx-heap-usage-logging-phase1.md`
   - Spec reference: `dot_ai/2025-06-11/specs/heap-usage-logging.md`
   - Goal: Implement memory tracking to display peak RSS for each task via NX_LOG_HEAP_USAGE environment variable
   - Next steps: Add pidusage dependency, enhance Task interface, create memory tracking service
 
 ## Completed
+
+- [x] MCP Server Improvements (2025-06-12) 
+  - Plan created: `dot_ai/2025-06-12/tasks/mcp-server-improvements.md`
+  - Goal: Implement architecture and performance improvements to MCP AI Content Server
+  - Next Steps: Fix race conditions, add error handling, implement incremental indexing
+
+- [x] Debug Migrate UI Module Resolution Issue (2025-06-13 17:05) (migrated)
+  - Plan created: `dot_ai/2025-06-13/tasks/debug-migrate-ui-module-resolution.md`
+  - Status: Active debugging
+  - Issue: Migrations fail with "module not found" in UI but work in terminal
+  - Note: Fix was implemented on 2025-06-17 but awaiting verification
+  - Needed to set chdir or use exec/spawn with cwd set to workspace root
+
+- [x] Fix Top 10 Easy Issues (2025-06-17 08:00) (migrated)
+  - Plan created: `dot_ai/2025-06-17/tasks/fix-top-10-easy-issues-plan.md`
+  - Status: 4 issues fixed, 6 skipped, awaiting user review
+  - Next steps: User to manually review and push branches
+
+- [x] Incident Management Consolidation Documentation (2025-06-17 17:30)
+  - Status: In Progress
+  - Location: `dot_ai/2025-06-17/tasks/incident-management-consolidation-summary.md`
+  - Goal: Documented the comprehensive consolidation of Notion incident management pages from June 13
+
+- [x] Enhance nx-easy-issues Command with AI Feedback (2025-06-17 16:30) 
+  - Status: In Progress
+  - Location: Modified `/Users/jack/.claude/commands/nx-easy-issues.md`
+  - Goal: Enhanced the nx-easy-issues.md command file based on comprehensive feedback from Gemini AI review
+  - Key enhancements: automated scoring system, dry run mode, parallel processing
+
+- [x] SKIPPED Add ShadCN Style Option to React Generator (2025-06-19) (migrated)
+  - Plan created: `dot_ai/2025-06-19/tasks/add-shadcn-style-option-react-generator.md`
+  - Status: Planning phase complete
+  - Goal: Add 'shadcn' as a new style option alongside existing options
+  - Note: Will integrate Tailwind CSS, PostCSS, and shadcn-specific configurations
+  - 9-step implementation plan defined
+  - Skipped this because it's just a demo
+
+- [x] Provide Johan with @nx/php/laravel initial implementation
+
+- [x] Tailwind stylesheet (025-06-20 15:00)
 
 - [x] Review Tailwind v4 support changes (2025-01-20 15:00)
   - Plan created: `.ai/2025-01-20/tasks/review-tailwind-v4-support.md`
@@ -298,3 +334,4 @@
   - Plan created: Various scripts in `dot_ai/2025-06-02/tasks/`
   - Goal: Analyze and create redirects for Nx documentation migration
   - Result: 100% redirect coverage achieved with high confidence scores
+

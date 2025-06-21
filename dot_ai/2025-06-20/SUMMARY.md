@@ -1,68 +1,76 @@
 # Daily Summary - 2025-06-20
 
-## Major Accomplishments
+## Work Performed
 
-### ✅ Tailwind v4 Implementation - COMPLETED
-- **Status**: Successfully completed and moved from pending to completed in TODO.md
-- **Linear ticket**: NXC-2084
-- **Branch**: `feat/tailwind-4` (ready for review)
-- **Summary**: Implemented full Tailwind CSS v4 support for React and Vue generators with intelligent version and bundler detection
-- **Key achievements**:
-  - Added version detection for Tailwind v2, v3, and v4
-  - Added bundler detection (Vite, Webpack, Rspack, Rsbuild)
-  - Implemented conditional logic for v4 + Vite to use `@tailwindcss/vite` plugin
-  - Maintained full backward compatibility
-  - Created 10+ new utility files, 100+ unit tests
-  - All tests passing, code validated with `nx prepush`
+### Created Laravel Plugin for @nx/php
+- **Task**: Implemented `@nx/php/laravel` plugin
+- **Branch**: laravel (current)
+- **Status**: Completed implementation and fixed build errors
 
-### ✅ Laravel Plugin for @nx/php - COMPLETED
-- **Status**: All 8 implementation steps completed
-- **Summary**: Created `@nx/php/laravel` plugin following existing composer/phpunit patterns
-- **Features implemented**:
-  - Automatic Laravel project detection via artisan file
-  - Nx targets for: serve, migrate, migrate-fresh, tinker, queue-work, cache-clear, route-list
-  - Custom artisan command detection from composer.json
-  - Comprehensive test coverage (fixed node:fs vs fs mock issues)
-  - Full documentation integration
+#### Files Modified:
+- **Plugin Core**:
+  - `packages/php/src/laravel/index.ts`
+  - `packages/php/src/laravel/plugin/create-nodes.ts`
+  - `packages/php/src/laravel/plugin/create-nodes.spec.ts`
+  
+- **Integration**:
+  - `packages/php/src/generators/init/init.ts`
+  - `packages/php/src/generators/init/lib/add-laravel-plugin.ts`
+  - `packages/php/package.json`
+  - `packages/php/README.md`
 
-### 📊 Nx Easy Issues Analysis
-- **Files**: Multiple analysis files in `tasks/nx-easy-issues-*.md`
-- **Summary**: Analyzed 539 open GitHub issues to identify quick wins
-- **Key findings**:
-  - Identified 50 easy-to-resolve issues
-  - 68% are documentation-related
-  - Created categorized lists with personal notes
-  - Prepared AI-actionable tasks for each issue
+#### Implementation Details:
+1. Created plugin structure following existing composer/phpunit patterns
+2. Implemented Laravel project detection (artisan file + Laravel directories)
+3. Added Nx targets: serve, migrate, migrate-fresh, tinker, queue-work, cache-clear, route-list
+4. Fixed TypeScript build errors by using `addPlugin` utility correctly
+5. Fixed test mocking issues (node:fs vs fs imports)
+6. Removed unnecessary memfs dependency
 
-### 💡 Visual Affordances Concept
-- **File**: `dictations/visual-affordances-for-ai-tools.md`
-- **Summary**: Dictated ideas for enhancing AI tool feedback with visual artifacts
-- **Proposed features**:
-  - Integration with Playwright for automated screenshots
-  - Video capture of execution processes
-  - Visual reports after AI task completion
-  - Quick verification without code diving
+### Deprecated simpleName Option Across Library Generators
+- **Task**: Applied consistent deprecation pattern for `simpleName` option
+- **Issue**: Related to #29508
+- **Commits**: 
+  - 74c7c34d25: feat(angular): deprecate simpleName option in library generator
+  - c80e0b1e75: feat(react,nest,js,angular): deprecate simpleName option in library generators
 
-## Technical Details
+#### Files Modified:
+- **Angular Generator**:
+  - `packages/angular/src/generators/library/schema.json`
+  - `packages/angular/src/generators/library/library.ts`
+  - `docs/generated/packages/angular/generators/library.json`
 
-### Tailwind v4 Key Decisions
-1. **No config files for v4 + Vite**: Clean setup without PostCSS/Tailwind configs
-2. **Automatic dependency detection**: v4 + Vite handles styles from dependencies automatically
-3. **CSS import syntax**: v4 uses `@import 'tailwindcss'` instead of `@tailwind` directives
+- **React Generator**:
+  - `packages/react/src/generators/library/schema.json`
+  - `packages/react/src/generators/library/library.ts`
+  - `docs/generated/packages/react/generators/library.json`
 
-### Test Scripts Created
-- Multiple debugging scripts for workspace creation issues
-- Fixed React generator dependency conflicts
-- Resolved Laravel plugin test mock issues
+- **Nest Generator**:
+  - `packages/nest/src/generators/library/schema.json`
+  - `packages/nest/src/generators/library/library.ts`
+  - `docs/generated/packages/nest/generators/library.json`
+
+- **JS Generator**:
+  - `packages/js/src/generators/library/schema.json`
+  - `packages/js/src/generators/library/library.ts`
+  - `docs/generated/packages/js/generators/library.json`
+
+#### Implementation Details:
+1. Added `x-deprecated` property to schema.json files with message: "Use the --name option to provide the exact name instead. This option will be removed in Nx 22."
+2. Added runtime warnings using logger: "The '--simpleName' option is deprecated and will be removed in Nx 22. Please use the '--name' option to provide the exact name you want for the library."
+3. Updated generated documentation to reflect deprecation
+4. Made deprecation messages consistent across all generators
+5. Addressed PR review feedback to clarify usage of `--name` option
+
+## Key Decisions
+- Used consistent deprecation pattern across all generators
+- Made warning messages explicit about using `--name` option
+- Used `--simpleName` in warnings for consistency with `--name`
 
 ## Next Steps
-1. **Tailwind v4**: Documentation updates and migration guide
-2. **Laravel Plugin**: Real-world testing and community feedback
-3. **Easy Issues**: Prioritize and assign to team/AI
-4. **Visual Affordances**: Explore implementation with Nx Cloud MCP
+- Monitor for any issues with the deprecation warnings
+- Plan for removal of simpleName option in Nx 22
 
-## Notes
-- Tailwind v4 implementation was smoother than expected due to its simplified configuration model
-- Laravel plugin follows established patterns, making it maintainable
-- The easy issues analysis provides a clear path for community contributions
-- This addresses long-standing user requests for both Tailwind v4 and Laravel support in Nx
+## References
+- Task plan: `.ai/2025-06-20/tasks/deprecate-simplename-option-all-generators.md`
+- GitHub Issue: #29508
