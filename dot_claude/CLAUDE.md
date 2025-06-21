@@ -14,6 +14,10 @@ I am in Eastern Timezone, so make sure all dates and time uses ET.
 
 Never commit directly to `master` or `main` branch. Always work in a new branch.
 
+## CRITICAL: Understanding architecture
+
+You might find useful architectural information under `.ai/architectures` for nx, ocean, nx-labs, or nx-console repo. These documents contain strucutre, key technologies, features, contributors, my contributions, recent changes, etc. Use them when doing work. For example, `.ai/architectures/nx-architecture.md`.
+
 ## CRITICAL: Commit Messages and PR Templates
 
 When creating commits that will be used for pull requests:

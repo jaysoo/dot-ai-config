@@ -4,6 +4,21 @@
 
 The Nx repository is a monorepo containing the core Nx build system, CLI tools, plugins for various frameworks, documentation website, and supporting infrastructure. It uses PNPM workspaces for package management and is primarily written in TypeScript with Rust components for performance-critical operations.
 
+
+## Core Contributors
+
+- Jason Jean – email: jasonjean1993@gmail.com → GitHub username: unknown
+- Victor Savkin – appears with emails mail@vsavkin.com and vic.savkin@gmail.com; additionally there’s a contributor listed as “vsavkin”. We assume his GitHub username is vsavkin.
+- vsavkin – email: avix1000@gmail.com → GitHub username: vsavkin
+- Jack Hsu – email: jack.hsu@gmail.com → GitHub username: unknown
+- Leosvel Pérez Espinosa – email: leosvel.perez.espinosa@gmail.com → GitHub username: unknown
+- Colum Ferry – email: cferry09@gmail.com → GitHub username: unknown
+- Craigory Coppola – email: craigorycoppola@gmail.com → GitHub username: unknown
+- Emily Xiong – email: xiongemi@gmail.com → GitHub username: unknown
+- Nicholas Cunningham – email: ndcunningham@gmail.com → GitHub username: unknown
+- James Henry – email: james@henry.sc → GitHub username: unknown
+- Jonathan Cammisuli – email: 4332460+Cammisuli@users.noreply.github.com → GitHub username: Cammisuli
+
 ## Core Components
 
 ### 1. Nx Core (`packages/nx`)
@@ -84,7 +99,7 @@ The repository contains official plugins for major frameworks:
 - **docs/shared/recipes/**: Code recipes and examples
 
 ### 5. Graph Visualization (`graph/`)
-- **Technology**: React with Tailwind CSS
+- **Technology**: React with TailwindCSS v3
 - **Purpose**: Interactive project graph visualization
 - **Features**:
   - Project dependency visualization
@@ -120,8 +135,7 @@ Each plugin follows a consistent structure:
 ### Performance Optimizations
 - Rust-based components for CPU-intensive operations
 - Native binaries for different platforms
-- Daemon process for persistent caching
-- Incremental builds and affected commands
+- Server-client (daemon) architecture to avoid expensive recomputation in large monorepos
 
 ## Recent Feature Development (2024-2025)
 
@@ -219,22 +233,14 @@ Based on commit history from jack.hsu@gmail.com:
   - Related to issue #29508
   - Will be removed in Nx v22
 
-### Recently Completed Features (2025-06-13)
-- **Heap Usage Logging**: Added memory tracking to display peak RSS for each task when `NX_LOG_HEAP_USAGE=true` is set
-  - Implemented MemoryTracker service using pidusage library for cross-platform support
-  - Integrated memory tracking throughout task execution pipeline
-  - Displays peak memory usage in terminal output: `✔ nx run app:build (2.5s) (peak: 256MB)`
-  - Tracks entire process tree including child processes
-  - No performance impact when feature is disabled (opt-in via environment variable)
-
 ## Key Technologies
 
 - **Languages**: TypeScript, JavaScript, Rust
 - **Package Manager**: PNPM
-- **Build Tools**: Nx (self-hosted), Webpack, Vite, Rollup, ESBuild
+- **Build Tools**: Nx (dogfooding), Webpack, Vite, Rollup, ESBuild
 - **Testing**: Jest, Cypress, Playwright
-- **Documentation**: Next.js, Markdown, Tailwind CSS
-- **Native Development**: Rust with NAPI bindings
+- **Documentation**: Next.js, Markdown, TailwindCSS
+- **Native Development**: Rust with NAPI bindings (napi-rs)
 
 ## Module Federation Support
 Special emphasis on module federation across multiple bundlers:
@@ -254,37 +260,7 @@ Special emphasis on module federation across multiple bundlers:
 - Extensive documentation and examples
 - Active development with frequent releases
 
-## Task Execution & Memory Tracking
-
-### Memory Usage Monitoring (Added 2025-06-13)
-Nx now supports memory usage tracking for task execution to help developers identify memory-intensive operations:
-
-**Architecture:**
-- **MemoryTracker Service** (`packages/nx/src/tasks-runner/memory-tracker.ts`):
-  - Singleton service using pidusage library
-  - Polls process memory every 100ms
-  - Tracks entire process tree (parent + children)
-  - Stores peak RSS (Resident Set Size) for each process
-
-**Integration Points:**
-1. **Task Interface** (`task-graph.ts`): Added optional `peakRss?: number` field
-2. **RunningNodeProcess** (`running-tasks.ts`): Starts/stops memory tracking for spawned processes
-3. **TaskOrchestrator** (`task-orchestrator.ts`): Threads memory data through execution pipeline
-4. **Terminal Output Lifecycles**: Display peak memory in human-readable format
-
-**Usage:**
-```bash
-NX_LOG_HEAP_USAGE=true nx run myapp:build
-# Output: ✔  nx run myapp:build (2.5s) (peak: 256MB)
-```
-
-**Design Principles:**
-- Zero overhead when disabled (environment variable opt-in)
-- Cross-platform support (Windows, macOS, Linux)
-- Graceful fallback for unsupported scenarios (pseudo-terminal, cached tasks)
-- Memory leak prevention with proper cleanup
-
-## Internal Development Practices
+## Personal Development Practices
 
 ### Repository Organization
 - **.ai/**: AI-assisted development artifacts and task tracking
