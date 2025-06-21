@@ -99,11 +99,14 @@ cd ~/projects/nx
    - Add with "NEW: needs categorization" marker
    - Review and categorize in future sessions
 
-## Notes
+## CRITICAL
 
-- Focuses only on today's work (previous days already captured)
+- Focuses mostly on today's work (previous days were probably captured)
 - Creates architecture file if it doesn't exist
 - One architecture.md per repository
 - Files stored in .ai/architectures/[repo]-architecture.md
+- When recording "Personal Work" or featrures/changes I've made, make sure to reference date and git branches or commits (if applicable)
+    - Later on, if old commits aren't found, then mark that work/feature as possibly not merged or reverted
+    - It's possible a PR was opened, but it did not finish, in which case I can review and delete them from the doc manually
 
 ARGUMENTS: [--initial-scan] [-v|--verbose]

@@ -97,13 +97,3 @@ PHP support in Nx enables monorepo management for PHP projects with automatic ta
 - TypeScript with strict checking
 - Nx build system integration
 
-## Future Concepts
-
-### Visual Affordances for AI Tools
-**Proposed**: 2025-06-20
-
-Integration of visual feedback when AI tools perform development tasks:
-- Playwright for automated screenshot capture
-- Nx Cloud MCP for storing visual artifacts
-- Terminal output and test result visualization
-- Quick visual verification without code inspection
