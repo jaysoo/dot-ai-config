@@ -10,6 +10,8 @@ Don't be overly friendly or optimistic. Be terse.
 
 I am in Eastern Timezone, so make sure all dates and time uses ET.
 
+When I ask for date or you need the date, run `date '+%Y-%m-%d`. If you need a timestamp run `date '+%Y-%m-%d %H:%M'`.
+
 ## CRITICAL: main branches
 
 Never commit directly to `master` or `main` branch. Always work in a new branch.
