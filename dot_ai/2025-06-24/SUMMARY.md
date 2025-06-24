@@ -4,7 +4,10 @@
 
 ### In Progress
 
-_None_
+- **LLM-First Nx Generators - Phase 1 Implementation** (15:02)
+  - Plan: `tasks/llm-first-nx-generators-phase1.md`
+  - Spec reference: `specs/llm-first-nx-generators.md`
+  - Goal: Implement MVP with Claude Code integration, basic TypeScript/React generators, and post-generation validation
 
 ### Completed
 

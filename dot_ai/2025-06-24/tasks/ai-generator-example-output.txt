@@ -1,0 +1,42 @@
+# Example: Running AI Generator
+
+$ nx g @nx/react:application my-ai-app --ai=claude
+
+NX  Generating @nx/react:application
+NX  Using Claude AI to generate @nx/react:application
+NX  Loaded AI template from: packages/react/ai-templates/application.md
+
+CREATE apps/my-ai-app/project.json
+CREATE apps/my-ai-app/src/main.tsx
+CREATE apps/my-ai-app/src/app/app.tsx
+CREATE apps/my-ai-app/src/app/app.module.css
+CREATE apps/my-ai-app/src/styles.css
+CREATE apps/my-ai-app/index.html
+CREATE apps/my-ai-app/vite.config.ts
+CREATE apps/my-ai-app/tsconfig.json
+CREATE apps/my-ai-app/tsconfig.app.json
+CREATE apps/my-ai-app/.eslintrc.json
+CREATE apps/my-ai-app/jest.config.ts
+CREATE apps/my-ai-app/src/app/app.spec.tsx
+
+NX  AI generation completed successfully!
+
+# The generated app.tsx would look like:
+
+import styles from './app.module.css';
+
+export function App() {
+  return (
+    <div className={styles.container}>
+      <h1>Welcome to my-ai-app!</h1>
+      <p>This app was generated with AI assistance using Claude.</p>
+    </div>
+  );
+}
+
+export default App;
+
+# You can then run:
+$ nx serve my-ai-app
+
+# And the app would start on http://localhost:4200

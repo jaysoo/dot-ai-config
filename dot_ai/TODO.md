@@ -2,6 +2,12 @@
 
 ## In Progress
 
+- [ ] LLM-First Nx Generators - Phase 1 Implementation (2025-06-24 15:02)
+  - Plan created: `.ai/2025-06-24/tasks/llm-first-nx-generators-phase1.md`
+  - Spec reference: `.ai/2025-06-24/specs/llm-first-nx-generators.md`
+  - Next steps: Research existing Nx generator architecture and Claude Code headless API
+  - Goal: Implement MVP with Claude Code integration, basic TypeScript/React generators, and post-generation validation
+
 - [ ] Nx Easy Issues Analysis and Implementation (2025-06-24 11:30)
   - Plan created: `.ai/2025-06-24/tasks/nx-easy-issues-plan.md`
   - Analysis script: `.ai/2025-06-24/tasks/analyze-easy-issues-v2.mjs`
