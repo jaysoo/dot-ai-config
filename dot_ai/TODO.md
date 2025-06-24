@@ -2,6 +2,22 @@
 
 ## In Progress
 
+- [ ] Nx Easy Issues Analysis and Implementation (2025-06-24 11:30)
+  - Plan created: `.ai/2025-06-24/tasks/nx-easy-issues-plan.md`
+  - Analysis script: `.ai/2025-06-24/tasks/analyze-easy-issues-v2.mjs`
+  - Next steps: Review top 10 issues and select high-impact fixes
+  - Goal: Address 3-5 high-priority, AI-suitable issues from the Nx repository
+  - Results: Found 130 actionable issues (59 high priority, 38 AI suitable, 69 with core team comments)
+
+- [ ] Fix Issue #30058: Supplemental addition for troubleshooting global installs of nx (2025-06-24 11:45)
+  - Plan created: `.ai/2025-06-24/tasks/fix-issue-30058-homebrew-troubleshooting.md`
+  - Issue: https://github.com/nrwl/nx/issues/30058
+  - Priority: MEDIUM, AI Suitability: HIGH
+  - Category: simpleDocs
+  - Core contributor: isaacplmann (ready to review PR)
+  - Goal: Add troubleshooting documentation for Homebrew Node.js edge case
+  - Next steps: Find target file, add Homebrew troubleshooting section
+
 - [ ] Generator to migrate integrated to ts solution
   - Hilton, Norark (Steven)
   - AXO-19 Extract TS solution migrator from Ocean repo into a public package
@@ -341,4 +357,3 @@
   - Plan created: Various scripts in `dot_ai/2025-06-02/tasks/`
   - Goal: Analyze and create redirects for Nx documentation migration
   - Result: 100% redirect coverage achieved with high confidence scores
-
