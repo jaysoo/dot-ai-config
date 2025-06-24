@@ -31,6 +31,13 @@
 
 ## Completed
 
+- [x] Fix Next.js Jest JSX Transform Warning (2025-06-24 10:55)
+  - Plan created: `.ai/2025-06-24/tasks/fix-nextjs-jest-jsx-transform.md`
+  - Goal: Update Next.js generators to use next/jest.js configuration with modern JSX transform
+  - Issue: https://github.com/nrwl/nx/issues/27900
+  - Result: Successfully updated both app and library generators to use next/jest.js
+  - Commits: f1a2dd8a5e (initial), 008d254dc4 (improvements)
+
 - [x] MCP Server Improvements (2025-06-12) 
   - Plan created: `dot_ai/2025-06-12/tasks/mcp-server-improvements.md`
   - Goal: Implement architecture and performance improvements to MCP AI Content Server

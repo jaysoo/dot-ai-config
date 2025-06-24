@@ -39,6 +39,9 @@ The repository contains official plugins for major frameworks:
 - **@nx/react**: React applications and libraries with various bundler support
 - **@nx/vue**: Vue.js applications with Vite integration
 - **@nx/next**: Next.js applications with custom server support
+  - Supports both App Router and Pages Router
+  - Integrated Jest configuration using `next/jest.js` (as of 2025-06-24)
+  - Custom server support with SWC or TypeScript compilation
 - **@nx/nuxt**: Nuxt.js support
 - **@nx/remix**: Remix framework support
 
@@ -57,6 +60,8 @@ The repository contains official plugins for major frameworks:
 
 #### Testing & Quality
 - **@nx/jest**: Jest testing framework integration
+  - Provides base configuration and executors for Jest
+  - Integrates with framework-specific testing setups
 - **@nx/cypress**: Cypress E2E and component testing
 - **@nx/playwright**: Playwright testing support
 - **@nx/detox**: React Native testing with Detox
@@ -211,6 +216,12 @@ Based on commit history from jack.hsu@gmail.com:
 - Migration UI enhancements
 - Port configuration support for React application generator across all bundlers
 - E2E test runner port configuration fixes
+- **2025-06-24**: Next.js Jest Configuration with Modern JSX Transform (branch: `fix/nextjs-jest-jsx-transform-27900-main`)
+  - Updated Next.js application and library generators to use `next/jest.js`
+  - Fixes React 19 JSX transform warnings (issue #27900)
+  - Added comprehensive unit and E2E tests
+  - Commits: f1a2dd8a5e, 008d254dc4, 752737f11e
+  - Consolidated duplicate Jest configuration code into shared utility
 
 ### Bug Fixes & Maintenance
 - Fixed npm scope matching issues
@@ -223,6 +234,21 @@ Based on commit history from jack.hsu@gmail.com:
 ### Active Development (In Progress)
 - **AI-MCP Integration**: Exploring Model Context Protocol integration for enhanced AI tool support
 - **Incident Response Documentation**: Auditing and improving incident response processes
+
+## Key Implementation Files
+
+### Next.js Jest Integration (2025-06-24)
+**Files that work together for Next.js Jest configuration:**
+- `packages/next/src/utils/jest-config-util.ts` - NEW: Shared utility for generating Jest config (consolidates duplicate code)
+- `packages/next/src/generators/application/application.ts` - Updated to use shared Jest config utility
+- `packages/next/src/generators/library/library.ts` - Updated to use shared Jest config utility
+- `packages/next/src/generators/application/application.spec.ts` - Tests using `toMatchInlineSnapshot()`
+- `packages/next/src/generators/library/library.spec.ts` - Tests for library Jest config
+- `e2e/next/src/next-jest-config.test.ts` - NEW: E2E tests for Jest configuration
+
+**Design Decisions**: 
+1. Rather than modifying existing Jest configs with string replacements, the implementation completely overwrites the Jest config file with a new `next/jest.js`-based configuration. This approach is more reliable and maintainable.
+2. Consolidated duplicate Jest configuration code between application and library generators into a shared utility to follow DRY principles and ease maintenance.
 
 ### Library Generator Improvements (2025-06-20)
 - **simpleName Option Deprecation**: Deprecated the `simpleName` option across all library generators
@@ -305,5 +331,5 @@ Special emphasis on module federation across multiple bundlers:
 
 ---
 
-*Last updated: 2025-06-20*
+*Last updated: 2025-06-24*
 *Based on analysis of repository structure and recent commits*
