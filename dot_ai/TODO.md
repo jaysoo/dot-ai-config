@@ -2,27 +2,8 @@
 
 ## In Progress
 
-- [ ] LLM-First Nx Generators - Phase 1 Implementation (2025-06-24 15:02)
-  - Plan created: `.ai/2025-06-24/tasks/llm-first-nx-generators-phase1.md`
-  - Spec reference: `.ai/2025-06-24/specs/llm-first-nx-generators.md`
-  - Next steps: Research existing Nx generator architecture and Claude Code headless API
-  - Goal: Implement MVP with Claude Code integration, basic TypeScript/React generators, and post-generation validation
-
-- [ ] Nx Easy Issues Analysis and Implementation (2025-06-24 11:30)
-  - Plan created: `.ai/2025-06-24/tasks/nx-easy-issues-plan.md`
-  - Analysis script: `.ai/2025-06-24/tasks/analyze-easy-issues-v2.mjs`
-  - Next steps: Review top 10 issues and select high-impact fixes
-  - Goal: Address 3-5 high-priority, AI-suitable issues from the Nx repository
-  - Results: Found 130 actionable issues (59 high priority, 38 AI suitable, 69 with core team comments)
-
-- [ ] Fix Issue #30058: Supplemental addition for troubleshooting global installs of nx (2025-06-24 11:45)
-  - Plan created: `.ai/2025-06-24/tasks/fix-issue-30058-homebrew-troubleshooting.md`
-  - Issue: https://github.com/nrwl/nx/issues/30058
-  - Priority: MEDIUM, AI Suitability: HIGH
-  - Category: simpleDocs
-  - Core contributor: isaacplmann (ready to review PR)
-  - Goal: Add troubleshooting documentation for Homebrew Node.js edge case
-  - Next steps: Find target file, add Homebrew troubleshooting section
+- [ ] Migrate hanging with 19.8.14 to latest (Reporter: Juri)
+  - https://linear.app/nxdev/issue/DOC-47/investigate-ctrlc-interrupt-issue-with-nx-migrate-command
 
 - [ ] Generator to migrate integrated to ts solution
   - Hilton, Norark (Steven)
@@ -36,20 +17,24 @@
 - [ ] Slow ESLINT graph calculation
   - https://github.com/nrwl/nx/issues/27849
 
-- [ ] Raw-docs for the trial (2025-06-18 10:51)
-  - Node.js backend (already merged and we'll iterate)
-  - Java: https://github.com/nrwl/raw-docs/pull/1 (Emily to review and update)
-  - MCP
+- [ ] LLM-First Nx Generators - Phase 1 Implementation (2025-06-24 15:02)
+  - Plan created: `.ai/2025-06-24/tasks/llm-first-nx-generators-phase1.md`
+  - Spec reference: `.ai/2025-06-24/specs/llm-first-nx-generators.md`
+  - Next steps: Research existing Nx generator architecture and Claude Code headless API
+  - Goal: Implement MVP with Claude Code integration, basic TypeScript/React generators, and post-generation validation
+
+- [ ] Fix Issue #30058: Supplemental addition for troubleshooting global installs of nx (2025-06-24 11:45)
+  - Plan created: `.ai/2025-06-24/tasks/fix-issue-30058-homebrew-troubleshooting.md`
+  - Issue: https://github.com/nrwl/nx/issues/30058
+  - Priority: MEDIUM, AI Suitability: HIGH
+  - Category: simpleDocs
+  - Core contributor: isaacplmann (ready to review PR)
+  - Goal: Add troubleshooting documentation for Homebrew Node.js edge case
+  - Next steps: Find target file, add Homebrew troubleshooting section
 
 - [ ] Ensure Nicholas' PRs are merged for Migrate UI (2025-06-18 10:48)
   - https://github.com/nrwl/nx/pull/31626
   - https://github.com/nrwl/nx-console/pull/2567
-
-- [ ] NX CLI Heap Usage Logging - Phase 1 (2025-06-11 18:35) (migrated)
-  - Plan created: `dot_ai/2025-06-11/tasks/nx-heap-usage-logging-phase1.md`
-  - Spec reference: `dot_ai/2025-06-11/specs/heap-usage-logging.md`
-  - Goal: Implement memory tracking to display peak RSS for each task via NX_LOG_HEAP_USAGE environment variable
-  - Next steps: Add pidusage dependency, enhance Task interface, create memory tracking service
 
 ## Completed
 
