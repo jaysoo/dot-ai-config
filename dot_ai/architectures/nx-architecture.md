@@ -160,6 +160,7 @@ Each plugin follows a consistent structure:
 - Automated conversion tools and generators
 - Updated all plugins to support flat config format
 - Added file extension support to overrides
+- **Documentation Updates (2025-07-09)**: Updated all ESLint documentation to show flat config as the primary/default format with legacy config in secondary tabs
 
 ### 4. **Framework Updates**
 - **Next.js**: Support for Next 14 and 15
@@ -235,7 +236,32 @@ Based on commit history from jack.hsu@gmail.com:
 - **AI-MCP Integration**: Exploring Model Context Protocol integration for enhanced AI tool support
 - **Incident Response Documentation**: Auditing and improving incident response processes
 
+### ESLint Documentation Modernization (2025-07-09)
+- **Branch**: `docs/enforce-module-boundaries`
+- **Context**: Building on commit `8531c0f583` which updated module boundaries rule docs
+- **Goal**: Modernize ESLint documentation to show flat config as default while maintaining legacy support
+- **Files Updated**:
+  - `docs/shared/packages/eslint/enforce-module-boundaries.md` - Added tabbed structure with flat config first
+  - `docs/shared/packages/eslint/dependency-checks.md` - Updated manual setup and override sections
+  - `docs/shared/eslint.md` - Updated TypeScript configuration examples with parserOptions.project
+- **Implementation**: Used consistent tabbed format with "Flat Config" and "Legacy (.eslintrc.json)" labels
+
 ## Key Implementation Files
+
+### ESLint Documentation Structure (2025-07-09)
+**Files that work together for ESLint configuration documentation:**
+- `docs/shared/packages/eslint/enforce-module-boundaries.md` - Rule documentation with tabbed examples
+- `docs/shared/packages/eslint/dependency-checks.md` - Rule documentation with configuration options
+- `docs/shared/eslint.md` - TypeScript ESLint setup guide with parserOptions
+- `docs/shared/features/enforce-module-boundaries.md` - Feature documentation (already updated)
+- `docs/shared/packages/eslint/eslint-plugin.md` - Plugin overview (no config examples)
+
+**Design Decisions**:
+1. Prioritize flat config format (eslint.config.mjs) as the default/recommended approach
+2. Maintain legacy config examples in secondary tabs for backward compatibility
+3. Use consistent tab labels across all documentation: "Flat Config" and "Legacy (.eslintrc.json)"
+4. Show proper ES module imports from @nx/eslint-plugin package
+5. Note: Generated documentation files in `docs/generated/` are automatically updated from source files and should not be edited directly
 
 ### Next.js Jest Integration (2025-06-24)
 **Files that work together for Next.js Jest configuration:**

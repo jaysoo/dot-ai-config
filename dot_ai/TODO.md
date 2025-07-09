@@ -2,8 +2,36 @@
 
 ## In Progress
 
+- [x] Ask Nicholas about Node 24 in nightly
+
+- [ ] Ask Jason to cut a patch release
+
+- [ ] Office Hours
+  - ESLint + local compilerOptions.paths aliases
+  - `packages/eslint-plugin/src/flat-configs/typescript.ts`
+  ```
+  {
+    plugins: { '@typescript-eslint': tseslint.plugin },
+    languageOptions: {
+      parser: tseslint.parser,
+      ecmaVersion: 2020,
+      sourceType: 'module',
+      parserOptions: {
+        // TODO: Do we need to specifiy project if using tsconfig.app.json?
+        project: './tsconfig.app.json',
+        // This neeeds to point to project root (I think?)
+        tsconfigRootDir: workspaceRoot,
+      },
+    },
+  },
+  ```
+
+- [ ] Test out and make improvements to raw docs for Heidi, Nicole, DPEs, DevRel
+  - See: https://www.notion.so/nxnrwl/Polygraph-Launch-Campaign-Brief-20e69f3c23878049bed3e8be9ff1a8ab?source=copy_link
+
 - [ ] Migrate hanging with 19.8.14 to latest (Reporter: Juri)
   - https://linear.app/nxdev/issue/DOC-47/investigate-ctrlc-interrupt-issue-with-nx-migrate-command
+  - Close at EOW (June 27 if no repro provided)
 
 - [ ] Generator to migrate integrated to ts solution
   - Hilton, Norark (Steven)
@@ -12,16 +40,25 @@
 
 - [ ] Triage during cooldown (Week of June 23rd)
   - MF stuff
-  - ESLint + local path aliases (need repro)
-
-- [ ] Slow ESLINT graph calculation
-  - https://github.com/nrwl/nx/issues/27849
 
 - [ ] LLM-First Nx Generators - Phase 1 Implementation (2025-06-24 15:02)
   - Plan created: `.ai/2025-06-24/tasks/llm-first-nx-generators-phase1.md`
   - Spec reference: `.ai/2025-06-24/specs/llm-first-nx-generators.md`
   - Next steps: Research existing Nx generator architecture and Claude Code headless API
   - Goal: Implement MVP with Claude Code integration, basic TypeScript/React generators, and post-generation validation
+
+- [ ] Move convert-ts-solution Generator to packages/js (2025-06-26 09:26)
+
+- [ ] Nx Easy Issues Analysis and Implementation (2025-06-26 14:55)
+  - Plan created: `.ai/2025-06-26/tasks/nx-easy-issues-plan.md`
+  - Analysis script: `.ai/2025-06-26/tasks/analyze-easy-issues-v2.mjs`
+  - Found 148 actionable issues (117 HIGH AI suitability)
+  - Next steps: Prioritize issues with core team guidance, start with config/dependency fixes
+  - Goal: Address high-scoring issues suitable for AI automation
+  - Plan created: `.ai/2025-06-26/tasks/move-convert-ts-solution-generator.md`
+  - Next steps: Publish to local registry, copy generator files, fix import issues, test thoroughly
+  - Goal: Move generator from ocean repo to packages/js and fix reported issues (imports, exports, references)
+
 
 - [ ] Fix Issue #30058: Supplemental addition for troubleshooting global installs of nx (2025-06-24 11:45)
   - Plan created: `.ai/2025-06-24/tasks/fix-issue-30058-homebrew-troubleshooting.md`
@@ -32,11 +69,32 @@
   - Goal: Add troubleshooting documentation for Homebrew Node.js edge case
   - Next steps: Find target file, add Homebrew troubleshooting section
 
-- [ ] Ensure Nicholas' PRs are merged for Migrate UI (2025-06-18 10:48)
+
+## Completed
+
+- [x] Update ESLint Documentation to Show Flat Config by Default (2025-07-09 17:41)
+  - Plan created: `.ai/2025-07-09/tasks/update-eslint-docs-flat-config.md`
+  - Branch: docs/enforce-module-boundaries
+  - Goal: Update remaining ESLint documentation pages to show flat config format by default
+  - Result: Successfully updated enforce-module-boundaries.md, dependency-checks.md, and eslint.md with tabbed format
+
+- [x] Reproduce Nx Lockfile Error (2025-06-26 15:44)
+  - Plan created: `.ai/2025-01-27/tasks/reproduce-nx-lockfile-error.md`
+  - Scripts created: analyze-lockfile-code.mjs, setup-repo.mjs, simulate-errors.mjs, reproduce-lock-errors.mjs, trigger-lockfile-error.mjs, minimal-repro.mjs
+  - Goal: Reliably reproduce lockfile error and understand why reset fixes it
+  - Result: Successfully identified root cause (corrupted cache files in .nx/workspace-data) and created reliable reproduction
+
+
+- [x] Ensure Nicholas' PRs are merged for Migrate UI (2025-06-18 10:48)
   - https://github.com/nrwl/nx/pull/31626
   - https://github.com/nrwl/nx-console/pull/2567
 
-## Completed
+- [x] ESLint + local path aliases (need repro)
+  - Closed, cannot repro: https://github.com/nrwl/nx/issues/31286
+
+- [x] Slow ESLINT graph calculation
+  - https://github.com/nrwl/nx/issues/27849
+  - Should be fixed in latest version
 
 - [x] Fix Next.js Jest JSX Transform Warning (2025-06-24 10:55)
   - Plan created: `.ai/2025-06-24/tasks/fix-nextjs-jest-jsx-transform.md`

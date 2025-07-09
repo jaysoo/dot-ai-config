@@ -1,0 +1,162 @@
+{
+  "version": "6.0",
+  "nxVersion": "21.2.1",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "package.json",
+        "hash": "3511656872064157546"
+      },
+      {
+        "file": "graph-1.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "graph-4.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "test-graph.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": ".nx/workspace-data/lockfile.hash",
+        "hash": "1909418679740916726"
+      },
+      {
+        "file": "lockfile-mismatch-test.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "graph-2.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "concurrent-test-4.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": ".nx/workspace-data/project-graph.json",
+        "hash": "15465704126913273340"
+      },
+      {
+        "file": "baseline.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "concurrent-test-3.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "corrupt-hash-test.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "after-reset-test.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "graph-7.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "graph-6.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "test.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "graph-9.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "concurrent-test-2.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "lock-test.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "graph-8.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": ".nx/workspace-data/file-map.json",
+        "hash": "15357409603744332410"
+      },
+      {
+        "file": "stale-daemon-test.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "nx.json",
+        "hash": "16142619335139823207"
+      },
+      {
+        "file": "graph-0.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "concurrent-test-1.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "graph-3.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": "after-reset.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": ".nx/workspace-data/parsed-lock-file.json",
+        "hash": "11637065768425816435"
+      },
+      {
+        "file": ".nx/workspace-data/nx_files.nxt",
+        "hash": "2354799991809038757"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "13770433950346039466"
+      },
+      {
+        "file": ".nx/workspace-data/source-maps.json",
+        "hash": "1271416577090154406"
+      },
+      {
+        "file": "concurrent-test-0.json",
+        "hash": "6179274074419696637"
+      },
+      {
+        "file": ".nx/workspace-data/d/server-process.json",
+        "hash": "14136468386828305453"
+      },
+      {
+        "file": "graph-5.json",
+        "hash": "6179274074419696637"
+      }
+    ],
+    "projectFileMap": {
+      "lib-a": [
+        {
+          "file": "packages/lib-a/index.js",
+          "hash": "16258719556113004490"
+        },
+        {
+          "file": "packages/lib-a/package.json",
+          "hash": "4245253867389375898"
+        },
+        {
+          "file": "packages/lib-a/project.json",
+          "hash": "1271694218012575427"
+        }
+      ]
+    }
+  }
+}

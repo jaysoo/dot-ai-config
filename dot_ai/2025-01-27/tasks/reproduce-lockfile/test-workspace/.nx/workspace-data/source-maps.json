@@ -1,0 +1,104 @@
+{
+  "packages/lib-a": {
+    "root": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "name": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:public": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageMain": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.executor": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.dependsOn": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.options": [
+      "packages/lib-a/package.json",
+      "nx/core/package-json"
+    ],
+    "$schema": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.outputs": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.outputPath": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.main": [
+      "packages/lib-a/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "lockfile-test",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@nx/js": "latest",
+    "nx": "21.2.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
