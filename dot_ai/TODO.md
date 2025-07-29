@@ -4,6 +4,11 @@
 
 ## Completed
 
+- [x] Update Nx commands to use @latest in documentation (2025-07-29 12:41)
+  - Plan created: `.ai/2025-07-29/tasks/update-nx-commands-to-latest.md`
+  - Goal: Update all docs to use `npx nx@latest` commands to ensure users get latest version
+  - Result: Successfully updated 27 occurrences across 23 files and formatted with prettier
+
 - [x] Add Tailwind CSS to Astro-Docs Website (2025-01-23 17:12)
   - Plan created: `.ai/2025-01-23/tasks/add-tailwind-to-astro-docs.md`
   - Goal: Integrate Tailwind CSS into the astro-docs website for enhanced styling capabilities

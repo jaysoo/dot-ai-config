@@ -274,7 +274,7 @@ https://nx.dev/recipes/adopting-nx/import-project
 https://nx.dev/recipes/adopting-nx/preserving-git-histories
 https://nx.dev/recipes/adopting-nx/manual
 https://nx.dev/recipes/nx-release
-https://nx.dev/recipes/nx-release/get-started-with-nx-release
+https://nx.dev/recipes/nx-release/release-npm-packages
 https://nx.dev/recipes/nx-release/release-projects-independently
 https://nx.dev/recipes/nx-release/updating-version-references
 https://nx.dev/recipes/nx-release/automatically-version-with-conventional-commits

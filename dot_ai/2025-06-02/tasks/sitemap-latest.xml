@@ -276,7 +276,7 @@
 <url><loc>https://nx.dev/recipes/adopting-nx/preserving-git-histories</loc><lastmod>2025-05-30T09:11:05.155Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://nx.dev/recipes/adopting-nx/manual</loc><lastmod>2025-05-30T09:11:05.155Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://nx.dev/recipes/nx-release</loc><lastmod>2025-05-30T09:11:05.155Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nx.dev/recipes/nx-release/get-started-with-nx-release</loc><lastmod>2025-05-30T09:11:05.155Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nx.dev/recipes/nx-release/release-npm-packages</loc><lastmod>2025-05-30T09:11:05.155Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://nx.dev/recipes/nx-release/release-projects-independently</loc><lastmod>2025-05-30T09:11:05.155Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://nx.dev/recipes/nx-release/updating-version-references</loc><lastmod>2025-05-30T09:11:05.155Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://nx.dev/recipes/nx-release/automatically-version-with-conventional-commits</loc><lastmod>2025-05-30T09:11:05.155Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>

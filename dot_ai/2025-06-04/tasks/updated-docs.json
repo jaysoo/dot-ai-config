@@ -1729,7 +1729,7 @@
       "/technologies/typescript/api/executors/node#waituntiltargets"
     ]
   ],
-  "docs/shared/recipes/nx-release/get-started-with-nx-release.md": [
+  "docs/shared/recipes/nx-release/release-npm-packages.md": [
     [
       "/nx-api/nx/documents/run-many",
       "/reference/core-api/nx/documents/run-many"
