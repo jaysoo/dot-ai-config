@@ -4,6 +4,11 @@
 
 ## Completed
 
+- [x] Test nx@0.0.0-pr-32120-1cb4170 Docker release functionality (2025-07-30 14:35)
+  - Plan created: `.ai/2025-07-30/tasks/test-nx-docker-release.md`
+  - Goal: Validate Nx workspace creation with Docker support and release functionality for PR builds
+  - Result: All tests passed successfully
+
 - [x] Update Nx commands to use @latest in documentation (2025-07-29 12:41)
   - Plan created: `.ai/2025-07-29/tasks/update-nx-commands-to-latest.md`
   - Goal: Update all docs to use `npx nx@latest` commands to ensure users get latest version
