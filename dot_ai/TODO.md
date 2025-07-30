@@ -4,6 +4,14 @@
 
 ## Completed
 
+- [x] Address CRITICAL(AI) sections in Docker documentation (2025-07-30 14:30)
+  - Plan created: `.ai/2025-07-30/tasks/address-docker-docs-critical-sections.md`
+  - Goal: Improve Docker release documentation by addressing three CRITICAL(AI) sections
+  - Changes made:
+    - Enhanced Production and Hotfix Releases section with customization examples
+    - Added Nx Cloud Agents compatibility warnings in two locations
+    - Updated nx-json reference docs with complete pattern documentation
+
 - [x] Test nx@0.0.0-pr-32120-1cb4170 Docker release functionality (2025-07-30 14:35)
   - Plan created: `.ai/2025-07-30/tasks/test-nx-docker-release.md`
   - Goal: Validate Nx workspace creation with Docker support and release functionality for PR builds

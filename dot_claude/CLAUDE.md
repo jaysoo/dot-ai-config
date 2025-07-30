@@ -6,6 +6,14 @@ I work at Nx and my contributions are mostly related to Nx CLI.
 
 Don't be overly friendly or optimistic. Be terse.
 
+## CRITICAL: AI Notes
+
+Make sure to keep notes and scripts inside `.ai/` folder. If it does not exist then run this command:
+
+```
+ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai
+```
+
 ## CRITICAL: Timezone
 
 I am in Eastern Timezone, so make sure all dates and time uses ET.
