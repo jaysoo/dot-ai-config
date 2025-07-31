@@ -208,6 +208,9 @@ Based on commit history from jack.hsu@gmail.com:
   - Added consistent package name titles to 29 documentation files
   - Updated links to point directly to overview pages for better navigation
   - Created reusable scripts for bulk documentation updates
+- **2025-07-29**: Updated documentation to consistently use `npx nx@latest` for init and connect commands
+  - Ensures users always get the latest version when setting up Nx
+  - Commit: 9b0fb37eb6
 
 ### Feature Development
 - Node.js Docker multi-stage builds for better layer caching
@@ -235,6 +238,11 @@ Based on commit history from jack.hsu@gmail.com:
 ### Active Development (In Progress)
 - **AI-MCP Integration**: Exploring Model Context Protocol integration for enhanced AI tool support
 - **Incident Response Documentation**: Auditing and improving incident response processes
+- **Patch Release Automation (2025-07-30)**: Created automation script for cherry-picking fixes from master to patch branches
+  - Script: `.ai/2025-07-30/tasks/nx-patch-release.mjs`
+  - Automates identification and cherry-picking of fix, docs, and feat(nx-dev) commits
+  - Includes sanity checks against website branch
+  - Handles failures gracefully with detailed reporting
 
 ### ESLint Documentation Modernization (2025-07-09)
 - **Branch**: `docs/enforce-module-boundaries`
@@ -357,5 +365,5 @@ Special emphasis on module federation across multiple bundlers:
 
 ---
 
-*Last updated: 2025-06-24*
+*Last updated: 2025-07-30*
 *Based on analysis of repository structure and recent commits*

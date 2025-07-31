@@ -2,7 +2,18 @@
 
 ## In Progress
 
+- [ ] Patch Release Automation for Nx (2025-07-30 16:30)
+  - Plan created: `dot_ai/2025-07-30/tasks/nx-patch-release.mjs`
+  - Next steps: Monitor effectiveness, consider adding more validation
+  - Goal: Streamline patch release process with automated cherry-picking
+  - Branch: 21.3.x
+
 ## Completed
+
+- [x] Update Nx documentation to use npx nx@latest (2025-07-29)
+  - Updated docs to use `npx nx@latest` for init and connect commands
+  - Commit: 9b0fb37eb6 docs(misc): make sure "npx nx@latest" is used when calling init or coonnect (#32128)
+  - Goal: Ensure users always get the latest version when setting up Nx
 
 - [x] Address CRITICAL(AI) sections in Docker documentation (2025-07-30 14:30)
   - Plan created: `.ai/2025-07-30/tasks/address-docker-docs-critical-sections.md`
