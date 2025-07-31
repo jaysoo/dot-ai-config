@@ -8,6 +8,8 @@
   - Goal: Streamline patch release process with automated cherry-picking
   - Branch: 21.3.x
 
+- [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
+
 ## Completed
 
 - [x] Update Nx documentation to use npx nx@latest (2025-07-29)
