@@ -2,6 +2,11 @@
 
 ## In Progress
 
+- [ ] Debug Cookie Prompt Not Rendering (2025-08-01 16:00)
+  - Plan created: `.ai/2025-08-01/tasks/cookie-prompt-not-rendering.md`
+  - Next steps: Follow the 5-step plan to debug and fix Cookiebot script loading
+  - Goal: Fix issue where Cookiebot script is not rendering in nx-dev website HTML source
+
 - [ ] Patch Release Automation for Nx (2025-07-30 16:30)
   - Plan created: `dot_ai/2025-07-30/tasks/nx-patch-release.mjs`
   - Next steps: Monitor effectiveness, consider adding more validation
