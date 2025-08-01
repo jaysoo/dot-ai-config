@@ -1,0 +1,189 @@
+<!-- 
+  COOKIEBOT CUSTOM TEMPLATE - COMPATIBLE VERSION
+  This version maintains compatibility with Cookiebot's internal scripts
+-->
+
+<!-- HTML Template -->
+<div id="cookiebanner" lang="[#LANGUAGE#]" dir="[#TEXTDIRECTION#]" ng-non-bindable>
+  <div id="c-left">
+    <p class="c-header">[#TITLE#]</p>
+    <p class="c-message">[#TEXT#]</p>
+  </div>
+  <div id="c-right">
+    <div class="c-buttons">
+      <a href="javascript:void(0)" onclick="showCookiebotDetails()" class="c-details-link">Show details</a>
+      <a href="javascript:void(0)" onclick="denyCookies()" class="c-button c-button-deny">Deny</a>
+      <a href="javascript:void(0)" onclick="allowAllCookies()" class="c-button c-button-allow">Allow all</a>
+    </div>
+  </div>
+  <div style="clear:both"></div>
+</div>
+
+<!-- CSS Styles -->
+<style>
+/* CSS for Cookiebot Banner - Compatible with Cookiebot internal scripts */
+#cookiebanner {
+  /* Positioning */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483645;
+  
+  /* Sizing */
+  width: 100%;
+  
+  /* Appearance */
+  background-color: rgb(2 6 23);
+  color: white;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Left section */
+#c-left {
+  margin-bottom: 1rem;
+}
+
+/* Header */
+.c-header {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+/* Message */
+.c-message {
+  font-size: 0.875rem;
+  color: rgb(203 213 225);
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+/* Right section */
+#c-right {
+  /* Mobile: full width */
+}
+
+/* Buttons container */
+.c-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Details link */
+.c-details-link {
+  font-size: 0.875rem;
+  color: rgb(148 163 184);
+  text-decoration: underline;
+  transition: color 0.2s;
+  display: inline-block;
+}
+
+.c-details-link:hover {
+  color: white;
+}
+
+/* Common button styles */
+.c-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  display: inline-block;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/* Deny button */
+.c-button-deny {
+  background-color: transparent;
+  color: white;
+  border-color: rgb(51 65 85);
+}
+
+.c-button-deny:hover {
+  background-color: rgb(30 41 59);
+}
+
+/* Allow button */
+.c-button-allow {
+  background-color: rgb(37 99 235);
+  color: white;
+}
+
+.c-button-allow:hover {
+  background-color: rgb(29 78 216);
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  #cookiebanner {
+    bottom: 1rem;
+    left: 1rem;
+    right: auto;
+    width: 512px;
+    border-radius: 0.5rem;
+  }
+  
+  #c-left {
+    float: left;
+    width: 60%;
+    margin-bottom: 0;
+  }
+  
+  #c-right {
+    float: right;
+    width: 38%;
+    text-align: right;
+  }
+  
+  .c-buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .c-details-link {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 0.5rem;
+  }
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+/* JavaScript for Cookiebot Banner - Compatible version */
+
+// Function to handle "Allow all" button click
+function allowAllCookies() {
+  if (window.Cookiebot) {
+    // Submit consent for all categories
+    window.Cookiebot.submitCustomConsent(true, true, true);
+  }
+}
+
+// Function to handle "Deny" button click
+function denyCookies() {
+  if (window.Cookiebot) {
+    // Deny all non-essential categories
+    window.Cookiebot.submitCustomConsent(false, false, false);
+  }
+}
+
+// Function to handle "Show details" link click
+function showCookiebotDetails() {
+  if (window.Cookiebot) {
+    // Show the detailed consent dialog
+    window.Cookiebot.renew();
+  }
+}
+</script>

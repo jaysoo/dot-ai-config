@@ -1,0 +1,146 @@
+/* CSS for Cookiebot Banner - Tailwind-inspired styles */
+#cookiebanner {
+  /* Positioning */
+  position: fixed;
+  bottom: -500px; /* Start off-screen for animation */
+  left: 0;
+  z-index: 2147483645; /* Cookiebot's z-index */
+  
+  /* Sizing */
+  width: 100%;
+  max-width: 100%;
+  
+  /* Appearance */
+  background-color: rgb(2 6 23); /* bg-slate-950 */
+  color: white;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  
+  /* Animation */
+  transition: bottom 0.3s ease-out;
+}
+
+/* Container */
+.cb-container {
+  padding: 1rem;
+  position: relative;
+}
+
+/* Header */
+.cb-header {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding-right: 2rem;
+  text-transform: none;
+  color: white;
+}
+
+/* Message */
+.cb-message {
+  font-size: 0.875rem;
+  color: rgb(203 213 225); /* text-slate-300 */
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Buttons container */
+.cb-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Details link */
+.cb-details-link {
+  font-size: 0.875rem;
+  color: rgb(148 163 184); /* text-slate-400 */
+  text-decoration: underline;
+  transition: color 0.2s;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.cb-details-link:hover {
+  color: white;
+}
+
+/* Button group */
+.cb-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Common button styles */
+.cb-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  display: inline-block;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/* Deny button */
+.cb-button-deny {
+  background-color: transparent;
+  color: white;
+  border-color: rgb(51 65 85); /* border-slate-700 */
+}
+
+.cb-button-deny:hover {
+  background-color: rgb(30 41 59); /* bg-slate-800 */
+}
+
+/* Allow button */
+.cb-button-allow {
+  background-color: rgb(37 99 235); /* bg-blue-600 */
+  color: white;
+}
+
+.cb-button-allow:hover {
+  background-color: rgb(29 78 216); /* bg-blue-700 */
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  #cookiebanner {
+    bottom: -500px;
+    left: 1rem;
+    right: auto;
+    width: 512px;
+    border-radius: 0.5rem;
+  }
+  
+  #cookiebanner.show {
+    bottom: 1rem;
+  }
+  
+  .cb-container {
+    padding: 1rem;
+  }
+  
+  .cb-buttons {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .cb-button-group {
+    flex-direction: row;
+  }
+  
+  .cb-details-link {
+    margin-bottom: 0;
+  }
+}
+
+/* Animation class */
+#cookiebanner.show {
+  bottom: 0;
+}

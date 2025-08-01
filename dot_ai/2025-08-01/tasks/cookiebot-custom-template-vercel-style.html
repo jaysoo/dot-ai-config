@@ -1,0 +1,208 @@
+<!-- 
+  COOKIEBOT CUSTOM TEMPLATE - VERCEL STYLE
+  A minimal, clean cookie banner positioned at bottom-left
+  Inspired by Vercel's cookie consent design
+-->
+
+<div id="cookiebanner" lang="[#LANGUAGE#]" dir="[#TEXTDIRECTION#]" ng-non-bindable>
+  <div class="cb-content">
+    <p class="cb-text">[#TEXT#]</p>
+    <div class="cb-buttons">
+      <button class="cb-button cb-button-deny" id="CybotCookiebotDialogBodyButtonDecline">Deny</button>
+      <button class="cb-button cb-button-accept" id="CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll">Accept all</button>
+      <button class="cb-button cb-button-settings" onclick="showCookiebotDetails()">Consent Settings</button>
+    </div>
+  </div>
+</div>
+
+<!-- CSS Styles -->
+<style>
+/* Reset and base styles */
+#cookiebanner * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
+#cookiebanner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2147483645;
+  max-width: 520px;
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Animation */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Content wrapper */
+.cb-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Text */
+.cb-text {
+  color: #e5e5e5;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+/* Buttons container */
+.cb-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Button base styles */
+.cb-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  letter-spacing: -0.01em;
+}
+
+/* Deny button */
+.cb-button-deny {
+  background-color: transparent;
+  color: #e5e5e5;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cb-button-deny:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Accept button */
+.cb-button-accept {
+  background-color: #e5e5e5;
+  color: #0a0a0a;
+  border: 1px solid #e5e5e5;
+}
+
+.cb-button-accept:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Settings button */
+.cb-button-settings {
+  background-color: transparent;
+  color: #e5e5e5;
+  border: 1px solid transparent;
+  padding: 8px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cb-button-settings:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Focus styles for accessibility */
+.cb-button:focus-visible {
+  outline: 2px solid #3291ff;
+  outline-offset: 2px;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  #cookiebanner {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    max-width: none;
+  }
+  
+  .cb-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cb-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Hide default Cookiebot elements if they appear */
+#CybotCookiebotDialog,
+#CybotCookiebotDialogPoweredbyLink {
+  display: none !important;
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+/* JavaScript for Cookiebot Banner - Vercel Style */
+
+// Function to handle "Consent Settings" button click
+function showCookiebotDetails() {
+  if (window.Cookiebot) {
+    // Show the detailed consent dialog
+    window.Cookiebot.renew();
+  }
+}
+
+// Ensure the banner is visible when Cookiebot shows it
+document.addEventListener('DOMContentLoaded', function() {
+  // Watch for when Cookiebot displays the banner
+  if (window.addEventListener) {
+    window.addEventListener('CookiebotOnDialogDisplay', function() {
+      var banner = document.getElementById('cookiebanner');
+      if (banner) {
+        banner.style.display = 'block';
+      }
+    });
+  }
+});
+
+// Hide the banner after consent
+if (window.addEventListener) {
+  window.addEventListener('CookiebotOnAccept', function() {
+    var banner = document.getElementById('cookiebanner');
+    if (banner) {
+      banner.style.opacity = '0';
+      banner.style.transform = 'translateY(20px)';
+      setTimeout(function() {
+        banner.style.display = 'none';
+      }, 300);
+    }
+  });
+  
+  window.addEventListener('CookiebotOnDecline', function() {
+    var banner = document.getElementById('cookiebanner');
+    if (banner) {
+      banner.style.opacity = '0';
+      banner.style.transform = 'translateY(20px)';
+      setTimeout(function() {
+        banner.style.display = 'none';
+      }, 300);
+    }
+  });
+}
+</script>
