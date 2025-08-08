@@ -17,6 +17,11 @@
 
 ## Completed
 
+- [x] Fix PTO Data Issues (2025-08-01 15:10)
+  - Goal: Correct Patrick M.'s missing May vacation and remove Victor R. who is not an employee
+  - Result: Successfully added Patrick M.'s 20-day May vacation and removed Victor R. from all data
+  - Updated totals: 332 PTO days (was 324), May is now peak month with 64 days
+
 - [x] Update Nx documentation to use npx nx@latest (2025-07-29)
   - Updated docs to use `npx nx@latest` for init and connect commands
   - Commit: 9b0fb37eb6 docs(misc): make sure "npx nx@latest" is used when calling init or coonnect (#32128)

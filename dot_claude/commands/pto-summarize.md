@@ -86,9 +86,28 @@ Generate multiple output files:
 2. **Summary Markdown** (`pto-summary-YYYY.md`):
    - Executive summary with key metrics
    - Monthly trends and patterns
+   - **Individual Developer Breakdown** (detailed section for each person)
    - Top PTO users
    - Insights and recommendations
    - Coverage considerations
+
+#### Individual Developer Breakdown Format
+
+For each developer, include:
+- **Total days**: Overall PTO count
+- **Monthly Distribution**: Breakdown showing days per month (e.g., Jan (2), Feb (11), Mar (14))
+- **Notable Pattern**: Key observation about their PTO usage
+- **Peak Month**: Month with highest PTO usage
+- **Key Dates**: Important periods like extended leaves or specific patterns
+
+Example:
+```markdown
+### Jack H. - 29 days
+- **Monthly Distribution**: Mar (5), Apr (4), May (2), Jun (2), Jul (16)
+- **Notable Pattern**: Heavy July usage (16 days - over half of total)
+- **Peak Month**: July with 16 days
+- **Key Dates**: Full week Mar 24-28, extended July vacation (Jul 1-11, 14-18)
+```
 
 ### 6. Key Metrics to Track
 
@@ -120,6 +139,22 @@ Person A: 18 days (2 Jan, 16 Jul)
 Person B: 15 days (5 Mar, 10 Jun)
 ...
 ```
+
+### 7. Summary Report Enhancements
+
+When creating the summary markdown report, include:
+
+1. **Executive Summary**: Quick overview of key metrics
+2. **Monthly Breakdown Table**: Visual representation of trends
+3. **Individual Developer Breakdown**: Detailed section for each person
+4. **Key Insights**: Patterns, leave types, coverage considerations
+5. **Recommendations**: Actionable insights for planning
+
+The Individual Developer Breakdown should be sorted by total PTO days (highest to lowest) and include all tracked information to help with:
+- Understanding individual PTO patterns
+- Planning for coverage based on historical usage
+- Identifying peak vacation periods for each developer
+- Tracking different types of leave
 
 ## Additional Considerations
 
