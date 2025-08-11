@@ -84,7 +84,8 @@ The repository contains official plugins for major frameworks:
 - **@nx/workspace**: Core workspace utilities and generators
 - **@nx/create-nx-workspace**: Workspace creation tooling
 
-### 4. Documentation & Website (`nx-dev/`)
+### 4. Documentation & Website
+#### nx-dev/ (Main documentation site)
 - **Technology**: Next.js application
 - **Components**:
   - Documentation viewer with markdown support
@@ -92,6 +93,16 @@ The repository contains official plugins for major frameworks:
   - Package schema viewer
   - Tutorial system
   - Blog and community content
+
+#### astro-docs/ (New Astro-based documentation)
+- **Technology**: Astro framework
+- **Components**:
+  - Markdoc integration for custom tags
+  - React component wrappers in `src/components/markdoc/`
+  - Plugin system for content loading (CLI, CNW, auto-plugin-sidebar)
+- **Key Files**:
+  - `markdoc.config.mjs` - Configuration for all markdoc tags
+  - `src/components/markdoc/*.astro` - Astro wrapper components for React components
 
 #### Documentation Structure (Updated 2025-06-18)
 - **docs/map.json**: Central routing configuration for documentation hierarchy
@@ -244,6 +255,28 @@ Based on commit history from jack.hsu@gmail.com:
   - Includes sanity checks against website branch
   - Handles failures gracefully with detailed reporting
 
+### Astro Documentation Integration (2025-08-08)
+- **Branch**: DOC-68
+- **Goal**: Integrate all markdoc custom tags from nx-dev into astro-docs site
+- **Implementation**: Added 25 new markdoc tags to astro-docs (27 total including pre-existing)
+  - Exported props types from React components where needed
+  - Created Astro wrapper components for each tag
+  - Converted hyphenated names to underscored format for markdoc compatibility
+  - Fixed children props passing from Astro to React components using `<slot/>`
+- **Files Modified**:
+  - `astro-docs/markdoc.config.mjs` - Added configurations for all 25 new tags
+  - `astro-docs/src/components/markdoc/*.astro` - Created wrapper components for each tag (CallToAction, Callout, Card, Cards, CourseVideo, GithubRepository, Graph, Iframe, LinkCard, Metrics, Persona, Personas, Pill, ProjectDetails, ShortVideo, StackblitzButton, Testimonial, VideoLink, VideoPlayer)
+  - `nx-dev/ui-markdoc/src/lib/tags/*.component.tsx` - Exported props types where missing
+- **Commits**: 30+ commits total
+  - Individual tag additions: `c4bef29138` through `38ac2ce89d` (one per tag)
+  - Children props fix: `9b896d6314` - Pass children as props from Astro to React
+  - Client-side rendering attempts: `1e5ac03690` (add client:load), `bbe3499523` (JSON loading)
+  - Cleanup and formatting: `676cdc9420`, `0b30d18c45`, `dedd4dfad6`
+- **Testing**: Created test page at `astro-docs/src/pages/test.mdoc` to validate all tags
+- **Known Issues**: 
+  - Some tags (graph, project_details, short_embeds, tabs) have rendering issues due to CopyToClipboard functionality incompatibility with Astro environment
+  - Client-side rendering for dynamic components still needs resolution - JSON loads but rendering fails
+
 ### ESLint Documentation Modernization (2025-07-09)
 - **Branch**: `docs/enforce-module-boundaries`
 - **Context**: Building on commit `8531c0f583` which updated module boundaries rule docs
@@ -365,5 +398,6 @@ Special emphasis on module federation across multiple bundlers:
 
 ---
 
-*Last updated: 2025-07-30*
+*Last updated: 2025-08-08*
 *Based on analysis of repository structure and recent commits*
+*Branch DOC-68: Astro documentation integration work*

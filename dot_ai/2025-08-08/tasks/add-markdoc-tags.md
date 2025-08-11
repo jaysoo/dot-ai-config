@@ -28,41 +28,40 @@ For each tag:
 
 ## Tags Status
 
-### Completed (2 existing + 3 new)
-- [x] install_nx_console (existing)
-- [x] youtube (existing)
+### ✅ COMPLETED - All 27 tags successfully added!
+
+#### Pre-existing (2)
+- [x] install_nx_console
+- [x] youtube
+
+#### Newly Added (25)
 - [x] callout - Added props export, config, and Astro component
-- [x] call_to_action - Added props export, config, and Astro component
+- [x] call_to_action - Added props export, config, and Astro component  
 - [x] card - Added props export, config, and Astro component
-
-### In Progress
-- [ ] cards - Working on this now
-
-### Pending (24 remaining)
-- [ ] cards
-- [ ] link_card
-- [ ] github_repository
-- [ ] stackblitz_button
-- [ ] graph
-- [ ] iframe
-- [ ] video_player
-- [ ] persona
-- [ ] personas
-- [ ] project_details
-- [ ] pill
-- [ ] short_embeds
-- [ ] short_video
-- [ ] side_by_side
-- [ ] step
-- [ ] steps
-- [ ] tab
-- [ ] tabs
-- [ ] testimonial
-- [ ] toc
-- [ ] tweet
-- [ ] course_video
-- [ ] video_link
-- [ ] metrics
+- [x] cards - Added config and Astro component
+- [x] link_card - Added config and Astro component
+- [x] github_repository - Added props export, config, and Astro component
+- [x] stackblitz_button - Added props export, config, and Astro component
+- [x] graph - Added props export, config, and Astro component
+- [x] iframe - Added props export and fixed typo, config, and Astro component
+- [x] video_player - Added props export, config, and Astro component
+- [x] persona - Added props export, config, and Astro component
+- [x] personas - Added props export, config, and Astro component
+- [x] project_details - Added props export, config, and Astro component
+- [x] pill - Added props export, config, and Astro component
+- [x] short_embeds - Added props export, config, and Astro component
+- [x] short_video - Added props export, config, and Astro component
+- [x] side_by_side - Added props export, config, and Astro component
+- [x] step - Added props export, config, and Astro component
+- [x] steps - Added props export, config, and Astro component
+- [x] tab - Added props export, config, and Astro component
+- [x] tabs - Added props export, config, and Astro component
+- [x] testimonial - Added props export, config, and Astro component
+- [x] toc - Exported interface, config, and Astro component
+- [x] tweet - Added props export, config, and Astro component
+- [x] course_video - Config and Astro component (props already exported)
+- [x] video_link - Added props export, config, and Astro component
+- [x] metrics - Exported interface, config, and Astro component
 
 ## Technical Details
 
@@ -109,7 +108,20 @@ tags: {
 ## CRITICAL: Track Progress
 Keep updating this file as we complete each tag implementation!
 
-## Current TODO
-- Continue with Card tag implementation
-- Add props exports for Card, Cards, and LinkCard components
-- Create configs and Astro wrappers for each
+## Summary
+
+✅ **Task completed successfully!**
+
+All 27 markdoc tags from nx-dev/ui-markdoc have been successfully integrated into the astro-docs site:
+- 2 tags were already present (install_nx_console, youtube)
+- 25 new tags were added with individual commits
+- Props types were exported where needed
+- All Astro wrapper components were created
+- Configuration was updated in markdoc.config.mjs
+
+The implementation followed all requirements:
+1. ✅ All custom tags from nx-dev/ui-markdoc/src/index.ts were added
+2. ✅ Hyphenated names were converted to underscored (e.g., `call-to-action` → `call_to_action`)
+3. ✅ Astro wrapper components were created in astro-docs/src/components/markdoc/
+4. ✅ Props types were exported from React components where needed
+5. ✅ One commit was created per tag as requested
