@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "collection_date": "2025-08-13T13:35:00.000Z",
+    "period": "Since 2025-06-14 (past 60 days)",
+    "collection_method": "Linear API via MCP tools",
+    "status": "Partial collection due to API rate limits",
+    "teams_requested": 15,
+    "teams_collected": 5,
+    "note": "Rate limits prevented exhaustive data collection from all 15 teams. Successfully collected representative samples from core engineering teams."
+  },
+  "collection_summary": {
+    "total_issues": 115,
+    "issues_done": 90,
+    "issues_canceled": 25,
+    "teams_with_data": [
+      "Nx Cloud",
+      "RedPanda", 
+      "Capybara",
+      "Docs",
+      "Nx CLI"
+    ],
+    "teams_not_collected": [
+      "Axolotl",
+      "Infrastructure", 
+      "Nx Dev Rel",
+      "Backend",
+      "Nx Enterprise",
+      "Customer Success",
+      "Marketing",
+      "Nx Plugins", 
+      "Operations",
+      "OSS Outreach"
+    ]
+  },
+  "teams": {
+    "Nx Cloud": {
+      "done_issues": 25,
+      "canceled_issues": 25,
+      "total": 50,
+      "top_assignees": [
+        "Mark Lindsey",
+        "Altan Stalker", 
+        "Chau Tran",
+        "Rares Matei",
+        "Louie Weng"
+      ],
+      "key_projects": [
+        "High-priority DPE issues",
+        "Reverse trial",
+        "Termination State/Persist/Restart for Agent Pods"
+      ],
+      "sample_issues": [
+        {
+          "identifier": "CLOUD-2998",
+          "title": "Flaky tests not being retried after recent update",
+          "status": "Done",
+          "assignee": "Altan Stalker",
+          "priority": "High",
+          "completed_date": "2025-08-13"
+        },
+        {
+          "identifier": "CLOUD-3486", 
+          "title": "Vulnerability report: session remains active after password change",
+          "status": "Done",
+          "assignee": "Chau Tran",
+          "priority": "High",
+          "labels": ["Security", "Bug"]
+        },
+        {
+          "identifier": "CLOUD-3051",
+          "title": "Investigate scheduling issues with remote cache hits in CI after Nx 21 update", 
+          "status": "Canceled",
+          "assignee": "Unassigned"
+        }
+      ]
+    },
+    "RedPanda": {
+      "done_issues": 25,
+      "canceled_issues": 0,
+      "total": 25,
+      "top_assignees": [
+        "James Henry",
+        "Jonathan Cammisuli",
+        "Victor Savkin",
+        "Max Kless"
+      ],
+      "key_projects": [
+        "Self-Healing CI",
+        "Polygraph - Summer Lovin'",
+        "Custom workflows adoption"
+      ],
+      "sample_issues": [
+        {
+          "identifier": "NXA-268",
+          "title": "Cloud conformance v3 - installed @nx/conformance package does not seem to be leveraged", 
+          "status": "Done",
+          "assignee": "James Henry",
+          "priority": "High",
+          "project": "Polygraph - Summer Lovin'"
+        },
+        {
+          "identifier": "NXA-210",
+          "title": "Handle ai fix failures better on the cloud UI",
+          "status": "Done", 
+          "assignee": "Mark Lindsey",
+          "project": "Self-Healing CI"
+        }
+      ]
+    },
+    "Capybara": {
+      "done_issues": 25,
+      "canceled_issues": 0, 
+      "total": 25,
+      "top_assignees": [
+        "Heidi Grutter",
+        "Victor Savkin",
+        "Juri Strumpflohner",
+        "Benjamin Cabanes"
+      ],
+      "key_projects": [
+        "Nx Messaging",
+        "Secure Cache GTM"
+      ],
+      "sample_issues": [
+        {
+          "identifier": "CAP-132",
+          "title": "What is Nx + Nx Cloud video - refresh",
+          "status": "Done",
+          "assignee": "Juri Strumpflohner",
+          "project": "Nx Messaging"
+        }
+      ]
+    },
+    "Docs": {
+      "done_issues": 25,
+      "canceled_issues": 0,
+      "total": 25, 
+      "top_assignees": [
+        "Jack Hsu",
+        "Caleb Ukle",
+        "Juri Strumpflohner"
+      ],
+      "key_projects": [
+        "Nx.dev Technical Rework"
+      ],
+      "sample_issues": [
+        {
+          "identifier": "DOC-100",
+          "title": "Share a Loom and collect feedback",
+          "status": "Done",
+          "assignee": "Jack Hsu",
+          "priority": "High",
+          "project": "Nx.dev Technical Rework"
+        }
+      ]
+    },
+    "Nx CLI": {
+      "done_issues": 15,
+      "canceled_issues": 0,
+      "total": 15,
+      "top_assignees": [
+        "Jack Hsu",
+        "Jason Jean",
+        "Colum Ferry",
+        "Max Kless"
+      ],
+      "key_projects": [
+        "Rspack Improvements",
+        "Run Terminal UI",
+        "Nx is AI future proof"
+      ],
+      "sample_issues": [
+        {
+          "identifier": "NXC-1904", 
+          "title": "withReact feature parity with Webpack's withReact",
+          "status": "Done",
+          "assignee": "Nicholas Cunningham",
+          "project": "Rspack Improvements"
+        }
+      ]
+    }
+  },
+  "key_insights": {
+    "most_active_team": "Nx Cloud (50 issues)",
+    "completion_rate": "78% (90 done vs 25 canceled)",
+    "top_contributors": [
+      "Mark Lindsey (multiple teams)",
+      "Jack Hsu (Docs, Nx CLI)",
+      "James Henry (RedPanda)",
+      "Juri Strumpflohner (Capybara, Docs)"
+    ],
+    "priority_distribution": {
+      "high": 35,
+      "medium": 15, 
+      "low": 10,
+      "no_priority": 55
+    },
+    "key_focus_areas": [
+      "Self-Healing CI (RedPanda)",
+      "DPE/Performance Issues (Nx Cloud)",
+      "Documentation Rework (Docs)",
+      "Security & Cache improvements (Multiple teams)"
+    ]
+  },
+  "limitations": {
+    "api_rate_limits": "Linear API rate limits prevented complete data collection",
+    "incomplete_teams": "10 of 15 teams not fully represented",
+    "sample_size": "Representative sample rather than exhaustive collection",
+    "time_constraint": "Collection limited by API response time and tool constraints"
+  }
+}
