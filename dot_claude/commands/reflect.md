@@ -2,6 +2,8 @@
 
 Maintain living architecture documentation for your repositories by capturing file relationships, design decisions, and work history from daily development activities.
 
+Also reflect on our current converstation/context and provide updates to $HOME/jack/projects/dot-ai-config/dot_claude/CLAUDE.md to prevent any mistakes or confusion that YOU had while completing the current task.
+
 ## Usage
 
 ```bash
@@ -18,6 +20,8 @@ Maintain living architecture documentation for your repositories by capturing fi
 
 CRITICAL: Whenever I talk about ".ai" folder, it needs to be at the repo root, i.e. where `.git` lives. It should already exist, so don't create a bunch of new ones!
 
+CRITICAL: Before you update CLAUDE.md show me your suggested updates and I will approval/decline.
+
 ## Overview
 
 The reflect command helps you build and maintain architecture documentation that captures:
@@ -25,6 +29,9 @@ The reflect command helps you build and maintain architecture documentation that
 - Design decisions and alternatives considered
 - Work history and context for features
 - Technology choices and limitations
+
+It also helps improve Claude Code itself by ensuring that mistakes done are not repeated:
+- CLAUDE.md is updated in $HOME/jack/projects/dot-ai-config/dot_claude/CLAUDE.md
 
 ## Features
 
@@ -108,5 +115,6 @@ cd ~/projects/nx
 - When recording "Personal Work" or featrures/changes I've made, make sure to reference date and git branches or commits (if applicable)
     - Later on, if old commits aren't found, then mark that work/feature as possibly not merged or reverted
     - It's possible a PR was opened, but it did not finish, in which case I can review and delete them from the doc manually
+- Look for mistakes or places where I corrected you and make sure you do not repeat the same mistakes by updating CLAUDE.md
 
 ARGUMENTS: [--initial-scan] [-v|--verbose]

@@ -2,20 +2,115 @@
 
 ## In Progress
 
-- [ ] Debug Cookie Prompt Not Rendering (2025-08-01 16:00)
-  - Plan created: `.ai/2025-08-01/tasks/cookie-prompt-not-rendering.md`
-  - Next steps: Follow the 5-step plan to debug and fix Cookiebot script loading
-  - Goal: Fix issue where Cookiebot script is not rendering in nx-dev website HTML source
-
-- [ ] Patch Release Automation for Nx (2025-07-30 16:30)
-  - Plan created: `dot_ai/2025-07-30/tasks/nx-patch-release.mjs`
-  - Next steps: Monitor effectiveness, consider adding more validation
-  - Goal: Streamline patch release process with automated cherry-picking
-  - Branch: 21.3.x
-
+- [ ] Review Linear Stale Issues for Nx CLI Team (2025-08-19 08:50)
+  - Plan created: `dot_ai/2025-08-19/tasks/linear-stale-issues-review.md`
+  - Goal: Identify and review stale issues in Linear that haven't been updated in 3+ months
+  - Next steps: Review with assignees, close/update stale issues
 - [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
 
 ## Completed
+
+### August 2025
+
+- [x] DOC-111: Update Astro Docs Header to Match Production (2025-08-13)
+  - Plan created: Work completed in nx-worktrees/DOC-111 branch
+  - Goal: Update Astro docs site header to match production nx.dev header
+  - Result: Successfully created custom header with version switcher, resources dropdown, proper navigation
+  - Commit: 4e276a8c74 - docs(nx-dev): make header more consistent with prod headers
+
+- [x] DOC-110: Create Index Pages for All Astro Docs Guides (2025-08-13)
+  - Goal: Create comprehensive index pages for all Astro docs sections
+  - Result: Created 21 new index pages across the guides section
+  - Status: All files created with proper frontmatter and navigation integration
+
+- [x] Documentation Callout Migration Fix (2025-08-12)
+  - Branch: DOC-110
+  - Goal: Revert aside tags back to deepdive callout format
+  - Result: Successfully reverted 6 deepdive callouts across 5 files
+
+- [x] Add All Markdoc Tags to Astro Docs Site (2025-08-08)
+  - Plan created: `dot_ai/2025-08-08/tasks/add-markdoc-tags.md`
+  - Branch: DOC-68
+  - Goal: Add support for all markdoc custom tags from nx-dev/ui-markdoc
+  - Result: Successfully integrated all 27 tags with Astro wrapper components
+
+- [x] Fix Astro Component Children Props (2025-08-08)
+  - Goal: Update Astro components to pass <slot/> as children to React components
+  - Result: Updated 5 components (Personas, Cards, Testimonial, etc.)
+  - Commit: 9b896d6314 - docs(misc): pass children as props from Astro to React
+
+- [x] Debug Cookie Prompt Not Rendering (2025-08-01)
+  - Plan created: `dot_ai/2025-08-01/tasks/cookie-prompt-not-rendering.md`
+  - Goal: Fix issue where Cookiebot script is not rendering in nx-dev website HTML source
+  - Result: Created custom Cookiebot templates and styling solutions
+
+- [x] PTO Calendar Analysis (2025-08-01)
+  - Goal: Analyze PTO data from Google Calendar for engineering team
+  - Result: Complete analysis with 341 total PTO days across 8 months
+  - Deliverables: Analysis scripts, JSON data, executive summary
+
+### July 2025
+
+- [x] Patch Release Automation for Nx (2025-07-30)
+  - Plan created: `dot_ai/2025-07-30/tasks/nx-patch-release.mjs`
+  - Goal: Streamline patch release process with automated cherry-picking
+  - Result: Created automation script for branch 21.3.x
+
+- [x] Address CRITICAL(AI) sections in Docker documentation (2025-07-30)
+  - Plan created: `dot_ai/2025-07-30/tasks/address-docker-docs-critical-sections.md`
+  - Goal: Improve Docker release documentation by addressing three CRITICAL(AI) sections
+  - Result: Enhanced production/hotfix releases, added Nx Cloud Agents warnings, updated nx-json reference
+
+- [x] Test nx@0.0.0-pr-32120-1cb4170 Docker release functionality (2025-07-30)
+  - Plan created: `dot_ai/2025-07-30/tasks/test-nx-docker-release.md`
+  - Goal: Validate Nx workspace creation with Docker support for PR builds
+  - Result: All tests passed successfully
+
+- [x] Update Nx commands to use @latest in documentation (2025-07-29)
+  - Plan created: `dot_ai/2025-07-29/tasks/update-nx-commands-to-latest.md`
+  - Goal: Update all docs to use `npx nx@latest` commands
+  - Result: Successfully updated 27 occurrences across 23 files
+
+- [x] Fix Astro Docs Markdown Error (2025-07-22)
+  - Plan created: `dot_ai/2025-07-22/tasks/fix-astro-docs-markdown-error.md`
+  - Goal: Fix TypeError when building astro-docs after rebase with master
+  - Result: Build completes successfully on branch `jack/astro-docs-fix-entry-metadata`
+  - Solution: Skipped renderMarkdown calls in custom loaders
+
+- [x] Remove unused Nx Cloud tutorial images (2025-07-21)
+  - Plan created: `dot_ai/2025-07-21/tasks/remove-unused-nx-cloud-tutorial-images.md`
+  - Goal: Clean up orphaned images from docs/nx-cloud/tutorial directory
+  - Result: Analyzed all images, removed 16 unused files
+
+- [x] Improve nx init output (2025-07-21)
+  - Plan created: `dot_ai/2025-07-21/tasks/improve-nx-init-output.md`
+  - Goal: Remove generic post-init messages and provide actionable, context-specific next steps
+  - Result: Removed generic messages, added context-aware next steps, created "After Running nx init" guide
+
+### June 2025
+
+- [x] Ocean Feature Documentation Analysis (2025-06-26)
+  - Plan created: `dot_ai/2025-06-26/tasks/ocean-feature-documentation-analysis.md`
+  - Raw docs update plan: `dot_ai/2025-06-26/tasks/raw-docs-update-plan.md`
+  - Goal: Identify key features needing documentation and create implementation plan
+  - Result: Identified 6 major features, created prioritized implementation plan
+
+- [x] Refactor Nx Cloud Error Handling (2025-06-25)
+  - Plan created: `dot_ai/2025-06-25/tasks/refactor-nx-cloud-error-handling.md`
+  - Goal: Improve error handling and user experience in Nx Cloud
+  - Status: Completed planning and implementation
+
+- [x] Fix Next.js Jest JSX Transform Warning (2025-06-24)
+  - Plan created: `dot_ai/2025-06-24/tasks/fix-nextjs-jest-jsx-transform.md`
+  - Goal: Update Next.js generators to use next/jest.js configuration with modern JSX transform
+  - Issue: https://github.com/nrwl/nx/issues/27900
+  - Result: Successfully updated both app and library generators to use next/jest.js
+  - Commits: f1a2dd8a5e (initial), 008d254dc4 (improvements), 752737f11e (code consolidation)
+
+- [x] Nx Easy Issues Analysis (2025-06-24)
+  - Summary: `dot_ai/2025-06-24/tasks/nx-easy-issues-summary.md`
+  - Goal: Analyze nrwl/nx repository for easy-to-close issues  
+  - Result: Found 524 actionable issues from 535 open issues, 230 highly suitable for AI assistance
 
 - [x] Fix PTO Data Issues (2025-08-01 15:10)
   - Goal: Correct Patrick M.'s missing May vacation and remove Victor R. who is not an employee
@@ -45,16 +140,7 @@
   - Goal: Update all docs to use `npx nx@latest` commands to ensure users get latest version
   - Result: Successfully updated 27 occurrences across 23 files and formatted with prettier
 
-- [x] Add Tailwind CSS to Astro-Docs Website (2025-01-23 17:12)
-  - Plan created: `.ai/2025-01-23/tasks/add-tailwind-to-astro-docs.md`
-  - Goal: Integrate Tailwind CSS into the astro-docs website for enhanced styling capabilities
-  - Result: Successfully installed Tailwind v3.4.4 with Starlight compatibility and Vite plugin configuration
 
-- [x] Fix Astro Docs Markdown Error (2025-07-22 17:40)
-  - Plan created: `.ai/2025-07-22/tasks/fix-astro-docs-markdown-error.md`
-  - Implementation: Skipped renderMarkdown calls in custom loaders
-  - Goal: Fix TypeError when building astro-docs after rebase with master
-  - Result: Build completes successfully on branch `jack/astro-docs-fix-entry-metadata`
 
 - [x] Remove unused Nx Cloud tutorial images (2025-07-21)
   - Plan created: `.ai/2025-07-21/tasks/remove-unused-nx-cloud-tutorial-images.md`
@@ -67,17 +153,7 @@
   - Documentation: Created "After Running nx init" guide
   - Goal: Remove generic post-init messages and provide actionable, context-specific next steps
 
-- [x] Ocean feature documentation analysis planning (2025-06-26 17:48)
-  - Plan created: `.ai/2025-06-26/tasks/ocean-feature-documentation-analysis.md`
-  - Raw docs update plan: `.ai/2025-06-26/tasks/raw-docs-update-plan.md`
-  - Goal: Identified key features needing documentation and created implementation plan
 
-- [x] Fix Next.js Jest JSX Transform Warning (2025-06-24 10:55)
-  - Plan created: `.ai/2025-06-24/tasks/fix-nextjs-jest-jsx-transform.md`
-  - Goal: Update Next.js generators to use next/jest.js configuration with modern JSX transform
-  - Issue: https://github.com/nrwl/nx/issues/27900
-  - Result: Successfully updated both app and library generators to use next/jest.js
-  - Commits: f1a2dd8a5e (initial), 008d254dc4 (improvements)
 
 - [x] MCP Server Improvements (2025-06-12) 
   - Plan created: `dot_ai/2025-06-12/tasks/mcp-server-improvements.md`
@@ -382,6 +458,18 @@
   - Plan created: Various scripts in `dot_ai/2025-06-02/tasks/`
   - Goal: Analyze and create redirects for Nx documentation migration
   - Result: 100% redirect coverage achieved with high confidence scores
+
+### January 2025
+
+- [x] Add Tailwind CSS to Astro-Docs Website (2025-01-23)
+  - Plan created: `dot_ai/2025-01-23/tasks/add-tailwind-to-astro-docs.md`
+  - Goal: Integrate Tailwind CSS into the astro-docs website for enhanced styling capabilities
+  - Result: Successfully installed Tailwind v3.4.4 with Starlight compatibility and Vite plugin configuration
+
+- [x] Review Tailwind v4 Support Changes (2025-01-20)
+  - Plan created: `dot_ai/2025-01-20/tasks/review-tailwind-v4-support.md`
+  - Goal: Review feat/tailwind-4 branch changes for React and Vue bundler support
+  - Result: Implementation is solid and production-ready, createGlobPatternsForDependencies works correctly
 
 ## Next Actions
 

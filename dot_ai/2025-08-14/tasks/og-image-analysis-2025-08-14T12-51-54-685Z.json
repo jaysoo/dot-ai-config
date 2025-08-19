@@ -1,0 +1,90 @@
+{
+  "totalPages": 20,
+  "pagesWithOgImage": 20,
+  "brokenImages": [
+    {
+      "page": "https://nx.dev/ai-chat",
+      "image": "https://nx.dev/images/nx-media.jpg"
+    },
+    {
+      "page": "https://nx.dev/changelog",
+      "image": "https://nx.dev/images/nx-media.jpg"
+    },
+    {
+      "page": "https://nx.dev/extending-nx",
+      "image": "https://nx.dev/images/open-graph/extending-nx.jpg"
+    }
+  ],
+  "workingImages": [
+    {
+      "page": "https://nx.dev",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/advent-of-code",
+      "image": "https://nx.dev/socials/ultimate-typescript-aoc-2023.jpg"
+    },
+    {
+      "page": "https://nx.dev/ai",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/ci",
+      "image": "https://nx.dev/images/open-graph/ci-features.jpg"
+    },
+    {
+      "page": "https://nx.dev/community",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/company",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/conf",
+      "image": "https://monorepo.world/opengraph-image.jpg?91e4da68da97effd"
+    },
+    {
+      "page": "https://nx.dev/contact",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/contact/engineering",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/contact/labs",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/contact/sales",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/customers",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/enterprise",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/enterprise/security",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/enterprise/trial",
+      "image": "https://nx.dev/socials/nx-media.png"
+    },
+    {
+      "page": "https://nx.dev/launch-nx",
+      "image": "https://nx.dev/socials/launch-nx-feb-2024.jpg"
+    },
+    {
+      "page": "https://nx.dev/nx-cloud",
+      "image": "https://nx.dev/socials/nx-media.png"
+    }
+  ],
+  "noOgImage": [],
+  "errors": []
+}
