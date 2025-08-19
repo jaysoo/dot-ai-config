@@ -178,6 +178,126 @@ If MCP server is unavailable:
 
 Remember: The MCP server contains the user's personal knowledge base. It should be the PRIMARY source for any query about their own work, notes, or documentation.
 
+### Linear MCP Specific Notes:
+- When searching for issues, always confirm the team name first
+- Team IDs are UUIDs and must be retrieved via `list_teams` 
+- Use pagination (limit parameter) to avoid response size errors
+- Common teams: "Nx Cloud" (cloud features), "Nx CLI" (core tooling)
+
+## CRITICAL: Linear Teams Clarification
+
+When working with Linear issues, be aware there are multiple teams:
+- **Nx CLI team** - Core Nx tooling and CLI features (prefix: NXC-)
+- **Nx Cloud team** - Cloud infrastructure and features (prefix: CLOUD-)
+- **Always confirm which team** the user is asking about before proceeding
+
+Example: "Stale issues for Nx Cloud team" means CLOUD- prefixed issues, not NXC- issues.
+
+## Linear API Usage
+
+When querying Linear issues:
+1. Always get the team ID first using `mcp__Linear__list_teams` with the specific team name
+2. Use smaller limits (30-50) to avoid token limit errors
+3. Be aware that "Nx Cloud" and "Nx CLI" are separate teams with different IDs
+4. Check both "Backlog" and "In Progress" states separately
+
+## Linear API Date Filtering
+
+When using `updatedAt` parameter in Linear API:
+- The parameter filters for items updated ON OR AFTER the specified date
+- To find stale items (not updated for X months), calculate the cutoff date first
+- Example: To find items stale for 3+ months on Aug 19, 2025:
+  - Use `updatedAt: "2025-05-19T23:59:59Z"` to get items updated May 19 or later
+  - These are NOT stale - they were updated within 3 months
+  - To find truly stale items, you need to filter the results further
+
+## Task Plan File Naming
+
+When creating task plans in `.ai/yyyy-mm-dd/tasks/`, use descriptive names that include the specific team or project:
+- ✅ `nx-cloud-stale-issues-review.md` (specific team)
+- ✅ `nx-cli-stale-issues-review.md` (specific team)
+- ❌ `linear-stale-issues-review.md` (ambiguous - which team?)
+
+When creating task plans that involve date calculations:
+- Include the threshold date in the filename or task description
+- Example: `nx-cloud-stale-issues-before-may-19.md` instead of just `stale-issues.md`
+- Always document the calculation used in the task file itself
+
+## Task Verification Steps
+
+For any task involving date calculations or staleness:
+1. Run `date '+%Y-%m-%d'` to confirm today's date
+2. Calculate and document the exact threshold date
+3. Verify your first few results manually before proceeding
+4. Include the calculation in your task documentation
+
+Example verification:
+- Today: August 19, 2025
+- 3 months ago: May 19, 2025
+- Test case: Issue updated June 1, 2025 = NOT stale (less than 3 months old)
+
+## Common Mistakes to Avoid
+
+### Linear Issue Searches
+- **Mistake**: Assuming "Linear issues" means one specific team
+- **Fix**: Always clarify which team (Nx Cloud, Nx CLI, etc.) before searching
+- **Why**: Different teams have completely different issue sets and priorities
+
+### Date Calculations for Staleness
+- **Mistake**: Marking items from June/July/August as "stale" when checking in August for 3+ month staleness
+- **Fix**: Calculate the exact cutoff date (3 months before today) and only items BEFORE that date are stale
+- **Example**: On August 19, 2025, only items last updated May 19, 2025 or earlier are 3+ months stale
+
+### Linear API Date Filters
+- **Mistake**: Assuming `updatedAt` parameter finds items NOT updated since that date
+- **Fix**: The parameter finds items updated ON OR AFTER that date
+- **Workaround**: May need to request ALL items and filter client-side for true staleness
+
+## CRITICAL: Date Calculations
+
+When calculating time periods (e.g., "3 months ago", "6 months old"):
+- Always use the current date as the starting point (run `date '+%Y-%m-%d'` to confirm)
+- Count backwards for the full period
+- Examples for August 19, 2025:
+  - 3 months ago = May 19, 2025 or earlier
+  - 6 months ago = February 19, 2025 or earlier
+  - 1 year ago = August 19, 2024 or earlier
+
+When filtering for "stale" items:
+- "Stale for 3+ months" means last updated on or before the calculated date
+- Items updated AFTER that date are NOT stale
+
+## CRITICAL: Task Planning Documentation
+
+When investigating or researching repository features (not just implementing features):
+- ALWAYS create a task plan in `.ai/yyyy-mm-dd/tasks/` IMMEDIATELY after starting
+- Document findings AS YOU GO, not just at the end  
+- Update the TODO.md file when task is complete
+
+## CRITICAL: Effective File Discovery
+
+When searching for scripts and configuration files:
+1. Start with simple `ls` commands in likely directories (tools/, scripts/, .github/)
+2. Use `find` with multiple file types: `-name "*.sh" -o -name "*.ts" -o -name "*.js"`
+3. Check package-scripts.js or package.json for command definitions
+4. Look for GitHub workflows that might invoke the scripts
+
+## CRITICAL: Investigation Documentation
+
+When documenting investigations:
+- Include line numbers when referencing specific code (e.g., file.sh:22-31)
+- Document the COMPLETE flow, not just individual pieces
+- Show relationships between files (what calls what)
+- Include examples of current values/formats before suggesting changes
+
+## CRITICAL: Architecture Documentation Updates
+
+After completing any investigation or implementation:
+- Update `.ai/architectures/[repo]-architecture.md` with findings
+- Add to "Personal Work History" section with date
+- Update "Design Decisions & Gotchas" if you discovered important context
+- Update daily SUMMARY.md in `.ai/yyyy-mm-dd/`
+
 ## Working With Tasks
 
 - If it sounds like I'm asking you to perform a task then use @~/.claude/commands/plan-task.md
@@ -214,4 +334,56 @@ Where `yyyy-mm-dd hh:mm` is the timestamp.
 ```
 
 Where `yyyy-mm-dd hh:mm` is the timestamp.
+
+## CRITICAL: Comment Style Preferences
+
+Prefer concise comments that explain WHY, not WHAT:
+- Code should be self-documenting
+- One comment block at the top of a function/section explaining the purpose
+- Avoid verbose step-by-step comments unless the logic is truly complex
+- Remove redundant comments during code cleanup
+
+Example:
+```typescript
+// BAD: Verbose what comments
+// 1. Add Introduction first if it exists
+if (introItem) {
+  finalItems.push(introItem);
+}
+// 2. Add Guides second if it exists  
+if (guidesItem) {
+  finalItems.push(guidesItem);
+}
+
+// GOOD: Concise why comment
+// Enforce consistent ordering across all technology sections
+// Order: Introduction → Guides → Generated items → Everything else
+if (introItem) finalItems.push(introItem);
+if (guidesItem) finalItems.push(guidesItem);
+```
+
+## CRITICAL: Astro Starlight Configuration
+
+When working with Astro Starlight documentation:
+
+**Collapsed State**: Groups are expanded by default. Always set `collapsed: true` for nested groups unless they should be expanded.
+
+**Dynamic Ordering**: When mixing generated items with static files, static files get added after generated items by default. If you need specific ordering (like Introduction first), you must extract and reorder items explicitly.
+
+**Testing**: Use Playwright MCP with the correct port (ask user, don't assume) to verify sidebar behavior in real-time.
+
+## CRITICAL: File System Operations
+
+- Never assume file paths exist without checking first
+- When working with build outputs (like `dist/` folders), verify they exist before trying to require/import
+- Use absolute paths when provided by user, don't guess at file locations
+- Ask user for correct development server port if unsure (don't assume 3000, 4321, etc.)
+
+## CRITICAL: Testing Web Applications
+
+When testing local development servers:
+- Ask user for the correct port if unsure 
+- Use Playwright MCP for real-time verification of UI changes
+- Test across multiple sections/pages to ensure consistency
+- Verify both functionality and UX (like collapsed states, ordering)
 

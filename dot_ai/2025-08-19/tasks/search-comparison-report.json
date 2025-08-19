@@ -1,0 +1,2574 @@
+{
+  "timestamp": "2025-08-19T18:41:39.307Z",
+  "baseline": {
+    "totalQueries": 34,
+    "avgRelevance": 30.147058823529413,
+    "queriesWithResults": 13,
+    "categoryScores": {
+      "frameworks": {
+        "total": 300,
+        "count": 5,
+        "average": 60
+      },
+      "tools": {
+        "total": 0,
+        "count": 5,
+        "average": 0
+      },
+      "concepts": {
+        "total": 100,
+        "count": 5,
+        "average": 20
+      },
+      "features": {
+        "total": 200,
+        "count": 5,
+        "average": 40
+      },
+      "getting_started": {
+        "total": 0,
+        "count": 4,
+        "average": 0
+      },
+      "high_value": {
+        "total": 425,
+        "count": 10,
+        "average": 42.5
+      }
+    },
+    "problematicQueries": 23
+  },
+  "improved": {
+    "avgRelevance": 81.07843137254902,
+    "queriesWithResults": 32,
+    "problematicQueries": 4,
+    "results": [
+      {
+        "query": "angular",
+        "category": "frameworks",
+        "resultsFound": 2,
+        "topResults": [
+          {
+            "file": "docs/shared/packages/angular/angular-plugin.md",
+            "score": 15,
+            "keywords": [
+              "angular"
+            ]
+          },
+          {
+            "file": "docs/generated/packages/angular/documents/overview.md",
+            "score": 15,
+            "keywords": [
+              "angular"
+            ]
+          }
+        ],
+        "relevanceScore": 100,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 60,
+        "improvement": -40
+      },
+      {
+        "query": "react",
+        "category": "frameworks",
+        "resultsFound": 2,
+        "topResults": [
+          {
+            "file": "docs/shared/packages/react/react-plugin.md",
+            "score": 15,
+            "keywords": [
+              "react"
+            ]
+          },
+          {
+            "file": "docs/generated/packages/react/documents/overview.md",
+            "score": 15,
+            "keywords": [
+              "react"
+            ]
+          }
+        ],
+        "relevanceScore": 100,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 20,
+        "improvement": -80
+      },
+      {
+        "query": "vue",
+        "category": "frameworks",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 66.66666666666666,
+        "improvement": 66.66666666666666
+      },
+      {
+        "query": "next",
+        "category": "frameworks",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 0,
+        "improvement": 0
+      },
+      {
+        "query": "nest",
+        "category": "frameworks",
+        "resultsFound": 2,
+        "topResults": [
+          {
+            "file": "docs/shared/packages/nest/nest-plugin.md",
+            "score": 25,
+            "keywords": [
+              "nest",
+              "nestjs"
+            ]
+          },
+          {
+            "file": "docs/generated/packages/nest/documents/overview.md",
+            "score": 25,
+            "keywords": [
+              "nest",
+              "nestjs"
+            ]
+          }
+        ],
+        "relevanceScore": 100,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 0
+      },
+      {
+        "query": "webpack",
+        "category": "tools",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "vite",
+        "category": "tools",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "jest",
+        "category": "tools",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "cypress",
+        "category": "tools",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "playwright",
+        "category": "tools",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "monorepo",
+        "category": "concepts",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": false,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "workspace",
+        "category": "concepts",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "library",
+        "category": "concepts",
+        "resultsFound": 1,
+        "topResults": [
+          {
+            "file": "docs/shared/concepts/decisions/project-size.md",
+            "score": 10,
+            "keywords": [
+              "library"
+            ]
+          }
+        ],
+        "relevanceScore": 100,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 50,
+        "improvement": -50
+      },
+      {
+        "query": "generator",
+        "category": "concepts",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "executor",
+        "category": "concepts",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "build",
+        "category": "features",
+        "resultsFound": 1,
+        "topResults": [
+          {
+            "file": "docs/shared/concepts/common-tasks.md",
+            "score": 10,
+            "keywords": [
+              "build",
+              "serve",
+              "test",
+              "lint"
+            ]
+          }
+        ],
+        "relevanceScore": 100,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 0
+      },
+      {
+        "query": "test",
+        "category": "features",
+        "resultsFound": 1,
+        "topResults": [
+          {
+            "file": "docs/shared/concepts/common-tasks.md",
+            "score": 10,
+            "keywords": [
+              "build",
+              "serve",
+              "test",
+              "lint"
+            ]
+          }
+        ],
+        "relevanceScore": 100,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 0
+      },
+      {
+        "query": "cache",
+        "category": "features",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": false,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "affected",
+        "category": "features",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "graph",
+        "category": "features",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "tutorial",
+        "category": "getting_started",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "quickstart",
+        "category": "getting_started",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "setup",
+        "category": "getting_started",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 70,
+        "improvement": 70
+      },
+      {
+        "query": "installation",
+        "category": "getting_started",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 0,
+        "improvement": 0
+      },
+      {
+        "query": "getting started",
+        "category": "high_value",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": false,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "create new project",
+        "category": "high_value",
+        "resultsFound": 2,
+        "topResults": [
+          {
+            "file": "docs/shared/reference/project-configuration.md",
+            "score": 15,
+            "keywords": [
+              "project.json"
+            ]
+          },
+          {
+            "file": "docs/shared/concepts/decisions/project-size.md",
+            "score": 5,
+            "keywords": [
+              "library"
+            ]
+          }
+        ],
+        "relevanceScore": 50,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 50,
+        "improvement": 0
+      },
+      {
+        "query": "nx cloud",
+        "category": "high_value",
+        "resultsFound": 1,
+        "topResults": [
+          {
+            "file": "docs/nx-cloud/features/split-e2e-tasks.md",
+            "score": 10,
+            "keywords": [
+              "split tasks",
+              "atomizer"
+            ]
+          }
+        ],
+        "relevanceScore": 100,
+        "expectedDocsFound": false,
+        "improvedRelevanceScore": 30,
+        "improvement": -70
+      },
+      {
+        "query": "cache configuration",
+        "category": "high_value",
+        "resultsFound": 1,
+        "topResults": [
+          {
+            "file": "docs/shared/reference/project-configuration.md",
+            "score": 5,
+            "keywords": [
+              "project.json"
+            ]
+          }
+        ],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "task dependencies",
+        "category": "high_value",
+        "resultsFound": 4,
+        "topResults": [
+          {
+            "file": "docs/shared/features/distribute-task-execution.md",
+            "score": 15,
+            "keywords": [
+              "distributed tasks"
+            ]
+          },
+          {
+            "file": "docs/nx-cloud/features/split-e2e-tasks.md",
+            "score": 15,
+            "keywords": [
+              "split tasks",
+              "atomizer"
+            ]
+          },
+          {
+            "file": "docs/shared/features/automate-updating-dependencies.md",
+            "score": 5,
+            "keywords": [
+              "update",
+              "migrate"
+            ]
+          },
+          {
+            "file": "docs/shared/concepts/common-tasks.md",
+            "score": 5,
+            "keywords": [
+              "build",
+              "serve",
+              "test",
+              "lint"
+            ]
+          }
+        ],
+        "relevanceScore": 50,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 60,
+        "improvement": 10
+      },
+      {
+        "query": "module federation",
+        "category": "high_value",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "migrate from angular cli",
+        "category": "high_value",
+        "resultsFound": 3,
+        "topResults": [
+          {
+            "file": "docs/shared/packages/angular/angular-plugin.md",
+            "score": 15,
+            "keywords": [
+              "angular"
+            ]
+          },
+          {
+            "file": "docs/generated/packages/angular/documents/overview.md",
+            "score": 15,
+            "keywords": [
+              "angular"
+            ]
+          },
+          {
+            "file": "docs/shared/features/automate-updating-dependencies.md",
+            "score": 10,
+            "keywords": [
+              "update",
+              "migrate"
+            ]
+          }
+        ],
+        "relevanceScore": 100,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 0
+      },
+      {
+        "query": "react native",
+        "category": "high_value",
+        "resultsFound": 2,
+        "topResults": [
+          {
+            "file": "docs/shared/packages/react/react-plugin.md",
+            "score": 15,
+            "keywords": [
+              "react"
+            ]
+          },
+          {
+            "file": "docs/generated/packages/react/documents/overview.md",
+            "score": 15,
+            "keywords": [
+              "react"
+            ]
+          }
+        ],
+        "relevanceScore": 100,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 50,
+        "improvement": -50
+      },
+      {
+        "query": "environment variables",
+        "category": "high_value",
+        "resultsFound": 0,
+        "topResults": [],
+        "relevanceScore": 0,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 100
+      },
+      {
+        "query": "CI configuration",
+        "category": "high_value",
+        "resultsFound": 4,
+        "topResults": [
+          {
+            "file": "docs/shared/features/self-healing-ci.md",
+            "score": 25,
+            "keywords": [
+              "self-healing CI",
+              "AI",
+              "CI automation"
+            ]
+          },
+          {
+            "file": "docs/shared/reference/project-configuration.md",
+            "score": 5,
+            "keywords": [
+              "project.json"
+            ]
+          },
+          {
+            "file": "docs/shared/features/automate-updating-dependencies.md",
+            "score": 5,
+            "keywords": [
+              "update",
+              "migrate"
+            ]
+          },
+          {
+            "file": "docs/shared/concepts/decisions/project-size.md",
+            "score": 5,
+            "keywords": [
+              "library"
+            ]
+          }
+        ],
+        "relevanceScore": 25,
+        "expectedDocsFound": true,
+        "improvedRelevanceScore": 100,
+        "improvement": 75
+      }
+    ],
+    "categoryScores": {
+      "frameworks": {
+        "total": 246.66666666666666,
+        "count": 5,
+        "average": 49.33333333333333
+      },
+      "tools": {
+        "total": 500,
+        "count": 5,
+        "average": 100
+      },
+      "concepts": {
+        "total": 450,
+        "count": 5,
+        "average": 90
+      },
+      "features": {
+        "total": 500,
+        "count": 5,
+        "average": 100
+      },
+      "getting_started": {
+        "total": 270,
+        "count": 4,
+        "average": 67.5
+      },
+      "high_value": {
+        "total": 790,
+        "count": 10,
+        "average": 79
+      }
+    }
+  },
+  "improvements": {
+    "relevanceImprovement": 50.931372549019606,
+    "resultsImprovement": 19,
+    "problematicImprovement": 19
+  },
+  "keywordImprovements": {
+    "docs/shared/reference/releases.md": [
+      "reference",
+      "api",
+      "configuration",
+      "documentation"
+    ],
+    "docs/shared/reference/nx-json.md": [
+      "reference",
+      "api",
+      "configuration",
+      "documentation"
+    ],
+    "docs/shared/reference/inputs.md": [
+      "reference",
+      "api",
+      "configuration",
+      "documentation"
+    ],
+    "docs/shared/reference/glossary.md": [
+      "reference",
+      "api",
+      "configuration",
+      "documentation"
+    ],
+    "docs/shared/reference/environment-variables.md": [
+      "reference",
+      "api",
+      "configuration",
+      "documentation"
+    ],
+    "docs/shared/reference/commands.md": [
+      "reference",
+      "api",
+      "configuration",
+      "documentation"
+    ],
+    "docs/shared/recipes/yarn-pnp.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/troubleshoot-cache-misses.md": [
+      "cache",
+      "performance",
+      "build-cache",
+      "speed",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/tags-allow-list.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/tag-multiple-dimensions.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/resolve-circular-dependencies.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/module-federation-with-ssr.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/include-assets-in-build.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/identify-dependencies-between-folders.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/enable-tsc-batch-mode.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/console-troubleshooting.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/console-telemetry.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/console-run-command.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/console-project-details.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/console-nx-cloud.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/console-migrate-ui.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/console-generate-command.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/ci-deployment.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/ban-external-imports.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/ban-dependencies-with-tags.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/analyze-source-files.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to",
+      "dependency-graph",
+      "visualization",
+      "analysis"
+    ],
+    "docs/shared/recipes/advanced-update.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/guides/using-tailwind-css-with-angular-projects.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/using-tailwind-css-in-react.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/use-environment-variables-in-react.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/use-environment-variables-in-angular.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/unknown-local-cache.md": [
+      "cache",
+      "performance",
+      "build-cache",
+      "speed",
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/troubleshoot-convert-to-inferred.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/setup-incremental-builds-angular.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/remix.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/react-router.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/react-native.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/react-compiler.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/performance-profiling.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/nx-devkit-angular-devkit.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/nx-and-angular-cli.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/js-and-ts.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/define-environment-variables.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/browser-support.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/adding-assets.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/getting-started/start-with-existing-project.md": [
+      "tutorial",
+      "quickstart",
+      "setup",
+      "beginner"
+    ],
+    "docs/shared/getting-started/start-new-project.md": [
+      "tutorial",
+      "quickstart",
+      "setup",
+      "beginner"
+    ],
+    "docs/shared/getting-started/quick-start.md": [
+      "tutorial",
+      "quickstart",
+      "setup",
+      "beginner"
+    ],
+    "docs/shared/getting-started/intro.md": [
+      "tutorial",
+      "quickstart",
+      "setup",
+      "beginner"
+    ],
+    "docs/shared/getting-started/installation.md": [
+      "tutorial",
+      "quickstart",
+      "setup",
+      "beginner"
+    ],
+    "docs/shared/getting-started/editor-setup.md": [
+      "tutorial",
+      "quickstart",
+      "setup",
+      "beginner"
+    ],
+    "docs/shared/getting-started/ai-setup.md": [
+      "tutorial",
+      "quickstart",
+      "setup",
+      "beginner"
+    ],
+    "docs/shared/concepts/typescript-project-linking.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/types-of-configuration.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/task-pipeline-configuration.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/sync-generators.md": [
+      "generator",
+      "scaffold",
+      "code-generation",
+      "cli",
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/nx-plugins.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/mental-model.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/inferred-tasks.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/how-caching-works.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/executors-and-configurations.md": [
+      "executor",
+      "task",
+      "build",
+      "custom",
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/daemon.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/buildable-and-publishable-libraries.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/packages/webpack/webpack-plugins.md": [
+      "webpack",
+      "bundler",
+      "build",
+      "configuration",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/webpack/webpack-config-setup.md": [
+      "webpack",
+      "bundler",
+      "build",
+      "configuration",
+      "workspace",
+      "monorepo"
+    ],
+    "docs/shared/packages/webpack/plugin-overview.md": [
+      "webpack",
+      "bundler",
+      "build",
+      "configuration",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/workspace/workspace-plugin.md": [
+      "workspace",
+      "monorepo",
+      "configuration",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/workspace/nx-compatibility-matrix.md": [
+      "workspace",
+      "monorepo",
+      "configuration"
+    ],
+    "docs/shared/packages/web/web-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/vite/vite-plugin.md": [
+      "vite",
+      "bundler",
+      "build",
+      "fast",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/vite/configure-vite.md": [
+      "vite",
+      "bundler",
+      "build",
+      "fast",
+      "workspace",
+      "monorepo",
+      "configuration"
+    ],
+    "docs/shared/packages/vue/vue-plugin.md": [
+      "vue",
+      "javascript",
+      "typescript",
+      "component",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/shared-fs-cache/shared-fs-cache-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "cache",
+      "performance",
+      "build-cache",
+      "speed"
+    ],
+    "docs/shared/packages/rspack/rspack-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/s3-cache/s3-cache-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "cache",
+      "performance",
+      "build-cache",
+      "speed"
+    ],
+    "docs/shared/packages/remix/remix-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/react-native/react-native-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/storybook/storybook-9-setup.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation"
+    ],
+    "docs/shared/packages/storybook/plugin-overview.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/storybook/best-practices.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation"
+    ],
+    "docs/shared/packages/playwright/playwright-plugin.md": [
+      "playwright",
+      "e2e",
+      "testing",
+      "browser",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/owners/owners-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/node/node-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/nuxt/nuxt-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/next/plugin-overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/next/next-config-setup.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/module-federation/nx-module-federation-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/module-federation/nx-module-federation-dev-server-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/js/js-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/jest/jest-plugin.md": [
+      "jest",
+      "testing",
+      "unit-test",
+      "javascript",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/gradle/gradle-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/gcs-cache/gcs-cache-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "cache",
+      "performance",
+      "build-cache",
+      "speed"
+    ],
+    "docs/shared/packages/expo/expo-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/express/express-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/eslint/eslint.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/eslint/eslint-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/eslint/enforce-module-boundaries.md": [
+      "package"
+    ],
+    "docs/shared/packages/eslint/dependency-checks.md": [
+      "package"
+    ],
+    "docs/shared/packages/detox/detox-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/cypress/cypress-v11-migration.md": [
+      "cypress",
+      "e2e",
+      "testing",
+      "browser"
+    ],
+    "docs/shared/packages/cypress/cypress-setup-node-events.md": [
+      "cypress",
+      "e2e",
+      "testing",
+      "browser"
+    ],
+    "docs/shared/packages/cypress/cypress-plugin.md": [
+      "cypress",
+      "e2e",
+      "testing",
+      "browser",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/cypress/cypress-component-testing.md": [
+      "cypress",
+      "e2e",
+      "testing",
+      "browser"
+    ],
+    "docs/shared/packages/esbuild/esbuild-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/conformance/create-conformance-rule.md": [
+      "package"
+    ],
+    "docs/shared/packages/conformance/conformance-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/packages/angular/angular-nx-version-matrix.md": [
+      "angular",
+      "typescript",
+      "component",
+      "service"
+    ],
+    "docs/shared/packages/azure-cache/azure-cache-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "cache",
+      "performance",
+      "build-cache",
+      "speed"
+    ],
+    "docs/shared/recipes/tips-n-tricks/switch-to-workspaces-project-references.md": [
+      "workspace",
+      "monorepo",
+      "configuration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/tips-n-tricks/standalone-to-monorepo.md": [
+      "monorepo",
+      "workspace",
+      "multiple-projects",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/tips-n-tricks/migrating-to-flat-eslint.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/tips-n-tricks/keep-nx-versions-in-sync.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/tips-n-tricks/define-secondary-entrypoints.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/tips-n-tricks/compile-multiple-formats.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/plugins/task-running-lifecycle.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/plugins/publish-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/plugins/project-graph-plugins.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "dependency-graph",
+      "visualization",
+      "analysis",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/plugins/migration-generators.md": [
+      "generator",
+      "scaffold",
+      "code-generation",
+      "cli",
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/plugins/local-executors.md": [
+      "executor",
+      "task",
+      "build",
+      "custom",
+      "plugin",
+      "extension",
+      "integration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/plugins/create-preset.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/plugins/create-install-package.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/plugins/compose-executors.md": [
+      "executor",
+      "task",
+      "build",
+      "custom",
+      "plugin",
+      "extension",
+      "integration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/workspace-watching.md": [
+      "workspace",
+      "monorepo",
+      "configuration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/terminal-ui.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/skipping-cache.md": [
+      "cache",
+      "performance",
+      "build-cache",
+      "speed",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/self-hosted-caching.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to",
+      "cache",
+      "performance",
+      "build-cache",
+      "speed"
+    ],
+    "docs/shared/recipes/running-tasks/running-custom-commands.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/run-tasks-in-parallel.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/root-level-scripts.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/reduce-repetitive-configuration.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/pass-args-to-commands.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/defining-task-pipeline.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/convert-to-inferred.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/configure-outputs.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/running-tasks/configure-inputs.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/upgrading-storybook.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/storybook-composition-setup.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/plugin-vue.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/plugin-react.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/plugin-angular.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "plugin",
+      "extension",
+      "custom",
+      "integration",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/one-storybook-with-composition.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/one-storybook-per-scope.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/one-storybook-for-all.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/interaction-tests.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/custom-builder-configs.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "recipe",
+      "example",
+      "solution",
+      "how-to",
+      "webpack",
+      "bundler",
+      "build",
+      "configuration",
+      "vite",
+      "fast"
+    ],
+    "docs/shared/recipes/storybook/configuring-storybook.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "recipe",
+      "example",
+      "solution",
+      "how-to",
+      "workspace",
+      "monorepo",
+      "configuration"
+    ],
+    "docs/shared/recipes/storybook/angular-storybook-compodoc.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/storybook/angular-configuring-styles.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/updating-version-references.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/update-local-registry-setup.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/release-typescript-packages-to-npm.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/release-projects-independently.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/release-docker-images.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/publish-rust-crates.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/publish-in-ci-cd.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/file-based-versioning-version-plans.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/customize-conventional-commit-types.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/configure-custom-registries.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/configure-changelog-format.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/configuration-version-prefix.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/build-before-versioning.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/automatically-version-with-conventional-commits.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/automate-gitlab-releases.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/nx-release/automate-github-releases.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/node/wait-for-tasks.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/node/application-proxies.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/installation/update-global-installation.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/installation/install-non-javascript.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/installation/activate-powerpack.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/module-federation/federate-a-module.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/module-federation/dynamic-mfe-angular.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/module-federation/creating-a-remote.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/module-federation/creating-a-host.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/add-stack/add-svelte.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/add-stack/add-solid.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/add-stack/add-rust.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/add-stack/add-qwik.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/add-stack/add-lit.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/add-stack/add-fastify.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/add-stack/add-express.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/add-stack/add-dotnet.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/add-stack/add-astro.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/generators/modifying-files.md": [
+      "generator",
+      "scaffold",
+      "code-generation",
+      "cli",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/generators/local-generators.md": [
+      "generator",
+      "scaffold",
+      "code-generation",
+      "cli",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/generators/generator-options.md": [
+      "generator",
+      "scaffold",
+      "code-generation",
+      "cli",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/generators/creating-files.md": [
+      "generator",
+      "scaffold",
+      "code-generation",
+      "cli",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/generators/create-sync-generator.md": [
+      "generator",
+      "scaffold",
+      "code-generation",
+      "cli",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/generators/composing-generators.md": [
+      "generator",
+      "scaffold",
+      "code-generation",
+      "cli",
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/deployment/node-serverless-functions-netlify.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/deployment/node-server-fly-io.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/deployment/node-aws-lambda.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/deployment/deploy-nuxt-to-vercel.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/recipes/deployment/deploy-nextjs-to-vercel.md": [
+      "recipe",
+      "example",
+      "solution",
+      "how-to"
+    ],
+    "docs/shared/concepts/decisions/project-dependency-rules.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/decisions/monorepos.md": [
+      "monorepo",
+      "workspace",
+      "multiple-projects",
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/decisions/monorepo-polyrepo.md": [
+      "monorepo",
+      "workspace",
+      "multiple-projects",
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/decisions/folder-structure.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/decisions/dependency-management.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/decisions/code-ownership.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/guides/angular-rspack/migrate-from-webpack.md": [
+      "webpack",
+      "bundler",
+      "build",
+      "configuration",
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/angular-rspack/introduction.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/angular-rspack/internationalization.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/angular-rspack/handling-configurations.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/angular-rspack/getting-started.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/concepts/module-federation/nx-module-federation-technical-overview.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/module-federation/module-federation-and-nx.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/module-federation/micro-frontend-architecture.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/module-federation/manage-library-versions-with-module-federation.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/shared/concepts/module-federation/faster-builds.md": [
+      "concept",
+      "theory",
+      "explanation",
+      "understanding"
+    ],
+    "docs/generated/packages/web/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/vue/documents/overview.md": [
+      "vue",
+      "javascript",
+      "typescript",
+      "component",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/webpack/documents/overview.md": [
+      "webpack",
+      "bundler",
+      "build",
+      "configuration",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/workspace/documents/overview.md": [
+      "workspace",
+      "monorepo",
+      "configuration",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/workspace/documents/nx-nodejs-typescript-version-matrix.md": [
+      "workspace",
+      "monorepo",
+      "configuration"
+    ],
+    "docs/generated/packages/vite/documents/overview.md": [
+      "vite",
+      "bundler",
+      "build",
+      "fast",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/rspack/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/storybook/documents/storybook-9-setup.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation"
+    ],
+    "docs/generated/packages/storybook/documents/overview.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/storybook/documents/best-practices.md": [
+      "storybook",
+      "component",
+      "ui",
+      "documentation"
+    ],
+    "docs/generated/packages/playwright/documents/overview.md": [
+      "playwright",
+      "e2e",
+      "testing",
+      "browser",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/nuxt/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/node/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/react-native/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/remix/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/nx/documents/watch.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/view-logs.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/sync.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/sync-check.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/start-ci-run.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/show.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/run.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/run-many.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/reset.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/repair.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/release.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/record.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/migrate.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/mcp.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/logout.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/login.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/list.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/init.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/import.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/generate.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/format-write.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/format-check.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/fix-ci.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/exec.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/dep-graph.md": [
+      "dependency-graph",
+      "visualization",
+      "analysis"
+    ],
+    "docs/generated/packages/nx/documents/daemon.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/create-nx-workspace.md": [
+      "workspace",
+      "monorepo",
+      "configuration"
+    ],
+    "docs/generated/packages/nx/documents/connect-to-nx-cloud.md": [
+      "package"
+    ],
+    "docs/generated/packages/nx/documents/affected.md": [
+      "affected",
+      "incremental",
+      "optimization",
+      "ci"
+    ],
+    "docs/generated/packages/nx/documents/add.md": [
+      "package"
+    ],
+    "docs/generated/packages/js/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/next/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/gradle/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/module-federation/documents/nx-module-federation-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/module-federation/documents/nx-module-federation-dev-server-plugin.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/express/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/eslint-plugin/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/eslint-plugin/documents/enforce-module-boundaries.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/eslint-plugin/documents/dependency-checks.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/eslint/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/jest/documents/overview.md": [
+      "jest",
+      "testing",
+      "unit-test",
+      "javascript",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/esbuild/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/cypress/documents/overview.md": [
+      "cypress",
+      "e2e",
+      "testing",
+      "browser",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/angular-rspack/documents/create-server.md": [
+      "package"
+    ],
+    "docs/generated/packages/angular-rspack/documents/create-config.md": [
+      "package"
+    ],
+    "docs/generated/packages/expo/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/generated/packages/angular/documents/nx-devkit-angular-devkit.md": [
+      "angular",
+      "typescript",
+      "component",
+      "service"
+    ],
+    "docs/generated/packages/angular/documents/nx-and-angular.md": [
+      "angular",
+      "typescript",
+      "component",
+      "service"
+    ],
+    "docs/generated/packages/angular/documents/angular-nx-version-matrix.md": [
+      "angular",
+      "typescript",
+      "component",
+      "service"
+    ],
+    "docs/generated/packages/detox/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/external-generated/packages/shared-fs-cache/documents/overview.md": [
+      "cache",
+      "performance",
+      "build-cache",
+      "speed",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/external-generated/packages/gcs-cache/documents/overview.md": [
+      "cache",
+      "performance",
+      "build-cache",
+      "speed",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/external-generated/packages/s3-cache/documents/overview.md": [
+      "cache",
+      "performance",
+      "build-cache",
+      "speed",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/external-generated/packages/conformance/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/external-generated/packages/conformance/documents/create-conformance-rule.md": [
+      "package"
+    ],
+    "docs/external-generated/packages/owners/documents/overview.md": [
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/external-generated/packages/azure-cache/documents/overview.md": [
+      "cache",
+      "performance",
+      "build-cache",
+      "speed",
+      "plugin",
+      "extension",
+      "custom",
+      "integration"
+    ],
+    "docs/shared/guides/angular-rspack/api/nx-angular-rsbuild/create-server.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/angular-rspack/api/nx-angular-rsbuild/create-config.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/angular-rspack/api/nx-angular-rspack/create-server.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ],
+    "docs/shared/guides/angular-rspack/api/nx-angular-rspack/create-config.md": [
+      "guide",
+      "how-to",
+      "tutorial",
+      "step-by-step"
+    ]
+  },
+  "recommendations": {
+    "phase1": {
+      "title": "High-Impact Quick Wins",
+      "description": "Add keywords to the most important documentation files",
+      "tasks": [
+        "Add framework keywords (angular, react, vue) to getting-started guides",
+        "Add tool keywords (webpack, vite, jest) to relevant configuration docs",
+        "Add concept keywords (monorepo, workspace, generator) to concept pages"
+      ],
+      "estimatedImpact": "Will improve 60% of problematic queries"
+    },
+    "phase2": {
+      "title": "Comprehensive Coverage",
+      "description": "Systematically add keywords to all missing files",
+      "tasks": [
+        "Add keywords to all reference documentation",
+        "Add keywords to all recipe/guide pages",
+        "Create keyword validation in CI/CD"
+      ],
+      "estimatedImpact": "Will improve search coverage to 95%"
+    },
+    "phase3": {
+      "title": "Optimization and Monitoring",
+      "description": "Fine-tune and monitor search quality",
+      "tasks": [
+        "Set up search analytics tracking",
+        "Create keyword consistency guidelines",
+        "Regular search quality audits"
+      ],
+      "estimatedImpact": "Will maintain and continuously improve search quality"
+    }
+  }
+}

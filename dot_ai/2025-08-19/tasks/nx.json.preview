@@ -1,0 +1,506 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "plugins": [
+    "@nxlv/python",
+    {
+      "plugin": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        },
+        "build": {
+          "targetName": "build",
+          "configName": "tsconfig.lib.json",
+          "buildDepsName": "build-deps",
+          "watchDepsName": "watch-deps"
+        }
+      },
+      "exclude": [
+        "libs/evals/*"
+      ]
+    },
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
+    },
+    {
+      "plugin": "@nx/gradle",
+      "options": {
+        "testTargetName": "test-kt",
+        "classesTargetName": "classes",
+        "buildTargetName": "build",
+        "ciTestTargetName": "test-ci"
+      }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "exclude": [
+        "libs/nx-packages/*-e2e/**/*",
+        "jest.config.ts",
+        "libs/nx-packages/powerpack-legacy/**"
+      ],
+      "options": {
+        "disableJestRuntime": true,
+        "targetName": "testjs"
+      }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "include": [
+        "libs/nx-packages/*-e2e/**/*"
+      ],
+      "options": {
+        "disableJestRuntime": true,
+        "targetName": "e2e",
+        "ciTargetName": "jest-e2e-ci"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "exclude": [
+        "libs/nx-packages/powerpack-legacy/**",
+        "libs/evals/**"
+      ],
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/storybook/plugin",
+      "options": {
+        "serveStorybookTargetName": "storybook",
+        "buildStorybookTargetName": "build-storybook",
+        "testStorybookTargetName": "test-storybook",
+        "staticStorybookTargetName": "static-storybook"
+      }
+    },
+    {
+      "plugin": "@monodon/rust"
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "exclude": [
+        "libs/evals/*"
+      ],
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "vite:typecheck"
+      }
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "include": [
+        "libs/evals/*"
+      ],
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
+      }
+    },
+    {
+      "plugin": "@nx/docker",
+      "options": {
+        "buildTargetName": "docker:build",
+        "pushTargetName": "docker:push"
+      }
+    }
+  ],
+  "generators": {
+    "@nx/react": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "bundler": "vite",
+        "babel": true
+      },
+      "library": {
+        "style": "none",
+        "linter": "eslint",
+        "unitTestRunner": "jest"
+      },
+      "component": {
+        "style": "none"
+      }
+    },
+    "@nx/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    },
+    "@nx/remix": {
+      "route": {
+        "style": "none"
+      },
+      "library": {
+        "style": "none",
+        "unitTestRunner": "jest"
+      }
+    }
+  },
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
+    "sharedGlobals": [
+      {
+        "env": "NX_POWERPACK_RELEASE_PIPELINE"
+      }
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/**/*.spec.ts{,.snap}",
+      "!{projectRoot}/src/test/**/*",
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+      "!{projectRoot}/.storybook/**/*",
+      "!{projectRoot}/tsconfig.storybook.json",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/eslint.config.mjs"
+    ],
+    "rust": [
+      "sharedGlobals",
+      "{projectRoot}/**/*.rs",
+      "{projectRoot}/**/Cargo.*",
+      "{workspaceRoot}/Cargo.toml",
+      {
+        "runtime": "node -p '`${process.platform}_${process.arch}`'"
+      },
+      {
+        "externalDependencies": [
+          "npm:@monodon/rust",
+          "npm:@napi-rs/cli"
+        ]
+      }
+    ],
+    "arch": [
+      "sharedGlobals",
+      {
+        "runtime": "uname -ms"
+      }
+    ],
+    "e2eInputs": [
+      "default",
+      "{workspaceRoot}/docker-compose.*",
+      "{workspaceRoot}/package-scripts.js"
+    ],
+    "gradle": [
+      "sharedGlobals",
+      "{workspaceRoot}/build.gradle.kts",
+      "{workspaceRoot}/gradle.properties",
+      "{workspaceRoot}/settings.gradle.kts",
+      "{workspaceRoot}/gradle/libs.versions.toml",
+      "{projectRoot}/build.gradle.kts"
+    ],
+    "nonWasmInputs": [
+      "production",
+      "!{projectRoot}/*.{mjs,cjs,wasm,node}",
+      "!{projectRoot}/browser.js",
+      "!{projectRoot}/native.js",
+      "!{projectRoot}/native.d.ts",
+      "!{projectRoot}/index.d.ts",
+      "!{projectRoot}/nx_key.wasi-browser.js"
+    ]
+  },
+  "nxCloudUrl": "https://snapshot.nx.app",
+  "nxCloudId": "62e400a396c2ae3137cd4cb7",
+  "targetDefaults": {
+    "package": {
+      "inputs": [
+        "production",
+        "^production"
+      ],
+      "cache": true
+    },
+    "build-rust": {
+      "cache": true,
+      "inputs": [
+        "^rust",
+        "rust"
+      ]
+    },
+    "build-rust-wasm": {
+      "cache": true,
+      "inputs": [
+        "^rust",
+        "rust"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ],
+      "cache": true
+    },
+    "build-libs": {
+      "inputs": [
+        "production",
+        "^production"
+      ],
+      "cache": true
+    },
+    "prune": {
+      "cache": true
+    },
+    "test": {
+      "inputs": [
+        "default",
+        "^production"
+      ],
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "e2e-ci": {
+      "cache": true,
+      "configurations": {
+        "default": {},
+        "private-enterprise": {
+          "env": {
+            "NX_CLOUD_MODE": "private-enterprise",
+            "NX_CLOUD_MONGO_DB_NAME": "nrwl-api-private-enterprise-e2e"
+          }
+        }
+      },
+      "defaultConfiguration": "default"
+    },
+    "e2e": {
+      "cache": true
+    },
+    "typecheck": {
+      "inputs": [
+        "default",
+        "^production"
+      ],
+      "outputs": [
+        "{projectRoot}/out-tsc/**/*.d.ts",
+        "{projectRoot}/out-tsc/**/*.tsbuildinfo"
+      ],
+      "cache": true
+    },
+    "build_manager": {
+      "cache": true
+    },
+    "test_manager": {
+      "cache": true
+    },
+    "testjs": {
+      "options": {
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "cache": true
+    },
+    "compile": {
+      "cache": true,
+      "inputs": [
+        "production",
+        "^production"
+      ]
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    },
+    "e2e-ci--e2e/**/**": {
+      "options": {
+        "args": [
+          "--pass-with-no-tests",
+          "--grep='/^(?!.*@private-only)/'"
+        ]
+      },
+      "configurations": {
+        "default": {},
+        "private-enterprise": {
+          "args": [
+            "--pass-with-no-tests",
+            "--grep='/@private|@private-only/'"
+          ],
+          "env": {
+            "NX_CLOUD_MODE": "private-enterprise",
+            "NX_CLOUD_MONGO_DB_NAME": "nrwl-api-private-enterprise-e2e"
+          }
+        }
+      },
+      "defaultConfiguration": "default"
+    },
+    "jest-e2e-ci--src/**/**": {
+      "dependsOn": [
+        "@nrwl/ocean:local-registry"
+      ]
+    },
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
+    },
+    "test-kt": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "gradle"
+      ]
+    },
+    "test-ci**": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "gradle"
+      ]
+    },
+    "compileTestKotlin": {
+      "options": {
+        "excludeDependsOn": false
+      }
+    }
+  },
+  "release": {
+    "releaseTagPattern": "{releaseGroupName}-v{version}",
+    "groups": {
+      "graph": {
+        "projects": [
+          "nx-graph"
+        ]
+      },
+      "powerpack": {
+        "projects": [
+          "tag:powerpack",
+          "powerpack-*",
+          "!*-e2e",
+          "!powerpack-utils",
+          "!nx-graph"
+        ]
+      },
+      "docker-images": {
+        "projects": [
+          "nx-api",
+          "file-server",
+          "aggregator",
+          "nx-cloud-workflow-controller",
+          "nx-ai",
+          "nx-background-worker",
+          "activemq"
+        ],
+        "projectsRelationship": "fixed",
+        "version": {
+          "generator": "./.ai/2025-08-19/tasks/calver-version-generator.mjs"
+        },
+        "docker": {
+          "registryUrl": "us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud",
+          "skipVersionActions": false,
+          "additionalRegistryUrls": [
+            "quay.io/nxdev"
+          ]
+        }
+      }
+    },
+    "version": {
+      "currentVersionResolver": "registry",
+      "preserveLocalDependencyProtocols": false,
+      "manifestRootsToUpdate": [
+        "dist/{projectRoot}"
+      ]
+    },
+    "changelog": {
+      "workspaceChangelog": false,
+      "projectChangelogs": false
+    }
+  },
+  "bustCache": "100034",
+  "parallel": 1,
+  "defaultBase": "main",
+  "owners": {
+    "format": "github",
+    "patterns": [
+      {
+        "description": "Infra Team ownership",
+        "projects": [
+          "virtual-appliances",
+          "nx-cloud-workflow-controller"
+        ],
+        "owners": [
+          "@nrwl/infrastructure-devs",
+          "@stevepentland",
+          "@vsavkin"
+        ]
+      },
+      {
+        "description": "Nx Cloud Plugin ownership",
+        "projects": [
+          "nx-cloud-plugin"
+        ],
+        "owners": [
+          "@nartc",
+          "@barbados-clemens",
+          "@vsavkin"
+        ]
+      },
+      {
+        "description": "Nx Cloud App Team ownership",
+        "projects": [
+          "nx-cloud-*",
+          "!nx-cloud-plugin",
+          "!nx-cloud-workflow-controller"
+        ],
+        "owners": [
+          "@nrwl/nx-cloud-application",
+          "@vsavkin"
+        ]
+      },
+      {
+        "description": "Conformance packages ownership",
+        "projects": [
+          "conformance",
+          "powerpack-conformance"
+        ],
+        "owners": [
+          "@JamesHenry"
+        ]
+      }
+    ]
+  },
+  "sync": {
+    "applyChanges": false,
+    "globalGenerators": [
+      "@nx/owners:sync-codeowners-file"
+    ]
+  },
+  "conformance": {
+    "rules": [
+      {
+        "rule": "./libs/nx-cloud-plugin/src/conformance-rules/server-client-public-api",
+        "status": "evaluated",
+        "projects": [
+          "nx-cloud-*",
+          "!nx-cloud-plugin",
+          "!nx-cloud-workflow-controller"
+        ]
+      },
+      {
+        "rule": "./libs/nx-cloud-plugin/src/conformance-rules/powerpack-third-party-licenses",
+        "status": "enforced"
+      }
+    ]
+  }
+}

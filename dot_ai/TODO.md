@@ -12,6 +12,11 @@
 
 ### August 2025
 
+- [x] Docker Tagging and Publishing Investigation (2025-08-19 11:13)
+  - Plan created: `.ai/2025-08-19/tasks/docker-tagging-publishing-investigation.md`
+  - Goal: Understand complete Docker tagging, pushing, and publishing flow with CalVer scheme
+  - Result: Documented complete flow, identified CalVer implementation in build-and-publish-to-snapshot.sh
+
 - [x] DOC-111: Update Astro Docs Header to Match Production (2025-08-13)
   - Plan created: Work completed in nx-worktrees/DOC-111 branch
   - Goal: Update Astro docs site header to match production nx.dev header

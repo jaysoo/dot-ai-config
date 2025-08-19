@@ -1,0 +1,25 @@
+{
+  "comment": "Example custom docker target that could work with nx release",
+  "targets": {
+    "docker:build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "docker buildx build --platform linux/amd64 -t nx-cloud-nx-api:{args.version} --build-arg NX_VERSION={args.version} -f ./apps/docker-setup/dockerfiles/nx-api.dockerfile ."
+        ]
+      }
+    },
+    "docker:push": {
+      "executor": "nx:run-commands", 
+      "dependsOn": ["docker:build"],
+      "options": {
+        "commands": [
+          "docker tag nx-cloud-nx-api:{args.version} us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud/nx-cloud-nx-api:{args.version}",
+          "docker tag nx-cloud-nx-api:{args.version} quay.io/nxdev/nx-cloud-nx-api:{args.version}",
+          "docker push us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud/nx-cloud-nx-api:{args.version}",
+          "docker push quay.io/nxdev/nx-cloud-nx-api:{args.version}"
+        ]
+      }
+    }
+  }
+}

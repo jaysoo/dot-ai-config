@@ -1,0 +1,1545 @@
+{
+  "timestamp": "2025-08-19T18:17:21.599Z",
+  "statistics": {
+    "totalKeywords": 18,
+    "filesWithKeywords": 13,
+    "filesMissingKeywords": 285
+  },
+  "keywords": {
+    "react": [
+      "docs/shared/packages/react/react-plugin.md",
+      "docs/generated/packages/react/documents/overview.md"
+    ],
+    "nest": [
+      "docs/shared/packages/nest/nest-plugin.md",
+      "docs/generated/packages/nest/documents/overview.md"
+    ],
+    "nestjs": [
+      "docs/shared/packages/nest/nest-plugin.md",
+      "docs/generated/packages/nest/documents/overview.md"
+    ],
+    "angular": [
+      "docs/shared/packages/angular/angular-plugin.md",
+      "docs/generated/packages/angular/documents/overview.md"
+    ],
+    "project.json": [
+      "docs/shared/reference/project-configuration.md"
+    ],
+    "self-healing CI": [
+      "docs/shared/features/self-healing-ci.md"
+    ],
+    "AI": [
+      "docs/shared/features/self-healing-ci.md"
+    ],
+    "CI automation": [
+      "docs/shared/features/self-healing-ci.md"
+    ],
+    "distributed tasks": [
+      "docs/shared/features/distribute-task-execution.md"
+    ],
+    "update": [
+      "docs/shared/features/automate-updating-dependencies.md"
+    ],
+    "migrate": [
+      "docs/shared/features/automate-updating-dependencies.md"
+    ],
+    "build": [
+      "docs/shared/concepts/common-tasks.md"
+    ],
+    "serve": [
+      "docs/shared/concepts/common-tasks.md"
+    ],
+    "test": [
+      "docs/shared/concepts/common-tasks.md"
+    ],
+    "lint": [
+      "docs/shared/concepts/common-tasks.md"
+    ],
+    "split tasks": [
+      "docs/nx-cloud/features/split-e2e-tasks.md"
+    ],
+    "atomizer": [
+      "docs/nx-cloud/features/split-e2e-tasks.md"
+    ],
+    "library": [
+      "docs/shared/concepts/decisions/project-size.md"
+    ]
+  },
+  "fileKeywords": {
+    "docs/shared/reference/project-configuration.md": [
+      "project.json"
+    ],
+    "docs/shared/features/self-healing-ci.md": [
+      "self-healing CI",
+      "AI",
+      "CI automation"
+    ],
+    "docs/shared/features/distribute-task-execution.md": [
+      "distributed tasks"
+    ],
+    "docs/shared/features/automate-updating-dependencies.md": [
+      "update",
+      "migrate"
+    ],
+    "docs/shared/concepts/common-tasks.md": [
+      "build",
+      "serve",
+      "test",
+      "lint"
+    ],
+    "docs/nx-cloud/features/split-e2e-tasks.md": [
+      "split tasks",
+      "atomizer"
+    ],
+    "docs/shared/packages/react/react-plugin.md": [
+      "react"
+    ],
+    "docs/shared/packages/nest/nest-plugin.md": [
+      "nest",
+      "nestjs"
+    ],
+    "docs/shared/packages/angular/angular-plugin.md": [
+      "angular"
+    ],
+    "docs/shared/concepts/decisions/project-size.md": [
+      "library"
+    ],
+    "docs/generated/packages/react/documents/overview.md": [
+      "react"
+    ],
+    "docs/generated/packages/nest/documents/overview.md": [
+      "nest",
+      "nestjs"
+    ],
+    "docs/generated/packages/angular/documents/overview.md": [
+      "angular"
+    ]
+  },
+  "missingKeywords": [
+    {
+      "file": "docs/shared/reference/releases.md",
+      "title": "Nx Release Schedule and Support Policy",
+      "description": "Information about Nx package releases, including version support timelines, LTS policy, and deprecation guidelines for the nx and @nx/* packages."
+    },
+    {
+      "file": "docs/shared/reference/nx-json.md",
+      "title": "nx.json Reference",
+      "description": "A comprehensive reference for the nx.json configuration file, which controls Nx CLI behavior, project defaults, and workspace settings."
+    },
+    {
+      "file": "docs/shared/reference/inputs.md",
+      "title": "Inputs and Named Inputs",
+      "description": "Learn how Nx uses inputs to compute cache hashes for tasks, including file sets, runtime inputs, and environment variables that affect task outputs."
+    },
+    {
+      "file": "docs/shared/reference/glossary.md",
+      "title": "Nx Glossary",
+      "description": "A comprehensive reference of Nx-specific terminology to help you understand the concepts and features of the Nx ecosystem."
+    },
+    {
+      "file": "docs/shared/reference/environment-variables.md",
+      "title": "Environment Variables",
+      "description": "A comprehensive reference of all environment variables that can be used to configure and control Nx behavior in different environments."
+    },
+    {
+      "file": "docs/shared/reference/commands.md",
+      "title": "Nx Commands",
+      "description": "A comprehensive reference of all available Nx CLI commands for modifying code, running tasks, displaying information, and integrating with Nx Cloud."
+    },
+    {
+      "file": "docs/shared/recipes/yarn-pnp.md",
+      "title": "Using Yarn Plug'n'Play with Nx",
+      "description": "Learn how to configure and use Yarn Plug'n'Play (PnP) in your Nx workspace to improve installation speed, reduce disk usage, and enforce dependency constraints."
+    },
+    {
+      "file": "docs/shared/recipes/troubleshoot-cache-misses.md",
+      "title": "Troubleshoot Cache Misses",
+      "description": "Learn how to diagnose and fix issues when Nx tasks are not being replayed from cache as expected, using project configuration checks and Nx Cloud tools."
+    },
+    {
+      "file": "docs/shared/recipes/tags-allow-list.md",
+      "title": "Tags Allow List",
+      "description": "Learn how to create exceptions to your module boundary rules by configuring allow lists that permit specific imports that would otherwise be restricted."
+    },
+    {
+      "file": "docs/shared/recipes/tag-multiple-dimensions.md",
+      "title": "Tag in Multiple Dimensions",
+      "description": "Learn how to use multiple tag dimensions in Nx to create more sophisticated module boundary constraints, controlling dependencies between projects based on scope, type, and other attributes."
+    },
+    {
+      "file": "docs/shared/recipes/resolve-circular-dependencies.md",
+      "title": "Resolve Circular Dependencies",
+      "description": "Learn how to identify and fix circular dependencies in your Nx workspace to improve code organization and make the affected algorithm more effective."
+    },
+    {
+      "file": "docs/shared/recipes/module-federation-with-ssr.md",
+      "title": "Module Federation with Server-Side Rendering",
+      "description": "Learn how to set up Module Federation with Server-Side Rendering (SSR) for Angular and React applications using Nx generators."
+    },
+    {
+      "file": "docs/shared/recipes/include-assets-in-build.md",
+      "title": "Including Assets in Your Build",
+      "description": "Learn how to configure Nx executors to include and copy assets into your output bundle using regex patterns or object format for precise control."
+    },
+    {
+      "file": "docs/shared/recipes/identify-dependencies-between-folders.md",
+      "title": "Identify Dependencies Between Folders",
+      "description": "Learn how to analyze and visualize dependencies between folders in your Nx workspace to help identify which code should be extracted into separate libraries."
+    },
+    {
+      "file": "docs/shared/recipes/enable-tsc-batch-mode.md",
+      "title": "Enable TypeScript Batch Mode",
+      "description": "Learn how to use TypeScript's batch mode in Nx to significantly improve build performance by batching TypeScript compilation tasks into a single process."
+    },
+    {
+      "file": "docs/shared/recipes/console-troubleshooting.md",
+      "title": "Troubleshoot Nx Console Issues",
+      "description": "Learn how to resolve common issues with Nx Console, including Node.js version conflicts with nvm and WSL configuration in JetBrains IDEs."
+    },
+    {
+      "file": "docs/shared/recipes/console-telemetry.md",
+      "title": "Nx Console Telemetry",
+      "description": "Learn about the telemetry data collected by Nx Console extensions, what information is gathered, and how to disable telemetry collection in different editors."
+    },
+    {
+      "file": "docs/shared/recipes/console-run-command.md",
+      "title": "Nx Console Run Command",
+      "description": "Learn how to use the Nx Console Run Command to execute project targets and customize command options directly from your editor's Command Palette."
+    },
+    {
+      "file": "docs/shared/recipes/console-project-details.md",
+      "title": "Nx Console Project Details View",
+      "description": "Learn how to use Nx Console's Project Details View to explore project information, run tasks, and navigate the dependency graph directly from your editor."
+    },
+    {
+      "file": "docs/shared/recipes/console-nx-cloud.md",
+      "title": "Nx Console & Nx Cloud Integration",
+      "description": "Learn how Nx Console integrates with Nx Cloud to provide CI pipeline visibility, notifications, and quick access to build results directly from your editor."
+    },
+    {
+      "file": "docs/shared/recipes/console-migrate-ui.md",
+      "title": "Nx Console Migrate UI",
+      "description": "Learn how to use the Nx Console Migrate UI to interactively update package dependencies, configuration files, and source code to match new package versions."
+    },
+    {
+      "file": "docs/shared/recipes/console-generate-command.md",
+      "title": "Nx Console Generate Command",
+      "description": "Learn how to use the Nx Console Generate UI to create projects, libraries, and components with a visual form interface that provides real-time previews."
+    },
+    {
+      "file": "docs/shared/recipes/ci-deployment.md",
+      "title": "Prepare Applications for Deployment via CI",
+      "description": "Learn how to generate package.json and pruned lock files for your Nx applications to optimize container-based deployments in CI environments."
+    },
+    {
+      "file": "docs/shared/recipes/ban-external-imports.md",
+      "title": "Ban External Imports",
+      "description": "Learn how to use ESLint module boundary constraints to prevent projects from importing specific external packages and enforce separation of concerns."
+    },
+    {
+      "file": "docs/shared/recipes/ban-dependencies-with-tags.md",
+      "title": "Ban Dependencies with Certain Tags",
+      "description": "Learn how to use the notDependOnLibsWithTags property to prevent projects from depending on libraries with specific tags in your Nx workspace."
+    },
+    {
+      "file": "docs/shared/recipes/analyze-source-files.md",
+      "title": "Disable Graph Links Created from Analyzing Source Files",
+      "description": "Learn how to configure Nx to only use dependencies defined in package.json instead of detecting dependencies from source code analysis."
+    },
+    {
+      "file": "docs/shared/recipes/advanced-update.md",
+      "title": "Advanced Update Process",
+      "description": "Learn advanced techniques for updating Nx and workspace dependencies, including step-by-step migration strategies, managing complex updates, and troubleshooting common issues."
+    },
+    {
+      "file": "docs/shared/guides/using-tailwind-css-with-angular-projects.md",
+      "title": "Using Tailwind CSS with Angular Projects",
+      "description": "Learn how to set up and configure Tailwind CSS in Angular applications and libraries within an Nx workspace, including dependency management and Module Federation support."
+    },
+    {
+      "file": "docs/shared/guides/using-tailwind-css-in-react.md",
+      "title": "Using Tailwind CSS in React and Next.js",
+      "description": "Learn how to set up and configure Tailwind CSS in your React and Next.js applications within an Nx workspace, with both automated and manual installation options."
+    },
+    {
+      "file": "docs/shared/guides/use-environment-variables-in-react.md",
+      "title": "Using Environment Variables in React Applications",
+      "description": "Learn how to configure and use environment variables in React applications with Nx, including setup for Vite and Webpack, and handling conflicts between Nx and Vite."
+    },
+    {
+      "file": "docs/shared/guides/use-environment-variables-in-angular.md",
+      "title": "Using Environment Variables in Angular Applications",
+      "description": "Learn how to configure and use environment variables in Angular applications with Nx, including setup for ESBuild and TypeScript type definitions."
+    },
+    {
+      "file": "docs/shared/guides/unknown-local-cache.md",
+      "title": "Unknown Local Cache Error",
+      "description": "Learn how to troubleshoot and resolve Nx cache errors related to machine ID changes, network drives, and understand how Nx ensures cache security."
+    },
+    {
+      "file": "docs/shared/guides/troubleshoot-convert-to-inferred.md",
+      "title": "Troubleshoot Convert to Inferred Migration",
+      "description": "Learn how to resolve common issues when migrating from executor-based tasks to inferred tasks in Nx, with specific solutions for Next.js, Remix, and other frameworks."
+    },
+    {
+      "file": "docs/shared/guides/setup-incremental-builds-angular.md",
+      "title": "Setup Incremental Builds for Angular Applications",
+      "description": "Learn how to configure your Angular applications in Nx to use incremental builds, improving build performance by only rebuilding what changed."
+    },
+    {
+      "file": "docs/shared/guides/remix.md",
+      "title": "Remix with Nx",
+      "description": "Learn how to create, build, serve, and test Remix applications within an Nx workspace, leveraging Nx's powerful tooling for modern web development."
+    },
+    {
+      "file": "docs/shared/guides/react-router.md",
+      "title": "React Router with Nx",
+      "description": "Learn how to create, build, serve, and test React Router applications within an Nx workspace, leveraging Nx's powerful tooling for modern web development."
+    },
+    {
+      "file": "docs/shared/guides/react-native.md",
+      "title": "React Native with Nx",
+      "description": "Learn how to develop React Native applications with Nx, including workspace setup, running on simulators, testing, and leveraging Nx's powerful tooling."
+    },
+    {
+      "file": "docs/shared/guides/react-compiler.md",
+      "title": "React Compiler with Nx",
+      "description": "Learn how to enable and configure React Compiler in Nx projects to automatically optimize your React code with memoization for better performance."
+    },
+    {
+      "file": "docs/shared/guides/performance-profiling.md",
+      "title": "Profiling Performance",
+      "description": "Learn how to profile and optimize Nx task execution performance using Chrome DevTools and environment variables to identify bottlenecks and improve build times."
+    },
+    {
+      "file": "docs/shared/guides/nx-devkit-angular-devkit.md",
+      "title": "Nx Devkit and Angular Devkit",
+      "description": "Compare Nx Devkit and Angular Devkit for creating generators and executors, understand key differences in implementation, and learn how to convert between the two approaches."
+    },
+    {
+      "file": "docs/shared/guides/nx-and-angular-cli.md",
+      "title": "Nx and the Angular CLI",
+      "description": "Compare Nx and Angular CLI features, understand similarities and differences, and learn how Nx enhances Angular development with improved caching, monorepo support, and advanced tooling."
+    },
+    {
+      "file": "docs/shared/guides/js-and-ts.md",
+      "title": "JavaScript and TypeScript",
+      "description": "Learn how to use Nx with both JavaScript and TypeScript, including how to generate JS files, mix languages in your workspace, and build TypeScript packages with advanced features."
+    },
+    {
+      "file": "docs/shared/guides/define-environment-variables.md",
+      "title": "Define Environment Variables",
+      "description": "Learn how to set and use environment variables in Nx projects, including file-based configuration, custom env files, and ad-hoc variable definition across different operating systems."
+    },
+    {
+      "file": "docs/shared/guides/browser-support.md",
+      "title": "Configuring Browser Support",
+      "description": "Learn how to configure browser compatibility for your Nx applications using browserslist, optimize bundle size with modern browser targets, and debug your browser support configuration."
+    },
+    {
+      "file": "docs/shared/guides/adding-assets.md",
+      "title": "Adding Images, Fonts, and Files",
+      "description": "Learn how to import and use assets like images, fonts, and files directly in your Nx projects, including special handling for SVGs in React, Next.js, and Vite applications."
+    },
+    {
+      "file": "docs/shared/getting-started/start-with-existing-project.md",
+      "title": "Start with an existing project",
+      "description": "Add Nx to any existing project with a single command. Start with Nx Core and gradually adopt plugins, CI integrations, and other capabilities."
+    },
+    {
+      "file": "docs/shared/getting-started/start-new-project.md",
+      "title": "Start a new project with Nx",
+      "description": "Create a new Nx workspace manually with your favorite CLI or use the guided setup with presets for various technology stacks and configurations."
+    },
+    {
+      "file": "docs/shared/getting-started/quick-start.md",
+      "title": "Quickstart with Nx",
+      "description": "Get up and running with Nx in minutes - install Nx, set up your editor, configure AI assistance, and choose your development path."
+    },
+    {
+      "file": "docs/shared/getting-started/intro.md",
+      "title": "Intro to Nx",
+      "description": "Nx is an AI-first build platform that connects everything from your editor to CI. Helping you deliver fast, without breaking things."
+    },
+    {
+      "file": "docs/shared/getting-started/installation.md",
+      "title": "Installation",
+      "description": "Install Nx globally via npm, Homebrew, Chocolatey, or apt. Add Nx to existing repos with nx init and keep dependencies updated automatically."
+    },
+    {
+      "file": "docs/shared/getting-started/editor-setup.md",
+      "title": "Editor Integration",
+      "description": "Set up Nx Console in VSCode or JetBrains for visual UI, task management, code generation, and enhanced AI assistance in your Nx workspace."
+    },
+    {
+      "file": "docs/shared/getting-started/ai-setup.md",
+      "title": "Integrate Nx with your Coding Assistant",
+      "description": "Set up Nx MCP server to give AI assistants deep workspace context, terminal integration, and enhanced development capabilities."
+    },
+    {
+      "file": "docs/shared/concepts/typescript-project-linking.md",
+      "title": "TypeScript Project Linking",
+      "description": "Learn how to efficiently reference code between TypeScript projects in your monorepo using project linking instead of relative paths."
+    },
+    {
+      "file": "docs/shared/concepts/types-of-configuration.md",
+      "title": "Managing Configuration Files",
+      "description": "Learn how Nx helps manage different types of configuration files in your workspace, including both Nx-specific and tool-specific configurations at global and project levels."
+    },
+    {
+      "file": "docs/shared/concepts/task-pipeline-configuration.md",
+      "title": "What is a Task Pipeline",
+      "description": "Learn how Nx manages task dependencies and execution order in monorepo workspaces, ensuring proper build sequences for interconnected projects."
+    },
+    {
+      "file": "docs/shared/concepts/sync-generators.md",
+      "title": "Sync Generators",
+      "description": "Learn how to use Nx sync generators to maintain repository state and update configuration files based on the project graph before tasks are run."
+    },
+    {
+      "file": "docs/shared/concepts/nx-plugins.md",
+      "title": "What Are Nx Plugins?",
+      "description": "Learn how Nx plugins help developers integrate tools and frameworks with Nx by providing automated configuration, code generation, and dependency management."
+    },
+    {
+      "file": "docs/shared/concepts/mental-model.md",
+      "title": "Mental Model",
+      "description": "Understand how Nx works with project graphs, task graphs, affected commands, and caching to efficiently manage your monorepo development workflow."
+    },
+    {
+      "file": "docs/shared/concepts/inferred-tasks.md",
+      "title": "Inferred Tasks (Project Crystal)",
+      "description": "Learn how Nx plugins automatically infer tasks from tool configurations, enabling caching, task dependencies, and optimized execution without manual setup."
+    },
+    {
+      "file": "docs/shared/concepts/how-caching-works.md",
+      "title": "How Caching Works",
+      "description": "Learn how Nx's computation hashing enables powerful caching, including what factors determine cache validity and how local and remote caches work together."
+    },
+    {
+      "file": "docs/shared/concepts/executors-and-configurations.md",
+      "title": "Executors and Configurations",
+      "description": "Learn about Nx executors, pre-packaged node scripts that run tasks consistently across projects, and how to configure them in project.json files."
+    },
+    {
+      "file": "docs/shared/concepts/daemon.md",
+      "title": "Nx Daemon",
+      "description": "Learn about the Nx Daemon, a background process that speeds up project graph computation in large workspaces by maintaining state between commands."
+    },
+    {
+      "file": "docs/shared/concepts/buildable-and-publishable-libraries.md",
+      "title": "Publishable and Buildable Nx Libraries",
+      "description": "Learn about buildable and publishable libraries in Nx, when to use them, and how they adjust your project configuration for distribution."
+    },
+    {
+      "file": "docs/shared/packages/webpack/webpack-plugins.md",
+      "title": "Webpack plugins",
+      "description": "A guide for webpack plugins that are provided by Nx."
+    },
+    {
+      "file": "docs/shared/packages/webpack/webpack-config-setup.md",
+      "title": "Configure Webpack in your Nx workspace",
+      "description": "A guide on how to configure webpack on your Nx workspace, and instructions on how to customize your webpack configuration"
+    },
+    {
+      "file": "docs/shared/packages/webpack/plugin-overview.md",
+      "title": "Overview of the Nx Webpack Plugin",
+      "description": "The Nx Plugin for Webpack contains executors and generators that support building applications using Webpack."
+    },
+    {
+      "file": "docs/shared/packages/workspace/workspace-plugin.md",
+      "title": "Workspace Plugin for Nx",
+      "description": "Learn about the core workspace plugin that provides essential executors and generators for any Nx workspace, including tools for project management."
+    },
+    {
+      "file": "docs/shared/packages/workspace/nx-compatibility-matrix.md",
+      "title": "Nx, Node.js and TypeScript Compatibility",
+      "description": "A reference outlining Nx's support policy and current compatibility matrix for Node.js and TypeScript."
+    },
+    {
+      "file": "docs/shared/packages/web/web-plugin.md",
+      "title": "Web Plugin for Nx",
+      "description": "Learn how to use the @nx/web plugin to create and manage Web Component applications and libraries in your Nx workspace, including testing and building."
+    },
+    {
+      "file": "docs/shared/packages/vite/vite-plugin.md",
+      "title": "Overview of the Nx Vite Plugin",
+      "description": "The Nx Plugin for Vite contains executors and generators that support building applications using Vite. This page also explains how to configure Vite on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/vite/configure-vite.md",
+      "title": "Configure Vite on your Nx workspace",
+      "description": "This guide explains how you can configure Vite in your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/vue/vue-plugin.md",
+      "title": "Overview of the Nx Vue Plugin",
+      "description": "The Nx Plugin for Vue contains generators for managing Vue applications and libraries within an Nx workspace. This page also explains how to configure Vue on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/shared-fs-cache/shared-fs-cache-plugin.md",
+      "title": "Overview of the Nx Shared File System Cache Plugin",
+      "description": "The @nx/shared-fs-cache plugin enables you to use a shared file system directory to host your remote cache for efficient build caching across your team."
+    },
+    {
+      "file": "docs/shared/packages/rspack/rspack-plugin.md",
+      "title": "Overview of the Nx Rspack Plugin",
+      "description": "The Nx Plugin for Rspack contains executors, generators, and utilities for managing Rspack projects in an Nx Workspace."
+    },
+    {
+      "file": "docs/shared/packages/s3-cache/s3-cache-plugin.md",
+      "title": "Overview of the Nx S3 Cache Plugin",
+      "description": "The @nx/s3-cache plugin enables you to use an Amazon S3 bucket to host your remote cache for efficient build caching across your team."
+    },
+    {
+      "file": "docs/shared/packages/remix/remix-plugin.md",
+      "title": "Overview of the Nx Remix Plugin",
+      "description": "The Nx Plugin for Remix contains executors, generators, and utilities for managing Remix applications and libraries within an Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/react-native/react-native-plugin.md",
+      "title": "Overview of the Nx React Native Plugin",
+      "description": "The Nx Plugin for React Native contains generators for managing React Native applications and libraries within an Nx workspace. This page also explains how to configure React Native on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/storybook/storybook-9-setup.md",
+      "title": "Storybook 9 overview",
+      "description": "This guide explains how you can set up Storybook version 9 in your Nx workspace. It also highlights the changes that you should expect to see when migrating from Storybook 8 to Storybook 9."
+    },
+    {
+      "file": "docs/shared/packages/storybook/plugin-overview.md",
+      "title": "Nx Storybook Plugin Overview",
+      "description": "This is an overview page for the Storybook plugin in Nx. It explains what Storybook is and how to set it up in your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/storybook/best-practices.md",
+      "title": "Storybook best practices for making the most out of Nx",
+      "description": "The purpose of this guide is to help you set up Storybook in your Nx workspace so that you can get the most out of Nx and its powerful capabilities."
+    },
+    {
+      "file": "docs/shared/packages/playwright/playwright-plugin.md",
+      "title": "Overview of the Nx Playwright Plugin",
+      "description": "The Nx Plugin for Playwright contains executors and generators that support e2e testing with Playwright. This page also explains how to configure Playwright on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/owners/owners-plugin.md",
+      "title": "Overview of the Nx powerpack-owners Plugin",
+      "description": "The Nx Powerpack Owners plugin provides the ability to define code ownership based on projects in addition to files"
+    },
+    {
+      "file": "docs/shared/packages/node/node-plugin.md",
+      "title": "Node.js Plugin for Nx",
+      "description": "Learn how to use the @nx/node plugin to create and manage Node.js applications and libraries in your Nx workspace, including setup, building, and testing."
+    },
+    {
+      "file": "docs/shared/packages/nuxt/nuxt-plugin.md",
+      "title": "Overview of the Nx Nuxt Plugin",
+      "description": "The Nx Plugin for Nuxt contains generators for managing Nuxt applications within a Nx workspace. This page also explains how to configure Nuxt on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/next/plugin-overview.md",
+      "title": "Overview of the Nx Next.js Plugin",
+      "description": "The Nx Next.js plugin contains executors and generators for managing Next.js applications and libraries within an Nx workspace. This page also explains how to configure Next.js on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/next/next-config-setup.md",
+      "title": "How to configure Next.js plugins",
+      "description": "A guide for configuring Next.js plugins with Nx"
+    },
+    {
+      "file": "docs/shared/packages/module-federation/nx-module-federation-plugin.md",
+      "title": "NxModuleFederationPlugin",
+      "description": "Details about the NxModuleFederationPlugin"
+    },
+    {
+      "file": "docs/shared/packages/module-federation/nx-module-federation-dev-server-plugin.md",
+      "title": "NxModuleFederationDevServerPlugin",
+      "description": "Details about the NxModuleFederationDevServerPlugin and NxModuleFederationSSRDevServerPlugin"
+    },
+    {
+      "file": "docs/shared/packages/js/js-plugin.md",
+      "title": "Overview of the Nx JS Plugin",
+      "description": "The Nx JS plugin contains executors and generators that are useful for JavaScript/TypeScript projects in an Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/jest/jest-plugin.md",
+      "title": "Overview of the Nx Jest Plugin",
+      "description": "The Nx Plugin for Jest contains executors and generators that support testing projects using Jest. This page also explains how to configure Jest on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/gradle/gradle-plugin.md",
+      "title": "Overview of the Nx Plugin for Gradle",
+      "description": "This plugin allows Gradle tasks to be run through Nx."
+    },
+    {
+      "file": "docs/shared/packages/gcs-cache/gcs-cache-plugin.md",
+      "title": "Overview of the Nx GCS Cache Plugin",
+      "description": "The @nx/gcs-cache plugin enables you to use Google Cloud Storage to host your remote cache for efficient build caching across your team."
+    },
+    {
+      "file": "docs/shared/packages/expo/expo-plugin.md",
+      "title": "Expo Plugin for Nx",
+      "description": "Learn how to use the @nx/expo plugin to manage Expo applications and libraries within an Nx workspace, including setup, configuration, and task inference."
+    },
+    {
+      "file": "docs/shared/packages/express/express-plugin.md",
+      "title": "Express Plugin for Nx",
+      "description": "Learn how to use the @nx/express plugin to create and manage Express applications in your Nx workspace, including setup and common recipes."
+    },
+    {
+      "file": "docs/shared/packages/eslint/eslint.md",
+      "title": "ESLint Plugin for Nx",
+      "description": "Learn how to set up and use the @nx/eslint plugin to integrate ESLint with Nx, enabling caching and providing code generators for ESLint configuration."
+    },
+    {
+      "file": "docs/shared/packages/eslint/eslint-plugin.md",
+      "title": "Nx ESLint Plugin",
+      "description": "An overview of the @nx/eslint-plugin package, which provides recommended ESLint configurations and Nx-specific rules for enforcing module boundaries and dependency checks."
+    },
+    {
+      "file": "docs/shared/packages/eslint/enforce-module-boundaries.md",
+      "title": "Enforce Module Boundaries ESLint Rule",
+      "description": "Learn how to use the @nx/enforce-module-boundaries ESLint rule to define strict rules for accessing resources between different projects in your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/eslint/dependency-checks.md",
+      "title": "Dependency Checks ESLint Rule",
+      "description": "Learn how to use the @nx/dependency-checks ESLint rule to identify mismatches between dependencies in package.json and actual project dependencies."
+    },
+    {
+      "file": "docs/shared/packages/detox/detox-plugin.md",
+      "title": "Detox Plugin for Nx",
+      "description": "Learn how to set up and use Detox for end-to-end testing of mobile applications in your Nx workspace, including environment setup and configuration options."
+    },
+    {
+      "file": "docs/shared/packages/cypress/cypress-v11-migration.md",
+      "title": "Migrating to Cypress V11",
+      "description": "A guide to migrating your Nx projects from Cypress v8/v9 to v11, including configuration changes, file renaming, and handling potential edge cases."
+    },
+    {
+      "file": "docs/shared/packages/cypress/cypress-setup-node-events.md",
+      "title": "Using setupNodeEvents with Cypress preset",
+      "description": "Learn how to properly configure and use the setupNodeEvents function with Nx's Cypress preset to customize Cypress behavior while maintaining web server functionality."
+    },
+    {
+      "file": "docs/shared/packages/cypress/cypress-plugin.md",
+      "title": "Overview of the Nx Cypress Plugin",
+      "description": "The Nx Plugin for Cypress contains executors and generators that support e2e testing with Cypress. This page also explains how to configure Cypress on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/cypress/cypress-component-testing.md",
+      "title": "Cypress Component Testing",
+      "description": "Learn how to set up and use Cypress component testing in your Nx workspace for React, Angular, and Next.js projects, including configuration and test execution."
+    },
+    {
+      "file": "docs/shared/packages/esbuild/esbuild-plugin.md",
+      "title": "Overview of the Nx esbuild Plugin",
+      "description": "The Nx Plugin for esbuild contains executors and generators that support building applications using esbuild. This page also explains how to configure esbuild on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/conformance/create-conformance-rule.md",
+      "title": "Create a Conformance Rule",
+      "description": "Learn how to create custom conformance rules for Nx Powerpack and Nx Enterprise to enforce standards and best practices across your Nx workspace."
+    },
+    {
+      "file": "docs/shared/packages/conformance/conformance-plugin.md",
+      "title": "Overview of the Nx powerpack-conformance Plugin",
+      "description": "The Nx Powerpack Conformance plugin provides the ability to write and apply rules for your workspace"
+    },
+    {
+      "file": "docs/shared/packages/angular/angular-nx-version-matrix.md",
+      "title": "Nx and Angular Versions",
+      "description": "A comprehensive compatibility matrix showing which Nx versions work with different Angular versions, including recommended versions and supported ranges."
+    },
+    {
+      "file": "docs/shared/packages/azure-cache/azure-cache-plugin.md",
+      "title": "Overview of the Nx Azure Cache Plugin",
+      "description": "The @nx/azure-cache plugin enables you to use Azure Storage to host your remote cache for efficient build caching across your team."
+    },
+    {
+      "file": "docs/shared/recipes/tips-n-tricks/switch-to-workspaces-project-references.md",
+      "title": "Switch to Workspaces and Project References",
+      "description": "Learn how to migrate from TypeScript path aliases to package manager workspaces for project linking, enabling TypeScript project references for better performance."
+    },
+    {
+      "file": "docs/shared/recipes/tips-n-tricks/standalone-to-monorepo.md",
+      "title": "Convert from a Standalone Repository to a Monorepo",
+      "description": "Learn how to transform your standalone Nx repository into a full monorepo structure by moving your root-level application into the apps directory."
+    },
+    {
+      "file": "docs/shared/recipes/tips-n-tricks/migrating-to-flat-eslint.md",
+      "title": "Switching to ESLint's Flat Config Format",
+      "description": "Learn how to migrate your Nx workspace to ESLint's new flat configuration format, understanding the benefits and implementation details."
+    },
+    {
+      "file": "docs/shared/recipes/tips-n-tricks/keep-nx-versions-in-sync.md",
+      "title": "Keep Nx Versions in Sync",
+      "description": "Learn how to ensure all Nx plugins in your repository are using the same version to avoid compatibility issues and debugging challenges."
+    },
+    {
+      "file": "docs/shared/recipes/tips-n-tricks/define-secondary-entrypoints.md",
+      "title": "Define Secondary Entry Points for TypeScript Packages",
+      "description": "Learn how to configure multiple entry points for your TypeScript packages using Nx, allowing consumers to import specific parts of your library."
+    },
+    {
+      "file": "docs/shared/recipes/tips-n-tricks/compile-multiple-formats.md",
+      "title": "Compile TypeScript Libraries to Multiple Formats",
+      "description": "Learn how to use Nx with Rollup to compile TypeScript libraries to both ESM and CommonJS formats for maximum compatibility."
+    },
+    {
+      "file": "docs/shared/recipes/plugins/task-running-lifecycle.md",
+      "title": "Hook into the Task Running Lifecycle",
+      "description": "Learn how to extend Nx's task running process with preTasksExecution and postTasksExecution hooks to implement custom logic before and after tasks run."
+    },
+    {
+      "file": "docs/shared/recipes/plugins/publish-plugin.md",
+      "title": "Publish Your Nx Plugin",
+      "description": "Learn how to publish your Nx plugin to npm and get it listed in the official Nx plugin registry so others can discover and use it."
+    },
+    {
+      "file": "docs/shared/recipes/plugins/project-graph-plugins.md",
+      "title": "Extending the Project Graph",
+      "description": "Learn how to create project graph plugins for Nx to add custom nodes and dependencies, enabling support for additional languages and technologies."
+    },
+    {
+      "file": "docs/shared/recipes/plugins/migration-generators.md",
+      "title": "Migration Generators",
+      "description": "Learn how to create migration generators for your Nx plugin to automatically update configuration files when your plugin makes breaking changes."
+    },
+    {
+      "file": "docs/shared/recipes/plugins/local-executors.md",
+      "title": "Write a Simple Executor",
+      "description": "Learn how to create, run, and customize local executors in your Nx workspace to standardize development, building, and deployment tasks."
+    },
+    {
+      "file": "docs/shared/recipes/plugins/create-preset.md",
+      "title": "Create a Custom Plugin Preset",
+      "description": "Learn how to create a custom preset generator for your Nx plugin that can be used with create-nx-workspace to generate customized workspaces."
+    },
+    {
+      "file": "docs/shared/recipes/plugins/create-install-package.md",
+      "title": "Creating an Install Package",
+      "description": "Learn how to create a custom \"create-x\" package for your Nx plugin to provide a seamless project bootstrapping experience with npm, yarn, or other package managers."
+    },
+    {
+      "file": "docs/shared/recipes/plugins/compose-executors.md",
+      "title": "Compose Executors",
+      "description": "Learn how to compose and chain Nx executors together, including how to invoke other targets and executors from within your custom executors."
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/workspace-watching.md",
+      "title": "Workspace Watching",
+      "description": "Learn how to use Nx's workspace watching feature to automatically execute commands when files change, improving development workflow and productivity."
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/terminal-ui.md",
+      "title": "Terminal UI",
+      "description": "Learn how to leverage and configure the Nx Terminal UI when running tasks"
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/skipping-cache.md",
+      "title": "Skip Task Caching",
+      "description": "Learn how to bypass Nx's caching mechanism for specific tasks, skip remote caching from Nx Cloud, and reset the cache when needed."
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/self-hosted-caching.md",
+      "title": "Remote Cache",
+      "description": "Learn how to set up remote cache."
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/running-custom-commands.md",
+      "title": "Running Custom Commands",
+      "description": "Learn how to run custom terminal commands with Nx to make them cacheable, distributable, and compatible with Nx's affected commands."
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/run-tasks-in-parallel.md",
+      "title": "Run Tasks in Parallel",
+      "description": "Learn how to configure Nx to run multiple tasks simultaneously by adjusting the parallel option in the command line or nx.json configuration."
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/root-level-scripts.md",
+      "title": "Run Root-Level NPM Scripts with Nx",
+      "description": "Learn how to run npm scripts from your root package.json using Nx to benefit from caching, task orchestration, and other Nx features."
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/reduce-repetitive-configuration.md",
+      "title": "Reduce Repetitive Configuration",
+      "description": "Learn how to use Nx's targetDefaults, namedInputs, and other features to minimize duplicate configuration across projects in your workspace."
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/pass-args-to-commands.md",
+      "title": "Pass Args to Commands",
+      "description": "Recipe describing how to pass args to tasks running commands"
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/defining-task-pipeline.md",
+      "title": "Defining a Task Pipeline",
+      "description": "This recipe shows how to define task dependencies in your Nx workspace"
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/convert-to-inferred.md",
+      "title": "Migrate to Inferred Tasks (Project Crystal)",
+      "description": "Learn how to convert your Nx workspace from explicit executor configuration to using inferred tasks for reduced configuration and improved caching."
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/configure-outputs.md",
+      "title": "Configure Outputs for Task Caching",
+      "description": "Learn how to optimize what Nx restores from the cache"
+    },
+    {
+      "file": "docs/shared/recipes/running-tasks/configure-inputs.md",
+      "title": "Configure Inputs for Task Caching",
+      "description": "Learn how to optimize when Nx restores from the cache by customizing what should be taken into consideration when calculating computation hashes for tasks"
+    },
+    {
+      "file": "docs/shared/recipes/storybook/upgrading-storybook.md",
+      "title": "Upgrading Storybook using the Storybook CLI",
+      "description": "This guide explains how you can upgrade Storybook using the Storybook CLI upgrade and automigrate commands."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/storybook-composition-setup.md",
+      "title": "Setting up Storybook Composition with Nx",
+      "description": "This guide explains how you can set up Storybook composition on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/plugin-vue.md",
+      "title": "Set up Storybook for Vue and Nuxt Projects",
+      "description": "This guide explains how to set up Storybook for Vue and Nuxt projects in your Nx workspace."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/plugin-react.md",
+      "title": "Set up Storybook for React Projects",
+      "description": "This guide explains how to set up Storybook for React projects in your Nx workspace."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/plugin-angular.md",
+      "title": "Set up Storybook for Angular Projects",
+      "description": "This guide explains how to set up Storybook for Angular projects in your Nx workspace."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/one-storybook-with-composition.md",
+      "title": "Publishing Storybook - One main Storybook instance using Storybook Composition",
+      "description": "Dive into the comprehensive guide on publishing a unified Storybook instance from multiple frameworks within an Nx workspace using Storybook Composition."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/one-storybook-per-scope.md",
+      "title": "Publishing Storybook - One Storybook instance per scope",
+      "description": "Learn how to set up individual Storybook instances for each scope within an Nx workspace. This guide provides a structured approach, emphasizing folder organization and thematic scope separation."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/one-storybook-for-all.md",
+      "title": "Publishing Storybook - One main Storybook instance for all projects",
+      "description": "Dive into a comprehensive guide on how to consolidate all your Storybook stories from different projects into one unified Storybook instance. Ideal for Nx workspaces leveraging a single framework."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/interaction-tests.md",
+      "title": "Setting up Storybook Interaction Tests with Nx",
+      "description": "This guide explains how you can set up Storybook interaction tests on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/custom-builder-configs.md",
+      "title": "How to configure Webpack and Vite for Storybook",
+      "description": "This guide explains how to customize the webpack configuration and your vite configuration for Storybook."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/configuring-storybook.md",
+      "title": "How Storybook is configured on your Nx workspace",
+      "description": "This guide explains how Storybook is configured on your Nx workspace."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/angular-storybook-compodoc.md",
+      "title": "Angular - Set up Compodoc for Storybook on Nx",
+      "description": "This guide explains how to set up Compodoc for Storybook on Angular projects in a Nx workspace."
+    },
+    {
+      "file": "docs/shared/recipes/storybook/angular-configuring-styles.md",
+      "title": "Angular - Configuring styles and preprocessor options",
+      "description": "This document explains how to configure styles and preprocessor options in Angular projects with a Storybook configuration."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/updating-version-references.md",
+      "title": "Updating Version References in Manifest Files",
+      "description": "Learn how to configure Nx Release to update version references in package.json and other manifest files, including strategies for source files, custom dist directories, and local dependency references."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/update-local-registry-setup.md",
+      "title": "Update Your Local Registry Setup to use Nx Release",
+      "description": "Learn how to update your existing local registry setup to use Nx Release for publishing packages during end-to-end testing, replacing older publish target approaches."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/release-typescript-packages-to-npm.md",
+      "title": "Release TypeScript/JavaScript Packages to NPM",
+      "description": "Learn how to use Nx Release to version, generate changelogs, and publish TypeScript/JavaScript packages to NPM in your monorepo."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/release-projects-independently.md",
+      "title": "Release Projects Independently",
+      "description": "Learn how to configure Nx Release to version and publish projects independently in your monorepo, allowing different release schedules for different projects."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/release-docker-images.md",
+      "title": "Release Docker Images",
+      "description": "Learn how to use Nx Release to version and publish Docker images from your monorepo with calendar-based versioning."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/publish-rust-crates.md",
+      "title": "Using Nx Release with Rust",
+      "description": "Learn how to version Rust libraries, generate changelogs, and publish Rust crates in a monorepo using Nx Release with a step-by-step guide."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/publish-in-ci-cd.md",
+      "title": "Publish in CI/CD",
+      "description": "Learn how to configure Nx Release to automate your package publishing process in CI/CD pipelines across different ecosystems including npm, Docker, and Rust."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/file-based-versioning-version-plans.md",
+      "title": "File Based Versioning (Version Plans)",
+      "description": "Learn how to use Nx Release's version plans feature to track version bumps in separate files, similar to Changesets or Beachball, allowing for more flexible versioning workflows."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/customize-conventional-commit-types.md",
+      "title": "Customize Conventional Commit Types",
+      "description": "Learn how to configure Nx Release to customize how different conventional commit types affect versioning and changelog generation, including changing semver bump types and section titles."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/configure-custom-registries.md",
+      "title": "Configure Custom Registries",
+      "description": "Learn how to configure Nx Release to publish packages to custom npm registries, including setting up multiple registries for different package scopes and per-package registry configuration."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/configure-changelog-format.md",
+      "title": "Configure Changelog Format",
+      "description": "Learn how to customize the format of changelogs generated by Nx Release, including options to control author information, commit references, and version title dates."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/configuration-version-prefix.md",
+      "title": "Configuring Version Prefix for Dependencies",
+      "description": "Learn how to set up custom version prefixes in Nx Release to control how dependency versions are specified in your manifest files (such as package.json, Cargo.toml, etc.), with options for exact, patch, or minor-level compatibility."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/build-before-versioning.md",
+      "title": "Build Before Versioning",
+      "description": "Learn how to configure Nx Release to build your projects before applying version updates, ensuring that distribution files are properly generated before publishing."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/automatically-version-with-conventional-commits.md",
+      "title": "Automatically Version with Conventional Commits",
+      "description": "Learn how to configure Nx Release to automatically determine version bumps based on conventional commit messages, enabling automated versioning in CI/CD pipelines."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/automate-gitlab-releases.md",
+      "title": "Automate GitLab Releases",
+      "description": "Learn how to configure Nx Release to automatically create GitLab releases with changelogs generated from your conventional commits, for both workspace and project-level releases."
+    },
+    {
+      "file": "docs/shared/recipes/nx-release/automate-github-releases.md",
+      "title": "Automate GitHub Releases",
+      "description": "Learn how to configure Nx Release to automatically create GitHub releases with changelogs generated from your conventional commits, for both workspace and project-level releases."
+    },
+    {
+      "file": "docs/shared/recipes/node/wait-for-tasks.md",
+      "title": "Wait for Tasks",
+      "description": "Learn how to ensure dependent tasks are completed before running a primary task in Nx, using dependsOn property or the waitUntilTargets option for Node executors."
+    },
+    {
+      "file": "docs/shared/recipes/node/application-proxies.md",
+      "title": "Set Up Application Proxies",
+      "description": "Learn how to configure proxies for your frontend applications to communicate with backend services during local development, avoiding CORS issues with Webpack, Vite, and Nx executors."
+    },
+    {
+      "file": "docs/shared/recipes/installation/update-global-installation.md",
+      "title": "Update Your Global Nx Installation",
+      "description": "Learn how to update your global Nx installation to avoid common errors when the workspace structure changes, including steps to identify and remove outdated installations."
+    },
+    {
+      "file": "docs/shared/recipes/installation/install-non-javascript.md",
+      "title": "Install Nx in a Non-JavaScript Repository",
+      "description": "Learn how to install and use Nx in repositories that don't contain JavaScript or TypeScript code, such as .NET or Java-based workspaces."
+    },
+    {
+      "file": "docs/shared/recipes/installation/activate-powerpack.md",
+      "title": "Activate Nx Powerpack",
+      "description": "Learn how to obtain and register an Nx Powerpack license to unlock enterprise features like conformance rules and code ownership."
+    },
+    {
+      "file": "docs/shared/recipes/module-federation/federate-a-module.md",
+      "title": "Federate a Module",
+      "description": "Learn how to share code between applications at runtime using Module Federation in Nx, including creating and configuring modules to be federated in React and Angular applications."
+    },
+    {
+      "file": "docs/shared/recipes/module-federation/dynamic-mfe-angular.md",
+      "title": "Advanced Angular Micro Frontends with Dynamic Module Federation",
+      "description": "Learn how to implement Dynamic Module Federation in Angular applications to achieve \"Build once, deploy everywhere\" with Nx, enabling runtime determination of remote application locations."
+    },
+    {
+      "file": "docs/shared/recipes/module-federation/creating-a-remote.md",
+      "title": "Creating a Module Federation Remote",
+      "description": "Learn how to generate and configure a remote application for Module Federation in React and Angular using Nx generators."
+    },
+    {
+      "file": "docs/shared/recipes/module-federation/creating-a-host.md",
+      "title": "Creating a Module Federation Host",
+      "description": "Learn how to generate and configure a host application for Module Federation in React and Angular using Nx generators."
+    },
+    {
+      "file": "docs/shared/recipes/add-stack/add-svelte.md",
+      "title": "Add a Svelte Project",
+      "description": "Learn how to integrate Svelte with Nx, including setting up applications, configuring build systems, and leveraging Nx features with manual configuration."
+    },
+    {
+      "file": "docs/shared/recipes/add-stack/add-solid.md",
+      "title": "Add a New Solid Project",
+      "description": "Learn how to integrate SolidJS with Nx, including setting up applications, configuring build systems, and leveraging Nx features with manual configuration."
+    },
+    {
+      "file": "docs/shared/recipes/add-stack/add-rust.md",
+      "title": "Add a New Rust Project",
+      "description": "Learn how to integrate Rust with Nx using the @monodon/rust plugin, including creating applications, libraries, and leveraging Nx features."
+    },
+    {
+      "file": "docs/shared/recipes/add-stack/add-qwik.md",
+      "title": "Add a New Qwik Project",
+      "description": "Learn how to integrate Qwik with Nx using the qwik-nx plugin, including creating applications, libraries, and leveraging Nx features."
+    },
+    {
+      "file": "docs/shared/recipes/add-stack/add-lit.md",
+      "title": "Add a New Lit Project",
+      "description": "Learn how to integrate Lit with Nx, including setting up applications, configuring build systems, and leveraging Nx features with manual configuration."
+    },
+    {
+      "file": "docs/shared/recipes/add-stack/add-fastify.md",
+      "title": "Add a New Fastify Project",
+      "description": "Learn how to create and configure Fastify applications and libraries in your Nx workspace using the @nx/node plugin."
+    },
+    {
+      "file": "docs/shared/recipes/add-stack/add-express.md",
+      "title": "Add a New Express Project",
+      "description": "Learn how to create and configure Express applications and libraries in your Nx workspace using the @nx/express plugin."
+    },
+    {
+      "file": "docs/shared/recipes/add-stack/add-dotnet.md",
+      "title": "Add a New .NET Project",
+      "description": "Learn how to integrate .NET projects with Nx using the @nx-dotnet/core plugin, including setup, configuration, and leveraging Nx features."
+    },
+    {
+      "file": "docs/shared/recipes/add-stack/add-astro.md",
+      "title": "Add an Astro Project",
+      "description": "Learn how to integrate Astro with Nx, including setting up caching, running tasks, and using other Nx plugins alongside your Astro application."
+    },
+    {
+      "file": "docs/shared/recipes/generators/modifying-files.md",
+      "title": "Modifying Files with a Generator",
+      "description": "Learn different approaches to modify existing files in your Nx workspace using generators, from simple JSON updates to advanced AST manipulation."
+    },
+    {
+      "file": "docs/shared/recipes/generators/local-generators.md",
+      "title": "Local Generators",
+      "description": "Learn how to create, run, and customize local generators in your Nx workspace to automate common development tasks and standardize workflows."
+    },
+    {
+      "file": "docs/shared/recipes/generators/generator-options.md",
+      "title": "Customizing Generator Options",
+      "description": "Learn how to define and customize options for Nx generators, including TypeScript schemas, static options, and dynamic prompts for user input."
+    },
+    {
+      "file": "docs/shared/recipes/generators/creating-files.md",
+      "title": "Creating Files with a Generator",
+      "description": "Learn how to create, update, and manage files in your Nx workspace using generators, including working with static and dynamic file templates."
+    },
+    {
+      "file": "docs/shared/recipes/generators/create-sync-generator.md",
+      "title": "Create a Sync Generator",
+      "description": "Learn how to create and register sync generators in Nx to ensure your file system is in the correct state before tasks run, including global and task-specific sync generators."
+    },
+    {
+      "file": "docs/shared/recipes/generators/composing-generators.md",
+      "title": "Composing Generators",
+      "description": "Learn how to combine and reuse Nx generators to build complex workflows from simpler building blocks, including using Nx Devkit generators and jscodeshift codemods."
+    },
+    {
+      "file": "docs/shared/recipes/deployment/node-serverless-functions-netlify.md",
+      "title": "Add and Deploy Netlify Edge Functions with Node",
+      "description": "Learn how to set up, develop, and deploy Node.js serverless functions to Netlify from an Nx workspace, including local development and production deployment."
+    },
+    {
+      "file": "docs/shared/recipes/deployment/node-server-fly-io.md",
+      "title": "Deploying a Node App to Fly.io",
+      "description": "Learn how to deploy a Node.js backend application from an Nx workspace to Fly.io, including Docker setup and automating the deployment process."
+    },
+    {
+      "file": "docs/shared/recipes/deployment/node-aws-lambda.md",
+      "title": "Deploying AWS Lambda Functions in Node.js",
+      "description": "Learn how to set up, develop, and deploy AWS Lambda functions in an Nx workspace using the @nx/aws-lambda plugin."
+    },
+    {
+      "file": "docs/shared/recipes/deployment/deploy-nuxt-to-vercel.md",
+      "title": "Deploying Nuxt applications to Vercel",
+      "description": "A detailed guide on how to deploy Nuxt applications from Nx workspaces to Vercel."
+    },
+    {
+      "file": "docs/shared/recipes/deployment/deploy-nextjs-to-vercel.md",
+      "title": "Deploying Next.js Applications to Vercel",
+      "description": "Learn how to configure and deploy Next.js applications from an Nx workspace to Vercel, including setting up build commands and implementing affected-based deployment."
+    },
+    {
+      "file": "docs/shared/concepts/decisions/project-dependency-rules.md",
+      "title": "Project Dependency Rules",
+      "description": "Learn how to organize your Nx workspace with library types like feature, UI, data-access, and utility libraries, and enforce dependency rules between them."
+    },
+    {
+      "file": "docs/shared/concepts/decisions/monorepos.md",
+      "title": "Monorepos",
+      "description": "Monorepos enable seamless code sharing, atomic changes, and consistent development practices across projects."
+    },
+    {
+      "file": "docs/shared/concepts/decisions/monorepo-polyrepo.md",
+      "title": "Monorepo or Polyrepo",
+      "description": "Evaluate the organizational considerations for choosing between monorepo and polyrepo approaches, including team agreements on code management and workflows."
+    },
+    {
+      "file": "docs/shared/concepts/decisions/folder-structure.md",
+      "title": "Folder Structure",
+      "description": "Learn about organizing your Nx monorepo with effective folder structures, and how to easily move or remove projects as your organization evolves."
+    },
+    {
+      "file": "docs/shared/concepts/decisions/dependency-management.md",
+      "title": "Dependency Management Strategies",
+      "description": "Compare independently maintained dependencies versus single version policy approaches for monorepos, with guidance on choosing the right strategy for your team."
+    },
+    {
+      "file": "docs/shared/concepts/decisions/code-ownership.md",
+      "title": "Code Ownership",
+      "description": "Learn about code ownership challenges in monorepos and how Nx helps manage shared code with tools like CODEOWNERS and module boundary rules."
+    },
+    {
+      "file": "docs/shared/guides/angular-rspack/migrate-from-webpack.md",
+      "title": "Migrate Angular with Webpack to Rspack",
+      "description": "Guide on how to Migrate Angular projects using Webpack to Rspack"
+    },
+    {
+      "file": "docs/shared/guides/angular-rspack/introduction.md",
+      "title": "Introduction - Angular Rspack",
+      "description": "Learn how Rspack can help you speed up your Angular applications."
+    },
+    {
+      "file": "docs/shared/guides/angular-rspack/internationalization.md",
+      "title": "Build-time Internationalization (i18n) with Angular Rspack",
+      "description": "Guide on how to use Angular's build-time i18n with Angular Rspack"
+    },
+    {
+      "file": "docs/shared/guides/angular-rspack/handling-configurations.md",
+      "title": "Handling Configurations",
+      "description": "Guide on how to handle configurations with Angular Rspack"
+    },
+    {
+      "file": "docs/shared/guides/angular-rspack/getting-started.md",
+      "title": "Getting Started - Angular Rspack",
+      "description": "Learn how to get started with Angular Rspack applications in Nx."
+    },
+    {
+      "file": "docs/shared/concepts/module-federation/nx-module-federation-technical-overview.md",
+      "title": "Nx Module Federation Technical Overview",
+      "description": "Understand the technical details of how Nx implements Module Federation through executors and webpack configuration utilities."
+    },
+    {
+      "file": "docs/shared/concepts/module-federation/module-federation-and-nx.md",
+      "title": "Module Federation and Nx",
+      "description": "Learn how Nx provides out-of-the-box support for Module Federation, making it easier to share code between applications in a monorepo environment."
+    },
+    {
+      "file": "docs/shared/concepts/module-federation/micro-frontend-architecture.md",
+      "title": "Micro Frontend Architecture",
+      "description": "Explore how Nx supports Micro Frontend architecture with Module Federation, enabling independent deployment while managing associated challenges."
+    },
+    {
+      "file": "docs/shared/concepts/module-federation/manage-library-versions-with-module-federation.md",
+      "title": "Manage Library Versions with Module Federation",
+      "description": "Learn how Module Federation's Shared API prevents dependency conflicts and reduces bundle size by managing shared library versions across federated modules."
+    },
+    {
+      "file": "docs/shared/concepts/module-federation/faster-builds.md",
+      "title": "Faster Builds with Module Federation",
+      "description": "Learn how Module Federation in Nx enables faster builds by splitting large SPAs into smaller remote applications while minimizing common downsides."
+    },
+    {
+      "file": "docs/generated/packages/web/documents/overview.md",
+      "title": "Web Plugin for Nx",
+      "description": "Learn how to use the @nx/web plugin to create and manage Web Component applications and libraries in your Nx workspace, including testing and building."
+    },
+    {
+      "file": "docs/generated/packages/vue/documents/overview.md",
+      "title": "Overview of the Nx Vue Plugin",
+      "description": "The Nx Plugin for Vue contains generators for managing Vue applications and libraries within an Nx workspace. This page also explains how to configure Vue on your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/webpack/documents/overview.md",
+      "title": "Overview of the Nx Webpack Plugin",
+      "description": "The Nx Plugin for Webpack contains executors and generators that support building applications using Webpack."
+    },
+    {
+      "file": "docs/generated/packages/workspace/documents/overview.md",
+      "title": "Workspace Plugin for Nx",
+      "description": "Learn about the core workspace plugin that provides essential executors and generators for any Nx workspace, including tools for project management."
+    },
+    {
+      "file": "docs/generated/packages/workspace/documents/nx-nodejs-typescript-version-matrix.md",
+      "title": "Nx, Node.js and TypeScript Compatibility",
+      "description": "A reference outlining Nx's support policy and current compatibility matrix for Node.js and TypeScript."
+    },
+    {
+      "file": "docs/generated/packages/vite/documents/overview.md",
+      "title": "Overview of the Nx Vite Plugin",
+      "description": "The Nx Plugin for Vite contains executors and generators that support building applications using Vite. This page also explains how to configure Vite on your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/rspack/documents/overview.md",
+      "title": "Overview of the Nx Rspack Plugin",
+      "description": "The Nx Plugin for Rspack contains executors, generators, and utilities for managing Rspack projects in an Nx Workspace."
+    },
+    {
+      "file": "docs/generated/packages/storybook/documents/storybook-9-setup.md",
+      "title": "Storybook 9 overview",
+      "description": "This guide explains how you can set up Storybook version 9 in your Nx workspace. It also highlights the changes that you should expect to see when migrating from Storybook 8 to Storybook 9."
+    },
+    {
+      "file": "docs/generated/packages/storybook/documents/overview.md",
+      "title": "Nx Storybook Plugin Overview",
+      "description": "This is an overview page for the Storybook plugin in Nx. It explains what Storybook is and how to set it up in your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/storybook/documents/best-practices.md",
+      "title": "Storybook best practices for making the most out of Nx",
+      "description": "The purpose of this guide is to help you set up Storybook in your Nx workspace so that you can get the most out of Nx and its powerful capabilities."
+    },
+    {
+      "file": "docs/generated/packages/playwright/documents/overview.md",
+      "title": "Overview of the Nx Playwright Plugin",
+      "description": "The Nx Plugin for Playwright contains executors and generators that support e2e testing with Playwright. This page also explains how to configure Playwright on your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/nuxt/documents/overview.md",
+      "title": "Overview of the Nx Nuxt Plugin",
+      "description": "The Nx Plugin for Nuxt contains generators for managing Nuxt applications within a Nx workspace. This page also explains how to configure Nuxt on your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/node/documents/overview.md",
+      "title": "Node.js Plugin for Nx",
+      "description": "Learn how to use the @nx/node plugin to create and manage Node.js applications and libraries in your Nx workspace, including setup, building, and testing."
+    },
+    {
+      "file": "docs/generated/packages/react-native/documents/overview.md",
+      "title": "Overview of the Nx React Native Plugin",
+      "description": "The Nx Plugin for React Native contains generators for managing React Native applications and libraries within an Nx workspace. This page also explains how to configure React Native on your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/remix/documents/overview.md",
+      "title": "Overview of the Nx Remix Plugin",
+      "description": "The Nx Plugin for Remix contains executors, generators, and utilities for managing Remix applications and libraries within an Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/watch.md",
+      "title": "watch - CLI command",
+      "description": "Watch for changes within projects, and execute commands."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/view-logs.md",
+      "title": "view-logs - CLI command",
+      "description": "Enables you to view and interact with the logs via the advanced analytic UI from Nx Cloud to help you debug your issue. To do this, Nx needs to connect your workspace to Nx Cloud and upload the most recent run details. Only the metrics are uploaded, not the artefacts."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/sync.md",
+      "title": "sync - CLI command",
+      "description": "Sync the workspace files by running all the sync generators."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/sync-check.md",
+      "title": "sync:check - CLI command",
+      "description": "Check that no changes are required after running all sync generators."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/start-ci-run.md",
+      "title": "start-ci-run - CLI command",
+      "description": "Starts a new CI run for distributed task execution. This command is an alias for [`nx-cloud start-ci-run`](/ci/reference/nx-cloud-cli#npx-nxcloud-start-ci-run)."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/show.md",
+      "title": "show - CLI command",
+      "description": "Show information about the workspace (e.g., list of projects)."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/run.md",
+      "title": "run - CLI command",
+      "description": "Run a target for a project (e.g., nx run myapp:serve:production).\nYou can also use the infix notation to run a target: (e.g., nx serve myapp --configuration=production)\nYou can skip the use of Nx cache by using the --skip-nx-cache option."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/run-many.md",
+      "title": "run-many - CLI command",
+      "description": "Run target for multiple listed projects."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/reset.md",
+      "title": "reset - CLI command",
+      "description": "Clears cached Nx artifacts and metadata about the workspace and shuts down the Nx Daemon."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/repair.md",
+      "title": "repair - CLI command",
+      "description": "Repair any configuration that is no longer supported by Nx.\nSpecifically, this will run every migration within the `nx` package against the current repository. Doing so should fix any configuration details left behind if the repository was previously updated to a new Nx version without using `nx migrate`.\nIf your repository has only ever updated to newer versions of Nx with `nx migrate`, running `nx repair` should do nothing. "
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/release.md",
+      "title": "release - CLI command",
+      "description": "Orchestrate versioning and publishing of applications and libraries."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/record.md",
+      "title": "record - CLI command",
+      "description": "Records a command execution for distributed task execution. This command is an alias for [`nx-cloud record`](/ci/reference/nx-cloud-cli#npx-nxcloud-record)."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/migrate.md",
+      "title": "migrate - CLI command",
+      "description": "Creates a migrations file or runs migrations from the migrations file. - Migrate packages and create migrations.json (e.g., nx migrate @nx/workspace@latest) - Run migrations (e.g., nx migrate --run-migrations=migrations.json). Use flag --if-exists to run migrations only if the migrations file exists."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/mcp.md",
+      "title": "mcp - CLI command",
+      "description": "Starts the Nx MCP server."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/logout.md",
+      "title": "logout - CLI command",
+      "description": "Logout from Nx Cloud. This command is an alias for [`nx-cloud logout`](/ci/reference/nx-cloud-cli#npx-nxcloud-logout)."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/login.md",
+      "title": "login - CLI command",
+      "description": "Login to Nx Cloud. This command is an alias for [`nx-cloud login`](/ci/reference/nx-cloud-cli#npx-nxcloud-login)."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/list.md",
+      "title": "list - CLI command",
+      "description": "Lists installed plugins, capabilities of installed plugins and other available plugins."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/init.md",
+      "title": "init - CLI command",
+      "description": "Adds Nx to any type of workspace. It installs nx, creates an nx.json configuration file and optionally sets up remote caching. For more info, check https://nx.dev/recipes/adopting-nx."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/import.md",
+      "title": "import - CLI command",
+      "description": "Import code and git history from another repository into this repository."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/generate.md",
+      "title": "generate - CLI command",
+      "description": "Runs a generator that creates and/or modifies files based on a generator from a collection."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/format-write.md",
+      "title": "format:write - CLI command",
+      "description": "Overwrite un-formatted files."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/format-check.md",
+      "title": "format:check - CLI command",
+      "description": "Check for un-formatted files."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/fix-ci.md",
+      "title": "fix-ci - CLI command",
+      "description": "Fixes CI failures. This command is an alias for [`nx-cloud fix-ci`](/ci/reference/nx-cloud-cli#npx-nxcloud-fix-ci)."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/exec.md",
+      "title": "exec - CLI command",
+      "description": "Executes any command as if it was a target on the project"
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/dep-graph.md",
+      "title": "graph - CLI command",
+      "description": "Graph dependencies within workspace."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/daemon.md",
+      "title": "daemon - CLI command",
+      "description": "Prints information about the Nx Daemon process or starts a daemon process."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/create-nx-workspace.md",
+      "title": "create-nx-workspace - CLI command",
+      "description": "Create a new Nx workspace"
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/connect-to-nx-cloud.md",
+      "title": "connect - CLI command",
+      "description": "Connect workspace to Nx Cloud."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/affected.md",
+      "title": "affected - CLI command",
+      "description": "Run target for affected projects. Affected projects are projects that have been changed and projects that depend on the changed projects. See https://nx.dev/ci/features/affected for more details."
+    },
+    {
+      "file": "docs/generated/packages/nx/documents/add.md",
+      "title": "add - CLI command",
+      "description": "Install a plugin and initialize it."
+    },
+    {
+      "file": "docs/generated/packages/js/documents/overview.md",
+      "title": "Overview of the Nx JS Plugin",
+      "description": "The Nx JS plugin contains executors and generators that are useful for JavaScript/TypeScript projects in an Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/next/documents/overview.md",
+      "title": "Overview of the Nx Next.js Plugin",
+      "description": "The Nx Next.js plugin contains executors and generators for managing Next.js applications and libraries within an Nx workspace. This page also explains how to configure Next.js on your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/gradle/documents/overview.md",
+      "title": "Overview of the Nx Plugin for Gradle",
+      "description": "This plugin allows Gradle tasks to be run through Nx."
+    },
+    {
+      "file": "docs/generated/packages/module-federation/documents/nx-module-federation-plugin.md",
+      "title": "NxModuleFederationPlugin",
+      "description": "Details about the NxModuleFederationPlugin"
+    },
+    {
+      "file": "docs/generated/packages/module-federation/documents/nx-module-federation-dev-server-plugin.md",
+      "title": "NxModuleFederationDevServerPlugin",
+      "description": "Details about the NxModuleFederationDevServerPlugin and NxModuleFederationSSRDevServerPlugin"
+    },
+    {
+      "file": "docs/generated/packages/express/documents/overview.md",
+      "title": "Express Plugin for Nx",
+      "description": "Learn how to use the @nx/express plugin to create and manage Express applications in your Nx workspace, including setup and common recipes."
+    },
+    {
+      "file": "docs/generated/packages/eslint-plugin/documents/overview.md",
+      "title": "Nx ESLint Plugin",
+      "description": "An overview of the @nx/eslint-plugin package, which provides recommended ESLint configurations and Nx-specific rules for enforcing module boundaries and dependency checks."
+    },
+    {
+      "file": "docs/generated/packages/eslint-plugin/documents/enforce-module-boundaries.md",
+      "title": "Enforce Module Boundaries ESLint Rule",
+      "description": "Learn how to use the @nx/enforce-module-boundaries ESLint rule to define strict rules for accessing resources between different projects in your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/eslint-plugin/documents/dependency-checks.md",
+      "title": "Dependency Checks ESLint Rule",
+      "description": "Learn how to use the @nx/dependency-checks ESLint rule to identify mismatches between dependencies in package.json and actual project dependencies."
+    },
+    {
+      "file": "docs/generated/packages/eslint/documents/overview.md",
+      "title": "ESLint Plugin for Nx",
+      "description": "Learn how to set up and use the @nx/eslint plugin to integrate ESLint with Nx, enabling caching and providing code generators for ESLint configuration."
+    },
+    {
+      "file": "docs/generated/packages/jest/documents/overview.md",
+      "title": "Overview of the Nx Jest Plugin",
+      "description": "The Nx Plugin for Jest contains executors and generators that support testing projects using Jest. This page also explains how to configure Jest on your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/esbuild/documents/overview.md",
+      "title": "Overview of the Nx esbuild Plugin",
+      "description": "The Nx Plugin for esbuild contains executors and generators that support building applications using esbuild. This page also explains how to configure esbuild on your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/cypress/documents/overview.md",
+      "title": "Overview of the Nx Cypress Plugin",
+      "description": "The Nx Plugin for Cypress contains executors and generators that support e2e testing with Cypress. This page also explains how to configure Cypress on your Nx workspace."
+    },
+    {
+      "file": "docs/generated/packages/angular-rspack/documents/create-server.md",
+      "title": "createServer - @nx/angular-rspack/ssr",
+      "description": "API Reference for createServer from @nx/angular-rspack/ssr"
+    },
+    {
+      "file": "docs/generated/packages/angular-rspack/documents/create-config.md",
+      "title": "createConfig - @nx/angular-rspack",
+      "description": "API Reference for createConfig from @nx/angular-rspack"
+    },
+    {
+      "file": "docs/generated/packages/expo/documents/overview.md",
+      "title": "Expo Plugin for Nx",
+      "description": "Learn how to use the @nx/expo plugin to manage Expo applications and libraries within an Nx workspace, including setup, configuration, and task inference."
+    },
+    {
+      "file": "docs/generated/packages/angular/documents/nx-devkit-angular-devkit.md",
+      "title": "Nx Devkit and Angular Devkit",
+      "description": "Compare Nx Devkit and Angular Devkit for creating generators and executors, understand key differences in implementation, and learn how to convert between the two approaches."
+    },
+    {
+      "file": "docs/generated/packages/angular/documents/nx-and-angular.md",
+      "title": "Nx and the Angular CLI",
+      "description": "Compare Nx and Angular CLI features, understand similarities and differences, and learn how Nx enhances Angular development with improved caching, monorepo support, and advanced tooling."
+    },
+    {
+      "file": "docs/generated/packages/angular/documents/angular-nx-version-matrix.md",
+      "title": "Nx and Angular Versions",
+      "description": "A comprehensive compatibility matrix showing which Nx versions work with different Angular versions, including recommended versions and supported ranges."
+    },
+    {
+      "file": "docs/generated/packages/detox/documents/overview.md",
+      "title": "Detox Plugin for Nx",
+      "description": "Learn how to set up and use Detox for end-to-end testing of mobile applications in your Nx workspace, including environment setup and configuration options."
+    },
+    {
+      "file": "docs/external-generated/packages/shared-fs-cache/documents/overview.md",
+      "title": "Overview of the Nx Shared File System Cache Plugin",
+      "description": "The @nx/shared-fs-cache plugin enables you to use a shared file system directory to host your remote cache for efficient build caching across your team."
+    },
+    {
+      "file": "docs/external-generated/packages/gcs-cache/documents/overview.md",
+      "title": "Overview of the Nx GCS Cache Plugin",
+      "description": "The @nx/gcs-cache plugin enables you to use Google Cloud Storage to host your remote cache for efficient build caching across your team."
+    },
+    {
+      "file": "docs/external-generated/packages/s3-cache/documents/overview.md",
+      "title": "Overview of the Nx S3 Cache Plugin",
+      "description": "The @nx/s3-cache plugin enables you to use an Amazon S3 bucket to host your remote cache for efficient build caching across your team."
+    },
+    {
+      "file": "docs/external-generated/packages/conformance/documents/overview.md",
+      "title": "Overview of the Nx powerpack-conformance Plugin",
+      "description": "The Nx Powerpack and Nx Enterprise Conformance plugin provides the ability to write and apply rules for your workspace"
+    },
+    {
+      "file": "docs/external-generated/packages/conformance/documents/create-conformance-rule.md",
+      "title": "Create a Conformance Rule",
+      "description": "Learn how to create custom conformance rules for Nx Powerpack and Nx Enterprise to enforce standards and best practices across your Nx workspace."
+    },
+    {
+      "file": "docs/external-generated/packages/owners/documents/overview.md",
+      "title": "Overview of the Nx powerpack-owners Plugin",
+      "description": "The Nx Powerpack Owners plugin provides the ability to define code ownership based on projects in addition to files"
+    },
+    {
+      "file": "docs/external-generated/packages/azure-cache/documents/overview.md",
+      "title": "Overview of the Nx Azure Cache Plugin",
+      "description": "The @nx/azure-cache plugin enables you to use Azure Storage to host your remote cache for efficient build caching across your team."
+    },
+    {
+      "file": "docs/shared/guides/angular-rspack/api/nx-angular-rsbuild/create-server.md",
+      "title": "createServer - @nx/angular-rsbuild/ssr",
+      "description": "API Reference for createServer from @nx/angular-rsbuild/ssr"
+    },
+    {
+      "file": "docs/shared/guides/angular-rspack/api/nx-angular-rsbuild/create-config.md",
+      "title": "createConfig - @nx/angular-rsbuild",
+      "description": "API Reference for createConfig from @nx/angular-rsbuild"
+    },
+    {
+      "file": "docs/shared/guides/angular-rspack/api/nx-angular-rspack/create-server.md",
+      "title": "createServer - @nx/angular-rspack/ssr",
+      "description": "API Reference for createServer from @nx/angular-rspack/ssr"
+    },
+    {
+      "file": "docs/shared/guides/angular-rspack/api/nx-angular-rspack/create-config.md",
+      "title": "createConfig - @nx/angular-rspack",
+      "description": "API Reference for createConfig from @nx/angular-rspack"
+    }
+  ]
+}

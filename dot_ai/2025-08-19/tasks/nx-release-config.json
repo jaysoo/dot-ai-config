@@ -1,0 +1,33 @@
+{
+  "release": {
+    "releaseTagPattern": "{version}",
+    "groups": {
+      "docker-images": {
+        "projects": [
+          "nx-api",
+          "file-server",
+          "aggregator",
+          "nx-cloud-workflow-controller",
+          "docker-setup",
+          "nx-cloud",
+          "nx-ai",
+          "nx-background-worker",
+          "activemq"
+        ],
+        "version": {
+          "generator": "./.ai/2025-08-19/tasks/calver-version-generator.mjs"
+        }
+      }
+    },
+    "version": {
+      "generatorOptions": {
+        "currentVersionResolver": "disk",
+        "fallbackCurrentVersionResolver": "disk"
+      }
+    },
+    "changelog": {
+      "workspaceChangelog": false,
+      "projectChangelogs": false
+    }
+  }
+}

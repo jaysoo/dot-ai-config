@@ -26,6 +26,32 @@ Ocean is the monorepo for Nx Cloud and related services. It uses Nx for workspac
 
 ## Features & Critical Paths
 
+### Docker Tagging and Publishing System (2025-08-19)
+**Last Updated**: 2025-08-19
+**Type**: Research/Investigation
+
+#### Quick Start
+Ocean uses a CalVer-based tagging system (yymm.dd.build-number) for Docker images, with automated publishing to multiple registries.
+
+#### Files Involved
+- `tools/build-and-publish-to-snapshot.sh` - Main snapshot build script with CalVer implementation
+- `package-scripts.js` - Docker build commands for all images (docker.buildAndPush)
+- `.github/workflows/build-public-dockerhub-release.yml` - DockerHub public release workflow
+- `.github/workflows/build-public-gar-release.yml` - Google Artifact Registry public release workflow
+- `.github/workflows/build-base.yml` - Base workflow for building images
+- `tools/scripts/private-cloud/public-release-from-branch.ts` - TypeScript script for public releases
+- `tools/scripts/private-cloud/build-from-branch.sh` - Shell script for branch builds
+- `tools/scripts/private-cloud/publish-executor-binaries.sh` - Publishes executor binaries to GCS
+
+#### Design Decisions
+- CalVer format: `yymm.dd.<build-number>` (e.g., 2508.19.1)
+- Build number increments based on existing tags for the same day
+- All Docker images share the same version tag for consistency
+- Images pushed to three registries: GAR, Quay.io, and DockerHub (for public releases)
+- Build numbers reset daily to maintain readability
+
+## Features & Critical Paths
+
 ### Nx Cloud Binary Module Resolution (2025-01-09)
 **Branch**: chore/rename-upstream-docs
 **Last Updated**: 2025-01-09
@@ -48,6 +74,13 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 
 ## Personal Work History
 
+### 2025-08-19
+- **Docker Tagging and Publishing Investigation**
+  - Task: Understand complete Docker tagging, pushing, and publishing flow
+  - Discovery: CalVer scheme implemented in build-and-publish-to-snapshot.sh (yymm.dd.build-number)
+  - Key finding: Build numbers increment per day, reset daily
+  - Documentation: Created comprehensive flow documentation and modification guide
+
 ### 2025-01-09
 - **Fix nx-cloud binary module resolution** (branch: chore/rename-upstream-docs)
   - Problem: nx-cloud binary failed in workspaces without root node_modules
@@ -55,6 +88,12 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
   - Files: custom-require.ts (new), nx-imports.ts, nx-imports-light.ts
 
 ## Design Decisions & Gotchas
+
+### Docker Versioning
+- CalVer chosen over SemVer for predictable, time-based releases
+- Format includes build number to handle multiple builds per day
+- All images in a release share the same version for consistency
+- Public releases use branch-based versioning (e.g., 2024.10) with patch numbers
 
 ### Module Resolution
 - The nx-cloud package has two different require patterns:

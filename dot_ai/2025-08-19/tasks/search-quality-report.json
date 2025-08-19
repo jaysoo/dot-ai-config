@@ -1,0 +1,522 @@
+{
+  "timestamp": "2025-08-19T18:32:47.397Z",
+  "summary": {
+    "totalQueries": 34,
+    "avgRelevance": 30.147058823529413,
+    "queriesWithResults": 13,
+    "queriesWithExpectedDocs": 30
+  },
+  "results": [
+    {
+      "query": "angular",
+      "category": "frameworks",
+      "resultsFound": 2,
+      "topResults": [
+        {
+          "file": "docs/shared/packages/angular/angular-plugin.md",
+          "score": 15,
+          "keywords": [
+            "angular"
+          ]
+        },
+        {
+          "file": "docs/generated/packages/angular/documents/overview.md",
+          "score": 15,
+          "keywords": [
+            "angular"
+          ]
+        }
+      ],
+      "relevanceScore": 100,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "react",
+      "category": "frameworks",
+      "resultsFound": 2,
+      "topResults": [
+        {
+          "file": "docs/shared/packages/react/react-plugin.md",
+          "score": 15,
+          "keywords": [
+            "react"
+          ]
+        },
+        {
+          "file": "docs/generated/packages/react/documents/overview.md",
+          "score": 15,
+          "keywords": [
+            "react"
+          ]
+        }
+      ],
+      "relevanceScore": 100,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "vue",
+      "category": "frameworks",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "next",
+      "category": "frameworks",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "nest",
+      "category": "frameworks",
+      "resultsFound": 2,
+      "topResults": [
+        {
+          "file": "docs/shared/packages/nest/nest-plugin.md",
+          "score": 25,
+          "keywords": [
+            "nest",
+            "nestjs"
+          ]
+        },
+        {
+          "file": "docs/generated/packages/nest/documents/overview.md",
+          "score": 25,
+          "keywords": [
+            "nest",
+            "nestjs"
+          ]
+        }
+      ],
+      "relevanceScore": 100,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "webpack",
+      "category": "tools",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "vite",
+      "category": "tools",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "jest",
+      "category": "tools",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "cypress",
+      "category": "tools",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "playwright",
+      "category": "tools",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "monorepo",
+      "category": "concepts",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": false
+    },
+    {
+      "query": "workspace",
+      "category": "concepts",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "library",
+      "category": "concepts",
+      "resultsFound": 1,
+      "topResults": [
+        {
+          "file": "docs/shared/concepts/decisions/project-size.md",
+          "score": 10,
+          "keywords": [
+            "library"
+          ]
+        }
+      ],
+      "relevanceScore": 100,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "generator",
+      "category": "concepts",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "executor",
+      "category": "concepts",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "build",
+      "category": "features",
+      "resultsFound": 1,
+      "topResults": [
+        {
+          "file": "docs/shared/concepts/common-tasks.md",
+          "score": 10,
+          "keywords": [
+            "build",
+            "serve",
+            "test",
+            "lint"
+          ]
+        }
+      ],
+      "relevanceScore": 100,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "test",
+      "category": "features",
+      "resultsFound": 1,
+      "topResults": [
+        {
+          "file": "docs/shared/concepts/common-tasks.md",
+          "score": 10,
+          "keywords": [
+            "build",
+            "serve",
+            "test",
+            "lint"
+          ]
+        }
+      ],
+      "relevanceScore": 100,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "cache",
+      "category": "features",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": false
+    },
+    {
+      "query": "affected",
+      "category": "features",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "graph",
+      "category": "features",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "tutorial",
+      "category": "getting_started",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "quickstart",
+      "category": "getting_started",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "setup",
+      "category": "getting_started",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "installation",
+      "category": "getting_started",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "getting started",
+      "category": "high_value",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": false
+    },
+    {
+      "query": "create new project",
+      "category": "high_value",
+      "resultsFound": 2,
+      "topResults": [
+        {
+          "file": "docs/shared/reference/project-configuration.md",
+          "score": 15,
+          "keywords": [
+            "project.json"
+          ]
+        },
+        {
+          "file": "docs/shared/concepts/decisions/project-size.md",
+          "score": 5,
+          "keywords": [
+            "library"
+          ]
+        }
+      ],
+      "relevanceScore": 50,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "nx cloud",
+      "category": "high_value",
+      "resultsFound": 1,
+      "topResults": [
+        {
+          "file": "docs/nx-cloud/features/split-e2e-tasks.md",
+          "score": 10,
+          "keywords": [
+            "split tasks",
+            "atomizer"
+          ]
+        }
+      ],
+      "relevanceScore": 100,
+      "expectedDocsFound": false
+    },
+    {
+      "query": "cache configuration",
+      "category": "high_value",
+      "resultsFound": 1,
+      "topResults": [
+        {
+          "file": "docs/shared/reference/project-configuration.md",
+          "score": 5,
+          "keywords": [
+            "project.json"
+          ]
+        }
+      ],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "task dependencies",
+      "category": "high_value",
+      "resultsFound": 4,
+      "topResults": [
+        {
+          "file": "docs/shared/features/distribute-task-execution.md",
+          "score": 15,
+          "keywords": [
+            "distributed tasks"
+          ]
+        },
+        {
+          "file": "docs/nx-cloud/features/split-e2e-tasks.md",
+          "score": 15,
+          "keywords": [
+            "split tasks",
+            "atomizer"
+          ]
+        },
+        {
+          "file": "docs/shared/features/automate-updating-dependencies.md",
+          "score": 5,
+          "keywords": [
+            "update",
+            "migrate"
+          ]
+        },
+        {
+          "file": "docs/shared/concepts/common-tasks.md",
+          "score": 5,
+          "keywords": [
+            "build",
+            "serve",
+            "test",
+            "lint"
+          ]
+        }
+      ],
+      "relevanceScore": 50,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "module federation",
+      "category": "high_value",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "migrate from angular cli",
+      "category": "high_value",
+      "resultsFound": 3,
+      "topResults": [
+        {
+          "file": "docs/shared/packages/angular/angular-plugin.md",
+          "score": 15,
+          "keywords": [
+            "angular"
+          ]
+        },
+        {
+          "file": "docs/generated/packages/angular/documents/overview.md",
+          "score": 15,
+          "keywords": [
+            "angular"
+          ]
+        },
+        {
+          "file": "docs/shared/features/automate-updating-dependencies.md",
+          "score": 10,
+          "keywords": [
+            "update",
+            "migrate"
+          ]
+        }
+      ],
+      "relevanceScore": 100,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "react native",
+      "category": "high_value",
+      "resultsFound": 2,
+      "topResults": [
+        {
+          "file": "docs/shared/packages/react/react-plugin.md",
+          "score": 15,
+          "keywords": [
+            "react"
+          ]
+        },
+        {
+          "file": "docs/generated/packages/react/documents/overview.md",
+          "score": 15,
+          "keywords": [
+            "react"
+          ]
+        }
+      ],
+      "relevanceScore": 100,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "environment variables",
+      "category": "high_value",
+      "resultsFound": 0,
+      "topResults": [],
+      "relevanceScore": 0,
+      "expectedDocsFound": true
+    },
+    {
+      "query": "CI configuration",
+      "category": "high_value",
+      "resultsFound": 4,
+      "topResults": [
+        {
+          "file": "docs/shared/features/self-healing-ci.md",
+          "score": 25,
+          "keywords": [
+            "self-healing CI",
+            "AI",
+            "CI automation"
+          ]
+        },
+        {
+          "file": "docs/shared/reference/project-configuration.md",
+          "score": 5,
+          "keywords": [
+            "project.json"
+          ]
+        },
+        {
+          "file": "docs/shared/features/automate-updating-dependencies.md",
+          "score": 5,
+          "keywords": [
+            "update",
+            "migrate"
+          ]
+        },
+        {
+          "file": "docs/shared/concepts/decisions/project-size.md",
+          "score": 5,
+          "keywords": [
+            "library"
+          ]
+        }
+      ],
+      "relevanceScore": 25,
+      "expectedDocsFound": true
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "high",
+      "issue": "Missing keywords",
+      "recommendation": "Add keywords to 285 documentation files",
+      "impact": "Will significantly improve search discoverability"
+    },
+    {
+      "priority": "medium",
+      "issue": "Low search quality for tools",
+      "recommendation": "Improve keyword coverage for tools-related documentation",
+      "impact": "Will improve search results for tools queries"
+    },
+    {
+      "priority": "medium",
+      "issue": "Low search quality for concepts",
+      "recommendation": "Improve keyword coverage for concepts-related documentation",
+      "impact": "Will improve search results for concepts queries"
+    },
+    {
+      "priority": "medium",
+      "issue": "Low search quality for features",
+      "recommendation": "Improve keyword coverage for features-related documentation",
+      "impact": "Will improve search results for features queries"
+    }
+  ]
+}
