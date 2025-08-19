@@ -2,12 +2,18 @@
 
 ## Tasks
 
-### In Progress
-- [ ] Review Linear Stale Issues for Nx CLI Team (08:50)
+### Completed
+- [x] Review Linear Stale Issues for Nx CLI Team (08:50)
   - Plan created: `tasks/linear-stale-issues-review.md`
   - Goal: Identify and review stale issues in Linear that haven't been updated in 3+ months
   - Findings: 6 In Progress issues and multiple Backlog issues are stale
+  - Architecture updated: Created `architectures/dot-ai-config-architecture.md`
   - Next steps: Review with assignees, close/update stale issues
+
+- [x] Review Linear Stale Issues for Nx CLI Team (08:50)
+  - Plan created: `tasks/linear-stale-issues-review.md`
+  - Goal: Identify and review stale issues in Linear that haven't been updated in 3+ months
+  - Findings: 6 In Progress issues and multiple Backlog issues are stale
 
 ## Key Findings
 
