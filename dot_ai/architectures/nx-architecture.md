@@ -58,6 +58,39 @@
 
 ## Personal Work History
 
+### 2025-08-20: Vite 7 Upgrade Testing
+- **PR**: [#32422](https://github.com/nrwl/nx/pull/32422) - feat(vite): support vite 7
+- **What Was Done**:
+  - Comprehensive testing of Vite 7 upgrade PR using published PR version (0.0.0-pr-32422-a3285be)
+  - Tested create-nx-workspace with different presets (React, Vue)
+  - Verified backwards compatibility with --useViteV6 and --useViteV5 flags
+  - Tested migration path from latest stable (21.4.0 with Vite 6) to PR version (Vite 7)
+  - Created extensive test documentation and scripts for future verification
+- **Key Findings**:
+  - Default Vite version successfully changed to 7.1.3
+  - Backwards compatibility flags work correctly (v6 installs 6.3.5, v5 installs 5.4.19)
+  - Migration from v6 to v7 requires manual Vite update (`pnpm add -D vite@^7.0.0`)
+  - All framework integrations (React, Vue) work with Vite 7
+- **Documentation Created**:
+  - Multiple test plans and result files in `.ai/2025-08-20/tasks/`
+  - 8 test repository scripts for comprehensive verification
+
+### 2025-08-20: Fix Broken Markdoc Components
+- **Branch**: DOC-148
+- **Commit**: 71533fd571
+- **Linear Issue**: [DOC-148](https://linear.app/nxdev/issue/DOC-148/broken-components-in-several-pages)
+- **What Was Done**:
+  - Fixed 108 escaped template blocks across 31 files (removed backslash escapes)
+  - Fixed 52 component name mismatches (hyphens to underscores)
+  - Created missing SideBySide component with pure Tailwind CSS
+  - Fixed graph components by removing JSON code block wrappers
+  - Inlined external JSON files directly into components
+- **Key Implementation**:
+  - Markdoc components must use underscores in names, not hyphens
+  - Graph components expect raw JSON, not markdown code blocks
+  - SideBySide component simplified to grid layout after user feedback
+- **Files Modified**: 29 total files across astro-docs
+
 ### 2025-08-20: Configure Next.js to Rewrite to Astro Docs
 - **Branch**: DOC-134
 - **Commit**: f74f4dcbc4
