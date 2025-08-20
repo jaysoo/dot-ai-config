@@ -766,3 +766,32 @@ When creating automation scripts for content fixes:
 - Store all scripts in `.ai/yyyy-mm-dd/tasks/` folder
 - Name scripts descriptively: `fix-escaped-template-blocks.mjs`
 - Include summary script showing all changes made
+
+## CRITICAL: Astro/Starlight Documentation Testing
+
+When working with Astro/Starlight documentation sites:
+
+### Production Build Testing Required
+- **Search functionality is ONLY available in production builds** - dev server shows "Search is only available in production builds"
+- Always build first: `nx run PROJECT:build` before testing search
+- Serve with static server: `npx serve PROJECT/dist -p 8000` (note: `-p` not `--port`)
+- **Never assume search works in dev mode** - it will show placeholder messages
+
+### Content Generation vs Static Content
+- **Always verify relationships** between generated content and static pages before removing generators
+- Generated content requires **consumer pages** (like .astro files) to be accessible
+- Static `.mdoc` files are completely separate from generated content
+- **Check if other content depends on generators** before removal (e.g., `/references/commands/` vs generated nx-cli content)
+
+### Search Weight Implementation
+- Astro Starlight **strips HTML attributes for security** from `renderMarkdown()` 
+- **Post-processing approach required**: Add search weights AFTER HTML rendering
+- Use regex patterns that match **actual rendered HTML** structure including attributes like `<code dir="auto">`
+- **Test with production builds** - dev server won't show search weight effects
+
+## CRITICAL: Static Server Command Syntax
+
+For serving built static files:
+- ✅ Correct: `npx serve dist -p 8000`
+- ❌ Wrong: `npx serve dist --port 8000` (will error)
+- Always use `-p` for port with the `serve` package
