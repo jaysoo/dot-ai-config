@@ -54,3 +54,25 @@
 - All 349 .mdoc files verified to have proper structure
 - No h1 headings remain in content, all titles come from frontmatter
 - Ready to push branch and create PR with auto-populated description
+
+### DOC-134: Configure docs/ to rewrite to astro-docs
+- **Linear Issue**: [DOC-134](https://linear.app/nxdev/issue/DOC-134/configure-docs-to-rewrite-to-astro-docs)
+- **Branch**: DOC-134
+- **Status**: Completed
+- **Commit**: f74f4dcbc4
+
+#### What Was Done
+- Updated Next.js config for nx-dev to add rewrite rules for `/docs` path
+- Configured rewrites to only activate when `NEXT_PUBLIC_ASTRO_URL` environment variable is set
+- Maintains backward compatibility - no rewrites when env var is not set
+- Initially included console.log for debugging, removed per user feedback
+
+#### Files Modified
+- `nx-dev/nx-dev/next.config.js` - Added async rewrites() function with conditional logic
+
+#### Implementation Details
+- Rewrite rules:
+  - `/docs` → `${astroDocsUrl}/`
+  - `/docs/:path*` → `${astroDocsUrl}/:path*`
+- Environment variable controlled activation for flexible deployment
+- No build-time configuration needed, runtime env var determines behavior

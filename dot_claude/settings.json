@@ -48,7 +48,22 @@
       "mcp__Notion__API-update-a-database",
       "mcp__Notion__API-retrieve-a-database",
       "mcp__Notion__API-retrieve-a-comment",
-      "mcp__Notion__API-create-a-comment"
+      "mcp__Notion__API-create-a-comment",
+      "mcp__Linear__list_comments",
+      "mcp__Linear__get_documents",
+      "mcp__Linear__listissue",
+      "mcp__Linear__get_issue",
+      "mcp__Linear__list_issue_statuses",
+      "mcp__Linear__get_issue_status",
+      "mcp__Linear__list_my_issues",
+      "mcp__Linear__list_issue_labels",
+      "mcp__Linear__list_projects",
+      "mcp__Linear__get_project",
+      "mcp__Linear__list_teams",
+      "mcp__Linear__get_team",
+      "mcp__Linear__list_users",
+      "mcp__Linear__get_user",
+      "mcp__Linear__search_documentation"
     ],
     "deny": []
   }
