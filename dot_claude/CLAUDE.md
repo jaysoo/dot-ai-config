@@ -6,13 +6,27 @@ I work at Nx and my contributions are mostly related to Nx CLI.
 
 Don't be overly friendly or optimistic. Be terse.
 
-## CRITICAL: AI Notes
+## CRITICAL: .ai Folder Must Be Symlinked
 
-Make sure to keep notes and scripts inside `.ai/` folder. If it does not exist then run this command:
+**ALWAYS check and create the .ai symlink BEFORE doing any work:**
 
-```
+```bash
+# Check if .ai exists and is a symlink
+ls -la .ai
+
+# If it doesn't exist or is not a symlink, create it:
 ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai
 ```
+
+**NEVER create .ai as a regular directory** - All state must be tracked in the centralized dot-ai-config repository. If you accidentally create .ai as a directory:
+1. Save any important files temporarily
+2. Remove the directory: `rm -rf .ai`
+3. Create the symlink: `ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai`
+4. Recreate the files in the symlinked location
+
+## CRITICAL: AI Notes
+
+Make sure to keep notes and scripts inside `.ai/` folder (which must be a symlink as described above).
 
 ## CRITICAL: Timezone
 
@@ -64,6 +78,14 @@ When working with Astro docs (astro-docs project):
 - If both frontmatter title and h1 exist, they will duplicate
 - To fix title/h2 distinction issues: remove h1 from content, keep title in frontmatter
 - Always preserve sidebar labels when changing titles
+
+### Astro/Starlight Title Handling
+- **NEVER have both** frontmatter title AND h1 in content - Starlight renders both causing duplication
+- Starlight automatically renders the frontmatter `title` as the page's h1
+- To customize sidebar text differently from page title:
+  - Use `title:` in frontmatter for the page title
+  - Use `sidebar: { label: 'Custom Text' }` for sidebar display
+- When removing duplicate h1s, preserve existing sidebar labels
 
 ## CRITICAL: Verifying Changes Before Claiming Completion
 
@@ -510,3 +532,33 @@ When working with Ocean scoring:
 - Use project-level typecheck targets: `nx run PROJECT:typecheck`
 - Don't worry about standalone tsc errors if using React/JSX
 
+## CRITICAL: Parsing Markdown/MDX/MDOC Files
+
+When analyzing markdown-like files for heading structure:
+- **Code blocks must be excluded** when searching for markdown headings
+- Shell comments (`# comment`) inside code blocks are NOT markdown headings
+- Only lines starting with `#` followed by space OUTSIDE of code blocks are h1 headings
+- Always check between triple backticks (```) to identify code block boundaries
+
+Example of what NOT to treat as h1:
+```shell
+# This is a shell comment, not an h1
+npm install
+```
+
+Example of actual h1:
+# This is a real h1 heading
+
+## CRITICAL: Script Development Best Practices
+
+When creating analysis or fix scripts:
+1. **Always verify assumptions first** - Check a sample file manually
+2. **Handle edge cases** - Especially code blocks in markdown
+3. **Create verification scripts** - Always verify changes were applied
+4. **Avoid external dependencies initially** - Many packages aren't installed in monorepos
+5. **Test incrementally** - Run on a few files before processing all
+
+Common pitfalls to avoid:
+- Treating code comments as markdown headings
+- Assuming npm packages are available
+- Not preserving existing metadata when updating files

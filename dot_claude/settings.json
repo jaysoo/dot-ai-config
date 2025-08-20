@@ -11,6 +11,7 @@
       "Bash(yarn:*)",
       "Bash(pnpm:*)",
       "Bash(bun:*)",
+      "Bash(ln:*)",
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(grep:*)",

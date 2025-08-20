@@ -2,32 +2,53 @@
 
 ## Tasks Completed
 
-### DOC-135: Fix H1 and Frontmatter Title Mismatch
-- **Time**: 09:12 ET
-- **Task Plan**: `tasks/doc-135-h1-title-fix.md`
-- **Linear Issue**: [DOC-135](https://linear.app/nxdev/issue/DOC-135/style-main-title-and-h2-title-are-almost-not-distinguishable)
+### DOC-125: Remove Duplicate Titles from Astro Docs
+- **Linear Issue**: [DOC-125](https://linear.app/nxdev/issue/DOC-125/remove-duplicate-titles)
+- **Branch**: DOC-125
+- **Status**: Completed
 
-**What was done:**
-- Analyzed all 349 mdoc files in astro-docs project
-- Identified 7 files with h1 headings at the beginning of content
-- Updated 1 file's frontmatter title ("Run Tasks" → "Tasks") with sidebar label preservation
-- Removed h1 headings from all 7 files to prevent duplication with Starlight's frontmatter title display
+#### What Was Done
+- Identified and fixed duplicate title rendering issue in Astro/Starlight documentation
+- Found 10 .mdoc files with h1 headings in content that duplicated frontmatter titles
+- Removed h1 headings from content where they matched frontmatter titles
+- Special handling for `features/run-tasks.mdoc`: Changed title to "Tasks" and preserved "Run Tasks" as sidebar label
+- Created verification script to ensure all 349 .mdoc files have proper structure
 
-**Files Modified:**
-1. features/run-tasks.mdoc (title updated + h1 removed)
-2. features/maintain-typescript-monorepos.mdoc (h1 removed)
-3. guides/Enforce Module Boundaries/tag-multiple-dimensions.mdoc (h1 removed)
-4. guides/Nx Release/configure-custom-registries.mdoc (h1 removed)
-5. guides/Nx Release/customize-conventional-commit-types.mdoc (h1 removed)
-6. troubleshooting/resolve-circular-dependencies.mdoc (h1 removed)
-7. troubleshooting/troubleshoot-cache-misses.mdoc (h1 removed)
+#### Files Modified
+- `astro-docs/src/content/docs/features/maintain-typescript-monorepos.mdoc`
+- `astro-docs/src/content/docs/features/run-tasks.mdoc`
+- `astro-docs/src/content/docs/guides/Enforce Module Boundaries/tag-multiple-dimensions.mdoc`
+- `astro-docs/src/content/docs/guides/Nx Release/configure-custom-registries.mdoc`
+- `astro-docs/src/content/docs/guides/Nx Release/customize-conventional-commit-types.mdoc`
+- `astro-docs/src/content/docs/references/Remote Cache Plugins/azure-cache/overview.mdoc`
+- `astro-docs/src/content/docs/references/Remote Cache Plugins/gcs-cache/overview.mdoc`
+- `astro-docs/src/content/docs/references/Remote Cache Plugins/s3-cache/overview.mdoc`
+- `astro-docs/src/content/docs/troubleshooting/resolve-circular-dependencies.mdoc`
+- `astro-docs/src/content/docs/troubleshooting/troubleshoot-cache-misses.mdoc`
 
-**Result:** Better visual distinction between page titles (from frontmatter) and h2 section headers.
+#### Scripts Created
+- `.ai/2025-08-20/tasks/find-h1-headings-accurate.mjs` - Script to find actual h1 headings (excluding code blocks)
+- `.ai/2025-08-20/tasks/fix-duplicate-titles.mjs` - Script to automatically fix duplicate titles
+- `.ai/2025-08-20/tasks/verify-mdoc-files.mjs` - Verification script to ensure all files are correctly formatted
 
-## In Progress Tasks
-- Review Linear Stale Issues for Nx CLI Team
-- Check on disabled test e2e/nx-init/src/nx-init-nest.test.ts
+## Key Learnings
 
-## Notes
-- Properly documented task in .ai folder structure as per CLAUDE.md instructions
-- All changes are ready for commit/PR
+### Astro/Starlight Documentation Structure
+- Starlight renders titles from frontmatter, not from h1 in content
+- Having both frontmatter title and h1 in content causes duplicate rendering
+- Sidebar labels can be preserved when changing titles using `sidebar.label` field
+
+### Script Development Challenges
+- Initial script incorrectly identified code comments as h1 headings
+- Need to exclude code blocks when parsing markdown content
+- Simple frontmatter parsing without external dependencies requires careful handling of YAML structure
+
+### Critical Mistake Made
+- **FAILED to create symlink first** - Created .ai directory directly instead of symlinking to $HOME/projects/dot-ai-config/dot_ai/
+- This caused work to not be properly tracked in the centralized dot-ai-config
+- **Fix Applied**: Removed incorrect .ai directory and created proper symlink
+
+## Next Steps
+- Changes are ready but not committed (as per instruction not to commit unless explicitly asked)
+- All 349 .mdoc files verified to have proper structure
+- No h1 headings remain in content, all titles come from frontmatter
