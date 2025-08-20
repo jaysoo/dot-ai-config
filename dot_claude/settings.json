@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Read",
+      "List",
       "Edit",
       "Edit(.ai/**)",
       "Bash(nx:*)",

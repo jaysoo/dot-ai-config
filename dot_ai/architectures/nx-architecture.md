@@ -38,13 +38,15 @@
 ### Astro Documentation Site
 *Last updated: 2025-08-20*
 
-**Related Linear Tasks**: DOC-125, DOC-137
+**Related Linear Tasks**: DOC-125, DOC-137, DOC-148
 
 **Quick Start**: Documentation content is in `.mdoc` files under `astro-docs/src/content/docs/`
 
 **Files Involved**:
 - `astro-docs/src/content/docs/**/*.mdoc` - All documentation content files
 - `astro-docs/src/content/docs/getting-started/Tutorials/*.md` - Tutorial files with code snippets
+- `astro-docs/markdoc.config.mjs` - Markdoc component registration
+- `astro-docs/src/components/markdoc/` - Custom Markdoc components
 - Uses frontmatter for metadata (title, description, sidebar configuration)
 
 **Key Implementation Details**:
@@ -55,6 +57,33 @@
 - **Critical**: When adding filename comments to code blocks, highlight line numbers must be offset by +1
 - Sidebar labels can be customized using `sidebar.label` in frontmatter
 - Content uses MDX-like syntax with custom components
+
+**Markdoc Components**:
+- Component names MUST use underscores, not hyphens (e.g., `side_by_side` not `side-by-side`)
+- Graph components expect raw JSON data, not wrapped in markdown code blocks
+- Template blocks use `{% %}` syntax without escaping
+- Components registered in `markdoc.config.mjs` must match usage in .mdoc files exactly
+
+### Vite Support in Nx
+*Last updated: 2025-08-20*
+
+**Related PRs**: #32422
+
+**Quick Start**: Use `--bundler=vite` when creating applications
+
+**Files Involved**:
+- `packages/vite/src/utils/versions.ts` - Version constants for Vite
+- `packages/vite/migrations.json` - Migration definitions
+- `packages/vite/src/generators/init/lib/utils.ts` - Version selection logic
+
+**Key Implementation Details**:
+- Default Vite version: 7.x (as of PR #32422)
+- Backwards compatibility flags:
+  - `--useViteV6`: Installs Vite 6.x
+  - `--useViteV5`: Installs Vite 5.x
+- Migration from v6 to v7 may require manual update: `pnpm add -D vite@^7.0.0`
+- Supports React, Vue, and Web Components
+- Vitest 3.x compatible with all Vite versions (5, 6, 7)
 
 ## Personal Work History
 
@@ -141,6 +170,25 @@
 - **Scripts Created**: Conversion, verification, and fix scripts in `.ai/2025-08-20/tasks/`
 - **Impact**: Proper filename display in code snippet headers and accurate line highlighting
 
+### 2025-08-20: Search Quality Improvements for CLI Commands  
+- **Branch**: DOC-121
+- **Linear Issue**: DOC-121 (search quality improvements)
+- **What Was Done**:
+  - Fixed search weighting issues where 7 critical CLI commands (init, import, build, serve, lint, affected, release) were scoring 0/3 in search results
+  - Implemented post-processing approach to add HTML weights AFTER markdown rendering to bypass Astro security stripping
+  - Applied consistent weighting scheme: priority commands get 10.0 (headings), 8.0 (descriptions), 9.0 (usage)
+  - Moved `nx init` from 5th group to 2nd group in search results (verified with screenshots)
+- **Files Modified**:
+  - `astro-docs/src/plugins/nx-reference-packages.loader.ts:62-108` - Added `addCliSearchWeights()` function
+  - `astro-docs/src/plugins/utils/generate-plugin-markdown.ts:12-109` - Added generator/executor weighting functions  
+  - `astro-docs/src/content/docs/references/commands.mdoc:33-35,92-94,183-185,227-229` - Static command weighting
+  - `astro-docs/src/content/docs/concepts/common-tasks.mdoc:11-13,103-105,183-185,243-245` - Common task weighting
+- **Key Technical Solution**: 
+  - HTML weighting attributes were being stripped by `renderMarkdown()` for security
+  - Solved by adding weights in post-processing AFTER HTML rendering using regex patterns
+  - Regex patterns match actual rendered HTML structure: `(<h3[^>]*>)(.*?<code[^>]*>nx ${cmdName}</code>.*?)(</h3>)`
+- **Impact**: All 7 priority CLI commands now have proper search discoverability, massive UX improvement
+
 ## Design Decisions & Gotchas
 
 ### Documentation Title Handling
@@ -168,6 +216,34 @@
   - `fileName="path/file.ts"` → Comment at top: `// path/file.ts`
   - `highlightLines=["5-18"]` → Curly braces: `{6-19}` (note +1 offset)
 - **Common Mistake**: Forgetting to adjust highlight line numbers causes wrong lines to be highlighted
+
+### Markdoc Component Development
+- **Decision**: Use underscores in component names, never hyphens
+- **Reason**: Markdoc registration requires exact name matching, hyphens break component resolution
+- **Gotchas**:
+  - Graph components expect raw JSON, not markdown code blocks with ```json
+  - Template blocks `{% %}` should never be escaped with backslashes
+  - JSON data should be inlined directly between component tags, not referenced externally
+- **Development Requirements**:
+  - Run `pnpm build` before `npx astro dev` to generate required .d.ts files
+  - Use ports 8000+ for dev server to avoid conflicts
+- **Component Registration**: All components must be registered in `astro-docs/markdoc.config.mjs`
+
+### Vite Version Migration
+- **Gotcha**: Automatic migration via `nx migrate` may not trigger Vite upgrade
+- **Solution**: Manually update with `pnpm add -D vite@^7.0.0` after Nx package updates
+- **Testing Strategy**:
+  - Use published PR versions (format: 0.0.0-pr-{PR#}-{commit}) for testing
+  - Test both new workspace creation and migration paths
+  - Verify backwards compatibility flags work correctly
+
+### Search Quality in Astro Starlight Documentation
+- **Problem**: HTML weighting attributes (`data-pagefind-weight`) are stripped from generated content for security
+- **Solution**: Post-processing approach - add weights AFTER HTML rendering using regex patterns
+- **Implementation**: Modify loader functions to call weight-adding functions after `renderMarkdown()`
+- **Weight Scale**: Use quadratic scale (10.0 = 100x search impact) for maximum effectiveness
+- **Gotcha**: Regex patterns must account for actual HTML attributes like `<code dir="auto">` not just simple tags
+- **Verification**: Use Playwright MCP for real-time search testing to verify improvements
 
 ## Technology Stack
 

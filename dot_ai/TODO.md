@@ -2,6 +2,12 @@
 
 ## In Progress
 
+- [ ] Review PR #8300 for Austin - Powerpack Conformance Allow Option (2025-08-20 15:16)
+  - PR: https://github.com/nrwl/ocean/pull/8300
+  - Linear Issue: NXC-2951
+  - Review scheduled for: Thursday, August 21, 2025
+  - Notes: `dot_ai/2025-08-20/dictations/pr-review-austin-conformance.md`
+  - Goal: Review new `allow` option for Powerpack conformance, verify Mailchimp fix
 - [ ] Review Linear Stale Issues for Nx CLI Team (2025-08-19 08:50)
   - Plan created: `dot_ai/2025-08-19/tasks/linear-stale-issues-review.md`
   - Goal: Identify and review stale issues in Linear that haven't been updated in 3+ months
