@@ -60,6 +60,22 @@
 
 **Key Discovery:** Markdoc components must use underscore naming convention to match registration keys
 
+### 2025-08-20 - Follow-up: Fix side_by_side Component Layout
+**Branch:** DOC-148  
+**Status:** Completed ✅
+
+**Issue Found:** The side_by_side component was not displaying content in proper two-column layout after initial fixes
+**Root Cause:** Astro component used single `<slot />` while React component uses `Children.toArray(children)` to split content
+
+**Solution Implemented:**
+- Updated `astro-docs/src/components/markdoc/SideBySide.astro` with client-side content splitting
+- Added JavaScript to move first child to left column, remaining to right column  
+- Applied proper CSS classes: `md:pr-6` (left), `md:pl-6 md:mt-0` (right)
+- Added `md:mt-0` to override Starlight's default margins
+
+**Component Usage:** 9 usages across 4 files (sync-generators, maintain-typescript-monorepos, explore-graph, mental-model)
+**Verification:** Tested on dev server, screenshot confirmed proper side-by-side layout
+
 ## Design Decisions & Gotchas
 
 ### Markdoc Component Naming Convention
@@ -84,6 +100,19 @@
 **Decision:** Use frontmatter titles only, remove h1 from content
 **Reasoning:** Starlight automatically renders frontmatter title as h1
 **Impact:** Prevents duplicate titles in rendered pages
+
+### Side-by-Side Component Implementation  
+**Decision:** Use simple Tailwind CSS Grid layout without JavaScript
+**Reasoning:**
+- User preference: "should just be tailwind only, no JS involved!"
+- Simple grid layouts are more maintainable than complex DOM manipulation
+- CSS Grid naturally handles two-column layouts with responsive behavior
+**Evolution:**
+1. ❌ JavaScript DOM manipulation approach (rejected - too complex)
+2. ❌ Tailwind arbitrary selectors `[&>*:first-child]:` (unreliable)  
+3. ❌ CSS custom properties with `<style>` block (working but complex)
+4. ✅ **Final**: Simple grid classes: `grid grid-auto-col md:grid-flow-row md:grid-cols-2 gap-4`
+**Key Insight:** Prefer simple Tailwind solutions over complex CSS/JS approaches
 
 ## Technology Stack
 

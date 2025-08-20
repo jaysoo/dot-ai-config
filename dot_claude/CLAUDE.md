@@ -6,6 +6,26 @@ I work at Nx and my contributions are mostly related to Nx CLI.
 
 Don't be overly friendly or optimistic. Be terse.
 
+## CRITICAL: Development Philosophy Preferences
+
+### Favor Simple Solutions Over Complex Ones
+- **Prefer simple Tailwind-only approaches** over JavaScript/complex CSS solutions
+- **Don't default to JavaScript** when pure CSS can solve the problem
+- **Test simple approaches first** before building complex implementations
+- **Example**: For layout components, try CSS Grid/Flexbox before DOM manipulation
+
+### Tailwind CSS Approach
+- **Avoid arbitrary selectors** like `[&>*:first-child]:` - they may not work reliably
+- **Use standard Tailwind classes** when possible
+- **CSS Grid and Flexbox** are often simpler than complex selector-based approaches
+- **Ask user preference** when multiple implementation approaches are possible
+
+### Implementation Approach Communication
+- **Always ask about implementation preferences** when multiple approaches are viable
+- **Explain trade-offs clearly** (complexity vs. functionality)
+- **Iterate based on feedback** rather than defending initial implementation choices
+- **Prefer user's stated preferences** over theoretical "best practices"
+
 ## CRITICAL: .ai Folder Must Be Symlinked - VERIFICATION REQUIRED
 
 **ALWAYS check and create the .ai symlink BEFORE doing any work AND during reflection:**
@@ -510,6 +530,26 @@ When working with Astro Starlight documentation:
 **Dynamic Ordering**: When mixing generated items with static files, static files get added after generated items by default. If you need specific ordering (like Introduction first), you must extract and reorder items explicitly.
 
 **Testing**: Use Playwright MCP with the correct port (ask user, don't assume) to verify sidebar behavior in real-time.
+
+## CRITICAL: Astro Component Development
+
+### Start Simple, Iterate Based on Feedback
+- **Begin with the simplest possible implementation** using standard Tailwind classes
+- **Avoid over-engineering** - JavaScript/complex CSS should be last resort
+- **Test each approach** before moving to more complex solutions
+- **Listen to user feedback** about implementation preferences (e.g., "no JS involved!")
+
+### Common Pitfalls to Avoid
+- **Don't assume arbitrary Tailwind selectors work** - `[&>*:first-child]:` can be unreliable
+- **Don't default to JavaScript** for layout problems that CSS can solve
+- **Don't use complex CSS custom properties** when simple grid layouts work
+- **Always check if user prefers simpler approach** before implementing complex solutions
+
+### Preferred Component Development Order
+1. **Start with simple Tailwind classes** (CSS Grid, Flexbox)
+2. **Ask for feedback** before adding complexity
+3. **Only add JavaScript** if pure CSS cannot achieve the requirement
+4. **Iterate based on user preferences** rather than defending implementation choices
 
 ## CRITICAL: File System Operations
 

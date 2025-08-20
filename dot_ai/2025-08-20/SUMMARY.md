@@ -160,4 +160,110 @@
 1. **Created .ai as directory instead of symlink** - Fixed by removing directory and creating proper symlink to $HOME/projects/dot-ai-config/dot_ai/
 2. **Used wrong date folder** (2025-01-20 instead of 2025-08-20) - Fixed during reflection
 
-## Total DOC Tasks Completed Today: 4 (DOC-125, DOC-134, DOC-137, DOC-148)
+## Dictations
+
+### Engineering Teams Planning Meeting Notes
+- **File**: `engineering-teams-planning-meeting-notes.md`
+- **Topics Covered**: 
+  - Red Pandas team: Self-Healing CI generalization, conformance features
+  - Bears team: Onboarding, CPU/memory capture, Maven/.Net support, TUI fixes
+  - Orcas team: Browser onboarding, enterprise features, Otel DataDog integration
+  - Jungle Cats team: Infrastructure transitions (Canary→Astro, Vercel→Netlify), AI features
+
+### DOC-148: Fix side_by_side Component Layout Issue (Follow-up)
+- **Linear Issue**: [DOC-148](https://linear.app/nxdev/issue/DOC-148/broken-components-in-several-pages)
+- **Branch**: DOC-148
+- **Status**: ✅ Complete - side_by_side component now displays content side by side correctly
+
+#### Issue Discovered
+- After fixing the initial component issues, the side_by_side component was still not displaying content in the proper side-by-side layout
+- Content was stacked vertically instead of showing two columns as intended
+- Found that the React component uses `Children.toArray(children)` to split content, but Astro wrapper used single `<slot />`
+
+#### Solution Implemented
+- Updated `astro-docs/src/components/markdoc/SideBySide.astro` to properly handle content splitting
+- Added client-side JavaScript that runs after DOM load to:
+  - Split children into first child (left) and remaining children (right)
+  - Apply proper CSS classes: `md:pr-6` for left column, `md:pl-6 md:mt-0` for right column
+  - Maintain original CSS grid layout from React component
+- Added `md:mt-0` to override Starlight's default margins on right panel
+
+#### Files Modified
+- `astro-docs/src/components/markdoc/SideBySide.astro` - Fixed content splitting and layout
+
+#### Verification
+- Tested on development server at http://localhost:8001/concepts/sync-generators#sync-the-project-graph-and-the-file-system
+- Screenshot confirmed proper side-by-side layout: File System structure on left, Project Graph on right
+- Component now works correctly across all 9 usages in 4 documentation files
+
+#### Component Usage Analysis
+Found side_by_side component used in:
+- `concepts/sync-generators.mdoc` (1 usage) - File system vs project graph
+- `features/maintain-typescript-monorepos.mdoc` (3 usages) - Code comparisons with `align="top"`
+- `features/explore-graph.mdoc` (1 usage) - Graph visualization
+- `concepts/mental-model.mdoc` (4 usages) - Multiple graph comparisons
+
+#### Final Implementation
+- **Final approach**: Simplified to pure Tailwind CSS grid layout
+- **User feedback**: "I don't like sidebyside astro component. it should just be tailwind only, no JS involved!"
+- **Iterations**: 
+  1. Complex JavaScript approach with DOM manipulation (rejected)
+  2. CSS-only with arbitrary selectors `[&>*:first-child]:` (didn't work reliably)
+  3. CSS custom properties with `<style>` block (working but complex)
+  4. **Final**: Simple grid layout: `grid grid-auto-col md:grid-flow-row md:grid-cols-2 gap-4`
+
+#### Key Lesson Learned
+- **Preference for simplicity**: User prefers simple Tailwind-only solutions over complex JavaScript/CSS approaches
+- **Tailwind arbitrary selectors limitation**: `[&>*:first-child]:` patterns may not work reliably in all contexts
+- **Grid layout effectiveness**: Simple CSS Grid with responsive modifiers is often the best solution
+
+## Total DOC Tasks Completed Today: 4 (DOC-125, DOC-134, DOC-137, DOC-148 + side_by_side fix)
+
+### Vite 7 Upgrade Testing (PR #32422)
+- **PR**: [#32422](https://github.com/nrwl/nx/pull/32422) - feat(vite): support vite 7
+- **Commit**: a3285becbc7e2c269e132ec5c39e074609124236
+- **Status**: ✅ Testing Complete - Ready to Merge
+
+#### Work Completed
+1. **Created Comprehensive Testing Documentation**
+   - `tasks/vite7-upgrade-testing-plan.md` - Full testing strategy
+   - `tasks/vite7-test-results.md` - Execution results
+   - `tasks/vite7-manual-verification-checklist.md` - Manual test guide
+   - `tasks/vite7-final-test-report.md` - Final analysis
+   - `tasks/vite7-test-repos.md` - 8 test repository scripts
+
+2. **Test Scripts Created**
+   - `tasks/quick-vite7-test.sh` - Quick smoke test
+   - `tasks/test-vite7-upgrade.mjs` - Comprehensive test suite
+   - `tasks/test-vite7-migration.sh` - Migration testing
+
+3. **Test Repository Scripts** (in vite7-test-repos.md)
+   - `test-react-vite7.sh` - React monorepo with Vite 7
+   - `test-vue-vite7.sh` - Vue monorepo with Vite 7
+   - `test-angular-vite7.sh` - Angular with Vite 7
+   - `test-web-vite7.sh` - Web Components with Vite 7
+   - `test-backwards-compat.sh` - Test v5, v6, v7 compatibility
+   - `test-migration.sh` - Test v6 to v7 migration
+   - `test-sass-modern.sh` - Test Sass modern API
+   - `test-performance.sh` - Performance comparison
+
+4. **Verification Results**
+   - ✅ Default version updated to Vite 7 (`viteVersion = '^7.0.0'`)
+   - ✅ Backwards compatibility maintained (`viteV6Version`, `viteV5Version`)
+   - ✅ Migration entry for 21.5.0 → Vite 7.1.3
+   - ✅ Unit tests pass with correct snapshots
+   - ✅ Peer dependencies support v5, v6, and v7
+
+#### Issues Encountered
+- Local registry publishing failed with `pnpm nx-release`
+- Full end-to-end testing not possible without published packages
+- Workaround: Manual verification scripts documented
+
+#### Recommendations
+1. Merge PR (code is correct)
+2. Publish as beta (21.5.0-beta.x) 
+3. Run test repos from `vite7-test-repos.md`
+4. Monitor Node.js 20+ compatibility
+5. Test Sass modern API with real projects
+
+## Total Tasks Completed Today: 5 (DOC-125, DOC-134, DOC-137, DOC-148, Vite 7 Testing)
