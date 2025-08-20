@@ -633,3 +633,11 @@ When working in worktree checkouts (e.g., `/Users/jack/projects/nx-worktrees/`):
 - Branch names often match issue IDs (e.g., DOC-125)
 - Remember this is a separate checkout, not the main repo location
 - Commits here don't affect other worktrees until pushed
+
+## CRITICAL: Easy tasks that do not require verifications
+
+When a task is simple and easy, such as updating Markdown/Markdoc (.md, .mdoc) content, or a typo, etc. it
+does not need to be verified against a dev server, or locally published packages. In that case, skip install 
+node_modules (e.g. `pnpm install`), and try to verify the work by using bash scripts, node scripts that do not
+require any external dependencies to be installed.
+
