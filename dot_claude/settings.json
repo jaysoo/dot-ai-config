@@ -8,6 +8,7 @@
       "Bash(npx:*)",
       "Bash(git:*)",
       "Bash(npm:*)", 
+      "Bash(find:*)",
       "Bash(yarn:*)",
       "Bash(pnpm:*)",
       "Bash(bun:*)",

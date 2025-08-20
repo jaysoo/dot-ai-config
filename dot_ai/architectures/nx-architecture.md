@@ -19,6 +19,22 @@
 
 ## Features & Critical Paths
 
+### Nx-Dev Next.js to Astro Docs Rewrite
+*Last updated: 2025-08-20*
+
+**Related Linear Tasks**: DOC-134
+
+**Quick Start**: Set `NEXT_PUBLIC_ASTRO_URL` environment variable to enable rewrites
+
+**Files Involved**:
+- `nx-dev/nx-dev/next.config.js` - Contains rewrite configuration
+
+**Key Implementation Details**:
+- Rewrites `/docs` and `/docs/*` paths to Astro documentation site
+- Only active when `NEXT_PUBLIC_ASTRO_URL` environment variable is set
+- Maintains backward compatibility - no rewrites when env var not set
+- Allows gradual migration from Next.js docs to Astro docs
+
 ### Astro Documentation Site
 *Last updated: 2025-08-20*
 
@@ -36,6 +52,21 @@
 - Content uses MDX-like syntax with custom components
 
 ## Personal Work History
+
+### 2025-08-20: Configure Next.js to Rewrite to Astro Docs
+- **Branch**: DOC-134
+- **Commit**: f74f4dcbc4
+- **Linear Issue**: [DOC-134](https://linear.app/nxdev/issue/DOC-134/configure-docs-to-rewrite-to-astro-docs)
+- **What Was Done**:
+  - Added rewrite configuration to nx-dev Next.js app for `/docs` routes
+  - Configured rewrites to only activate when `NEXT_PUBLIC_ASTRO_URL` environment variable is set
+  - Maintains backward compatibility - no rewrites when env var is not set
+  - Initially included console.log for debugging, removed per user feedback
+- **Files Modified**:
+  - `nx-dev/nx-dev/next.config.js` - Added async rewrites() function with conditional logic
+- **Implementation**:
+  - Rewrite rules: `/docs` → `${astroDocsUrl}/`, `/docs/:path*` → `${astroDocsUrl}/:path*`
+  - Environment variable controlled activation for flexible deployment
 
 ### 2025-08-20: Remove Duplicate Titles from Documentation
 - **Branch**: DOC-125
