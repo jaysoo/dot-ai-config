@@ -1,6 +1,9 @@
 {
   "permissions": {
     "allow": [
+      "Read",
+      "Edit",
+      "Edit(.ai/**)",
       "Bash(nx:*)",
       "Bash(npx:*)",
       "Bash(git:*)",
@@ -18,8 +21,6 @@
       "Bash(mv:*)",
       "Bash(rm *.log:*)",
       "Bash(rm *.tmp:*)",
-      "Read",
-      "Edit",
       "mcp__MyNotes__search_ai_content",
       "mcp__MyNotes__get_task_context",
       "mcp__MyNotes__find_specs",
