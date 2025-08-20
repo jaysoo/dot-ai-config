@@ -6,23 +6,29 @@ I work at Nx and my contributions are mostly related to Nx CLI.
 
 Don't be overly friendly or optimistic. Be terse.
 
-## CRITICAL: .ai Folder Must Be Symlinked
+## CRITICAL: .ai Folder Must Be Symlinked - VERIFICATION REQUIRED
 
-**ALWAYS check and create the .ai symlink BEFORE doing any work:**
+**ALWAYS check and create the .ai symlink BEFORE doing any work AND during reflection:**
 
 ```bash
-# Check if .ai exists and is a symlink
+# Check if .ai exists and is a symlink (not a directory!)
 ls -la .ai
+file .ai
 
-# If it doesn't exist or is not a symlink, create it:
+# If it shows "directory" instead of symlink, fix it immediately:
+# 1. Backup any current work
+cp -r .ai /tmp/backup-ai-$(date +%Y-%m-%d)
+# 2. Remove the directory
+rm -rf .ai  
+# 3. Create proper symlink
 ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai
+# 4. Restore work to correct date folder
+cp -r /tmp/backup-ai-$(date +%Y-%m-%d) .ai/$(date +%Y-%m-%d)
 ```
 
-**NEVER create .ai as a regular directory** - All state must be tracked in the centralized dot-ai-config repository. If you accidentally create .ai as a directory:
-1. Save any important files temporarily
-2. Remove the directory: `rm -rf .ai`
-3. Create the symlink: `ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai`
-4. Recreate the files in the symlinked location
+**VERIFICATION**: The command `file .ai` should return "symbolic link" not "directory"
+
+**Never work with .ai as a directory** - All state must be tracked in centralized dot-ai-config
 
 ## CRITICAL: AI Notes
 
@@ -156,6 +162,24 @@ When making file edits:
 4. **Run verification scripts** to ensure all expected changes are in place
 5. **Check git status** to confirm all intended files show as modified
 6. **Review changes with git diff** before committing to ensure correctness
+7. **Use simple grep/regex to verify completeness** - don't rely only on custom scripts
+8. **Check ALL relevant file types** - don't assume the scope is limited to one format
+
+### Thorough Verification Examples
+- For markdown h1 removal: `grep -r "^#\s" path/ --include="*.md" --include="*.mdx" --include="*.mdoc"`
+- For code pattern removal: Use both custom scripts AND simple grep verification
+- Always verify the actual count of changes matches expectations
+
+## CRITICAL: Understanding Full Task Scope
+
+When working on file modifications:
+1. **Clarify ALL file types in scope** - don't assume .mdoc means only .mdoc files
+2. **Ask for clarification** if task description is ambiguous about file types
+3. **Check related file formats** - if working with .mdoc, also check .md, .mdx
+4. **Use broad searches first** to understand full scope before creating focused fixes
+5. **Verify assumptions** with simple grep/find commands across all relevant extensions
+
+Example: Task says "fix .mdoc files" but documentation site uses .md, .mdx, .mdoc - check ALL formats.
 
 ## CRITICAL: MCP Server Usage
 
@@ -626,6 +650,13 @@ Common pitfalls to avoid:
 - Assuming npm packages are available
 - Not preserving existing metadata when updating files
 
+## CRITICAL: Easy tasks that do not require verifications
+
+When a task is simple and easy, such as updating Markdown/Markdoc (.md, .mdoc) content, or a typo, etc. it
+does not need to be verified against a dev server, or locally published packages. In that case, skip install 
+node_modules (e.g. `pnpm install`), and try to verify the work by using bash scripts, node scripts that do not
+require any external dependencies to be installed.
+
 ## CRITICAL: Working in Git Worktrees
 
 When working in worktree checkouts (e.g., `/Users/jack/projects/nx-worktrees/`):
@@ -641,3 +672,57 @@ does not need to be verified against a dev server, or locally published packages
 node_modules (e.g. `pnpm install`), and try to verify the work by using bash scripts, node scripts that do not
 require any external dependencies to be installed.
 
+
+## CRITICAL: Markdoc Component Development
+
+When working with Markdoc components in Astro/Starlight documentation:
+
+### Component Naming Convention
+- **ALWAYS use underscores** in component names, never hyphens
+- Registration in markdoc.config.mjs must match component usage exactly
+- Example: `side_by_side` not `side-by-side`, `project_details` not `project-details`
+
+### JSON Data Embedding
+- Graph and project_details components expect **raw JSON only**
+- **Remove markdown code block wrappers** (```json) before component tags
+- **Inline JSON directly** between component open/close tags for reliability
+- Never leave external jsonFile references - always inline the content
+
+### Template Block Escaping
+- **Never escape template blocks** with backslashes: `{% %}` not `\{% %\}`
+- If escaping appears in files, it indicates copy/paste from rendered HTML
+- Use systematic search/replace to fix: `%\}` → `%}` and `\{%` → `{%`
+
+### Development Server Requirements
+- **ALWAYS run build first**: `pnpm build` before `npx astro dev`
+- **Use ports 8000+** to avoid conflicts: `--port 8000`
+- Build generates required .d.ts files for API documentation components
+
+## CRITICAL: Date Consistency in Task Files
+
+When creating task files in `.ai/yyyy-mm-dd/`:
+- **ALWAYS use current date**: Run `date '+%Y-%m-%d'` to confirm
+- **DO NOT use hardcoded dates** like "2025-01-20" when working in August
+- **Verify date folder**: Check `.ai/$(date +%Y-%m-%d)/` exists before creating files
+- **During reflection**: Move any incorrectly dated work to the right folder
+
+## CRITICAL: Script Development for Bulk Content Fixes
+
+When creating automation scripts for content fixes:
+
+### Progressive Script Development
+1. **Start small**: Test regex patterns on 1-2 files manually first
+2. **Verify assumptions**: Check actual file content, don't assume format
+3. **Create verification scripts**: Always make scripts to verify changes applied
+4. **Handle edge cases**: Code blocks, escaped content, special formatting
+
+### Common Patterns for Documentation Sites
+- **Exclude code blocks** when searching for markdown headings
+- **Handle frontmatter** parsing without external YAML libraries
+- **Use relative paths** in output for readability
+- **Count replacements** to verify script effectiveness
+
+### Script Organization
+- Store all scripts in `.ai/yyyy-mm-dd/tasks/` folder
+- Name scripts descriptively: `fix-escaped-template-blocks.mjs`
+- Include summary script showing all changes made

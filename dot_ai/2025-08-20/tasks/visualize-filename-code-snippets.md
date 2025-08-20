@@ -95,3 +95,12 @@ const example = true;
 - Verified no remaining legacy attributes
 - All code blocks now use Starlight format
 - Conversion complete and successful
+
+### Phase 5: Line Offset Fix ✅
+- Identified that highlight line numbers needed +1 offset due to filename comment
+- Fixed all 9 instances where highlights needed adjustment:
+  - typescript-packages.md: 6 fixes
+  - angular-monorepo.md: 1 fix
+  - gradle.md: 1 fix  
+  - react-monorepo.md: 1 fix
+- Verified correct highlighting after offset adjustment
