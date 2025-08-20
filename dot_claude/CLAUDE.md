@@ -42,15 +42,75 @@ Never commit directly to `master` or `main` branch. Always work in a new branch.
 
 You might find useful architectural information under `.ai/architectures` for nx, ocean, nx-labs, or nx-console repo. These documents contain strucutre, key technologies, features, contributors, my contributions, recent changes, etc. Use them when doing work. For example, `.ai/architectures/nx-architecture.md`.
 
-## CRITICAL: Commit Messages and PR Templates
+## CRITICAL: Git Commits and PR Templates
 
-When creating commits that will be used for pull requests:
+### ALWAYS Squash Commits at End of Task
+When completing a task:
+1. **ALWAYS squash all commits into a single commit** before pushing
+2. Use `git rebase -i HEAD~n` (where n is number of commits) or `git reset --soft` and recommit
+3. The final commit message MUST follow the PR template format
+
+### Commit Message Must Match PR Template
 1. Check if the repository has a `.github/PULL_REQUEST_TEMPLATE.md` file
-2. If it exists, ensure your commit message body follows the template structure
-3. Include all required sections from the PR template in your commit message
-4. This allows the PR description to be auto-populated correctly when creating the PR
+2. If it exists, the squashed commit message MUST include all template sections
+3. This allows the PR description to be auto-populated when creating the PR
+4. If no template exists, use a sensible default format
 
-Example: If the PR template has "Current Behavior", "Expected Behavior", and "Related Issue(s)" sections, include these in your commit body.
+### Example Workflow:
+```bash
+# After completing all work, squash commits
+git log --oneline -5  # Check how many commits to squash
+git reset --soft HEAD~4  # Reset last 4 commits but keep changes
+git commit -m "fix(scope): brief description
+
+## Current Behavior
+Description of the behavior before this change
+
+## Expected Behavior  
+Description of the behavior after this change
+
+## Related Issue(s)
+Fixes #123"
+```
+
+### For Nx Repository Specifically:
+Always use the format from `.github/PULL_REQUEST_TEMPLATE.md`:
+- Current Behavior
+- Expected Behavior  
+- Related Issue(s) with "Fixes #NUMBER"
+
+This ensures I don't have to manually type the PR description when opening a PR.
+
+### Complete Task Workflow
+1. Verify all changes work correctly
+2. Stage all modified files: `git add .` or specific files
+3. Check commit count: `git log --oneline -n` 
+4. Squash commits: `git reset --soft HEAD~n` (where n = number of commits)
+5. Create single commit with PR template format
+6. Verify with: `git log --oneline -1`
+7. Branch is ready for push and PR creation
+
+## CRITICAL: Linear Issue References in Commits
+
+When referencing Linear issues in commit messages:
+- Use the Linear issue ID (e.g., DOC-125) in the commit body
+- Do NOT use "Fixes #DOC-125" - Linear issues don't use # syntax
+- For GitHub issues, use "Fixes #123" format
+- The Linear ID helps track work but won't auto-close Linear issues
+
+Example:
+```bash
+git commit -m "docs(astro): remove duplicate titles
+
+## Current Behavior
+...
+
+## Expected Behavior
+...
+
+## Related Issue(s)
+Fixes DOC-125"  # For Linear issues, no # prefix
+```
 
 ## CRITICAL: Plan Mode and Tasks
 
@@ -93,6 +153,9 @@ When making file edits:
 1. Always verify the changes were actually applied (not reverted by linting/formatting)
 2. If files get reverted, understand why and fix the root cause
 3. Don't claim task completion until changes are confirmed to persist
+4. **Run verification scripts** to ensure all expected changes are in place
+5. **Check git status** to confirm all intended files show as modified
+6. **Review changes with git diff** before committing to ensure correctness
 
 ## CRITICAL: MCP Server Usage
 
@@ -562,3 +625,11 @@ Common pitfalls to avoid:
 - Treating code comments as markdown headings
 - Assuming npm packages are available
 - Not preserving existing metadata when updating files
+
+## CRITICAL: Working in Git Worktrees
+
+When working in worktree checkouts (e.g., `/Users/jack/projects/nx-worktrees/`):
+- The `.ai` symlink must still point to the main dot-ai-config location
+- Branch names often match issue IDs (e.g., DOC-125)
+- Remember this is a separate checkout, not the main repo location
+- Commits here don't affect other worktrees until pushed

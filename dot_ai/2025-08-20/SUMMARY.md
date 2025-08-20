@@ -48,7 +48,9 @@
 - This caused work to not be properly tracked in the centralized dot-ai-config
 - **Fix Applied**: Removed incorrect .ai directory and created proper symlink
 
-## Next Steps
-- Changes are ready but not committed (as per instruction not to commit unless explicitly asked)
+## Completed
+- All changes committed in single squashed commit following PR template format
+- Commit: 6b084188c5 - "docs(astro): remove duplicate h1 titles from mdoc pages"
 - All 349 .mdoc files verified to have proper structure
 - No h1 headings remain in content, all titles come from frontmatter
+- Ready to push branch and create PR with auto-populated description

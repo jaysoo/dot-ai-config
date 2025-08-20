@@ -39,16 +39,25 @@
 
 ### 2025-08-20: Remove Duplicate Titles from Documentation
 - **Branch**: DOC-125
+- **Commit**: 6b084188c5
 - **Linear Issue**: [DOC-125](https://linear.app/nxdev/issue/DOC-125/remove-duplicate-titles)
 - **What Was Done**:
   - Fixed duplicate title rendering in Astro/Starlight documentation
   - Removed h1 headings from 10 .mdoc files where they duplicated frontmatter titles
   - Updated `features/run-tasks.mdoc` to use "Tasks" as title with "Run Tasks" as sidebar label
   - Created verification scripts to ensure all 349 .mdoc files have proper structure
+  - Squashed commits with proper PR template format for auto-population
 - **Files Modified**:
-  - All cache plugin overview files (azure, gcs, s3)
-  - Several guide files for Nx Release and Module Boundaries
-  - Core feature documentation files
+  - `astro-docs/src/content/docs/features/maintain-typescript-monorepos.mdoc`
+  - `astro-docs/src/content/docs/features/run-tasks.mdoc`
+  - `astro-docs/src/content/docs/guides/Enforce Module Boundaries/tag-multiple-dimensions.mdoc`
+  - `astro-docs/src/content/docs/guides/Nx Release/configure-custom-registries.mdoc`
+  - `astro-docs/src/content/docs/guides/Nx Release/customize-conventional-commit-types.mdoc`
+  - `astro-docs/src/content/docs/references/Remote Cache Plugins/azure-cache/overview.mdoc`
+  - `astro-docs/src/content/docs/references/Remote Cache Plugins/gcs-cache/overview.mdoc`
+  - `astro-docs/src/content/docs/references/Remote Cache Plugins/s3-cache/overview.mdoc`
+  - `astro-docs/src/content/docs/troubleshooting/resolve-circular-dependencies.mdoc`
+  - `astro-docs/src/content/docs/troubleshooting/troubleshoot-cache-misses.mdoc`
 
 ## Design Decisions & Gotchas
 
