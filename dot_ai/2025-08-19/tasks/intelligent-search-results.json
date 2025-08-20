@@ -1,0 +1,3761 @@
+{
+  "timestamp": "2025-08-19T19:48:55.331Z",
+  "summary": {
+    "totalKeywords": 35,
+    "oceanScore": 0,
+    "enhancedScore": 1.2380952380952381,
+    "exactMatches": 0,
+    "contentMatches": 13,
+    "noMatches": 22,
+    "improvement": 1.2380952380952381
+  },
+  "keywordResults": [
+    {
+      "keyword": "init",
+      "category": "commands",
+      "expectedUrls": [
+        "/reference/core-api/nx/documents/init"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Launch Templates",
+          "url": "https://nx-docs.netlify.app/references/launch-templates/",
+          "pathname": "/references/launch-templates/"
+        },
+        {
+          "position": 2,
+          "title": "launch-templates.<template-name>.init-steps",
+          "url": "https://nx-docs.netlify.app/references/launch-templates/#launch-templatestemplate-nameinit-steps",
+          "pathname": "/references/launch-templates/"
+        },
+        {
+          "position": 3,
+          "title": "launch-templates.<template-name>.init-steps[*].inputs",
+          "url": "https://nx-docs.netlify.app/references/launch-templates/#launch-templatestemplate-nameinit-stepsinputs",
+          "pathname": "/references/launch-templates/"
+        },
+        {
+          "position": 4,
+          "title": "Full Example",
+          "url": "https://nx-docs.netlify.app/references/launch-templates/#full-example",
+          "pathname": "/references/launch-templates/"
+        },
+        {
+          "position": 5,
+          "title": "@nx/owners - Generators",
+          "url": "https://nx-docs.netlify.app/references/powerpack/owners/generators/",
+          "pathname": "/references/powerpack/owners/generators/"
+        },
+        {
+          "position": 6,
+          "title": "init",
+          "url": "https://nx-docs.netlify.app/references/powerpack/owners/generators/#init",
+          "pathname": "/references/powerpack/owners/generators/"
+        },
+        {
+          "position": 7,
+          "title": "@nx/shared-fs-cache - Generators",
+          "url": "https://nx-docs.netlify.app/references/remote-cache-plugins/shared-fs-cache/generators/",
+          "pathname": "/references/remote-cache-plugins/shared-fs-cache/generators/"
+        },
+        {
+          "position": 8,
+          "title": "init",
+          "url": "https://nx-docs.netlify.app/references/remote-cache-plugins/shared-fs-cache/generators/#init",
+          "pathname": "/references/remote-cache-plugins/shared-fs-cache/generators/"
+        },
+        {
+          "position": 9,
+          "title": "Nx Commands",
+          "url": "https://nx-docs.netlify.app/references/commands/",
+          "pathname": "/references/commands/"
+        },
+        {
+          "position": 10,
+          "title": "nx init",
+          "url": "https://nx-docs.netlify.app/references/commands/#nx-init",
+          "pathname": "/references/commands/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "import",
+      "category": "commands",
+      "expectedUrls": [
+        "/reference/core-api/nx/documents/import"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Ban External Imports",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/ban-external-imports/",
+          "pathname": "/guides/enforce-module-boundaries/ban-external-imports/"
+        },
+        {
+          "position": 2,
+          "title": "Ban External Imports",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/ban-external-imports/#_top",
+          "pathname": "/guides/enforce-module-boundaries/ban-external-imports/"
+        },
+        {
+          "position": 3,
+          "title": "Allowlist external imports with allowedExternalImports",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/ban-external-imports/#allowlist-external-imports-with-allowedexternalimports",
+          "pathname": "/guides/enforce-module-boundaries/ban-external-imports/"
+        },
+        {
+          "position": 4,
+          "title": "Import an Existing Project into an Nx Workspace",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/import-project/",
+          "pathname": "/guides/adopting-nx/import-project/"
+        },
+        {
+          "position": 5,
+          "title": "Import an Existing Project into an Nx Workspace",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/import-project/#_top",
+          "pathname": "/guides/adopting-nx/import-project/"
+        },
+        {
+          "position": 6,
+          "title": "Manage Dependencies",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/import-project/#manage-dependencies",
+          "pathname": "/guides/adopting-nx/import-project/"
+        },
+        {
+          "position": 7,
+          "title": "Migrate External Code and Configuration",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/import-project/#migrate-external-code-and-configuration",
+          "pathname": "/guides/adopting-nx/import-project/"
+        },
+        {
+          "position": 8,
+          "title": "Advanced Angular Micro Frontends with Dynamic Module Federation",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/dynamic-module-federation-with-angular/",
+          "pathname": "/technologies/angular/guides/dynamic-module-federation-with-angular/"
+        },
+        {
+          "position": 9,
+          "title": "What was generated?",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/dynamic-module-federation-with-angular/#what-was-generated",
+          "pathname": "/technologies/angular/guides/dynamic-module-federation-with-angular/"
+        },
+        {
+          "position": 10,
+          "title": "Login Application",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/dynamic-module-federation-with-angular/#login-application",
+          "pathname": "/technologies/angular/guides/dynamic-module-federation-with-angular/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "build",
+      "category": "commands",
+      "expectedUrls": [
+        "/concepts/common-tasks"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "@nx/angular - Executors",
+          "url": "https://nx-docs.netlify.app/technologies/angular/executors/",
+          "pathname": "/technologies/angular/executors/"
+        },
+        {
+          "position": 2,
+          "title": "Options",
+          "url": "https://nx-docs.netlify.app/technologies/angular/executors/#options",
+          "pathname": "/technologies/angular/executors/"
+        },
+        {
+          "position": 3,
+          "title": "Options",
+          "url": "https://nx-docs.netlify.app/technologies/angular/executors/#options-1",
+          "pathname": "/technologies/angular/executors/"
+        },
+        {
+          "position": 4,
+          "title": "Examples",
+          "url": "https://nx-docs.netlify.app/technologies/angular/executors/#examples-2",
+          "pathname": "/technologies/angular/executors/"
+        },
+        {
+          "position": 5,
+          "title": "Project Configuration",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 6,
+          "title": "When to Use package.json vs project.json",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#when-to-use-packagejson-vs-projectjson",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 7,
+          "title": "dependsOn",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#dependson",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 8,
+          "title": "Examples",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#examples",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 9,
+          "title": "Setup Incremental Builds for Angular Applications",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/setup-incremental-builds-angular/",
+          "pathname": "/technologies/angular/guides/setup-incremental-builds-angular/"
+        },
+        {
+          "position": 10,
+          "title": "Use buildable libraries",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/setup-incremental-builds-angular/#use-buildable-libraries",
+          "pathname": "/technologies/angular/guides/setup-incremental-builds-angular/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/troubleshooting/performance-profiling",
+            "score": 21,
+            "title": "This builds the \"cart\" application and creates a profile.json file",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/troubleshooting/unknown-local-cache",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/features/manage-releases",
+            "score": 11,
+            "title": "Manage Releases",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "serve",
+      "category": "commands",
+      "expectedUrls": [
+        "/concepts/common-tasks"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Creating a Module Federation Remote",
+          "url": "https://nx-docs.netlify.app/technologies/module-federation/guides/create-a-remote/",
+          "pathname": "/technologies/module-federation/guides/create-a-remote/"
+        },
+        {
+          "position": 2,
+          "title": "Serving your Remote",
+          "url": "https://nx-docs.netlify.app/technologies/module-federation/guides/create-a-remote/#serving-your-remote",
+          "pathname": "/technologies/module-federation/guides/create-a-remote/"
+        },
+        {
+          "position": 3,
+          "title": "Serve-Static Target",
+          "url": "https://nx-docs.netlify.app/technologies/module-federation/guides/create-a-remote/#serve-static-target",
+          "pathname": "/technologies/module-federation/guides/create-a-remote/"
+        },
+        {
+          "position": 4,
+          "title": "Serving your Remote via your Host",
+          "url": "https://nx-docs.netlify.app/technologies/module-federation/guides/create-a-remote/#serving-your-remote-via-your-host",
+          "pathname": "/technologies/module-federation/guides/create-a-remote/"
+        },
+        {
+          "position": 5,
+          "title": "@nx/rspack - Executors",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/rspack/executors/",
+          "pathname": "/technologies/build-tools/rspack/executors/"
+        },
+        {
+          "position": 6,
+          "title": "Options",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/rspack/executors/#options",
+          "pathname": "/technologies/build-tools/rspack/executors/"
+        },
+        {
+          "position": 7,
+          "title": "Options",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/rspack/executors/#options-1",
+          "pathname": "/technologies/build-tools/rspack/executors/"
+        },
+        {
+          "position": 8,
+          "title": "Options",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/rspack/executors/#options-2",
+          "pathname": "/technologies/build-tools/rspack/executors/"
+        },
+        {
+          "position": 9,
+          "title": "@nx/angular - Executors",
+          "url": "https://nx-docs.netlify.app/technologies/angular/executors/",
+          "pathname": "/technologies/angular/executors/"
+        },
+        {
+          "position": 10,
+          "title": "Examples",
+          "url": "https://nx-docs.netlify.app/technologies/angular/executors/#examples-3",
+          "pathname": "/technologies/angular/executors/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/getting-started/ai-setup",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/concepts/common-tasks",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/troubleshooting/troubleshoot-convert-to-inferred",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "lint",
+      "category": "commands",
+      "expectedUrls": [
+        "/concepts/common-tasks"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "@nx/eslint - Executors",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/executors/",
+          "pathname": "/technologies/eslint/executors/"
+        },
+        {
+          "position": 2,
+          "title": "lint",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/executors/#lint",
+          "pathname": "/technologies/eslint/executors/"
+        },
+        {
+          "position": 3,
+          "title": "Examples",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/executors/#examples",
+          "pathname": "/technologies/eslint/executors/"
+        },
+        {
+          "position": 4,
+          "title": "Options",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/executors/#options",
+          "pathname": "/technologies/eslint/executors/"
+        },
+        {
+          "position": 5,
+          "title": "ESLint Plugin for Nx",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/introduction/",
+          "pathname": "/technologies/eslint/introduction/"
+        },
+        {
+          "position": 6,
+          "title": "ESLint Plugin for Nx",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/introduction/#_top",
+          "pathname": "/technologies/eslint/introduction/"
+        },
+        {
+          "position": 7,
+          "title": "How @nx/eslint Infers Tasks",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/introduction/#how-nxeslint-infers-tasks",
+          "pathname": "/technologies/eslint/introduction/"
+        },
+        {
+          "position": 8,
+          "title": "Lint",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/introduction/#lint",
+          "pathname": "/technologies/eslint/introduction/"
+        },
+        {
+          "position": 9,
+          "title": "Angular Monorepo Tutorial",
+          "url": "https://nx-docs.netlify.app/getting-started/tutorials/angular-monorepo/",
+          "pathname": "/getting-started/tutorials/angular-monorepo/"
+        },
+        {
+          "position": 10,
+          "title": "Create Local Libraries",
+          "url": "https://nx-docs.netlify.app/getting-started/tutorials/angular-monorepo/#create-local-libraries",
+          "pathname": "/getting-started/tutorials/angular-monorepo/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/troubleshooting/resolve-circular-dependencies",
+            "score": 11,
+            "title": "Resolve Circular Dependencies",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/features/enforce-module-boundaries",
+            "score": 11,
+            "title": "Enforce Module Boundaries",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/concepts/common-tasks",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "affected",
+      "category": "commands",
+      "expectedUrls": [
+        "/reference/core-api/nx/documents/affected"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Run Only Tasks Affected by a PR",
+          "url": "https://nx-docs.netlify.app/features/ci-features/affected/",
+          "pathname": "/features/ci-features/affected/"
+        },
+        {
+          "position": 2,
+          "title": "Run Only Tasks Affected by a PR",
+          "url": "https://nx-docs.netlify.app/features/ci-features/affected/#_top",
+          "pathname": "/features/ci-features/affected/"
+        },
+        {
+          "position": 3,
+          "title": "Configure Affected on CI",
+          "url": "https://nx-docs.netlify.app/features/ci-features/affected/#configure-affected-on-ci",
+          "pathname": "/features/ci-features/affected/"
+        },
+        {
+          "position": 4,
+          "title": "Marking Projects Affected by Dependency Updates",
+          "url": "https://nx-docs.netlify.app/features/ci-features/affected/#marking-projects-affected-by-dependency-updates",
+          "pathname": "/features/ci-features/affected/"
+        },
+        {
+          "position": 5,
+          "title": "Reduce the Number of Affected Projects in a CI Pipeline Execution",
+          "url": "https://nx-docs.netlify.app/guides/nx-cloud/cipe-affected-project-graph/",
+          "pathname": "/guides/nx-cloud/cipe-affected-project-graph/"
+        },
+        {
+          "position": 6,
+          "title": "Getting to the CI Pipeline Execution Affected Project Graph",
+          "url": "https://nx-docs.netlify.app/guides/nx-cloud/cipe-affected-project-graph/#getting-to-the-ci-pipeline-execution-affected-project-graph",
+          "pathname": "/guides/nx-cloud/cipe-affected-project-graph/"
+        },
+        {
+          "position": 7,
+          "title": "Create a New CI Pipeline Execution with a Code Change",
+          "url": "https://nx-docs.netlify.app/guides/nx-cloud/cipe-affected-project-graph/#create-a-new-ci-pipeline-execution-with-a-code-change",
+          "pathname": "/guides/nx-cloud/cipe-affected-project-graph/"
+        },
+        {
+          "position": 8,
+          "title": "Break Up the Source of the Affected Projects",
+          "url": "https://nx-docs.netlify.app/guides/nx-cloud/cipe-affected-project-graph/#break-up-the-source-of-the-affected-projects",
+          "pathname": "/guides/nx-cloud/cipe-affected-project-graph/"
+        },
+        {
+          "position": 9,
+          "title": "Reduce Wasted Time in CI",
+          "url": "https://nx-docs.netlify.app/concepts/ci-concepts/reduce-waste/",
+          "pathname": "/concepts/ci-concepts/reduce-waste/"
+        },
+        {
+          "position": 10,
+          "title": "Reduce Wasted Time With Affected",
+          "url": "https://nx-docs.netlify.app/concepts/ci-concepts/reduce-waste/#reduce-wasted-time-with-affected",
+          "pathname": "/concepts/ci-concepts/reduce-waste/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/troubleshooting/resolve-circular-dependencies",
+            "score": 11,
+            "title": "Resolve Circular Dependencies",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/references/nxignore",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/concepts/mental-model",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "release",
+      "category": "commands",
+      "expectedUrls": [
+        "/reference/core-api/nx/documents/release",
+        "/features/manage-releases"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Release TypeScript/JavaScript Packages to NPM",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/release-npm-packages/",
+          "pathname": "/guides/nx-release/release-npm-packages/"
+        },
+        {
+          "position": 2,
+          "title": "Configure Projects to Release",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/release-npm-packages/#configure-projects-to-release",
+          "pathname": "/guides/nx-release/release-npm-packages/"
+        },
+        {
+          "position": 3,
+          "title": "Create the First Release",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/release-npm-packages/#create-the-first-release",
+          "pathname": "/guides/nx-release/release-npm-packages/"
+        },
+        {
+          "position": 4,
+          "title": "Customize the Commit Message and Tag Pattern",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/release-npm-packages/#customize-the-commit-message-and-tag-pattern",
+          "pathname": "/guides/nx-release/release-npm-packages/"
+        },
+        {
+          "position": 5,
+          "title": "Using Nx Release with Rust",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/publish-rust-crates/",
+          "pathname": "/guides/nx-release/publish-rust-crates/"
+        },
+        {
+          "position": 6,
+          "title": "Configure Projects to Release",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/publish-rust-crates/#configure-projects-to-release",
+          "pathname": "/guides/nx-release/publish-rust-crates/"
+        },
+        {
+          "position": 7,
+          "title": "Create the First Release",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/publish-rust-crates/#create-the-first-release",
+          "pathname": "/guides/nx-release/publish-rust-crates/"
+        },
+        {
+          "position": 8,
+          "title": "Customize the Commit Message and Tag Pattern",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/publish-rust-crates/#customize-the-commit-message-and-tag-pattern",
+          "pathname": "/guides/nx-release/publish-rust-crates/"
+        },
+        {
+          "position": 9,
+          "title": "nx.json Reference",
+          "url": "https://nx-docs.netlify.app/references/nx-json/",
+          "pathname": "/references/nx-json/"
+        },
+        {
+          "position": 10,
+          "title": "Release",
+          "url": "https://nx-docs.netlify.app/references/nx-json/#release",
+          "pathname": "/references/nx-json/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/features/manage-releases",
+            "score": 13,
+            "title": "Manage Releases",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "migrate",
+      "category": "commands",
+      "expectedUrls": [
+        "/reference/core-api/nx/documents/migrate",
+        "/features/automate-updating-dependencies"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Advanced Update Process",
+          "url": "https://nx-docs.netlify.app/guides/tips-and-tricks/advanced-update/",
+          "pathname": "/guides/tips-and-tricks/advanced-update/"
+        },
+        {
+          "position": 2,
+          "title": "Make changes easier to review by committing after each migration runs",
+          "url": "https://nx-docs.netlify.app/guides/tips-and-tricks/advanced-update/#make-changes-easier-to-review-by-committing-after-each-migration-runs",
+          "pathname": "/guides/tips-and-tricks/advanced-update/"
+        },
+        {
+          "position": 3,
+          "title": "Customizing which migrations run by altering migrations.json",
+          "url": "https://nx-docs.netlify.app/guides/tips-and-tricks/advanced-update/#customizing-which-migrations-run-by-altering-migrationsjson",
+          "pathname": "/guides/tips-and-tricks/advanced-update/"
+        },
+        {
+          "position": 4,
+          "title": "Identifying the Nx version to migrate from to collect previously skipped updates",
+          "url": "https://nx-docs.netlify.app/guides/tips-and-tricks/advanced-update/#identifying-the-nx-version-to-migrate-from-to-collect-previously-skipped-updates",
+          "pathname": "/guides/tips-and-tricks/advanced-update/"
+        },
+        {
+          "position": 5,
+          "title": "Automate Updating Dependencies",
+          "url": "https://nx-docs.netlify.app/features/automate-updating-dependencies/",
+          "pathname": "/features/automate-updating-dependencies/"
+        },
+        {
+          "position": 6,
+          "title": "How Does It Work?",
+          "url": "https://nx-docs.netlify.app/features/automate-updating-dependencies/#how-does-it-work",
+          "pathname": "/features/automate-updating-dependencies/"
+        },
+        {
+          "position": 7,
+          "title": "Step 1: Update Dependencies and Generate Migrations",
+          "url": "https://nx-docs.netlify.app/features/automate-updating-dependencies/#step-1-update-dependencies-and-generate-migrations",
+          "pathname": "/features/automate-updating-dependencies/"
+        },
+        {
+          "position": 8,
+          "title": "Step 2: Run Migrations",
+          "url": "https://nx-docs.netlify.app/features/automate-updating-dependencies/#step-2-run-migrations",
+          "pathname": "/features/automate-updating-dependencies/"
+        },
+        {
+          "position": 9,
+          "title": "Nx Console Migrate UI",
+          "url": "https://nx-docs.netlify.app/guides/nx-console/console-migrate-ui/",
+          "pathname": "/guides/nx-console/console-migrate-ui/"
+        },
+        {
+          "position": 10,
+          "title": "Starting the Migration",
+          "url": "https://nx-docs.netlify.app/guides/nx-console/console-migrate-ui/#starting-the-migration",
+          "pathname": "/guides/nx-console/console-migrate-ui/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/features/automate-updating-dependencies",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/guides/Tasks & Caching/convert-to-inferred",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/guides/Nx Console/console-migrate-ui",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "atomizer",
+      "category": "features",
+      "expectedUrls": [
+        "/ci/features/split-e2e-tasks"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Migrate to Inferred Tasks (Project Crystal)",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        },
+        {
+          "position": 2,
+          "title": "Migrate to Inferred Tasks (Project Crystal)",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/#_top",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        },
+        {
+          "position": 3,
+          "title": "Enable Atomizer (task splitting)",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/#enable-atomizer-task-splitting",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        },
+        {
+          "position": 4,
+          "title": "Overview of the Nx Jest Plugin",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/introduction/",
+          "pathname": "/technologies/test-tools/jest/introduction/"
+        },
+        {
+          "position": 5,
+          "title": "Configuring @nx/jest/plugin for both E2E and Unit Tests",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/introduction/#configuring-nxjestplugin-for-both-e2e-and-unit-tests",
+          "pathname": "/technologies/test-tools/jest/introduction/"
+        },
+        {
+          "position": 6,
+          "title": "Splitting E2E Tests",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/introduction/#splitting-e2e-tests",
+          "pathname": "/technologies/test-tools/jest/introduction/"
+        },
+        {
+          "position": 7,
+          "title": "Customizing atomized unit/e2e tasks group name",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/introduction/#customizing-atomized-unite2e-tasks-group-name",
+          "pathname": "/technologies/test-tools/jest/introduction/"
+        },
+        {
+          "position": 8,
+          "title": "Automatically Split E2E Tasks by File (Atomizer)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        },
+        {
+          "position": 9,
+          "title": "Automatically Split E2E Tasks by File (Atomizer)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/#_top",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        },
+        {
+          "position": 10,
+          "title": "Verify Automated Task Splitting Works",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/#verify-automated-task-splitting-works",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "split tasks",
+      "category": "features",
+      "expectedUrls": [
+        "/ci/features/split-e2e-tasks"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Automatically Split E2E Tasks by File (Atomizer)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        },
+        {
+          "position": 2,
+          "title": "Automatically Split E2E Tasks by File (Atomizer)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/#_top",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        },
+        {
+          "position": 3,
+          "title": "Update an Existing e2e Project to use Automated Task Splitting",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/#update-an-existing-e2e-project-to-use-automated-task-splitting",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        },
+        {
+          "position": 4,
+          "title": "Verify Automated Task Splitting Works",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/#verify-automated-task-splitting-works",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        },
+        {
+          "position": 5,
+          "title": "Migrate to Inferred Tasks (Project Crystal)",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        },
+        {
+          "position": 6,
+          "title": "Migrate to Inferred Tasks (Project Crystal)",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/#_top",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        },
+        {
+          "position": 7,
+          "title": "Understand the Migration Process",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/#understand-the-migration-process",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        },
+        {
+          "position": 8,
+          "title": "Enable Atomizer (task splitting)",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/#enable-atomizer-task-splitting",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        },
+        {
+          "position": 9,
+          "title": "Overview of the Nx Cypress Plugin",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/cypress/introduction/",
+          "pathname": "/technologies/test-tools/cypress/introduction/"
+        },
+        {
+          "position": 10,
+          "title": "How @nx/cypress Infers Tasks",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/cypress/introduction/#how-nxcypress-infers-tasks",
+          "pathname": "/technologies/test-tools/cypress/introduction/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "distributed tasks",
+      "category": "features",
+      "expectedUrls": [
+        "/ci/features/distribute-task-execution"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Parallelization and Distribution",
+          "url": "https://nx-docs.netlify.app/concepts/ci-concepts/parallelization-distribution/",
+          "pathname": "/concepts/ci-concepts/parallelization-distribution/"
+        },
+        {
+          "position": 2,
+          "title": "Distribution Across Machines",
+          "url": "https://nx-docs.netlify.app/concepts/ci-concepts/parallelization-distribution/#distribution-across-machines",
+          "pathname": "/concepts/ci-concepts/parallelization-distribution/"
+        },
+        {
+          "position": 3,
+          "title": "Manual Distribution",
+          "url": "https://nx-docs.netlify.app/concepts/ci-concepts/parallelization-distribution/#manual-distribution",
+          "pathname": "/concepts/ci-concepts/parallelization-distribution/"
+        },
+        {
+          "position": 4,
+          "title": "Distributed Task Execution Using Nx Agents",
+          "url": "https://nx-docs.netlify.app/concepts/ci-concepts/parallelization-distribution/#distributed-task-execution-using-nx-agents",
+          "pathname": "/concepts/ci-concepts/parallelization-distribution/"
+        },
+        {
+          "position": 5,
+          "title": "Distribute Task Execution (Nx Agents)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 6,
+          "title": "Distribute Task Execution (Nx Agents)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/#_top",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 7,
+          "title": "Enable Nx Agents",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/#enable-nx-agents",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 8,
+          "title": "How Nx Agents Work",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/#how-nx-agents-work",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 9,
+          "title": "Nx Glossary",
+          "url": "https://nx-docs.netlify.app/references/glossary/",
+          "pathname": "/references/glossary/"
+        },
+        {
+          "position": 10,
+          "title": "Distributed Task Execution",
+          "url": "https://nx-docs.netlify.app/references/glossary/#distributed-task-execution",
+          "pathname": "/references/glossary/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "nx agents",
+      "category": "features",
+      "expectedUrls": [
+        "/ci/features/distribute-task-execution"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Distribute Task Execution (Nx Agents)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 2,
+          "title": "Distribute Task Execution (Nx Agents)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/#_top",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 3,
+          "title": "Enable Nx Agents",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/#enable-nx-agents",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 4,
+          "title": "How Nx Agents Work",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/#how-nx-agents-work",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 5,
+          "title": "Manual Distributed Task Execution",
+          "url": "https://nx-docs.netlify.app/guides/nx-cloud/manual-dte/",
+          "pathname": "/guides/nx-cloud/manual-dte/"
+        },
+        {
+          "position": 6,
+          "title": "Manual Distributed Task Execution",
+          "url": "https://nx-docs.netlify.app/guides/nx-cloud/manual-dte/#_top",
+          "pathname": "/guides/nx-cloud/manual-dte/"
+        },
+        {
+          "position": 7,
+          "title": "Understanding \"CI Execution Failed\"",
+          "url": "https://nx-docs.netlify.app/troubleshooting/ci-execution-failed/",
+          "pathname": "/troubleshooting/ci-execution-failed/"
+        },
+        {
+          "position": 8,
+          "title": "A command was issued to stop all Nx Cloud agents",
+          "url": "https://nx-docs.netlify.app/troubleshooting/ci-execution-failed/#a-command-was-issued-to-stop-all-nx-cloud-agents",
+          "pathname": "/troubleshooting/ci-execution-failed/"
+        },
+        {
+          "position": 9,
+          "title": "Failed to start Nx Agents workflow",
+          "url": "https://nx-docs.netlify.app/troubleshooting/ci-execution-failed/#failed-to-start-nx-agents-workflow",
+          "pathname": "/troubleshooting/ci-execution-failed/"
+        },
+        {
+          "position": 10,
+          "title": "Unable to get workflow status from Nx Agents",
+          "url": "https://nx-docs.netlify.app/troubleshooting/ci-execution-failed/#unable-to-get-workflow-status-from-nx-agents",
+          "pathname": "/troubleshooting/ci-execution-failed/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "task pipeline",
+      "category": "features",
+      "expectedUrls": [
+        "/features/run-tasks",
+        "/concepts/task-pipeline-configuration"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Nx Glossary",
+          "url": "https://nx-docs.netlify.app/references/glossary/",
+          "pathname": "/references/glossary/"
+        },
+        {
+          "position": 2,
+          "title": "CIPE (Continuous Integration Pipeline Execution)",
+          "url": "https://nx-docs.netlify.app/references/glossary/#cipe-continuous-integration-pipeline-execution",
+          "pathname": "/references/glossary/"
+        },
+        {
+          "position": 3,
+          "title": "Flaky Tasks",
+          "url": "https://nx-docs.netlify.app/references/glossary/#flaky-tasks",
+          "pathname": "/references/glossary/"
+        },
+        {
+          "position": 4,
+          "title": "Task Pipeline",
+          "url": "https://nx-docs.netlify.app/references/glossary/#task-pipeline",
+          "pathname": "/references/glossary/"
+        },
+        {
+          "position": 5,
+          "title": "Run Tasks",
+          "url": "https://nx-docs.netlify.app/features/run-tasks/",
+          "pathname": "/features/run-tasks/"
+        },
+        {
+          "position": 6,
+          "title": "Tasks",
+          "url": "https://nx-docs.netlify.app/features/run-tasks/#tasks",
+          "pathname": "/features/run-tasks/"
+        },
+        {
+          "position": 7,
+          "title": "Run Tasks for Multiple Projects",
+          "url": "https://nx-docs.netlify.app/features/run-tasks/#run-tasks-for-multiple-projects",
+          "pathname": "/features/run-tasks/"
+        },
+        {
+          "position": 8,
+          "title": "Defining a Task Pipeline",
+          "url": "https://nx-docs.netlify.app/features/run-tasks/#defining-a-task-pipeline",
+          "pathname": "/features/run-tasks/"
+        },
+        {
+          "position": 9,
+          "title": "Reduce the Number of Affected Projects in a CI Pipeline Execution",
+          "url": "https://nx-docs.netlify.app/guides/nx-cloud/cipe-affected-project-graph/",
+          "pathname": "/guides/nx-cloud/cipe-affected-project-graph/"
+        },
+        {
+          "position": 10,
+          "title": "Getting to the CI Pipeline Execution Affected Project Graph",
+          "url": "https://nx-docs.netlify.app/guides/nx-cloud/cipe-affected-project-graph/#getting-to-the-ci-pipeline-execution-affected-project-graph",
+          "pathname": "/guides/nx-cloud/cipe-affected-project-graph/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/concepts/task-pipeline-configuration",
+            "score": 13,
+            "title": "What is a Task Pipeline",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "inferred tasks",
+      "category": "concepts",
+      "expectedUrls": [
+        "/concepts/inferred-tasks"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Inferred Tasks (Project Crystal)",
+          "url": "https://nx-docs.netlify.app/concepts/inferred-tasks/",
+          "pathname": "/concepts/inferred-tasks/"
+        },
+        {
+          "position": 2,
+          "title": "What Is Inferred",
+          "url": "https://nx-docs.netlify.app/concepts/inferred-tasks/#what-is-inferred",
+          "pathname": "/concepts/inferred-tasks/"
+        },
+        {
+          "position": 3,
+          "title": "Overriding Inferred Task Configuration",
+          "url": "https://nx-docs.netlify.app/concepts/inferred-tasks/#overriding-inferred-task-configuration",
+          "pathname": "/concepts/inferred-tasks/"
+        },
+        {
+          "position": 4,
+          "title": "Existing Nx Workspaces",
+          "url": "https://nx-docs.netlify.app/concepts/inferred-tasks/#existing-nx-workspaces",
+          "pathname": "/concepts/inferred-tasks/"
+        },
+        {
+          "position": 5,
+          "title": "Common Tasks",
+          "url": "https://nx-docs.netlify.app/concepts/common-tasks/",
+          "pathname": "/concepts/common-tasks/"
+        },
+        {
+          "position": 6,
+          "title": "build",
+          "url": "https://nx-docs.netlify.app/concepts/common-tasks/#build",
+          "pathname": "/concepts/common-tasks/"
+        },
+        {
+          "position": 7,
+          "title": "serve",
+          "url": "https://nx-docs.netlify.app/concepts/common-tasks/#serve",
+          "pathname": "/concepts/common-tasks/"
+        },
+        {
+          "position": 8,
+          "title": "test",
+          "url": "https://nx-docs.netlify.app/concepts/common-tasks/#test",
+          "pathname": "/concepts/common-tasks/"
+        },
+        {
+          "position": 9,
+          "title": "Overview of the Nx Cypress Plugin",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/cypress/introduction/",
+          "pathname": "/technologies/test-tools/cypress/introduction/"
+        },
+        {
+          "position": 10,
+          "title": "How @nx/cypress Infers Tasks",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/cypress/introduction/#how-nxcypress-infers-tasks",
+          "pathname": "/technologies/test-tools/cypress/introduction/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "nx plugins",
+      "category": "concepts",
+      "expectedUrls": [
+        "/concepts/nx-plugins",
+        "/plugin-registry"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Nx Plugins",
+          "url": "https://nx-docs.netlify.app/plugin-registry/",
+          "pathname": "/plugin-registry/"
+        },
+        {
+          "position": 2,
+          "title": "Nx Plugins",
+          "url": "https://nx-docs.netlify.app/plugin-registry/#_top",
+          "pathname": "/plugin-registry/"
+        },
+        {
+          "position": 3,
+          "title": "Nx Commands",
+          "url": "https://nx-docs.netlify.app/references/commands/",
+          "pathname": "/references/commands/"
+        },
+        {
+          "position": 4,
+          "title": "Nx Commands",
+          "url": "https://nx-docs.netlify.app/references/commands/#_top",
+          "pathname": "/references/commands/"
+        },
+        {
+          "position": 5,
+          "title": "nx repair",
+          "url": "https://nx-docs.netlify.app/references/commands/#nx-repair",
+          "pathname": "/references/commands/"
+        },
+        {
+          "position": 6,
+          "title": "nx list",
+          "url": "https://nx-docs.netlify.app/references/commands/#nx-list",
+          "pathname": "/references/commands/"
+        },
+        {
+          "position": 7,
+          "title": "How to configure Next.js plugins",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/guides/next-config-setup/",
+          "pathname": "/technologies/react/next/guides/next-config-setup/"
+        },
+        {
+          "position": 8,
+          "title": "How to configure Next.js plugins",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/guides/next-config-setup/#_top",
+          "pathname": "/technologies/react/next/guides/next-config-setup/"
+        },
+        {
+          "position": 9,
+          "title": "Composing plugins using composePlugins utility (Nx 16 and later)",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/guides/next-config-setup/#composing-plugins-using-composeplugins-utility-nx-16-and-later",
+          "pathname": "/technologies/react/next/guides/next-config-setup/"
+        },
+        {
+          "position": 10,
+          "title": "Manually composing plugins (Nx 15 and prior)",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/guides/next-config-setup/#manually-composing-plugins-nx-15-and-prior",
+          "pathname": "/technologies/react/next/guides/next-config-setup/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "update",
+      "category": "concepts",
+      "expectedUrls": [
+        "/features/automate-updating-dependencies",
+        "/reference/core-api/nx/documents/migrate"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "@nx/angular - Migrations",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 2,
+          "title": "Package Updates for 21.4.0-ngrx",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#package-updates-for-2140-ngrx",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 3,
+          "title": "update-angular-cli-version-20-1-0",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#update-angular-cli-version-20-1-0",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 4,
+          "title": "Package Updates for 21.3.0",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#package-updates-for-2130",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 5,
+          "title": "Advanced Update Process",
+          "url": "https://nx-docs.netlify.app/guides/tips-and-tricks/advanced-update/",
+          "pathname": "/guides/tips-and-tricks/advanced-update/"
+        },
+        {
+          "position": 6,
+          "title": "Choosing optional package updates to apply",
+          "url": "https://nx-docs.netlify.app/guides/tips-and-tricks/advanced-update/#choosing-optional-package-updates-to-apply",
+          "pathname": "/guides/tips-and-tricks/advanced-update/"
+        },
+        {
+          "position": 7,
+          "title": "Updating dependencies that are behind the versions Nx manages",
+          "url": "https://nx-docs.netlify.app/guides/tips-and-tricks/advanced-update/#updating-dependencies-that-are-behind-the-versions-nx-manages",
+          "pathname": "/guides/tips-and-tricks/advanced-update/"
+        },
+        {
+          "position": 8,
+          "title": "Identifying the Nx version to migrate from to collect previously skipped updates",
+          "url": "https://nx-docs.netlify.app/guides/tips-and-tricks/advanced-update/#identifying-the-nx-version-to-migrate-from-to-collect-previously-skipped-updates",
+          "pathname": "/guides/tips-and-tricks/advanced-update/"
+        },
+        {
+          "position": 9,
+          "title": "@nx/react - Migrations",
+          "url": "https://nx-docs.netlify.app/technologies/react/migrations/",
+          "pathname": "/technologies/react/migrations/"
+        },
+        {
+          "position": 10,
+          "title": "Package Updates for 21.4.0",
+          "url": "https://nx-docs.netlify.app/technologies/react/migrations/#package-updates-for-2140",
+          "pathname": "/technologies/react/migrations/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "library",
+      "category": "concepts",
+      "expectedUrls": [
+        "/concepts/decisions/project-size"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Manage Library Versions with Module Federation",
+          "url": "https://nx-docs.netlify.app/concepts/module-federation/manage-library-versions-with-module-federation/",
+          "pathname": "/concepts/module-federation/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 2,
+          "title": "4. Singleton Libraries",
+          "url": "https://nx-docs.netlify.app/concepts/module-federation/manage-library-versions-with-module-federation/#4-singleton-libraries",
+          "pathname": "/concepts/module-federation/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 3,
+          "title": "2. Opt out from sharing library versions",
+          "url": "https://nx-docs.netlify.app/concepts/module-federation/manage-library-versions-with-module-federation/#2-opt-out-from-sharing-library-versions",
+          "pathname": "/concepts/module-federation/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 4,
+          "title": "How are library versions determined?",
+          "url": "https://nx-docs.netlify.app/concepts/module-federation/manage-library-versions-with-module-federation/#how-are-library-versions-determined",
+          "pathname": "/concepts/module-federation/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 5,
+          "title": "Manage Library Versions with Module Federation",
+          "url": "https://nx-docs.netlify.app/technologies/module-federation/concepts/manage-library-versions-with-module-federation/",
+          "pathname": "/technologies/module-federation/concepts/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 6,
+          "title": "4. Singleton Libraries",
+          "url": "https://nx-docs.netlify.app/technologies/module-federation/concepts/manage-library-versions-with-module-federation/#4-singleton-libraries",
+          "pathname": "/technologies/module-federation/concepts/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 7,
+          "title": "2. Opt out from sharing library versions",
+          "url": "https://nx-docs.netlify.app/technologies/module-federation/concepts/manage-library-versions-with-module-federation/#2-opt-out-from-sharing-library-versions",
+          "pathname": "/technologies/module-federation/concepts/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 8,
+          "title": "How are library versions determined?",
+          "url": "https://nx-docs.netlify.app/technologies/module-federation/concepts/manage-library-versions-with-module-federation/#how-are-library-versions-determined",
+          "pathname": "/technologies/module-federation/concepts/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 9,
+          "title": "Project Dependency Rules",
+          "url": "https://nx-docs.netlify.app/concepts/decisions/project-dependency-rules/",
+          "pathname": "/concepts/decisions/project-dependency-rules/"
+        },
+        {
+          "position": 10,
+          "title": "Project Dependency Rules",
+          "url": "https://nx-docs.netlify.app/concepts/decisions/project-dependency-rules/#_top",
+          "pathname": "/concepts/decisions/project-dependency-rules/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "nx.json",
+      "category": "reference",
+      "expectedUrls": [
+        "/reference/nx-json"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "nx.json Reference",
+          "url": "https://nx-docs.netlify.app/references/nx-json/",
+          "pathname": "/references/nx-json/"
+        },
+        {
+          "position": 2,
+          "title": "nx.json Reference",
+          "url": "https://nx-docs.netlify.app/references/nx-json/#_top",
+          "pathname": "/references/nx-json/"
+        },
+        {
+          "position": 3,
+          "title": "inputs & namedInputs",
+          "url": "https://nx-docs.netlify.app/references/nx-json/#inputs--namedinputs",
+          "pathname": "/references/nx-json/"
+        },
+        {
+          "position": 4,
+          "title": "Max Cache Size",
+          "url": "https://nx-docs.netlify.app/references/nx-json/#max-cache-size",
+          "pathname": "/references/nx-json/"
+        },
+        {
+          "position": 5,
+          "title": "Overview of the Nx S3 Cache Plugin",
+          "url": "https://nx-docs.netlify.app/references/remote-cache-plugins/s3-cache/overview/",
+          "pathname": "/references/remote-cache-plugins/s3-cache/overview/"
+        },
+        {
+          "position": 6,
+          "title": "Credentials in nx.json File",
+          "url": "https://nx-docs.netlify.app/references/remote-cache-plugins/s3-cache/overview/#credentials-in-nxjson-file",
+          "pathname": "/references/remote-cache-plugins/s3-cache/overview/"
+        },
+        {
+          "position": 7,
+          "title": "3. Configure S3 Cache",
+          "url": "https://nx-docs.netlify.app/references/remote-cache-plugins/s3-cache/overview/#3-configure-s3-cache",
+          "pathname": "/references/remote-cache-plugins/s3-cache/overview/"
+        },
+        {
+          "position": 8,
+          "title": "Cache Modes",
+          "url": "https://nx-docs.netlify.app/references/remote-cache-plugins/s3-cache/overview/#cache-modes",
+          "pathname": "/references/remote-cache-plugins/s3-cache/overview/"
+        },
+        {
+          "position": 9,
+          "title": "Configuring the Cloud Runner",
+          "url": "https://nx-docs.netlify.app/references/config/",
+          "pathname": "/references/config/"
+        },
+        {
+          "position": 10,
+          "title": "Configuring the Cloud Runner",
+          "url": "https://nx-docs.netlify.app/references/config/#_top",
+          "pathname": "/references/config/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "project.json",
+      "category": "reference",
+      "expectedUrls": [
+        "/reference/project-configuration"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Project Configuration",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 2,
+          "title": "When to Use package.json vs project.json",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#when-to-use-packagejson-vs-projectjson",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 3,
+          "title": "tags",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#tags",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 4,
+          "title": "implicitDependencies",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#implicitdependencies",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 5,
+          "title": "Running Custom Commands",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/run-commands-executor/",
+          "pathname": "/guides/tasks--caching/run-commands-executor/"
+        },
+        {
+          "position": 6,
+          "title": "2. Update project.json",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/run-commands-executor/#2-update-projectjson",
+          "pathname": "/guides/tasks--caching/run-commands-executor/"
+        },
+        {
+          "position": 7,
+          "title": "Pass Args to Commands",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/pass-args-to-commands/",
+          "pathname": "/guides/tasks--caching/pass-args-to-commands/"
+        },
+        {
+          "position": 8,
+          "title": "Example project and tasks",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/pass-args-to-commands/#example-project-and-tasks",
+          "pathname": "/guides/tasks--caching/pass-args-to-commands/"
+        },
+        {
+          "position": 9,
+          "title": "Pass args in the project.json task configuration",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/pass-args-to-commands/#pass-args-in-the-projectjson-task-configuration",
+          "pathname": "/guides/tasks--caching/pass-args-to-commands/"
+        },
+        {
+          "position": 10,
+          "title": "Configuring Version Prefix for Dependencies",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/configuration-version-prefix/",
+          "pathname": "/guides/nx-release/configuration-version-prefix/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "angular",
+      "category": "frameworks",
+      "expectedUrls": [
+        "/technologies/angular/api/"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "@nx/angular - Migrations",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 2,
+          "title": "Package Updates for 21.3.0",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#package-updates-for-2130",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 3,
+          "title": "Package Updates for 21.2.0",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#package-updates-for-2120",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 4,
+          "title": "Package Updates for 20.5.0",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#package-updates-for-2050",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 5,
+          "title": "@nx/angular - Generators",
+          "url": "https://nx-docs.netlify.app/technologies/angular/generators/",
+          "pathname": "/technologies/angular/generators/"
+        },
+        {
+          "position": 6,
+          "title": "Examples",
+          "url": "https://nx-docs.netlify.app/technologies/angular/generators/#examples-1",
+          "pathname": "/technologies/angular/generators/"
+        },
+        {
+          "position": 7,
+          "title": "convert-to-application-executor",
+          "url": "https://nx-docs.netlify.app/technologies/angular/generators/#convert-to-application-executor",
+          "pathname": "/technologies/angular/generators/"
+        },
+        {
+          "position": 8,
+          "title": "Specifying a Build Target",
+          "url": "https://nx-docs.netlify.app/technologies/angular/generators/#specifying-a-build-target",
+          "pathname": "/technologies/angular/generators/"
+        },
+        {
+          "position": 9,
+          "title": "Nx and the Angular CLI",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/nx-and-angular/",
+          "pathname": "/technologies/angular/guides/nx-and-angular/"
+        },
+        {
+          "position": 10,
+          "title": "Quick Overview Comparison",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/nx-and-angular/#quick-overview-comparison",
+          "pathname": "/technologies/angular/guides/nx-and-angular/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/concepts/buildable-and-publishable-libraries",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/references/commands",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/getting-started/start-with-existing-project",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "angular matrix",
+      "category": "frameworks",
+      "expectedUrls": [
+        "/technologies/angular/recipes/angular-nx-version-matrix"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Nx and Angular Versions",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/angular-nx-version-matrix/",
+          "pathname": "/technologies/angular/guides/angular-nx-version-matrix/"
+        },
+        {
+          "position": 2,
+          "title": "Nx and Angular Versions",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/angular-nx-version-matrix/#_top",
+          "pathname": "/technologies/angular/guides/angular-nx-version-matrix/"
+        },
+        {
+          "position": 3,
+          "title": "Nx and Angular Version Compatibility Matrix",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/angular-nx-version-matrix/#nx-and-angular-version-compatibility-matrix",
+          "pathname": "/technologies/angular/guides/angular-nx-version-matrix/"
+        },
+        {
+          "position": 4,
+          "title": "Nx and Angular Rspack Version Compatibility Matrix",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/angular-nx-version-matrix/#nx-and-angular-rspack-version-compatibility-matrix",
+          "pathname": "/technologies/angular/guides/angular-nx-version-matrix/"
+        },
+        {
+          "position": 5,
+          "title": "Guides",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/",
+          "pathname": "/technologies/angular/guides/"
+        },
+        {
+          "position": 6,
+          "title": "Guides",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/#_top",
+          "pathname": "/technologies/angular/guides/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "react",
+      "category": "frameworks",
+      "expectedUrls": [
+        "/technologies/react/api/"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "@nx/react - Generators",
+          "url": "https://nx-docs.netlify.app/technologies/react/generators/",
+          "pathname": "/technologies/react/generators/"
+        },
+        {
+          "position": 2,
+          "title": "Examples",
+          "url": "https://nx-docs.netlify.app/technologies/react/generators/#examples",
+          "pathname": "/technologies/react/generators/"
+        },
+        {
+          "position": 3,
+          "title": "cypress-component-configuration",
+          "url": "https://nx-docs.netlify.app/technologies/react/generators/#cypress-component-configuration",
+          "pathname": "/technologies/react/generators/"
+        },
+        {
+          "position": 4,
+          "title": "Specifying a Build Target",
+          "url": "https://nx-docs.netlify.app/technologies/react/generators/#specifying-a-build-target",
+          "pathname": "/technologies/react/generators/"
+        },
+        {
+          "position": 5,
+          "title": "Overview of the Nx React Native Plugin",
+          "url": "https://nx-docs.netlify.app/technologies/react/react-native/introduction/",
+          "pathname": "/technologies/react/react-native/introduction/"
+        },
+        {
+          "position": 6,
+          "title": "Overview of the Nx React Native Plugin",
+          "url": "https://nx-docs.netlify.app/technologies/react/react-native/introduction/#_top",
+          "pathname": "/technologies/react/react-native/introduction/"
+        },
+        {
+          "position": 7,
+          "title": "Installation",
+          "url": "https://nx-docs.netlify.app/technologies/react/react-native/introduction/#installation",
+          "pathname": "/technologies/react/react-native/introduction/"
+        },
+        {
+          "position": 8,
+          "title": "@nx/react-native Configuration",
+          "url": "https://nx-docs.netlify.app/technologies/react/react-native/introduction/#nxreact-native-configuration",
+          "pathname": "/technologies/react/react-native/introduction/"
+        },
+        {
+          "position": 9,
+          "title": "Guides",
+          "url": "https://nx-docs.netlify.app/technologies/react/guides/",
+          "pathname": "/technologies/react/guides/"
+        },
+        {
+          "position": 10,
+          "title": "Guides",
+          "url": "https://nx-docs.netlify.app/technologies/react/guides/#_top",
+          "pathname": "/technologies/react/guides/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/concepts/task-pipeline-configuration",
+            "score": 16,
+            "title": "What is a Task Pipeline",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/concepts/buildable-and-publishable-libraries",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/troubleshooting/troubleshoot-convert-to-inferred",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "nestjs",
+      "category": "frameworks",
+      "expectedUrls": [
+        "/technologies/node/nest/api/"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Nest.js Plugin for Nx",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 2,
+          "title": "Nest.js Plugin for Nx",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/#_top",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 3,
+          "title": "Using CLI Plugins",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/#using-cli-plugins",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 4,
+          "title": "Deployment",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/#deployment",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 5,
+          "title": "NestJS",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/",
+          "pathname": "/technologies/node/nest/"
+        },
+        {
+          "position": 6,
+          "title": "NestJS",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/#_top",
+          "pathname": "/technologies/node/nest/"
+        },
+        {
+          "position": 7,
+          "title": "Node.js",
+          "url": "https://nx-docs.netlify.app/technologies/node/",
+          "pathname": "/technologies/node/"
+        },
+        {
+          "position": 8,
+          "title": "Node.js",
+          "url": "https://nx-docs.netlify.app/technologies/node/#_top",
+          "pathname": "/technologies/node/"
+        },
+        {
+          "position": 9,
+          "title": "Ban External Imports",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/ban-external-imports/",
+          "pathname": "/guides/enforce-module-boundaries/ban-external-imports/"
+        },
+        {
+          "position": 10,
+          "title": "Ban External Imports",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/ban-external-imports/#_top",
+          "pathname": "/guides/enforce-module-boundaries/ban-external-imports/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "nest",
+      "category": "frameworks",
+      "expectedUrls": [
+        "/technologies/node/nest/api/"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Nest.js Plugin for Nx",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 2,
+          "title": "Nest.js Plugin for Nx",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/#_top",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 3,
+          "title": "Create Libraries",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/#create-libraries",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 4,
+          "title": "Nest Generators",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/#nest-generators",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 5,
+          "title": "@nx/nest - Generators",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/generators/",
+          "pathname": "/technologies/node/nest/generators/"
+        },
+        {
+          "position": 6,
+          "title": "@nx/nest - Generators",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/generators/#_top",
+          "pathname": "/technologies/node/nest/generators/"
+        },
+        {
+          "position": 7,
+          "title": "class",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/generators/#class",
+          "pathname": "/technologies/node/nest/generators/"
+        },
+        {
+          "position": 8,
+          "title": "controller",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/generators/#controller",
+          "pathname": "/technologies/node/nest/generators/"
+        },
+        {
+          "position": 9,
+          "title": "Inputs and Named Inputs",
+          "url": "https://nx-docs.netlify.app/references/inputs/",
+          "pathname": "/references/inputs/"
+        },
+        {
+          "position": 10,
+          "title": "Token Behavior with Nested Projects",
+          "url": "https://nx-docs.netlify.app/references/inputs/#token-behavior-with-nested-projects",
+          "pathname": "/references/inputs/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/concepts/buildable-and-publishable-libraries",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/references/nx-json",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/references/inputs",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "next",
+      "category": "frameworks",
+      "expectedUrls": [
+        "/technologies/react/next/api/"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Overview of the Nx Next.js Plugin",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/introduction/",
+          "pathname": "/technologies/react/next/introduction/"
+        },
+        {
+          "position": 2,
+          "title": "How @nx/next Infers Tasks",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/introduction/#how-nxnext-infers-tasks",
+          "pathname": "/technologies/react/next/introduction/"
+        },
+        {
+          "position": 3,
+          "title": "@nx/next Configuration",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/introduction/#nxnext-configuration",
+          "pathname": "/technologies/react/next/introduction/"
+        },
+        {
+          "position": 4,
+          "title": "Building Projects",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/introduction/#building-projects",
+          "pathname": "/technologies/react/next/introduction/"
+        },
+        {
+          "position": 5,
+          "title": "@nx/next - Executors",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/executors/",
+          "pathname": "/technologies/react/next/executors/"
+        },
+        {
+          "position": 6,
+          "title": "For Next.js Standalone projects",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/executors/#for-nextjs-standalone-projects",
+          "pathname": "/technologies/react/next/executors/"
+        },
+        {
+          "position": 7,
+          "title": "Options",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/executors/#options",
+          "pathname": "/technologies/react/next/executors/"
+        },
+        {
+          "position": 8,
+          "title": "For Next.js Standalone projects",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/executors/#for-nextjs-standalone-projects-1",
+          "pathname": "/technologies/react/next/executors/"
+        },
+        {
+          "position": 9,
+          "title": "@nx/next - Generators",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/generators/",
+          "pathname": "/technologies/react/next/generators/"
+        },
+        {
+          "position": 10,
+          "title": "@nx/next - Generators",
+          "url": "https://nx-docs.netlify.app/technologies/react/next/generators/#_top",
+          "pathname": "/technologies/react/next/generators/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/troubleshooting/troubleshoot-convert-to-inferred",
+            "score": 11,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/quickstart",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/guides/ci-deployment",
+            "score": 8,
+            "title": "Prepare Applications for Deployment via CI",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "storybook",
+      "category": "tools",
+      "expectedUrls": [
+        "/technologies/test-tools/storybook/api/"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "@nx/storybook - Generators",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/generators/",
+          "pathname": "/technologies/test-tools/storybook/generators/"
+        },
+        {
+          "position": 2,
+          "title": "configuration",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/generators/#configuration",
+          "pathname": "/technologies/test-tools/storybook/generators/"
+        },
+        {
+          "position": 3,
+          "title": "Generate Storybook configuration using JavaScript",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/generators/#generate-storybook-configuration-using-javascript",
+          "pathname": "/technologies/test-tools/storybook/generators/"
+        },
+        {
+          "position": 4,
+          "title": "migrate-8",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/generators/#migrate-8",
+          "pathname": "/technologies/test-tools/storybook/generators/"
+        },
+        {
+          "position": 5,
+          "title": "Nx Storybook Plugin Overview",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/introduction/",
+          "pathname": "/technologies/test-tools/storybook/introduction/"
+        },
+        {
+          "position": 6,
+          "title": "@nx/storybook Configuration",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/introduction/#nxstorybook-configuration",
+          "pathname": "/technologies/test-tools/storybook/introduction/"
+        },
+        {
+          "position": 7,
+          "title": "Generating Storybook Configuration",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/introduction/#generating-storybook-configuration",
+          "pathname": "/technologies/test-tools/storybook/introduction/"
+        },
+        {
+          "position": 8,
+          "title": "Using Addons",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/introduction/#using-addons",
+          "pathname": "/technologies/test-tools/storybook/introduction/"
+        },
+        {
+          "position": 9,
+          "title": "Storybook best practices for making the most out of Nx",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/guides/best-practices/",
+          "pathname": "/technologies/test-tools/storybook/guides/best-practices/"
+        },
+        {
+          "position": 10,
+          "title": "Build and deploy",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/guides/best-practices/#build-and-deploy",
+          "pathname": "/technologies/test-tools/storybook/guides/best-practices/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/troubleshooting/troubleshoot-convert-to-inferred",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/features/generate-code",
+            "score": 8,
+            "title": "Generate Code",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/concepts/nx-plugins",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "medium"
+      },
+      "explanation": "exact_match",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "eslint",
+      "category": "tools",
+      "expectedUrls": [
+        "/technologies/eslint/api/"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "ESLint Plugin for Nx",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/introduction/",
+          "pathname": "/technologies/eslint/introduction/"
+        },
+        {
+          "position": 2,
+          "title": "ESLint Plugin for Nx",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/introduction/#_top",
+          "pathname": "/technologies/eslint/introduction/"
+        },
+        {
+          "position": 3,
+          "title": "How @nx/eslint Infers Tasks",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/introduction/#how-nxeslint-infers-tasks",
+          "pathname": "/technologies/eslint/introduction/"
+        },
+        {
+          "position": 4,
+          "title": "@nx/eslint Configuration",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/introduction/#nxeslint-configuration",
+          "pathname": "/technologies/eslint/introduction/"
+        },
+        {
+          "position": 5,
+          "title": "@nx/angular - Migrations",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 6,
+          "title": "Package Updates for 20.5.0-angular-eslint",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#package-updates-for-2050-angular-eslint",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 7,
+          "title": "Package Updates for 20.2.0-angular-eslint",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#package-updates-for-2020-angular-eslint",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 8,
+          "title": "Package Updates for 20.2.2-angular-eslint",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#package-updates-for-2022-angular-eslint",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 9,
+          "title": "@nx/eslint - Migrations",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/migrations/",
+          "pathname": "/technologies/eslint/migrations/"
+        },
+        {
+          "position": 10,
+          "title": "Package Updates for 21.2.0-typescript-eslint",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/migrations/#package-updates-for-2120-typescript-eslint",
+          "pathname": "/technologies/eslint/migrations/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/features/enforce-module-boundaries",
+            "score": 11,
+            "title": "Enforce Module Boundaries",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/references/nx-json",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/references/inputs",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "jest",
+      "category": "tools",
+      "expectedUrls": [
+        "/technologies/test-tools/jest/api/"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Overview of the Nx Jest Plugin",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/introduction/",
+          "pathname": "/technologies/test-tools/jest/introduction/"
+        },
+        {
+          "position": 2,
+          "title": "Configuring @nx/jest/plugin for both E2E and Unit Tests",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/introduction/#configuring-nxjestplugin-for-both-e2e-and-unit-tests",
+          "pathname": "/technologies/test-tools/jest/introduction/"
+        },
+        {
+          "position": 3,
+          "title": "Jest",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/introduction/#jest",
+          "pathname": "/technologies/test-tools/jest/introduction/"
+        },
+        {
+          "position": 4,
+          "title": "Global setup/teardown with nx libraries",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/introduction/#global-setupteardown-with-nx-libraries",
+          "pathname": "/technologies/test-tools/jest/introduction/"
+        },
+        {
+          "position": 5,
+          "title": "@nx/jest - Executors",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/executors/",
+          "pathname": "/technologies/test-tools/jest/executors/"
+        },
+        {
+          "position": 6,
+          "title": "@nx/jest - Executors",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/executors/#_top",
+          "pathname": "/technologies/test-tools/jest/executors/"
+        },
+        {
+          "position": 7,
+          "title": "jest",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/executors/#jest",
+          "pathname": "/technologies/test-tools/jest/executors/"
+        },
+        {
+          "position": 8,
+          "title": "Options",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/executors/#options",
+          "pathname": "/technologies/test-tools/jest/executors/"
+        },
+        {
+          "position": 9,
+          "title": "@nx/jest - Migrations",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/migrations/",
+          "pathname": "/technologies/test-tools/jest/migrations/"
+        },
+        {
+          "position": 10,
+          "title": "@nx/jest - Migrations",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/migrations/#_top",
+          "pathname": "/technologies/test-tools/jest/migrations/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/references/project-configuration",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/references/nx-json",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/references/inputs",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "medium"
+      },
+      "explanation": "exact_match",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "vite",
+      "category": "tools",
+      "expectedUrls": [
+        "/technologies/build-tools/vite/api/"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Overview of the Nx Vite Plugin",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/vite/introduction/",
+          "pathname": "/technologies/build-tools/vite/introduction/"
+        },
+        {
+          "position": 2,
+          "title": "Overview of the Nx Vite Plugin",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/vite/introduction/#_top",
+          "pathname": "/technologies/build-tools/vite/introduction/"
+        },
+        {
+          "position": 3,
+          "title": "How @nx/vite Infers Tasks",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/vite/introduction/#how-nxvite-infers-tasks",
+          "pathname": "/technologies/build-tools/vite/introduction/"
+        },
+        {
+          "position": 4,
+          "title": "Generate a new project using Vite",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/vite/introduction/#generate-a-new-project-using-vite",
+          "pathname": "/technologies/build-tools/vite/introduction/"
+        },
+        {
+          "position": 5,
+          "title": "@nx/vite - Generators",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/vite/generators/",
+          "pathname": "/technologies/build-tools/vite/generators/"
+        },
+        {
+          "position": 6,
+          "title": "configuration",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/vite/generators/#configuration",
+          "pathname": "/technologies/build-tools/vite/generators/"
+        },
+        {
+          "position": 7,
+          "title": "Convert a Web app to use Vite",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/vite/generators/#convert-a-web-app-to-use-vite",
+          "pathname": "/technologies/build-tools/vite/generators/"
+        },
+        {
+          "position": 8,
+          "title": "Options",
+          "url": "https://nx-docs.netlify.app/technologies/build-tools/vite/generators/#options-3",
+          "pathname": "/technologies/build-tools/vite/generators/"
+        },
+        {
+          "position": 9,
+          "title": "Using Environment Variables in React Applications",
+          "url": "https://nx-docs.netlify.app/technologies/react/guides/use-environment-variables-in-react/",
+          "pathname": "/technologies/react/guides/use-environment-variables-in-react/"
+        },
+        {
+          "position": 10,
+          "title": "For React applications using Vite",
+          "url": "https://nx-docs.netlify.app/technologies/react/guides/use-environment-variables-in-react/#for-react-applications-using-vite",
+          "pathname": "/technologies/react/guides/use-environment-variables-in-react/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/troubleshooting/troubleshoot-convert-to-inferred",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/guides/ci-deployment",
+            "score": 8,
+            "title": "Prepare Applications for Deployment via CI",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/references/project-configuration",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "medium"
+      },
+      "explanation": "exact_match",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "docker",
+      "category": "tools",
+      "expectedUrls": [],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Release Docker Images",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/release-docker-images/",
+          "pathname": "/guides/nx-release/release-docker-images/"
+        },
+        {
+          "position": 2,
+          "title": "Install Nx Docker Plugin",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/release-docker-images/#install-nx-docker-plugin",
+          "pathname": "/guides/nx-release/release-docker-images/"
+        },
+        {
+          "position": 3,
+          "title": "Set Up a New Release Group",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/release-docker-images/#set-up-a-new-release-group",
+          "pathname": "/guides/nx-release/release-docker-images/"
+        },
+        {
+          "position": 4,
+          "title": "Your First Docker Release",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/release-docker-images/#your-first-docker-release",
+          "pathname": "/guides/nx-release/release-docker-images/"
+        },
+        {
+          "position": 5,
+          "title": "Publish in CI/CD",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/publish-in-ci-cd/",
+          "pathname": "/guides/nx-release/publish-in-ci-cd/"
+        },
+        {
+          "position": 6,
+          "title": "Publishing Docker Images experimental",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/publish-in-ci-cd/#publishing-docker-images",
+          "pathname": "/guides/nx-release/publish-in-ci-cd/"
+        },
+        {
+          "position": 7,
+          "title": "Docker Registry Authentication",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/publish-in-ci-cd/#docker-registry-authentication",
+          "pathname": "/guides/nx-release/publish-in-ci-cd/"
+        },
+        {
+          "position": 8,
+          "title": "Example GitHub Actions Workflow for Docker",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/publish-in-ci-cd/#example-github-actions-workflow-for-docker",
+          "pathname": "/guides/nx-release/publish-in-ci-cd/"
+        },
+        {
+          "position": 9,
+          "title": "nx.json Reference",
+          "url": "https://nx-docs.netlify.app/references/nx-json/",
+          "pathname": "/references/nx-json/"
+        },
+        {
+          "position": 10,
+          "title": "Docker experimental",
+          "url": "https://nx-docs.netlify.app/references/nx-json/#docker",
+          "pathname": "/references/nx-json/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 1,
+      "contentMatches": {
+        "matches": [
+          {
+            "url": "/astro-docs/src/content/docs/guides/ci-deployment",
+            "score": 11,
+            "title": "Prepare Applications for Deployment via CI",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/troubleshooting/troubleshoot-convert-to-inferred",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          },
+          {
+            "url": "/astro-docs/src/content/docs/references/project-configuration",
+            "score": 8,
+            "title": "Untitled",
+            "type": "content_match"
+          }
+        ],
+        "confidence": "high"
+      },
+      "explanation": "content_exists_not_searchable",
+      "bestPosition": "content_match"
+    },
+    {
+      "keyword": "tailwind",
+      "category": "tools",
+      "expectedUrls": [
+        "/technologies/react/recipes/using-tailwind-css-in-react",
+        "/technologies/angular/recipes/using-tailwind-css-with-angular-projects"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Using Tailwind CSS with Angular Projects",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/using-tailwind-css-with-angular-projects/",
+          "pathname": "/technologies/angular/guides/using-tailwind-css-with-angular-projects/"
+        },
+        {
+          "position": 2,
+          "title": "Configure Tailwind CSS for an application with buildable or publishable libraries as dependencies",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/using-tailwind-css-with-angular-projects/#configure-tailwind-css-for-an-application-with-buildable-or-publishable-libraries-as-dependencies",
+          "pathname": "/technologies/angular/guides/using-tailwind-css-with-angular-projects/"
+        },
+        {
+          "position": 3,
+          "title": "Configure Tailwind CSS for multiple applications with different themes and sharing common buildable or publishable libraries",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/using-tailwind-css-with-angular-projects/#configure-tailwind-css-for-multiple-applications-with-different-themes-and-sharing-common-buildable-or-publishable-libraries",
+          "pathname": "/technologies/angular/guides/using-tailwind-css-with-angular-projects/"
+        },
+        {
+          "position": 4,
+          "title": "Distribute publishable libraries themes",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/using-tailwind-css-with-angular-projects/#distribute-publishable-libraries-themes",
+          "pathname": "/technologies/angular/guides/using-tailwind-css-with-angular-projects/"
+        },
+        {
+          "position": 5,
+          "title": "Using Tailwind CSS in React and Next.js",
+          "url": "https://nx-docs.netlify.app/technologies/react/guides/using-tailwind-css-in-react/",
+          "pathname": "/technologies/react/guides/using-tailwind-css-in-react/"
+        },
+        {
+          "position": 6,
+          "title": "Step 1: Install Tailwind Dependencies",
+          "url": "https://nx-docs.netlify.app/technologies/react/guides/using-tailwind-css-in-react/#step-1-install-tailwind-dependencies",
+          "pathname": "/technologies/react/guides/using-tailwind-css-in-react/"
+        },
+        {
+          "position": 7,
+          "title": "Introducing Nx Utility for Better Tailwind Purging",
+          "url": "https://nx-docs.netlify.app/technologies/react/guides/using-tailwind-css-in-react/#introducing-nx-utility-for-better-tailwind-purging",
+          "pathname": "/technologies/react/guides/using-tailwind-css-in-react/"
+        },
+        {
+          "position": 8,
+          "title": "Step 3: Import Tailwind CSS Styles",
+          "url": "https://nx-docs.netlify.app/technologies/react/guides/using-tailwind-css-in-react/#step-3-import-tailwind-css-styles",
+          "pathname": "/technologies/react/guides/using-tailwind-css-in-react/"
+        },
+        {
+          "position": 9,
+          "title": "Angular - Configuring styles and preprocessor options",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/guides/angular-configuring-styles/",
+          "pathname": "/technologies/test-tools/storybook/guides/angular-configuring-styles/"
+        },
+        {
+          "position": 10,
+          "title": "Tailwind CSS configuration",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/storybook/guides/angular-configuring-styles/#tailwind-css-configuration",
+          "pathname": "/technologies/test-tools/storybook/guides/angular-configuring-styles/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "pnpm",
+      "category": "tools",
+      "expectedUrls": [
+        "/recipes/adopting-nx/adding-to-monorepo"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Updating Version References in Manifest Files",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/updating-version-references/",
+          "pathname": "/guides/nx-release/updating-version-references/"
+        },
+        {
+          "position": 2,
+          "title": "Scenario 2: I want to publish from a custom dist directory and update references in my both my source and dist package.json files",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/updating-version-references/#scenario-2-i-want-to-publish-from-a-custom-dist-directory-and-update-references-in-my-both-my-source-and-dist-packagejson-files",
+          "pathname": "/guides/nx-release/updating-version-references/"
+        },
+        {
+          "position": 3,
+          "title": "Scenario 3: I want to publish from a custom dist directory and not update references in my source package.json files",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/updating-version-references/#scenario-3-i-want-to-publish-from-a-custom-dist-directory-and-not-update-references-in-my-source-packagejson-files",
+          "pathname": "/guides/nx-release/updating-version-references/"
+        },
+        {
+          "position": 4,
+          "title": "Scenario 4: I want to update package versions directly in my source files, but use local dependency references via file/workspace",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/updating-version-references/#scenario-4-i-want-to-update-package-versions-directly-in-my-source-files-but-use-local-dependency-references-via-fileworkspace",
+          "pathname": "/guides/nx-release/updating-version-references/"
+        },
+        {
+          "position": 5,
+          "title": "Adding Nx to NPM/Yarn/PNPM Workspace",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/adding-to-monorepo/",
+          "pathname": "/guides/adopting-nx/adding-to-monorepo/"
+        },
+        {
+          "position": 6,
+          "title": "Adding Nx to NPM/Yarn/PNPM Workspace",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/adding-to-monorepo/#_top",
+          "pathname": "/guides/adopting-nx/adding-to-monorepo/"
+        },
+        {
+          "position": 7,
+          "title": "Incrementally Adopting Nx",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/adding-to-monorepo/#incrementally-adopting-nx",
+          "pathname": "/guides/adopting-nx/adding-to-monorepo/"
+        },
+        {
+          "position": 8,
+          "title": "Workspace Watching",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/workspace-watching/",
+          "pathname": "/guides/tasks--caching/workspace-watching/"
+        },
+        {
+          "position": 9,
+          "title": "Running Nx watch with package managers",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/workspace-watching/#running-nx-watch-with-package-managers",
+          "pathname": "/guides/tasks--caching/workspace-watching/"
+        },
+        {
+          "position": 10,
+          "title": "pnpm",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/workspace-watching/#pnpm",
+          "pathname": "/guides/tasks--caching/workspace-watching/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "onlyDependOnLibsWithTags",
+      "category": "api",
+      "expectedUrls": [
+        "/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Tag in Multiple Dimensions",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/tag-multiple-dimensions/",
+          "pathname": "/guides/enforce-module-boundaries/tag-multiple-dimensions/"
+        },
+        {
+          "position": 2,
+          "title": "Tag in Multiple Dimensions",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/tag-multiple-dimensions/#tag-in-multiple-dimensions",
+          "pathname": "/guides/enforce-module-boundaries/tag-multiple-dimensions/"
+        },
+        {
+          "position": 3,
+          "title": "Matching multiple source tags",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/tag-multiple-dimensions/#matching-multiple-source-tags",
+          "pathname": "/guides/enforce-module-boundaries/tag-multiple-dimensions/"
+        },
+        {
+          "position": 4,
+          "title": "Enforce Module Boundaries",
+          "url": "https://nx-docs.netlify.app/features/enforce-module-boundaries/",
+          "pathname": "/features/enforce-module-boundaries/"
+        },
+        {
+          "position": 5,
+          "title": "Tags",
+          "url": "https://nx-docs.netlify.app/features/enforce-module-boundaries/#tags",
+          "pathname": "/features/enforce-module-boundaries/"
+        },
+        {
+          "position": 6,
+          "title": "Tag formats",
+          "url": "https://nx-docs.netlify.app/features/enforce-module-boundaries/#tag-formats",
+          "pathname": "/features/enforce-module-boundaries/"
+        },
+        {
+          "position": 7,
+          "title": "Ban Dependencies with Certain Tags",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/ban-dependencies-with-tags/",
+          "pathname": "/guides/enforce-module-boundaries/ban-dependencies-with-tags/"
+        },
+        {
+          "position": 8,
+          "title": "Ban Dependencies with Certain Tags",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/ban-dependencies-with-tags/#_top",
+          "pathname": "/guides/enforce-module-boundaries/ban-dependencies-with-tags/"
+        },
+        {
+          "position": 9,
+          "title": "Switching to ESLint's Flat Config Format",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/guides/flat-config/",
+          "pathname": "/technologies/eslint/guides/flat-config/"
+        },
+        {
+          "position": 10,
+          "title": "Switching to ESLint's Flat Config Format",
+          "url": "https://nx-docs.netlify.app/technologies/eslint/guides/flat-config/#_top",
+          "pathname": "/technologies/eslint/guides/flat-config/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "addProjectConfiguration",
+      "category": "api",
+      "expectedUrls": [
+        "/reference/core-api/devkit/documents/addProjectConfiguration"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "addProjectConfiguration",
+          "url": "https://nx-docs.netlify.app/references/devkit/addprojectconfiguration/",
+          "pathname": "/references/devkit/addprojectconfiguration/"
+        },
+        {
+          "position": 2,
+          "title": "addProjectConfiguration",
+          "url": "https://nx-docs.netlify.app/references/devkit/addprojectconfiguration/#_top",
+          "pathname": "/references/devkit/addprojectconfiguration/"
+        },
+        {
+          "position": 3,
+          "title": "Signatures",
+          "url": "https://nx-docs.netlify.app/references/devkit/addprojectconfiguration/#signatures",
+          "pathname": "/references/devkit/addprojectconfiguration/"
+        },
+        {
+          "position": 4,
+          "title": "DevKit Documentation",
+          "url": "https://nx-docs.netlify.app/references/devkit/",
+          "pathname": "/references/devkit/"
+        },
+        {
+          "position": 5,
+          "title": "Functions",
+          "url": "https://nx-docs.netlify.app/references/devkit/#functions",
+          "pathname": "/references/devkit/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    },
+    {
+      "keyword": "dependsOn",
+      "category": "api",
+      "expectedUrls": [
+        "/reference/project-configuration"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Project Configuration",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 2,
+          "title": "When to Use package.json vs project.json",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#when-to-use-packagejson-vs-projectjson",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 3,
+          "title": "dependsOn",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#dependson",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 4,
+          "title": "Examples",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#examples",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 5,
+          "title": "Setup Incremental Builds for Angular Applications",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/setup-incremental-builds-angular/",
+          "pathname": "/technologies/angular/guides/setup-incremental-builds-angular/"
+        },
+        {
+          "position": 6,
+          "title": "Adjust the application executor",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/setup-incremental-builds-angular/#adjust-the-application-executor",
+          "pathname": "/technologies/angular/guides/setup-incremental-builds-angular/"
+        },
+        {
+          "position": 7,
+          "title": "Add Executor to Target Defaults",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/setup-incremental-builds-angular/#add-executor-to-target-defaults",
+          "pathname": "/technologies/angular/guides/setup-incremental-builds-angular/"
+        },
+        {
+          "position": 8,
+          "title": "Build target name",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/setup-incremental-builds-angular/#build-target-name",
+          "pathname": "/technologies/angular/guides/setup-incremental-builds-angular/"
+        },
+        {
+          "position": 9,
+          "title": "Migrating from Turborepo to Nx",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/from-turborepo/",
+          "pathname": "/guides/adopting-nx/from-turborepo/"
+        },
+        {
+          "position": 10,
+          "title": "Example: Basic Configuration Comparison",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/from-turborepo/#example-basic-configuration-comparison",
+          "pathname": "/guides/adopting-nx/from-turborepo/"
+        }
+      ],
+      "oceanScore": 0,
+      "enhancedScore": 0,
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "explanation": "exact_match",
+      "bestPosition": -1
+    }
+  ],
+  "unsureUrls": [
+    {
+      "keyword": "init",
+      "expectedUrls": [
+        "/reference/core-api/nx/documents/init"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Launch Templates",
+          "url": "https://nx-docs.netlify.app/references/launch-templates/",
+          "pathname": "/references/launch-templates/"
+        },
+        {
+          "position": 2,
+          "title": "launch-templates.<template-name>.init-steps",
+          "url": "https://nx-docs.netlify.app/references/launch-templates/#launch-templatestemplate-nameinit-steps",
+          "pathname": "/references/launch-templates/"
+        },
+        {
+          "position": 3,
+          "title": "launch-templates.<template-name>.init-steps[*].inputs",
+          "url": "https://nx-docs.netlify.app/references/launch-templates/#launch-templatestemplate-nameinit-stepsinputs",
+          "pathname": "/references/launch-templates/"
+        },
+        {
+          "position": 4,
+          "title": "Full Example",
+          "url": "https://nx-docs.netlify.app/references/launch-templates/#full-example",
+          "pathname": "/references/launch-templates/"
+        },
+        {
+          "position": 5,
+          "title": "@nx/owners - Generators",
+          "url": "https://nx-docs.netlify.app/references/powerpack/owners/generators/",
+          "pathname": "/references/powerpack/owners/generators/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "import",
+      "expectedUrls": [
+        "/reference/core-api/nx/documents/import"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Ban External Imports",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/ban-external-imports/",
+          "pathname": "/guides/enforce-module-boundaries/ban-external-imports/"
+        },
+        {
+          "position": 2,
+          "title": "Ban External Imports",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/ban-external-imports/#_top",
+          "pathname": "/guides/enforce-module-boundaries/ban-external-imports/"
+        },
+        {
+          "position": 3,
+          "title": "Allowlist external imports with allowedExternalImports",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/ban-external-imports/#allowlist-external-imports-with-allowedexternalimports",
+          "pathname": "/guides/enforce-module-boundaries/ban-external-imports/"
+        },
+        {
+          "position": 4,
+          "title": "Import an Existing Project into an Nx Workspace",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/import-project/",
+          "pathname": "/guides/adopting-nx/import-project/"
+        },
+        {
+          "position": 5,
+          "title": "Import an Existing Project into an Nx Workspace",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/import-project/#_top",
+          "pathname": "/guides/adopting-nx/import-project/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "atomizer",
+      "expectedUrls": [
+        "/ci/features/split-e2e-tasks"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Migrate to Inferred Tasks (Project Crystal)",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        },
+        {
+          "position": 2,
+          "title": "Migrate to Inferred Tasks (Project Crystal)",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/#_top",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        },
+        {
+          "position": 3,
+          "title": "Enable Atomizer (task splitting)",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/#enable-atomizer-task-splitting",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        },
+        {
+          "position": 4,
+          "title": "Overview of the Nx Jest Plugin",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/introduction/",
+          "pathname": "/technologies/test-tools/jest/introduction/"
+        },
+        {
+          "position": 5,
+          "title": "Configuring @nx/jest/plugin for both E2E and Unit Tests",
+          "url": "https://nx-docs.netlify.app/technologies/test-tools/jest/introduction/#configuring-nxjestplugin-for-both-e2e-and-unit-tests",
+          "pathname": "/technologies/test-tools/jest/introduction/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "split tasks",
+      "expectedUrls": [
+        "/ci/features/split-e2e-tasks"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Automatically Split E2E Tasks by File (Atomizer)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        },
+        {
+          "position": 2,
+          "title": "Automatically Split E2E Tasks by File (Atomizer)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/#_top",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        },
+        {
+          "position": 3,
+          "title": "Update an Existing e2e Project to use Automated Task Splitting",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/#update-an-existing-e2e-project-to-use-automated-task-splitting",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        },
+        {
+          "position": 4,
+          "title": "Verify Automated Task Splitting Works",
+          "url": "https://nx-docs.netlify.app/features/ci-features/split-e2e-tasks/#verify-automated-task-splitting-works",
+          "pathname": "/features/ci-features/split-e2e-tasks/"
+        },
+        {
+          "position": 5,
+          "title": "Migrate to Inferred Tasks (Project Crystal)",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/convert-to-inferred/",
+          "pathname": "/guides/tasks--caching/convert-to-inferred/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "distributed tasks",
+      "expectedUrls": [
+        "/ci/features/distribute-task-execution"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Parallelization and Distribution",
+          "url": "https://nx-docs.netlify.app/concepts/ci-concepts/parallelization-distribution/",
+          "pathname": "/concepts/ci-concepts/parallelization-distribution/"
+        },
+        {
+          "position": 2,
+          "title": "Distribution Across Machines",
+          "url": "https://nx-docs.netlify.app/concepts/ci-concepts/parallelization-distribution/#distribution-across-machines",
+          "pathname": "/concepts/ci-concepts/parallelization-distribution/"
+        },
+        {
+          "position": 3,
+          "title": "Manual Distribution",
+          "url": "https://nx-docs.netlify.app/concepts/ci-concepts/parallelization-distribution/#manual-distribution",
+          "pathname": "/concepts/ci-concepts/parallelization-distribution/"
+        },
+        {
+          "position": 4,
+          "title": "Distributed Task Execution Using Nx Agents",
+          "url": "https://nx-docs.netlify.app/concepts/ci-concepts/parallelization-distribution/#distributed-task-execution-using-nx-agents",
+          "pathname": "/concepts/ci-concepts/parallelization-distribution/"
+        },
+        {
+          "position": 5,
+          "title": "Distribute Task Execution (Nx Agents)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "nx agents",
+      "expectedUrls": [
+        "/ci/features/distribute-task-execution"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Distribute Task Execution (Nx Agents)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 2,
+          "title": "Distribute Task Execution (Nx Agents)",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/#_top",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 3,
+          "title": "Enable Nx Agents",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/#enable-nx-agents",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 4,
+          "title": "How Nx Agents Work",
+          "url": "https://nx-docs.netlify.app/features/ci-features/distribute-task-execution/#how-nx-agents-work",
+          "pathname": "/features/ci-features/distribute-task-execution/"
+        },
+        {
+          "position": 5,
+          "title": "Manual Distributed Task Execution",
+          "url": "https://nx-docs.netlify.app/guides/nx-cloud/manual-dte/",
+          "pathname": "/guides/nx-cloud/manual-dte/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "inferred tasks",
+      "expectedUrls": [
+        "/concepts/inferred-tasks"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Inferred Tasks (Project Crystal)",
+          "url": "https://nx-docs.netlify.app/concepts/inferred-tasks/",
+          "pathname": "/concepts/inferred-tasks/"
+        },
+        {
+          "position": 2,
+          "title": "What Is Inferred",
+          "url": "https://nx-docs.netlify.app/concepts/inferred-tasks/#what-is-inferred",
+          "pathname": "/concepts/inferred-tasks/"
+        },
+        {
+          "position": 3,
+          "title": "Overriding Inferred Task Configuration",
+          "url": "https://nx-docs.netlify.app/concepts/inferred-tasks/#overriding-inferred-task-configuration",
+          "pathname": "/concepts/inferred-tasks/"
+        },
+        {
+          "position": 4,
+          "title": "Existing Nx Workspaces",
+          "url": "https://nx-docs.netlify.app/concepts/inferred-tasks/#existing-nx-workspaces",
+          "pathname": "/concepts/inferred-tasks/"
+        },
+        {
+          "position": 5,
+          "title": "Common Tasks",
+          "url": "https://nx-docs.netlify.app/concepts/common-tasks/",
+          "pathname": "/concepts/common-tasks/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "nx plugins",
+      "expectedUrls": [
+        "/concepts/nx-plugins",
+        "/plugin-registry"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Nx Plugins",
+          "url": "https://nx-docs.netlify.app/plugin-registry/",
+          "pathname": "/plugin-registry/"
+        },
+        {
+          "position": 2,
+          "title": "Nx Plugins",
+          "url": "https://nx-docs.netlify.app/plugin-registry/#_top",
+          "pathname": "/plugin-registry/"
+        },
+        {
+          "position": 3,
+          "title": "Nx Commands",
+          "url": "https://nx-docs.netlify.app/references/commands/",
+          "pathname": "/references/commands/"
+        },
+        {
+          "position": 4,
+          "title": "Nx Commands",
+          "url": "https://nx-docs.netlify.app/references/commands/#_top",
+          "pathname": "/references/commands/"
+        },
+        {
+          "position": 5,
+          "title": "nx repair",
+          "url": "https://nx-docs.netlify.app/references/commands/#nx-repair",
+          "pathname": "/references/commands/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "update",
+      "expectedUrls": [
+        "/features/automate-updating-dependencies",
+        "/reference/core-api/nx/documents/migrate"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "@nx/angular - Migrations",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 2,
+          "title": "Package Updates for 21.4.0-ngrx",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#package-updates-for-2140-ngrx",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 3,
+          "title": "update-angular-cli-version-20-1-0",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#update-angular-cli-version-20-1-0",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 4,
+          "title": "Package Updates for 21.3.0",
+          "url": "https://nx-docs.netlify.app/technologies/angular/migrations/#package-updates-for-2130",
+          "pathname": "/technologies/angular/migrations/"
+        },
+        {
+          "position": 5,
+          "title": "Advanced Update Process",
+          "url": "https://nx-docs.netlify.app/guides/tips-and-tricks/advanced-update/",
+          "pathname": "/guides/tips-and-tricks/advanced-update/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "library",
+      "expectedUrls": [
+        "/concepts/decisions/project-size"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Manage Library Versions with Module Federation",
+          "url": "https://nx-docs.netlify.app/concepts/module-federation/manage-library-versions-with-module-federation/",
+          "pathname": "/concepts/module-federation/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 2,
+          "title": "4. Singleton Libraries",
+          "url": "https://nx-docs.netlify.app/concepts/module-federation/manage-library-versions-with-module-federation/#4-singleton-libraries",
+          "pathname": "/concepts/module-federation/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 3,
+          "title": "2. Opt out from sharing library versions",
+          "url": "https://nx-docs.netlify.app/concepts/module-federation/manage-library-versions-with-module-federation/#2-opt-out-from-sharing-library-versions",
+          "pathname": "/concepts/module-federation/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 4,
+          "title": "How are library versions determined?",
+          "url": "https://nx-docs.netlify.app/concepts/module-federation/manage-library-versions-with-module-federation/#how-are-library-versions-determined",
+          "pathname": "/concepts/module-federation/manage-library-versions-with-module-federation/"
+        },
+        {
+          "position": 5,
+          "title": "Manage Library Versions with Module Federation",
+          "url": "https://nx-docs.netlify.app/technologies/module-federation/concepts/manage-library-versions-with-module-federation/",
+          "pathname": "/technologies/module-federation/concepts/manage-library-versions-with-module-federation/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "nx.json",
+      "expectedUrls": [
+        "/reference/nx-json"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "nx.json Reference",
+          "url": "https://nx-docs.netlify.app/references/nx-json/",
+          "pathname": "/references/nx-json/"
+        },
+        {
+          "position": 2,
+          "title": "nx.json Reference",
+          "url": "https://nx-docs.netlify.app/references/nx-json/#_top",
+          "pathname": "/references/nx-json/"
+        },
+        {
+          "position": 3,
+          "title": "inputs & namedInputs",
+          "url": "https://nx-docs.netlify.app/references/nx-json/#inputs--namedinputs",
+          "pathname": "/references/nx-json/"
+        },
+        {
+          "position": 4,
+          "title": "Max Cache Size",
+          "url": "https://nx-docs.netlify.app/references/nx-json/#max-cache-size",
+          "pathname": "/references/nx-json/"
+        },
+        {
+          "position": 5,
+          "title": "Overview of the Nx S3 Cache Plugin",
+          "url": "https://nx-docs.netlify.app/references/remote-cache-plugins/s3-cache/overview/",
+          "pathname": "/references/remote-cache-plugins/s3-cache/overview/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "project.json",
+      "expectedUrls": [
+        "/reference/project-configuration"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Project Configuration",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 2,
+          "title": "When to Use package.json vs project.json",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#when-to-use-packagejson-vs-projectjson",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 3,
+          "title": "tags",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#tags",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 4,
+          "title": "implicitDependencies",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#implicitdependencies",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 5,
+          "title": "Running Custom Commands",
+          "url": "https://nx-docs.netlify.app/guides/tasks--caching/run-commands-executor/",
+          "pathname": "/guides/tasks--caching/run-commands-executor/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "angular matrix",
+      "expectedUrls": [
+        "/technologies/angular/recipes/angular-nx-version-matrix"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Nx and Angular Versions",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/angular-nx-version-matrix/",
+          "pathname": "/technologies/angular/guides/angular-nx-version-matrix/"
+        },
+        {
+          "position": 2,
+          "title": "Nx and Angular Versions",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/angular-nx-version-matrix/#_top",
+          "pathname": "/technologies/angular/guides/angular-nx-version-matrix/"
+        },
+        {
+          "position": 3,
+          "title": "Nx and Angular Version Compatibility Matrix",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/angular-nx-version-matrix/#nx-and-angular-version-compatibility-matrix",
+          "pathname": "/technologies/angular/guides/angular-nx-version-matrix/"
+        },
+        {
+          "position": 4,
+          "title": "Nx and Angular Rspack Version Compatibility Matrix",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/angular-nx-version-matrix/#nx-and-angular-rspack-version-compatibility-matrix",
+          "pathname": "/technologies/angular/guides/angular-nx-version-matrix/"
+        },
+        {
+          "position": 5,
+          "title": "Guides",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/",
+          "pathname": "/technologies/angular/guides/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "nestjs",
+      "expectedUrls": [
+        "/technologies/node/nest/api/"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Nest.js Plugin for Nx",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 2,
+          "title": "Nest.js Plugin for Nx",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/#_top",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 3,
+          "title": "Using CLI Plugins",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/#using-cli-plugins",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 4,
+          "title": "Deployment",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/introduction/#deployment",
+          "pathname": "/technologies/node/nest/introduction/"
+        },
+        {
+          "position": 5,
+          "title": "NestJS",
+          "url": "https://nx-docs.netlify.app/technologies/node/nest/",
+          "pathname": "/technologies/node/nest/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "tailwind",
+      "expectedUrls": [
+        "/technologies/react/recipes/using-tailwind-css-in-react",
+        "/technologies/angular/recipes/using-tailwind-css-with-angular-projects"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Using Tailwind CSS with Angular Projects",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/using-tailwind-css-with-angular-projects/",
+          "pathname": "/technologies/angular/guides/using-tailwind-css-with-angular-projects/"
+        },
+        {
+          "position": 2,
+          "title": "Configure Tailwind CSS for an application with buildable or publishable libraries as dependencies",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/using-tailwind-css-with-angular-projects/#configure-tailwind-css-for-an-application-with-buildable-or-publishable-libraries-as-dependencies",
+          "pathname": "/technologies/angular/guides/using-tailwind-css-with-angular-projects/"
+        },
+        {
+          "position": 3,
+          "title": "Configure Tailwind CSS for multiple applications with different themes and sharing common buildable or publishable libraries",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/using-tailwind-css-with-angular-projects/#configure-tailwind-css-for-multiple-applications-with-different-themes-and-sharing-common-buildable-or-publishable-libraries",
+          "pathname": "/technologies/angular/guides/using-tailwind-css-with-angular-projects/"
+        },
+        {
+          "position": 4,
+          "title": "Distribute publishable libraries themes",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/using-tailwind-css-with-angular-projects/#distribute-publishable-libraries-themes",
+          "pathname": "/technologies/angular/guides/using-tailwind-css-with-angular-projects/"
+        },
+        {
+          "position": 5,
+          "title": "Using Tailwind CSS in React and Next.js",
+          "url": "https://nx-docs.netlify.app/technologies/react/guides/using-tailwind-css-in-react/",
+          "pathname": "/technologies/react/guides/using-tailwind-css-in-react/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "pnpm",
+      "expectedUrls": [
+        "/recipes/adopting-nx/adding-to-monorepo"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Updating Version References in Manifest Files",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/updating-version-references/",
+          "pathname": "/guides/nx-release/updating-version-references/"
+        },
+        {
+          "position": 2,
+          "title": "Scenario 2: I want to publish from a custom dist directory and update references in my both my source and dist package.json files",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/updating-version-references/#scenario-2-i-want-to-publish-from-a-custom-dist-directory-and-update-references-in-my-both-my-source-and-dist-packagejson-files",
+          "pathname": "/guides/nx-release/updating-version-references/"
+        },
+        {
+          "position": 3,
+          "title": "Scenario 3: I want to publish from a custom dist directory and not update references in my source package.json files",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/updating-version-references/#scenario-3-i-want-to-publish-from-a-custom-dist-directory-and-not-update-references-in-my-source-packagejson-files",
+          "pathname": "/guides/nx-release/updating-version-references/"
+        },
+        {
+          "position": 4,
+          "title": "Scenario 4: I want to update package versions directly in my source files, but use local dependency references via file/workspace",
+          "url": "https://nx-docs.netlify.app/guides/nx-release/updating-version-references/#scenario-4-i-want-to-update-package-versions-directly-in-my-source-files-but-use-local-dependency-references-via-fileworkspace",
+          "pathname": "/guides/nx-release/updating-version-references/"
+        },
+        {
+          "position": 5,
+          "title": "Adding Nx to NPM/Yarn/PNPM Workspace",
+          "url": "https://nx-docs.netlify.app/guides/adopting-nx/adding-to-monorepo/",
+          "pathname": "/guides/adopting-nx/adding-to-monorepo/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "onlyDependOnLibsWithTags",
+      "expectedUrls": [
+        "/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Tag in Multiple Dimensions",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/tag-multiple-dimensions/",
+          "pathname": "/guides/enforce-module-boundaries/tag-multiple-dimensions/"
+        },
+        {
+          "position": 2,
+          "title": "Tag in Multiple Dimensions",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/tag-multiple-dimensions/#tag-in-multiple-dimensions",
+          "pathname": "/guides/enforce-module-boundaries/tag-multiple-dimensions/"
+        },
+        {
+          "position": 3,
+          "title": "Matching multiple source tags",
+          "url": "https://nx-docs.netlify.app/guides/enforce-module-boundaries/tag-multiple-dimensions/#matching-multiple-source-tags",
+          "pathname": "/guides/enforce-module-boundaries/tag-multiple-dimensions/"
+        },
+        {
+          "position": 4,
+          "title": "Enforce Module Boundaries",
+          "url": "https://nx-docs.netlify.app/features/enforce-module-boundaries/",
+          "pathname": "/features/enforce-module-boundaries/"
+        },
+        {
+          "position": 5,
+          "title": "Tags",
+          "url": "https://nx-docs.netlify.app/features/enforce-module-boundaries/#tags",
+          "pathname": "/features/enforce-module-boundaries/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "addProjectConfiguration",
+      "expectedUrls": [
+        "/reference/core-api/devkit/documents/addProjectConfiguration"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "addProjectConfiguration",
+          "url": "https://nx-docs.netlify.app/references/devkit/addprojectconfiguration/",
+          "pathname": "/references/devkit/addprojectconfiguration/"
+        },
+        {
+          "position": 2,
+          "title": "addProjectConfiguration",
+          "url": "https://nx-docs.netlify.app/references/devkit/addprojectconfiguration/#_top",
+          "pathname": "/references/devkit/addprojectconfiguration/"
+        },
+        {
+          "position": 3,
+          "title": "Signatures",
+          "url": "https://nx-docs.netlify.app/references/devkit/addprojectconfiguration/#signatures",
+          "pathname": "/references/devkit/addprojectconfiguration/"
+        },
+        {
+          "position": 4,
+          "title": "DevKit Documentation",
+          "url": "https://nx-docs.netlify.app/references/devkit/",
+          "pathname": "/references/devkit/"
+        },
+        {
+          "position": 5,
+          "title": "Functions",
+          "url": "https://nx-docs.netlify.app/references/devkit/#functions",
+          "pathname": "/references/devkit/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    },
+    {
+      "keyword": "dependsOn",
+      "expectedUrls": [
+        "/reference/project-configuration"
+      ],
+      "searchResults": [
+        {
+          "position": 1,
+          "title": "Project Configuration",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 2,
+          "title": "When to Use package.json vs project.json",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#when-to-use-packagejson-vs-projectjson",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 3,
+          "title": "dependsOn",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#dependson",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 4,
+          "title": "Examples",
+          "url": "https://nx-docs.netlify.app/references/project-configuration/#examples",
+          "pathname": "/references/project-configuration/"
+        },
+        {
+          "position": 5,
+          "title": "Setup Incremental Builds for Angular Applications",
+          "url": "https://nx-docs.netlify.app/technologies/angular/guides/setup-incremental-builds-angular/",
+          "pathname": "/technologies/angular/guides/setup-incremental-builds-angular/"
+        }
+      ],
+      "contentMatches": {
+        "matches": [],
+        "confidence": "none"
+      },
+      "reason": "no_clear_match_found"
+    }
+  ]
+}

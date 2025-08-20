@@ -42,6 +42,36 @@ Example: If the PR template has "Current Behavior", "Expected Behavior", and "Re
 
 Make sure to check @~/.claude/commands/plan-task.md for how tasks should be planned. Make sure there is a task .md file written down before executing phases and steps, and update the file as you go.
 
+## CRITICAL: Reading Issue Descriptions First
+
+When working on a Linear issue:
+1. ALWAYS use WebFetch or mcp__Linear__get_issue to read the FULL issue description first
+2. DO NOT assume what needs to be done based on the title alone
+3. The issue description often contains specific implementation instructions that override what the title might suggest
+
+## CRITICAL: Task Planning in .ai Folder
+
+When starting ANY task from Linear or GitHub:
+1. IMMEDIATELY create the .ai symlink if not present: `ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai`
+2. Create task plan in `.ai/yyyy-mm-dd/tasks/` BEFORE starting any implementation
+3. Update the plan as you work through the task
+4. This is NOT optional - it must be done for every task
+
+## CRITICAL: Understanding Astro/Starlight Documentation Structure
+
+When working with Astro docs (astro-docs project):
+- Starlight renders the title from frontmatter, not from h1 in content
+- If both frontmatter title and h1 exist, they will duplicate
+- To fix title/h2 distinction issues: remove h1 from content, keep title in frontmatter
+- Always preserve sidebar labels when changing titles
+
+## CRITICAL: Verifying Changes Before Claiming Completion
+
+When making file edits:
+1. Always verify the changes were actually applied (not reverted by linting/formatting)
+2. If files get reverted, understand why and fix the root cause
+3. Don't claim task completion until changes are confirmed to persist
+
 ## CRITICAL: MCP Server Usage
 
 **ALWAYS use the MyNotes MCP server tools FIRST when I ask about:**
@@ -386,4 +416,97 @@ When testing local development servers:
 - Use Playwright MCP for real-time verification of UI changes
 - Test across multiple sections/pages to ensure consistency
 - Verify both functionality and UX (like collapsed states, ordering)
+
+## CRITICAL: Search Quality Assessment and URL Matching
+
+When working on search quality comparisons or Ocean scoring tasks:
+
+### Check Ocean Script First
+- Ocean script location: `~/projects/ocean/tools/scripts/scorecards/nx-dev-search-score.ts`
+- ALWAYS use the exact Ocean keywords and expected URLs, not custom keyword sets
+- Ocean has 35 official keywords across 6 categories (commands, features, concepts, reference, frameworks, tools, api)
+
+### Intelligent URL Matching
+When comparing search results to expected URLs:
+- **Flexible path matching**: `/reference/nx-json` should match `/references/nx-json`
+- **Better alternatives**: Introduction pages are often better than API pages for users
+- **Path variants**: `/ci/features/` vs `/features/ci-features/` are equivalent
+- **Semantic matching**: Related content may be more valuable than exact URL matches
+
+### Avoid Initial Mistakes
+- **Don't create custom keyword lists** - use existing Ocean script
+- **Don't use overly strict URL matching** - implement intelligent matching
+- **Don't assume 0 score means no content** - check actual content quality
+- **Do recalculate scores** with flexible matching after initial assessment
+
+## CRITICAL: Content Analysis for Documentation Sites
+
+When analyzing documentation sites (especially Astro/Starlight):
+
+### mdoc File Analysis
+- Look for content in `.mdoc` files under the documentation root
+- Build content maps to understand what documentation exists vs what's searchable
+- Check for content-search discrepancy (content exists but isn't discoverable)
+
+### Search vs Content Gap
+- Sites may have rich content that isn't properly indexed/searchable
+- Score both "exact matches" and "content quality" separately
+- Generate lists of content that needs better search discoverability
+
+### Manual Review Tracking
+- Always generate lists of ambiguous cases for human review
+- Include expected URLs vs actual URLs found
+- Provide confidence levels (high/medium/low) for matches
+- Allow for user decision on URL equivalency
+
+## CRITICAL: Ocean Script Integration
+
+When working with Ocean scoring:
+
+### Ocean Score Calculation
+- Formula: `(10 × total_points) / (total_keywords × 3)`
+- Position scoring: 3 points (1-3), 2 points (4-6), 1 point (7-9), 0 points (10+)
+- Use `.endsWith()` matching for URL comparison, not exact string matching
+
+### Ocean Script Updates
+- Ocean script may be updated with new expected URLs during your work
+- Always re-read the Ocean script if URLs seem mismatched
+- Document URL structure migrations (like `/nx-api/` to `/technologies/`)
+
+### Comparative Analysis
+- Run Ocean scoring on both sites being compared
+- Provide category breakdowns (commands, features, concepts, etc.)
+- Calculate improvement scores and identify winning categories
+- Generate actionable insights, not just raw scores
+
+## CRITICAL: Nx Monorepo Development Patterns
+
+### Astro Documentation Projects
+- Astro projects in Nx monorepos typically don't have standard npm scripts
+- Use `nx run PROJECT:serve` or navigate to project directory and use `npx astro dev --port PORT`
+- Don't assume `npm run dev` exists - check project.json for available targets
+
+### Build Process in Large Monorepos
+- Avoid running full builds (`pnpm build`, `nx build`) for testing single changes
+- Full builds can take 2+ minutes and often timeout
+- Use project-specific builds: `nx run PROJECT:build` or development servers instead
+- For quick validation, start dev servers rather than full builds
+
+### Shared Components Between Deployment Contexts
+- Components shared between main site (nx.dev) and docs site (astro-docs) need deployment-aware configuration
+- Use props to control behavior rather than environment detection
+- Main site and docs site may have different URL structures and domain requirements
+- Always consider backward compatibility when modifying shared components
+
+### Nx-Dev Project Structure
+- `nx-dev/ui-common/` contains shared UI components like Footer, Header
+- `astro-docs/` is the standalone documentation site using Astro + Starlight
+- Shared components are imported as workspace dependencies (`@nx/nx-dev-ui-common`)
+- Check imports in components to understand dependency structure
+
+### TypeScript Compilation in Nx Projects
+- Individual file TypeScript checks may fail due to missing JSX configuration
+- This doesn't indicate actual syntax errors in your changes
+- Use project-level typecheck targets: `nx run PROJECT:typecheck`
+- Don't worry about standalone tsc errors if using React/JSX
 

@@ -12,6 +12,11 @@
 
 ### August 2025
 
+- [x] DOC-135: Fix H1 and Frontmatter Title Mismatch (2025-08-20 09:12)
+  - Plan created: `.ai/2025-08-20/tasks/doc-135-h1-title-fix.md`
+  - Goal: Remove h1 headings from mdoc files to improve visual distinction between titles and h2
+  - Result: Updated 7 files - removed h1 headings, preserved sidebar labels
+
 - [x] Docker Tagging and Publishing Investigation (2025-08-19 11:13)
   - Plan created: `.ai/2025-08-19/tasks/docker-tagging-publishing-investigation.md`
   - Goal: Understand complete Docker tagging, pushing, and publishing flow with CalVer scheme

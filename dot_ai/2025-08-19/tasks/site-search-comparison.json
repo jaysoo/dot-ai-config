@@ -1,0 +1,2748 @@
+{
+  "timestamp": "2025-08-19T19:13:27.452Z",
+  "sites": {
+    "production": {
+      "url": "https://nx.dev",
+      "searchMethod": "algolia",
+      "totalKeywords": 35,
+      "testedKeywords": 35,
+      "keywordResults": {
+        "init": {
+          "keyword": "init",
+          "category": "commands",
+          "expectedUrls": [
+            "/reference/core-api/nx/documents/init"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "init",
+              "url": "https://nx.dev/reference/core-api/nx/documents/init#init",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/shared-fs-cache:init",
+              "url": "https://nx.dev/reference/core-api/shared-fs-cache/generators/init#nxsharedfscacheinit",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/owners:init",
+              "url": "https://nx.dev/reference/core-api/owners/generators/init#nxownersinit",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/vue:init",
+              "url": "https://nx.dev/technologies/vue/api/generators/init#nxvueinit",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/js:init",
+              "url": "https://nx.dev/technologies/typescript/api/generators/init#nxjsinit",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Initialize Nx in Your Project with nx init",
+              "url": "https://nx.dev/courses/pnpm-nx-next/lessons-01-nx-init",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "CORS - The Great Initiation For Web Developers",
+              "url": "https://nx.dev/blog/handling-cors#cors-the-great-initiation-for-web-developers",
+              "snippet": "Handling CORS In Your Workspace",
+              "source": "algolia"
+            },
+            {
+              "title": "Initialize a new PNPM workspace",
+              "url": "https://nx.dev/blog/setup-a-monorepo-with-pnpm-workspaces-and-speed-it-up-with-nx#initialize-a-new-pnpm-workspace",
+              "snippet": "Setup a Monorepo with PNPM workspaces and speed it up …",
+              "source": "algolia"
+            },
+            {
+              "title": "Example: Gradle Init",
+              "url": "https://nx.dev/blog/manage-your-gradle-project-using-nx#example-gradle-init",
+              "snippet": "Manage Your Gradle Project using Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "Initially, the assistant might search for generic build scripts. However …",
+              "url": "https://nx.dev/blog/vibe-exploring-a-codebase#figuring-out-the-build-process",
+              "snippet": "Vibe Exploring a Codebase with LLMs",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/reference/core-api/nx/documents/init",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:30.849Z"
+        },
+        "import": {
+          "keyword": "import",
+          "category": "commands",
+          "expectedUrls": [
+            "/reference/core-api/nx/documents/import"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "import",
+              "url": "https://nx.dev/reference/core-api/nx/documents/import#import",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Ban External Imports",
+              "url": "https://nx.dev/recipes/enforce-module-boundaries/ban-external-imports#ban-external-imports",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Import an Existing Project into an Nx Workspace",
+              "url": "https://nx.dev/recipes/adopting-nx/import-project#import-an-existing-project-into-an-nx-workspace",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Why is this important?",
+              "url": "https://nx.dev/ci/recipes/improving-ttg#why-is-this-important",
+              "snippet": "Optimize Your Time to Green (TTG)",
+              "source": "algolia"
+            },
+            {
+              "title": "import",
+              "url": "https://nx.dev/reference/nx-commands#import",
+              "snippet": "Nx Commands",
+              "source": "algolia"
+            },
+            {
+              "title": "Import External Projects to Your Nx Monorepo With `nx import`",
+              "url": "https://nx.dev/blog/nx-import#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Monorepos: the Benefits, Challenges, and Importance of Tooling Support",
+              "url": "https://nx.dev/blog/monorepos-the-benefits-challenges-and-importance-of-tooling-support#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Using Relative Imports",
+              "url": "https://nx.dev/blog/managing-ts-packages-in-monorepos#using-relative-imports",
+              "snippet": "Managing TypeScript Packages in Monorepos",
+              "source": "algolia"
+            },
+            {
+              "title": "Why is this so important?",
+              "url": "https://nx.dev/blog/virtuous-cycle-of-workspace-structure#why-is-this-so-important",
+              "snippet": "The virtuous cycle of workspace structure",
+              "source": "algolia"
+            },
+            {
+              "title": "Support for banned external imports lint checks on transitive dependencies",
+              "url": "https://nx.dev/blog/nx-14-5-cypress-v10-output-globs-linter-perf-react-tailwind-support#support-for-banned-external-imports-lint-checks-on-transitive-dependencies",
+              "snippet": "Nx 14.5 — Cypress v10, output globs, linter perf, React …",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/reference/core-api/nx/documents/import",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:33.694Z"
+        },
+        "build": {
+          "keyword": "build",
+          "category": "commands",
+          "expectedUrls": [
+            "/concepts/common-tasks"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "build",
+              "url": "https://nx.dev/concepts/common-tasks#build",
+              "snippet": "Common Tasks",
+              "source": "algolia"
+            },
+            {
+              "title": "\"build\"",
+              "url": "https://nx.dev/technologies/angular/recipes/setup-incremental-builds-angular#use-buildable-libraries",
+              "snippet": "Setup incremental builds for Angular applications",
+              "source": "algolia"
+            },
+            {
+              "title": "\"build\"",
+              "url": "https://nx.dev/technologies/build-tools/vite/api/executors/build#nxvitebuild",
+              "snippet": "@nx/vite:build",
+              "source": "algolia"
+            },
+            {
+              "title": "\"build\"",
+              "url": "https://nx.dev/technologies/react/next/api/executors/build#nxnextbuild",
+              "snippet": "@nx/next:build",
+              "source": "algolia"
+            },
+            {
+              "title": "Build Tools",
+              "url": "https://nx.dev/technologies/build-tools#build-tools",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "\"build\"",
+              "url": "https://nx.dev/courses/pnpm-nx-next/lessons-04-task-pipelines",
+              "snippet": "Create a Task Pipeline to Build Your Next app Before …",
+              "source": "algolia"
+            },
+            {
+              "title": "Smart ReposFast Builds",
+              "url": "https://nx.dev/",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Build Smarter & Ship Faster",
+              "url": "https://nx.dev/customers",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Who Gave JavaScript a Build Step?!?",
+              "url": "https://nx.dev/blog/who-gave-js-a-build-step#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Critical Exploit Discovered: Protecting Your Build Infrastructure from Emerging Threats",
+              "url": "https://nx.dev/blog/securing-your-build-pipeline-critical-vulnerabilities-and-modern-security-practices#main",
+              "snippet": "",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/concepts/common-tasks",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:36.608Z"
+        },
+        "serve": {
+          "keyword": "serve",
+          "category": "commands",
+          "expectedUrls": [
+            "/concepts/common-tasks"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "serve",
+              "url": "https://nx.dev/concepts/common-tasks#serve",
+              "snippet": "Common Tasks",
+              "source": "algolia"
+            },
+            {
+              "title": "\"serve\"",
+              "url": "https://nx.dev/technologies/react/api/executors/module-federation-dev-server#examples",
+              "snippet": "@nx/react:module-federation-dev-server",
+              "source": "algolia"
+            },
+            {
+              "title": "\"serve\"",
+              "url": "https://nx.dev/technologies/angular/api/executors/module-federation-dev-server#examples",
+              "snippet": "@nx/angular:module-federation-dev-server",
+              "source": "algolia"
+            },
+            {
+              "title": "\"serve\"",
+              "url": "https://nx.dev/reference/core-api/web/executors/file-server#nxwebfileserver",
+              "snippet": "@nx/web:file-server",
+              "source": "algolia"
+            },
+            {
+              "title": "\"serve\"",
+              "url": "https://nx.dev/technologies/build-tools/vite/api/executors/dev-server#nxvitedevserver",
+              "snippet": "@nx/vite:dev-server",
+              "source": "algolia"
+            },
+            {
+              "title": "Setting up Module Federation with Server-Side Rendering for Angular",
+              "url": "https://nx.dev/blog/setting-up-module-federation-with-server-side-rendering-for-angular#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Making Cursor Smarter with an MCP Server For Nx Monorepos",
+              "url": "https://nx.dev/blog/nx-made-cursor-smarter#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Building an MCP Server with Nx",
+              "url": "https://nx.dev/blog/building-mcp-server-with-nx#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "\"serve\"",
+              "url": "https://nx.dev/blog/nx-21-continuous-tasks#frontend-serve-depends-on-backend-serve",
+              "snippet": "Continuous tasks are a huge DX improvement",
+              "source": "algolia"
+            },
+            {
+              "title": "Server State with React Query",
+              "url": "https://nx.dev/blog/state-management-nx-react-native-expo-apps-with-tanstack-query-and-redux#server-state-with-react-query",
+              "snippet": "State Management Nx React Native/Expo Apps with TanStack …",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/concepts/common-tasks",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:39.468Z"
+        },
+        "lint": {
+          "keyword": "lint",
+          "category": "commands",
+          "expectedUrls": [
+            "/concepts/common-tasks"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "lint",
+              "url": "https://nx.dev/concepts/common-tasks#lint",
+              "snippet": "Common Tasks",
+              "source": "algolia"
+            },
+            {
+              "title": "ESLint",
+              "url": "https://nx.dev/technologies/eslint#eslint",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "ESLint Plugin",
+              "url": "https://nx.dev/technologies/eslint/eslint-plugin#eslint-plugin",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Switching to ESLint's flat config format",
+              "url": "https://nx.dev/technologies/eslint/recipes/flat-config#switching-to-eslints-flat-config-format",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Configuring ESLint with TypeScript",
+              "url": "https://nx.dev/technologies/eslint/recipes/eslint#configuring-eslint-with-typescript",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx 14.5 — Cypress v10, output globs, linter perf, React …",
+              "url": "https://nx.dev/blog/nx-14-5-cypress-v10-output-globs-linter-perf-react-tailwind-support#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "\"lint\"",
+              "url": "https://nx.dev/blog/nx-16-5-release#new-nxdependencychecks-eslint-rule",
+              "snippet": "Nx 16.5 Release!!!",
+              "source": "algolia"
+            },
+            {
+              "title": "Linting",
+              "url": "https://nx.dev/blog/react-vite-and-typescript-get-started-in-under-2-minutes#linting",
+              "snippet": "React, Vite and TypeScript: Get started in under 2 …",
+              "source": "algolia"
+            },
+            {
+              "title": "ESLint preconfigured!",
+              "url": "https://nx.dev/blog/the-react-cli-you-always-wanted-but-didnt-know-about#eslint-preconfigured",
+              "snippet": "The React CLI you always wanted but didn't know …",
+              "source": "algolia"
+            },
+            {
+              "title": "NEW GENERATOR: ESLint Flat Config",
+              "url": "https://nx.dev/blog/nx-16-8-release#new-generator-eslint-flat-config",
+              "snippet": "Nx 16.8 Release!!!",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/concepts/common-tasks",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:42.270Z"
+        },
+        "affected": {
+          "keyword": "affected",
+          "category": "commands",
+          "expectedUrls": [
+            "/reference/core-api/nx/documents/affected"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "affected",
+              "url": "https://nx.dev/reference/core-api/nx/documents/affected#affected",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "print-affected",
+              "url": "https://nx.dev/deprecated/print-affected#printaffected",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "affected:graph",
+              "url": "https://nx.dev/deprecated/affected-graph#affectedgraph",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Run Only Tasks Affected by a PR",
+              "url": "https://nx.dev/ci/features/affected#run-only-tasks-affected-by-a-pr",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Reduce the Number of Affected Projects in a CI Pipeline …",
+              "url": "https://nx.dev/ci/recipes/other/cipe-affected-project-graph#reduce-the-number-of-affected-projects-in-a-ci-pipeline-execution",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "See your affected project graph in Nx Cloud",
+              "url": "https://nx.dev/blog/ci-affected-graph#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Affected Commands",
+              "url": "https://nx.dev/blog/helping-the-environment-by-saving-two-centuries-of-compute-time#affected-commands",
+              "snippet": "Helping the Environment by Saving Two Centuries of Compute time",
+              "source": "algolia"
+            },
+            {
+              "title": "Run Only Tasks Affected by a PR",
+              "url": "https://nx.dev/blog/manage-your-gradle-project-using-nx#run-only-tasks-affected-by-a-pr",
+              "snippet": "Manage Your Gradle Project using Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "Affected Project Graph in Nx Cloud",
+              "url": "https://nx.dev/blog/nx-highlights-2024#affected-project-graph-in-nx-cloud",
+              "snippet": "Nx Highlights 2024",
+              "source": "algolia"
+            },
+            {
+              "title": "Affected - identifying and running tasks only on projects impacted by …",
+              "url": "https://nx.dev/blog/monorepos-why-speed-matters#why-speed-matters",
+              "snippet": "Monorepos - Why Speed Matters",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/reference/core-api/nx/documents/affected",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:45.084Z"
+        },
+        "release": {
+          "keyword": "release",
+          "category": "commands",
+          "expectedUrls": [
+            "/reference/core-api/nx/documents/release",
+            "/features/manage-releases"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "\"release\"",
+              "url": "https://nx.dev/features/manage-releases#basic-configuration",
+              "snippet": "Manage Releases - nx release",
+              "source": "algolia"
+            },
+            {
+              "title": "\"release\"",
+              "url": "https://nx.dev/recipes/nx-release/release-projects-independently#configure-independent-releases",
+              "snippet": "Release Projects Independently",
+              "source": "algolia"
+            },
+            {
+              "title": "\"release\"",
+              "url": "https://nx.dev/recipes/nx-release/automate-gitlab-releases#enable-release-creation",
+              "snippet": "Automate GitLab Releases",
+              "source": "algolia"
+            },
+            {
+              "title": "\"release\"",
+              "url": "https://nx.dev/recipes/nx-release/automate-github-releases#enable-release-creation",
+              "snippet": "Automate GitHub Releases",
+              "source": "algolia"
+            },
+            {
+              "title": "\"release\"",
+              "url": "https://nx.dev/recipes/nx-release/release-npm-packages#configure-projects-to-release",
+              "snippet": "Release TypeScript/JavaScript Packages to NPM",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Cloud Release: Introducing Polygraph",
+              "url": "https://nx.dev/blog/nx-cloud-introducing-polygraph#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx 21 Release: Continuous tasks and Terminal UI lead the …",
+              "url": "https://nx.dev/blog/nx-21-release#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx 21.2 Release: Big upgrades to Angular 20, Nest …",
+              "url": "https://nx.dev/blog/nx-21-2-release#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx 19.0 Release!!",
+              "url": "https://nx.dev/blog/nx-19-release#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx 16.8 Release!!!",
+              "url": "https://nx.dev/blog/nx-16-8-release#main",
+              "snippet": "",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/features/manage-releases",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:47.898Z"
+        },
+        "migrate": {
+          "keyword": "migrate",
+          "category": "commands",
+          "expectedUrls": [
+            "/reference/core-api/nx/documents/migrate",
+            "/features/automate-updating-dependencies"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Automate Updating Dependencies",
+              "url": "https://nx.dev/features/automate-updating-dependencies#automate-updating-dependencies",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "migrate",
+              "url": "https://nx.dev/reference/core-api/nx/documents/migrate#migrate",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Migrate to Inferred Tasks (Project Crystal)",
+              "url": "https://nx.dev/recipes/running-tasks/convert-to-inferred#migrate-to-inferred-tasks-project-crystal",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Console Migrate UI",
+              "url": "https://nx.dev/recipes/nx-console/console-migrate-ui#nx-console-migrate-ui",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Migrate Angular with Webpack to Rspack",
+              "url": "https://nx.dev/technologies/angular/angular-rspack/recipes/migrate-from-webpack#migrate-angular-with-webpack-to-rspack",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Background: Why Migrate from Angular to Lit?",
+              "url": "https://nx.dev/blog/nx-console-gets-lit#background-why-migrate-from-angular-to-lit",
+              "snippet": "Nx Console gets Lit",
+              "source": "algolia"
+            },
+            {
+              "title": "Why We Built the Migrate UI",
+              "url": "https://nx.dev/blog/migrate-ui#why-we-built-the-migrate-ui",
+              "snippet": "A New UI for Nx Migration",
+              "source": "algolia"
+            },
+            {
+              "title": "Here's how to Upgrade with Nx Migrate",
+              "url": "https://nx.dev/blog/nx-16-is-here#heres-how-to-upgrade-with-nx-migrate",
+              "snippet": "Nx 16 is Here!",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Migrate improvements and Nx Repair",
+              "url": "https://nx.dev/blog/nx-14-5-cypress-v10-output-globs-linter-perf-react-tailwind-support#nx-migrate-improvements-and-nx-repair",
+              "snippet": "Nx 14.5 — Cypress v10, output globs, linter perf, React …",
+              "source": "algolia"
+            },
+            {
+              "title": "Using CRA? Automatically migrate to Vite + Nx",
+              "url": "https://nx.dev/blog/react-vite-and-typescript-get-started-in-under-2-minutes#using-cra-automatically-migrate-to-vite-nx",
+              "snippet": "React, Vite and TypeScript: Get started in under 2 …",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/reference/core-api/nx/documents/migrate",
+              "position": 2
+            },
+            {
+              "url": "/features/automate-updating-dependencies",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:50.728Z"
+        },
+        "atomizer": {
+          "keyword": "atomizer",
+          "category": "features",
+          "expectedUrls": [
+            "/ci/features/split-e2e-tasks"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Automatically Split E2E Tasks by File (Atomizer)",
+              "url": "https://nx.dev/ci/features/split-e2e-tasks#automatically-split-e2e-tasks-by-file-atomizer",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Enable Atomizer (task splitting)",
+              "url": "https://nx.dev/recipes/running-tasks/convert-to-inferred#enable-atomizer-task-splitting",
+              "snippet": "demo",
+              "source": "algolia"
+            },
+            {
+              "title": "Atomizer",
+              "url": "https://nx.dev/reference/glossary#atomizer",
+              "snippet": "Glossary",
+              "source": "algolia"
+            },
+            {
+              "title": "Automatically Split E2E Tasks (Atomizer)",
+              "url": "https://nx.dev/ci/features#features",
+              "snippet": "Features",
+              "source": "algolia"
+            },
+            {
+              "title": "Task Atomizer Configuration",
+              "url": "https://nx.dev/reference/nx-json#task-atomizer-configuration",
+              "snippet": "nx.json",
+              "source": "algolia"
+            },
+            {
+              "title": "… here! Stackblitz, Bun, Incremental Builds for Vite, Gradle Test Atomizer",
+              "url": "https://nx.dev/blog/nx-19-5-adds-stackblitz-new-features-and-more#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Atomizer",
+              "url": "https://nx.dev/blog/test-splitting-techniques#nx-atomizer",
+              "snippet": "3 Test Splitting Techniques that Cut E2E Times up to …",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Atomizer Enhancements",
+              "url": "https://nx.dev/blog/nx-19-release#nx-atomizer-enhancements",
+              "snippet": "Nx 19.0 Release!!",
+              "source": "algolia"
+            },
+            {
+              "title": "Atomizer",
+              "url": "https://nx.dev/blog/nx-highlights-2024#nx-agents-atomizer-and-flakiness-detection",
+              "snippet": "Nx Highlights 2024",
+              "source": "algolia"
+            },
+            {
+              "title": "Atomizer",
+              "url": "https://nx.dev/blog/monorepos-why-speed-matters#atomizer",
+              "snippet": "Monorepos - Why Speed Matters",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/ci/features/split-e2e-tasks",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:53.566Z"
+        },
+        "split tasks": {
+          "keyword": "split tasks",
+          "category": "features",
+          "expectedUrls": [
+            "/ci/features/split-e2e-tasks"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Automatically Split E2E Tasks by File (Atomizer)",
+              "url": "https://nx.dev/ci/features/split-e2e-tasks#automatically-split-e2e-tasks-by-file-atomizer",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Atomizer automatically splits tasks on Nx Agents, providing you detailed …",
+              "url": "https://nx.dev/reference/glossary#atomizer",
+              "snippet": "Glossary",
+              "source": "algolia"
+            },
+            {
+              "title": "The Atomizer splits potentially slow tasks into separate tasks per …",
+              "url": "https://nx.dev/recipes/running-tasks/convert-to-inferred#enable-atomizer-task-splitting",
+              "snippet": "demo",
+              "source": "algolia"
+            },
+            {
+              "title": "Automatically Split E2E Tasks",
+              "url": "https://nx.dev/features/ci-features#ci-features",
+              "snippet": "CI Features",
+              "source": "algolia"
+            },
+            {
+              "title": "Automatically Split E2E Tasks (Atomizer)",
+              "url": "https://nx.dev/ci/features#features",
+              "snippet": "Features",
+              "source": "algolia"
+            },
+            {
+              "title": "Second, when using binning you split tasks of the same …",
+              "url": "https://nx.dev/blog/distributing-ci-binning-and-distributed-task-execution#binning-doesnt-partition-the-work-in-the-optimal-way",
+              "snippet": "Distributing CI: Binning and Distributed Task Execution",
+              "source": "algolia"
+            },
+            {
+              "title": "… This feature allows you to split tasks per file. This …",
+              "url": "https://nx.dev/blog/test-splitting-techniques#nx-atomizer",
+              "snippet": "3 Test Splitting Techniques that Cut E2E Times up to …",
+              "source": "algolia"
+            },
+            {
+              "title": "Automatically Split E2E Tasks by File",
+              "url": "https://nx.dev/blog/fast-effortless-ci#automatically-split-e2e-tasks-by-file",
+              "snippet": "Fast, Effortless CI",
+              "source": "algolia"
+            },
+            {
+              "title": "… and scaled based on the tasks that need to be …",
+              "url": "https://nx.dev/blog/nx-conf-2023-recap#nx-cloud-workflows-nextgen-ci-with-firstclass-monorepo-support",
+              "snippet": "Nx Conf 2023 — Recap",
+              "source": "algolia"
+            },
+            {
+              "title": "… possible, our recommendation is to split them up. Like:\n\"build …",
+              "url": "https://nx.dev/blog/nx-14-5-cypress-v10-output-globs-linter-perf-react-tailwind-support#globs-for-task-outputs",
+              "snippet": "Nx 14.5 — Cypress v10, output globs, linter perf, React …",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/ci/features/split-e2e-tasks",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:56.505Z"
+        },
+        "distributed tasks": {
+          "keyword": "distributed tasks",
+          "category": "features",
+          "expectedUrls": [
+            "/ci/features/distribute-task-execution"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Distribute Task Execution (Nx Agents)",
+              "url": "https://nx.dev/ci/features/distribute-task-execution#distribute-task-execution-nx-agents",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Manual Distributed Task Execution",
+              "url": "https://nx.dev/ci/recipes/dte#manual-distributed-task-execution",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Manual Distributed Task Execution on Jenkins",
+              "url": "https://nx.dev/ci/recipes/dte/jenkins-dte#manual-distributed-task-execution-on-jenkins",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Manual Distributed Task Execution on GitLab",
+              "url": "https://nx.dev/ci/recipes/dte/gitlab-dte#manual-distributed-task-execution-on-gitlab",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Manual Distributed Task Execution on Github Actions",
+              "url": "https://nx.dev/ci/recipes/dte/github-dte#manual-distributed-task-execution-on-github-actions",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Distributing CI: Binning and Distributed Task Execution",
+              "url": "https://nx.dev/blog/distributing-ci-binning-and-distributed-task-execution#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Distributed Task Execution",
+              "url": "https://nx.dev/blog/nx-console-meets-nx-cloud#distributed-task-execution",
+              "snippet": "Nx Console meets Nx Cloud",
+              "source": "algolia"
+            },
+            {
+              "title": "Distributed Task Execution (short DTE) is a core part of …",
+              "url": "https://nx.dev/blog/nx-cloud-3-0-faster-more-efficient-modernized#dte-just-got-better",
+              "snippet": "Nx Cloud 3.0 — Faster Cache, More Powerful DTE, Better …",
+              "source": "algolia"
+            },
+            {
+              "title": "Distributed task execution — Distribution of the cache is one thing …",
+              "url": "https://nx.dev/blog/lerna-used-to-walk-now-it-can-fly#whats-more",
+              "snippet": "How Lerna just got 10x faster!",
+              "source": "algolia"
+            },
+            {
+              "title": "… Nx Cloud already offers DTE (Distributed Task Execution), which is …",
+              "url": "https://nx.dev/blog/nx-conf-2023-recap#nx-cloud-workflows-nextgen-ci-with-firstclass-monorepo-support",
+              "snippet": "Nx Conf 2023 — Recap",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/ci/features/distribute-task-execution",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:13:59.338Z"
+        },
+        "nx agents": {
+          "keyword": "nx agents",
+          "category": "features",
+          "expectedUrls": [
+            "/ci/features/distribute-task-execution"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Nx Agents Walkthrough: Effortlessly Fast CI Built for Monorepos",
+              "url": "https://nx.dev/blog/nx-agents-walkthrough-effortlessly-fast-ci-built-for-monorepos#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Vattenfall changes the math on concurrent PRs with Nx Agents",
+              "url": "https://nx.dev/blog/nx-agents-changes-the-math#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Agents Launched",
+              "url": "https://nx.dev/blog/launch-nx-week-recap#nx-agents-launched",
+              "snippet": "Launch Nx Week Recap",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Agents supports custom GitHub domains",
+              "url": "https://nx.dev/blog/nx-cloud-update-april-2025#nx-agents-supports-custom-github-domains",
+              "snippet": "Nx Cloud Update - Assignment rules come out of beta and …",
+              "source": "algolia"
+            },
+            {
+              "title": "Distribute Tasks with Nx Agents",
+              "url": "https://nx.dev/blog/fast-effortless-ci#distribute-tasks-with-nx-agents",
+              "snippet": "Fast, Effortless CI",
+              "source": "algolia"
+            },
+            {
+              "title": "Distribute Task Execution (Nx Agents)",
+              "url": "https://nx.dev/ci/features/distribute-task-execution#distribute-task-execution-nx-agents",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Agents at Scale",
+              "url": "https://nx.dev/showcase/benchmarks/nx-agents#nx-agents-at-scale",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Custom images for Nx Agents",
+              "url": "https://nx.dev/ci/reference/custom-images#custom-images-for-nx-agents",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Agents-Related",
+              "url": "https://nx.dev/ci/troubleshooting/ci-execution-failed#nx-agentsrelated",
+              "snippet": "Understanding 'CI Execution Failed'",
+              "source": "algolia"
+            },
+            {
+              "title": "Using Assignment Rules with Dynamic Nx Agents",
+              "url": "https://nx.dev/ci/reference/assignment-rules#using-assignment-rules-with-dynamic-nx-agents",
+              "snippet": "Assignment Rules",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 2,
+          "bestPosition": 6,
+          "foundExpectedUrls": [
+            {
+              "url": "/ci/features/distribute-task-execution",
+              "position": 6
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:02.157Z"
+        },
+        "task pipeline": {
+          "keyword": "task pipeline",
+          "category": "features",
+          "expectedUrls": [
+            "/features/run-tasks",
+            "/concepts/task-pipeline-configuration"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "What is a Task Pipeline",
+              "url": "https://nx.dev/concepts/task-pipeline-configuration#what-is-a-task-pipeline",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Defining a Task Pipeline",
+              "url": "https://nx.dev/recipes/running-tasks/defining-task-pipeline#defining-a-task-pipeline",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Defining a Task Pipeline",
+              "url": "https://nx.dev/features/run-tasks#defining-a-task-pipeline",
+              "snippet": "Tasks",
+              "source": "algolia"
+            },
+            {
+              "title": "What is a Task Pipeline",
+              "url": "https://nx.dev/concepts#core-concepts",
+              "snippet": "Core Concepts",
+              "source": "algolia"
+            },
+            {
+              "title": "Define a Task Pipeline",
+              "url": "https://nx.dev/recipes/running-tasks#tasks-caching",
+              "snippet": "Tasks & Caching",
+              "source": "algolia"
+            },
+            {
+              "title": "Create a Task Pipeline to Build Your Next app Before …",
+              "url": "https://nx.dev/courses/pnpm-nx-next/lessons-04-task-pipelines",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "What is a task pipeline?",
+              "url": "https://nx.dev/blog/nx-21-continuous-tasks#what-is-a-task-pipeline",
+              "snippet": "Continuous tasks are a huge DX improvement",
+              "source": "algolia"
+            },
+            {
+              "title": "New Compact Syntax for Task Pipelines",
+              "url": "https://nx.dev/blog/whats-new-in-nx-15#new-compact-syntax-for-task-pipelines",
+              "snippet": "What's new in Nx 15?",
+              "source": "algolia"
+            },
+            {
+              "title": "Using Nx – Run Tasks, Task Pipelines, Affected, Caching, Generate Code",
+              "url": "https://nx.dev/blog/nx-essentials-workshop#about-the-workshop",
+              "snippet": "The More the Merrier - Groups Save 50% on Nx Essentials …",
+              "source": "algolia"
+            },
+            {
+              "title": "… of opportunities to better configure your task pipelines, such as:",
+              "url": "https://nx.dev/blog/nx-21-release#continuous-tasks",
+              "snippet": "Nx 21 Release: Continuous tasks and Terminal UI lead the …",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/features/run-tasks",
+              "position": 3
+            },
+            {
+              "url": "/concepts/task-pipeline-configuration",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:04.997Z"
+        },
+        "inferred tasks": {
+          "keyword": "inferred tasks",
+          "category": "concepts",
+          "expectedUrls": [
+            "/concepts/inferred-tasks"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Inferred Tasks (Project Crystal)",
+              "url": "https://nx.dev/concepts/inferred-tasks#inferred-tasks-project-crystal",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Migrate to Inferred Tasks (Project Crystal)",
+              "url": "https://nx.dev/recipes/running-tasks/convert-to-inferred#migrate-to-inferred-tasks-project-crystal",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Create an Inferred Task",
+              "url": "https://nx.dev/extending-nx/tutorials/tooling-plugin#create-an-inferred-task",
+              "snippet": "Integrate a New Tool into an Nx Repository with a …",
+              "source": "algolia"
+            },
+            {
+              "title": "Inferred Tasks",
+              "url": "https://nx.dev/recipes/adopting-nx/adding-to-monorepo#inferred-tasks",
+              "snippet": "Adding Nx to NPM/Yarn/PNPM Workspace",
+              "source": "algolia"
+            },
+            {
+              "title": "Inferred Tasks",
+              "url": "https://nx.dev/recipes/adopting-nx/adding-to-existing-project#inferred-tasks",
+              "snippet": "Adding Nx to your Existing Project",
+              "source": "algolia"
+            },
+            {
+              "title": "Inferred Tasks with Module Federation",
+              "url": "https://nx.dev/blog/improved-module-federation#inferred-tasks-with-module-federation",
+              "snippet": "New and Improved Module Federation Experience with Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "You can view inferred tasks for Gradle project in your …",
+              "url": "https://nx.dev/blog/manage-your-gradle-project-using-nx#how-to-add-nxgradle-to-an-existing-nx-workspace",
+              "snippet": "Manage Your Gradle Project using Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "Tutorial: Creating Your Own Plugin With Inferred Tasks",
+              "url": "https://nx.dev/blog/advent-of-code-crystal-edition#learn-more",
+              "snippet": "Advent of Code Gets The Crystal Treatment!",
+              "source": "algolia"
+            },
+            {
+              "title": "… to convert all your Nx Plugins to use inferred tasks.",
+              "url": "https://nx.dev/blog/announcing-nx-20#main",
+              "snippet": "Announcing Nx 20",
+              "source": "algolia"
+            },
+            {
+              "title": "… tasks, and understand where each inferred task (like build and …",
+              "url": "https://nx.dev/blog/introducing-nx-nuxt-enhanced-nuxt-js-support-in-nx#using-nx-console",
+              "snippet": "Introducing @nx/nuxt Enhanced Nuxt.js Support in Nx",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/concepts/inferred-tasks",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:07.843Z"
+        },
+        "nx plugins": {
+          "keyword": "nx plugins",
+          "category": "concepts",
+          "expectedUrls": [
+            "/concepts/nx-plugins",
+            "/plugin-registry"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "What Are Nx Plugins?",
+              "url": "https://nx.dev/concepts/nx-plugins#what-are-nx-plugins",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/plugin",
+              "url": "https://nx.dev/reference/core-api/plugin#nxplugin",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Publish your Nx Plugin",
+              "url": "https://nx.dev/extending-nx/recipes/publish-plugin#publish-your-nx-plugin",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Plugin",
+              "url": "https://nx.dev/extending-nx/api/plugin#nx-plugin",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/plugin:migrations | Nx",
+              "url": "https://nx.dev/reference/core-api/plugin/migrations#nxpluginmigrations-nx",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "What if Nx Plugins Were More Like VSCode Extensions",
+              "url": "https://nx.dev/blog/what-if-nx-plugins-were-more-like-vscode-extensions#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "The Journey of the Nx Plugin for Gradle: From Prototype …",
+              "url": "https://nx.dev/blog/journey-of-the-nx-plugin-for-gradle#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "What is Nx and what is an Nx plugin?",
+              "url": "https://nx.dev/blog/create-your-own-create-react-app-cli#what-is-nx-and-what-is-an-nx-plugin",
+              "snippet": "Create Your Own create-react-app CLI",
+              "source": "algolia"
+            },
+            {
+              "title": "What are Nx Plugins and why do you need them?",
+              "url": "https://nx.dev/blog/tailoring-nx-for-your-organization#what-are-nx-plugins-and-why-do-you-need-them",
+              "snippet": "Tailoring Nx for Your Organization",
+              "source": "algolia"
+            },
+            {
+              "title": "NEW Nx PLUGIN: Playwright",
+              "url": "https://nx.dev/blog/nx-16-8-release#new-nx-plugin-playwright",
+              "snippet": "Nx 16.8 Release!!!",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/concepts/nx-plugins",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:10.684Z"
+        },
+        "update": {
+          "keyword": "update",
+          "category": "concepts",
+          "expectedUrls": [
+            "/features/automate-updating-dependencies",
+            "/reference/core-api/nx/documents/migrate"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Automate Updating Dependencies",
+              "url": "https://nx.dev/features/automate-updating-dependencies#automate-updating-dependencies",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Advanced update process",
+              "url": "https://nx.dev/recipes/tips-n-tricks/advanced-update#advanced-update-process",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Update Your Local Registry Setup to use Nx Release",
+              "url": "https://nx.dev/recipes/nx-release/update-local-registry-setup#update-your-local-registry-setup-to-use-nx-release",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Update Your Global Nx Installation",
+              "url": "https://nx.dev/recipes/installation/update-global-installation#update-your-global-nx-installation",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Function: updateTsConfigsToJs",
+              "url": "https://nx.dev/reference/core-api/devkit/documents/updateTsConfigsToJs#function-updatetsconfigstojs",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Over-The-Air Updates for Super Apps with React Native …",
+              "url": "https://nx.dev/blog/ota-updates-with-zephyr#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Update: 20.5",
+              "url": "https://nx.dev/blog/nx-update-20-5#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Update: 20.3!",
+              "url": "https://nx.dev/blog/nx-update-20-3#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx Cloud Update - Assignment rules come out of beta and …",
+              "url": "https://nx.dev/blog/nx-cloud-update-april-2025#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx 19.8 Update!!",
+              "url": "https://nx.dev/blog/nx-19-8-update#main",
+              "snippet": "",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/features/automate-updating-dependencies",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:13.508Z"
+        },
+        "library": {
+          "keyword": "library",
+          "category": "concepts",
+          "expectedUrls": [
+            "/concepts/decisions/project-size"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Project Size",
+              "url": "https://nx.dev/concepts/decisions/project-size#project-size",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "library",
+              "url": "https://nx.dev/technologies/angular/api/generators/library-secondary-entry-point#library",
+              "snippet": "@nx/angular:library-secondary-entry-point",
+              "source": "algolia"
+            },
+            {
+              "title": "Publishable and Buildable Nx Libraries",
+              "url": "https://nx.dev/concepts/buildable-and-publishable-libraries#publishable-and-buildable-nx-libraries",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Compile Typescript Libraries to Multiple Formats",
+              "url": "https://nx.dev/technologies/typescript/recipes/compile-multiple-formats#compile-typescript-libraries-to-multiple-formats",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Manage Library Versions with Module Federation",
+              "url": "https://nx.dev/technologies/module-federation/concepts/manage-library-versions-with-module-federation#manage-library-versions-with-module-federation",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Build Better, Ship Faster: Monorepos, Apps, & Component Libraries with Nx …",
+              "url": "https://nx.dev/blog/build-better-shipfaster-monorepos-apps-component-libraries-with-nx-cloud#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Signals Only, No Library",
+              "url": "https://nx.dev/blog/angular-state-management-2025#signals-only-no-library",
+              "snippet": "Angular State Management for 2025",
+              "source": "algolia"
+            },
+            {
+              "title": "Packaging TypeScript Libraries — Secondary Entrypoints, ESM, CJS",
+              "url": "https://nx.dev/blog/nx-16-8-release#packaging-typescript-libraries-secondary-entrypoints-esm-cjs",
+              "snippet": "Nx 16.8 Release!!!",
+              "source": "algolia"
+            },
+            {
+              "title": "Create a Shareable UI Library",
+              "url": "https://nx.dev/blog/step-by-step-guide-to-creating-an-expo-monorepo-with-nx#create-a-shareable-ui-library",
+              "snippet": "Step-by-Step Guide to Creating an Expo Monorepo with …",
+              "source": "algolia"
+            },
+            {
+              "title": "Create React library",
+              "url": "https://nx.dev/blog/using-apollo-graphql-in-an-nx-workspace#create-react-library",
+              "snippet": "Using Apollo GraphQL in an Nx Workspace",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/concepts/decisions/project-size",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:16.420Z"
+        },
+        "nx.json": {
+          "keyword": "nx.json",
+          "category": "reference",
+          "expectedUrls": [
+            "/reference/nx-json"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "nx.json",
+              "url": "https://nx.dev/reference/nx-json#nxjson",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "nxJson",
+              "url": "https://nx.dev/reference/core-api/devkit/documents/updateNxJson#parameters",
+              "snippet": "Function: updateNxJson",
+              "source": "algolia"
+            },
+            {
+              "title": "Function: readNxJson",
+              "url": "https://nx.dev/reference/core-api/devkit/documents/readNxJson#function-readnxjson",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Interface: NxJsonConfiguration<T>",
+              "url": "https://nx.dev/reference/core-api/devkit/documents/NxJsonConfiguration#interface-nxjsonconfigurationt",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Create a Basic nx.json File",
+              "url": "https://nx.dev/recipes/adopting-nx/manual#create-a-basic-nxjson-file",
+              "snippet": "Manual migration of existing code bases",
+              "source": "algolia"
+            },
+            {
+              "title": "nx.json Simplification",
+              "url": "https://nx.dev/blog/nx-17-release#nxjson-simplification",
+              "snippet": "Nx 17 has Landed",
+              "source": "algolia"
+            },
+            {
+              "title": "a nx.json at the root containing configuration about caching …",
+              "url": "https://nx.dev/blog/new-nx-experience-for-typescript-monorepos#create-a-new-workspacesbased-monorepo",
+              "snippet": "A New Nx Experience for TypeScript Monorepos and Beyond",
+              "source": "algolia"
+            },
+            {
+              "title": "CREATE nx.json",
+              "url": "https://nx.dev/blog/manage-your-gradle-project-using-nx#how-to-add-nx-to-a-gradle-workspace",
+              "snippet": "Manage Your Gradle Project using Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "globally at the nx.json level for all the projects …",
+              "url": "https://nx.dev/blog/nx-14-4-inputs-optional-npm-scope-project-graph-cache-directory-and-more#syntactic-sugar-for-dependson",
+              "snippet": "Nx 14.4 — Inputs, optional npm scope, project graph cache …",
+              "source": "algolia"
+            },
+            {
+              "title": "Tags used to live in nx.json but were in …",
+              "url": "https://nx.dev/blog/mastering-the-project-boundaries-in-nx#using-tags-to-enforce-boundaries",
+              "snippet": "Taming Code Organization with Module Boundaries in Nx",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/reference/nx-json",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:19.233Z"
+        },
+        "project.json": {
+          "keyword": "project.json",
+          "category": "reference",
+          "expectedUrls": [
+            "/reference/project-configuration"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Project Configuration",
+              "url": "https://nx.dev/reference/project-configuration#project-configuration",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "2. Update project.json",
+              "url": "https://nx.dev/recipes/running-tasks/run-commands-executor#2-update-projectjson",
+              "snippet": "Running Custom Commands",
+              "source": "algolia"
+            },
+            {
+              "title": "Pass args in the project.json task configuration",
+              "url": "https://nx.dev/recipes/running-tasks/pass-args-to-commands#pass-args-in-the-projectjson-task-configuration",
+              "snippet": "my-app",
+              "source": "algolia"
+            },
+            {
+              "title": "Configuring Version Prefix in nx.json or project.json",
+              "url": "https://nx.dev/recipes/nx-release/configuration-version-prefix#configuring-version-prefix-in-nxjson-or-projectjson",
+              "snippet": "Configuring Version Prefix for Dependency Versions",
+              "source": "algolia"
+            },
+            {
+              "title": "apps/host/project.json",
+              "url": "https://nx.dev/technologies/module-federation/concepts/faster-builds-with-module-federation#appshostprojectjson",
+              "snippet": "Faster Builds with Module Federation",
+              "source": "algolia"
+            },
+            {
+              "title": "Adding the target to the project.json rather than package …",
+              "url": "https://nx.dev/blog/create-your-own-create-react-app-cli#adding-the-target-to-the-projectjson-rather-than-packagejson",
+              "snippet": "Create Your Own create-react-app CLI",
+              "source": "algolia"
+            },
+            {
+              "title": "It reads the project.json for the VS Code project …",
+              "url": "https://nx.dev/blog/vibe-exploring-a-codebase#understanding-task-dependencies",
+              "snippet": "Vibe Exploring a Codebase with LLMs",
+              "source": "algolia"
+            },
+            {
+              "title": "Add name in e2e/project.json:",
+              "url": "https://nx.dev/blog/introducing-playwright-support-for-nx#apply-playwright-configuration",
+              "snippet": "Introducing Playwright Support for Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "per project level in the project.json/package.json depending …",
+              "url": "https://nx.dev/blog/nx-14-4-inputs-optional-npm-scope-project-graph-cache-directory-and-more#syntactic-sugar-for-dependson",
+              "snippet": "Nx 14.4 — Inputs, optional npm scope, project graph cache …",
+              "source": "algolia"
+            },
+            {
+              "title": "Then in our in the project.json, let's tell …",
+              "url": "https://nx.dev/blog/handling-cors#leave-it-to-the-framework-tools",
+              "snippet": "Handling CORS In Your Workspace",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/reference/project-configuration",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:22.077Z"
+        },
+        "angular": {
+          "keyword": "angular",
+          "category": "frameworks",
+          "expectedUrls": [
+            "/technologies/angular/api/"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "@nx/angular",
+              "url": "https://nx.dev/technologies/angular/introduction#nxangular",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/angular",
+              "url": "https://nx.dev/technologies/angular/api#nxangular",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Angular",
+              "url": "https://nx.dev/technologies/angular#angular",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Angular Schematics and Builders",
+              "url": "https://nx.dev/deprecated/angular-schematics-builders#angular-schematics-and-builders",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Angular Rspack",
+              "url": "https://nx.dev/technologies/angular/angular-rspack#angular-rspack",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Angular",
+              "url": "https://nx.dev/blog/using-rspack-with-angular#further-reading",
+              "snippet": "Using Rspack with Angular",
+              "source": "algolia"
+            },
+            {
+              "title": "Setting up Module Federation with Server-Side Rendering for Angular",
+              "url": "https://nx.dev/blog/setting-up-module-federation-with-server-side-rendering-for-angular#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Set up Tailwind CSS with Angular in an Nx workspace",
+              "url": "https://nx.dev/blog/set-up-tailwind-css-with-angular-in-an-nx-workspace#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Scaffolding New Apps With Angular Rspack",
+              "url": "https://nx.dev/blog/scaffold-angular-rspack-applications#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx 21.2 Release: Big upgrades to Angular 20, Nest …",
+              "url": "https://nx.dev/blog/nx-21-2-release#main",
+              "snippet": "",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 0,
+          "bestPosition": -1,
+          "foundExpectedUrls": [],
+          "timestamp": "2025-08-19T19:14:24.895Z"
+        },
+        "angular matrix": {
+          "keyword": "angular matrix",
+          "category": "frameworks",
+          "expectedUrls": [
+            "/technologies/angular/recipes/angular-nx-version-matrix"
+          ],
+          "resultCount": 3,
+          "results": [
+            {
+              "title": "… well as our Nx and Angular compatibility matrix for more …",
+              "url": "https://nx.dev/blog/nx-15-7-node-support-angular-lts-lockfile-pruning#detaching-angular-versions",
+              "snippet": "Nx 15.7 — Node Support, Angular LTS, Lockfile Pruning",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx and Angular Version Compatibility Matrix",
+              "url": "https://nx.dev/technologies/angular/recipes/angular-nx-version-matrix#nx-and-angular-version-compatibility-matrix",
+              "snippet": "Nx and Angular Versions",
+              "source": "algolia"
+            },
+            {
+              "title": "Angular and Nx Version Matrix",
+              "url": "https://nx.dev/technologies/angular/recipes#guides",
+              "snippet": "Guides",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 2,
+          "foundExpectedUrls": [
+            {
+              "url": "/technologies/angular/recipes/angular-nx-version-matrix",
+              "position": 2
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:27.809Z"
+        },
+        "react": {
+          "keyword": "react",
+          "category": "frameworks",
+          "expectedUrls": [
+            "/technologies/react/api/"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "@nx/react",
+              "url": "https://nx.dev/technologies/react/introduction#nxreact",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/react",
+              "url": "https://nx.dev/technologies/react/api#nxreact",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "React",
+              "url": "https://nx.dev/technologies/react#react",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "React Native",
+              "url": "https://nx.dev/technologies/react/react-native#react-native",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Using Apollo GraphQL with React in an Nx Workspace",
+              "url": "https://nx.dev/showcase/example-repos/apollo-react#using-apollo-graphql-with-react-in-an-nx-workspace",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Experience the power of Nx in your React monorepo",
+              "url": "https://nx.dev/react",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Use Storybook with Nx React Native",
+              "url": "https://nx.dev/blog/use-storybook-with-nx-react-native#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "The React CLI you always wanted but didn't know …",
+              "url": "https://nx.dev/blog/the-react-cli-you-always-wanted-but-didnt-know-about#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Step by Step Guide on Creating a Monorepo for React …",
+              "url": "https://nx.dev/blog/step-by-step-guide-on-creating-a-monorepo-for-react-native-apps-using-nx#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "State Management Nx React Native/Expo Apps with TanStack …",
+              "url": "https://nx.dev/blog/state-management-nx-react-native-expo-apps-with-tanstack-query-and-redux#main",
+              "snippet": "",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 0,
+          "bestPosition": -1,
+          "foundExpectedUrls": [],
+          "timestamp": "2025-08-19T19:14:30.633Z"
+        },
+        "nestjs": {
+          "keyword": "nestjs",
+          "category": "frameworks",
+          "expectedUrls": [
+            "/technologies/node/nest/api/"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "@nx/nest",
+              "url": "https://nx.dev/technologies/node/nest/introduction#nxnest",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Create a NestJS application.",
+              "url": "https://nx.dev/technologies/node/nest/api#generators",
+              "snippet": "@nx/nest",
+              "source": "algolia"
+            },
+            {
+              "title": "Using Prisma with NestJS in an Nx Workspace",
+              "url": "https://nx.dev/showcase/example-repos/nestjs-prisma#using-prisma-with-nestjs-in-an-nx-workspace",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Prisma NestJS",
+              "url": "https://nx.dev/showcase/example-repos#examples-across-platforms",
+              "snippet": "Nx Integration with Technologies and Frameworks",
+              "source": "algolia"
+            },
+            {
+              "title": "NestJs",
+              "url": "https://nx.dev/concepts/buildable-and-publishable-libraries#publishable-and-buildable-nx-libraries",
+              "snippet": "Publishable and Buildable Nx Libraries",
+              "source": "algolia"
+            },
+            {
+              "title": "… Big upgrades to Angular 20, NestJS 11, and Storybook …",
+              "url": "https://nx.dev/blog/nx-21-2-release#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "NestJS",
+              "url": "https://nx.dev/blog/nx-15-7-node-support-angular-lts-lockfile-pruning#coming-up",
+              "snippet": "Nx 15.7 — Node Support, Angular LTS, Lockfile Pruning",
+              "source": "algolia"
+            },
+            {
+              "title": "… add an ExpressJS or Nest.js based application to …",
+              "url": "https://nx.dev/blog/nx-15-8-rust-hasher-nx-console-for-intellij-deno-node-and-storybook#modular-node-applications",
+              "snippet": "Nx 15.8 — Rust Hasher, Nx Console for IntelliJ, Deno …",
+              "source": "algolia"
+            },
+            {
+              "title": "… had support for Express and NestJS backend for a …",
+              "url": "https://nx.dev/blog/nx-highlights-of-2023#improved-node-backend-development-fastify-and-docker",
+              "snippet": "Nx — Highlights of 2023",
+              "source": "algolia"
+            },
+            {
+              "title": "… React & React Native, Next.js, Nest.js, Node and many …",
+              "url": "https://nx.dev/blog/nx-v14-is-out-here-is-all-you-need-to-know#simplifying-nx",
+              "snippet": "Nx v14 is out — Here is all you need to …",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 0,
+          "bestPosition": -1,
+          "foundExpectedUrls": [],
+          "timestamp": "2025-08-19T19:14:33.438Z"
+        },
+        "nest": {
+          "keyword": "nest",
+          "category": "frameworks",
+          "expectedUrls": [
+            "/technologies/node/nest/api/"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "@nx/nest",
+              "url": "https://nx.dev/technologies/node/nest/introduction#nxnest",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/nest",
+              "url": "https://nx.dev/technologies/node/nest/api#nxnest",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nest",
+              "url": "https://nx.dev/technologies/node/nest#nest",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Using Prisma with NestJS in an Nx Workspace",
+              "url": "https://nx.dev/showcase/example-repos/nestjs-prisma#using-prisma-with-nestjs-in-an-nx-workspace",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/nest:migrations | Nx",
+              "url": "https://nx.dev/technologies/node/nest/api/migrations#nxnestmigrations-nx",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx 21.2 Release: Big upgrades to Angular 20, Nest …",
+              "url": "https://nx.dev/blog/nx-21-2-release#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "NestJS",
+              "url": "https://nx.dev/blog/nx-15-7-node-support-angular-lts-lockfile-pruning#coming-up",
+              "snippet": "Nx 15.7 — Node Support, Angular LTS, Lockfile Pruning",
+              "source": "algolia"
+            },
+            {
+              "title": "the directory structure based on nested folders for scope",
+              "url": "https://nx.dev/blog/tailoring-nx-for-your-organization#setting-up-custom-generators",
+              "snippet": "Tailoring Nx for Your Organization",
+              "source": "algolia"
+            },
+            {
+              "title": "We find that navigating through deeply-nested structures is slow …",
+              "url": "https://nx.dev/blog/virtuous-cycle-of-workspace-structure#engineers-should-be-able-to-locate-code-quickly",
+              "snippet": "The virtuous cycle of workspace structure",
+              "source": "algolia"
+            },
+            {
+              "title": "… add an ExpressJS or Nest.js based application to …",
+              "url": "https://nx.dev/blog/nx-15-8-rust-hasher-nx-console-for-intellij-deno-node-and-storybook#modular-node-applications",
+              "snippet": "Nx 15.8 — Rust Hasher, Nx Console for IntelliJ, Deno …",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 0,
+          "bestPosition": -1,
+          "foundExpectedUrls": [],
+          "timestamp": "2025-08-19T19:14:36.242Z"
+        },
+        "next": {
+          "keyword": "next",
+          "category": "frameworks",
+          "expectedUrls": [
+            "/technologies/react/next/api/"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Next",
+              "url": "https://nx.dev/technologies/react/next#next",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "File Large Next.js Apps Made Faster by Using Nx",
+              "url": "https://nx.dev/showcase/benchmarks/caching#file-large-nextjs-apps-made-faster-by-using-nx",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Using Tailwind CSS in React and Next.js",
+              "url": "https://nx.dev/technologies/react/recipes/using-tailwind-css-in-react#using-tailwind-css-in-react-and-nextjs",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Deploying Next.js applications to Vercel",
+              "url": "https://nx.dev/technologies/react/recipes/deploy-nextjs-to-vercel#deploying-nextjs-applications-to-vercel",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/next",
+              "url": "https://nx.dev/technologies/react/next/introduction#nxnext",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Next-Gen Module Federation Deployments with Nx and Zephyr Cloud",
+              "url": "https://nx.dev/blog/next-gen-module-federation-deployment#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "NextJS 13 Support",
+              "url": "https://nx.dev/blog/nx-16-5-release#nextjs-13-support",
+              "snippet": "Nx 16.5 Release!!!",
+              "source": "algolia"
+            },
+            {
+              "title": "Recap and next steps",
+              "url": "https://nx.dev/blog/create-your-own-create-react-app-cli#recap-and-next-steps",
+              "snippet": "Create Your Own create-react-app CLI",
+              "source": "algolia"
+            },
+            {
+              "title": "What’s Next",
+              "url": "https://nx.dev/blog/android-and-nx#whats-next",
+              "snippet": "Getting Mobile Into Your Monorepo: Android + Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "Coming Next",
+              "url": "https://nx.dev/blog/nx-cloud-3-0-faster-more-efficient-modernized#coming-next",
+              "snippet": "Nx Cloud 3.0 — Faster Cache, More Powerful DTE, Better …",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 0,
+          "bestPosition": -1,
+          "foundExpectedUrls": [],
+          "timestamp": "2025-08-19T19:14:39.179Z"
+        },
+        "storybook": {
+          "keyword": "storybook",
+          "category": "tools",
+          "expectedUrls": [
+            "/technologies/test-tools/storybook/api/"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "\"storybook\"",
+              "url": "https://nx.dev/blog/dynamic-targets-with-inference-tasks#the-problem",
+              "snippet": "Avoiding Port Conflicts with Multiple Storybook Instances",
+              "source": "algolia"
+            },
+            {
+              "title": "Storybook",
+              "url": "https://nx.dev/blog/nx-15-8-rust-hasher-nx-console-for-intellij-deno-node-and-storybook#storybook",
+              "snippet": "… Rust Hasher, Nx Console for IntelliJ, Deno, Node and Storybook",
+              "source": "algolia"
+            },
+            {
+              "title": "Use Storybook with Nx React Native",
+              "url": "https://nx.dev/blog/use-storybook-with-nx-react-native#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Storybook Interaction Tests in Nx",
+              "url": "https://nx.dev/blog/storybook-interaction-tests-in-nx#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "… upgrades to Angular 20, NestJS 11, and Storybook 9",
+              "url": "https://nx.dev/blog/nx-21-2-release#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Storybook",
+              "url": "https://nx.dev/technologies/test-tools/storybook#storybook",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "storybook",
+              "url": "https://nx.dev/technologies/test-tools/storybook/api#executors",
+              "snippet": "@nx/storybook",
+              "source": "algolia"
+            },
+            {
+              "title": "storybook",
+              "url": "https://nx.dev/technologies/test-tools/storybook/api/executors#executor-references",
+              "snippet": "@nx/storybook:executors | Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "\"storybook\"",
+              "url": "https://nx.dev/technologies/test-tools/storybook/recipes/one-storybook-with-composition#change-the-storybook-port-in-the-hosted-apps",
+              "snippet": "Publishing Storybook: One main Storybook instance using Storybook Composition",
+              "source": "algolia"
+            },
+            {
+              "title": "\"storybook\"",
+              "url": "https://nx.dev/technologies/test-tools/storybook/recipes/storybook-composition-setup#adjust-the-storybook-ports",
+              "snippet": "Setting up Storybook Composition with Nx",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 0,
+          "bestPosition": -1,
+          "foundExpectedUrls": [],
+          "timestamp": "2025-08-19T19:14:42.002Z"
+        },
+        "eslint": {
+          "keyword": "eslint",
+          "category": "tools",
+          "expectedUrls": [
+            "/technologies/eslint/api/"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "ESLint",
+              "url": "https://nx.dev/technologies/eslint#eslint",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/eslint",
+              "url": "https://nx.dev/technologies/eslint/introduction#nxeslint",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/eslint",
+              "url": "https://nx.dev/technologies/eslint/api#nxeslint",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "ESLint Plugin",
+              "url": "https://nx.dev/technologies/eslint/eslint-plugin#eslint-plugin",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Switching to ESLint's flat config format",
+              "url": "https://nx.dev/technologies/eslint/recipes/flat-config#switching-to-eslints-flat-config-format",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "ESM support for eslint config",
+              "url": "https://nx.dev/blog/nx-update-20-5#esm-support-for-eslint-config",
+              "snippet": "Nx Update: 20.5",
+              "source": "algolia"
+            },
+            {
+              "title": "ESLint preconfigured!",
+              "url": "https://nx.dev/blog/the-react-cli-you-always-wanted-but-didnt-know-about#eslint-preconfigured",
+              "snippet": "The React CLI you always wanted but didn't know …",
+              "source": "algolia"
+            },
+            {
+              "title": "NEW GENERATOR: ESLint Flat Config",
+              "url": "https://nx.dev/blog/nx-16-8-release#new-generator-eslint-flat-config",
+              "snippet": "Nx 16.8 Release!!!",
+              "source": "algolia"
+            },
+            {
+              "title": "New Nx Workspaces Created with ESLint v9",
+              "url": "https://nx.dev/blog/nx-19-8-update#new-nx-workspaces-created-with-eslint-v9",
+              "snippet": "Nx 19.8 Update!!",
+              "source": "algolia"
+            },
+            {
+              "title": "ESLint v9 Updates",
+              "url": "https://nx.dev/blog/announcing-nx-20#eslint-v9-updates",
+              "snippet": "Announcing Nx 20",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 0,
+          "bestPosition": -1,
+          "foundExpectedUrls": [],
+          "timestamp": "2025-08-19T19:14:44.828Z"
+        },
+        "jest": {
+          "keyword": "jest",
+          "category": "tools",
+          "expectedUrls": [
+            "/technologies/test-tools/jest/api/"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Jest",
+              "url": "https://nx.dev/technologies/test-tools/jest#jest",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "jest",
+              "url": "https://nx.dev/technologies/test-tools/jest/api#executors",
+              "snippet": "@nx/jest",
+              "source": "algolia"
+            },
+            {
+              "title": "Jest",
+              "url": "https://nx.dev/technologies/test-tools/jest/introduction#jest",
+              "snippet": "@nx/jest",
+              "source": "algolia"
+            },
+            {
+              "title": "jest",
+              "url": "https://nx.dev/technologies/test-tools/jest/api/executors#executor-references",
+              "snippet": "@nx/jest:executors | Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/jest:migrations | Nx",
+              "url": "https://nx.dev/technologies/test-tools/jest/api/migrations#nxjestmigrations-nx",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Unit Testing Expo Apps With Jest",
+              "url": "https://nx.dev/blog/unit-testing-expo-apps-with-jest#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Jest preconfigured!",
+              "url": "https://nx.dev/blog/the-react-cli-you-always-wanted-but-didnt-know-about#jest-preconfigured",
+              "snippet": "The React CLI you always wanted but didn't know …",
+              "source": "algolia"
+            },
+            {
+              "title": "In Jest we can utilize the new --shard option to …",
+              "url": "https://nx.dev/blog/test-splitting-techniques#builtin-test-sharding",
+              "snippet": "3 Test Splitting Techniques that Cut E2E Times up to …",
+              "source": "algolia"
+            },
+            {
+              "title": "Unit Testing Expo Apps With Jest\n👩‍💻 Nx Git …",
+              "url": "https://nx.dev/blog/step-by-step-guide-to-creating-an-expo-monorepo-with-nx#learn-more",
+              "snippet": "Step-by-Step Guide to Creating an Expo Monorepo with …",
+              "source": "algolia"
+            },
+            {
+              "title": "… with community tools such as Jest for unit testing, ES …",
+              "url": "https://nx.dev/blog/nx-14-2-angular-v14-storybook-update-lightweight-nx-and-more#easy-migration-from-angular-cli-to-nx",
+              "snippet": "Nx 14.2 — Angular v14, Storybook update, lightweight Nx and …",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 0,
+          "bestPosition": -1,
+          "foundExpectedUrls": [],
+          "timestamp": "2025-08-19T19:14:48.008Z"
+        },
+        "vite": {
+          "keyword": "vite",
+          "category": "tools",
+          "expectedUrls": [
+            "/technologies/build-tools/vite/api/"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Vite",
+              "url": "https://nx.dev/technologies/build-tools/vite#vite",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/vite",
+              "url": "https://nx.dev/technologies/build-tools/vite/introduction#nxvite",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/vite",
+              "url": "https://nx.dev/technologies/build-tools/vite/api#nxvite",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "How to configure Webpack and Vite for Storybook",
+              "url": "https://nx.dev/technologies/test-tools/storybook/recipes/custom-builder-configs#how-to-configure-webpack-and-vite-for-storybook",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Configure Vite on your Nx workspace",
+              "url": "https://nx.dev/technologies/build-tools/vite/recipes/configure-vite#configure-vite-on-your-nx-workspace",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Configure Tailwind 4 with Vite in an NPM Workspace: The …",
+              "url": "https://nx.dev/blog/setup-tailwind-4-npm-workspace#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "React, Vite and TypeScript: Get started in under 2 …",
+              "url": "https://nx.dev/blog/react-vite-and-typescript-get-started-in-under-2-minutes#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "… here! Stackblitz, Bun, Incremental Builds for Vite, Gradle Test Atomizer",
+              "url": "https://nx.dev/blog/nx-19-5-adds-stackblitz-new-features-and-more#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx 15.4 — Vite 4 Support, a new Nx Watch …",
+              "url": "https://nx.dev/blog/nx-15-4-vite-4-support-a-new-nx-watch-command-and-more#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Nx 15.3 — Standalone Projects, Vite, Task Graph and more!",
+              "url": "https://nx.dev/blog/nx-15-3-standalone-projects-vite-task-graph-and-more#main",
+              "snippet": "",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 0,
+          "bestPosition": -1,
+          "foundExpectedUrls": [],
+          "timestamp": "2025-08-19T19:14:50.849Z"
+        },
+        "docker": {
+          "keyword": "docker",
+          "category": "tools",
+          "expectedUrls": [],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "\"docker\"",
+              "url": "https://nx.dev/blog/seamless-deploys-with-docker#integrating-docker-with-nx-release",
+              "snippet": "Seamless Java Deployment in Nx Using Docker",
+              "source": "algolia"
+            },
+            {
+              "title": "Docker support",
+              "url": "https://nx.dev/blog/bundling-a-node-api-with-fastify-esbuild-and-nx#docker-support",
+              "snippet": "Bundling a Node API with Fastify, esbuild, and Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "Improved Node Backend Development: Fastify and Docker",
+              "url": "https://nx.dev/blog/nx-highlights-of-2023#improved-node-backend-development-fastify-and-docker",
+              "snippet": "Nx — Highlights of 2023",
+              "source": "algolia"
+            },
+            {
+              "title": "improving our docker setup to account for non-bundled output …",
+              "url": "https://nx.dev/blog/nx-15-8-rust-hasher-nx-console-for-intellij-deno-node-and-storybook#modular-node-applications",
+              "snippet": "Nx 15.8 — Rust Hasher, Nx Console for IntelliJ, Deno …",
+              "source": "algolia"
+            },
+            {
+              "title": "Seamless Deploys With Docker",
+              "url": "https://nx.dev/blog/spring-boot-with-nx#main",
+              "snippet": "Polyglot Projects Made Easy: Integrating Spring Boot into an Nx …",
+              "source": "algolia"
+            },
+            {
+              "title": "\"docker\"",
+              "url": "https://nx.dev/recipes/nx-release/release-docker-images#set-up-a-new-release-group",
+              "snippet": "Release Docker Images",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/node:setup-docker",
+              "url": "https://nx.dev/technologies/node/api/generators/setup-docker#nxnodesetupdocker",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "\"docker\"",
+              "url": "https://nx.dev/recipes/nx-release/build-before-versioning#build-before-docker-versioning",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "\"docker\"",
+              "url": "https://nx.dev/recipes/nx-release/publish-in-ci-cd#using-different-registries",
+              "snippet": "Publish in CI/CD",
+              "source": "algolia"
+            },
+            {
+              "title": "Setup Docker",
+              "url": "https://nx.dev/technologies/node/recipes/node-server-fly-io#setup-docker",
+              "snippet": "Deploying a Node App to Fly.io",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 0,
+          "bestPosition": -1,
+          "foundExpectedUrls": [],
+          "timestamp": "2025-08-19T19:14:53.760Z"
+        },
+        "tailwind": {
+          "keyword": "tailwind",
+          "category": "tools",
+          "expectedUrls": [
+            "/technologies/react/recipes/using-tailwind-css-in-react",
+            "/technologies/angular/recipes/using-tailwind-css-with-angular-projects"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Single File Monorepo Config, Custom Workspace Presets, Improved Tailwind Support …",
+              "url": "https://nx.dev/blog/single-file-monorepo-config-custom-workspace-presets-improved-tailwind-support-and-more-in-nx-13#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Configure Tailwind 4 with Vite in an NPM Workspace: The …",
+              "url": "https://nx.dev/blog/setup-tailwind-4-npm-workspace#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Setup React and Tailwind — The Easy Way",
+              "url": "https://nx.dev/blog/setup-react-and-tailwind-the-easy-way#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Set up Tailwind CSS with Angular in an Nx workspace",
+              "url": "https://nx.dev/blog/set-up-tailwind-css-with-angular-in-an-nx-workspace#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "… 5 — Cypress v10, output globs, linter perf, React Tailwind support",
+              "url": "https://nx.dev/blog/nx-14-5-cypress-v10-output-globs-linter-perf-react-tailwind-support#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Using Tailwind CSS in React and Next.js",
+              "url": "https://nx.dev/technologies/react/recipes/using-tailwind-css-in-react#using-tailwind-css-in-react-and-nextjs",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Using Tailwind CSS with Angular projects",
+              "url": "https://nx.dev/technologies/angular/recipes/using-tailwind-css-with-angular-projects#using-tailwind-css-with-angular-projects",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/vue:setup-tailwind",
+              "url": "https://nx.dev/technologies/vue/api/generators/setup-tailwind#nxvuesetuptailwind",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/react:setup-tailwind",
+              "url": "https://nx.dev/technologies/react/api/generators/setup-tailwind#nxreactsetuptailwind",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "@nx/angular:setup-tailwind",
+              "url": "https://nx.dev/technologies/angular/api/generators/setup-tailwind#nxangularsetuptailwind",
+              "snippet": "",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 2,
+          "bestPosition": 6,
+          "foundExpectedUrls": [
+            {
+              "url": "/technologies/react/recipes/using-tailwind-css-in-react",
+              "position": 6
+            },
+            {
+              "url": "/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+              "position": 7
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:56.539Z"
+        },
+        "pnpm": {
+          "keyword": "pnpm",
+          "category": "tools",
+          "expectedUrls": [
+            "/recipes/adopting-nx/adding-to-monorepo"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "From PNPM Workspaces to Distributed CI",
+              "url": "https://nx.dev/courses/pnpm-nx-next",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Setup a Monorepo with PNPM workspaces and speed it up …",
+              "url": "https://nx.dev/blog/setup-a-monorepo-with-pnpm-workspaces-and-speed-it-up-with-nx#main",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "Bun and Pnpm v9 Support",
+              "url": "https://nx.dev/blog/nx-19-5-adds-stackblitz-new-features-and-more#bun-and-pnpm-v9-support",
+              "snippet": "Nx 19.5 is here! Stackblitz, Bun, Incremental Builds for …",
+              "source": "algolia"
+            },
+            {
+              "title": "The Nx Repo Switches to PNPM for its Package Manager",
+              "url": "https://nx.dev/blog/nx-16-is-here#the-nx-repo-switches-to-pnpm-for-its-package-manager",
+              "snippet": "Nx 16 is Here!",
+              "source": "algolia"
+            },
+            {
+              "title": "#pnpm",
+              "url": "https://nx.dev/blog/introducing-playwright-support-for-nx#install-nxplaywright",
+              "snippet": "Introducing Playwright Support for Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "pnpm dlx nx@latest init",
+              "url": "https://nx.dev/blog/versioning-and-releasing-packages-in-a-monorepo#adding-nx",
+              "snippet": "Versioning and Releasing Packages in a Monorepo",
+              "source": "algolia"
+            },
+            {
+              "title": "Adding Nx to NPM/Yarn/PNPM Workspace",
+              "url": "https://nx.dev/recipes/adopting-nx/adding-to-monorepo#adding-nx-to-npmyarnpnpm-workspace",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "NPM/Yarn/PNPM workspaces",
+              "url": "https://nx.dev/recipes/adopting-nx#adopting-nx",
+              "snippet": "Adopting Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "pnpm",
+              "url": "https://nx.dev/recipes/running-tasks/workspace-watching#pnpm",
+              "snippet": "Workspace Watching",
+              "source": "algolia"
+            },
+            {
+              "title": "pnpm init {x}",
+              "url": "https://nx.dev/extending-nx/recipes/create-install-package#creating-an-install-package",
+              "snippet": "Creating an Install Package",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 1,
+          "bestPosition": 7,
+          "foundExpectedUrls": [
+            {
+              "url": "/recipes/adopting-nx/adding-to-monorepo",
+              "position": 7
+            }
+          ],
+          "timestamp": "2025-08-19T19:14:59.381Z"
+        },
+        "onlyDependOnLibsWithTags": {
+          "keyword": "onlyDependOnLibsWithTags",
+          "category": "api",
+          "expectedUrls": [
+            "/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries"
+          ],
+          "resultCount": 9,
+          "results": [
+            {
+              "title": "onlyDependOnLibsWithTags",
+              "url": "https://nx.dev/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries#dependency-constraints",
+              "snippet": "Enforce module boundaries rule",
+              "source": "algolia"
+            },
+            {
+              "title": "onlyDependOnLibsWithTags",
+              "url": "https://nx.dev/technologies/eslint/recipes/flat-config#switching-to-eslints-flat-config-format",
+              "snippet": "Switching to ESLint's flat config format",
+              "source": "algolia"
+            },
+            {
+              "title": "\"onlyDependOnLibsWithTags\"",
+              "url": "https://nx.dev/features/enforce-module-boundaries#tags",
+              "snippet": "Enforce Module Boundaries",
+              "source": "algolia"
+            },
+            {
+              "title": "\"onlyDependOnLibsWithTags\"",
+              "url": "https://nx.dev/recipes/enforce-module-boundaries/ban-dependencies-with-tags#ban-dependencies-with-certain-tags",
+              "snippet": "Ban Dependencies with Certain Tags",
+              "source": "algolia"
+            },
+            {
+              "title": "\"onlyDependOnLibsWithTags\"",
+              "url": "https://nx.dev/recipes/enforce-module-boundaries/tag-multiple-dimensions#tag-in-multiple-dimensions",
+              "snippet": "Tag in Multiple Dimensions",
+              "source": "algolia"
+            },
+            {
+              "title": "\"onlyDependOnLibsWithTags\"",
+              "url": "https://nx.dev/blog/what-is-new-in-nx-13-10#new-notdependonlibswithtags-linter-option",
+              "snippet": "What is new in Nx 13.10?",
+              "source": "algolia"
+            },
+            {
+              "title": "… of sourceTag and onlyDependOnLibsWithTags …",
+              "url": "https://nx.dev/blog/mastering-the-project-boundaries-in-nx#understanding-the-default-configuration",
+              "snippet": "Taming Code Organization with Module Boundaries in Nx",
+              "source": "algolia"
+            },
+            {
+              "title": "… onlyDependOnLibsWithTags\nsourceTag\nonlyDepend …",
+              "url": "https://nx.dev/blog/architecting-angular-applications#guard-your-boundaries-automatically-enforcing-clear-dependencies",
+              "snippet": "Angular Architecture Guide To Building Maintainable Applications at Scale",
+              "source": "algolia"
+            },
+            {
+              "title": "… onlyDependOnLibsWithTags\"\n\"sourceTag\"\n\"onlyDepend …",
+              "url": "https://nx.dev/blog/react-vite-and-typescript-get-started-in-under-2-minutes#hidden-gem-guard-your-boundaries",
+              "snippet": "React, Vite and TypeScript: Get started in under 2 …",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:15:02.196Z"
+        },
+        "addProjectConfiguration": {
+          "keyword": "addProjectConfiguration",
+          "category": "api",
+          "expectedUrls": [
+            "/reference/core-api/devkit/documents/addProjectConfiguration"
+          ],
+          "resultCount": 6,
+          "results": [
+            {
+              "title": "Function: addProjectConfiguration",
+              "url": "https://nx.dev/reference/core-api/devkit/documents/addProjectConfiguration#function-addprojectconfiguration",
+              "snippet": "",
+              "source": "algolia"
+            },
+            {
+              "title": "addProjectConfiguration",
+              "url": "https://nx.dev/extending-nx/api/nx-devkit/overview#functions",
+              "snippet": "@nx/devkit",
+              "source": "algolia"
+            },
+            {
+              "title": "addProjectConfiguration",
+              "url": "https://nx.dev/reference/core-api/devkit/documents/nx_devkit#functions",
+              "snippet": "@nx/devkit",
+              "source": "algolia"
+            },
+            {
+              "title": "addProjectConfiguration",
+              "url": "https://nx.dev/reference/core-api/devkit/documents/README#functions",
+              "snippet": "@nx/devkit",
+              "source": "algolia"
+            },
+            {
+              "title": "addProjectConfiguration - Create a new project configured for Type …",
+              "url": "https://nx.dev/extending-nx/intro/getting-started#understand-the-generator-functionality",
+              "snippet": "Extending Nx with Plugins",
+              "source": "algolia"
+            },
+            {
+              "title": "… have adjusted the already present addProjectConfiguration function to …",
+              "url": "https://nx.dev/blog/create-your-own-create-react-app-cli#adding-the-target-to-the-projectjson-rather-than-packagejson",
+              "snippet": "Create Your Own create-react-app CLI",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 3,
+          "bestPosition": 1,
+          "foundExpectedUrls": [
+            {
+              "url": "/reference/core-api/devkit/documents/addProjectConfiguration",
+              "position": 1
+            }
+          ],
+          "timestamp": "2025-08-19T19:15:05.027Z"
+        },
+        "dependsOn": {
+          "keyword": "dependsOn",
+          "category": "api",
+          "expectedUrls": [
+            "/reference/project-configuration"
+          ],
+          "resultCount": 10,
+          "results": [
+            {
+              "title": "Syntactic sugar for \"dependsOn\"",
+              "url": "https://nx.dev/blog/nx-14-4-inputs-optional-npm-scope-project-graph-cache-directory-and-more#syntactic-sugar-for-dependson",
+              "snippet": "Nx 14.4 — Inputs, optional npm scope, project graph cache …",
+              "source": "algolia"
+            },
+            {
+              "title": "Frontend serve depends on backend serve",
+              "url": "https://nx.dev/blog/nx-21-continuous-tasks#frontend-serve-depends-on-backend-serve",
+              "snippet": "Continuous tasks are a huge DX improvement",
+              "source": "algolia"
+            },
+            {
+              "title": "\"dependsOn\"",
+              "url": "https://nx.dev/blog/nx-21-release#continuous-tasks",
+              "snippet": "Nx 21 Release: Continuous tasks and Terminal UI lead the …",
+              "source": "algolia"
+            },
+            {
+              "title": "\"dependsOn\"",
+              "url": "https://nx.dev/blog/whats-new-in-nx-15#new-compact-syntax-for-task-pipelines",
+              "snippet": "What's new in Nx 15?",
+              "source": "algolia"
+            },
+            {
+              "title": "\"dependsOn\"",
+              "url": "https://nx.dev/blog/spring-boot-with-nx#connecting-two-tasks",
+              "snippet": "Polyglot Projects Made Easy: Integrating Spring Boot into an Nx …",
+              "source": "algolia"
+            },
+            {
+              "title": "dependsOn",
+              "url": "https://nx.dev/reference/project-configuration#dependson",
+              "snippet": "demo",
+              "source": "algolia"
+            },
+            {
+              "title": "dependsOn",
+              "url": "https://nx.dev/reference/core-api/devkit/documents/TargetConfiguration#dependson",
+              "snippet": "Interface: TargetConfiguration<T>",
+              "source": "algolia"
+            },
+            {
+              "title": "update-19-6-0-add-depends-on-for-preview-server",
+              "url": "https://nx.dev/technologies/build-tools/vite/api#update1960adddependsonforpreviewserver",
+              "snippet": "@nx/vite",
+              "source": "algolia"
+            },
+            {
+              "title": "excludeDependsOn",
+              "url": "https://nx.dev/technologies/java/api/executors/gradle#excludedependson",
+              "snippet": "@nx/gradle:gradle",
+              "source": "algolia"
+            },
+            {
+              "title": "update-19-6-0-add-depends-on-for-preview-server",
+              "url": "https://nx.dev/technologies/build-tools/vite/api/migrations#update1960adddependsonforpreviewserver",
+              "snippet": "@nx/vite:migrations | Nx",
+              "source": "algolia"
+            }
+          ],
+          "oceanScore": 2,
+          "bestPosition": 6,
+          "foundExpectedUrls": [
+            {
+              "url": "/reference/project-configuration",
+              "position": 6
+            }
+          ],
+          "timestamp": "2025-08-19T19:15:07.909Z"
+        }
+      },
+      "summary": {
+        "coverageRate": "71.4",
+        "excellenceRate": "60.0",
+        "avgRelevance": 0,
+        "totalRelevantResults": 0,
+        "zeroResultsCount": 0,
+        "oceanScore": 6.67,
+        "perfectResults": 21,
+        "foundResults": 25
+      },
+      "categoryBreakdown": {
+        "commands": {
+          "found": 8,
+          "perfect": 8,
+          "totalOceanScore": 24,
+          "count": 8,
+          "coverage": "100.0%",
+          "excellence": "100.0%",
+          "oceanScore": "10.00"
+        },
+        "features": {
+          "found": 5,
+          "perfect": 4,
+          "totalOceanScore": 14,
+          "count": 5,
+          "coverage": "100.0%",
+          "excellence": "80.0%",
+          "oceanScore": "9.33"
+        },
+        "concepts": {
+          "found": 4,
+          "perfect": 4,
+          "totalOceanScore": 12,
+          "count": 4,
+          "coverage": "100.0%",
+          "excellence": "100.0%",
+          "oceanScore": "10.00"
+        },
+        "reference": {
+          "found": 2,
+          "perfect": 2,
+          "totalOceanScore": 6,
+          "count": 2,
+          "coverage": "100.0%",
+          "excellence": "100.0%",
+          "oceanScore": "10.00"
+        },
+        "frameworks": {
+          "found": 1,
+          "perfect": 1,
+          "totalOceanScore": 3,
+          "count": 6,
+          "coverage": "16.7%",
+          "excellence": "16.7%",
+          "oceanScore": "1.67"
+        },
+        "tools": {
+          "found": 2,
+          "perfect": 0,
+          "totalOceanScore": 3,
+          "count": 7,
+          "coverage": "28.6%",
+          "excellence": "0.0%",
+          "oceanScore": "1.43"
+        },
+        "api": {
+          "found": 3,
+          "perfect": 2,
+          "totalOceanScore": 8,
+          "count": 3,
+          "coverage": "100.0%",
+          "excellence": "66.7%",
+          "oceanScore": "8.89"
+        }
+      }
+    }
+  },
+  "comparison": {}
+}

@@ -5,6 +5,21 @@
 The Nx repository is a monorepo containing the core Nx build system, CLI tools, plugins for various frameworks, documentation website, and supporting infrastructure. It uses PNPM workspaces for package management and is primarily written in TypeScript with Rust components for performance-critical operations.
 
 
+## Personal Work History
+
+### 2025-08-20 - DOC-135: Fix Astro Docs H1/Frontmatter Title Mismatch
+- **Branch**: DOC-135
+- **Linear Issue**: [DOC-135](https://linear.app/nxdev/issue/DOC-135/style-main-title-and-h2-title-are-almost-not-distinguishable)
+- **Files Modified**:
+  - `astro-docs/src/content/docs/features/run-tasks.mdoc` - Updated title and removed h1
+  - `astro-docs/src/content/docs/features/maintain-typescript-monorepos.mdoc` - Removed h1
+  - `astro-docs/src/content/docs/guides/Enforce Module Boundaries/tag-multiple-dimensions.mdoc` - Removed h1
+  - `astro-docs/src/content/docs/guides/Nx Release/configure-custom-registries.mdoc` - Removed h1
+  - `astro-docs/src/content/docs/guides/Nx Release/customize-conventional-commit-types.mdoc` - Removed h1
+  - `astro-docs/src/content/docs/troubleshooting/resolve-circular-dependencies.mdoc` - Removed h1
+  - `astro-docs/src/content/docs/troubleshooting/troubleshoot-cache-misses.mdoc` - Removed h1
+- **Context**: Starlight displays titles from frontmatter, so h1 headings in content were creating duplicates and poor visual distinction
+
 ## Core Contributors
 
 - Jason Jean – email: jasonjean1993@gmail.com → GitHub username: unknown
