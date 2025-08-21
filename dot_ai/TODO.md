@@ -2,6 +2,11 @@
 
 ## In Progress
 
+- [ ] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)
+  - Dictation: `.ai/2025-08-21/dictations/module-federation-dynamic-manifest-issues.md`
+  - Goal: Fix URL property handling in dynamic manifests and static fallback mechanism
+  - Next steps: Create reproduction repo, communicate with Colum, review on Friday
+
 - [ ] Review PR #8300 for Austin - Powerpack Conformance Allow Option (2025-08-20 15:16)
   - PR: https://github.com/nrwl/ocean/pull/8300
   - Linear Issue: NXC-2951
