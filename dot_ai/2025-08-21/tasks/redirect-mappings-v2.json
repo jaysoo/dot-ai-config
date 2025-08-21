@@ -1,0 +1,3126 @@
+{
+  "generated": "2025-08-21T14:02:55.476Z",
+  "summary": {
+    "totalDocUrls": 506,
+    "mappedUrls": 145,
+    "highConfidence": 36,
+    "mediumConfidence": 0,
+    "lowConfidence": 109,
+    "uncertainUrls": 361
+  },
+  "mappings": [
+    {
+      "old": "/webinar",
+      "new": "/docs/webinar",
+      "confidence": "high"
+    },
+    {
+      "old": "/getting-started",
+      "new": "/docs/getting-started",
+      "confidence": "high"
+    },
+    {
+      "old": "/getting-started/intro",
+      "new": "/docs/getting-started/intro",
+      "confidence": "high"
+    },
+    {
+      "old": "/getting-started/installation",
+      "new": "/docs/getting-started/installation",
+      "confidence": "high"
+    },
+    {
+      "old": "/getting-started/start-new-project",
+      "new": "/docs/getting-started/start-new-project",
+      "confidence": "high"
+    },
+    {
+      "old": "/getting-started/adding-to-existing",
+      "new": "/docs/guides/adopting-nx/adding-to-existing-project",
+      "confidence": "low"
+    },
+    {
+      "old": "/getting-started/editor-setup",
+      "new": "/docs/getting-started/editor-setup",
+      "confidence": "high"
+    },
+    {
+      "old": "/getting-started/tutorials",
+      "new": "/docs/getting-started/tutorials",
+      "confidence": "high"
+    },
+    {
+      "old": "/features",
+      "new": "/docs/features",
+      "confidence": "high"
+    },
+    {
+      "old": "/features/run-tasks",
+      "new": "/docs/features/run-tasks",
+      "confidence": "high"
+    },
+    {
+      "old": "/features/cache-task-results",
+      "new": "/docs/features/cache-task-results",
+      "confidence": "high"
+    },
+    {
+      "old": "/features/explore-graph",
+      "new": "/docs/features/explore-graph",
+      "confidence": "high"
+    },
+    {
+      "old": "/features/generate-code",
+      "new": "/docs/features/generate-code",
+      "confidence": "high"
+    },
+    {
+      "old": "/features/automate-updating-dependencies",
+      "new": "/docs/features/automate-updating-dependencies",
+      "confidence": "high"
+    },
+    {
+      "old": "/features/enforce-module-boundaries",
+      "new": "/docs/features/enforce-module-boundaries",
+      "confidence": "high"
+    },
+    {
+      "old": "/features/manage-releases",
+      "new": "/docs/features/manage-releases",
+      "confidence": "high"
+    },
+    {
+      "old": "/features/ci-features",
+      "new": "/docs/features/ci-features",
+      "confidence": "high"
+    },
+    {
+      "old": "/recipes/installation/install-non-javascript",
+      "new": "/docs/guides/installation/install-non-javascript",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/installation/update-global-installation",
+      "new": "/docs/guides/installation/update-global-installation",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/configure-inputs",
+      "new": "/docs/guides/tasks--caching/configure-inputs",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/configure-outputs",
+      "new": "/docs/guides/tasks--caching/configure-outputs",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/defining-task-pipeline",
+      "new": "/docs/guides/tasks--caching/defining-task-pipeline",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/terminal-ui",
+      "new": "/docs/guides/tasks--caching/terminal-ui",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/run-commands-executor",
+      "new": "/docs/guides/tasks--caching/run-commands-executor",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/pass-args-to-commands",
+      "new": "/docs/guides/tasks--caching/pass-args-to-commands",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/run-tasks-in-parallel",
+      "new": "/docs/guides/tasks--caching/run-tasks-in-parallel",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/root-level-scripts",
+      "new": "/docs/guides/tasks--caching/root-level-scripts",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/workspace-watching",
+      "new": "/docs/guides/tasks--caching/workspace-watching",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/reduce-repetitive-configuration",
+      "new": "/docs/guides/tasks--caching/reduce-repetitive-configuration",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/change-cache-location",
+      "new": "/docs/guides/tasks--caching/change-cache-location",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/skipping-cache",
+      "new": "/docs/guides/tasks--caching/skipping-cache",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/running-tasks/self-hosted-caching",
+      "new": "/docs/guides/tasks--caching/self-hosted-caching",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/adopting-nx/adding-to-monorepo",
+      "new": "/docs/guides/adopting-nx/adding-to-monorepo",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/adopting-nx/from-turborepo",
+      "new": "/docs/guides/adopting-nx/from-turborepo",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/adopting-nx/adding-to-existing-project",
+      "new": "/docs/guides/adopting-nx/adding-to-existing-project",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/adopting-nx/import-project",
+      "new": "/docs/guides/adopting-nx/import-project",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/adopting-nx/preserving-git-histories",
+      "new": "/docs/guides/adopting-nx/preserving-git-histories",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/release-npm-packages",
+      "new": "/docs/guides/nx-release/release-npm-packages",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/release-docker-images",
+      "new": "/docs/guides/nx-release/release-docker-images",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/publish-rust-crates",
+      "new": "/docs/guides/nx-release/publish-rust-crates",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/release-projects-independently",
+      "new": "/docs/guides/nx-release/release-projects-independently",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/updating-version-references",
+      "new": "/docs/guides/nx-release/updating-version-references",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/automatically-version-with-conventional-commits",
+      "new": "/docs/guides/nx-release/automatically-version-with-conventional-commits",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/customize-conventional-commit-types",
+      "new": "/docs/guides/nx-release/customize-conventional-commit-types",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/file-based-versioning-version-plans",
+      "new": "/docs/guides/nx-release/file-based-versioning-version-plans",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/configure-custom-registries",
+      "new": "/docs/guides/nx-release/configure-custom-registries",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/publish-in-ci-cd",
+      "new": "/docs/guides/nx-release/publish-in-ci-cd",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/automate-github-releases",
+      "new": "/docs/guides/nx-release/automate-github-releases",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/automate-gitlab-releases",
+      "new": "/docs/guides/nx-release/automate-gitlab-releases",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/update-local-registry-setup",
+      "new": "/docs/guides/nx-release/update-local-registry-setup",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/configure-changelog-format",
+      "new": "/docs/guides/nx-release/configure-changelog-format",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/build-before-versioning",
+      "new": "/docs/guides/nx-release/build-before-versioning",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-release/configuration-version-prefix",
+      "new": "/docs/guides/nx-release/configuration-version-prefix",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-console/console-telemetry",
+      "new": "/docs/guides/nx-console/console-telemetry",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-console/console-project-details",
+      "new": "/docs/guides/nx-console/console-project-details",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-console/console-generate-command",
+      "new": "/docs/guides/nx-console/console-generate-command",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-console/console-run-command",
+      "new": "/docs/guides/nx-console/console-run-command",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-console/console-nx-cloud",
+      "new": "/docs/guides/nx-console/console-nx-cloud",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/nx-console/console-migrate-ui",
+      "new": "/docs/guides/nx-console/console-migrate-ui",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/enforce-module-boundaries/ban-dependencies-with-tags",
+      "new": "/docs/guides/enforce-module-boundaries/ban-dependencies-with-tags",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/enforce-module-boundaries/tag-multiple-dimensions",
+      "new": "/docs/guides/enforce-module-boundaries/tag-multiple-dimensions",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/enforce-module-boundaries/ban-external-imports",
+      "new": "/docs/guides/enforce-module-boundaries/ban-external-imports",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/enforce-module-boundaries/tags-allow-list",
+      "new": "/docs/guides/enforce-module-boundaries/tags-allow-list",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/standalone-to-monorepo",
+      "new": "/docs/guides/tips-and-tricks/standalone-to-monorepo",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+      "new": "/docs/guides/tips-and-tricks/keep-nx-versions-in-sync",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/define-environment-variables",
+      "new": "/docs/guides/tips-and-tricks/define-environment-variables",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/browser-support",
+      "new": "/docs/guides/tips-and-tricks/browser-support",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/include-assets-in-build",
+      "new": "/docs/guides/tips-and-tricks/include-assets-in-build",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/include-all-packagejson",
+      "new": "/docs/guides/tips-and-tricks/include-all-packagejson",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/identify-dependencies-between-folders",
+      "new": "/docs/guides/tips-and-tricks/identify-dependencies-between-folders",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/analyze-source-files",
+      "new": "/docs/guides/tips-and-tricks/analyze-source-files",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/advanced-update",
+      "new": "/docs/guides/tips-and-tricks/advanced-update",
+      "confidence": "low"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/yarn-pnp",
+      "new": "/docs/guides/tips-and-tricks/yarn-pnp",
+      "confidence": "low"
+    },
+    {
+      "old": "/concepts",
+      "new": "/docs/concepts",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/mental-model",
+      "new": "/docs/concepts/mental-model",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/how-caching-works",
+      "new": "/docs/concepts/how-caching-works",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/task-pipeline-configuration",
+      "new": "/docs/concepts/task-pipeline-configuration",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/nx-plugins",
+      "new": "/docs/concepts/nx-plugins",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/inferred-tasks",
+      "new": "/docs/concepts/inferred-tasks",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/types-of-configuration",
+      "new": "/docs/concepts/types-of-configuration",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/executors-and-configurations",
+      "new": "/docs/concepts/executors-and-configurations",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/common-tasks",
+      "new": "/docs/concepts/common-tasks",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/sync-generators",
+      "new": "/docs/concepts/sync-generators",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/typescript-project-linking",
+      "new": "/docs/concepts/typescript-project-linking",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/buildable-and-publishable-libraries",
+      "new": "/docs/concepts/buildable-and-publishable-libraries",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/decisions",
+      "new": "/docs/concepts/decisions",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/decisions/overview",
+      "new": "/docs/concepts/decisions/overview",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/decisions/why-monorepos",
+      "new": "/docs/concepts/decisions/why-monorepos",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/decisions/dependency-management",
+      "new": "/docs/concepts/decisions/dependency-management",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/decisions/code-ownership",
+      "new": "/docs/concepts/decisions/code-ownership",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/decisions/project-size",
+      "new": "/docs/concepts/decisions/project-size",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/decisions/project-dependency-rules",
+      "new": "/docs/concepts/decisions/project-dependency-rules",
+      "confidence": "high"
+    },
+    {
+      "old": "/concepts/decisions/folder-structure",
+      "new": "/docs/concepts/decisions/folder-structure",
+      "confidence": "high"
+    },
+    {
+      "old": "/reference/nx-json",
+      "new": "/docs/references/nx-json",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/project-configuration",
+      "new": "/docs/references/project-configuration",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/nxignore",
+      "new": "/docs/references/nxignore",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/glossary",
+      "new": "/docs/references/glossary",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/conformance/create-conformance-rule",
+      "new": "/docs/references/powerpack/conformance/create-conformance-rule",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/create-nx-workspace",
+      "new": "/docs/references/create-nx-workspace",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/names",
+      "new": "/docs/references/devkit/names",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/reverse",
+      "new": "/docs/references/devkit/reverse",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/create-nx-workspace",
+      "new": "/docs/references/create-nx-workspace",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/list",
+      "new": "/docs/guides/enforce-module-boundaries/tags-allow-list",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/watch",
+      "new": "/docs/guides/tasks--caching/workspace-watching",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/record",
+      "new": "/docs/guides/nx-cloud/record-commands",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/nx/executors/run-commands",
+      "new": "/docs/guides/tasks--caching/run-commands-executor",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/web/generators/application",
+      "new": "/docs/technologies/node/guides/application-proxies",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/run-commands",
+      "new": "/docs/guides/tasks--caching/run-commands-executor",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/npm-package",
+      "new": "/docs/guides/nx-release/release-npm-packages",
+      "confidence": "low"
+    },
+    {
+      "old": "/reference/core-api/conformance/documents/create-conformance-rule",
+      "new": "/docs/references/powerpack/conformance/create-conformance-rule",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/features/self-healing-ci",
+      "new": "/docs/features/ci-features/self-healing-ci",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/features/distribute-task-execution",
+      "new": "/docs/features/ci-features/distribute-task-execution",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/features/dynamic-agents",
+      "new": "/docs/features/ci-features/dynamic-agents",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/features/split-e2e-tasks",
+      "new": "/docs/features/ci-features/split-e2e-tasks",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/features/flaky-tasks",
+      "new": "/docs/features/ci-features/flaky-tasks",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/features/explain-with-ai",
+      "new": "/docs/features/ci-features/explain-with-ai",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/features/github-integration",
+      "new": "/docs/features/ci-features/github-integration",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/concepts/building-blocks-fast-ci",
+      "new": "/docs/concepts/ci-concepts/building-blocks-fast-ci",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/concepts/reduce-waste",
+      "new": "/docs/concepts/ci-concepts/reduce-waste",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/concepts/parallelization-distribution",
+      "new": "/docs/concepts/ci-concepts/parallelization-distribution",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/concepts/cache-security",
+      "new": "/docs/concepts/ci-concepts/cache-security",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/concepts/heartbeat",
+      "new": "/docs/concepts/ci-concepts/heartbeat-and-manual-shutdown-handling",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/security",
+      "new": "/docs/concepts/ci-concepts/cache-security",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/security/google-auth",
+      "new": "/docs/guides/nx-cloud/google-auth",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/security/personal-access-tokens",
+      "new": "/docs/guides/nx-cloud/personal-access-tokens",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/security/encryption",
+      "new": "/docs/guides/nx-cloud/encryption",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/source-control-integration",
+      "new": "/docs/guides/nx-cloud/source-control-integration",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/dte",
+      "new": "/docs/guides/nx-cloud/manual-dte",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/auth-github",
+      "new": "/docs/enterprise/single-tenant/auth-github",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/auth-gitlab",
+      "new": "/docs/enterprise/single-tenant/auth-gitlab",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/auth-bitbucket-data-center",
+      "new": "/docs/enterprise/single-tenant/auth-bitbucket-data-center",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/auth-saml",
+      "new": "/docs/enterprise/single-tenant/auth-saml",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/custom-github-app",
+      "new": "/docs/enterprise/single-tenant/custom-github-app",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/enterprise/conformance/configure-conformance-rules-in-nx-cloud",
+      "new": "/docs/enterprise/powerpack-features/configure-conformance-rules-in-nx-cloud",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/enterprise/conformance/publish-conformance-rules-to-nx-cloud",
+      "new": "/docs/enterprise/powerpack-features/publish-conformance-rules-to-nx-cloud",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/enterprise/polygraph",
+      "new": "/docs/enterprise/polygraph",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/enterprise/metadata-only-workspace",
+      "new": "/docs/enterprise/metadata-only-workspace",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/enterprise/custom-workflows",
+      "new": "/docs/enterprise/custom-workflows",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/other/record-commands",
+      "new": "/docs/guides/nx-cloud/record-commands",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/other/ci-deployment",
+      "new": "/docs/guides/ci-deployment",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/recipes/other/cipe-affected-project-graph",
+      "new": "/docs/guides/nx-cloud/cipe-affected-project-graph",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/reference/nx-cloud-cli",
+      "new": "/docs/references/nx-cloud-cli",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/reference/launch-templates",
+      "new": "/docs/references/launch-templates",
+      "confidence": "low"
+    },
+    {
+      "old": "/ci/troubleshooting/ci-execution-failed",
+      "new": "/docs/troubleshooting/ci-execution-failed",
+      "confidence": "low"
+    },
+    {
+      "old": "/extending-nx/api/nx-devkit",
+      "new": "/docs/technologies/angular/guides/nx-devkit-angular-devkit",
+      "confidence": "low"
+    }
+  ],
+  "uncertain": [
+    {
+      "old": "/ci",
+      "possibleMatches": [
+        "/docs/concepts/ci-concepts",
+        "/docs/concepts/ci-concepts/ai-features",
+        "/docs/concepts/ci-concepts/building-blocks-fast-ci",
+        "/docs/concepts/ci-concepts/cache-security",
+        "/docs/concepts/ci-concepts/heartbeat-and-manual-shutdown-handling"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/extending-nx",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/react",
+      "possibleMatches": [
+        "/docs/getting-started/tutorials/react-monorepo",
+        "/docs/technologies/react",
+        "/docs/technologies/react/executors",
+        "/docs/technologies/react/expo",
+        "/docs/technologies/react/expo/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/getting-started/ai-integration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/getting-started/tutorials/typescript-packages-tutorial",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/getting-started/tutorials/react-monorepo-tutorial",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/getting-started/tutorials/angular-monorepo-tutorial",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/getting-started/tutorials/gradle-tutorial",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/features/enhance-AI",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/features/maintain-ts-monorepos",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/recipes",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/recipes/installation",
+      "possibleMatches": [
+        "/docs/getting-started/installation",
+        "/docs/guides/installation",
+        "/docs/guides/installation/install-non-javascript",
+        "/docs/guides/installation/update-global-installation"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/recipes/running-tasks",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/recipes/running-tasks/convert-to-inferred",
+      "possibleMatches": [
+        "/docs/guides/tasks--caching/convert-to-inferred",
+        "/docs/troubleshooting/troubleshoot-convert-to-inferred"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/recipes/adopting-nx",
+      "possibleMatches": [
+        "/docs/guides/adopting-nx",
+        "/docs/guides/adopting-nx/adding-to-existing-project",
+        "/docs/guides/adopting-nx/adding-to-monorepo",
+        "/docs/guides/adopting-nx/from-turborepo",
+        "/docs/guides/adopting-nx/import-project"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/recipes/adopting-nx/manual",
+      "possibleMatches": [
+        "/docs/concepts/ci-concepts/heartbeat-and-manual-shutdown-handling",
+        "/docs/guides/adopting-nx/manual",
+        "/docs/guides/nx-cloud/manual-dte"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/recipes/nx-release",
+      "possibleMatches": [
+        "/docs/guides/nx-release",
+        "/docs/guides/nx-release/automate-github-releases",
+        "/docs/guides/nx-release/automate-gitlab-releases",
+        "/docs/guides/nx-release/automatically-version-with-conventional-commits",
+        "/docs/guides/nx-release/build-before-versioning"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/recipes/nx-console",
+      "possibleMatches": [
+        "/docs/guides/nx-console",
+        "/docs/guides/nx-console/console-generate-command",
+        "/docs/guides/nx-console/console-migrate-ui",
+        "/docs/guides/nx-console/console-nx-cloud",
+        "/docs/guides/nx-console/console-project-details"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/recipes/nx-console/console-troubleshooting",
+      "possibleMatches": [
+        "/docs/guides/nx-console/console-troubleshooting",
+        "/docs/troubleshooting/console-troubleshooting"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/recipes/enforce-module-boundaries",
+      "possibleMatches": [
+        "/docs/features/enforce-module-boundaries",
+        "/docs/guides/enforce-module-boundaries",
+        "/docs/guides/enforce-module-boundaries/ban-dependencies-with-tags",
+        "/docs/guides/enforce-module-boundaries/ban-external-imports",
+        "/docs/guides/enforce-module-boundaries/tag-multiple-dimensions"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/recipes/tips-n-tricks",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/concepts/nx-daemon",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference",
+      "possibleMatches": [
+        "/docs/guides/nx-release/updating-version-references",
+        "/docs/references",
+        "/docs/references/benchmarks",
+        "/docs/references/benchmarks/caching",
+        "/docs/references/benchmarks/nx-agents"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/nx-commands",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/inputs",
+      "possibleMatches": [
+        "/docs/guides/tasks--caching/configure-inputs",
+        "/docs/references/inputs"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/environment-variables",
+      "possibleMatches": [
+        "/docs/guides/tips-and-tricks/define-environment-variables",
+        "/docs/references/environment-variables",
+        "/docs/technologies/angular/guides/use-environment-variables-in-angular",
+        "/docs/technologies/react/guides/use-environment-variables-in-react"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/releases",
+      "possibleMatches": [
+        "/docs/features/manage-releases",
+        "/docs/guides/nx-release/automate-github-releases",
+        "/docs/guides/nx-release/automate-gitlab-releases",
+        "/docs/references/releases"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx",
+      "possibleMatches": [
+        "/docs/concepts/module-federation/module-federation-and-nx",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/concepts/nx-plugins",
+        "/docs/enterprise/powerpack-features/configure-conformance-rules-in-nx-cloud",
+        "/docs/enterprise/powerpack-features/publish-conformance-rules-to-nx-cloud"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/workspace",
+      "possibleMatches": [
+        "/docs/enterprise/metadata-only-workspace",
+        "/docs/guides/tasks--caching/workspace-watching",
+        "/docs/references/create-nx-workspace",
+        "/docs/references/devkit/getworkspacelayout",
+        "/docs/references/devkit/isworkspacesenabled"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/owners",
+      "possibleMatches": [
+        "/docs/concepts/decisions/code-ownership",
+        "/docs/enterprise/powerpack-features/owners",
+        "/docs/references/powerpack/owners",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/owners/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/conformance",
+      "possibleMatches": [
+        "/docs/enterprise/powerpack-features/configure-conformance-rules-in-nx-cloud",
+        "/docs/enterprise/powerpack-features/conformance",
+        "/docs/enterprise/powerpack-features/publish-conformance-rules-to-nx-cloud",
+        "/docs/references/powerpack/conformance",
+        "/docs/references/powerpack/conformance/create-conformance-rule"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/conformance/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/azure-cache",
+      "possibleMatches": [
+        "/docs/references/remote-cache-plugins/azure-cache",
+        "/docs/references/remote-cache-plugins/azure-cache/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/azure-cache/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/gcs-cache",
+      "possibleMatches": [
+        "/docs/references/remote-cache-plugins/gcs-cache",
+        "/docs/references/remote-cache-plugins/gcs-cache/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/gcs-cache/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/s3-cache",
+      "possibleMatches": [
+        "/docs/references/remote-cache-plugins/s3-cache",
+        "/docs/references/remote-cache-plugins/s3-cache/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/s3-cache/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache",
+      "possibleMatches": [
+        "/docs/references/remote-cache-plugins/shared-fs-cache",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/devkit",
+      "possibleMatches": [
+        "/docs/references/devkit",
+        "/docs/references/devkit/adddependenciestopackagejson",
+        "/docs/references/devkit/addprojectconfiguration",
+        "/docs/references/devkit/aggregatecreatenodeserror",
+        "/docs/references/devkit/applychangestostring"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/plugin",
+      "possibleMatches": [
+        "/docs/concepts/nx-plugins",
+        "/docs/plugin-registry",
+        "/docs/references/devkit/nxplugin",
+        "/docs/references/devkit/nxpluginv2",
+        "/docs/references/remote-cache-plugins"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/web",
+      "possibleMatches": [
+        "/docs/technologies/angular/angular-rspack/guides/migrate-from-webpack",
+        "/docs/technologies/build-tools/webpack",
+        "/docs/technologies/build-tools/webpack/executors",
+        "/docs/technologies/build-tools/webpack/generators",
+        "/docs/technologies/build-tools/webpack/guides"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/nx-api/nx/documents/affected%23skip-nx-cache",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/nx-json%23tasks-runner-options",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/nx-json%23inputs-namedinputs",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/project-configuration%23inputs-and-namedinputs",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/nx-json%23generators",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/nx_devkit",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ngcli_adapter",
+      "possibleMatches": [
+        "/docs/references/devkit/ngcli_adapter",
+        "/docs/references/devkit/ngcli_adapter/mockschematicsfortesting",
+        "/docs/references/devkit/ngcli_adapter/nxscopedhost",
+        "/docs/references/devkit/ngcli_adapter/wrapangulardevkitschematic"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/AggregateCreateNodesError",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/AsyncIteratorExecutor",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ChangeType",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateDependencies",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateDependenciesContext",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateMetadata",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateMetadataContext",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodes",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesContext",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesContextV2",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesFunction",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesFunctionV2",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesResult",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesResultV2",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesV2",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CustomHasher",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/DefaultTasksRunnerOptions",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/DependencyType",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/DynamicDependency",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Executor",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ExecutorContext",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ExecutorsJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ExpandedPluginConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/FileChange",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/FileData",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/FileMap",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Generator",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/GeneratorCallback",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/GeneratorsJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/GraphJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Hash",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Hasher",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/HasherContext",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ImplicitDependency",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ImplicitDependencyEntry",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ImplicitJsonSubsetDependency",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/JsonParseOptions",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/JsonSerializeOptions",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Migration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/MigrationsJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/NX_VERSION",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/NxAffectedConfig",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/NxJsonConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/NxPlugin",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/NxPluginV2",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/OverwriteStrategy",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PackageManager",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PluginConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PostTasksExecution",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PostTasksExecutionContext",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PreTasksExecution",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PreTasksExecutionContext",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectFileMap",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectGraph",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectGraphDependency",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectGraphExternalNode",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectGraphProjectNode",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectType",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectsConfigurations",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectsMetadata",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PromiseExecutor",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/README",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/RawProjectGraphDependency",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/RemoteCache",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/StaleProjectGraphCacheError",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/StaticDependency",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/StringChange",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/StringDeletion",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/StringInsertion",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Target",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TargetConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TargetDefaults",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TargetDependencyConfig",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Task",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TaskGraph",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TaskGraphExecutor",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TaskHasher",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TaskResult",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TaskResults",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ToJSOptions",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Tree",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Workspace",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/WorkspaceJsonConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/addDependenciesToPackageJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/addProjectConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/applyChangesToString",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/cacheDir",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/convertNxExecutor",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/convertNxGenerator",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/createNodesFromFiles",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/createProjectFileMapUsingProjectGraph",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/createProjectGraphAsync",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/defaultTasksRunner",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/detectPackageManager",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ensurePackage",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/extractLayoutDirectory",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/formatFiles",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/generateFiles",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/getOutputsForTargetAndConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/getPackageManagerCommand",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/getPackageManagerVersion",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/getProjects",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/getWorkspaceLayout",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/glob",
+      "possibleMatches": [
+        "/docs/guides/installation/update-global-installation",
+        "/docs/references/devkit/glob",
+        "/docs/references/devkit/globasync"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/globAsync",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/hashArray",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/installPackagesTask",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/isDaemonEnabled",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/isWorkspacesEnabled",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/joinPathFragments",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/logger",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/moveFilesToNewDirectory",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ngcli_adapter/NxScopedHost",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ngcli_adapter/README",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ngcli_adapter/mockSchematicsForTesting",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ngcli_adapter/wrapAngularDevkitSchematic",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/normalizePath",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/offsetFromRoot",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/output",
+      "possibleMatches": [
+        "/docs/guides/tasks--caching/configure-outputs",
+        "/docs/references/devkit/getoutputsfortargetandconfiguration"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/parseJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/parseTargetString",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readCachedProjectGraph",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readJsonFile",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readNxJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readProjectConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readProjectsConfigurationFromProjectGraph",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readTargetOptions",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/removeDependenciesFromPackageJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/removeProjectConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/runExecutor",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/runTasksInSerial",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/serializeJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/stripIndents",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/stripJsonComments",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/targetToTargetString",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/toJS",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/updateJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/updateNxJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/updateProjectConfiguration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/updateTsConfigsToJs",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/validateDependency",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/visitNotIgnoredFiles",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/workspaceLayout",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/workspaceRoot",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/writeJson",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/writeJsonFile",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/devkit/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/devkit/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/devkit/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/init",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/generate",
+      "possibleMatches": [
+        "/docs/features/generate-code",
+        "/docs/guides/nx-console/console-generate-command",
+        "/docs/references/devkit/generatefiles"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/run",
+      "possibleMatches": [
+        "/docs/features/run-tasks",
+        "/docs/guides/nx-console/console-run-command",
+        "/docs/guides/tasks--caching/run-commands-executor",
+        "/docs/guides/tasks--caching/run-tasks-in-parallel",
+        "/docs/references/devkit/defaulttasksrunner"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/daemon",
+      "possibleMatches": [
+        "/docs/concepts/daemon",
+        "/docs/references/devkit/isdaemonenabled"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/dep-graph",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/run-many",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/affected",
+      "possibleMatches": [
+        "/docs/features/ci-features/affected",
+        "/docs/guides/nx-cloud/cipe-affected-project-graph",
+        "/docs/references/devkit/nxaffectedconfig"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/format-check",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/format-write",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/migrate",
+      "possibleMatches": [
+        "/docs/guides/nx-console/console-migrate-ui",
+        "/docs/technologies/angular/angular-rspack/guides/migrate-from-webpack"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/report",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/connect-to-nx-cloud",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/reset",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/repair",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/sync",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/guides/tips-and-tricks/keep-nx-versions-in-sync",
+        "/docs/references/devkit/asynciteratorexecutor",
+        "/docs/references/devkit/createprojectgraphasync",
+        "/docs/references/devkit/globasync"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/sync-check",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/import",
+      "possibleMatches": [
+        "/docs/guides/adopting-nx/import-project",
+        "/docs/guides/enforce-module-boundaries/ban-external-imports"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/exec",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/features/ci-features/distribute-task-execution",
+        "/docs/guides/tasks--caching/run-commands-executor",
+        "/docs/references/devkit/asynciteratorexecutor",
+        "/docs/references/devkit/convertnxexecutor"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/show",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/view-logs",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/release",
+      "possibleMatches": [
+        "/docs/features/manage-releases",
+        "/docs/guides/nx-release",
+        "/docs/guides/nx-release/automate-github-releases",
+        "/docs/guides/nx-release/automate-gitlab-releases",
+        "/docs/guides/nx-release/automatically-version-with-conventional-commits"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/add",
+      "possibleMatches": [
+        "/docs/guides/adopting-nx/adding-to-existing-project",
+        "/docs/guides/adopting-nx/adding-to-monorepo",
+        "/docs/references/devkit/adddependenciestopackagejson",
+        "/docs/references/devkit/addprojectconfiguration",
+        "/docs/technologies/react/guides/adding-assets-react"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/mcp",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/login",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/logout",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/fix-ci",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/start-ci-run",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/executors/noop",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/executors/run-script",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/nx/generators/connect-to-nx-cloud",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/nx/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/plugin/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/plugin",
+      "possibleMatches": [
+        "/docs/concepts/nx-plugins",
+        "/docs/plugin-registry",
+        "/docs/references/devkit/nxplugin",
+        "/docs/references/devkit/nxpluginv2",
+        "/docs/references/remote-cache-plugins"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/create-package",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/e2e-project",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/migration",
+      "possibleMatches": [
+        "/docs/references/devkit/migration",
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migration",
+        "/docs/technologies/angular/migration/angular-multiple",
+        "/docs/technologies/angular/migration/angular"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/generator",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/convertnxgenerator",
+        "/docs/references/devkit/generator",
+        "/docs/references/devkit/generatorcallback",
+        "/docs/references/devkit/generatorsjson"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/executor",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/guides/tasks--caching/run-commands-executor",
+        "/docs/references/devkit/asynciteratorexecutor",
+        "/docs/references/devkit/convertnxexecutor",
+        "/docs/references/devkit/executor"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/plugin-lint-checks",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/preset",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/plugin/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/web/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/web/executors/file-server",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/web/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/web/generators/init",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/web/generators/static-config",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/web/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/workspace/documents",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/workspace/documents/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/workspace/documents/nx-nodejs-typescript-version-matrix",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/workspace/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/workspace/executors/counter",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/preset",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/move",
+      "possibleMatches": [
+        "/docs/references/devkit/movefilestonewdirectory",
+        "/docs/references/devkit/removedependenciesfrompackagejson",
+        "/docs/references/devkit/removeprojectconfiguration"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/remove",
+      "possibleMatches": [
+        "/docs/references/devkit/removedependenciesfrompackagejson",
+        "/docs/references/devkit/removeprojectconfiguration"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/convert-to-monorepo",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/new",
+      "possibleMatches": [
+        "/docs/getting-started/start-new-project",
+        "/docs/references/devkit/movefilestonewdirectory"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/fix-configuration",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/ci-workflow",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/infer-targets",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/workspace/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/azure-cache/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/azure-cache/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/azure-cache/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/conformance/documents",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/conformance/documents/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/conformance/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/conformance/executors/bundle-rules",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/conformance/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/conformance/generators/create-rule",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/conformance/generators/preset",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/conformance/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/owners/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/owners/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/owners/generators/init",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/owners/generators/sync-codeowners-file",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/owners/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/gcs-cache/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/gcs-cache/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/gcs-cache/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/s3-cache/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/s3-cache/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/s3-cache/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache/executors",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/references/devkit/executorsjson",
+        "/docs/references/powerpack/conformance/executors",
+        "/docs/technologies/angular/executors",
+        "/docs/technologies/build-tools/esbuild/executors"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache/generators",
+      "possibleMatches": [
+        "/docs/concepts/sync-generators",
+        "/docs/references/devkit/generatorsjson",
+        "/docs/references/powerpack/conformance/generators",
+        "/docs/references/powerpack/owners/generators",
+        "/docs/references/remote-cache-plugins/shared-fs-cache/generators"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache/generators/init",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache/migrations",
+      "possibleMatches": [
+        "/docs/references/devkit/migrationsjson",
+        "/docs/technologies/angular/migrations",
+        "/docs/technologies/build-tools/rollup/migrations",
+        "/docs/technologies/build-tools/rspack/migrations",
+        "/docs/technologies/build-tools/vite/migrations"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/features",
+      "possibleMatches": [
+        "/docs/concepts/ci-concepts/ai-features",
+        "/docs/enterprise/powerpack-features",
+        "/docs/enterprise/powerpack-features/configure-conformance-rules-in-nx-cloud",
+        "/docs/enterprise/powerpack-features/conformance",
+        "/docs/enterprise/powerpack-features/licenses-and-trials"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/features/remote-cache",
+      "possibleMatches": [
+        "/docs/features/ci-features/remote-cache",
+        "/docs/references/remote-cache-plugins",
+        "/docs/references/remote-cache-plugins/azure-cache",
+        "/docs/references/remote-cache-plugins/azure-cache/overview",
+        "/docs/references/remote-cache-plugins/gcs-cache"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/features/affected",
+      "possibleMatches": [
+        "/docs/features/ci-features/affected",
+        "/docs/guides/nx-cloud/cipe-affected-project-graph",
+        "/docs/references/devkit/nxaffectedconfig"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/concepts",
+      "possibleMatches": [
+        "/docs/concepts",
+        "/docs/concepts/buildable-and-publishable-libraries",
+        "/docs/concepts/ci-concepts",
+        "/docs/concepts/ci-concepts/ai-features",
+        "/docs/concepts/ci-concepts/building-blocks-fast-ci"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/concepts/nx-cloud-ai",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/improving-ttg",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/set-up",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/set-up/monorepo-ci-azure",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/set-up/monorepo-ci-circle-ci",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/set-up/monorepo-ci-github-actions",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/set-up/monorepo-ci-jenkins",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/set-up/monorepo-ci-gitlab",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/set-up/monorepo-ci-bitbucket-pipelines",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/security/access-tokens",
+      "possibleMatches": [
+        "/docs/guides/nx-cloud/access-tokens",
+        "/docs/guides/nx-cloud/personal-access-tokens"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/recipes/source-control-integration/github",
+      "possibleMatches": [
+        "/docs/enterprise/single-tenant/auth-github",
+        "/docs/enterprise/single-tenant/custom-github-app",
+        "/docs/features/ci-features/github-integration",
+        "/docs/guides/nx-release/automate-github-releases"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/recipes/source-control-integration/bitbucket",
+      "possibleMatches": [
+        "/docs/enterprise/single-tenant/auth-bitbucket-data-center",
+        "/docs/enterprise/single-tenant/auth-bitbucket"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/recipes/source-control-integration/gitlab",
+      "possibleMatches": [
+        "/docs/enterprise/single-tenant/auth-gitlab",
+        "/docs/guides/nx-release/automate-gitlab-releases"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/recipes/source-control-integration/azure-devops",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/dte/github-dte",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/dte/circle-ci-dte",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/dte/azure-dte",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/dte/bitbucket-dte",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/dte/gitlab-dte",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/dte/jenkins-dte",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/recipes/enterprise",
+      "possibleMatches": [
+        "/docs/enterprise",
+        "/docs/enterprise/activate-powerpack",
+        "/docs/enterprise/custom-workflows",
+        "/docs/enterprise/metadata-only-workspace",
+        "/docs/enterprise/polygraph"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant",
+      "possibleMatches": [
+        "/docs/enterprise/single-tenant",
+        "/docs/enterprise/single-tenant/auth-bitbucket-data-center",
+        "/docs/enterprise/single-tenant/auth-bitbucket",
+        "/docs/enterprise/single-tenant/auth-github",
+        "/docs/enterprise/single-tenant/auth-gitlab"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/auth-bitbucket",
+      "possibleMatches": [
+        "/docs/enterprise/single-tenant/auth-bitbucket-data-center",
+        "/docs/enterprise/single-tenant/auth-bitbucket"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/recipes/enterprise/conformance",
+      "possibleMatches": [
+        "/docs/enterprise/powerpack-features/configure-conformance-rules-in-nx-cloud",
+        "/docs/enterprise/powerpack-features/conformance",
+        "/docs/enterprise/powerpack-features/publish-conformance-rules-to-nx-cloud",
+        "/docs/references/powerpack/conformance",
+        "/docs/references/powerpack/conformance/create-conformance-rule"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/recipes/other",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/reference",
+      "possibleMatches": [
+        "/docs/guides/nx-release/updating-version-references",
+        "/docs/references",
+        "/docs/references/benchmarks",
+        "/docs/references/benchmarks/caching",
+        "/docs/references/benchmarks/nx-agents"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/reference/config",
+      "possibleMatches": [
+        "/docs/concepts/executors-and-configurations",
+        "/docs/concepts/task-pipeline-configuration",
+        "/docs/concepts/types-of-configuration",
+        "/docs/enterprise/powerpack-features/configure-conformance-rules-in-nx-cloud",
+        "/docs/guides/nx-release/configuration-version-prefix"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/ci/reference/assignment-rules",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/reference/custom-steps",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/reference/custom-images",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/reference/env-vars",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/reference/credits-pricing",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/reference/release-notes",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/ci/troubleshooting",
+      "possibleMatches": [
+        "/docs/guides/nx-console/console-troubleshooting",
+        "/docs/troubleshooting",
+        "/docs/troubleshooting/ci-execution-failed",
+        "/docs/troubleshooting/console-troubleshooting",
+        "/docs/troubleshooting/performance-profiling"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/extending-nx/intro",
+      "possibleMatches": [
+        "/docs/getting-started/intro",
+        "/docs/technologies/angular/angular-rspack/introduction",
+        "/docs/technologies/angular/introduction",
+        "/docs/technologies/build-tools/esbuild/introduction",
+        "/docs/technologies/build-tools/rollup/introduction"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/extending-nx/intro/getting-started",
+      "possibleMatches": [
+        "/docs/getting-started",
+        "/docs/getting-started/ai-setup",
+        "/docs/getting-started/editor-setup",
+        "/docs/getting-started/installation",
+        "/docs/getting-started/intro"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/extending-nx/tutorials",
+      "possibleMatches": [
+        "/docs/getting-started/tutorials",
+        "/docs/getting-started/tutorials/angular-monorepo",
+        "/docs/getting-started/tutorials/gradle",
+        "/docs/getting-started/tutorials/react-monorepo",
+        "/docs/getting-started/tutorials/typescript-packages"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/extending-nx/tutorials/organization-specific-plugin",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/tutorials/tooling-plugin",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/local-generators",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/composing-generators",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/generator-options",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/creating-files",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/modifying-files",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/create-sync-generator",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/migration-generators",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/local-executors",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/compose-executors",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/create-preset",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/create-install-package",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/project-graph-plugins",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/publish-plugin",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/recipes/task-running-lifecycle",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/api",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/api/nx-devkit/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/extending-nx/api/nx-devkit/ngcli-adapter",
+      "possibleMatches": [],
+      "reason": "no matches found"
+    },
+    {
+      "old": "/extending-nx/api/plugin",
+      "possibleMatches": [
+        "/docs/concepts/nx-plugins",
+        "/docs/plugin-registry",
+        "/docs/references/devkit/nxplugin",
+        "/docs/references/devkit/nxpluginv2",
+        "/docs/references/remote-cache-plugins"
+      ],
+      "reason": "multiple matches"
+    },
+    {
+      "old": "/extending-nx/api/plugin/overview",
+      "possibleMatches": [
+        "/docs/concepts/decisions/overview",
+        "/docs/concepts/module-federation/nx-module-federation-technical-overview",
+        "/docs/enterprise/single-tenant/overview",
+        "/docs/references/powerpack/conformance/overview",
+        "/docs/references/powerpack/owners/overview"
+      ],
+      "reason": "multiple matches"
+    }
+  ]
+}

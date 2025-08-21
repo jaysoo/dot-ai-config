@@ -1,259 +1,69 @@
 # Nx Repository Architecture
 
-## Directory Overview
+## Repository Overview
+Nx monorepo containing the Nx build system, documentation, and related tooling.
 
-### astro-docs/
-- New Astro-based documentation site using Starlight theme
-- Contains all documentation content in `.mdoc` format
-- Structure: `src/content/docs/` contains all documentation pages
-
-### Documentation Content Structure (astro-docs/src/content/docs/)
-- `concepts/` - Core Nx concepts and mental models
-- `features/` - Feature documentation
-- `guides/` - How-to guides and tutorials
-- `references/` - API and configuration references
-- `technologies/` - Framework-specific documentation (Angular, React, etc.)
-- `troubleshooting/` - Common issues and solutions
-- `enterprise/` - Enterprise features and setup
-- `getting-started/` - Onboarding documentation
-
-## Features & Critical Paths
-
-### Nx-Dev Next.js to Astro Docs Rewrite
-*Last updated: 2025-08-20*
-
-**Related Linear Tasks**: DOC-134
-
-**Quick Start**: Set `NEXT_PUBLIC_ASTRO_URL` environment variable to enable rewrites
-
-**Files Involved**:
-- `nx-dev/nx-dev/next.config.js` - Contains rewrite configuration
-
-**Key Implementation Details**:
-- Rewrites `/docs` and `/docs/*` paths to Astro documentation site
-- Only active when `NEXT_PUBLIC_ASTRO_URL` environment variable is set
-- Maintains backward compatibility - no rewrites when env var not set
-- Allows gradual migration from Next.js docs to Astro docs
-
-### Astro Documentation Site
-*Last updated: 2025-08-20*
-
-**Related Linear Tasks**: DOC-125, DOC-137, DOC-148
-
-**Quick Start**: Documentation content is in `.mdoc` files under `astro-docs/src/content/docs/`
-
-**Files Involved**:
-- `astro-docs/src/content/docs/**/*.mdoc` - All documentation content files
-- `astro-docs/src/content/docs/getting-started/Tutorials/*.md` - Tutorial files with code snippets
-- `astro-docs/markdoc.config.mjs` - Markdoc component registration
-- `astro-docs/src/components/markdoc/` - Custom Markdoc components
-- Uses frontmatter for metadata (title, description, sidebar configuration)
-
-**Key Implementation Details**:
-- Starlight renders titles from frontmatter, not from h1 in content
-- Code snippets use Starlight's native format:
-  - Filenames shown as comments at top of code blocks (e.g., `// filename.ts`)
-  - Line highlighting uses curly brace syntax (e.g., `{1,3-5}`)
-- **Critical**: When adding filename comments to code blocks, highlight line numbers must be offset by +1
-- Sidebar labels can be customized using `sidebar.label` in frontmatter
-- Content uses MDX-like syntax with custom components
-
-**Markdoc Components**:
-- Component names MUST use underscores, not hyphens (e.g., `side_by_side` not `side-by-side`)
-- Graph components expect raw JSON data, not wrapped in markdown code blocks
-- Template blocks use `{% %}` syntax without escaping
-- Components registered in `markdoc.config.mjs` must match usage in .mdoc files exactly
-
-### Vite Support in Nx
-*Last updated: 2025-08-20*
-
-**Related PRs**: #32422
-
-**Quick Start**: Use `--bundler=vite` when creating applications
-
-**Files Involved**:
-- `packages/vite/src/utils/versions.ts` - Version constants for Vite
-- `packages/vite/migrations.json` - Migration definitions
-- `packages/vite/src/generators/init/lib/utils.ts` - Version selection logic
-
-**Key Implementation Details**:
-- Default Vite version: 7.x (as of PR #32422)
-- Backwards compatibility flags:
-  - `--useViteV6`: Installs Vite 6.x
-  - `--useViteV5`: Installs Vite 5.x
-- Migration from v6 to v7 may require manual update: `pnpm add -D vite@^7.0.0`
-- Supports React, Vue, and Web Components
-- Vitest 3.x compatible with all Vite versions (5, 6, 7)
+## Directory Structure
+- `astro-docs/` - New Astro-based documentation site (Starlight framework)
+- `nx-dev/` - Main Nx website and legacy documentation (Next.js)
+  - `nx-dev/nx-dev/` - Next.js application
+  - `nx-dev/nx-dev/pages/` - Pages router pages
+  - `nx-dev/nx-dev/app/` - App router pages
+- `docs/` - Documentation content source
+  - `docs/blog/` - Blog posts in markdown
+- `packages/` - Nx packages and plugins
+- `e2e/` - End-to-end tests
 
 ## Personal Work History
 
-### 2025-08-20: Vite 7 Upgrade Testing
-- **PR**: [#32422](https://github.com/nrwl/nx/pull/32422) - feat(vite): support vite 7
-- **What Was Done**:
-  - Comprehensive testing of Vite 7 upgrade PR using published PR version (0.0.0-pr-32422-a3285be)
-  - Tested create-nx-workspace with different presets (React, Vue)
-  - Verified backwards compatibility with --useViteV6 and --useViteV5 flags
-  - Tested migration path from latest stable (21.4.0 with Vite 6) to PR version (Vite 7)
-  - Created extensive test documentation and scripts for future verification
-- **Key Findings**:
-  - Default Vite version successfully changed to 7.1.3
-  - Backwards compatibility flags work correctly (v6 installs 6.3.5, v5 installs 5.4.19)
-  - Migration from v6 to v7 requires manual Vite update (`pnpm add -D vite@^7.0.0`)
-  - All framework integrations (React, Vue) work with Vite 7
-- **Documentation Created**:
-  - Multiple test plans and result files in `.ai/2025-08-20/tasks/`
-  - 8 test repository scripts for comprehensive verification
-
-### 2025-08-20: Fix Broken Markdoc Components
-- **Branch**: DOC-148
-- **Commit**: 71533fd571
-- **Linear Issue**: [DOC-148](https://linear.app/nxdev/issue/DOC-148/broken-components-in-several-pages)
-- **What Was Done**:
-  - Fixed 108 escaped template blocks across 31 files (removed backslash escapes)
-  - Fixed 52 component name mismatches (hyphens to underscores)
-  - Created missing SideBySide component with pure Tailwind CSS
-  - Fixed graph components by removing JSON code block wrappers
-  - Inlined external JSON files directly into components
-- **Key Implementation**:
-  - Markdoc components must use underscores in names, not hyphens
-  - Graph components expect raw JSON, not markdown code blocks
-  - SideBySide component simplified to grid layout after user feedback
-- **Files Modified**: 29 total files across astro-docs
-
-### 2025-08-20: Configure Next.js to Rewrite to Astro Docs
-- **Branch**: DOC-134
-- **Commit**: f74f4dcbc4
-- **Linear Issue**: [DOC-134](https://linear.app/nxdev/issue/DOC-134/configure-docs-to-rewrite-to-astro-docs)
-- **What Was Done**:
-  - Added rewrite configuration to nx-dev Next.js app for `/docs` routes
-  - Configured rewrites to only activate when `NEXT_PUBLIC_ASTRO_URL` environment variable is set
-  - Maintains backward compatibility - no rewrites when env var is not set
-  - Initially included console.log for debugging, removed per user feedback
+### 2025-08-21: DOC-107 - Documentation Migration to Astro
+- **Branch**: DOC-107
+- **Linear Issue**: DOC-107
 - **Files Modified**:
-  - `nx-dev/nx-dev/next.config.js` - Added async rewrites() function with conditional logic
-- **Implementation**:
-  - Rewrite rules: `/docs` → `${astroDocsUrl}/`, `/docs/:path*` → `${astroDocsUrl}/:path*`
-  - Environment variable controlled activation for flexible deployment
+  - `docs/blog/2023-09-18-introducing-playwright-support-for-nx.md` - Updated doc link
+  - `nx-dev/nx-dev/pages/changelog.tsx` - Updated reference link
+  - `nx-dev/nx-dev/pages/plugin-registry.tsx` - Updated extending-nx link
+- **Scripts Created**:
+  - `.ai/2025-08-21/tasks/find-non-doc-pages.mjs` - Scan for doc links
+  - `.ai/2025-08-21/tasks/create-redirect-mappings.mjs` - Generate redirects
+  - `.ai/2025-08-21/tasks/create-redirect-mappings-v2.mjs` - Improved redirect logic
+- **Purpose**: Update non-doc pages to link to new Astro docs with `/docs` prefix
 
-### 2025-08-20: Remove Duplicate Titles from Documentation
-- **Branch**: DOC-125
-- **Commit**: 52e55c4cc6 (amended to include all fixes)
-- **Linear Issue**: [DOC-125](https://linear.app/nxdev/issue/DOC-125/remove-duplicate-titles)
-- **What Was Done**:
-  - Fixed duplicate title rendering in Astro/Starlight documentation
-  - Initially fixed 10 .mdoc files, then found 3 additional .md files needing fixes
-  - Total of 13 files fixed across all markdown formats (.md, .mdx, .mdoc)
-  - Updated tutorial files to use descriptive h1s as titles with original names as sidebar labels
-  - Created comprehensive verification scripts ensuring all 353 markdown files are clean
-  - Squashed commits with proper PR template format for auto-population
-- **Files Modified**:
-  - 10 .mdoc files (features, guides, references, troubleshooting)
-  - 3 .md tutorial files with h1 headings
-- **Key Learning**: Always verify all markdown file types (.md, .mdx, .mdoc) not just one format
-- **Scripts Created**: Comprehensive verification and fixing scripts in `.ai/2025-08-20/tasks/`
+## Features & Critical Paths
 
-### 2025-08-20: Convert Code Snippets to Starlight Format
-- **Branch**: DOC-137
-- **Commit**: 58ff399021
-- **Linear Issue**: [DOC-137](https://linear.app/nxdev/issue/DOC-137/visualize-the-filename-in-header-of-code-snippet)
-- **What Was Done**:
-  - Converted all code snippets in tutorial files from legacy Nx format to Starlight's native format
-  - Fixed critical line offset bug where filename comments shifted highlight line numbers
-  - Repaired broken code blocks where initial conversion removed closing triple backticks
-  - Converted 27 fileName attributes and 9 highlightLines attributes across 4 tutorial files
-- **Files Modified**:
-  - `astro-docs/src/content/docs/getting-started/Tutorials/angular-monorepo.md`
-  - `astro-docs/src/content/docs/getting-started/Tutorials/gradle.md`
-  - `astro-docs/src/content/docs/getting-started/Tutorials/react-monorepo.md`
-  - `astro-docs/src/content/docs/getting-started/Tutorials/typescript-packages.md`
-- **Critical Bug Found**: When adding filename comments to code blocks, all highlight line numbers need +1 offset
-- **Scripts Created**: Conversion, verification, and fix scripts in `.ai/2025-08-20/tasks/`
-- **Impact**: Proper filename display in code snippet headers and accurate line highlighting
+### Documentation System
+**Last Updated**: 2025-08-21
+**Description**: Dual documentation system with migration in progress
 
-### 2025-08-20: Search Quality Improvements for CLI Commands  
-- **Branch**: DOC-121
-- **Linear Issue**: DOC-121 (search quality improvements)
-- **What Was Done**:
-  - Fixed search weighting issues where 7 critical CLI commands (init, import, build, serve, lint, affected, release) were scoring 0/3 in search results
-  - Implemented post-processing approach to add HTML weights AFTER markdown rendering to bypass Astro security stripping
-  - Applied consistent weighting scheme: priority commands get 10.0 (headings), 8.0 (descriptions), 9.0 (usage)
-  - Moved `nx init` from 5th group to 2nd group in search results (verified with screenshots)
-- **Files Modified**:
-  - `astro-docs/src/plugins/nx-reference-packages.loader.ts:62-108` - Added `addCliSearchWeights()` function
-  - `astro-docs/src/plugins/utils/generate-plugin-markdown.ts:12-109` - Added generator/executor weighting functions  
-  - `astro-docs/src/content/docs/references/commands.mdoc:33-35,92-94,183-185,227-229` - Static command weighting
-  - `astro-docs/src/content/docs/concepts/common-tasks.mdoc:11-13,103-105,183-185,243-245` - Common task weighting
-- **Key Technical Solution**: 
-  - HTML weighting attributes were being stripped by `renderMarkdown()` for security
-  - Solved by adding weights in post-processing AFTER HTML rendering using regex patterns
-  - Regex patterns match actual rendered HTML structure: `(<h3[^>]*>)(.*?<code[^>]*>nx ${cmdName}</code>.*?)(</h3>)`
-- **Impact**: All 7 priority CLI commands now have proper search discoverability, massive UX improvement
+**Files**:
+- `astro-docs/` - New Starlight-based docs (serves at /docs)
+- `nx-dev/nx-dev/pages/[...segments].tsx` - Legacy doc viewer
+- `nx-dev/nx-dev/redirect-rules.js` - URL redirects configuration
+- `nx-dev/nx-dev/next.config.js` - Next.js config with rewrites to Astro
+
+**Key Points**:
+- Astro docs use Starlight framework
+- Legacy docs being migrated to new `/docs` prefix
+- Blog and marketing pages remain in nx-dev Next.js app
+- Redirects needed from old URLs to new `/docs` structure
 
 ## Design Decisions & Gotchas
 
-### Documentation Title Handling
-- **Decision**: Use only frontmatter titles, remove h1 from content
-- **Reason**: Starlight automatically renders frontmatter title as h1, having h1 in content causes duplication
-- **Implementation**: 
-  - All .mdoc files must have `title` in frontmatter
-  - No h1 (`# Title`) should exist in content body
-  - Use `sidebar.label` to customize sidebar text if different from title
+### Astro Documentation Site
+- Uses `npx astro dev` not `npm run dev` (no package.json scripts)
+- Starlight renders title from frontmatter, not h1 in content
+- Dev server doesn't have `/docs` prefix but production does
+- Sitemap URLs need `/docs` prefix added for production mapping
 
-### MDX Content Parsing
-- **Gotcha**: When parsing .mdoc files, code blocks can contain `#` that look like h1 headings
-- **Solution**: Must exclude code blocks (between ```) when searching for markdown headings
-- **Example**: Comments in shell scripts (`# comment`) should not be treated as h1 headings
-
-### Code Snippet Conversion (Starlight)
-- **Decision**: Use Starlight's native code block format instead of custom attributes
-- **Critical Gotcha**: When adding filename comments to code blocks, highlight line numbers must be offset by +1
-- **Format**: 
-  ```ts {2,4-6}  // Line numbers account for filename comment
-  // filename.ts
-  const code = true;
-  ```
-- **Conversion Process**:
-  - `fileName="path/file.ts"` → Comment at top: `// path/file.ts`
-  - `highlightLines=["5-18"]` → Curly braces: `{6-19}` (note +1 offset)
-- **Common Mistake**: Forgetting to adjust highlight line numbers causes wrong lines to be highlighted
-
-### Markdoc Component Development
-- **Decision**: Use underscores in component names, never hyphens
-- **Reason**: Markdoc registration requires exact name matching, hyphens break component resolution
-- **Gotchas**:
-  - Graph components expect raw JSON, not markdown code blocks with ```json
-  - Template blocks `{% %}` should never be escaped with backslashes
-  - JSON data should be inlined directly between component tags, not referenced externally
-- **Development Requirements**:
-  - Run `pnpm build` before `npx astro dev` to generate required .d.ts files
-  - Use ports 8000+ for dev server to avoid conflicts
-- **Component Registration**: All components must be registered in `astro-docs/markdoc.config.mjs`
-
-### Vite Version Migration
-- **Gotcha**: Automatic migration via `nx migrate` may not trigger Vite upgrade
-- **Solution**: Manually update with `pnpm add -D vite@^7.0.0` after Nx package updates
-- **Testing Strategy**:
-  - Use published PR versions (format: 0.0.0-pr-{PR#}-{commit}) for testing
-  - Test both new workspace creation and migration paths
-  - Verify backwards compatibility flags work correctly
-
-### Search Quality in Astro Starlight Documentation
-- **Problem**: HTML weighting attributes (`data-pagefind-weight`) are stripped from generated content for security
-- **Solution**: Post-processing approach - add weights AFTER HTML rendering using regex patterns
-- **Implementation**: Modify loader functions to call weight-adding functions after `renderMarkdown()`
-- **Weight Scale**: Use quadratic scale (10.0 = 100x search impact) for maximum effectiveness
-- **Gotcha**: Regex patterns must account for actual HTML attributes like `<code dir="auto">` not just simple tags
-- **Verification**: Use Playwright MCP for real-time search testing to verify improvements
+### Documentation URL Structure
+- Old: `/getting-started/intro`
+- New: `/docs/getting-started/intro`
+- All doc links in non-doc pages need `/docs` prefix
+- Redirects use 301 permanent status
 
 ## Technology Stack
-
-### Documentation Site
-- **Astro** - Static site generator
-- **Starlight** - Documentation theme for Astro
-- **MDX/MDOC** - Content format supporting components and markdown
-
-## Repository Structure Notes
-
-- This is a worktree checkout at `/Users/jack/projects/nx-worktrees/DOC-125`
-- Main repository is the Nx monorepo
-- Documentation is being migrated to new Astro-based system
+- **Documentation**: Astro + Starlight
+- **Main Site**: Next.js (App Router + Pages Router)
+- **Build System**: Nx
+- **Languages**: TypeScript, JavaScript
+- **Styling**: Tailwind CSS
