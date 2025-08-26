@@ -1,0 +1,39 @@
+URL NORMALIZATIONS APPLIED
+===========================
+
+UPPERCASE TO LOWERCASE:
+  /docs/getting-started/Tutorials/angular-monorepo
+  → /docs/getting-started/tutorials/angular-monorepo
+
+  /docs/getting-started/Tutorials/angular-monorepo
+  → /docs/getting-started/tutorials/angular-monorepo
+
+  /docs/getting-started/Tutorials/angular-monorepo
+  → /docs/getting-started/tutorials/angular-monorepo
+
+  /docs/getting-started/Tutorials/angular-monorepo
+  → /docs/getting-started/tutorials/angular-monorepo
+
+  /docs/getting-started/Tutorials/angular-monorepo
+  → /docs/getting-started/tutorials/angular-monorepo
+
+  ... and 568 more
+
+MULTIPLE TRANSFORMATIONS:
+  /docs/features/CI Features/affected
+  → /docs/features/ci-features/affected
+
+  /docs/guides/Tasks & Caching/configure-inputs
+  → /docs/guides/tasks-caching/configure-inputs
+
+  /docs/guides/Tasks & Caching/configure-outputs
+  → /docs/guides/tasks-caching/configure-outputs
+
+  /docs/guides/Tasks & Caching/defining-task-pipeline
+  → /docs/guides/tasks-caching/defining-task-pipeline
+
+  /docs/guides/Tasks & Caching/terminal-ui
+  → /docs/guides/tasks-caching/terminal-ui
+
+  ... and 131 more
+

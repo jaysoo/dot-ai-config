@@ -1,0 +1,39 @@
+URL NORMALIZATIONS APPLIED (FIXED VERSION)
+===========================================
+
+AMPERSAND (&) → DOUBLE DASH (--):
+  /docs/guides/Tasks & Caching/configure-inputs
+  → /docs/guides/tasks--caching/configure-inputs
+
+  /docs/guides/Tasks & Caching/configure-outputs
+  → /docs/guides/tasks--caching/configure-outputs
+
+  /docs/guides/Tasks & Caching/defining-task-pipeline
+  → /docs/guides/tasks--caching/defining-task-pipeline
+
+  /docs/guides/Tasks & Caching/terminal-ui
+  → /docs/guides/tasks--caching/terminal-ui
+
+  /docs/guides/Tasks & Caching/run-commands-executor
+  → /docs/guides/tasks--caching/run-commands-executor
+
+  /docs/guides/Tasks & Caching/pass-args-to-commands
+  → /docs/guides/tasks--caching/pass-args-to-commands
+
+  /docs/guides/Tasks & Caching/run-tasks-in-parallel
+  → /docs/guides/tasks--caching/run-tasks-in-parallel
+
+  /docs/guides/Tasks & Caching/root-level-scripts
+  → /docs/guides/tasks--caching/root-level-scripts
+
+  /docs/guides/Tasks & Caching/workspace-watching
+  → /docs/guides/tasks--caching/workspace-watching
+
+  /docs/guides/Tasks & Caching/reduce-repetitive-configuration
+  → /docs/guides/tasks--caching/reduce-repetitive-configuration
+
+TRANSFORMATION SUMMARY:
+- Total URLs normalized: 713
+- Ampersands replaced with --: 29
+- Uppercase to lowercase: 709
+- Spaces replaced with -: 136
