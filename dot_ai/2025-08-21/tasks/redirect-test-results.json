@@ -1,0 +1,1687 @@
+{
+  "highConfidence": {
+    "passed": [
+      {
+        "originalPath": "/getting-started",
+        "expectedPath": "/docs/getting-started",
+        "testUrl": "http://localhost:4200/getting-started",
+        "expectedUrl": "http://localhost:9001/docs/getting-started",
+        "status": 308,
+        "location": "/docs/getting-started",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/getting-started/intro",
+        "expectedPath": "/docs/getting-started/intro",
+        "testUrl": "http://localhost:4200/getting-started/intro",
+        "expectedUrl": "http://localhost:9001/docs/getting-started/intro",
+        "status": 308,
+        "location": "/docs/getting-started/intro",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/getting-started/installation",
+        "expectedPath": "/docs/getting-started/installation",
+        "testUrl": "http://localhost:4200/getting-started/installation",
+        "expectedUrl": "http://localhost:9001/docs/getting-started/installation",
+        "status": 308,
+        "location": "/docs/getting-started/installation",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/getting-started/start-new-project",
+        "expectedPath": "/docs/getting-started/start-new-project",
+        "testUrl": "http://localhost:4200/getting-started/start-new-project",
+        "expectedUrl": "http://localhost:9001/docs/getting-started/start-new-project",
+        "status": 308,
+        "location": "/docs/getting-started/start-new-project",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/getting-started/editor-setup",
+        "expectedPath": "/docs/getting-started/editor-setup",
+        "testUrl": "http://localhost:4200/getting-started/editor-setup",
+        "expectedUrl": "http://localhost:9001/docs/getting-started/editor-setup",
+        "status": 308,
+        "location": "/docs/getting-started/editor-setup",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/getting-started/tutorials",
+        "expectedPath": "/docs/getting-started/tutorials",
+        "testUrl": "http://localhost:4200/getting-started/tutorials",
+        "expectedUrl": "http://localhost:9001/docs/getting-started/tutorials",
+        "status": 308,
+        "location": "/docs/getting-started/tutorials",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/features",
+        "expectedPath": "/docs/features",
+        "testUrl": "http://localhost:4200/features",
+        "expectedUrl": "http://localhost:9001/docs/features",
+        "status": 308,
+        "location": "/docs/features",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/features/run-tasks",
+        "expectedPath": "/docs/features/run-tasks",
+        "testUrl": "http://localhost:4200/features/run-tasks",
+        "expectedUrl": "http://localhost:9001/docs/features/run-tasks",
+        "status": 308,
+        "location": "/docs/features/run-tasks",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/features/cache-task-results",
+        "expectedPath": "/docs/features/cache-task-results",
+        "testUrl": "http://localhost:4200/features/cache-task-results",
+        "expectedUrl": "http://localhost:9001/docs/features/cache-task-results",
+        "status": 308,
+        "location": "/docs/features/cache-task-results",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/features/explore-graph",
+        "expectedPath": "/docs/features/explore-graph",
+        "testUrl": "http://localhost:4200/features/explore-graph",
+        "expectedUrl": "http://localhost:9001/docs/features/explore-graph",
+        "status": 308,
+        "location": "/docs/features/explore-graph",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/features/generate-code",
+        "expectedPath": "/docs/features/generate-code",
+        "testUrl": "http://localhost:4200/features/generate-code",
+        "expectedUrl": "http://localhost:9001/docs/features/generate-code",
+        "status": 308,
+        "location": "/docs/features/generate-code",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/features/automate-updating-dependencies",
+        "expectedPath": "/docs/features/automate-updating-dependencies",
+        "testUrl": "http://localhost:4200/features/automate-updating-dependencies",
+        "expectedUrl": "http://localhost:9001/docs/features/automate-updating-dependencies",
+        "status": 308,
+        "location": "/docs/features/automate-updating-dependencies",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/features/enforce-module-boundaries",
+        "expectedPath": "/docs/features/enforce-module-boundaries",
+        "testUrl": "http://localhost:4200/features/enforce-module-boundaries",
+        "expectedUrl": "http://localhost:9001/docs/features/enforce-module-boundaries",
+        "status": 308,
+        "location": "/docs/features/enforce-module-boundaries",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/features/manage-releases",
+        "expectedPath": "/docs/features/manage-releases",
+        "testUrl": "http://localhost:4200/features/manage-releases",
+        "expectedUrl": "http://localhost:9001/docs/features/manage-releases",
+        "status": 308,
+        "location": "/docs/features/manage-releases",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/features/ci-features",
+        "expectedPath": "/docs/features/ci-features",
+        "testUrl": "http://localhost:4200/features/ci-features",
+        "expectedUrl": "http://localhost:9001/docs/features/ci-features",
+        "status": 308,
+        "location": "/docs/features/ci-features",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts",
+        "expectedPath": "/docs/concepts",
+        "testUrl": "http://localhost:4200/concepts",
+        "expectedUrl": "http://localhost:9001/docs/concepts",
+        "status": 308,
+        "location": "/docs/concepts",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/mental-model",
+        "expectedPath": "/docs/concepts/mental-model",
+        "testUrl": "http://localhost:4200/concepts/mental-model",
+        "expectedUrl": "http://localhost:9001/docs/concepts/mental-model",
+        "status": 308,
+        "location": "/docs/concepts/mental-model",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/how-caching-works",
+        "expectedPath": "/docs/concepts/how-caching-works",
+        "testUrl": "http://localhost:4200/concepts/how-caching-works",
+        "expectedUrl": "http://localhost:9001/docs/concepts/how-caching-works",
+        "status": 308,
+        "location": "/docs/concepts/how-caching-works",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/task-pipeline-configuration",
+        "expectedPath": "/docs/concepts/task-pipeline-configuration",
+        "testUrl": "http://localhost:4200/concepts/task-pipeline-configuration",
+        "expectedUrl": "http://localhost:9001/docs/concepts/task-pipeline-configuration",
+        "status": 308,
+        "location": "/docs/concepts/task-pipeline-configuration",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/nx-plugins",
+        "expectedPath": "/docs/concepts/nx-plugins",
+        "testUrl": "http://localhost:4200/concepts/nx-plugins",
+        "expectedUrl": "http://localhost:9001/docs/concepts/nx-plugins",
+        "status": 308,
+        "location": "/docs/concepts/nx-plugins",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/inferred-tasks",
+        "expectedPath": "/docs/concepts/inferred-tasks",
+        "testUrl": "http://localhost:4200/concepts/inferred-tasks",
+        "expectedUrl": "http://localhost:9001/docs/concepts/inferred-tasks",
+        "status": 308,
+        "location": "/docs/concepts/inferred-tasks",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/types-of-configuration",
+        "expectedPath": "/docs/concepts/types-of-configuration",
+        "testUrl": "http://localhost:4200/concepts/types-of-configuration",
+        "expectedUrl": "http://localhost:9001/docs/concepts/types-of-configuration",
+        "status": 308,
+        "location": "/docs/concepts/types-of-configuration",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/executors-and-configurations",
+        "expectedPath": "/docs/concepts/executors-and-configurations",
+        "testUrl": "http://localhost:4200/concepts/executors-and-configurations",
+        "expectedUrl": "http://localhost:9001/docs/concepts/executors-and-configurations",
+        "status": 308,
+        "location": "/docs/concepts/executors-and-configurations",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/common-tasks",
+        "expectedPath": "/docs/concepts/common-tasks",
+        "testUrl": "http://localhost:4200/concepts/common-tasks",
+        "expectedUrl": "http://localhost:9001/docs/concepts/common-tasks",
+        "status": 308,
+        "location": "/docs/concepts/common-tasks",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/sync-generators",
+        "expectedPath": "/docs/concepts/sync-generators",
+        "testUrl": "http://localhost:4200/concepts/sync-generators",
+        "expectedUrl": "http://localhost:9001/docs/concepts/sync-generators",
+        "status": 308,
+        "location": "/docs/concepts/sync-generators",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/typescript-project-linking",
+        "expectedPath": "/docs/concepts/typescript-project-linking",
+        "testUrl": "http://localhost:4200/concepts/typescript-project-linking",
+        "expectedUrl": "http://localhost:9001/docs/concepts/typescript-project-linking",
+        "status": 308,
+        "location": "/docs/concepts/typescript-project-linking",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/buildable-and-publishable-libraries",
+        "expectedPath": "/docs/concepts/buildable-and-publishable-libraries",
+        "testUrl": "http://localhost:4200/concepts/buildable-and-publishable-libraries",
+        "expectedUrl": "http://localhost:9001/docs/concepts/buildable-and-publishable-libraries",
+        "status": 308,
+        "location": "/docs/concepts/buildable-and-publishable-libraries",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/daemon",
+        "expectedPath": "/docs/concepts/daemon",
+        "testUrl": "http://localhost:4200/concepts/daemon",
+        "expectedUrl": "http://localhost:9001/docs/concepts/daemon",
+        "status": 308,
+        "location": "/docs/concepts/daemon",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/decisions",
+        "expectedPath": "/docs/concepts/decisions",
+        "testUrl": "http://localhost:4200/concepts/decisions",
+        "expectedUrl": "http://localhost:9001/docs/concepts/decisions",
+        "status": 308,
+        "location": "/docs/concepts/decisions",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/decisions/overview",
+        "expectedPath": "/docs/concepts/decisions/overview",
+        "testUrl": "http://localhost:4200/concepts/decisions/overview",
+        "expectedUrl": "http://localhost:9001/docs/concepts/decisions/overview",
+        "status": 308,
+        "location": "/docs/concepts/decisions/overview",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/decisions/why-monorepos",
+        "expectedPath": "/docs/concepts/decisions/why-monorepos",
+        "testUrl": "http://localhost:4200/concepts/decisions/why-monorepos",
+        "expectedUrl": "http://localhost:9001/docs/concepts/decisions/why-monorepos",
+        "status": 308,
+        "location": "/docs/concepts/decisions/why-monorepos",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/decisions/dependency-management",
+        "expectedPath": "/docs/concepts/decisions/dependency-management",
+        "testUrl": "http://localhost:4200/concepts/decisions/dependency-management",
+        "expectedUrl": "http://localhost:9001/docs/concepts/decisions/dependency-management",
+        "status": 308,
+        "location": "/docs/concepts/decisions/dependency-management",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/decisions/code-ownership",
+        "expectedPath": "/docs/concepts/decisions/code-ownership",
+        "testUrl": "http://localhost:4200/concepts/decisions/code-ownership",
+        "expectedUrl": "http://localhost:9001/docs/concepts/decisions/code-ownership",
+        "status": 308,
+        "location": "/docs/concepts/decisions/code-ownership",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/decisions/project-size",
+        "expectedPath": "/docs/concepts/decisions/project-size",
+        "testUrl": "http://localhost:4200/concepts/decisions/project-size",
+        "expectedUrl": "http://localhost:9001/docs/concepts/decisions/project-size",
+        "status": 308,
+        "location": "/docs/concepts/decisions/project-size",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/decisions/project-dependency-rules",
+        "expectedPath": "/docs/concepts/decisions/project-dependency-rules",
+        "testUrl": "http://localhost:4200/concepts/decisions/project-dependency-rules",
+        "expectedUrl": "http://localhost:9001/docs/concepts/decisions/project-dependency-rules",
+        "status": 308,
+        "location": "/docs/concepts/decisions/project-dependency-rules",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/concepts/decisions/folder-structure",
+        "expectedPath": "/docs/concepts/decisions/folder-structure",
+        "testUrl": "http://localhost:4200/concepts/decisions/folder-structure",
+        "expectedUrl": "http://localhost:9001/docs/concepts/decisions/folder-structure",
+        "status": 308,
+        "location": "/docs/concepts/decisions/folder-structure",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      }
+    ],
+    "failed": [],
+    "contentMismatch": [],
+    "notFound": []
+  },
+  "lowConfidence": {
+    "passed": [
+      {
+        "originalPath": "/recipes/installation/install-non-javascript",
+        "expectedPath": "/docs/guides/installation/install-non-javascript",
+        "testUrl": "http://localhost:4200/recipes/installation/install-non-javascript",
+        "expectedUrl": "http://localhost:9001/docs/guides/installation/install-non-javascript",
+        "status": 308,
+        "location": "/docs/guides/installation/install-non-javascript",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/installation/update-global-installation",
+        "expectedPath": "/docs/guides/installation/update-global-installation",
+        "testUrl": "http://localhost:4200/recipes/installation/update-global-installation",
+        "expectedUrl": "http://localhost:9001/docs/guides/installation/update-global-installation",
+        "status": 308,
+        "location": "/docs/guides/installation/update-global-installation",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/configure-inputs",
+        "expectedPath": "/docs/guides/tasks--caching/configure-inputs",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/configure-inputs",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/configure-inputs",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/configure-inputs",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/configure-outputs",
+        "expectedPath": "/docs/guides/tasks--caching/configure-outputs",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/configure-outputs",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/configure-outputs",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/configure-outputs",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/defining-task-pipeline",
+        "expectedPath": "/docs/guides/tasks--caching/defining-task-pipeline",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/defining-task-pipeline",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/defining-task-pipeline",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/defining-task-pipeline",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/terminal-ui",
+        "expectedPath": "/docs/guides/tasks--caching/terminal-ui",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/terminal-ui",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/terminal-ui",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/terminal-ui",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/run-commands-executor",
+        "expectedPath": "/docs/guides/tasks--caching/run-commands-executor",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/run-commands-executor",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/run-commands-executor",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/run-commands-executor",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/pass-args-to-commands",
+        "expectedPath": "/docs/guides/tasks--caching/pass-args-to-commands",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/pass-args-to-commands",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/pass-args-to-commands",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/pass-args-to-commands",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/run-tasks-in-parallel",
+        "expectedPath": "/docs/guides/tasks--caching/run-tasks-in-parallel",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/run-tasks-in-parallel",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/run-tasks-in-parallel",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/run-tasks-in-parallel",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/root-level-scripts",
+        "expectedPath": "/docs/guides/tasks--caching/root-level-scripts",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/root-level-scripts",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/root-level-scripts",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/root-level-scripts",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/workspace-watching",
+        "expectedPath": "/docs/guides/tasks--caching/workspace-watching",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/workspace-watching",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/workspace-watching",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/workspace-watching",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/reduce-repetitive-configuration",
+        "expectedPath": "/docs/guides/tasks--caching/reduce-repetitive-configuration",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/reduce-repetitive-configuration",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/reduce-repetitive-configuration",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/reduce-repetitive-configuration",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/change-cache-location",
+        "expectedPath": "/docs/guides/tasks--caching/change-cache-location",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/change-cache-location",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/change-cache-location",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/change-cache-location",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/skipping-cache",
+        "expectedPath": "/docs/guides/tasks--caching/skipping-cache",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/skipping-cache",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/skipping-cache",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/skipping-cache",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/running-tasks/self-hosted-caching",
+        "expectedPath": "/docs/guides/tasks--caching/self-hosted-caching",
+        "testUrl": "http://localhost:4200/recipes/running-tasks/self-hosted-caching",
+        "expectedUrl": "http://localhost:9001/docs/guides/tasks--caching/self-hosted-caching",
+        "status": 308,
+        "location": "/docs/guides/tasks--caching/self-hosted-caching",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/adopting-nx/adding-to-monorepo",
+        "expectedPath": "/docs/guides/adopting-nx/adding-to-monorepo",
+        "testUrl": "http://localhost:4200/recipes/adopting-nx/adding-to-monorepo",
+        "expectedUrl": "http://localhost:9001/docs/guides/adopting-nx/adding-to-monorepo",
+        "status": 308,
+        "location": "/docs/guides/adopting-nx/adding-to-monorepo",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/adopting-nx/from-turborepo",
+        "expectedPath": "/docs/guides/adopting-nx/from-turborepo",
+        "testUrl": "http://localhost:4200/recipes/adopting-nx/from-turborepo",
+        "expectedUrl": "http://localhost:9001/docs/guides/adopting-nx/from-turborepo",
+        "status": 308,
+        "location": "/docs/guides/adopting-nx/from-turborepo",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/adopting-nx/adding-to-existing-project",
+        "expectedPath": "/docs/guides/adopting-nx/adding-to-existing-project",
+        "testUrl": "http://localhost:4200/recipes/adopting-nx/adding-to-existing-project",
+        "expectedUrl": "http://localhost:9001/docs/guides/adopting-nx/adding-to-existing-project",
+        "status": 308,
+        "location": "/docs/guides/adopting-nx/adding-to-existing-project",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/adopting-nx/import-project",
+        "expectedPath": "/docs/guides/adopting-nx/import-project",
+        "testUrl": "http://localhost:4200/recipes/adopting-nx/import-project",
+        "expectedUrl": "http://localhost:9001/docs/guides/adopting-nx/import-project",
+        "status": 308,
+        "location": "/docs/guides/adopting-nx/import-project",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/adopting-nx/preserving-git-histories",
+        "expectedPath": "/docs/guides/adopting-nx/preserving-git-histories",
+        "testUrl": "http://localhost:4200/recipes/adopting-nx/preserving-git-histories",
+        "expectedUrl": "http://localhost:9001/docs/guides/adopting-nx/preserving-git-histories",
+        "status": 308,
+        "location": "/docs/guides/adopting-nx/preserving-git-histories",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/release-npm-packages",
+        "expectedPath": "/docs/guides/nx-release/release-npm-packages",
+        "testUrl": "http://localhost:4200/recipes/nx-release/release-npm-packages",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/release-npm-packages",
+        "status": 308,
+        "location": "/docs/guides/nx-release/release-npm-packages",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/release-docker-images",
+        "expectedPath": "/docs/guides/nx-release/release-docker-images",
+        "testUrl": "http://localhost:4200/recipes/nx-release/release-docker-images",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/release-docker-images",
+        "status": 308,
+        "location": "/docs/guides/nx-release/release-docker-images",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/publish-rust-crates",
+        "expectedPath": "/docs/guides/nx-release/publish-rust-crates",
+        "testUrl": "http://localhost:4200/recipes/nx-release/publish-rust-crates",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/publish-rust-crates",
+        "status": 308,
+        "location": "/docs/guides/nx-release/publish-rust-crates",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/release-projects-independently",
+        "expectedPath": "/docs/guides/nx-release/release-projects-independently",
+        "testUrl": "http://localhost:4200/recipes/nx-release/release-projects-independently",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/release-projects-independently",
+        "status": 308,
+        "location": "/docs/guides/nx-release/release-projects-independently",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/updating-version-references",
+        "expectedPath": "/docs/guides/nx-release/updating-version-references",
+        "testUrl": "http://localhost:4200/recipes/nx-release/updating-version-references",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/updating-version-references",
+        "status": 308,
+        "location": "/docs/guides/nx-release/updating-version-references",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/automatically-version-with-conventional-commits",
+        "expectedPath": "/docs/guides/nx-release/automatically-version-with-conventional-commits",
+        "testUrl": "http://localhost:4200/recipes/nx-release/automatically-version-with-conventional-commits",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/automatically-version-with-conventional-commits",
+        "status": 308,
+        "location": "/docs/guides/nx-release/automatically-version-with-conventional-commits",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/customize-conventional-commit-types",
+        "expectedPath": "/docs/guides/nx-release/customize-conventional-commit-types",
+        "testUrl": "http://localhost:4200/recipes/nx-release/customize-conventional-commit-types",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/customize-conventional-commit-types",
+        "status": 308,
+        "location": "/docs/guides/nx-release/customize-conventional-commit-types",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/file-based-versioning-version-plans",
+        "expectedPath": "/docs/guides/nx-release/file-based-versioning-version-plans",
+        "testUrl": "http://localhost:4200/recipes/nx-release/file-based-versioning-version-plans",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/file-based-versioning-version-plans",
+        "status": 308,
+        "location": "/docs/guides/nx-release/file-based-versioning-version-plans",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/configure-custom-registries",
+        "expectedPath": "/docs/guides/nx-release/configure-custom-registries",
+        "testUrl": "http://localhost:4200/recipes/nx-release/configure-custom-registries",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/configure-custom-registries",
+        "status": 308,
+        "location": "/docs/guides/nx-release/configure-custom-registries",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/publish-in-ci-cd",
+        "expectedPath": "/docs/guides/nx-release/publish-in-ci-cd",
+        "testUrl": "http://localhost:4200/recipes/nx-release/publish-in-ci-cd",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/publish-in-ci-cd",
+        "status": 308,
+        "location": "/docs/guides/nx-release/publish-in-ci-cd",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/automate-github-releases",
+        "expectedPath": "/docs/guides/nx-release/automate-github-releases",
+        "testUrl": "http://localhost:4200/recipes/nx-release/automate-github-releases",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/automate-github-releases",
+        "status": 308,
+        "location": "/docs/guides/nx-release/automate-github-releases",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/automate-gitlab-releases",
+        "expectedPath": "/docs/guides/nx-release/automate-gitlab-releases",
+        "testUrl": "http://localhost:4200/recipes/nx-release/automate-gitlab-releases",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/automate-gitlab-releases",
+        "status": 308,
+        "location": "/docs/guides/nx-release/automate-gitlab-releases",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/update-local-registry-setup",
+        "expectedPath": "/docs/guides/nx-release/update-local-registry-setup",
+        "testUrl": "http://localhost:4200/recipes/nx-release/update-local-registry-setup",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/update-local-registry-setup",
+        "status": 308,
+        "location": "/docs/guides/nx-release/update-local-registry-setup",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/configure-changelog-format",
+        "expectedPath": "/docs/guides/nx-release/configure-changelog-format",
+        "testUrl": "http://localhost:4200/recipes/nx-release/configure-changelog-format",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/configure-changelog-format",
+        "status": 308,
+        "location": "/docs/guides/nx-release/configure-changelog-format",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/build-before-versioning",
+        "expectedPath": "/docs/guides/nx-release/build-before-versioning",
+        "testUrl": "http://localhost:4200/recipes/nx-release/build-before-versioning",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/build-before-versioning",
+        "status": 308,
+        "location": "/docs/guides/nx-release/build-before-versioning",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-release/configuration-version-prefix",
+        "expectedPath": "/docs/guides/nx-release/configuration-version-prefix",
+        "testUrl": "http://localhost:4200/recipes/nx-release/configuration-version-prefix",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-release/configuration-version-prefix",
+        "status": 308,
+        "location": "/docs/guides/nx-release/configuration-version-prefix",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-console/console-telemetry",
+        "expectedPath": "/docs/guides/nx-console/console-telemetry",
+        "testUrl": "http://localhost:4200/recipes/nx-console/console-telemetry",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-console/console-telemetry",
+        "status": 308,
+        "location": "/docs/guides/nx-console/console-telemetry",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-console/console-project-details",
+        "expectedPath": "/docs/guides/nx-console/console-project-details",
+        "testUrl": "http://localhost:4200/recipes/nx-console/console-project-details",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-console/console-project-details",
+        "status": 308,
+        "location": "/docs/guides/nx-console/console-project-details",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-console/console-generate-command",
+        "expectedPath": "/docs/guides/nx-console/console-generate-command",
+        "testUrl": "http://localhost:4200/recipes/nx-console/console-generate-command",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-console/console-generate-command",
+        "status": 308,
+        "location": "/docs/guides/nx-console/console-generate-command",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-console/console-run-command",
+        "expectedPath": "/docs/guides/nx-console/console-run-command",
+        "testUrl": "http://localhost:4200/recipes/nx-console/console-run-command",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-console/console-run-command",
+        "status": 308,
+        "location": "/docs/guides/nx-console/console-run-command",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-console/console-nx-cloud",
+        "expectedPath": "/docs/guides/nx-console/console-nx-cloud",
+        "testUrl": "http://localhost:4200/recipes/nx-console/console-nx-cloud",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-console/console-nx-cloud",
+        "status": 308,
+        "location": "/docs/guides/nx-console/console-nx-cloud",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/nx-console/console-migrate-ui",
+        "expectedPath": "/docs/guides/nx-console/console-migrate-ui",
+        "testUrl": "http://localhost:4200/recipes/nx-console/console-migrate-ui",
+        "expectedUrl": "http://localhost:9001/docs/guides/nx-console/console-migrate-ui",
+        "status": 308,
+        "location": "/docs/guides/nx-console/console-migrate-ui",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/enforce-module-boundaries/ban-dependencies-with-tags",
+        "expectedPath": "/docs/guides/enforce-module-boundaries/ban-dependencies-with-tags",
+        "testUrl": "http://localhost:4200/recipes/enforce-module-boundaries/ban-dependencies-with-tags",
+        "expectedUrl": "http://localhost:9001/docs/guides/enforce-module-boundaries/ban-dependencies-with-tags",
+        "status": 308,
+        "location": "/docs/guides/enforce-module-boundaries/ban-dependencies-with-tags",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/enforce-module-boundaries/tag-multiple-dimensions",
+        "expectedPath": "/docs/guides/enforce-module-boundaries/tag-multiple-dimensions",
+        "testUrl": "http://localhost:4200/recipes/enforce-module-boundaries/tag-multiple-dimensions",
+        "expectedUrl": "http://localhost:9001/docs/guides/enforce-module-boundaries/tag-multiple-dimensions",
+        "status": 308,
+        "location": "/docs/guides/enforce-module-boundaries/tag-multiple-dimensions",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/enforce-module-boundaries/ban-external-imports",
+        "expectedPath": "/docs/guides/enforce-module-boundaries/ban-external-imports",
+        "testUrl": "http://localhost:4200/recipes/enforce-module-boundaries/ban-external-imports",
+        "expectedUrl": "http://localhost:9001/docs/guides/enforce-module-boundaries/ban-external-imports",
+        "status": 308,
+        "location": "/docs/guides/enforce-module-boundaries/ban-external-imports",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/enforce-module-boundaries/tags-allow-list",
+        "expectedPath": "/docs/guides/enforce-module-boundaries/tags-allow-list",
+        "testUrl": "http://localhost:4200/recipes/enforce-module-boundaries/tags-allow-list",
+        "expectedUrl": "http://localhost:9001/docs/guides/enforce-module-boundaries/tags-allow-list",
+        "status": 308,
+        "location": "/docs/guides/enforce-module-boundaries/tags-allow-list",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/standalone-to-monorepo",
+        "expectedPath": "/docs/guides/tips-and-tricks/standalone-to-monorepo",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/standalone-to-monorepo",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/standalone-to-monorepo",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/standalone-to-monorepo",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+        "expectedPath": "/docs/guides/tips-and-tricks/keep-nx-versions-in-sync",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/keep-nx-versions-in-sync",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/keep-nx-versions-in-sync",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/define-environment-variables",
+        "expectedPath": "/docs/guides/tips-and-tricks/define-environment-variables",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/define-environment-variables",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/define-environment-variables",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/define-environment-variables",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/browser-support",
+        "expectedPath": "/docs/guides/tips-and-tricks/browser-support",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/browser-support",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/browser-support",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/browser-support",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/include-assets-in-build",
+        "expectedPath": "/docs/guides/tips-and-tricks/include-assets-in-build",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/include-assets-in-build",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/include-assets-in-build",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/include-assets-in-build",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/include-all-packagejson",
+        "expectedPath": "/docs/guides/tips-and-tricks/include-all-packagejson",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/include-all-packagejson",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/include-all-packagejson",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/include-all-packagejson",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/identify-dependencies-between-folders",
+        "expectedPath": "/docs/guides/tips-and-tricks/identify-dependencies-between-folders",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/identify-dependencies-between-folders",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/identify-dependencies-between-folders",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/identify-dependencies-between-folders",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/advanced-update",
+        "expectedPath": "/docs/guides/tips-and-tricks/advanced-update",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/advanced-update",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/advanced-update",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/advanced-update",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/yarn-pnp",
+        "expectedPath": "/docs/guides/tips-and-tricks/yarn-pnp",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/yarn-pnp",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/yarn-pnp",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/yarn-pnp",
+        "passed": true,
+        "reason": "Redirect works and destination exists"
+      }
+    ],
+    "failed": [
+      {
+        "originalPath": "/recipes/tips-n-tricks/disable-graph-animations",
+        "expectedPath": "/docs/guides/tips-and-tricks/disable-graph-animations",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/disable-graph-animations",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/disable-graph-animations",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/disable-graph-animations",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/js-and-ts",
+        "expectedPath": "/docs/guides/tips-and-tricks/js-and-ts",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/js-and-ts",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/js-and-ts",
+        "status": 308,
+        "location": "/technologies/typescript/recipes/js-and-ts",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/typescript/recipes/js-and-ts (expected /docs/guides/tips-and-tricks/js-and-ts or http://localhost:9001/docs/guides/tips-and-tricks/js-and-ts)"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/flat-config",
+        "expectedPath": "/docs/guides/tips-and-tricks/flat-config",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/flat-config",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/flat-config",
+        "status": 308,
+        "location": "/technologies/eslint/recipes/flat-config",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/eslint/recipes/flat-config (expected /docs/guides/tips-and-tricks/flat-config or http://localhost:9001/docs/guides/tips-and-tricks/flat-config)"
+      },
+      {
+        "originalPath": "/recipes/tips-n-tricks/deploy-nextjs-to-vercel",
+        "expectedPath": "/docs/guides/tips-and-tricks/deploy-nextjs-to-vercel",
+        "testUrl": "http://localhost:4200/recipes/tips-n-tricks/deploy-nextjs-to-vercel",
+        "expectedUrl": "http://localhost:9001/docs/guides/tips-and-tricks/deploy-nextjs-to-vercel",
+        "status": 308,
+        "location": "/docs/guides/tips-and-tricks/deploy-nextjs-to-vercel",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/managing-repository/merge-unrelated-histories",
+        "expectedPath": "/docs/guides/managing-repository/merge-unrelated-histories",
+        "testUrl": "http://localhost:4200/recipes/managing-repository/merge-unrelated-histories",
+        "expectedUrl": "http://localhost:9001/docs/guides/managing-repository/merge-unrelated-histories",
+        "status": 308,
+        "location": "/docs/guides/managing-repository/merge-unrelated-histories",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/managing-repository/build-affected-with-bazel",
+        "expectedPath": "/docs/guides/managing-repository/build-affected-with-bazel",
+        "testUrl": "http://localhost:4200/recipes/managing-repository/build-affected-with-bazel",
+        "expectedUrl": "http://localhost:9001/docs/guides/managing-repository/build-affected-with-bazel",
+        "status": 308,
+        "location": "/docs/guides/managing-repository/build-affected-with-bazel",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/managing-repository/pnpm-composite-type-declarations",
+        "expectedPath": "/docs/guides/managing-repository/pnpm-composite-type-declarations",
+        "testUrl": "http://localhost:4200/recipes/managing-repository/pnpm-composite-type-declarations",
+        "expectedUrl": "http://localhost:9001/docs/guides/managing-repository/pnpm-composite-type-declarations",
+        "status": 308,
+        "location": "/docs/guides/managing-repository/pnpm-composite-type-declarations",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/module-federation/create-a-host",
+        "expectedPath": "/docs/guides/module-federation/create-a-host",
+        "testUrl": "http://localhost:4200/recipes/module-federation/create-a-host",
+        "expectedUrl": "http://localhost:9001/docs/guides/module-federation/create-a-host",
+        "status": 308,
+        "location": "/technologies/module-federation/recipes/create-a-host",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/module-federation/recipes/create-a-host (expected /docs/guides/module-federation/create-a-host or http://localhost:9001/docs/guides/module-federation/create-a-host)"
+      },
+      {
+        "originalPath": "/recipes/module-federation/create-a-remote",
+        "expectedPath": "/docs/guides/module-federation/create-a-remote",
+        "testUrl": "http://localhost:4200/recipes/module-federation/create-a-remote",
+        "expectedUrl": "http://localhost:9001/docs/guides/module-federation/create-a-remote",
+        "status": 308,
+        "location": "/technologies/module-federation/recipes/create-a-remote",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/module-federation/recipes/create-a-remote (expected /docs/guides/module-federation/create-a-remote or http://localhost:9001/docs/guides/module-federation/create-a-remote)"
+      },
+      {
+        "originalPath": "/recipes/module-federation/federate-a-module",
+        "expectedPath": "/docs/guides/module-federation/federate-a-module",
+        "testUrl": "http://localhost:4200/recipes/module-federation/federate-a-module",
+        "expectedUrl": "http://localhost:9001/docs/guides/module-federation/federate-a-module",
+        "status": 308,
+        "location": "/technologies/module-federation/recipes/federate-a-module",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/module-federation/recipes/federate-a-module (expected /docs/guides/module-federation/federate-a-module or http://localhost:9001/docs/guides/module-federation/federate-a-module)"
+      },
+      {
+        "originalPath": "/recipes/node/node-server-fly-io",
+        "expectedPath": "/docs/guides/node/node-server-fly-io",
+        "testUrl": "http://localhost:4200/recipes/node/node-server-fly-io",
+        "expectedUrl": "http://localhost:9001/docs/guides/node/node-server-fly-io",
+        "status": 308,
+        "location": "/technologies/node/recipes/node-server-fly-io",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/node/recipes/node-server-fly-io (expected /docs/guides/node/node-server-fly-io or http://localhost:9001/docs/guides/node/node-server-fly-io)"
+      },
+      {
+        "originalPath": "/recipes/node/node-lambda-serverless-framework",
+        "expectedPath": "/docs/guides/node/node-lambda-serverless-framework",
+        "testUrl": "http://localhost:4200/recipes/node/node-lambda-serverless-framework",
+        "expectedUrl": "http://localhost:9001/docs/guides/node/node-lambda-serverless-framework",
+        "status": 308,
+        "location": "/technologies/node/recipes/node-lambda-serverless-framework",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/node/recipes/node-lambda-serverless-framework (expected /docs/guides/node/node-lambda-serverless-framework or http://localhost:9001/docs/guides/node/node-lambda-serverless-framework)"
+      },
+      {
+        "originalPath": "/recipes/node/node-aws-lambda",
+        "expectedPath": "/docs/guides/node/node-aws-lambda",
+        "testUrl": "http://localhost:4200/recipes/node/node-aws-lambda",
+        "expectedUrl": "http://localhost:9001/docs/guides/node/node-aws-lambda",
+        "status": 308,
+        "location": "/technologies/node/recipes/node-aws-lambda",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/node/recipes/node-aws-lambda (expected /docs/guides/node/node-aws-lambda or http://localhost:9001/docs/guides/node/node-aws-lambda)"
+      },
+      {
+        "originalPath": "/recipes/node/deploy-fastify-to-railway",
+        "expectedPath": "/docs/guides/node/deploy-fastify-to-railway",
+        "testUrl": "http://localhost:4200/recipes/node/deploy-fastify-to-railway",
+        "expectedUrl": "http://localhost:9001/docs/guides/node/deploy-fastify-to-railway",
+        "status": 308,
+        "location": "/technologies/node/recipes/deploy-fastify-to-railway",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/node/recipes/deploy-fastify-to-railway (expected /docs/guides/node/deploy-fastify-to-railway or http://localhost:9001/docs/guides/node/deploy-fastify-to-railway)"
+      },
+      {
+        "originalPath": "/recipes/node/deploy-koa-to-heroku",
+        "expectedPath": "/docs/guides/node/deploy-koa-to-heroku",
+        "testUrl": "http://localhost:4200/recipes/node/deploy-koa-to-heroku",
+        "expectedUrl": "http://localhost:9001/docs/guides/node/deploy-koa-to-heroku",
+        "status": 308,
+        "location": "/technologies/node/recipes/deploy-koa-to-heroku",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/node/recipes/deploy-koa-to-heroku (expected /docs/guides/node/deploy-koa-to-heroku or http://localhost:9001/docs/guides/node/deploy-koa-to-heroku)"
+      },
+      {
+        "originalPath": "/recipes/node/deploy-nestjs-to-render",
+        "expectedPath": "/docs/guides/node/deploy-nestjs-to-render",
+        "testUrl": "http://localhost:4200/recipes/node/deploy-nestjs-to-render",
+        "expectedUrl": "http://localhost:9001/docs/guides/node/deploy-nestjs-to-render",
+        "status": 308,
+        "location": "/technologies/node/recipes/deploy-nestjs-to-render",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/node/recipes/deploy-nestjs-to-render (expected /docs/guides/node/deploy-nestjs-to-render or http://localhost:9001/docs/guides/node/deploy-nestjs-to-render)"
+      },
+      {
+        "originalPath": "/recipes/node/set-up-express-proxies",
+        "expectedPath": "/docs/guides/node/set-up-express-proxies",
+        "testUrl": "http://localhost:4200/recipes/node/set-up-express-proxies",
+        "expectedUrl": "http://localhost:9001/docs/guides/node/set-up-express-proxies",
+        "status": 308,
+        "location": "/technologies/node/recipes/set-up-express-proxies",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/node/recipes/set-up-express-proxies (expected /docs/guides/node/set-up-express-proxies or http://localhost:9001/docs/guides/node/set-up-express-proxies)"
+      },
+      {
+        "originalPath": "/recipes/react/react-dynamic-module-federation",
+        "expectedPath": "/docs/guides/react/react-dynamic-module-federation",
+        "testUrl": "http://localhost:4200/recipes/react/react-dynamic-module-federation",
+        "expectedUrl": "http://localhost:9001/docs/guides/react/react-dynamic-module-federation",
+        "status": 308,
+        "location": "/technologies/react/recipes/react-dynamic-module-federation",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/react/recipes/react-dynamic-module-federation (expected /docs/guides/react/react-dynamic-module-federation or http://localhost:9001/docs/guides/react/react-dynamic-module-federation)"
+      },
+      {
+        "originalPath": "/recipes/react/react-module-federation-with-ssr",
+        "expectedPath": "/docs/guides/react/react-module-federation-with-ssr",
+        "testUrl": "http://localhost:4200/recipes/react/react-module-federation-with-ssr",
+        "expectedUrl": "http://localhost:9001/docs/guides/react/react-module-federation-with-ssr",
+        "status": 308,
+        "location": "/technologies/react/recipes/react-module-federation-with-ssr",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/react/recipes/react-module-federation-with-ssr (expected /docs/guides/react/react-module-federation-with-ssr or http://localhost:9001/docs/guides/react/react-module-federation-with-ssr)"
+      },
+      {
+        "originalPath": "/recipes/react/use-environment-variables-in-react",
+        "expectedPath": "/docs/guides/react/use-environment-variables-in-react",
+        "testUrl": "http://localhost:4200/recipes/react/use-environment-variables-in-react",
+        "expectedUrl": "http://localhost:9001/docs/guides/react/use-environment-variables-in-react",
+        "status": 308,
+        "location": "/technologies/react/recipes/use-environment-variables-in-react",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/react/recipes/use-environment-variables-in-react (expected /docs/guides/react/use-environment-variables-in-react or http://localhost:9001/docs/guides/react/use-environment-variables-in-react)"
+      },
+      {
+        "originalPath": "/recipes/react/using-tailwind-css-in-react",
+        "expectedPath": "/docs/guides/react/using-tailwind-css-in-react",
+        "testUrl": "http://localhost:4200/recipes/react/using-tailwind-css-in-react",
+        "expectedUrl": "http://localhost:9001/docs/guides/react/using-tailwind-css-in-react",
+        "status": 308,
+        "location": "/technologies/react/recipes/using-tailwind-css-in-react",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/react/recipes/using-tailwind-css-in-react (expected /docs/guides/react/using-tailwind-css-in-react or http://localhost:9001/docs/guides/react/using-tailwind-css-in-react)"
+      },
+      {
+        "originalPath": "/recipes/react/storybook-interaction-tests",
+        "expectedPath": "/docs/guides/react/storybook-interaction-tests",
+        "testUrl": "http://localhost:4200/recipes/react/storybook-interaction-tests",
+        "expectedUrl": "http://localhost:9001/docs/guides/react/storybook-interaction-tests",
+        "status": 308,
+        "location": "/technologies/react/recipes/storybook-interaction-tests",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/react/recipes/storybook-interaction-tests (expected /docs/guides/react/storybook-interaction-tests or http://localhost:9001/docs/guides/react/storybook-interaction-tests)"
+      },
+      {
+        "originalPath": "/recipes/react/react-app-to-azure-static-web-service",
+        "expectedPath": "/docs/guides/react/react-app-to-azure-static-web-service",
+        "testUrl": "http://localhost:4200/recipes/react/react-app-to-azure-static-web-service",
+        "expectedUrl": "http://localhost:9001/docs/guides/react/react-app-to-azure-static-web-service",
+        "status": 308,
+        "location": "/technologies/react/recipes/react-app-to-azure-static-web-service",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/react/recipes/react-app-to-azure-static-web-service (expected /docs/guides/react/react-app-to-azure-static-web-service or http://localhost:9001/docs/guides/react/react-app-to-azure-static-web-service)"
+      },
+      {
+        "originalPath": "/recipes/react/remix-application-to-a-different-provider",
+        "expectedPath": "/docs/guides/react/remix-application-to-a-different-provider",
+        "testUrl": "http://localhost:4200/recipes/react/remix-application-to-a-different-provider",
+        "expectedUrl": "http://localhost:9001/docs/guides/react/remix-application-to-a-different-provider",
+        "status": 308,
+        "location": "/technologies/react/recipes/remix-application-to-a-different-provider",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/react/recipes/remix-application-to-a-different-provider (expected /docs/guides/react/remix-application-to-a-different-provider or http://localhost:9001/docs/guides/react/remix-application-to-a-different-provider)"
+      },
+      {
+        "originalPath": "/recipes/react/react-native-and-web-components",
+        "expectedPath": "/docs/guides/react/react-native-and-web-components",
+        "testUrl": "http://localhost:4200/recipes/react/react-native-and-web-components",
+        "expectedUrl": "http://localhost:9001/docs/guides/react/react-native-and-web-components",
+        "status": 308,
+        "location": "/technologies/react/recipes/react-native-and-web-components",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/react/recipes/react-native-and-web-components (expected /docs/guides/react/react-native-and-web-components or http://localhost:9001/docs/guides/react/react-native-and-web-components)"
+      },
+      {
+        "originalPath": "/recipes/react/deploy-nextjs-to-vercel",
+        "expectedPath": "/docs/guides/react/deploy-nextjs-to-vercel",
+        "testUrl": "http://localhost:4200/recipes/react/deploy-nextjs-to-vercel",
+        "expectedUrl": "http://localhost:9001/docs/guides/react/deploy-nextjs-to-vercel",
+        "status": 308,
+        "location": "/technologies/react/recipes/deploy-nextjs-to-vercel",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/react/recipes/deploy-nextjs-to-vercel (expected /docs/guides/react/deploy-nextjs-to-vercel or http://localhost:9001/docs/guides/react/deploy-nextjs-to-vercel)"
+      },
+      {
+        "originalPath": "/recipes/angular/angular-dynamic-module-federation",
+        "expectedPath": "/docs/guides/angular/angular-dynamic-module-federation",
+        "testUrl": "http://localhost:4200/recipes/angular/angular-dynamic-module-federation",
+        "expectedUrl": "http://localhost:9001/docs/guides/angular/angular-dynamic-module-federation",
+        "status": 308,
+        "location": "/technologies/angular/recipes/angular-dynamic-module-federation",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/angular/recipes/angular-dynamic-module-federation (expected /docs/guides/angular/angular-dynamic-module-federation or http://localhost:9001/docs/guides/angular/angular-dynamic-module-federation)"
+      },
+      {
+        "originalPath": "/recipes/angular/angular-module-federation-with-ssr",
+        "expectedPath": "/docs/guides/angular/angular-module-federation-with-ssr",
+        "testUrl": "http://localhost:4200/recipes/angular/angular-module-federation-with-ssr",
+        "expectedUrl": "http://localhost:9001/docs/guides/angular/angular-module-federation-with-ssr",
+        "status": 308,
+        "location": "/technologies/angular/recipes/angular-module-federation-with-ssr",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/angular/recipes/angular-module-federation-with-ssr (expected /docs/guides/angular/angular-module-federation-with-ssr or http://localhost:9001/docs/guides/angular/angular-module-federation-with-ssr)"
+      },
+      {
+        "originalPath": "/recipes/angular/use-environment-variables-in-angular",
+        "expectedPath": "/docs/guides/angular/use-environment-variables-in-angular",
+        "testUrl": "http://localhost:4200/recipes/angular/use-environment-variables-in-angular",
+        "expectedUrl": "http://localhost:9001/docs/guides/angular/use-environment-variables-in-angular",
+        "status": 308,
+        "location": "/technologies/angular/recipes/use-environment-variables-in-angular",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/angular/recipes/use-environment-variables-in-angular (expected /docs/guides/angular/use-environment-variables-in-angular or http://localhost:9001/docs/guides/angular/use-environment-variables-in-angular)"
+      },
+      {
+        "originalPath": "/recipes/angular/using-tailwind-css-with-angular-projects",
+        "expectedPath": "/docs/guides/angular/using-tailwind-css-with-angular-projects",
+        "testUrl": "http://localhost:4200/recipes/angular/using-tailwind-css-with-angular-projects",
+        "expectedUrl": "http://localhost:9001/docs/guides/angular/using-tailwind-css-with-angular-projects",
+        "status": 308,
+        "location": "/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/angular/recipes/using-tailwind-css-with-angular-projects (expected /docs/guides/angular/using-tailwind-css-with-angular-projects or http://localhost:9001/docs/guides/angular/using-tailwind-css-with-angular-projects)"
+      },
+      {
+        "originalPath": "/recipes/angular/angular-setup-incremental-builds",
+        "expectedPath": "/docs/guides/angular/angular-setup-incremental-builds",
+        "testUrl": "http://localhost:4200/recipes/angular/angular-setup-incremental-builds",
+        "expectedUrl": "http://localhost:9001/docs/guides/angular/angular-setup-incremental-builds",
+        "status": 308,
+        "location": "/technologies/angular/recipes/angular-setup-incremental-builds",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/angular/recipes/angular-setup-incremental-builds (expected /docs/guides/angular/angular-setup-incremental-builds or http://localhost:9001/docs/guides/angular/angular-setup-incremental-builds)"
+      },
+      {
+        "originalPath": "/recipes/angular/angular-lazy-load-libraries",
+        "expectedPath": "/docs/guides/angular/angular-lazy-load-libraries",
+        "testUrl": "http://localhost:4200/recipes/angular/angular-lazy-load-libraries",
+        "expectedUrl": "http://localhost:9001/docs/guides/angular/angular-lazy-load-libraries",
+        "status": 308,
+        "location": "/technologies/angular/recipes/angular-lazy-load-libraries",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/angular/recipes/angular-lazy-load-libraries (expected /docs/guides/angular/angular-lazy-load-libraries or http://localhost:9001/docs/guides/angular/angular-lazy-load-libraries)"
+      },
+      {
+        "originalPath": "/recipes/angular/angular-project-to-ghpages",
+        "expectedPath": "/docs/guides/angular/angular-project-to-ghpages",
+        "testUrl": "http://localhost:4200/recipes/angular/angular-project-to-ghpages",
+        "expectedUrl": "http://localhost:9001/docs/guides/angular/angular-project-to-ghpages",
+        "status": 308,
+        "location": "/technologies/angular/recipes/angular-project-to-ghpages",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/angular/recipes/angular-project-to-ghpages (expected /docs/guides/angular/angular-project-to-ghpages or http://localhost:9001/docs/guides/angular/angular-project-to-ghpages)"
+      },
+      {
+        "originalPath": "/recipes/vue/deploy-nuxt-to-vercel",
+        "expectedPath": "/docs/guides/vue/deploy-nuxt-to-vercel",
+        "testUrl": "http://localhost:4200/recipes/vue/deploy-nuxt-to-vercel",
+        "expectedUrl": "http://localhost:9001/docs/guides/vue/deploy-nuxt-to-vercel",
+        "status": 308,
+        "location": "/docs/guides/vue/deploy-nuxt-to-vercel",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/playwright/playwright-ct-angular",
+        "expectedPath": "/docs/guides/playwright/playwright-ct-angular",
+        "testUrl": "http://localhost:4200/recipes/playwright/playwright-ct-angular",
+        "expectedUrl": "http://localhost:9001/docs/guides/playwright/playwright-ct-angular",
+        "status": 308,
+        "location": "/docs/guides/playwright/playwright-ct-angular",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/playwright/playwright-ct-react",
+        "expectedPath": "/docs/guides/playwright/playwright-ct-react",
+        "testUrl": "http://localhost:4200/recipes/playwright/playwright-ct-react",
+        "expectedUrl": "http://localhost:9001/docs/guides/playwright/playwright-ct-react",
+        "status": 308,
+        "location": "/docs/guides/playwright/playwright-ct-react",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/webpack/webpack-typescript-monorepo",
+        "expectedPath": "/docs/guides/webpack/webpack-typescript-monorepo",
+        "testUrl": "http://localhost:4200/recipes/webpack/webpack-typescript-monorepo",
+        "expectedUrl": "http://localhost:9001/docs/guides/webpack/webpack-typescript-monorepo",
+        "status": 308,
+        "location": "/technologies/build-tools/webpack/recipes/webpack-typescript-monorepo",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/build-tools/webpack/recipes/webpack-typescript-monorepo (expected /docs/guides/webpack/webpack-typescript-monorepo or http://localhost:9001/docs/guides/webpack/webpack-typescript-monorepo)"
+      },
+      {
+        "originalPath": "/recipes/webpack/webpack-plugin-overview",
+        "expectedPath": "/docs/guides/webpack/webpack-plugin-overview",
+        "testUrl": "http://localhost:4200/recipes/webpack/webpack-plugin-overview",
+        "expectedUrl": "http://localhost:9001/docs/guides/webpack/webpack-plugin-overview",
+        "status": 308,
+        "location": "/technologies/build-tools/webpack/recipes/webpack-plugin-overview",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/build-tools/webpack/recipes/webpack-plugin-overview (expected /docs/guides/webpack/webpack-plugin-overview or http://localhost:9001/docs/guides/webpack/webpack-plugin-overview)"
+      },
+      {
+        "originalPath": "/recipes/webpack/webpack-config-setup",
+        "expectedPath": "/docs/guides/webpack/webpack-config-setup",
+        "testUrl": "http://localhost:4200/recipes/webpack/webpack-config-setup",
+        "expectedUrl": "http://localhost:9001/docs/guides/webpack/webpack-config-setup",
+        "status": 308,
+        "location": "/technologies/build-tools/webpack/recipes/webpack-config-setup",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/build-tools/webpack/recipes/webpack-config-setup (expected /docs/guides/webpack/webpack-config-setup or http://localhost:9001/docs/guides/webpack/webpack-config-setup)"
+      },
+      {
+        "originalPath": "/recipes/webpack/webpack-stylesheets-sass",
+        "expectedPath": "/docs/guides/webpack/webpack-stylesheets-sass",
+        "testUrl": "http://localhost:4200/recipes/webpack/webpack-stylesheets-sass",
+        "expectedUrl": "http://localhost:9001/docs/guides/webpack/webpack-stylesheets-sass",
+        "status": 308,
+        "location": "/technologies/build-tools/webpack/recipes/webpack-stylesheets-sass",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/build-tools/webpack/recipes/webpack-stylesheets-sass (expected /docs/guides/webpack/webpack-stylesheets-sass or http://localhost:9001/docs/guides/webpack/webpack-stylesheets-sass)"
+      },
+      {
+        "originalPath": "/recipes/webpack/webpack-react-module-federation",
+        "expectedPath": "/docs/guides/webpack/webpack-react-module-federation",
+        "testUrl": "http://localhost:4200/recipes/webpack/webpack-react-module-federation",
+        "expectedUrl": "http://localhost:9001/docs/guides/webpack/webpack-react-module-federation",
+        "status": 308,
+        "location": "/technologies/build-tools/webpack/recipes/webpack-react-module-federation",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/build-tools/webpack/recipes/webpack-react-module-federation (expected /docs/guides/webpack/webpack-react-module-federation or http://localhost:9001/docs/guides/webpack/webpack-react-module-federation)"
+      },
+      {
+        "originalPath": "/recipes/vite/set-up-vite-manually",
+        "expectedPath": "/docs/guides/vite/set-up-vite-manually",
+        "testUrl": "http://localhost:4200/recipes/vite/set-up-vite-manually",
+        "expectedUrl": "http://localhost:9001/docs/guides/vite/set-up-vite-manually",
+        "status": 308,
+        "location": "/recipes/vite/configure-vite",
+        "passed": false,
+        "reason": "Redirects to wrong location: /recipes/vite/configure-vite (expected /docs/guides/vite/set-up-vite-manually or http://localhost:9001/docs/guides/vite/set-up-vite-manually)"
+      },
+      {
+        "originalPath": "/recipes/storybook/overview-react",
+        "expectedPath": "/docs/guides/storybook/overview-react",
+        "testUrl": "http://localhost:4200/recipes/storybook/overview-react",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/overview-react",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/overview-react",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/overview-react (expected /docs/guides/storybook/overview-react or http://localhost:9001/docs/guides/storybook/overview-react)"
+      },
+      {
+        "originalPath": "/recipes/storybook/overview-angular",
+        "expectedPath": "/docs/guides/storybook/overview-angular",
+        "testUrl": "http://localhost:4200/recipes/storybook/overview-angular",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/overview-angular",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/overview-angular",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/overview-angular (expected /docs/guides/storybook/overview-angular or http://localhost:9001/docs/guides/storybook/overview-angular)"
+      },
+      {
+        "originalPath": "/recipes/storybook/custom-builder-configs",
+        "expectedPath": "/docs/guides/storybook/custom-builder-configs",
+        "testUrl": "http://localhost:4200/recipes/storybook/custom-builder-configs",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/custom-builder-configs",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/custom-builder-configs",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/custom-builder-configs (expected /docs/guides/storybook/custom-builder-configs or http://localhost:9001/docs/guides/storybook/custom-builder-configs)"
+      },
+      {
+        "originalPath": "/recipes/storybook/angular-storybook-interaction-tests",
+        "expectedPath": "/docs/guides/storybook/angular-storybook-interaction-tests",
+        "testUrl": "http://localhost:4200/recipes/storybook/angular-storybook-interaction-tests",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/angular-storybook-interaction-tests",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/angular-storybook-interaction-tests",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/angular-storybook-interaction-tests (expected /docs/guides/storybook/angular-storybook-interaction-tests or http://localhost:9001/docs/guides/storybook/angular-storybook-interaction-tests)"
+      },
+      {
+        "originalPath": "/recipes/storybook/angular-storybook-compodoc",
+        "expectedPath": "/docs/guides/storybook/angular-storybook-compodoc",
+        "testUrl": "http://localhost:4200/recipes/storybook/angular-storybook-compodoc",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/angular-storybook-compodoc",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/angular-storybook-compodoc",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/angular-storybook-compodoc (expected /docs/guides/storybook/angular-storybook-compodoc or http://localhost:9001/docs/guides/storybook/angular-storybook-compodoc)"
+      },
+      {
+        "originalPath": "/recipes/storybook/angular-output-and-input-properties",
+        "expectedPath": "/docs/guides/storybook/angular-output-and-input-properties",
+        "testUrl": "http://localhost:4200/recipes/storybook/angular-output-and-input-properties",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/angular-output-and-input-properties",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/angular-output-and-input-properties",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/angular-output-and-input-properties (expected /docs/guides/storybook/angular-output-and-input-properties or http://localhost:9001/docs/guides/storybook/angular-output-and-input-properties)"
+      },
+      {
+        "originalPath": "/recipes/storybook/angular-route-providers",
+        "expectedPath": "/docs/guides/storybook/angular-route-providers",
+        "testUrl": "http://localhost:4200/recipes/storybook/angular-route-providers",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/angular-route-providers",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/angular-route-providers",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/angular-route-providers (expected /docs/guides/storybook/angular-route-providers or http://localhost:9001/docs/guides/storybook/angular-route-providers)"
+      },
+      {
+        "originalPath": "/recipes/storybook/one-storybook-for-all",
+        "expectedPath": "/docs/guides/storybook/one-storybook-for-all",
+        "testUrl": "http://localhost:4200/recipes/storybook/one-storybook-for-all",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/one-storybook-for-all",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/one-storybook-for-all",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/one-storybook-for-all (expected /docs/guides/storybook/one-storybook-for-all or http://localhost:9001/docs/guides/storybook/one-storybook-for-all)"
+      },
+      {
+        "originalPath": "/recipes/storybook/one-storybook-per-scope",
+        "expectedPath": "/docs/guides/storybook/one-storybook-per-scope",
+        "testUrl": "http://localhost:4200/recipes/storybook/one-storybook-per-scope",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/one-storybook-per-scope",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/one-storybook-per-scope",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/one-storybook-per-scope (expected /docs/guides/storybook/one-storybook-per-scope or http://localhost:9001/docs/guides/storybook/one-storybook-per-scope)"
+      },
+      {
+        "originalPath": "/recipes/storybook/storybook-composition-setup",
+        "expectedPath": "/docs/guides/storybook/storybook-composition-setup",
+        "testUrl": "http://localhost:4200/recipes/storybook/storybook-composition-setup",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/storybook-composition-setup",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/storybook-composition-setup",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/storybook-composition-setup (expected /docs/guides/storybook/storybook-composition-setup or http://localhost:9001/docs/guides/storybook/storybook-composition-setup)"
+      },
+      {
+        "originalPath": "/recipes/storybook/angular-property-controls",
+        "expectedPath": "/docs/guides/storybook/angular-property-controls",
+        "testUrl": "http://localhost:4200/recipes/storybook/angular-property-controls",
+        "expectedUrl": "http://localhost:9001/docs/guides/storybook/angular-property-controls",
+        "status": 308,
+        "location": "/technologies/test-tools/storybook/recipes/angular-property-controls",
+        "passed": false,
+        "reason": "Redirects to wrong location: /technologies/test-tools/storybook/recipes/angular-property-controls (expected /docs/guides/storybook/angular-property-controls or http://localhost:9001/docs/guides/storybook/angular-property-controls)"
+      },
+      {
+        "originalPath": "/recipes/docker/build-angular-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-angular-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-angular-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-angular-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-angular-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/docker/build-fastify-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-fastify-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-fastify-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-fastify-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-fastify-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/docker/build-express-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-express-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-express-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-express-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-express-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/docker/build-koa-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-koa-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-koa-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-koa-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-koa-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/docker/build-nestjs-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-nestjs-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-nestjs-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-nestjs-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-nestjs-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/docker/build-react-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-react-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-react-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-react-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-react-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/docker/build-remix-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-remix-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-remix-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-remix-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-remix-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/docker/build-nextjs-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-nextjs-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-nextjs-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-nextjs-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-nextjs-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/docker/build-react-native-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-react-native-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-react-native-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-react-native-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-react-native-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/docker/build-vue-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-vue-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-vue-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-vue-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-vue-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/docker/build-nuxt-application-in-docker",
+        "expectedPath": "/docs/guides/docker/build-nuxt-application-in-docker",
+        "testUrl": "http://localhost:4200/recipes/docker/build-nuxt-application-in-docker",
+        "expectedUrl": "http://localhost:9001/docs/guides/docker/build-nuxt-application-in-docker",
+        "status": 308,
+        "location": "/docs/guides/docker/build-nuxt-application-in-docker",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/expo/test-app-detox",
+        "expectedPath": "/docs/guides/expo/test-app-detox",
+        "testUrl": "http://localhost:4200/recipes/expo/test-app-detox",
+        "expectedUrl": "http://localhost:9001/docs/guides/expo/test-app-detox",
+        "status": 308,
+        "location": "/docs/guides/expo/test-app-detox",
+        "passed": false,
+        "reason": "Destination returns 404"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/ts-solution-style",
+        "expectedPath": "/docs/troubleshooting/ts-solution-style",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/ts-solution-style",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/ts-solution-style",
+        "status": 308,
+        "location": "/troubleshooting/ts-solution-style",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/ts-solution-style (expected /docs/troubleshooting/ts-solution-style or http://localhost:9001/docs/troubleshooting/ts-solution-style)"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/reduce-typescript-compilations",
+        "expectedPath": "/docs/troubleshooting/reduce-typescript-compilations",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/reduce-typescript-compilations",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/reduce-typescript-compilations",
+        "status": 308,
+        "location": "/troubleshooting/reduce-typescript-compilations",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/reduce-typescript-compilations (expected /docs/troubleshooting/reduce-typescript-compilations or http://localhost:9001/docs/troubleshooting/reduce-typescript-compilations)"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/resolve-lockfile-conflicts",
+        "expectedPath": "/docs/troubleshooting/resolve-lockfile-conflicts",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/resolve-lockfile-conflicts",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/resolve-lockfile-conflicts",
+        "status": 308,
+        "location": "/troubleshooting/resolve-lockfile-conflicts",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/resolve-lockfile-conflicts (expected /docs/troubleshooting/resolve-lockfile-conflicts or http://localhost:9001/docs/troubleshooting/resolve-lockfile-conflicts)"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/updating-nx",
+        "expectedPath": "/docs/troubleshooting/updating-nx",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/updating-nx",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/updating-nx",
+        "status": 308,
+        "location": "/troubleshooting/updating-nx",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/updating-nx (expected /docs/troubleshooting/updating-nx or http://localhost:9001/docs/troubleshooting/updating-nx)"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/verbose-logging",
+        "expectedPath": "/docs/troubleshooting/verbose-logging",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/verbose-logging",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/verbose-logging",
+        "status": 308,
+        "location": "/troubleshooting/verbose-logging",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/verbose-logging (expected /docs/troubleshooting/verbose-logging or http://localhost:9001/docs/troubleshooting/verbose-logging)"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/angular-cache",
+        "expectedPath": "/docs/troubleshooting/angular-cache",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/angular-cache",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/angular-cache",
+        "status": 308,
+        "location": "/troubleshooting/angular-cache",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/angular-cache (expected /docs/troubleshooting/angular-cache or http://localhost:9001/docs/troubleshooting/angular-cache)"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/clear-the-cache",
+        "expectedPath": "/docs/troubleshooting/clear-the-cache",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/clear-the-cache",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/clear-the-cache",
+        "status": 308,
+        "location": "/troubleshooting/clear-the-cache",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/clear-the-cache (expected /docs/troubleshooting/clear-the-cache or http://localhost:9001/docs/troubleshooting/clear-the-cache)"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/react-typescript-compile-errors",
+        "expectedPath": "/docs/troubleshooting/react-typescript-compile-errors",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/react-typescript-compile-errors",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/react-typescript-compile-errors",
+        "status": 308,
+        "location": "/troubleshooting/react-typescript-compile-errors",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/react-typescript-compile-errors (expected /docs/troubleshooting/react-typescript-compile-errors or http://localhost:9001/docs/troubleshooting/react-typescript-compile-errors)"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/react-native-command-pod-install-unrecognized",
+        "expectedPath": "/docs/troubleshooting/react-native-command-pod-install-unrecognized",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/react-native-command-pod-install-unrecognized",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/react-native-command-pod-install-unrecognized",
+        "status": 308,
+        "location": "/troubleshooting/react-native-command-pod-install-unrecognized",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/react-native-command-pod-install-unrecognized (expected /docs/troubleshooting/react-native-command-pod-install-unrecognized or http://localhost:9001/docs/troubleshooting/react-native-command-pod-install-unrecognized)"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/expo-native-dependency",
+        "expectedPath": "/docs/troubleshooting/expo-native-dependency",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/expo-native-dependency",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/expo-native-dependency",
+        "status": 308,
+        "location": "/troubleshooting/expo-native-dependency",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/expo-native-dependency (expected /docs/troubleshooting/expo-native-dependency or http://localhost:9001/docs/troubleshooting/expo-native-dependency)"
+      },
+      {
+        "originalPath": "/recipes/troubleshooting/graph-restore-focus",
+        "expectedPath": "/docs/troubleshooting/graph-restore-focus",
+        "testUrl": "http://localhost:4200/recipes/troubleshooting/graph-restore-focus",
+        "expectedUrl": "http://localhost:9001/docs/troubleshooting/graph-restore-focus",
+        "status": 308,
+        "location": "/troubleshooting/graph-restore-focus",
+        "passed": false,
+        "reason": "Redirects to wrong location: /troubleshooting/graph-restore-focus (expected /docs/troubleshooting/graph-restore-focus or http://localhost:9001/docs/troubleshooting/graph-restore-focus)"
+      }
+    ],
+    "contentMismatch": [],
+    "notFound": []
+  }
+}

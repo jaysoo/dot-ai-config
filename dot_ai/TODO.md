@@ -2,6 +2,17 @@
 
 ## In Progress
 
+- [ ] DOC-154: Fix URL Redirects from nx.dev to Astro docs (2025-08-22 16:30)
+  - Plan: `.ai/2025-08-22/tasks/doc-154-redirect-fixes-continuation.md`
+  - Goal: Fix redirects to properly redirect to Astro server instead of internal rewrites
+  - Status: Redirect rules configured but not working as expected (only 36% success rate)
+  - Next steps: Investigate NEXT_PUBLIC_ASTRO_URL mechanism, check for conflicting redirect rules
+
+- [ ] Marketing & Blog Platform Requirements Gathering (2025-08-22 13:30)
+  - Dictation: `.ai/2025-08-22/dictations/marketing-blog-requirements-heidi.md`
+  - Goal: Evaluate platform options for migrating away from Next.js + Vercel
+  - Next steps: Review requirements against platform options, get feedback from Heidi
+
 - [ ] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)
   - Dictation: `.ai/2025-08-21/dictations/module-federation-dynamic-manifest-issues.md`
   - Goal: Fix URL property handling in dynamic manifests and static fallback mechanism

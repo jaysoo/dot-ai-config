@@ -1,0 +1,16 @@
+=== SITEMAP-BASED SUGGESTED FIXES ===
+
+Summary:
+- URLs found in sitemap: 6
+- URLs not in sitemap: 83
+
+=== FOUND IN SITEMAP ===
+These redirects can be updated to point to existing sitemap URLs:
+
+Partial matches (verify manually):
+"/recipes/adopting-nx": "/docs/guides/adopting-nx", // Score: 75
+"/recipes/nx-release": "/docs/guides/nx-release", // Score: 75
+"/recipes/nx-console": "/docs/guides/nx-console", // Score: 75
+"/nx-enterprise/powerpack": "/docs/reference/powerpack", // Score: 55
+"/showcase/benchmarks": "/docs/reference/benchmarks", // Score: 55
+"/extending-nx/tutorials": "/docs/getting-started/tutorials", // Score: 55

@@ -1,0 +1,2866 @@
+=== BROKEN NEW URLs ===
+
+Old: /extending-nx
+New: /docs/extending-nx (Status: 404)
+
+Old: /getting-started/adding-to-existing
+New: /docs/getting-started/adding-to-existing (Status: 404)
+
+Old: /ci
+New: /docs/ci (Status: 404)
+
+Old: /getting-started/ai-integration
+New: /docs/getting-started/ai-integration (Status: 404)
+
+Old: /getting-started/tutorials/react-monorepo-tutorial
+New: /docs/getting-started/tutorials/react-monorepo-tutorial (Status: 404)
+
+Old: /getting-started/tutorials/gradle-tutorial
+New: /docs/getting-started/tutorials/gradle-tutorial (Status: 404)
+
+Old: /getting-started/tutorials/angular-monorepo-tutorial
+New: /docs/getting-started/tutorials/angular-monorepo-tutorial (Status: 404)
+
+Old: /getting-started/tutorials/typescript-packages-tutorial
+New: /docs/getting-started/tutorials/typescript-packages-tutorial (Status: 404)
+
+Old: /features/maintain-ts-monorepos
+New: /docs/features/maintain-ts-monorepos (Status: 404)
+
+Old: /recipes/installation
+New: /docs/recipes/installation (Status: 404)
+
+Old: /recipes/installation/install-non-javascript
+New: /docs/recipes/installation/install-non-javascript (Status: 404)
+
+Old: /recipes/installation/update-global-installation
+New: /docs/recipes/installation/update-global-installation (Status: 404)
+
+Old: /recipes
+New: /docs/recipes (Status: 404)
+
+Old: /recipes/running-tasks/root-level-scripts
+New: /docs/recipes/running-tasks/root-level-scripts (Status: 404)
+
+Old: /recipes/running-tasks/defining-task-pipeline
+New: /docs/recipes/running-tasks/defining-task-pipeline (Status: 404)
+
+Old: /recipes/running-tasks/run-tasks-in-parallel
+New: /docs/recipes/running-tasks/run-tasks-in-parallel (Status: 404)
+
+Old: /recipes/running-tasks/configure-outputs
+New: /docs/recipes/running-tasks/configure-outputs (Status: 404)
+
+Old: /recipes/running-tasks
+New: /docs/recipes/running-tasks (Status: 404)
+
+Old: /recipes/running-tasks/pass-args-to-commands
+New: /docs/recipes/running-tasks/pass-args-to-commands (Status: 404)
+
+Old: /recipes/running-tasks/run-commands-executor
+New: /docs/recipes/running-tasks/run-commands-executor (Status: 404)
+
+Old: /recipes/running-tasks/terminal-ui
+New: /docs/recipes/running-tasks/terminal-ui (Status: 404)
+
+Old: /recipes/running-tasks/workspace-watching
+New: /docs/recipes/running-tasks/workspace-watching (Status: 404)
+
+Old: /recipes/running-tasks/configure-inputs
+New: /docs/recipes/running-tasks/configure-inputs (Status: 404)
+
+Old: /recipes/adopting-nx/import-project
+New: /docs/recipes/adopting-nx/import-project (Status: 404)
+
+Old: /recipes/running-tasks/reduce-repetitive-configuration
+New: /docs/recipes/running-tasks/reduce-repetitive-configuration (Status: 404)
+
+Old: /recipes/running-tasks/convert-to-inferred
+New: /docs/recipes/running-tasks/convert-to-inferred (Status: 404)
+
+Old: /recipes/adopting-nx/from-turborepo
+New: /docs/recipes/adopting-nx/from-turborepo (Status: 404)
+
+Old: /recipes/adopting-nx/adding-to-monorepo
+New: /docs/recipes/adopting-nx/adding-to-monorepo (Status: 404)
+
+Old: /recipes/running-tasks/self-hosted-caching
+New: /docs/recipes/running-tasks/self-hosted-caching (Status: 404)
+
+Old: /recipes/adopting-nx
+New: /docs/recipes/adopting-nx (Status: 404)
+
+Old: /recipes/running-tasks/skipping-cache
+New: /docs/recipes/running-tasks/skipping-cache (Status: 404)
+
+Old: /recipes/running-tasks/change-cache-location
+New: /docs/recipes/running-tasks/change-cache-location (Status: 404)
+
+Old: /recipes/adopting-nx/adding-to-existing-project
+New: /docs/recipes/adopting-nx/adding-to-existing-project (Status: 404)
+
+Old: /recipes/nx-release/publish-rust-crates
+New: /docs/recipes/nx-release/publish-rust-crates (Status: 404)
+
+Old: /recipes/adopting-nx/manual
+New: /docs/recipes/adopting-nx/manual (Status: 404)
+
+Old: /recipes/nx-release/release-npm-packages
+New: /docs/recipes/nx-release/release-npm-packages (Status: 404)
+
+Old: /recipes/nx-release/updating-version-references
+New: /docs/recipes/nx-release/updating-version-references (Status: 404)
+
+Old: /recipes/nx-release/customize-conventional-commit-types
+New: /docs/recipes/nx-release/customize-conventional-commit-types (Status: 404)
+
+Old: /recipes/nx-release/automatically-version-with-conventional-commits
+New: /docs/recipes/nx-release/automatically-version-with-conventional-commits (Status: 404)
+
+Old: /recipes/nx-release/release-docker-images
+New: /docs/recipes/nx-release/release-docker-images (Status: 404)
+
+Old: /recipes/nx-release
+New: /docs/recipes/nx-release (Status: 404)
+
+Old: /recipes/nx-release/release-projects-independently
+New: /docs/recipes/nx-release/release-projects-independently (Status: 404)
+
+Old: /recipes/adopting-nx/preserving-git-histories
+New: /docs/recipes/adopting-nx/preserving-git-histories (Status: 404)
+
+Old: /recipes/nx-release/automate-gitlab-releases
+New: /docs/recipes/nx-release/automate-gitlab-releases (Status: 404)
+
+Old: /recipes/nx-release/file-based-versioning-version-plans
+New: /docs/recipes/nx-release/file-based-versioning-version-plans (Status: 404)
+
+Old: /recipes/nx-release/configure-changelog-format
+New: /docs/recipes/nx-release/configure-changelog-format (Status: 404)
+
+Old: /recipes/nx-release/configuration-version-prefix
+New: /docs/recipes/nx-release/configuration-version-prefix (Status: 404)
+
+Old: /recipes/nx-console
+New: /docs/recipes/nx-console (Status: 404)
+
+Old: /recipes/nx-release/build-before-versioning
+New: /docs/recipes/nx-release/build-before-versioning (Status: 404)
+
+Old: /recipes/nx-release/automate-github-releases
+New: /docs/recipes/nx-release/automate-github-releases (Status: 404)
+
+Old: /recipes/nx-release/update-local-registry-setup
+New: /docs/recipes/nx-release/update-local-registry-setup (Status: 404)
+
+Old: /recipes/nx-release/configure-custom-registries
+New: /docs/recipes/nx-release/configure-custom-registries (Status: 404)
+
+Old: /recipes/nx-release/publish-in-ci-cd
+New: /docs/recipes/nx-release/publish-in-ci-cd (Status: 404)
+
+Old: /recipes/nx-console/console-generate-command
+New: /docs/recipes/nx-console/console-generate-command (Status: 404)
+
+Old: /recipes/nx-console/console-nx-cloud
+New: /docs/recipes/nx-console/console-nx-cloud (Status: 404)
+
+Old: /recipes/nx-console/console-troubleshooting
+New: /docs/recipes/nx-console/console-troubleshooting (Status: 404)
+
+Old: /recipes/nx-console/console-migrate-ui
+New: /docs/recipes/nx-console/console-migrate-ui (Status: 404)
+
+Old: /recipes/nx-console/console-telemetry
+New: /docs/recipes/nx-console/console-telemetry (Status: 404)
+
+Old: /recipes/nx-console/console-run-command
+New: /docs/recipes/nx-console/console-run-command (Status: 404)
+
+Old: /recipes/enforce-module-boundaries/tag-multiple-dimensions
+New: /docs/recipes/enforce-module-boundaries/tag-multiple-dimensions (Status: 404)
+
+Old: /recipes/enforce-module-boundaries
+New: /docs/recipes/enforce-module-boundaries (Status: 404)
+
+Old: /recipes/enforce-module-boundaries/ban-dependencies-with-tags
+New: /docs/recipes/enforce-module-boundaries/ban-dependencies-with-tags (Status: 404)
+
+Old: /recipes/nx-console/console-project-details
+New: /docs/recipes/nx-console/console-project-details (Status: 404)
+
+Old: /recipes/tips-n-tricks/keep-nx-versions-in-sync
+New: /docs/recipes/tips-n-tricks/keep-nx-versions-in-sync (Status: 404)
+
+Old: /recipes/tips-n-tricks
+New: /docs/recipes/tips-n-tricks (Status: 404)
+
+Old: /recipes/tips-n-tricks/define-environment-variables
+New: /docs/recipes/tips-n-tricks/define-environment-variables (Status: 404)
+
+Old: /recipes/tips-n-tricks/browser-support
+New: /docs/recipes/tips-n-tricks/browser-support (Status: 404)
+
+Old: /recipes/tips-n-tricks/identify-dependencies-between-folders
+New: /docs/recipes/tips-n-tricks/identify-dependencies-between-folders (Status: 404)
+
+Old: /recipes/enforce-module-boundaries/tags-allow-list
+New: /docs/recipes/enforce-module-boundaries/tags-allow-list (Status: 404)
+
+Old: /recipes/tips-n-tricks/include-all-packagejson
+New: /docs/recipes/tips-n-tricks/include-all-packagejson (Status: 404)
+
+Old: /recipes/tips-n-tricks/standalone-to-monorepo
+New: /docs/recipes/tips-n-tricks/standalone-to-monorepo (Status: 404)
+
+Old: /recipes/enforce-module-boundaries/ban-external-imports
+New: /docs/recipes/enforce-module-boundaries/ban-external-imports (Status: 404)
+
+Old: /recipes/tips-n-tricks/include-assets-in-build
+New: /docs/recipes/tips-n-tricks/include-assets-in-build (Status: 404)
+
+Old: /recipes/tips-n-tricks/advanced-update
+New: /docs/recipes/tips-n-tricks/advanced-update (Status: 404)
+
+Old: /recipes/tips-n-tricks/yarn-pnp
+New: /docs/recipes/tips-n-tricks/yarn-pnp (Status: 404)
+
+Old: /recipes/tips-n-tricks/analyze-source-files
+New: /docs/recipes/tips-n-tricks/analyze-source-files (Status: 404)
+
+Old: /concepts/nx-daemon
+New: /docs/concepts/nx-daemon (Status: 404)
+
+Old: /technologies/typescript/recipes/switch-to-workspaces-project-references
+New: /docs/technologies/typescript/recipes/switch-to-workspaces-project-references (Status: 404)
+
+Old: /technologies/typescript/recipes
+New: /docs/technologies/typescript/recipes (Status: 404)
+
+Old: /technologies/typescript/recipes/enable-tsc-batch-mode
+New: /docs/technologies/typescript/recipes/enable-tsc-batch-mode (Status: 404)
+
+Old: /technologies/typescript/recipes/define-secondary-entrypoints
+New: /docs/technologies/typescript/recipes/define-secondary-entrypoints (Status: 404)
+
+Old: /technologies/typescript/recipes/js-and-ts
+New: /docs/technologies/typescript/recipes/js-and-ts (Status: 404)
+
+Old: /technologies/angular/recipes
+New: /docs/technologies/angular/recipes (Status: 404)
+
+Old: /technologies/typescript/api
+New: /docs/technologies/typescript/api (Status: 404)
+
+Old: /technologies/typescript/recipes/compile-multiple-formats
+New: /docs/technologies/typescript/recipes/compile-multiple-formats (Status: 404)
+
+Old: /technologies/angular/recipes/module-federation-with-ssr
+New: /docs/technologies/angular/recipes/module-federation-with-ssr (Status: 404)
+
+Old: /technologies/angular/recipes/setup-incremental-builds-angular
+New: /docs/technologies/angular/recipes/setup-incremental-builds-angular (Status: 404)
+
+Old: /technologies/angular/recipes/use-environment-variables-in-angular
+New: /docs/technologies/angular/recipes/use-environment-variables-in-angular (Status: 404)
+
+Old: /technologies/angular/api
+New: /docs/technologies/angular/api (Status: 404)
+
+Old: /technologies/angular/recipes/nx-and-angular
+New: /docs/technologies/angular/recipes/nx-and-angular (Status: 404)
+
+Old: /technologies/angular/recipes/angular-nx-version-matrix
+New: /docs/technologies/angular/recipes/angular-nx-version-matrix (Status: 404)
+
+Old: /technologies/angular/recipes/using-tailwind-css-with-angular-projects
+New: /docs/technologies/angular/recipes/using-tailwind-css-with-angular-projects (Status: 404)
+
+Old: /technologies/angular/recipes/nx-devkit-angular-devkit
+New: /docs/technologies/angular/recipes/nx-devkit-angular-devkit (Status: 404)
+
+Old: /technologies/angular/recipes/dynamic-module-federation-with-angular
+New: /docs/technologies/angular/recipes/dynamic-module-federation-with-angular (Status: 404)
+
+Old: /technologies/angular/angular-rspack/recipes/internationalization
+New: /docs/technologies/angular/angular-rspack/recipes/internationalization (Status: 404)
+
+Old: /technologies/angular/angular-rspack/recipes
+New: /docs/technologies/angular/angular-rspack/recipes (Status: 404)
+
+Old: /technologies/angular/angular-rspack/api
+New: /docs/technologies/angular/angular-rspack/api (Status: 404)
+
+Old: /technologies/angular/angular-rspack/recipes/getting-started
+New: /docs/technologies/angular/angular-rspack/recipes/getting-started (Status: 404)
+
+Old: /technologies/angular/angular-rspack/recipes/migrate-from-webpack
+New: /docs/technologies/angular/angular-rspack/recipes/migrate-from-webpack (Status: 404)
+
+Old: /technologies/angular/angular-rspack/api/create-config
+New: /docs/technologies/angular/angular-rspack/api/create-config (Status: 404)
+
+Old: /technologies/angular/angular-rspack/recipes/handling-configurations
+New: /docs/technologies/angular/angular-rspack/recipes/handling-configurations (Status: 404)
+
+Old: /technologies/angular/angular-rspack/api/create-server
+New: /docs/technologies/angular/angular-rspack/api/create-server (Status: 404)
+
+Old: /technologies/angular/angular-rsbuild/api
+New: /docs/technologies/angular/angular-rsbuild/api (Status: 404)
+
+Old: /technologies/react/recipes/use-environment-variables-in-react
+New: /docs/technologies/react/recipes/use-environment-variables-in-react (Status: 404)
+
+Old: /technologies/angular/angular-rsbuild/api/create-config
+New: /docs/technologies/angular/angular-rsbuild/api/create-config (Status: 404)
+
+Old: /technologies/react/recipes/react-native
+New: /docs/technologies/react/recipes/react-native (Status: 404)
+
+Old: /technologies/angular/angular-rsbuild/api/create-server
+New: /docs/technologies/angular/angular-rsbuild/api/create-server (Status: 404)
+
+Old: /technologies/react/recipes/remix
+New: /docs/technologies/react/recipes/remix (Status: 404)
+
+Old: /technologies/react/recipes/react-router
+New: /docs/technologies/react/recipes/react-router (Status: 404)
+
+Old: /technologies/react/recipes
+New: /docs/technologies/react/recipes (Status: 404)
+
+Old: /technologies/react/recipes/using-tailwind-css-in-react
+New: /docs/technologies/react/recipes/using-tailwind-css-in-react (Status: 404)
+
+Old: /technologies/react/next/recipes
+New: /docs/technologies/react/next/recipes (Status: 404)
+
+Old: /technologies/react/recipes/module-federation-with-ssr
+New: /docs/technologies/react/recipes/module-federation-with-ssr (Status: 404)
+
+Old: /technologies/react/next/recipes/next-config-setup
+New: /docs/technologies/react/next/recipes/next-config-setup (Status: 404)
+
+Old: /technologies/react/recipes/adding-assets-react
+New: /docs/technologies/react/recipes/adding-assets-react (Status: 404)
+
+Old: /technologies/react/recipes/deploy-nextjs-to-vercel
+New: /docs/technologies/react/recipes/deploy-nextjs-to-vercel (Status: 404)
+
+Old: /technologies/react/recipes/react-compiler
+New: /docs/technologies/react/recipes/react-compiler (Status: 404)
+
+Old: /technologies/react/api
+New: /docs/technologies/react/api (Status: 404)
+
+Old: /technologies/react/next/api
+New: /docs/technologies/react/next/api (Status: 404)
+
+Old: /technologies/react/react-native/recipes
+New: /docs/technologies/react/react-native/recipes (Status: 404)
+
+Old: /technologies/react/remix/api
+New: /docs/technologies/react/remix/api (Status: 404)
+
+Old: /technologies/react/remix/recipes
+New: /docs/technologies/react/remix/recipes (Status: 404)
+
+Old: /technologies/react/react-native/api
+New: /docs/technologies/react/react-native/api (Status: 404)
+
+Old: /technologies/vue/nuxt/recipes
+New: /docs/technologies/vue/nuxt/recipes (Status: 404)
+
+Old: /technologies/react/expo/recipes
+New: /docs/technologies/react/expo/recipes (Status: 404)
+
+Old: /technologies/react/expo/api
+New: /docs/technologies/react/expo/api (Status: 404)
+
+Old: /technologies/vue/api
+New: /docs/technologies/vue/api (Status: 404)
+
+Old: /technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel
+New: /docs/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel (Status: 404)
+
+Old: /technologies/vue/nuxt/api
+New: /docs/technologies/vue/nuxt/api (Status: 404)
+
+Old: /technologies/node/recipes/wait-for-tasks
+New: /docs/technologies/node/recipes/wait-for-tasks (Status: 404)
+
+Old: /technologies/node/recipes/node-server-fly-io
+New: /docs/technologies/node/recipes/node-server-fly-io (Status: 404)
+
+Old: /technologies/node/recipes/application-proxies
+New: /docs/technologies/node/recipes/application-proxies (Status: 404)
+
+Old: /technologies/node/api
+New: /docs/technologies/node/api (Status: 404)
+
+Old: /technologies/node/recipes
+New: /docs/technologies/node/recipes (Status: 404)
+
+Old: /technologies/node/recipes/node-aws-lambda
+New: /docs/technologies/node/recipes/node-aws-lambda (Status: 404)
+
+Old: /technologies/node/recipes/node-serverless-functions-netlify
+New: /docs/technologies/node/recipes/node-serverless-functions-netlify (Status: 404)
+
+Old: /technologies/node/express/api
+New: /docs/technologies/node/express/api (Status: 404)
+
+Old: /technologies/java/introduction
+New: /docs/technologies/java/introduction (Status: 404)
+
+Old: /technologies/java
+New: /docs/technologies/java (Status: 404)
+
+Old: /technologies/java/api
+New: /docs/technologies/java/api (Status: 404)
+
+Old: /technologies/node/nest/api
+New: /docs/technologies/node/nest/api (Status: 404)
+
+Old: /technologies/module-federation/recipes/create-a-remote
+New: /docs/technologies/module-federation/recipes/create-a-remote (Status: 404)
+
+Old: /technologies/module-federation/recipes
+New: /docs/technologies/module-federation/recipes (Status: 404)
+
+Old: /technologies/module-federation/recipes/create-a-host
+New: /docs/technologies/module-federation/recipes/create-a-host (Status: 404)
+
+Old: /technologies/module-federation/recipes/nx-module-federation-plugin
+New: /docs/technologies/module-federation/recipes/nx-module-federation-plugin (Status: 404)
+
+Old: /technologies/module-federation/recipes/federate-a-module
+New: /docs/technologies/module-federation/recipes/federate-a-module (Status: 404)
+
+Old: /technologies/module-federation/api
+New: /docs/technologies/module-federation/api (Status: 404)
+
+Old: /technologies/eslint/api
+New: /docs/technologies/eslint/api (Status: 404)
+
+Old: /technologies/eslint/recipes/eslint
+New: /docs/technologies/eslint/recipes/eslint (Status: 404)
+
+Old: /technologies/eslint/recipes
+New: /docs/technologies/eslint/recipes (Status: 404)
+
+Old: /technologies/module-federation/recipes/nx-module-federation-dev-server-plugin
+New: /docs/technologies/module-federation/recipes/nx-module-federation-dev-server-plugin (Status: 404)
+
+Old: /technologies/eslint/recipes/flat-config
+New: /docs/technologies/eslint/recipes/flat-config (Status: 404)
+
+Old: /technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries
+New: /docs/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries (Status: 404)
+
+Old: /technologies/eslint/eslint-plugin/recipes/dependency-checks
+New: /docs/technologies/eslint/eslint-plugin/recipes/dependency-checks (Status: 404)
+
+Old: /technologies/eslint/eslint-plugin/recipes
+New: /docs/technologies/eslint/eslint-plugin/recipes (Status: 404)
+
+Old: /technologies/eslint/eslint-plugin/api
+New: /docs/technologies/eslint/eslint-plugin/api (Status: 404)
+
+Old: /technologies/build-tools/docker
+New: /docs/technologies/build-tools/docker (Status: 404)
+
+Old: /technologies/build-tools/vite/recipes/configure-vite
+New: /docs/technologies/build-tools/vite/recipes/configure-vite (Status: 404)
+
+Old: /technologies/build-tools/webpack/recipes/webpack-config-setup
+New: /docs/technologies/build-tools/webpack/recipes/webpack-config-setup (Status: 404)
+
+Old: /technologies/build-tools/webpack/recipes/webpack-plugins
+New: /docs/technologies/build-tools/webpack/recipes/webpack-plugins (Status: 404)
+
+Old: /technologies/build-tools/vite/recipes
+New: /docs/technologies/build-tools/vite/recipes (Status: 404)
+
+Old: /technologies/build-tools/vite/api
+New: /docs/technologies/build-tools/vite/api (Status: 404)
+
+Old: /technologies/build-tools/webpack/api
+New: /docs/technologies/build-tools/webpack/api (Status: 404)
+
+Old: /technologies/build-tools/webpack/recipes
+New: /docs/technologies/build-tools/webpack/recipes (Status: 404)
+
+Old: /technologies/build-tools/rollup/api
+New: /docs/technologies/build-tools/rollup/api (Status: 404)
+
+Old: /technologies/build-tools/esbuild/api
+New: /docs/technologies/build-tools/esbuild/api (Status: 404)
+
+Old: /technologies/build-tools/esbuild/recipes
+New: /docs/technologies/build-tools/esbuild/recipes (Status: 404)
+
+Old: /technologies/build-tools/rspack/recipes
+New: /docs/technologies/build-tools/rspack/recipes (Status: 404)
+
+Old: /technologies/build-tools/rollup/recipes
+New: /docs/technologies/build-tools/rollup/recipes (Status: 404)
+
+Old: /technologies/test-tools/cypress/recipes
+New: /docs/technologies/test-tools/cypress/recipes (Status: 404)
+
+Old: /technologies/build-tools/rspack/api
+New: /docs/technologies/build-tools/rspack/api (Status: 404)
+
+Old: /technologies/build-tools/rsbuild/recipes
+New: /docs/technologies/build-tools/rsbuild/recipes (Status: 404)
+
+Old: /technologies/test-tools/cypress/recipes/cypress-component-testing
+New: /docs/technologies/test-tools/cypress/recipes/cypress-component-testing (Status: 404)
+
+Old: /technologies/build-tools/rsbuild/api
+New: /docs/technologies/build-tools/rsbuild/api (Status: 404)
+
+Old: /technologies/test-tools/jest/recipes
+New: /docs/technologies/test-tools/jest/recipes (Status: 404)
+
+Old: /technologies/test-tools/cypress/api
+New: /docs/technologies/test-tools/cypress/api (Status: 404)
+
+Old: /technologies/test-tools/playwright/recipes
+New: /docs/technologies/test-tools/playwright/recipes (Status: 404)
+
+Old: /technologies/test-tools/cypress/recipes/cypress-setup-node-events
+New: /docs/technologies/test-tools/cypress/recipes/cypress-setup-node-events (Status: 404)
+
+Old: /technologies/test-tools/cypress/recipes/cypress-v11-migration
+New: /docs/technologies/test-tools/cypress/recipes/cypress-v11-migration (Status: 404)
+
+Old: /technologies/test-tools/jest/api
+New: /docs/technologies/test-tools/jest/api (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/best-practices
+New: /docs/technologies/test-tools/storybook/recipes/best-practices (Status: 404)
+
+Old: /technologies/test-tools/playwright/api
+New: /docs/technologies/test-tools/playwright/api (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/overview-angular
+New: /docs/technologies/test-tools/storybook/recipes/overview-angular (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/overview-react
+New: /docs/technologies/test-tools/storybook/recipes/overview-react (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes
+New: /docs/technologies/test-tools/storybook/recipes (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/overview-vue
+New: /docs/technologies/test-tools/storybook/recipes/overview-vue (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/configuring-storybook
+New: /docs/technologies/test-tools/storybook/recipes/configuring-storybook (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/storybook-9-setup
+New: /docs/technologies/test-tools/storybook/recipes/storybook-9-setup (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/one-storybook-per-scope
+New: /docs/technologies/test-tools/storybook/recipes/one-storybook-per-scope (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/one-storybook-for-all
+New: /docs/technologies/test-tools/storybook/recipes/one-storybook-for-all (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/storybook-interaction-tests
+New: /docs/technologies/test-tools/storybook/recipes/storybook-interaction-tests (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/angular-configuring-styles
+New: /docs/technologies/test-tools/storybook/recipes/angular-configuring-styles (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/upgrading-storybook
+New: /docs/technologies/test-tools/storybook/recipes/upgrading-storybook (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/storybook-composition-setup
+New: /docs/technologies/test-tools/storybook/recipes/storybook-composition-setup (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/angular-storybook-compodoc
+New: /docs/technologies/test-tools/storybook/recipes/angular-storybook-compodoc (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/custom-builder-configs
+New: /docs/technologies/test-tools/storybook/recipes/custom-builder-configs (Status: 404)
+
+Old: /technologies/test-tools/storybook/recipes/one-storybook-with-composition
+New: /docs/technologies/test-tools/storybook/recipes/one-storybook-with-composition (Status: 404)
+
+Old: /technologies/test-tools/storybook/api
+New: /docs/technologies/test-tools/storybook/api (Status: 404)
+
+Old: /technologies/test-tools/detox/recipes
+New: /docs/technologies/test-tools/detox/recipes (Status: 404)
+
+Old: /nx-enterprise/activate-powerpack
+New: /docs/nx-enterprise/activate-powerpack (Status: 404)
+
+Old: /nx-enterprise/powerpack/conformance
+New: /docs/nx-enterprise/powerpack/conformance (Status: 404)
+
+Old: /nx-enterprise
+New: /docs/nx-enterprise (Status: 404)
+
+Old: /nx-enterprise/powerpack
+New: /docs/nx-enterprise/powerpack (Status: 404)
+
+Old: /nx-enterprise/powerpack/licenses-and-trials
+New: /docs/nx-enterprise/powerpack/licenses-and-trials (Status: 404)
+
+Old: /technologies/test-tools/detox/api
+New: /docs/technologies/test-tools/detox/api (Status: 404)
+
+Old: /nx-enterprise/powerpack/owners
+New: /docs/nx-enterprise/powerpack/owners (Status: 404)
+
+Old: /showcase/example-repos
+New: /docs/showcase/example-repos (Status: 404)
+
+Old: /showcase/example-repos/add-astro
+New: /docs/showcase/example-repos/add-astro (Status: 404)
+
+Old: /showcase/example-repos/add-dotnet
+New: /docs/showcase/example-repos/add-dotnet (Status: 404)
+
+Old: /showcase/example-repos/add-lit
+New: /docs/showcase/example-repos/add-lit (Status: 404)
+
+Old: /showcase/example-repos/add-solid
+New: /docs/showcase/example-repos/add-solid (Status: 404)
+
+Old: /showcase/example-repos/add-qwik
+New: /docs/showcase/example-repos/add-qwik (Status: 404)
+
+Old: /showcase
+New: /docs/showcase (Status: 404)
+
+Old: /showcase/example-repos/add-express
+New: /docs/showcase/example-repos/add-express (Status: 404)
+
+Old: /showcase/example-repos/add-svelte
+New: /docs/showcase/example-repos/add-svelte (Status: 404)
+
+Old: /showcase/example-repos/add-rust
+New: /docs/showcase/example-repos/add-rust (Status: 404)
+
+Old: /showcase/example-repos/nestjs-prisma
+New: /docs/showcase/example-repos/nestjs-prisma (Status: 404)
+
+Old: /showcase/example-repos/postgres-fastify
+New: /docs/showcase/example-repos/postgres-fastify (Status: 404)
+
+Old: /showcase/example-repos/serverless-fastify-planetscale
+New: /docs/showcase/example-repos/serverless-fastify-planetscale (Status: 404)
+
+Old: /showcase/example-repos/apollo-react
+New: /docs/showcase/example-repos/apollo-react (Status: 404)
+
+Old: /showcase/example-repos/mfe
+New: /docs/showcase/example-repos/mfe (Status: 404)
+
+Old: /showcase/benchmarks/tsc-batch-mode
+New: /docs/showcase/benchmarks/tsc-batch-mode (Status: 404)
+
+Old: /showcase/benchmarks
+New: /docs/showcase/benchmarks (Status: 404)
+
+Old: /showcase/example-repos/mongo-fastify
+New: /docs/showcase/example-repos/mongo-fastify (Status: 404)
+
+Old: /showcase/example-repos/add-fastify
+New: /docs/showcase/example-repos/add-fastify (Status: 404)
+
+Old: /showcase/example-repos/redis-fastify
+New: /docs/showcase/example-repos/redis-fastify (Status: 404)
+
+Old: /showcase/benchmarks/caching
+New: /docs/showcase/benchmarks/caching (Status: 404)
+
+Old: /showcase/benchmarks/nx-agents
+New: /docs/showcase/benchmarks/nx-agents (Status: 404)
+
+Old: /reference/core-api/workspace
+New: /docs/reference/core-api/workspace (Status: 404)
+
+Old: /reference/core-api
+New: /docs/reference/core-api (Status: 404)
+
+Old: /reference/core-api/nx
+New: /docs/reference/core-api/nx (Status: 404)
+
+Old: /reference/core-api/owners/overview
+New: /docs/reference/core-api/owners/overview (Status: 404)
+
+Old: /reference/core-api/owners
+New: /docs/reference/core-api/owners (Status: 404)
+
+Old: /reference/core-api/conformance/create-conformance-rule
+New: /docs/reference/core-api/conformance/create-conformance-rule (Status: 404)
+
+Old: /reference/core-api/azure-cache
+New: /docs/reference/core-api/azure-cache (Status: 404)
+
+Old: /reference/core-api/conformance/overview
+New: /docs/reference/core-api/conformance/overview (Status: 404)
+
+Old: /reference/core-api/conformance
+New: /docs/reference/core-api/conformance (Status: 404)
+
+Old: /reference/core-api/gcs-cache
+New: /docs/reference/core-api/gcs-cache (Status: 404)
+
+Old: /reference/core-api/gcs-cache/overview
+New: /docs/reference/core-api/gcs-cache/overview (Status: 404)
+
+Old: /reference/core-api/s3-cache
+New: /docs/reference/core-api/s3-cache (Status: 404)
+
+Old: /reference/core-api/azure-cache/overview
+New: /docs/reference/core-api/azure-cache/overview (Status: 404)
+
+Old: /reference/core-api/shared-fs-cache
+New: /docs/reference/core-api/shared-fs-cache (Status: 404)
+
+Old: /reference/core-api/s3-cache/overview
+New: /docs/reference/core-api/s3-cache/overview (Status: 404)
+
+Old: /reference/core-api/shared-fs-cache/overview
+New: /docs/reference/core-api/shared-fs-cache/overview (Status: 404)
+
+Old: /reference/core-api/devkit
+New: /docs/reference/core-api/devkit (Status: 404)
+
+Old: /reference/core-api/plugin
+New: /docs/reference/core-api/plugin (Status: 404)
+
+Old: /reference/core-api/web
+New: /docs/reference/core-api/web (Status: 404)
+
+Old: /reference/core-api/create-nx-workspace
+New: /docs/reference/core-api/create-nx-workspace (Status: 404)
+
+Old: /deprecated/affected-graph
+New: /docs/deprecated/affected-graph (Status: 404)
+
+Old: /troubleshooting/convert-to-inferred
+New: /docs/troubleshooting/convert-to-inferred (Status: 404)
+
+Old: /deprecated
+New: /docs/deprecated (Status: 404)
+
+Old: /deprecated/print-affected
+New: /docs/deprecated/print-affected (Status: 404)
+
+Old: /deprecated/legacy-cache
+New: /docs/deprecated/legacy-cache (Status: 404)
+
+Old: /deprecated/workspace-generators
+New: /docs/deprecated/workspace-generators (Status: 404)
+
+Old: /deprecated/workspace-executors
+New: /docs/deprecated/workspace-executors (Status: 404)
+
+Old: /deprecated/npm-scope
+New: /docs/deprecated/npm-scope (Status: 404)
+
+Old: /deprecated/as-provided-vs-derived
+New: /docs/deprecated/as-provided-vs-derived (Status: 404)
+
+Old: /deprecated/cacheable-operations
+New: /docs/deprecated/cacheable-operations (Status: 404)
+
+Old: /deprecated/runtime-cache-inputs
+New: /docs/deprecated/runtime-cache-inputs (Status: 404)
+
+Old: /deprecated/workspace-json
+New: /docs/deprecated/workspace-json (Status: 404)
+
+Old: /deprecated/custom-tasks-runner
+New: /docs/deprecated/custom-tasks-runner (Status: 404)
+
+Old: /nx-api/nx/documents/affected%23skip-nx-cache
+New: /docs/nx-api/nx/documents/affected%23skip-nx-cache (Status: 404)
+
+Old: /deprecated/angular-schematics-builders
+New: /docs/deprecated/angular-schematics-builders (Status: 404)
+
+Old: /see-also
+New: /docs/see-also (Status: 404)
+
+Old: /deprecated/global-implicit-dependencies
+New: /docs/deprecated/global-implicit-dependencies (Status: 404)
+
+Old: /deprecated/rescope
+New: /docs/deprecated/rescope (Status: 404)
+
+Old: /deprecated/integrated-vs-package-based
+New: /docs/deprecated/integrated-vs-package-based (Status: 404)
+
+Old: /deprecated/v1-nx-plugin-api
+New: /docs/deprecated/v1-nx-plugin-api (Status: 404)
+
+Old: /technologies/angular/api/executors/module-federation-dev-server
+New: /docs/technologies/angular/api/executors/module-federation-dev-server (Status: 404)
+
+Old: /technologies/angular/api/executors/delegate-build
+New: /docs/technologies/angular/api/executors/delegate-build (Status: 404)
+
+Old: /technologies/angular/api/executors
+New: /docs/technologies/angular/api/executors (Status: 404)
+
+Old: /technologies/angular/api/executors/application
+New: /docs/technologies/angular/api/executors/application (Status: 404)
+
+Old: /see-also/sitemap
+New: /docs/see-also/sitemap (Status: 404)
+
+Old: /technologies/angular/api/executors/ng-packagr-lite
+New: /docs/technologies/angular/api/executors/ng-packagr-lite (Status: 404)
+
+Old: /technologies/angular/api/executors/browser-esbuild
+New: /docs/technologies/angular/api/executors/browser-esbuild (Status: 404)
+
+Old: /technologies/angular/api/executors/package
+New: /docs/technologies/angular/api/executors/package (Status: 404)
+
+Old: /technologies/angular/api/executors/module-federation-dev-ssr
+New: /docs/technologies/angular/api/executors/module-federation-dev-ssr (Status: 404)
+
+Old: /technologies/angular/api/executors/webpack-server
+New: /docs/technologies/angular/api/executors/webpack-server (Status: 404)
+
+Old: /technologies/angular/api/executors/extract-i18n
+New: /docs/technologies/angular/api/executors/extract-i18n (Status: 404)
+
+Old: /technologies/angular/api/executors/webpack-browser
+New: /docs/technologies/angular/api/executors/webpack-browser (Status: 404)
+
+Old: /technologies/angular/api/generators
+New: /docs/technologies/angular/api/generators (Status: 404)
+
+Old: /technologies/angular/api/generators/component-test
+New: /docs/technologies/angular/api/generators/component-test (Status: 404)
+
+Old: /technologies/angular/api/executors/dev-server
+New: /docs/technologies/angular/api/executors/dev-server (Status: 404)
+
+Old: /technologies/angular/api/generators/component
+New: /docs/technologies/angular/api/generators/component (Status: 404)
+
+Old: /technologies/angular/api/generators/application
+New: /docs/technologies/angular/api/generators/application (Status: 404)
+
+Old: /technologies/angular/api/generators/add-linting
+New: /docs/technologies/angular/api/generators/add-linting (Status: 404)
+
+Old: /technologies/angular/api/generators/component-story
+New: /docs/technologies/angular/api/generators/component-story (Status: 404)
+
+Old: /technologies/angular/api/generators/convert-to-application-executor
+New: /docs/technologies/angular/api/generators/convert-to-application-executor (Status: 404)
+
+Old: /technologies/angular/api/generators/federate-module
+New: /docs/technologies/angular/api/generators/federate-module (Status: 404)
+
+Old: /technologies/angular/api/generators/library-secondary-entry-point
+New: /docs/technologies/angular/api/generators/library-secondary-entry-point (Status: 404)
+
+Old: /technologies/angular/api/generators/remote
+New: /docs/technologies/angular/api/generators/remote (Status: 404)
+
+Old: /technologies/angular/api/generators/directive
+New: /docs/technologies/angular/api/generators/directive (Status: 404)
+
+Old: /technologies/angular/api/generators/move
+New: /docs/technologies/angular/api/generators/move (Status: 404)
+
+Old: /technologies/angular/api/generators/convert-to-with-mf
+New: /docs/technologies/angular/api/generators/convert-to-with-mf (Status: 404)
+
+Old: /technologies/angular/api/generators/library
+New: /docs/technologies/angular/api/generators/library (Status: 404)
+
+Old: /technologies/angular/api/generators/init
+New: /docs/technologies/angular/api/generators/init (Status: 404)
+
+Old: /technologies/angular/api/generators/convert-to-rspack
+New: /docs/technologies/angular/api/generators/convert-to-rspack (Status: 404)
+
+Old: /technologies/angular/api/generators/host
+New: /docs/technologies/angular/api/generators/host (Status: 404)
+
+Old: /technologies/angular/api/generators/ngrx-feature-store
+New: /docs/technologies/angular/api/generators/ngrx-feature-store (Status: 404)
+
+Old: /technologies/angular/api/generators/scam-directive
+New: /docs/technologies/angular/api/generators/scam-directive (Status: 404)
+
+Old: /technologies/angular/api/generators/ng-add
+New: /docs/technologies/angular/api/generators/ng-add (Status: 404)
+
+Old: /technologies/angular/api/generators/scam
+New: /docs/technologies/angular/api/generators/scam (Status: 404)
+
+Old: /technologies/angular/api/generators/scam-pipe
+New: /docs/technologies/angular/api/generators/scam-pipe (Status: 404)
+
+Old: /technologies/angular/api/generators/ngrx-root-store
+New: /docs/technologies/angular/api/generators/ngrx-root-store (Status: 404)
+
+Old: /technologies/angular/api/generators/scam-to-standalone
+New: /docs/technologies/angular/api/generators/scam-to-standalone (Status: 404)
+
+Old: /technologies/angular/api/generators/ngrx
+New: /docs/technologies/angular/api/generators/ngrx (Status: 404)
+
+Old: /technologies/angular/api/generators/pipe
+New: /docs/technologies/angular/api/generators/pipe (Status: 404)
+
+Old: /technologies/angular/api/generators/setup-mf
+New: /docs/technologies/angular/api/generators/setup-mf (Status: 404)
+
+Old: /technologies/test-tools/cypress/api/executors
+New: /docs/technologies/test-tools/cypress/api/executors (Status: 404)
+
+Old: /technologies/angular/api/generators/web-worker
+New: /docs/technologies/angular/api/generators/web-worker (Status: 404)
+
+Old: /technologies/angular/api/generators/storybook-configuration
+New: /docs/technologies/angular/api/generators/storybook-configuration (Status: 404)
+
+Old: /technologies/test-tools/cypress/api/executors/cypress
+New: /docs/technologies/test-tools/cypress/api/executors/cypress (Status: 404)
+
+Old: /technologies/angular/api/generators/setup-tailwind
+New: /docs/technologies/angular/api/generators/setup-tailwind (Status: 404)
+
+Old: /technologies/angular/api/generators/stories
+New: /docs/technologies/angular/api/generators/stories (Status: 404)
+
+Old: /technologies/angular/api/generators/cypress-component-configuration
+New: /docs/technologies/angular/api/generators/cypress-component-configuration (Status: 404)
+
+Old: /technologies/angular/api/generators/setup-ssr
+New: /docs/technologies/angular/api/generators/setup-ssr (Status: 404)
+
+Old: /technologies/angular/api/migrations
+New: /docs/technologies/angular/api/migrations (Status: 404)
+
+Old: /technologies/test-tools/cypress/api/generators/init
+New: /docs/technologies/test-tools/cypress/api/generators/init (Status: 404)
+
+Old: /technologies/test-tools/cypress/api/generators/migrate-to-cypress-11
+New: /docs/technologies/test-tools/cypress/api/generators/migrate-to-cypress-11 (Status: 404)
+
+Old: /technologies/test-tools/detox/api/executors/build
+New: /docs/technologies/test-tools/detox/api/executors/build (Status: 404)
+
+Old: /technologies/test-tools/cypress/api/generators
+New: /docs/technologies/test-tools/cypress/api/generators (Status: 404)
+
+Old: /technologies/test-tools/cypress/api/generators/convert-to-inferred
+New: /docs/technologies/test-tools/cypress/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/test-tools/cypress/api/generators/component-configuration
+New: /docs/technologies/test-tools/cypress/api/generators/component-configuration (Status: 404)
+
+Old: /technologies/test-tools/detox/api/executors/test
+New: /docs/technologies/test-tools/detox/api/executors/test (Status: 404)
+
+Old: /technologies/test-tools/detox/api/executors
+New: /docs/technologies/test-tools/detox/api/executors (Status: 404)
+
+Old: /technologies/test-tools/cypress/api/generators/configuration
+New: /docs/technologies/test-tools/cypress/api/generators/configuration (Status: 404)
+
+Old: /technologies/test-tools/cypress/api/migrations
+New: /docs/technologies/test-tools/cypress/api/migrations (Status: 404)
+
+Old: /technologies/test-tools/detox/api/generators
+New: /docs/technologies/test-tools/detox/api/generators (Status: 404)
+
+Old: /technologies/test-tools/detox/api/migrations
+New: /docs/technologies/test-tools/detox/api/migrations (Status: 404)
+
+Old: /technologies/test-tools/detox/api/generators/application
+New: /docs/technologies/test-tools/detox/api/generators/application (Status: 404)
+
+Old: /reference/core-api/devkit/documents/AsyncIteratorExecutor
+New: /docs/reference/core-api/devkit/documents/AsyncIteratorExecutor (Status: 404)
+
+Old: /technologies/test-tools/detox/api/generators/init
+New: /docs/technologies/test-tools/detox/api/generators/init (Status: 404)
+
+Old: /reference/core-api/devkit/documents/nx_devkit
+New: /docs/reference/core-api/devkit/documents/nx_devkit (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ngcli_adapter
+New: /docs/reference/core-api/devkit/documents/ngcli_adapter (Status: 404)
+
+Old: /reference/core-api/devkit/documents
+New: /docs/reference/core-api/devkit/documents (Status: 404)
+
+Old: /technologies/test-tools/detox/api/generators/convert-to-inferred
+New: /docs/technologies/test-tools/detox/api/generators/convert-to-inferred (Status: 404)
+
+Old: /reference/core-api/devkit/documents/AggregateCreateNodesError
+New: /docs/reference/core-api/devkit/documents/AggregateCreateNodesError (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ChangeType
+New: /docs/reference/core-api/devkit/documents/ChangeType (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateMetadata
+New: /docs/reference/core-api/devkit/documents/CreateMetadata (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateMetadataContext
+New: /docs/reference/core-api/devkit/documents/CreateMetadataContext (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateNodes
+New: /docs/reference/core-api/devkit/documents/CreateNodes (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateNodesFunctionV2
+New: /docs/reference/core-api/devkit/documents/CreateNodesFunctionV2 (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateNodesContext
+New: /docs/reference/core-api/devkit/documents/CreateNodesContext (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateDependenciesContext
+New: /docs/reference/core-api/devkit/documents/CreateDependenciesContext (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateDependencies
+New: /docs/reference/core-api/devkit/documents/CreateDependencies (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateNodesContextV2
+New: /docs/reference/core-api/devkit/documents/CreateNodesContextV2 (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateNodesFunction
+New: /docs/reference/core-api/devkit/documents/CreateNodesFunction (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateNodesV2
+New: /docs/reference/core-api/devkit/documents/CreateNodesV2 (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateNodesResult
+New: /docs/reference/core-api/devkit/documents/CreateNodesResult (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CustomHasher
+New: /docs/reference/core-api/devkit/documents/CustomHasher (Status: 404)
+
+Old: /reference/core-api/devkit/documents/DefaultTasksRunnerOptions
+New: /docs/reference/core-api/devkit/documents/DefaultTasksRunnerOptions (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ExecutorContext
+New: /docs/reference/core-api/devkit/documents/ExecutorContext (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ExecutorsJson
+New: /docs/reference/core-api/devkit/documents/ExecutorsJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/CreateNodesResultV2
+New: /docs/reference/core-api/devkit/documents/CreateNodesResultV2 (Status: 404)
+
+Old: /reference/core-api/devkit/documents/DynamicDependency
+New: /docs/reference/core-api/devkit/documents/DynamicDependency (Status: 404)
+
+Old: /reference/core-api/devkit/documents/Executor
+New: /docs/reference/core-api/devkit/documents/Executor (Status: 404)
+
+Old: /reference/core-api/devkit/documents/DependencyType
+New: /docs/reference/core-api/devkit/documents/DependencyType (Status: 404)
+
+Old: /reference/core-api/devkit/documents/FileChange
+New: /docs/reference/core-api/devkit/documents/FileChange (Status: 404)
+
+Old: /reference/core-api/devkit/documents/FileMap
+New: /docs/reference/core-api/devkit/documents/FileMap (Status: 404)
+
+Old: /reference/core-api/devkit/documents/Generator
+New: /docs/reference/core-api/devkit/documents/Generator (Status: 404)
+
+Old: /reference/core-api/devkit/documents/GeneratorsJson
+New: /docs/reference/core-api/devkit/documents/GeneratorsJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/Hasher
+New: /docs/reference/core-api/devkit/documents/Hasher (Status: 404)
+
+Old: /reference/core-api/devkit/documents/Hash
+New: /docs/reference/core-api/devkit/documents/Hash (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ExpandedPluginConfiguration
+New: /docs/reference/core-api/devkit/documents/ExpandedPluginConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/GraphJson
+New: /docs/reference/core-api/devkit/documents/GraphJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/GeneratorCallback
+New: /docs/reference/core-api/devkit/documents/GeneratorCallback (Status: 404)
+
+Old: /reference/core-api/devkit/documents/FileData
+New: /docs/reference/core-api/devkit/documents/FileData (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ImplicitDependencyEntry
+New: /docs/reference/core-api/devkit/documents/ImplicitDependencyEntry (Status: 404)
+
+Old: /reference/core-api/devkit/documents/NX_VERSION
+New: /docs/reference/core-api/devkit/documents/NX_VERSION (Status: 404)
+
+Old: /reference/core-api/devkit/documents/NxAffectedConfig
+New: /docs/reference/core-api/devkit/documents/NxAffectedConfig (Status: 404)
+
+Old: /reference/core-api/devkit/documents/Migration
+New: /docs/reference/core-api/devkit/documents/Migration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/JsonSerializeOptions
+New: /docs/reference/core-api/devkit/documents/JsonSerializeOptions (Status: 404)
+
+Old: /reference/core-api/devkit/documents/HasherContext
+New: /docs/reference/core-api/devkit/documents/HasherContext (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ImplicitDependency
+New: /docs/reference/core-api/devkit/documents/ImplicitDependency (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ImplicitJsonSubsetDependency
+New: /docs/reference/core-api/devkit/documents/ImplicitJsonSubsetDependency (Status: 404)
+
+Old: /reference/core-api/devkit/documents/MigrationsJson
+New: /docs/reference/core-api/devkit/documents/MigrationsJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/JsonParseOptions
+New: /docs/reference/core-api/devkit/documents/JsonParseOptions (Status: 404)
+
+Old: /reference/core-api/devkit/documents/OverwriteStrategy
+New: /docs/reference/core-api/devkit/documents/OverwriteStrategy (Status: 404)
+
+Old: /reference/core-api/devkit/documents/NxPlugin
+New: /docs/reference/core-api/devkit/documents/NxPlugin (Status: 404)
+
+Old: /reference/core-api/devkit/documents/PostTasksExecutionContext
+New: /docs/reference/core-api/devkit/documents/PostTasksExecutionContext (Status: 404)
+
+Old: /reference/core-api/devkit/documents/PreTasksExecution
+New: /docs/reference/core-api/devkit/documents/PreTasksExecution (Status: 404)
+
+Old: /reference/core-api/devkit/documents/PluginConfiguration
+New: /docs/reference/core-api/devkit/documents/PluginConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/NxJsonConfiguration
+New: /docs/reference/core-api/devkit/documents/NxJsonConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/PackageManager
+New: /docs/reference/core-api/devkit/documents/PackageManager (Status: 404)
+
+Old: /reference/core-api/devkit/documents/NxPluginV2
+New: /docs/reference/core-api/devkit/documents/NxPluginV2 (Status: 404)
+
+Old: /reference/core-api/devkit/documents/PostTasksExecution
+New: /docs/reference/core-api/devkit/documents/PostTasksExecution (Status: 404)
+
+Old: /reference/core-api/devkit/documents/PreTasksExecutionContext
+New: /docs/reference/core-api/devkit/documents/PreTasksExecutionContext (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ProjectsConfigurations
+New: /docs/reference/core-api/devkit/documents/ProjectsConfigurations (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ProjectGraphDependency
+New: /docs/reference/core-api/devkit/documents/ProjectGraphDependency (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ProjectType
+New: /docs/reference/core-api/devkit/documents/ProjectType (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ProjectConfiguration
+New: /docs/reference/core-api/devkit/documents/ProjectConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ProjectGraphExternalNode
+New: /docs/reference/core-api/devkit/documents/ProjectGraphExternalNode (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ProjectGraph
+New: /docs/reference/core-api/devkit/documents/ProjectGraph (Status: 404)
+
+Old: /reference/core-api/devkit/documents/PromiseExecutor
+New: /docs/reference/core-api/devkit/documents/PromiseExecutor (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ProjectFileMap
+New: /docs/reference/core-api/devkit/documents/ProjectFileMap (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ProjectGraphProjectNode
+New: /docs/reference/core-api/devkit/documents/ProjectGraphProjectNode (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ProjectsMetadata
+New: /docs/reference/core-api/devkit/documents/ProjectsMetadata (Status: 404)
+
+Old: /reference/core-api/devkit/documents/RemoteCache
+New: /docs/reference/core-api/devkit/documents/RemoteCache (Status: 404)
+
+Old: /reference/core-api/devkit/documents/README
+New: /docs/reference/core-api/devkit/documents/README (Status: 404)
+
+Old: /reference/core-api/devkit/documents/StaticDependency
+New: /docs/reference/core-api/devkit/documents/StaticDependency (Status: 404)
+
+Old: /reference/core-api/devkit/documents/StaleProjectGraphCacheError
+New: /docs/reference/core-api/devkit/documents/StaleProjectGraphCacheError (Status: 404)
+
+Old: /reference/core-api/devkit/documents/StringDeletion
+New: /docs/reference/core-api/devkit/documents/StringDeletion (Status: 404)
+
+Old: /reference/core-api/devkit/documents/TargetConfiguration
+New: /docs/reference/core-api/devkit/documents/TargetConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/StringChange
+New: /docs/reference/core-api/devkit/documents/StringChange (Status: 404)
+
+Old: /reference/core-api/devkit/documents/StringInsertion
+New: /docs/reference/core-api/devkit/documents/StringInsertion (Status: 404)
+
+Old: /reference/core-api/devkit/documents/RawProjectGraphDependency
+New: /docs/reference/core-api/devkit/documents/RawProjectGraphDependency (Status: 404)
+
+Old: /reference/core-api/devkit/documents/Target
+New: /docs/reference/core-api/devkit/documents/Target (Status: 404)
+
+Old: /reference/core-api/devkit/documents/TaskResult
+New: /docs/reference/core-api/devkit/documents/TaskResult (Status: 404)
+
+Old: /reference/core-api/devkit/documents/TaskGraph
+New: /docs/reference/core-api/devkit/documents/TaskGraph (Status: 404)
+
+Old: /reference/core-api/devkit/documents/Task
+New: /docs/reference/core-api/devkit/documents/Task (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ToJSOptions
+New: /docs/reference/core-api/devkit/documents/ToJSOptions (Status: 404)
+
+Old: /reference/core-api/devkit/documents/TaskHasher
+New: /docs/reference/core-api/devkit/documents/TaskHasher (Status: 404)
+
+Old: /reference/core-api/devkit/documents/TaskResults
+New: /docs/reference/core-api/devkit/documents/TaskResults (Status: 404)
+
+Old: /reference/core-api/devkit/documents/TaskGraphExecutor
+New: /docs/reference/core-api/devkit/documents/TaskGraphExecutor (Status: 404)
+
+Old: /reference/core-api/devkit/documents/Tree
+New: /docs/reference/core-api/devkit/documents/Tree (Status: 404)
+
+Old: /reference/core-api/devkit/documents/TargetDefaults
+New: /docs/reference/core-api/devkit/documents/TargetDefaults (Status: 404)
+
+Old: /reference/core-api/devkit/documents/TargetDependencyConfig
+New: /docs/reference/core-api/devkit/documents/TargetDependencyConfig (Status: 404)
+
+Old: /reference/core-api/devkit/documents/addDependenciesToPackageJson
+New: /docs/reference/core-api/devkit/documents/addDependenciesToPackageJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/addProjectConfiguration
+New: /docs/reference/core-api/devkit/documents/addProjectConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/cacheDir
+New: /docs/reference/core-api/devkit/documents/cacheDir (Status: 404)
+
+Old: /reference/core-api/devkit/documents/createNodesFromFiles
+New: /docs/reference/core-api/devkit/documents/createNodesFromFiles (Status: 404)
+
+Old: /reference/core-api/devkit/documents/WorkspaceJsonConfiguration
+New: /docs/reference/core-api/devkit/documents/WorkspaceJsonConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/convertNxExecutor
+New: /docs/reference/core-api/devkit/documents/convertNxExecutor (Status: 404)
+
+Old: /reference/core-api/devkit/documents/applyChangesToString
+New: /docs/reference/core-api/devkit/documents/applyChangesToString (Status: 404)
+
+Old: /reference/core-api/devkit/documents/convertNxGenerator
+New: /docs/reference/core-api/devkit/documents/convertNxGenerator (Status: 404)
+
+Old: /reference/core-api/devkit/documents/createProjectFileMapUsingProjectGraph
+New: /docs/reference/core-api/devkit/documents/createProjectFileMapUsingProjectGraph (Status: 404)
+
+Old: /reference/core-api/devkit/documents/Workspace
+New: /docs/reference/core-api/devkit/documents/Workspace (Status: 404)
+
+Old: /reference/core-api/devkit/documents/formatFiles
+New: /docs/reference/core-api/devkit/documents/formatFiles (Status: 404)
+
+Old: /reference/core-api/devkit/documents/getPackageManagerCommand
+New: /docs/reference/core-api/devkit/documents/getPackageManagerCommand (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ensurePackage
+New: /docs/reference/core-api/devkit/documents/ensurePackage (Status: 404)
+
+Old: /reference/core-api/devkit/documents/getOutputsForTargetAndConfiguration
+New: /docs/reference/core-api/devkit/documents/getOutputsForTargetAndConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/detectPackageManager
+New: /docs/reference/core-api/devkit/documents/detectPackageManager (Status: 404)
+
+Old: /reference/core-api/devkit/documents/createProjectGraphAsync
+New: /docs/reference/core-api/devkit/documents/createProjectGraphAsync (Status: 404)
+
+Old: /reference/core-api/devkit/documents/getPackageManagerVersion
+New: /docs/reference/core-api/devkit/documents/getPackageManagerVersion (Status: 404)
+
+Old: /reference/core-api/devkit/documents/extractLayoutDirectory
+New: /docs/reference/core-api/devkit/documents/extractLayoutDirectory (Status: 404)
+
+Old: /reference/core-api/devkit/documents/defaultTasksRunner
+New: /docs/reference/core-api/devkit/documents/defaultTasksRunner (Status: 404)
+
+Old: /reference/core-api/devkit/documents/generateFiles
+New: /docs/reference/core-api/devkit/documents/generateFiles (Status: 404)
+
+Old: /reference/core-api/devkit/documents/glob
+New: /docs/reference/core-api/devkit/documents/glob (Status: 404)
+
+Old: /reference/core-api/devkit/documents/getProjects
+New: /docs/reference/core-api/devkit/documents/getProjects (Status: 404)
+
+Old: /reference/core-api/devkit/documents/globAsync
+New: /docs/reference/core-api/devkit/documents/globAsync (Status: 404)
+
+Old: /reference/core-api/devkit/documents/getWorkspaceLayout
+New: /docs/reference/core-api/devkit/documents/getWorkspaceLayout (Status: 404)
+
+Old: /reference/core-api/devkit/documents/logger
+New: /docs/reference/core-api/devkit/documents/logger (Status: 404)
+
+Old: /reference/core-api/devkit/documents/hashArray
+New: /docs/reference/core-api/devkit/documents/hashArray (Status: 404)
+
+Old: /reference/core-api/devkit/documents/joinPathFragments
+New: /docs/reference/core-api/devkit/documents/joinPathFragments (Status: 404)
+
+Old: /reference/core-api/devkit/documents/isDaemonEnabled
+New: /docs/reference/core-api/devkit/documents/isDaemonEnabled (Status: 404)
+
+Old: /reference/core-api/devkit/documents/installPackagesTask
+New: /docs/reference/core-api/devkit/documents/installPackagesTask (Status: 404)
+
+Old: /reference/core-api/devkit/documents/isWorkspacesEnabled
+New: /docs/reference/core-api/devkit/documents/isWorkspacesEnabled (Status: 404)
+
+Old: /reference/core-api/devkit/documents/moveFilesToNewDirectory
+New: /docs/reference/core-api/devkit/documents/moveFilesToNewDirectory (Status: 404)
+
+Old: /reference/core-api/devkit/documents/names
+New: /docs/reference/core-api/devkit/documents/names (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ngcli_adapter/mockSchematicsForTesting
+New: /docs/reference/core-api/devkit/documents/ngcli_adapter/mockSchematicsForTesting (Status: 404)
+
+Old: /reference/core-api/devkit/documents/offsetFromRoot
+New: /docs/reference/core-api/devkit/documents/offsetFromRoot (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ngcli_adapter/wrapAngularDevkitSchematic
+New: /docs/reference/core-api/devkit/documents/ngcli_adapter/wrapAngularDevkitSchematic (Status: 404)
+
+Old: /reference/core-api/devkit/documents/output
+New: /docs/reference/core-api/devkit/documents/output (Status: 404)
+
+Old: /reference/core-api/devkit/documents/normalizePath
+New: /docs/reference/core-api/devkit/documents/normalizePath (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ngcli_adapter/README
+New: /docs/reference/core-api/devkit/documents/ngcli_adapter/README (Status: 404)
+
+Old: /reference/core-api/devkit/documents/parseJson
+New: /docs/reference/core-api/devkit/documents/parseJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/ngcli_adapter/NxScopedHost
+New: /docs/reference/core-api/devkit/documents/ngcli_adapter/NxScopedHost (Status: 404)
+
+Old: /reference/core-api/devkit/documents/readProjectsConfigurationFromProjectGraph
+New: /docs/reference/core-api/devkit/documents/readProjectsConfigurationFromProjectGraph (Status: 404)
+
+Old: /reference/core-api/devkit/documents/parseTargetString
+New: /docs/reference/core-api/devkit/documents/parseTargetString (Status: 404)
+
+Old: /reference/core-api/devkit/documents/removeDependenciesFromPackageJson
+New: /docs/reference/core-api/devkit/documents/removeDependenciesFromPackageJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/readNxJson
+New: /docs/reference/core-api/devkit/documents/readNxJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/readJson
+New: /docs/reference/core-api/devkit/documents/readJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/readProjectConfiguration
+New: /docs/reference/core-api/devkit/documents/readProjectConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/readTargetOptions
+New: /docs/reference/core-api/devkit/documents/readTargetOptions (Status: 404)
+
+Old: /reference/core-api/devkit/documents/readJsonFile
+New: /docs/reference/core-api/devkit/documents/readJsonFile (Status: 404)
+
+Old: /reference/core-api/devkit/documents/readCachedProjectGraph
+New: /docs/reference/core-api/devkit/documents/readCachedProjectGraph (Status: 404)
+
+Old: /reference/core-api/devkit/documents/removeProjectConfiguration
+New: /docs/reference/core-api/devkit/documents/removeProjectConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/runExecutor
+New: /docs/reference/core-api/devkit/documents/runExecutor (Status: 404)
+
+Old: /reference/core-api/devkit/documents/runTasksInSerial
+New: /docs/reference/core-api/devkit/documents/runTasksInSerial (Status: 404)
+
+Old: /reference/core-api/devkit/documents/serializeJson
+New: /docs/reference/core-api/devkit/documents/serializeJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/reverse
+New: /docs/reference/core-api/devkit/documents/reverse (Status: 404)
+
+Old: /reference/core-api/devkit/documents/stripIndents
+New: /docs/reference/core-api/devkit/documents/stripIndents (Status: 404)
+
+Old: /reference/core-api/devkit/documents/targetToTargetString
+New: /docs/reference/core-api/devkit/documents/targetToTargetString (Status: 404)
+
+Old: /reference/core-api/devkit/documents/updateJson
+New: /docs/reference/core-api/devkit/documents/updateJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/stripJsonComments
+New: /docs/reference/core-api/devkit/documents/stripJsonComments (Status: 404)
+
+Old: /reference/core-api/devkit/documents/updateNxJson
+New: /docs/reference/core-api/devkit/documents/updateNxJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/toJS
+New: /docs/reference/core-api/devkit/documents/toJS (Status: 404)
+
+Old: /reference/core-api/devkit/documents/workspaceRoot
+New: /docs/reference/core-api/devkit/documents/workspaceRoot (Status: 404)
+
+Old: /reference/core-api/devkit/documents/validateDependency
+New: /docs/reference/core-api/devkit/documents/validateDependency (Status: 404)
+
+Old: /reference/core-api/devkit/documents/updateProjectConfiguration
+New: /docs/reference/core-api/devkit/documents/updateProjectConfiguration (Status: 404)
+
+Old: /reference/core-api/devkit/documents/workspaceLayout
+New: /docs/reference/core-api/devkit/documents/workspaceLayout (Status: 404)
+
+Old: /reference/core-api/devkit/documents/updateTsConfigsToJs
+New: /docs/reference/core-api/devkit/documents/updateTsConfigsToJs (Status: 404)
+
+Old: /reference/core-api/devkit/executors
+New: /docs/reference/core-api/devkit/executors (Status: 404)
+
+Old: /reference/core-api/devkit/documents/visitNotIgnoredFiles
+New: /docs/reference/core-api/devkit/documents/visitNotIgnoredFiles (Status: 404)
+
+Old: /reference/core-api/devkit/generators
+New: /docs/reference/core-api/devkit/generators (Status: 404)
+
+Old: /reference/core-api/devkit/documents/writeJson
+New: /docs/reference/core-api/devkit/documents/writeJson (Status: 404)
+
+Old: /reference/core-api/devkit/documents/writeJsonFile
+New: /docs/reference/core-api/devkit/documents/writeJsonFile (Status: 404)
+
+Old: /technologies/build-tools/esbuild/api/executors
+New: /docs/technologies/build-tools/esbuild/api/executors (Status: 404)
+
+Old: /technologies/eslint/api/executors/lint
+New: /docs/technologies/eslint/api/executors/lint (Status: 404)
+
+Old: /technologies/build-tools/esbuild/api/migrations
+New: /docs/technologies/build-tools/esbuild/api/migrations (Status: 404)
+
+Old: /technologies/build-tools/esbuild/api/executors/esbuild
+New: /docs/technologies/build-tools/esbuild/api/executors/esbuild (Status: 404)
+
+Old: /technologies/build-tools/esbuild/api/generators
+New: /docs/technologies/build-tools/esbuild/api/generators (Status: 404)
+
+Old: /technologies/eslint/api/executors
+New: /docs/technologies/eslint/api/executors (Status: 404)
+
+Old: /reference/core-api/devkit/migrations
+New: /docs/reference/core-api/devkit/migrations (Status: 404)
+
+Old: /technologies/build-tools/esbuild/api/generators/init
+New: /docs/technologies/build-tools/esbuild/api/generators/init (Status: 404)
+
+Old: /technologies/build-tools/esbuild/api/generators/configuration
+New: /docs/technologies/build-tools/esbuild/api/generators/configuration (Status: 404)
+
+Old: /technologies/eslint/api/generators
+New: /docs/technologies/eslint/api/generators (Status: 404)
+
+Old: /technologies/eslint/eslint-plugin/api/generators
+New: /docs/technologies/eslint/eslint-plugin/api/generators (Status: 404)
+
+Old: /technologies/eslint/api/generators/init
+New: /docs/technologies/eslint/api/generators/init (Status: 404)
+
+Old: /technologies/eslint/api/generators/convert-to-flat-config
+New: /docs/technologies/eslint/api/generators/convert-to-flat-config (Status: 404)
+
+Old: /technologies/eslint/api/generators/workspace-rule
+New: /docs/technologies/eslint/api/generators/workspace-rule (Status: 404)
+
+Old: /technologies/eslint/eslint-plugin/api/executors
+New: /docs/technologies/eslint/eslint-plugin/api/executors (Status: 404)
+
+Old: /technologies/react/expo/api/executors
+New: /docs/technologies/react/expo/api/executors (Status: 404)
+
+Old: /technologies/eslint/api/generators/convert-to-inferred
+New: /docs/technologies/eslint/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/eslint/eslint-plugin/api/migrations
+New: /docs/technologies/eslint/eslint-plugin/api/migrations (Status: 404)
+
+Old: /technologies/eslint/api/generators/workspace-rules-project
+New: /docs/technologies/eslint/api/generators/workspace-rules-project (Status: 404)
+
+Old: /technologies/eslint/api/migrations
+New: /docs/technologies/eslint/api/migrations (Status: 404)
+
+Old: /technologies/react/expo/api/executors/start
+New: /docs/technologies/react/expo/api/executors/start (Status: 404)
+
+Old: /technologies/react/expo/api/executors/prebuild
+New: /docs/technologies/react/expo/api/executors/prebuild (Status: 404)
+
+Old: /technologies/react/expo/api/executors/build
+New: /docs/technologies/react/expo/api/executors/build (Status: 404)
+
+Old: /technologies/react/expo/api/executors/update
+New: /docs/technologies/react/expo/api/executors/update (Status: 404)
+
+Old: /technologies/react/expo/api/executors/build-list
+New: /docs/technologies/react/expo/api/executors/build-list (Status: 404)
+
+Old: /technologies/react/expo/api/executors/export
+New: /docs/technologies/react/expo/api/executors/export (Status: 404)
+
+Old: /technologies/react/expo/api/executors/sync-deps
+New: /docs/technologies/react/expo/api/executors/sync-deps (Status: 404)
+
+Old: /technologies/react/expo/api/executors/install
+New: /docs/technologies/react/expo/api/executors/install (Status: 404)
+
+Old: /technologies/react/expo/api/executors/ensure-symlink
+New: /docs/technologies/react/expo/api/executors/ensure-symlink (Status: 404)
+
+Old: /technologies/react/expo/api/executors/run
+New: /docs/technologies/react/expo/api/executors/run (Status: 404)
+
+Old: /technologies/react/expo/api/generators/application
+New: /docs/technologies/react/expo/api/generators/application (Status: 404)
+
+Old: /technologies/react/expo/api/executors/submit
+New: /docs/technologies/react/expo/api/executors/submit (Status: 404)
+
+Old: /technologies/react/expo/api/generators
+New: /docs/technologies/react/expo/api/generators (Status: 404)
+
+Old: /technologies/react/expo/api/executors/serve
+New: /docs/technologies/react/expo/api/executors/serve (Status: 404)
+
+Old: /technologies/react/expo/api/generators/library
+New: /docs/technologies/react/expo/api/generators/library (Status: 404)
+
+Old: /technologies/react/expo/api/generators/component
+New: /docs/technologies/react/expo/api/generators/component (Status: 404)
+
+Old: /technologies/react/expo/api/migrations
+New: /docs/technologies/react/expo/api/migrations (Status: 404)
+
+Old: /technologies/node/express/api/executors
+New: /docs/technologies/node/express/api/executors (Status: 404)
+
+Old: /technologies/react/expo/api/generators/init
+New: /docs/technologies/react/expo/api/generators/init (Status: 404)
+
+Old: /technologies/react/expo/api/generators/convert-to-inferred
+New: /docs/technologies/react/expo/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/node/express/api/generators
+New: /docs/technologies/node/express/api/generators (Status: 404)
+
+Old: /technologies/java/api/generators
+New: /docs/technologies/java/api/generators (Status: 404)
+
+Old: /technologies/java/api/migrations
+New: /docs/technologies/java/api/migrations (Status: 404)
+
+Old: /technologies/java/api/generators/ci-workflow
+New: /docs/technologies/java/api/generators/ci-workflow (Status: 404)
+
+Old: /technologies/java/api/executors
+New: /docs/technologies/java/api/executors (Status: 404)
+
+Old: /technologies/node/express/api/generators/application
+New: /docs/technologies/node/express/api/generators/application (Status: 404)
+
+Old: /technologies/java/api/executors/gradle
+New: /docs/technologies/java/api/executors/gradle (Status: 404)
+
+Old: /technologies/java/api/generators/init
+New: /docs/technologies/java/api/generators/init (Status: 404)
+
+Old: /technologies/node/express/api/generators/init
+New: /docs/technologies/node/express/api/generators/init (Status: 404)
+
+Old: /technologies/node/express/api/migrations
+New: /docs/technologies/node/express/api/migrations (Status: 404)
+
+Old: /technologies/test-tools/jest/api/executors/jest
+New: /docs/technologies/test-tools/jest/api/executors/jest (Status: 404)
+
+Old: /technologies/test-tools/jest/api/generators
+New: /docs/technologies/test-tools/jest/api/generators (Status: 404)
+
+Old: /technologies/typescript/api/executors/tsc
+New: /docs/technologies/typescript/api/executors/tsc (Status: 404)
+
+Old: /technologies/test-tools/jest/api/generators/convert-to-inferred
+New: /docs/technologies/test-tools/jest/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/test-tools/jest/api/generators/init
+New: /docs/technologies/test-tools/jest/api/generators/init (Status: 404)
+
+Old: /technologies/typescript/api/executors/copy-workspace-modules
+New: /docs/technologies/typescript/api/executors/copy-workspace-modules (Status: 404)
+
+Old: /technologies/typescript/api/executors
+New: /docs/technologies/typescript/api/executors (Status: 404)
+
+Old: /technologies/test-tools/jest/api/executors
+New: /docs/technologies/test-tools/jest/api/executors (Status: 404)
+
+Old: /technologies/test-tools/jest/api/generators/configuration
+New: /docs/technologies/test-tools/jest/api/generators/configuration (Status: 404)
+
+Old: /technologies/test-tools/jest/api/migrations
+New: /docs/technologies/test-tools/jest/api/migrations (Status: 404)
+
+Old: /technologies/typescript/api/generators
+New: /docs/technologies/typescript/api/generators (Status: 404)
+
+Old: /technologies/typescript/api/executors/verdaccio
+New: /docs/technologies/typescript/api/executors/verdaccio (Status: 404)
+
+Old: /technologies/typescript/api/generators/library
+New: /docs/technologies/typescript/api/generators/library (Status: 404)
+
+Old: /technologies/typescript/api/generators/convert-to-swc
+New: /docs/technologies/typescript/api/generators/convert-to-swc (Status: 404)
+
+Old: /technologies/typescript/api/executors/release-publish
+New: /docs/technologies/typescript/api/executors/release-publish (Status: 404)
+
+Old: /technologies/typescript/api/executors/prune-lockfile
+New: /docs/technologies/typescript/api/executors/prune-lockfile (Status: 404)
+
+Old: /technologies/typescript/api/executors/node
+New: /docs/technologies/typescript/api/executors/node (Status: 404)
+
+Old: /technologies/typescript/api/executors/swc
+New: /docs/technologies/typescript/api/executors/swc (Status: 404)
+
+Old: /technologies/typescript/api/generators/init
+New: /docs/technologies/typescript/api/generators/init (Status: 404)
+
+Old: /technologies/typescript/api/generators/release-version
+New: /docs/technologies/typescript/api/generators/release-version (Status: 404)
+
+Old: /technologies/module-federation/api/executors
+New: /docs/technologies/module-federation/api/executors (Status: 404)
+
+Old: /technologies/typescript/api/migrations
+New: /docs/technologies/typescript/api/migrations (Status: 404)
+
+Old: /technologies/typescript/api/generators/setup-verdaccio
+New: /docs/technologies/typescript/api/generators/setup-verdaccio (Status: 404)
+
+Old: /technologies/module-federation/api/generators
+New: /docs/technologies/module-federation/api/generators (Status: 404)
+
+Old: /technologies/typescript/api/generators/setup-build
+New: /docs/technologies/typescript/api/generators/setup-build (Status: 404)
+
+Old: /technologies/module-federation/api/migrations
+New: /docs/technologies/module-federation/api/migrations (Status: 404)
+
+Old: /technologies/typescript/api/generators/setup-prettier
+New: /docs/technologies/typescript/api/generators/setup-prettier (Status: 404)
+
+Old: /technologies/node/nest/api/executors
+New: /docs/technologies/node/nest/api/executors (Status: 404)
+
+Old: /technologies/node/nest/api/generators
+New: /docs/technologies/node/nest/api/generators (Status: 404)
+
+Old: /technologies/typescript/api/generators/typescript-sync
+New: /docs/technologies/typescript/api/generators/typescript-sync (Status: 404)
+
+Old: /technologies/node/nest/api/generators/gateway
+New: /docs/technologies/node/nest/api/generators/gateway (Status: 404)
+
+Old: /technologies/node/nest/api/generators/class
+New: /docs/technologies/node/nest/api/generators/class (Status: 404)
+
+Old: /technologies/node/nest/api/generators/init
+New: /docs/technologies/node/nest/api/generators/init (Status: 404)
+
+Old: /technologies/node/nest/api/generators/library
+New: /docs/technologies/node/nest/api/generators/library (Status: 404)
+
+Old: /technologies/node/nest/api/generators/application
+New: /docs/technologies/node/nest/api/generators/application (Status: 404)
+
+Old: /technologies/node/nest/api/generators/guard
+New: /docs/technologies/node/nest/api/generators/guard (Status: 404)
+
+Old: /technologies/node/nest/api/generators/decorator
+New: /docs/technologies/node/nest/api/generators/decorator (Status: 404)
+
+Old: /technologies/node/nest/api/generators/filter
+New: /docs/technologies/node/nest/api/generators/filter (Status: 404)
+
+Old: /technologies/node/nest/api/generators/interceptor
+New: /docs/technologies/node/nest/api/generators/interceptor (Status: 404)
+
+Old: /technologies/node/nest/api/generators/controller
+New: /docs/technologies/node/nest/api/generators/controller (Status: 404)
+
+Old: /technologies/node/nest/api/generators/interface
+New: /docs/technologies/node/nest/api/generators/interface (Status: 404)
+
+Old: /technologies/node/nest/api/generators/module
+New: /docs/technologies/node/nest/api/generators/module (Status: 404)
+
+Old: /technologies/react/next/api/executors
+New: /docs/technologies/react/next/api/executors (Status: 404)
+
+Old: /technologies/node/nest/api/generators/service
+New: /docs/technologies/node/nest/api/generators/service (Status: 404)
+
+Old: /technologies/node/nest/api/generators/pipe
+New: /docs/technologies/node/nest/api/generators/pipe (Status: 404)
+
+Old: /technologies/node/nest/api/generators/resource
+New: /docs/technologies/node/nest/api/generators/resource (Status: 404)
+
+Old: /technologies/node/nest/api/generators/resolver
+New: /docs/technologies/node/nest/api/generators/resolver (Status: 404)
+
+Old: /technologies/node/nest/api/generators/middleware
+New: /docs/technologies/node/nest/api/generators/middleware (Status: 404)
+
+Old: /technologies/node/nest/api/generators/provider
+New: /docs/technologies/node/nest/api/generators/provider (Status: 404)
+
+Old: /technologies/node/nest/api/migrations
+New: /docs/technologies/node/nest/api/migrations (Status: 404)
+
+Old: /technologies/react/next/api/executors/build
+New: /docs/technologies/react/next/api/executors/build (Status: 404)
+
+Old: /technologies/react/next/api/generators/component
+New: /docs/technologies/react/next/api/generators/component (Status: 404)
+
+Old: /technologies/react/next/api/executors/server
+New: /docs/technologies/react/next/api/executors/server (Status: 404)
+
+Old: /technologies/react/next/api/generators/page
+New: /docs/technologies/react/next/api/generators/page (Status: 404)
+
+Old: /technologies/react/next/api/generators/custom-server
+New: /docs/technologies/react/next/api/generators/custom-server (Status: 404)
+
+Old: /technologies/react/next/api/generators/init
+New: /docs/technologies/react/next/api/generators/init (Status: 404)
+
+Old: /technologies/react/next/api/generators
+New: /docs/technologies/react/next/api/generators (Status: 404)
+
+Old: /technologies/react/next/api/generators/cypress-component-configuration
+New: /docs/technologies/react/next/api/generators/cypress-component-configuration (Status: 404)
+
+Old: /technologies/react/next/api/generators/application
+New: /docs/technologies/react/next/api/generators/application (Status: 404)
+
+Old: /technologies/react/next/api/generators/library
+New: /docs/technologies/react/next/api/generators/library (Status: 404)
+
+Old: /technologies/node/api/generators
+New: /docs/technologies/node/api/generators (Status: 404)
+
+Old: /technologies/react/next/api/generators/convert-to-inferred
+New: /docs/technologies/react/next/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/react/next/api/migrations
+New: /docs/technologies/react/next/api/migrations (Status: 404)
+
+Old: /technologies/node/api/migrations
+New: /docs/technologies/node/api/migrations (Status: 404)
+
+Old: /technologies/node/api/executors
+New: /docs/technologies/node/api/executors (Status: 404)
+
+Old: /technologies/node/api/generators/application
+New: /docs/technologies/node/api/generators/application (Status: 404)
+
+Old: /technologies/vue/nuxt/api/executors
+New: /docs/technologies/vue/nuxt/api/executors (Status: 404)
+
+Old: /technologies/node/api/generators/init
+New: /docs/technologies/node/api/generators/init (Status: 404)
+
+Old: /technologies/node/api/generators/library
+New: /docs/technologies/node/api/generators/library (Status: 404)
+
+Old: /technologies/node/api/generators/setup-docker
+New: /docs/technologies/node/api/generators/setup-docker (Status: 404)
+
+Old: /technologies/vue/nuxt/api/generators
+New: /docs/technologies/vue/nuxt/api/generators (Status: 404)
+
+Old: /technologies/vue/nuxt/api/generators/init
+New: /docs/technologies/vue/nuxt/api/generators/init (Status: 404)
+
+Old: /reference/core-api/nx/documents/generate
+New: /docs/reference/core-api/nx/documents/generate (Status: 404)
+
+Old: /reference/core-api/nx/documents/init
+New: /docs/reference/core-api/nx/documents/init (Status: 404)
+
+Old: /technologies/vue/nuxt/api/generators/application
+New: /docs/technologies/vue/nuxt/api/generators/application (Status: 404)
+
+Old: /technologies/vue/nuxt/api/migrations
+New: /docs/technologies/vue/nuxt/api/migrations (Status: 404)
+
+Old: /reference/core-api/nx/documents
+New: /docs/reference/core-api/nx/documents (Status: 404)
+
+Old: /reference/core-api/nx/documents/run
+New: /docs/reference/core-api/nx/documents/run (Status: 404)
+
+Old: /reference/core-api/nx/documents/create-nx-workspace
+New: /docs/reference/core-api/nx/documents/create-nx-workspace (Status: 404)
+
+Old: /technologies/vue/nuxt/api/generators/storybook-configuration
+New: /docs/technologies/vue/nuxt/api/generators/storybook-configuration (Status: 404)
+
+Old: /reference/core-api/nx/documents/run-many
+New: /docs/reference/core-api/nx/documents/run-many (Status: 404)
+
+Old: /reference/core-api/nx/documents/dep-graph
+New: /docs/reference/core-api/nx/documents/dep-graph (Status: 404)
+
+Old: /reference/core-api/nx/documents/affected
+New: /docs/reference/core-api/nx/documents/affected (Status: 404)
+
+Old: /reference/core-api/nx/documents/list
+New: /docs/reference/core-api/nx/documents/list (Status: 404)
+
+Old: /reference/core-api/nx/documents/report
+New: /docs/reference/core-api/nx/documents/report (Status: 404)
+
+Old: /reference/core-api/nx/documents/format-check
+New: /docs/reference/core-api/nx/documents/format-check (Status: 404)
+
+Old: /reference/core-api/nx/documents/format-write
+New: /docs/reference/core-api/nx/documents/format-write (Status: 404)
+
+Old: /reference/core-api/nx/documents/daemon
+New: /docs/reference/core-api/nx/documents/daemon (Status: 404)
+
+Old: /reference/core-api/nx/documents/migrate
+New: /docs/reference/core-api/nx/documents/migrate (Status: 404)
+
+Old: /reference/core-api/nx/documents/connect-to-nx-cloud
+New: /docs/reference/core-api/nx/documents/connect-to-nx-cloud (Status: 404)
+
+Old: /reference/core-api/nx/documents/sync-check
+New: /docs/reference/core-api/nx/documents/sync-check (Status: 404)
+
+Old: /reference/core-api/nx/documents/sync
+New: /docs/reference/core-api/nx/documents/sync (Status: 404)
+
+Old: /reference/core-api/nx/documents/exec
+New: /docs/reference/core-api/nx/documents/exec (Status: 404)
+
+Old: /reference/core-api/nx/documents/repair
+New: /docs/reference/core-api/nx/documents/repair (Status: 404)
+
+Old: /reference/core-api/nx/documents/watch
+New: /docs/reference/core-api/nx/documents/watch (Status: 404)
+
+Old: /reference/core-api/nx/documents/view-logs
+New: /docs/reference/core-api/nx/documents/view-logs (Status: 404)
+
+Old: /reference/core-api/nx/documents/release
+New: /docs/reference/core-api/nx/documents/release (Status: 404)
+
+Old: /reference/core-api/nx/documents/reset
+New: /docs/reference/core-api/nx/documents/reset (Status: 404)
+
+Old: /reference/core-api/nx/documents/show
+New: /docs/reference/core-api/nx/documents/show (Status: 404)
+
+Old: /reference/core-api/nx/documents/import
+New: /docs/reference/core-api/nx/documents/import (Status: 404)
+
+Old: /reference/core-api/nx/documents/add
+New: /docs/reference/core-api/nx/documents/add (Status: 404)
+
+Old: /reference/core-api/nx/documents/start-ci-run
+New: /docs/reference/core-api/nx/documents/start-ci-run (Status: 404)
+
+Old: /reference/core-api/nx/documents/logout
+New: /docs/reference/core-api/nx/documents/logout (Status: 404)
+
+Old: /reference/core-api/nx/documents/fix-ci
+New: /docs/reference/core-api/nx/documents/fix-ci (Status: 404)
+
+Old: /reference/core-api/nx/executors/run-commands
+New: /docs/reference/core-api/nx/executors/run-commands (Status: 404)
+
+Old: /reference/core-api/nx/documents/login
+New: /docs/reference/core-api/nx/documents/login (Status: 404)
+
+Old: /reference/core-api/nx/documents/mcp
+New: /docs/reference/core-api/nx/documents/mcp (Status: 404)
+
+Old: /reference/core-api/nx/executors/noop
+New: /docs/reference/core-api/nx/executors/noop (Status: 404)
+
+Old: /reference/core-api/nx/documents/record
+New: /docs/reference/core-api/nx/documents/record (Status: 404)
+
+Old: /reference/core-api/nx/executors
+New: /docs/reference/core-api/nx/executors (Status: 404)
+
+Old: /technologies/test-tools/playwright/api/generators
+New: /docs/technologies/test-tools/playwright/api/generators (Status: 404)
+
+Old: /technologies/test-tools/playwright/api/generators/init
+New: /docs/technologies/test-tools/playwright/api/generators/init (Status: 404)
+
+Old: /technologies/test-tools/playwright/api/executors
+New: /docs/technologies/test-tools/playwright/api/executors (Status: 404)
+
+Old: /technologies/test-tools/playwright/api/executors/playwright
+New: /docs/technologies/test-tools/playwright/api/executors/playwright (Status: 404)
+
+Old: /reference/core-api/nx/executors/run-script
+New: /docs/reference/core-api/nx/executors/run-script (Status: 404)
+
+Old: /technologies/test-tools/playwright/api/generators/convert-to-inferred
+New: /docs/technologies/test-tools/playwright/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/test-tools/playwright/api/generators/configuration
+New: /docs/technologies/test-tools/playwright/api/generators/configuration (Status: 404)
+
+Old: /reference/core-api/nx/generators
+New: /docs/reference/core-api/nx/generators (Status: 404)
+
+Old: /reference/core-api/nx/migrations
+New: /docs/reference/core-api/nx/migrations (Status: 404)
+
+Old: /reference/core-api/nx/generators/connect-to-nx-cloud
+New: /docs/reference/core-api/nx/generators/connect-to-nx-cloud (Status: 404)
+
+Old: /reference/core-api/plugin/generators/plugin
+New: /docs/reference/core-api/plugin/generators/plugin (Status: 404)
+
+Old: /reference/core-api/plugin/generators/migration
+New: /docs/reference/core-api/plugin/generators/migration (Status: 404)
+
+Old: /reference/core-api/plugin/generators/e2e-project
+New: /docs/reference/core-api/plugin/generators/e2e-project (Status: 404)
+
+Old: /technologies/test-tools/playwright/api/migrations
+New: /docs/technologies/test-tools/playwright/api/migrations (Status: 404)
+
+Old: /reference/core-api/plugin/generators/plugin-lint-checks
+New: /docs/reference/core-api/plugin/generators/plugin-lint-checks (Status: 404)
+
+Old: /reference/core-api/plugin/generators/executor
+New: /docs/reference/core-api/plugin/generators/executor (Status: 404)
+
+Old: /reference/core-api/plugin/executors
+New: /docs/reference/core-api/plugin/executors (Status: 404)
+
+Old: /reference/core-api/plugin/generators/create-package
+New: /docs/reference/core-api/plugin/generators/create-package (Status: 404)
+
+Old: /reference/core-api/plugin/generators/generator
+New: /docs/reference/core-api/plugin/generators/generator (Status: 404)
+
+Old: /reference/core-api/plugin/generators
+New: /docs/reference/core-api/plugin/generators (Status: 404)
+
+Old: /technologies/react/api/executors/module-federation-ssr-dev-server
+New: /docs/technologies/react/api/executors/module-federation-ssr-dev-server (Status: 404)
+
+Old: /reference/core-api/plugin/migrations
+New: /docs/reference/core-api/plugin/migrations (Status: 404)
+
+Old: /technologies/react/api/executors/module-federation-static-server
+New: /docs/technologies/react/api/executors/module-federation-static-server (Status: 404)
+
+Old: /technologies/react/api/executors/module-federation-dev-server
+New: /docs/technologies/react/api/executors/module-federation-dev-server (Status: 404)
+
+Old: /technologies/react/api/generators/application
+New: /docs/technologies/react/api/generators/application (Status: 404)
+
+Old: /technologies/react/api/generators/library
+New: /docs/technologies/react/api/generators/library (Status: 404)
+
+Old: /technologies/react/api/generators
+New: /docs/technologies/react/api/generators (Status: 404)
+
+Old: /technologies/react/api/generators/init
+New: /docs/technologies/react/api/generators/init (Status: 404)
+
+Old: /technologies/react/api/executors
+New: /docs/technologies/react/api/executors (Status: 404)
+
+Old: /reference/core-api/plugin/generators/preset
+New: /docs/reference/core-api/plugin/generators/preset (Status: 404)
+
+Old: /technologies/react/api/generators/stories
+New: /docs/technologies/react/api/generators/stories (Status: 404)
+
+Old: /technologies/react/api/generators/cypress-component-configuration
+New: /docs/technologies/react/api/generators/cypress-component-configuration (Status: 404)
+
+Old: /technologies/react/api/generators/component
+New: /docs/technologies/react/api/generators/component (Status: 404)
+
+Old: /technologies/react/api/generators/component-test
+New: /docs/technologies/react/api/generators/component-test (Status: 404)
+
+Old: /technologies/react/api/generators/component-story
+New: /docs/technologies/react/api/generators/component-story (Status: 404)
+
+Old: /technologies/react/api/generators/redux
+New: /docs/technologies/react/api/generators/redux (Status: 404)
+
+Old: /technologies/react/api/generators/storybook-configuration
+New: /docs/technologies/react/api/generators/storybook-configuration (Status: 404)
+
+Old: /technologies/react/api/generators/host
+New: /docs/technologies/react/api/generators/host (Status: 404)
+
+Old: /technologies/react/api/generators/hook
+New: /docs/technologies/react/api/generators/hook (Status: 404)
+
+Old: /technologies/react/api/generators/remote
+New: /docs/technologies/react/api/generators/remote (Status: 404)
+
+Old: /technologies/react/api/generators/setup-tailwind
+New: /docs/technologies/react/api/generators/setup-tailwind (Status: 404)
+
+Old: /technologies/react/react-native/api/executors
+New: /docs/technologies/react/react-native/api/executors (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/build-android
+New: /docs/technologies/react/react-native/api/executors/build-android (Status: 404)
+
+Old: /technologies/react/api/migrations
+New: /docs/technologies/react/api/migrations (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/bundle
+New: /docs/technologies/react/react-native/api/executors/bundle (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/build-ios
+New: /docs/technologies/react/react-native/api/executors/build-ios (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/run-ios
+New: /docs/technologies/react/react-native/api/executors/run-ios (Status: 404)
+
+Old: /technologies/react/api/generators/federate-module
+New: /docs/technologies/react/api/generators/federate-module (Status: 404)
+
+Old: /technologies/react/api/generators/setup-ssr
+New: /docs/technologies/react/api/generators/setup-ssr (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/run-android
+New: /docs/technologies/react/react-native/api/executors/run-android (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/start
+New: /docs/technologies/react/react-native/api/executors/start (Status: 404)
+
+Old: /technologies/react/react-native/api/generators/init
+New: /docs/technologies/react/react-native/api/generators/init (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/upgrade
+New: /docs/technologies/react/react-native/api/executors/upgrade (Status: 404)
+
+Old: /technologies/react/react-native/api/generators/application
+New: /docs/technologies/react/react-native/api/generators/application (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/storybook
+New: /docs/technologies/react/react-native/api/executors/storybook (Status: 404)
+
+Old: /technologies/react/react-native/api/generators/library
+New: /docs/technologies/react/react-native/api/generators/library (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/pod-install
+New: /docs/technologies/react/react-native/api/executors/pod-install (Status: 404)
+
+Old: /technologies/react/react-native/api/generators
+New: /docs/technologies/react/react-native/api/generators (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/sync-deps
+New: /docs/technologies/react/react-native/api/executors/sync-deps (Status: 404)
+
+Old: /technologies/react/react-native/api/executors/ensure-symlink
+New: /docs/technologies/react/react-native/api/executors/ensure-symlink (Status: 404)
+
+Old: /technologies/react/remix/api/executors/serve
+New: /docs/technologies/react/remix/api/executors/serve (Status: 404)
+
+Old: /technologies/react/react-native/api/generators/convert-to-inferred
+New: /docs/technologies/react/react-native/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/react/remix/api/executors
+New: /docs/technologies/react/remix/api/executors (Status: 404)
+
+Old: /technologies/react/react-native/api/generators/component
+New: /docs/technologies/react/react-native/api/generators/component (Status: 404)
+
+Old: /technologies/react/react-native/api/generators/web-configuration
+New: /docs/technologies/react/react-native/api/generators/web-configuration (Status: 404)
+
+Old: /technologies/react/react-native/api/migrations
+New: /docs/technologies/react/react-native/api/migrations (Status: 404)
+
+Old: /technologies/react/remix/api/generators/preset
+New: /docs/technologies/react/remix/api/generators/preset (Status: 404)
+
+Old: /technologies/react/remix/api/executors/build
+New: /docs/technologies/react/remix/api/executors/build (Status: 404)
+
+Old: /technologies/react/remix/api/generators/setup
+New: /docs/technologies/react/remix/api/generators/setup (Status: 404)
+
+Old: /technologies/react/remix/api/generators
+New: /docs/technologies/react/remix/api/generators (Status: 404)
+
+Old: /technologies/react/remix/api/generators/library
+New: /docs/technologies/react/remix/api/generators/library (Status: 404)
+
+Old: /technologies/react/remix/api/generators/resource-route
+New: /docs/technologies/react/remix/api/generators/resource-route (Status: 404)
+
+Old: /technologies/react/remix/api/generators/application
+New: /docs/technologies/react/remix/api/generators/application (Status: 404)
+
+Old: /technologies/react/remix/api/generators/loader
+New: /docs/technologies/react/remix/api/generators/loader (Status: 404)
+
+Old: /technologies/react/remix/api/generators/style
+New: /docs/technologies/react/remix/api/generators/style (Status: 404)
+
+Old: /technologies/react/remix/api/generators/route
+New: /docs/technologies/react/remix/api/generators/route (Status: 404)
+
+Old: /technologies/react/remix/api/generators/setup-tailwind
+New: /docs/technologies/react/remix/api/generators/setup-tailwind (Status: 404)
+
+Old: /technologies/react/remix/api/generators/init
+New: /docs/technologies/react/remix/api/generators/init (Status: 404)
+
+Old: /technologies/react/remix/api/generators/action
+New: /docs/technologies/react/remix/api/generators/action (Status: 404)
+
+Old: /technologies/react/remix/api/generators/cypress-component-configuration
+New: /docs/technologies/react/remix/api/generators/cypress-component-configuration (Status: 404)
+
+Old: /technologies/react/remix/api/generators/error-boundary
+New: /docs/technologies/react/remix/api/generators/error-boundary (Status: 404)
+
+Old: /technologies/react/remix/api/generators/storybook-configuration
+New: /docs/technologies/react/remix/api/generators/storybook-configuration (Status: 404)
+
+Old: /technologies/build-tools/rollup/api/executors/rollup
+New: /docs/technologies/build-tools/rollup/api/executors/rollup (Status: 404)
+
+Old: /technologies/build-tools/rollup/api/generators/init
+New: /docs/technologies/build-tools/rollup/api/generators/init (Status: 404)
+
+Old: /technologies/react/remix/api/generators/meta
+New: /docs/technologies/react/remix/api/generators/meta (Status: 404)
+
+Old: /technologies/react/remix/api/migrations
+New: /docs/technologies/react/remix/api/migrations (Status: 404)
+
+Old: /technologies/react/remix/api/generators/convert-to-inferred
+New: /docs/technologies/react/remix/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/build-tools/rollup/api/generators/configuration
+New: /docs/technologies/build-tools/rollup/api/generators/configuration (Status: 404)
+
+Old: /technologies/build-tools/rollup/api/generators
+New: /docs/technologies/build-tools/rollup/api/generators (Status: 404)
+
+Old: /technologies/build-tools/rollup/api/executors
+New: /docs/technologies/build-tools/rollup/api/executors (Status: 404)
+
+Old: /technologies/build-tools/rsbuild/api/generators/configuration
+New: /docs/technologies/build-tools/rsbuild/api/generators/configuration (Status: 404)
+
+Old: /technologies/build-tools/rsbuild/api/migrations
+New: /docs/technologies/build-tools/rsbuild/api/migrations (Status: 404)
+
+Old: /technologies/build-tools/rsbuild/api/executors
+New: /docs/technologies/build-tools/rsbuild/api/executors (Status: 404)
+
+Old: /technologies/build-tools/rsbuild/api/generators
+New: /docs/technologies/build-tools/rsbuild/api/generators (Status: 404)
+
+Old: /technologies/build-tools/rollup/api/migrations
+New: /docs/technologies/build-tools/rollup/api/migrations (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/executors
+New: /docs/technologies/build-tools/rspack/api/executors (Status: 404)
+
+Old: /technologies/build-tools/rollup/api/generators/convert-to-inferred
+New: /docs/technologies/build-tools/rollup/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/executors/rspack
+New: /docs/technologies/build-tools/rspack/api/executors/rspack (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/executors/dev-server
+New: /docs/technologies/build-tools/rspack/api/executors/dev-server (Status: 404)
+
+Old: /technologies/build-tools/rsbuild/api/generators/init
+New: /docs/technologies/build-tools/rsbuild/api/generators/init (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/generators/configuration
+New: /docs/technologies/build-tools/rspack/api/generators/configuration (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/executors/module-federation-ssr-dev-server
+New: /docs/technologies/build-tools/rspack/api/executors/module-federation-ssr-dev-server (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/executors/ssr-dev-server
+New: /docs/technologies/build-tools/rspack/api/executors/ssr-dev-server (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/executors/module-federation-dev-server
+New: /docs/technologies/build-tools/rspack/api/executors/module-federation-dev-server (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/generators/application
+New: /docs/technologies/build-tools/rspack/api/generators/application (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/executors/module-federation-static-server
+New: /docs/technologies/build-tools/rspack/api/executors/module-federation-static-server (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/generators/convert-webpack
+New: /docs/technologies/build-tools/rspack/api/generators/convert-webpack (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/generators/preset
+New: /docs/technologies/build-tools/rspack/api/generators/preset (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/generators/init
+New: /docs/technologies/build-tools/rspack/api/generators/init (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/generators
+New: /docs/technologies/build-tools/rspack/api/generators (Status: 404)
+
+Old: /technologies/test-tools/storybook/api/executors/build
+New: /docs/technologies/test-tools/storybook/api/executors/build (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/generators/convert-config-to-rspack-plugin
+New: /docs/technologies/build-tools/rspack/api/generators/convert-config-to-rspack-plugin (Status: 404)
+
+Old: /technologies/test-tools/storybook/api/generators
+New: /docs/technologies/test-tools/storybook/api/generators (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/generators/convert-to-inferred
+New: /docs/technologies/build-tools/rspack/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/build-tools/rspack/api/migrations
+New: /docs/technologies/build-tools/rspack/api/migrations (Status: 404)
+
+Old: /technologies/test-tools/storybook/api/generators/configuration
+New: /docs/technologies/test-tools/storybook/api/generators/configuration (Status: 404)
+
+Old: /technologies/test-tools/storybook/api/executors
+New: /docs/technologies/test-tools/storybook/api/executors (Status: 404)
+
+Old: /technologies/test-tools/storybook/api/generators/convert-to-inferred
+New: /docs/technologies/test-tools/storybook/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/test-tools/storybook/api/executors/storybook
+New: /docs/technologies/test-tools/storybook/api/executors/storybook (Status: 404)
+
+Old: /technologies/test-tools/storybook/api/generators/init
+New: /docs/technologies/test-tools/storybook/api/generators/init (Status: 404)
+
+Old: /technologies/build-tools/vite/api/generators
+New: /docs/technologies/build-tools/vite/api/generators (Status: 404)
+
+Old: /technologies/test-tools/storybook/api/migrations
+New: /docs/technologies/test-tools/storybook/api/migrations (Status: 404)
+
+Old: /technologies/build-tools/vite/api/executors
+New: /docs/technologies/build-tools/vite/api/executors (Status: 404)
+
+Old: /technologies/build-tools/vite/api/executors/test
+New: /docs/technologies/build-tools/vite/api/executors/test (Status: 404)
+
+Old: /technologies/build-tools/vite/api/executors/preview-server
+New: /docs/technologies/build-tools/vite/api/executors/preview-server (Status: 404)
+
+Old: /technologies/test-tools/storybook/api/generators/migrate-8
+New: /docs/technologies/test-tools/storybook/api/generators/migrate-8 (Status: 404)
+
+Old: /technologies/build-tools/vite/api/generators/init
+New: /docs/technologies/build-tools/vite/api/generators/init (Status: 404)
+
+Old: /technologies/build-tools/vite/api/executors/dev-server
+New: /docs/technologies/build-tools/vite/api/executors/dev-server (Status: 404)
+
+Old: /technologies/build-tools/vite/api/executors/build
+New: /docs/technologies/build-tools/vite/api/executors/build (Status: 404)
+
+Old: /technologies/test-tools/storybook/api/generators/migrate-9
+New: /docs/technologies/test-tools/storybook/api/generators/migrate-9 (Status: 404)
+
+Old: /technologies/build-tools/vite/api/generators/setup-paths-plugin
+New: /docs/technologies/build-tools/vite/api/generators/setup-paths-plugin (Status: 404)
+
+Old: /technologies/build-tools/vite/api/generators/configuration
+New: /docs/technologies/build-tools/vite/api/generators/configuration (Status: 404)
+
+Old: /technologies/vue/api/executors
+New: /docs/technologies/vue/api/executors (Status: 404)
+
+Old: /technologies/build-tools/vite/api/migrations
+New: /docs/technologies/build-tools/vite/api/migrations (Status: 404)
+
+Old: /technologies/vue/api/generators
+New: /docs/technologies/vue/api/generators (Status: 404)
+
+Old: /technologies/vue/api/generators/library
+New: /docs/technologies/vue/api/generators/library (Status: 404)
+
+Old: /technologies/vue/api/generators/init
+New: /docs/technologies/vue/api/generators/init (Status: 404)
+
+Old: /technologies/vue/api/generators/application
+New: /docs/technologies/vue/api/generators/application (Status: 404)
+
+Old: /technologies/build-tools/vite/api/generators/vitest
+New: /docs/technologies/build-tools/vite/api/generators/vitest (Status: 404)
+
+Old: /technologies/build-tools/vite/api/generators/convert-to-inferred
+New: /docs/technologies/build-tools/vite/api/generators/convert-to-inferred (Status: 404)
+
+Old: /technologies/vue/api/generators/storybook-configuration
+New: /docs/technologies/vue/api/generators/storybook-configuration (Status: 404)
+
+Old: /technologies/vue/api/generators/setup-tailwind
+New: /docs/technologies/vue/api/generators/setup-tailwind (Status: 404)
+
+Old: /reference/core-api/web/generators/application
+New: /docs/reference/core-api/web/generators/application (Status: 404)
+
+Old: /technologies/vue/api/migrations
+New: /docs/technologies/vue/api/migrations (Status: 404)
+
+Old: /reference/core-api/web/executors
+New: /docs/reference/core-api/web/executors (Status: 404)
+
+Old: /technologies/vue/api/generators/stories
+New: /docs/technologies/vue/api/generators/stories (Status: 404)
+
+Old: /reference/core-api/web/generators/init
+New: /docs/reference/core-api/web/generators/init (Status: 404)
+
+Old: /reference/core-api/web/generators
+New: /docs/reference/core-api/web/generators (Status: 404)
+
+Old: /reference/core-api/web/executors/file-server
+New: /docs/reference/core-api/web/executors/file-server (Status: 404)
+
+Old: /technologies/vue/api/generators/component
+New: /docs/technologies/vue/api/generators/component (Status: 404)
+
+Old: /technologies/build-tools/webpack/api/executors
+New: /docs/technologies/build-tools/webpack/api/executors (Status: 404)
+
+Old: /technologies/build-tools/webpack/api/executors/webpack
+New: /docs/technologies/build-tools/webpack/api/executors/webpack (Status: 404)
+
+Old: /technologies/build-tools/webpack/api/generators
+New: /docs/technologies/build-tools/webpack/api/generators (Status: 404)
+
+Old: /technologies/build-tools/webpack/api/generators/configuration
+New: /docs/technologies/build-tools/webpack/api/generators/configuration (Status: 404)
+
+Old: /technologies/build-tools/webpack/api/executors/ssr-dev-server
+New: /docs/technologies/build-tools/webpack/api/executors/ssr-dev-server (Status: 404)
+
+Old: /technologies/build-tools/webpack/api/executors/dev-server
+New: /docs/technologies/build-tools/webpack/api/executors/dev-server (Status: 404)
+
+Old: /technologies/build-tools/webpack/api/generators/convert-config-to-webpack-plugin
+New: /docs/technologies/build-tools/webpack/api/generators/convert-config-to-webpack-plugin (Status: 404)
+
+Old: /technologies/build-tools/webpack/api/generators/init
+New: /docs/technologies/build-tools/webpack/api/generators/init (Status: 404)
+
+Old: /reference/core-api/web/migrations
+New: /docs/reference/core-api/web/migrations (Status: 404)
+
+Old: /reference/core-api/web/generators/static-config
+New: /docs/reference/core-api/web/generators/static-config (Status: 404)
+
+Old: /reference/core-api/workspace/documents/overview
+New: /docs/reference/core-api/workspace/documents/overview (Status: 404)
+
+Old: /reference/core-api/workspace/executors/counter
+New: /docs/reference/core-api/workspace/executors/counter (Status: 404)
+
+Old: /technologies/build-tools/webpack/api/migrations
+New: /docs/technologies/build-tools/webpack/api/migrations (Status: 404)
+
+Old: /reference/core-api/workspace/executors
+New: /docs/reference/core-api/workspace/executors (Status: 404)
+
+Old: /reference/core-api/workspace/generators/preset
+New: /docs/reference/core-api/workspace/generators/preset (Status: 404)
+
+Old: /technologies/build-tools/webpack/api/generators/convert-to-inferred
+New: /docs/technologies/build-tools/webpack/api/generators/convert-to-inferred (Status: 404)
+
+Old: /reference/core-api/workspace/documents/nx-nodejs-typescript-version-matrix
+New: /docs/reference/core-api/workspace/documents/nx-nodejs-typescript-version-matrix (Status: 404)
+
+Old: /reference/core-api/workspace/generators
+New: /docs/reference/core-api/workspace/generators (Status: 404)
+
+Old: /reference/core-api/workspace/generators/move
+New: /docs/reference/core-api/workspace/generators/move (Status: 404)
+
+Old: /reference/core-api/workspace/documents
+New: /docs/reference/core-api/workspace/documents (Status: 404)
+
+Old: /reference/core-api/workspace/generators/convert-to-monorepo
+New: /docs/reference/core-api/workspace/generators/convert-to-monorepo (Status: 404)
+
+Old: /reference/core-api/workspace/generators/remove
+New: /docs/reference/core-api/workspace/generators/remove (Status: 404)
+
+Old: /reference/core-api/workspace/generators/new
+New: /docs/reference/core-api/workspace/generators/new (Status: 404)
+
+Old: /reference/core-api/workspace/generators/npm-package
+New: /docs/reference/core-api/workspace/generators/npm-package (Status: 404)
+
+Old: /reference/core-api/workspace/migrations
+New: /docs/reference/core-api/workspace/migrations (Status: 404)
+
+Old: /reference/core-api/workspace/generators/run-commands
+New: /docs/reference/core-api/workspace/generators/run-commands (Status: 404)
+
+Old: /reference/core-api/workspace/generators/fix-configuration
+New: /docs/reference/core-api/workspace/generators/fix-configuration (Status: 404)
+
+Old: /reference/core-api/workspace/generators/infer-targets
+New: /docs/reference/core-api/workspace/generators/infer-targets (Status: 404)
+
+Old: /reference/core-api/azure-cache/executors
+New: /docs/reference/core-api/azure-cache/executors (Status: 404)
+
+Old: /reference/core-api/workspace/generators/ci-workflow
+New: /docs/reference/core-api/workspace/generators/ci-workflow (Status: 404)
+
+Old: /reference/core-api/azure-cache/migrations
+New: /docs/reference/core-api/azure-cache/migrations (Status: 404)
+
+Old: /reference/core-api/conformance/documents/create-conformance-rule
+New: /docs/reference/core-api/conformance/documents/create-conformance-rule (Status: 404)
+
+Old: /reference/core-api/conformance/executors/bundle-rules
+New: /docs/reference/core-api/conformance/executors/bundle-rules (Status: 404)
+
+Old: /reference/core-api/conformance/executors
+New: /docs/reference/core-api/conformance/executors (Status: 404)
+
+Old: /reference/core-api/conformance/generators
+New: /docs/reference/core-api/conformance/generators (Status: 404)
+
+Old: /reference/core-api/conformance/documents/overview
+New: /docs/reference/core-api/conformance/documents/overview (Status: 404)
+
+Old: /reference/core-api/conformance/documents
+New: /docs/reference/core-api/conformance/documents (Status: 404)
+
+Old: /reference/core-api/conformance/generators/create-rule
+New: /docs/reference/core-api/conformance/generators/create-rule (Status: 404)
+
+Old: /reference/core-api/conformance/generators/preset
+New: /docs/reference/core-api/conformance/generators/preset (Status: 404)
+
+Old: /reference/core-api/azure-cache/generators
+New: /docs/reference/core-api/azure-cache/generators (Status: 404)
+
+Old: /reference/core-api/owners/migrations
+New: /docs/reference/core-api/owners/migrations (Status: 404)
+
+Old: /reference/core-api/gcs-cache/executors
+New: /docs/reference/core-api/gcs-cache/executors (Status: 404)
+
+Old: /reference/core-api/owners/generators/sync-codeowners-file
+New: /docs/reference/core-api/owners/generators/sync-codeowners-file (Status: 404)
+
+Old: /reference/core-api/owners/generators
+New: /docs/reference/core-api/owners/generators (Status: 404)
+
+Old: /reference/core-api/owners/executors
+New: /docs/reference/core-api/owners/executors (Status: 404)
+
+Old: /reference/core-api/gcs-cache/migrations
+New: /docs/reference/core-api/gcs-cache/migrations (Status: 404)
+
+Old: /reference/core-api/s3-cache/executors
+New: /docs/reference/core-api/s3-cache/executors (Status: 404)
+
+Old: /reference/core-api/gcs-cache/generators
+New: /docs/reference/core-api/gcs-cache/generators (Status: 404)
+
+Old: /reference/core-api/conformance/migrations
+New: /docs/reference/core-api/conformance/migrations (Status: 404)
+
+Old: /reference/core-api/owners/generators/init
+New: /docs/reference/core-api/owners/generators/init (Status: 404)
+
+Old: /reference/core-api/s3-cache/migrations
+New: /docs/reference/core-api/s3-cache/migrations (Status: 404)
+
+Old: /ci/features
+New: /docs/ci/features (Status: 404)
+
+Old: /ci/getting-started/intro
+New: /docs/ci/getting-started/intro (Status: 404)
+
+Old: /reference/core-api/shared-fs-cache/migrations
+New: /docs/reference/core-api/shared-fs-cache/migrations (Status: 404)
+
+Old: /ci/features/self-healing-ci
+New: /docs/ci/features/self-healing-ci (Status: 404)
+
+Old: /reference/core-api/s3-cache/generators
+New: /docs/reference/core-api/s3-cache/generators (Status: 404)
+
+Old: /reference/core-api/shared-fs-cache/generators
+New: /docs/reference/core-api/shared-fs-cache/generators (Status: 404)
+
+Old: /reference/core-api/shared-fs-cache/executors
+New: /docs/reference/core-api/shared-fs-cache/executors (Status: 404)
+
+Old: /reference/core-api/shared-fs-cache/generators/init
+New: /docs/reference/core-api/shared-fs-cache/generators/init (Status: 404)
+
+Old: /ci/getting-started
+New: /docs/ci/getting-started (Status: 404)
+
+Old: /ci/features/distribute-task-execution
+New: /docs/ci/features/distribute-task-execution (Status: 404)
+
+Old: /ci/features/affected
+New: /docs/ci/features/affected (Status: 404)
+
+Old: /ci/features/explain-with-ai
+New: /docs/ci/features/explain-with-ai (Status: 404)
+
+Old: /ci/features/flaky-tasks
+New: /docs/ci/features/flaky-tasks (Status: 404)
+
+Old: /ci/features/remote-cache
+New: /docs/ci/features/remote-cache (Status: 404)
+
+Old: /ci/features/dynamic-agents
+New: /docs/ci/features/dynamic-agents (Status: 404)
+
+Old: /ci/concepts/building-blocks-fast-ci
+New: /docs/ci/concepts/building-blocks-fast-ci (Status: 404)
+
+Old: /ci/concepts
+New: /docs/ci/concepts (Status: 404)
+
+Old: /ci/features/split-e2e-tasks
+New: /docs/ci/features/split-e2e-tasks (Status: 404)
+
+Old: /ci/features/github-integration
+New: /docs/ci/features/github-integration (Status: 404)
+
+Old: /ci/concepts/nx-cloud-ai
+New: /docs/ci/concepts/nx-cloud-ai (Status: 404)
+
+Old: /ci/concepts/heartbeat
+New: /docs/ci/concepts/heartbeat (Status: 404)
+
+Old: /ci/recipes/set-up
+New: /docs/ci/recipes/set-up (Status: 404)
+
+Old: /ci/recipes
+New: /docs/ci/recipes (Status: 404)
+
+Old: /ci/concepts/parallelization-distribution
+New: /docs/ci/concepts/parallelization-distribution (Status: 404)
+
+Old: /ci/concepts/reduce-waste
+New: /docs/ci/concepts/reduce-waste (Status: 404)
+
+Old: /ci/concepts/cache-security
+New: /docs/ci/concepts/cache-security (Status: 404)
+
+Old: /ci/recipes/set-up/monorepo-ci-azure
+New: /docs/ci/recipes/set-up/monorepo-ci-azure (Status: 404)
+
+Old: /ci/recipes/set-up/monorepo-ci-circle-ci
+New: /docs/ci/recipes/set-up/monorepo-ci-circle-ci (Status: 404)
+
+Old: /ci/recipes/improving-ttg
+New: /docs/ci/recipes/improving-ttg (Status: 404)
+
+Old: /ci/recipes/set-up/monorepo-ci-github-actions
+New: /docs/ci/recipes/set-up/monorepo-ci-github-actions (Status: 404)
+
+Old: /ci/recipes/set-up/monorepo-ci-gitlab
+New: /docs/ci/recipes/set-up/monorepo-ci-gitlab (Status: 404)
+
+Old: /ci/recipes/set-up/monorepo-ci-jenkins
+New: /docs/ci/recipes/set-up/monorepo-ci-jenkins (Status: 404)
+
+Old: /ci/recipes/security/google-auth
+New: /docs/ci/recipes/security/google-auth (Status: 404)
+
+Old: /ci/recipes/security/encryption
+New: /docs/ci/recipes/security/encryption (Status: 404)
+
+Old: /ci/recipes/security/access-tokens
+New: /docs/ci/recipes/security/access-tokens (Status: 404)
+
+Old: /ci/recipes/source-control-integration
+New: /docs/ci/recipes/source-control-integration (Status: 404)
+
+Old: /ci/recipes/security
+New: /docs/ci/recipes/security (Status: 404)
+
+Old: /ci/recipes/security/personal-access-tokens
+New: /docs/ci/recipes/security/personal-access-tokens (Status: 404)
+
+Old: /ci/recipes/set-up/monorepo-ci-bitbucket-pipelines
+New: /docs/ci/recipes/set-up/monorepo-ci-bitbucket-pipelines (Status: 404)
+
+Old: /ci/recipes/dte/circle-ci-dte
+New: /docs/ci/recipes/dte/circle-ci-dte (Status: 404)
+
+Old: /ci/recipes/source-control-integration/bitbucket
+New: /docs/ci/recipes/source-control-integration/bitbucket (Status: 404)
+
+Old: /ci/recipes/dte/gitlab-dte
+New: /docs/ci/recipes/dte/gitlab-dte (Status: 404)
+
+Old: /ci/recipes/source-control-integration/gitlab
+New: /docs/ci/recipes/source-control-integration/gitlab (Status: 404)
+
+Old: /ci/recipes/dte/github-dte
+New: /docs/ci/recipes/dte/github-dte (Status: 404)
+
+Old: /ci/recipes/dte/azure-dte
+New: /docs/ci/recipes/dte/azure-dte (Status: 404)
+
+Old: /ci/recipes/dte
+New: /docs/ci/recipes/dte (Status: 404)
+
+Old: /ci/recipes/source-control-integration/azure-devops
+New: /docs/ci/recipes/source-control-integration/azure-devops (Status: 404)
+
+Old: /ci/recipes/source-control-integration/github
+New: /docs/ci/recipes/source-control-integration/github (Status: 404)
+
+Old: /ci/recipes/dte/bitbucket-dte
+New: /docs/ci/recipes/dte/bitbucket-dte (Status: 404)
+
+Old: /ci/recipes/enterprise
+New: /docs/ci/recipes/enterprise (Status: 404)
+
+Old: /ci/recipes/dte/jenkins-dte
+New: /docs/ci/recipes/dte/jenkins-dte (Status: 404)
+
+Old: /ci/recipes/enterprise/single-tenant
+New: /docs/ci/recipes/enterprise/single-tenant (Status: 404)
+
+Old: /ci/recipes/enterprise/single-tenant/custom-github-app
+New: /docs/ci/recipes/enterprise/single-tenant/custom-github-app (Status: 404)
+
+Old: /ci/recipes/enterprise/single-tenant/auth-saml
+New: /docs/ci/recipes/enterprise/single-tenant/auth-saml (Status: 404)
+
+Old: /ci/recipes/enterprise/single-tenant/overview
+New: /docs/ci/recipes/enterprise/single-tenant/overview (Status: 404)
+
+Old: /ci/recipes/enterprise/single-tenant/auth-github
+New: /docs/ci/recipes/enterprise/single-tenant/auth-github (Status: 404)
+
+Old: /ci/recipes/enterprise/single-tenant/auth-bitbucket-data-center
+New: /docs/ci/recipes/enterprise/single-tenant/auth-bitbucket-data-center (Status: 404)
+
+Old: /ci/recipes/enterprise/single-tenant/auth-bitbucket
+New: /docs/ci/recipes/enterprise/single-tenant/auth-bitbucket (Status: 404)
+
+Old: /ci/recipes/enterprise/single-tenant/auth-gitlab
+New: /docs/ci/recipes/enterprise/single-tenant/auth-gitlab (Status: 404)
+
+Old: /ci/recipes/other/ci-deployment
+New: /docs/ci/recipes/other/ci-deployment (Status: 404)
+
+Old: /ci/recipes/enterprise/polygraph
+New: /docs/ci/recipes/enterprise/polygraph (Status: 404)
+
+Old: /ci/recipes/enterprise/conformance
+New: /docs/ci/recipes/enterprise/conformance (Status: 404)
+
+Old: /ci/recipes/other
+New: /docs/ci/recipes/other (Status: 404)
+
+Old: /ci/recipes/enterprise/metadata-only-workspace
+New: /docs/ci/recipes/enterprise/metadata-only-workspace (Status: 404)
+
+Old: /ci/recipes/enterprise/custom-workflows
+New: /docs/ci/recipes/enterprise/custom-workflows (Status: 404)
+
+Old: /ci/recipes/other/cipe-affected-project-graph
+New: /docs/ci/recipes/other/cipe-affected-project-graph (Status: 404)
+
+Old: /ci/recipes/enterprise/conformance/publish-conformance-rules-to-nx-cloud
+New: /docs/ci/recipes/enterprise/conformance/publish-conformance-rules-to-nx-cloud (Status: 404)
+
+Old: /ci/recipes/other/record-commands
+New: /docs/ci/recipes/other/record-commands (Status: 404)
+
+Old: /ci/recipes/enterprise/conformance/configure-conformance-rules-in-nx-cloud
+New: /docs/ci/recipes/enterprise/conformance/configure-conformance-rules-in-nx-cloud (Status: 404)
+
+Old: /ci/reference/custom-steps
+New: /docs/ci/reference/custom-steps (Status: 404)
+
+Old: /ci/reference/launch-templates
+New: /docs/ci/reference/launch-templates (Status: 404)
+
+Old: /ci/reference/config
+New: /docs/ci/reference/config (Status: 404)
+
+Old: /ci/reference/env-vars
+New: /docs/ci/reference/env-vars (Status: 404)
+
+Old: /ci/reference/nx-cloud-cli
+New: /docs/ci/reference/nx-cloud-cli (Status: 404)
+
+Old: /ci/reference/credits-pricing
+New: /docs/ci/reference/credits-pricing (Status: 404)
+
+Old: /ci/reference/assignment-rules
+New: /docs/ci/reference/assignment-rules (Status: 404)
+
+Old: /ci/reference/custom-images
+New: /docs/ci/reference/custom-images (Status: 404)
+
+Old: /ci/reference/release-notes
+New: /docs/ci/reference/release-notes (Status: 404)
+
+Old: /ci/reference
+New: /docs/ci/reference (Status: 404)
+
+Old: /ci/troubleshooting/ci-execution-failed
+New: /docs/ci/troubleshooting/ci-execution-failed (Status: 404)
+
+Old: /extending-nx/tutorials
+New: /docs/extending-nx/tutorials (Status: 404)
+
+Old: /extending-nx/tutorials/tooling-plugin
+New: /docs/extending-nx/tutorials/tooling-plugin (Status: 404)
+
+Old: /extending-nx/recipes
+New: /docs/extending-nx/recipes (Status: 404)
+
+Old: /extending-nx/intro
+New: /docs/extending-nx/intro (Status: 404)
+
+Old: /extending-nx/recipes/local-generators
+New: /docs/extending-nx/recipes/local-generators (Status: 404)
+
+Old: /extending-nx/intro/getting-started
+New: /docs/extending-nx/intro/getting-started (Status: 404)
+
+Old: /extending-nx/tutorials/organization-specific-plugin
+New: /docs/extending-nx/tutorials/organization-specific-plugin (Status: 404)
+
+Old: /ci/troubleshooting
+New: /docs/ci/troubleshooting (Status: 404)
+
+Old: /extending-nx/recipes/composing-generators
+New: /docs/extending-nx/recipes/composing-generators (Status: 404)
+
+Old: /extending-nx/recipes/generator-options
+New: /docs/extending-nx/recipes/generator-options (Status: 404)
+
+Old: /extending-nx/recipes/migration-generators
+New: /docs/extending-nx/recipes/migration-generators (Status: 404)
+
+Old: /extending-nx/recipes/create-preset
+New: /docs/extending-nx/recipes/create-preset (Status: 404)
+
+Old: /extending-nx/recipes/modifying-files
+New: /docs/extending-nx/recipes/modifying-files (Status: 404)
+
+Old: /extending-nx/recipes/compose-executors
+New: /docs/extending-nx/recipes/compose-executors (Status: 404)
+
+Old: /extending-nx/recipes/local-executors
+New: /docs/extending-nx/recipes/local-executors (Status: 404)
+
+Old: /extending-nx/recipes/project-graph-plugins
+New: /docs/extending-nx/recipes/project-graph-plugins (Status: 404)
+
+Old: /extending-nx/recipes/create-install-package
+New: /docs/extending-nx/recipes/create-install-package (Status: 404)
+
+Old: /extending-nx/recipes/creating-files
+New: /docs/extending-nx/recipes/creating-files (Status: 404)
+
+Old: /extending-nx/recipes/create-sync-generator
+New: /docs/extending-nx/recipes/create-sync-generator (Status: 404)
+
+Old: /extending-nx/api/nx-devkit
+New: /docs/extending-nx/api/nx-devkit (Status: 404)
+
+Old: /extending-nx/recipes/publish-plugin
+New: /docs/extending-nx/recipes/publish-plugin (Status: 404)
+
+Old: /extending-nx/api
+New: /docs/extending-nx/api (Status: 404)
+
+Old: /extending-nx/api/nx-devkit/ngcli-adapter
+New: /docs/extending-nx/api/nx-devkit/ngcli-adapter (Status: 404)
+
+Old: /extending-nx/api/nx-devkit/overview
+New: /docs/extending-nx/api/nx-devkit/overview (Status: 404)
+
+Old: /extending-nx/api/plugin
+New: /docs/extending-nx/api/plugin (Status: 404)
+
+Old: /extending-nx/recipes/task-running-lifecycle
+New: /docs/extending-nx/recipes/task-running-lifecycle (Status: 404)
+
+Old: /extending-nx/api/plugin/overview
+New: /docs/extending-nx/api/plugin/overview (Status: 404)

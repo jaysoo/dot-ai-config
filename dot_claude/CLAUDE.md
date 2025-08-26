@@ -795,3 +795,60 @@ For serving built static files:
 - ✅ Correct: `npx serve dist -p 8000`
 - ❌ Wrong: `npx serve dist --port 8000` (will error)
 - Always use `-p` for port with the `serve` package
+
+## CRITICAL: Next.js Environment Variables in Components
+
+When using environment variables in Next.js components:
+- **Environment variables are replaced at BUILD TIME, not runtime**
+- `process.env.NEXT_PUBLIC_*` in components becomes a static value after build
+- This means conditional logic like `process.env.NEXT_PUBLIC_ASTRO_URL ? '/docs' : '/home'` 
+  will be evaluated during build and become a static string
+- The condition works correctly - it just happens at build time, not runtime
+- To change the behavior, you must rebuild with different env vars
+
+Common confusion: Thinking env vars don't work in client components (they do, just at build time)
+
+## CRITICAL: Next.js Rewrites vs Redirects
+
+When debugging routing issues in Next.js:
+1. **Check for conflicting redirect rules first** - redirects execute before rewrites
+2. Routing precedence: Headers → Redirects → Rewrites → Static Files → Dynamic Routes
+3. Look in BOTH `next.config.js` AND imported files like `redirect-rules.js`
+4. A path can't be both redirected and rewritten - redirect wins
+
+Debug approach:
+- Test with curl to see actual server behavior: `curl -I -L http://localhost:PORT/path`
+- Check redirect-rules.js for conflicts (often imported into next.config.js)
+- Comment out conflicting redirects to allow rewrites to work
+
+## CRITICAL: Managing Nx Development Servers
+
+When working with nx-dev servers:
+- **Check for stuck processes**: `lsof -i :4200 | grep LISTEN`
+- **Kill stuck processes**: `kill PID` or `pkill -f "nx-dev:serve"`
+- **Use specific targets**: `nx run nx-dev:serve:development` instead of just `:serve`
+- Some nx commands wait for other processes - use development target directly
+
+Common issue: "Waiting for nx-dev:serve:development in another nx process" means another instance is running
+
+## CRITICAL: Client vs Server Navigation in Next.js
+
+Client-side navigation (Link components) behaves differently from server-side:
+- **Link components don't trigger server redirects** - they use client routing
+- To make links work with new paths, update the href in the component
+- Server redirects only work for direct navigation, not Link clicks
+
+Testing approach:
+1. Server behavior: `curl -I http://localhost:PORT/path`
+2. Client behavior: Use Playwright to click actual links
+3. Update both redirects (for direct navigation) AND component hrefs (for Link navigation)
+
+## CRITICAL: Handling Automatic File Reversions
+
+When files appear to revert after editing:
+- **Linters and formatters may revert changes** automatically
+- **Prettier may format on save** - check if formatting matches project style
+- **System reminders about file changes** mean the file was modified externally
+- Always verify changes persisted: `git diff path/to/file`
+
+If changes revert, it's usually intentional (linting/formatting), not a bug

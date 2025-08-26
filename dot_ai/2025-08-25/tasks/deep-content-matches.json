@@ -1,0 +1,694 @@
+{
+  "foundMatches": [
+    {
+      "from": "/extending-nx",
+      "to": "/docs/extending-nx",
+      "targetStatus": 404,
+      "newUrl": "/extending-nx",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/features/maintain-ts-monorepos",
+      "to": "/docs/features/maintain-ts-monorepos",
+      "targetStatus": 404,
+      "newUrl": "/features/maintain-ts-monorepos",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/recipes",
+      "to": "/docs/recipes",
+      "targetStatus": 404,
+      "newUrl": "/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/recipes/installation",
+      "to": "/docs/recipes/installation",
+      "targetStatus": 404,
+      "newUrl": "/recipes/installation",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/recipes/running-tasks",
+      "to": "/docs/recipes/running-tasks",
+      "targetStatus": 404,
+      "newUrl": "/recipes/running-tasks",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/recipes/adopting-nx",
+      "to": "/docs/recipes/adopting-nx",
+      "targetStatus": 404,
+      "newUrl": "/recipes/adopting-nx",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/recipes/nx-release",
+      "to": "/docs/recipes/nx-release",
+      "targetStatus": 404,
+      "newUrl": "/recipes/nx-release",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/recipes/nx-console",
+      "to": "/docs/recipes/nx-console",
+      "targetStatus": 404,
+      "newUrl": "/recipes/nx-console",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries",
+      "to": "/docs/recipes/enforce-module-boundaries",
+      "targetStatus": 404,
+      "newUrl": "/recipes/enforce-module-boundaries",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/recipes/tips-n-tricks",
+      "to": "/docs/recipes/tips-n-tricks",
+      "targetStatus": 404,
+      "newUrl": "/recipes/tips-n-tricks",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/concepts/nx-daemon",
+      "to": "/docs/concepts/nx-daemon",
+      "targetStatus": 404,
+      "newUrl": "/concepts/nx-daemon",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/typescript/recipes",
+      "to": "/docs/technologies/typescript/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/typescript/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/typescript/recipes/switch-to-workspaces-project-references",
+      "to": "/docs/technologies/typescript/recipes/switch-to-workspaces-project-references",
+      "targetStatus": 404,
+      "newUrl": "/technologies/typescript/recipes/switch-to-workspaces-project-references",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/typescript/recipes/enable-tsc-batch-mode",
+      "to": "/docs/technologies/typescript/recipes/enable-tsc-batch-mode",
+      "targetStatus": 404,
+      "newUrl": "/technologies/typescript/recipes/enable-tsc-batch-mode",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/typescript/recipes/define-secondary-entrypoints",
+      "to": "/docs/technologies/typescript/recipes/define-secondary-entrypoints",
+      "targetStatus": 404,
+      "newUrl": "/technologies/typescript/recipes/define-secondary-entrypoints",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/typescript/recipes/compile-multiple-formats",
+      "to": "/docs/technologies/typescript/recipes/compile-multiple-formats",
+      "targetStatus": 404,
+      "newUrl": "/technologies/typescript/recipes/compile-multiple-formats",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/typescript/recipes/js-and-ts",
+      "to": "/docs/technologies/typescript/recipes/js-and-ts",
+      "targetStatus": 404,
+      "newUrl": "/technologies/typescript/recipes/js-and-ts",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/typescript/api",
+      "to": "/docs/technologies/typescript/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/typescript/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/recipes",
+      "to": "/docs/technologies/angular/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/recipes/use-environment-variables-in-angular",
+      "to": "/docs/technologies/angular/recipes/use-environment-variables-in-angular",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/recipes/use-environment-variables-in-angular",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+      "to": "/docs/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/recipes/module-federation-with-ssr",
+      "to": "/docs/technologies/angular/recipes/module-federation-with-ssr",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/recipes/module-federation-with-ssr",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/recipes/dynamic-module-federation-with-angular",
+      "to": "/docs/technologies/angular/recipes/dynamic-module-federation-with-angular",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/recipes/dynamic-module-federation-with-angular",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/recipes/setup-incremental-builds-angular",
+      "to": "/docs/technologies/angular/recipes/setup-incremental-builds-angular",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/recipes/setup-incremental-builds-angular",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/recipes/nx-and-angular",
+      "to": "/docs/technologies/angular/recipes/nx-and-angular",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/recipes/nx-and-angular",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/recipes/nx-devkit-angular-devkit",
+      "to": "/docs/technologies/angular/recipes/nx-devkit-angular-devkit",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/recipes/nx-devkit-angular-devkit",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/recipes/angular-nx-version-matrix",
+      "to": "/docs/technologies/angular/recipes/angular-nx-version-matrix",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/recipes/angular-nx-version-matrix",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/api",
+      "to": "/docs/technologies/angular/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes",
+      "to": "/docs/technologies/angular/angular-rspack/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rspack/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/getting-started",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/getting-started",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rspack/recipes/getting-started",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/handling-configurations",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/handling-configurations",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rspack/recipes/handling-configurations",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/internationalization",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/internationalization",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rspack/recipes/internationalization",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/api",
+      "to": "/docs/technologies/angular/angular-rspack/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rspack/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/api/create-config",
+      "to": "/docs/technologies/angular/angular-rspack/api/create-config",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rspack/api/create-config",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/api/create-server",
+      "to": "/docs/technologies/angular/angular-rspack/api/create-server",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rspack/api/create-server",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rsbuild/api",
+      "to": "/docs/technologies/angular/angular-rsbuild/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rsbuild/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rsbuild/api/create-config",
+      "to": "/docs/technologies/angular/angular-rsbuild/api/create-config",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rsbuild/api/create-config",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/angular/angular-rsbuild/api/create-server",
+      "to": "/docs/technologies/angular/angular-rsbuild/api/create-server",
+      "targetStatus": 404,
+      "newUrl": "/technologies/angular/angular-rsbuild/api/create-server",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/recipes",
+      "to": "/docs/technologies/react/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/recipes/react-native",
+      "to": "/docs/technologies/react/recipes/react-native",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/recipes/react-native",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/recipes/remix",
+      "to": "/docs/technologies/react/recipes/remix",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/recipes/remix",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/recipes/react-router",
+      "to": "/docs/technologies/react/recipes/react-router",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/recipes/react-router",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/recipes/use-environment-variables-in-react",
+      "to": "/docs/technologies/react/recipes/use-environment-variables-in-react",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/recipes/use-environment-variables-in-react",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/recipes/using-tailwind-css-in-react",
+      "to": "/docs/technologies/react/recipes/using-tailwind-css-in-react",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/recipes/using-tailwind-css-in-react",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/recipes/adding-assets-react",
+      "to": "/docs/technologies/react/recipes/adding-assets-react",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/recipes/adding-assets-react",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/recipes/module-federation-with-ssr",
+      "to": "/docs/technologies/react/recipes/module-federation-with-ssr",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/recipes/module-federation-with-ssr",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/recipes/deploy-nextjs-to-vercel",
+      "to": "/docs/technologies/react/recipes/deploy-nextjs-to-vercel",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/recipes/deploy-nextjs-to-vercel",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/recipes/react-compiler",
+      "to": "/docs/technologies/react/recipes/react-compiler",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/recipes/react-compiler",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/api",
+      "to": "/docs/technologies/react/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/next/recipes",
+      "to": "/docs/technologies/react/next/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/next/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/next/recipes/next-config-setup",
+      "to": "/docs/technologies/react/next/recipes/next-config-setup",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/next/recipes/next-config-setup",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/next/api",
+      "to": "/docs/technologies/react/next/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/next/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/remix/recipes",
+      "to": "/docs/technologies/react/remix/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/remix/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/remix/api",
+      "to": "/docs/technologies/react/remix/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/remix/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/react-native/recipes",
+      "to": "/docs/technologies/react/react-native/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/react-native/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/react-native/api",
+      "to": "/docs/technologies/react/react-native/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/react-native/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/expo/recipes",
+      "to": "/docs/technologies/react/expo/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/expo/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/react/expo/api",
+      "to": "/docs/technologies/react/expo/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/react/expo/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/vue/api",
+      "to": "/docs/technologies/vue/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/vue/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/vue/nuxt/recipes",
+      "to": "/docs/technologies/vue/nuxt/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/vue/nuxt/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+      "to": "/docs/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+      "targetStatus": 404,
+      "newUrl": "/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/vue/nuxt/api",
+      "to": "/docs/technologies/vue/nuxt/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/vue/nuxt/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/node/recipes",
+      "to": "/docs/technologies/node/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/node/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/node/recipes/node-server-fly-io",
+      "to": "/docs/technologies/node/recipes/node-server-fly-io",
+      "targetStatus": 404,
+      "newUrl": "/technologies/node/recipes/node-server-fly-io",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/node/recipes/node-serverless-functions-netlify",
+      "to": "/docs/technologies/node/recipes/node-serverless-functions-netlify",
+      "targetStatus": 404,
+      "newUrl": "/technologies/node/recipes/node-serverless-functions-netlify",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/node/recipes/node-aws-lambda",
+      "to": "/docs/technologies/node/recipes/node-aws-lambda",
+      "targetStatus": 404,
+      "newUrl": "/technologies/node/recipes/node-aws-lambda",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/node/recipes/application-proxies",
+      "to": "/docs/technologies/node/recipes/application-proxies",
+      "targetStatus": 404,
+      "newUrl": "/technologies/node/recipes/application-proxies",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/node/recipes/wait-for-tasks",
+      "to": "/docs/technologies/node/recipes/wait-for-tasks",
+      "targetStatus": 404,
+      "newUrl": "/technologies/node/recipes/wait-for-tasks",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/node/api",
+      "to": "/docs/technologies/node/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/node/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/node/express/api",
+      "to": "/docs/technologies/node/express/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/node/express/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/node/nest/api",
+      "to": "/docs/technologies/node/nest/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/node/nest/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/java",
+      "to": "/docs/technologies/java",
+      "targetStatus": 404,
+      "newUrl": "/technologies/java",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/java/introduction",
+      "to": "/docs/technologies/java/introduction",
+      "targetStatus": 404,
+      "newUrl": "/technologies/java/introduction",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/java/api",
+      "to": "/docs/technologies/java/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/java/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/module-federation/recipes",
+      "to": "/docs/technologies/module-federation/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/module-federation/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/module-federation/recipes/create-a-host",
+      "to": "/docs/technologies/module-federation/recipes/create-a-host",
+      "targetStatus": 404,
+      "newUrl": "/technologies/module-federation/recipes/create-a-host",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/module-federation/recipes/create-a-remote",
+      "to": "/docs/technologies/module-federation/recipes/create-a-remote",
+      "targetStatus": 404,
+      "newUrl": "/technologies/module-federation/recipes/create-a-remote",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/module-federation/recipes/federate-a-module",
+      "to": "/docs/technologies/module-federation/recipes/federate-a-module",
+      "targetStatus": 404,
+      "newUrl": "/technologies/module-federation/recipes/federate-a-module",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/module-federation/recipes/nx-module-federation-plugin",
+      "to": "/docs/technologies/module-federation/recipes/nx-module-federation-plugin",
+      "targetStatus": 404,
+      "newUrl": "/technologies/module-federation/recipes/nx-module-federation-plugin",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/module-federation/recipes/nx-module-federation-dev-server-plugin",
+      "to": "/docs/technologies/module-federation/recipes/nx-module-federation-dev-server-plugin",
+      "targetStatus": 404,
+      "newUrl": "/technologies/module-federation/recipes/nx-module-federation-dev-server-plugin",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/module-federation/api",
+      "to": "/docs/technologies/module-federation/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/module-federation/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/eslint/recipes",
+      "to": "/docs/technologies/eslint/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/eslint/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/eslint/recipes/eslint",
+      "to": "/docs/technologies/eslint/recipes/eslint",
+      "targetStatus": 404,
+      "newUrl": "/technologies/eslint/recipes/eslint",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/eslint/recipes/flat-config",
+      "to": "/docs/technologies/eslint/recipes/flat-config",
+      "targetStatus": 404,
+      "newUrl": "/technologies/eslint/recipes/flat-config",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/eslint/api",
+      "to": "/docs/technologies/eslint/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/eslint/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/recipes",
+      "to": "/docs/technologies/eslint/eslint-plugin/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/eslint/eslint-plugin/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries",
+      "to": "/docs/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries",
+      "targetStatus": 404,
+      "newUrl": "/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/recipes/dependency-checks",
+      "to": "/docs/technologies/eslint/eslint-plugin/recipes/dependency-checks",
+      "targetStatus": 404,
+      "newUrl": "/technologies/eslint/eslint-plugin/recipes/dependency-checks",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/api",
+      "to": "/docs/technologies/eslint/eslint-plugin/api",
+      "targetStatus": 404,
+      "newUrl": "/technologies/eslint/eslint-plugin/api",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/build-tools/docker",
+      "to": "/docs/technologies/build-tools/docker",
+      "targetStatus": 404,
+      "newUrl": "/technologies/build-tools/docker",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/recipes",
+      "to": "/docs/technologies/build-tools/webpack/recipes",
+      "targetStatus": 404,
+      "newUrl": "/technologies/build-tools/webpack/recipes",
+      "method": "url-pattern"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/recipes/webpack-config-setup",
+      "to": "/docs/technologies/build-tools/webpack/recipes/webpack-config-setup",
+      "targetStatus": 404,
+      "newUrl": "/technologies/build-tools/webpack/recipes/webpack-config-setup",
+      "method": "url-pattern"
+    }
+  ],
+  "possibleMatches": [],
+  "noContentFound": [
+    {
+      "from": "/ci",
+      "to": "/docs/ci",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/adding-to-existing",
+      "to": "/docs/getting-started/adding-to-existing",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/ai-integration",
+      "to": "/docs/getting-started/ai-integration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/tutorials/typescript-packages-tutorial",
+      "to": "/docs/getting-started/tutorials/typescript-packages-tutorial",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/tutorials/react-monorepo-tutorial",
+      "to": "/docs/getting-started/tutorials/react-monorepo-tutorial",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/tutorials/angular-monorepo-tutorial",
+      "to": "/docs/getting-started/tutorials/angular-monorepo-tutorial",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/tutorials/gradle-tutorial",
+      "to": "/docs/getting-started/tutorials/gradle-tutorial",
+      "targetStatus": 404
+    }
+  ],
+  "contentFoundNoMatch": []
+}

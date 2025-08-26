@@ -1,0 +1,5397 @@
+{
+  "correctDocsUrls": [
+    {
+      "from": "/plugin-registry",
+      "to": "/docs/plugin-registry",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/getting-started",
+      "to": "/docs/getting-started",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/getting-started/intro",
+      "to": "/docs/getting-started/intro",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/getting-started/installation",
+      "to": "/docs/getting-started/installation",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/getting-started/start-new-project",
+      "to": "/docs/getting-started/start-new-project",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/getting-started/editor-setup",
+      "to": "/docs/getting-started/editor-setup",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/getting-started/tutorials",
+      "to": "/docs/getting-started/tutorials",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/features",
+      "to": "/docs/features",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/features/run-tasks",
+      "to": "/docs/features/run-tasks",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/features/cache-task-results",
+      "to": "/docs/features/cache-task-results",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/features/enhance-AI",
+      "to": "/docs/features/enhance-AI",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/features/explore-graph",
+      "to": "/docs/features/explore-graph",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/features/generate-code",
+      "to": "/docs/features/generate-code",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/features/automate-updating-dependencies",
+      "to": "/docs/features/automate-updating-dependencies",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/features/enforce-module-boundaries",
+      "to": "/docs/features/enforce-module-boundaries",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/features/manage-releases",
+      "to": "/docs/features/manage-releases",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/features/ci-features",
+      "to": "/docs/features/ci-features",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts",
+      "to": "/docs/concepts",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/mental-model",
+      "to": "/docs/concepts/mental-model",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/how-caching-works",
+      "to": "/docs/concepts/how-caching-works",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/task-pipeline-configuration",
+      "to": "/docs/concepts/task-pipeline-configuration",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/nx-plugins",
+      "to": "/docs/concepts/nx-plugins",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/inferred-tasks",
+      "to": "/docs/concepts/inferred-tasks",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/types-of-configuration",
+      "to": "/docs/concepts/types-of-configuration",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/executors-and-configurations",
+      "to": "/docs/concepts/executors-and-configurations",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/common-tasks",
+      "to": "/docs/concepts/common-tasks",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/sync-generators",
+      "to": "/docs/concepts/sync-generators",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/typescript-project-linking",
+      "to": "/docs/concepts/typescript-project-linking",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/buildable-and-publishable-libraries",
+      "to": "/docs/concepts/buildable-and-publishable-libraries",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/decisions",
+      "to": "/docs/concepts/decisions",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/decisions/overview",
+      "to": "/docs/concepts/decisions/overview",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/decisions/why-monorepos",
+      "to": "/docs/concepts/decisions/why-monorepos",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/decisions/dependency-management",
+      "to": "/docs/concepts/decisions/dependency-management",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/decisions/code-ownership",
+      "to": "/docs/concepts/decisions/code-ownership",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/decisions/project-size",
+      "to": "/docs/concepts/decisions/project-size",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/decisions/project-dependency-rules",
+      "to": "/docs/concepts/decisions/project-dependency-rules",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/concepts/decisions/folder-structure",
+      "to": "/docs/concepts/decisions/folder-structure",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies",
+      "to": "/docs/technologies",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/typescript",
+      "to": "/docs/technologies/typescript",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/typescript/introduction",
+      "to": "/docs/technologies/typescript/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/angular",
+      "to": "/docs/technologies/angular",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/angular/introduction",
+      "to": "/docs/technologies/angular/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/angular/migration",
+      "to": "/docs/technologies/angular/migration",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/angular/migration/angular",
+      "to": "/docs/technologies/angular/migration/angular",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/angular/migration/angular-multiple",
+      "to": "/docs/technologies/angular/migration/angular-multiple",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack",
+      "to": "/docs/technologies/angular/angular-rspack",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/introduction",
+      "to": "/docs/technologies/angular/angular-rspack/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/angular/angular-rsbuild",
+      "to": "/docs/technologies/angular/angular-rsbuild",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/react",
+      "to": "/docs/technologies/react",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/react/introduction",
+      "to": "/docs/technologies/react/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/react/next",
+      "to": "/docs/technologies/react/next",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/react/next/introduction",
+      "to": "/docs/technologies/react/next/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/react/remix",
+      "to": "/docs/technologies/react/remix",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/react/remix/introduction",
+      "to": "/docs/technologies/react/remix/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/react/react-native",
+      "to": "/docs/technologies/react/react-native",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/react/react-native/introduction",
+      "to": "/docs/technologies/react/react-native/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/react/expo",
+      "to": "/docs/technologies/react/expo",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/react/expo/introduction",
+      "to": "/docs/technologies/react/expo/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/vue",
+      "to": "/docs/technologies/vue",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/vue/introduction",
+      "to": "/docs/technologies/vue/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/vue/nuxt",
+      "to": "/docs/technologies/vue/nuxt",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/vue/nuxt/introduction",
+      "to": "/docs/technologies/vue/nuxt/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/node",
+      "to": "/docs/technologies/node",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/node/introduction",
+      "to": "/docs/technologies/node/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/node/express",
+      "to": "/docs/technologies/node/express",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/node/express/introduction",
+      "to": "/docs/technologies/node/express/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/node/nest",
+      "to": "/docs/technologies/node/nest",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/node/nest/introduction",
+      "to": "/docs/technologies/node/nest/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/module-federation",
+      "to": "/docs/technologies/module-federation",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/module-federation/introduction",
+      "to": "/docs/technologies/module-federation/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/module-federation/concepts",
+      "to": "/docs/technologies/module-federation/concepts",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/module-federation/concepts/module-federation-and-nx",
+      "to": "/docs/technologies/module-federation/concepts/module-federation-and-nx",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/module-federation/concepts/nx-module-federation-technical-overview",
+      "to": "/docs/technologies/module-federation/concepts/nx-module-federation-technical-overview",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/module-federation/concepts/faster-builds-with-module-federation",
+      "to": "/docs/technologies/module-federation/concepts/faster-builds-with-module-federation",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/module-federation/concepts/micro-frontend-architecture",
+      "to": "/docs/technologies/module-federation/concepts/micro-frontend-architecture",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/module-federation/concepts/manage-library-versions-with-module-federation",
+      "to": "/docs/technologies/module-federation/concepts/manage-library-versions-with-module-federation",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/eslint",
+      "to": "/docs/technologies/eslint",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/eslint/introduction",
+      "to": "/docs/technologies/eslint/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin",
+      "to": "/docs/technologies/eslint/eslint-plugin",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools",
+      "to": "/docs/technologies/build-tools",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/docker/introduction",
+      "to": "/docs/technologies/build-tools/docker/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/webpack",
+      "to": "/docs/technologies/build-tools/webpack",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/introduction",
+      "to": "/docs/technologies/build-tools/webpack/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/vite",
+      "to": "/docs/technologies/build-tools/vite",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/vite/introduction",
+      "to": "/docs/technologies/build-tools/vite/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/rollup",
+      "to": "/docs/technologies/build-tools/rollup",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/rollup/introduction",
+      "to": "/docs/technologies/build-tools/rollup/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/esbuild",
+      "to": "/docs/technologies/build-tools/esbuild",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/introduction",
+      "to": "/docs/technologies/build-tools/esbuild/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/rspack",
+      "to": "/docs/technologies/build-tools/rspack",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/introduction",
+      "to": "/docs/technologies/build-tools/rspack/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild",
+      "to": "/docs/technologies/build-tools/rsbuild",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/introduction",
+      "to": "/docs/technologies/build-tools/rsbuild/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools",
+      "to": "/docs/technologies/test-tools",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools/cypress",
+      "to": "/docs/technologies/test-tools/cypress",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/introduction",
+      "to": "/docs/technologies/test-tools/cypress/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools/jest",
+      "to": "/docs/technologies/test-tools/jest",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools/jest/introduction",
+      "to": "/docs/technologies/test-tools/jest/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools/playwright",
+      "to": "/docs/technologies/test-tools/playwright",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools/playwright/introduction",
+      "to": "/docs/technologies/test-tools/playwright/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools/storybook",
+      "to": "/docs/technologies/test-tools/storybook",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/introduction",
+      "to": "/docs/technologies/test-tools/storybook/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools/detox",
+      "to": "/docs/technologies/test-tools/detox",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/technologies/test-tools/detox/introduction",
+      "to": "/docs/technologies/test-tools/detox/introduction",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference",
+      "to": "/docs/reference",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/nx-commands",
+      "to": "/docs/reference/nx-commands",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/nx-json",
+      "to": "/docs/reference/nx-json",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/project-configuration",
+      "to": "/docs/reference/project-configuration",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/inputs",
+      "to": "/docs/reference/inputs",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/nxignore",
+      "to": "/docs/reference/nxignore",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/environment-variables",
+      "to": "/docs/reference/environment-variables",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/glossary",
+      "to": "/docs/reference/glossary",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/releases",
+      "to": "/docs/reference/releases",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/troubleshooting",
+      "to": "/docs/troubleshooting",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/troubleshooting/resolve-circular-dependencies",
+      "to": "/docs/troubleshooting/resolve-circular-dependencies",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/troubleshooting/troubleshoot-nx-install-issues",
+      "to": "/docs/troubleshooting/troubleshoot-nx-install-issues",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/troubleshooting/troubleshoot-cache-misses",
+      "to": "/docs/troubleshooting/troubleshoot-cache-misses",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/troubleshooting/unknown-local-cache",
+      "to": "/docs/troubleshooting/unknown-local-cache",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/troubleshooting/performance-profiling",
+      "to": "/docs/troubleshooting/performance-profiling",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/nx-json%23tasks-runner-options",
+      "to": "/docs/reference/nx-json%23tasks-runner-options",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/nx-json%23inputs-namedinputs",
+      "to": "/docs/reference/nx-json%23inputs-namedinputs",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/project-configuration%23inputs-and-namedinputs",
+      "to": "/docs/reference/project-configuration%23inputs-and-namedinputs",
+      "category": "docs-exists"
+    },
+    {
+      "from": "/reference/nx-json%23generators",
+      "to": "/docs/reference/nx-json%23generators",
+      "category": "docs-exists"
+    }
+  ],
+  "incorrectNonDocs": [],
+  "brokenDocsUrls": [
+    {
+      "from": "/ci",
+      "to": "/docs/ci",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx",
+      "to": "/docs/extending-nx",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/getting-started/adding-to-existing",
+      "to": "/docs/getting-started/adding-to-existing",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/getting-started/ai-integration",
+      "to": "/docs/getting-started/ai-integration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/getting-started/tutorials/typescript-packages-tutorial",
+      "to": "/docs/getting-started/tutorials/typescript-packages-tutorial",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/getting-started/tutorials/react-monorepo-tutorial",
+      "to": "/docs/getting-started/tutorials/react-monorepo-tutorial",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/getting-started/tutorials/angular-monorepo-tutorial",
+      "to": "/docs/getting-started/tutorials/angular-monorepo-tutorial",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/getting-started/tutorials/gradle-tutorial",
+      "to": "/docs/getting-started/tutorials/gradle-tutorial",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/features/maintain-ts-monorepos",
+      "to": "/docs/features/maintain-ts-monorepos",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes",
+      "to": "/docs/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/installation",
+      "to": "/docs/recipes/installation",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/installation/install-non-javascript",
+      "to": "/docs/recipes/installation/install-non-javascript",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/installation/update-global-installation",
+      "to": "/docs/recipes/installation/update-global-installation",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks",
+      "to": "/docs/recipes/running-tasks",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/configure-inputs",
+      "to": "/docs/recipes/running-tasks/configure-inputs",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/configure-outputs",
+      "to": "/docs/recipes/running-tasks/configure-outputs",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/defining-task-pipeline",
+      "to": "/docs/recipes/running-tasks/defining-task-pipeline",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/terminal-ui",
+      "to": "/docs/recipes/running-tasks/terminal-ui",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/run-commands-executor",
+      "to": "/docs/recipes/running-tasks/run-commands-executor",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/pass-args-to-commands",
+      "to": "/docs/recipes/running-tasks/pass-args-to-commands",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/run-tasks-in-parallel",
+      "to": "/docs/recipes/running-tasks/run-tasks-in-parallel",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/root-level-scripts",
+      "to": "/docs/recipes/running-tasks/root-level-scripts",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/workspace-watching",
+      "to": "/docs/recipes/running-tasks/workspace-watching",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/reduce-repetitive-configuration",
+      "to": "/docs/recipes/running-tasks/reduce-repetitive-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/change-cache-location",
+      "to": "/docs/recipes/running-tasks/change-cache-location",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/skipping-cache",
+      "to": "/docs/recipes/running-tasks/skipping-cache",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/convert-to-inferred",
+      "to": "/docs/recipes/running-tasks/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/running-tasks/self-hosted-caching",
+      "to": "/docs/recipes/running-tasks/self-hosted-caching",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/adopting-nx",
+      "to": "/docs/recipes/adopting-nx",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/adopting-nx/adding-to-monorepo",
+      "to": "/docs/recipes/adopting-nx/adding-to-monorepo",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/adopting-nx/from-turborepo",
+      "to": "/docs/recipes/adopting-nx/from-turborepo",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/adopting-nx/adding-to-existing-project",
+      "to": "/docs/recipes/adopting-nx/adding-to-existing-project",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/adopting-nx/import-project",
+      "to": "/docs/recipes/adopting-nx/import-project",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/adopting-nx/preserving-git-histories",
+      "to": "/docs/recipes/adopting-nx/preserving-git-histories",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/adopting-nx/manual",
+      "to": "/docs/recipes/adopting-nx/manual",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release",
+      "to": "/docs/recipes/nx-release",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/release-npm-packages",
+      "to": "/docs/recipes/nx-release/release-npm-packages",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/release-docker-images",
+      "to": "/docs/recipes/nx-release/release-docker-images",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/publish-rust-crates",
+      "to": "/docs/recipes/nx-release/publish-rust-crates",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/release-projects-independently",
+      "to": "/docs/recipes/nx-release/release-projects-independently",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/updating-version-references",
+      "to": "/docs/recipes/nx-release/updating-version-references",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/automatically-version-with-conventional-commits",
+      "to": "/docs/recipes/nx-release/automatically-version-with-conventional-commits",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/customize-conventional-commit-types",
+      "to": "/docs/recipes/nx-release/customize-conventional-commit-types",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/file-based-versioning-version-plans",
+      "to": "/docs/recipes/nx-release/file-based-versioning-version-plans",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/configure-custom-registries",
+      "to": "/docs/recipes/nx-release/configure-custom-registries",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/publish-in-ci-cd",
+      "to": "/docs/recipes/nx-release/publish-in-ci-cd",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/automate-github-releases",
+      "to": "/docs/recipes/nx-release/automate-github-releases",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/automate-gitlab-releases",
+      "to": "/docs/recipes/nx-release/automate-gitlab-releases",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/update-local-registry-setup",
+      "to": "/docs/recipes/nx-release/update-local-registry-setup",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/configure-changelog-format",
+      "to": "/docs/recipes/nx-release/configure-changelog-format",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/build-before-versioning",
+      "to": "/docs/recipes/nx-release/build-before-versioning",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-release/configuration-version-prefix",
+      "to": "/docs/recipes/nx-release/configuration-version-prefix",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-console",
+      "to": "/docs/recipes/nx-console",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-console/console-telemetry",
+      "to": "/docs/recipes/nx-console/console-telemetry",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-console/console-project-details",
+      "to": "/docs/recipes/nx-console/console-project-details",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-console/console-generate-command",
+      "to": "/docs/recipes/nx-console/console-generate-command",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-console/console-run-command",
+      "to": "/docs/recipes/nx-console/console-run-command",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-console/console-nx-cloud",
+      "to": "/docs/recipes/nx-console/console-nx-cloud",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-console/console-migrate-ui",
+      "to": "/docs/recipes/nx-console/console-migrate-ui",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/nx-console/console-troubleshooting",
+      "to": "/docs/recipes/nx-console/console-troubleshooting",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries",
+      "to": "/docs/recipes/enforce-module-boundaries",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries/ban-dependencies-with-tags",
+      "to": "/docs/recipes/enforce-module-boundaries/ban-dependencies-with-tags",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries/tag-multiple-dimensions",
+      "to": "/docs/recipes/enforce-module-boundaries/tag-multiple-dimensions",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries/ban-external-imports",
+      "to": "/docs/recipes/enforce-module-boundaries/ban-external-imports",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries/tags-allow-list",
+      "to": "/docs/recipes/enforce-module-boundaries/tags-allow-list",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks",
+      "to": "/docs/recipes/tips-n-tricks",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks/standalone-to-monorepo",
+      "to": "/docs/recipes/tips-n-tricks/standalone-to-monorepo",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+      "to": "/docs/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks/define-environment-variables",
+      "to": "/docs/recipes/tips-n-tricks/define-environment-variables",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks/browser-support",
+      "to": "/docs/recipes/tips-n-tricks/browser-support",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks/include-assets-in-build",
+      "to": "/docs/recipes/tips-n-tricks/include-assets-in-build",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks/include-all-packagejson",
+      "to": "/docs/recipes/tips-n-tricks/include-all-packagejson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks/identify-dependencies-between-folders",
+      "to": "/docs/recipes/tips-n-tricks/identify-dependencies-between-folders",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks/analyze-source-files",
+      "to": "/docs/recipes/tips-n-tricks/analyze-source-files",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks/advanced-update",
+      "to": "/docs/recipes/tips-n-tricks/advanced-update",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/recipes/tips-n-tricks/yarn-pnp",
+      "to": "/docs/recipes/tips-n-tricks/yarn-pnp",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/concepts/nx-daemon",
+      "to": "/docs/concepts/nx-daemon",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/recipes",
+      "to": "/docs/technologies/typescript/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/recipes/switch-to-workspaces-project-references",
+      "to": "/docs/technologies/typescript/recipes/switch-to-workspaces-project-references",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/recipes/enable-tsc-batch-mode",
+      "to": "/docs/technologies/typescript/recipes/enable-tsc-batch-mode",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/recipes/define-secondary-entrypoints",
+      "to": "/docs/technologies/typescript/recipes/define-secondary-entrypoints",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/recipes/compile-multiple-formats",
+      "to": "/docs/technologies/typescript/recipes/compile-multiple-formats",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/recipes/js-and-ts",
+      "to": "/docs/technologies/typescript/recipes/js-and-ts",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api",
+      "to": "/docs/technologies/typescript/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/recipes",
+      "to": "/docs/technologies/angular/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/recipes/use-environment-variables-in-angular",
+      "to": "/docs/technologies/angular/recipes/use-environment-variables-in-angular",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+      "to": "/docs/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/recipes/module-federation-with-ssr",
+      "to": "/docs/technologies/angular/recipes/module-federation-with-ssr",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/recipes/dynamic-module-federation-with-angular",
+      "to": "/docs/technologies/angular/recipes/dynamic-module-federation-with-angular",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/recipes/setup-incremental-builds-angular",
+      "to": "/docs/technologies/angular/recipes/setup-incremental-builds-angular",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/recipes/nx-and-angular",
+      "to": "/docs/technologies/angular/recipes/nx-and-angular",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/recipes/nx-devkit-angular-devkit",
+      "to": "/docs/technologies/angular/recipes/nx-devkit-angular-devkit",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/recipes/angular-nx-version-matrix",
+      "to": "/docs/technologies/angular/recipes/angular-nx-version-matrix",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api",
+      "to": "/docs/technologies/angular/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes",
+      "to": "/docs/technologies/angular/angular-rspack/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/getting-started",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/getting-started",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/handling-configurations",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/handling-configurations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/internationalization",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/internationalization",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/api",
+      "to": "/docs/technologies/angular/angular-rspack/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/api/create-config",
+      "to": "/docs/technologies/angular/angular-rspack/api/create-config",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/api/create-server",
+      "to": "/docs/technologies/angular/angular-rspack/api/create-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rsbuild/api",
+      "to": "/docs/technologies/angular/angular-rsbuild/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rsbuild/api/create-config",
+      "to": "/docs/technologies/angular/angular-rsbuild/api/create-config",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/angular-rsbuild/api/create-server",
+      "to": "/docs/technologies/angular/angular-rsbuild/api/create-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/recipes",
+      "to": "/docs/technologies/react/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/recipes/react-native",
+      "to": "/docs/technologies/react/recipes/react-native",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/recipes/remix",
+      "to": "/docs/technologies/react/recipes/remix",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/recipes/react-router",
+      "to": "/docs/technologies/react/recipes/react-router",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/recipes/use-environment-variables-in-react",
+      "to": "/docs/technologies/react/recipes/use-environment-variables-in-react",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/recipes/using-tailwind-css-in-react",
+      "to": "/docs/technologies/react/recipes/using-tailwind-css-in-react",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/recipes/adding-assets-react",
+      "to": "/docs/technologies/react/recipes/adding-assets-react",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/recipes/module-federation-with-ssr",
+      "to": "/docs/technologies/react/recipes/module-federation-with-ssr",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/recipes/deploy-nextjs-to-vercel",
+      "to": "/docs/technologies/react/recipes/deploy-nextjs-to-vercel",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/recipes/react-compiler",
+      "to": "/docs/technologies/react/recipes/react-compiler",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api",
+      "to": "/docs/technologies/react/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/recipes",
+      "to": "/docs/technologies/react/next/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/recipes/next-config-setup",
+      "to": "/docs/technologies/react/next/recipes/next-config-setup",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api",
+      "to": "/docs/technologies/react/next/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/recipes",
+      "to": "/docs/technologies/react/remix/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api",
+      "to": "/docs/technologies/react/remix/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/recipes",
+      "to": "/docs/technologies/react/react-native/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api",
+      "to": "/docs/technologies/react/react-native/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/recipes",
+      "to": "/docs/technologies/react/expo/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api",
+      "to": "/docs/technologies/react/expo/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api",
+      "to": "/docs/technologies/vue/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/nuxt/recipes",
+      "to": "/docs/technologies/vue/nuxt/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+      "to": "/docs/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/nuxt/api",
+      "to": "/docs/technologies/vue/nuxt/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/recipes",
+      "to": "/docs/technologies/node/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/recipes/node-server-fly-io",
+      "to": "/docs/technologies/node/recipes/node-server-fly-io",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/recipes/node-serverless-functions-netlify",
+      "to": "/docs/technologies/node/recipes/node-serverless-functions-netlify",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/recipes/node-aws-lambda",
+      "to": "/docs/technologies/node/recipes/node-aws-lambda",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/recipes/application-proxies",
+      "to": "/docs/technologies/node/recipes/application-proxies",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/recipes/wait-for-tasks",
+      "to": "/docs/technologies/node/recipes/wait-for-tasks",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/api",
+      "to": "/docs/technologies/node/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/express/api",
+      "to": "/docs/technologies/node/express/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api",
+      "to": "/docs/technologies/node/nest/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/java",
+      "to": "/docs/technologies/java",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/java/introduction",
+      "to": "/docs/technologies/java/introduction",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/java/api",
+      "to": "/docs/technologies/java/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/module-federation/recipes",
+      "to": "/docs/technologies/module-federation/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/module-federation/recipes/create-a-host",
+      "to": "/docs/technologies/module-federation/recipes/create-a-host",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/module-federation/recipes/create-a-remote",
+      "to": "/docs/technologies/module-federation/recipes/create-a-remote",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/module-federation/recipes/federate-a-module",
+      "to": "/docs/technologies/module-federation/recipes/federate-a-module",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/module-federation/recipes/nx-module-federation-plugin",
+      "to": "/docs/technologies/module-federation/recipes/nx-module-federation-plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/module-federation/recipes/nx-module-federation-dev-server-plugin",
+      "to": "/docs/technologies/module-federation/recipes/nx-module-federation-dev-server-plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/module-federation/api",
+      "to": "/docs/technologies/module-federation/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/recipes",
+      "to": "/docs/technologies/eslint/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/recipes/eslint",
+      "to": "/docs/technologies/eslint/recipes/eslint",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/recipes/flat-config",
+      "to": "/docs/technologies/eslint/recipes/flat-config",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/api",
+      "to": "/docs/technologies/eslint/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/recipes",
+      "to": "/docs/technologies/eslint/eslint-plugin/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries",
+      "to": "/docs/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/recipes/dependency-checks",
+      "to": "/docs/technologies/eslint/eslint-plugin/recipes/dependency-checks",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/api",
+      "to": "/docs/technologies/eslint/eslint-plugin/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/docker",
+      "to": "/docs/technologies/build-tools/docker",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/recipes",
+      "to": "/docs/technologies/build-tools/webpack/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/recipes/webpack-config-setup",
+      "to": "/docs/technologies/build-tools/webpack/recipes/webpack-config-setup",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/recipes/webpack-plugins",
+      "to": "/docs/technologies/build-tools/webpack/recipes/webpack-plugins",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api",
+      "to": "/docs/technologies/build-tools/webpack/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/recipes",
+      "to": "/docs/technologies/build-tools/vite/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/recipes/configure-vite",
+      "to": "/docs/technologies/build-tools/vite/recipes/configure-vite",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api",
+      "to": "/docs/technologies/build-tools/vite/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rollup/recipes",
+      "to": "/docs/technologies/build-tools/rollup/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api",
+      "to": "/docs/technologies/build-tools/rollup/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/recipes",
+      "to": "/docs/technologies/build-tools/esbuild/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api",
+      "to": "/docs/technologies/build-tools/esbuild/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/recipes",
+      "to": "/docs/technologies/build-tools/rspack/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api",
+      "to": "/docs/technologies/build-tools/rspack/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/recipes",
+      "to": "/docs/technologies/build-tools/rsbuild/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api",
+      "to": "/docs/technologies/build-tools/rsbuild/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/recipes",
+      "to": "/docs/technologies/test-tools/cypress/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/recipes/cypress-component-testing",
+      "to": "/docs/technologies/test-tools/cypress/recipes/cypress-component-testing",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/recipes/cypress-setup-node-events",
+      "to": "/docs/technologies/test-tools/cypress/recipes/cypress-setup-node-events",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/recipes/cypress-v11-migration",
+      "to": "/docs/technologies/test-tools/cypress/recipes/cypress-v11-migration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api",
+      "to": "/docs/technologies/test-tools/cypress/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/jest/recipes",
+      "to": "/docs/technologies/test-tools/jest/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/jest/api",
+      "to": "/docs/technologies/test-tools/jest/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/playwright/recipes",
+      "to": "/docs/technologies/test-tools/playwright/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api",
+      "to": "/docs/technologies/test-tools/playwright/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes",
+      "to": "/docs/technologies/test-tools/storybook/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/best-practices",
+      "to": "/docs/technologies/test-tools/storybook/recipes/best-practices",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/storybook-9-setup",
+      "to": "/docs/technologies/test-tools/storybook/recipes/storybook-9-setup",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/overview-react",
+      "to": "/docs/technologies/test-tools/storybook/recipes/overview-react",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/overview-angular",
+      "to": "/docs/technologies/test-tools/storybook/recipes/overview-angular",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/overview-vue",
+      "to": "/docs/technologies/test-tools/storybook/recipes/overview-vue",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/configuring-storybook",
+      "to": "/docs/technologies/test-tools/storybook/recipes/configuring-storybook",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/one-storybook-for-all",
+      "to": "/docs/technologies/test-tools/storybook/recipes/one-storybook-for-all",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/one-storybook-per-scope",
+      "to": "/docs/technologies/test-tools/storybook/recipes/one-storybook-per-scope",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/one-storybook-with-composition",
+      "to": "/docs/technologies/test-tools/storybook/recipes/one-storybook-with-composition",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/custom-builder-configs",
+      "to": "/docs/technologies/test-tools/storybook/recipes/custom-builder-configs",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/storybook-interaction-tests",
+      "to": "/docs/technologies/test-tools/storybook/recipes/storybook-interaction-tests",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/upgrading-storybook",
+      "to": "/docs/technologies/test-tools/storybook/recipes/upgrading-storybook",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/storybook-composition-setup",
+      "to": "/docs/technologies/test-tools/storybook/recipes/storybook-composition-setup",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/angular-storybook-compodoc",
+      "to": "/docs/technologies/test-tools/storybook/recipes/angular-storybook-compodoc",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/angular-configuring-styles",
+      "to": "/docs/technologies/test-tools/storybook/recipes/angular-configuring-styles",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api",
+      "to": "/docs/technologies/test-tools/storybook/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/detox/recipes",
+      "to": "/docs/technologies/test-tools/detox/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/detox/api",
+      "to": "/docs/technologies/test-tools/detox/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/nx-enterprise",
+      "to": "/docs/nx-enterprise",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/nx-enterprise/activate-powerpack",
+      "to": "/docs/nx-enterprise/activate-powerpack",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/nx-enterprise/powerpack",
+      "to": "/docs/nx-enterprise/powerpack",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/nx-enterprise/powerpack/licenses-and-trials",
+      "to": "/docs/nx-enterprise/powerpack/licenses-and-trials",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/nx-enterprise/powerpack/conformance",
+      "to": "/docs/nx-enterprise/powerpack/conformance",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/nx-enterprise/powerpack/owners",
+      "to": "/docs/nx-enterprise/powerpack/owners",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase",
+      "to": "/docs/showcase",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos",
+      "to": "/docs/showcase/example-repos",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/add-express",
+      "to": "/docs/showcase/example-repos/add-express",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/add-lit",
+      "to": "/docs/showcase/example-repos/add-lit",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/add-solid",
+      "to": "/docs/showcase/example-repos/add-solid",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/add-qwik",
+      "to": "/docs/showcase/example-repos/add-qwik",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/add-rust",
+      "to": "/docs/showcase/example-repos/add-rust",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/add-dotnet",
+      "to": "/docs/showcase/example-repos/add-dotnet",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/add-astro",
+      "to": "/docs/showcase/example-repos/add-astro",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/add-svelte",
+      "to": "/docs/showcase/example-repos/add-svelte",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/add-fastify",
+      "to": "/docs/showcase/example-repos/add-fastify",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/apollo-react",
+      "to": "/docs/showcase/example-repos/apollo-react",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/nestjs-prisma",
+      "to": "/docs/showcase/example-repos/nestjs-prisma",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/mongo-fastify",
+      "to": "/docs/showcase/example-repos/mongo-fastify",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/redis-fastify",
+      "to": "/docs/showcase/example-repos/redis-fastify",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/postgres-fastify",
+      "to": "/docs/showcase/example-repos/postgres-fastify",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/serverless-fastify-planetscale",
+      "to": "/docs/showcase/example-repos/serverless-fastify-planetscale",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/example-repos/mfe",
+      "to": "/docs/showcase/example-repos/mfe",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/benchmarks",
+      "to": "/docs/showcase/benchmarks",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/benchmarks/tsc-batch-mode",
+      "to": "/docs/showcase/benchmarks/tsc-batch-mode",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/benchmarks/caching",
+      "to": "/docs/showcase/benchmarks/caching",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/showcase/benchmarks/nx-agents",
+      "to": "/docs/showcase/benchmarks/nx-agents",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api",
+      "to": "/docs/reference/core-api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx",
+      "to": "/docs/reference/core-api/nx",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace",
+      "to": "/docs/reference/core-api/workspace",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/owners",
+      "to": "/docs/reference/core-api/owners",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/owners/overview",
+      "to": "/docs/reference/core-api/owners/overview",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance",
+      "to": "/docs/reference/core-api/conformance",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/overview",
+      "to": "/docs/reference/core-api/conformance/overview",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/create-conformance-rule",
+      "to": "/docs/reference/core-api/conformance/create-conformance-rule",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/azure-cache",
+      "to": "/docs/reference/core-api/azure-cache",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/azure-cache/overview",
+      "to": "/docs/reference/core-api/azure-cache/overview",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/gcs-cache",
+      "to": "/docs/reference/core-api/gcs-cache",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/gcs-cache/overview",
+      "to": "/docs/reference/core-api/gcs-cache/overview",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/s3-cache",
+      "to": "/docs/reference/core-api/s3-cache",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/s3-cache/overview",
+      "to": "/docs/reference/core-api/s3-cache/overview",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache",
+      "to": "/docs/reference/core-api/shared-fs-cache",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache/overview",
+      "to": "/docs/reference/core-api/shared-fs-cache/overview",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit",
+      "to": "/docs/reference/core-api/devkit",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin",
+      "to": "/docs/reference/core-api/plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/web",
+      "to": "/docs/reference/core-api/web",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/create-nx-workspace",
+      "to": "/docs/reference/core-api/create-nx-workspace",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/troubleshooting/convert-to-inferred",
+      "to": "/docs/troubleshooting/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated",
+      "to": "/docs/deprecated",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/affected-graph",
+      "to": "/docs/deprecated/affected-graph",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/print-affected",
+      "to": "/docs/deprecated/print-affected",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/workspace-json",
+      "to": "/docs/deprecated/workspace-json",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/as-provided-vs-derived",
+      "to": "/docs/deprecated/as-provided-vs-derived",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/workspace-generators",
+      "to": "/docs/deprecated/workspace-generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/legacy-cache",
+      "to": "/docs/deprecated/legacy-cache",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/custom-tasks-runner",
+      "to": "/docs/deprecated/custom-tasks-runner",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/workspace-executors",
+      "to": "/docs/deprecated/workspace-executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/runtime-cache-inputs",
+      "to": "/docs/deprecated/runtime-cache-inputs",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/cacheable-operations",
+      "to": "/docs/deprecated/cacheable-operations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/npm-scope",
+      "to": "/docs/deprecated/npm-scope",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/global-implicit-dependencies",
+      "to": "/docs/deprecated/global-implicit-dependencies",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/angular-schematics-builders",
+      "to": "/docs/deprecated/angular-schematics-builders",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/v1-nx-plugin-api",
+      "to": "/docs/deprecated/v1-nx-plugin-api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/rescope",
+      "to": "/docs/deprecated/rescope",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/deprecated/integrated-vs-package-based",
+      "to": "/docs/deprecated/integrated-vs-package-based",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/see-also",
+      "to": "/docs/see-also",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/nx-api/nx/documents/affected%23skip-nx-cache",
+      "to": "/docs/nx-api/nx/documents/affected%23skip-nx-cache",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/see-also/sitemap",
+      "to": "/docs/see-also/sitemap",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors",
+      "to": "/docs/technologies/angular/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/delegate-build",
+      "to": "/docs/technologies/angular/api/executors/delegate-build",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/ng-packagr-lite",
+      "to": "/docs/technologies/angular/api/executors/ng-packagr-lite",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/package",
+      "to": "/docs/technologies/angular/api/executors/package",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/browser-esbuild",
+      "to": "/docs/technologies/angular/api/executors/browser-esbuild",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/module-federation-dev-server",
+      "to": "/docs/technologies/angular/api/executors/module-federation-dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/module-federation-dev-ssr",
+      "to": "/docs/technologies/angular/api/executors/module-federation-dev-ssr",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/application",
+      "to": "/docs/technologies/angular/api/executors/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/extract-i18n",
+      "to": "/docs/technologies/angular/api/executors/extract-i18n",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/webpack-browser",
+      "to": "/docs/technologies/angular/api/executors/webpack-browser",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/dev-server",
+      "to": "/docs/technologies/angular/api/executors/dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/executors/webpack-server",
+      "to": "/docs/technologies/angular/api/executors/webpack-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators",
+      "to": "/docs/technologies/angular/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/add-linting",
+      "to": "/docs/technologies/angular/api/generators/add-linting",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/application",
+      "to": "/docs/technologies/angular/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/component",
+      "to": "/docs/technologies/angular/api/generators/component",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/component-story",
+      "to": "/docs/technologies/angular/api/generators/component-story",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/component-test",
+      "to": "/docs/technologies/angular/api/generators/component-test",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/convert-to-application-executor",
+      "to": "/docs/technologies/angular/api/generators/convert-to-application-executor",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/convert-to-rspack",
+      "to": "/docs/technologies/angular/api/generators/convert-to-rspack",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/directive",
+      "to": "/docs/technologies/angular/api/generators/directive",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/federate-module",
+      "to": "/docs/technologies/angular/api/generators/federate-module",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/init",
+      "to": "/docs/technologies/angular/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/library",
+      "to": "/docs/technologies/angular/api/generators/library",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/library-secondary-entry-point",
+      "to": "/docs/technologies/angular/api/generators/library-secondary-entry-point",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/remote",
+      "to": "/docs/technologies/angular/api/generators/remote",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/move",
+      "to": "/docs/technologies/angular/api/generators/move",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/convert-to-with-mf",
+      "to": "/docs/technologies/angular/api/generators/convert-to-with-mf",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/host",
+      "to": "/docs/technologies/angular/api/generators/host",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/ng-add",
+      "to": "/docs/technologies/angular/api/generators/ng-add",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/ngrx",
+      "to": "/docs/technologies/angular/api/generators/ngrx",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/ngrx-feature-store",
+      "to": "/docs/technologies/angular/api/generators/ngrx-feature-store",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/ngrx-root-store",
+      "to": "/docs/technologies/angular/api/generators/ngrx-root-store",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/pipe",
+      "to": "/docs/technologies/angular/api/generators/pipe",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/scam-to-standalone",
+      "to": "/docs/technologies/angular/api/generators/scam-to-standalone",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/scam",
+      "to": "/docs/technologies/angular/api/generators/scam",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/scam-directive",
+      "to": "/docs/technologies/angular/api/generators/scam-directive",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/scam-pipe",
+      "to": "/docs/technologies/angular/api/generators/scam-pipe",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/setup-mf",
+      "to": "/docs/technologies/angular/api/generators/setup-mf",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/setup-ssr",
+      "to": "/docs/technologies/angular/api/generators/setup-ssr",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/setup-tailwind",
+      "to": "/docs/technologies/angular/api/generators/setup-tailwind",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/stories",
+      "to": "/docs/technologies/angular/api/generators/stories",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/storybook-configuration",
+      "to": "/docs/technologies/angular/api/generators/storybook-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/cypress-component-configuration",
+      "to": "/docs/technologies/angular/api/generators/cypress-component-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/generators/web-worker",
+      "to": "/docs/technologies/angular/api/generators/web-worker",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/angular/api/migrations",
+      "to": "/docs/technologies/angular/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/executors",
+      "to": "/docs/technologies/test-tools/cypress/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/executors/cypress",
+      "to": "/docs/technologies/test-tools/cypress/api/executors/cypress",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators",
+      "to": "/docs/technologies/test-tools/cypress/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators/init",
+      "to": "/docs/technologies/test-tools/cypress/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators/configuration",
+      "to": "/docs/technologies/test-tools/cypress/api/generators/configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators/component-configuration",
+      "to": "/docs/technologies/test-tools/cypress/api/generators/component-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators/migrate-to-cypress-11",
+      "to": "/docs/technologies/test-tools/cypress/api/generators/migrate-to-cypress-11",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/test-tools/cypress/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/migrations",
+      "to": "/docs/technologies/test-tools/cypress/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/executors",
+      "to": "/docs/technologies/test-tools/detox/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/executors/build",
+      "to": "/docs/technologies/test-tools/detox/api/executors/build",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/executors/test",
+      "to": "/docs/technologies/test-tools/detox/api/executors/test",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/generators",
+      "to": "/docs/technologies/test-tools/detox/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/generators/init",
+      "to": "/docs/technologies/test-tools/detox/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/generators/application",
+      "to": "/docs/technologies/test-tools/detox/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/test-tools/detox/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/migrations",
+      "to": "/docs/technologies/test-tools/detox/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents",
+      "to": "/docs/reference/core-api/devkit/documents",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/nx_devkit",
+      "to": "/docs/reference/core-api/devkit/documents/nx_devkit",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ngcli_adapter",
+      "to": "/docs/reference/core-api/devkit/documents/ngcli_adapter",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/AggregateCreateNodesError",
+      "to": "/docs/reference/core-api/devkit/documents/AggregateCreateNodesError",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/AsyncIteratorExecutor",
+      "to": "/docs/reference/core-api/devkit/documents/AsyncIteratorExecutor",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ChangeType",
+      "to": "/docs/reference/core-api/devkit/documents/ChangeType",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateDependencies",
+      "to": "/docs/reference/core-api/devkit/documents/CreateDependencies",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateDependenciesContext",
+      "to": "/docs/reference/core-api/devkit/documents/CreateDependenciesContext",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateMetadata",
+      "to": "/docs/reference/core-api/devkit/documents/CreateMetadata",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateMetadataContext",
+      "to": "/docs/reference/core-api/devkit/documents/CreateMetadataContext",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodes",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesContext",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesContext",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesContextV2",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesContextV2",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesFunction",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesFunction",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesFunctionV2",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesFunctionV2",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesResult",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesResult",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesResultV2",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesResultV2",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesV2",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesV2",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CustomHasher",
+      "to": "/docs/reference/core-api/devkit/documents/CustomHasher",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/DefaultTasksRunnerOptions",
+      "to": "/docs/reference/core-api/devkit/documents/DefaultTasksRunnerOptions",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/DependencyType",
+      "to": "/docs/reference/core-api/devkit/documents/DependencyType",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/DynamicDependency",
+      "to": "/docs/reference/core-api/devkit/documents/DynamicDependency",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Executor",
+      "to": "/docs/reference/core-api/devkit/documents/Executor",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ExecutorContext",
+      "to": "/docs/reference/core-api/devkit/documents/ExecutorContext",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ExecutorsJson",
+      "to": "/docs/reference/core-api/devkit/documents/ExecutorsJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ExpandedPluginConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/ExpandedPluginConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/FileChange",
+      "to": "/docs/reference/core-api/devkit/documents/FileChange",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/FileData",
+      "to": "/docs/reference/core-api/devkit/documents/FileData",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/FileMap",
+      "to": "/docs/reference/core-api/devkit/documents/FileMap",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Generator",
+      "to": "/docs/reference/core-api/devkit/documents/Generator",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/GeneratorCallback",
+      "to": "/docs/reference/core-api/devkit/documents/GeneratorCallback",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/GeneratorsJson",
+      "to": "/docs/reference/core-api/devkit/documents/GeneratorsJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/GraphJson",
+      "to": "/docs/reference/core-api/devkit/documents/GraphJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Hash",
+      "to": "/docs/reference/core-api/devkit/documents/Hash",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Hasher",
+      "to": "/docs/reference/core-api/devkit/documents/Hasher",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/HasherContext",
+      "to": "/docs/reference/core-api/devkit/documents/HasherContext",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ImplicitDependency",
+      "to": "/docs/reference/core-api/devkit/documents/ImplicitDependency",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ImplicitDependencyEntry",
+      "to": "/docs/reference/core-api/devkit/documents/ImplicitDependencyEntry",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ImplicitJsonSubsetDependency",
+      "to": "/docs/reference/core-api/devkit/documents/ImplicitJsonSubsetDependency",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/JsonParseOptions",
+      "to": "/docs/reference/core-api/devkit/documents/JsonParseOptions",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/JsonSerializeOptions",
+      "to": "/docs/reference/core-api/devkit/documents/JsonSerializeOptions",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Migration",
+      "to": "/docs/reference/core-api/devkit/documents/Migration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/MigrationsJson",
+      "to": "/docs/reference/core-api/devkit/documents/MigrationsJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/NX_VERSION",
+      "to": "/docs/reference/core-api/devkit/documents/NX_VERSION",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/NxAffectedConfig",
+      "to": "/docs/reference/core-api/devkit/documents/NxAffectedConfig",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/NxJsonConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/NxJsonConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/NxPlugin",
+      "to": "/docs/reference/core-api/devkit/documents/NxPlugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/NxPluginV2",
+      "to": "/docs/reference/core-api/devkit/documents/NxPluginV2",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/OverwriteStrategy",
+      "to": "/docs/reference/core-api/devkit/documents/OverwriteStrategy",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PackageManager",
+      "to": "/docs/reference/core-api/devkit/documents/PackageManager",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PluginConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/PluginConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PostTasksExecution",
+      "to": "/docs/reference/core-api/devkit/documents/PostTasksExecution",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PostTasksExecutionContext",
+      "to": "/docs/reference/core-api/devkit/documents/PostTasksExecutionContext",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PreTasksExecution",
+      "to": "/docs/reference/core-api/devkit/documents/PreTasksExecution",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PreTasksExecutionContext",
+      "to": "/docs/reference/core-api/devkit/documents/PreTasksExecutionContext",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectFileMap",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectFileMap",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectGraph",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectGraph",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectGraphDependency",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectGraphDependency",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectGraphExternalNode",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectGraphExternalNode",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectGraphProjectNode",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectGraphProjectNode",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectType",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectType",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectsConfigurations",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectsConfigurations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectsMetadata",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectsMetadata",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PromiseExecutor",
+      "to": "/docs/reference/core-api/devkit/documents/PromiseExecutor",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/README",
+      "to": "/docs/reference/core-api/devkit/documents/README",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/RawProjectGraphDependency",
+      "to": "/docs/reference/core-api/devkit/documents/RawProjectGraphDependency",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/RemoteCache",
+      "to": "/docs/reference/core-api/devkit/documents/RemoteCache",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/StaleProjectGraphCacheError",
+      "to": "/docs/reference/core-api/devkit/documents/StaleProjectGraphCacheError",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/StaticDependency",
+      "to": "/docs/reference/core-api/devkit/documents/StaticDependency",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/StringChange",
+      "to": "/docs/reference/core-api/devkit/documents/StringChange",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/StringDeletion",
+      "to": "/docs/reference/core-api/devkit/documents/StringDeletion",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/StringInsertion",
+      "to": "/docs/reference/core-api/devkit/documents/StringInsertion",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Target",
+      "to": "/docs/reference/core-api/devkit/documents/Target",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TargetConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/TargetConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TargetDefaults",
+      "to": "/docs/reference/core-api/devkit/documents/TargetDefaults",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TargetDependencyConfig",
+      "to": "/docs/reference/core-api/devkit/documents/TargetDependencyConfig",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Task",
+      "to": "/docs/reference/core-api/devkit/documents/Task",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TaskGraph",
+      "to": "/docs/reference/core-api/devkit/documents/TaskGraph",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TaskGraphExecutor",
+      "to": "/docs/reference/core-api/devkit/documents/TaskGraphExecutor",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TaskHasher",
+      "to": "/docs/reference/core-api/devkit/documents/TaskHasher",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TaskResult",
+      "to": "/docs/reference/core-api/devkit/documents/TaskResult",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TaskResults",
+      "to": "/docs/reference/core-api/devkit/documents/TaskResults",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ToJSOptions",
+      "to": "/docs/reference/core-api/devkit/documents/ToJSOptions",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Tree",
+      "to": "/docs/reference/core-api/devkit/documents/Tree",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Workspace",
+      "to": "/docs/reference/core-api/devkit/documents/Workspace",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/WorkspaceJsonConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/WorkspaceJsonConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/addDependenciesToPackageJson",
+      "to": "/docs/reference/core-api/devkit/documents/addDependenciesToPackageJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/addProjectConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/addProjectConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/applyChangesToString",
+      "to": "/docs/reference/core-api/devkit/documents/applyChangesToString",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/cacheDir",
+      "to": "/docs/reference/core-api/devkit/documents/cacheDir",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/convertNxExecutor",
+      "to": "/docs/reference/core-api/devkit/documents/convertNxExecutor",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/convertNxGenerator",
+      "to": "/docs/reference/core-api/devkit/documents/convertNxGenerator",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/createNodesFromFiles",
+      "to": "/docs/reference/core-api/devkit/documents/createNodesFromFiles",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/createProjectFileMapUsingProjectGraph",
+      "to": "/docs/reference/core-api/devkit/documents/createProjectFileMapUsingProjectGraph",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/createProjectGraphAsync",
+      "to": "/docs/reference/core-api/devkit/documents/createProjectGraphAsync",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/defaultTasksRunner",
+      "to": "/docs/reference/core-api/devkit/documents/defaultTasksRunner",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/detectPackageManager",
+      "to": "/docs/reference/core-api/devkit/documents/detectPackageManager",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ensurePackage",
+      "to": "/docs/reference/core-api/devkit/documents/ensurePackage",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/extractLayoutDirectory",
+      "to": "/docs/reference/core-api/devkit/documents/extractLayoutDirectory",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/formatFiles",
+      "to": "/docs/reference/core-api/devkit/documents/formatFiles",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/generateFiles",
+      "to": "/docs/reference/core-api/devkit/documents/generateFiles",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/getOutputsForTargetAndConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/getOutputsForTargetAndConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/getPackageManagerCommand",
+      "to": "/docs/reference/core-api/devkit/documents/getPackageManagerCommand",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/getPackageManagerVersion",
+      "to": "/docs/reference/core-api/devkit/documents/getPackageManagerVersion",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/getProjects",
+      "to": "/docs/reference/core-api/devkit/documents/getProjects",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/getWorkspaceLayout",
+      "to": "/docs/reference/core-api/devkit/documents/getWorkspaceLayout",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/glob",
+      "to": "/docs/reference/core-api/devkit/documents/glob",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/globAsync",
+      "to": "/docs/reference/core-api/devkit/documents/globAsync",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/hashArray",
+      "to": "/docs/reference/core-api/devkit/documents/hashArray",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/installPackagesTask",
+      "to": "/docs/reference/core-api/devkit/documents/installPackagesTask",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/isDaemonEnabled",
+      "to": "/docs/reference/core-api/devkit/documents/isDaemonEnabled",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/isWorkspacesEnabled",
+      "to": "/docs/reference/core-api/devkit/documents/isWorkspacesEnabled",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/joinPathFragments",
+      "to": "/docs/reference/core-api/devkit/documents/joinPathFragments",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/logger",
+      "to": "/docs/reference/core-api/devkit/documents/logger",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/moveFilesToNewDirectory",
+      "to": "/docs/reference/core-api/devkit/documents/moveFilesToNewDirectory",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/names",
+      "to": "/docs/reference/core-api/devkit/documents/names",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ngcli_adapter/NxScopedHost",
+      "to": "/docs/reference/core-api/devkit/documents/ngcli_adapter/NxScopedHost",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ngcli_adapter/README",
+      "to": "/docs/reference/core-api/devkit/documents/ngcli_adapter/README",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ngcli_adapter/mockSchematicsForTesting",
+      "to": "/docs/reference/core-api/devkit/documents/ngcli_adapter/mockSchematicsForTesting",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ngcli_adapter/wrapAngularDevkitSchematic",
+      "to": "/docs/reference/core-api/devkit/documents/ngcli_adapter/wrapAngularDevkitSchematic",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/normalizePath",
+      "to": "/docs/reference/core-api/devkit/documents/normalizePath",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/offsetFromRoot",
+      "to": "/docs/reference/core-api/devkit/documents/offsetFromRoot",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/output",
+      "to": "/docs/reference/core-api/devkit/documents/output",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/parseJson",
+      "to": "/docs/reference/core-api/devkit/documents/parseJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/parseTargetString",
+      "to": "/docs/reference/core-api/devkit/documents/parseTargetString",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readCachedProjectGraph",
+      "to": "/docs/reference/core-api/devkit/documents/readCachedProjectGraph",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readJson",
+      "to": "/docs/reference/core-api/devkit/documents/readJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readJsonFile",
+      "to": "/docs/reference/core-api/devkit/documents/readJsonFile",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readNxJson",
+      "to": "/docs/reference/core-api/devkit/documents/readNxJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readProjectConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/readProjectConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readProjectsConfigurationFromProjectGraph",
+      "to": "/docs/reference/core-api/devkit/documents/readProjectsConfigurationFromProjectGraph",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readTargetOptions",
+      "to": "/docs/reference/core-api/devkit/documents/readTargetOptions",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/removeDependenciesFromPackageJson",
+      "to": "/docs/reference/core-api/devkit/documents/removeDependenciesFromPackageJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/removeProjectConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/removeProjectConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/reverse",
+      "to": "/docs/reference/core-api/devkit/documents/reverse",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/runExecutor",
+      "to": "/docs/reference/core-api/devkit/documents/runExecutor",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/runTasksInSerial",
+      "to": "/docs/reference/core-api/devkit/documents/runTasksInSerial",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/serializeJson",
+      "to": "/docs/reference/core-api/devkit/documents/serializeJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/stripIndents",
+      "to": "/docs/reference/core-api/devkit/documents/stripIndents",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/stripJsonComments",
+      "to": "/docs/reference/core-api/devkit/documents/stripJsonComments",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/targetToTargetString",
+      "to": "/docs/reference/core-api/devkit/documents/targetToTargetString",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/toJS",
+      "to": "/docs/reference/core-api/devkit/documents/toJS",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/updateJson",
+      "to": "/docs/reference/core-api/devkit/documents/updateJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/updateNxJson",
+      "to": "/docs/reference/core-api/devkit/documents/updateNxJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/updateProjectConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/updateProjectConfiguration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/updateTsConfigsToJs",
+      "to": "/docs/reference/core-api/devkit/documents/updateTsConfigsToJs",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/validateDependency",
+      "to": "/docs/reference/core-api/devkit/documents/validateDependency",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/visitNotIgnoredFiles",
+      "to": "/docs/reference/core-api/devkit/documents/visitNotIgnoredFiles",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/workspaceLayout",
+      "to": "/docs/reference/core-api/devkit/documents/workspaceLayout",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/workspaceRoot",
+      "to": "/docs/reference/core-api/devkit/documents/workspaceRoot",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/writeJson",
+      "to": "/docs/reference/core-api/devkit/documents/writeJson",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/writeJsonFile",
+      "to": "/docs/reference/core-api/devkit/documents/writeJsonFile",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/executors",
+      "to": "/docs/reference/core-api/devkit/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/generators",
+      "to": "/docs/reference/core-api/devkit/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/devkit/migrations",
+      "to": "/docs/reference/core-api/devkit/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/executors",
+      "to": "/docs/technologies/build-tools/esbuild/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/executors/esbuild",
+      "to": "/docs/technologies/build-tools/esbuild/api/executors/esbuild",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/generators",
+      "to": "/docs/technologies/build-tools/esbuild/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/generators/init",
+      "to": "/docs/technologies/build-tools/esbuild/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/esbuild/api/generators/configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/migrations",
+      "to": "/docs/technologies/build-tools/esbuild/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/api/executors",
+      "to": "/docs/technologies/eslint/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/api/executors/lint",
+      "to": "/docs/technologies/eslint/api/executors/lint",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/api/generators",
+      "to": "/docs/technologies/eslint/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/api/generators/init",
+      "to": "/docs/technologies/eslint/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/api/generators/workspace-rules-project",
+      "to": "/docs/technologies/eslint/api/generators/workspace-rules-project",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/api/generators/workspace-rule",
+      "to": "/docs/technologies/eslint/api/generators/workspace-rule",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/api/generators/convert-to-flat-config",
+      "to": "/docs/technologies/eslint/api/generators/convert-to-flat-config",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/eslint/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/api/migrations",
+      "to": "/docs/technologies/eslint/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/api/executors",
+      "to": "/docs/technologies/eslint/eslint-plugin/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/api/generators",
+      "to": "/docs/technologies/eslint/eslint-plugin/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/api/migrations",
+      "to": "/docs/technologies/eslint/eslint-plugin/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors",
+      "to": "/docs/technologies/react/expo/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/update",
+      "to": "/docs/technologies/react/expo/api/executors/update",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/build",
+      "to": "/docs/technologies/react/expo/api/executors/build",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/build-list",
+      "to": "/docs/technologies/react/expo/api/executors/build-list",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/run",
+      "to": "/docs/technologies/react/expo/api/executors/run",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/start",
+      "to": "/docs/technologies/react/expo/api/executors/start",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/sync-deps",
+      "to": "/docs/technologies/react/expo/api/executors/sync-deps",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/ensure-symlink",
+      "to": "/docs/technologies/react/expo/api/executors/ensure-symlink",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/prebuild",
+      "to": "/docs/technologies/react/expo/api/executors/prebuild",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/install",
+      "to": "/docs/technologies/react/expo/api/executors/install",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/export",
+      "to": "/docs/technologies/react/expo/api/executors/export",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/submit",
+      "to": "/docs/technologies/react/expo/api/executors/submit",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/serve",
+      "to": "/docs/technologies/react/expo/api/executors/serve",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/generators",
+      "to": "/docs/technologies/react/expo/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/generators/init",
+      "to": "/docs/technologies/react/expo/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/generators/application",
+      "to": "/docs/technologies/react/expo/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/generators/library",
+      "to": "/docs/technologies/react/expo/api/generators/library",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/generators/component",
+      "to": "/docs/technologies/react/expo/api/generators/component",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/react/expo/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/expo/api/migrations",
+      "to": "/docs/technologies/react/expo/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/express/api/executors",
+      "to": "/docs/technologies/node/express/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/express/api/generators",
+      "to": "/docs/technologies/node/express/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/express/api/generators/init",
+      "to": "/docs/technologies/node/express/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/express/api/generators/application",
+      "to": "/docs/technologies/node/express/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/express/api/migrations",
+      "to": "/docs/technologies/node/express/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/java/api/executors",
+      "to": "/docs/technologies/java/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/java/api/executors/gradle",
+      "to": "/docs/technologies/java/api/executors/gradle",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/java/api/generators",
+      "to": "/docs/technologies/java/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/java/api/generators/init",
+      "to": "/docs/technologies/java/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/java/api/generators/ci-workflow",
+      "to": "/docs/technologies/java/api/generators/ci-workflow",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/java/api/migrations",
+      "to": "/docs/technologies/java/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/executors",
+      "to": "/docs/technologies/test-tools/jest/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/executors/jest",
+      "to": "/docs/technologies/test-tools/jest/api/executors/jest",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/generators",
+      "to": "/docs/technologies/test-tools/jest/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/generators/init",
+      "to": "/docs/technologies/test-tools/jest/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/generators/configuration",
+      "to": "/docs/technologies/test-tools/jest/api/generators/configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/test-tools/jest/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/migrations",
+      "to": "/docs/technologies/test-tools/jest/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/executors",
+      "to": "/docs/technologies/typescript/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/executors/copy-workspace-modules",
+      "to": "/docs/technologies/typescript/api/executors/copy-workspace-modules",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/executors/tsc",
+      "to": "/docs/technologies/typescript/api/executors/tsc",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/executors/swc",
+      "to": "/docs/technologies/typescript/api/executors/swc",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/executors/node",
+      "to": "/docs/technologies/typescript/api/executors/node",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/executors/prune-lockfile",
+      "to": "/docs/technologies/typescript/api/executors/prune-lockfile",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/executors/release-publish",
+      "to": "/docs/technologies/typescript/api/executors/release-publish",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/executors/verdaccio",
+      "to": "/docs/technologies/typescript/api/executors/verdaccio",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/generators",
+      "to": "/docs/technologies/typescript/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/generators/library",
+      "to": "/docs/technologies/typescript/api/generators/library",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/generators/init",
+      "to": "/docs/technologies/typescript/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/generators/convert-to-swc",
+      "to": "/docs/technologies/typescript/api/generators/convert-to-swc",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/generators/release-version",
+      "to": "/docs/technologies/typescript/api/generators/release-version",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/generators/setup-verdaccio",
+      "to": "/docs/technologies/typescript/api/generators/setup-verdaccio",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/generators/setup-build",
+      "to": "/docs/technologies/typescript/api/generators/setup-build",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/generators/typescript-sync",
+      "to": "/docs/technologies/typescript/api/generators/typescript-sync",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/generators/setup-prettier",
+      "to": "/docs/technologies/typescript/api/generators/setup-prettier",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/typescript/api/migrations",
+      "to": "/docs/technologies/typescript/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/module-federation/api/executors",
+      "to": "/docs/technologies/module-federation/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/module-federation/api/generators",
+      "to": "/docs/technologies/module-federation/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/module-federation/api/migrations",
+      "to": "/docs/technologies/module-federation/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/executors",
+      "to": "/docs/technologies/node/nest/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators",
+      "to": "/docs/technologies/node/nest/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/application",
+      "to": "/docs/technologies/node/nest/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/init",
+      "to": "/docs/technologies/node/nest/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/library",
+      "to": "/docs/technologies/node/nest/api/generators/library",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/class",
+      "to": "/docs/technologies/node/nest/api/generators/class",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/controller",
+      "to": "/docs/technologies/node/nest/api/generators/controller",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/decorator",
+      "to": "/docs/technologies/node/nest/api/generators/decorator",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/filter",
+      "to": "/docs/technologies/node/nest/api/generators/filter",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/gateway",
+      "to": "/docs/technologies/node/nest/api/generators/gateway",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/guard",
+      "to": "/docs/technologies/node/nest/api/generators/guard",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/interceptor",
+      "to": "/docs/technologies/node/nest/api/generators/interceptor",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/interface",
+      "to": "/docs/technologies/node/nest/api/generators/interface",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/middleware",
+      "to": "/docs/technologies/node/nest/api/generators/middleware",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/module",
+      "to": "/docs/technologies/node/nest/api/generators/module",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/pipe",
+      "to": "/docs/technologies/node/nest/api/generators/pipe",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/provider",
+      "to": "/docs/technologies/node/nest/api/generators/provider",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/resolver",
+      "to": "/docs/technologies/node/nest/api/generators/resolver",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/resource",
+      "to": "/docs/technologies/node/nest/api/generators/resource",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/service",
+      "to": "/docs/technologies/node/nest/api/generators/service",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/nest/api/migrations",
+      "to": "/docs/technologies/node/nest/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/executors",
+      "to": "/docs/technologies/react/next/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/executors/build",
+      "to": "/docs/technologies/react/next/api/executors/build",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/executors/server",
+      "to": "/docs/technologies/react/next/api/executors/server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/generators",
+      "to": "/docs/technologies/react/next/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/generators/init",
+      "to": "/docs/technologies/react/next/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/generators/application",
+      "to": "/docs/technologies/react/next/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/generators/page",
+      "to": "/docs/technologies/react/next/api/generators/page",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/generators/component",
+      "to": "/docs/technologies/react/next/api/generators/component",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/generators/library",
+      "to": "/docs/technologies/react/next/api/generators/library",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/generators/custom-server",
+      "to": "/docs/technologies/react/next/api/generators/custom-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/generators/cypress-component-configuration",
+      "to": "/docs/technologies/react/next/api/generators/cypress-component-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/react/next/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/next/api/migrations",
+      "to": "/docs/technologies/react/next/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/api/executors",
+      "to": "/docs/technologies/node/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/api/generators",
+      "to": "/docs/technologies/node/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/api/generators/init",
+      "to": "/docs/technologies/node/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/api/generators/application",
+      "to": "/docs/technologies/node/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/api/generators/library",
+      "to": "/docs/technologies/node/api/generators/library",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/api/generators/setup-docker",
+      "to": "/docs/technologies/node/api/generators/setup-docker",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/node/api/migrations",
+      "to": "/docs/technologies/node/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/executors",
+      "to": "/docs/technologies/vue/nuxt/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/generators",
+      "to": "/docs/technologies/vue/nuxt/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/generators/init",
+      "to": "/docs/technologies/vue/nuxt/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/generators/application",
+      "to": "/docs/technologies/vue/nuxt/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/generators/storybook-configuration",
+      "to": "/docs/technologies/vue/nuxt/api/generators/storybook-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/migrations",
+      "to": "/docs/technologies/vue/nuxt/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents",
+      "to": "/docs/reference/core-api/nx/documents",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/create-nx-workspace",
+      "to": "/docs/reference/core-api/nx/documents/create-nx-workspace",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/init",
+      "to": "/docs/reference/core-api/nx/documents/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/generate",
+      "to": "/docs/reference/core-api/nx/documents/generate",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/run",
+      "to": "/docs/reference/core-api/nx/documents/run",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/daemon",
+      "to": "/docs/reference/core-api/nx/documents/daemon",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/dep-graph",
+      "to": "/docs/reference/core-api/nx/documents/dep-graph",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/run-many",
+      "to": "/docs/reference/core-api/nx/documents/run-many",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/affected",
+      "to": "/docs/reference/core-api/nx/documents/affected",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/format-check",
+      "to": "/docs/reference/core-api/nx/documents/format-check",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/format-write",
+      "to": "/docs/reference/core-api/nx/documents/format-write",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/migrate",
+      "to": "/docs/reference/core-api/nx/documents/migrate",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/report",
+      "to": "/docs/reference/core-api/nx/documents/report",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/list",
+      "to": "/docs/reference/core-api/nx/documents/list",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/connect-to-nx-cloud",
+      "to": "/docs/reference/core-api/nx/documents/connect-to-nx-cloud",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/reset",
+      "to": "/docs/reference/core-api/nx/documents/reset",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/repair",
+      "to": "/docs/reference/core-api/nx/documents/repair",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/sync",
+      "to": "/docs/reference/core-api/nx/documents/sync",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/sync-check",
+      "to": "/docs/reference/core-api/nx/documents/sync-check",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/import",
+      "to": "/docs/reference/core-api/nx/documents/import",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/exec",
+      "to": "/docs/reference/core-api/nx/documents/exec",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/watch",
+      "to": "/docs/reference/core-api/nx/documents/watch",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/show",
+      "to": "/docs/reference/core-api/nx/documents/show",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/view-logs",
+      "to": "/docs/reference/core-api/nx/documents/view-logs",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/release",
+      "to": "/docs/reference/core-api/nx/documents/release",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/add",
+      "to": "/docs/reference/core-api/nx/documents/add",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/mcp",
+      "to": "/docs/reference/core-api/nx/documents/mcp",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/login",
+      "to": "/docs/reference/core-api/nx/documents/login",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/logout",
+      "to": "/docs/reference/core-api/nx/documents/logout",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/fix-ci",
+      "to": "/docs/reference/core-api/nx/documents/fix-ci",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/record",
+      "to": "/docs/reference/core-api/nx/documents/record",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/documents/start-ci-run",
+      "to": "/docs/reference/core-api/nx/documents/start-ci-run",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/executors",
+      "to": "/docs/reference/core-api/nx/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/executors/noop",
+      "to": "/docs/reference/core-api/nx/executors/noop",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/executors/run-commands",
+      "to": "/docs/reference/core-api/nx/executors/run-commands",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/executors/run-script",
+      "to": "/docs/reference/core-api/nx/executors/run-script",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/generators",
+      "to": "/docs/reference/core-api/nx/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/generators/connect-to-nx-cloud",
+      "to": "/docs/reference/core-api/nx/generators/connect-to-nx-cloud",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/nx/migrations",
+      "to": "/docs/reference/core-api/nx/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/executors",
+      "to": "/docs/technologies/test-tools/playwright/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/executors/playwright",
+      "to": "/docs/technologies/test-tools/playwright/api/executors/playwright",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/generators",
+      "to": "/docs/technologies/test-tools/playwright/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/generators/configuration",
+      "to": "/docs/technologies/test-tools/playwright/api/generators/configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/generators/init",
+      "to": "/docs/technologies/test-tools/playwright/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/test-tools/playwright/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/migrations",
+      "to": "/docs/technologies/test-tools/playwright/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/executors",
+      "to": "/docs/reference/core-api/plugin/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/generators",
+      "to": "/docs/reference/core-api/plugin/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/plugin",
+      "to": "/docs/reference/core-api/plugin/generators/plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/create-package",
+      "to": "/docs/reference/core-api/plugin/generators/create-package",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/e2e-project",
+      "to": "/docs/reference/core-api/plugin/generators/e2e-project",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/migration",
+      "to": "/docs/reference/core-api/plugin/generators/migration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/generator",
+      "to": "/docs/reference/core-api/plugin/generators/generator",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/executor",
+      "to": "/docs/reference/core-api/plugin/generators/executor",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/plugin-lint-checks",
+      "to": "/docs/reference/core-api/plugin/generators/plugin-lint-checks",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/preset",
+      "to": "/docs/reference/core-api/plugin/generators/preset",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/plugin/migrations",
+      "to": "/docs/reference/core-api/plugin/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/executors",
+      "to": "/docs/technologies/react/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/executors/module-federation-dev-server",
+      "to": "/docs/technologies/react/api/executors/module-federation-dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/executors/module-federation-ssr-dev-server",
+      "to": "/docs/technologies/react/api/executors/module-federation-ssr-dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/executors/module-federation-static-server",
+      "to": "/docs/technologies/react/api/executors/module-federation-static-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators",
+      "to": "/docs/technologies/react/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/init",
+      "to": "/docs/technologies/react/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/application",
+      "to": "/docs/technologies/react/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/library",
+      "to": "/docs/technologies/react/api/generators/library",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/component",
+      "to": "/docs/technologies/react/api/generators/component",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/redux",
+      "to": "/docs/technologies/react/api/generators/redux",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/storybook-configuration",
+      "to": "/docs/technologies/react/api/generators/storybook-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/component-story",
+      "to": "/docs/technologies/react/api/generators/component-story",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/stories",
+      "to": "/docs/technologies/react/api/generators/stories",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/hook",
+      "to": "/docs/technologies/react/api/generators/hook",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/host",
+      "to": "/docs/technologies/react/api/generators/host",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/remote",
+      "to": "/docs/technologies/react/api/generators/remote",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/cypress-component-configuration",
+      "to": "/docs/technologies/react/api/generators/cypress-component-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/component-test",
+      "to": "/docs/technologies/react/api/generators/component-test",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/setup-tailwind",
+      "to": "/docs/technologies/react/api/generators/setup-tailwind",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/setup-ssr",
+      "to": "/docs/technologies/react/api/generators/setup-ssr",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/generators/federate-module",
+      "to": "/docs/technologies/react/api/generators/federate-module",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/api/migrations",
+      "to": "/docs/technologies/react/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors",
+      "to": "/docs/technologies/react/react-native/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/run-android",
+      "to": "/docs/technologies/react/react-native/api/executors/run-android",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/run-ios",
+      "to": "/docs/technologies/react/react-native/api/executors/run-ios",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/bundle",
+      "to": "/docs/technologies/react/react-native/api/executors/bundle",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/build-android",
+      "to": "/docs/technologies/react/react-native/api/executors/build-android",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/build-ios",
+      "to": "/docs/technologies/react/react-native/api/executors/build-ios",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/start",
+      "to": "/docs/technologies/react/react-native/api/executors/start",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/sync-deps",
+      "to": "/docs/technologies/react/react-native/api/executors/sync-deps",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/ensure-symlink",
+      "to": "/docs/technologies/react/react-native/api/executors/ensure-symlink",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/storybook",
+      "to": "/docs/technologies/react/react-native/api/executors/storybook",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/pod-install",
+      "to": "/docs/technologies/react/react-native/api/executors/pod-install",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/upgrade",
+      "to": "/docs/technologies/react/react-native/api/executors/upgrade",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators",
+      "to": "/docs/technologies/react/react-native/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/init",
+      "to": "/docs/technologies/react/react-native/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/application",
+      "to": "/docs/technologies/react/react-native/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/library",
+      "to": "/docs/technologies/react/react-native/api/generators/library",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/component",
+      "to": "/docs/technologies/react/react-native/api/generators/component",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/web-configuration",
+      "to": "/docs/technologies/react/react-native/api/generators/web-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/react/react-native/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/react-native/api/migrations",
+      "to": "/docs/technologies/react/react-native/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/executors",
+      "to": "/docs/technologies/react/remix/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/executors/serve",
+      "to": "/docs/technologies/react/remix/api/executors/serve",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/executors/build",
+      "to": "/docs/technologies/react/remix/api/executors/build",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators",
+      "to": "/docs/technologies/react/remix/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/preset",
+      "to": "/docs/technologies/react/remix/api/generators/preset",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/setup",
+      "to": "/docs/technologies/react/remix/api/generators/setup",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/application",
+      "to": "/docs/technologies/react/remix/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/cypress-component-configuration",
+      "to": "/docs/technologies/react/remix/api/generators/cypress-component-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/library",
+      "to": "/docs/technologies/react/remix/api/generators/library",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/init",
+      "to": "/docs/technologies/react/remix/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/route",
+      "to": "/docs/technologies/react/remix/api/generators/route",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/resource-route",
+      "to": "/docs/technologies/react/remix/api/generators/resource-route",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/action",
+      "to": "/docs/technologies/react/remix/api/generators/action",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/loader",
+      "to": "/docs/technologies/react/remix/api/generators/loader",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/style",
+      "to": "/docs/technologies/react/remix/api/generators/style",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/setup-tailwind",
+      "to": "/docs/technologies/react/remix/api/generators/setup-tailwind",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/storybook-configuration",
+      "to": "/docs/technologies/react/remix/api/generators/storybook-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/meta",
+      "to": "/docs/technologies/react/remix/api/generators/meta",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/error-boundary",
+      "to": "/docs/technologies/react/remix/api/generators/error-boundary",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/react/remix/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/react/remix/api/migrations",
+      "to": "/docs/technologies/react/remix/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/executors",
+      "to": "/docs/technologies/build-tools/rollup/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/executors/rollup",
+      "to": "/docs/technologies/build-tools/rollup/api/executors/rollup",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/generators",
+      "to": "/docs/technologies/build-tools/rollup/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/generators/init",
+      "to": "/docs/technologies/build-tools/rollup/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/rollup/api/generators/configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/build-tools/rollup/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/migrations",
+      "to": "/docs/technologies/build-tools/rollup/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api/executors",
+      "to": "/docs/technologies/build-tools/rsbuild/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api/generators",
+      "to": "/docs/technologies/build-tools/rsbuild/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api/generators/init",
+      "to": "/docs/technologies/build-tools/rsbuild/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/rsbuild/api/generators/configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api/migrations",
+      "to": "/docs/technologies/build-tools/rsbuild/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors",
+      "to": "/docs/technologies/build-tools/rspack/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/rspack",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/rspack",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/dev-server",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/ssr-dev-server",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/ssr-dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/module-federation-dev-server",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/module-federation-dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/module-federation-ssr-dev-server",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/module-federation-ssr-dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/module-federation-static-server",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/module-federation-static-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators",
+      "to": "/docs/technologies/build-tools/rspack/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/init",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/preset",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/preset",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/application",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/convert-webpack",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/convert-webpack",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/convert-config-to-rspack-plugin",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/convert-config-to-rspack-plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/migrations",
+      "to": "/docs/technologies/build-tools/rspack/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/executors",
+      "to": "/docs/technologies/test-tools/storybook/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/executors/storybook",
+      "to": "/docs/technologies/test-tools/storybook/api/executors/storybook",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/executors/build",
+      "to": "/docs/technologies/test-tools/storybook/api/executors/build",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators",
+      "to": "/docs/technologies/test-tools/storybook/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators/init",
+      "to": "/docs/technologies/test-tools/storybook/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators/configuration",
+      "to": "/docs/technologies/test-tools/storybook/api/generators/configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/test-tools/storybook/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators/migrate-8",
+      "to": "/docs/technologies/test-tools/storybook/api/generators/migrate-8",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators/migrate-9",
+      "to": "/docs/technologies/test-tools/storybook/api/generators/migrate-9",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/migrations",
+      "to": "/docs/technologies/test-tools/storybook/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/executors",
+      "to": "/docs/technologies/build-tools/vite/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/executors/dev-server",
+      "to": "/docs/technologies/build-tools/vite/api/executors/dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/executors/build",
+      "to": "/docs/technologies/build-tools/vite/api/executors/build",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/executors/test",
+      "to": "/docs/technologies/build-tools/vite/api/executors/test",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/executors/preview-server",
+      "to": "/docs/technologies/build-tools/vite/api/executors/preview-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators",
+      "to": "/docs/technologies/build-tools/vite/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators/init",
+      "to": "/docs/technologies/build-tools/vite/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/vite/api/generators/configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators/setup-paths-plugin",
+      "to": "/docs/technologies/build-tools/vite/api/generators/setup-paths-plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/build-tools/vite/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators/vitest",
+      "to": "/docs/technologies/build-tools/vite/api/generators/vitest",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/migrations",
+      "to": "/docs/technologies/build-tools/vite/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api/executors",
+      "to": "/docs/technologies/vue/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api/generators",
+      "to": "/docs/technologies/vue/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api/generators/init",
+      "to": "/docs/technologies/vue/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api/generators/application",
+      "to": "/docs/technologies/vue/api/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api/generators/library",
+      "to": "/docs/technologies/vue/api/generators/library",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api/generators/component",
+      "to": "/docs/technologies/vue/api/generators/component",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api/generators/setup-tailwind",
+      "to": "/docs/technologies/vue/api/generators/setup-tailwind",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api/generators/storybook-configuration",
+      "to": "/docs/technologies/vue/api/generators/storybook-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api/generators/stories",
+      "to": "/docs/technologies/vue/api/generators/stories",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/vue/api/migrations",
+      "to": "/docs/technologies/vue/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/web/executors",
+      "to": "/docs/reference/core-api/web/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/web/executors/file-server",
+      "to": "/docs/reference/core-api/web/executors/file-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/web/generators",
+      "to": "/docs/reference/core-api/web/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/web/generators/init",
+      "to": "/docs/reference/core-api/web/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/web/generators/application",
+      "to": "/docs/reference/core-api/web/generators/application",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/web/generators/static-config",
+      "to": "/docs/reference/core-api/web/generators/static-config",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/web/migrations",
+      "to": "/docs/reference/core-api/web/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/executors",
+      "to": "/docs/technologies/build-tools/webpack/api/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/executors/webpack",
+      "to": "/docs/technologies/build-tools/webpack/api/executors/webpack",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/executors/dev-server",
+      "to": "/docs/technologies/build-tools/webpack/api/executors/dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/executors/ssr-dev-server",
+      "to": "/docs/technologies/build-tools/webpack/api/executors/ssr-dev-server",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/generators",
+      "to": "/docs/technologies/build-tools/webpack/api/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/generators/init",
+      "to": "/docs/technologies/build-tools/webpack/api/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/webpack/api/generators/configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/generators/convert-config-to-webpack-plugin",
+      "to": "/docs/technologies/build-tools/webpack/api/generators/convert-config-to-webpack-plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/build-tools/webpack/api/generators/convert-to-inferred",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/migrations",
+      "to": "/docs/technologies/build-tools/webpack/api/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/documents",
+      "to": "/docs/reference/core-api/workspace/documents",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/documents/overview",
+      "to": "/docs/reference/core-api/workspace/documents/overview",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/documents/nx-nodejs-typescript-version-matrix",
+      "to": "/docs/reference/core-api/workspace/documents/nx-nodejs-typescript-version-matrix",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/executors",
+      "to": "/docs/reference/core-api/workspace/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/executors/counter",
+      "to": "/docs/reference/core-api/workspace/executors/counter",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators",
+      "to": "/docs/reference/core-api/workspace/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/preset",
+      "to": "/docs/reference/core-api/workspace/generators/preset",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/move",
+      "to": "/docs/reference/core-api/workspace/generators/move",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/remove",
+      "to": "/docs/reference/core-api/workspace/generators/remove",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/convert-to-monorepo",
+      "to": "/docs/reference/core-api/workspace/generators/convert-to-monorepo",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/new",
+      "to": "/docs/reference/core-api/workspace/generators/new",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/run-commands",
+      "to": "/docs/reference/core-api/workspace/generators/run-commands",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/fix-configuration",
+      "to": "/docs/reference/core-api/workspace/generators/fix-configuration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/npm-package",
+      "to": "/docs/reference/core-api/workspace/generators/npm-package",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/ci-workflow",
+      "to": "/docs/reference/core-api/workspace/generators/ci-workflow",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/infer-targets",
+      "to": "/docs/reference/core-api/workspace/generators/infer-targets",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/workspace/migrations",
+      "to": "/docs/reference/core-api/workspace/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/azure-cache/executors",
+      "to": "/docs/reference/core-api/azure-cache/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/azure-cache/generators",
+      "to": "/docs/reference/core-api/azure-cache/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/azure-cache/migrations",
+      "to": "/docs/reference/core-api/azure-cache/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/documents",
+      "to": "/docs/reference/core-api/conformance/documents",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/documents/overview",
+      "to": "/docs/reference/core-api/conformance/documents/overview",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/documents/create-conformance-rule",
+      "to": "/docs/reference/core-api/conformance/documents/create-conformance-rule",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/executors",
+      "to": "/docs/reference/core-api/conformance/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/executors/bundle-rules",
+      "to": "/docs/reference/core-api/conformance/executors/bundle-rules",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/generators",
+      "to": "/docs/reference/core-api/conformance/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/generators/create-rule",
+      "to": "/docs/reference/core-api/conformance/generators/create-rule",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/generators/preset",
+      "to": "/docs/reference/core-api/conformance/generators/preset",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/conformance/migrations",
+      "to": "/docs/reference/core-api/conformance/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/owners/executors",
+      "to": "/docs/reference/core-api/owners/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/owners/generators",
+      "to": "/docs/reference/core-api/owners/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/owners/generators/init",
+      "to": "/docs/reference/core-api/owners/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/owners/generators/sync-codeowners-file",
+      "to": "/docs/reference/core-api/owners/generators/sync-codeowners-file",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/owners/migrations",
+      "to": "/docs/reference/core-api/owners/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/gcs-cache/executors",
+      "to": "/docs/reference/core-api/gcs-cache/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/gcs-cache/generators",
+      "to": "/docs/reference/core-api/gcs-cache/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/gcs-cache/migrations",
+      "to": "/docs/reference/core-api/gcs-cache/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/s3-cache/executors",
+      "to": "/docs/reference/core-api/s3-cache/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/s3-cache/generators",
+      "to": "/docs/reference/core-api/s3-cache/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/s3-cache/migrations",
+      "to": "/docs/reference/core-api/s3-cache/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache/executors",
+      "to": "/docs/reference/core-api/shared-fs-cache/executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache/generators",
+      "to": "/docs/reference/core-api/shared-fs-cache/generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache/generators/init",
+      "to": "/docs/reference/core-api/shared-fs-cache/generators/init",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache/migrations",
+      "to": "/docs/reference/core-api/shared-fs-cache/migrations",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/getting-started",
+      "to": "/docs/ci/getting-started",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/getting-started/intro",
+      "to": "/docs/ci/getting-started/intro",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/features",
+      "to": "/docs/ci/features",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/features/self-healing-ci",
+      "to": "/docs/ci/features/self-healing-ci",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/features/remote-cache",
+      "to": "/docs/ci/features/remote-cache",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/features/distribute-task-execution",
+      "to": "/docs/ci/features/distribute-task-execution",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/features/affected",
+      "to": "/docs/ci/features/affected",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/features/dynamic-agents",
+      "to": "/docs/ci/features/dynamic-agents",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/features/split-e2e-tasks",
+      "to": "/docs/ci/features/split-e2e-tasks",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/features/flaky-tasks",
+      "to": "/docs/ci/features/flaky-tasks",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/features/explain-with-ai",
+      "to": "/docs/ci/features/explain-with-ai",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/features/github-integration",
+      "to": "/docs/ci/features/github-integration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/concepts",
+      "to": "/docs/ci/concepts",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/concepts/building-blocks-fast-ci",
+      "to": "/docs/ci/concepts/building-blocks-fast-ci",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/concepts/reduce-waste",
+      "to": "/docs/ci/concepts/reduce-waste",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/concepts/parallelization-distribution",
+      "to": "/docs/ci/concepts/parallelization-distribution",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/concepts/cache-security",
+      "to": "/docs/ci/concepts/cache-security",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/concepts/heartbeat",
+      "to": "/docs/ci/concepts/heartbeat",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/concepts/nx-cloud-ai",
+      "to": "/docs/ci/concepts/nx-cloud-ai",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes",
+      "to": "/docs/ci/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/improving-ttg",
+      "to": "/docs/ci/recipes/improving-ttg",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/set-up",
+      "to": "/docs/ci/recipes/set-up",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-azure",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-azure",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-circle-ci",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-circle-ci",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-github-actions",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-github-actions",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-jenkins",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-jenkins",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-gitlab",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-gitlab",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-bitbucket-pipelines",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-bitbucket-pipelines",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/security",
+      "to": "/docs/ci/recipes/security",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/security/google-auth",
+      "to": "/docs/ci/recipes/security/google-auth",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/security/access-tokens",
+      "to": "/docs/ci/recipes/security/access-tokens",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/security/personal-access-tokens",
+      "to": "/docs/ci/recipes/security/personal-access-tokens",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/security/encryption",
+      "to": "/docs/ci/recipes/security/encryption",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/source-control-integration",
+      "to": "/docs/ci/recipes/source-control-integration",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/source-control-integration/github",
+      "to": "/docs/ci/recipes/source-control-integration/github",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/source-control-integration/bitbucket",
+      "to": "/docs/ci/recipes/source-control-integration/bitbucket",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/source-control-integration/gitlab",
+      "to": "/docs/ci/recipes/source-control-integration/gitlab",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/source-control-integration/azure-devops",
+      "to": "/docs/ci/recipes/source-control-integration/azure-devops",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/dte",
+      "to": "/docs/ci/recipes/dte",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/dte/github-dte",
+      "to": "/docs/ci/recipes/dte/github-dte",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/dte/circle-ci-dte",
+      "to": "/docs/ci/recipes/dte/circle-ci-dte",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/dte/azure-dte",
+      "to": "/docs/ci/recipes/dte/azure-dte",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/dte/bitbucket-dte",
+      "to": "/docs/ci/recipes/dte/bitbucket-dte",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/dte/gitlab-dte",
+      "to": "/docs/ci/recipes/dte/gitlab-dte",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/dte/jenkins-dte",
+      "to": "/docs/ci/recipes/dte/jenkins-dte",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise",
+      "to": "/docs/ci/recipes/enterprise",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant",
+      "to": "/docs/ci/recipes/enterprise/single-tenant",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/overview",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/overview",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/auth-github",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/auth-github",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/auth-gitlab",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/auth-gitlab",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/auth-bitbucket",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/auth-bitbucket",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/auth-bitbucket-data-center",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/auth-bitbucket-data-center",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/auth-saml",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/auth-saml",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/custom-github-app",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/custom-github-app",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/conformance",
+      "to": "/docs/ci/recipes/enterprise/conformance",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/conformance/configure-conformance-rules-in-nx-cloud",
+      "to": "/docs/ci/recipes/enterprise/conformance/configure-conformance-rules-in-nx-cloud",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/conformance/publish-conformance-rules-to-nx-cloud",
+      "to": "/docs/ci/recipes/enterprise/conformance/publish-conformance-rules-to-nx-cloud",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/polygraph",
+      "to": "/docs/ci/recipes/enterprise/polygraph",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/metadata-only-workspace",
+      "to": "/docs/ci/recipes/enterprise/metadata-only-workspace",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/enterprise/custom-workflows",
+      "to": "/docs/ci/recipes/enterprise/custom-workflows",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/other",
+      "to": "/docs/ci/recipes/other",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/other/record-commands",
+      "to": "/docs/ci/recipes/other/record-commands",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/other/ci-deployment",
+      "to": "/docs/ci/recipes/other/ci-deployment",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/recipes/other/cipe-affected-project-graph",
+      "to": "/docs/ci/recipes/other/cipe-affected-project-graph",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/reference",
+      "to": "/docs/ci/reference",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/reference/config",
+      "to": "/docs/ci/reference/config",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/reference/nx-cloud-cli",
+      "to": "/docs/ci/reference/nx-cloud-cli",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/reference/launch-templates",
+      "to": "/docs/ci/reference/launch-templates",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/reference/assignment-rules",
+      "to": "/docs/ci/reference/assignment-rules",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/reference/custom-steps",
+      "to": "/docs/ci/reference/custom-steps",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/reference/custom-images",
+      "to": "/docs/ci/reference/custom-images",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/reference/env-vars",
+      "to": "/docs/ci/reference/env-vars",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/reference/credits-pricing",
+      "to": "/docs/ci/reference/credits-pricing",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/reference/release-notes",
+      "to": "/docs/ci/reference/release-notes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/troubleshooting",
+      "to": "/docs/ci/troubleshooting",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/ci/troubleshooting/ci-execution-failed",
+      "to": "/docs/ci/troubleshooting/ci-execution-failed",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/intro",
+      "to": "/docs/extending-nx/intro",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/intro/getting-started",
+      "to": "/docs/extending-nx/intro/getting-started",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/tutorials",
+      "to": "/docs/extending-nx/tutorials",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/tutorials/organization-specific-plugin",
+      "to": "/docs/extending-nx/tutorials/organization-specific-plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/tutorials/tooling-plugin",
+      "to": "/docs/extending-nx/tutorials/tooling-plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes",
+      "to": "/docs/extending-nx/recipes",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/local-generators",
+      "to": "/docs/extending-nx/recipes/local-generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/composing-generators",
+      "to": "/docs/extending-nx/recipes/composing-generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/generator-options",
+      "to": "/docs/extending-nx/recipes/generator-options",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/creating-files",
+      "to": "/docs/extending-nx/recipes/creating-files",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/modifying-files",
+      "to": "/docs/extending-nx/recipes/modifying-files",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/create-sync-generator",
+      "to": "/docs/extending-nx/recipes/create-sync-generator",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/migration-generators",
+      "to": "/docs/extending-nx/recipes/migration-generators",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/local-executors",
+      "to": "/docs/extending-nx/recipes/local-executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/compose-executors",
+      "to": "/docs/extending-nx/recipes/compose-executors",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/create-preset",
+      "to": "/docs/extending-nx/recipes/create-preset",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/create-install-package",
+      "to": "/docs/extending-nx/recipes/create-install-package",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/project-graph-plugins",
+      "to": "/docs/extending-nx/recipes/project-graph-plugins",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/publish-plugin",
+      "to": "/docs/extending-nx/recipes/publish-plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/recipes/task-running-lifecycle",
+      "to": "/docs/extending-nx/recipes/task-running-lifecycle",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/api",
+      "to": "/docs/extending-nx/api",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/api/nx-devkit",
+      "to": "/docs/extending-nx/api/nx-devkit",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/api/nx-devkit/overview",
+      "to": "/docs/extending-nx/api/nx-devkit/overview",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/api/nx-devkit/ngcli-adapter",
+      "to": "/docs/extending-nx/api/nx-devkit/ngcli-adapter",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/api/plugin",
+      "to": "/docs/extending-nx/api/plugin",
+      "category": "docs-broken"
+    },
+    {
+      "from": "/extending-nx/api/plugin/overview",
+      "to": "/docs/extending-nx/api/plugin/overview",
+      "category": "docs-broken"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+REDIRECT RULES UPDATE SUMMARY
+Generated: 2025-08-25T20:14:11.098Z
+
+Statistics:
+- Total redirects processed: 1078
+- Working redirects kept: 123
+- Redirects fixed: 872
+- Broken redirects commented: 83
+
+Sections updated:
+- ci: 0 working, 58 fixed
+- concepts: 20 working, 1 fixed
+- extending-nx: 0 working, 5 fixed
+- features: 10 working, 1 fixed
+- getting-started: 6 working, 6 fixed
+- nx-enterprise: 0 working, 5 fixed
+- plugin-registry: 1 working, 0 fixed
+- recipes: 0 working, 64 fixed
+- reference: 13 working, 277 fixed
+- showcase: 0 working, 4 fixed
+- technologies: 67 working, 450 fixed
+- troubleshooting: 6 working, 1 fixed
+
+Broken sections (commented out):
+- ci: 19 broken
+- deprecated: 17 broken
+- extending-nx: 22 broken
+- nx-api: 1 broken
+- nx-enterprise: 1 broken
+- recipes: 3 broken
+- see-also: 2 broken
+- showcase: 18 broken

@@ -1,0 +1,4373 @@
+{
+  "timestamp": "2025-08-25T20:03:19.115Z",
+  "summary": {
+    "total": 1078,
+    "working": 123,
+    "broken": 955,
+    "fixable": 872,
+    "needsContent": 83,
+    "needsInvestigation": 0
+  },
+  "fixableRedirects": [
+    {
+      "old": "/getting-started/adding-to-existing",
+      "current": "/docs/getting-started/adding-to-existing",
+      "suggested": "/docs/getting-started/Tutorials/angular-monorepo"
+    },
+    {
+      "old": "/getting-started/ai-integration",
+      "current": "/docs/getting-started/ai-integration",
+      "suggested": "/docs/getting-started/Tutorials/angular-monorepo"
+    },
+    {
+      "old": "/getting-started/tutorials/react-monorepo-tutorial",
+      "current": "/docs/getting-started/tutorials/react-monorepo-tutorial",
+      "suggested": "/docs/getting-started/Tutorials/angular-monorepo"
+    },
+    {
+      "old": "/getting-started/tutorials/gradle-tutorial",
+      "current": "/docs/getting-started/tutorials/gradle-tutorial",
+      "suggested": "/docs/getting-started/Tutorials/angular-monorepo"
+    },
+    {
+      "old": "/getting-started/tutorials/angular-monorepo-tutorial",
+      "current": "/docs/getting-started/tutorials/angular-monorepo-tutorial",
+      "suggested": "/docs/getting-started/Tutorials/angular-monorepo"
+    },
+    {
+      "old": "/getting-started/tutorials/typescript-packages-tutorial",
+      "current": "/docs/getting-started/tutorials/typescript-packages-tutorial",
+      "suggested": "/docs/getting-started/Tutorials/angular-monorepo"
+    },
+    {
+      "old": "/features/maintain-ts-monorepos",
+      "current": "/docs/features/maintain-ts-monorepos",
+      "suggested": "/docs/features/CI Features/affected"
+    },
+    {
+      "old": "/recipes/installation",
+      "current": "/docs/recipes/installation",
+      "suggested": "/docs/getting-started/installation"
+    },
+    {
+      "old": "/recipes/installation/install-non-javascript",
+      "current": "/docs/recipes/installation/install-non-javascript",
+      "suggested": "/docs/guides/Installation/install-non-javascript"
+    },
+    {
+      "old": "/recipes/installation/update-global-installation",
+      "current": "/docs/recipes/installation/update-global-installation",
+      "suggested": "/docs/guides/Installation/update-global-installation"
+    },
+    {
+      "old": "/recipes/running-tasks/root-level-scripts",
+      "current": "/docs/recipes/running-tasks/root-level-scripts",
+      "suggested": "/docs/guides/Tasks & Caching/root-level-scripts"
+    },
+    {
+      "old": "/recipes/running-tasks/defining-task-pipeline",
+      "current": "/docs/recipes/running-tasks/defining-task-pipeline",
+      "suggested": "/docs/guides/Tasks & Caching/defining-task-pipeline"
+    },
+    {
+      "old": "/recipes/running-tasks/run-tasks-in-parallel",
+      "current": "/docs/recipes/running-tasks/run-tasks-in-parallel",
+      "suggested": "/docs/guides/Tasks & Caching/run-tasks-in-parallel"
+    },
+    {
+      "old": "/recipes/running-tasks/configure-outputs",
+      "current": "/docs/recipes/running-tasks/configure-outputs",
+      "suggested": "/docs/guides/Tasks & Caching/configure-outputs"
+    },
+    {
+      "old": "/recipes/running-tasks/pass-args-to-commands",
+      "current": "/docs/recipes/running-tasks/pass-args-to-commands",
+      "suggested": "/docs/guides/Tasks & Caching/pass-args-to-commands"
+    },
+    {
+      "old": "/recipes/running-tasks/run-commands-executor",
+      "current": "/docs/recipes/running-tasks/run-commands-executor",
+      "suggested": "/docs/guides/Tasks & Caching/run-commands-executor"
+    },
+    {
+      "old": "/recipes/running-tasks/terminal-ui",
+      "current": "/docs/recipes/running-tasks/terminal-ui",
+      "suggested": "/docs/guides/Tasks & Caching/terminal-ui"
+    },
+    {
+      "old": "/recipes/running-tasks/workspace-watching",
+      "current": "/docs/recipes/running-tasks/workspace-watching",
+      "suggested": "/docs/guides/Tasks & Caching/workspace-watching"
+    },
+    {
+      "old": "/recipes/running-tasks/configure-inputs",
+      "current": "/docs/recipes/running-tasks/configure-inputs",
+      "suggested": "/docs/guides/Tasks & Caching/configure-inputs"
+    },
+    {
+      "old": "/recipes/adopting-nx/import-project",
+      "current": "/docs/recipes/adopting-nx/import-project",
+      "suggested": "/docs/guides/Adopting Nx/import-project"
+    },
+    {
+      "old": "/recipes/running-tasks/reduce-repetitive-configuration",
+      "current": "/docs/recipes/running-tasks/reduce-repetitive-configuration",
+      "suggested": "/docs/guides/Tasks & Caching/reduce-repetitive-configuration"
+    },
+    {
+      "old": "/recipes/running-tasks/convert-to-inferred",
+      "current": "/docs/recipes/running-tasks/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/recipes/adopting-nx/from-turborepo",
+      "current": "/docs/recipes/adopting-nx/from-turborepo",
+      "suggested": "/docs/guides/Adopting Nx/from-turborepo"
+    },
+    {
+      "old": "/recipes/adopting-nx/adding-to-monorepo",
+      "current": "/docs/recipes/adopting-nx/adding-to-monorepo",
+      "suggested": "/docs/guides/Adopting Nx/adding-to-monorepo"
+    },
+    {
+      "old": "/recipes/running-tasks/self-hosted-caching",
+      "current": "/docs/recipes/running-tasks/self-hosted-caching",
+      "suggested": "/docs/guides/Tasks & Caching/self-hosted-caching"
+    },
+    {
+      "old": "/recipes/adopting-nx",
+      "current": "/docs/recipes/adopting-nx",
+      "suggested": "/docs/guides/adopting-nx"
+    },
+    {
+      "old": "/recipes/running-tasks/skipping-cache",
+      "current": "/docs/recipes/running-tasks/skipping-cache",
+      "suggested": "/docs/guides/Tasks & Caching/skipping-cache"
+    },
+    {
+      "old": "/recipes/running-tasks/change-cache-location",
+      "current": "/docs/recipes/running-tasks/change-cache-location",
+      "suggested": "/docs/guides/Tasks & Caching/change-cache-location"
+    },
+    {
+      "old": "/recipes/adopting-nx/adding-to-existing-project",
+      "current": "/docs/recipes/adopting-nx/adding-to-existing-project",
+      "suggested": "/docs/guides/Adopting Nx/adding-to-existing-project"
+    },
+    {
+      "old": "/recipes/nx-release/publish-rust-crates",
+      "current": "/docs/recipes/nx-release/publish-rust-crates",
+      "suggested": "/docs/guides/Nx Release/publish-rust-crates"
+    },
+    {
+      "old": "/recipes/adopting-nx/manual",
+      "current": "/docs/recipes/adopting-nx/manual",
+      "suggested": "/docs/guides/Adopting Nx/manual"
+    },
+    {
+      "old": "/recipes/nx-release/release-npm-packages",
+      "current": "/docs/recipes/nx-release/release-npm-packages",
+      "suggested": "/docs/guides/Nx Release/release-npm-packages"
+    },
+    {
+      "old": "/recipes/nx-release/updating-version-references",
+      "current": "/docs/recipes/nx-release/updating-version-references",
+      "suggested": "/docs/guides/Nx Release/updating-version-references"
+    },
+    {
+      "old": "/recipes/nx-release/customize-conventional-commit-types",
+      "current": "/docs/recipes/nx-release/customize-conventional-commit-types",
+      "suggested": "/docs/guides/Nx Release/customize-conventional-commit-types"
+    },
+    {
+      "old": "/recipes/nx-release/automatically-version-with-conventional-commits",
+      "current": "/docs/recipes/nx-release/automatically-version-with-conventional-commits",
+      "suggested": "/docs/guides/Nx Release/automatically-version-with-conventional-commits"
+    },
+    {
+      "old": "/recipes/nx-release/release-docker-images",
+      "current": "/docs/recipes/nx-release/release-docker-images",
+      "suggested": "/docs/guides/Nx Release/release-docker-images"
+    },
+    {
+      "old": "/recipes/nx-release",
+      "current": "/docs/recipes/nx-release",
+      "suggested": "/docs/guides/nx-release"
+    },
+    {
+      "old": "/recipes/nx-release/release-projects-independently",
+      "current": "/docs/recipes/nx-release/release-projects-independently",
+      "suggested": "/docs/guides/Nx Release/release-projects-independently"
+    },
+    {
+      "old": "/recipes/adopting-nx/preserving-git-histories",
+      "current": "/docs/recipes/adopting-nx/preserving-git-histories",
+      "suggested": "/docs/guides/Adopting Nx/preserving-git-histories"
+    },
+    {
+      "old": "/recipes/nx-release/automate-gitlab-releases",
+      "current": "/docs/recipes/nx-release/automate-gitlab-releases",
+      "suggested": "/docs/guides/Nx Release/automate-gitlab-releases"
+    },
+    {
+      "old": "/recipes/nx-release/file-based-versioning-version-plans",
+      "current": "/docs/recipes/nx-release/file-based-versioning-version-plans",
+      "suggested": "/docs/guides/Nx Release/file-based-versioning-version-plans"
+    },
+    {
+      "old": "/recipes/nx-release/configure-changelog-format",
+      "current": "/docs/recipes/nx-release/configure-changelog-format",
+      "suggested": "/docs/guides/Nx Release/configure-changelog-format"
+    },
+    {
+      "old": "/recipes/nx-release/configuration-version-prefix",
+      "current": "/docs/recipes/nx-release/configuration-version-prefix",
+      "suggested": "/docs/guides/Nx Release/configuration-version-prefix"
+    },
+    {
+      "old": "/recipes/nx-console",
+      "current": "/docs/recipes/nx-console",
+      "suggested": "/docs/guides/nx-console"
+    },
+    {
+      "old": "/recipes/nx-release/build-before-versioning",
+      "current": "/docs/recipes/nx-release/build-before-versioning",
+      "suggested": "/docs/guides/Nx Release/build-before-versioning"
+    },
+    {
+      "old": "/recipes/nx-release/automate-github-releases",
+      "current": "/docs/recipes/nx-release/automate-github-releases",
+      "suggested": "/docs/guides/Nx Release/automate-github-releases"
+    },
+    {
+      "old": "/recipes/nx-release/update-local-registry-setup",
+      "current": "/docs/recipes/nx-release/update-local-registry-setup",
+      "suggested": "/docs/guides/Nx Release/update-local-registry-setup"
+    },
+    {
+      "old": "/recipes/nx-release/configure-custom-registries",
+      "current": "/docs/recipes/nx-release/configure-custom-registries",
+      "suggested": "/docs/guides/Nx Release/configure-custom-registries"
+    },
+    {
+      "old": "/recipes/nx-release/publish-in-ci-cd",
+      "current": "/docs/recipes/nx-release/publish-in-ci-cd",
+      "suggested": "/docs/guides/Nx Release/publish-in-ci-cd"
+    },
+    {
+      "old": "/recipes/nx-console/console-generate-command",
+      "current": "/docs/recipes/nx-console/console-generate-command",
+      "suggested": "/docs/guides/Nx Console/console-generate-command"
+    },
+    {
+      "old": "/recipes/nx-console/console-nx-cloud",
+      "current": "/docs/recipes/nx-console/console-nx-cloud",
+      "suggested": "/docs/guides/Nx Console/console-nx-cloud"
+    },
+    {
+      "old": "/recipes/nx-console/console-troubleshooting",
+      "current": "/docs/recipes/nx-console/console-troubleshooting",
+      "suggested": "/docs/guides/Nx Console/console-troubleshooting"
+    },
+    {
+      "old": "/recipes/nx-console/console-migrate-ui",
+      "current": "/docs/recipes/nx-console/console-migrate-ui",
+      "suggested": "/docs/guides/Nx Console/console-migrate-ui"
+    },
+    {
+      "old": "/recipes/nx-console/console-telemetry",
+      "current": "/docs/recipes/nx-console/console-telemetry",
+      "suggested": "/docs/guides/Nx Console/console-telemetry"
+    },
+    {
+      "old": "/recipes/nx-console/console-run-command",
+      "current": "/docs/recipes/nx-console/console-run-command",
+      "suggested": "/docs/guides/Nx Console/console-run-command"
+    },
+    {
+      "old": "/recipes/enforce-module-boundaries/tag-multiple-dimensions",
+      "current": "/docs/recipes/enforce-module-boundaries/tag-multiple-dimensions",
+      "suggested": "/docs/guides/Enforce Module Boundaries/tag-multiple-dimensions"
+    },
+    {
+      "old": "/recipes/enforce-module-boundaries",
+      "current": "/docs/recipes/enforce-module-boundaries",
+      "suggested": "/docs/features/enforce-module-boundaries"
+    },
+    {
+      "old": "/recipes/enforce-module-boundaries/ban-dependencies-with-tags",
+      "current": "/docs/recipes/enforce-module-boundaries/ban-dependencies-with-tags",
+      "suggested": "/docs/guides/Enforce Module Boundaries/ban-dependencies-with-tags"
+    },
+    {
+      "old": "/recipes/nx-console/console-project-details",
+      "current": "/docs/recipes/nx-console/console-project-details",
+      "suggested": "/docs/guides/Nx Console/console-project-details"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+      "current": "/docs/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+      "suggested": "/docs/guides/Tips and Tricks/keep-nx-versions-in-sync"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/define-environment-variables",
+      "current": "/docs/recipes/tips-n-tricks/define-environment-variables",
+      "suggested": "/docs/guides/Tips and Tricks/define-environment-variables"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/browser-support",
+      "current": "/docs/recipes/tips-n-tricks/browser-support",
+      "suggested": "/docs/guides/Tips and Tricks/browser-support"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/identify-dependencies-between-folders",
+      "current": "/docs/recipes/tips-n-tricks/identify-dependencies-between-folders",
+      "suggested": "/docs/guides/Tips and Tricks/identify-dependencies-between-folders"
+    },
+    {
+      "old": "/recipes/enforce-module-boundaries/tags-allow-list",
+      "current": "/docs/recipes/enforce-module-boundaries/tags-allow-list",
+      "suggested": "/docs/guides/Enforce Module Boundaries/tags-allow-list"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/include-all-packagejson",
+      "current": "/docs/recipes/tips-n-tricks/include-all-packagejson",
+      "suggested": "/docs/guides/Tips and Tricks/include-all-packagejson"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/standalone-to-monorepo",
+      "current": "/docs/recipes/tips-n-tricks/standalone-to-monorepo",
+      "suggested": "/docs/guides/Tips and Tricks/standalone-to-monorepo"
+    },
+    {
+      "old": "/recipes/enforce-module-boundaries/ban-external-imports",
+      "current": "/docs/recipes/enforce-module-boundaries/ban-external-imports",
+      "suggested": "/docs/guides/Enforce Module Boundaries/ban-external-imports"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/include-assets-in-build",
+      "current": "/docs/recipes/tips-n-tricks/include-assets-in-build",
+      "suggested": "/docs/guides/Tips and Tricks/include-assets-in-build"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/advanced-update",
+      "current": "/docs/recipes/tips-n-tricks/advanced-update",
+      "suggested": "/docs/guides/Tips and Tricks/advanced-update"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/yarn-pnp",
+      "current": "/docs/recipes/tips-n-tricks/yarn-pnp",
+      "suggested": "/docs/guides/Tips and Tricks/yarn-pnp"
+    },
+    {
+      "old": "/recipes/tips-n-tricks/analyze-source-files",
+      "current": "/docs/recipes/tips-n-tricks/analyze-source-files",
+      "suggested": "/docs/guides/Tips and Tricks/analyze-source-files"
+    },
+    {
+      "old": "/concepts/nx-daemon",
+      "current": "/docs/concepts/nx-daemon",
+      "suggested": "/docs/concepts/CI Concepts/ai-features"
+    },
+    {
+      "old": "/technologies/typescript/recipes/switch-to-workspaces-project-references",
+      "current": "/docs/technologies/typescript/recipes/switch-to-workspaces-project-references",
+      "suggested": "/docs/technologies/typescript/Guides/switch-to-workspaces-project-references"
+    },
+    {
+      "old": "/technologies/typescript/recipes",
+      "current": "/docs/technologies/typescript/recipes",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/recipes/enable-tsc-batch-mode",
+      "current": "/docs/technologies/typescript/recipes/enable-tsc-batch-mode",
+      "suggested": "/docs/technologies/typescript/Guides/enable-tsc-batch-mode"
+    },
+    {
+      "old": "/technologies/typescript/recipes/define-secondary-entrypoints",
+      "current": "/docs/technologies/typescript/recipes/define-secondary-entrypoints",
+      "suggested": "/docs/technologies/typescript/Guides/define-secondary-entrypoints"
+    },
+    {
+      "old": "/technologies/typescript/recipes/js-and-ts",
+      "current": "/docs/technologies/typescript/recipes/js-and-ts",
+      "suggested": "/docs/technologies/typescript/Guides/js-and-ts"
+    },
+    {
+      "old": "/technologies/angular/recipes",
+      "current": "/docs/technologies/angular/recipes",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/typescript/api",
+      "current": "/docs/technologies/typescript/api",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/recipes/compile-multiple-formats",
+      "current": "/docs/technologies/typescript/recipes/compile-multiple-formats",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/angular/recipes/module-federation-with-ssr",
+      "current": "/docs/technologies/angular/recipes/module-federation-with-ssr",
+      "suggested": "/docs/technologies/angular/Guides/module-federation-with-ssr"
+    },
+    {
+      "old": "/technologies/angular/recipes/setup-incremental-builds-angular",
+      "current": "/docs/technologies/angular/recipes/setup-incremental-builds-angular",
+      "suggested": "/docs/technologies/angular/Guides/setup-incremental-builds-angular"
+    },
+    {
+      "old": "/technologies/angular/recipes/use-environment-variables-in-angular",
+      "current": "/docs/technologies/angular/recipes/use-environment-variables-in-angular",
+      "suggested": "/docs/technologies/angular/Guides/use-environment-variables-in-angular"
+    },
+    {
+      "old": "/technologies/angular/api",
+      "current": "/docs/technologies/angular/api",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/recipes/nx-and-angular",
+      "current": "/docs/technologies/angular/recipes/nx-and-angular",
+      "suggested": "/docs/technologies/angular/Guides/nx-and-angular"
+    },
+    {
+      "old": "/technologies/angular/recipes/angular-nx-version-matrix",
+      "current": "/docs/technologies/angular/recipes/angular-nx-version-matrix",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+      "current": "/docs/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+      "suggested": "/docs/technologies/angular/Guides/using-tailwind-css-with-angular-projects"
+    },
+    {
+      "old": "/technologies/angular/recipes/nx-devkit-angular-devkit",
+      "current": "/docs/technologies/angular/recipes/nx-devkit-angular-devkit",
+      "suggested": "/docs/technologies/angular/Guides/nx-devkit-angular-devkit"
+    },
+    {
+      "old": "/technologies/angular/recipes/dynamic-module-federation-with-angular",
+      "current": "/docs/technologies/angular/recipes/dynamic-module-federation-with-angular",
+      "suggested": "/docs/technologies/angular/Guides/dynamic-module-federation-with-angular"
+    },
+    {
+      "old": "/technologies/angular/angular-rspack/recipes/internationalization",
+      "current": "/docs/technologies/angular/angular-rspack/recipes/internationalization",
+      "suggested": "/docs/technologies/angular/angular-rspack/Guides/internationalization"
+    },
+    {
+      "old": "/technologies/angular/angular-rspack/recipes",
+      "current": "/docs/technologies/angular/angular-rspack/recipes",
+      "suggested": "/docs/technologies/angular/angular-rspack/Guides/getting-started"
+    },
+    {
+      "old": "/technologies/angular/angular-rspack/api",
+      "current": "/docs/technologies/angular/angular-rspack/api",
+      "suggested": "/docs/technologies/angular/angular-rspack/Guides/getting-started"
+    },
+    {
+      "old": "/technologies/angular/angular-rspack/recipes/getting-started",
+      "current": "/docs/technologies/angular/angular-rspack/recipes/getting-started",
+      "suggested": "/docs/technologies/angular/angular-rspack/Guides/getting-started"
+    },
+    {
+      "old": "/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+      "current": "/docs/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+      "suggested": "/docs/technologies/angular/angular-rspack/Guides/migrate-from-webpack"
+    },
+    {
+      "old": "/technologies/angular/angular-rspack/api/create-config",
+      "current": "/docs/technologies/angular/angular-rspack/api/create-config",
+      "suggested": "/docs/technologies/angular/angular-rspack/create-config"
+    },
+    {
+      "old": "/technologies/angular/angular-rspack/recipes/handling-configurations",
+      "current": "/docs/technologies/angular/angular-rspack/recipes/handling-configurations",
+      "suggested": "/docs/technologies/angular/angular-rspack/Guides/handling-configurations"
+    },
+    {
+      "old": "/technologies/angular/angular-rspack/api/create-server",
+      "current": "/docs/technologies/angular/angular-rspack/api/create-server",
+      "suggested": "/docs/technologies/angular/angular-rspack/create-server"
+    },
+    {
+      "old": "/technologies/angular/angular-rsbuild/api",
+      "current": "/docs/technologies/angular/angular-rsbuild/api",
+      "suggested": "/docs/technologies/angular/angular-rsbuild/create-config"
+    },
+    {
+      "old": "/technologies/react/recipes/use-environment-variables-in-react",
+      "current": "/docs/technologies/react/recipes/use-environment-variables-in-react",
+      "suggested": "/docs/technologies/react/Guides/use-environment-variables-in-react"
+    },
+    {
+      "old": "/technologies/angular/angular-rsbuild/api/create-config",
+      "current": "/docs/technologies/angular/angular-rsbuild/api/create-config",
+      "suggested": "/docs/technologies/angular/angular-rsbuild/create-config"
+    },
+    {
+      "old": "/technologies/react/recipes/react-native",
+      "current": "/docs/technologies/react/recipes/react-native",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/angular/angular-rsbuild/api/create-server",
+      "current": "/docs/technologies/angular/angular-rsbuild/api/create-server",
+      "suggested": "/docs/technologies/angular/angular-rsbuild/create-server"
+    },
+    {
+      "old": "/technologies/react/recipes/remix",
+      "current": "/docs/technologies/react/recipes/remix",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/recipes/react-router",
+      "current": "/docs/technologies/react/recipes/react-router",
+      "suggested": "/docs/technologies/react/Guides/react-router"
+    },
+    {
+      "old": "/technologies/react/recipes",
+      "current": "/docs/technologies/react/recipes",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/recipes/using-tailwind-css-in-react",
+      "current": "/docs/technologies/react/recipes/using-tailwind-css-in-react",
+      "suggested": "/docs/technologies/react/Guides/using-tailwind-css-in-react"
+    },
+    {
+      "old": "/technologies/react/next/recipes",
+      "current": "/docs/technologies/react/next/recipes",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/recipes/module-federation-with-ssr",
+      "current": "/docs/technologies/react/recipes/module-federation-with-ssr",
+      "suggested": "/docs/technologies/react/Guides/module-federation-with-ssr"
+    },
+    {
+      "old": "/technologies/react/next/recipes/next-config-setup",
+      "current": "/docs/technologies/react/next/recipes/next-config-setup",
+      "suggested": "/docs/technologies/react/next/Guides/next-config-setup"
+    },
+    {
+      "old": "/technologies/react/recipes/adding-assets-react",
+      "current": "/docs/technologies/react/recipes/adding-assets-react",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/recipes/deploy-nextjs-to-vercel",
+      "current": "/docs/technologies/react/recipes/deploy-nextjs-to-vercel",
+      "suggested": "/docs/technologies/react/Guides/deploy-nextjs-to-vercel"
+    },
+    {
+      "old": "/technologies/react/recipes/react-compiler",
+      "current": "/docs/technologies/react/recipes/react-compiler",
+      "suggested": "/docs/technologies/react/Guides/react-compiler"
+    },
+    {
+      "old": "/technologies/react/api",
+      "current": "/docs/technologies/react/api",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/next/api",
+      "current": "/docs/technologies/react/next/api",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/react-native/recipes",
+      "current": "/docs/technologies/react/react-native/recipes",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/remix/api",
+      "current": "/docs/technologies/react/remix/api",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/recipes",
+      "current": "/docs/technologies/react/remix/recipes",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/react-native/api",
+      "current": "/docs/technologies/react/react-native/api",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/vue/nuxt/recipes",
+      "current": "/docs/technologies/vue/nuxt/recipes",
+      "suggested": "/docs/technologies/vue/nuxt/Guides/deploy-nuxt-to-vercel"
+    },
+    {
+      "old": "/technologies/react/expo/recipes",
+      "current": "/docs/technologies/react/expo/recipes",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api",
+      "current": "/docs/technologies/react/expo/api",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/vue/api",
+      "current": "/docs/technologies/vue/api",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+      "current": "/docs/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+      "suggested": "/docs/technologies/vue/nuxt/Guides/deploy-nuxt-to-vercel"
+    },
+    {
+      "old": "/technologies/vue/nuxt/api",
+      "current": "/docs/technologies/vue/nuxt/api",
+      "suggested": "/docs/technologies/vue/nuxt/Guides/deploy-nuxt-to-vercel"
+    },
+    {
+      "old": "/technologies/node/recipes/wait-for-tasks",
+      "current": "/docs/technologies/node/recipes/wait-for-tasks",
+      "suggested": "/docs/technologies/node/Guides/wait-for-tasks"
+    },
+    {
+      "old": "/technologies/node/recipes/node-server-fly-io",
+      "current": "/docs/technologies/node/recipes/node-server-fly-io",
+      "suggested": "/docs/technologies/node/Guides/node-server-fly-io"
+    },
+    {
+      "old": "/technologies/node/recipes/application-proxies",
+      "current": "/docs/technologies/node/recipes/application-proxies",
+      "suggested": "/docs/technologies/node/Guides/application-proxies"
+    },
+    {
+      "old": "/technologies/node/api",
+      "current": "/docs/technologies/node/api",
+      "suggested": "/docs/technologies/node/Guides/application-proxies"
+    },
+    {
+      "old": "/technologies/node/recipes",
+      "current": "/docs/technologies/node/recipes",
+      "suggested": "/docs/technologies/node/Guides/application-proxies"
+    },
+    {
+      "old": "/technologies/node/recipes/node-aws-lambda",
+      "current": "/docs/technologies/node/recipes/node-aws-lambda",
+      "suggested": "/docs/technologies/node/Guides/node-aws-lambda"
+    },
+    {
+      "old": "/technologies/node/recipes/node-serverless-functions-netlify",
+      "current": "/docs/technologies/node/recipes/node-serverless-functions-netlify",
+      "suggested": "/docs/technologies/node/Guides/node-serverless-functions-netlify"
+    },
+    {
+      "old": "/technologies/node/express/api",
+      "current": "/docs/technologies/node/express/api",
+      "suggested": "/docs/technologies/node/express"
+    },
+    {
+      "old": "/technologies/java/introduction",
+      "current": "/docs/technologies/java/introduction",
+      "suggested": "/docs/technologies/angular/angular-rspack/introduction"
+    },
+    {
+      "old": "/technologies/java",
+      "current": "/docs/technologies/java",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/java/api",
+      "current": "/docs/technologies/java/api",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/node/nest/api",
+      "current": "/docs/technologies/node/nest/api",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/module-federation/recipes/create-a-remote",
+      "current": "/docs/technologies/module-federation/recipes/create-a-remote",
+      "suggested": "/docs/technologies/module-federation/Guides/create-a-remote"
+    },
+    {
+      "old": "/technologies/module-federation/recipes",
+      "current": "/docs/technologies/module-federation/recipes",
+      "suggested": "/docs/technologies/module-federation/Guides/create-a-host"
+    },
+    {
+      "old": "/technologies/module-federation/recipes/create-a-host",
+      "current": "/docs/technologies/module-federation/recipes/create-a-host",
+      "suggested": "/docs/technologies/module-federation/Guides/create-a-host"
+    },
+    {
+      "old": "/technologies/module-federation/recipes/nx-module-federation-plugin",
+      "current": "/docs/technologies/module-federation/recipes/nx-module-federation-plugin",
+      "suggested": "/docs/technologies/module-federation/Guides/create-a-host"
+    },
+    {
+      "old": "/technologies/module-federation/recipes/federate-a-module",
+      "current": "/docs/technologies/module-federation/recipes/federate-a-module",
+      "suggested": "/docs/technologies/module-federation/Guides/federate-a-module"
+    },
+    {
+      "old": "/technologies/module-federation/api",
+      "current": "/docs/technologies/module-federation/api",
+      "suggested": "/docs/technologies/module-federation/Guides/create-a-host"
+    },
+    {
+      "old": "/technologies/eslint/api",
+      "current": "/docs/technologies/eslint/api",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/technologies/eslint/recipes/eslint",
+      "current": "/docs/technologies/eslint/recipes/eslint",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/technologies/eslint/recipes",
+      "current": "/docs/technologies/eslint/recipes",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/technologies/module-federation/recipes/nx-module-federation-dev-server-plugin",
+      "current": "/docs/technologies/module-federation/recipes/nx-module-federation-dev-server-plugin",
+      "suggested": "/docs/technologies/module-federation/Guides/nx-module-federation-dev-server-plugin"
+    },
+    {
+      "old": "/technologies/eslint/recipes/flat-config",
+      "current": "/docs/technologies/eslint/recipes/flat-config",
+      "suggested": "/docs/technologies/eslint/Guides/flat-config"
+    },
+    {
+      "old": "/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries",
+      "current": "/docs/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries",
+      "suggested": "/docs/technologies/eslint/eslint-plugin/Guides/enforce-module-boundaries"
+    },
+    {
+      "old": "/technologies/eslint/eslint-plugin/recipes/dependency-checks",
+      "current": "/docs/technologies/eslint/eslint-plugin/recipes/dependency-checks",
+      "suggested": "/docs/technologies/eslint/eslint-plugin/Guides/dependency-checks"
+    },
+    {
+      "old": "/technologies/eslint/eslint-plugin/recipes",
+      "current": "/docs/technologies/eslint/eslint-plugin/recipes",
+      "suggested": "/docs/technologies/eslint/eslint-plugin/Guides/dependency-checks"
+    },
+    {
+      "old": "/technologies/eslint/eslint-plugin/api",
+      "current": "/docs/technologies/eslint/eslint-plugin/api",
+      "suggested": "/docs/technologies/eslint/eslint-plugin/Guides/dependency-checks"
+    },
+    {
+      "old": "/technologies/build-tools/docker",
+      "current": "/docs/technologies/build-tools/docker",
+      "suggested": "/docs/technologies/build-tools/docker/introduction"
+    },
+    {
+      "old": "/technologies/build-tools/vite/recipes/configure-vite",
+      "current": "/docs/technologies/build-tools/vite/recipes/configure-vite",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/recipes/webpack-config-setup",
+      "current": "/docs/technologies/build-tools/webpack/recipes/webpack-config-setup",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides/webpack-config-setup"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/recipes/webpack-plugins",
+      "current": "/docs/technologies/build-tools/webpack/recipes/webpack-plugins",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides/webpack-plugins"
+    },
+    {
+      "old": "/technologies/build-tools/vite/recipes",
+      "current": "/docs/technologies/build-tools/vite/recipes",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api",
+      "current": "/docs/technologies/build-tools/vite/api",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api",
+      "current": "/docs/technologies/build-tools/webpack/api",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/recipes",
+      "current": "/docs/technologies/build-tools/webpack/recipes",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides"
+    },
+    {
+      "old": "/technologies/build-tools/rollup/api",
+      "current": "/docs/technologies/build-tools/rollup/api",
+      "suggested": "/docs/technologies/build-tools/rollup"
+    },
+    {
+      "old": "/technologies/build-tools/esbuild/api",
+      "current": "/docs/technologies/build-tools/esbuild/api",
+      "suggested": "/docs/technologies/build-tools/esbuild"
+    },
+    {
+      "old": "/technologies/build-tools/esbuild/recipes",
+      "current": "/docs/technologies/build-tools/esbuild/recipes",
+      "suggested": "/docs/technologies/build-tools/esbuild"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/recipes",
+      "current": "/docs/technologies/build-tools/rspack/recipes",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rollup/recipes",
+      "current": "/docs/technologies/build-tools/rollup/recipes",
+      "suggested": "/docs/technologies/build-tools/rollup"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/recipes",
+      "current": "/docs/technologies/test-tools/cypress/recipes",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-component-testing"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api",
+      "current": "/docs/technologies/build-tools/rspack/api",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rsbuild/recipes",
+      "current": "/docs/technologies/build-tools/rsbuild/recipes",
+      "suggested": "/docs/technologies/build-tools/rsbuild"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/recipes/cypress-component-testing",
+      "current": "/docs/technologies/test-tools/cypress/recipes/cypress-component-testing",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-component-testing"
+    },
+    {
+      "old": "/technologies/build-tools/rsbuild/api",
+      "current": "/docs/technologies/build-tools/rsbuild/api",
+      "suggested": "/docs/technologies/build-tools/rsbuild"
+    },
+    {
+      "old": "/technologies/test-tools/jest/recipes",
+      "current": "/docs/technologies/test-tools/jest/recipes",
+      "suggested": "/docs/technologies/test-tools/jest"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/api",
+      "current": "/docs/technologies/test-tools/cypress/api",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-component-testing"
+    },
+    {
+      "old": "/technologies/test-tools/playwright/recipes",
+      "current": "/docs/technologies/test-tools/playwright/recipes",
+      "suggested": "/docs/technologies/test-tools/playwright"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/recipes/cypress-setup-node-events",
+      "current": "/docs/technologies/test-tools/cypress/recipes/cypress-setup-node-events",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-setup-node-events"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/recipes/cypress-v11-migration",
+      "current": "/docs/technologies/test-tools/cypress/recipes/cypress-v11-migration",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-v11-migration"
+    },
+    {
+      "old": "/technologies/test-tools/jest/api",
+      "current": "/docs/technologies/test-tools/jest/api",
+      "suggested": "/docs/technologies/test-tools/jest"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/best-practices",
+      "current": "/docs/technologies/test-tools/storybook/recipes/best-practices",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/best-practices"
+    },
+    {
+      "old": "/technologies/test-tools/playwright/api",
+      "current": "/docs/technologies/test-tools/playwright/api",
+      "suggested": "/docs/technologies/test-tools/playwright"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/overview-angular",
+      "current": "/docs/technologies/test-tools/storybook/recipes/overview-angular",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/overview-angular"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/overview-react",
+      "current": "/docs/technologies/test-tools/storybook/recipes/overview-react",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/overview-react"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes",
+      "current": "/docs/technologies/test-tools/storybook/recipes",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/overview-vue",
+      "current": "/docs/technologies/test-tools/storybook/recipes/overview-vue",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/overview-vue"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/configuring-storybook",
+      "current": "/docs/technologies/test-tools/storybook/recipes/configuring-storybook",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/configuring-storybook"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/storybook-9-setup",
+      "current": "/docs/technologies/test-tools/storybook/recipes/storybook-9-setup",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/storybook-9-setup"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/one-storybook-per-scope",
+      "current": "/docs/technologies/test-tools/storybook/recipes/one-storybook-per-scope",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/one-storybook-per-scope"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/one-storybook-for-all",
+      "current": "/docs/technologies/test-tools/storybook/recipes/one-storybook-for-all",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/one-storybook-for-all"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/storybook-interaction-tests",
+      "current": "/docs/technologies/test-tools/storybook/recipes/storybook-interaction-tests",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/storybook-interaction-tests"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/angular-configuring-styles",
+      "current": "/docs/technologies/test-tools/storybook/recipes/angular-configuring-styles",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/upgrading-storybook",
+      "current": "/docs/technologies/test-tools/storybook/recipes/upgrading-storybook",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/upgrading-storybook"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/storybook-composition-setup",
+      "current": "/docs/technologies/test-tools/storybook/recipes/storybook-composition-setup",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/storybook-composition-setup"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/angular-storybook-compodoc",
+      "current": "/docs/technologies/test-tools/storybook/recipes/angular-storybook-compodoc",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-storybook-compodoc"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/custom-builder-configs",
+      "current": "/docs/technologies/test-tools/storybook/recipes/custom-builder-configs",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/custom-builder-configs"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/recipes/one-storybook-with-composition",
+      "current": "/docs/technologies/test-tools/storybook/recipes/one-storybook-with-composition",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/one-storybook-with-composition"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api",
+      "current": "/docs/technologies/test-tools/storybook/api",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/test-tools/detox/recipes",
+      "current": "/docs/technologies/test-tools/detox/recipes",
+      "suggested": "/docs/technologies/test-tools/detox"
+    },
+    {
+      "old": "/nx-enterprise/activate-powerpack",
+      "current": "/docs/nx-enterprise/activate-powerpack",
+      "suggested": "/docs/enterprise/activate-powerpack"
+    },
+    {
+      "old": "/nx-enterprise/powerpack/conformance",
+      "current": "/docs/nx-enterprise/powerpack/conformance",
+      "suggested": "/docs/enterprise/Powerpack Features/conformance"
+    },
+    {
+      "old": "/nx-enterprise/powerpack",
+      "current": "/docs/nx-enterprise/powerpack",
+      "suggested": "/docs/reference/powerpack"
+    },
+    {
+      "old": "/nx-enterprise/powerpack/licenses-and-trials",
+      "current": "/docs/nx-enterprise/powerpack/licenses-and-trials",
+      "suggested": "/docs/enterprise/Powerpack Features/licenses-and-trials"
+    },
+    {
+      "old": "/technologies/test-tools/detox/api",
+      "current": "/docs/technologies/test-tools/detox/api",
+      "suggested": "/docs/technologies/test-tools/detox"
+    },
+    {
+      "old": "/nx-enterprise/powerpack/owners",
+      "current": "/docs/nx-enterprise/powerpack/owners",
+      "suggested": "/docs/enterprise/Powerpack Features/owners"
+    },
+    {
+      "old": "/showcase/benchmarks/tsc-batch-mode",
+      "current": "/docs/showcase/benchmarks/tsc-batch-mode",
+      "suggested": "/docs/reference/Benchmarks/tsc-batch-mode"
+    },
+    {
+      "old": "/showcase/benchmarks",
+      "current": "/docs/showcase/benchmarks",
+      "suggested": "/docs/reference/benchmarks"
+    },
+    {
+      "old": "/showcase/benchmarks/caching",
+      "current": "/docs/showcase/benchmarks/caching",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/showcase/benchmarks/nx-agents",
+      "current": "/docs/showcase/benchmarks/nx-agents",
+      "suggested": "/docs/reference/Benchmarks/nx-agents"
+    },
+    {
+      "old": "/reference/core-api/workspace",
+      "current": "/docs/reference/core-api/workspace",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api",
+      "current": "/docs/reference/core-api",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx",
+      "current": "/docs/reference/core-api/nx",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/owners/overview",
+      "current": "/docs/reference/core-api/owners/overview",
+      "suggested": "/docs/reference/Powerpack/owners/overview"
+    },
+    {
+      "old": "/reference/core-api/owners",
+      "current": "/docs/reference/core-api/owners",
+      "suggested": "/docs/reference/Powerpack/owners"
+    },
+    {
+      "old": "/reference/core-api/conformance/create-conformance-rule",
+      "current": "/docs/reference/core-api/conformance/create-conformance-rule",
+      "suggested": "/docs/reference/Powerpack/conformance/create-conformance-rule"
+    },
+    {
+      "old": "/reference/core-api/azure-cache",
+      "current": "/docs/reference/core-api/azure-cache",
+      "suggested": "/docs/reference/Remote Cache Plugins/azure-cache"
+    },
+    {
+      "old": "/reference/core-api/conformance/overview",
+      "current": "/docs/reference/core-api/conformance/overview",
+      "suggested": "/docs/reference/Powerpack/conformance/overview"
+    },
+    {
+      "old": "/reference/core-api/conformance",
+      "current": "/docs/reference/core-api/conformance",
+      "suggested": "/docs/reference/Powerpack/conformance"
+    },
+    {
+      "old": "/reference/core-api/gcs-cache",
+      "current": "/docs/reference/core-api/gcs-cache",
+      "suggested": "/docs/reference/Remote Cache Plugins/gcs-cache"
+    },
+    {
+      "old": "/reference/core-api/gcs-cache/overview",
+      "current": "/docs/reference/core-api/gcs-cache/overview",
+      "suggested": "/docs/reference/Remote Cache Plugins/gcs-cache/overview"
+    },
+    {
+      "old": "/reference/core-api/s3-cache",
+      "current": "/docs/reference/core-api/s3-cache",
+      "suggested": "/docs/reference/Remote Cache Plugins/s3-cache"
+    },
+    {
+      "old": "/reference/core-api/azure-cache/overview",
+      "current": "/docs/reference/core-api/azure-cache/overview",
+      "suggested": "/docs/reference/Remote Cache Plugins/azure-cache/overview"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache",
+      "current": "/docs/reference/core-api/shared-fs-cache",
+      "suggested": "/docs/reference/Remote Cache Plugins/shared-fs-cache"
+    },
+    {
+      "old": "/reference/core-api/s3-cache/overview",
+      "current": "/docs/reference/core-api/s3-cache/overview",
+      "suggested": "/docs/reference/Remote Cache Plugins/s3-cache/overview"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache/overview",
+      "current": "/docs/reference/core-api/shared-fs-cache/overview",
+      "suggested": "/docs/reference/Remote Cache Plugins/shared-fs-cache/overview"
+    },
+    {
+      "old": "/reference/core-api/devkit",
+      "current": "/docs/reference/core-api/devkit",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/plugin",
+      "current": "/docs/reference/core-api/plugin",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/web",
+      "current": "/docs/reference/core-api/web",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/create-nx-workspace",
+      "current": "/docs/reference/core-api/create-nx-workspace",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/troubleshooting/convert-to-inferred",
+      "current": "/docs/troubleshooting/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/angular/api/executors/module-federation-dev-server",
+      "current": "/docs/technologies/angular/api/executors/module-federation-dev-server",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors/delegate-build",
+      "current": "/docs/technologies/angular/api/executors/delegate-build",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors",
+      "current": "/docs/technologies/angular/api/executors",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors/application",
+      "current": "/docs/technologies/angular/api/executors/application",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors/ng-packagr-lite",
+      "current": "/docs/technologies/angular/api/executors/ng-packagr-lite",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors/browser-esbuild",
+      "current": "/docs/technologies/angular/api/executors/browser-esbuild",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors/package",
+      "current": "/docs/technologies/angular/api/executors/package",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors/module-federation-dev-ssr",
+      "current": "/docs/technologies/angular/api/executors/module-federation-dev-ssr",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors/webpack-server",
+      "current": "/docs/technologies/angular/api/executors/webpack-server",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors/extract-i18n",
+      "current": "/docs/technologies/angular/api/executors/extract-i18n",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors/webpack-browser",
+      "current": "/docs/technologies/angular/api/executors/webpack-browser",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators",
+      "current": "/docs/technologies/angular/api/generators",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/component-test",
+      "current": "/docs/technologies/angular/api/generators/component-test",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/executors/dev-server",
+      "current": "/docs/technologies/angular/api/executors/dev-server",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/component",
+      "current": "/docs/technologies/angular/api/generators/component",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/application",
+      "current": "/docs/technologies/angular/api/generators/application",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/add-linting",
+      "current": "/docs/technologies/angular/api/generators/add-linting",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/component-story",
+      "current": "/docs/technologies/angular/api/generators/component-story",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/convert-to-application-executor",
+      "current": "/docs/technologies/angular/api/generators/convert-to-application-executor",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/federate-module",
+      "current": "/docs/technologies/angular/api/generators/federate-module",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/library-secondary-entry-point",
+      "current": "/docs/technologies/angular/api/generators/library-secondary-entry-point",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/remote",
+      "current": "/docs/technologies/angular/api/generators/remote",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/directive",
+      "current": "/docs/technologies/angular/api/generators/directive",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/move",
+      "current": "/docs/technologies/angular/api/generators/move",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/convert-to-with-mf",
+      "current": "/docs/technologies/angular/api/generators/convert-to-with-mf",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/library",
+      "current": "/docs/technologies/angular/api/generators/library",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/init",
+      "current": "/docs/technologies/angular/api/generators/init",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/convert-to-rspack",
+      "current": "/docs/technologies/angular/api/generators/convert-to-rspack",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/host",
+      "current": "/docs/technologies/angular/api/generators/host",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/ngrx-feature-store",
+      "current": "/docs/technologies/angular/api/generators/ngrx-feature-store",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/scam-directive",
+      "current": "/docs/technologies/angular/api/generators/scam-directive",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/ng-add",
+      "current": "/docs/technologies/angular/api/generators/ng-add",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/scam",
+      "current": "/docs/technologies/angular/api/generators/scam",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/scam-pipe",
+      "current": "/docs/technologies/angular/api/generators/scam-pipe",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/ngrx-root-store",
+      "current": "/docs/technologies/angular/api/generators/ngrx-root-store",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/scam-to-standalone",
+      "current": "/docs/technologies/angular/api/generators/scam-to-standalone",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/ngrx",
+      "current": "/docs/technologies/angular/api/generators/ngrx",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/pipe",
+      "current": "/docs/technologies/angular/api/generators/pipe",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/setup-mf",
+      "current": "/docs/technologies/angular/api/generators/setup-mf",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/api/executors",
+      "current": "/docs/technologies/test-tools/cypress/api/executors",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-component-testing"
+    },
+    {
+      "old": "/technologies/angular/api/generators/web-worker",
+      "current": "/docs/technologies/angular/api/generators/web-worker",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/storybook-configuration",
+      "current": "/docs/technologies/angular/api/generators/storybook-configuration",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/api/executors/cypress",
+      "current": "/docs/technologies/test-tools/cypress/api/executors/cypress",
+      "suggested": "/docs/technologies/test-tools/cypress"
+    },
+    {
+      "old": "/technologies/angular/api/generators/setup-tailwind",
+      "current": "/docs/technologies/angular/api/generators/setup-tailwind",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/stories",
+      "current": "/docs/technologies/angular/api/generators/stories",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/cypress-component-configuration",
+      "current": "/docs/technologies/angular/api/generators/cypress-component-configuration",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/generators/setup-ssr",
+      "current": "/docs/technologies/angular/api/generators/setup-ssr",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/angular/api/migrations",
+      "current": "/docs/technologies/angular/api/migrations",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/api/generators/init",
+      "current": "/docs/technologies/test-tools/cypress/api/generators/init",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-component-testing"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/api/generators/migrate-to-cypress-11",
+      "current": "/docs/technologies/test-tools/cypress/api/generators/migrate-to-cypress-11",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-component-testing"
+    },
+    {
+      "old": "/technologies/test-tools/detox/api/executors/build",
+      "current": "/docs/technologies/test-tools/detox/api/executors/build",
+      "suggested": "/docs/technologies/test-tools/detox"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/api/generators",
+      "current": "/docs/technologies/test-tools/cypress/api/generators",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-component-testing"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/test-tools/cypress/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/api/generators/component-configuration",
+      "current": "/docs/technologies/test-tools/cypress/api/generators/component-configuration",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-component-testing"
+    },
+    {
+      "old": "/technologies/test-tools/detox/api/executors/test",
+      "current": "/docs/technologies/test-tools/detox/api/executors/test",
+      "suggested": "/docs/technologies/test-tools/detox"
+    },
+    {
+      "old": "/technologies/test-tools/detox/api/executors",
+      "current": "/docs/technologies/test-tools/detox/api/executors",
+      "suggested": "/docs/technologies/test-tools/detox"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/api/generators/configuration",
+      "current": "/docs/technologies/test-tools/cypress/api/generators/configuration",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-component-testing"
+    },
+    {
+      "old": "/technologies/test-tools/cypress/api/migrations",
+      "current": "/docs/technologies/test-tools/cypress/api/migrations",
+      "suggested": "/docs/technologies/test-tools/cypress/Guides/cypress-component-testing"
+    },
+    {
+      "old": "/technologies/test-tools/detox/api/generators",
+      "current": "/docs/technologies/test-tools/detox/api/generators",
+      "suggested": "/docs/technologies/test-tools/detox"
+    },
+    {
+      "old": "/technologies/test-tools/detox/api/migrations",
+      "current": "/docs/technologies/test-tools/detox/api/migrations",
+      "suggested": "/docs/technologies/test-tools/detox"
+    },
+    {
+      "old": "/technologies/test-tools/detox/api/generators/application",
+      "current": "/docs/technologies/test-tools/detox/api/generators/application",
+      "suggested": "/docs/technologies/test-tools/detox"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/AsyncIteratorExecutor",
+      "current": "/docs/reference/core-api/devkit/documents/AsyncIteratorExecutor",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/test-tools/detox/api/generators/init",
+      "current": "/docs/technologies/test-tools/detox/api/generators/init",
+      "suggested": "/docs/technologies/test-tools/detox"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/nx_devkit",
+      "current": "/docs/reference/core-api/devkit/documents/nx_devkit",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ngcli_adapter",
+      "current": "/docs/reference/core-api/devkit/documents/ngcli_adapter",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents",
+      "current": "/docs/reference/core-api/devkit/documents",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/test-tools/detox/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/test-tools/detox/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/AggregateCreateNodesError",
+      "current": "/docs/reference/core-api/devkit/documents/AggregateCreateNodesError",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ChangeType",
+      "current": "/docs/reference/core-api/devkit/documents/ChangeType",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateMetadata",
+      "current": "/docs/reference/core-api/devkit/documents/CreateMetadata",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateMetadataContext",
+      "current": "/docs/reference/core-api/devkit/documents/CreateMetadataContext",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodes",
+      "current": "/docs/reference/core-api/devkit/documents/CreateNodes",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesFunctionV2",
+      "current": "/docs/reference/core-api/devkit/documents/CreateNodesFunctionV2",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesContext",
+      "current": "/docs/reference/core-api/devkit/documents/CreateNodesContext",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateDependenciesContext",
+      "current": "/docs/reference/core-api/devkit/documents/CreateDependenciesContext",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateDependencies",
+      "current": "/docs/reference/core-api/devkit/documents/CreateDependencies",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesContextV2",
+      "current": "/docs/reference/core-api/devkit/documents/CreateNodesContextV2",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesFunction",
+      "current": "/docs/reference/core-api/devkit/documents/CreateNodesFunction",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesV2",
+      "current": "/docs/reference/core-api/devkit/documents/CreateNodesV2",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesResult",
+      "current": "/docs/reference/core-api/devkit/documents/CreateNodesResult",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CustomHasher",
+      "current": "/docs/reference/core-api/devkit/documents/CustomHasher",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/DefaultTasksRunnerOptions",
+      "current": "/docs/reference/core-api/devkit/documents/DefaultTasksRunnerOptions",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ExecutorContext",
+      "current": "/docs/reference/core-api/devkit/documents/ExecutorContext",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ExecutorsJson",
+      "current": "/docs/reference/core-api/devkit/documents/ExecutorsJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/CreateNodesResultV2",
+      "current": "/docs/reference/core-api/devkit/documents/CreateNodesResultV2",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/DynamicDependency",
+      "current": "/docs/reference/core-api/devkit/documents/DynamicDependency",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Executor",
+      "current": "/docs/reference/core-api/devkit/documents/Executor",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/DependencyType",
+      "current": "/docs/reference/core-api/devkit/documents/DependencyType",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/FileChange",
+      "current": "/docs/reference/core-api/devkit/documents/FileChange",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/FileMap",
+      "current": "/docs/reference/core-api/devkit/documents/FileMap",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Generator",
+      "current": "/docs/reference/core-api/devkit/documents/Generator",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/GeneratorsJson",
+      "current": "/docs/reference/core-api/devkit/documents/GeneratorsJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Hasher",
+      "current": "/docs/reference/core-api/devkit/documents/Hasher",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Hash",
+      "current": "/docs/reference/core-api/devkit/documents/Hash",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ExpandedPluginConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/ExpandedPluginConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/GraphJson",
+      "current": "/docs/reference/core-api/devkit/documents/GraphJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/GeneratorCallback",
+      "current": "/docs/reference/core-api/devkit/documents/GeneratorCallback",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/FileData",
+      "current": "/docs/reference/core-api/devkit/documents/FileData",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ImplicitDependencyEntry",
+      "current": "/docs/reference/core-api/devkit/documents/ImplicitDependencyEntry",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/NX_VERSION",
+      "current": "/docs/reference/core-api/devkit/documents/NX_VERSION",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/NxAffectedConfig",
+      "current": "/docs/reference/core-api/devkit/documents/NxAffectedConfig",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Migration",
+      "current": "/docs/reference/core-api/devkit/documents/Migration",
+      "suggested": "/docs/technologies/angular/Migration"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/JsonSerializeOptions",
+      "current": "/docs/reference/core-api/devkit/documents/JsonSerializeOptions",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/HasherContext",
+      "current": "/docs/reference/core-api/devkit/documents/HasherContext",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ImplicitDependency",
+      "current": "/docs/reference/core-api/devkit/documents/ImplicitDependency",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ImplicitJsonSubsetDependency",
+      "current": "/docs/reference/core-api/devkit/documents/ImplicitJsonSubsetDependency",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/MigrationsJson",
+      "current": "/docs/reference/core-api/devkit/documents/MigrationsJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/JsonParseOptions",
+      "current": "/docs/reference/core-api/devkit/documents/JsonParseOptions",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/OverwriteStrategy",
+      "current": "/docs/reference/core-api/devkit/documents/OverwriteStrategy",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/NxPlugin",
+      "current": "/docs/reference/core-api/devkit/documents/NxPlugin",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PostTasksExecutionContext",
+      "current": "/docs/reference/core-api/devkit/documents/PostTasksExecutionContext",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PreTasksExecution",
+      "current": "/docs/reference/core-api/devkit/documents/PreTasksExecution",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PluginConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/PluginConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/NxJsonConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/NxJsonConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PackageManager",
+      "current": "/docs/reference/core-api/devkit/documents/PackageManager",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/NxPluginV2",
+      "current": "/docs/reference/core-api/devkit/documents/NxPluginV2",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PostTasksExecution",
+      "current": "/docs/reference/core-api/devkit/documents/PostTasksExecution",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PreTasksExecutionContext",
+      "current": "/docs/reference/core-api/devkit/documents/PreTasksExecutionContext",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectsConfigurations",
+      "current": "/docs/reference/core-api/devkit/documents/ProjectsConfigurations",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectGraphDependency",
+      "current": "/docs/reference/core-api/devkit/documents/ProjectGraphDependency",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectType",
+      "current": "/docs/reference/core-api/devkit/documents/ProjectType",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/ProjectConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectGraphExternalNode",
+      "current": "/docs/reference/core-api/devkit/documents/ProjectGraphExternalNode",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectGraph",
+      "current": "/docs/reference/core-api/devkit/documents/ProjectGraph",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/PromiseExecutor",
+      "current": "/docs/reference/core-api/devkit/documents/PromiseExecutor",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectFileMap",
+      "current": "/docs/reference/core-api/devkit/documents/ProjectFileMap",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectGraphProjectNode",
+      "current": "/docs/reference/core-api/devkit/documents/ProjectGraphProjectNode",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ProjectsMetadata",
+      "current": "/docs/reference/core-api/devkit/documents/ProjectsMetadata",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/RemoteCache",
+      "current": "/docs/reference/core-api/devkit/documents/RemoteCache",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/README",
+      "current": "/docs/reference/core-api/devkit/documents/README",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/StaticDependency",
+      "current": "/docs/reference/core-api/devkit/documents/StaticDependency",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/StaleProjectGraphCacheError",
+      "current": "/docs/reference/core-api/devkit/documents/StaleProjectGraphCacheError",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/StringDeletion",
+      "current": "/docs/reference/core-api/devkit/documents/StringDeletion",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TargetConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/TargetConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/StringChange",
+      "current": "/docs/reference/core-api/devkit/documents/StringChange",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/StringInsertion",
+      "current": "/docs/reference/core-api/devkit/documents/StringInsertion",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/RawProjectGraphDependency",
+      "current": "/docs/reference/core-api/devkit/documents/RawProjectGraphDependency",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Target",
+      "current": "/docs/reference/core-api/devkit/documents/Target",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TaskResult",
+      "current": "/docs/reference/core-api/devkit/documents/TaskResult",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TaskGraph",
+      "current": "/docs/reference/core-api/devkit/documents/TaskGraph",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Task",
+      "current": "/docs/reference/core-api/devkit/documents/Task",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ToJSOptions",
+      "current": "/docs/reference/core-api/devkit/documents/ToJSOptions",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TaskHasher",
+      "current": "/docs/reference/core-api/devkit/documents/TaskHasher",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TaskResults",
+      "current": "/docs/reference/core-api/devkit/documents/TaskResults",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TaskGraphExecutor",
+      "current": "/docs/reference/core-api/devkit/documents/TaskGraphExecutor",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Tree",
+      "current": "/docs/reference/core-api/devkit/documents/Tree",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TargetDefaults",
+      "current": "/docs/reference/core-api/devkit/documents/TargetDefaults",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/TargetDependencyConfig",
+      "current": "/docs/reference/core-api/devkit/documents/TargetDependencyConfig",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/addDependenciesToPackageJson",
+      "current": "/docs/reference/core-api/devkit/documents/addDependenciesToPackageJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/addProjectConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/addProjectConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/cacheDir",
+      "current": "/docs/reference/core-api/devkit/documents/cacheDir",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/createNodesFromFiles",
+      "current": "/docs/reference/core-api/devkit/documents/createNodesFromFiles",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/WorkspaceJsonConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/WorkspaceJsonConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/convertNxExecutor",
+      "current": "/docs/reference/core-api/devkit/documents/convertNxExecutor",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/applyChangesToString",
+      "current": "/docs/reference/core-api/devkit/documents/applyChangesToString",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/convertNxGenerator",
+      "current": "/docs/reference/core-api/devkit/documents/convertNxGenerator",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/createProjectFileMapUsingProjectGraph",
+      "current": "/docs/reference/core-api/devkit/documents/createProjectFileMapUsingProjectGraph",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/Workspace",
+      "current": "/docs/reference/core-api/devkit/documents/Workspace",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/formatFiles",
+      "current": "/docs/reference/core-api/devkit/documents/formatFiles",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/getPackageManagerCommand",
+      "current": "/docs/reference/core-api/devkit/documents/getPackageManagerCommand",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ensurePackage",
+      "current": "/docs/reference/core-api/devkit/documents/ensurePackage",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/getOutputsForTargetAndConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/getOutputsForTargetAndConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/detectPackageManager",
+      "current": "/docs/reference/core-api/devkit/documents/detectPackageManager",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/createProjectGraphAsync",
+      "current": "/docs/reference/core-api/devkit/documents/createProjectGraphAsync",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/getPackageManagerVersion",
+      "current": "/docs/reference/core-api/devkit/documents/getPackageManagerVersion",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/extractLayoutDirectory",
+      "current": "/docs/reference/core-api/devkit/documents/extractLayoutDirectory",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/defaultTasksRunner",
+      "current": "/docs/reference/core-api/devkit/documents/defaultTasksRunner",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/generateFiles",
+      "current": "/docs/reference/core-api/devkit/documents/generateFiles",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/glob",
+      "current": "/docs/reference/core-api/devkit/documents/glob",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/getProjects",
+      "current": "/docs/reference/core-api/devkit/documents/getProjects",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/globAsync",
+      "current": "/docs/reference/core-api/devkit/documents/globAsync",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/getWorkspaceLayout",
+      "current": "/docs/reference/core-api/devkit/documents/getWorkspaceLayout",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/logger",
+      "current": "/docs/reference/core-api/devkit/documents/logger",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/hashArray",
+      "current": "/docs/reference/core-api/devkit/documents/hashArray",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/joinPathFragments",
+      "current": "/docs/reference/core-api/devkit/documents/joinPathFragments",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/isDaemonEnabled",
+      "current": "/docs/reference/core-api/devkit/documents/isDaemonEnabled",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/installPackagesTask",
+      "current": "/docs/reference/core-api/devkit/documents/installPackagesTask",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/isWorkspacesEnabled",
+      "current": "/docs/reference/core-api/devkit/documents/isWorkspacesEnabled",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/moveFilesToNewDirectory",
+      "current": "/docs/reference/core-api/devkit/documents/moveFilesToNewDirectory",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/names",
+      "current": "/docs/reference/core-api/devkit/documents/names",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ngcli_adapter/mockSchematicsForTesting",
+      "current": "/docs/reference/core-api/devkit/documents/ngcli_adapter/mockSchematicsForTesting",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/offsetFromRoot",
+      "current": "/docs/reference/core-api/devkit/documents/offsetFromRoot",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ngcli_adapter/wrapAngularDevkitSchematic",
+      "current": "/docs/reference/core-api/devkit/documents/ngcli_adapter/wrapAngularDevkitSchematic",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/output",
+      "current": "/docs/reference/core-api/devkit/documents/output",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/normalizePath",
+      "current": "/docs/reference/core-api/devkit/documents/normalizePath",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ngcli_adapter/README",
+      "current": "/docs/reference/core-api/devkit/documents/ngcli_adapter/README",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/parseJson",
+      "current": "/docs/reference/core-api/devkit/documents/parseJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/ngcli_adapter/NxScopedHost",
+      "current": "/docs/reference/core-api/devkit/documents/ngcli_adapter/NxScopedHost",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readProjectsConfigurationFromProjectGraph",
+      "current": "/docs/reference/core-api/devkit/documents/readProjectsConfigurationFromProjectGraph",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/parseTargetString",
+      "current": "/docs/reference/core-api/devkit/documents/parseTargetString",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/removeDependenciesFromPackageJson",
+      "current": "/docs/reference/core-api/devkit/documents/removeDependenciesFromPackageJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readNxJson",
+      "current": "/docs/reference/core-api/devkit/documents/readNxJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readJson",
+      "current": "/docs/reference/core-api/devkit/documents/readJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readProjectConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/readProjectConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readTargetOptions",
+      "current": "/docs/reference/core-api/devkit/documents/readTargetOptions",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readJsonFile",
+      "current": "/docs/reference/core-api/devkit/documents/readJsonFile",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/readCachedProjectGraph",
+      "current": "/docs/reference/core-api/devkit/documents/readCachedProjectGraph",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/removeProjectConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/removeProjectConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/runExecutor",
+      "current": "/docs/reference/core-api/devkit/documents/runExecutor",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/runTasksInSerial",
+      "current": "/docs/reference/core-api/devkit/documents/runTasksInSerial",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/serializeJson",
+      "current": "/docs/reference/core-api/devkit/documents/serializeJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/reverse",
+      "current": "/docs/reference/core-api/devkit/documents/reverse",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/stripIndents",
+      "current": "/docs/reference/core-api/devkit/documents/stripIndents",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/targetToTargetString",
+      "current": "/docs/reference/core-api/devkit/documents/targetToTargetString",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/updateJson",
+      "current": "/docs/reference/core-api/devkit/documents/updateJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/stripJsonComments",
+      "current": "/docs/reference/core-api/devkit/documents/stripJsonComments",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/updateNxJson",
+      "current": "/docs/reference/core-api/devkit/documents/updateNxJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/toJS",
+      "current": "/docs/reference/core-api/devkit/documents/toJS",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/workspaceRoot",
+      "current": "/docs/reference/core-api/devkit/documents/workspaceRoot",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/validateDependency",
+      "current": "/docs/reference/core-api/devkit/documents/validateDependency",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/updateProjectConfiguration",
+      "current": "/docs/reference/core-api/devkit/documents/updateProjectConfiguration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/workspaceLayout",
+      "current": "/docs/reference/core-api/devkit/documents/workspaceLayout",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/updateTsConfigsToJs",
+      "current": "/docs/reference/core-api/devkit/documents/updateTsConfigsToJs",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/executors",
+      "current": "/docs/reference/core-api/devkit/executors",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/visitNotIgnoredFiles",
+      "current": "/docs/reference/core-api/devkit/documents/visitNotIgnoredFiles",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/generators",
+      "current": "/docs/reference/core-api/devkit/generators",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/writeJson",
+      "current": "/docs/reference/core-api/devkit/documents/writeJson",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/devkit/documents/writeJsonFile",
+      "current": "/docs/reference/core-api/devkit/documents/writeJsonFile",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/build-tools/esbuild/api/executors",
+      "current": "/docs/technologies/build-tools/esbuild/api/executors",
+      "suggested": "/docs/technologies/build-tools/esbuild"
+    },
+    {
+      "old": "/technologies/eslint/api/executors/lint",
+      "current": "/docs/technologies/eslint/api/executors/lint",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/technologies/build-tools/esbuild/api/migrations",
+      "current": "/docs/technologies/build-tools/esbuild/api/migrations",
+      "suggested": "/docs/technologies/build-tools/esbuild"
+    },
+    {
+      "old": "/technologies/build-tools/esbuild/api/executors/esbuild",
+      "current": "/docs/technologies/build-tools/esbuild/api/executors/esbuild",
+      "suggested": "/docs/technologies/build-tools/esbuild"
+    },
+    {
+      "old": "/technologies/build-tools/esbuild/api/generators",
+      "current": "/docs/technologies/build-tools/esbuild/api/generators",
+      "suggested": "/docs/technologies/build-tools/esbuild"
+    },
+    {
+      "old": "/technologies/eslint/api/executors",
+      "current": "/docs/technologies/eslint/api/executors",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/reference/core-api/devkit/migrations",
+      "current": "/docs/reference/core-api/devkit/migrations",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/build-tools/esbuild/api/generators/init",
+      "current": "/docs/technologies/build-tools/esbuild/api/generators/init",
+      "suggested": "/docs/technologies/build-tools/esbuild"
+    },
+    {
+      "old": "/technologies/build-tools/esbuild/api/generators/configuration",
+      "current": "/docs/technologies/build-tools/esbuild/api/generators/configuration",
+      "suggested": "/docs/technologies/build-tools/esbuild"
+    },
+    {
+      "old": "/technologies/eslint/api/generators",
+      "current": "/docs/technologies/eslint/api/generators",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/technologies/eslint/eslint-plugin/api/generators",
+      "current": "/docs/technologies/eslint/eslint-plugin/api/generators",
+      "suggested": "/docs/technologies/eslint/eslint-plugin/Guides/dependency-checks"
+    },
+    {
+      "old": "/technologies/eslint/api/generators/init",
+      "current": "/docs/technologies/eslint/api/generators/init",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/technologies/eslint/api/generators/convert-to-flat-config",
+      "current": "/docs/technologies/eslint/api/generators/convert-to-flat-config",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/technologies/eslint/api/generators/workspace-rule",
+      "current": "/docs/technologies/eslint/api/generators/workspace-rule",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/technologies/eslint/eslint-plugin/api/executors",
+      "current": "/docs/technologies/eslint/eslint-plugin/api/executors",
+      "suggested": "/docs/technologies/eslint/eslint-plugin/Guides/dependency-checks"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors",
+      "current": "/docs/technologies/react/expo/api/executors",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/eslint/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/eslint/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/eslint/eslint-plugin/api/migrations",
+      "current": "/docs/technologies/eslint/eslint-plugin/api/migrations",
+      "suggested": "/docs/technologies/eslint/eslint-plugin/Guides/dependency-checks"
+    },
+    {
+      "old": "/technologies/eslint/api/generators/workspace-rules-project",
+      "current": "/docs/technologies/eslint/api/generators/workspace-rules-project",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/technologies/eslint/api/migrations",
+      "current": "/docs/technologies/eslint/api/migrations",
+      "suggested": "/docs/technologies/eslint/Guides/eslint"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/start",
+      "current": "/docs/technologies/react/expo/api/executors/start",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/prebuild",
+      "current": "/docs/technologies/react/expo/api/executors/prebuild",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/build",
+      "current": "/docs/technologies/react/expo/api/executors/build",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/update",
+      "current": "/docs/technologies/react/expo/api/executors/update",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/build-list",
+      "current": "/docs/technologies/react/expo/api/executors/build-list",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/export",
+      "current": "/docs/technologies/react/expo/api/executors/export",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/sync-deps",
+      "current": "/docs/technologies/react/expo/api/executors/sync-deps",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/install",
+      "current": "/docs/technologies/react/expo/api/executors/install",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/ensure-symlink",
+      "current": "/docs/technologies/react/expo/api/executors/ensure-symlink",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/run",
+      "current": "/docs/technologies/react/expo/api/executors/run",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/generators/application",
+      "current": "/docs/technologies/react/expo/api/generators/application",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/submit",
+      "current": "/docs/technologies/react/expo/api/executors/submit",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/generators",
+      "current": "/docs/technologies/react/expo/api/generators",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/executors/serve",
+      "current": "/docs/technologies/react/expo/api/executors/serve",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/generators/library",
+      "current": "/docs/technologies/react/expo/api/generators/library",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/generators/component",
+      "current": "/docs/technologies/react/expo/api/generators/component",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/migrations",
+      "current": "/docs/technologies/react/expo/api/migrations",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/node/express/api/executors",
+      "current": "/docs/technologies/node/express/api/executors",
+      "suggested": "/docs/technologies/node/express"
+    },
+    {
+      "old": "/technologies/react/expo/api/generators/init",
+      "current": "/docs/technologies/react/expo/api/generators/init",
+      "suggested": "/docs/technologies/react/expo"
+    },
+    {
+      "old": "/technologies/react/expo/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/react/expo/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/node/express/api/generators",
+      "current": "/docs/technologies/node/express/api/generators",
+      "suggested": "/docs/technologies/node/express"
+    },
+    {
+      "old": "/technologies/java/api/generators",
+      "current": "/docs/technologies/java/api/generators",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/java/api/migrations",
+      "current": "/docs/technologies/java/api/migrations",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/java/api/generators/ci-workflow",
+      "current": "/docs/technologies/java/api/generators/ci-workflow",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/java/api/executors",
+      "current": "/docs/technologies/java/api/executors",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/node/express/api/generators/application",
+      "current": "/docs/technologies/node/express/api/generators/application",
+      "suggested": "/docs/technologies/node/express"
+    },
+    {
+      "old": "/technologies/java/api/executors/gradle",
+      "current": "/docs/technologies/java/api/executors/gradle",
+      "suggested": "/docs/getting-started/Tutorials/gradle"
+    },
+    {
+      "old": "/technologies/java/api/generators/init",
+      "current": "/docs/technologies/java/api/generators/init",
+      "suggested": "/docs/technologies/angular/Guides/angular-nx-version-matrix"
+    },
+    {
+      "old": "/technologies/node/express/api/generators/init",
+      "current": "/docs/technologies/node/express/api/generators/init",
+      "suggested": "/docs/technologies/node/express"
+    },
+    {
+      "old": "/technologies/node/express/api/migrations",
+      "current": "/docs/technologies/node/express/api/migrations",
+      "suggested": "/docs/technologies/node/express"
+    },
+    {
+      "old": "/technologies/test-tools/jest/api/executors/jest",
+      "current": "/docs/technologies/test-tools/jest/api/executors/jest",
+      "suggested": "/docs/technologies/test-tools/jest"
+    },
+    {
+      "old": "/technologies/test-tools/jest/api/generators",
+      "current": "/docs/technologies/test-tools/jest/api/generators",
+      "suggested": "/docs/technologies/test-tools/jest"
+    },
+    {
+      "old": "/technologies/typescript/api/executors/tsc",
+      "current": "/docs/technologies/typescript/api/executors/tsc",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/test-tools/jest/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/test-tools/jest/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/test-tools/jest/api/generators/init",
+      "current": "/docs/technologies/test-tools/jest/api/generators/init",
+      "suggested": "/docs/technologies/test-tools/jest"
+    },
+    {
+      "old": "/technologies/typescript/api/executors/copy-workspace-modules",
+      "current": "/docs/technologies/typescript/api/executors/copy-workspace-modules",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/api/executors",
+      "current": "/docs/technologies/typescript/api/executors",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/test-tools/jest/api/executors",
+      "current": "/docs/technologies/test-tools/jest/api/executors",
+      "suggested": "/docs/technologies/test-tools/jest"
+    },
+    {
+      "old": "/technologies/test-tools/jest/api/generators/configuration",
+      "current": "/docs/technologies/test-tools/jest/api/generators/configuration",
+      "suggested": "/docs/technologies/test-tools/jest"
+    },
+    {
+      "old": "/technologies/test-tools/jest/api/migrations",
+      "current": "/docs/technologies/test-tools/jest/api/migrations",
+      "suggested": "/docs/technologies/test-tools/jest"
+    },
+    {
+      "old": "/technologies/typescript/api/generators",
+      "current": "/docs/technologies/typescript/api/generators",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/api/executors/verdaccio",
+      "current": "/docs/technologies/typescript/api/executors/verdaccio",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/api/generators/library",
+      "current": "/docs/technologies/typescript/api/generators/library",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/api/generators/convert-to-swc",
+      "current": "/docs/technologies/typescript/api/generators/convert-to-swc",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/api/executors/release-publish",
+      "current": "/docs/technologies/typescript/api/executors/release-publish",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/api/executors/prune-lockfile",
+      "current": "/docs/technologies/typescript/api/executors/prune-lockfile",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/api/executors/node",
+      "current": "/docs/technologies/typescript/api/executors/node",
+      "suggested": "/docs/technologies/node"
+    },
+    {
+      "old": "/technologies/typescript/api/executors/swc",
+      "current": "/docs/technologies/typescript/api/executors/swc",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/api/generators/init",
+      "current": "/docs/technologies/typescript/api/generators/init",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/api/generators/release-version",
+      "current": "/docs/technologies/typescript/api/generators/release-version",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/module-federation/api/executors",
+      "current": "/docs/technologies/module-federation/api/executors",
+      "suggested": "/docs/technologies/module-federation/Guides/create-a-host"
+    },
+    {
+      "old": "/technologies/typescript/api/migrations",
+      "current": "/docs/technologies/typescript/api/migrations",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/typescript/api/generators/setup-verdaccio",
+      "current": "/docs/technologies/typescript/api/generators/setup-verdaccio",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/module-federation/api/generators",
+      "current": "/docs/technologies/module-federation/api/generators",
+      "suggested": "/docs/technologies/module-federation/Guides/create-a-host"
+    },
+    {
+      "old": "/technologies/typescript/api/generators/setup-build",
+      "current": "/docs/technologies/typescript/api/generators/setup-build",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/module-federation/api/migrations",
+      "current": "/docs/technologies/module-federation/api/migrations",
+      "suggested": "/docs/technologies/module-federation/Guides/create-a-host"
+    },
+    {
+      "old": "/technologies/typescript/api/generators/setup-prettier",
+      "current": "/docs/technologies/typescript/api/generators/setup-prettier",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/node/nest/api/executors",
+      "current": "/docs/technologies/node/nest/api/executors",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators",
+      "current": "/docs/technologies/node/nest/api/generators",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/typescript/api/generators/typescript-sync",
+      "current": "/docs/technologies/typescript/api/generators/typescript-sync",
+      "suggested": "/docs/technologies/typescript/Guides/compile-multiple-formats"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/gateway",
+      "current": "/docs/technologies/node/nest/api/generators/gateway",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/class",
+      "current": "/docs/technologies/node/nest/api/generators/class",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/init",
+      "current": "/docs/technologies/node/nest/api/generators/init",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/library",
+      "current": "/docs/technologies/node/nest/api/generators/library",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/application",
+      "current": "/docs/technologies/node/nest/api/generators/application",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/guard",
+      "current": "/docs/technologies/node/nest/api/generators/guard",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/decorator",
+      "current": "/docs/technologies/node/nest/api/generators/decorator",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/filter",
+      "current": "/docs/technologies/node/nest/api/generators/filter",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/interceptor",
+      "current": "/docs/technologies/node/nest/api/generators/interceptor",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/controller",
+      "current": "/docs/technologies/node/nest/api/generators/controller",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/interface",
+      "current": "/docs/technologies/node/nest/api/generators/interface",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/module",
+      "current": "/docs/technologies/node/nest/api/generators/module",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/react/next/api/executors",
+      "current": "/docs/technologies/react/next/api/executors",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/service",
+      "current": "/docs/technologies/node/nest/api/generators/service",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/pipe",
+      "current": "/docs/technologies/node/nest/api/generators/pipe",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/resource",
+      "current": "/docs/technologies/node/nest/api/generators/resource",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/resolver",
+      "current": "/docs/technologies/node/nest/api/generators/resolver",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/middleware",
+      "current": "/docs/technologies/node/nest/api/generators/middleware",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/generators/provider",
+      "current": "/docs/technologies/node/nest/api/generators/provider",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/node/nest/api/migrations",
+      "current": "/docs/technologies/node/nest/api/migrations",
+      "suggested": "/docs/technologies/node/nest"
+    },
+    {
+      "old": "/technologies/react/next/api/executors/build",
+      "current": "/docs/technologies/react/next/api/executors/build",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/next/api/generators/component",
+      "current": "/docs/technologies/react/next/api/generators/component",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/next/api/executors/server",
+      "current": "/docs/technologies/react/next/api/executors/server",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/next/api/generators/page",
+      "current": "/docs/technologies/react/next/api/generators/page",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/next/api/generators/custom-server",
+      "current": "/docs/technologies/react/next/api/generators/custom-server",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/next/api/generators/init",
+      "current": "/docs/technologies/react/next/api/generators/init",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/next/api/generators",
+      "current": "/docs/technologies/react/next/api/generators",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/next/api/generators/cypress-component-configuration",
+      "current": "/docs/technologies/react/next/api/generators/cypress-component-configuration",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/next/api/generators/application",
+      "current": "/docs/technologies/react/next/api/generators/application",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/react/next/api/generators/library",
+      "current": "/docs/technologies/react/next/api/generators/library",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/node/api/generators",
+      "current": "/docs/technologies/node/api/generators",
+      "suggested": "/docs/technologies/node/Guides/application-proxies"
+    },
+    {
+      "old": "/technologies/react/next/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/react/next/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/react/next/api/migrations",
+      "current": "/docs/technologies/react/next/api/migrations",
+      "suggested": "/docs/technologies/react/next/Guides"
+    },
+    {
+      "old": "/technologies/node/api/migrations",
+      "current": "/docs/technologies/node/api/migrations",
+      "suggested": "/docs/technologies/node/Guides/application-proxies"
+    },
+    {
+      "old": "/technologies/node/api/executors",
+      "current": "/docs/technologies/node/api/executors",
+      "suggested": "/docs/technologies/node/Guides/application-proxies"
+    },
+    {
+      "old": "/technologies/node/api/generators/application",
+      "current": "/docs/technologies/node/api/generators/application",
+      "suggested": "/docs/technologies/node/Guides/application-proxies"
+    },
+    {
+      "old": "/technologies/vue/nuxt/api/executors",
+      "current": "/docs/technologies/vue/nuxt/api/executors",
+      "suggested": "/docs/technologies/vue/nuxt/Guides/deploy-nuxt-to-vercel"
+    },
+    {
+      "old": "/technologies/node/api/generators/init",
+      "current": "/docs/technologies/node/api/generators/init",
+      "suggested": "/docs/technologies/node/Guides/application-proxies"
+    },
+    {
+      "old": "/technologies/node/api/generators/library",
+      "current": "/docs/technologies/node/api/generators/library",
+      "suggested": "/docs/technologies/node/Guides/application-proxies"
+    },
+    {
+      "old": "/technologies/node/api/generators/setup-docker",
+      "current": "/docs/technologies/node/api/generators/setup-docker",
+      "suggested": "/docs/technologies/node/Guides/application-proxies"
+    },
+    {
+      "old": "/technologies/vue/nuxt/api/generators",
+      "current": "/docs/technologies/vue/nuxt/api/generators",
+      "suggested": "/docs/technologies/vue/nuxt/Guides/deploy-nuxt-to-vercel"
+    },
+    {
+      "old": "/technologies/vue/nuxt/api/generators/init",
+      "current": "/docs/technologies/vue/nuxt/api/generators/init",
+      "suggested": "/docs/technologies/vue/nuxt/Guides/deploy-nuxt-to-vercel"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/generate",
+      "current": "/docs/reference/core-api/nx/documents/generate",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/init",
+      "current": "/docs/reference/core-api/nx/documents/init",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/vue/nuxt/api/generators/application",
+      "current": "/docs/technologies/vue/nuxt/api/generators/application",
+      "suggested": "/docs/technologies/vue/nuxt/Guides/deploy-nuxt-to-vercel"
+    },
+    {
+      "old": "/technologies/vue/nuxt/api/migrations",
+      "current": "/docs/technologies/vue/nuxt/api/migrations",
+      "suggested": "/docs/technologies/vue/nuxt/Guides/deploy-nuxt-to-vercel"
+    },
+    {
+      "old": "/reference/core-api/nx/documents",
+      "current": "/docs/reference/core-api/nx/documents",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/run",
+      "current": "/docs/reference/core-api/nx/documents/run",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/create-nx-workspace",
+      "current": "/docs/reference/core-api/nx/documents/create-nx-workspace",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/vue/nuxt/api/generators/storybook-configuration",
+      "current": "/docs/technologies/vue/nuxt/api/generators/storybook-configuration",
+      "suggested": "/docs/technologies/vue/nuxt/Guides/deploy-nuxt-to-vercel"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/run-many",
+      "current": "/docs/reference/core-api/nx/documents/run-many",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/dep-graph",
+      "current": "/docs/reference/core-api/nx/documents/dep-graph",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/affected",
+      "current": "/docs/reference/core-api/nx/documents/affected",
+      "suggested": "/docs/features/CI Features/affected"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/list",
+      "current": "/docs/reference/core-api/nx/documents/list",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/report",
+      "current": "/docs/reference/core-api/nx/documents/report",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/format-check",
+      "current": "/docs/reference/core-api/nx/documents/format-check",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/format-write",
+      "current": "/docs/reference/core-api/nx/documents/format-write",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/daemon",
+      "current": "/docs/reference/core-api/nx/documents/daemon",
+      "suggested": "/docs/concepts/daemon"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/migrate",
+      "current": "/docs/reference/core-api/nx/documents/migrate",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/connect-to-nx-cloud",
+      "current": "/docs/reference/core-api/nx/documents/connect-to-nx-cloud",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/sync-check",
+      "current": "/docs/reference/core-api/nx/documents/sync-check",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/sync",
+      "current": "/docs/reference/core-api/nx/documents/sync",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/exec",
+      "current": "/docs/reference/core-api/nx/documents/exec",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/repair",
+      "current": "/docs/reference/core-api/nx/documents/repair",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/watch",
+      "current": "/docs/reference/core-api/nx/documents/watch",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/view-logs",
+      "current": "/docs/reference/core-api/nx/documents/view-logs",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/release",
+      "current": "/docs/reference/core-api/nx/documents/release",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/reset",
+      "current": "/docs/reference/core-api/nx/documents/reset",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/show",
+      "current": "/docs/reference/core-api/nx/documents/show",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/import",
+      "current": "/docs/reference/core-api/nx/documents/import",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/add",
+      "current": "/docs/reference/core-api/nx/documents/add",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/start-ci-run",
+      "current": "/docs/reference/core-api/nx/documents/start-ci-run",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/logout",
+      "current": "/docs/reference/core-api/nx/documents/logout",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/fix-ci",
+      "current": "/docs/reference/core-api/nx/documents/fix-ci",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/executors/run-commands",
+      "current": "/docs/reference/core-api/nx/executors/run-commands",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/login",
+      "current": "/docs/reference/core-api/nx/documents/login",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/mcp",
+      "current": "/docs/reference/core-api/nx/documents/mcp",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/executors/noop",
+      "current": "/docs/reference/core-api/nx/executors/noop",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/documents/record",
+      "current": "/docs/reference/core-api/nx/documents/record",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/executors",
+      "current": "/docs/reference/core-api/nx/executors",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/test-tools/playwright/api/generators",
+      "current": "/docs/technologies/test-tools/playwright/api/generators",
+      "suggested": "/docs/technologies/test-tools/playwright"
+    },
+    {
+      "old": "/technologies/test-tools/playwright/api/generators/init",
+      "current": "/docs/technologies/test-tools/playwright/api/generators/init",
+      "suggested": "/docs/technologies/test-tools/playwright"
+    },
+    {
+      "old": "/technologies/test-tools/playwright/api/executors",
+      "current": "/docs/technologies/test-tools/playwright/api/executors",
+      "suggested": "/docs/technologies/test-tools/playwright"
+    },
+    {
+      "old": "/technologies/test-tools/playwright/api/executors/playwright",
+      "current": "/docs/technologies/test-tools/playwright/api/executors/playwright",
+      "suggested": "/docs/technologies/test-tools/playwright"
+    },
+    {
+      "old": "/reference/core-api/nx/executors/run-script",
+      "current": "/docs/reference/core-api/nx/executors/run-script",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/test-tools/playwright/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/test-tools/playwright/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/test-tools/playwright/api/generators/configuration",
+      "current": "/docs/technologies/test-tools/playwright/api/generators/configuration",
+      "suggested": "/docs/technologies/test-tools/playwright"
+    },
+    {
+      "old": "/reference/core-api/nx/generators",
+      "current": "/docs/reference/core-api/nx/generators",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/migrations",
+      "current": "/docs/reference/core-api/nx/migrations",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/nx/generators/connect-to-nx-cloud",
+      "current": "/docs/reference/core-api/nx/generators/connect-to-nx-cloud",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/plugin",
+      "current": "/docs/reference/core-api/plugin/generators/plugin",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/migration",
+      "current": "/docs/reference/core-api/plugin/generators/migration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/e2e-project",
+      "current": "/docs/reference/core-api/plugin/generators/e2e-project",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/test-tools/playwright/api/migrations",
+      "current": "/docs/technologies/test-tools/playwright/api/migrations",
+      "suggested": "/docs/technologies/test-tools/playwright"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/plugin-lint-checks",
+      "current": "/docs/reference/core-api/plugin/generators/plugin-lint-checks",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/executor",
+      "current": "/docs/reference/core-api/plugin/generators/executor",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/plugin/executors",
+      "current": "/docs/reference/core-api/plugin/executors",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/create-package",
+      "current": "/docs/reference/core-api/plugin/generators/create-package",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/generator",
+      "current": "/docs/reference/core-api/plugin/generators/generator",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators",
+      "current": "/docs/reference/core-api/plugin/generators",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/react/api/executors/module-federation-ssr-dev-server",
+      "current": "/docs/technologies/react/api/executors/module-federation-ssr-dev-server",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/reference/core-api/plugin/migrations",
+      "current": "/docs/reference/core-api/plugin/migrations",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/react/api/executors/module-federation-static-server",
+      "current": "/docs/technologies/react/api/executors/module-federation-static-server",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/executors/module-federation-dev-server",
+      "current": "/docs/technologies/react/api/executors/module-federation-dev-server",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/application",
+      "current": "/docs/technologies/react/api/generators/application",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/library",
+      "current": "/docs/technologies/react/api/generators/library",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators",
+      "current": "/docs/technologies/react/api/generators",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/init",
+      "current": "/docs/technologies/react/api/generators/init",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/executors",
+      "current": "/docs/technologies/react/api/executors",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/reference/core-api/plugin/generators/preset",
+      "current": "/docs/reference/core-api/plugin/generators/preset",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/react/api/generators/stories",
+      "current": "/docs/technologies/react/api/generators/stories",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/cypress-component-configuration",
+      "current": "/docs/technologies/react/api/generators/cypress-component-configuration",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/component",
+      "current": "/docs/technologies/react/api/generators/component",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/component-test",
+      "current": "/docs/technologies/react/api/generators/component-test",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/component-story",
+      "current": "/docs/technologies/react/api/generators/component-story",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/redux",
+      "current": "/docs/technologies/react/api/generators/redux",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/storybook-configuration",
+      "current": "/docs/technologies/react/api/generators/storybook-configuration",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/host",
+      "current": "/docs/technologies/react/api/generators/host",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/hook",
+      "current": "/docs/technologies/react/api/generators/hook",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/remote",
+      "current": "/docs/technologies/react/api/generators/remote",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/setup-tailwind",
+      "current": "/docs/technologies/react/api/generators/setup-tailwind",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors",
+      "current": "/docs/technologies/react/react-native/api/executors",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/build-android",
+      "current": "/docs/technologies/react/react-native/api/executors/build-android",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/api/migrations",
+      "current": "/docs/technologies/react/api/migrations",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/bundle",
+      "current": "/docs/technologies/react/react-native/api/executors/bundle",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/build-ios",
+      "current": "/docs/technologies/react/react-native/api/executors/build-ios",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/run-ios",
+      "current": "/docs/technologies/react/react-native/api/executors/run-ios",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/api/generators/federate-module",
+      "current": "/docs/technologies/react/api/generators/federate-module",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/api/generators/setup-ssr",
+      "current": "/docs/technologies/react/api/generators/setup-ssr",
+      "suggested": "/docs/technologies/react/Guides/adding-assets-react"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/run-android",
+      "current": "/docs/technologies/react/react-native/api/executors/run-android",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/start",
+      "current": "/docs/technologies/react/react-native/api/executors/start",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/generators/init",
+      "current": "/docs/technologies/react/react-native/api/generators/init",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/upgrade",
+      "current": "/docs/technologies/react/react-native/api/executors/upgrade",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/generators/application",
+      "current": "/docs/technologies/react/react-native/api/generators/application",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/storybook",
+      "current": "/docs/technologies/react/react-native/api/executors/storybook",
+      "suggested": "/docs/technologies/test-tools/storybook"
+    },
+    {
+      "old": "/technologies/react/react-native/api/generators/library",
+      "current": "/docs/technologies/react/react-native/api/generators/library",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/pod-install",
+      "current": "/docs/technologies/react/react-native/api/executors/pod-install",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/generators",
+      "current": "/docs/technologies/react/react-native/api/generators",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/sync-deps",
+      "current": "/docs/technologies/react/react-native/api/executors/sync-deps",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/executors/ensure-symlink",
+      "current": "/docs/technologies/react/react-native/api/executors/ensure-symlink",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/remix/api/executors/serve",
+      "current": "/docs/technologies/react/remix/api/executors/serve",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/react-native/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/react/react-native/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/react/remix/api/executors",
+      "current": "/docs/technologies/react/remix/api/executors",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/react-native/api/generators/component",
+      "current": "/docs/technologies/react/react-native/api/generators/component",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/generators/web-configuration",
+      "current": "/docs/technologies/react/react-native/api/generators/web-configuration",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/react-native/api/migrations",
+      "current": "/docs/technologies/react/react-native/api/migrations",
+      "suggested": "/docs/technologies/react/Guides/react-native"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/preset",
+      "current": "/docs/technologies/react/remix/api/generators/preset",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/executors/build",
+      "current": "/docs/technologies/react/remix/api/executors/build",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/setup",
+      "current": "/docs/technologies/react/remix/api/generators/setup",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators",
+      "current": "/docs/technologies/react/remix/api/generators",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/library",
+      "current": "/docs/technologies/react/remix/api/generators/library",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/resource-route",
+      "current": "/docs/technologies/react/remix/api/generators/resource-route",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/application",
+      "current": "/docs/technologies/react/remix/api/generators/application",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/loader",
+      "current": "/docs/technologies/react/remix/api/generators/loader",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/style",
+      "current": "/docs/technologies/react/remix/api/generators/style",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/route",
+      "current": "/docs/technologies/react/remix/api/generators/route",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/setup-tailwind",
+      "current": "/docs/technologies/react/remix/api/generators/setup-tailwind",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/init",
+      "current": "/docs/technologies/react/remix/api/generators/init",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/action",
+      "current": "/docs/technologies/react/remix/api/generators/action",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/cypress-component-configuration",
+      "current": "/docs/technologies/react/remix/api/generators/cypress-component-configuration",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/error-boundary",
+      "current": "/docs/technologies/react/remix/api/generators/error-boundary",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/storybook-configuration",
+      "current": "/docs/technologies/react/remix/api/generators/storybook-configuration",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/build-tools/rollup/api/executors/rollup",
+      "current": "/docs/technologies/build-tools/rollup/api/executors/rollup",
+      "suggested": "/docs/technologies/build-tools/rollup"
+    },
+    {
+      "old": "/technologies/build-tools/rollup/api/generators/init",
+      "current": "/docs/technologies/build-tools/rollup/api/generators/init",
+      "suggested": "/docs/technologies/build-tools/rollup"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/meta",
+      "current": "/docs/technologies/react/remix/api/generators/meta",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/migrations",
+      "current": "/docs/technologies/react/remix/api/migrations",
+      "suggested": "/docs/technologies/react/Guides/remix"
+    },
+    {
+      "old": "/technologies/react/remix/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/react/remix/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/build-tools/rollup/api/generators/configuration",
+      "current": "/docs/technologies/build-tools/rollup/api/generators/configuration",
+      "suggested": "/docs/technologies/build-tools/rollup"
+    },
+    {
+      "old": "/technologies/build-tools/rollup/api/generators",
+      "current": "/docs/technologies/build-tools/rollup/api/generators",
+      "suggested": "/docs/technologies/build-tools/rollup"
+    },
+    {
+      "old": "/technologies/build-tools/rollup/api/executors",
+      "current": "/docs/technologies/build-tools/rollup/api/executors",
+      "suggested": "/docs/technologies/build-tools/rollup"
+    },
+    {
+      "old": "/technologies/build-tools/rsbuild/api/generators/configuration",
+      "current": "/docs/technologies/build-tools/rsbuild/api/generators/configuration",
+      "suggested": "/docs/technologies/build-tools/rsbuild"
+    },
+    {
+      "old": "/technologies/build-tools/rsbuild/api/migrations",
+      "current": "/docs/technologies/build-tools/rsbuild/api/migrations",
+      "suggested": "/docs/technologies/build-tools/rsbuild"
+    },
+    {
+      "old": "/technologies/build-tools/rsbuild/api/executors",
+      "current": "/docs/technologies/build-tools/rsbuild/api/executors",
+      "suggested": "/docs/technologies/build-tools/rsbuild"
+    },
+    {
+      "old": "/technologies/build-tools/rsbuild/api/generators",
+      "current": "/docs/technologies/build-tools/rsbuild/api/generators",
+      "suggested": "/docs/technologies/build-tools/rsbuild"
+    },
+    {
+      "old": "/technologies/build-tools/rollup/api/migrations",
+      "current": "/docs/technologies/build-tools/rollup/api/migrations",
+      "suggested": "/docs/technologies/build-tools/rollup"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/executors",
+      "current": "/docs/technologies/build-tools/rspack/api/executors",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rollup/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/build-tools/rollup/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/executors/rspack",
+      "current": "/docs/technologies/build-tools/rspack/api/executors/rspack",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/executors/dev-server",
+      "current": "/docs/technologies/build-tools/rspack/api/executors/dev-server",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rsbuild/api/generators/init",
+      "current": "/docs/technologies/build-tools/rsbuild/api/generators/init",
+      "suggested": "/docs/technologies/build-tools/rsbuild"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/generators/configuration",
+      "current": "/docs/technologies/build-tools/rspack/api/generators/configuration",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/executors/module-federation-ssr-dev-server",
+      "current": "/docs/technologies/build-tools/rspack/api/executors/module-federation-ssr-dev-server",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/executors/ssr-dev-server",
+      "current": "/docs/technologies/build-tools/rspack/api/executors/ssr-dev-server",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/executors/module-federation-dev-server",
+      "current": "/docs/technologies/build-tools/rspack/api/executors/module-federation-dev-server",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/generators/application",
+      "current": "/docs/technologies/build-tools/rspack/api/generators/application",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/executors/module-federation-static-server",
+      "current": "/docs/technologies/build-tools/rspack/api/executors/module-federation-static-server",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/generators/convert-webpack",
+      "current": "/docs/technologies/build-tools/rspack/api/generators/convert-webpack",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/generators/preset",
+      "current": "/docs/technologies/build-tools/rspack/api/generators/preset",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/generators/init",
+      "current": "/docs/technologies/build-tools/rspack/api/generators/init",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/generators",
+      "current": "/docs/technologies/build-tools/rspack/api/generators",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api/executors/build",
+      "current": "/docs/technologies/test-tools/storybook/api/executors/build",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/generators/convert-config-to-rspack-plugin",
+      "current": "/docs/technologies/build-tools/rspack/api/generators/convert-config-to-rspack-plugin",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api/generators",
+      "current": "/docs/technologies/test-tools/storybook/api/generators",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/build-tools/rspack/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/build-tools/rspack/api/migrations",
+      "current": "/docs/technologies/build-tools/rspack/api/migrations",
+      "suggested": "/docs/technologies/build-tools/rspack"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api/generators/configuration",
+      "current": "/docs/technologies/test-tools/storybook/api/generators/configuration",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api/executors",
+      "current": "/docs/technologies/test-tools/storybook/api/executors",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/test-tools/storybook/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api/executors/storybook",
+      "current": "/docs/technologies/test-tools/storybook/api/executors/storybook",
+      "suggested": "/docs/technologies/test-tools/storybook"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api/generators/init",
+      "current": "/docs/technologies/test-tools/storybook/api/generators/init",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/generators",
+      "current": "/docs/technologies/build-tools/vite/api/generators",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api/migrations",
+      "current": "/docs/technologies/test-tools/storybook/api/migrations",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/executors",
+      "current": "/docs/technologies/build-tools/vite/api/executors",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/executors/test",
+      "current": "/docs/technologies/build-tools/vite/api/executors/test",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/executors/preview-server",
+      "current": "/docs/technologies/build-tools/vite/api/executors/preview-server",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api/generators/migrate-8",
+      "current": "/docs/technologies/test-tools/storybook/api/generators/migrate-8",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/generators/init",
+      "current": "/docs/technologies/build-tools/vite/api/generators/init",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/executors/dev-server",
+      "current": "/docs/technologies/build-tools/vite/api/executors/dev-server",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/executors/build",
+      "current": "/docs/technologies/build-tools/vite/api/executors/build",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/test-tools/storybook/api/generators/migrate-9",
+      "current": "/docs/technologies/test-tools/storybook/api/generators/migrate-9",
+      "suggested": "/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/generators/setup-paths-plugin",
+      "current": "/docs/technologies/build-tools/vite/api/generators/setup-paths-plugin",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/generators/configuration",
+      "current": "/docs/technologies/build-tools/vite/api/generators/configuration",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/vue/api/executors",
+      "current": "/docs/technologies/vue/api/executors",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/migrations",
+      "current": "/docs/technologies/build-tools/vite/api/migrations",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/vue/api/generators",
+      "current": "/docs/technologies/vue/api/generators",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/technologies/vue/api/generators/library",
+      "current": "/docs/technologies/vue/api/generators/library",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/technologies/vue/api/generators/init",
+      "current": "/docs/technologies/vue/api/generators/init",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/technologies/vue/api/generators/application",
+      "current": "/docs/technologies/vue/api/generators/application",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/generators/vitest",
+      "current": "/docs/technologies/build-tools/vite/api/generators/vitest",
+      "suggested": "/docs/technologies/build-tools/vite/Guides/configure-vite"
+    },
+    {
+      "old": "/technologies/build-tools/vite/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/build-tools/vite/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/technologies/vue/api/generators/storybook-configuration",
+      "current": "/docs/technologies/vue/api/generators/storybook-configuration",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/technologies/vue/api/generators/setup-tailwind",
+      "current": "/docs/technologies/vue/api/generators/setup-tailwind",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/reference/core-api/web/generators/application",
+      "current": "/docs/reference/core-api/web/generators/application",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/vue/api/migrations",
+      "current": "/docs/technologies/vue/api/migrations",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/reference/core-api/web/executors",
+      "current": "/docs/reference/core-api/web/executors",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/vue/api/generators/stories",
+      "current": "/docs/technologies/vue/api/generators/stories",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/reference/core-api/web/generators/init",
+      "current": "/docs/reference/core-api/web/generators/init",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/web/generators",
+      "current": "/docs/reference/core-api/web/generators",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/web/executors/file-server",
+      "current": "/docs/reference/core-api/web/executors/file-server",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/vue/api/generators/component",
+      "current": "/docs/technologies/vue/api/generators/component",
+      "suggested": "/docs/technologies/vue"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api/executors",
+      "current": "/docs/technologies/build-tools/webpack/api/executors",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api/executors/webpack",
+      "current": "/docs/technologies/build-tools/webpack/api/executors/webpack",
+      "suggested": "/docs/technologies/build-tools/webpack"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api/generators",
+      "current": "/docs/technologies/build-tools/webpack/api/generators",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api/generators/configuration",
+      "current": "/docs/technologies/build-tools/webpack/api/generators/configuration",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api/executors/ssr-dev-server",
+      "current": "/docs/technologies/build-tools/webpack/api/executors/ssr-dev-server",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api/executors/dev-server",
+      "current": "/docs/technologies/build-tools/webpack/api/executors/dev-server",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api/generators/convert-config-to-webpack-plugin",
+      "current": "/docs/technologies/build-tools/webpack/api/generators/convert-config-to-webpack-plugin",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api/generators/init",
+      "current": "/docs/technologies/build-tools/webpack/api/generators/init",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides"
+    },
+    {
+      "old": "/reference/core-api/web/migrations",
+      "current": "/docs/reference/core-api/web/migrations",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/web/generators/static-config",
+      "current": "/docs/reference/core-api/web/generators/static-config",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/documents/overview",
+      "current": "/docs/reference/core-api/workspace/documents/overview",
+      "suggested": "/docs/reference/Powerpack/conformance/overview"
+    },
+    {
+      "old": "/reference/core-api/workspace/executors/counter",
+      "current": "/docs/reference/core-api/workspace/executors/counter",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api/migrations",
+      "current": "/docs/technologies/build-tools/webpack/api/migrations",
+      "suggested": "/docs/technologies/build-tools/webpack/Guides"
+    },
+    {
+      "old": "/reference/core-api/workspace/executors",
+      "current": "/docs/reference/core-api/workspace/executors",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/preset",
+      "current": "/docs/reference/core-api/workspace/generators/preset",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/technologies/build-tools/webpack/api/generators/convert-to-inferred",
+      "current": "/docs/technologies/build-tools/webpack/api/generators/convert-to-inferred",
+      "suggested": "/docs/guides/Tasks & Caching/convert-to-inferred"
+    },
+    {
+      "old": "/reference/core-api/workspace/documents/nx-nodejs-typescript-version-matrix",
+      "current": "/docs/reference/core-api/workspace/documents/nx-nodejs-typescript-version-matrix",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators",
+      "current": "/docs/reference/core-api/workspace/generators",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/move",
+      "current": "/docs/reference/core-api/workspace/generators/move",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/documents",
+      "current": "/docs/reference/core-api/workspace/documents",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/convert-to-monorepo",
+      "current": "/docs/reference/core-api/workspace/generators/convert-to-monorepo",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/remove",
+      "current": "/docs/reference/core-api/workspace/generators/remove",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/new",
+      "current": "/docs/reference/core-api/workspace/generators/new",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/npm-package",
+      "current": "/docs/reference/core-api/workspace/generators/npm-package",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/migrations",
+      "current": "/docs/reference/core-api/workspace/migrations",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/run-commands",
+      "current": "/docs/reference/core-api/workspace/generators/run-commands",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/fix-configuration",
+      "current": "/docs/reference/core-api/workspace/generators/fix-configuration",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/infer-targets",
+      "current": "/docs/reference/core-api/workspace/generators/infer-targets",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/azure-cache/executors",
+      "current": "/docs/reference/core-api/azure-cache/executors",
+      "suggested": "/docs/reference/Remote Cache Plugins/azure-cache"
+    },
+    {
+      "old": "/reference/core-api/workspace/generators/ci-workflow",
+      "current": "/docs/reference/core-api/workspace/generators/ci-workflow",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/reference/core-api/azure-cache/migrations",
+      "current": "/docs/reference/core-api/azure-cache/migrations",
+      "suggested": "/docs/reference/Remote Cache Plugins/azure-cache"
+    },
+    {
+      "old": "/reference/core-api/conformance/documents/create-conformance-rule",
+      "current": "/docs/reference/core-api/conformance/documents/create-conformance-rule",
+      "suggested": "/docs/reference/Powerpack/conformance/create-conformance-rule"
+    },
+    {
+      "old": "/reference/core-api/conformance/executors/bundle-rules",
+      "current": "/docs/reference/core-api/conformance/executors/bundle-rules",
+      "suggested": "/docs/reference/Powerpack/conformance/Executors"
+    },
+    {
+      "old": "/reference/core-api/conformance/executors",
+      "current": "/docs/reference/core-api/conformance/executors",
+      "suggested": "/docs/reference/Powerpack/conformance/Executors"
+    },
+    {
+      "old": "/reference/core-api/conformance/generators",
+      "current": "/docs/reference/core-api/conformance/generators",
+      "suggested": "/docs/reference/Powerpack/conformance/Executors"
+    },
+    {
+      "old": "/reference/core-api/conformance/documents/overview",
+      "current": "/docs/reference/core-api/conformance/documents/overview",
+      "suggested": "/docs/reference/Powerpack/conformance/overview"
+    },
+    {
+      "old": "/reference/core-api/conformance/documents",
+      "current": "/docs/reference/core-api/conformance/documents",
+      "suggested": "/docs/reference/Powerpack/conformance/Executors"
+    },
+    {
+      "old": "/reference/core-api/conformance/generators/create-rule",
+      "current": "/docs/reference/core-api/conformance/generators/create-rule",
+      "suggested": "/docs/reference/Powerpack/conformance/Executors"
+    },
+    {
+      "old": "/reference/core-api/conformance/generators/preset",
+      "current": "/docs/reference/core-api/conformance/generators/preset",
+      "suggested": "/docs/reference/Powerpack/conformance/Executors"
+    },
+    {
+      "old": "/reference/core-api/azure-cache/generators",
+      "current": "/docs/reference/core-api/azure-cache/generators",
+      "suggested": "/docs/reference/Remote Cache Plugins/azure-cache"
+    },
+    {
+      "old": "/reference/core-api/owners/migrations",
+      "current": "/docs/reference/core-api/owners/migrations",
+      "suggested": "/docs/reference/Powerpack/owners/Generators"
+    },
+    {
+      "old": "/reference/core-api/gcs-cache/executors",
+      "current": "/docs/reference/core-api/gcs-cache/executors",
+      "suggested": "/docs/reference/Remote Cache Plugins/gcs-cache"
+    },
+    {
+      "old": "/reference/core-api/owners/generators/sync-codeowners-file",
+      "current": "/docs/reference/core-api/owners/generators/sync-codeowners-file",
+      "suggested": "/docs/reference/Powerpack/owners/Generators"
+    },
+    {
+      "old": "/reference/core-api/owners/generators",
+      "current": "/docs/reference/core-api/owners/generators",
+      "suggested": "/docs/reference/Powerpack/owners/Generators"
+    },
+    {
+      "old": "/reference/core-api/owners/executors",
+      "current": "/docs/reference/core-api/owners/executors",
+      "suggested": "/docs/reference/Powerpack/owners/Generators"
+    },
+    {
+      "old": "/reference/core-api/gcs-cache/migrations",
+      "current": "/docs/reference/core-api/gcs-cache/migrations",
+      "suggested": "/docs/reference/Remote Cache Plugins/gcs-cache"
+    },
+    {
+      "old": "/reference/core-api/s3-cache/executors",
+      "current": "/docs/reference/core-api/s3-cache/executors",
+      "suggested": "/docs/reference/Remote Cache Plugins/s3-cache"
+    },
+    {
+      "old": "/reference/core-api/gcs-cache/generators",
+      "current": "/docs/reference/core-api/gcs-cache/generators",
+      "suggested": "/docs/reference/Remote Cache Plugins/gcs-cache"
+    },
+    {
+      "old": "/reference/core-api/conformance/migrations",
+      "current": "/docs/reference/core-api/conformance/migrations",
+      "suggested": "/docs/reference/Powerpack/conformance/Executors"
+    },
+    {
+      "old": "/reference/core-api/owners/generators/init",
+      "current": "/docs/reference/core-api/owners/generators/init",
+      "suggested": "/docs/reference/Powerpack/owners/Generators"
+    },
+    {
+      "old": "/reference/core-api/s3-cache/migrations",
+      "current": "/docs/reference/core-api/s3-cache/migrations",
+      "suggested": "/docs/reference/Remote Cache Plugins/s3-cache"
+    },
+    {
+      "old": "/ci/features",
+      "current": "/docs/ci/features",
+      "suggested": "/docs/features"
+    },
+    {
+      "old": "/ci/getting-started/intro",
+      "current": "/docs/ci/getting-started/intro",
+      "suggested": "/docs/getting-started/intro"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache/migrations",
+      "current": "/docs/reference/core-api/shared-fs-cache/migrations",
+      "suggested": "/docs/reference/Remote Cache Plugins/shared-fs-cache/Generators"
+    },
+    {
+      "old": "/ci/features/self-healing-ci",
+      "current": "/docs/ci/features/self-healing-ci",
+      "suggested": "/docs/features/CI Features/self-healing-ci"
+    },
+    {
+      "old": "/reference/core-api/s3-cache/generators",
+      "current": "/docs/reference/core-api/s3-cache/generators",
+      "suggested": "/docs/reference/Remote Cache Plugins/s3-cache"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache/generators",
+      "current": "/docs/reference/core-api/shared-fs-cache/generators",
+      "suggested": "/docs/reference/Remote Cache Plugins/shared-fs-cache/Generators"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache/executors",
+      "current": "/docs/reference/core-api/shared-fs-cache/executors",
+      "suggested": "/docs/reference/Remote Cache Plugins/shared-fs-cache/Generators"
+    },
+    {
+      "old": "/reference/core-api/shared-fs-cache/generators/init",
+      "current": "/docs/reference/core-api/shared-fs-cache/generators/init",
+      "suggested": "/docs/reference/Remote Cache Plugins/shared-fs-cache/Generators"
+    },
+    {
+      "old": "/ci/getting-started",
+      "current": "/docs/ci/getting-started",
+      "suggested": "/docs/getting-started"
+    },
+    {
+      "old": "/ci/features/distribute-task-execution",
+      "current": "/docs/ci/features/distribute-task-execution",
+      "suggested": "/docs/features/CI Features/distribute-task-execution"
+    },
+    {
+      "old": "/ci/features/affected",
+      "current": "/docs/ci/features/affected",
+      "suggested": "/docs/features/CI Features/affected"
+    },
+    {
+      "old": "/ci/features/explain-with-ai",
+      "current": "/docs/ci/features/explain-with-ai",
+      "suggested": "/docs/features/CI Features/explain-with-ai"
+    },
+    {
+      "old": "/ci/features/flaky-tasks",
+      "current": "/docs/ci/features/flaky-tasks",
+      "suggested": "/docs/features/CI Features/flaky-tasks"
+    },
+    {
+      "old": "/ci/features/remote-cache",
+      "current": "/docs/ci/features/remote-cache",
+      "suggested": "/docs/features/CI Features/remote-cache"
+    },
+    {
+      "old": "/ci/features/dynamic-agents",
+      "current": "/docs/ci/features/dynamic-agents",
+      "suggested": "/docs/features/CI Features/dynamic-agents"
+    },
+    {
+      "old": "/ci/concepts/building-blocks-fast-ci",
+      "current": "/docs/ci/concepts/building-blocks-fast-ci",
+      "suggested": "/docs/concepts/CI Concepts/building-blocks-fast-ci"
+    },
+    {
+      "old": "/ci/concepts",
+      "current": "/docs/ci/concepts",
+      "suggested": "/docs/concepts"
+    },
+    {
+      "old": "/ci/features/split-e2e-tasks",
+      "current": "/docs/ci/features/split-e2e-tasks",
+      "suggested": "/docs/features/CI Features/split-e2e-tasks"
+    },
+    {
+      "old": "/ci/features/github-integration",
+      "current": "/docs/ci/features/github-integration",
+      "suggested": "/docs/features/CI Features/github-integration"
+    },
+    {
+      "old": "/ci/concepts/nx-cloud-ai",
+      "current": "/docs/ci/concepts/nx-cloud-ai",
+      "suggested": "/docs/concepts/CI Concepts/ai-features"
+    },
+    {
+      "old": "/ci/concepts/heartbeat",
+      "current": "/docs/ci/concepts/heartbeat",
+      "suggested": "/docs/concepts/CI Concepts/ai-features"
+    },
+    {
+      "old": "/ci/concepts/parallelization-distribution",
+      "current": "/docs/ci/concepts/parallelization-distribution",
+      "suggested": "/docs/concepts/CI Concepts/parallelization-distribution"
+    },
+    {
+      "old": "/ci/concepts/reduce-waste",
+      "current": "/docs/ci/concepts/reduce-waste",
+      "suggested": "/docs/concepts/CI Concepts/reduce-waste"
+    },
+    {
+      "old": "/ci/concepts/cache-security",
+      "current": "/docs/ci/concepts/cache-security",
+      "suggested": "/docs/concepts/CI Concepts/cache-security"
+    },
+    {
+      "old": "/ci/recipes/security/google-auth",
+      "current": "/docs/ci/recipes/security/google-auth",
+      "suggested": "/docs/guides/Nx Cloud/google-auth"
+    },
+    {
+      "old": "/ci/recipes/security/encryption",
+      "current": "/docs/ci/recipes/security/encryption",
+      "suggested": "/docs/guides/Nx Cloud/encryption"
+    },
+    {
+      "old": "/ci/recipes/security/access-tokens",
+      "current": "/docs/ci/recipes/security/access-tokens",
+      "suggested": "/docs/guides/Nx Cloud/access-tokens"
+    },
+    {
+      "old": "/ci/recipes/source-control-integration",
+      "current": "/docs/ci/recipes/source-control-integration",
+      "suggested": "/docs/guides/Nx Cloud/source-control-integration"
+    },
+    {
+      "old": "/ci/recipes/security/personal-access-tokens",
+      "current": "/docs/ci/recipes/security/personal-access-tokens",
+      "suggested": "/docs/guides/Nx Cloud/personal-access-tokens"
+    },
+    {
+      "old": "/ci/recipes/source-control-integration/bitbucket",
+      "current": "/docs/ci/recipes/source-control-integration/bitbucket",
+      "suggested": "/docs/guides/Nx Cloud/source-control-integration"
+    },
+    {
+      "old": "/ci/recipes/source-control-integration/gitlab",
+      "current": "/docs/ci/recipes/source-control-integration/gitlab",
+      "suggested": "/docs/guides/Nx Cloud/source-control-integration"
+    },
+    {
+      "old": "/ci/recipes/source-control-integration/azure-devops",
+      "current": "/docs/ci/recipes/source-control-integration/azure-devops",
+      "suggested": "/docs/guides/Nx Cloud/source-control-integration"
+    },
+    {
+      "old": "/ci/recipes/source-control-integration/github",
+      "current": "/docs/ci/recipes/source-control-integration/github",
+      "suggested": "/docs/guides/Nx Cloud/source-control-integration"
+    },
+    {
+      "old": "/ci/recipes/enterprise",
+      "current": "/docs/ci/recipes/enterprise",
+      "suggested": "/docs/enterprise"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant",
+      "current": "/docs/ci/recipes/enterprise/single-tenant",
+      "suggested": "/docs/enterprise/Powerpack Features/configure-conformance-rules-in-nx-cloud"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/custom-github-app",
+      "current": "/docs/ci/recipes/enterprise/single-tenant/custom-github-app",
+      "suggested": "/docs/enterprise/Single Tenant/custom-github-app"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/auth-saml",
+      "current": "/docs/ci/recipes/enterprise/single-tenant/auth-saml",
+      "suggested": "/docs/enterprise/Single Tenant/auth-saml"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/overview",
+      "current": "/docs/ci/recipes/enterprise/single-tenant/overview",
+      "suggested": "/docs/enterprise/Single Tenant/overview"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/auth-github",
+      "current": "/docs/ci/recipes/enterprise/single-tenant/auth-github",
+      "suggested": "/docs/enterprise/Single Tenant/auth-github"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/auth-bitbucket-data-center",
+      "current": "/docs/ci/recipes/enterprise/single-tenant/auth-bitbucket-data-center",
+      "suggested": "/docs/enterprise/Single Tenant/auth-bitbucket-data-center"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/auth-bitbucket",
+      "current": "/docs/ci/recipes/enterprise/single-tenant/auth-bitbucket",
+      "suggested": "/docs/enterprise/Single Tenant/auth-bitbucket"
+    },
+    {
+      "old": "/ci/recipes/enterprise/single-tenant/auth-gitlab",
+      "current": "/docs/ci/recipes/enterprise/single-tenant/auth-gitlab",
+      "suggested": "/docs/enterprise/Single Tenant/auth-gitlab"
+    },
+    {
+      "old": "/ci/recipes/other/ci-deployment",
+      "current": "/docs/ci/recipes/other/ci-deployment",
+      "suggested": "/docs/guides/ci-deployment"
+    },
+    {
+      "old": "/ci/recipes/enterprise/polygraph",
+      "current": "/docs/ci/recipes/enterprise/polygraph",
+      "suggested": "/docs/enterprise/polygraph"
+    },
+    {
+      "old": "/ci/recipes/enterprise/conformance",
+      "current": "/docs/ci/recipes/enterprise/conformance",
+      "suggested": "/docs/enterprise/Powerpack Features/conformance"
+    },
+    {
+      "old": "/ci/recipes/enterprise/metadata-only-workspace",
+      "current": "/docs/ci/recipes/enterprise/metadata-only-workspace",
+      "suggested": "/docs/enterprise/metadata-only-workspace"
+    },
+    {
+      "old": "/ci/recipes/enterprise/custom-workflows",
+      "current": "/docs/ci/recipes/enterprise/custom-workflows",
+      "suggested": "/docs/enterprise/custom-workflows"
+    },
+    {
+      "old": "/ci/recipes/other/cipe-affected-project-graph",
+      "current": "/docs/ci/recipes/other/cipe-affected-project-graph",
+      "suggested": "/docs/guides/Nx Cloud/cipe-affected-project-graph"
+    },
+    {
+      "old": "/ci/recipes/enterprise/conformance/publish-conformance-rules-to-nx-cloud",
+      "current": "/docs/ci/recipes/enterprise/conformance/publish-conformance-rules-to-nx-cloud",
+      "suggested": "/docs/enterprise/Powerpack Features/publish-conformance-rules-to-nx-cloud"
+    },
+    {
+      "old": "/ci/recipes/other/record-commands",
+      "current": "/docs/ci/recipes/other/record-commands",
+      "suggested": "/docs/guides/Nx Cloud/record-commands"
+    },
+    {
+      "old": "/ci/recipes/enterprise/conformance/configure-conformance-rules-in-nx-cloud",
+      "current": "/docs/ci/recipes/enterprise/conformance/configure-conformance-rules-in-nx-cloud",
+      "suggested": "/docs/enterprise/Powerpack Features/configure-conformance-rules-in-nx-cloud"
+    },
+    {
+      "old": "/ci/reference/custom-steps",
+      "current": "/docs/ci/reference/custom-steps",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/ci/reference/launch-templates",
+      "current": "/docs/ci/reference/launch-templates",
+      "suggested": "/docs/reference/launch-templates"
+    },
+    {
+      "old": "/ci/reference/config",
+      "current": "/docs/ci/reference/config",
+      "suggested": "/docs/reference/config"
+    },
+    {
+      "old": "/ci/reference/env-vars",
+      "current": "/docs/ci/reference/env-vars",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/ci/reference/nx-cloud-cli",
+      "current": "/docs/ci/reference/nx-cloud-cli",
+      "suggested": "/docs/reference/nx-cloud-cli"
+    },
+    {
+      "old": "/ci/reference/credits-pricing",
+      "current": "/docs/ci/reference/credits-pricing",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/ci/reference/assignment-rules",
+      "current": "/docs/ci/reference/assignment-rules",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/ci/reference/custom-images",
+      "current": "/docs/ci/reference/custom-images",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/ci/reference/release-notes",
+      "current": "/docs/ci/reference/release-notes",
+      "suggested": "/docs/reference/Benchmarks/caching"
+    },
+    {
+      "old": "/ci/reference",
+      "current": "/docs/ci/reference",
+      "suggested": "/docs/reference"
+    },
+    {
+      "old": "/ci/troubleshooting/ci-execution-failed",
+      "current": "/docs/ci/troubleshooting/ci-execution-failed",
+      "suggested": "/docs/troubleshooting/ci-execution-failed"
+    },
+    {
+      "old": "/extending-nx/tutorials",
+      "current": "/docs/extending-nx/tutorials",
+      "suggested": "/docs/getting-started/tutorials"
+    },
+    {
+      "old": "/extending-nx/intro",
+      "current": "/docs/extending-nx/intro",
+      "suggested": "/docs/getting-started/intro"
+    },
+    {
+      "old": "/extending-nx/intro/getting-started",
+      "current": "/docs/extending-nx/intro/getting-started",
+      "suggested": "/docs/getting-started"
+    },
+    {
+      "old": "/ci/troubleshooting",
+      "current": "/docs/ci/troubleshooting",
+      "suggested": "/docs/troubleshooting"
+    },
+    {
+      "old": "/extending-nx/api/nx-devkit/overview",
+      "current": "/docs/extending-nx/api/nx-devkit/overview",
+      "suggested": "/docs/concepts/Decisions/overview"
+    },
+    {
+      "old": "/extending-nx/api/plugin/overview",
+      "current": "/docs/extending-nx/api/plugin/overview",
+      "suggested": "/docs/concepts/Decisions/overview"
+    }
+  ]
+}

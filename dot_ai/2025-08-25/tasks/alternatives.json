@@ -1,0 +1,5181 @@
+{
+  "fixable": [
+    {
+      "from": "/recipes/nx-console/console-troubleshooting",
+      "to": "/docs/recipes/nx-console/console-troubleshooting",
+      "targetStatus": 404,
+      "workingAlternative": "/docs/troubleshooting/console-troubleshooting"
+    },
+    {
+      "from": "/ci/getting-started",
+      "to": "/docs/ci/getting-started",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/getting-started"
+    },
+    {
+      "from": "/ci/getting-started/intro",
+      "to": "/docs/ci/getting-started/intro",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/getting-started/intro"
+    },
+    {
+      "from": "/ci/features",
+      "to": "/docs/ci/features",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/features"
+    },
+    {
+      "from": "/ci/features/self-healing-ci",
+      "to": "/docs/ci/features/self-healing-ci",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/features/self-healing-ci"
+    },
+    {
+      "from": "/ci/features/remote-cache",
+      "to": "/docs/ci/features/remote-cache",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/features/remote-cache"
+    },
+    {
+      "from": "/ci/features/distribute-task-execution",
+      "to": "/docs/ci/features/distribute-task-execution",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/features/distribute-task-execution"
+    },
+    {
+      "from": "/ci/features/affected",
+      "to": "/docs/ci/features/affected",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/features/affected"
+    },
+    {
+      "from": "/ci/features/dynamic-agents",
+      "to": "/docs/ci/features/dynamic-agents",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/features/dynamic-agents"
+    },
+    {
+      "from": "/ci/features/split-e2e-tasks",
+      "to": "/docs/ci/features/split-e2e-tasks",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/features/split-e2e-tasks"
+    },
+    {
+      "from": "/ci/features/flaky-tasks",
+      "to": "/docs/ci/features/flaky-tasks",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/features/flaky-tasks"
+    },
+    {
+      "from": "/ci/features/explain-with-ai",
+      "to": "/docs/ci/features/explain-with-ai",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/features/explain-with-ai"
+    },
+    {
+      "from": "/ci/features/github-integration",
+      "to": "/docs/ci/features/github-integration",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/features/github-integration"
+    },
+    {
+      "from": "/ci/concepts",
+      "to": "/docs/ci/concepts",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/concepts"
+    },
+    {
+      "from": "/ci/concepts/building-blocks-fast-ci",
+      "to": "/docs/ci/concepts/building-blocks-fast-ci",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/concepts/building-blocks-fast-ci"
+    },
+    {
+      "from": "/ci/concepts/reduce-waste",
+      "to": "/docs/ci/concepts/reduce-waste",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/concepts/reduce-waste"
+    },
+    {
+      "from": "/ci/concepts/parallelization-distribution",
+      "to": "/docs/ci/concepts/parallelization-distribution",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/concepts/parallelization-distribution"
+    },
+    {
+      "from": "/ci/concepts/cache-security",
+      "to": "/docs/ci/concepts/cache-security",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/concepts/cache-security"
+    },
+    {
+      "from": "/ci/concepts/heartbeat",
+      "to": "/docs/ci/concepts/heartbeat",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/concepts/heartbeat"
+    },
+    {
+      "from": "/ci/concepts/nx-cloud-ai",
+      "to": "/docs/ci/concepts/nx-cloud-ai",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/concepts/nx-cloud-ai"
+    },
+    {
+      "from": "/ci/recipes",
+      "to": "/docs/ci/recipes",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes"
+    },
+    {
+      "from": "/ci/recipes/improving-ttg",
+      "to": "/docs/ci/recipes/improving-ttg",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/improving-ttg"
+    },
+    {
+      "from": "/ci/recipes/set-up",
+      "to": "/docs/ci/recipes/set-up",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/set-up"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-azure",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-azure",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/set-up/monorepo-ci-azure"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-circle-ci",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-circle-ci",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/set-up/monorepo-ci-circle-ci"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-github-actions",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-github-actions",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/set-up/monorepo-ci-github-actions"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-jenkins",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-jenkins",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/set-up/monorepo-ci-jenkins"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-gitlab",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-gitlab",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/set-up/monorepo-ci-gitlab"
+    },
+    {
+      "from": "/ci/recipes/set-up/monorepo-ci-bitbucket-pipelines",
+      "to": "/docs/ci/recipes/set-up/monorepo-ci-bitbucket-pipelines",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/set-up/monorepo-ci-bitbucket-pipelines"
+    },
+    {
+      "from": "/ci/recipes/security",
+      "to": "/docs/ci/recipes/security",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/security"
+    },
+    {
+      "from": "/ci/recipes/security/google-auth",
+      "to": "/docs/ci/recipes/security/google-auth",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/security/google-auth"
+    },
+    {
+      "from": "/ci/recipes/security/access-tokens",
+      "to": "/docs/ci/recipes/security/access-tokens",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/security/access-tokens"
+    },
+    {
+      "from": "/ci/recipes/security/personal-access-tokens",
+      "to": "/docs/ci/recipes/security/personal-access-tokens",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/security/personal-access-tokens"
+    },
+    {
+      "from": "/ci/recipes/security/encryption",
+      "to": "/docs/ci/recipes/security/encryption",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/security/encryption"
+    },
+    {
+      "from": "/ci/recipes/source-control-integration",
+      "to": "/docs/ci/recipes/source-control-integration",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/source-control-integration"
+    },
+    {
+      "from": "/ci/recipes/source-control-integration/github",
+      "to": "/docs/ci/recipes/source-control-integration/github",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/source-control-integration/github"
+    },
+    {
+      "from": "/ci/recipes/source-control-integration/bitbucket",
+      "to": "/docs/ci/recipes/source-control-integration/bitbucket",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/source-control-integration/bitbucket"
+    },
+    {
+      "from": "/ci/recipes/source-control-integration/gitlab",
+      "to": "/docs/ci/recipes/source-control-integration/gitlab",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/source-control-integration/gitlab"
+    },
+    {
+      "from": "/ci/recipes/source-control-integration/azure-devops",
+      "to": "/docs/ci/recipes/source-control-integration/azure-devops",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/source-control-integration/azure-devops"
+    },
+    {
+      "from": "/ci/recipes/dte",
+      "to": "/docs/ci/recipes/dte",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/dte"
+    },
+    {
+      "from": "/ci/recipes/dte/github-dte",
+      "to": "/docs/ci/recipes/dte/github-dte",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/dte/github-dte"
+    },
+    {
+      "from": "/ci/recipes/dte/circle-ci-dte",
+      "to": "/docs/ci/recipes/dte/circle-ci-dte",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/dte/circle-ci-dte"
+    },
+    {
+      "from": "/ci/recipes/dte/azure-dte",
+      "to": "/docs/ci/recipes/dte/azure-dte",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/dte/azure-dte"
+    },
+    {
+      "from": "/ci/recipes/dte/bitbucket-dte",
+      "to": "/docs/ci/recipes/dte/bitbucket-dte",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/dte/bitbucket-dte"
+    },
+    {
+      "from": "/ci/recipes/dte/gitlab-dte",
+      "to": "/docs/ci/recipes/dte/gitlab-dte",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/dte/gitlab-dte"
+    },
+    {
+      "from": "/ci/recipes/dte/jenkins-dte",
+      "to": "/docs/ci/recipes/dte/jenkins-dte",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/dte/jenkins-dte"
+    },
+    {
+      "from": "/ci/recipes/enterprise",
+      "to": "/docs/ci/recipes/enterprise",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant",
+      "to": "/docs/ci/recipes/enterprise/single-tenant",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/single-tenant"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/overview",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/overview",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/single-tenant/overview"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/auth-github",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/auth-github",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/single-tenant/auth-github"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/auth-gitlab",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/auth-gitlab",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/single-tenant/auth-gitlab"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/auth-bitbucket",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/auth-bitbucket",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/single-tenant/auth-bitbucket"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/auth-bitbucket-data-center",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/auth-bitbucket-data-center",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/single-tenant/auth-bitbucket-data-center"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/auth-saml",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/auth-saml",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/single-tenant/auth-saml"
+    },
+    {
+      "from": "/ci/recipes/enterprise/single-tenant/custom-github-app",
+      "to": "/docs/ci/recipes/enterprise/single-tenant/custom-github-app",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/single-tenant/custom-github-app"
+    },
+    {
+      "from": "/ci/recipes/enterprise/conformance",
+      "to": "/docs/ci/recipes/enterprise/conformance",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/conformance"
+    },
+    {
+      "from": "/ci/recipes/enterprise/conformance/configure-conformance-rules-in-nx-cloud",
+      "to": "/docs/ci/recipes/enterprise/conformance/configure-conformance-rules-in-nx-cloud",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/conformance/configure-conformance-rules-in-nx-cloud"
+    },
+    {
+      "from": "/ci/recipes/enterprise/conformance/publish-conformance-rules-to-nx-cloud",
+      "to": "/docs/ci/recipes/enterprise/conformance/publish-conformance-rules-to-nx-cloud",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/conformance/publish-conformance-rules-to-nx-cloud"
+    },
+    {
+      "from": "/ci/recipes/enterprise/polygraph",
+      "to": "/docs/ci/recipes/enterprise/polygraph",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/polygraph"
+    },
+    {
+      "from": "/ci/recipes/enterprise/metadata-only-workspace",
+      "to": "/docs/ci/recipes/enterprise/metadata-only-workspace",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/metadata-only-workspace"
+    },
+    {
+      "from": "/ci/recipes/enterprise/custom-workflows",
+      "to": "/docs/ci/recipes/enterprise/custom-workflows",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/enterprise/custom-workflows"
+    },
+    {
+      "from": "/ci/recipes/other",
+      "to": "/docs/ci/recipes/other",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/other"
+    },
+    {
+      "from": "/ci/recipes/other/record-commands",
+      "to": "/docs/ci/recipes/other/record-commands",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/other/record-commands"
+    },
+    {
+      "from": "/ci/recipes/other/ci-deployment",
+      "to": "/docs/ci/recipes/other/ci-deployment",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/other/ci-deployment"
+    },
+    {
+      "from": "/ci/recipes/other/cipe-affected-project-graph",
+      "to": "/docs/ci/recipes/other/cipe-affected-project-graph",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/recipes/other/cipe-affected-project-graph"
+    },
+    {
+      "from": "/ci/reference",
+      "to": "/docs/ci/reference",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/reference"
+    },
+    {
+      "from": "/ci/reference/config",
+      "to": "/docs/ci/reference/config",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/reference/config"
+    },
+    {
+      "from": "/ci/reference/nx-cloud-cli",
+      "to": "/docs/ci/reference/nx-cloud-cli",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/reference/nx-cloud-cli"
+    },
+    {
+      "from": "/ci/reference/launch-templates",
+      "to": "/docs/ci/reference/launch-templates",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/reference/launch-templates"
+    },
+    {
+      "from": "/ci/reference/assignment-rules",
+      "to": "/docs/ci/reference/assignment-rules",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/reference/assignment-rules"
+    },
+    {
+      "from": "/ci/reference/custom-steps",
+      "to": "/docs/ci/reference/custom-steps",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/reference/custom-steps"
+    },
+    {
+      "from": "/ci/reference/custom-images",
+      "to": "/docs/ci/reference/custom-images",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/reference/custom-images"
+    },
+    {
+      "from": "/ci/reference/env-vars",
+      "to": "/docs/ci/reference/env-vars",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/reference/env-vars"
+    },
+    {
+      "from": "/ci/reference/credits-pricing",
+      "to": "/docs/ci/reference/credits-pricing",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/reference/credits-pricing"
+    },
+    {
+      "from": "/ci/reference/release-notes",
+      "to": "/docs/ci/reference/release-notes",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/reference/release-notes"
+    },
+    {
+      "from": "/ci/troubleshooting",
+      "to": "/docs/ci/troubleshooting",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/troubleshooting"
+    },
+    {
+      "from": "/ci/troubleshooting/ci-execution-failed",
+      "to": "/docs/ci/troubleshooting/ci-execution-failed",
+      "targetStatus": 404,
+      "workingAlternative": "/ci/troubleshooting/ci-execution-failed"
+    },
+    {
+      "from": "/extending-nx/intro",
+      "to": "/docs/extending-nx/intro",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/intro"
+    },
+    {
+      "from": "/extending-nx/intro/getting-started",
+      "to": "/docs/extending-nx/intro/getting-started",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/intro/getting-started"
+    },
+    {
+      "from": "/extending-nx/tutorials",
+      "to": "/docs/extending-nx/tutorials",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/tutorials"
+    },
+    {
+      "from": "/extending-nx/tutorials/organization-specific-plugin",
+      "to": "/docs/extending-nx/tutorials/organization-specific-plugin",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/tutorials/organization-specific-plugin"
+    },
+    {
+      "from": "/extending-nx/tutorials/tooling-plugin",
+      "to": "/docs/extending-nx/tutorials/tooling-plugin",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/tutorials/tooling-plugin"
+    },
+    {
+      "from": "/extending-nx/recipes",
+      "to": "/docs/extending-nx/recipes",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes"
+    },
+    {
+      "from": "/extending-nx/recipes/local-generators",
+      "to": "/docs/extending-nx/recipes/local-generators",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/local-generators"
+    },
+    {
+      "from": "/extending-nx/recipes/composing-generators",
+      "to": "/docs/extending-nx/recipes/composing-generators",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/composing-generators"
+    },
+    {
+      "from": "/extending-nx/recipes/generator-options",
+      "to": "/docs/extending-nx/recipes/generator-options",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/generator-options"
+    },
+    {
+      "from": "/extending-nx/recipes/creating-files",
+      "to": "/docs/extending-nx/recipes/creating-files",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/creating-files"
+    },
+    {
+      "from": "/extending-nx/recipes/modifying-files",
+      "to": "/docs/extending-nx/recipes/modifying-files",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/modifying-files"
+    },
+    {
+      "from": "/extending-nx/recipes/create-sync-generator",
+      "to": "/docs/extending-nx/recipes/create-sync-generator",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/create-sync-generator"
+    },
+    {
+      "from": "/extending-nx/recipes/migration-generators",
+      "to": "/docs/extending-nx/recipes/migration-generators",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/migration-generators"
+    },
+    {
+      "from": "/extending-nx/recipes/local-executors",
+      "to": "/docs/extending-nx/recipes/local-executors",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/local-executors"
+    },
+    {
+      "from": "/extending-nx/recipes/compose-executors",
+      "to": "/docs/extending-nx/recipes/compose-executors",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/compose-executors"
+    },
+    {
+      "from": "/extending-nx/recipes/create-preset",
+      "to": "/docs/extending-nx/recipes/create-preset",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/create-preset"
+    },
+    {
+      "from": "/extending-nx/recipes/create-install-package",
+      "to": "/docs/extending-nx/recipes/create-install-package",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/create-install-package"
+    },
+    {
+      "from": "/extending-nx/recipes/project-graph-plugins",
+      "to": "/docs/extending-nx/recipes/project-graph-plugins",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/project-graph-plugins"
+    },
+    {
+      "from": "/extending-nx/recipes/publish-plugin",
+      "to": "/docs/extending-nx/recipes/publish-plugin",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/publish-plugin"
+    },
+    {
+      "from": "/extending-nx/recipes/task-running-lifecycle",
+      "to": "/docs/extending-nx/recipes/task-running-lifecycle",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/recipes/task-running-lifecycle"
+    },
+    {
+      "from": "/extending-nx/api",
+      "to": "/docs/extending-nx/api",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/api"
+    },
+    {
+      "from": "/extending-nx/api/nx-devkit",
+      "to": "/docs/extending-nx/api/nx-devkit",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/api/nx-devkit"
+    },
+    {
+      "from": "/extending-nx/api/nx-devkit/overview",
+      "to": "/docs/extending-nx/api/nx-devkit/overview",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/api/nx-devkit/overview"
+    },
+    {
+      "from": "/extending-nx/api/nx-devkit/ngcli-adapter",
+      "to": "/docs/extending-nx/api/nx-devkit/ngcli-adapter",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/api/nx-devkit/ngcli-adapter"
+    },
+    {
+      "from": "/extending-nx/api/plugin",
+      "to": "/docs/extending-nx/api/plugin",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/api/plugin"
+    },
+    {
+      "from": "/extending-nx/api/plugin/overview",
+      "to": "/docs/extending-nx/api/plugin/overview",
+      "targetStatus": 404,
+      "workingAlternative": "/extending-nx/api/plugin/overview"
+    }
+  ],
+  "needsInvestigation": [
+    {
+      "from": "/recipes/installation/install-non-javascript",
+      "to": "/docs/recipes/installation/install-non-javascript",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/installation/recipes/install-non-javascript",
+        "/docs/guides/install-non-javascript",
+        "/docs/troubleshooting/install-non-javascript"
+      ]
+    },
+    {
+      "from": "/recipes/installation/update-global-installation",
+      "to": "/docs/recipes/installation/update-global-installation",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/installation/recipes/update-global-installation",
+        "/docs/guides/update-global-installation",
+        "/docs/troubleshooting/update-global-installation"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/configure-inputs",
+      "to": "/docs/recipes/running-tasks/configure-inputs",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/configure-inputs",
+        "/docs/guides/configure-inputs",
+        "/docs/troubleshooting/configure-inputs"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/configure-outputs",
+      "to": "/docs/recipes/running-tasks/configure-outputs",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/configure-outputs",
+        "/docs/guides/configure-outputs",
+        "/docs/troubleshooting/configure-outputs"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/defining-task-pipeline",
+      "to": "/docs/recipes/running-tasks/defining-task-pipeline",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/defining-task-pipeline",
+        "/docs/guides/defining-task-pipeline",
+        "/docs/troubleshooting/defining-task-pipeline"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/terminal-ui",
+      "to": "/docs/recipes/running-tasks/terminal-ui",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/terminal-ui",
+        "/docs/guides/terminal-ui",
+        "/docs/troubleshooting/terminal-ui"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/run-commands-executor",
+      "to": "/docs/recipes/running-tasks/run-commands-executor",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/run-commands-executor",
+        "/docs/guides/run-commands-executor",
+        "/docs/troubleshooting/run-commands-executor"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/pass-args-to-commands",
+      "to": "/docs/recipes/running-tasks/pass-args-to-commands",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/pass-args-to-commands",
+        "/docs/guides/pass-args-to-commands",
+        "/docs/troubleshooting/pass-args-to-commands"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/run-tasks-in-parallel",
+      "to": "/docs/recipes/running-tasks/run-tasks-in-parallel",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/run-tasks-in-parallel",
+        "/docs/guides/run-tasks-in-parallel",
+        "/docs/troubleshooting/run-tasks-in-parallel"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/root-level-scripts",
+      "to": "/docs/recipes/running-tasks/root-level-scripts",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/root-level-scripts",
+        "/docs/guides/root-level-scripts",
+        "/docs/troubleshooting/root-level-scripts"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/workspace-watching",
+      "to": "/docs/recipes/running-tasks/workspace-watching",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/workspace-watching",
+        "/docs/guides/workspace-watching",
+        "/docs/troubleshooting/workspace-watching"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/reduce-repetitive-configuration",
+      "to": "/docs/recipes/running-tasks/reduce-repetitive-configuration",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/reduce-repetitive-configuration",
+        "/docs/guides/reduce-repetitive-configuration",
+        "/docs/troubleshooting/reduce-repetitive-configuration"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/change-cache-location",
+      "to": "/docs/recipes/running-tasks/change-cache-location",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/change-cache-location",
+        "/docs/guides/change-cache-location",
+        "/docs/troubleshooting/change-cache-location"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/skipping-cache",
+      "to": "/docs/recipes/running-tasks/skipping-cache",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/skipping-cache",
+        "/docs/guides/skipping-cache",
+        "/docs/troubleshooting/skipping-cache"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/convert-to-inferred",
+      "to": "/docs/recipes/running-tasks/convert-to-inferred",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/convert-to-inferred",
+        "/docs/guides/convert-to-inferred",
+        "/docs/troubleshooting/convert-to-inferred"
+      ]
+    },
+    {
+      "from": "/recipes/running-tasks/self-hosted-caching",
+      "to": "/docs/recipes/running-tasks/self-hosted-caching",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/running-tasks/recipes/self-hosted-caching",
+        "/docs/guides/self-hosted-caching",
+        "/docs/troubleshooting/self-hosted-caching"
+      ]
+    },
+    {
+      "from": "/recipes/adopting-nx/adding-to-monorepo",
+      "to": "/docs/recipes/adopting-nx/adding-to-monorepo",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/adopting-nx/recipes/adding-to-monorepo",
+        "/docs/guides/adding-to-monorepo",
+        "/docs/troubleshooting/adding-to-monorepo"
+      ]
+    },
+    {
+      "from": "/recipes/adopting-nx/from-turborepo",
+      "to": "/docs/recipes/adopting-nx/from-turborepo",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/adopting-nx/recipes/from-turborepo",
+        "/docs/guides/from-turborepo",
+        "/docs/troubleshooting/from-turborepo"
+      ]
+    },
+    {
+      "from": "/recipes/adopting-nx/adding-to-existing-project",
+      "to": "/docs/recipes/adopting-nx/adding-to-existing-project",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/adopting-nx/recipes/adding-to-existing-project",
+        "/docs/guides/adding-to-existing-project",
+        "/docs/troubleshooting/adding-to-existing-project"
+      ]
+    },
+    {
+      "from": "/recipes/adopting-nx/import-project",
+      "to": "/docs/recipes/adopting-nx/import-project",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/adopting-nx/recipes/import-project",
+        "/docs/guides/import-project",
+        "/docs/troubleshooting/import-project"
+      ]
+    },
+    {
+      "from": "/recipes/adopting-nx/preserving-git-histories",
+      "to": "/docs/recipes/adopting-nx/preserving-git-histories",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/adopting-nx/recipes/preserving-git-histories",
+        "/docs/guides/preserving-git-histories",
+        "/docs/troubleshooting/preserving-git-histories"
+      ]
+    },
+    {
+      "from": "/recipes/adopting-nx/manual",
+      "to": "/docs/recipes/adopting-nx/manual",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/adopting-nx/recipes/manual",
+        "/docs/guides/manual",
+        "/docs/troubleshooting/manual"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/release-npm-packages",
+      "to": "/docs/recipes/nx-release/release-npm-packages",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/release-npm-packages",
+        "/docs/guides/release-npm-packages",
+        "/docs/troubleshooting/release-npm-packages"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/release-docker-images",
+      "to": "/docs/recipes/nx-release/release-docker-images",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/release-docker-images",
+        "/docs/guides/release-docker-images",
+        "/docs/troubleshooting/release-docker-images"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/publish-rust-crates",
+      "to": "/docs/recipes/nx-release/publish-rust-crates",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/publish-rust-crates",
+        "/docs/guides/publish-rust-crates",
+        "/docs/troubleshooting/publish-rust-crates"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/release-projects-independently",
+      "to": "/docs/recipes/nx-release/release-projects-independently",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/release-projects-independently",
+        "/docs/guides/release-projects-independently",
+        "/docs/troubleshooting/release-projects-independently"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/updating-version-references",
+      "to": "/docs/recipes/nx-release/updating-version-references",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/updating-version-references",
+        "/docs/guides/updating-version-references",
+        "/docs/troubleshooting/updating-version-references"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/automatically-version-with-conventional-commits",
+      "to": "/docs/recipes/nx-release/automatically-version-with-conventional-commits",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/automatically-version-with-conventional-commits",
+        "/docs/guides/automatically-version-with-conventional-commits",
+        "/docs/troubleshooting/automatically-version-with-conventional-commits"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/customize-conventional-commit-types",
+      "to": "/docs/recipes/nx-release/customize-conventional-commit-types",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/customize-conventional-commit-types",
+        "/docs/guides/customize-conventional-commit-types",
+        "/docs/troubleshooting/customize-conventional-commit-types"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/file-based-versioning-version-plans",
+      "to": "/docs/recipes/nx-release/file-based-versioning-version-plans",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/file-based-versioning-version-plans",
+        "/docs/guides/file-based-versioning-version-plans",
+        "/docs/troubleshooting/file-based-versioning-version-plans"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/configure-custom-registries",
+      "to": "/docs/recipes/nx-release/configure-custom-registries",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/configure-custom-registries",
+        "/docs/guides/configure-custom-registries",
+        "/docs/troubleshooting/configure-custom-registries"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/publish-in-ci-cd",
+      "to": "/docs/recipes/nx-release/publish-in-ci-cd",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/publish-in-ci-cd",
+        "/docs/guides/publish-in-ci-cd",
+        "/docs/troubleshooting/publish-in-ci-cd"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/automate-github-releases",
+      "to": "/docs/recipes/nx-release/automate-github-releases",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/automate-github-releases",
+        "/docs/guides/automate-github-releases",
+        "/docs/troubleshooting/automate-github-releases"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/automate-gitlab-releases",
+      "to": "/docs/recipes/nx-release/automate-gitlab-releases",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/automate-gitlab-releases",
+        "/docs/guides/automate-gitlab-releases",
+        "/docs/troubleshooting/automate-gitlab-releases"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/update-local-registry-setup",
+      "to": "/docs/recipes/nx-release/update-local-registry-setup",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/update-local-registry-setup",
+        "/docs/guides/update-local-registry-setup",
+        "/docs/troubleshooting/update-local-registry-setup"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/configure-changelog-format",
+      "to": "/docs/recipes/nx-release/configure-changelog-format",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/configure-changelog-format",
+        "/docs/guides/configure-changelog-format",
+        "/docs/troubleshooting/configure-changelog-format"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/build-before-versioning",
+      "to": "/docs/recipes/nx-release/build-before-versioning",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/build-before-versioning",
+        "/docs/guides/build-before-versioning",
+        "/docs/troubleshooting/build-before-versioning"
+      ]
+    },
+    {
+      "from": "/recipes/nx-release/configuration-version-prefix",
+      "to": "/docs/recipes/nx-release/configuration-version-prefix",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-release/recipes/configuration-version-prefix",
+        "/docs/guides/configuration-version-prefix",
+        "/docs/troubleshooting/configuration-version-prefix"
+      ]
+    },
+    {
+      "from": "/recipes/nx-console/console-telemetry",
+      "to": "/docs/recipes/nx-console/console-telemetry",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-console/recipes/console-telemetry",
+        "/docs/guides/console-telemetry",
+        "/docs/troubleshooting/console-telemetry"
+      ]
+    },
+    {
+      "from": "/recipes/nx-console/console-project-details",
+      "to": "/docs/recipes/nx-console/console-project-details",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-console/recipes/console-project-details",
+        "/docs/guides/console-project-details",
+        "/docs/troubleshooting/console-project-details"
+      ]
+    },
+    {
+      "from": "/recipes/nx-console/console-generate-command",
+      "to": "/docs/recipes/nx-console/console-generate-command",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-console/recipes/console-generate-command",
+        "/docs/guides/console-generate-command",
+        "/docs/troubleshooting/console-generate-command"
+      ]
+    },
+    {
+      "from": "/recipes/nx-console/console-run-command",
+      "to": "/docs/recipes/nx-console/console-run-command",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-console/recipes/console-run-command",
+        "/docs/guides/console-run-command",
+        "/docs/troubleshooting/console-run-command"
+      ]
+    },
+    {
+      "from": "/recipes/nx-console/console-nx-cloud",
+      "to": "/docs/recipes/nx-console/console-nx-cloud",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-console/recipes/console-nx-cloud",
+        "/docs/guides/console-nx-cloud",
+        "/docs/troubleshooting/console-nx-cloud"
+      ]
+    },
+    {
+      "from": "/recipes/nx-console/console-migrate-ui",
+      "to": "/docs/recipes/nx-console/console-migrate-ui",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx-console/recipes/console-migrate-ui",
+        "/docs/guides/console-migrate-ui",
+        "/docs/troubleshooting/console-migrate-ui"
+      ]
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries/ban-dependencies-with-tags",
+      "to": "/docs/recipes/enforce-module-boundaries/ban-dependencies-with-tags",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/enforce-module-boundaries/recipes/ban-dependencies-with-tags",
+        "/docs/guides/ban-dependencies-with-tags",
+        "/docs/troubleshooting/ban-dependencies-with-tags"
+      ]
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries/tag-multiple-dimensions",
+      "to": "/docs/recipes/enforce-module-boundaries/tag-multiple-dimensions",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/enforce-module-boundaries/recipes/tag-multiple-dimensions",
+        "/docs/guides/tag-multiple-dimensions",
+        "/docs/troubleshooting/tag-multiple-dimensions"
+      ]
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries/ban-external-imports",
+      "to": "/docs/recipes/enforce-module-boundaries/ban-external-imports",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/enforce-module-boundaries/recipes/ban-external-imports",
+        "/docs/guides/ban-external-imports",
+        "/docs/troubleshooting/ban-external-imports"
+      ]
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries/tags-allow-list",
+      "to": "/docs/recipes/enforce-module-boundaries/tags-allow-list",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/enforce-module-boundaries/recipes/tags-allow-list",
+        "/docs/guides/tags-allow-list",
+        "/docs/troubleshooting/tags-allow-list"
+      ]
+    },
+    {
+      "from": "/recipes/tips-n-tricks/standalone-to-monorepo",
+      "to": "/docs/recipes/tips-n-tricks/standalone-to-monorepo",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/tips-n-tricks/recipes/standalone-to-monorepo",
+        "/docs/guides/standalone-to-monorepo",
+        "/docs/troubleshooting/standalone-to-monorepo"
+      ]
+    },
+    {
+      "from": "/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+      "to": "/docs/recipes/tips-n-tricks/keep-nx-versions-in-sync",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/tips-n-tricks/recipes/keep-nx-versions-in-sync",
+        "/docs/guides/keep-nx-versions-in-sync",
+        "/docs/troubleshooting/keep-nx-versions-in-sync"
+      ]
+    },
+    {
+      "from": "/recipes/tips-n-tricks/define-environment-variables",
+      "to": "/docs/recipes/tips-n-tricks/define-environment-variables",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/tips-n-tricks/recipes/define-environment-variables",
+        "/docs/guides/define-environment-variables",
+        "/docs/troubleshooting/define-environment-variables"
+      ]
+    },
+    {
+      "from": "/recipes/tips-n-tricks/browser-support",
+      "to": "/docs/recipes/tips-n-tricks/browser-support",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/tips-n-tricks/recipes/browser-support",
+        "/docs/guides/browser-support",
+        "/docs/troubleshooting/browser-support"
+      ]
+    },
+    {
+      "from": "/recipes/tips-n-tricks/include-assets-in-build",
+      "to": "/docs/recipes/tips-n-tricks/include-assets-in-build",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/tips-n-tricks/recipes/include-assets-in-build",
+        "/docs/guides/include-assets-in-build",
+        "/docs/troubleshooting/include-assets-in-build"
+      ]
+    },
+    {
+      "from": "/recipes/tips-n-tricks/include-all-packagejson",
+      "to": "/docs/recipes/tips-n-tricks/include-all-packagejson",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/tips-n-tricks/recipes/include-all-packagejson",
+        "/docs/guides/include-all-packagejson",
+        "/docs/troubleshooting/include-all-packagejson"
+      ]
+    },
+    {
+      "from": "/recipes/tips-n-tricks/identify-dependencies-between-folders",
+      "to": "/docs/recipes/tips-n-tricks/identify-dependencies-between-folders",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/tips-n-tricks/recipes/identify-dependencies-between-folders",
+        "/docs/guides/identify-dependencies-between-folders",
+        "/docs/troubleshooting/identify-dependencies-between-folders"
+      ]
+    },
+    {
+      "from": "/recipes/tips-n-tricks/analyze-source-files",
+      "to": "/docs/recipes/tips-n-tricks/analyze-source-files",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/tips-n-tricks/recipes/analyze-source-files",
+        "/docs/guides/analyze-source-files",
+        "/docs/troubleshooting/analyze-source-files"
+      ]
+    },
+    {
+      "from": "/recipes/tips-n-tricks/advanced-update",
+      "to": "/docs/recipes/tips-n-tricks/advanced-update",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/tips-n-tricks/recipes/advanced-update",
+        "/docs/guides/advanced-update",
+        "/docs/troubleshooting/advanced-update"
+      ]
+    },
+    {
+      "from": "/recipes/tips-n-tricks/yarn-pnp",
+      "to": "/docs/recipes/tips-n-tricks/yarn-pnp",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/tips-n-tricks/recipes/yarn-pnp",
+        "/docs/guides/yarn-pnp",
+        "/docs/troubleshooting/yarn-pnp"
+      ]
+    },
+    {
+      "from": "/nx-api/nx/documents/affected%23skip-nx-cache",
+      "to": "/docs/nx-api/nx/documents/affected%23skip-nx-cache",
+      "targetStatus": 404,
+      "triedAlternatives": [
+        "/docs/technologies/nx/documents/affected%23skip-nx-cache/api",
+        "/technologies/nx/documents/affected%23skip-nx-cache/api",
+        "/docs/reference/nx/documents/affected%23skip-nx-cache"
+      ]
+    }
+  ],
+  "noAlternative": [
+    {
+      "from": "/ci",
+      "to": "/docs/ci",
+      "targetStatus": 404
+    },
+    {
+      "from": "/extending-nx",
+      "to": "/docs/extending-nx",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/adding-to-existing",
+      "to": "/docs/getting-started/adding-to-existing",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/ai-integration",
+      "to": "/docs/getting-started/ai-integration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/tutorials/typescript-packages-tutorial",
+      "to": "/docs/getting-started/tutorials/typescript-packages-tutorial",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/tutorials/react-monorepo-tutorial",
+      "to": "/docs/getting-started/tutorials/react-monorepo-tutorial",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/tutorials/angular-monorepo-tutorial",
+      "to": "/docs/getting-started/tutorials/angular-monorepo-tutorial",
+      "targetStatus": 404
+    },
+    {
+      "from": "/getting-started/tutorials/gradle-tutorial",
+      "to": "/docs/getting-started/tutorials/gradle-tutorial",
+      "targetStatus": 404
+    },
+    {
+      "from": "/features/maintain-ts-monorepos",
+      "to": "/docs/features/maintain-ts-monorepos",
+      "targetStatus": 404
+    },
+    {
+      "from": "/recipes",
+      "to": "/docs/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/recipes/installation",
+      "to": "/docs/recipes/installation",
+      "targetStatus": 404
+    },
+    {
+      "from": "/recipes/running-tasks",
+      "to": "/docs/recipes/running-tasks",
+      "targetStatus": 404
+    },
+    {
+      "from": "/recipes/adopting-nx",
+      "to": "/docs/recipes/adopting-nx",
+      "targetStatus": 404
+    },
+    {
+      "from": "/recipes/nx-release",
+      "to": "/docs/recipes/nx-release",
+      "targetStatus": 404
+    },
+    {
+      "from": "/recipes/nx-console",
+      "to": "/docs/recipes/nx-console",
+      "targetStatus": 404
+    },
+    {
+      "from": "/recipes/enforce-module-boundaries",
+      "to": "/docs/recipes/enforce-module-boundaries",
+      "targetStatus": 404
+    },
+    {
+      "from": "/recipes/tips-n-tricks",
+      "to": "/docs/recipes/tips-n-tricks",
+      "targetStatus": 404
+    },
+    {
+      "from": "/concepts/nx-daemon",
+      "to": "/docs/concepts/nx-daemon",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/recipes",
+      "to": "/docs/technologies/typescript/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/recipes/switch-to-workspaces-project-references",
+      "to": "/docs/technologies/typescript/recipes/switch-to-workspaces-project-references",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/recipes/enable-tsc-batch-mode",
+      "to": "/docs/technologies/typescript/recipes/enable-tsc-batch-mode",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/recipes/define-secondary-entrypoints",
+      "to": "/docs/technologies/typescript/recipes/define-secondary-entrypoints",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/recipes/compile-multiple-formats",
+      "to": "/docs/technologies/typescript/recipes/compile-multiple-formats",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/recipes/js-and-ts",
+      "to": "/docs/technologies/typescript/recipes/js-and-ts",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api",
+      "to": "/docs/technologies/typescript/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/recipes",
+      "to": "/docs/technologies/angular/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/recipes/use-environment-variables-in-angular",
+      "to": "/docs/technologies/angular/recipes/use-environment-variables-in-angular",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+      "to": "/docs/technologies/angular/recipes/using-tailwind-css-with-angular-projects",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/recipes/module-federation-with-ssr",
+      "to": "/docs/technologies/angular/recipes/module-federation-with-ssr",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/recipes/dynamic-module-federation-with-angular",
+      "to": "/docs/technologies/angular/recipes/dynamic-module-federation-with-angular",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/recipes/setup-incremental-builds-angular",
+      "to": "/docs/technologies/angular/recipes/setup-incremental-builds-angular",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/recipes/nx-and-angular",
+      "to": "/docs/technologies/angular/recipes/nx-and-angular",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/recipes/nx-devkit-angular-devkit",
+      "to": "/docs/technologies/angular/recipes/nx-devkit-angular-devkit",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/recipes/angular-nx-version-matrix",
+      "to": "/docs/technologies/angular/recipes/angular-nx-version-matrix",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api",
+      "to": "/docs/technologies/angular/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes",
+      "to": "/docs/technologies/angular/angular-rspack/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/getting-started",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/getting-started",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/migrate-from-webpack",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/handling-configurations",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/handling-configurations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/recipes/internationalization",
+      "to": "/docs/technologies/angular/angular-rspack/recipes/internationalization",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/api",
+      "to": "/docs/technologies/angular/angular-rspack/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/api/create-config",
+      "to": "/docs/technologies/angular/angular-rspack/api/create-config",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rspack/api/create-server",
+      "to": "/docs/technologies/angular/angular-rspack/api/create-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rsbuild/api",
+      "to": "/docs/technologies/angular/angular-rsbuild/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rsbuild/api/create-config",
+      "to": "/docs/technologies/angular/angular-rsbuild/api/create-config",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/angular-rsbuild/api/create-server",
+      "to": "/docs/technologies/angular/angular-rsbuild/api/create-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/recipes",
+      "to": "/docs/technologies/react/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/recipes/react-native",
+      "to": "/docs/technologies/react/recipes/react-native",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/recipes/remix",
+      "to": "/docs/technologies/react/recipes/remix",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/recipes/react-router",
+      "to": "/docs/technologies/react/recipes/react-router",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/recipes/use-environment-variables-in-react",
+      "to": "/docs/technologies/react/recipes/use-environment-variables-in-react",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/recipes/using-tailwind-css-in-react",
+      "to": "/docs/technologies/react/recipes/using-tailwind-css-in-react",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/recipes/adding-assets-react",
+      "to": "/docs/technologies/react/recipes/adding-assets-react",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/recipes/module-federation-with-ssr",
+      "to": "/docs/technologies/react/recipes/module-federation-with-ssr",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/recipes/deploy-nextjs-to-vercel",
+      "to": "/docs/technologies/react/recipes/deploy-nextjs-to-vercel",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/recipes/react-compiler",
+      "to": "/docs/technologies/react/recipes/react-compiler",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api",
+      "to": "/docs/technologies/react/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/recipes",
+      "to": "/docs/technologies/react/next/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/recipes/next-config-setup",
+      "to": "/docs/technologies/react/next/recipes/next-config-setup",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api",
+      "to": "/docs/technologies/react/next/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/recipes",
+      "to": "/docs/technologies/react/remix/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api",
+      "to": "/docs/technologies/react/remix/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/recipes",
+      "to": "/docs/technologies/react/react-native/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api",
+      "to": "/docs/technologies/react/react-native/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/recipes",
+      "to": "/docs/technologies/react/expo/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api",
+      "to": "/docs/technologies/react/expo/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api",
+      "to": "/docs/technologies/vue/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/nuxt/recipes",
+      "to": "/docs/technologies/vue/nuxt/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+      "to": "/docs/technologies/vue/nuxt/recipes/deploy-nuxt-to-vercel",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/nuxt/api",
+      "to": "/docs/technologies/vue/nuxt/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/recipes",
+      "to": "/docs/technologies/node/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/recipes/node-server-fly-io",
+      "to": "/docs/technologies/node/recipes/node-server-fly-io",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/recipes/node-serverless-functions-netlify",
+      "to": "/docs/technologies/node/recipes/node-serverless-functions-netlify",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/recipes/node-aws-lambda",
+      "to": "/docs/technologies/node/recipes/node-aws-lambda",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/recipes/application-proxies",
+      "to": "/docs/technologies/node/recipes/application-proxies",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/recipes/wait-for-tasks",
+      "to": "/docs/technologies/node/recipes/wait-for-tasks",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/api",
+      "to": "/docs/technologies/node/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/express/api",
+      "to": "/docs/technologies/node/express/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api",
+      "to": "/docs/technologies/node/nest/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/java",
+      "to": "/docs/technologies/java",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/java/introduction",
+      "to": "/docs/technologies/java/introduction",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/java/api",
+      "to": "/docs/technologies/java/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/module-federation/recipes",
+      "to": "/docs/technologies/module-federation/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/module-federation/recipes/create-a-host",
+      "to": "/docs/technologies/module-federation/recipes/create-a-host",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/module-federation/recipes/create-a-remote",
+      "to": "/docs/technologies/module-federation/recipes/create-a-remote",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/module-federation/recipes/federate-a-module",
+      "to": "/docs/technologies/module-federation/recipes/federate-a-module",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/module-federation/recipes/nx-module-federation-plugin",
+      "to": "/docs/technologies/module-federation/recipes/nx-module-federation-plugin",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/module-federation/recipes/nx-module-federation-dev-server-plugin",
+      "to": "/docs/technologies/module-federation/recipes/nx-module-federation-dev-server-plugin",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/module-federation/api",
+      "to": "/docs/technologies/module-federation/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/recipes",
+      "to": "/docs/technologies/eslint/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/recipes/eslint",
+      "to": "/docs/technologies/eslint/recipes/eslint",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/recipes/flat-config",
+      "to": "/docs/technologies/eslint/recipes/flat-config",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/api",
+      "to": "/docs/technologies/eslint/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/recipes",
+      "to": "/docs/technologies/eslint/eslint-plugin/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries",
+      "to": "/docs/technologies/eslint/eslint-plugin/recipes/enforce-module-boundaries",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/recipes/dependency-checks",
+      "to": "/docs/technologies/eslint/eslint-plugin/recipes/dependency-checks",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/api",
+      "to": "/docs/technologies/eslint/eslint-plugin/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/docker",
+      "to": "/docs/technologies/build-tools/docker",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/recipes",
+      "to": "/docs/technologies/build-tools/webpack/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/recipes/webpack-config-setup",
+      "to": "/docs/technologies/build-tools/webpack/recipes/webpack-config-setup",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/recipes/webpack-plugins",
+      "to": "/docs/technologies/build-tools/webpack/recipes/webpack-plugins",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api",
+      "to": "/docs/technologies/build-tools/webpack/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/recipes",
+      "to": "/docs/technologies/build-tools/vite/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/recipes/configure-vite",
+      "to": "/docs/technologies/build-tools/vite/recipes/configure-vite",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api",
+      "to": "/docs/technologies/build-tools/vite/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rollup/recipes",
+      "to": "/docs/technologies/build-tools/rollup/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api",
+      "to": "/docs/technologies/build-tools/rollup/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/recipes",
+      "to": "/docs/technologies/build-tools/esbuild/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api",
+      "to": "/docs/technologies/build-tools/esbuild/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/recipes",
+      "to": "/docs/technologies/build-tools/rspack/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api",
+      "to": "/docs/technologies/build-tools/rspack/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/recipes",
+      "to": "/docs/technologies/build-tools/rsbuild/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api",
+      "to": "/docs/technologies/build-tools/rsbuild/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/recipes",
+      "to": "/docs/technologies/test-tools/cypress/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/recipes/cypress-component-testing",
+      "to": "/docs/technologies/test-tools/cypress/recipes/cypress-component-testing",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/recipes/cypress-setup-node-events",
+      "to": "/docs/technologies/test-tools/cypress/recipes/cypress-setup-node-events",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/recipes/cypress-v11-migration",
+      "to": "/docs/technologies/test-tools/cypress/recipes/cypress-v11-migration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api",
+      "to": "/docs/technologies/test-tools/cypress/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/jest/recipes",
+      "to": "/docs/technologies/test-tools/jest/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/jest/api",
+      "to": "/docs/technologies/test-tools/jest/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/playwright/recipes",
+      "to": "/docs/technologies/test-tools/playwright/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api",
+      "to": "/docs/technologies/test-tools/playwright/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes",
+      "to": "/docs/technologies/test-tools/storybook/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/best-practices",
+      "to": "/docs/technologies/test-tools/storybook/recipes/best-practices",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/storybook-9-setup",
+      "to": "/docs/technologies/test-tools/storybook/recipes/storybook-9-setup",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/overview-react",
+      "to": "/docs/technologies/test-tools/storybook/recipes/overview-react",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/overview-angular",
+      "to": "/docs/technologies/test-tools/storybook/recipes/overview-angular",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/overview-vue",
+      "to": "/docs/technologies/test-tools/storybook/recipes/overview-vue",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/configuring-storybook",
+      "to": "/docs/technologies/test-tools/storybook/recipes/configuring-storybook",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/one-storybook-for-all",
+      "to": "/docs/technologies/test-tools/storybook/recipes/one-storybook-for-all",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/one-storybook-per-scope",
+      "to": "/docs/technologies/test-tools/storybook/recipes/one-storybook-per-scope",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/one-storybook-with-composition",
+      "to": "/docs/technologies/test-tools/storybook/recipes/one-storybook-with-composition",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/custom-builder-configs",
+      "to": "/docs/technologies/test-tools/storybook/recipes/custom-builder-configs",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/storybook-interaction-tests",
+      "to": "/docs/technologies/test-tools/storybook/recipes/storybook-interaction-tests",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/upgrading-storybook",
+      "to": "/docs/technologies/test-tools/storybook/recipes/upgrading-storybook",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/storybook-composition-setup",
+      "to": "/docs/technologies/test-tools/storybook/recipes/storybook-composition-setup",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/angular-storybook-compodoc",
+      "to": "/docs/technologies/test-tools/storybook/recipes/angular-storybook-compodoc",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/recipes/angular-configuring-styles",
+      "to": "/docs/technologies/test-tools/storybook/recipes/angular-configuring-styles",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api",
+      "to": "/docs/technologies/test-tools/storybook/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/detox/recipes",
+      "to": "/docs/technologies/test-tools/detox/recipes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/detox/api",
+      "to": "/docs/technologies/test-tools/detox/api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/nx-enterprise",
+      "to": "/docs/nx-enterprise",
+      "targetStatus": 404
+    },
+    {
+      "from": "/nx-enterprise/activate-powerpack",
+      "to": "/docs/nx-enterprise/activate-powerpack",
+      "targetStatus": 404
+    },
+    {
+      "from": "/nx-enterprise/powerpack",
+      "to": "/docs/nx-enterprise/powerpack",
+      "targetStatus": 404
+    },
+    {
+      "from": "/nx-enterprise/powerpack/licenses-and-trials",
+      "to": "/docs/nx-enterprise/powerpack/licenses-and-trials",
+      "targetStatus": 404
+    },
+    {
+      "from": "/nx-enterprise/powerpack/conformance",
+      "to": "/docs/nx-enterprise/powerpack/conformance",
+      "targetStatus": 404
+    },
+    {
+      "from": "/nx-enterprise/powerpack/owners",
+      "to": "/docs/nx-enterprise/powerpack/owners",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase",
+      "to": "/docs/showcase",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos",
+      "to": "/docs/showcase/example-repos",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/add-express",
+      "to": "/docs/showcase/example-repos/add-express",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/add-lit",
+      "to": "/docs/showcase/example-repos/add-lit",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/add-solid",
+      "to": "/docs/showcase/example-repos/add-solid",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/add-qwik",
+      "to": "/docs/showcase/example-repos/add-qwik",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/add-rust",
+      "to": "/docs/showcase/example-repos/add-rust",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/add-dotnet",
+      "to": "/docs/showcase/example-repos/add-dotnet",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/add-astro",
+      "to": "/docs/showcase/example-repos/add-astro",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/add-svelte",
+      "to": "/docs/showcase/example-repos/add-svelte",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/add-fastify",
+      "to": "/docs/showcase/example-repos/add-fastify",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/apollo-react",
+      "to": "/docs/showcase/example-repos/apollo-react",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/nestjs-prisma",
+      "to": "/docs/showcase/example-repos/nestjs-prisma",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/mongo-fastify",
+      "to": "/docs/showcase/example-repos/mongo-fastify",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/redis-fastify",
+      "to": "/docs/showcase/example-repos/redis-fastify",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/postgres-fastify",
+      "to": "/docs/showcase/example-repos/postgres-fastify",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/serverless-fastify-planetscale",
+      "to": "/docs/showcase/example-repos/serverless-fastify-planetscale",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/example-repos/mfe",
+      "to": "/docs/showcase/example-repos/mfe",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/benchmarks",
+      "to": "/docs/showcase/benchmarks",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/benchmarks/tsc-batch-mode",
+      "to": "/docs/showcase/benchmarks/tsc-batch-mode",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/benchmarks/caching",
+      "to": "/docs/showcase/benchmarks/caching",
+      "targetStatus": 404
+    },
+    {
+      "from": "/showcase/benchmarks/nx-agents",
+      "to": "/docs/showcase/benchmarks/nx-agents",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api",
+      "to": "/docs/reference/core-api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx",
+      "to": "/docs/reference/core-api/nx",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace",
+      "to": "/docs/reference/core-api/workspace",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/owners",
+      "to": "/docs/reference/core-api/owners",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/owners/overview",
+      "to": "/docs/reference/core-api/owners/overview",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance",
+      "to": "/docs/reference/core-api/conformance",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/overview",
+      "to": "/docs/reference/core-api/conformance/overview",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/create-conformance-rule",
+      "to": "/docs/reference/core-api/conformance/create-conformance-rule",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/azure-cache",
+      "to": "/docs/reference/core-api/azure-cache",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/azure-cache/overview",
+      "to": "/docs/reference/core-api/azure-cache/overview",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/gcs-cache",
+      "to": "/docs/reference/core-api/gcs-cache",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/gcs-cache/overview",
+      "to": "/docs/reference/core-api/gcs-cache/overview",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/s3-cache",
+      "to": "/docs/reference/core-api/s3-cache",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/s3-cache/overview",
+      "to": "/docs/reference/core-api/s3-cache/overview",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache",
+      "to": "/docs/reference/core-api/shared-fs-cache",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache/overview",
+      "to": "/docs/reference/core-api/shared-fs-cache/overview",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit",
+      "to": "/docs/reference/core-api/devkit",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin",
+      "to": "/docs/reference/core-api/plugin",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/web",
+      "to": "/docs/reference/core-api/web",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/create-nx-workspace",
+      "to": "/docs/reference/core-api/create-nx-workspace",
+      "targetStatus": 404
+    },
+    {
+      "from": "/troubleshooting/convert-to-inferred",
+      "to": "/docs/troubleshooting/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated",
+      "to": "/docs/deprecated",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/affected-graph",
+      "to": "/docs/deprecated/affected-graph",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/print-affected",
+      "to": "/docs/deprecated/print-affected",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/workspace-json",
+      "to": "/docs/deprecated/workspace-json",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/as-provided-vs-derived",
+      "to": "/docs/deprecated/as-provided-vs-derived",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/workspace-generators",
+      "to": "/docs/deprecated/workspace-generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/legacy-cache",
+      "to": "/docs/deprecated/legacy-cache",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/custom-tasks-runner",
+      "to": "/docs/deprecated/custom-tasks-runner",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/workspace-executors",
+      "to": "/docs/deprecated/workspace-executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/runtime-cache-inputs",
+      "to": "/docs/deprecated/runtime-cache-inputs",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/cacheable-operations",
+      "to": "/docs/deprecated/cacheable-operations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/npm-scope",
+      "to": "/docs/deprecated/npm-scope",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/global-implicit-dependencies",
+      "to": "/docs/deprecated/global-implicit-dependencies",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/angular-schematics-builders",
+      "to": "/docs/deprecated/angular-schematics-builders",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/v1-nx-plugin-api",
+      "to": "/docs/deprecated/v1-nx-plugin-api",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/rescope",
+      "to": "/docs/deprecated/rescope",
+      "targetStatus": 404
+    },
+    {
+      "from": "/deprecated/integrated-vs-package-based",
+      "to": "/docs/deprecated/integrated-vs-package-based",
+      "targetStatus": 404
+    },
+    {
+      "from": "/see-also",
+      "to": "/docs/see-also",
+      "targetStatus": 404
+    },
+    {
+      "from": "/see-also/sitemap",
+      "to": "/docs/see-also/sitemap",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors",
+      "to": "/docs/technologies/angular/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/delegate-build",
+      "to": "/docs/technologies/angular/api/executors/delegate-build",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/ng-packagr-lite",
+      "to": "/docs/technologies/angular/api/executors/ng-packagr-lite",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/package",
+      "to": "/docs/technologies/angular/api/executors/package",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/browser-esbuild",
+      "to": "/docs/technologies/angular/api/executors/browser-esbuild",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/module-federation-dev-server",
+      "to": "/docs/technologies/angular/api/executors/module-federation-dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/module-federation-dev-ssr",
+      "to": "/docs/technologies/angular/api/executors/module-federation-dev-ssr",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/application",
+      "to": "/docs/technologies/angular/api/executors/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/extract-i18n",
+      "to": "/docs/technologies/angular/api/executors/extract-i18n",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/webpack-browser",
+      "to": "/docs/technologies/angular/api/executors/webpack-browser",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/dev-server",
+      "to": "/docs/technologies/angular/api/executors/dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/executors/webpack-server",
+      "to": "/docs/technologies/angular/api/executors/webpack-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators",
+      "to": "/docs/technologies/angular/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/add-linting",
+      "to": "/docs/technologies/angular/api/generators/add-linting",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/application",
+      "to": "/docs/technologies/angular/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/component",
+      "to": "/docs/technologies/angular/api/generators/component",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/component-story",
+      "to": "/docs/technologies/angular/api/generators/component-story",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/component-test",
+      "to": "/docs/technologies/angular/api/generators/component-test",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/convert-to-application-executor",
+      "to": "/docs/technologies/angular/api/generators/convert-to-application-executor",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/convert-to-rspack",
+      "to": "/docs/technologies/angular/api/generators/convert-to-rspack",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/directive",
+      "to": "/docs/technologies/angular/api/generators/directive",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/federate-module",
+      "to": "/docs/technologies/angular/api/generators/federate-module",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/init",
+      "to": "/docs/technologies/angular/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/library",
+      "to": "/docs/technologies/angular/api/generators/library",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/library-secondary-entry-point",
+      "to": "/docs/technologies/angular/api/generators/library-secondary-entry-point",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/remote",
+      "to": "/docs/technologies/angular/api/generators/remote",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/move",
+      "to": "/docs/technologies/angular/api/generators/move",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/convert-to-with-mf",
+      "to": "/docs/technologies/angular/api/generators/convert-to-with-mf",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/host",
+      "to": "/docs/technologies/angular/api/generators/host",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/ng-add",
+      "to": "/docs/technologies/angular/api/generators/ng-add",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/ngrx",
+      "to": "/docs/technologies/angular/api/generators/ngrx",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/ngrx-feature-store",
+      "to": "/docs/technologies/angular/api/generators/ngrx-feature-store",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/ngrx-root-store",
+      "to": "/docs/technologies/angular/api/generators/ngrx-root-store",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/pipe",
+      "to": "/docs/technologies/angular/api/generators/pipe",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/scam-to-standalone",
+      "to": "/docs/technologies/angular/api/generators/scam-to-standalone",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/scam",
+      "to": "/docs/technologies/angular/api/generators/scam",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/scam-directive",
+      "to": "/docs/technologies/angular/api/generators/scam-directive",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/scam-pipe",
+      "to": "/docs/technologies/angular/api/generators/scam-pipe",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/setup-mf",
+      "to": "/docs/technologies/angular/api/generators/setup-mf",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/setup-ssr",
+      "to": "/docs/technologies/angular/api/generators/setup-ssr",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/setup-tailwind",
+      "to": "/docs/technologies/angular/api/generators/setup-tailwind",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/stories",
+      "to": "/docs/technologies/angular/api/generators/stories",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/storybook-configuration",
+      "to": "/docs/technologies/angular/api/generators/storybook-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/cypress-component-configuration",
+      "to": "/docs/technologies/angular/api/generators/cypress-component-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/generators/web-worker",
+      "to": "/docs/technologies/angular/api/generators/web-worker",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/angular/api/migrations",
+      "to": "/docs/technologies/angular/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/executors",
+      "to": "/docs/technologies/test-tools/cypress/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/executors/cypress",
+      "to": "/docs/technologies/test-tools/cypress/api/executors/cypress",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators",
+      "to": "/docs/technologies/test-tools/cypress/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators/init",
+      "to": "/docs/technologies/test-tools/cypress/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators/configuration",
+      "to": "/docs/technologies/test-tools/cypress/api/generators/configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators/component-configuration",
+      "to": "/docs/technologies/test-tools/cypress/api/generators/component-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators/migrate-to-cypress-11",
+      "to": "/docs/technologies/test-tools/cypress/api/generators/migrate-to-cypress-11",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/test-tools/cypress/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/cypress/api/migrations",
+      "to": "/docs/technologies/test-tools/cypress/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/executors",
+      "to": "/docs/technologies/test-tools/detox/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/executors/build",
+      "to": "/docs/technologies/test-tools/detox/api/executors/build",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/executors/test",
+      "to": "/docs/technologies/test-tools/detox/api/executors/test",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/generators",
+      "to": "/docs/technologies/test-tools/detox/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/generators/init",
+      "to": "/docs/technologies/test-tools/detox/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/generators/application",
+      "to": "/docs/technologies/test-tools/detox/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/test-tools/detox/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/detox/api/migrations",
+      "to": "/docs/technologies/test-tools/detox/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents",
+      "to": "/docs/reference/core-api/devkit/documents",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/nx_devkit",
+      "to": "/docs/reference/core-api/devkit/documents/nx_devkit",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ngcli_adapter",
+      "to": "/docs/reference/core-api/devkit/documents/ngcli_adapter",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/AggregateCreateNodesError",
+      "to": "/docs/reference/core-api/devkit/documents/AggregateCreateNodesError",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/AsyncIteratorExecutor",
+      "to": "/docs/reference/core-api/devkit/documents/AsyncIteratorExecutor",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ChangeType",
+      "to": "/docs/reference/core-api/devkit/documents/ChangeType",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateDependencies",
+      "to": "/docs/reference/core-api/devkit/documents/CreateDependencies",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateDependenciesContext",
+      "to": "/docs/reference/core-api/devkit/documents/CreateDependenciesContext",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateMetadata",
+      "to": "/docs/reference/core-api/devkit/documents/CreateMetadata",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateMetadataContext",
+      "to": "/docs/reference/core-api/devkit/documents/CreateMetadataContext",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodes",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodes",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesContext",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesContext",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesContextV2",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesContextV2",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesFunction",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesFunction",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesFunctionV2",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesFunctionV2",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesResult",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesResult",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesResultV2",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesResultV2",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CreateNodesV2",
+      "to": "/docs/reference/core-api/devkit/documents/CreateNodesV2",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/CustomHasher",
+      "to": "/docs/reference/core-api/devkit/documents/CustomHasher",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/DefaultTasksRunnerOptions",
+      "to": "/docs/reference/core-api/devkit/documents/DefaultTasksRunnerOptions",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/DependencyType",
+      "to": "/docs/reference/core-api/devkit/documents/DependencyType",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/DynamicDependency",
+      "to": "/docs/reference/core-api/devkit/documents/DynamicDependency",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Executor",
+      "to": "/docs/reference/core-api/devkit/documents/Executor",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ExecutorContext",
+      "to": "/docs/reference/core-api/devkit/documents/ExecutorContext",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ExecutorsJson",
+      "to": "/docs/reference/core-api/devkit/documents/ExecutorsJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ExpandedPluginConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/ExpandedPluginConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/FileChange",
+      "to": "/docs/reference/core-api/devkit/documents/FileChange",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/FileData",
+      "to": "/docs/reference/core-api/devkit/documents/FileData",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/FileMap",
+      "to": "/docs/reference/core-api/devkit/documents/FileMap",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Generator",
+      "to": "/docs/reference/core-api/devkit/documents/Generator",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/GeneratorCallback",
+      "to": "/docs/reference/core-api/devkit/documents/GeneratorCallback",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/GeneratorsJson",
+      "to": "/docs/reference/core-api/devkit/documents/GeneratorsJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/GraphJson",
+      "to": "/docs/reference/core-api/devkit/documents/GraphJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Hash",
+      "to": "/docs/reference/core-api/devkit/documents/Hash",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Hasher",
+      "to": "/docs/reference/core-api/devkit/documents/Hasher",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/HasherContext",
+      "to": "/docs/reference/core-api/devkit/documents/HasherContext",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ImplicitDependency",
+      "to": "/docs/reference/core-api/devkit/documents/ImplicitDependency",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ImplicitDependencyEntry",
+      "to": "/docs/reference/core-api/devkit/documents/ImplicitDependencyEntry",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ImplicitJsonSubsetDependency",
+      "to": "/docs/reference/core-api/devkit/documents/ImplicitJsonSubsetDependency",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/JsonParseOptions",
+      "to": "/docs/reference/core-api/devkit/documents/JsonParseOptions",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/JsonSerializeOptions",
+      "to": "/docs/reference/core-api/devkit/documents/JsonSerializeOptions",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Migration",
+      "to": "/docs/reference/core-api/devkit/documents/Migration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/MigrationsJson",
+      "to": "/docs/reference/core-api/devkit/documents/MigrationsJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/NX_VERSION",
+      "to": "/docs/reference/core-api/devkit/documents/NX_VERSION",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/NxAffectedConfig",
+      "to": "/docs/reference/core-api/devkit/documents/NxAffectedConfig",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/NxJsonConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/NxJsonConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/NxPlugin",
+      "to": "/docs/reference/core-api/devkit/documents/NxPlugin",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/NxPluginV2",
+      "to": "/docs/reference/core-api/devkit/documents/NxPluginV2",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/OverwriteStrategy",
+      "to": "/docs/reference/core-api/devkit/documents/OverwriteStrategy",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PackageManager",
+      "to": "/docs/reference/core-api/devkit/documents/PackageManager",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PluginConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/PluginConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PostTasksExecution",
+      "to": "/docs/reference/core-api/devkit/documents/PostTasksExecution",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PostTasksExecutionContext",
+      "to": "/docs/reference/core-api/devkit/documents/PostTasksExecutionContext",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PreTasksExecution",
+      "to": "/docs/reference/core-api/devkit/documents/PreTasksExecution",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PreTasksExecutionContext",
+      "to": "/docs/reference/core-api/devkit/documents/PreTasksExecutionContext",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectFileMap",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectFileMap",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectGraph",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectGraph",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectGraphDependency",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectGraphDependency",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectGraphExternalNode",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectGraphExternalNode",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectGraphProjectNode",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectGraphProjectNode",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectType",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectType",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectsConfigurations",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectsConfigurations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ProjectsMetadata",
+      "to": "/docs/reference/core-api/devkit/documents/ProjectsMetadata",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/PromiseExecutor",
+      "to": "/docs/reference/core-api/devkit/documents/PromiseExecutor",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/README",
+      "to": "/docs/reference/core-api/devkit/documents/README",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/RawProjectGraphDependency",
+      "to": "/docs/reference/core-api/devkit/documents/RawProjectGraphDependency",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/RemoteCache",
+      "to": "/docs/reference/core-api/devkit/documents/RemoteCache",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/StaleProjectGraphCacheError",
+      "to": "/docs/reference/core-api/devkit/documents/StaleProjectGraphCacheError",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/StaticDependency",
+      "to": "/docs/reference/core-api/devkit/documents/StaticDependency",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/StringChange",
+      "to": "/docs/reference/core-api/devkit/documents/StringChange",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/StringDeletion",
+      "to": "/docs/reference/core-api/devkit/documents/StringDeletion",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/StringInsertion",
+      "to": "/docs/reference/core-api/devkit/documents/StringInsertion",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Target",
+      "to": "/docs/reference/core-api/devkit/documents/Target",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TargetConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/TargetConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TargetDefaults",
+      "to": "/docs/reference/core-api/devkit/documents/TargetDefaults",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TargetDependencyConfig",
+      "to": "/docs/reference/core-api/devkit/documents/TargetDependencyConfig",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Task",
+      "to": "/docs/reference/core-api/devkit/documents/Task",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TaskGraph",
+      "to": "/docs/reference/core-api/devkit/documents/TaskGraph",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TaskGraphExecutor",
+      "to": "/docs/reference/core-api/devkit/documents/TaskGraphExecutor",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TaskHasher",
+      "to": "/docs/reference/core-api/devkit/documents/TaskHasher",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TaskResult",
+      "to": "/docs/reference/core-api/devkit/documents/TaskResult",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/TaskResults",
+      "to": "/docs/reference/core-api/devkit/documents/TaskResults",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ToJSOptions",
+      "to": "/docs/reference/core-api/devkit/documents/ToJSOptions",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Tree",
+      "to": "/docs/reference/core-api/devkit/documents/Tree",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/Workspace",
+      "to": "/docs/reference/core-api/devkit/documents/Workspace",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/WorkspaceJsonConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/WorkspaceJsonConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/addDependenciesToPackageJson",
+      "to": "/docs/reference/core-api/devkit/documents/addDependenciesToPackageJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/addProjectConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/addProjectConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/applyChangesToString",
+      "to": "/docs/reference/core-api/devkit/documents/applyChangesToString",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/cacheDir",
+      "to": "/docs/reference/core-api/devkit/documents/cacheDir",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/convertNxExecutor",
+      "to": "/docs/reference/core-api/devkit/documents/convertNxExecutor",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/convertNxGenerator",
+      "to": "/docs/reference/core-api/devkit/documents/convertNxGenerator",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/createNodesFromFiles",
+      "to": "/docs/reference/core-api/devkit/documents/createNodesFromFiles",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/createProjectFileMapUsingProjectGraph",
+      "to": "/docs/reference/core-api/devkit/documents/createProjectFileMapUsingProjectGraph",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/createProjectGraphAsync",
+      "to": "/docs/reference/core-api/devkit/documents/createProjectGraphAsync",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/defaultTasksRunner",
+      "to": "/docs/reference/core-api/devkit/documents/defaultTasksRunner",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/detectPackageManager",
+      "to": "/docs/reference/core-api/devkit/documents/detectPackageManager",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ensurePackage",
+      "to": "/docs/reference/core-api/devkit/documents/ensurePackage",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/extractLayoutDirectory",
+      "to": "/docs/reference/core-api/devkit/documents/extractLayoutDirectory",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/formatFiles",
+      "to": "/docs/reference/core-api/devkit/documents/formatFiles",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/generateFiles",
+      "to": "/docs/reference/core-api/devkit/documents/generateFiles",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/getOutputsForTargetAndConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/getOutputsForTargetAndConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/getPackageManagerCommand",
+      "to": "/docs/reference/core-api/devkit/documents/getPackageManagerCommand",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/getPackageManagerVersion",
+      "to": "/docs/reference/core-api/devkit/documents/getPackageManagerVersion",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/getProjects",
+      "to": "/docs/reference/core-api/devkit/documents/getProjects",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/getWorkspaceLayout",
+      "to": "/docs/reference/core-api/devkit/documents/getWorkspaceLayout",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/glob",
+      "to": "/docs/reference/core-api/devkit/documents/glob",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/globAsync",
+      "to": "/docs/reference/core-api/devkit/documents/globAsync",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/hashArray",
+      "to": "/docs/reference/core-api/devkit/documents/hashArray",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/installPackagesTask",
+      "to": "/docs/reference/core-api/devkit/documents/installPackagesTask",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/isDaemonEnabled",
+      "to": "/docs/reference/core-api/devkit/documents/isDaemonEnabled",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/isWorkspacesEnabled",
+      "to": "/docs/reference/core-api/devkit/documents/isWorkspacesEnabled",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/joinPathFragments",
+      "to": "/docs/reference/core-api/devkit/documents/joinPathFragments",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/logger",
+      "to": "/docs/reference/core-api/devkit/documents/logger",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/moveFilesToNewDirectory",
+      "to": "/docs/reference/core-api/devkit/documents/moveFilesToNewDirectory",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/names",
+      "to": "/docs/reference/core-api/devkit/documents/names",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ngcli_adapter/NxScopedHost",
+      "to": "/docs/reference/core-api/devkit/documents/ngcli_adapter/NxScopedHost",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ngcli_adapter/README",
+      "to": "/docs/reference/core-api/devkit/documents/ngcli_adapter/README",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ngcli_adapter/mockSchematicsForTesting",
+      "to": "/docs/reference/core-api/devkit/documents/ngcli_adapter/mockSchematicsForTesting",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/ngcli_adapter/wrapAngularDevkitSchematic",
+      "to": "/docs/reference/core-api/devkit/documents/ngcli_adapter/wrapAngularDevkitSchematic",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/normalizePath",
+      "to": "/docs/reference/core-api/devkit/documents/normalizePath",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/offsetFromRoot",
+      "to": "/docs/reference/core-api/devkit/documents/offsetFromRoot",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/output",
+      "to": "/docs/reference/core-api/devkit/documents/output",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/parseJson",
+      "to": "/docs/reference/core-api/devkit/documents/parseJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/parseTargetString",
+      "to": "/docs/reference/core-api/devkit/documents/parseTargetString",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readCachedProjectGraph",
+      "to": "/docs/reference/core-api/devkit/documents/readCachedProjectGraph",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readJson",
+      "to": "/docs/reference/core-api/devkit/documents/readJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readJsonFile",
+      "to": "/docs/reference/core-api/devkit/documents/readJsonFile",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readNxJson",
+      "to": "/docs/reference/core-api/devkit/documents/readNxJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readProjectConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/readProjectConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readProjectsConfigurationFromProjectGraph",
+      "to": "/docs/reference/core-api/devkit/documents/readProjectsConfigurationFromProjectGraph",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/readTargetOptions",
+      "to": "/docs/reference/core-api/devkit/documents/readTargetOptions",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/removeDependenciesFromPackageJson",
+      "to": "/docs/reference/core-api/devkit/documents/removeDependenciesFromPackageJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/removeProjectConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/removeProjectConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/reverse",
+      "to": "/docs/reference/core-api/devkit/documents/reverse",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/runExecutor",
+      "to": "/docs/reference/core-api/devkit/documents/runExecutor",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/runTasksInSerial",
+      "to": "/docs/reference/core-api/devkit/documents/runTasksInSerial",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/serializeJson",
+      "to": "/docs/reference/core-api/devkit/documents/serializeJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/stripIndents",
+      "to": "/docs/reference/core-api/devkit/documents/stripIndents",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/stripJsonComments",
+      "to": "/docs/reference/core-api/devkit/documents/stripJsonComments",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/targetToTargetString",
+      "to": "/docs/reference/core-api/devkit/documents/targetToTargetString",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/toJS",
+      "to": "/docs/reference/core-api/devkit/documents/toJS",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/updateJson",
+      "to": "/docs/reference/core-api/devkit/documents/updateJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/updateNxJson",
+      "to": "/docs/reference/core-api/devkit/documents/updateNxJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/updateProjectConfiguration",
+      "to": "/docs/reference/core-api/devkit/documents/updateProjectConfiguration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/updateTsConfigsToJs",
+      "to": "/docs/reference/core-api/devkit/documents/updateTsConfigsToJs",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/validateDependency",
+      "to": "/docs/reference/core-api/devkit/documents/validateDependency",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/visitNotIgnoredFiles",
+      "to": "/docs/reference/core-api/devkit/documents/visitNotIgnoredFiles",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/workspaceLayout",
+      "to": "/docs/reference/core-api/devkit/documents/workspaceLayout",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/workspaceRoot",
+      "to": "/docs/reference/core-api/devkit/documents/workspaceRoot",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/writeJson",
+      "to": "/docs/reference/core-api/devkit/documents/writeJson",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/documents/writeJsonFile",
+      "to": "/docs/reference/core-api/devkit/documents/writeJsonFile",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/executors",
+      "to": "/docs/reference/core-api/devkit/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/generators",
+      "to": "/docs/reference/core-api/devkit/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/devkit/migrations",
+      "to": "/docs/reference/core-api/devkit/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/executors",
+      "to": "/docs/technologies/build-tools/esbuild/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/executors/esbuild",
+      "to": "/docs/technologies/build-tools/esbuild/api/executors/esbuild",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/generators",
+      "to": "/docs/technologies/build-tools/esbuild/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/generators/init",
+      "to": "/docs/technologies/build-tools/esbuild/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/esbuild/api/generators/configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/esbuild/api/migrations",
+      "to": "/docs/technologies/build-tools/esbuild/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/api/executors",
+      "to": "/docs/technologies/eslint/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/api/executors/lint",
+      "to": "/docs/technologies/eslint/api/executors/lint",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/api/generators",
+      "to": "/docs/technologies/eslint/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/api/generators/init",
+      "to": "/docs/technologies/eslint/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/api/generators/workspace-rules-project",
+      "to": "/docs/technologies/eslint/api/generators/workspace-rules-project",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/api/generators/workspace-rule",
+      "to": "/docs/technologies/eslint/api/generators/workspace-rule",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/api/generators/convert-to-flat-config",
+      "to": "/docs/technologies/eslint/api/generators/convert-to-flat-config",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/eslint/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/api/migrations",
+      "to": "/docs/technologies/eslint/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/api/executors",
+      "to": "/docs/technologies/eslint/eslint-plugin/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/api/generators",
+      "to": "/docs/technologies/eslint/eslint-plugin/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/eslint/eslint-plugin/api/migrations",
+      "to": "/docs/technologies/eslint/eslint-plugin/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors",
+      "to": "/docs/technologies/react/expo/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/update",
+      "to": "/docs/technologies/react/expo/api/executors/update",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/build",
+      "to": "/docs/technologies/react/expo/api/executors/build",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/build-list",
+      "to": "/docs/technologies/react/expo/api/executors/build-list",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/run",
+      "to": "/docs/technologies/react/expo/api/executors/run",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/start",
+      "to": "/docs/technologies/react/expo/api/executors/start",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/sync-deps",
+      "to": "/docs/technologies/react/expo/api/executors/sync-deps",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/ensure-symlink",
+      "to": "/docs/technologies/react/expo/api/executors/ensure-symlink",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/prebuild",
+      "to": "/docs/technologies/react/expo/api/executors/prebuild",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/install",
+      "to": "/docs/technologies/react/expo/api/executors/install",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/export",
+      "to": "/docs/technologies/react/expo/api/executors/export",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/submit",
+      "to": "/docs/technologies/react/expo/api/executors/submit",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/executors/serve",
+      "to": "/docs/technologies/react/expo/api/executors/serve",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/generators",
+      "to": "/docs/technologies/react/expo/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/generators/init",
+      "to": "/docs/technologies/react/expo/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/generators/application",
+      "to": "/docs/technologies/react/expo/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/generators/library",
+      "to": "/docs/technologies/react/expo/api/generators/library",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/generators/component",
+      "to": "/docs/technologies/react/expo/api/generators/component",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/react/expo/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/expo/api/migrations",
+      "to": "/docs/technologies/react/expo/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/express/api/executors",
+      "to": "/docs/technologies/node/express/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/express/api/generators",
+      "to": "/docs/technologies/node/express/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/express/api/generators/init",
+      "to": "/docs/technologies/node/express/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/express/api/generators/application",
+      "to": "/docs/technologies/node/express/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/express/api/migrations",
+      "to": "/docs/technologies/node/express/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/java/api/executors",
+      "to": "/docs/technologies/java/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/java/api/executors/gradle",
+      "to": "/docs/technologies/java/api/executors/gradle",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/java/api/generators",
+      "to": "/docs/technologies/java/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/java/api/generators/init",
+      "to": "/docs/technologies/java/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/java/api/generators/ci-workflow",
+      "to": "/docs/technologies/java/api/generators/ci-workflow",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/java/api/migrations",
+      "to": "/docs/technologies/java/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/executors",
+      "to": "/docs/technologies/test-tools/jest/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/executors/jest",
+      "to": "/docs/technologies/test-tools/jest/api/executors/jest",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/generators",
+      "to": "/docs/technologies/test-tools/jest/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/generators/init",
+      "to": "/docs/technologies/test-tools/jest/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/generators/configuration",
+      "to": "/docs/technologies/test-tools/jest/api/generators/configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/test-tools/jest/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/jest/api/migrations",
+      "to": "/docs/technologies/test-tools/jest/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/executors",
+      "to": "/docs/technologies/typescript/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/executors/copy-workspace-modules",
+      "to": "/docs/technologies/typescript/api/executors/copy-workspace-modules",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/executors/tsc",
+      "to": "/docs/technologies/typescript/api/executors/tsc",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/executors/swc",
+      "to": "/docs/technologies/typescript/api/executors/swc",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/executors/node",
+      "to": "/docs/technologies/typescript/api/executors/node",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/executors/prune-lockfile",
+      "to": "/docs/technologies/typescript/api/executors/prune-lockfile",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/executors/release-publish",
+      "to": "/docs/technologies/typescript/api/executors/release-publish",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/executors/verdaccio",
+      "to": "/docs/technologies/typescript/api/executors/verdaccio",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/generators",
+      "to": "/docs/technologies/typescript/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/generators/library",
+      "to": "/docs/technologies/typescript/api/generators/library",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/generators/init",
+      "to": "/docs/technologies/typescript/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/generators/convert-to-swc",
+      "to": "/docs/technologies/typescript/api/generators/convert-to-swc",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/generators/release-version",
+      "to": "/docs/technologies/typescript/api/generators/release-version",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/generators/setup-verdaccio",
+      "to": "/docs/technologies/typescript/api/generators/setup-verdaccio",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/generators/setup-build",
+      "to": "/docs/technologies/typescript/api/generators/setup-build",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/generators/typescript-sync",
+      "to": "/docs/technologies/typescript/api/generators/typescript-sync",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/generators/setup-prettier",
+      "to": "/docs/technologies/typescript/api/generators/setup-prettier",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/typescript/api/migrations",
+      "to": "/docs/technologies/typescript/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/module-federation/api/executors",
+      "to": "/docs/technologies/module-federation/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/module-federation/api/generators",
+      "to": "/docs/technologies/module-federation/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/module-federation/api/migrations",
+      "to": "/docs/technologies/module-federation/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/executors",
+      "to": "/docs/technologies/node/nest/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators",
+      "to": "/docs/technologies/node/nest/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/application",
+      "to": "/docs/technologies/node/nest/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/init",
+      "to": "/docs/technologies/node/nest/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/library",
+      "to": "/docs/technologies/node/nest/api/generators/library",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/class",
+      "to": "/docs/technologies/node/nest/api/generators/class",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/controller",
+      "to": "/docs/technologies/node/nest/api/generators/controller",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/decorator",
+      "to": "/docs/technologies/node/nest/api/generators/decorator",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/filter",
+      "to": "/docs/technologies/node/nest/api/generators/filter",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/gateway",
+      "to": "/docs/technologies/node/nest/api/generators/gateway",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/guard",
+      "to": "/docs/technologies/node/nest/api/generators/guard",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/interceptor",
+      "to": "/docs/technologies/node/nest/api/generators/interceptor",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/interface",
+      "to": "/docs/technologies/node/nest/api/generators/interface",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/middleware",
+      "to": "/docs/technologies/node/nest/api/generators/middleware",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/module",
+      "to": "/docs/technologies/node/nest/api/generators/module",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/pipe",
+      "to": "/docs/technologies/node/nest/api/generators/pipe",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/provider",
+      "to": "/docs/technologies/node/nest/api/generators/provider",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/resolver",
+      "to": "/docs/technologies/node/nest/api/generators/resolver",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/resource",
+      "to": "/docs/technologies/node/nest/api/generators/resource",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/generators/service",
+      "to": "/docs/technologies/node/nest/api/generators/service",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/nest/api/migrations",
+      "to": "/docs/technologies/node/nest/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/executors",
+      "to": "/docs/technologies/react/next/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/executors/build",
+      "to": "/docs/technologies/react/next/api/executors/build",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/executors/server",
+      "to": "/docs/technologies/react/next/api/executors/server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/generators",
+      "to": "/docs/technologies/react/next/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/generators/init",
+      "to": "/docs/technologies/react/next/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/generators/application",
+      "to": "/docs/technologies/react/next/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/generators/page",
+      "to": "/docs/technologies/react/next/api/generators/page",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/generators/component",
+      "to": "/docs/technologies/react/next/api/generators/component",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/generators/library",
+      "to": "/docs/technologies/react/next/api/generators/library",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/generators/custom-server",
+      "to": "/docs/technologies/react/next/api/generators/custom-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/generators/cypress-component-configuration",
+      "to": "/docs/technologies/react/next/api/generators/cypress-component-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/react/next/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/next/api/migrations",
+      "to": "/docs/technologies/react/next/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/api/executors",
+      "to": "/docs/technologies/node/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/api/generators",
+      "to": "/docs/technologies/node/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/api/generators/init",
+      "to": "/docs/technologies/node/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/api/generators/application",
+      "to": "/docs/technologies/node/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/api/generators/library",
+      "to": "/docs/technologies/node/api/generators/library",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/api/generators/setup-docker",
+      "to": "/docs/technologies/node/api/generators/setup-docker",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/node/api/migrations",
+      "to": "/docs/technologies/node/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/executors",
+      "to": "/docs/technologies/vue/nuxt/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/generators",
+      "to": "/docs/technologies/vue/nuxt/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/generators/init",
+      "to": "/docs/technologies/vue/nuxt/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/generators/application",
+      "to": "/docs/technologies/vue/nuxt/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/generators/storybook-configuration",
+      "to": "/docs/technologies/vue/nuxt/api/generators/storybook-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/nuxt/api/migrations",
+      "to": "/docs/technologies/vue/nuxt/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents",
+      "to": "/docs/reference/core-api/nx/documents",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/create-nx-workspace",
+      "to": "/docs/reference/core-api/nx/documents/create-nx-workspace",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/init",
+      "to": "/docs/reference/core-api/nx/documents/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/generate",
+      "to": "/docs/reference/core-api/nx/documents/generate",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/run",
+      "to": "/docs/reference/core-api/nx/documents/run",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/daemon",
+      "to": "/docs/reference/core-api/nx/documents/daemon",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/dep-graph",
+      "to": "/docs/reference/core-api/nx/documents/dep-graph",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/run-many",
+      "to": "/docs/reference/core-api/nx/documents/run-many",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/affected",
+      "to": "/docs/reference/core-api/nx/documents/affected",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/format-check",
+      "to": "/docs/reference/core-api/nx/documents/format-check",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/format-write",
+      "to": "/docs/reference/core-api/nx/documents/format-write",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/migrate",
+      "to": "/docs/reference/core-api/nx/documents/migrate",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/report",
+      "to": "/docs/reference/core-api/nx/documents/report",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/list",
+      "to": "/docs/reference/core-api/nx/documents/list",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/connect-to-nx-cloud",
+      "to": "/docs/reference/core-api/nx/documents/connect-to-nx-cloud",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/reset",
+      "to": "/docs/reference/core-api/nx/documents/reset",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/repair",
+      "to": "/docs/reference/core-api/nx/documents/repair",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/sync",
+      "to": "/docs/reference/core-api/nx/documents/sync",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/sync-check",
+      "to": "/docs/reference/core-api/nx/documents/sync-check",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/import",
+      "to": "/docs/reference/core-api/nx/documents/import",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/exec",
+      "to": "/docs/reference/core-api/nx/documents/exec",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/watch",
+      "to": "/docs/reference/core-api/nx/documents/watch",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/show",
+      "to": "/docs/reference/core-api/nx/documents/show",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/view-logs",
+      "to": "/docs/reference/core-api/nx/documents/view-logs",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/release",
+      "to": "/docs/reference/core-api/nx/documents/release",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/add",
+      "to": "/docs/reference/core-api/nx/documents/add",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/mcp",
+      "to": "/docs/reference/core-api/nx/documents/mcp",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/login",
+      "to": "/docs/reference/core-api/nx/documents/login",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/logout",
+      "to": "/docs/reference/core-api/nx/documents/logout",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/fix-ci",
+      "to": "/docs/reference/core-api/nx/documents/fix-ci",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/record",
+      "to": "/docs/reference/core-api/nx/documents/record",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/documents/start-ci-run",
+      "to": "/docs/reference/core-api/nx/documents/start-ci-run",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/executors",
+      "to": "/docs/reference/core-api/nx/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/executors/noop",
+      "to": "/docs/reference/core-api/nx/executors/noop",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/executors/run-commands",
+      "to": "/docs/reference/core-api/nx/executors/run-commands",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/executors/run-script",
+      "to": "/docs/reference/core-api/nx/executors/run-script",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/generators",
+      "to": "/docs/reference/core-api/nx/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/generators/connect-to-nx-cloud",
+      "to": "/docs/reference/core-api/nx/generators/connect-to-nx-cloud",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/nx/migrations",
+      "to": "/docs/reference/core-api/nx/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/executors",
+      "to": "/docs/technologies/test-tools/playwright/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/executors/playwright",
+      "to": "/docs/technologies/test-tools/playwright/api/executors/playwright",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/generators",
+      "to": "/docs/technologies/test-tools/playwright/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/generators/configuration",
+      "to": "/docs/technologies/test-tools/playwright/api/generators/configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/generators/init",
+      "to": "/docs/technologies/test-tools/playwright/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/test-tools/playwright/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/playwright/api/migrations",
+      "to": "/docs/technologies/test-tools/playwright/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/executors",
+      "to": "/docs/reference/core-api/plugin/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/generators",
+      "to": "/docs/reference/core-api/plugin/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/plugin",
+      "to": "/docs/reference/core-api/plugin/generators/plugin",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/create-package",
+      "to": "/docs/reference/core-api/plugin/generators/create-package",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/e2e-project",
+      "to": "/docs/reference/core-api/plugin/generators/e2e-project",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/migration",
+      "to": "/docs/reference/core-api/plugin/generators/migration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/generator",
+      "to": "/docs/reference/core-api/plugin/generators/generator",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/executor",
+      "to": "/docs/reference/core-api/plugin/generators/executor",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/plugin-lint-checks",
+      "to": "/docs/reference/core-api/plugin/generators/plugin-lint-checks",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/generators/preset",
+      "to": "/docs/reference/core-api/plugin/generators/preset",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/plugin/migrations",
+      "to": "/docs/reference/core-api/plugin/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/executors",
+      "to": "/docs/technologies/react/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/executors/module-federation-dev-server",
+      "to": "/docs/technologies/react/api/executors/module-federation-dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/executors/module-federation-ssr-dev-server",
+      "to": "/docs/technologies/react/api/executors/module-federation-ssr-dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/executors/module-federation-static-server",
+      "to": "/docs/technologies/react/api/executors/module-federation-static-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators",
+      "to": "/docs/technologies/react/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/init",
+      "to": "/docs/technologies/react/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/application",
+      "to": "/docs/technologies/react/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/library",
+      "to": "/docs/technologies/react/api/generators/library",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/component",
+      "to": "/docs/technologies/react/api/generators/component",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/redux",
+      "to": "/docs/technologies/react/api/generators/redux",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/storybook-configuration",
+      "to": "/docs/technologies/react/api/generators/storybook-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/component-story",
+      "to": "/docs/technologies/react/api/generators/component-story",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/stories",
+      "to": "/docs/technologies/react/api/generators/stories",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/hook",
+      "to": "/docs/technologies/react/api/generators/hook",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/host",
+      "to": "/docs/technologies/react/api/generators/host",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/remote",
+      "to": "/docs/technologies/react/api/generators/remote",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/cypress-component-configuration",
+      "to": "/docs/technologies/react/api/generators/cypress-component-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/component-test",
+      "to": "/docs/technologies/react/api/generators/component-test",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/setup-tailwind",
+      "to": "/docs/technologies/react/api/generators/setup-tailwind",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/setup-ssr",
+      "to": "/docs/technologies/react/api/generators/setup-ssr",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/generators/federate-module",
+      "to": "/docs/technologies/react/api/generators/federate-module",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/api/migrations",
+      "to": "/docs/technologies/react/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors",
+      "to": "/docs/technologies/react/react-native/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/run-android",
+      "to": "/docs/technologies/react/react-native/api/executors/run-android",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/run-ios",
+      "to": "/docs/technologies/react/react-native/api/executors/run-ios",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/bundle",
+      "to": "/docs/technologies/react/react-native/api/executors/bundle",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/build-android",
+      "to": "/docs/technologies/react/react-native/api/executors/build-android",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/build-ios",
+      "to": "/docs/technologies/react/react-native/api/executors/build-ios",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/start",
+      "to": "/docs/technologies/react/react-native/api/executors/start",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/sync-deps",
+      "to": "/docs/technologies/react/react-native/api/executors/sync-deps",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/ensure-symlink",
+      "to": "/docs/technologies/react/react-native/api/executors/ensure-symlink",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/storybook",
+      "to": "/docs/technologies/react/react-native/api/executors/storybook",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/pod-install",
+      "to": "/docs/technologies/react/react-native/api/executors/pod-install",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/executors/upgrade",
+      "to": "/docs/technologies/react/react-native/api/executors/upgrade",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators",
+      "to": "/docs/technologies/react/react-native/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/init",
+      "to": "/docs/technologies/react/react-native/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/application",
+      "to": "/docs/technologies/react/react-native/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/library",
+      "to": "/docs/technologies/react/react-native/api/generators/library",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/component",
+      "to": "/docs/technologies/react/react-native/api/generators/component",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/web-configuration",
+      "to": "/docs/technologies/react/react-native/api/generators/web-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/react/react-native/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/react-native/api/migrations",
+      "to": "/docs/technologies/react/react-native/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/executors",
+      "to": "/docs/technologies/react/remix/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/executors/serve",
+      "to": "/docs/technologies/react/remix/api/executors/serve",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/executors/build",
+      "to": "/docs/technologies/react/remix/api/executors/build",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators",
+      "to": "/docs/technologies/react/remix/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/preset",
+      "to": "/docs/technologies/react/remix/api/generators/preset",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/setup",
+      "to": "/docs/technologies/react/remix/api/generators/setup",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/application",
+      "to": "/docs/technologies/react/remix/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/cypress-component-configuration",
+      "to": "/docs/technologies/react/remix/api/generators/cypress-component-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/library",
+      "to": "/docs/technologies/react/remix/api/generators/library",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/init",
+      "to": "/docs/technologies/react/remix/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/route",
+      "to": "/docs/technologies/react/remix/api/generators/route",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/resource-route",
+      "to": "/docs/technologies/react/remix/api/generators/resource-route",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/action",
+      "to": "/docs/technologies/react/remix/api/generators/action",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/loader",
+      "to": "/docs/technologies/react/remix/api/generators/loader",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/style",
+      "to": "/docs/technologies/react/remix/api/generators/style",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/setup-tailwind",
+      "to": "/docs/technologies/react/remix/api/generators/setup-tailwind",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/storybook-configuration",
+      "to": "/docs/technologies/react/remix/api/generators/storybook-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/meta",
+      "to": "/docs/technologies/react/remix/api/generators/meta",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/error-boundary",
+      "to": "/docs/technologies/react/remix/api/generators/error-boundary",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/react/remix/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/react/remix/api/migrations",
+      "to": "/docs/technologies/react/remix/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/executors",
+      "to": "/docs/technologies/build-tools/rollup/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/executors/rollup",
+      "to": "/docs/technologies/build-tools/rollup/api/executors/rollup",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/generators",
+      "to": "/docs/technologies/build-tools/rollup/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/generators/init",
+      "to": "/docs/technologies/build-tools/rollup/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/rollup/api/generators/configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/build-tools/rollup/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rollup/api/migrations",
+      "to": "/docs/technologies/build-tools/rollup/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api/executors",
+      "to": "/docs/technologies/build-tools/rsbuild/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api/generators",
+      "to": "/docs/technologies/build-tools/rsbuild/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api/generators/init",
+      "to": "/docs/technologies/build-tools/rsbuild/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/rsbuild/api/generators/configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rsbuild/api/migrations",
+      "to": "/docs/technologies/build-tools/rsbuild/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors",
+      "to": "/docs/technologies/build-tools/rspack/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/rspack",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/rspack",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/dev-server",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/ssr-dev-server",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/ssr-dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/module-federation-dev-server",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/module-federation-dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/module-federation-ssr-dev-server",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/module-federation-ssr-dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/executors/module-federation-static-server",
+      "to": "/docs/technologies/build-tools/rspack/api/executors/module-federation-static-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators",
+      "to": "/docs/technologies/build-tools/rspack/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/init",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/preset",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/preset",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/application",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/convert-webpack",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/convert-webpack",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/convert-config-to-rspack-plugin",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/convert-config-to-rspack-plugin",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/build-tools/rspack/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/rspack/api/migrations",
+      "to": "/docs/technologies/build-tools/rspack/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/executors",
+      "to": "/docs/technologies/test-tools/storybook/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/executors/storybook",
+      "to": "/docs/technologies/test-tools/storybook/api/executors/storybook",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/executors/build",
+      "to": "/docs/technologies/test-tools/storybook/api/executors/build",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators",
+      "to": "/docs/technologies/test-tools/storybook/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators/init",
+      "to": "/docs/technologies/test-tools/storybook/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators/configuration",
+      "to": "/docs/technologies/test-tools/storybook/api/generators/configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/test-tools/storybook/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators/migrate-8",
+      "to": "/docs/technologies/test-tools/storybook/api/generators/migrate-8",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/generators/migrate-9",
+      "to": "/docs/technologies/test-tools/storybook/api/generators/migrate-9",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/test-tools/storybook/api/migrations",
+      "to": "/docs/technologies/test-tools/storybook/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/executors",
+      "to": "/docs/technologies/build-tools/vite/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/executors/dev-server",
+      "to": "/docs/technologies/build-tools/vite/api/executors/dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/executors/build",
+      "to": "/docs/technologies/build-tools/vite/api/executors/build",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/executors/test",
+      "to": "/docs/technologies/build-tools/vite/api/executors/test",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/executors/preview-server",
+      "to": "/docs/technologies/build-tools/vite/api/executors/preview-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators",
+      "to": "/docs/technologies/build-tools/vite/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators/init",
+      "to": "/docs/technologies/build-tools/vite/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/vite/api/generators/configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators/setup-paths-plugin",
+      "to": "/docs/technologies/build-tools/vite/api/generators/setup-paths-plugin",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/build-tools/vite/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/generators/vitest",
+      "to": "/docs/technologies/build-tools/vite/api/generators/vitest",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/vite/api/migrations",
+      "to": "/docs/technologies/build-tools/vite/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api/executors",
+      "to": "/docs/technologies/vue/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api/generators",
+      "to": "/docs/technologies/vue/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api/generators/init",
+      "to": "/docs/technologies/vue/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api/generators/application",
+      "to": "/docs/technologies/vue/api/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api/generators/library",
+      "to": "/docs/technologies/vue/api/generators/library",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api/generators/component",
+      "to": "/docs/technologies/vue/api/generators/component",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api/generators/setup-tailwind",
+      "to": "/docs/technologies/vue/api/generators/setup-tailwind",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api/generators/storybook-configuration",
+      "to": "/docs/technologies/vue/api/generators/storybook-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api/generators/stories",
+      "to": "/docs/technologies/vue/api/generators/stories",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/vue/api/migrations",
+      "to": "/docs/technologies/vue/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/web/executors",
+      "to": "/docs/reference/core-api/web/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/web/executors/file-server",
+      "to": "/docs/reference/core-api/web/executors/file-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/web/generators",
+      "to": "/docs/reference/core-api/web/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/web/generators/init",
+      "to": "/docs/reference/core-api/web/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/web/generators/application",
+      "to": "/docs/reference/core-api/web/generators/application",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/web/generators/static-config",
+      "to": "/docs/reference/core-api/web/generators/static-config",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/web/migrations",
+      "to": "/docs/reference/core-api/web/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/executors",
+      "to": "/docs/technologies/build-tools/webpack/api/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/executors/webpack",
+      "to": "/docs/technologies/build-tools/webpack/api/executors/webpack",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/executors/dev-server",
+      "to": "/docs/technologies/build-tools/webpack/api/executors/dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/executors/ssr-dev-server",
+      "to": "/docs/technologies/build-tools/webpack/api/executors/ssr-dev-server",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/generators",
+      "to": "/docs/technologies/build-tools/webpack/api/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/generators/init",
+      "to": "/docs/technologies/build-tools/webpack/api/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/generators/configuration",
+      "to": "/docs/technologies/build-tools/webpack/api/generators/configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/generators/convert-config-to-webpack-plugin",
+      "to": "/docs/technologies/build-tools/webpack/api/generators/convert-config-to-webpack-plugin",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/generators/convert-to-inferred",
+      "to": "/docs/technologies/build-tools/webpack/api/generators/convert-to-inferred",
+      "targetStatus": 404
+    },
+    {
+      "from": "/technologies/build-tools/webpack/api/migrations",
+      "to": "/docs/technologies/build-tools/webpack/api/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/documents",
+      "to": "/docs/reference/core-api/workspace/documents",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/documents/overview",
+      "to": "/docs/reference/core-api/workspace/documents/overview",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/documents/nx-nodejs-typescript-version-matrix",
+      "to": "/docs/reference/core-api/workspace/documents/nx-nodejs-typescript-version-matrix",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/executors",
+      "to": "/docs/reference/core-api/workspace/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/executors/counter",
+      "to": "/docs/reference/core-api/workspace/executors/counter",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators",
+      "to": "/docs/reference/core-api/workspace/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/preset",
+      "to": "/docs/reference/core-api/workspace/generators/preset",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/move",
+      "to": "/docs/reference/core-api/workspace/generators/move",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/remove",
+      "to": "/docs/reference/core-api/workspace/generators/remove",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/convert-to-monorepo",
+      "to": "/docs/reference/core-api/workspace/generators/convert-to-monorepo",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/new",
+      "to": "/docs/reference/core-api/workspace/generators/new",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/run-commands",
+      "to": "/docs/reference/core-api/workspace/generators/run-commands",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/fix-configuration",
+      "to": "/docs/reference/core-api/workspace/generators/fix-configuration",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/npm-package",
+      "to": "/docs/reference/core-api/workspace/generators/npm-package",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/ci-workflow",
+      "to": "/docs/reference/core-api/workspace/generators/ci-workflow",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/generators/infer-targets",
+      "to": "/docs/reference/core-api/workspace/generators/infer-targets",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/workspace/migrations",
+      "to": "/docs/reference/core-api/workspace/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/azure-cache/executors",
+      "to": "/docs/reference/core-api/azure-cache/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/azure-cache/generators",
+      "to": "/docs/reference/core-api/azure-cache/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/azure-cache/migrations",
+      "to": "/docs/reference/core-api/azure-cache/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/documents",
+      "to": "/docs/reference/core-api/conformance/documents",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/documents/overview",
+      "to": "/docs/reference/core-api/conformance/documents/overview",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/documents/create-conformance-rule",
+      "to": "/docs/reference/core-api/conformance/documents/create-conformance-rule",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/executors",
+      "to": "/docs/reference/core-api/conformance/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/executors/bundle-rules",
+      "to": "/docs/reference/core-api/conformance/executors/bundle-rules",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/generators",
+      "to": "/docs/reference/core-api/conformance/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/generators/create-rule",
+      "to": "/docs/reference/core-api/conformance/generators/create-rule",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/generators/preset",
+      "to": "/docs/reference/core-api/conformance/generators/preset",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/conformance/migrations",
+      "to": "/docs/reference/core-api/conformance/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/owners/executors",
+      "to": "/docs/reference/core-api/owners/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/owners/generators",
+      "to": "/docs/reference/core-api/owners/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/owners/generators/init",
+      "to": "/docs/reference/core-api/owners/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/owners/generators/sync-codeowners-file",
+      "to": "/docs/reference/core-api/owners/generators/sync-codeowners-file",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/owners/migrations",
+      "to": "/docs/reference/core-api/owners/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/gcs-cache/executors",
+      "to": "/docs/reference/core-api/gcs-cache/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/gcs-cache/generators",
+      "to": "/docs/reference/core-api/gcs-cache/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/gcs-cache/migrations",
+      "to": "/docs/reference/core-api/gcs-cache/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/s3-cache/executors",
+      "to": "/docs/reference/core-api/s3-cache/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/s3-cache/generators",
+      "to": "/docs/reference/core-api/s3-cache/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/s3-cache/migrations",
+      "to": "/docs/reference/core-api/s3-cache/migrations",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache/executors",
+      "to": "/docs/reference/core-api/shared-fs-cache/executors",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache/generators",
+      "to": "/docs/reference/core-api/shared-fs-cache/generators",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache/generators/init",
+      "to": "/docs/reference/core-api/shared-fs-cache/generators/init",
+      "targetStatus": 404
+    },
+    {
+      "from": "/reference/core-api/shared-fs-cache/migrations",
+      "to": "/docs/reference/core-api/shared-fs-cache/migrations",
+      "targetStatus": 404
+    }
+  ]
+}
