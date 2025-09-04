@@ -34,6 +34,13 @@
 
 ### August 2025
 
+- [x] Fix Astro Documentation Styling Issues (2025-08-28 13:00)
+  - Plan: `.ai/2025-08-28/tasks/fix-astro-docs-styling-issues.md`
+  - Branch: DOC-143
+  - Goal: Fix 5 Linear styling issues for Astro docs
+  - Result: Fixed active link colors, deepdive callout spacing, card styling, TOC spacing, sidebar headers
+  - Screenshots: Saved in `.ai/2025-08-28/tasks/`
+
 - [x] DOC-135: Fix H1 and Frontmatter Title Mismatch (2025-08-20 09:12)
   - Plan created: `.ai/2025-08-20/tasks/doc-135-h1-title-fix.md`
   - Goal: Remove h1 headings from mdoc files to improve visual distinction between titles and h2
