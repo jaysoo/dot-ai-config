@@ -102,6 +102,8 @@ Fixes DOC-125"
 
 ### Philosophy
 - **Simple > Complex** - Try Tailwind/CSS before JavaScript
+- **Debug first, fix second** - Understand the actual problem before implementing
+- **One property > Many hacks** - Check if single CSS property solves the issue
 - **Ask before assuming** - Multiple approaches? Ask preference
 - **Iterate, don't defend** - Change based on feedback
 - **Code > Comments** - Self-documenting code, minimal comments
@@ -109,6 +111,7 @@ Fixes DOC-125"
 ### Component Development Order
 1. Simple Tailwind classes (Grid/Flexbox)
 1.5. Check if CSS in global stylesheets can solve the problem
+1.6. For alignment issues, try basic flexbox properties first (align-items, justify-content)
 2. Get feedback before complexity
 3. JavaScript only if CSS fails
 3.5. Component overrides only as last resort (especially for third-party components like Starlight)
@@ -117,6 +120,8 @@ Fixes DOC-125"
 ### Common Pitfalls
 - Arbitrary Tailwind selectors (`[&>*:first-child]:`) unreliable
 - Don't default to JavaScript for CSS-solvable problems
+- Tab/list alignment issues: Try `align-items: end` before complex margin/border hacks
+- Avoid creating horizontal scrolling when vertical alignment is the actual issue
 - Always verify file paths exist before using
 - Ask for dev server port (don't assume 4200, 3000, etc.)
 
@@ -152,6 +157,11 @@ Fixes DOC-125"
   - `md`: 768px, `lg`: 1024px, `xl`: 1280px, `2xl`: 1536px
 - **Testing:** Check all intermediate breakpoints (1000px, 1100px, 1200px, 1300px, 1400px)
 - **Mobile menu:** CTAs at bottom, don't duplicate desktop elements
+
+### Tab Component Fixes
+- **Tab alignment issues**: Use `align-items: end` on `[role="tablist"]`
+- **Don't overcomplicate**: Single CSS property often beats 40+ lines of "fixes"
+- **Test without media queries first**: Many fixes work across all screen sizes
 
 ### Common Astro/Starlight Mistakes
 - ❌ Don't duplicate theme switcher in mobile menu
