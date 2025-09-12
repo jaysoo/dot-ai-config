@@ -158,6 +158,8 @@ Fixes DOC-125"
 - ❌ Don't assume all UI elements are in Header.astro  
 - ❌ Don't use lg:hidden when you mean xl:hidden
 - ❌ Don't override entire Starlight components for simple style fixes
+- ❌ Don't add complex horizontal scrolling for simple vertical alignment issues
+- ❌ Don't use !important in global.css to override Starlight styles
 - ✅ Check what Starlight provides by default first
 - ✅ Test actual viewport widths user mentions, not just breakpoints
 - ✅ Prefer CSS fixes in global.css over component overrides
