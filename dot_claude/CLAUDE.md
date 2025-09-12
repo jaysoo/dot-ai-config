@@ -17,6 +17,7 @@ ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai
 - **Never commit to main/master** - always use feature branches
 - **Always squash commits** before pushing: `git reset --soft HEAD~n && git commit`
 - **Commit format must match PR template** (check `.github/PULL_REQUEST_TEMPLATE.md`)
+- **NEVER push branches or create PRs unless explicitly asked** - User will handle push and PR creation
 - Linear issues: Use `DOC-125` format (no # prefix)
 - GitHub issues: Use `Fixes #123` format
 
@@ -95,6 +96,7 @@ Fixes DOC-125"
 - Assuming "Linear issues" = one team (always clarify)
 - Wrong staleness calc (Aug 19 - 3mo = May 19 or earlier is stale)
 - `updatedAt` filters ON/AFTER date (not before)
+- For documentation-only changes, use `docs(misc)` scope, not project-specific scopes like `docs(astro-docs)`
 
 ## 💻 Development Preferences
 
@@ -106,8 +108,10 @@ Fixes DOC-125"
 
 ### Component Development Order
 1. Simple Tailwind classes (Grid/Flexbox)
+1.5. Check if CSS in global stylesheets can solve the problem
 2. Get feedback before complexity
 3. JavaScript only if CSS fails
+3.5. Component overrides only as last resort (especially for third-party components like Starlight)
 4. Listen to user preferences
 
 ### Common Pitfalls
@@ -134,6 +138,33 @@ Fixes DOC-125"
 - Inline JSON directly (no code block wrappers)
 - Never escape template blocks: `{% %}` not `\{% %\}`
 
+### Header Component Structure
+- Main header: `src/components/layout/Header.astro`
+- Mobile menu sidebar: `src/components/layout/PageFrame.astro`
+- Theme switcher in mobile handled by Starlight - DO NOT duplicate
+- Import Starlight components: `import Component from 'virtual:starlight/components/ComponentName'`
+
+### Responsive Design Best Practices
+- **Element priority for overflow prevention:**
+  1. Visibility priority (what stays visible first): Theme > CTAs > Social
+  2. Visual order (left to right): Can differ from visibility priority
+- **Tailwind breakpoints:**
+  - `md`: 768px, `lg`: 1024px, `xl`: 1280px, `2xl`: 1536px
+- **Testing:** Check all intermediate breakpoints (1000px, 1100px, 1200px, 1300px, 1400px)
+- **Mobile menu:** CTAs at bottom, don't duplicate desktop elements
+
+### Common Astro/Starlight Mistakes
+- ❌ Don't duplicate theme switcher in mobile menu
+- ❌ Don't assume all UI elements are in Header.astro  
+- ❌ Don't use lg:hidden when you mean xl:hidden
+- ❌ Don't override entire Starlight components for simple style fixes
+- ✅ Check what Starlight provides by default first
+- ✅ Test actual viewport widths user mentions, not just breakpoints
+- ✅ Prefer CSS fixes in global.css over component overrides
+- ✅ Use CSS selectors like `starlight-menu-button button` for third-party component styling
+- ✅ Use `[data-theme='dark']` selector for dark mode specific styles
+- ✅ Use Tailwind theme colors `theme('colors.slate.600')` for consistency
+
 ## 🏗️ Nx Monorepo Patterns
 
 ### Commands
@@ -150,6 +181,42 @@ Fixes DOC-125"
 - TSC errors in isolation normal (use project-level checks)
 - Stuck processes: `lsof -i :PORT` then `kill PID`
 - File reversions = linting/formatting (verify with `git diff`)
+
+### Nx Docker Plugin (@nx/docker)
+- **Target Naming**: Use `docker:build` not `docker-build`
+- **Dockerfile Requirements**: 
+  - MUST be named exactly `Dockerfile` (not `*.dockerfile`)
+  - Located in project root directory
+  - For sub-projects, create separate project.json files
+- **Docker Build Configuration** - minimal needed:
+  ```json
+  "docker:build": {
+    "options": {
+      "cwd": "",  // Build from workspace root
+      "file": "apps/myapp/Dockerfile"
+    }
+  }
+  ```
+  - No executor needed - inferred by plugin
+  - No command needed - handled by plugin
+  - `nx-release-publish` target is auto-inferred
+- **Java/Kotlin Projects**:
+  - Add `skipVersionActions: true` in release config
+  - These projects don't have package.json files
+  - Create temporary package.json for testing if needed
+
+### Creating Sub-Projects
+- For apps with multiple Docker images (like workflow-controller):
+  - Create sub-directories with own project.json
+  - Use descriptive names (e.g., nx-cloud-workflow-executor)
+  - Each needs minimal project.json with docker:build target
+
+### Docker/Nx Common Mistakes
+- ❌ Using `docker-build` instead of `docker:build`
+- ❌ Keeping `.dockerfile` extension instead of `Dockerfile`
+- ❌ Forgetting to update buildAndPush when updating build paths
+- ❌ Using full executor config when only options are needed
+- ❌ Not checking if Docker builds from project vs workspace root
 
 ## ✅ Verification
 
@@ -172,11 +239,27 @@ Fixes DOC-125"
 - `.ai` symlink still points to main config
 - Branch names match issue IDs
 - Separate checkout from main repo
+- `.ai` folder should be in worktree root (e.g., `/Users/jack/projects/nx-worktrees/DOC-184/.ai/`)
+- Architecture files use main repo name: `nx-architecture.md` not `DOC-184-architecture.md`
+- When reflecting, recognize worktree structure: `nx-worktrees/BRANCH-NAME/`
 
 ### Next.js Issues
 - Env vars replaced at BUILD time, not runtime
 - Redirects execute before rewrites
 - Link components use client routing (update href directly)
+- After file changes, wait 5-10 seconds for rebuild before verification
+- Check build output in background processes for errors
+- Fast Refresh may require full reload for environment variable changes
+
+### URL Migration Patterns (Nx Docs)
+- Use conditional rendering for documentation links during migration:
+  ```tsx
+  href={process.env.NEXT_PUBLIC_ASTRO_URL ? "/docs/new-path" : "/old-path"}
+  ```
+- This prevents 308 redirects while maintaining backward compatibility
+- Apply to TextLink, Link, and ButtonLink components
+- Always verify with script checking all non-doc pages
+- Check redirect-rules-docs-to-astro.js for correct new paths
 
 ### Ocean Scoring
 - Location: `~/projects/ocean/tools/scripts/scorecards/nx-dev-search-score.ts`
@@ -193,6 +276,22 @@ Fixes DOC-125"
 4. Avoid external dependencies initially
 5. Store in `.ai/yyyy-mm-dd/tasks/`
 6. File discovery: Start with `ls` in likely dirs → `find -name "*.sh" -o -name "*.ts"`
+
+### Verification Scripts Best Practice
+- Always create verification scripts for systematic changes
+- Check localhost directly, not production URLs
+- Filter out expected pages (e.g., documentation pages when checking non-doc pages)
+- Use Node.js scripts for cross-platform compatibility
+- Clean up temporary scripts after verification
+- Store scripts in `.ai/yyyy-mm-dd/tasks/` for future reference
+
+### Moving Files in Monorepos
+- When moving Dockerfiles or similar files, update ALL references:
+  - package-scripts.js (all build AND buildAndPush commands)
+  - GitHub workflows
+  - Documentation
+- Use `grep` to find all occurrences before moving
+- Check both `build` and `buildAndPush` sections separately
 
 ### Investigation Documentation
 - Include line numbers (e.g., file.sh:22-31)

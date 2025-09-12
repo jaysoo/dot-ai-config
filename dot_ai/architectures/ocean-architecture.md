@@ -26,6 +26,39 @@ Ocean is the monorepo for Nx Cloud and related services. It uses Nx for workspac
 
 ## Features & Critical Paths
 
+### Docker Release with Nx (2025-09-10)
+**Last Updated:** 2025-09-10
+**Branch:** NXC-2493
+**Linear Task:** NXC-2493
+**Commit:** 7a146758b
+**Status:** In Progress
+
+Implementing nx release support for Docker images to dogfood @nx/docker plugin while maintaining backward compatibility with existing pipeline.
+
+#### Quick Start
+Enable nx release for Docker builds by setting NX_RELEASE_DOCKER=true environment variable or using workflow_dispatch input in CI.
+
+#### Files Involved
+- `nx.json` - Added "apps" release group with Docker configuration
+- `tools/build-and-publish-to-snapshot.sh` - Added NX_RELEASE_DOCKER conditional logic
+- `.github/workflows/ci.yml` - Added workflow_dispatch input for use_nx_release
+- `apps/*/Dockerfile` - Moved from apps/docker-setup/dockerfiles/ to respective projects
+- `apps/*/project.json` - Added docker:build targets with minimal configuration
+- `apps/nx-cloud-workflow-controller/cmd/*/project.json` - NEW: Separate projects for executor and log-uploader
+- `package-scripts.js` - Updated all Docker build paths to new locations
+
+#### Implementation Details
+- All Docker projects use `docker:build` target (not docker-build)
+- Target only needs `cwd: ""` and `file` options - no executor or command
+- `nx-release-publish` target is inferred by @nx/docker plugin
+- Repository names scoped to jaysoo83/ for testing
+- Dockerfiles must be named exactly `Dockerfile` (not *.dockerfile)
+- Workflow controller has 3 separate Docker images with sub-projects in cmd/
+
+#### Dependencies
+- @nx/docker plugin (21.5.0-beta.1)
+- Docker buildx for multi-platform builds
+
 ### Docker Tagging and Publishing System (2025-08-19)
 **Last Updated**: 2025-08-19
 **Type**: Research/Investigation
@@ -74,6 +107,15 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 
 ## Personal Work History
 
+### 2025-09-10
+- **Docker Nx Release Migration** (branch: NXC-2493, commit: 7a146758b)
+  - Task: Enable nx release for Docker images per NXC-2493
+  - Migrated all Dockerfiles from apps/docker-setup/dockerfiles/ to project directories
+  - Created separate projects for workflow-executor and log-uploader
+  - Updated package-scripts.js to reference new paths
+  - Configured release group "apps" with all Docker projects
+  - Added workflow_dispatch input to CI for toggling between pipelines
+
 ### 2025-08-19
 - **Docker Tagging and Publishing Investigation**
   - Task: Understand complete Docker tagging, pushing, and publishing flow
@@ -88,6 +130,30 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
   - Files: custom-require.ts (new), nx-imports.ts, nx-imports-light.ts
 
 ## Design Decisions & Gotchas
+
+### Docker Build Context (2025-09-10)
+- @nx/docker plugin builds from project directory by default
+- Our Dockerfiles expect workspace root context (e.g., dist/apps/nx-api/)
+- Solution: Override with manual command in docker:build target with cwd: ""
+- Cannot use inferred targets due to this context requirement
+
+### Dockerfile Naming Convention (2025-09-10)
+- Must be named exactly `Dockerfile` for nx/docker plugin to work
+- Cannot use *.dockerfile extension
+- Located in project root (except workflow sub-projects in cmd/)
+- This was a key discovery - initially tried keeping .dockerfile extension
+
+### Java/Kotlin Apps and Package.json (2025-09-10)
+- Apps like nx-api don't have package.json in dist/
+- Use skipVersionActions: true in nx.json Docker config
+- Create temporary package.json for testing if needed
+- This prevents nx release version from failing on non-JS projects
+
+### Workflow Controller Special Case (2025-09-10)
+- Three separate Docker images from one project
+- Created sub-projects in cmd/ directory with own project.json files
+- Each has its own Dockerfile and repository name
+- Projects named: nx-cloud-workflow-controller-main, nx-cloud-workflow-executor, nx-cloud-workflow-log-uploader
 
 ### Docker Versioning
 - CalVer chosen over SemVer for predictable, time-based releases
