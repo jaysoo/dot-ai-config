@@ -167,6 +167,9 @@ Fixes DOC-125"
 
 ## 🏗️ Nx Monorepo Patterns
 
+When starting any work, ALWAYS use a subagent to run `pnpm install` and `pnpm build` in the 
+background because subsequent commands will need those so it's better to get it out of the way in parallel.
+
 ### Commands
 - Use `nx run PROJECT:target` not `npm run`
 - Avoid full builds for testing (use dev servers)
@@ -321,3 +324,4 @@ Fixes DOC-125"
 - Content reorganizes: `/recipes/*` → `/docs/technologies/{tech}/Guides/*`
 - Multiple old pages may merge into single new pages
 - Verify file existence before assuming 404s
+
