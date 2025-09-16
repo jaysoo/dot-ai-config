@@ -6,13 +6,13 @@ The `@nx/cli` package docs are being generated under `/references/nx-cli/` in as
 ## Investigation Plan
 
 ### Phase 1: Locate Generation Source
-- [ ] Find plugins/scripts that generate reference documentation
-- [ ] Look for references to `@nx/cli` in generation configuration
-- [ ] Check astro-docs build process and plugins
+- [x] Find plugins/scripts that generate reference documentation
+- [x] Look for references to `@nx/cli` in generation configuration
+- [x] Check astro-docs build process and plugins
 
 ### Phase 2: Remove @nx/cli
-- [ ] Remove @nx/cli from generation configuration
-- [ ] Ensure other packages are still included correctly
+- [x] Remove @nx/cli from generation configuration
+- [x] Ensure other packages are still included correctly
 - [ ] Update any filtering logic if needed
 
 ### Phase 3: Verify Changes
@@ -26,11 +26,11 @@ The `@nx/cli` package docs are being generated under `/references/nx-cli/` in as
 - Other package documentation continues to generate correctly
 
 ## TODO
-- [x] Create task plan  
+- [x] Create task plan
 - [x] Find generation source
-- [ ] Remove @nx/cli configuration
-- [ ] Build and verify
-- [ ] Test search functionality
+- [x] Remove @nx/cli configuration
+- [x] Build and verify
+- [x] Test search functionality
 
 ## Findings
 **Source of the issue**: 

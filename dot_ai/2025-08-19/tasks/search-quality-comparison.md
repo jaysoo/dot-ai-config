@@ -139,9 +139,9 @@ Compare the quality of search results between the current production Nx document
 - **TODO:**
   - [x] Create comprehensive keyword test suite (75 keywords across 6 categories)
   - [x] Analyze current keyword coverage in documentation files
-  - [ ] Test all 75 keywords on production nx.dev site using Playwright
-  - [ ] Record search results, ranking, and relevance scores
-  - [ ] Identify critical gaps in current search functionality
+  - [x] Test all 75 keywords on production nx.dev site using Playwright
+  - [x] Record search results, ranking, and relevance scores
+  - [x] Identify critical gaps in current search functionality
 
 **Scripts:**
 - `extract-keywords.mjs` ✅ (completed - found 285 files missing keywords)

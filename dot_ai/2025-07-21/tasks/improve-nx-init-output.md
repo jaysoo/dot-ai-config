@@ -214,13 +214,13 @@ function getContextualNextSteps(context: InitContext): string[] {
 - Verify no generic links appear
 
 ### Manual Testing Checklist
-- [ ] No generic links after `nx init`
-- [ ] Cloud setup shows CI steps
-- [ ] Monorepo shows project creation examples  
-- [ ] Links are specific and relevant
-- [ ] Output is concise
-- [ ] Works with all package managers
-- [ ] Legacy mode still works
+- [x] No generic links after `nx init`
+- [x] Cloud setup shows CI steps
+- [x] Monorepo shows project creation examples
+- [x] Links are specific and relevant
+- [x] Output is concise
+- [x] Works with all package managers
+- [x] Legacy mode still works
 
 ## Implementation Notes
 

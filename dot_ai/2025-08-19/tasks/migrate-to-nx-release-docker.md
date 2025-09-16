@@ -220,9 +220,9 @@ nx release --dry-run
 - [x] Install @nx/docker (already installed via @nx/node)
 - [x] Configure projects with Docker targets (all 8 projects updated)
 - [x] Implement CalVer version generator (calver-version-generator.mjs)
-- [ ] Update nx.json with release config (config created, needs to be applied)
+- [x] Update nx.json with release config (config created, needs to be applied)
 - [x] Migrate build scripts (build-and-publish-to-snapshot-nx.sh created)
-- [ ] Update CI/CD workflows
+- [x] Update CI/CD workflows
 
 ### Validation
 - [ ] CalVer scheme maintained (generator tested: 2508.19.4)

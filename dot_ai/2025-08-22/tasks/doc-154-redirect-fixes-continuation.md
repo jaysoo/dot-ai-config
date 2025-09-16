@@ -54,13 +54,13 @@ The redirects are not working as expected - nx-dev is doing internal rewrites in
 ## Investigation Needed
 
 ### Phase 1: Understand Current Redirect Mechanism
-- [ ] Check how redirect-rules.js imports and uses redirect-rules-docs-to-astro.js
-- [ ] Verify NEXT_PUBLIC_ASTRO_URL is being read correctly in the application
-- [ ] Check if Next.js rewrites are being used instead of redirects
-- [ ] Look for any middleware that might be intercepting redirects
+- [x] Check how redirect-rules.js imports and uses redirect-rules-docs-to-astro.js
+- [x] Verify NEXT_PUBLIC_ASTRO_URL is being read correctly in the application
+- [x] Check if Next.js rewrites are being used instead of redirects
+- [x] Look for any middleware that might be intercepting redirects
 
 ### Phase 2: Fix Redirect Implementation
-- [ ] Determine if we need to use Next.js redirects instead of rewrites
+- [x] Determine if we need to use Next.js redirects instead of rewrites
 - [ ] Check if redirects need absolute URLs when going to different servers
 - [ ] Test with production build instead of development server
 - [ ] Verify no conflicting redirect rules exist

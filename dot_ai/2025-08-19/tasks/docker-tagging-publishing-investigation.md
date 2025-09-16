@@ -94,10 +94,10 @@ Current logic counts existing tags for the day. Could be changed to:
 
 ## Next Steps (for using `nx release` to tag/push docker images)
 
-- [ ] Figure out how Dockerfiles are stored, which project they belong to
-- [ ] Configure `nx.json` and `project.json` according to https://nx.dev/recipes/nx-release/release-docker-images
-- [ ] Ensure that `nx show project <project-that-has-dockerfile> --json` contains the `docker:build` target from `@nx/docker`
-- [ ] Update `tools/build-and-publish-to-snapshot.sh` and other scripts that use `docker build` or `docker push` or tagging to use `nx release version` and `nx release publish` instead
+- [x] Figure out how Dockerfiles are stored, which project they belong to
+- [x] Configure `nx.json` and `project.json` according to https://nx.dev/recipes/nx-release/release-docker-images
+- [x] Ensure that `nx show project <project-that-has-dockerfile> --json` contains the `docker:build` target from `@nx/docker`
+- [x] Update `tools/build-and-publish-to-snapshot.sh` and other scripts that use `docker build` or `docker push` or tagging to use `nx release version` and `nx release publish` instead
 - [ ] Update regex patterns in TypeScript files as noted previously
 - [ ] Manual test locally using `nx release` commands
 - [ ] Update documentation (if applicable)

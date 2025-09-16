@@ -33,6 +33,13 @@ git commit -m "fix(scope): brief description
 Fixes DOC-125"
 ```
 
+### Handling Commit Message Rejections
+When commit message is rejected:
+- Use `docs(misc)` for documentation-only changes across multiple packages
+- Don't use project-specific scopes like `docs(astro-docs)` for cross-cutting concerns
+- If you need to fix commit message: use `--amend` to avoid multiple commits
+- Common scopes: `docs(misc)`, `test(misc)`, `chore(misc)` for multi-project changes
+
 ### Date & Time
 - Always use ET timezone: `date '+%Y-%m-%d'` or `date '+%Y-%m-%d %H:%M'`
 - Task files go in `.ai/yyyy-mm-dd/tasks/` with current date
@@ -124,6 +131,9 @@ Fixes DOC-125"
 - Avoid creating horizontal scrolling when vertical alignment is the actual issue
 - Always verify file paths exist before using
 - Ask for dev server port (don't assume 4200, 3000, etc.)
+- Transformation functions appear to work partially: Check for malformed source files
+- Regex patterns failing silently: Validate input structure first
+- Cache issues with Astro: Always clear `.astro` folder when debugging transformations
 
 ## 📚 Documentation Sites (Astro/Starlight)
 
@@ -138,10 +148,27 @@ Fixes DOC-125"
 - Serve static: `npx serve dist -p 8000` (use `-p` not `--port`)
 - Use Playwright MCP for UI verification
 
+### Testing Content Transformations
+- Use `curl -s URL | grep "pattern"` to check rendered HTML
+- Clear cache between tests: `rm -rf .astro dist`
+- Test individual files with Node scripts before full integration
+- Check for both presence and absence of patterns
+
 ### Markdoc Components
 - Use underscores: `side_by_side` not `side-by-side`
 - Inline JSON directly (no code block wrappers)
 - Never escape template blocks: `{% %}` not `\{% %\}`
+
+### Markdoc to Starlight Migration
+When converting Markdoc syntax to Starlight:
+- `{% tabs %}...{% /tabs %}` → Convert to headers (#### Tab Label)
+- `{% callout type="X" %}` → Map to Starlight asides (:::note, :::tip, :::caution, :::danger)
+- `{% graph %}` → Remove entirely (not supported in Starlight)
+
+**Common Issues:**
+- Missing closing tags cause regex failures
+- Some files may have orphaned opening tags
+- Run validation before transformation
 
 ### Header Component Structure
 - Main header: `src/components/layout/Header.astro`
@@ -165,17 +192,21 @@ Fixes DOC-125"
 
 ### Common Astro/Starlight Mistakes
 - ❌ Don't duplicate theme switcher in mobile menu
-- ❌ Don't assume all UI elements are in Header.astro  
+- ❌ Don't assume all UI elements are in Header.astro
 - ❌ Don't use lg:hidden when you mean xl:hidden
 - ❌ Don't override entire Starlight components for simple style fixes
 - ❌ Don't add complex horizontal scrolling for simple vertical alignment issues
 - ❌ Don't use !important in global.css to override Starlight styles
+- ❌ Don't assume markdown files are well-formed - check for missing closing tags
+- ❌ Don't create complex regex to handle malformed input - fix the source
 - ✅ Check what Starlight provides by default first
 - ✅ Test actual viewport widths user mentions, not just breakpoints
 - ✅ Prefer CSS fixes in global.css over component overrides
 - ✅ Use CSS selectors like `starlight-menu-button button` for third-party component styling
 - ✅ Use `[data-theme='dark']` selector for dark mode specific styles
 - ✅ Use Tailwind theme colors `theme('colors.slate.600')` for consistency
+- ✅ Validate markdown structure before transformations
+- ✅ Clear Astro cache (`.astro`) when transformations aren't reflecting
 
 ## 🏗️ Nx Monorepo Patterns
 
@@ -186,6 +217,26 @@ background because subsequent commands will need those so it's better to get it 
 - Use `nx run PROJECT:target` not `npm run`
 - Avoid full builds for testing (use dev servers)
 - Project-specific typecheck: `nx run PROJECT:typecheck`
+
+### Nx Testing Conventions
+- **Use `.spec.ts` extension** - Not `.test.ts` for test files
+- **Vitest configuration**: Create `vitest.config.ts` in project root
+- **Nx Vite plugin**: Add project to nx.json's Vite plugin includes for inferred targets
+- **Don't hardcode test targets**: Let Nx Vite plugin infer from vitest.config.ts
+- **Test target behavior**: Nx may auto-add test targets with dependencies
+
+Example vitest.config.ts:
+```typescript
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    globals: true,
+    environment: 'node',
+    include: ['src/**/*.{test,spec}.{js,ts,jsx,tsx}'],
+  }
+});
+```
 
 ### Project Structure
 - `nx-dev/ui-common/` - shared components
@@ -232,6 +283,11 @@ background because subsequent commands will need those so it's better to get it 
 - ❌ Forgetting to update buildAndPush when updating build paths
 - ❌ Using full executor config when only options are needed
 - ❌ Not checking if Docker builds from project vs workspace root
+- ❌ Using `.test.ts` extension - use `.spec.ts` for consistency
+- ❌ Installing test dependencies in project package.json if already in root
+- ❌ Hardcoding test targets when Nx plugins can infer them
+- ✅ Configure Nx Vite plugin in nx.json for projects using Vitest
+- ✅ Let Nx manage test target dependencies automatically
 
 ## ✅ Verification
 
@@ -291,6 +347,21 @@ background because subsequent commands will need those so it's better to get it 
 4. Avoid external dependencies initially
 5. Store in `.ai/yyyy-mm-dd/tasks/`
 6. File discovery: Start with `ls` in likely dirs → `find -name "*.sh" -o -name "*.ts"`
+
+### Debugging Text Transformations
+When regex transformations aren't working:
+1. **Check source data first** - Malformed input will cause silent failures
+2. **Test regex in isolation** - Use simple Node scripts to verify patterns
+3. **Count opening/closing tags** - Ensure balanced pairs before transformation
+4. **Fix source files** - Better than making regex handle edge cases
+
+Example debugging script:
+```javascript
+const content = fs.readFileSync('file.md', 'utf-8');
+const openCount = (content.match(/\{% tabs %\}/g) || []).length;
+const closeCount = (content.match(/\{% \/tabs %\}/g) || []).length;
+console.log(`Open: ${openCount}, Close: ${closeCount}`);
+```
 
 ### Verification Scripts Best Practice
 - Always create verification scripts for systematic changes
