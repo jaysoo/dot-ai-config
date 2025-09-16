@@ -29,6 +29,11 @@
   - Goal: Identify and review stale issues in Linear that haven't been updated in 3+ months
   - Next steps: Review with assignees, close/update stale issues
 - [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
+- [ ] Sync with Colum and Leo on Component Testing (CT) for Nx 22 (2025-09-16)
+  - Discuss two options for component testing configuration:
+    - Option 1: Keep current defaults, no user customization
+    - Option 2: Create `webpack.cy.ts` with good defaults allowing user control (requires migration)
+  - Goal: Decide on approach for component testing in Nx 22
 
 ## Completed
 
