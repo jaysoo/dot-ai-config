@@ -159,6 +159,14 @@ When commit message is rejected:
 - Inline JSON directly (no code block wrappers)
 - Never escape template blocks: `{% %}` not `\{% %\}`
 
+### Astro/Markdoc JSON Handling
+- **JSON in graph/project_details tags**: Use code fences (```json) not inline JSON
+- **Escaped quotes issue**: Markdown processors strip escape characters before reaching React
+- **Data-code attribute**: When using code fences, JSON is available in `data-code` attribute
+- **HTML entity decoding**: Handle all variations (named: &quot;, decimal: &#34;, hexadecimal: &#x22;)
+- **SSR compatibility**: Use regex to extract data-code, not DOM parsing
+- **Test both client and server**: Different HTML entity encodings may be used
+
 ### Markdoc to Starlight Migration
 When converting Markdoc syntax to Starlight:
 - `{% tabs %}...{% /tabs %}` → Convert to headers (#### Tab Label)
@@ -199,6 +207,8 @@ When converting Markdoc syntax to Starlight:
 - ❌ Don't use !important in global.css to override Starlight styles
 - ❌ Don't assume markdown files are well-formed - check for missing closing tags
 - ❌ Don't create complex regex to handle malformed input - fix the source
+- ❌ Don't use inline JSON in Markdoc tags when it contains escaped quotes
+- ❌ Don't try to escape quotes in JSON - markdown processors strip escapes
 - ✅ Check what Starlight provides by default first
 - ✅ Test actual viewport widths user mentions, not just breakpoints
 - ✅ Prefer CSS fixes in global.css over component overrides
@@ -207,6 +217,8 @@ When converting Markdoc syntax to Starlight:
 - ✅ Use Tailwind theme colors `theme('colors.slate.600')` for consistency
 - ✅ Validate markdown structure before transformations
 - ✅ Clear Astro cache (`.astro`) when transformations aren't reflecting
+- ✅ Use code fences for JSON in graph/project_details tags
+- ✅ Extract shared parsing logic to utility functions
 
 ## 🏗️ Nx Monorepo Patterns
 
@@ -218,12 +230,22 @@ background because subsequent commands will need those so it's better to get it 
 - Avoid full builds for testing (use dev servers)
 - Project-specific typecheck: `nx run PROJECT:typecheck`
 
+### Adding Dependencies in Nx Projects
+- **ALWAYS run `nx sync` after modifying any package.json** - This updates inferred targets and workspace configuration
+- Sequence:
+  1. Modify package.json
+  2. Run `nx sync`
+  3. Stage and commit changes
+- Missing `nx sync` will cause workspace inconsistencies
+
 ### Nx Testing Conventions
 - **Use `.spec.ts` extension** - Not `.test.ts` for test files
 - **Vitest configuration**: Create `vitest.config.ts` in project root
 - **Nx Vite plugin**: Add project to nx.json's Vite plugin includes for inferred targets
 - **Don't hardcode test targets**: Let Nx Vite plugin infer from vitest.config.ts
 - **Test target behavior**: Nx may auto-add test targets with dependencies
+- **Component parsing tests**: Test all HTML entity variations (&quot;, &#34;, &#x22;)
+- **SSR compatibility tests**: Verify functions work without DOM access
 
 Example vitest.config.ts:
 ```typescript
@@ -250,7 +272,7 @@ export default defineConfig({
 
 ### Nx Docker Plugin (@nx/docker)
 - **Target Naming**: Use `docker:build` not `docker-build`
-- **Dockerfile Requirements**: 
+- **Dockerfile Requirements**:
   - MUST be named exactly `Dockerfile` (not `*.dockerfile`)
   - Located in project root directory
   - For sub-projects, create separate project.json files
@@ -286,8 +308,10 @@ export default defineConfig({
 - ❌ Using `.test.ts` extension - use `.spec.ts` for consistency
 - ❌ Installing test dependencies in project package.json if already in root
 - ❌ Hardcoding test targets when Nx plugins can infer them
+- ❌ Forgetting to run `nx sync` after adding/removing dependencies in package.json
 - ✅ Configure Nx Vite plugin in nx.json for projects using Vitest
 - ✅ Let Nx manage test target dependencies automatically
+- ✅ Always run `nx sync` immediately after package.json changes, before committing
 
 ## ✅ Verification
 
@@ -385,6 +409,14 @@ console.log(`Open: ${openCount}, Close: ${closeCount}`);
 - Show relationships between files
 - Include current values/formats before changes
 - Update `.ai/architectures/[repo]-architecture.md` after
+
+### URL Generation from File Paths
+- **Lowercase all segments**: `CI Features` → `ci-features`
+- **Replace special chars with dashes**: spaces, underscores → dashes
+- **Remove file extension**: `.mdoc` → (nothing)
+- **Examples**:
+  - `features/CI Features/split-e2e-tasks.mdoc` → `/docs/features/ci-features/split-e2e-tasks`
+  - `concepts/mental-model.mdoc` → `/docs/concepts/mental-model`
 
 ## 🔧 Debugging Tips
 
