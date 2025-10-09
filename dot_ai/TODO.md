@@ -2,6 +2,8 @@
 
 ## In Progress
 
+- [ ] hey just fyi - we added ai.configure-agents-check notification to GA that doesn't correspond to a feature so we should ignore it for scorecards
+
 - [ ] Blog post https://www.notion.so/Astro-docs-migration-article-28569f3c23878044a126c7819e8fdae1?pvs=6
 
 - [ ] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)

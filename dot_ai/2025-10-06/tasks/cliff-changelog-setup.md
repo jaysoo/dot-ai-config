@@ -237,6 +237,27 @@ Manual Review & Merge
 5. **Release Notes:** Could integrate with GitHub releases
 6. **Auto-merge:** Consider auto-merging changelog PRs if CI passes
 
+## Testing Commits (TO BE REMOVED)
+
+**⚠️ Dummy commit for testing - REMOVE BEFORE MERGING:**
+```bash
+# Commit hash: c0f838a12
+# Remove with: git reset --soft HEAD~1
+# Or: git rebase -i HEAD~1 (and delete the line)
+
+Commit message:
+fix(nx-api): fixes bug xyz #analytics #dte
+
+BREAKING CHANGE: Add environment variable FOO_BAR
+```
+
+**Important:** Hashtags must be in the first line (commit message), not in the body!
+
+This commit tests:
+- BREAKING CHANGE rendering
+- Hashtag component extraction (#analytics, #dte)
+- Scope display in changelog (nx-api)
+
 ## Notes
 
 - Changelog generation is **non-blocking** - release continues even if it fails

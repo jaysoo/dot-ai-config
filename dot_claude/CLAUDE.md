@@ -346,6 +346,44 @@ export default defineConfig({
 - Check build output in background processes for errors
 - Fast Refresh may require full reload for environment variable changes
 
+#### Next.js Configuration Patterns
+
+**Rewrites vs Environment Variables:**
+- Rewrites can still be needed even when assuming env var is always set
+- Don't remove entire configuration blocks - only remove conditional checks
+- Example: Keep `rewrites()` function but remove `if (!envVar) return []` guards
+
+**Common Mistake from DOC-161:**
+- ❌ Removed entire `rewrites()` function thinking it was conditional
+- ✅ Should have only removed the `if (!astroDocsUrl) return []` check
+- Reason: Rewrites are needed for proxying, not conditionally applied
+
+#### Environment Variable Access in Next.js
+
+**Static Objects vs Functions:**
+- Static objects can't access `process.env` at runtime
+- Must convert to functions for dynamic env var access
+
+**Pattern**:
+```tsx
+// ❌ Wrong: Static object
+const navigation = {
+  items: [{ href: process.env.NX_DEV_URL }]  // Undefined!
+};
+
+// ✅ Correct: Function
+const getNavigation = () => {
+  const url = process.env.NX_DEV_URL || '';
+  return {
+    items: [{ href: url }]
+  };
+};
+```
+
+**When to use empty string default:**
+- Use `''` when you want relative URLs to work: `/path` stays `/path`
+- Use full URL when you need absolute URLs: `https://example.com`
+
 ### URL Migration Patterns (Nx Docs)
 - Use conditional rendering for documentation links during migration:
   ```tsx
@@ -363,6 +401,33 @@ export default defineConfig({
 - Flexible URL matching (path variants OK)
 
 ## 📝 Script Development & Investigation
+
+### Environment Variable Cleanup Patterns
+
+When removing environment variable checks (e.g., after feature flags or migrations complete):
+
+1. **Identify the truthy branch**: When the env var is SET, which value is used?
+   ```tsx
+   // When NEXT_PUBLIC_VAR is set (truthy):
+   process.env.NEXT_PUBLIC_VAR ? truthyValue : falsyValue  // → truthyValue
+
+   // Boolean conversion:
+   !!process.env.NEXT_PUBLIC_VAR  // → true when set
+   ```
+
+2. **Keep the correct branch**:
+   - For ternaries: Keep the FIRST value (truthy branch)
+   - For boolean checks: Keep the value that matches when the check is true
+
+3. **Special cases**:
+   - `env ? null : <Component />` → Remove entire block (null behavior)
+   - `env ? <NewComponent /> : <OldComponent />` → Keep `<NewComponent />`
+   - `!!env` used for boolean props → Keep `true`
+
+**Common Mistake from DOC-161**: Keeping the falsy branch instead of truthy branch
+**Example**:
+- ❌ Wrong: `noindex={false}` (kept falsy branch when env var NOT set)
+- ✅ Correct: `noindex={true}` (kept truthy branch when env var IS set)
 
 ### Script Development & File Discovery
 1. Test on 1-2 files first
