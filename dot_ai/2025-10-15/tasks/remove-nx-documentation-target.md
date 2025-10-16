@@ -6,7 +6,7 @@
 
 ## Overview
 
-Remove the `documentation` target from the root project and all references to it in CI workflows, hooks, and scripts. This will be done in two phases.
+Remove the `documentation` target from the root project and all references to it in CI workflows, hooks, and scripts. This will be done in three phases.
 
 ## Investigation Summary
 
@@ -68,9 +68,11 @@ The main script (`scripts/documentation/generators/main.ts`) generates:
 - `scripts/documentation/package-schemas/package-metadata.ts`
 - `scripts/documentation/package-schemas/schema.resolver.ts`
 
+**Docs and map.json verifcation:**
+- `scripts/documentation/map-link-checker.ts` - Used by `check-documentation-map` npm script (should be removed since we no longer need map.json)
+
 **Scripts to KEEP**:
 - `scripts/documentation/internal-link-checker.ts` - Used by `nx-dev:build` target
-- `scripts/documentation/map-link-checker.ts` - Used by `check-documentation-map` npm script
 - `scripts/documentation/json-parser.ts` - May be a utility
 - `scripts/documentation/utils.ts` - May be a utility
 - `scripts/documentation/load-webinars.ts` - May be used elsewhere
@@ -120,57 +122,159 @@ The main script (`scripts/documentation/generators/main.ts`) generates:
 
 ### nx-dev Dependencies on Generated Files
 
-The following files read from `docs/generated/devkit`:
-- `nx-dev/data-access-packages/src/lib/packages.api.ts`
-- `nx-dev/data-access-documents/src/lib/documents.api.ts`
+#### API files that import from generated manifests
 
-These would need to be updated or the generation needs to continue working somehow.
+These files in `nx-dev/nx-dev/lib/` import JSON files from `public/documentation/generated/manifests/`:
+
+1. **nx.api.ts** - imports `nx.json` and `new-nx-api.json`
+2. **ci.api.ts** - imports `ci.json` and `tags.json`
+3. **new-packages.api.ts** - imports `new-nx-api.json` (used by `[...segments].tsx`, `plugin-registry.tsx`)
+4. **menus.api.ts** - imports `menus.json` (used by ALL page routes)
+5. **tags.api.ts** - imports `tags.json`
+6. **plugins.api.ts** - imports `extending-nx.json`
+
+#### Code that reads from docs/generated/devkit
+
+1. **packages.api.ts** (`nx-dev/data-access-packages/src/lib/packages.api.ts:180-203`)
+   - Reads directory structure from `../../docs/generated/devkit`
+   - Used in `getStaticDocumentPaths()` method for devkit package
+
+2. **documents.api.ts** (`nx-dev/data-access-documents/src/lib/documents.api.ts`)
+   - Lines 154-173: Reads from `../../docs/generated/devkit` in `getSlugsStaticDocumentPaths()`
+   - Lines 198-213: Legacy handler for devkit docs at `/nx-api/devkit/documents/*`
+   - Lines 215-231: NEW legacy handler for devkit docs at `/reference/core-api/devkit/documents/*`
+
+#### Pages that use these APIs
+
+- `pages/[...segments].tsx` - uses `menusApi`, `nxNewPackagesApi`
+- `pages/ci/[...segments].tsx` - uses `menusApi`, `ciApi`
+- `pages/extending-nx/[...segments].tsx` - likely uses `pluginsApi`
+- `pages/plugin-registry.tsx` - uses `nxNewPackagesApi`
+- All pages use `menusApi` for navigation
+
+#### Generated Files Structure
+
+**In `docs/generated/`:**
+- `cli/` - CLI documentation (32 files)
+- `devkit/` - Devkit API documentation (144 files in subdirectories)
+- `manifests/` - JSON manifest files:
+  - `ci.json` (69 KB)
+  - `extending-nx.json` (17 KB)
+  - `menus.json` (300 KB) - **CRITICAL: Used by all pages**
+  - `new-nx-api.json` (296 KB) - **CRITICAL: Used for package API pages**
+  - `nx.json` (467 KB)
+  - `tags.json` (63 KB)
+- `packages/` - Package schemas (34 directories)
+- `packages-metadata.json` (264 KB)
+
+**In `docs/external-generated/`:**
+- `packages/` - External package schemas (6 items)
+- `packages-metadata.json` (8 KB)
+
+#### Build Process
+
+The `copy-docs.js` script copies the entire `docs/` folder (including generated files) to `nx-dev/nx-dev/public/documentation/` during the `copy-docs` target, which runs before every build.
 
 ## Implementation Plan
 
-### Phase 1: Remove Target from CI/Hooks (This PR)
+### Phase 1: Remove Target from CI/Hooks (COMPLETED ✅)
 
 **Goal**: Stop running the documentation target but don't remove any scripts or generated files yet.
 
-1. Remove "Check Documentation" step from `.github/workflows/ci.yml`
-2. Remove `documentation` dependency from `prepush` target in root `project.json`
-3. Remove `documentation` script from `package.json` (optional - could leave for manual runs)
-4. Remove `@nx/nx-source:documentation` dependency from `nx-dev:deploy-build` target
-5. Verify `nx build nx-dev` still works
+**Completed Changes**:
+1. ✅ Removed "Check Documentation" step from `.github/workflows/ci.yml`
+2. ✅ Removed `documentation` dependency from `prepush` target in root `project.json`
+3. ✅ Removed `documentation` script from `package.json`
+4. ✅ Removed `@nx/nx-source:documentation` dependency from `nx-dev:deploy-build` target
 
-**Files to modify**:
+**Files Modified**:
 - `.github/workflows/ci.yml`
 - `project.json` (root - prepush target)
 - `nx-dev/nx-dev/project.json` (deploy-build target)
-- `package.json` (optional - documentation script)
+- `package.json` (documentation script)
+
+**Status**: Committed in `0798700b75`
+
+**Validation**: 
+- Build works for nx-dev: `NEXT_PUBLIC_ASTRO_URL=https://nx-docs.netlify.app nx deploy-build nx-dev`
+---
+
+### Phase 2: Update nx-dev to Not Depend on Generated Files (Follow-up PR)
+
+**Goal**: Modify nx-dev code so it not longer renders/generates docs-related pages, and remove all code/targets/modules that are used in the removed pages.
+
+**Files to Modify**:
+
+1. Remove `[...segments].tsx` pages (should be three of them):
+    - These are all docs related, and we've moved them into astro-docs
+
+2. Remove docs-related API modules:
+    - e.g. `nx.api.ts`, `ci.api.ts`, `new-packages.api.ts`, `menus.api.ts`, `tags.api.ts`, `plugins.api.ts`
+    - Also data-access modules like `packages.api.ts`, `documents.api.ts`, etc.
+
+3. Remove `copy-docs`, `serve-docs` and other docs-related targets from `nx-dev/nx-dev/project.json`
+    - They should not be part of build/deploy
+
+**Approach**:
+- Remove pages first so they do not generate/render in Next.js app
+- Build nx-dev and check for errors
+- Remove API modules
+- Build nx-dev and check for errors
+
+**Notes**:
+- Redirects are already set for all docs pages to go to astro-docs, so no need to handle them here
+- Only non-docs pages should remain in nx-dev
+    - `/` (homepage)
+    - `/blog` (and child pages)
+    - `/changelog`
+    - `/java`
+    - etc.
 
 **Validation**:
-- Run `nx build nx-dev` to ensure it still works
+- Build works for nx-dev: `NEXT_PUBLIC_ASTRO_URL=https://nx-docs.netlify.app nx deploy-build nx-dev`
+- Serve locally: NEXT_PUBLIC_ASTRO_URL=https://nx-docs.netlify.app nx start nx-dev`
+- Spot check key pages load correctly
+- Verify navigation works
 
-### Phase 2: Remove Scripts and Generated Files (Follow-up PR)
+---
 
-**Goal**: Clean up all the scripts, generated files, and nx-dev pages that depend on them.
+### Phase 3: Remove Documentation Target and Generated Files (Follow-up PR)
 
-1. Remove the `documentation` target entirely from root `project.json`
-2. Remove `scripts/documentation/generators/` directory
-3. Remove `scripts/documentation/package-schemas/` directory
-4. Remove `docs/generated/` directory
-5. Remove `docs/external-generated/` directory
-6. Update `nx-dev` code to not depend on generated files:
-   - `nx-dev/data-access-packages/src/lib/packages.api.ts`
-   - `nx-dev/data-access-documents/src/lib/documents.api.ts`
-7. Remove any nx-dev pages that display generated content
-8. Remove `check-documentation-map` script from package.json if no longer needed
-9. Update `.gitignore` if it has entries for generated docs
+**Goal**: Clean up all the scripts and generated files.
 
-**Files to investigate further**:
-- Check if `scripts/documentation/schema-flattener.ts` is used elsewhere
-- Check if any other scripts depend on the generators
+**Files/Directories to Remove**:
+
+1. **Remove the documentation target** from root `project.json` (lines 47-81)
+
+2. **Remove generator scripts**:
+   - `scripts/documentation/generators/` - entire directory
+   - `scripts/documentation/package-schemas/` - entire directory
+
+3. **Remove generated files**:
+   - `docs/generated/` - entire directory
+   - `docs/external-generated/` - entire directory
+
+4. **Clean up package.json**:
+   - Remove `check-documentation-map` script (if not needed)
+
+5. **Update .gitignore**:
+   - Add entries for `docs/generated` and `docs/external-generated` (if not already there)
+
+**Scripts to KEEP** (in `scripts/documentation/`):
+- `internal-link-checker.ts` - Used by `nx-dev:build` target
+- `map-link-checker.ts` - Used by `check-documentation-map` npm script (investigate if needed)
+- `json-parser.ts` - Utility (check usage)
+- `utils.ts` - Utility (check usage)
+- `load-webinars.ts` - May be used elsewhere
+- `plugin-quality-indicators.ts` - Used by `nx-dev:deploy-build`
+- `open-graph/generate-images.ts` - Used by `nx-dev:generate-og-images`
+- `schema-flattener.ts` - Check usage before removing
 
 **Validation**:
-- Run `nx build nx-dev`
-- Run `./scripts/documentation/internal-link-checker.ts` to ensure it still works
-- Check that the nx-dev site builds and serves correctly
+- Run `nx build nx-dev` successfully
+- Run `internal-link-checker.ts` to ensure it still works
+- Run `nx prepush` successfully
+- Check that nx-dev site builds and serves correctly
 
 ## Notes
 
