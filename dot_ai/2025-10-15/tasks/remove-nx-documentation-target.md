@@ -199,42 +199,57 @@ The `copy-docs.js` script copies the entire `docs/` folder (including generated 
 - Build works for nx-dev: `NEXT_PUBLIC_ASTRO_URL=https://nx-docs.netlify.app nx deploy-build nx-dev`
 ---
 
-### Phase 2: Update nx-dev to Not Depend on Generated Files (Follow-up PR)
+### Phase 2: Update nx-dev to Not Depend on Generated Files (IN PROGRESS)
 
-**Goal**: Modify nx-dev code so it not longer renders/generates docs-related pages, and remove all code/targets/modules that are used in the removed pages.
+**Goal**: Modify nx-dev code so it no longer renders/generates docs-related pages, and remove all code/targets/modules that are used in the removed pages.
 
-**Files to Modify**:
+**Status**: Partially complete - build works, but additional cleanup identified
 
-1. Remove `[...segments].tsx` pages (should be three of them):
-    - These are all docs related, and we've moved them into astro-docs
+**Completed**:
+1. ✅ Removed 5 docs-related pages:
+   - `pages/[...segments].tsx` - Main docs catch-all
+   - `pages/ci/[...segments].tsx` - CI docs
+   - `pages/ci/index.tsx` - CI root
+   - `pages/extending-nx/[...segments].tsx` - Extending Nx docs
+   - `pages/extending-nx/index.tsx` - Extending Nx root
+   - `pages/plugin-registry.tsx` - Plugin registry (migrated to astro-docs)
 
-2. Remove docs-related API modules:
-    - e.g. `nx.api.ts`, `ci.api.ts`, `new-packages.api.ts`, `menus.api.ts`, `tags.api.ts`, `plugins.api.ts`
-    - Also data-access modules like `packages.api.ts`, `documents.api.ts`, etc.
+2. ✅ Removed 6 docs-related API modules from `nx-dev/nx-dev/lib/`:
+   - `nx.api.ts`, `ci.api.ts`, `plugins.api.ts`
+   - `tags.api.ts`, `menus.api.ts`, `new-packages.api.ts`
 
-3. Remove `copy-docs`, `serve-docs` and other docs-related targets from `nx-dev/nx-dev/project.json`
-    - They should not be part of build/deploy
+3. ✅ Cleaned up remaining pages:
+   - Removed menu/sidebar code from `changelog.tsx`
+   - Removed menu/sidebar code from `ai-chat/index.tsx`
 
-**Approach**:
-- Remove pages first so they do not generate/render in Next.js app
-- Build nx-dev and check for errors
-- Remove API modules
-- Build nx-dev and check for errors
+4. ✅ Updated dependencies in `nx-dev/nx-dev/package.json`:
+   - Removed: `@nx/nx-dev-data-access-menu`, `@nx/nx-dev-data-access-packages`, `@nx/nx-dev-models-package`, `@nx/nx-dev-models-document`, `@nx/nx-dev-models-menu`, `@nx/nx-dev-feature-doc-viewer`, `@nx/nx-dev-feature-package-schema-viewer`
+   - Added: `ai: "3.0.19"` (for API routes)
 
-**Notes**:
-- Redirects are already set for all docs pages to go to astro-docs, so no need to handle them here
-- Only non-docs pages should remain in nx-dev
-    - `/` (homepage)
-    - `/blog` (and child pages)
-    - `/changelog`
-    - `/java`
-    - etc.
+5. ✅ Added missing dependency to `nx-dev/ui-powerpack/package.json`:
+   - Added: `@nx/nx-dev-feature-analytics`
+
+6. ✅ Removed docs-related targets from `nx-dev/nx-dev/project.json`:
+   - Removed `copy-docs` target
+   - Removed `serve-docs` target
+   - Removed `copy-docs` from `build-base` dependencies
+   - Removed `copy-docs` from `serve` dependencies
+   - Removed `copy-docs` command from `deploy-build`
+   - Removed `implicitDependencies: ["docs"]`
+
+7. ✅ Ran `nx sync` and `pnpm install`
+
+**Remaining Cleanup** (see `.ai/2025-10-16/phase2-cleanup-remaining.md`):
+- Remove unused data-access packages: `data-access-menu`, `data-access-packages`, `feature-package-schema-viewer`, `feature-doc-viewer`
+- Remove unused model packages: `models-document`, `models-package`, `models-menu`
+- Remove unused files in `data-access-documents`: `documents.api.ts`, `tags.api.ts`
+- Remove unused file: `nx-dev/nx-dev/lib/rspack/pkg.ts`
+- Update exports in `data-access-documents/src/node.index.ts`
 
 **Validation**:
-- Build works for nx-dev: `NEXT_PUBLIC_ASTRO_URL=https://nx-docs.netlify.app nx deploy-build nx-dev`
-- Serve locally: NEXT_PUBLIC_ASTRO_URL=https://nx-docs.netlify.app nx start nx-dev`
-- Spot check key pages load correctly
-- Verify navigation works
+- ✅ Build works: `NEXT_PUBLIC_ASTRO_URL=https://nx-docs.netlify.app nx run nx-dev:build`
+- ✅ All TypeScript compiles
+- ⚠️  Internal link checker found broken links in Astro docs (expected, separate fix)
 
 ---
 
