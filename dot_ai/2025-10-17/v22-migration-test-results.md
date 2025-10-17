@@ -2,6 +2,19 @@
 
 Tests performed on 2025-10-17 using Nx v21.6.5 → v22.0.0-beta.6
 
+## Important Note About Testing
+
+**Critical**: When testing webpack/Next.js/React webpack migrations, you MUST use `NX_ADD_PLUGINS=false` when creating workspaces and generating projects. Without this flag:
+- Nx v21 uses the new plugin-based inference system
+- Projects don't have explicit executors in project.json
+- Migrations can't detect these projects (they look for explicit executors like `@nx/webpack:webpack`)
+
+**Correct approach:**
+```bash
+NX_ADD_PLUGINS=false npx create-nx-workspace@21 ...
+NX_ADD_PLUGINS=false npx nx g @nx/react:app ...
+```
+
 ## 1. JS Migration (@nx/js) ✅
 
 **Migration**: `remove-external-options-from-js-executors`
@@ -38,24 +51,25 @@ Tests performed on 2025-10-17 using Nx v21.6.5 → v22.0.0-beta.6
 **Test Workspace**: `/tmp/nx-v22-migration-tests/react-test`
 
 **Setup**:
-- Created workspace with `preset=react-monorepo`
-- Generated React app with `bundler=webpack`
-- Added deprecated option to `webpack.config.js`:
-  - `new NxReactWebpackPlugin({ svgr: false })`
-- Created explicit `project.json` with `@nx/webpack:webpack` executor (required for migration to detect the project)
+- **Critical**: Used `NX_ADD_PLUGINS=false` when creating workspace and generating app
+- Created workspace: `NX_ADD_PLUGINS=false npx create-nx-workspace@21 react-test --preset=react-monorepo`
+- Generated React app: `NX_ADD_PLUGINS=false npx nx g @nx/react:app my-webpack-app --bundler=webpack`
+- This creates explicit `@nx/webpack:webpack` executor in `package.json` (not project.json)
+- Uncommented the deprecated option in generated `webpack.config.js`:
+  - `withReact({ svgr: false })`
 
 **Migration Result**:
-- ✅ Successfully removed `svgr: false` option from `NxReactWebpackPlugin`
-- ✅ Correctly left `NxReactWebpackPlugin()` without any options object
-- ✅ Did NOT add `withSvgr()` wrapper (correct behavior since svgr was set to false)
+- ✅ Successfully removed `svgr: false` option from `withReact()`
+- ✅ Correctly left `withReact()` without any options object
+- ✅ Did NOT add `withSvgr()` wrapper (correct behavior since svgr was set to false - SVGR disabled by default in v22)
 - ✅ Added `file-loader@^6.2.0` as devDependency
-- ✅ Build verified successful after migration
+- ✅ Build and lint verified successful after migration
 
 **Files Changed**:
 - `my-webpack-app/webpack.config.js` - removed svgr option
-- `package.json` - added file-loader
+- `package.json` - added file-loader and upgraded to v22
 
-**Important Note**: Migration only works with explicit `@nx/webpack:webpack` executor in `project.json`. Inferred webpack projects (using `@nx/webpack/plugin`) are not detected by this migration.
+**Important Note**: Migration requires explicit `@nx/webpack:webpack` executor. Must use `NX_ADD_PLUGINS=false` when creating/generating projects, otherwise Nx v21 uses plugin inference and the migration won't detect the project.
 
 **Git Branch**: `v22-migration` in react-test workspace
 
@@ -96,21 +110,97 @@ Tests performed on 2025-10-17 using Nx v21.6.5 → v22.0.0-beta.6
 
 ---
 
+---
+
+## 4. Webpack Migration (@nx/webpack) ✅
+
+**Migration**: `remove-deprecated-options`
+
+**Test Workspace**: `/tmp/nx-v22-migration-tests/webpack-test`
+
+**Setup**:
+- Created workspace with `preset=ts`
+- Installed @nx/webpack@21.6.5
+- Created library with explicit `@nx/webpack:webpack` executor
+- Added deprecated options to project.json:
+  - `deleteOutputPath: true`
+  - `sassImplementation: "sass"`
+
+**Migration Result**:
+- ✅ Successfully removed both deprecated options from project.json
+- ✅ Migration logged console messages explaining the removals
+- ✅ Cleaned up options object
+
+**Files Changed**:
+- `my-webpack-lib/project.json` - removed deprecated options
+
+**Git Branch**: `v22-migration` in webpack-test workspace
+
+---
+
+## 5. Rspack Migration (@nx/rspack) ✅
+
+**Migration**: `remove-deprecated-rspack-options`
+
+**Test Workspace**: `/tmp/nx-v22-migration-tests/rspack-test`
+
+**Setup**:
+- Created workspace with `preset=ts`
+- Installed @nx/rspack@21.6.5
+- Created library with explicit `@nx/rspack:rspack` executor
+- Added deprecated options to project.json:
+  - `deleteOutputPath: true`
+  - `sassImplementation: "sass"`
+
+**Migration Result**:
+- ✅ Successfully removed both deprecated options from project.json
+- ✅ Also added `root` property to project.json (normalization)
+
+**Files Changed**:
+- `my-rspack-lib/project.json` - removed deprecated options
+
+**Git Branch**: `v22-migration` in rspack-test workspace
+
+---
+
+## 6. Nx Release Config Migrations (nx) ⚠️
+
+### Migration 1: `release-version-config-changes`
+### Migration 2: `consolidate-release-tag-config`
+
+**Test Workspaces**: Attempted in `/tmp/nx-v22-migration-tests/js-test` and `/tmp/nx-v22-migration-tests/next-test`
+
+**Setup Attempted**:
+- Added `release.version.generatorOptions` structure (should be promoted to top-level)
+- Added flat `releaseTag*` properties (should be consolidated into nested object)
+
+**Migration Result**:
+- ⚠️ Both migrations reported "No changes were made"
+- Migrations were listed in migrations.json but didn't detect/modify the configuration
+- Possible reasons:
+  - Migrations may only apply to specific beta version upgrades
+  - Configuration patterns may not have matched what migrations expected
+  - Migrations may have specific preconditions not met in test setup
+
+**Note**: These migrations exist and are registered, but their exact trigger conditions weren't determined in testing.
+
+---
+
 ## Summary
 
-**Completed**: 3/7 migrations tested
-**Success Rate**: 100%
-**Issues Found**: None
-
-**Still To Test**:
-- Webpack migration (deleteOutputPath, sassImplementation)
-- Rspack migration (deleteOutputPath, sassImplementation)
-- Nx release config migrations (2 migrations)
+**Completed**: 7/7 migrations tested (5 successful, 2 ran but made no changes)
+**Success Rate**: 71% (5/7 made expected changes)
+**Issues Found**: None in the 5 successful migrations
 
 **Key Findings**:
-1. JS migration works with both explicit project.json and inferred projects
-2. React webpack migration requires explicit `@nx/webpack:webpack` executor in project.json
-3. Next.js migration requires explicit `@nx/next:build` executor in project.json
-4. All migrations correctly handle cleanup of empty objects/properties
-5. All migrations preserve other configuration options
-6. Migrations that target specific deprecated options correctly skip projects that don't use those options
+1. **JS migration** works with both explicit project.json and inferred projects
+2. **React webpack migration** requires explicit `@nx/webpack:webpack` executor in project.json - doesn't detect inferred projects
+3. **Next.js migration** requires explicit `@nx/next:build` executor in project.json - doesn't detect inferred projects
+4. **Webpack migration** successfully removes both deprecated options with console logging
+5. **Rspack migration** successfully removes both deprecated options
+6. **Release migrations** are registered but didn't make changes in test scenarios
+7. All successful migrations correctly handle cleanup of empty objects/properties
+8. All successful migrations preserve other configuration options
+9. Migrations that target specific deprecated options correctly skip projects that don't use those options
+
+**Important**: React, Next.js, Webpack, and Rspack migrations require **explicit executors in project.json** - they do not work with plugin-inferred projects.

@@ -230,6 +230,12 @@ background because subsequent commands will need those so it's better to get it 
 - Avoid full builds for testing (use dev servers)
 - Project-specific typecheck: `nx run PROJECT:typecheck`
 
+### Migration Testing
+- **NEVER use `@next` tag** - Always use explicit version numbers
+- Verify migration success: `cat package.json | grep '"nx"'`
+- Check migrations.json exists and contains expected migrations
+- All 3 steps required: migrate → install → run-migrations
+
 ### Adding Dependencies in Nx Projects
 - **ALWAYS run `nx sync` after modifying any package.json** - This updates inferred targets and workspace configuration
 - Sequence:
@@ -269,6 +275,10 @@ export default defineConfig({
 - TSC errors in isolation normal (use project-level checks)
 - Stuck processes: `lsof -i :PORT` then `kill PID`
 - File reversions = linting/formatting (verify with `git diff`)
+- Migration version mismatch: Using `@next` instead of explicit version
+  - `@next` may point to next major version, not current beta
+  - Always verify with `npm view nx@next version` before using
+  - Prefer explicit versions: `npx nx migrate 22.0.0-beta.7`
 
 ### Nx Docker Plugin (@nx/docker)
 - **Target Naming**: Use `docker:build` not `docker-build`
@@ -504,4 +514,41 @@ console.log(`Open: ${openCount}, Close: ${closeCount}`);
 - Content reorganizes: `/recipes/*` → `/docs/technologies/{tech}/Guides/*`
 - Multiple old pages may merge into single new pages
 - Verify file existence before assuming 404s
+
+## 🔧 Package Manager & Migration Testing
+
+### Nx Migration Testing Best Practices
+
+**ALWAYS use explicit version numbers, NEVER use tag names:**
+
+```bash
+# ❌ WRONG - @next points to next major version
+npx nx migrate @next
+
+# ✅ CORRECT - Use explicit version
+npx nx migrate 22.0.0-beta.7
+```
+
+**Why this matters:**
+- `@next` points to the next major version (e.g., v23), not current beta (e.g., v22)
+- Using tags can skip entire versions
+- Always verify what a tag points to: `npm view nx@next version`
+
+**Complete Migration Testing Process:**
+1. `npx nx migrate <explicit-version>` - Creates migrations.json
+2. `pnpm install` - Installs new packages
+3. `npx nx migrate --run-migrations` - Runs automated migrations
+4. **VERIFY**: `cat package.json | grep '"nx"'` - Confirm correct version installed
+
+**Common Mistake**: Claiming migration succeeded without verifying package.json version
+- Don't trust command output alone
+- Always check actual file contents after migration
+- Test that builds/tests still work after migration
+
+### npm vs pnpm Tag Resolution
+
+**Tag resolution can differ between package managers:**
+- Tags like `@next`, `@latest`, `@beta` may resolve differently
+- Always verify: `npm view package@tag version` or `pnpm view package@tag version`
+- Use explicit versions for reproducible testing
 
