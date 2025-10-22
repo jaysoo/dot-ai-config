@@ -84,27 +84,28 @@ NX_ADD_PLUGINS=false npx nx g @nx/react:app ...
 **Test Workspace**: `/tmp/nx-v22-migration-tests/next-test`
 
 **Setup**:
-- Created workspace with `preset=next`
+- **Critical**: Used `NX_ADD_PLUGINS=false` when creating workspace
+- Created workspace: `NX_ADD_PLUGINS=false npx create-nx-workspace@21 next-test --preset=next`
+- This creates explicit `@nx/next:build` executor in `package.json`
 - Added deprecated option to `next.config.js`:
   - `nx: { svgr: true }` in nextConfig
-- Created explicit `project.json` with `@nx/next:build` executor (required for migration to detect the project)
 
 **Migration Result**:
 - ✅ Successfully removed `svgr: true` option from `nx` object
 - ✅ Left `nx: {}` empty object
-- ✅ Added `withSvgr()` webpack config function with SVGR loader configuration
+- ✅ Added complete `withSvgr()` webpack config function with SVGR loader configuration
 - ✅ Added `withSvgr` to `composePlugins()` call as the last argument
 - ✅ Added `file-loader@^6.2.0` as devDependency
+- ✅ Build verified successful after migration
 - ⚠️ Migration only processes `svgr: true` or `svgr: { options }` - correctly skips `svgr: false`
 
 **Files Changed**:
 - `apps/my-next-app/next.config.js` - removed nx.svgr option, added withSvgr function
-- `package.json` - added file-loader
+- `package.json` - added file-loader and upgraded to v22
 
 **Important Notes**:
-- Migration only works with explicit `@nx/next:build` executor in `project.json`
-- Migration only acts on `svgr: true` or object values, skips `svgr: false` (correct behavior)
-- Inferred Next.js projects (using `@nx/next/plugin`) are not detected
+- Migration requires explicit `@nx/next:build` executor. Must use `NX_ADD_PLUGINS=false` when creating workspaces, otherwise Nx v21 uses plugin inference and the migration won't detect the project
+- Migration only acts on `svgr: true` or object values, correctly skips `svgr: false`
 
 **Git Branch**: `v22-migration` in next-test workspace
 
@@ -163,44 +164,85 @@ NX_ADD_PLUGINS=false npx nx g @nx/react:app ...
 
 ---
 
-## 6. Nx Release Config Migrations (nx) ⚠️
+## 6. Nx Release Config Migrations (nx) ✅
 
-### Migration 1: `release-version-config-changes`
-### Migration 2: `consolidate-release-tag-config`
+### Migration 1: `release-version-config-changes` ✅
 
-**Test Workspaces**: Attempted in `/tmp/nx-v22-migration-tests/js-test` and `/tmp/nx-v22-migration-tests/next-test`
+**Test Workspace**: `/tmp/nx-v22-migration-tests/js-test`
 
-**Setup Attempted**:
-- Added `release.version.generatorOptions` structure (should be promoted to top-level)
-- Added flat `releaseTag*` properties (should be consolidated into nested object)
+**Setup**:
+- Added `release.version.generatorOptions` to nx.json with all supported properties:
+  - `specifierSource: "prompt"`
+  - `currentVersionResolver: "registry"`
+  - `currentVersionResolverMetadata: { "tag": "latest" }`
+  - `fallbackCurrentVersionResolver: "disk"`
+  - `versionPrefix: "auto"`
+  - `updateDependents: "auto"`
+  - `logUnchangedProjects: true`
+  - `preserveLocalDependencyProtocols: false`
 
 **Migration Result**:
-- ⚠️ Both migrations reported "No changes were made"
-- Migrations were listed in migrations.json but didn't detect/modify the configuration
-- Possible reasons:
-  - Migrations may only apply to specific beta version upgrades
-  - Configuration patterns may not have matched what migrations expected
-  - Migrations may have specific preconditions not met in test setup
+- ✅ Successfully promoted ALL properties from `generatorOptions` to top-level in `release.version`
+- ✅ Removed `generatorOptions` wrapper completely
+- ✅ Preserved all property values correctly
+- ✅ Build verified successful after migration
 
-**Note**: These migrations exist and are registered, but their exact trigger conditions weren't determined in testing.
+**Files Changed**:
+- `nx.json` - promoted generatorOptions properties to top-level
+
+**Git Branch**: `test-release-version-migration` in js-test workspace
+
+---
+
+### Migration 2: `consolidate-release-tag-config` ✅
+
+**Test Workspace**: `/tmp/nx-v22-migration-tests/js-test`
+
+**Setup**:
+- Added flat `releaseTagPattern*` properties to nx.json:
+  - `releaseTagPattern: 'v{version}'`
+  - `releaseTagPatternCheckAllBranchesWhen: true`
+  - `releaseTagPatternRequireSemver: true`
+  - `releaseTagPatternPreferDockerVersion: false`
+  - `releaseTagPatternStrictPreid: false`
+
+**Migration Result**:
+- ✅ Successfully consolidated flat properties into nested `releaseTag` object structure:
+  - `releaseTagPattern` → `releaseTag.pattern`
+  - `releaseTagPatternCheckAllBranchesWhen` → `releaseTag.checkAllBranchesWhen`
+  - `releaseTagPatternRequireSemver` → `releaseTag.requireSemver`
+  - `releaseTagPatternPreferDockerVersion` → `releaseTag.preferDockerVersion`
+  - `releaseTagPatternStrictPreid` → `releaseTag.strictPreid`
+- ✅ Build verified successful after migration
+
+**Files Changed**:
+- `nx.json` - consolidated releaseTagPattern* properties into nested structure
+
+**Git Branch**: `test-release-version-migration` in js-test workspace
+
+**Note**: Both release migrations were tested together in the same migration run and both successfully transformed their respective configurations.
 
 ---
 
 ## Summary
 
-**Completed**: 7/7 migrations tested (5 successful, 2 ran but made no changes)
-**Success Rate**: 71% (5/7 made expected changes)
-**Issues Found**: None in the 5 successful migrations
+**Completed**: 7/7 migrations tested - ALL SUCCESSFUL ✅
+**Success Rate**: 100% (7/7 made expected changes)
+**Issues Found**: None
 
 **Key Findings**:
 1. **JS migration** works with both explicit project.json and inferred projects
-2. **React webpack migration** requires explicit `@nx/webpack:webpack` executor in project.json - doesn't detect inferred projects
-3. **Next.js migration** requires explicit `@nx/next:build` executor in project.json - doesn't detect inferred projects
+2. **React webpack migration** requires explicit `@nx/webpack:webpack` executor - doesn't detect inferred projects. Must use `NX_ADD_PLUGINS=false` when creating workspaces
+3. **Next.js migration** requires explicit `@nx/next:build` executor - doesn't detect inferred projects. Must use `NX_ADD_PLUGINS=false` when creating workspaces
 4. **Webpack migration** successfully removes both deprecated options with console logging
 5. **Rspack migration** successfully removes both deprecated options
-6. **Release migrations** are registered but didn't make changes in test scenarios
-7. All successful migrations correctly handle cleanup of empty objects/properties
-8. All successful migrations preserve other configuration options
-9. Migrations that target specific deprecated options correctly skip projects that don't use those options
+6. **Release version config migration** successfully promotes all `generatorOptions` properties to top-level in `release.version`
+7. **Release tag consolidation migration** successfully consolidates `releaseTagPattern*` properties into nested `releaseTag` object structure
+8. All migrations correctly handle cleanup of empty objects/properties
+9. All migrations preserve other configuration options
+10. Migrations that target specific deprecated options correctly skip projects that don't use those options
 
-**Important**: React, Next.js, Webpack, and Rspack migrations require **explicit executors in project.json** - they do not work with plugin-inferred projects.
+**Important Notes**:
+- React, Next.js, Webpack, and Rspack migrations require **explicit executors** (in project.json or package.json) - they do not work with plugin-inferred projects
+- Use `NX_ADD_PLUGINS=false` when creating/generating projects in v21 for testing webpack/Next.js/React migrations
+- Release migrations work on nx.json, release groups, project.json, and package.json configurations
