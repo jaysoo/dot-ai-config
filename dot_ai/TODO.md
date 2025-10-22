@@ -28,23 +28,134 @@
 
 ### October 2025
 
+- [x] DOC-302: PNPM Catalog Support (2025-10-21 14:28)
+  - Plan: `dot_ai/2025-10-21/tasks/pnpm-catalog-support.md`
+  - Goal: Add documentation about PNPM catalogs for maintaining single version policy
+  - Status: Complete - Added concise aside in dependency-management.mdoc
+  - Commit: 366535f8c2
+
+- [x] DOC-301: Java Introduction Page Update (2025-10-21)
+  - Plan: `dot_ai/2025-10-21/SUMMARY.md`
+  - Goal: Restructure Java introduction page to improve onboarding
+  - Result: Moved Requirements first, added Quick Start section, marked Maven as experimental
+  - File: `astro-docs/src/content/docs/technologies/java/introduction.mdoc`
+
+- [x] Framer Migration URL Inventory (2025-10-21)
+  - Plan: `dot_ai/2025-10-21/tasks/framer-migration-urls.md`
+  - Goal: Create comprehensive URL inventory for Framer migration planning
+  - Result: Analyzed 1,307 URLs - 73 marketing pages, 168 blog posts (docs excluded)
+
+- [x] DOC-188: TypeDoc Module Resolution Fix (2025-10-17)
+  - Issue: https://linear.app/nxdev/issue/DOC-188
+  - Goal: Fix DevKit API docs to use local workspace builds instead of node_modules
+  - Result: Added TypeScript path mappings to redirect module resolution to `dist/packages/`
+  - Files: `astro-docs/src/plugins/utils/typedoc/typedoc.ts`, `astro-docs/project.json`
+
+- [x] Nx v22 Migration Testing (2025-10-17)
+  - Plan: `dot_ai/2025-10-17/v22-migration-test-results.md`
+  - Goal: Test Nx v21.6.5 → v22.0.0-beta.7 migration across 5 workspace types
+  - Result: 100% success rate (5/5) - React (3 variants), Angular, Node all passed
+  - Summary: `/tmp/NX-V22-MIGRATION-SUMMARY.md`
+  - Key Learning: Use explicit version `22.0.0-beta.7`, not `@next` (points to v23)
+
+- [x] Public Changelog System Implementation (2025-10-09)
+  - Plan: `dot_ai/2025-10-09/SUMMARY.md`
+  - Goal: Set up git-cliff CLI tool to generate public-facing changelogs for nx-cloud and nx-api
+  - Result: Created feature library `@nx-cloud/feature-changelog`, implemented `/changelog` route
+  - Features: CalVer version detection, component hashtags, breaking changes section
+  - Files: `libs/nx-cloud/feature-changelog/`, `tools/scripts/private-cloud/generate-changelog.ts`
+
+- [x] DOC-260: Update TailwindCSS Guides (2025-10-08)
+  - Issue: https://linear.app/nxdev/issue/DOC-260
+  - Goal: Remove deprecated generator references and provide simple manual setup
+  - Result: Updated React and Angular guides with v3/v4 compatible instructions
+  - Files: `astro-docs/src/content/docs/technologies/angular/Guides/using-tailwind-css-with-angular-projects.mdoc`, `astro-docs/src/content/docs/technologies/react/Guides/using-tailwind-css-in-react.mdoc`
+
+- [x] DOC-252: AI Embeddings Support for Astro Docs (2025-10-08)
+  - Issue: https://linear.app/nxdev/issue/DOC-252
+  - Plan: `dot_ai/2025-10-08/tasks/doc-252-astro-embeddings.md`
+  - Goal: Enable AI chat to search through Astro documentation
+  - Result: Implemented dual-mode system (astro/legacy), local testing flag, HTML-to-markdown conversion
+  - Stats: 504 docs pages, 3,100 sections, 106 community plugins
+  - Files: `tools/documentation/create-embeddings/src/main.mts`, `.github/workflows/generate-embeddings.yml`
+
+- [x] Embeddings Script Refactoring (2025-10-02)
+  - Plan: `dot_ai/2025-10-02/tasks/embeddings-script-refactoring.md`
+  - Goal: Migrate embeddings generation from Next.js to Astro documentation
+  - Result: Implemented `--mode=astro` with direct source reading and URL path generation
+  - Output: 504 pages, 3,100 sections, 895KB
+
 - [x] hey just fyi - we added ai.configure-agents-check notification to GA that doesn't correspond to a feature so we should ignore it for scorecards
 
 ### September 2025
 
-- [x] DOC-154: Fix URL Redirects from nx.dev to Astro docs (2025-08-22 16:30)
+- [x] NXC-3108: Remove Deprecated Webpack Options for v22 (2025-09-23)
+  - Issue: https://linear.app/nxdev/issue/NXC-3108
+  - Plan: `dot_ai/2025-09-23/SUMMARY.md`
+  - Goal: Remove deprecated deleteOutputPath and sassImplementation options for Nx v22
+  - Result: Created migration, removed options from all interfaces/schemas, added comprehensive tests
+  - Commit: 25d82d78a8 - feat(webpack)!: remove deprecated deleteOutputPath and sassImplementation options
 
-  - Plan: `.ai/2025-08-22/tasks/doc-154-redirect-fixes-continuation.md`
-  - Goal: Fix redirects to properly redirect to Astro server instead of internal rewrites
-  - Status: Redirect rules configured but not working as expected (only 36% success rate)
-  - Next steps: Investigate NEXT_PUBLIC_ASTRO_URL mechanism, check for conflicting redirect rules
+- [x] DOC-223: Add Conditional Noindex to Old Docs Pages (2025-09-22)
+  - Plan: `dot_ai/2025-09-22/SUMMARY.md`
+  - Goal: Prevent search engines from indexing old documentation during Astro migration
+  - Result: Added noindex meta tags when NEXT_PUBLIC_ASTRO_URL is set
+  - Files: DocViewer, changelog, plugin-registry, ai-chat pages
+
+- [x] DOC-221: Add Algolia Search to Blog Index (2025-09-19)
+  - Branch: DOC-221
+  - Plan: `dot_ai/2025-09-19/SUMMARY.md`
+  - Goal: Add blog-only search functionality during Astro migration
+  - Result: Integrated AlgoliaSearch with blogOnly prop, facet filtering for blog posts
+  - Files: algolia-search.tsx, blog-container.tsx
+
+- [x] DOC-209: Update Header Menu Items (2025-09-16)
+  - Branch: DOC-209
+  - Plan: `dot_ai/2025-09-16/SUMMARY.md`
+  - Goal: Update header navigation and add sidebar links
+  - Result: Updated tutorials link, removed Office Hours/Code examples, added Plugin Registry and Changelog to sidebar
+  - Commits: 8d4b7c352c, 160b0a7cab, ef899b1a28
 
 - [x] Sync with Colum and Leo on Component Testing (CT) for Nx 22 (2025-09-16)
-
   - Discuss two options for component testing configuration:
     - Option 1: Keep current defaults, no user customization
     - Option 2: Create `webpack.cy.ts` with good defaults allowing user control (requires migration)
   - Goal: Decide on approach for component testing in Nx 22
+
+- [x] DOC-185: Add API Documentation for Core Nx Packages (2025-09-15)
+  - Branch: DOC-185 (nx-worktrees)
+  - Plan: `dot_ai/2025-09-15/SUMMARY.md`
+  - Goal: Create API documentation pages for nx, workspace, web, plugin packages
+  - Result: Created 8 new API pages, updated ~40 redirect rules, fixed broken link validation
+  - Commit: 776ea2b5f2 - docs(misc): add API docs for nx, workspace, web, plugin
+
+- [x] DOC-184 & DOC-169: Documentation URL Fixes (2025-09-12)
+  - Plans: `dot_ai/2025-09-12/SUMMARY.md`
+  - DOC-184: Implemented client-side routing for old documentation URLs (12 files updated)
+  - DOC-169: Fixed mobile menu icon theme visibility with CSS-only approach
+  - Commits: Multiple commits for DOC-184, 06d0ce43d1 for DOC-169
+
+- [x] NXC-2493: Docker Nx Release Migration (Ocean) (2025-09-10)
+  - Branch: NXC-2493
+  - Plan: `dot_ai/2025-09-10/SUMMARY.md`
+  - Goal: Implement nx release support for Docker images in Ocean repository
+  - Result: Migrated Dockerfiles, added docker:build targets, configured release groups
+  - Commit: 7a146758b (amended multiple times)
+
+- [x] DOC-184: Client-Side Routing for Old Documentation URLs (2025-09-09)
+  - Branch: DOC-184 (nx-worktrees)
+  - Issue: https://linear.app/nxdev/issue/DOC-184
+  - Plan: `dot_ai/2025-09-09/SUMMARY.md`
+  - Goal: Prevent 404s and content flashing for old documentation links
+  - Result: Created Link wrapper component with URL transformation, updated 23 files
+  - Commit: 51c0936abd
+
+- [x] DOC-185: Add Missing API Reference Pages for Core Packages (2025-09-04)
+  - Branch: DOC-185
+  - Plan: `dot_ai/2025-09-04/SUMMARY.md`
+  - Goal: Create Astro pages for missing core package documentation (nx, workspace, plugin, web)
+  - Result: Created 12 new pages with flattened URL structure, updated redirect rules
+  - Commit: 57222d29ea - docs(misc): add missing API reference pages for core packages
 
 - [x] Review Linear Stale Issues for Nx CLI Team (2025-08-19 08:50)
 
