@@ -2,20 +2,6 @@
 
 ## In Progress
 
-- [ ] DOC-269: GitLab Source Control Integration Guide Update (2025-10-21)
-  - Plan: `dot_ai/2025-10-21/SUMMARY.md`
-  - Goal: Update GitLab integration documentation to reflect UI changes
-  - Status: Committed locally (71b0d76400), ready for push and PR
-  - Files: `astro-docs/src/content/docs/guides/Nx Cloud/source-control-integration.mdoc`
-
-- [ ] API Documentation Integration for Embeddings (2025-10-02)
-  - Plan: `dot_ai/2025-10-02/SUMMARY.md`
-  - Goal: Include dynamically generated API docs in embeddings (nx-cli, nx-cloud-cli, create-nx-workspace, plugins)
-  - Status: Outstanding work - need to decide between parsing built HTML or using Astro loaders
-  - Options: Parse `astro-docs/dist/api/**/*.html` OR use Astro loaders from `astro-docs/src/plugins/*.loader.ts`
-
-- [ ] Blog post https://www.notion.so/Astro-docs-migration-article-28569f3c23878044a126c7819e8fdae1?pvs=6
-
 - [ ] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)
 
   - Dictation: `.ai/2025-08-21/dictations/module-federation-dynamic-manifest-issues.md`
@@ -27,6 +13,12 @@
 ## Completed
 
 ### October 2025
+
+- [x] DOC-269: GitLab Source Control Integration Guide Update (2025-10-22)
+  - Plan: `dot_ai/2025-10-21/SUMMARY.md`
+  - Goal: Update GitLab integration documentation to reflect UI changes
+  - Status: Committed locally (71b0d76400), ready for push and PR
+  - Files: `astro-docs/src/content/docs/guides/Nx Cloud/source-control-integration.mdoc`
 
 - [x] DOC-302: PNPM Catalog Support (2025-10-21 14:28)
   - Plan: `dot_ai/2025-10-21/tasks/pnpm-catalog-support.md`
@@ -78,6 +70,12 @@
   - Result: Implemented dual-mode system (astro/legacy), local testing flag, HTML-to-markdown conversion
   - Stats: 504 docs pages, 3,100 sections, 106 community plugins
   - Files: `tools/documentation/create-embeddings/src/main.mts`, `.github/workflows/generate-embeddings.yml`
+
+- [x] API Documentation Integration for Embeddings (2025-10-02)
+  - Plan: `dot_ai/2025-10-02/SUMMARY.md`
+  - Goal: Include dynamically generated API docs in embeddings (nx-cli, nx-cloud-cli, create-nx-workspace, plugins)
+  - Status: Outstanding work - need to decide between parsing built HTML or using Astro loaders
+  - Options: Parse `astro-docs/dist/api/**/*.html` OR use Astro loaders from `astro-docs/src/plugins/*.loader.ts`
 
 - [x] Embeddings Script Refactoring (2025-10-02)
   - Plan: `dot_ai/2025-10-02/tasks/embeddings-script-refactoring.md`
