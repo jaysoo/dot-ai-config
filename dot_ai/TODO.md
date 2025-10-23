@@ -2,6 +2,15 @@
 
 ## In Progress
 
+- [ ] Add missing release.version options to nx-json reference (2025-10-23)
+  - Goal: Document `preVersionCommand`, `versionPrefix`, and `groupPreVersionCommand` in the Version section
+  - Options found in guides but missing from reference:
+    1. `release.version.preVersionCommand` - runs command before versioning
+    2. `release.version.versionPrefix` - controls dependency version prefixes (auto/""/~/^/=)
+    3. `release.groups[name].version.groupPreVersionCommand` - group-level pre-version command
+  - Location: `astro-docs/src/content/docs/reference/nx-json.mdoc` (Version section around line 504)
+  - Related guides: build-before-versioning.mdoc, configuration-version-prefix.mdoc
+
 - [ ] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)
 
   - Dictation: `.ai/2025-08-21/dictations/module-federation-dynamic-manifest-issues.md`
@@ -13,6 +22,13 @@
 ## Completed
 
 ### October 2025
+
+- [x] DOC-261: Document Nx Release v22 Missing Changes (2025-10-22 19:26)
+  - Plan: `.ai/2025-10-22/tasks/nx-release-v22-missing-documentation.md`
+  - Goal: Add documentation for 6 Nx Release v22 changes that weren't documented originally
+  - Result: Successfully rebased onto master, resolved conflicts, and added all missing features
+  - Commits: c07d4a5d1a (after rebase), 7e850571d6 (additional features)
+  - Features documented: preserveMatchingDependencyRanges, updateDependents options, replaceExistingContents, ReleaseClient API, custom changelog renderer
 
 - [x] DOC-269: GitLab Source Control Integration Guide Update (2025-10-22)
   - Plan: `dot_ai/2025-10-21/SUMMARY.md`
