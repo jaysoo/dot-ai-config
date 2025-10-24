@@ -188,3 +188,116 @@ Made the `workerOption` conditional based on `isTsSolutionSetup`:
 - **Consistency**: Worker plugin comments now match the main plugins configuration pattern
 - **Clarity**: Developers see correct plugin setup when uncommenting worker configuration
 - **Maintainability**: Single source of truth for plugin requirements based on TS setup type
+
+---
+
+## NXC-2493: Centralize Docker Build Configuration with @nx/docker Plugin
+
+### Overview
+Updated all Docker build configurations across 8 app projects in the Ocean repository to use the new @nx/docker plugin-level configuration feature from Nx 22.1.0-beta.0.
+
+### The Problem
+- Docker build arguments (cache-from, cache-to, NX_VERSION) were duplicated across 8 different project configurations
+- Each project needed to maintain identical cache configuration separately
+- Difficult to ensure consistency across projects when updating Docker build args
+
+### The Solution
+**Branch**: NXC-2493
+
+**Approach**:
+1. Centralized Docker cache arguments in nx.json at the plugin level
+2. Used `{projectName}` interpolation for project-specific cache references
+3. Removed all `args` arrays from individual project configurations
+4. Kept `configurations.ci.cwd: ""` override for legacy file path support
+
+### Changes Made
+
+**nx.json** - Plugin-level configuration:
+```json
+{
+  "plugin": "@nx/docker",
+  "options": {
+    "buildTarget": {
+      "name": "docker:build",
+      "configurations": {
+        "ci": {
+          "args": [
+            "--cache-from type=registry,ref=$REGISTRY/{projectName}:$PREVIOUS_CALVER_TAG",
+            "--cache-to type=inline"
+          ]
+        }
+      }
+    },
+    "runTarget": "docker:run"
+  }
+}
+```
+
+**Updated 8 Projects**:
+1. apps/aggregator/project.json
+2. apps/nx-api/project.json
+3. apps/nx-background-worker/project.json
+4. apps/file-server/package.json
+5. apps/nx-cloud/package.json
+6. apps/nx-cloud-workflow-controller/cmd/nx-cloud-workflow-controller/project.json
+7. apps/nx-cloud-workflow-controller/cmd/nx-cloud-workflow-executor/project.json
+8. apps/nx-cloud-workflow-controller/cmd/nx-cloud-workflow-log-uploader/project.json
+
+**Project Configuration Pattern** (before):
+```json
+"docker:build": {
+  "options": {
+    "cwd": "",
+    "file": "apps/PROJECT/Dockerfile",
+    "args": ["--build-arg=\"NX_VERSION=$NX_VERSION\""]
+  },
+  "configurations": {
+    "ci": {
+      "args": [
+        "--build-arg=\"NX_VERSION=$NX_VERSION\"",
+        "--cache-from type=registry,ref=$REGISTRY/PROJECT:$PREVIOUS_CALVER_TAG",
+        "--cache-to type=inline"
+      ]
+    }
+  }
+}
+```
+
+**Project Configuration Pattern** (after):
+```json
+"docker:build": {
+  "options": {
+    "cwd": "",
+    "file": "apps/PROJECT/Dockerfile"
+  },
+  "configurations": {
+    "ci": {
+      "cwd": ""
+    }
+  }
+}
+```
+
+### Git Workflow
+- Rebased NXC-2493 branch with main to incorporate Nx 22.1.0-beta.0
+- Resolved package-lock.json conflict during rebase
+- Applied configuration changes to all 8 projects
+- Verified with `nx sync` - all files up to date
+
+### Impact
+- **Maintainability**: Single source of truth for Docker cache configuration
+- **Consistency**: All projects use identical cache strategy automatically
+- **Reduced Duplication**: Removed ~15-20 lines of config per project (8 projects total)
+- **Easier Updates**: Future Docker arg changes only need to be made in nx.json
+- **Leverages New Feature**: Takes advantage of @nx/docker plugin capabilities in Nx 22.1
+
+### Verification
+```bash
+nx sync
+# Output: The workspace is already up to date
+```
+
+### Files Changed
+- nx.json (plugin configuration)
+- 8 project configuration files (3 project.json, 5 package.json)
+- All changes verified and workspace synchronized

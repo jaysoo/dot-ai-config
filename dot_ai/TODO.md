@@ -2,15 +2,6 @@
 
 ## In Progress
 
-- [ ] Add missing release.version options to nx-json reference (2025-10-23)
-  - Goal: Document `preVersionCommand`, `versionPrefix`, and `groupPreVersionCommand` in the Version section
-  - Options found in guides but missing from reference:
-    1. `release.version.preVersionCommand` - runs command before versioning
-    2. `release.version.versionPrefix` - controls dependency version prefixes (auto/""/~/^/=)
-    3. `release.groups[name].version.groupPreVersionCommand` - group-level pre-version command
-  - Location: `astro-docs/src/content/docs/reference/nx-json.mdoc` (Version section around line 504)
-  - Related guides: build-before-versioning.mdoc, configuration-version-prefix.mdoc
-
 - [ ] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)
 
   - Dictation: `.ai/2025-08-21/dictations/module-federation-dynamic-manifest-issues.md`
@@ -22,6 +13,61 @@
 ## Completed
 
 ### October 2025
+
+- [x] Issue #33231: Fix nxViteTsPaths Local Path Aliases and Clean-up Worker Plugin (2025-10-24)
+  - Goal: Fix critical bug where local path aliases in project-level tsconfig.app.json were ignored
+  - Problem: `getProjectTsConfigPath` incorrectly joined workspace root with already-absolute project root
+  - Solution: Use relative path from workspace root instead of absolute path
+  - E2E test added: Vite React app with local path alias (`~/*` → `src/*`)
+  - Additional clean-up: Made worker plugin configuration conditional based on TS Solution setup
+  - Commits: d885dc9a84 (fix), follow-up clean-up commit
+  - Impact: Breaking regression fix affecting all Vite projects using nxViteTsPaths with project-level path aliases
+
+- [x] GitHub Issues Research - Nx 22.0.0/22.0.1 (2025-10-24)
+  - Goal: Identify urgent bugs and regressions in Nx 22.0.0/22.0.1 releases
+  - Critical issues identified:
+    1. #33231 - `getProjectTsConfigPath` path resolution bug (FIXED)
+    2. #33204 - Module resolution failures (NO FIX YET)
+    3. #33076 - Optimistic TypeScript caching issue (PR #33077 OPEN)
+    4. #33079 - Non-input references added to project references (NO FIX YET)
+  - Related PRs reviewed: #33223 (pnpm lockfile), #33217 (daemon cache)
+  - Recommendations: Prioritized issues requiring immediate attention
+  - Documentation: Comprehensive analysis in conversation history
+
+- [x] Performance Benchmark: tsconfig-fix vs main Branch (2025-10-24)
+  - Goal: Measure typecheck performance differences between branches
+  - Command: `hyperfine "npx nx run-many -t typecheck --skip-nx-cache"`
+  - Results: tsconfig-fix delivers ~41% faster execution (84.5s vs 143.8s)
+  - Improvements: 59s faster, 1.7x speedup, 72% lower variance, 37% less CPU
+  - Report: `.ai/2025-10-24/benchmark-comparison-summary.md`
+
+- [x] Nx.dev Website Update - Sync master to website-22 (2025-10-23)
+  - Goal: Synchronize documentation updates from master to website-22 branch
+  - Process: Cherry-picked 4 commits from master (post-083b97255a)
+  - Commits applied:
+    1. 2402ecb576 - Fix releaseTag object notation (#33202)
+    2. 7c2f3511e2 - Add programmatic API guide (#33198)
+    3. ab82c7b1be - Add Release Groups and Update Dependents guides (#33200)
+    4. b3c3e40490 - Update nx release docs for v22 (#33189)
+  - Result: 100% success rate, no conflicts
+  - Impact: website-22 now has complete Nx Release v22 documentation
+
+- [x] DOC-270: Fixed Codeblock Line Highlighting Syntax (2025-10-22)
+  - Goal: Fix incorrect line highlighting syntax in Astro documentation
+  - Problem: Using `{numbers}` syntax instead of Markdoc meta syntax
+  - Solution: Updated to `{% meta="{numbers}" %}` format
+  - Files: 7 instances across 4 files (tutorials and Next.js intro)
+  - Commit: 5ab470ec74 - "docs(misc): fix bad line higlighting in docs"
+
+- [x] Add missing release.version options to nx-json reference (2025-10-23)
+  - Goal: Document `preVersionCommand`, `versionPrefix`, and `groupPreVersionCommand` in the Version section
+  - Options found in guides but missing from reference:
+    1. `release.version.preVersionCommand` - runs command before versioning
+    2. `release.version.versionPrefix` - controls dependency version prefixes (auto/""/~/^/=)
+    3. `release.groups[name].version.groupPreVersionCommand` - group-level pre-version command
+  - Location: `astro-docs/src/content/docs/reference/nx-json.mdoc` (Version section around line 504)
+  - Related guides: build-before-versioning.mdoc, configuration-version-prefix.mdoc
+
 
 - [x] DOC-261: Document Nx Release v22 Missing Changes (2025-10-22 19:26)
   - Plan: `.ai/2025-10-22/tasks/nx-release-v22-missing-documentation.md`
