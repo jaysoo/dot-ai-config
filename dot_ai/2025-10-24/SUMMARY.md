@@ -301,3 +301,53 @@ nx sync
 - nx.json (plugin configuration)
 - 8 project configuration files (3 project.json, 5 package.json)
 - All changes verified and workspace synchronized
+
+---
+
+## NXC-2493: Fix Branch Regression - Dockerfile Path Updates Only
+
+### Overview
+Fixed regression in NXC-2493 branch where package-scripts.js had incorrectly replaced all `buildAndPush` commands with inline docker buildx commands instead of just updating Dockerfile paths.
+
+### The Problem
+During a bad rebase, the branch had changed from:
+```javascript
+// Main branch (correct)
+buildAndPush: './tools/scripts/private-cloud/build-and-push.sh nx-cloud-aggregator ./apps/docker-setup/dockerfiles/aggregator.dockerfile'
+
+// Current branch (WRONG - regression)
+buildAndPush: 'docker buildx build --platform linux/amd64 ${PREVIOUS_CALVER_TAG:+--cache-from...}'
+```
+
+### The Fix
+**Commit**: 86bdf50b3 (amended from 2fd6c90fd)
+
+Reverted all `buildAndPush` commands to use the `build-and-push.sh` script while only updating the Dockerfile paths:
+```javascript
+// Fixed version
+buildAndPush: './tools/scripts/private-cloud/build-and-push.sh nx-cloud-aggregator ./apps/aggregator/Dockerfile'
+```
+
+### Changes Made
+**package-scripts.js** - Updated 8 buildAndPush commands:
+1. `nx-cloud-nx-api` - Path: `./apps/nx-api/Dockerfile`
+2. `nx-cloud-file-server` - Path: `./apps/file-server/Dockerfile`
+3. `nx-cloud-aggregator` - Path: `./apps/aggregator/Dockerfile`
+4. `nx-cloud-workflow-controller` - Path: `./apps/nx-cloud-workflow-controller/cmd/nx-cloud-workflow-controller/Dockerfile`
+5. `nx-cloud-workflow-executor` - Path: `./apps/nx-cloud-workflow-controller/cmd/nx-cloud-workflow-executor/Dockerfile` (with platforms)
+6. `nx-cloud-workflow-log-uploader` - Path: `./apps/nx-cloud-workflow-controller/cmd/nx-cloud-workflow-log-uploader/Dockerfile` (with platforms)
+7. `nx-cloud-frontend` - Path: `./apps/nx-cloud/Dockerfile`
+8. `nx-cloud-ai` - Path: `./apps/nx-ai/Dockerfile`
+9. `nx-cloud-background-worker` - Path: `./apps/nx-background-worker/Dockerfile`
+
+### Verified Scope
+The branch now contains ONLY the three intended changes:
+1. ✅ **Dockerfiles moved** from `./apps/docker-setup/dockerfiles/` to individual project roots
+2. ✅ **docker:build configs** added to all project.json/package.json files
+3. ✅ **NX_RELEASE_DOCKER logic** in tools/build-and-publish-to-snapshot.sh (lines 66-74) for forking between `nx release` and `npx nps docker.buildAndPush`
+
+### Impact
+- **No regressions**: Reverted to using build-and-push.sh script from main
+- **Minimal changes**: Only Dockerfile path updates in package-scripts.js
+- **Clean branch**: Ready for review with correct scope
+- **CI compatibility**: Maintains existing build pipeline behavior

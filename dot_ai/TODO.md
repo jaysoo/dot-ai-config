@@ -10,6 +10,36 @@
 
 - [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
 
+- [ ] Fix #32236 - Invalid Jest config with Node v22.18.0 (2025-10-27 09:58)
+  - URL: https://github.com/nrwl/nx/issues/32236
+  - Goal: Update Jest config generation to use ESM-compatible patterns instead of `__dirname` for Node v22.18.0+ compatibility
+  - Impact: High (31 engagement - 6 comments, 25 reactions)
+  - Notes: Multiple workarounds exist in comments, clear root cause identified
+
+- [ ] Fix #33047 - @nx/web:file-server crash on non-GET requests (2025-10-27 09:58)
+  - URL: https://github.com/nrwl/nx/issues/33047
+  - Goal: Handle non-GET requests properly in file-server to prevent crashes with SPA mode
+  - Impact: Small scoped fix (3 engagement)
+  - Notes: Root cause identified - related to http-server issue with SPA proxy
+
+- [ ] Fix #32492 - Storybook migration hangs during nx migrate (2025-10-27 09:58)
+  - URL: https://github.com/nrwl/nx/issues/32492
+  - Goal: Add non-interactive flags to storybook automigrate command to prevent hanging during migrations
+  - Impact: High (14 engagement - 2 comments, 12 reactions)
+  - Notes: User prompts are swallowed by `pnpm nx migrate --run-migrations`
+
+- [ ] Fix #32880 - Next.js Jest tests do not exit properly (2025-10-27 09:58)
+  - URL: https://github.com/nrwl/nx/issues/32880
+  - Goal: Configure Jest properly for Next.js apps to avoid hanging after test completion
+  - Impact: Medium (4 engagement)
+  - Notes: Workaround exists (forceExit config), affects only Next.js apps created with nx/next
+
+- [ ] Fix #32439 - MaxListenersExceededWarning with run-many (2025-10-27 09:58)
+  - URL: https://github.com/nrwl/nx/issues/32439
+  - Goal: Fix event listener management in task runner to prevent MaxListenersExceededWarning
+  - Impact: High (18 engagement - 4 comments, 14 reactions)
+  - Notes: Reproducible in nx-examples repo, affects run-many and affected commands
+
 ## Completed
 
 ### October 2025
