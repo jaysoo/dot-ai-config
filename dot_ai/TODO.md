@@ -2,6 +2,10 @@
 
 ## In Progress
 
+- [ ] NXC-3289: Vue E2E Fails on macOS/NPM/Node 20 (2025-10-29 11:14)
+  - Issue: https://linear.app/nxdev/issue/NXC-3289/vue-e2e-fails-on-macosnpmnode-20
+  - Goal: Fix Vue E2E test failures on macOS with npm and Node 20
+
 - [ ] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)
 
   - Dictation: `.ai/2025-08-21/dictations/module-federation-dynamic-manifest-issues.md`
@@ -43,6 +47,25 @@
 ## Completed
 
 ### October 2025
+
+- [x] Test Storybook 10 Support PR (2025-10-29)
+  - PR: https://github.com/nrwl/nx/pull/33277
+  - Loom: https://www.loom.com/share/b8a78adc610245a08932a927b4269e03
+  - PR Release: 0.0.0-pr-33277-88af54b
+  - Status: Reviewed and tested Storybook 10 migration support
+
+- [x] Circle back with ClickUp (Caleb) when 21.x patch is out with pnpm lockfile fix (2025-10-29)
+  - PR: https://github.com/nrwl/nx/pull/33223
+  - Status: 21.x patch released with pnpm lockfile fix
+
+- [x] NXC-3244: Fix pnpm Lockfile Parser Undefined Importer Crash (2025-10-23)
+  - Issue: https://linear.app/nxdev/issue/NXC-3244
+  - PR: https://github.com/nrwl/nx/pull/33223
+  - Goal: Fix "Cannot destructure property 'specifiers' of 'projectSnapshot' as it is undefined" error
+  - Problem: When workspace packages were referenced but missing importer entries, undefined values were added to output lockfile
+  - Solution: Added null check before adding workspace dependency importers
+  - Impact: Prevents crashes when stringifying pnpm v9 lockfiles with out-of-sync workspace packages
+  - Commit: 065c8c739f
 
 - [x] Issue #33231: Fix nxViteTsPaths Local Path Aliases and Clean-up Worker Plugin (2025-10-24)
   - Goal: Fix critical bug where local path aliases in project-level tsconfig.app.json were ignored
