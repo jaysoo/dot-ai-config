@@ -2,6 +2,25 @@
 
 ## In Progress
 
+- [ ] Optimize @nx/js/typescript plugin buildTscTargets performance (2025-11-07 15:59)
+  - Plan: `dot_ai/2025-11-07/tasks/nx-typescript-plugin-performance-optimization.md`
+  - Goal: Reduce buildTscTargets from 27s to <5s on pathological workspace
+  - Context: Created reproduction workspace with 6,820 tsconfig files, deep project references
+  - Related: NXC-3215 typescript:createNodes performance investigation
+
+- [ ] NXC-3215: Investigate typescript:createNodes and lockfile parsing performance (2025-11-06 13:20)
+  - Issue: https://linear.app/nxdev/issue/NXC-3215/investigate-performance-issues-related-to-typescriptcreatenodes-and
+  - Plan: `dot_ai/2025-11-06/tasks/nxc-3215-typescript-createNodes-performance.md`
+  - Goal: Optimize graph creation from 17-31s down to <10s
+  - Scale: 2,073 tsconfig files, 1.5MB pnpm-lock.yaml
+  - Targets: typescript:createNodes <5s (from 11s), lockfile parsing <2s (from 4.78s)
+
+- [ ] Investigate rootDir issue in swc executor for Nx 21 (2025-11-06 09:16)
+  - Repro: https://github.com/HaasStefan/nx-repro-rootDir-swc-rollup-in-angular
+  - Failing targets: js-swc-lib:build, js-rollup-lib:build
+  - Issue: Latest Nx 21 versions have rootDir problem in swc executor
+  - Users staying on 21.0.0 to avoid this issue
+
 - [ ] Look into Katerina's issue: https://github.com/mandarini/repro-nx-release/tree/not-working
 
 - [ ] NXC-3289: Vue E2E Fails on macOS/NPM/Node 20 (2025-10-29 11:14)
@@ -45,6 +64,16 @@
   - Goal: Fix event listener management in task runner to prevent MaxListenersExceededWarning
   - Impact: High (18 engagement - 4 comments, 14 reactions)
   - Notes: Reproducible in nx-examples repo, affects run-many and affected commands
+
+- [ ] JS Plugin Performance Optimizations (2025-11-07 11:43)
+  - Plan: `.ai/2025-11-07/tasks/js-plugin-performance-optimizations.md`
+  - Goal: Optimize nx/js/dependencies-and-lockfile plugin to reduce graph creation time
+  - Priority Optimizations:
+    1. Eliminate duplicate lockfile reads (50-100ms savings)
+    2. Cache TargetProjectLocator instance (10-50ms savings)
+    3. Cache getLockFilePath result (eliminates repeated fs checks)
+  - Estimated Total Savings: 60-150ms per plugin execution
+  - Files: packages/nx/src/plugins/js/index.ts, lock-file/lock-file.ts, build-dependencies/*.ts
 
 ## Completed
 
