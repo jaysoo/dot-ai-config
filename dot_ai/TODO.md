@@ -2,6 +2,8 @@
 
 ## In Progress
 
+- [ ] Look into Katerina's issue: https://github.com/mandarini/repro-nx-release/tree/not-working
+
 - [ ] NXC-3289: Vue E2E Fails on macOS/NPM/Node 20 (2025-10-29 11:14)
   - Issue: https://linear.app/nxdev/issue/NXC-3289/vue-e2e-fails-on-macosnpmnode-20
   - Goal: Fix Vue E2E test failures on macOS with npm and Node 20
