@@ -2,21 +2,14 @@
 
 ## In Progress
 
-- [ ] Optimize @nx/js/typescript plugin buildTscTargets performance (2025-11-07 15:59)
-  - Plan: `dot_ai/2025-11-07/tasks/nx-typescript-plugin-performance-optimization.md`
-  - Goal: Reduce buildTscTargets from 27s to <5s on pathological workspace
-  - Context: Created reproduction workspace with 6,820 tsconfig files, deep project references
-  - Related: NXC-3215 typescript:createNodes performance investigation
+- [ ] NXC-3464: PR release with CNW templates (2025-11-12 15:30)
+  - Plan: `.ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md`
+  - Goal: Open draft PR and publish PR release for CNW templates feature
+  - Context: Meta property system already exists for tracking message effectiveness
 
-- [ ] JS Plugin Performance Optimizations (2025-11-07 11:43)
-  - Plan: `.ai/2025-11-07/tasks/js-plugin-performance-optimizations.md`
-  - Goal: Optimize nx/js/dependencies-and-lockfile plugin to reduce graph creation time
-  - Priority Optimizations:
-    1. Eliminate duplicate lockfile reads (50-100ms savings)
-    2. Cache TargetProjectLocator instance (10-50ms savings)
-    3. Cache getLockFilePath result (eliminates repeated fs checks)
-  - Estimated Total Savings: 60-150ms per plugin execution
-  - Files: packages/nx/src/plugins/js/index.ts, lock-file/lock-file.ts, build-dependencies/*.ts
+- [ ] Get Node 24 merged for Nx CI (2025-11-11 9:56)
+
+- [ ] PR release for CNW template changes (2025-11-11 9:56)
 
 - [ ] Investigate rootDir issue in swc executor for Nx 21 (2025-11-06 09:16)
   - Repro: https://github.com/HaasStefan/nx-repro-rootDir-swc-rollup-in-angular
@@ -51,14 +44,32 @@
   - Notes: Workaround exists (forceExit config), affects only Next.js apps created with nx/next
 
 - [ ] Fix #32439 - MaxListenersExceededWarning with run-many (2025-10-27 09:58)
-  - URL: https://github.com/nrwl/nx/issues/32439
-  - Goal: Fix event listener management in task runner to prevent MaxListenersExceededWarning
+  - URL: https://github.com/nrwl/nx/issues/32439 Goal: Fix event listener management in task runner to prevent MaxListenersExceededWarning
   - Impact: High (18 engagement - 4 comments, 14 reactions)
   - Notes: Reproducible in nx-examples repo, affects run-many and affected commands
 
 ## Completed
 
 ### November 2025
+
+- [x] JS Plugin Performance Optimizations (2025-11-10 10:19)
+  - Plan: `.ai/2025-11-07/tasks/js-plugin-performance-optimizations.md`
+  - Goal: Optimize nx/js/dependencies-and-lockfile plugin to reduce graph creation time
+  - Priority Optimizations:
+    1. Eliminate duplicate lockfile reads (50-100ms savings)
+    2. Cache TargetProjectLocator instance (10-50ms savings)
+    3. Cache getLockFilePath result (eliminates repeated fs checks)
+  - Estimated Total Savings: 60-150ms per plugin execution
+  - Files: packages/nx/src/plugins/js/index.ts, lock-file/lock-file.ts, build-dependencies/*.ts
+  - Leo will take a look at this one
+
+
+- [x] Optimize @nx/js/typescript plugin buildTscTargets performance (2025-11-10 10:19)
+  - Plan: `dot_ai/2025-11-07/tasks/nx-typescript-plugin-performance-optimization.md`
+  - Goal: Reduce buildTscTargets from 27s to <5s on pathological workspace
+  - Context: Created reproduction workspace with 6,820 tsconfig files, deep project references
+  - Related: NXC-3215 typescript:createNodes performance investigation
+  - Leo will combine the picomatch optimization into his PR
 
 - [x] Fix #32236 - Invalid Jest config with Node v22.18.0 (2025-10-27 09:58)
   - URL: https://github.com/nrwl/nx/issues/32236
