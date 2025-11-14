@@ -2,15 +2,6 @@
 
 ## In Progress
 
-- [ ] NXC-3464: PR release with CNW templates (2025-11-12 15:30)
-  - Plan: `.ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md`
-  - Goal: Open draft PR and publish PR release for CNW templates feature
-  - Context: Meta property system already exists for tracking message effectiveness
-
-- [ ] Get Node 24 merged for Nx CI (2025-11-11 9:56)
-
-- [ ] PR release for CNW template changes (2025-11-11 9:56)
-
 - [ ] Investigate rootDir issue in swc executor for Nx 21 (2025-11-06 09:16)
   - Repro: https://github.com/HaasStefan/nx-repro-rootDir-swc-rollup-in-angular
   - Failing targets: js-swc-lib:build, js-rollup-lib:build
@@ -51,6 +42,15 @@
 ## Completed
 
 ### November 2025
+
+- [x] NXC-3464: PR release with CNW templates (2025-11-12 15:30)
+  - Plan: `.ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md`
+  - Goal: Open draft PR and publish PR release for CNW templates feature
+  - Context: Meta property system already exists for tracking message effectiveness
+
+- [x] Get Node 24 merged for Nx CI (2025-11-11 9:56)
+
+- [x] PR release for CNW template changes (2025-11-11 9:56)
 
 - [x] JS Plugin Performance Optimizations (2025-11-10 10:19)
   - Plan: `.ai/2025-11-07/tasks/js-plugin-performance-optimizations.md`

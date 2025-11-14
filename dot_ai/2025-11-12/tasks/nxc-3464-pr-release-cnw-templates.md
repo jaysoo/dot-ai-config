@@ -2,10 +2,385 @@
 
 **Linear Issue**: https://linear.app/nxdev/issue/NXC-3464/pr-release-with-cnw-templates
 **Parent Issue**: https://linear.app/nxdev/issue/NXC-3355/utilize-github-templates-for-cnw
-**Branch**: `cnw_templates`
-**Status**: Planning Complete - Ready for Implementation
+**Branch**: `NXC-3464`
+**Status**: ✅ Phases 1-6 Complete + Code Review Done | 📋 Testing & Validation Pending
 **Started**: 2025-11-12
 **Plan Approved**: 2025-11-12
+**Implementation Completed**: 2025-11-12 (Phases 1-6)
+**Code Review**: 2025-11-12 (2 rounds - all high-priority issues fixed)
+**Commits Squashed**: 2025-11-12 (9 commits → 1 commit, then added Phase 6)
+
+---
+
+## 🎯 IMPLEMENTATION PROGRESS
+
+### ✅ Completed Phases (1-5)
+
+**Phase 1: CLI Flag & Validation** - Commit: `85d506f`
+- ✅ Added `--template` option to yargs CLI configuration
+- ✅ Added `template` property to BaseArguments interface
+- ✅ Created `validateAndExpandTemplate()` function
+  - Only allows `nrwl/*` organization repos
+  - Strips `.git` suffix if present
+  - Rejects full GitHub URLs (must use short form)
+  - Expands to full URL: `nrwl/react-template` → `https://github.com/nrwl/react-template`
+- ✅ Added conflict check: `--template` + `--preset` → error
+- Files: `packages/create-nx-workspace/bin/create-nx-workspace.ts`
+
+**Phase 2: Template Selection Prompt** - Commits: `02c2b0a`, `e163490`
+- ✅ Created `determineTemplate()` function in prompts.ts
+- ✅ Added template selection with 4 choices:
+  - Empty (minimal Nx workspace)
+  - TypeScript (Node.js with TypeScript)
+  - React (React app with Vite)
+  - Angular (Angular app)
+- ✅ Prompt asks "Which stack do you want to use?" (user-facing)
+- ✅ CLI flag remains `--template` (future-proof for third-party)
+- ✅ Template flow skips all preset-specific prompts
+- ✅ Falls back to preset flow when `--preset` flag used
+- Files: `packages/create-nx-workspace/src/internal-utils/prompts.ts`, `bin/create-nx-workspace.ts`
+
+**Phase 3: Template Cloning & Setup** - Commit: `45b8edd`
+- ✅ Created `clone-template.ts` utility with two functions:
+  - `cloneTemplate()`: Git clone → remove .git → update package.json name → clean nx.json
+  - `cleanupLockfiles()`: Remove incompatible package manager lockfiles
+- ✅ Template cloning process:
+  1. `git clone --depth 1` (shallow clone for speed)
+  2. Remove `.git` directory (fresh git history)
+  3. Update workspace name in `package.json`
+  4. Remove `nxCloudId` and `nxCloudAccessToken` from `nx.json`
+  5. Delete non-matching lockfiles (e.g., remove yarn.lock if using npm)
+  6. Run `pnpm/npm/yarn install`
+- ✅ Integrated into `createWorkspace()` with template flow branch
+- ✅ Skip CI workflow generation for templates (they provide their own)
+- Files: `packages/create-nx-workspace/src/utils/template/clone-template.ts`, `src/create-workspace.ts`
+
+**Phase 4: Simplified Cloud Prompt** - Commit: `d39de46`
+- ✅ Added `setupNxCloudSimple` message config to ab-testing.ts
+- ✅ Created `determineNxCloudSimple()` function
+- ✅ Template flow: Simple yes/no prompt (no CI provider selection)
+- ✅ Preset flow: Still shows full CI provider selection (unchanged)
+- ✅ Template prompt: "Would you like to enable remote caching with Nx Cloud?"
+  - Choices: "Yes, enable caching" / "No, configure it later"
+- Files: `packages/create-nx-workspace/src/utils/nx/ab-testing.ts`, `src/internal-utils/prompts.ts`, `bin/create-nx-workspace.ts`
+
+**Phase 5: A/B Testing Integration** - Commits: `c079c89`, `c6be27c`, `86c8f5f`
+- ✅ Added 3 A/B test variants for Cloud **prompt** (not success message):
+  - **v1**: "Get to green PRs faster with Nx Cloud?" (TTG-focused, links to TTG guide)
+    - Footer: "Automated validation, self-healing tests, and 70% faster CI"
+    - Hint: "(free for open source)"
+  - **v2**: "Would you like to enable remote caching with Nx Cloud?" (control/original)
+    - Footer: "Remote caching makes your builds faster"
+    - Hint: "(can be enabled any time)"
+  - **v3**: "Speed up CI and reduce compute costs with Nx Cloud?" (efficiency-focused)
+    - Footer: "70% faster CI, 60% less compute, automated test healing"
+    - Hint: "(can be enabled later)"
+- ✅ Added 3 success message variants in messages.ts (for future use)
+- ✅ Updated `createNxCloudOnboardingUrl()` and `getNxCloudInfo()` to accept `isTemplate` flag
+- ✅ Variant codes automatically tracked via existing Nx Cloud infrastructure
+- Files: `packages/create-nx-workspace/src/utils/nx/ab-testing.ts`, `src/utils/nx/messages.ts`, `src/utils/nx/nx-cloud.ts`, `src/create-workspace.ts`
+
+**Phase 6: Prompt Variant Tracking** - Commit: `86c294c`
+- ✅ Added metaCode field to MessageData interface in ab-testing.ts
+- ✅ Assigned metaCodes to setupNxCloudSimple variants:
+  - `simple-cloud-v1` → `'green-prs'`
+  - `simple-cloud-v2` → `'remote-cache'`
+  - `simple-cloud-v3` → `'fast-ci'`
+- ✅ Added `metaCodeOfSelectedPromptMessage()` method to retrieve metaCode or fallback to code
+- ✅ Updated CreateWorkspaceOptions interface with `nxCloudPromptCode?: string`
+- ✅ Captured prompt variant code in normalizeArgsMiddleware after determineNxCloudSimple()
+- ✅ Passed promptCode through function chain:
+  - createWorkspace → createNxCloudOnboardingUrl (combines with success code)
+  - createWorkspace → getNxCloudInfo (for consistency)
+- ✅ Combined prompt code with success message code in meta parameter
+  - Format: `"prompt-code:success-code"` (e.g., `green-prs:template-cloud-connect-v2`)
+  - Falls back to just success code if no prompt code
+- ✅ Added setupNxCloudSimple tracking to recordStat meta array
+- ⏳ Unit tests for metaCodeOfSelectedPromptMessage() not yet added
+- ⏳ Manual testing: verify URL contains both codes not yet performed
+- **Detailed Plan**: `.ai/2025-11-12/tasks/track-simplified-cloud-prompt-variants.md`
+- **Actual Time**: ~1.5 hours
+- **Why**: Enables tracking which PROMPT variant drives highest Cloud connection rate (3×3 matrix of prompt × success message)
+
+### 📊 Testing Status
+- ✅ All unit tests passing (28 tests, 12 snapshots)
+- ⏳ Manual testing not yet performed
+- ⏳ E2E tests not yet added
+- ⏳ Edge cases not yet fully tested
+
+### 📝 Key Implementation Notes
+
+**1. Template Flow vs Preset Flow:**
+```
+Template Flow (new):
+1. determineFolder() → workspace name
+2. determineTemplate() → template selection OR --template flag
+3. determinePackageManager() → package manager
+4. determineAiAgents() → AI agents
+5. determineDefaultBase() → git branch
+6. determineNxCloudSimple() → simple yes/no Cloud prompt
+7. Clone template → Install deps → Setup git
+
+Preset Flow (unchanged):
+1. determineFolder() → workspace name
+2. determineStack() → stack selection
+3. determinePresetOptions() → stack-specific prompts
+4. determinePackageManager() → package manager
+5. determineAiAgents() → AI agents
+6. determineDefaultBase() → git branch
+7. determineNxCloud() → CI provider selection
+8. Create empty workspace → Generate preset → Setup CI
+```
+
+**2. Critical Code Locations:**
+- Main CLI: `packages/create-nx-workspace/bin/create-nx-workspace.ts`
+  - Middleware: lines 304-405 (handles template vs preset branching)
+  - Validation: lines 404-437 (`validateAndExpandTemplate()`)
+- Prompts: `packages/create-nx-workspace/src/internal-utils/prompts.ts`
+  - Template prompt: lines 79-126 (`determineTemplate()`)
+  - Simple Cloud prompt: lines 34-69 (`determineNxCloudSimple()`)
+- Template cloning: `packages/create-nx-workspace/src/utils/template/clone-template.ts`
+  - Clone logic: lines 8-71 (`cloneTemplate()`)
+  - Lockfile cleanup: lines 73-95 (`cleanupLockfiles()`)
+- Workspace creation: `packages/create-nx-workspace/src/create-workspace.ts`
+  - Template flow: lines 51-61
+  - Preset flow: lines 62-87
+  - Cloud setup: lines 88-144
+
+**3. Template Validation Rules:**
+- Pattern: `nrwl/[a-zA-Z0-9-]+` (only lowercase, alphanumeric, hyphens)
+- Rejects: Full URLs, other orgs, `.git` suffix
+- Expands to: `https://github.com/nrwl/repo-name`
+
+**4. A/B Testing Implementation:**
+- Prompt variants randomized in `ab-testing.ts` (existing infrastructure)
+- Variant code passed through Cloud onboarding URL
+- Success message variants also exist but not currently used
+- All tracking automatic via existing Nx Cloud telemetry
+
+---
+
+## 🚧 REMAINING WORK (Phases 6-7)
+
+### Phase 6: Testing & Validation (NOT STARTED)
+**Estimated**: 4-6 hours
+
+**Manual Testing Needed:**
+```bash
+# 1. Template with Cloud (interactive)
+cd /tmp
+npx create-nx-workspace@23.11.12-beta.1 test-1
+# Should see: "Which stack do you want to use?"
+# Choose: React
+# Should see one of 3 Cloud prompts (v1/v2/v3)
+# Choose: Yes
+# Verify: workspace created, deps installed, git initialized
+
+# 2. Template via CLI flag
+npx create-nx-workspace@23.11.12-beta.1 test-2 --template nrwl/angular-template
+# Should skip template prompt
+# Should show package manager, AI agents, Cloud prompts
+
+# 3. Template without Cloud
+npx create-nx-workspace@23.11.12-beta.1 test-3 --template nrwl/react-template --nxCloud skip
+
+# 4. Preset flow still works (must not be broken!)
+npx create-nx-workspace@23.11.12-beta.1 test-4 --preset react-standalone
+# Should show old flow, not template prompts
+
+# 5. Validate error handling
+npx create-nx-workspace@23.11.12-beta.1 test-5 --template other-org/template
+# Should error: "Only templates from the nrwl organization are supported"
+
+npx create-nx-workspace@23.11.12-beta.1 test-6 --template nrwl/react --preset react
+# Should error: "Cannot use both --template and --preset"
+```
+
+**E2E Tests to Add:**
+- [ ] Template cloning works end-to-end
+- [ ] Lockfile cleanup for all package managers
+- [ ] Workspace name replacement in package.json
+- [ ] Cloud config removal from nx.json
+- [ ] Error handling for 404, network errors
+- [ ] Preset flow completely unaffected
+- [ ] A/B variant codes properly tracked
+
+**Unit Tests to Add:**
+- [ ] `validateAndExpandTemplate()` edge cases
+- [ ] Template + preset conflict detection
+- [ ] Lockfile cleanup logic
+- [ ] Cloud prompt variant selection
+
+### Phase 7: Edge Cases & Polish (NOT STARTED)
+**Estimated**: 2-3 hours
+
+**Error Messages to Implement:**
+- [ ] Template repo 404: "Template repository 'nrwl/X' not found"
+- [ ] Network error: "Failed to clone template. Check your internet connection"
+- [ ] Missing nx.json: "Invalid template - missing nx.json file"
+- [ ] Missing package.json: "Invalid template - missing package.json file"
+- [ ] Directory exists: "Directory 'X' already exists"
+
+**Cleanup on Error:**
+- [ ] Remove partial directory if clone fails
+- [ ] Keep directory if install fails (let user debug)
+
+**Non-Interactive Mode:**
+- [ ] Validate required flags present
+- [ ] Clear error if flags missing
+
+---
+
+## 🧪 HOW TO TEST LOCALLY
+
+### 1. Build and Publish Local Version
+```bash
+# In nx repo root
+pnpm nx-release 23.11.12-beta.1 --local
+
+# This publishes to local registry
+# Note: Increment version (beta.1, beta.2, etc.) for each test iteration
+```
+
+### 2. Test Template Flow
+```bash
+cd /tmp
+
+# Interactive (see all prompts)
+npx -y create-nx-workspace@23.11.12-beta.1 test-template-1
+
+# With flags
+npx -y create-nx-workspace@23.11.12-beta.1 test-template-2 \
+  --template nrwl/react-template \
+  --nxCloud skip \
+  --packageManager pnpm
+
+# Verify workspace
+cd test-template-2
+cat package.json  # name should be "test-template-2"
+cat nx.json        # no nxCloudId or nxCloudAccessToken
+ls -la            # should have pnpm-lock.yaml, not other lockfiles
+```
+
+### 3. Test Preset Flow (Regression Check)
+```bash
+# Make sure we didn't break existing functionality!
+npx -y create-nx-workspace@23.11.12-beta.1 test-preset-1 \
+  --preset react-standalone
+
+# Should NOT see template prompts
+# Should see old CI provider selection
+```
+
+### 4. Test Error Handling
+```bash
+# Invalid org
+npx -y create-nx-workspace@23.11.12-beta.1 test-error-1 \
+  --template bad-org/template
+# Expected: Error message about nrwl org only
+
+# Both flags
+npx -y create-nx-workspace@23.11.12-beta.1 test-error-2 \
+  --template nrwl/react-template \
+  --preset react-standalone
+# Expected: Error about conflicting flags
+```
+
+### 5. Check A/B Test Variants
+```bash
+# Run multiple times to see different prompts
+for i in {1..5}; do
+  npx -y create-nx-workspace@23.11.12-beta.1 test-ab-$i --template nrwl/empty-template
+  # You should see different Cloud prompt messages across runs
+  # v1: "Get to green PRs faster with Nx Cloud?"
+  # v2: "Would you like to enable remote caching with Nx Cloud?"
+  # v3: "Speed up CI and reduce compute costs with Nx Cloud?"
+done
+```
+
+---
+
+## 📦 COMMITS MADE
+
+**Current State**: 2 commits on `NXC-3464` branch (squashed main commit + Phase 6)
+
+**Commits**:
+1. **c44a295** - `feat(core): add GitHub template support to create-nx-workspace`
+   - Includes all phases 1-5
+   - Includes code quality improvements
+   - Single commit from master
+   - 8 files changed, 460 insertions, 68 deletions
+
+2. **86c294c** - `feat(core): track simplified Cloud prompt variants in templates`
+   - Phase 6: Prompt variant tracking implementation
+   - Adds metaCode tracking for A/B testing
+   - Combines prompt code with success message code
+   - 5 files changed, 39 insertions, 6 deletions
+
+**Original Development Commits** (squashed into c44a295):
+1. **85d506f** - `feat(core): add --template flag and validation (Phase 1)`
+2. **02c2b0a** - `feat(core): add template selection prompt (Phase 2)`
+3. **e163490** - `cleanup(core): improve template prompt UX`
+4. **45b8edd** - `feat(core): implement template cloning and setup (Phase 3)`
+5. **d39de46** - `feat(core): add simplified Cloud prompt for templates (Phase 4)`
+6. **c079c89** - `feat(core): add A/B testing for template Cloud messages (Phase 5)`
+7. **c6be27c** - `feat(core): add A/B test variants for Cloud prompt`
+8. **86c8f5f** - `feat(core): update Cloud prompt variants with TTG messaging`
+9. **1d32605** - `cleanup(core): improve code quality in template implementation`
+
+---
+
+## 🎯 NEXT SESSION TODO
+
+### Option A: Testing & Validation (Recommended)
+**Priority**: High (needed before merge)
+**Time**: ~4-6 hours
+
+1. **Test locally** using steps from "How to Test Locally" section
+   - Build and publish local version: `pnpm nx-release 23.11.12-beta.1 --local`
+   - Test template flow (interactive and with flags)
+   - Test preset flow (regression check)
+   - Test error handling
+   - Verify A/B test variants appear
+2. **Fix any bugs** discovered during testing
+3. **Add unit tests** for metaCodeOfSelectedPromptMessage()
+4. **Run full prepush validation**: `nx prepush`
+5. **Manual verification**: Check URL format contains prompt codes
+
+### Option B: Merge Without Additional Testing
+**Priority**: Medium (riskier but faster)
+
+1. **Run prepush validation only**: `nx prepush`
+2. **Create PR** with description:
+   - Link to Linear issue
+   - Summary of changes (Phases 1-6)
+   - Testing performed: Unit tests passing
+   - Note: Manual testing not yet performed (will test in staging)
+3. **Monitor A/B test results** after merge closely for issues
+
+### Option C: Add Unit Tests First, Manual Testing Later
+**Priority**: Medium (balance between speed and safety)
+
+1. **Add unit tests** for Phase 6 changes:
+   - Test metaCodeOfSelectedPromptMessage() returns metaCode
+   - Test metaCodeOfSelectedPromptMessage() falls back to code
+   - Test prompt code combination in createNxCloudOnboardingUrl
+2. **Run prepush validation**: `nx prepush`
+3. **Create PR** noting manual testing pending
+4. **Manual test** after PR approval but before merge
+
+---
+
+## 🔑 KEY DECISIONS MADE
+
+1. **Template org restriction**: Only `nrwl/*` for security (can expand later)
+2. **Prompt wording**: "Which stack" (user-facing) vs "--template" (CLI, future-proof)
+3. **No "Use presets instead" option**: Force choice of 4 templates or use `--preset` flag
+4. **A/B test the prompt**: Not the success message (better conversion point)
+5. **Variant v1 focus**: "Get to green PRs faster" with TTG guide link
+6. **Lockfile strategy**: Delete non-matching, let install regenerate
+7. **Cloud config**: Silently remove from nx.json (fresh start)
+8. **CI workflows**: Keep template's workflows, don't generate new ones
 
 ---
 
