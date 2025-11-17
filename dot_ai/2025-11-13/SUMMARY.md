@@ -97,3 +97,50 @@ const { connectToNxCloud } = require(require.resolve(
 
 ### Impact
 Users can now use `npx create-nx-workspace --template org/repo` to clone templates and get seamless Nx Cloud integration with GitHub push capabilities, matching the experience of the preset flow.
+
+---
+
+## Nx 2026 Roadmap Draft
+
+### Overview
+Drafted comprehensive roadmap for Nx 2026 with 7 major strategic themes.
+
+### Key Accomplishments
+
+#### 1. Research & Planning
+- Analyzed 2025 roadmap structure (7 themes, narrative prose format, high-level directions)
+- Researched 50+ Linear projects and issues from Nx CLI and Nx Cloud teams
+- Identified major themes from customer-driven projects and strategic initiatives
+- Gathered input on priorities via user questions (polyglot support, AI-native development, modern JS/TS tooling)
+
+#### 2. CI Improvements Research
+- Investigated Linear for CI enhancement projects beyond target-level affected logic
+- Found 5 key areas: test atomization expansion, CPU/memory tracking, AI-powered insights, flaky test reduction, cost visibility
+- Identified specific projects: CI Watchdog (AI-powered monitoring), CIPE credit usage view, test atomization for Cypress/Gradle
+
+#### 3. Roadmap Sections
+**Final 7 Themes:**
+1. **Polyglot Monorepos** - .NET (`@nx/dotnet`), Java/Maven, experimental PHP, Python discussion
+2. **Modern JavaScript and TypeScript** - Node 24, ESM migration, oxc/Biome/oxlint integration
+3. **AI-Native Development Experience** - AI-assisted migrations, enhanced metadata for Claude Code/Cursor/Copilot
+4. **Performance and Developer Observability** - Rust migration (task orchestrator), CPU/memory tracking
+5. **Smarter CI Pipelines** - Target-level affected logic, test atomization expansion, AI-powered insights
+6. **Nx Release for Apps** - Docker release evolution, polyglot deployment support
+7. **Integration with Modern Tooling** - Knip, Crystal plugins (SWC/esbuild), voidZero ecosystem
+
+#### 4. Iterative Refinement
+- Trimmed roadmap by 30% per user request
+- Removed "Developer Experience and Onboarding" section
+- Split "CI/CD and Deployment" into two focused sections
+- Removed customer names (Lemonade, Hilton)
+- Updated deployment section title and messaging per user feedback
+- Emphasized Nx Release for Docker is already in use internally
+
+### Technical Details
+- Format: Narrative prose (no bullet points within sections)
+- Length: Concise, ~3-5 sentences per section
+- Tone: High-level strategic direction, not tied to specific releases
+- Location: `.ai/2025-11-13/tasks/2026-roadmap-draft.md`
+
+### Impact
+Created concise, strategic roadmap that balances polyglot expansion, modern tooling adoption, AI integration, and CI/CD improvements - ready for final review and publication.

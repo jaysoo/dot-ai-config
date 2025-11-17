@@ -2,6 +2,8 @@
 
 ## In Progress
 
+- [ ] Checkout Ben's Loom and let him know if it works or not https://nrwl.slack.com/archives/C07939JBZT9/p1763393473373429 (2025-11-17 11:01 AM)
+
 - [ ] Investigate rootDir issue in swc executor for Nx 21 (2025-11-06 09:16)
   - Repro: https://github.com/HaasStefan/nx-repro-rootDir-swc-rollup-in-angular
   - Failing targets: js-swc-lib:build, js-rollup-lib:build
