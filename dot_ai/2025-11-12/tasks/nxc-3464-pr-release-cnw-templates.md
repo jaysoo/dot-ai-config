@@ -1097,6 +1097,7 @@ expect(() => normalizeArgs({ template: 'nrwl/react', preset: 'react' })).toThrow
 4. **Template badges**: Show "New! ✨" during rollout?
 5. **Custom templates**: Allow users to create their own templates?
 6. **Template testing**: CI to validate templates are always working?
+7. **Custom Starter Cloud Prompts** (2025-11-13): The "Custom" starter option (added in 7ba12c83a3) redirects to the preset flow with full CI provider selection. Consider updating this flow to use the simplified Cloud prompts similar to the template flow, though this is lower priority since it's not the primary onboarding path.
 
 ---
 

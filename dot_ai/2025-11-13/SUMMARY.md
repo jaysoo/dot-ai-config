@@ -46,7 +46,16 @@ Completed critical bug fixes and feature additions for the template flow in crea
 - **Testing**: Published version 23.0.25, verified prompt appears correctly
 - **Commit**: `8ad6194d2a` - feat(core): add GitHub push prompt for template flow with Nx Cloud
 
-#### 4. Naming and Messaging Updates
+#### 4. Custom Starter Option
+- **Feature**: Added "Custom" option to starter selection menu
+- **Description**: "More options for framework, test runners, etc."
+- **Behavior**: Returns `'skip'` which triggers the original preset-based flow
+- **Purpose**: Gives users access to full configuration options when templates don't fit their needs
+- **Files Modified**: `packages/create-nx-workspace/src/internal-utils/prompts.ts`
+- **Commit**: `7ba12c83a3` - feat(core): add Custom starter option to access preset flow
+- **Future Consideration**: Consider updating the preset flow's Cloud prompts to use simplified messaging like the template flow (lower priority)
+
+#### 5. Naming and Messaging Updates
 - Renamed `determineNxCloudSimple` to `determineNxCloudV2`
 - Updated message keys from `setupNxCloudSimple` to `setupNxCloudV2`
 - Updated A/B testing codes with `cloud-v2-` prefix
@@ -81,6 +90,7 @@ const { connectToNxCloud } = require(require.resolve(
 7. `6bcee00066` - fix(core): generate nxCloudId for template flow (includes fixes for dynamic require, FsTree, path handling)
 8. `4bf3126d5a` - chore(misc): remove unused arg
 9. `8ad6194d2a` - feat(core): add GitHub push prompt for template flow with Nx Cloud
+10. `7ba12c83a3` - feat(core): add Custom starter option to access preset flow
 
 ### Files Modified
 - `packages/create-nx-workspace/src/create-workspace.ts`

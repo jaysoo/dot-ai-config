@@ -2,7 +2,7 @@
 
 ## In Progress
 
-- [ ] Checkout Ben's Loom and let him know if it works or not https://nrwl.slack.com/archives/C07939JBZT9/p1763393473373429 (2025-11-17 11:01 AM)
+- [ ] Add Szymon to Engineering team in 1password (talk to Victor/Jeff)
 
 - [ ] Investigate rootDir issue in swc executor for Nx 21 (2025-11-06 09:16)
   - Repro: https://github.com/HaasStefan/nx-repro-rootDir-swc-rollup-in-angular
@@ -44,6 +44,8 @@
 ## Completed
 
 ### November 2025
+
+- [x] Checkout Ben's Loom and let him know if it works or not https://nrwl.slack.com/archives/C07939JBZT9/p1763393473373429 (2025-11-17 11:01 AM)
 
 - [x] NXC-3464: PR release with CNW templates (2025-11-12 15:30)
   - Plan: `.ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md`
