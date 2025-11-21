@@ -1,6 +1,8 @@
 # Jack Hsu's Claude Configuration
 Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse, not overly friendly
 
+**IMPORTANT**: This file lives in `~/projects/dot-ai-config/dot_claude/CLAUDE.md` and syncs to `~/.claude/CLAUDE.md`. Always edit the `dot-ai-config` version, not the `~/.claude` version.
+
 ## 🔴 Critical Setup & Verification
 
 ### .ai Folder Symlink (MUST CHECK FIRST)
@@ -222,8 +224,106 @@ When converting Markdoc syntax to Starlight:
 
 ## 🏗️ Nx Monorepo Patterns
 
-When starting any work, ALWAYS use a subagent to run `pnpm install` and `pnpm build` in the 
+When starting any work, ALWAYS use a subagent to run `pnpm install` and `pnpm build` in the
 background because subsequent commands will need those so it's better to get it out of the way in parallel.
+
+### Common Nx Acronyms & Terminology
+
+**Package Names:**
+- **CNW**: Create Nx Workspace (`packages/create-nx-workspace/`) - CLI tool for creating new Nx workspaces
+- **CNP**: Create Nx Plugin (`packages/create-nx-plugin/`) - CLI tool for creating Nx plugins
+
+**Linear Project Prefixes:**
+- **NXC**: Nx CLI team issues
+- **DOC**: Documentation team issues
+- **CLOUD**: Nx Cloud team issues
+
+**Best Practice**: Always spell out acronyms on first use in summaries and architecture docs.
+Example: "NXC-3464: CNW (Create Nx Workspace) Templates"
+
+### Creating Nx Workspaces (CNW)
+
+**Basic Usage:**
+```bash
+# Interactive mode (default)
+npx create-nx-workspace@latest
+
+# Non-interactive with preset
+npx -y create-nx-workspace@latest myworkspace --preset=react-monorepo --no-interactive
+
+# Skip npm install prompt with -y flag
+npx -y create-nx-workspace@latest
+```
+
+**Common Presets:**
+```bash
+# Monorepo presets
+--preset=react-monorepo          # React apps + shared libraries
+--preset=angular-monorepo        # Angular apps + shared libraries
+--preset=node-monorepo           # Node.js apps (Express, Nest, etc.)
+--preset=vue-monorepo            # Vue apps + shared libraries
+
+# Standalone presets (single app)
+--preset=react-standalone        # Single React app
+--preset=angular-standalone      # Single Angular app
+--preset=next                    # Next.js app
+--preset=nest                    # NestJS app
+--preset=express                 # Express app
+
+# Other
+--preset=ts                      # TypeScript library
+--preset=npm                     # NPM packages
+```
+
+**Useful Options:**
+```bash
+# Workspace configuration
+--name=myworkspace               # Workspace name
+--packageManager=pnpm            # Use pnpm (default: npm)
+--no-interactive                 # Skip all prompts
+
+# App configuration (for monorepo presets)
+--appName=api                    # Name of the initial app
+--framework=nest                 # Framework (nest, express, fastify for node)
+--framework=react                # Framework for web apps
+
+# Testing
+--e2eTestRunner=playwright       # E2E test runner (playwright, cypress, none)
+--unitTestRunner=vitest          # Unit test runner (jest, vitest, none)
+
+# Git & CI
+--skipGit                        # Don't initialize git repo
+--skipGitHubPush                 # Don't push to GitHub
+--nxCloud=skip                   # Skip Nx Cloud setup
+--nxCloud=yes                    # Enable Nx Cloud
+
+# Other
+--docker                         # Generate Dockerfile (for Node apps)
+```
+
+**Common Testing/Debugging Patterns:**
+```bash
+# Create test workspace for bug reproduction
+npx -y create-nx-workspace@latest node1 \
+  --preset=node-monorepo \
+  --appName=api \
+  --framework=nest \
+  --no-interactive \
+  --nx-cloud=skip
+
+# Create in tmp for cleanup
+cd /tmp
+npx -y create-nx-workspace@latest testworkspace --preset=react-monorepo --no-interactive
+
+# Multiple versions for migration testing
+npx create-nx-workspace@21.0.0 workspace-v21
+npx create-nx-workspace@22.0.0 workspace-v22
+```
+
+**Package Location:**
+- Source: `packages/create-nx-workspace/`
+- Entry point: `packages/create-nx-workspace/bin/create-nx-workspace.ts`
+- Related: `packages/create-nx-plugin/` (for plugin development)
 
 ### Commands
 - Use `nx run PROJECT:target` not `npm run`

@@ -2,6 +2,9 @@
 
 ## In Progress
 
+- [ ] Iterate on CNW templates 
+  - Plan: `.ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md`
+
 - [ ] Add Szymon to Engineering team in 1password (talk to Victor/Jeff)
 
 - [ ] Investigate rootDir issue in swc executor for Nx 21 (2025-11-06 09:16)
@@ -24,11 +27,13 @@
   - Impact: Small scoped fix (3 engagement)
   - Notes: Root cause identified - related to http-server issue with SPA proxy
 
-- [ ] Fix #32492 - Storybook migration hangs during nx migrate (2025-10-27 09:58)
-  - URL: https://github.com/nrwl/nx/issues/32492
+- [ ] Fix NXC-3504 / #32492 - Storybook migration hangs during nx migrate (2025-11-21 09:21)
+  - Linear: https://linear.app/nxdev/issue/NXC-3504
+  - GitHub: https://github.com/nrwl/nx/issues/32492
+  - Plan: `.ai/2025-11-21/tasks/nxc-3504-storybook-migration-hangs.md`
   - Goal: Add non-interactive flags to storybook automigrate command to prevent hanging during migrations
   - Impact: High (14 engagement - 2 comments, 12 reactions)
-  - Notes: User prompts are swallowed by `pnpm nx migrate --run-migrations`
+  - Notes: Investigation complete, task plan created
 
 - [ ] Fix #32880 - Next.js Jest tests do not exit properly (2025-10-27 09:58)
   - URL: https://github.com/nrwl/nx/issues/32880
@@ -40,6 +45,18 @@
   - URL: https://github.com/nrwl/nx/issues/32439 Goal: Fix event listener management in task runner to prevent MaxListenersExceededWarning
   - Impact: High (18 engagement - 4 comments, 14 reactions)
   - Notes: Reproducible in nx-examples repo, affects run-many and affected commands
+
+- [ ] Fix #33258 - "Compile TypeScript Libraries to Multiple Formats" article produces invalid packages (2025-11-18 10:30)
+  - URL: https://github.com/nrwl/nx/issues/33258
+  - Goal: Fix documentation article that produces invalid packages
+  - Priority: High
+  - Scope: docs
+
+- [ ] Fix #29481 - nx@npm:20.3.0 couldn't be built successfully (exit code 129) (2025-11-18 10:30)
+  - URL: https://github.com/nrwl/nx/issues/29481
+  - Goal: Fix build failure issue with exit code 129
+  - Priority: High
+  - Scope: misc
 
 ## Completed
 
