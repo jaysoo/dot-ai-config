@@ -5,35 +5,17 @@
 - [ ] Iterate on CNW templates 
   - Plan: `.ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md`
 
-- [ ] Add Szymon to Engineering team in 1password (talk to Victor/Jeff)
-
 - [ ] Investigate rootDir issue in swc executor for Nx 21 (2025-11-06 09:16)
   - Repro: https://github.com/HaasStefan/nx-repro-rootDir-swc-rollup-in-angular
   - Failing targets: js-swc-lib:build, js-rollup-lib:build
   - Issue: Latest Nx 21 versions have rootDir problem in swc executor
   - Users staying on 21.0.0 to avoid this issue
 
-- [ ] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)
-
-  - Dictation: `.ai/2025-08-21/dictations/module-federation-dynamic-manifest-issues.md`
-  - Goal: Fix URL property handling in dynamic manifests and static fallback mechanism
-  - Next steps: Create reproduction repo, communicate with Colum, review on Friday
-
-- [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
-
 - [ ] Fix #33047 - @nx/web:file-server crash on non-GET requests (2025-10-27 09:58)
   - URL: https://github.com/nrwl/nx/issues/33047
   - Goal: Handle non-GET requests properly in file-server to prevent crashes with SPA mode
   - Impact: Small scoped fix (3 engagement)
   - Notes: Root cause identified - related to http-server issue with SPA proxy
-
-- [ ] Fix NXC-3504 / #32492 - Storybook migration hangs during nx migrate (2025-11-21 09:21)
-  - Linear: https://linear.app/nxdev/issue/NXC-3504
-  - GitHub: https://github.com/nrwl/nx/issues/32492
-  - Plan: `.ai/2025-11-21/tasks/nxc-3504-storybook-migration-hangs.md`
-  - Goal: Add non-interactive flags to storybook automigrate command to prevent hanging during migrations
-  - Impact: High (14 engagement - 2 comments, 12 reactions)
-  - Notes: Investigation complete, task plan created
 
 - [ ] Fix #32880 - Next.js Jest tests do not exit properly (2025-10-27 09:58)
   - URL: https://github.com/nrwl/nx/issues/32880
@@ -46,21 +28,41 @@
   - Impact: High (18 engagement - 4 comments, 14 reactions)
   - Notes: Reproducible in nx-examples repo, affects run-many and affected commands
 
-- [ ] Fix #33258 - "Compile TypeScript Libraries to Multiple Formats" article produces invalid packages (2025-11-18 10:30)
+- [ ] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)
+
+  - Dictation: `.ai/2025-08-21/dictations/module-federation-dynamic-manifest-issues.md`
+  - Goal: Fix URL property handling in dynamic manifests and static fallback mechanism
+  - Next steps: Create reproduction repo, communicate with Colum, review on Friday
+
+- [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
+
+## Completed
+
+### November 2025
+
+- [x] Add Szymon to Engineering team in 1password (talk to Victor/Jeff)
+
+- [x] Fix #33258 - "Compile TypeScript Libraries to Multiple Formats" article produces invalid packages (2025-11-18 10:30)
   - URL: https://github.com/nrwl/nx/issues/33258
   - Goal: Fix documentation article that produces invalid packages
   - Priority: High
   - Scope: docs
 
-- [ ] Fix #29481 - nx@npm:20.3.0 couldn't be built successfully (exit code 129) (2025-11-18 10:30)
-  - URL: https://github.com/nrwl/nx/issues/29481
-  - Goal: Fix build failure issue with exit code 129
-  - Priority: High
-  - Scope: misc
+- [x] Fix NXC-3504 / #32492 - Storybook migration hangs during nx migrate (2025-11-21 09:21)
+  - Linear: https://linear.app/nxdev/issue/NXC-3504
+  - GitHub: https://github.com/nrwl/nx/issues/32492
+  - Plan: `.ai/2025-11-21/tasks/nxc-3504-storybook-migration-hangs.md`
+  - Goal: Add non-interactive flags to storybook automigrate command to prevent hanging during migrations
+  - Impact: High (14 engagement - 2 comments, 12 reactions)
+  - Notes: Investigation complete, task plan created
 
-## Completed
-
-### November 2025
+- [x] NXC-3508 / #29481 - nx@npm:20.3.0 couldn't be built successfully (exit code 129) (2025-11-21 11:40)
+  - Linear: https://linear.app/nxdev/issue/NXC-3508
+  - GitHub: https://github.com/nrwl/nx/issues/29481
+  - Plan: `.ai/2025-11-21/tasks/nxc-3508-exit-code-129-investigation.md`
+  - Result: Closed as version mismatch issue - users can resolve by ensuring single nx version in dependency tree
+  - Root Cause: Multiple nx versions causing parallel postinstall conflicts in CI/CD
+  - Low engagement (2 people), user-solvable problem
 
 - [x] Checkout Ben's Loom and let him know if it works or not https://nrwl.slack.com/archives/C07939JBZT9/p1763393473373429 (2025-11-17 11:01 AM)
 

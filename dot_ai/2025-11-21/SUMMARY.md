@@ -72,6 +72,63 @@ Established and enforced punctuation rules across all user-facing messages:
 - Branch: NXC-3464
 - Status: Implementation feedback incorporated, ready for next review cycle
 
+## NXC-3515: Fix TypeScript Errors in Cypress Commands Template (Completed)
+
+### Overview
+Fixed TypeScript compilation errors when adding Cypress configuration to a library, mirroring GitHub issue #32930.
+
+### Problem
+When running `nx typecheck` after adding Cypress to a library, three TypeScript errors occurred:
+- **TS2669**: "Augmentations for the global scope can only be directly nested in external modules or ambient module declarations"
+- **TS2551**: Property 'login' does not exist on type 'cy & CyEventEmitter'
+- **TS2345**: Argument of type '"login"' is not assignable to parameter of type 'keyof Chainable<any>'
+
+### Root Cause
+The generated `commands.ts` file used `declare global { namespace Cypress { ... } }` syntax, which requires the file to be treated as a module (i.e., have imports/exports). Since the file had no imports/exports, TypeScript treated it as a script, causing the global augmentation syntax to fail.
+
+### Solution
+Changed the Cypress commands template from:
+```typescript
+declare global {
+  namespace Cypress {
+    interface Chainable<Subject> {
+      login(email: string, password: string): void;
+    }
+  }
+}
+```
+
+To:
+```typescript
+declare namespace Cypress {
+  interface Chainable<Subject> {
+    login(email: string, password: string): void;
+  }
+}
+```
+
+### Changes Made
+- **Modified 2 template files**:
+  - `packages/cypress/src/generators/base-setup/files/common/__directory__/support/commands.ts__ext__`
+  - `packages/cypress/src/generators/base-setup/files/config-ts/__directory__/support/commands.ts__ext__`
+- **Added E2E test** in `e2e/cypress/src/cypress.test.ts`:
+  - Runs `npx tsc --noEmit` on generated Cypress e2e project
+  - Ensures TypeScript compilation passes without errors
+  - References GitHub issue #32930 for context
+
+### Verification
+✅ Tested with reproduction repo from issue - `nx typecheck` now passes
+✅ E2E test added to prevent regression
+✅ Commit includes proper reference to GitHub issue #32930
+
+### Commit
+- **SHA**: `7865f72fb4`
+- **Message**: `fix(testing): remove declare global wrapper from cypress commands.ts template`
+- **Branch**: NXC-3515
+- **Related Issues**:
+  - Linear: https://linear.app/nxdev/issue/NXC-3515/mirror-github-issue-nrwlnx32930-for-nx-cli
+  - GitHub: https://github.com/nrwl/nx/issues/32930
+
 ## Other Tasks
 
 ### NXC-3510: Node Executor Port Release Investigation (Completed)
@@ -101,3 +158,73 @@ Direct SIGTERM to Server (48878) → Terminated ✓ → Port Released ✓
 - Posted detailed reproduction steps and analysis on Linear issue
 - Created test workspace: `tmp/claude/node1` with Nest app
 - Added process.pid logging to verify behavior
+
+### NXC-3508: Exit Code 129 Investigation (Completed)
+- **Goal**: Investigate intermittent exit code 129 errors during nx postinstall
+- **Status**: ✅ Closed as version mismatch issue
+- **Linear**: https://linear.app/nxdev/issue/NXC-3508
+- **GitHub**: https://github.com/nrwl/nx/issues/29481
+- **Plan**: `.ai/2025-11-21/tasks/nxc-3508-exit-code-129-investigation.md`
+- **Result**: Users can resolve by ensuring single nx version in dependency tree
+- **Root Cause**: Multiple nx versions causing parallel postinstall conflicts in CI/CD
+- **Impact**: Low engagement (2 people), user-solvable problem
+
+### NXC-3504: Storybook Migration Hangs Investigation
+- **Goal**: Fix hanging during storybook automigrate in nx migrate
+- **Status**: Investigation complete, task plan created
+- **Linear**: https://linear.app/nxdev/issue/NXC-3504
+- **GitHub**: https://github.com/nrwl/nx/issues/32492
+- **Plan**: `.ai/2025-11-21/tasks/nxc-3504-storybook-migration-hangs.md`
+- **Impact**: High (14 engagement - 2 comments, 12 reactions)
+
+### NXC-3505: Next.js Jest Tests Hanging Investigation
+- **Goal**: Investigate Jest tests not exiting properly in Next.js apps
+- **Status**: Investigation in progress
+- **Plan**: `.ai/2025-11-21/tasks/nxc-3505-nextjs-jest-hanging-investigation.md`
+- **Related GitHub**: https://github.com/nrwl/nx/issues/32880
+- **Impact**: Medium (4 engagement)
+
+## NXC-3511: Fix React Component Generator with Tailwind (Completed)
+
+### Overview
+Fixed a bug where the `@nx/react` library generator created faulty React components when using `--style=tailwind`.
+
+### Problem
+When generating a React component with `--style=tailwind`, the template incorrectly included:
+- `className={styles['container']}` CSS modules syntax
+- Attempts to import CSS module files that don't exist
+- This resulted in TypeScript/build errors
+
+### Root Cause
+The component template (`packages/react/src/generators/component/files/__fileName__.__ext__`) was checking for `styled-jsx` but not `tailwind` when determining whether to use CSS modules syntax. Since Tailwind uses utility classes directly in JSX, it shouldn't generate CSS modules imports or references.
+
+### Solution
+Added `|| styledModule === 'tailwind'` check on line 16 of the template to exclude Tailwind from CSS modules processing, treating it the same way as `styled-jsx` and `globalCss`.
+
+### Changes Made
+1. **Template Fix** (`__fileName__.__ext__`):
+   - Changed: `globalCss || styledModule === 'styled-jsx'`
+   - To: `globalCss || styledModule === 'styled-jsx' || styledModule === 'tailwind'`
+
+2. **Test Enhancement** (`component.spec.ts`):
+   - Added assertions: `expect(content).not.toContain("styles['container']")`
+   - Added assertions: `expect(content).not.toContain('import styles')`
+
+3. **Snapshot Update** (`component.spec.ts.snap`):
+   - Updated to show plain `<div>` without CSS modules references
+
+### Verification
+✅ Unit tests passing with updated assertions
+✅ Snapshot updated to correct expected output
+✅ Generated components now use clean JSX without CSS modules
+
+### Commit
+- **SHA**: `a46bd6afc6`
+- **Message**: `fix(react): exclude tailwind from CSS modules syntax in component generator`
+- **Branch**: NXC-3511
+- **Related Issues**:
+  - Linear: https://linear.app/nxdev/issue/NXC-3511/nxreact-lib-generator-creates-faulty-component-with-tailwind
+
+### Merged PRs
+- ✅ `fix(storybook): remove STORYBOOK_PROJECT_ROOT when running automigrate to prevent hanging` (#33567)
+- ✅ `docs(misc): update migration docs to use supported markdown syntax` (#33563)

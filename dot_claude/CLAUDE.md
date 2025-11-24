@@ -371,6 +371,38 @@ export default defineConfig({
 - `astro-docs/` - standalone docs site
 - Check `project.json` for available targets
 
+### Nx Executors: Process Spawning
+
+**`nx:run-commands` has multiple code paths** depending on the command:
+
+**For single commands** (most common, e.g., `nx test`):
+- Location: `packages/nx/src/executors/run-commands/run-commands.impl.ts:150-155`
+- Uses: `runSingleCommandWithPseudoTerminal()`
+- Spawns via **PTY (pseudo-terminal)** using Rust native bindings (`RustPseudoTerminal`)
+- Location of PTY impl: `packages/nx/src/tasks-runner/pseudo-terminal.ts`
+- Conditions checked (lines 130-138):
+  - Single command
+  - PTY supported (`PseudoTerminal.isSupported()`)
+  - `process.env.NX_NATIVE_COMMAND_RUNNER !== 'false'`
+  - No prefix configured
+  - `usePty` enabled (default: true)
+
+**For parallel commands**:
+- Uses: `ParallelRunningTasks`
+- Spawns via Node's `exec()` with piped stdio
+- Location: `packages/nx/src/executors/run-commands/running-tasks.ts:400`
+
+**For serial commands**:
+- Uses: `SeriallyRunningTasks`
+- Also uses PTY if supported
+
+**To debug which path is taken**:
+- Add logging in `node_modules/nx/src/executors/run-commands/running-tasks.js`
+- Check conditions at `run-commands.impl.ts:130-163`
+- Look for function calls: `runSingleCommandWithPseudoTerminal` vs `ParallelRunningTasks`
+
+**Important**: Don't assume piped stdio for single commands - verify with logs!
+
 ### Common Issues
 - TSC errors in isolation normal (use project-level checks)
 - Stuck processes: `lsof -i :PORT` then `kill PID`
@@ -584,6 +616,32 @@ console.log(`Open: ${openCount}, Close: ${closeCount}`);
 - Show relationships between files
 - Include current values/formats before changes
 - Update `.ai/architectures/[repo]-architecture.md` after
+
+### Code Path Investigation Best Practices
+
+When investigating how code executes in complex systems:
+
+1. **Verify the actual code path FIRST** - Don't assume which functions are called
+   - Add temporary logging to node_modules to confirm execution path
+   - Check for conditional logic that routes to different implementations
+   - Look for feature flags or environment variables that change behavior
+
+2. **Don't document theories as facts** - Wait for verification before writing detailed explanations
+   - Mark unverified theories clearly: "HYPOTHESIS: needs verification"
+   - Test assumptions before creating documentation
+   - Ask user to confirm if you're investigating the right code path
+
+3. **Watch for multiple implementations** - Large codebases often have:
+   - Different executors for single vs parallel commands
+   - Native (Rust/C++) vs JavaScript implementations
+   - PTY vs spawn vs exec for process management
+   - Feature-flagged code paths
+
+4. **Example from NXC-3505**:
+   - ❌ WRONG: Assumed `nx:run-commands` uses `exec()` with piped stdio
+   - ✅ CORRECT: For single commands, uses `runSingleCommandWithPseudoTerminal()` with PTY
+   - Lesson: Check `run-commands.impl.ts` logic at lines 130-163 to see which path is taken
+   - User had to add logs to node_modules to verify actual execution path
 
 ### URL Generation from File Paths
 - **Lowercase all segments**: `CI Features` → `ci-features`
