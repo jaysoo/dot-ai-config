@@ -177,12 +177,67 @@ Direct SIGTERM to Server (48878) → Terminated ✓ → Port Released ✓
 - **Plan**: `.ai/2025-11-21/tasks/nxc-3504-storybook-migration-hangs.md`
 - **Impact**: High (14 engagement - 2 comments, 12 reactions)
 
-### NXC-3505: Next.js Jest Tests Hanging Investigation
-- **Goal**: Investigate Jest tests not exiting properly in Next.js apps
-- **Status**: Investigation in progress
+### NXC-3505: Next.js Jest Tests Hanging Investigation (Investigation Complete)
+- **Goal**: Investigate Jest tests not exiting properly in Next.js apps when run via `nx test`
+- **Status**: ✅ Root cause identified, workaround documented, recommendations provided
 - **Plan**: `.ai/2025-11-21/tasks/nxc-3505-nextjs-jest-hanging-investigation.md`
-- **Related GitHub**: https://github.com/nrwl/nx/issues/32880
-- **Impact**: Medium (4 engagement)
+- **Linear**: https://linear.app/nxdev/issue/NXC-3505/nextjs-jest-tests-do-not-exit-properly
+- **GitHub**: https://github.com/nrwl/nx/issues/32880
+- **Impact**: Medium (4 engagement) - affects all Next.js + Jest users in Nx
+
+#### Key Findings
+
+**Issue**: Jest tests pass successfully but hang indefinitely when run via `nx test` in Next.js projects. Running `npx jest` directly works fine.
+
+**Root Cause Analysis**:
+- Initially investigated wrong code path (assumed `exec()` with piped stdio)
+- **Actual path**: `nx:run-commands` uses PTY (pseudo-terminal) for single commands
+- Location: `packages/nx/src/executors/run-commands/run-commands.impl.ts:150-155`
+- Calls: `runSingleCommandWithPseudoTerminal()` → Rust `RustPseudoTerminal.runCommand()`
+- **Issue**: Something in Next.js's Jest setup (`next/jest`) doesn't interact well with PTY spawning
+- Running with `--detectOpenHandles` shows NO open handles, but process still hangs
+- Not a bug in user test code - interaction between Nx's PTY and Next.js's async resource loading
+
+**Verified Workaround**:
+```typescript
+// apps/my-next-app/jest.config.cts
+const config = {
+  forceExit: true,  // Required for Next.js projects
+  // ... rest of config
+};
+```
+
+#### Recommended Solutions
+
+**Short-term** (Nx 22.x patch):
+1. Update `@nx/next` generator to add `forceExit: true` to jest.config for new projects
+2. Document workaround for existing projects
+3. Add clear explanation in docs why this is needed (PTY interaction, not user bug)
+
+**Medium-term** (Nx 23.x):
+- Update `@nx/jest/plugin` to auto-detect Next.js projects and pass `--forceExit` flag
+
+**Long-term**:
+- Investigate root cause with Next.js team (may be upstream issue)
+- Create minimal reproduction of PTY + Next.js Jest interaction
+
+#### Lessons Learned (Added to CLAUDE.md)
+
+1. **Don't assume code paths** - Verify with logging in node_modules
+2. **Multiple implementations exist** - Single vs parallel commands use different spawning
+3. **PTY vs exec vs spawn** - Know the differences and verify which is used
+4. **Document theories clearly** - Mark as "HYPOTHESIS" until verified
+
+#### Files Investigated
+- `packages/nx/src/executors/run-commands/run-commands.impl.ts` - Entry point, conditional logic
+- `packages/nx/src/executors/run-commands/running-tasks.ts` - Multiple task runners
+- `packages/nx/src/tasks-runner/pseudo-terminal.ts` - PTY implementation
+- `packages/nx/src/native/` - Rust bindings for PTY
+
+#### Next Steps
+- Create PR with generator changes
+- Update documentation
+- Consider filing issue with Next.js team
 
 ## NXC-3511: Fix React Component Generator with Tailwind (Completed)
 

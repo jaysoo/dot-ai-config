@@ -673,6 +673,42 @@ When investigating how code executes in complex systems:
 - Multiple old pages may merge into single new pages
 - Verify file existence before assuming 404s
 
+## 🐛 Debugging Third-Party Integration Issues
+
+### Before Deep-Diving Internal Code
+
+When debugging issues that involve third-party tools (package managers, CLI tools, external APIs):
+
+1. **Check if code logic is sound first**
+   - Trace through the actual code paths
+   - Verify what content is passed between functions
+   - Don't assume - verify with logging or tests
+
+2. **If logic appears correct AND you cannot reproduce**:
+   - ⚠️ **STOP and consider third-party bugs**
+   - Check the third-party tool's issue tracker
+   - Test with different versions of the third-party tool
+   - Look for known bugs with similar symptoms
+
+3. **Red Flags for Third-Party Bugs**:
+   - Error mentions third-party tool's parser/validator
+   - Cannot reproduce despite code looking correct
+   - Error is intermittent or environment-specific
+   - Works in your test but fails for reporter
+
+### Example: NXC-3514 (Bun Lockfile Bug)
+
+**Mistake**: Spent hours debugging Nx's lockfile parsing code when the bug was in Bun itself.
+
+**What happened**:
+- Issue: Yarn parser errors when processing Bun binary lockfile
+- Investigation: Verified Nx calls `bun bun.lockb` correctly, passes output to Yarn parser
+- Testing: Created test repos - everything worked fine
+- **Should have checked**: Bun's output from `bun bun.lockb` for malformed content
+- **Actual bug**: Bun outputs malformed Yarn format (https://github.com/oven-sh/bun/issues/16252)
+
+**Lesson**: When your code logic is correct and tests work, check third-party tools first before extensive internal debugging.
+
 ## 🔧 Package Manager & Migration Testing
 
 ### Nx Migration Testing Best Practices

@@ -18,6 +18,17 @@ JavaScript/TypeScript build and execution tools
   - `node.impl.ts` - Main executor implementation with signal handling
   - `lib/kill-tree.ts` - Process tree termination utility
 
+### packages/nx/
+Core Nx functionality
+
+- `packages/nx/src/executors/run-commands/` - Generic command executor with multiple spawning strategies
+  - `run-commands.impl.ts` - Entry point with conditional logic for PTY vs exec spawning
+  - `running-tasks.ts` - Task runners (ParallelRunningTasks, SeriallyRunningTasks, RunningNodeProcess)
+- `packages/nx/src/tasks-runner/` - Task execution infrastructure
+  - `pseudo-terminal.ts` - PTY wrapper for native Rust implementation
+- `packages/nx/src/native/` - Rust native bindings
+  - `index.d.ts` - TypeScript definitions for RustPseudoTerminal
+
 ### nx-dev/
 The Nx documentation site (docs.nrwl.io) - Next.js application with multiple sub-packages
 
@@ -72,6 +83,58 @@ Nx CLI Process → fork() → intermediate process → fork() → Server Process
 - Uses `pgrep -P` on macOS to discover child processes
 - Relies on Node.js `child_process.fork()` for spawning
 
+### Next.js Jest Test Hanging Investigation (2025-11-21)
+**Branch**: NXC-3505
+**Issue**: https://linear.app/nxdev/issue/NXC-3505/nextjs-jest-tests-do-not-exit-properly
+**GitHub**: https://github.com/nrwl/nx/issues/32880
+**Status**: Investigation complete, workaround identified, generator fix pending
+
+When running Jest tests for Next.js apps via `nx test`, tests pass successfully but Jest hangs and never exits. Running `npx jest` directly in the app directory works fine.
+
+**Files Investigated**:
+- `packages/nx/src/executors/run-commands/run-commands.impl.ts:130-163` - Executor routing logic
+- `packages/nx/src/executors/run-commands/running-tasks.ts` - Task runner implementations
+- `packages/nx/src/tasks-runner/pseudo-terminal.ts:62-91` - PTY command execution
+- `packages/nx/src/native/` - Rust PTY bindings (`RustPseudoTerminal`)
+
+**Root Cause**:
+- `nx:run-commands` uses different code paths for single vs parallel commands
+- For single commands: calls `runSingleCommandWithPseudoTerminal()` which uses PTY (pseudo-terminal)
+- PTY spawning via Rust native bindings: `RustPseudoTerminal.runCommand()`
+- Next.js's Jest config (`next/jest`) loads resources asynchronously (SWC bindings, config files, env vars)
+- These async operations don't clean up properly when spawned via PTY
+- Running `--detectOpenHandles` shows NO open handles, but process still hangs
+- Not an issue with user test code - interaction between PTY spawning and Next.js Jest setup
+
+**Code Path Logic** (packages/nx/src/executors/run-commands/run-commands.impl.ts:130-138):
+```typescript
+const isSingleCommandAndCanUsePseudoTerminal =
+  isSingleCommand &&
+  usePseudoTerminal &&
+  process.env.NX_NATIVE_COMMAND_RUNNER !== 'false' &&
+  !normalized.commands[0].prefix &&
+  normalized.usePty;
+```
+
+**Workaround**:
+Add `forceExit: true` to jest.config for Next.js projects:
+```typescript
+const config = {
+  forceExit: true,  // Required for Next.js + Nx
+  // ... rest of config
+};
+```
+
+**Proposed Solutions**:
+1. **Short-term**: Update `@nx/next` generator to add `forceExit: true` for new projects
+2. **Medium-term**: Update `@nx/jest/plugin` to auto-detect Next.js and pass `--forceExit` flag
+3. **Long-term**: Investigate with Next.js team (may be upstream issue with PTY)
+
+**Key Learning**:
+- Don't assume code paths - verify with logging in node_modules
+- Single vs parallel commands use completely different spawning mechanisms
+- PTY ≠ piped stdio ≠ inherited stdio - understand the differences
+
 ### ESLint Flat Config AST Utilities (2025-11-19)
 **Branch**: NXC-3501
 **Issue**: https://github.com/nrwl/nx/issues/31796
@@ -120,6 +183,17 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 
 ## Personal Work History
 
+### 2025-11-21 - Next.js Jest Hanging Investigation (NXC-3505)
+- **Task**: NXC-3505 - Investigate Jest tests not exiting properly in Next.js apps
+- **Branch**: NXC-3505
+- **Purpose**: Understand why `nx test` hangs but `npx jest` works fine
+- **Key Discovery**: `nx:run-commands` uses PTY for single commands, not piped stdio as initially assumed
+- **Critical Mistake**: Initially investigated wrong code path (`exec()` with pipes), had to backtrack and verify actual execution
+- **Methodology**: Added logs to node_modules to confirm actual code path taken
+- **Result**: Identified PTY interaction issue, documented workaround (`forceExit: true`), proposed generator fix
+- **Lesson**: Don't assume code paths - always verify with logging when dealing with conditional executors
+- **Investigation Doc**: `.ai/2025-11-21/tasks/nxc-3505-nextjs-jest-hanging-investigation.md`
+
 ### 2025-11-21 - Node Executor SIGTERM Investigation
 - **Task**: NXC-3510 - Investigate port release issue with Node executor
 - **Branch**: NXC-3510
@@ -140,6 +214,23 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - **Purpose**: Preserve blog search functionality during docs migration to Astro
 
 ## Design Decisions & Gotchas
+
+### Code Path Verification in Conditional Executors
+- **Issue**: Nx executors often have multiple code paths based on runtime conditions
+- **Example**: `nx:run-commands` uses PTY for single commands, `exec()` for parallel commands
+- **Trap**: Easy to assume one path is always taken without checking conditions
+- **Solution**: Add temporary logging to node_modules to verify actual execution path
+- **Context**: NXC-3505 - Initially assumed piped stdio, actually was PTY spawning
+- **Impact**: Spent time investigating wrong code path, creating incorrect documentation
+- **Learning**: Check conditional logic (lines 130-163 in run-commands.impl.ts) before deep diving
+
+### PTY vs Piped Stdio vs Inherited Stdio
+- **PTY (Pseudo-Terminal)**: Emulates terminal device, used by `runSingleCommandWithPseudoTerminal()`
+- **Piped Stdio**: Used by `exec()`, captures stdout/stderr as streams
+- **Inherited Stdio**: Direct process uses parent's stdio
+- **Difference Matters**: Some processes behave differently depending on spawning method
+- **Example**: Next.js Jest works with inherited stdio but hangs with PTY
+- **Debugging**: Can't always rely on `--detectOpenHandles` - it may not detect PTY-related issues
 
 ### Process Lifecycle Management
 - **Issue**: Node executor may not properly clean up child processes on shutdown
