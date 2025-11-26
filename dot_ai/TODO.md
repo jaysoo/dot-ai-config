@@ -2,6 +2,13 @@
 
 ## In Progress
 
+- [ ] Test Nuxt 4 migration for Colum https://www.npmjs.com/package/nx/v/0.0.0-pr-33611-c0ec6b0 (2025-11-26 11:00)
+
+- [ ] Publish @nx/key with axios 1.13.2 fix (2025-11-26)
+  - Branch: NXC-3519
+  - Goal: Release @nx/key package with updated axios dependency
+  - Context: axios 1.13.2 fixes security/bug issues; breaking change in 1.8.0 doesn't affect @nx/key
+
 - [ ] Iterate on CNW templates 
   - Plan: `.ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md`
 
