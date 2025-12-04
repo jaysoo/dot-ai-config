@@ -2,15 +2,29 @@
 
 ## In Progress
 
-- [ ] Test Nuxt 4 migration for Colum https://www.npmjs.com/package/nx/v/0.0.0-pr-33611-c0ec6b0 (2025-11-26 11:00)
+- [ ] Test Nuxt 4 ai-migrations in /tmp/nuxt2 (2025-11-27 12:55)
+  - Setup guide: `/tmp/nuxt1/ai-migrations/SETUP_NUXT3_TEST_FILES.md`
+  - Migration instructions: `/tmp/nuxt1/ai-migrations/MIGRATE_NUXT_4.md`
+  - Steps:
+    1. Create new Nuxt workspace: `npx -y create-nx-workspace@latest nuxt2 --preset=nuxt --appName=demo --no-interactive --nx-cloud=skip`
+    2. Add Nuxt 3 test files per SETUP_NUXT3_TEST_FILES.md
+    3. Run `nx migrate 22.2.0-beta.X` (check latest beta)
+    4. Follow MIGRATE_NUXT_4.md instructions
+    5. Verify all patterns migrated
+
 
 - [ ] Publish @nx/key with axios 1.13.2 fix (2025-11-26)
   - Branch: NXC-3519
   - Goal: Release @nx/key package with updated axios dependency
   - Context: axios 1.13.2 fixes security/bug issues; breaking change in 1.8.0 doesn't affect @nx/key
 
-- [ ] Iterate on CNW templates 
+- [ ] Iterate on CNW templates
   - Plan: `.ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md`
+
+- [ ] Add GitHub push progress indicator and timeout (2025-12-03)
+  - Plan: `.ai/2025-12-03/tasks/github-push-progress-timeout.md`
+  - Goal: Show ora spinner during GitHub push and timeout after 10 seconds if no response
+  - Context: Improve UX during `gh repo create` in CNW template flow
 
 - [ ] Investigate rootDir issue in swc executor for Nx 21 (2025-11-06 09:16)
   - Repro: https://github.com/HaasStefan/nx-repro-rootDir-swc-rollup-in-angular
@@ -46,6 +60,8 @@
 ## Completed
 
 ### November 2025
+
+- [x] Test Nuxt 4 migration for Colum https://www.npmjs.com/package/nx/v/0.0.0-pr-33611-c0ec6b0 (2025-11-26 11:00)
 
 - [x] Add Szymon to Engineering team in 1password (talk to Victor/Jeff)
 

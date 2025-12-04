@@ -41,6 +41,28 @@ Updated axios dependency in `@nx/key` package from previous version to 1.13.2.
 - **No impact on @nx/key**: The package only uses relative paths with its configured `baseURL`, so the breaking change doesn't affect it
 - Lockfile changes (removing `@nx/key-*` optional dependency stubs) are expected npm cleanup behavior, not caused by axios bump
 
+### NXC-3500: Update Custom ESLint Rules Generator for ESLint v9
+
+**Linear Issue**: https://linear.app/nxdev/issue/NXC-3500/update-custom-eslint-rules-generator-for-eslint-v9
+**Branch**: NXC-3500
+
+Fixed the `@nx/eslint:workspace-rule` generator to install correct `@typescript-eslint/utils` version based on the workspace's ESLint version.
+
+**Problem:**
+- The `workspace-rules-project` generator always installed `@typescript-eslint/utils` v7, which is incompatible with ESLint v9
+- When running `nx g @nx/eslint:workspace-rule my-custom-rule` in an ESLint v9 workspace, the generated rule project would have version conflicts
+
+**Solution:**
+- Updated `workspace-rules-project.ts` to use `getTypeScriptEslintVersionToInstall(tree)` utility
+- This dynamically detects the installed ESLint version and installs the compatible `@typescript-eslint/utils`:
+  - ESLint v8 → `@typescript-eslint/utils` v7
+  - ESLint v9 → `@typescript-eslint/utils` v8
+
+**File Changed:**
+- `packages/eslint/src/generators/workspace-rules-project/workspace-rules-project.ts`
+
+**Commit**: `bf964504ef` - `fix(linter): use correct @typescript-eslint/utils version for ESLint v9`
+
 ## Notes
 
 - The `@nx/vitest` plugin is the dedicated Vitest plugin introduced to separate Vitest functionality from the Vite build tool plugin
