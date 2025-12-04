@@ -201,14 +201,19 @@ class SearchEngine:
         # Apply date filter
         if parsed_date_filter:
             all_results = {
-                k: v for k, v in all_results.items() 
+                k: v for k, v in all_results.items()
                 if self._is_date_in_filter(v['item'].date, parsed_date_filter)
             }
-            
-        # Sort by score and limit results
+
+        # Apply recency boost to scores
+        for result in all_results.values():
+            recency_boost = self._calculate_recency_boost(result['item'].date)
+            result['score'] += recency_boost
+
+        # Sort by score (with recency boost applied) and limit results
         sorted_results = sorted(
-            all_results.values(), 
-            key=lambda x: x['score'], 
+            all_results.values(),
+            key=lambda x: x['score'],
             reverse=True
         )[:max_results]
         
@@ -257,10 +262,38 @@ class SearchEngine:
         # Word boundary matches
         query_words = query_lower.split()
         filename_words = filename_lower.replace('-', ' ').replace('_', ' ').split()
-        
+
         matches = sum(1 for word in query_words if word in filename_words)
         return matches * 0.5
-        
+
+    def _calculate_recency_boost(self, item_date: str) -> float:
+        """Calculate a recency boost based on how recent the file is.
+
+        Args:
+            item_date: Date string in YYYY-MM-DD format
+
+        Returns:
+            Recency boost score (0.0 to 3.0)
+        """
+        try:
+            file_date = datetime.strptime(item_date, '%Y-%m-%d').date()
+            today = datetime.now().date()
+            days_old = (today - file_date).days
+
+            # Boost recent files more heavily
+            if days_old <= 1:
+                return 3.0  # Today or yesterday
+            elif days_old <= 7:
+                return 2.0  # Within a week
+            elif days_old <= 30:
+                return 1.0  # Within a month
+            elif days_old <= 90:
+                return 0.5  # Within 3 months
+            else:
+                return 0.0  # Older than 3 months
+        except ValueError:
+            return 0.0
+
     def _extract_snippet(self, query: str, content: str, snippet_length: int = 200) -> str:
         """Extract a relevant snippet from content around the query.
         

@@ -81,32 +81,28 @@ class ContentIndexer:
                 
     def _should_index_file(self, file_path: Path) -> bool:
         """Determine if a file should be indexed.
-        
+
         Args:
             file_path: Path to the file
-            
+
         Returns:
             True if the file should be indexed
         """
-        # Skip binary files and common non-content files
-        skip_extensions = {'.pyc', '.pyo', '.pyd', '.so', '.dll', '.exe', 
-                          '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.ico',
-                          '.zip', '.tar', '.gz', '.rar', '.7z', '.json'}
-        
-        if file_path.suffix.lower() in skip_extensions:
+        # Only index markdown files
+        if file_path.suffix.lower() != '.md':
             return False
-            
+
         # Skip hidden files and directories
         if any(part.startswith('.') for part in file_path.parts):
             return False
-            
+
         # Skip very large files (>10MB)
         try:
             if file_path.stat().st_size > 10 * 1024 * 1024:
                 return False
         except OSError:
             return False
-            
+
         return True
         
     async def _index_file(self, file_path: Path, date: str):
