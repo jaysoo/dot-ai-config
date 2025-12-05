@@ -3,10 +3,8 @@
     "allow": [
       "Read",
       "List",
-      "Edit",
       "Edit(.ai/**)",
       "Bash(nx:*)",
-      "Bash(npx:*)",
       "Bash(git:*)",
       "Bash(npm:*)", 
       "Bash(find:*)",
