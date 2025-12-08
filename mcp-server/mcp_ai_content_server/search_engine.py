@@ -205,6 +205,16 @@ class SearchEngine:
                 if self._is_date_in_filter(v['item'].date, parsed_date_filter)
             }
 
+        # Apply priority boost for important files (SUMMARY.md, TODO.md)
+        for result in all_results.values():
+            priority_boost = self._calculate_priority_file_boost(result['item'].filename)
+            result['score'] += priority_boost
+
+        # Apply category boost (dictations prioritized)
+        for result in all_results.values():
+            category_boost = self._calculate_category_boost(result['item'].category)
+            result['score'] += category_boost
+
         # Apply recency boost to scores
         for result in all_results.values():
             recency_boost = self._calculate_recency_boost(result['item'].date)
@@ -265,6 +275,51 @@ class SearchEngine:
 
         matches = sum(1 for word in query_words if word in filename_words)
         return matches * 0.5
+
+    def _calculate_priority_file_boost(self, filename: str) -> float:
+        """Calculate a priority boost for important files like SUMMARY.md and TODO.md.
+
+        Args:
+            filename: Name of the file
+
+        Returns:
+            Priority boost score (0.0 to 5.0)
+        """
+        filename_upper = filename.upper()
+
+        # High priority files that should appear first
+        if filename_upper == 'SUMMARY.MD':
+            return 5.0
+        elif filename_upper == 'TODO.MD':
+            return 5.0
+        # Medium priority for partial matches
+        elif 'SUMMARY' in filename_upper:
+            return 2.0
+        elif 'TODO' in filename_upper:
+            return 2.0
+
+        return 0.0
+
+    def _calculate_category_boost(self, category: str) -> float:
+        """Calculate a category boost to prioritize certain content types.
+
+        Args:
+            category: Category of the content item
+
+        Returns:
+            Category boost score (0.0 to 4.0)
+        """
+        # Dictations are prioritized as they contain important user notes
+        if category == 'dictations':
+            return 4.0
+        # Tasks are second priority
+        elif category == 'tasks':
+            return 2.0
+        # Specs are third priority
+        elif category == 'specs':
+            return 1.0
+
+        return 0.0
 
     def _calculate_recency_boost(self, item_date: str) -> float:
         """Calculate a recency boost based on how recent the file is.

@@ -2,6 +2,11 @@
 
 ## In Progress
 
+- [ ] Migrate Nx packages with `import = require` to ESM-compatible imports (2025-12-05)
+  - Plan: `.ai/2025-12-05/tasks/esm-import-migration-plan.md`
+  - Goal: Enable dual CJS/ESM compilation for remaining 35 packages
+  - Context: Currently 3 packages build ESM (docker, gradle, maven); ~18 packages have `import = require` patterns
+
 - [ ] Test Nuxt 4 ai-migrations in /tmp/nuxt2 (2025-11-27 12:55)
   - Setup guide: `/tmp/nuxt1/ai-migrations/SETUP_NUXT3_TEST_FILES.md`
   - Migration instructions: `/tmp/nuxt1/ai-migrations/MIGRATE_NUXT_4.md`

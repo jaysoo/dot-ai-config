@@ -746,3 +746,24 @@ npx nx migrate 22.0.0-beta.7
 - Always verify: `npm view package@tag version` or `pnpm view package@tag version`
 - Use explicit versions for reproducible testing
 
+## 🔐 1Password CLI (op)
+
+### Ocean/Nx Cloud Local Dev
+The nx-api fetches secrets from 1Password at runtime. If you see vault errors:
+```
+"Engineering" isn't a vault in this account
+```
+
+**Fix:**
+```bash
+op signin
+# Select: tuskteam.1password.com
+```
+
+### Quick Reference
+```bash
+op account list              # Check current account
+op signin                    # Re-authenticate (pick tuskteam)
+op signout --all            # Sign out of all accounts
+```
+

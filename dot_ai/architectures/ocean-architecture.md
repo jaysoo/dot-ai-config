@@ -173,6 +173,51 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
   2. Global/Standalone: modules in `.nx/installation/node_modules`
 - nx-cloud binary must support both modes
 
+## Local Development Setup
+
+### 1Password CLI (op)
+
+The nx-api uses 1Password CLI to fetch secrets at runtime. If you see errors like:
+```
+"Engineering" isn't a vault in this account
+```
+
+**Fix:** Re-authenticate to the correct 1Password account:
+```bash
+# Check current account
+op account list
+
+# Sign in to Tusk team account
+op signin
+# Select: tuskteam.1password.com
+```
+
+### Running Nx Cloud Locally
+
+**With API (full stack):**
+```bash
+npx nps nxCloud.serve.withApi
+```
+Requires: MongoDB running, 1Password authenticated to tuskteam
+
+**Frontend only (no API):**
+```bash
+npx nps nxCloud.serve
+```
+Serves on port 4202, uses mock/hardcoded data
+
+### E2E Testing
+
+E2E tests bypass Auth0 by creating public organizations:
+```bash
+nx run nx-cloud-e2e-playwright:e2e --grep "pattern"
+```
+
+Key fixtures:
+- `db.createTestOrganization({ isPublic: true })` - Creates org viewable without login
+- `db.createTestCIPE()` - Creates test pipeline execution
+- `auth.login('DAVID_SMITH')` - Handles Auth0 login when needed
+
 ## Technology Stack
 
 ### Core Technologies
