@@ -22,6 +22,7 @@ Quick reference for team members.
 | Rares | Scotland, UK | Partner: Mariana, baby daughter; Wedding Aug 2026 in Crete |
 | Steve Pentland | Welland(?), ON | |
 | Szymon | Poland | |
+| Victor | | CTO |
 
 ## Upcoming Events
 

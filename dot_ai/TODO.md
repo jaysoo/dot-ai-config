@@ -1,6 +1,25 @@
 # TODO
 
 ## In Progress
+- [ ] Louie 1:1
+  - Really enjoyed agent resource work and feature work in general
+  - Working on background/backend is a bit demoralizing
+
+- [ ] Altan 1:1
+  - Continuous non cachable DTE
+  - Ship these things but dogfood is slow
+  - Generally okay with Red Panda work but feels like he doesn't add much value beyond execution
+  - Would like some time to do team multiplier work
+
+- [ ] Victor 1:1
+  - AI Czar
+  - Altan working on non-Red Panda work -- one day a week? Refactors, etc. team multiplier work -- talk to Nicole, Louie, etc. to coordinate
+  - Leo and Max unhappiness
+  - https://www.youtube.com/watch?v=JvosMkuNxF8&t=951s AI ROI
+  - Tracing I/O for Enteprise -- talk to Steve about concerns
+
+- [ ] CNW + Nest https://github.com/nrwl/nx/issues/33776 
+  - Regression in 22.2.0: @nx/nest app fails to serve immediately after generation ("Cannot find module 'nx'") #33776
 
 - [ ] Migrate Nx packages with `import = require` to ESM-compatible imports (2025-12-05)
   - Plan: `.ai/2025-12-05/tasks/esm-import-migration-plan.md`

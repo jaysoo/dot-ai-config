@@ -281,23 +281,23 @@
 | Patrick Mariglia | 1643 | 0 | 0 | 84 | 1727 |
 | Steve Pentland | 1043 | 0 | 0 | 104 | 1147 |
 | Szymon Wojciechowski | 502 | 0 | 0 | 7 | 509 |
-| Colum Ferry | 1 | 346 | 0 | 0 | 347 |
+| Louie Weng | 129 | 31 | 3 | 305 | 468 |
 | Altan Stalker | 128 | 0 | 2 | 259 | 389 |
-| MaxKless | 0 | 63 | 290 | 27 | 380 |
+| Max Kless | 0 | 63 | 290 | 27 | 380 |
 | Rares Matei | 216 | 30 | 0 | 107 | 353 |
-| Chau Tran | 14 | 22 | 0 | 303 | 339 |
-| Jason Jean | 0 | 267 | 17 | 48 | 332 |
+| Chau Tran | 23 | 22 | 0 | 303 | 348 |
+| Colum Ferry | 1 | 346 | 0 | 0 | 347 |
+| Jason Jean | 0 | 272 | 17 | 48 | 337 |
 | James Henry | 43 | 55 | 6 | 214 | 318 |
-| Jack Hsu | 0 | 275 | 4 | 19 | 298 |
+| Jack Hsu | 0 | 276 | 4 | 19 | 299 |
 | Jonathan Cammisuli | 26 | 26 | 27 | 201 | 280 |
-| Leosvel Pérez Espinosa | 0 | 254 | 3 | 2 | 259 |
+| Leosvel Pérez Espinosa | 0 | 256 | 3 | 0 | 259 |
 | Benjamin Cabanes | 1 | 78 | 0 | 178 | 257 |
 | Mark Lindsey | 0 | 0 | 0 | 183 | 183 |
 | Victor Savkin | 9 | 19 | 4 | 124 | 156 |
 | Craigory Coppola | 0 | 127 | 0 | 5 | 132 |
-| Caleb Ukle | 8 | 85 | 0 | 24 | 117 |
-| Louie Weng | 67 | 31 | 3 | 305 | 406 |
 | Nicole Oliver | 3 | 11 | 0 | 90 | 104 |
+| Dillon | 0 | 0 | 0 | 71 | 71 |
 
 ---
 
@@ -597,13 +597,13 @@ The AI team shipped **4 major projects** transforming CI:
 
 2025 was a big year. We shipped a lot, solved hard problems, and kept the product moving forward.
 
-Infrastructure made Nx Cloud enterprise-ready with SOC2 compliance, multi-cloud support, and observability across the stack. The CLI team kept pace with the ecosystem, shipping support for every major framework release. Nx Cloud became easier to adopt with a streamlined onboarding flow and flaky task analytics. And RedPanda brought Self-Healing CI from concept to production, now running on enterprise customer pipelines.
+Infrastructure expanded our enterprise capabilities with Azure support, Docker Layer Caching, and observability across the stack. The CLI team kept pace with the ecosystem, shipping support for every major framework release. Nx Cloud became easier to adopt with a streamlined onboarding flow and flaky task analytics. And RedPanda brought Self-Healing CI from concept to production, now running on enterprise customer pipelines.
 
 Here's what we shipped together:
 
 ## Infrastructure
 **Steve Pentland** and the infra team handled the unglamorous but critical work:
-- 40+ completed projects: SOC2 compliance, Azure expansion, observability
+- 40+ completed projects: Azure expansion, Docker Layer Caching, observability
 - **Patrick Mariglia** (1,700+ commits) delivered Docker Layer Caching, tracing, and cost reporting
 - **Szymon** modernized deployments with Helm charts and MongoDB upgrades
 
@@ -629,12 +629,13 @@ Here's what we shipped together:
 - **James Henry** shipped Nx Release revamp and TUI core, then Self-Healing product direction
 - **Altan Stalker** built Time-to-Green analytics and Self-Healing observability
 - **Mark Lindsey** delivered EU Pro support, then Self-Healing filtering and Azure support
+- **Ben Cabanes** improved self-healing check runs and GitHub comment theming
 
 ## Numbers
 - 7,000+ commits across our repos
 - 80+ completed projects
 - Node 24, Angular 21, Next 16, Expo 54 support
-- Multi-cloud enterprise support (GCP, AWS, Azure)
+- Azure single-tenant support
 - Self-Healing CI in production with enterprise customers
 
 Thanks for the work this year. Looking forward to 2026.

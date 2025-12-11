@@ -37,6 +37,41 @@ Implemented static build-time banner system for nx-dev and astro-docs sites.
 - Andrew: Neighbors with Leo in Barcelona
 - January 2026: Leo and Andrew visiting Swissbank(?) with Miro and Luzia(?)
 
+### Eng Wrapped 2025 Presentation
+Built interactive React presentation showcasing Nx Engineering team's 2025 accomplishments.
+
+**Key Features Implemented:**
+- 23-slide presentation with smooth scroll-snap navigation
+- Scroll interruption system - scrolling during animation cancels current and speeds to next section
+- Whimsical animations (wiggle, popIn, slideInUp) with staggered delays
+- Teams page with 5 accomplishments per team and animated cards that pause on hover
+- Real images/logos instead of emojis (cloud providers, Grafana dashboard, Maven/.NET)
+
+**Slides Include:**
+- Hero/intro with welcome message
+- Contributor stats (commits per team member)
+- "Big Features" section: Self-Healing CI, Helm Chart v1.0, Full Observability, Azure Single Tenant
+- "Any Cloud • Any Scale • Always On" infrastructure slide
+- New Ecosystems (Gradle, Maven, .NET)
+- Projects showcase (80+ projects, custom cloud options)
+- Teams page (CLI, Web, SDK, Cloud, Docs, DevRel)
+- Thanks/closing slides
+
+**Technical Details:**
+- React with useState, useEffect, useRef hooks
+- Tailwind CSS for styling
+- Vite dev server at localhost:5173
+- requestAnimationFrame/cancelAnimationFrame for smooth scroll animations
+- CSS keyframe animations with staggered delays
+
+**Content Verification:**
+- Verified Helm Chart content against Linear project (Kustomize → Helm migration, ArgoCD AppSets)
+- Replaced fake helm install command with visual feature cards after checking actual repo
+
+**Files:**
+- `/Users/jack/projects/eng-wrapped/src/EngWrapped.jsx` - Main 23-slide presentation
+- `/Users/jack/projects/eng-wrapped/public/` - Image assets (grafana-dashboard.png, cloud logos, etc.)
+
 ## Notes
 - Banner JSON uses `id` field for localStorage dismissal tracking (changing ID resets dismissals)
 - `activeUntil` field allows automatic expiration without code changes
