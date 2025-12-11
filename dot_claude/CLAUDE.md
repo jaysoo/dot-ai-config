@@ -467,6 +467,23 @@ export default defineConfig({
   - Always verify with `npm view nx@next version` before using
   - Prefer explicit versions: `npx nx migrate 22.0.0-beta.7`
 
+### GitHub Actions & setup-node Side Effects
+
+**`setup-node` with `registry-url` sets `NODE_AUTH_TOKEN`:**
+- Even without a real NPM token, `setup-node` exports a dummy placeholder: `XXXXX-XXXXX-XXXXX-XXXXX`
+- Code that checks `process.env.NODE_AUTH_TOKEN` may rely on this side effect
+- When migrating away from `setup-node` (e.g., to mise), this side effect is lost
+
+**NPM Trusted Publisher (OIDC):**
+- Uses `id-token: write` permission instead of `NODE_AUTH_TOKEN`
+- No token secrets needed in GitHub environment
+- CI detection should use `GITHUB_ACTIONS` env var, not token presence
+
+**Debugging CI code path issues:**
+- Check what environment variables are expected vs actually set
+- `setup-node`, `setup-python`, etc. often have side effects beyond their main purpose
+- When workflows change (e.g., mise migration), verify all implicit dependencies
+
 ### Nx Docker Plugin (@nx/docker)
 - **Target Naming**: Use `docker:build` not `docker-build`
 - **Dockerfile Requirements**:

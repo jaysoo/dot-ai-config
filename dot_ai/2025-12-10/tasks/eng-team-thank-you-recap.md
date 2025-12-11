@@ -593,47 +593,50 @@ The AI team shipped **4 major projects** transforming CI:
 
 ---
 
-# Thank You, Engineering Team! 🙌
+# Thanks, Engineering Team
 
-2025 has been an incredible year of shipping. Here's a celebration of what we accomplished together:
+2025 was a big year. We shipped a lot, solved hard problems, and kept the product moving forward.
 
-## Infrastructure Team
-**Steve Pentland** and the infra team built the foundation for everything:
-- **40+ completed projects** including SOC2 compliance, Azure expansion, and observability infrastructure
-- **Patrick Mariglia** led with 1,700+ commits delivering Docker Layer Caching, distributed tracing, and cost reporting
-- **Szymon** modernized our deployment with Helm charts, MongoDB upgrades, and multi-cloud mirrors
+Infrastructure made Nx Cloud enterprise-ready with SOC2 compliance, multi-cloud support, and observability across the stack. The CLI team kept pace with the ecosystem, shipping support for every major framework release. Nx Cloud became easier to adopt with a streamlined onboarding flow and flaky task analytics. And RedPanda brought Self-Healing CI from concept to production, now running on enterprise customer pipelines.
 
-## Nx CLI Team
-**Jason Jean** and the CLI crew shipped framework support at remarkable velocity:
-- **Colum Ferry** delivered Expo 54, Nuxt 4, Next 16, Vitest 4, and Storybook 10 support
-- **Leosvel Pérez** landed Angular 21, Cypress 15, and TUI batch process improvements
-- **Jack Hsu** shipped GitHub Templates for CNW, Node 24 support, and ESLint improvements
-- **Max Kless** enhanced Nx Console and shipped Gradle/AI tooling
-- **Craigory Coppola** shipped .NET plugin support and improved TUI stability with process cleanup and bottom chrome
+Here's what we shipped together:
 
-## Nx Cloud Team
-**Nicole Oliver** and the cloud team transformed the user experience:
-- **Chau Tran** built the new one-page onboarding flow, enterprise usage UI, and PostHog integration
-- **Louie Weng** improved DTE performance, termination state tracking, and billing APIs
-- **Rares Matei** drove CI stability with GitHub token fixes and security scanning
+## Infrastructure
+**Steve Pentland** and the infra team handled the unglamorous but critical work:
+- 40+ completed projects: SOC2 compliance, Azure expansion, observability
+- **Patrick Mariglia** (1,700+ commits) delivered Docker Layer Caching, tracing, and cost reporting
+- **Szymon** modernized deployments with Helm charts and MongoDB upgrades
 
-## RedPanda Team
-**Victor Savkin** leads the RedPanda team, architecting Self-Healing CI and the Nx AI future:
-- Self-Healing CI now supports GitHub, GitLab, and Azure DevOps
-- **Jon Cammisuli** had an exceptional year: shipped TUI to Windows, built S3/Azure/GCS caches with perpetual licensing, then drove 50+ Self-Healing issues including GitLab parity and flaky task handling
-- **James Henry** delivered the Nx Release revamp and TUI core features, then shifted to Self-Healing product direction and enterprise customer feedback loops
-- **Altan Stalker** built the **Time-to-Green (TTG) analytics system**—the flagship metric used in customer demos, prospect conversations, and marketing to demonstrate Nx Cloud value—then added Self-Healing observability with Grafana tracing
-- **Mark Lindsey** shipped EU prepaid Pro support and GitHub integration improvements, then delivered Self-Healing filtering, settings UI, and Azure support
+## Nx CLI
+**Jason Jean** kept the CLI moving:
+- **Colum Ferry** shipped framework support: Expo 54, Nuxt 4, Next 16, Vitest 4, Storybook 10
+- **Leosvel Pérez** landed Angular 21, Cypress 15, and TUI improvements
+- **Jack Hsu** added GitHub Templates for CNW, Node 24, and ESLint fixes
+- **Max Kless** improved Nx Console and built Gradle/AI tooling
+- **Craigory Coppola** shipped .NET plugin support and fixed TUI stability issues
 
-## By The Numbers
-- **7,000+ commits** across our main repositories
-- **80+ completed projects** across 4 teams
-- **Node 24, Angular 21, Next 16, Expo 54** and countless framework updates
-- **Multi-cloud** (GCP, AWS, Azure) enterprise support
-- **Self-Healing CI** launched and adopted by enterprise customers
+## Nx Cloud
+**Nicole Oliver** focused on making the product easier to use:
+- **Chau Tran** built the new onboarding flow, enterprise usage UI, and PostHog integration
+- **Louie Weng** improved DTE performance and billing APIs
+- **Rares Matei** fixed CI stability and security scanning
+- **Dillon** built flaky task analytics UI and the new user welcome page
 
-**Every bug fixed, every feature shipped, every late-night incident resolved—it all added up to an extraordinary year. Thank you for your dedication, creativity, and relentless pursuit of making developers more productive.**
+## RedPanda
+**Victor Savkin** architected Self-Healing CI and set the AI direction:
+- The team shipped GitHub, GitLab, and Azure DevOps support for Self-Healing CI
+- **Jon Cammisuli** drove TUI on Windows, S3/Azure/GCS caches, GitLab parity, and flaky task handling
+- **James Henry** shipped Nx Release revamp and TUI core, then Self-Healing product direction
+- **Altan Stalker** built Time-to-Green analytics and Self-Healing observability
+- **Mark Lindsey** delivered EU Pro support, then Self-Healing filtering and Azure support
 
-Here's to an even bigger 2026! 🚀
+## Numbers
+- 7,000+ commits across our repos
+- 80+ completed projects
+- Node 24, Angular 21, Next 16, Expo 54 support
+- Multi-cloud enterprise support (GCP, AWS, Azure)
+- Self-Healing CI in production with enterprise customers
+
+Thanks for the work this year. Looking forward to 2026.
 
 ---
