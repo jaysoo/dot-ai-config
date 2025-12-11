@@ -36,7 +36,7 @@ Created a new React client component (`PluginDirectory.tsx`) to restore interact
 - Build passes
 - Lint passes
 - UI tested in dev server - search and sort controls render correctly
-- Awaiting final testing with stats enabled
+- **Committed:** `feat(astro-docs): restore search and filter controls to plugin registry`
 
 ---
 
@@ -49,6 +49,21 @@ Searched personal notes for CNW (Create Nx Workspace) and Nx work from the past 
    - `dot_ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md` - Main implementation
    - `dot_ai/2025-11-12/tasks/track-simplified-cloud-prompt-variants.md` - A/B testing tracking
    - `dot_ai/2025-12-02/tasks/nxc-3464-pr-review-fixes.md` - PR cleanup
+
+---
+
+## Company Hack Day
+
+**Dictation:** `.ai/2025-12-08/dictations/hackday-recap.md`
+
+Six projects were demoed:
+
+1. **Domain Assist for Nx Cloud** (Altan) - Interactive entity graph + natural language MongoDB query generation for the 4,000-line Kotlin domain model
+2. **OTEL for Nx CLI** (Max & Colum) - OpenTelemetry integration with user consent flow, collecting generator usage, OS distribution, daemon stats, and performance traces
+3. **Leonard - AI QA for Docs** (James) - Automated doc QA using Claude Code SDK with personas (new user, NX skeptic), auto-creates Linear issues
+4. **Self-Healing Screen UI Redesign** (Ben) - IDE-style all-at-once layout with resizable panels, new "Apply Fix" dialog with auto-apply option
+5. **AI Chat for Nx Graph** (Jason) - Claude integration for graph navigation, AI-powered config editing, and executive summary reports with activity heatmaps
+6. **Workspace Contributions Dashboard** (Mark) - Analytics for developer contributions per workspace with pass/fail rates, self-healing stats
 
 ---
 

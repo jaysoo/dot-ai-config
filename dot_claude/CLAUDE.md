@@ -75,6 +75,61 @@ When commit message is rejected:
   - Plan: `dot_ai/yyyy-mm-dd/tasks/name-of-task.md`
 ```
 
+## 👥 Personnel Notes
+
+**Location:** `.ai/personnel/[name].md` (lowercase, hyphenated for multi-word names)
+
+### When to Update
+
+1. **During `/dictate`** - If user mentions colleagues/employees, create or update their file
+2. **During conversations** - If user mentions personal details about team members
+3. **After 1:1 meetings** - When user discusses 1:1 prep or follow-ups
+4. **When mentioned in context** - Any relevant info about team members
+
+### What to Capture
+
+**Personal (for bonding):**
+- Location (city, country)
+- Partner/spouse name
+- Children (names, ages if mentioned)
+- Pets
+- Hobbies/interests
+- Food/drink preferences
+- Favorite restaurants
+
+**Professional:**
+- Team and role
+- Current projects/focus areas
+- Goals and aspirations
+- Strengths and skills
+- Areas they're developing
+
+**1:1 Notes:**
+- Dated entries from 1:1 discussions
+- Action items or follow-ups
+- Topics to revisit
+
+### File Structure
+
+- **OVERVIEW.md** - Quick reference table with name, location, key notes. **Always update this when adding/modifying personnel files.**
+- **_template.md** - Template for new entries
+- **[name].md** - Individual files (lowercase, hyphenated for multi-word names)
+
+Examples:
+- `.ai/personnel/leo.md`
+- `.ai/personnel/steve-pentland.md`
+
+### Maintaining OVERVIEW.md
+
+Keep this file current as a quick-glance reference:
+- Table with Name, Location, Key Notes columns
+- Upcoming Events section for weddings, trips, etc.
+- To Clarify section for unknowns to fill in later
+
+### Privacy Note
+
+These notes are for Jack's personal reference to build better relationships and have more effective 1:1s. Keep entries factual and professional.
+
 ## 🔍 MCP Server Usage (Priority)
 
 **ALWAYS use MyNotes MCP first for:**
