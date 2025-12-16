@@ -1,19 +1,54 @@
 # PR #33822 Verification Plan: Prisma node_modules Copy Fix
 
+## Status: ✅ COMPLETED with Optimization
+
 ## Issue Summary
 
 PR #33822 removes `node_modules` from the ignore list in `copy-assets-handler.ts` to allow Prisma clients (generated in `node_modules`) to be copied during builds.
 
-## Critical Finding: Incomplete Fix
+## Critical Finding: Incomplete Fix + Performance Issue
 
 **The PR only fixes ONE of TWO locations:**
 
 | Method | Line | Fixed? |
 |--------|------|--------|
 | `processAllAssetsOnce()` (async) | 143 | ✅ Yes |
-| `processAllAssetsOnceSync()` (sync) | 160 | ❌ No |
+| `processAllAssetsOnceSync()` (sync) | 160 | ❌ No (FIXED) |
 
-**Action Required:** The sync method at line 160 also needs the same fix.
+**Performance Issue Discovered:** Simply removing `**/node_modules/**` from ignore causes 39,000% performance regression for broad glob patterns (e.g., `**/*.json` takes 185ms vs 0.47ms).
+
+## Solution Implemented: Smart node_modules Filtering
+
+Instead of unconditionally removing node_modules from ignore, we now **conditionally allow node_modules traversal only when the asset input path explicitly starts with `node_modules/`**.
+
+### New Helper Method
+```typescript
+private getIgnorePatternsForAsset(ag: AssetEntry): string[] {
+  const inputStartsWithNodeModules =
+    ag.input.startsWith('node_modules/') || ag.input === 'node_modules';
+
+  if (inputStartsWithNodeModules) {
+    return ['**/.git/**'];
+  }
+  return ['**/node_modules/**', '**/.git/**'];
+}
+```
+
+### Behavior
+| Asset Input | node_modules Ignored? | Example |
+|-------------|----------------------|---------|
+| `node_modules/.prisma/client` | No | Prisma client copied ✅ |
+| `node_modules/@prisma/client` | No | @prisma/client copied ✅ |
+| `apps/api` | Yes | Performance preserved ✅ |
+| `.` (root) | Yes | Performance preserved ✅ |
+
+## Test Results
+
+All 12 tests pass including 4 new node_modules-specific tests:
+- ✅ should copy files from node_modules/.prisma using async method
+- ✅ should copy files from node_modules/.prisma using sync method
+- ✅ should copy files from node_modules/@prisma/client
+- ✅ should still ignore node_modules for non-node_modules patterns
 
 ---
 

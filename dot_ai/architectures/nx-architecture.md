@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2025-11-21
+Last Updated: 2025-12-16
 
 ## Directory Overview
 
@@ -29,6 +29,26 @@ Core Nx functionality
 - `packages/nx/src/native/` - Rust native bindings
   - `index.d.ts` - TypeScript definitions for RustPseudoTerminal
 
+### packages/create-nx-workspace/
+CLI tool for creating new Nx workspaces (CNW)
+
+- `bin/create-nx-workspace.ts` - Main CLI entry point with yargs middleware
+  - `normalizeArgsMiddleware()` - Handles A/B testing flow (template vs preset)
+  - `determineTemplate()` - Template selection prompt
+  - `determineNxCloud()` / `determineNxCloudV2()` - Nx Cloud setup prompts
+- `src/create-workspace.ts` - Workspace creation logic
+  - `createWorkspace()` - Main function for cloning templates or generating presets
+  - `setupCI()` - CI workflow generation (GitHub, GitLab, Azure, etc.)
+- `src/internal-utils/prompts.ts` - User prompt functions
+  - `determineNxCloud()` - Old flow with CI provider selection
+  - `determineNxCloudV2()` - Simplified "Try the full Nx platform?" prompt
+- `src/internal-utils/yargs-options.ts` - CLI option definitions (`--nxCloud` alias `--ci`)
+- `src/utils/nx/ab-testing.ts` - A/B testing and telemetry
+  - `shouldUseTemplateFlow()` - Determines variant (0=preset, 1=template)
+  - `getFlowVariant()` - Returns current variant for tracking
+  - `recordStat()` - Telemetry recording (start, complete, error, cancel, precreate)
+  - `messages` - Prompt message variants for A/B testing
+
 ### nx-dev/
 The Nx documentation site (docs.nrwl.io) - Next.js application with multiple sub-packages
 
@@ -38,6 +58,54 @@ The Nx documentation site (docs.nrwl.io) - Next.js application with multiple sub
 - `nx-dev/data-access-documents/` - Document fetching and processing
 
 ## Features & Critical Paths
+
+### Create Nx Workspace (CNW) A/B Testing Flow (2025-12-16)
+**Branch**: NXC-3624
+**Issue**: https://linear.app/nxdev/issue/NXC-3624
+**Status**: Implemented, 4 commits on branch
+
+CNW has two user flows controlled by A/B testing:
+- **Variant 0 (preset flow)**: User selects stack → preset → CI provider
+- **Variant 1 (template flow)**: User selects from predefined templates (nrwl/*)
+
+**Key Files**:
+- `bin/create-nx-workspace.ts:446-555` - Flow routing based on `determineTemplate()` result
+- `src/utils/nx/ab-testing.ts:67-74` - `shouldUseTemplateFlow()` variant determination
+- `src/create-workspace.ts:149-154` - CI generation logic
+
+**Flow Logic**:
+```
+determineTemplate() returns:
+├── 'nrwl/*' template → Template flow (variant 1)
+│   └── determineNxCloudV2() → "Try the full Nx platform?" Yes/Skip
+│   └── No CI generation (templates have own ci.yml)
+│
+└── 'custom' → Preset flow (variant 0)
+    ├── CLI arg provided (--nxCloud gitlab) → determineNxCloud() → CI provider selection
+    │   └── setupCI() generates workflow for selected provider
+    │
+    └── No CLI arg → determineNxCloudV2() → "Try the full Nx platform?" Yes/Skip
+        └── If Yes: nxCloud='yes' → maps to 'github' for setupCI()
+```
+
+**nxCloud Values and Their Meaning**:
+| Value | Source | CI Generated | Push to GitHub |
+|-------|--------|--------------|----------------|
+| `'github'` | CLI arg `--nxCloud github` | Yes (GitHub) | Yes |
+| `'gitlab'` | CLI arg `--nxCloud gitlab` | Yes (GitLab) | No |
+| `'yes'` | Simplified prompt "Yes" | Yes (GitHub) | Yes |
+| `'skip'` | Any prompt "Skip" | No | No |
+
+**Telemetry Events** (recordStat types):
+- `start` - CNW invoked
+- `precreate` - After template/preset selection (tracks flowVariant, template, preset)
+- `complete` - Workspace created successfully
+- `error` - Error occurred (tracks errorCode, errorMessage, errorFile)
+- `cancel` - User cancelled (SIGINT)
+
+**CLI Options** (defined in yargs-options.ts):
+- `--nxCloud` (alias `--ci`) - CI provider or 'skip'
+- Values: github, gitlab, azure, bitbucket-pipelines, circleci, skip, yes
 
 ### Node Executor Signal Handling (2025-11-21)
 **Branch**: NXC-3510
@@ -182,6 +250,23 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - Environment variable `NEXT_PUBLIC_ASTRO_URL` for feature flag
 
 ## Personal Work History
+
+### 2025-12-16 - CNW Simplified Cloud Prompt & Telemetry (NXC-3624)
+- **Task**: NXC-3624 - Simplify preset flow cloud prompt and add telemetry
+- **Branch**: NXC-3624
+- **Commits**:
+  - `2278baaab4` - Directory validation with re-prompt
+  - `fb41b6ad84` - Additional tracking fields
+  - `1c11252c6c` - Simplify preset flow to use setupNxCloudV2
+  - `33cf7d17e8` - Add precreate stat after template/preset selection
+- **Purpose**: Unify the cloud prompt experience between template and preset flows
+- **Key Changes**:
+  - Preset flow now uses `setupNxCloudV2` ("Try the full Nx platform?") when no CLI arg provided
+  - `nxCloud === 'yes'` maps to `'github'` for CI generation in preset flow
+  - Added `RecordStatMetaPrecreate` interface for telemetry
+  - Fixed TypeScript error: made error interface fields required (not optional) to satisfy index signature
+- **Key Learning**: `--nxCloud` and `--ci` are aliases (defined in yargs-options.ts line 10)
+- **Task Plan**: `.ai/2025-12-16/tasks/nxc-3624-simplify-custom-cloud-prompt.md`
 
 ### 2025-11-21 - Next.js Jest Hanging Investigation (NXC-3505)
 - **Task**: NXC-3505 - Investigate Jest tests not exiting properly in Next.js apps

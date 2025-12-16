@@ -2,10 +2,12 @@
 
 ## Completed
 
-### NXC-3624: Handle Directory Validation for CNW (Create Nx Workspace)
+### NXC-3624: CNW (Create Nx Workspace) Improvements
 
 **Linear Issue**: https://linear.app/nxdev/issue/NXC-3624
 **Branch**: NXC-3624
+
+#### 1. Directory Validation
 **Commit**: `2278baaab4 fix(misc): validate directory existence in create-nx-workspace`
 
 **Problem**: When passing a directory name via CLI argument (e.g., `npx create-nx-workspace existing_dir`), there was no validation to check if that directory already existed. The error would only occur later during workspace creation with a confusing message.
@@ -14,11 +16,44 @@
 - **Interactive mode**: Shows a warning "Directory existing_dir already exists." and re-prompts for a new folder name
 - **Non-interactive/CI mode**: Throws a clear `DIRECTORY_EXISTS` error immediately
 - Added `validate` function to enquirer prompt for real-time validation in interactive mode
-- Kept fallback `invariant` checks for CI/non-interactive mode as safety guards
+
+#### 2. Simplified Preset Flow Cloud Prompt
+**Commit**: `1c11252c6c fix(misc): simplify preset flow cloud prompt to use setupNxCloudV2`
+
+**Problem**: The preset/custom flow used the old CI provider selection prompt (`setupCI` + `setupNxCloud`) while the template flow used the simplified `setupNxCloudV2` ("Try the full Nx platform?") prompt.
+
+**Solution**:
+- When no `--nxCloud` CLI arg provided: Use simplified `setupNxCloudV2` prompt (same as template flow)
+- When CLI arg provided (e.g., `--nxCloud gitlab`): Keep existing behavior (CI provider selection)
+- If user selects "Yes" → Nx Cloud enabled, GitHub CI generated, push to GitHub
+- Maps `nxCloud === 'yes'` to `'github'` for CI generation
+
+**Behavior Matrix**:
+| Input | nxCloud | CI Generated | Push to GitHub |
+|-------|---------|--------------|----------------|
+| `--nxCloud github` | `'github'` | Yes (GitHub) | Yes |
+| `--nxCloud gitlab` | `'gitlab'` | Yes (GitLab) | No |
+| No arg → "Yes" | `'yes'` | Yes (GitHub) | Yes |
+| No arg → "Skip" | `'skip'` | No | No |
+
+#### 3. Precreate Telemetry
+**Commit**: `33cf7d17e8 chore(misc): add precreate stat after template/preset selection`
+
+Added `precreate` stat recording after template/preset selection to track:
+- `flowVariant`: Which A/B test variant (0=preset, 1=template)
+- `template`: Selected template (for template flow)
+- `preset`: Selected preset (for preset flow)
+- `nodeVersion`, `packageManager`
+
+#### 4. Additional Tracking
+**Commit**: `fb41b6ad84 chore(misc): add more tracking`
+
+Enhanced telemetry for better insights into CNW usage patterns.
 
 **Files Changed**:
-- `packages/create-nx-workspace/bin/create-nx-workspace.ts` - Added directory validation with re-prompt flow
-- `packages/create-nx-workspace/src/utils/template/clone-template.ts` - Minor error message cleanup
+- `packages/create-nx-workspace/bin/create-nx-workspace.ts` - All prompt flow changes and telemetry
+- `packages/create-nx-workspace/src/create-workspace.ts` - CI generation and GitHub push conditions
+- `packages/create-nx-workspace/src/utils/nx/ab-testing.ts` - Added `RecordStatMetaPrecreate` interface
 
 ### Framer Sync (2025-12-16)
 

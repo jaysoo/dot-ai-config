@@ -13,6 +13,7 @@
 - [ ] Planning Meeting
   - eBPF tracing of I/O and inputs/outputs
   - Proper Docker builds -- easier to adopt Nx into existing set up
+  - KB for docs: https://linear.app/nxdev/project/nx-knowledge-base-docs-project-0c6aee98d867/overview
   - Codspeed? We need to know performance regressions
 
 - [ ] Follow-up NXC-3427: Multiple Nx daemons persist for same workspace in 21.6.8

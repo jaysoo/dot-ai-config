@@ -418,6 +418,33 @@ npx create-nx-workspace@22.0.0 workspace-v22
 - Entry point: `packages/create-nx-workspace/bin/create-nx-workspace.ts`
 - Related: `packages/create-nx-plugin/` (for plugin development)
 
+### CNW CLI Options & A/B Testing
+
+**CLI Aliases:**
+- `--nxCloud` and `--ci` are aliases (defined in `yargs-options.ts:10`)
+- Both accept: github, gitlab, azure, bitbucket-pipelines, circleci, skip, yes
+
+**A/B Testing Flow (Variant 0 vs 1):**
+- **Variant 0 (preset flow)**: `determineTemplate()` returns 'custom' → CI provider selection
+- **Variant 1 (template flow)**: `determineTemplate()` returns 'nrwl/*' → Simplified prompt
+
+**nxCloud Values:**
+| Value | Source | CI Generated |
+|-------|--------|--------------|
+| `'github'`, `'gitlab'`, etc. | CLI arg `--nxCloud <provider>` | Yes (that provider) |
+| `'yes'` | Simplified prompt "Yes" | Yes (GitHub) |
+| `'skip'` | Any prompt "Skip" | No |
+
+**Key Files:**
+- `bin/create-nx-workspace.ts:446-555` - Flow routing
+- `src/utils/nx/ab-testing.ts` - Variant determination and telemetry
+- `src/create-workspace.ts:149-154` - CI generation logic
+
+**TypeScript Index Signature Gotcha:**
+When interface has `[key: string]: string`, optional properties (`prop?: string`) conflict because they can be `undefined`. Either:
+1. Make properties required and use `?? ''` at call sites
+2. Use `[key: string]: string | undefined` (less strict)
+
 ### Commands
 - Use `nx run PROJECT:target` not `npm run`
 - Avoid full builds for testing (use dev servers)
