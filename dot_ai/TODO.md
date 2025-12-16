@@ -1,60 +1,44 @@
 # TODO
 
 ## In Progress
-- [ ] Louie 1:1
-  - Really enjoyed agent resource work and feature work in general
-  - Working on background/backend is a bit demoralizing
 
-- [ ] Altan 1:1
-  - Continuous non cachable DTE
-  - Ship these things but dogfood is slow
-  - Generally okay with Red Panda work but feels like he doesn't add much value beyond execution
-  - Would like some time to do team multiplier work
+- [ ] Review Colum's AI Show & Tell: Identify Closeable Issues Command (2025-12-16 12:12)
+  - Slack: https://nrwl.slack.com/archives/C06C6AP7GNN/p1765902607326319
+  - Slash command `/identify-closeable-issues` for Claude to find GitHub issues that can be closed
+  - Categories: Already fixed by PR, underlying tooling issue (not Nx), user config issue
+  - Has guardrails and confidence scoring, report-only mode (no auto-closing)
+  - Try it out for CLI team issues, evaluate results, provide feedback to Colum
+  - Command file: `~/.claude/commands/identify-closeable-issues.md`
 
-- [ ] Victor 1:1
-  - AI Czar
-  - Altan working on non-Red Panda work -- one day a week? Refactors, etc. team multiplier work -- talk to Nicole, Louie, etc. to coordinate
-  - Leo and Max unhappiness
-  - https://www.youtube.com/watch?v=JvosMkuNxF8&t=951s AI ROI
-  - Tracing I/O for Enteprise -- talk to Steve about concerns
+- [ ] Planning Meeting
+  - eBPF tracing of I/O and inputs/outputs
+  - Proper Docker builds -- easier to adopt Nx into existing set up
+  - Codspeed? We need to know performance regressions
 
-- [ ] CNW + Nest https://github.com/nrwl/nx/issues/33776 
-  - Regression in 22.2.0: @nx/nest app fails to serve immediately after generation ("Cannot find module 'nx'") #33776
+- [ ] Follow-up NXC-3427: Multiple Nx daemons persist for same workspace in 21.6.8
+  - URL: https://linear.app/nxdev/issue/NXC-3427
+  - Assignee: Max Kless | Priority: High | Status: In Progress
+  - Issue: Multiple daemons observed after `nx reset`, causes "Waiting for graph construction" hangs
+  - Customer: Block (via Caleb)
 
-- [ ] Migrate Nx packages with `import = require` to ESM-compatible imports (2025-12-05)
-  - Plan: `.ai/2025-12-05/tasks/esm-import-migration-plan.md`
-  - Goal: Enable dual CJS/ESM compilation for remaining 35 packages
-  - Context: Currently 3 packages build ESM (docker, gradle, maven); ~18 packages have `import = require` patterns
+- [ ] Follow-up CLOUD-3924: Compare Tasks doesn't show cache origin unless you click compare
+  - URL: https://linear.app/nxdev/issue/CLOUD-3924
+  - Assignee: Unassigned | Priority: High | Status: Todo
+  - Issue: Cache origin not visible on Investigate tab until you click "Check for task"
+  - Created by: Miro (DPE request)
 
-- [ ] Test Nuxt 4 ai-migrations in /tmp/nuxt2 (2025-11-27 12:55)
-  - Setup guide: `/tmp/nuxt1/ai-migrations/SETUP_NUXT3_TEST_FILES.md`
-  - Migration instructions: `/tmp/nuxt1/ai-migrations/MIGRATE_NUXT_4.md`
-  - Steps:
-    1. Create new Nuxt workspace: `npx -y create-nx-workspace@latest nuxt2 --preset=nuxt --appName=demo --no-interactive --nx-cloud=skip`
-    2. Add Nuxt 3 test files per SETUP_NUXT3_TEST_FILES.md
-    3. Run `nx migrate 22.2.0-beta.X` (check latest beta)
-    4. Follow MIGRATE_NUXT_4.md instructions
-    5. Verify all patterns migrated
+- [ ] Follow-up CLOUD-2614: Investigate discrepancy in contributor count
+  - URL: https://linear.app/nxdev/issue/CLOUD-2614
+  - Assignee: Nicole Oliver | Priority: High | Status: Todo
+  - Issue: Org shows 7/5 contributors used but list only shows 6 (null contributors not discounted)
+  - Fix: Change in aggregator to discount "null" contributors from count
+  - Customer: Org 65811494657f145ed525b196
 
-
-- [ ] Publish @nx/key with axios 1.13.2 fix (2025-11-26)
-  - Branch: NXC-3519
-  - Goal: Release @nx/key package with updated axios dependency
-  - Context: axios 1.13.2 fixes security/bug issues; breaking change in 1.8.0 doesn't affect @nx/key
-
-- [ ] Iterate on CNW templates
-  - Plan: `.ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md`
-
-- [ ] Add GitHub push progress indicator and timeout (2025-12-03)
-  - Plan: `.ai/2025-12-03/tasks/github-push-progress-timeout.md`
-  - Goal: Show ora spinner during GitHub push and timeout after 10 seconds if no response
-  - Context: Improve UX during `gh repo create` in CNW template flow
-
-- [ ] Investigate rootDir issue in swc executor for Nx 21 (2025-11-06 09:16)
-  - Repro: https://github.com/HaasStefan/nx-repro-rootDir-swc-rollup-in-angular
-  - Failing targets: js-swc-lib:build, js-rollup-lib:build
-  - Issue: Latest Nx 21 versions have rootDir problem in swc executor
-  - Users staying on 21.0.0 to avoid this issue
+- [ ] Review PR #33822 - Allow copying Prisma client from node_modules (2025-12-15)
+  - PR: https://github.com/nrwl/nx/pull/33822
+  - Author: parostatkiem
+  - Issue: Nx v22 hardcodes `node_modules` in asset copy ignore list, breaking Prisma workflows
+  - Goal: Review PR that removes node_modules from ignore list for asset copying
 
 - [ ] Fix #33047 - @nx/web:file-server crash on non-GET requests (2025-10-27 09:58)
   - URL: https://github.com/nrwl/nx/issues/33047
@@ -83,7 +67,88 @@
 
 ## Completed
 
+### December 2025
+
+- [x] CNW: Investigate users re-creating workspaces after successful creation (2025-12-16)
+  - Issue: Users try to create a workspace again even though one was just created successfully
+  - Root cause likely: NPM warnings returned as errors confuse users
+  - The "something failed but workspace exists" messaging doesn't seem to be working
+
+- [x] Migrate Nx packages with `import = require` to ESM-compatible imports (2025-12-16)
+  - Plan: `.ai/2025-12-05/tasks/esm-import-migration-plan.md`
+  - Goal: Enable dual CJS/ESM compilation for remaining 35 packages
+
+- [x] Test Nuxt 4 ai-migrations (2025-12-16)
+  - Verified migration patterns work correctly
+
+- [x] Framer Sync (2025-12-16)
+  1. Which page for canary this week? -> /community
+  2. Banner JSON -> let's do this week on canary
+  3. Pricing and Cloud pages
+    - TBD (deadline Friday for exec team for outline of pages to review next week)
+    - Sync first week in January
+  4. Blog?
+    - GitHub sync should work for local author with AI assistance
+    - Custom components: embeds (videos, tweets), code blocks with highlighting/diffs
+    - Could have plugin between authored and rendered content
+    - More CTAs at end of blogs - Framer can do this
+
+- [x] Infra Sync (2025-12-16)
+  - Make sure Linear tasks are the source of truth, attach relevant docs, links, PRs
+  - ClickUp renewal concerns
+  - Follow-up with projects like Docker Layer Caching and Hosted Redis
+  - Docker, not building in images makes a lot of headaches
+
+- [x] CLI Sync (2025-12-16)
+  - Can we check with Claude what issues are related to PRs
+  - Follow up with Nicole on onboarding leftover items
+  - DPEs Sync to go over dotnet adoption
+
+- [x] Follow-up CLOUD-3875: Usage page total credits not aligned with Prepaid Plan credits (2025-12-15)
+  - URL: https://linear.app/nxdev/issue/CLOUD-3875
+
+- [x] Follow-up CLOUD-2540: Allow passing working directory to start-ci-run command (2025-12-15)
+  - URL: https://linear.app/nxdev/issue/CLOUD-2540
+
+- [x] Follow-up CLOUD-3551: Remove Pro Plan option from users who previously used Nx Cloud trial (2025-12-15)
+  - URL: https://linear.app/nxdev/issue/CLOUD-3551
+
+- [x] CNW + Nest #33776 (2025-12-15)
+  - URL: https://github.com/nrwl/nx/issues/33776
+
+- [x] Add GitHub push progress indicator and timeout (2025-12-15)
+  - Plan: `.ai/2025-12-03/tasks/github-push-progress-timeout.md`
+
+- [x] Iterate on CNW templates (2025-12-15)
+  - Plan: `.ai/2025-11-12/tasks/nxc-3464-pr-release-cnw-templates.md`
+
+- [x] DPEs Sync (2025-12-15)
+  - Notes: `.ai/dpe-sync/README.md`
+
+- [x] Louie 1:1 (2025-12-15)
+  - Really enjoyed agent resource work and feature work in general
+  - Working on background/backend is a bit demoralizing
+
+- [x] Altan 1:1 (2025-12-15)
+  - Continuous non cachable DTE
+  - Ship these things but dogfood is slow
+  - Generally okay with Red Panda work but feels like he doesn't add much value beyond execution
+  - Would like some time to do team multiplier work
+
+- [x] Victor 1:1 (2025-12-15)
+  - AI Czar
+  - Altan working on non-Red Panda work -- one day a week? Refactors, etc. team multiplier work -- talk to Nicole, Louie, etc. to coordinate
+  - Leo and Max unhappiness
+  - https://www.youtube.com/watch?v=JvosMkuNxF8&t=951s AI ROI
+  - Tracing I/O for Enteprise -- talk to Steve about concerns
+
 ### November 2025
+
+- [x] Publish @nx/key with axios 1.13.2 fix (2025-11-26)
+  - Branch: NXC-3519
+
+- [x] Investigate rootDir issue in swc executor for Nx 21 (2025-11-06)
+  - Repro: https://github.com/HaasStefan/nx-repro-rootDir-swc-rollup-in-angular
 
 - [x] Test Nuxt 4 migration for Colum https://www.npmjs.com/package/nx/v/0.0.0-pr-33611-c0ec6b0 (2025-11-26 11:00)
 

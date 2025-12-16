@@ -130,6 +130,44 @@ Keep this file current as a quick-glance reference:
 
 These notes are for Jack's personal reference to build better relationships and have more effective 1:1s. Keep entries factual and professional.
 
+## 📊 Team Sync Tracking
+
+**Location:** `.ai/syncs/[team]/README.md`
+
+### Available Syncs
+| Team | Location |
+|------|----------|
+| DPE | `.ai/syncs/dpe/README.md` |
+| CLI | `.ai/syncs/cli/README.md` |
+| Orca | `.ai/syncs/orca/README.md` |
+| Backend | `.ai/syncs/backend/README.md` |
+| Infra | `.ai/syncs/infra/README.md` |
+| Docs | `.ai/syncs/docs/README.md` |
+| Framer | `.ai/syncs/framer/README.md` |
+
+### When to Update
+- After each sync meeting, add notes to the "Meeting Notes" section
+- Update relevant tables (e.g., Active Accounts for DPE)
+- Add new action items to the "Action Items" section
+- Mark completed items
+- The `/dictate` command auto-detects sync meetings and updates the right file
+
+### Document Structure
+- **Topics for Next Meeting** - Items to discuss next time
+- **Action Items** - Ongoing work items with owners
+- **Meeting Notes** - Dated entries with updates from each sync
+
+### Adding Meeting Notes
+```markdown
+### YYYY-MM-DD
+
+**Updates:**
+- Account updates...
+
+**Action Items:**
+- New items from this meeting...
+```
+
 ## 🔍 MCP Server Usage (Priority)
 
 **ALWAYS use MyNotes MCP first for:**
