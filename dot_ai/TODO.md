@@ -1,6 +1,76 @@
 # TODO
 
+## Recent Tasks (Last 10)
+<!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
+
+1. **Recent Tasks tracking system** (2025-12-17)
+   - Summary: Added "Recent Tasks (Last 10)" section to TODO.md, updated CLAUDE.md and /summarize command
+   - Files: `dot_ai/2025-12-17/SUMMARY.md`
+
+2. **Review PR #33822 - Prisma client copy fix** (2025-12-16)
+   - Summary: Optimized node_modules filtering for Prisma client copy, fixed async/sync methods
+   - Files: `dot_ai/2025-12-16/SUMMARY.md`
+
+3. **CNW: Investigate re-creation after success** (2025-12-16)
+   - Summary: Users re-create workspaces due to NPM warnings appearing as errors
+   - Files: `dot_ai/2025-12-16/SUMMARY.md`
+
+4. **ESM import migration for Nx packages** (2025-12-16)
+   - Summary: Migrate `import = require` to ESM-compatible imports for 35 packages
+   - Files: `dot_ai/2025-12-05/tasks/esm-import-migration-plan.md`
+
+5. **Nuxt 4 ai-migrations testing** (2025-12-16)
+   - Summary: Verified migration patterns work correctly
+   - Files: `dot_ai/2025-12-16/SUMMARY.md`
+
+6. **Framer Sync** (2025-12-16)
+   - Summary: Discussed canary page, banner JSON, pricing/cloud pages, blog GitHub sync
+   - Files: `dot_ai/syncs/framer/README.md`
+
+7. **Infra Sync** (2025-12-16)
+   - Summary: Linear as source of truth, ClickUp renewal, Docker layer caching follow-up
+   - Files: `dot_ai/syncs/infra/README.md`
+
+8. **CLI Sync** (2025-12-16)
+   - Summary: Claude issue-PR correlation, Nicole onboarding follow-up, dotnet adoption
+   - Files: `dot_ai/syncs/cli/README.md`
+
+9. **CNW + Nest #33776** (2025-12-15)
+   - Summary: Fixed Nest workspace creation issue
+   - Files: GitHub issue #33776
+
+10. **GitHub push progress indicator** (2025-12-15)
+    - Summary: Added progress indicator and timeout for GitHub push operations
+    - Files: `dot_ai/2025-12-03/tasks/github-push-progress-timeout.md`
+
 ## In Progress
+- [ ] Prepare for Partners meeting
+  - Review script from Zack
+    - Nx MCP Server Demo — Show how easy the setup is and demonstrate the benefits when paired with an AI tool like Cursor and Claude
+      - What projects are in this workspace? Use the nx mcp
+      - Add React lib
+      - Ask about Nx Release
+    - Nx 2025
+      - Angular Rspack
+      - TUI and continuous tasks
+      - PNPM catalog
+      - Nx Release polish + Docker
+      - Started experimenting with AI migrations
+      - CPU/memory tracking
+      - Updated to latest majors for tools/frameworks
+        - Angular 21
+      - Node 24 support with type stripping
+    - Nx 2026 Roadmap Presentation — Explain Nx's plans for 2026, covering the roadmap and highlighting things you're most excited about
+      - Modern JS tooling like oxc oxfmt oxlint
+      - Polyglot
+        - Partial graph task running
+        - Native toolchains like mise
+      - Nx Release for Apps
+        - More Docker work -- layer caching, docker build --push, etc.
+      - eBPF tracing for input/outputs
+      - More AI
+        - Moving away from many generators and generator options and lean more into a solid base that AI can enhance e.g. TailwindCSS
+    - Q&A — Stay on for the Q&A session at the end to field questions in your areas of expertise (though it sounds like attendance is flexible if needed)
 
 - [ ] Review Colum's AI Show & Tell: Identify Closeable Issues Command (2025-12-16 12:12)
   - Slack: https://nrwl.slack.com/archives/C06C6AP7GNN/p1765902607326319
@@ -35,12 +105,6 @@
   - Fix: Change in aggregator to discount "null" contributors from count
   - Customer: Org 65811494657f145ed525b196
 
-- [ ] Review PR #33822 - Allow copying Prisma client from node_modules (2025-12-15)
-  - PR: https://github.com/nrwl/nx/pull/33822
-  - Author: parostatkiem
-  - Issue: Nx v22 hardcodes `node_modules` in asset copy ignore list, breaking Prisma workflows
-  - Goal: Review PR that removes node_modules from ignore list for asset copying
-
 - [ ] Fix #33047 - @nx/web:file-server crash on non-GET requests (2025-10-27 09:58)
   - URL: https://github.com/nrwl/nx/issues/33047
   - Goal: Handle non-GET requests properly in file-server to prevent crashes with SPA mode
@@ -69,6 +133,14 @@
 ## Completed
 
 ### December 2025
+
+- [x] Review PR #33822 - Allow copying Prisma client from node_modules (2025-12-16)
+  - PR: https://github.com/nrwl/nx/pull/33822
+  - Author: parostatkiem
+  - Result: Completed with optimization - added smart node_modules filtering
+  - Key finding: Original PR only fixed async method, sync method was missing fix
+  - Performance: Prevented 39,000% regression by conditionally allowing node_modules traversal
+  - Tests: Added 4 new tests, all 12 tests pass
 
 - [x] CNW: Investigate users re-creating workspaces after successful creation (2025-12-16)
   - Issue: Users try to create a workspace again even though one was just created successfully

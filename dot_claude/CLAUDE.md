@@ -3,6 +3,8 @@ Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse
 
 **IMPORTANT**: This file lives in `~/projects/dot-ai-config/dot_claude/CLAUDE.md` and syncs to `~/.claude/CLAUDE.md`. Always edit the `dot-ai-config` version, not the `~/.claude` version.
 
+**IMPORTANT**: Always use Nx MCP's nx_workspace or nx_docs tools when I ask about workspace/project info and how to do something in Nx respectively.
+
 ## 🔴 Critical Setup & Verification
 
 ### .ai Folder Symlink (MUST CHECK FIRST)
@@ -40,7 +42,13 @@ When commit message is rejected:
 - Use `docs(misc)` for documentation-only changes across multiple packages
 - Don't use project-specific scopes like `docs(astro-docs)` for cross-cutting concerns
 - If you need to fix commit message: use `--amend` to avoid multiple commits
-- Common scopes: `docs(misc)`, `test(misc)`, `chore(misc)` for multi-project changes
+- Common scopes: `docs(misc)`, `chore(misc)` for multi-project changes
+
+### Valid Commit Types (Nx Repository)
+- **Valid types**: `feat`, `fix`, `docs`, `cleanup`, `chore`
+- **NOT valid**: `test`, `refactor`, `perf`, `style`, `build`, `ci`
+- For test-only changes, use `chore(testing):` not `test(misc):`
+- Example: `chore(testing): add e2e tests for CNW template flow`
 
 ### Date & Time
 - Always use ET timezone: `date '+%Y-%m-%d'` or `date '+%Y-%m-%d %H:%M'`
@@ -74,6 +82,23 @@ When commit message is rejected:
 - [x] Name of task (yyyy-mm-dd hh:mm)
   - Plan: `dot_ai/yyyy-mm-dd/tasks/name-of-task.md`
 ```
+
+### Recent Tasks List (Last 10)
+The `dot_ai/TODO.md` has a "Recent Tasks (Last 10)" section at the top for quick context rebuilding.
+
+**When to Update:**
+- When marking a task as **in_progress** or **completed**, add/update it in the Recent Tasks list
+- New tasks go at position #1, bump others down
+- Remove the 11th item when adding new ones (keep only 10)
+
+**Format:**
+```markdown
+1. **Task name** (yyyy-mm-dd)
+   - Summary: 1-2 sentence description of what was accomplished
+   - Files: `dot_ai/yyyy-mm-dd/tasks/task-file.md` or relevant sync file
+```
+
+**Purpose:** Enables quick context rebuilding when following up on recent work without re-reading full task plans.
 
 ## 👥 Personnel Notes
 

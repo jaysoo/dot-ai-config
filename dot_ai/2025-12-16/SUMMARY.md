@@ -81,18 +81,117 @@ Enhanced telemetry for better insights into CNW usage patterns.
 - Follow up with Nicole on onboarding leftover items
 - DPEs Sync to go over dotnet adoption
 
-## In Progress
-
 ### PR #33822 Review - Allow Copying Prisma Client from node_modules
 
 **PR**: https://github.com/nrwl/nx/pull/33822
 **Plan**: `.ai/2025-12-16/tasks/pr-33822-prisma-node-modules-verification.md`
+**Status**: ✅ COMPLETED with Optimization
 
-Critical finding: The PR only fixes ONE of TWO locations:
-- `processAllAssetsOnce()` (async) at line 143 - Fixed
-- `processAllAssetsOnceSync()` (sync) at line 160 - NOT Fixed
+#### Problem Analysis
 
-Action required: The sync method also needs the same fix.
+The original PR only fixed one of two locations:
+- `processAllAssetsOnce()` (async) at line 143 - Fixed by PR
+- `processAllAssetsOnceSync()` (sync) at line 160 - Missing (fixed)
+
+#### Critical Performance Issue Discovered
+
+Simply removing `**/node_modules/**` from the ignore list caused a **39,000% performance regression** for broad glob patterns:
+- `**/*.json`: 0.47ms/18 files → 185ms/2,280 files (before optimization)
+
+#### Solution Implemented: Smart node_modules Filtering
+
+Added `getIgnorePatternsForAsset()` helper method that conditionally allows node_modules traversal only when the asset input path explicitly starts with `node_modules/`:
+
+```typescript
+private getIgnorePatternsForAsset(ag: AssetEntry): string[] {
+  const inputStartsWithNodeModules =
+    ag.input.startsWith('node_modules/') || ag.input === 'node_modules';
+
+  if (inputStartsWithNodeModules) {
+    return ['**/.git/**'];
+  }
+  return ['**/node_modules/**', '**/.git/**'];
+}
+```
+
+#### Behavior Matrix
+
+| Asset Input | node_modules Ignored? | Example |
+|-------------|----------------------|---------|
+| `node_modules/.prisma/client` | No | Prisma client copied ✅ |
+| `node_modules/@prisma/client` | No | @prisma/client copied ✅ |
+| `apps/api` | Yes | Performance preserved ✅ |
+| `.` (root) | Yes | Performance preserved ✅ |
+
+#### Tests Added
+
+4 new tests in `copy-assets-handler.spec.ts`:
+1. `should copy files from node_modules/.prisma using async method`
+2. `should copy files from node_modules/.prisma using sync method`
+3. `should copy files from node_modules/@prisma/client`
+4. `should still ignore node_modules for non-node_modules patterns`
+
+All 12 tests pass.
+
+#### Files Modified
+
+- `packages/js/src/utils/assets/copy-assets-handler.ts` - Added `getIgnorePatternsForAsset()` method, updated both async and sync methods
+- `packages/js/src/utils/assets/copy-assets-handler.spec.ts` - Added 4 new tests (+207 lines)
+
+### CNW pnpm/yarn/bun Workspace Protocol Fix
+
+**Branch**: pnpm_fix
+
+#### Problem
+
+When CNW (Create Nx Workspace) generates workspaces with workspace dependencies, it was using `*` instead of `workspace:*` in individual package.json files. This caused issues for pnpm, yarn, and bun which require the `workspace:*` protocol for proper symlinking.
+
+#### Solution
+
+**Commit**: `dfce2e425b fix(core): convert * to workspace:* for pnpm/yarn/bun in CNW`
+
+1. Created `convertStarToWorkspaceProtocol()` function that:
+   - Finds all package.json files under `packages/`, `libs/`, `apps/` directories
+   - Supports 2-level nesting (e.g., `libs/shared/models/package.json`)
+   - Converts `*` dependencies/devDependencies to `workspace:*`
+   - Only modifies files that have `*` versions (no unnecessary writes)
+
+2. Created `findAllWorkspacePackageJsons()` with recursive search:
+   - Configurable `maxDepth` parameter (defaults to 2)
+   - Memory-efficient single array that accumulates results during recursion
+
+3. Applied to pnpm, yarn, and bun (npm handles `*` natively)
+
+**Files Changed**:
+- `packages/create-nx-workspace/src/utils/package-manager.ts` - Added new functions
+- `packages/create-nx-workspace/src/utils/package-manager.spec.ts` - Added tests
+
+### CNW Template E2E Tests
+
+**Commit**: `b646a7e3ce chore(testing): add e2e tests for CNW template flow`
+
+Added e2e tests for the CNW template flow (`--template=nrwl/*`):
+
+1. Tests all 4 templates:
+   - `nrwl/empty-template`
+   - `nrwl/typescript-template`
+   - `nrwl/react-template`
+   - `nrwl/angular-template`
+
+2. Tests both npm and pnpm package managers
+
+3. Verifies `nx run-many -t test,build` works after workspace creation
+
+4. Updated `runCreateWorkspace` helper function:
+   - Made `preset` and `template` both optional
+   - Added validation: exactly one must be provided
+   - Only passes `--preset` or `--template` when defined
+
+**Files Changed**:
+- `e2e/workspace-create/src/create-nx-workspace-templates.test.ts` - New test file
+- `e2e/utils/create-project-utils.ts` - Updated `runCreateWorkspace` signature
+
+## In Progress
 
 ### CNW User Re-creation Investigation
 
