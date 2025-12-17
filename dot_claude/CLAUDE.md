@@ -3,8 +3,6 @@ Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse
 
 **IMPORTANT**: This file lives in `~/projects/dot-ai-config/dot_claude/CLAUDE.md` and syncs to `~/.claude/CLAUDE.md`. Always edit the `dot-ai-config` version, not the `~/.claude` version.
 
-**IMPORTANT**: Always use Nx MCP's nx_workspace or nx_docs tools when I ask about workspace/project info and how to do something in Nx respectively.
-
 ## 🔴 Critical Setup & Verification
 
 ### .ai Folder Symlink (MUST CHECK FIRST)
@@ -929,3 +927,4 @@ op signin                    # Re-authenticate (pick tuskteam)
 op signout --all            # Sign out of all accounts
 ```
 
+**CRITICAL**: Always use Nx MCP's nx_workspace or nx_docs tools when I ask about workspace/project info and how to do something in Nx respectively.
