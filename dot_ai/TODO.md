@@ -48,7 +48,7 @@
   - Review script from Zack
     - Nx MCP Server Demo — Show how easy the setup is and demonstrate the benefits when paired with an AI tool like Cursor and Claude
       - What projects are in this workspace? Use the nx mcp
-      - Add React lib
+      - Add React lib -- generators are good starting points and AI can customize further
       - Ask about Nx Release
     - Nx 2025
       - Angular Rspack
@@ -57,6 +57,8 @@
       - Nx Release polish + Docker
       - Started experimenting with AI migrations
       - CPU/memory tracking
+      - Polyglot
+        - Java (Gradle, Maven), .NET
       - Updated to latest majors for tools/frameworks
         - Angular 21
       - Node 24 support with type stripping
