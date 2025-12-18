@@ -3,44 +3,44 @@
 ## Recent Tasks (Last 10)
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **Ben 1:1** (2025-12-18)
+1. **Nicole 1:1** (2025-12-18)
+   - Summary: Discussed onboarding numbers, platform roadmap 2026, customer advisory board, Sales/Marketing communication
+   - Files: `dot_ai/TODO.md` (completed section)
+
+2. **Ben 1:1** (2025-12-18)
    - Summary: Discussed self-healing ownership, Framer, and ecommerce with Caitlin
    - Files: `dot_ai/TODO.md` (completed section)
 
-2. **Claude Skills & Commands Repository** (2025-12-18)
+3. **Claude Skills & Commands Repository** (2025-12-18)
    - Summary: Created new repo to centralize custom Claude Code commands and skills with sync script
    - Files: `~/projects/claude-skills-commands/` (README, sync.sh, commands/, skills/)
 
-3. **Steve 1:1** (2025-12-18)
+4. **Steve 1:1** (2025-12-18)
    - Summary: Discussed infra tracking, Sales/Marketing communication, ClickUp renewal, cost tracking, and NPM/Docker registry value
    - Files: `dot_ai/TODO.md` (completed section)
 
-4. **DOC-360: Simplify Banner JSON Schema** (2025-12-18)
+5. **DOC-360: Simplify Banner JSON Schema** (2025-12-18)
    - Summary: Changed banner config from array to single object, build-time fetching from Framer CMS, shared prebuild script for nx-dev and astro-docs
    - Files: `dot_ai/2025-12-18/SUMMARY.md`
 
-5. **Chau 1:1** (2025-12-18)
+6. **Chau 1:1** (2025-12-18)
    - Summary: Moving to Red Panda in January, frontend focus with some backend, AI Czar role, responsibilities include auth, usage screen, enterprise licensing, graph
    - Files: `dot_ai/TODO.md` (completed section)
 
-6. **Prepare for Partners meeting** (2025-12-17)
+7. **Prepare for Partners meeting** (2025-12-17)
    - Summary: Reviewed Zack's script for Nx MCP Server demo, Nx 2025 features, and 2026 roadmap presentation
    - Files: `dot_ai/TODO.md` (completed section)
 
-7. **Review Colum's AI Show & Tell** (2025-12-16)
+8. **Review Colum's AI Show & Tell** (2025-12-16)
    - Summary: Reviewed `/identify-closeable-issues` slash command for finding closeable GitHub issues
    - Files: `~/.claude/commands/identify-closeable-issues.md`
 
-8. **Recent Tasks tracking system** (2025-12-17)
+9. **Recent Tasks tracking system** (2025-12-17)
    - Summary: Added "Recent Tasks (Last 10)" section to TODO.md, updated CLAUDE.md and /summarize command
    - Files: `dot_ai/2025-12-17/SUMMARY.md`
 
-9. **Review PR #33822 - Prisma client copy fix** (2025-12-16)
-   - Summary: Optimized node_modules filtering for Prisma client copy, fixed async/sync methods
-   - Files: `dot_ai/2025-12-16/SUMMARY.md`
-
-10. **CNW: Investigate re-creation after success** (2025-12-16)
-    - Summary: Users re-create workspaces due to NPM warnings appearing as errors
+10. **Review PR #33822 - Prisma client copy fix** (2025-12-16)
+    - Summary: Optimized node_modules filtering for Prisma client copy, fixed async/sync methods
     - Files: `dot_ai/2025-12-16/SUMMARY.md`
 
 ## In Progress
@@ -99,6 +99,12 @@
 ## Completed
 
 ### December 2025
+
+- [x] Nicole 1:1 (2025-12-18)
+  - Onboarding numbers follow-up on any CNW impact
+  - Platform roadmap for 2026
+  - Customer advisory board
+  - How do we communicate better with Sales and Marketing?
 
 - [x] Ben 1:1 (2025-12-18)
   - Self-helped self-healing ownership
