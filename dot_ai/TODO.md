@@ -3,25 +3,25 @@
 ## Recent Tasks (Last 10)
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **Nicole 1:1** (2025-12-18)
+1. **DOC-360: Banner as Astro Content Collection** (2025-12-18)
+   - Summary: Converted banner to Astro content collection with array format, removed middleware approach, both nx-dev and astro-docs now use consistent collection-based banner
+   - Files: `dot_ai/2025-12-18/SUMMARY.md`
+
+2. **Nicole 1:1** (2025-12-18)
    - Summary: Discussed onboarding numbers, platform roadmap 2026, customer advisory board, Sales/Marketing communication
    - Files: `dot_ai/TODO.md` (completed section)
 
-2. **Ben 1:1** (2025-12-18)
+3. **Ben 1:1** (2025-12-18)
    - Summary: Discussed self-healing ownership, Framer, and ecommerce with Caitlin
    - Files: `dot_ai/TODO.md` (completed section)
 
-3. **Claude Skills & Commands Repository** (2025-12-18)
+4. **Claude Skills & Commands Repository** (2025-12-18)
    - Summary: Created new repo to centralize custom Claude Code commands and skills with sync script
    - Files: `~/projects/claude-skills-commands/` (README, sync.sh, commands/, skills/)
 
-4. **Steve 1:1** (2025-12-18)
+5. **Steve 1:1** (2025-12-18)
    - Summary: Discussed infra tracking, Sales/Marketing communication, ClickUp renewal, cost tracking, and NPM/Docker registry value
    - Files: `dot_ai/TODO.md` (completed section)
-
-5. **DOC-360: Simplify Banner JSON Schema** (2025-12-18)
-   - Summary: Changed banner config from array to single object, build-time fetching from Framer CMS, shared prebuild script for nx-dev and astro-docs
-   - Files: `dot_ai/2025-12-18/SUMMARY.md`
 
 6. **Chau 1:1** (2025-12-18)
    - Summary: Moving to Red Panda in January, frontend focus with some backend, AI Czar role, responsibilities include auth, usage screen, enterprise licensing, graph

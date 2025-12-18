@@ -2,30 +2,41 @@
 
 ## Completed Tasks
 
-### DOC-360: Simplify Banner JSON Schema
+### DOC-360: Simplify Banner JSON Schema (Continued)
 
-Simplified the banner configuration from an array of notifications to a single object, with build-time fetching from Framer CMS.
+Continued work on banner configuration - converted from middleware approach back to Astro content collection with array format.
 
-**Key Changes:**
-- Changed banner JSON schema from array to single object
-- Created shared `prebuild-banner.mjs` script for both nx-dev and astro-docs
-- Script fetches from Framer URL at build time, parses JSON from `<pre>` tag
-- Made prebuild-banner non-cacheable (`cache: false`) so it always fetches fresh content
-- Added banner-config.json as runtime input to build targets for proper cache invalidation
-- Removed dead code (unused DynamicBanner/useBannerConfig components)
-- Updated READMEs with clear documentation for both sites
+**Final Implementation:**
+- Banner uses array format for both nx-dev and astro-docs (collection style)
+- astro-docs: Uses Astro content collection with `file()` loader at `src/content/banner.json`
+- nx-dev: Uses direct JSON import from `lib/banner.json`
+- Shared `prebuild-banner.mjs` script outputs array with `id` field for Astro file loader
+- Removed middleware approach entirely - banner now read directly from collection in PageFrame.astro
+- WebinarNotifier component updated to accept `id` prop, handles `activeUntil` expiration internally
+
+**Key Changes (This Session):**
+- Converted banner from single object back to array format (collection)
+- Added `banner` collection to `content.config.ts` with `file()` loader and Zod schema
+- Updated `PageFrame.astro` to use `getCollection('banner')` instead of `Astro.locals.floatingBanner`
+- Removed `banner.middleware.ts` and its reference in `astro.config.mjs`
+- Removed `floatingBanner` type from `env.d.ts`
+- Updated nx-dev `_app.tsx` and `layout.tsx` to map over banner array
+- Added `id: 'banner'` to prebuild script output for Astro file loader requirement
 
 **Files Modified:**
-- `scripts/documentation/prebuild-banner.mjs` - Shared prebuild script with Framer HTML parsing
-- `nx-dev/nx-dev/project.json` - Added prebuild-banner target, updated caching
-- `astro-docs/project.json` - Added prebuild-banner target, updated caching
-- `nx-dev/nx-dev/app/layout.tsx` - Use local banner config with WebinarNotifier
-- `nx-dev/nx-dev/pages/_app.tsx` - Use local banner config with WebinarNotifier
-- `astro-docs/src/plugins/banner.middleware.ts` - Simplified to import from local JSON
-- `astro-docs/src/content.config.ts` - Removed banner content collection
-- Both README.md files - Documented banner setup and behavior
+- `scripts/documentation/prebuild-banner.mjs` - Outputs array with id field
+- `astro-docs/src/content.config.ts` - Added banner collection with schema
+- `astro-docs/src/components/layout/PageFrame.astro` - Uses getCollection('banner')
+- `astro-docs/src/env.d.ts` - Removed floatingBanner type
+- `astro-docs/astro.config.mjs` - Removed banner middleware reference
+- `astro-docs/project.json` - Output to `src/content/banner.json`
+- `nx-dev/nx-dev/app/layout.tsx` - Maps over bannerCollection array
+- `nx-dev/nx-dev/pages/_app.tsx` - Maps over bannerCollection array
+- `nx-dev/nx-dev/project.json` - Output to `lib/banner.json`
+- `nx-dev/ui-common/src/lib/webinar-notifier.tsx` - Added id prop, internal activeUntil check
+- Both README.md files - Updated documentation
 
-**Commit:** `cc9964cc99` - feat(misc): simplify banner JSON schema to single object
+**Commit:** `9c9c4c1bd4` - feat(misc): simplify banner JSON schema to single object
 
 ### Chau 1:1
 
