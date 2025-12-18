@@ -3,86 +3,50 @@
 ## Recent Tasks (Last 10)
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **Recent Tasks tracking system** (2025-12-17)
+1. **Steve 1:1** (2025-12-18)
+   - Summary: Discussed infra tracking, Sales/Marketing communication, ClickUp renewal, cost tracking, and NPM/Docker registry value
+   - Files: `dot_ai/TODO.md` (completed section)
+
+2. **DOC-360: Simplify Banner JSON Schema** (2025-12-18)
+   - Summary: Changed banner config from array to single object, build-time fetching from Framer CMS, shared prebuild script for nx-dev and astro-docs
+   - Files: `dot_ai/2025-12-18/SUMMARY.md`
+
+3. **Chau 1:1** (2025-12-18)
+   - Summary: Moving to Red Panda in January, frontend focus with some backend, AI Czar role, responsibilities include auth, usage screen, enterprise licensing, graph
+   - Files: `dot_ai/TODO.md` (completed section)
+
+4. **Prepare for Partners meeting** (2025-12-17)
+   - Summary: Reviewed Zack's script for Nx MCP Server demo, Nx 2025 features, and 2026 roadmap presentation
+   - Files: `dot_ai/TODO.md` (completed section)
+
+5. **Review Colum's AI Show & Tell** (2025-12-16)
+   - Summary: Reviewed `/identify-closeable-issues` slash command for finding closeable GitHub issues
+   - Files: `~/.claude/commands/identify-closeable-issues.md`
+
+6. **Recent Tasks tracking system** (2025-12-17)
    - Summary: Added "Recent Tasks (Last 10)" section to TODO.md, updated CLAUDE.md and /summarize command
    - Files: `dot_ai/2025-12-17/SUMMARY.md`
 
-2. **Review PR #33822 - Prisma client copy fix** (2025-12-16)
+7. **Review PR #33822 - Prisma client copy fix** (2025-12-16)
    - Summary: Optimized node_modules filtering for Prisma client copy, fixed async/sync methods
    - Files: `dot_ai/2025-12-16/SUMMARY.md`
 
-3. **CNW: Investigate re-creation after success** (2025-12-16)
+8. **CNW: Investigate re-creation after success** (2025-12-16)
    - Summary: Users re-create workspaces due to NPM warnings appearing as errors
    - Files: `dot_ai/2025-12-16/SUMMARY.md`
 
-4. **ESM import migration for Nx packages** (2025-12-16)
+9. **ESM import migration for Nx packages** (2025-12-16)
    - Summary: Migrate `import = require` to ESM-compatible imports for 35 packages
    - Files: `dot_ai/2025-12-05/tasks/esm-import-migration-plan.md`
 
-5. **Nuxt 4 ai-migrations testing** (2025-12-16)
-   - Summary: Verified migration patterns work correctly
-   - Files: `dot_ai/2025-12-16/SUMMARY.md`
-
-6. **Framer Sync** (2025-12-16)
-   - Summary: Discussed canary page, banner JSON, pricing/cloud pages, blog GitHub sync
-   - Files: `dot_ai/syncs/framer/README.md`
-
-7. **Infra Sync** (2025-12-16)
-   - Summary: Linear as source of truth, ClickUp renewal, Docker layer caching follow-up
-   - Files: `dot_ai/syncs/infra/README.md`
-
-8. **CLI Sync** (2025-12-16)
-   - Summary: Claude issue-PR correlation, Nicole onboarding follow-up, dotnet adoption
-   - Files: `dot_ai/syncs/cli/README.md`
-
-9. **CNW + Nest #33776** (2025-12-15)
-   - Summary: Fixed Nest workspace creation issue
-   - Files: GitHub issue #33776
-
-10. **GitHub push progress indicator** (2025-12-15)
-    - Summary: Added progress indicator and timeout for GitHub push operations
-    - Files: `dot_ai/2025-12-03/tasks/github-push-progress-timeout.md`
+10. **Nuxt 4 ai-migrations testing** (2025-12-16)
+    - Summary: Verified migration patterns work correctly
+    - Files: `dot_ai/2025-12-16/SUMMARY.md`
 
 ## In Progress
-- [ ] Prepare for Partners meeting
-  - Review script from Zack
-    - Nx MCP Server Demo — Show how easy the setup is and demonstrate the benefits when paired with an AI tool like Cursor and Claude
-      - What projects are in this workspace? Use the nx mcp
-      - Add React lib -- generators are good starting points and AI can customize further
-      - Ask about Nx Release
-    - Nx 2025
-      - Angular Rspack
-      - TUI and continuous tasks
-      - PNPM catalog
-      - Nx Release polish + Docker
-      - Started experimenting with AI migrations
-      - CPU/memory tracking
-      - Polyglot
-        - Java (Gradle, Maven), .NET
-      - Updated to latest majors for tools/frameworks
-        - Angular 21
-      - Node 24 support with type stripping
-    - Nx 2026 Roadmap Presentation — Explain Nx's plans for 2026, covering the roadmap and highlighting things you're most excited about
-      - Modern JS tooling like oxc oxfmt oxlint
-      - Polyglot
-        - Partial graph task running
-        - Native toolchains like mise
-      - Nx Release for Apps
-        - More Docker work -- layer caching, docker build --push, etc.
-      - eBPF tracing for input/outputs
-      - More AI
-        - Moving away from many generators and generator options and lean more into a solid base that AI can enhance e.g. TailwindCSS
-    - Q&A — Stay on for the Q&A session at the end to field questions in your areas of expertise (though it sounds like attendance is flexible if needed)
-
-- [ ] Review Colum's AI Show & Tell: Identify Closeable Issues Command (2025-12-16 12:12)
-  - Slack: https://nrwl.slack.com/archives/C06C6AP7GNN/p1765902607326319
-  - Slash command `/identify-closeable-issues` for Claude to find GitHub issues that can be closed
-  - Categories: Already fixed by PR, underlying tooling issue (not Nx), user config issue
-  - Has guardrails and confidence scoring, report-only mode (no auto-closing)
-  - Try it out for CLI team issues, evaluate results, provide feedback to Colum
-  - Command file: `~/.claude/commands/identify-closeable-issues.md`
 
 - [ ] Planning Meeting
+  - Roadmap and team moves
   - eBPF tracing of I/O and inputs/outputs
   - Proper Docker builds -- easier to adopt Nx into existing set up
   - KB for docs: https://linear.app/nxdev/project/nx-knowledge-base-docs-project-0c6aee98d867/overview
@@ -136,6 +100,66 @@
 
 ### December 2025
 
+- [x] Steve 1:1 (2025-12-18)
+  - Tracking inventory and requests from Sale to Infra
+  - How to communicate with Sales and Marketing
+  - How much does agents cluster cost us? What does XYZ cost? etc.
+  - ClickUp renewal coming up -- how to track usage and ROI better
+  - Estimates from PoVs are hard to use for actual usage
+  - A way to count and calculate disk, compute, etc.
+  - NPM and Docker registries going down is fine since we mirror for free
+  - Report of what Sales and DPEs need and things they need to know
+
+- [x] DOC-360: Simplify Banner JSON Schema (2025-12-18)
+  - Changed banner config from array to single object
+  - Build-time fetching from Framer CMS (parses JSON from `<pre>` tag)
+  - Shared `prebuild-banner.mjs` script for nx-dev and astro-docs
+  - Made prebuild non-cacheable, added banner-config.json as build input
+  - Commit: `cc9964cc99`
+
+- [x] Chau 1:1 (2025-12-18)
+  - Move to Red Panda starting in January
+  - Focus on frontend with some backend work
+  - AI Czar
+  - Main responsibilities: Auth, usage screen, enterprise licensing, graph
+
+- [x] Prepare for Partners meeting (2025-12-17)
+  - Review script from Zack
+    - Nx MCP Server Demo — Show how easy the setup is and demonstrate the benefits when paired with an AI tool like Cursor and Claude
+      - What projects are in this workspace? Use the nx mcp
+      - Add React lib -- generators are good starting points and AI can customize further
+      - Ask about Nx Release
+    - Nx 2025
+      - Angular Rspack
+      - TUI and continuous tasks
+      - PNPM catalog
+      - Nx Release polish + Docker
+      - Started experimenting with AI migrations
+      - CPU/memory tracking
+      - Polyglot
+        - Java (Gradle, Maven), .NET
+      - Updated to latest majors for tools/frameworks
+        - Angular 21
+      - Node 24 support with type stripping
+    - Nx 2026 Roadmap Presentation — Explain Nx's plans for 2026, covering the roadmap and highlighting things you're most excited about
+      - Modern JS tooling like oxc oxfmt oxlint
+      - Polyglot
+        - Partial graph task running
+        - Native toolchains like mise
+      - Nx Release for Apps
+        - More Docker work -- layer caching, docker build --push, etc.
+      - eBPF tracing for input/outputs
+      - More AI
+        - Moving away from many generators and generator options and lean more into a solid base that AI can enhance e.g. TailwindCSS
+    - Q&A — Stay on for the Q&A session at the end to field questions in your areas of expertise (though it sounds like attendance is flexible if needed)
+
+- [x] Review Colum's AI Show & Tell: Identify Closeable Issues Command (2025-12-16 12:12)
+  - Slack: https://nrwl.slack.com/archives/C06C6AP7GNN/p1765902607326319
+  - Slash command `/identify-closeable-issues` for Claude to find GitHub issues that can be closed
+  - Categories: Already fixed by PR, underlying tooling issue (not Nx), user config issue
+  - Has guardrails and confidence scoring, report-only mode (no auto-closing)
+  - Try it out for CLI team issues, evaluate results, provide feedback to Colum
+  - Command file: `~/.claude/commands/identify-closeable-issues.md`
 - [x] Review PR #33822 - Allow copying Prisma client from node_modules (2025-12-16)
   - PR: https://github.com/nrwl/nx/pull/33822
   - Author: parostatkiem
