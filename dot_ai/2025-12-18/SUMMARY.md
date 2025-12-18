@@ -33,3 +33,26 @@ Simplified the banner configuration from an array of notifications to a single o
 - Frontend focus with some backend work
 - AI Czar role
 - Main responsibilities: Auth, usage screen, enterprise licensing, graph
+
+### Claude Skills & Commands Repository
+
+Created a new repository (`~/projects/claude-skills-commands/`) to centralize custom Claude Code commands and skills.
+
+**Purpose:**
+- Version-controlled storage for custom slash commands
+- Shareable across machines via git sync
+- Single source of truth for Claude Code customizations
+
+**Structure:**
+- `commands/` - Custom slash commands (`.md` files)
+- `skills/` - Custom skills (`.md` files)
+- `sync.sh` - Script to copy commands/skills to `~/.claude/`
+- `.syncignore` - Files to exclude from syncing
+
+**Initial Content:**
+- `identify-closeable-issues.md` - Report generator for GitHub issues that may be closeable (originally from Colum's AI Show & Tell)
+
+**Usage:**
+```bash
+./sync.sh  # Copies commands and skills to ~/.claude/
+```
