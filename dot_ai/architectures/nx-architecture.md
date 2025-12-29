@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2025-12-16
+Last Updated: 2025-12-19
 
 ## Directory Overview
 
@@ -226,6 +226,47 @@ Handles parsing and modification of ESLint flat config files using TypeScript AS
 - Only `hasOverride` was migrated to AST extraction
 - `replaceOverride` kept original approach because it needs to preserve dynamic import expressions in output
 
+### Next.js Middleware for Framer Proxy (2025-12-19)
+**Branch**: DOC-372
+**Issue**: https://linear.app/nxdev/issue/DOC-372
+**Status**: Fixed, committed
+
+Production 500 errors on `/changelog` page due to `getServerSideProps` reading files at request time instead of build time.
+
+**Root Cause**:
+- Commit `3384b1dc91` (Dec 17) converted 25+ pages from `getStaticProps` to `getServerSideProps` for Framer proxy
+- `getServerSideProps` runs at request time in serverless functions
+- Serverless functions don't have access to files copied during build (`public/documentation/changelog`)
+- Also increases Vercel costs (Lambda invocations vs CDN cache)
+
+**Files Changed**:
+- `nx-dev/nx-dev/middleware.ts` (NEW) - Edge middleware for Framer proxy
+- `nx-dev/nx-dev/lib/framer-proxy.ts` (DELETED) - No longer needed
+- 25 page files reverted from `getServerSideProps` to static
+
+**Middleware Implementation**:
+```typescript
+export function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+  if (framerUrl && framerPaths.has(pathname)) {
+    const framerDestination = new URL(pathname, framerUrl);
+    return NextResponse.rewrite(framerDestination, {
+      headers: { 'Cache-Control': 'public, max-age=3600, must-revalidate' },
+    });
+  }
+  return NextResponse.next();
+}
+```
+
+**Cost Comparison**:
+| Approach | Runtime | Cost |
+|----------|---------|------|
+| getServerSideProps | Lambda (serverless) | $0.20/million invocations |
+| Middleware | Edge Runtime | Often free/included |
+| Static pages | CDN cache | Essentially free |
+
+**Key Learning**: Use middleware for conditional routing/rewrites instead of converting pages to SSR.
+
 ### Blog Search Integration (2025-09-19)
 **Branch**: DOC-221
 **Status**: Implemented, not yet merged
@@ -250,6 +291,20 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - Environment variable `NEXT_PUBLIC_ASTRO_URL` for feature flag
 
 ## Personal Work History
+
+### 2025-12-19 - Framer Proxy Middleware Fix (DOC-372)
+- **Task**: DOC-372 - nx.dev changelog page failing on prod and canary
+- **Branch**: DOC-372
+- **Commit**: `19feb14a80` - fix(nx-dev): use middleware for Framer proxy to keep pages static
+- **Purpose**: Fix 500 errors caused by getServerSideProps reading files at runtime
+- **Root Cause**: Previous commit converted 25 pages to SSR for Framer proxy, but SSR functions can't access build-time files
+- **Key Changes**:
+  - Created `nx-dev/nx-dev/middleware.ts` for edge-based Framer proxy
+  - Reverted all 25 pages to static (getStaticProps or no data fetching)
+  - Deleted `nx-dev/nx-dev/lib/framer-proxy.ts`
+- **Key Learning**: Use Next.js middleware for conditional routing/rewrites instead of SSR
+- **Cost Insight**: Middleware runs at edge (cheap), SSR runs as Lambda (expensive per-request)
+- **Task Plan**: `.ai/2025-12-19/SUMMARY.md`
 
 ### 2025-12-16 - CNW Simplified Cloud Prompt & Telemetry (NXC-3624)
 - **Task**: NXC-3624 - Simplify preset flow cloud prompt and add telemetry
@@ -299,6 +354,29 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - **Purpose**: Preserve blog search functionality during docs migration to Astro
 
 ## Design Decisions & Gotchas
+
+### getStaticProps vs getServerSideProps for File-Reading Pages
+- **Issue**: Pages that read from filesystem work in dev but fail in production with ENOENT
+- **Root Cause**: `getServerSideProps` runs at REQUEST time in serverless functions
+- **Problem**: Serverless functions are ephemeral and don't have access to files copied during build
+- **Example**: `public/documentation/changelog/` exists at build time but not in Lambda runtime
+- **Solution**: Use `getStaticProps` to read files at BUILD time, not REQUEST time
+- **When SSR breaks**: Any page using `readdirSync`, `readFileSync`, or accessing `public/` at runtime
+- **Detection**: Look for ENOENT errors in Vercel logs that reference `public/` paths
+
+### Middleware vs SSR for Conditional Routing
+- **Issue**: Need to conditionally route some paths to external service (Framer)
+- **Wrong Approach**: Convert pages to `getServerSideProps` and call rewrite function
+- **Problems with SSR approach**:
+  1. Pages become dynamic (Lambda invocations, expensive)
+  2. Lose access to build-time files
+  3. Every request spawns serverless function
+- **Correct Approach**: Use Next.js middleware at the edge
+- **Benefits**:
+  1. Pages remain static (served from CDN)
+  2. Middleware is cheap (edge runtime, often free)
+  3. Routing logic centralized in one file
+- **Pattern**: `middleware.ts` checks paths, rewrites to external URL if matched
 
 ### Code Path Verification in Conditional Executors
 - **Issue**: Nx executors often have multiple code paths based on runtime conditions

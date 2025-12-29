@@ -25,6 +25,11 @@ Tracking document for Infrastructure team sync meetings.
 
 ## Meeting Notes
 
+### 2025-12-19
+
+**Updates:**
+- Planning meeting - done
+
 ### 2025-12-16
 
 **Updates:**

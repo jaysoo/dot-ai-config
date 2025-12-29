@@ -686,6 +686,64 @@ const getNavigation = () => {
 - Use `''` when you want relative URLs to work: `/path` stays `/path`
 - Use full URL when you need absolute URLs: `https://example.com`
 
+#### getStaticProps vs getServerSideProps for File Access
+
+**Critical Issue from DOC-372:**
+- `getServerSideProps` runs at REQUEST time in serverless functions
+- Serverless functions don't have access to files copied during build
+- Pages that read from `public/` directory will get ENOENT errors in production
+
+**When SSR breaks file access:**
+- Any page using `readdirSync`, `readFileSync`
+- Pages accessing `public/documentation/`, `public/assets/`, etc.
+- Changelog, blog index, or any page listing files dynamically
+
+**Pattern:**
+```tsx
+// ❌ Wrong: Reads files at request time (fails in production)
+export const getServerSideProps = async () => {
+  const files = readdirSync('public/documentation/changelog');
+  return { props: { files } };
+};
+
+// ✅ Correct: Reads files at build time
+export async function getStaticProps() {
+  const files = readdirSync('public/documentation/changelog');
+  return { props: { files } };
+}
+```
+
+**Detection:** ENOENT errors in Vercel logs referencing `public/` paths
+
+#### Middleware vs SSR for Conditional Routing
+
+**Wrong approach** (expensive, breaks file access):
+```tsx
+// ❌ Converting every page to SSR for routing logic
+export const getServerSideProps = async (ctx) => {
+  if (shouldProxy(ctx.req.url)) {
+    return proxyToExternalService(ctx);
+  }
+  // ... read files (BREAKS!)
+};
+```
+
+**Correct approach** (cheap, keeps pages static):
+```typescript
+// ✅ middleware.ts - runs at edge, pages stay static
+export function middleware(request: NextRequest) {
+  if (shouldProxy(request.nextUrl.pathname)) {
+    return NextResponse.rewrite(new URL(pathname, externalUrl));
+  }
+  return NextResponse.next();
+}
+```
+
+**Cost comparison:**
+- `getServerSideProps`: Lambda invocations (~$0.20/million)
+- Middleware: Edge Runtime (often free/included)
+- Static pages: CDN cache (essentially free)
+
 ### URL Migration Patterns (Nx Docs)
 - Use conditional rendering for documentation links during migration:
   ```tsx

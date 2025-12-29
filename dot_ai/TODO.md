@@ -3,54 +3,47 @@
 ## Recent Tasks (Last 10)
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-360: Banner as Astro Content Collection** (2025-12-18)
+1. **DOC-330: Add Netlify Configuration for nx-dev** (2025-12-19)
+   - Summary: Created Netlify config for nx-dev to run alongside Vercel during migration, with plan to remove Vercel in 2 weeks
+   - Files: `dot_ai/2025-12-19/SUMMARY.md`, `nx-dev/nx-dev/netlify.toml`
+
+2. **Planning Meeting** (2025-12-19)
+   - Summary: Discussed roadmap, team moves, eBPF I/O tracing architecture (Cloud-heavy 80/20 split), Codspeed for perf regressions, Docker builds, KB for docs
+   - Files: `dot_ai/syncs/infra/README.md`, `dot_ai/TODO.md`
+
+3. **DOC-368: Support .md URLs and llms.txt for AI Agents** (2025-12-19)
+   - Summary: Implemented raw markdown endpoints (.md URLs) and dynamic llms.txt generation following llmstxt.org spec for AI discoverability
+   - Files: `dot_ai/2025-12-19/SUMMARY.md`
+
+4. **DOC-372: Fix Changelog Page & Middleware for Framer Proxy** (2025-12-19)
+   - Summary: Fixed 500 error on changelog page by reverting to getStaticProps, replaced per-page Framer proxy with edge middleware to keep all pages static and reduce Vercel costs
+   - Files: `dot_ai/2025-12-19/SUMMARY.md`
+
+5. **DOC-360: Banner as Astro Content Collection** (2025-12-18)
    - Summary: Converted banner to Astro content collection with array format, removed middleware approach, both nx-dev and astro-docs now use consistent collection-based banner
    - Files: `dot_ai/2025-12-18/SUMMARY.md`
 
-2. **Nicole 1:1** (2025-12-18)
+6. **Nicole 1:1** (2025-12-18)
    - Summary: Discussed onboarding numbers, platform roadmap 2026, customer advisory board, Sales/Marketing communication
    - Files: `dot_ai/TODO.md` (completed section)
 
-3. **Ben 1:1** (2025-12-18)
+7. **Ben 1:1** (2025-12-18)
    - Summary: Discussed self-healing ownership, Framer, and ecommerce with Caitlin
    - Files: `dot_ai/TODO.md` (completed section)
 
-4. **Claude Skills & Commands Repository** (2025-12-18)
+8. **Claude Skills & Commands Repository** (2025-12-18)
    - Summary: Created new repo to centralize custom Claude Code commands and skills with sync script
    - Files: `~/projects/claude-skills-commands/` (README, sync.sh, commands/, skills/)
 
-5. **Steve 1:1** (2025-12-18)
+9. **Steve 1:1** (2025-12-18)
    - Summary: Discussed infra tracking, Sales/Marketing communication, ClickUp renewal, cost tracking, and NPM/Docker registry value
    - Files: `dot_ai/TODO.md` (completed section)
 
-6. **Chau 1:1** (2025-12-18)
-   - Summary: Moving to Red Panda in January, frontend focus with some backend, AI Czar role, responsibilities include auth, usage screen, enterprise licensing, graph
-   - Files: `dot_ai/TODO.md` (completed section)
-
-7. **Prepare for Partners meeting** (2025-12-17)
-   - Summary: Reviewed Zack's script for Nx MCP Server demo, Nx 2025 features, and 2026 roadmap presentation
-   - Files: `dot_ai/TODO.md` (completed section)
-
-8. **Review Colum's AI Show & Tell** (2025-12-16)
-   - Summary: Reviewed `/identify-closeable-issues` slash command for finding closeable GitHub issues
-   - Files: `~/.claude/commands/identify-closeable-issues.md`
-
-9. **Recent Tasks tracking system** (2025-12-17)
-   - Summary: Added "Recent Tasks (Last 10)" section to TODO.md, updated CLAUDE.md and /summarize command
-   - Files: `dot_ai/2025-12-17/SUMMARY.md`
-
-10. **Review PR #33822 - Prisma client copy fix** (2025-12-16)
-    - Summary: Optimized node_modules filtering for Prisma client copy, fixed async/sync methods
-    - Files: `dot_ai/2025-12-16/SUMMARY.md`
+10. **Chau 1:1** (2025-12-18)
+    - Summary: Moving to Red Panda in January, frontend focus with some backend, AI Czar role, responsibilities include auth, usage screen, enterprise licensing, graph
+    - Files: `dot_ai/TODO.md` (completed section)
 
 ## In Progress
-
-- [ ] Planning Meeting
-  - Roadmap and team moves
-  - eBPF tracing of I/O and inputs/outputs
-  - Proper Docker builds -- easier to adopt Nx into existing set up
-  - KB for docs: https://linear.app/nxdev/project/nx-knowledge-base-docs-project-0c6aee98d867/overview
-  - Codspeed? We need to know performance regressions
 
 - [ ] Follow-up NXC-3427: Multiple Nx daemons persist for same workspace in 21.6.8
   - URL: https://linear.app/nxdev/issue/NXC-3427
@@ -99,6 +92,17 @@
 ## Completed
 
 ### December 2025
+
+- [x] Add up unused TOIL hours (2025-12-19)
+  - https://docs.google.com/spreadsheets/d/1fDF8XD1i9zZcPArRpnx0i0QVVxFYl2hXBsRzVEG_iiY/edit?gid=0#gid=0
+
+- [x] Planning Meeting (2025-12-19)
+  - Notes https://www.notion.so/nxnrwl/2026-Jan-Feb-planning-notes-2ce69f3c238780b78fe4e5a2e8a5b786
+  - Roadmap and team moves
+  - eBPF tracing of I/O and inputs/outputs - Cloud-heavy architecture (80% Cloud, 20% external tooling)
+  - Codspeed? We need to know performance regressions
+  - Proper Docker builds -- easier to adopt Nx into existing set up
+  - KB for docs: https://linear.app/nxdev/project/nx-knowledge-base-docs-project-0c6aee98d867/overview
 
 - [x] Nicole 1:1 (2025-12-18)
   - Onboarding numbers follow-up on any CNW impact
