@@ -3,44 +3,44 @@
 ## Recent Tasks (Last 10)
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-330: Netlify Migration Review** (2025-12-29)
+1. **AI Usage Tracking Scripts** (2025-12-30)
+   - Summary: Created suite of scripts to track AI tool usage (Claude Code, Cursor, VSCode) for team accountability; supports markdown/HTML output, cost estimates, shareable via GitHub Gist
+   - Files: `scripts/ai-usage.mjs`, `scripts/claude-code-usage.mjs`, `scripts/cursor-usage.mjs`, `scripts/vscode-copilot-usage.mjs`
+
+2. **DOC-330: Netlify Migration Review** (2025-12-29)
    - Summary: Reviewed nx-dev Netlify config; found issues: missing @netlify/plugin-nextjs, ~959 redirects near limit, external rewrites need plugin, middleware compatibility
    - Files: `dot_ai/2025-12-29/tasks/doc-330-netlify-migration-review.md`
 
-2. **NXC-3641: Centralized Template Updater** (2025-12-29)
+3. **NXC-3641: Centralized Template Updater** (2025-12-29)
    - Summary: Built `nrwl/nx-template-updater` repo with GitHub App auth, nightly workflows, Slack notifications; committed locally, ready for team review
    - Files: `dot_ai/2025-12-29/tasks/nxc-3641-template-updater.md`, `/Users/jack/projects/nx-template-updater`
 
-3. **Turborepo vs Nx Devtools Comparison Setup** (2025-12-29)
+4. **Turborepo vs Nx Devtools Comparison Setup** (2025-12-29)
    - Summary: Created 500-package test monorepo with random deps to compare Turbo/Nx devtools at scale; branches: main (Turbo), use-nx (Nx)
    - Files: `dot_ai/2025-12-29/SUMMARY.md`, `/tmp/my-turborepo`
 
-4. **PR #33417: peerDepsVersionStrategy workspace protocol fix** (2025-12-29)
+5. **PR #33417: peerDepsVersionStrategy workspace protocol fix** (2025-12-29)
    - Summary: Fixed dependency-checks rule to accept all workspace protocol variants (`workspace:*`, `workspace:^`, `workspace:~`), not just exact `workspace:*`
    - Files: `dot_ai/2025-12-29/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/33417
 
-5. **Planning Meeting** (2025-12-19)
+6. **Planning Meeting** (2025-12-19)
    - Summary: Discussed roadmap, team moves, eBPF I/O tracing architecture (Cloud-heavy 80/20 split), Codspeed for perf regressions, Docker builds, KB for docs
    - Files: `dot_ai/syncs/infra/README.md`, `dot_ai/TODO.md`
 
-6. **DOC-368: Support .md URLs and llms.txt for AI Agents** (2025-12-19)
+7. **DOC-368: Support .md URLs and llms.txt for AI Agents** (2025-12-19)
    - Summary: Implemented raw markdown endpoints (.md URLs) and dynamic llms.txt generation following llmstxt.org spec for AI discoverability
    - Files: `dot_ai/2025-12-19/SUMMARY.md`
 
-7. **DOC-372: Fix Changelog Page & Middleware for Framer Proxy** (2025-12-19)
+8. **DOC-372: Fix Changelog Page & Middleware for Framer Proxy** (2025-12-19)
    - Summary: Fixed 500 error on changelog page by reverting to getStaticProps, replaced per-page Framer proxy with edge middleware to keep all pages static and reduce Vercel costs
    - Files: `dot_ai/2025-12-19/SUMMARY.md`
 
-8. **DOC-360: Banner as Astro Content Collection** (2025-12-18)
+9. **DOC-360: Banner as Astro Content Collection** (2025-12-18)
    - Summary: Converted banner to Astro content collection with array format, removed middleware approach, both nx-dev and astro-docs now use consistent collection-based banner
    - Files: `dot_ai/2025-12-18/SUMMARY.md`
 
-9. **Nicole 1:1** (2025-12-18)
-   - Summary: Discussed onboarding numbers, platform roadmap 2026, customer advisory board, Sales/Marketing communication
-   - Files: `dot_ai/TODO.md` (completed section)
-
-10. **Ben 1:1** (2025-12-18)
-    - Summary: Discussed self-healing ownership, Framer, and ecommerce with Caitlin
+10. **Nicole 1:1** (2025-12-18)
+    - Summary: Discussed onboarding numbers, platform roadmap 2026, customer advisory board, Sales/Marketing communication
     - Files: `dot_ai/TODO.md` (completed section)
 
 ## In Progress
