@@ -8,14 +8,19 @@ The user must have already run `/netlify-pending` and edited `/tmp/pending-deplo
 
 ## Instructions
 
-1. Confirm with the user how many deploys will be rejected:
+1. Check that NETLIFY_TOKEN is set:
+```bash
+[ -z "$NETLIFY_TOKEN" ] && echo "Error: NETLIFY_TOKEN not set. Run: export NETLIFY_TOKEN='your-token'" && exit 1
+```
+
+2. Confirm with the user how many deploys will be rejected:
 ```bash
 echo "Will reject $(tail -n +2 /tmp/pending-deploys.tsv | wc -l | tr -d ' ') deploys"
 ```
 
-2. Ask the user to confirm before proceeding.
+3. Ask the user to confirm before proceeding.
 
-3. If confirmed, run the reject script:
+4. If confirmed, run the reject script:
 ```bash
-cd /tmp && NETLIFY_TOKEN="nfp_Y1kBux31ur9MtXQ6osKZ4CNUaEedRsm55ea3" ~/.ai/scripts/netlify-reject-deploys.sh
+cd /tmp && ~/projects/dot-ai-config/dot_ai/scripts/netlify-reject-deploys.sh
 ```
