@@ -212,7 +212,7 @@ function renderCursor() {
 
   console.log('| Metric | Value |');
   console.log('|--------|-------|');
-  console.log(`| Tracking since | ${fmtDate(startTime?.timestamp)} |`);
+  console.log(`| First session | ${fmtDate(startTime?.timestamp)} |`);
   console.log(`| AI code blocks | ${total.toLocaleString()} |`);
   console.log(`| Scored commits | ${scoredCommits.length.toLocaleString()} |`);
   console.log('');
