@@ -3,47 +3,65 @@
 ## Recent Tasks (Last 10)
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-330: Add Netlify Configuration for nx-dev** (2025-12-19)
-   - Summary: Created Netlify config for nx-dev to run alongside Vercel during migration, with plan to remove Vercel in 2 weeks
-   - Files: `dot_ai/2025-12-19/SUMMARY.md`, `nx-dev/nx-dev/netlify.toml`
+1. **DOC-330: Netlify Migration Review** (2025-12-29)
+   - Summary: Reviewed nx-dev Netlify config; found issues: missing @netlify/plugin-nextjs, ~959 redirects near limit, external rewrites need plugin, middleware compatibility
+   - Files: `dot_ai/2025-12-29/tasks/doc-330-netlify-migration-review.md`
 
-2. **Planning Meeting** (2025-12-19)
+2. **NXC-3641: Centralized Template Updater** (2025-12-29)
+   - Summary: Built `nrwl/nx-template-updater` repo with GitHub App auth, nightly workflows, Slack notifications; committed locally, ready for team review
+   - Files: `dot_ai/2025-12-29/tasks/nxc-3641-template-updater.md`, `/Users/jack/projects/nx-template-updater`
+
+3. **Turborepo vs Nx Devtools Comparison Setup** (2025-12-29)
+   - Summary: Created 500-package test monorepo with random deps to compare Turbo/Nx devtools at scale; branches: main (Turbo), use-nx (Nx)
+   - Files: `dot_ai/2025-12-29/SUMMARY.md`, `/tmp/my-turborepo`
+
+4. **PR #33417: peerDepsVersionStrategy workspace protocol fix** (2025-12-29)
+   - Summary: Fixed dependency-checks rule to accept all workspace protocol variants (`workspace:*`, `workspace:^`, `workspace:~`), not just exact `workspace:*`
+   - Files: `dot_ai/2025-12-29/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/33417
+
+5. **Planning Meeting** (2025-12-19)
    - Summary: Discussed roadmap, team moves, eBPF I/O tracing architecture (Cloud-heavy 80/20 split), Codspeed for perf regressions, Docker builds, KB for docs
    - Files: `dot_ai/syncs/infra/README.md`, `dot_ai/TODO.md`
 
-3. **DOC-368: Support .md URLs and llms.txt for AI Agents** (2025-12-19)
+6. **DOC-368: Support .md URLs and llms.txt for AI Agents** (2025-12-19)
    - Summary: Implemented raw markdown endpoints (.md URLs) and dynamic llms.txt generation following llmstxt.org spec for AI discoverability
    - Files: `dot_ai/2025-12-19/SUMMARY.md`
 
-4. **DOC-372: Fix Changelog Page & Middleware for Framer Proxy** (2025-12-19)
+7. **DOC-372: Fix Changelog Page & Middleware for Framer Proxy** (2025-12-19)
    - Summary: Fixed 500 error on changelog page by reverting to getStaticProps, replaced per-page Framer proxy with edge middleware to keep all pages static and reduce Vercel costs
    - Files: `dot_ai/2025-12-19/SUMMARY.md`
 
-5. **DOC-360: Banner as Astro Content Collection** (2025-12-18)
+8. **DOC-360: Banner as Astro Content Collection** (2025-12-18)
    - Summary: Converted banner to Astro content collection with array format, removed middleware approach, both nx-dev and astro-docs now use consistent collection-based banner
    - Files: `dot_ai/2025-12-18/SUMMARY.md`
 
-6. **Nicole 1:1** (2025-12-18)
+9. **Nicole 1:1** (2025-12-18)
    - Summary: Discussed onboarding numbers, platform roadmap 2026, customer advisory board, Sales/Marketing communication
    - Files: `dot_ai/TODO.md` (completed section)
 
-7. **Ben 1:1** (2025-12-18)
-   - Summary: Discussed self-healing ownership, Framer, and ecommerce with Caitlin
-   - Files: `dot_ai/TODO.md` (completed section)
-
-8. **Claude Skills & Commands Repository** (2025-12-18)
-   - Summary: Created new repo to centralize custom Claude Code commands and skills with sync script
-   - Files: `~/projects/claude-skills-commands/` (README, sync.sh, commands/, skills/)
-
-9. **Steve 1:1** (2025-12-18)
-   - Summary: Discussed infra tracking, Sales/Marketing communication, ClickUp renewal, cost tracking, and NPM/Docker registry value
-   - Files: `dot_ai/TODO.md` (completed section)
-
-10. **Chau 1:1** (2025-12-18)
-    - Summary: Moving to Red Panda in January, frontend focus with some backend, AI Czar role, responsibilities include auth, usage screen, enterprise licensing, graph
+10. **Ben 1:1** (2025-12-18)
+    - Summary: Discussed self-healing ownership, Framer, and ecommerce with Caitlin
     - Files: `dot_ai/TODO.md` (completed section)
 
 ## In Progress
+
+- [ ] NXC-3641: Centralized Template Updater (2025-12-29 11:30)
+  - Linear: https://linear.app/nxdev/issue/NXC-3641
+  - Plan: `.ai/2025-12-29/tasks/nxc-3641-template-updater.md`
+  - Repo: `/Users/jack/projects/nx-template-updater` (commit `99ada50`, not pushed)
+  - Goal: Create `nrwl/nx-template-updater` repo to auto-update CNW templates when Nx publishes
+  - Status: Implementation complete, pending team review
+  - Remaining:
+    - Push commit to remote
+    - Test full update workflow via manual trigger
+    - Add post-merge squash workflow to `nrwl/empty-template`
+    - Enable schedule in check-and-update.yml (currently commented out)
+
+- [ ] Fix #33047 - @nx/web:file-server crash on non-GET requests (2025-10-27 09:58)
+  - URL: https://github.com/nrwl/nx/issues/33047
+  - Goal: Handle non-GET requests properly in file-server to prevent crashes with SPA mode
+  - Impact: Small scoped fix (3 engagement)
+  - Notes: Root cause identified - related to http-server issue with SPA proxy
 
 - [ ] Follow-up NXC-3427: Multiple Nx daemons persist for same workspace in 21.6.8
   - URL: https://linear.app/nxdev/issue/NXC-3427
@@ -64,12 +82,6 @@
   - Fix: Change in aggregator to discount "null" contributors from count
   - Customer: Org 65811494657f145ed525b196
 
-- [ ] Fix #33047 - @nx/web:file-server crash on non-GET requests (2025-10-27 09:58)
-  - URL: https://github.com/nrwl/nx/issues/33047
-  - Goal: Handle non-GET requests properly in file-server to prevent crashes with SPA mode
-  - Impact: Small scoped fix (3 engagement)
-  - Notes: Root cause identified - related to http-server issue with SPA proxy
-
 - [ ] Fix #32880 - Next.js Jest tests do not exit properly (2025-10-27 09:58)
   - URL: https://github.com/nrwl/nx/issues/32880
   - Goal: Configure Jest properly for Next.js apps to avoid hanging after test completion
@@ -81,17 +93,17 @@
   - Impact: High (18 engagement - 4 comments, 14 reactions)
   - Notes: Reproducible in nx-examples repo, affects run-many and affected commands
 
-- [ ] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)
-
-  - Dictation: `.ai/2025-08-21/dictations/module-federation-dynamic-manifest-issues.md`
-  - Goal: Fix URL property handling in dynamic manifests and static fallback mechanism
-  - Next steps: Create reproduction repo, communicate with Colum, review on Friday
-
 - [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
 
 ## Completed
 
 ### December 2025
+
+- [x] Module Federation Dynamic Manifest and Static Fallback Issues (2025-08-21 10:49)
+  - Dictation: `.ai/2025-08-21/dictations/module-federation-dynamic-manifest-issues.md`
+  - Goal: Fix URL property handling in dynamic manifests and static fallback mechanism
+  - Next steps: Create reproduction repo, communicate with Colum, review on Friday
+  - This was skipped due to being stale
 
 - [x] Add up unused TOIL hours (2025-12-19)
   - https://docs.google.com/spreadsheets/d/1fDF8XD1i9zZcPArRpnx0i0QVVxFYl2hXBsRzVEG_iiY/edit?gid=0#gid=0
