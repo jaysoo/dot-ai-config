@@ -16,6 +16,7 @@ ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai
 ```
 
 ### Git Workflow
+- **🔐 NEVER commit tokens, secrets, or API keys** - Check for `.env`, credentials, auth tokens before staging
 - **Never commit to main/master** - always use feature branches
 - **Always squash commits** before pushing: `git reset --soft HEAD~n && git commit`
 - **Commit format must match PR template** (check `.github/PULL_REQUEST_TEMPLATE.md`)
