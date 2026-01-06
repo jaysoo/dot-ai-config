@@ -23,6 +23,8 @@ Quick reference for team members.
 | Steve Pentland | Welland(?), ON | |
 | Szymon | Poland | |
 | Victor | | CTO |
+| Madeline | | VP of Sales |
+| Joe | | |
 
 ## Upcoming Events
 

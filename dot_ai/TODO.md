@@ -45,17 +45,22 @@
 
 ## In Progress
 
+- [ ] Infra Sync
+  - Docker Layer Caching as a feature to push, also NPM mirrors
+    - Lots of value add for ST
+  - It'd be a lot of work to replicate what our infra does for reliability, etc.
+
 - [ ] NXC-3641: Centralized Template Updater (2025-12-29 11:30)
   - Linear: https://linear.app/nxdev/issue/NXC-3641
   - Plan: `.ai/2025-12-29/tasks/nxc-3641-template-updater.md`
-  - Repo: `/Users/jack/projects/nx-template-updater` (commit `99ada50`, not pushed)
+  - Repo: `/Users/jack/projects/nx-template-updater`
   - Goal: Create `nrwl/nx-template-updater` repo to auto-update CNW templates when Nx publishes
   - Status: Implementation complete, pending team review
   - Remaining:
-    - Push commit to remote
     - Test full update workflow via manual trigger
     - Add post-merge squash workflow to `nrwl/empty-template`
     - Enable schedule in check-and-update.yml (currently commented out)
+    - Also need to run `npx nx configure-ai-agents` and `npx nx run-many -t lint test typecheck build e2e`
 
 - [ ] Fix #33047 - @nx/web:file-server crash on non-GET requests (2025-10-27 09:58)
   - URL: https://github.com/nrwl/nx/issues/33047

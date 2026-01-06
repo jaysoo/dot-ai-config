@@ -25,7 +25,11 @@
 
 ## 1:1 Notes
 
-### 2024-12-29 - file-server SPA infinite loop fix (#33047)
+### 2026-01-06
+
+- Very against Maven plugin being gated
+
+### 2025-12-29 - file-server SPA infinite loop fix (#33047)
 
 **Issue:** `@nx/web:file-server` crashes when handling non-GET requests in SPA mode due to http-server's self-referential proxy causing infinite loops.
 
