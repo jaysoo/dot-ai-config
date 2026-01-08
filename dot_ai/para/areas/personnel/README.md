@@ -1,6 +1,20 @@
-# Team Overview
+# Personnel
 
-Quick reference for team members.
+Notes on team members for building relationships and effective 1:1s.
+
+## Purpose
+
+- Track personal details (location, family, interests) for bonding
+- Record professional info (role, projects, goals)
+- Maintain 1:1 notes and follow-ups
+
+## File Structure
+
+- `README.md` - This overview and quick reference table
+- `_template.md` - Template for new team member files
+- `[name].md` - Individual files (lowercase, hyphenated)
+
+## Quick Reference
 
 | Name | Location | Key Notes |
 |------|----------|-----------|

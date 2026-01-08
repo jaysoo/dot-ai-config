@@ -52,8 +52,34 @@ body {
 
 .header-stats {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   color: var(--text-secondary);
+  align-items: center;
+}
+
+.header-stats .last-updated {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.refresh-btn {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--accent-secondary);
+  color: var(--text-primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background: var(--accent-secondary);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .view-nav {

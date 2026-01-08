@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import type { PageData, PathSegment } from './types';
 import { loadAllData } from './utils/parser';
 import {
@@ -21,27 +21,61 @@ function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('tree');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+
+  const refreshData = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      // Add cache-busting query param to force fresh fetch
+      const timestamp = Date.now();
+      const [mainResponse, extendedResponse] = await Promise.all([
+        fetch(`/data/pages-main.csv?t=${timestamp}`),
+        fetch(`/data/pages-extended.csv?t=${timestamp}`),
+      ]);
+
+      const [mainText, extendedText] = await Promise.all([
+        mainResponse.text(),
+        extendedResponse.text(),
+      ]);
+
+      // Re-import parser to use its parseCSV function
+      const { parseCSV } = await import('./utils/parser');
+      const mainPages = parseCSV(mainText);
+      const extendedPages = parseCSV(extendedText);
+
+      // Merge and dedupe
+      const pageMap = new Map<string, PageData>();
+      for (const page of extendedPages) {
+        pageMap.set(page.path, page);
+      }
+      for (const page of mainPages) {
+        pageMap.set(page.path, page);
+      }
+      const data = Array.from(pageMap.values());
+
+      setPages(data);
+      const pathTree = createPathTree(data);
+      setTree(pathTree);
+
+      // Select the largest section by default
+      const docsNode = pathTree.children.get('docs');
+      if (docsNode && docsNode.children.size > 0) {
+        const topSection = Array.from(docsNode.children.values())
+          .sort((a, b) => b.totalViews - a.totalViews)[0];
+        setSelectedSegment(topSection);
+      }
+      setLastUpdated(new Date());
+      setLoading(false);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load data');
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    loadAllData()
-      .then((data) => {
-        setPages(data);
-        const pathTree = createPathTree(data);
-        setTree(pathTree);
-        // Select the largest section by default
-        const docsNode = pathTree.children.get('docs');
-        if (docsNode && docsNode.children.size > 0) {
-          const topSection = Array.from(docsNode.children.values())
-            .sort((a, b) => b.totalViews - a.totalViews)[0];
-          setSelectedSegment(topSection);
-        }
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
+    refreshData();
+  }, [refreshData]);
 
   if (loading) {
     return <div className="loading">Loading analytics data...</div>;
@@ -73,6 +107,14 @@ function App() {
         <div className="header-stats">
           <span>{pages.length} pages</span>
           <span>{totalViews.toLocaleString()} total views</span>
+          {lastUpdated && (
+            <span className="last-updated">
+              Updated {lastUpdated.toLocaleTimeString()}
+            </span>
+          )}
+          <button className="refresh-btn" onClick={refreshData} disabled={loading}>
+            {loading ? 'Loading...' : 'Refresh Data'}
+          </button>
         </div>
       </header>
 

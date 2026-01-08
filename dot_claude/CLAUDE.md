@@ -105,16 +105,28 @@ The `.ai/` folder uses the [PARA method](https://fortelabs.com/blog/para/) for o
 
 ```
 .ai/para/
-├── projects/    # Active projects with deadlines/goals
-├── areas/       # Ongoing responsibilities (no end date)
+├── README.md        # Master documentation of PARA system
+├── projects/        # Active projects with deadlines/goals
+│   └── README.md
+├── areas/           # Ongoing responsibilities (no end date)
+│   ├── README.md
 │   ├── personnel/   # 1:1 notes and team member info
+│   │   └── README.md
 │   ├── syncs/       # Team sync meeting notes
-│   └── productivity.md
-├── resources/   # Reference materials for future use
+│   │   └── README.md
+│   └── productivity/
+│       └── README.md
+├── resources/       # Reference materials for future use
+│   ├── README.md
 │   ├── architectures/   # Repository architecture docs
+│   │   └── README.md
 │   └── scripts/         # Utility scripts
-└── archive/     # Inactive items from projects/areas/resources
+│       └── README.md
+└── archive/         # Inactive items from projects/areas/resources
+    └── README.md
 ```
+
+**Key Rule:** Every folder has a `README.md`. No orphaned files at folder root level.
 
 ### PARA Definitions
 
@@ -133,10 +145,11 @@ The `.ai/` folder uses the [PARA method](https://fortelabs.com/blog/para/) for o
 4. **Is it no longer active/relevant?** → `.ai/para/archive/`
 
 ### Key Paths
-- Projects: `.ai/para/projects/[project-name].md`
+- PARA docs: `.ai/para/README.md`
+- Projects: `.ai/para/projects/[project-name]/README.md`
 - Personnel notes: `.ai/para/areas/personnel/`
 - Team syncs: `.ai/para/areas/syncs/`
-- Productivity: `.ai/para/areas/productivity.md`
+- Productivity: `.ai/para/areas/productivity/README.md`
 - Architectures: `.ai/para/resources/architectures/`
 - Scripts: `.ai/para/resources/scripts/`
 - Archive: `.ai/para/archive/`
