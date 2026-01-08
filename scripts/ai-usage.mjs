@@ -61,6 +61,21 @@ function getStateValue(dbPath, key) {
 // =============================================================================
 // Claude Code
 // =============================================================================
+function aggregateByMonth(dailyActivity) {
+  const months = {};
+  for (const day of dailyActivity) {
+    const month = day.date.slice(0, 7); // YYYY-MM
+    if (!months[month]) {
+      months[month] = { messages: 0, sessions: 0, toolCalls: 0, days: 0 };
+    }
+    months[month].messages += day.messageCount || 0;
+    months[month].sessions += day.sessionCount || 0;
+    months[month].toolCalls += day.toolCallCount || 0;
+    months[month].days += 1;
+  }
+  return months;
+}
+
 function renderClaudeCode() {
   console.log('## Claude Code\n');
 
@@ -112,22 +127,28 @@ function renderClaudeCode() {
   console.log(`| First session | ${fmtDate(data.firstSessionDate)} |`);
   console.log(`| Total sessions | ${(data.totalSessions || 0).toLocaleString()} |`);
   console.log(`| Total messages | ${(data.totalMessages || 0).toLocaleString()} |`);
-  console.log(`| **Total tokens** | **${fmt(total)}** |`);
-  console.log(`| **Est. cost** | **$${totalCost.toFixed(2)}** |`);
+  console.log(`| **Total tokens** | **${fmt(total)}** _(cumulative)_ |`);
+  console.log(`| **Est. cost** | **$${totalCost.toFixed(2)}** _(cumulative)_ |`);
   console.log('');
 
-  console.log('### Daily Averages\n');
-  console.log('| Metric | Value |');
-  console.log('|--------|-------|');
-  console.log(`| Calendar days | ${calendarDays} |`);
-  console.log(`| Est. working days | ${workingDays} |`);
-  console.log(`| Active days | ${activeDays} |`);
-  console.log(`| Tokens/working day | ${fmt(Math.round(total / workingDays))} |`);
-  console.log(`| Messages/day | ${Math.round((data.totalMessages || 0) / activeDays)} |`);
-  console.log(`| Cost/working day | $${(totalCost / workingDays).toFixed(2)} |`);
-  console.log('');
+  // Monthly breakdown
+  const monthlyData = aggregateByMonth(data.dailyActivity || []);
+  const sortedMonths = Object.keys(monthlyData).sort();
 
-  console.log('### Token Breakdown\n');
+  if (sortedMonths.length > 0) {
+    console.log('### Monthly Activity\n');
+    console.log('| Month | Messages | Sessions | Tool Calls | Active Days | Msgs/Day |');
+    console.log('|-------|----------|----------|------------|-------------|----------|');
+    for (const month of sortedMonths) {
+      const m = monthlyData[month];
+      const msgsPerDay = m.days > 0 ? Math.round(m.messages / m.days) : 0;
+      console.log(`| ${month} | ${m.messages.toLocaleString()} | ${m.sessions.toLocaleString()} | ${m.toolCalls.toLocaleString()} | ${m.days} | ${msgsPerDay} |`);
+    }
+    console.log('');
+  }
+
+  console.log('### Token Breakdown (Cumulative)\n');
+  console.log('> _Token usage is only tracked as cumulative totals, not per day/month._\n');
   console.log('| Type | Tokens |');
   console.log('|------|--------|');
   console.log(`| Input | ${fmt(input)} |`);
@@ -136,7 +157,7 @@ function renderClaudeCode() {
   console.log(`| Cache write | ${fmt(cacheWrite)} |`);
   console.log('');
 
-  console.log('### By Model\n');
+  console.log('### By Model (Cumulative)\n');
   console.log('| Model | Input | Output | Cache Read | Cache Write | Est. Cost |');
   console.log('|-------|-------|--------|------------|-------------|-----------|');
   for (const [model, usage] of Object.entries(data.modelUsage || {})) {
@@ -179,17 +200,37 @@ function renderCursor() {
   const startTime = getStateValue(CURSOR_STATE_DB, 'aiCodeTrackingStartTime');
   const scoredCommits = getStateValue(CURSOR_STATE_DB, 'aiCodeTrackingScoredCommits') || [];
 
-  // Get daily stats
-  const dailyResult = sqliteQuery(CURSOR_STATE_DB, "SELECT value FROM ItemTable WHERE key LIKE 'aiCodeTracking.dailyStats%'");
+  // Get daily stats and aggregate by month
+  const dailyResult = sqliteQuery(CURSOR_STATE_DB, "SELECT key, value FROM ItemTable WHERE key LIKE 'aiCodeTracking.dailyStats%'");
   let totalTabSugg = 0, totalTabAcc = 0, totalCompSugg = 0, totalCompAcc = 0;
+  const cursorMonthly = {};
   if (dailyResult) {
     for (const line of dailyResult.split('\n')) {
       try {
-        const day = JSON.parse(line);
+        // Key format: aiCodeTracking.dailyStats.v1.5.YYYY-MM-DD
+        const pipeIdx = line.indexOf('|');
+        const key = pipeIdx > -1 ? line.slice(0, pipeIdx) : '';
+        const value = pipeIdx > -1 ? line.slice(pipeIdx + 1) : line;
+        const day = JSON.parse(value);
+
         totalTabSugg += day.tabSuggestedLines || 0;
         totalTabAcc += day.tabAcceptedLines || 0;
         totalCompSugg += day.composerSuggestedLines || 0;
         totalCompAcc += day.composerAcceptedLines || 0;
+
+        // Extract month from date field or key
+        const dateStr = day.date || key.match(/\d{4}-\d{2}-\d{2}/)?.[0];
+        if (dateStr) {
+          const month = dateStr.slice(0, 7);
+          if (!cursorMonthly[month]) {
+            cursorMonthly[month] = { tabSugg: 0, tabAcc: 0, compSugg: 0, compAcc: 0, days: 0 };
+          }
+          cursorMonthly[month].tabSugg += day.tabSuggestedLines || 0;
+          cursorMonthly[month].tabAcc += day.tabAcceptedLines || 0;
+          cursorMonthly[month].compSugg += day.composerSuggestedLines || 0;
+          cursorMonthly[month].compAcc += day.composerAcceptedLines || 0;
+          cursorMonthly[month].days += 1;
+        }
       } catch {}
     }
   }
@@ -229,11 +270,27 @@ function renderCursor() {
   const totalSugg = totalTabSugg + totalCompSugg;
   const totalAcc = totalTabAcc + totalCompAcc;
   if (totalSugg > 0 || totalAcc > 0) {
-    console.log('### Lines of Code\n');
+    console.log('### Lines of Code (Cumulative)\n');
     console.log('| Metric | Tab | Composer | Total |');
     console.log('|--------|-----|----------|-------|');
     console.log(`| Suggested | ${totalTabSugg.toLocaleString()} | ${totalCompSugg.toLocaleString()} | ${totalSugg.toLocaleString()} |`);
     console.log(`| Accepted | ${totalTabAcc.toLocaleString()} | ${totalCompAcc.toLocaleString()} | ${totalAcc.toLocaleString()} |`);
+    console.log('');
+  }
+
+  // Monthly breakdown
+  const sortedCursorMonths = Object.keys(cursorMonthly).sort();
+  if (sortedCursorMonths.length > 0) {
+    console.log('### Monthly Activity\n');
+    console.log('| Month | Suggested | Accepted | Accept Rate | Active Days |');
+    console.log('|-------|-----------|----------|-------------|-------------|');
+    for (const month of sortedCursorMonths) {
+      const m = cursorMonthly[month];
+      const sugg = m.tabSugg + m.compSugg;
+      const acc = m.tabAcc + m.compAcc;
+      const rate = sugg > 0 ? ((acc / sugg) * 100).toFixed(1) + '%' : '-';
+      console.log(`| ${month} | ${sugg.toLocaleString()} | ${acc.toLocaleString()} | ${rate} | ${m.days} |`);
+    }
     console.log('');
   }
 }
@@ -326,6 +383,8 @@ function renderVSCode() {
     }
     console.log('');
   }
+
+  console.log('> **Note:** Monthly/daily breakdown not available. VSCode stores only cumulative totals locally. For detailed usage, check your [GitHub Copilot dashboard](https://github.com/settings/copilot).\n');
 }
 
 // =============================================================================
@@ -347,9 +406,9 @@ renderVSCode();
 
 console.log('---\n');
 console.log('**Notes:**');
-console.log('- Claude Code: Full token usage tracked locally; cost estimated using [Anthropic pricing](https://anthropic.com/pricing)');
-console.log('- Cursor: Code blocks and lines tracked locally; tokens/cost are server-side only (cannot estimate)');
-console.log('- VSCode/Copilot: Minimal local tracking; tokens/cost are server-side only (cannot estimate)');
+console.log('- Claude Code: Monthly activity (messages, sessions, tool calls) available; token/cost only as cumulative totals');
+console.log('- Cursor: Monthly lines suggested/accepted available; tokens/cost are server-side only');
+console.log('- VSCode/Copilot: Cumulative totals only; no daily/monthly breakdown available locally');
 
 // Restore console.log
 console.log = originalLog;

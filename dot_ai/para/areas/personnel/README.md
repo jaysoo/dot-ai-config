@@ -30,7 +30,7 @@ Notes on team members for building relationships and effective 1:1s.
 | Jon | London, ON | |
 | Leo | Barcelona, Spain | COI team(?), neighbors with Andrew |
 | Louie | Vancouver or Toronto | |
-| Mark | McKees Rocks, PA | |
+| Mark | McKees Rocks, PA | Frontend, self-healing UI onboarding |
 | Max | Munich, Germany | |
 | Nicole | San Diego, CA | Husband, daughter |
 | Patrick | Toronto, ON | |
@@ -58,3 +58,4 @@ Notes on team members for building relationships and effective 1:1s.
 - Colum's partner name
 - Rares's daughter's name
 - Leo's team (COI?)
+- Mark's wife's name
