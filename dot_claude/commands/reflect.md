@@ -48,7 +48,7 @@ It also helps improve Claude Code itself by ensuring that mistakes done are not 
 ### Regular Reflection
 - Run anytime during work (even 10x per day)
 - Updates today's SUMMARY.md in .ai/yyyy-mm-dd/
-- Updates repository architecture in .ai/architectures/[repo]-architecture.md
+- Updates repository architecture in .ai/para/resources/architectures/[repo]-architecture.md
 - Quiet by default, shows summary of changes
 
 ### Smart Updates
@@ -111,7 +111,7 @@ cd ~/projects/nx
 - Focuses mostly on today's work (previous days were probably captured)
 - Creates architecture file if it doesn't exist
 - One architecture.md per repository
-- Files stored in .ai/architectures/[repo]-architecture.md
+- Files stored in .ai/para/resources/architectures/[repo]-architecture.md
 - When recording "Personal Work" or featrures/changes I've made, make sure to reference date and git branches or commits (if applicable)
     - Later on, if old commits aren't found, then mark that work/feature as possibly not merged or reverted
     - It's possible a PR was opened, but it did not finish, in which case I can review and delete them from the doc manually

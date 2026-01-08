@@ -1,8 +1,8 @@
-# Jason
+# Philip Fulcher
 
-**Team:**
+**Team:** Documentation
 **Role:**
-**Location:** Toronto, Ontario, Canada
+**Location:**
 
 ## Personal
 
@@ -25,4 +25,10 @@
 
 ## 1:1 Notes
 
+### 2026-01-08
+
+- Attended Docs sync with Caleb
+
 ## Random Notes
+
+<!-- Miscellaneous things to remember -->

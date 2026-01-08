@@ -1,0 +1,383 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-tertiary: #0f3460;
+  --text-primary: #eaeaea;
+  --text-secondary: #a0a0a0;
+  --accent: #e94560;
+  --accent-secondary: #0f4c75;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #ef4444;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: var(--bg-secondary);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.header-stats {
+  display: flex;
+  gap: 2rem;
+  color: var(--text-secondary);
+}
+
+.view-nav {
+  background: var(--bg-secondary);
+  padding: 0.5rem 2rem;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.view-nav button {
+  background: transparent;
+  border: 1px solid var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.view-nav button:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.view-nav button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.loading,
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.25rem;
+}
+
+.error {
+  color: var(--danger);
+}
+
+/* Tree View Layout */
+.tree-view {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  height: calc(100vh - 120px);
+}
+
+.sidebar {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--bg-tertiary);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.tree-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+.detail-panel {
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.no-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: var(--text-secondary);
+}
+
+/* Path Tree Component */
+.path-tree-node {
+  font-size: 0.875rem;
+}
+
+.path-row {
+  display: flex;
+  align-items: center;
+  padding: 0.375rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.path-row:hover {
+  background: var(--bg-tertiary);
+}
+
+.path-row.selected {
+  background: var(--accent-secondary);
+}
+
+.expand-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  font-size: 0.7rem;
+}
+
+.expand-placeholder {
+  width: 20px;
+}
+
+.segment-name {
+  flex: 1;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.metrics {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.metrics .views {
+  color: var(--text-primary);
+}
+
+.metrics .percentage {
+  color: #60a5fa;
+  min-width: 45px;
+  text-align: right;
+}
+
+.metrics .bounce {
+  color: var(--warning);
+  min-width: 80px;
+  text-align: right;
+}
+
+/* Segment Detail */
+.segment-detail {
+  max-width: 1400px;
+}
+
+.segment-header {
+  margin-bottom: 1.5rem;
+}
+
+.segment-header h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.segment-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.segment-stats .stat {
+  background: var(--bg-secondary);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  min-width: 120px;
+}
+
+.segment-stats .label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.segment-stats .value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Page Table */
+.page-table {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.page-table h3 {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1rem;
+  background: var(--bg-tertiary);
+}
+
+.page-table .empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.page-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.page-table th,
+.page-table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.page-table th {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+}
+
+.page-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.page-table th.sortable:hover {
+  color: var(--text-primary);
+}
+
+.page-table .sort-indicator {
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+
+.page-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.page-table .path {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page-table .high-bounce {
+  color: var(--danger);
+}
+
+.page-table .score {
+  font-weight: 600;
+}
+
+.page-table .score.engagement {
+  color: var(--success);
+}
+
+.page-table .score.problem {
+  color: var(--danger);
+}
+
+/* List View */
+.list-view {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.view-description {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.view-description p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.view-description strong {
+  color: var(--text-primary);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}

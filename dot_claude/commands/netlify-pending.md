@@ -11,7 +11,7 @@ Fetch all pending_review Netlify deploys, save to TSV, and show summary.
 
 2. Run the export script:
 ```bash
-cd /tmp && ~/projects/dot-ai-config/dot_ai/scripts/netlify-pending-deploys.sh
+cd /tmp && ~/projects/dot-ai-config/dot_ai/para/resources/scripts/netlify-pending-deploys.sh
 ```
 
 3. Show the 10 most recent deploys and total count:

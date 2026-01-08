@@ -3,47 +3,58 @@
 ## Recent Tasks (Last 10)
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **AI Usage Tracking Scripts** (2025-12-30)
+1. **2025 Productivity Report for Victor** (2026-01-08)
+   - Summary: Created comprehensive productivity analysis showing AI tooling and August layoffs had net positive impact; TTFR decreased 68%, PR volume up 22.7%, LOC changed up 133% YoY; recommended SPACE framework for 2026
+   - Files: [Google Doc](https://docs.google.com/document/d/1AYjxss9Eba0QWuGsx7TZmqsF9FDeurZABi8kjTRQ2Mc/edit?tab=t.0)
+
+2. **GitHub Issue #34010: Fix replaceOverride for Variable References** (2026-01-07)
+   - Summary: Fixed `replaceOverride` in ast-utils.ts to handle ESLint flat configs with variable references using property-level AST updates and `structuredClone`
+   - Files: `.ai/2026-01-07/SUMMARY.md`, `packages/eslint/src/generators/utils/flat-config/ast-utils.ts`
+
+3. **2026 Engineering Metrics Framework** (2026-01-08)
+   - Summary: Designed SPACE-aligned metrics framework for 2026 with 7 key metrics: PR throughput, AI amplification index, planning accuracy, TTFR, code health ratio, developer satisfaction, and stakeholder satisfaction surveys
+   - Files: `.ai/2026-01-08/SUMMARY.md`
+
+4. **Work Composition Metrics** (2026-01-07)
+   - Summary: Added Planned Work %, Unplanned Work, and Firefighting % metrics to productivity report; includes YoY analysis script for AI/layoff impact assessment
+   - Files: `.ai/2026-01-07/SUMMARY.md`, `collect-productivity-baselines.mjs`, `generate-productivity-report.mjs`, `analyze-yoy.mjs`
+
+5. **Productivity Baseline Script Improvements** (2026-01-07)
+   - Summary: Fixed 0 PRs issue (GraphQL node limit, GitHub token auth), then added per-month caching for fast re-runs
+   - Files: `.ai/2026-01-07/SUMMARY.md`, `collect-productivity-baselines.mjs`, `data/README.md`
+
+6. **AI Usage Tracking Scripts** (2025-12-30)
    - Summary: Created suite of scripts to track AI tool usage (Claude Code, Cursor, VSCode) for team accountability; supports markdown/HTML output, cost estimates, shareable via GitHub Gist
    - Files: `scripts/ai-usage.mjs`, `scripts/claude-code-usage.mjs`, `scripts/cursor-usage.mjs`, `scripts/vscode-copilot-usage.mjs`
 
-2. **DOC-330: Netlify Migration Review** (2025-12-29)
+7. **DOC-330: Netlify Migration Review** (2025-12-29)
    - Summary: Reviewed nx-dev Netlify config; found issues: missing @netlify/plugin-nextjs, ~959 redirects near limit, external rewrites need plugin, middleware compatibility
    - Files: `dot_ai/2025-12-29/tasks/doc-330-netlify-migration-review.md`
 
-3. **NXC-3641: Centralized Template Updater** (2025-12-29)
+8. **NXC-3641: Centralized Template Updater** (2025-12-29)
    - Summary: Built `nrwl/nx-template-updater` repo with GitHub App auth, nightly workflows, Slack notifications; committed locally, ready for team review
    - Files: `dot_ai/2025-12-29/tasks/nxc-3641-template-updater.md`, `/Users/jack/projects/nx-template-updater`
 
-4. **Turborepo vs Nx Devtools Comparison Setup** (2025-12-29)
+9. **Turborepo vs Nx Devtools Comparison Setup** (2025-12-29)
    - Summary: Created 500-package test monorepo with random deps to compare Turbo/Nx devtools at scale; branches: main (Turbo), use-nx (Nx)
    - Files: `dot_ai/2025-12-29/SUMMARY.md`, `/tmp/my-turborepo`
 
-5. **PR #33417: peerDepsVersionStrategy workspace protocol fix** (2025-12-29)
-   - Summary: Fixed dependency-checks rule to accept all workspace protocol variants (`workspace:*`, `workspace:^`, `workspace:~`), not just exact `workspace:*`
-   - Files: `dot_ai/2025-12-29/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/33417
-
-6. **Planning Meeting** (2025-12-19)
-   - Summary: Discussed roadmap, team moves, eBPF I/O tracing architecture (Cloud-heavy 80/20 split), Codspeed for perf regressions, Docker builds, KB for docs
-   - Files: `dot_ai/syncs/infra/README.md`, `dot_ai/TODO.md`
-
-7. **DOC-368: Support .md URLs and llms.txt for AI Agents** (2025-12-19)
-   - Summary: Implemented raw markdown endpoints (.md URLs) and dynamic llms.txt generation following llmstxt.org spec for AI discoverability
-   - Files: `dot_ai/2025-12-19/SUMMARY.md`
-
-8. **DOC-372: Fix Changelog Page & Middleware for Framer Proxy** (2025-12-19)
-   - Summary: Fixed 500 error on changelog page by reverting to getStaticProps, replaced per-page Framer proxy with edge middleware to keep all pages static and reduce Vercel costs
-   - Files: `dot_ai/2025-12-19/SUMMARY.md`
-
-9. **DOC-360: Banner as Astro Content Collection** (2025-12-18)
-   - Summary: Converted banner to Astro content collection with array format, removed middleware approach, both nx-dev and astro-docs now use consistent collection-based banner
-   - Files: `dot_ai/2025-12-18/SUMMARY.md`
-
-10. **Nicole 1:1** (2025-12-18)
-    - Summary: Discussed onboarding numbers, platform roadmap 2026, customer advisory board, Sales/Marketing communication
-    - Files: `dot_ai/TODO.md` (completed section)
+10. **PR #33417: peerDepsVersionStrategy workspace protocol fix** (2025-12-29)
+    - Summary: Fixed dependency-checks rule to accept all workspace protocol variants (`workspace:*`, `workspace:^`, `workspace:~`), not just exact `workspace:*`
+    - Files: `dot_ai/2025-12-29/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/33417
 
 ## In Progress
+
+- [ ] Discuss Maven paywall decision with Victor (2026-01-07)
+  - From Jason 1:1: Push for clarity on revenue path or abandon gating
+  - Address underlying motivations not clearly communicated
+  - Team pushback: Colum against, James raised issues at all hands
+
+- [ ] Cut patch release for PR #34026 (20.8.x and 22.x) (2026-01-07)
+  - PR: https://github.com/nrwl/nx/pull/34026
+  - Fix: `@nx/plugin:migration` generator failing with ESLint flat configs containing variable references
+  - Customer: Fidelity (via Slack: https://nrwl.slack.com/archives/C6WJMCAB1/p1767627484254249)
+  - Versions: 20.8.x and 22.x branches
 
 - [ ] Infra Sync
   - Docker Layer Caching as a feature to push, also NPM mirrors
@@ -101,6 +112,14 @@
 - [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
 
 ## Completed
+
+### January 2026
+
+- [x] 2025 Productivity Report for Victor (2026-01-08)
+  - Report: https://docs.google.com/document/d/1AYjxss9Eba0QWuGsx7TZmqsF9FDeurZABi8kjTRQ2Mc/edit?tab=t.0
+  - Key findings: August layoffs and AI adoption had net positive impact on productivity
+  - Metrics: Issues per developer up (14.9→22.8), TTFR down 68% (2.5h→0.8h), PR volume up 22.7%, LOC changed up 133% YoY
+  - 2026 focus: SPACE framework with 5 key metrics (PR throughput, AI usage, planning accuracy, PR cycle time, P1 resolution time)
 
 ### December 2025
 

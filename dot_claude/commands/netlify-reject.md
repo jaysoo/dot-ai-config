@@ -22,5 +22,5 @@ echo "Will reject $(tail -n +2 /tmp/pending-deploys.tsv | wc -l | tr -d ' ') dep
 
 4. If confirmed, run the reject script:
 ```bash
-cd /tmp && ~/projects/dot-ai-config/dot_ai/scripts/netlify-reject-deploys.sh
+cd /tmp && ~/projects/dot-ai-config/dot_ai/para/resources/scripts/netlify-reject-deploys.sh
 ```

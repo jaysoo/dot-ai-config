@@ -65,7 +65,7 @@ When commit message is rejected:
 ### Task Files & Workflow
 - Plan tasks: Follow `~/.claude/commands/plan-task.md`
 - Dictation: Follow `~/.claude/commands/dictate.md`
-- Architecture docs: `.ai/architectures/[repo]-architecture.md`
+- Architecture docs: `.ai/para/resources/architectures/[repo]-architecture.md`
 - Daily summaries: `.ai/yyyy-mm-dd/SUMMARY.md`
 
 **Complete Workflow**: Verify → Stage (`git add`) → Check count → Squash → Commit with template → Verify
@@ -99,9 +99,58 @@ The `dot_ai/TODO.md` has a "Recent Tasks (Last 10)" section at the top for quick
 
 **Purpose:** Enables quick context rebuilding when following up on recent work without re-reading full task plans.
 
+## 📁 PARA Organization
+
+The `.ai/` folder uses the [PARA method](https://fortelabs.com/blog/para/) for organization:
+
+```
+.ai/para/
+├── projects/    # Active projects with deadlines/goals
+├── areas/       # Ongoing responsibilities (no end date)
+│   ├── personnel/   # 1:1 notes and team member info
+│   ├── syncs/       # Team sync meeting notes
+│   └── productivity.md
+├── resources/   # Reference materials for future use
+│   ├── architectures/   # Repository architecture docs
+│   └── scripts/         # Utility scripts
+└── archive/     # Inactive items from projects/areas/resources
+```
+
+### PARA Definitions
+
+| Category | Definition | Has End Date? | Examples |
+|----------|------------|---------------|----------|
+| **Projects** | Short-term efforts with a specific goal | ✅ Yes | Ship feature X, Complete migration, Write RFC |
+| **Areas** | Ongoing responsibilities requiring attention | ❌ No | Personnel management, Team syncs, Productivity |
+| **Resources** | Topics/materials collected for reference | ❌ No | Architecture docs, Scripts, How-to guides |
+| **Archive** | Inactive items from above categories | N/A | Completed projects, Old team info, Outdated docs |
+
+### Decision Guide: Where Does It Go?
+
+1. **Does it have a deadline or completion goal?** → `.ai/para/projects/`
+2. **Is it an ongoing responsibility?** → `.ai/para/areas/`
+3. **Is it reference material for future use?** → `.ai/para/resources/`
+4. **Is it no longer active/relevant?** → `.ai/para/archive/`
+
+### Key Paths
+- Projects: `.ai/para/projects/[project-name].md`
+- Personnel notes: `.ai/para/areas/personnel/`
+- Team syncs: `.ai/para/areas/syncs/`
+- Productivity: `.ai/para/areas/productivity.md`
+- Architectures: `.ai/para/resources/architectures/`
+- Scripts: `.ai/para/resources/scripts/`
+- Archive: `.ai/para/archive/`
+
+### Archiving Items
+
+When something becomes inactive:
+1. Move from its current location to `.ai/para/archive/`
+2. Preserve the folder structure (e.g., `.ai/para/archive/projects/old-project.md`)
+3. Add a note at the top with archive date and reason if helpful
+
 ## 👥 Personnel Notes
 
-**Location:** `.ai/personnel/[name].md` (lowercase, hyphenated for multi-word names)
+**Location:** `.ai/para/areas/personnel/[name].md` (lowercase, hyphenated for multi-word names)
 
 ### When to Update
 
@@ -140,8 +189,8 @@ The `dot_ai/TODO.md` has a "Recent Tasks (Last 10)" section at the top for quick
 - **[name].md** - Individual files (lowercase, hyphenated for multi-word names)
 
 Examples:
-- `.ai/personnel/leo.md`
-- `.ai/personnel/steve-pentland.md`
+- `.ai/para/areas/personnel/leo.md`
+- `.ai/para/areas/personnel/steve-pentland.md`
 
 ### Maintaining OVERVIEW.md
 
@@ -156,18 +205,18 @@ These notes are for Jack's personal reference to build better relationships and 
 
 ## 📊 Team Sync Tracking
 
-**Location:** `.ai/syncs/[team]/README.md`
+**Location:** `.ai/para/areas/syncs/[team]/README.md`
 
 ### Available Syncs
 | Team | Location |
 |------|----------|
-| DPE | `.ai/syncs/dpe/README.md` |
-| CLI | `.ai/syncs/cli/README.md` |
-| Orca | `.ai/syncs/orca/README.md` |
-| Backend | `.ai/syncs/backend/README.md` |
-| Infra | `.ai/syncs/infra/README.md` |
-| Docs | `.ai/syncs/docs/README.md` |
-| Framer | `.ai/syncs/framer/README.md` |
+| DPE | `.ai/para/areas/syncs/dpe/README.md` |
+| CLI | `.ai/para/areas/syncs/cli/README.md` |
+| Orca | `.ai/para/areas/syncs/orca/README.md` |
+| Backend | `.ai/para/areas/syncs/backend/README.md` |
+| Infra | `.ai/para/areas/syncs/infra/README.md` |
+| Docs | `.ai/para/areas/syncs/docs/README.md` |
+| Framer | `.ai/para/areas/syncs/framer/README.md` |
 
 ### When to Update
 - After each sync meeting, add notes to the "Meeting Notes" section
@@ -834,7 +883,7 @@ console.log(`Open: ${openCount}, Close: ${closeCount}`);
 - Document complete flow (what calls what)
 - Show relationships between files
 - Include current values/formats before changes
-- Update `.ai/architectures/[repo]-architecture.md` after
+- Update `.ai/para/resources/architectures/[repo]-architecture.md` after
 
 ### Code Path Investigation Best Practices
 

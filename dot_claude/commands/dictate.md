@@ -19,11 +19,11 @@ The output must be shareable with others, but doesn't have to be formal.
 If the dictation mentions a **1:1**, **1-on-1**, **one-on-one**, or similar with a specific person:
 
 1. Create the dictation file as normal in `.ai/yyyy-mm-dd/dictations/`
-2. **Also update the personnel file** at `.ai/personnel/[name].md`:
+2. **Also update the personnel file** at `.ai/para/areas/personnel/[name].md`:
    - Add a dated entry under the `## 1:1 Notes` section
    - Include key discussion points, action items, and follow-ups
    - Update any personal/professional info mentioned
-3. Update `.ai/personnel/OVERVIEW.md` if needed
+3. Update `.ai/para/areas/personnel/OVERVIEW.md` if needed
 
 ### Team Syncs
 
@@ -31,13 +31,13 @@ If the dictation mentions a **sync meeting** for one of these teams, update the 
 
 | Trigger Words | Sync Document |
 |---------------|---------------|
-| "DPE sync", "DPE meeting" | `.ai/syncs/dpe/README.md` |
-| "CLI sync", "CLI meeting" | `.ai/syncs/cli/README.md` |
-| "Orca sync", "Orca meeting" | `.ai/syncs/orca/README.md` |
-| "Backend sync", "Backend meeting" | `.ai/syncs/backend/README.md` |
-| "Infra sync", "Infrastructure sync" | `.ai/syncs/infra/README.md` |
-| "Docs sync", "Documentation sync" | `.ai/syncs/docs/README.md` |
-| "Framer sync", "Framer meeting" | `.ai/syncs/framer/README.md` |
+| "DPE sync", "DPE meeting" | `.ai/para/areas/syncs/dpe/README.md` |
+| "CLI sync", "CLI meeting" | `.ai/para/areas/syncs/cli/README.md` |
+| "Orca sync", "Orca meeting" | `.ai/para/areas/syncs/orca/README.md` |
+| "Backend sync", "Backend meeting" | `.ai/para/areas/syncs/backend/README.md` |
+| "Infra sync", "Infrastructure sync" | `.ai/para/areas/syncs/infra/README.md` |
+| "Docs sync", "Documentation sync" | `.ai/para/areas/syncs/docs/README.md` |
+| "Framer sync", "Framer meeting" | `.ai/para/areas/syncs/framer/README.md` |
 
 For sync meetings:
 1. Create the dictation file as normal

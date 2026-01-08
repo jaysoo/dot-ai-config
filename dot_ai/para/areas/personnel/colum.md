@@ -25,6 +25,9 @@
 
 ## 1:1 Notes
 
+### Upcoming Topics
+- **PR Review Goals 2026:** TTM/TTFR under 24 hours (ideally under 12 hours), encourage AI-assisted PR reviews for prioritization and summaries
+
 ### 2026-01-06
 
 - Very against Maven plugin being gated
