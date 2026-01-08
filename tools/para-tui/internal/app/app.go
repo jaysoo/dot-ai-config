@@ -51,8 +51,10 @@ type Model struct {
 
 	// Content state
 	currentPath  string
+	pathHistory  []string // Stack of previous paths for back navigation
 	items        []para.Item
 	selectedIdx  int
+	scrollOffset int    // Scroll offset for content pane
 	previewText  string
 	previewFile  string // Path to file being previewed (for editing)
 
@@ -83,10 +85,12 @@ func New(paraDir string) Model {
 			sidebar.SubItems[i] = nil
 		} else if cat.Path == "para/projects" {
 			// Projects - include TODOs
-			sidebar.SubItems[i] = loader.LoadProjectItems(21)
+			items := loader.LoadProjectItems(21)
+			sidebar.SubItems[i] = items
+			sidebar.Counts[i] = len(items)
 		} else if cat.Path == "para/archive" {
-			// Archive - include completed items
-			sidebar.SubItems[i] = loader.LoadArchiveItems()
+			// Archive - show months
+			sidebar.SubItems[i] = loader.LoadArchiveMonths()
 		} else {
 			items, _ := loader.LoadItems(cat.Path)
 			sidebar.SubItems[i] = items
@@ -367,8 +371,8 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 							m.editStatus = "Archived!"
 							// Refresh projects list
 							m.projects = m.loader.GetAllProjects(21)
-							// Refresh sidebar (index 1 = Projects)
-							m.sidebar.SubItems[1] = m.loader.LoadProjectItems(21)
+							// Refresh sidebar counts
+							m.updateSidebarCounts()
 							if m.homeSelectedIdx >= len(m.projects) {
 								m.homeSelectedIdx = len(m.projects) - 1
 							}
@@ -403,6 +407,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			case key.Matches(msg, m.keys.Up):
 				if m.selectedIdx > 0 {
 					m.selectedIdx--
+					m.ensureSelectedVisible()
 					m.updatePreview()
 				}
 				return m, nil
@@ -410,27 +415,118 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			case key.Matches(msg, m.keys.Down):
 				if m.selectedIdx < len(m.items)-1 {
 					m.selectedIdx++
+					m.ensureSelectedVisible()
 					m.updatePreview()
 				}
 				return m, nil
 
 			case key.Matches(msg, m.keys.Left), key.Matches(msg, m.keys.Back):
+				// If we have path history, go back up
+				if len(m.pathHistory) > 0 {
+					// Pop from history
+					prevPath := m.pathHistory[len(m.pathHistory)-1]
+					m.pathHistory = m.pathHistory[:len(m.pathHistory)-1]
+					m.currentPath = prevPath
+
+					// Reload items for the previous path
+					if prevPath == "_home" {
+						m.items = m.loader.LoadProjectItems(21)
+					} else if strings.HasPrefix(prevPath, "ARCHIVE_MONTH:") {
+						month := strings.TrimPrefix(prevPath, "ARCHIVE_MONTH:")
+						m.items = m.loader.LoadArchiveItemsForMonth(month)
+					} else if prevPath == "para/archive" {
+						m.items = m.loader.LoadArchiveMonths()
+					} else {
+						items, err := m.loader.LoadItems(prevPath)
+						if err == nil {
+							m.items = items
+						}
+					}
+					m.selectedIdx = 0
+					m.scrollOffset = 0
+					m.updatePreview()
+					return m, nil
+				}
+				// No history - go to sidebar
 				m.focusedPane = PaneSidebar
 				m.sidebar.Focused = true
 				return m, nil
 
-			case key.Matches(msg, m.keys.Right), key.Matches(msg, m.keys.Enter):
+			case key.Matches(msg, m.keys.Right):
+				// Right arrow always moves to preview pane
+				m.focusedPane = PanePreview
+				return m, nil
+
+			case key.Matches(msg, m.keys.Enter):
+				// Enter drills into expandable items, or focuses preview for leaf items
+				if len(m.items) > 0 && m.selectedIdx < len(m.items) {
+					item := m.items[m.selectedIdx]
+
+					// Check if this is an expandable item
+					if item.IsFolder || strings.HasPrefix(item.Path, "ARCHIVE_MONTH:") {
+						// Push current path to history before drilling in
+						m.pathHistory = append(m.pathHistory, m.currentPath)
+
+						// Drill into the folder/month
+						if strings.HasPrefix(item.Path, "ARCHIVE_MONTH:") {
+							// Load items for this archive month
+							month := strings.TrimPrefix(item.Path, "ARCHIVE_MONTH:")
+							m.currentPath = item.Path
+							m.items = m.loader.LoadArchiveItemsForMonth(month)
+							m.selectedIdx = 0
+							m.scrollOffset = 0
+							m.updatePreview()
+						} else {
+							// Navigate into the folder
+							m.currentPath = item.Path
+							items, err := m.loader.LoadItems(item.Path)
+							if err == nil {
+								m.items = items
+								m.selectedIdx = 0
+								m.scrollOffset = 0
+								m.updatePreview()
+							}
+						}
+						return m, nil
+					}
+				}
+				// Leaf item - focus preview pane
 				m.focusedPane = PanePreview
 				return m, nil
 
 			case key.Matches(msg, m.keys.Edit):
-				// Enter edit mode if there's a file being previewed
-				if m.previewFile != "" {
+				// Enter edit mode if there's a file being previewed (not in archive)
+				if m.previewFile != "" && !m.isArchiveContext() {
 					m.editMode = true
 					m.editingFile = m.previewFile
 					m.editInput.Focus()
 					m.editStatus = ""
 					return m, textinput.Blink
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.Restore):
+				// Restore archived item back to projects/TODO
+				if m.isArchiveContext() && len(m.items) > 0 && m.selectedIdx < len(m.items) {
+					item := m.items[m.selectedIdx]
+					var err error
+					if strings.HasPrefix(item.Path, "COMPLETED:") {
+						// Restore to TODO.md
+						completedText := strings.TrimPrefix(item.Path, "COMPLETED:")
+						err = m.loader.RestoreCompletedItem(completedText)
+					} else if item.IsFolder && strings.HasPrefix(item.Path, "para/archive/") {
+						// Restore folder to para/projects
+						err = m.loader.RestoreArchivedFolder(item.Path)
+					}
+
+					if err != nil {
+						m.editStatus = fmt.Sprintf("Restore failed: %v", err)
+					} else {
+						m.editStatus = "Item restored!"
+						// Refresh the view
+						m.updateSidebarCounts()
+						m.updateContent()
+					}
 				}
 				return m, nil
 			}
@@ -441,8 +537,8 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				return m, nil
 
 			case key.Matches(msg, m.keys.Edit):
-				// Enter edit mode if there's a file being previewed
-				if m.previewFile != "" {
+				// Enter edit mode if there's a file being previewed (not in archive)
+				if m.previewFile != "" && !m.isArchiveContext() {
 					m.editMode = true
 					m.editingFile = m.previewFile
 					m.editInput.Focus()
@@ -497,15 +593,15 @@ func writeFile(path string, content string) error {
 func (m *Model) updateContent() {
 	path := m.sidebar.SelectedPath()
 	m.currentPath = path
+	m.pathHistory = nil // Clear history when navigating from sidebar
 
 	// Check if this is the Home category
 	if path == "_home" {
 		// Home shows projects (TODOs + project folders) in content pane
 		m.items = m.loader.LoadProjectItems(21)
 		m.selectedIdx = 0
-		// Set a welcome message in preview
-		m.previewText = "Welcome to PARA Manager!\n\nSelect a project to view details."
-		m.previewFile = ""
+		m.scrollOffset = 0
+		m.updatePreview()
 		return
 	}
 
@@ -575,14 +671,26 @@ func (m *Model) updateContent() {
 	if path == "para/projects" {
 		m.items = m.loader.LoadProjectItems(21)
 		m.selectedIdx = 0
+		m.scrollOffset = 0
 		m.updatePreview()
 		return
 	}
 
-	// Check if this is the Archive category - show completed items + archive folders
+	// Check if this is the Archive category - show months
 	if path == "para/archive" {
-		m.items = m.loader.LoadArchiveItems()
+		m.items = m.loader.LoadArchiveMonths()
 		m.selectedIdx = 0
+		m.scrollOffset = 0
+		m.updatePreview()
+		return
+	}
+
+	// Check if this is an archive month - show items for that month
+	if strings.HasPrefix(path, "ARCHIVE_MONTH:") {
+		month := strings.TrimPrefix(path, "ARCHIVE_MONTH:")
+		m.items = m.loader.LoadArchiveItemsForMonth(month)
+		m.selectedIdx = 0
+		m.scrollOffset = 0
 		m.updatePreview()
 		return
 	}
@@ -596,6 +704,7 @@ func (m *Model) updateContent() {
 
 	m.items = items
 	m.selectedIdx = 0
+	m.scrollOffset = 0
 	m.updatePreview()
 }
 
@@ -603,7 +712,7 @@ func (m *Model) updateContent() {
 func (m *Model) updatePreview() {
 	if len(m.items) == 0 {
 		// Check for special paths that don't need file reading
-		if m.currentPath == "_home" || strings.HasPrefix(m.currentPath, "TODO:") || strings.HasPrefix(m.currentPath, "COMPLETED:") {
+		if m.currentPath == "_home" || strings.HasPrefix(m.currentPath, "TODO:") || strings.HasPrefix(m.currentPath, "COMPLETED:") || strings.HasPrefix(m.currentPath, "ARCHIVE_MONTH:") {
 			return // Preview already set
 		}
 		// Try to read README from current path
@@ -680,6 +789,15 @@ func (m *Model) updatePreview() {
 		return
 	}
 
+	// Handle ARCHIVE_MONTH items (month groupings)
+	if strings.HasPrefix(item.Path, "ARCHIVE_MONTH:") {
+		month := strings.TrimPrefix(item.Path, "ARCHIVE_MONTH:")
+		items := m.loader.LoadArchiveItemsForMonth(month)
+		m.previewText = fmt.Sprintf("📅 %s\n\n%d archived items", month, len(items))
+		m.previewFile = ""
+		return
+	}
+
 	if item.IsFolder {
 		// Read README from folder
 		readmePath := item.Path + "/README.md"
@@ -700,6 +818,50 @@ func (m *Model) updatePreview() {
 		} else {
 			m.previewText = content
 			m.previewFile = item.Path
+		}
+	}
+}
+
+// ensureSelectedVisible adjusts scrollOffset to keep selected item visible
+func (m *Model) ensureSelectedVisible() {
+	// Estimate visible height (will be refined during render)
+	visibleHeight := m.height - 10 // Rough estimate accounting for borders, header, etc.
+	if visibleHeight < 5 {
+		visibleHeight = 5
+	}
+
+	// If selected is above visible area, scroll up
+	if m.selectedIdx < m.scrollOffset {
+		m.scrollOffset = m.selectedIdx
+	}
+
+	// If selected is below visible area, scroll down
+	if m.selectedIdx >= m.scrollOffset+visibleHeight {
+		m.scrollOffset = m.selectedIdx - visibleHeight + 1
+	}
+
+	// Ensure scrollOffset is not negative
+	if m.scrollOffset < 0 {
+		m.scrollOffset = 0
+	}
+}
+
+// isArchiveContext returns true if currently viewing archive content (not editable/archivable)
+func (m *Model) isArchiveContext() bool {
+	return strings.HasPrefix(m.currentPath, "para/archive") ||
+		strings.HasPrefix(m.currentPath, "ARCHIVE_MONTH:") ||
+		strings.HasPrefix(m.currentPath, "COMPLETED:")
+}
+
+// updateSidebarCounts refreshes the project count in sidebar
+func (m *Model) updateSidebarCounts() {
+	// Update Projects count (index 1)
+	for i, cat := range m.sidebar.Categories {
+		if cat.Path == "para/projects" {
+			items := m.loader.LoadProjectItems(21)
+			m.sidebar.SubItems[i] = items
+			m.sidebar.Counts[i] = len(items)
+			break
 		}
 	}
 }
@@ -815,7 +977,10 @@ func (m Model) View() string {
 		Foreground(lipgloss.Color("#666666"))
 
 	var footer string
-	if m.viewMode == ViewHome {
+	if m.isArchiveContext() {
+		// Show restore option for archived items
+		footer = footerStyle.Render("j/k:move  Enter:open  R:restore  tab:pane  1-4:jump  H:home  q:quit")
+	} else if m.viewMode == ViewHome {
 		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  1-4:jump  H:home  q:quit")
 	} else {
 		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  tab:pane  1-4:jump  H:home  q:quit")
@@ -957,13 +1122,26 @@ func (m Model) renderContent(width, height int) string {
 	itemStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#888888"))
 	selectedStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#FFFFFF")).Bold(true)
 	focusedStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#7AA2F7")).Bold(true)
+	scrollIndicatorStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#565F89"))
 	fileIcon := "󰈙 "
 
-	for i, item := range m.items {
-		if i >= height-2 {
-			b.WriteString(itemStyle.Render(fmt.Sprintf("... and %d more", len(m.items)-i)))
-			break
-		}
+	// Calculate visible range with scrolling
+	visibleHeight := height - 2 // Leave room for scroll indicators
+	startIdx := m.scrollOffset
+	endIdx := startIdx + visibleHeight
+	if endIdx > len(m.items) {
+		endIdx = len(m.items)
+	}
+
+	// Show "more above" indicator
+	if startIdx > 0 {
+		b.WriteString(scrollIndicatorStyle.Render(fmt.Sprintf("  ↑ %d more above", startIdx)))
+		b.WriteString("\n")
+		visibleHeight-- // One less line for items
+	}
+
+	for i := startIdx; i < endIdx && i-startIdx < visibleHeight; i++ {
+		item := m.items[i]
 
 		prefix := "  "
 		style := itemStyle
@@ -990,8 +1168,13 @@ func (m Model) renderContent(width, height int) string {
 				staleIndicator = " ⚠"
 			}
 		} else if item.IsFolder {
-			icon = "📁 "
-			suffix = "/"
+			// Archive months get calendar icon
+			if strings.HasPrefix(item.Path, "ARCHIVE_MONTH:") {
+				icon = "📅 "
+			} else {
+				icon = "📁 "
+				suffix = "/"
+			}
 			if item.IsStale {
 				staleIndicator = " ⚠"
 			}
@@ -1000,12 +1183,19 @@ func (m Model) renderContent(width, height int) string {
 		name := item.Name + suffix + staleIndicator
 		// Truncate long names
 		maxLen := width - 8
-		if len(name) > maxLen {
+		if len(name) > maxLen && maxLen > 1 {
 			name = name[:maxLen-1] + "…"
 		}
 
 		line := fmt.Sprintf("%s%s%s", prefix, icon, name)
 		b.WriteString(style.Render(line))
+		b.WriteString("\n")
+	}
+
+	// Show "more below" indicator
+	remaining := len(m.items) - endIdx
+	if remaining > 0 {
+		b.WriteString(scrollIndicatorStyle.Render(fmt.Sprintf("  ↓ %d more below", remaining)))
 		b.WriteString("\n")
 	}
 

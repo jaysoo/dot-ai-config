@@ -20,6 +20,7 @@ type Sidebar struct {
 	SubItems    map[int][]para.Item // Cached sub-items for expanded categories
 	SelectedSub map[int]int         // Selected sub-item index per category
 	InSubMenu   bool                // Whether we're navigating sub-items
+	Counts      map[int]int         // Item counts for categories (e.g., Projects count)
 }
 
 // NewSidebar creates a new sidebar
@@ -34,6 +35,7 @@ func NewSidebar() *Sidebar {
 		SubItems:    make(map[int][]para.Item),
 		SelectedSub: make(map[int]int),
 		InSubMenu:   false,
+		Counts:      make(map[int]int),
 	}
 }
 
@@ -178,7 +180,13 @@ func (s *Sidebar) View() string {
 			expandIcon = " ▼"
 		}
 
-		line := fmt.Sprintf("%s%s %s%s", prefix, cat.Icon, cat.Name, expandIcon)
+		// Show count if available
+		countStr := ""
+		if count, ok := s.Counts[i]; ok && count > 0 {
+			countStr = fmt.Sprintf(" (%d)", count)
+		}
+
+		line := fmt.Sprintf("%s%s %s%s%s", prefix, cat.Icon, cat.Name, countStr, expandIcon)
 		b.WriteString(style.Render(line))
 		b.WriteString("\n")
 

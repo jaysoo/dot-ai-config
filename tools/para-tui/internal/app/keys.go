@@ -19,6 +19,7 @@ type KeyMap struct {
 	Edit    key.Binding
 	New     key.Binding
 	Archive key.Binding
+	Restore key.Binding
 	Delete  key.Binding
 	Refresh key.Binding
 	Yank    key.Binding
@@ -89,6 +90,10 @@ func DefaultKeyMap() KeyMap {
 		Archive: key.NewBinding(
 			key.WithKeys("a"),
 			key.WithHelp("a", "archive"),
+		),
+		Restore: key.NewBinding(
+			key.WithKeys("R"),
+			key.WithHelp("R", "restore"),
 		),
 		Delete: key.NewBinding(
 			key.WithKeys("d"),

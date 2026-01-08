@@ -390,25 +390,33 @@ func (l *Loader) GetCompletedItems() []CompletedItem {
 	return items
 }
 
-// LoadArchiveItems returns Items for sidebar (completed items + archive folders)
-func (l *Loader) LoadArchiveItems() []Item {
-	var items []Item
+// ArchiveMonth represents a month grouping in the archive
+type ArchiveMonth struct {
+	Name      string // e.g., "January 2026"
+	SortKey   string // e.g., "2026-01" for sorting
+	ItemCount int
+}
 
-	// Get completed items from COMPLETED.md
+// LoadArchiveMonths returns list of months that have archived items
+func (l *Loader) LoadArchiveMonths() []Item {
+	monthMap := make(map[string]*ArchiveMonth)
+
+	// Get months from COMPLETED.md
 	completed := l.GetCompletedItems()
 	for _, c := range completed {
-		name := c.Text
-		if c.Date != "" {
-			name = c.Text // Keep just the text, date shown in preview
+		month := c.Month
+		if month == "" {
+			month = "Unknown"
 		}
-		items = append(items, Item{
-			Name:   name,
-			Path:   "COMPLETED:" + c.Text, // Special marker for completed items
-			IsTodo: true,                  // Reuse IsTodo for completed items (similar display)
-		})
+		if _, exists := monthMap[month]; !exists {
+			// Parse month to get sort key (e.g., "January 2026" -> "2026-01")
+			sortKey := parseMonthSortKey(month)
+			monthMap[month] = &ArchiveMonth{Name: month, SortKey: sortKey}
+		}
+		monthMap[month].ItemCount++
 	}
 
-	// Also get archived project folders from para/archive
+	// Get months from archived project folders (yyyy-mm-dd-name format)
 	archivePath := filepath.Join(l.RootDir, "para", "archive")
 	entries, err := os.ReadDir(archivePath)
 	if err == nil {
@@ -416,22 +424,102 @@ func (l *Loader) LoadArchiveItems() []Item {
 			if !entry.IsDir() || strings.HasPrefix(entry.Name(), ".") {
 				continue
 			}
-			// Skip COMPLETED.md folder if somehow exists
-			if entry.Name() == "COMPLETED.md" {
-				continue
+			// Parse date from folder name (yyyy-mm-dd-name)
+			if len(entry.Name()) >= 10 {
+				dateStr := entry.Name()[:10]
+				if t, err := time.Parse("2006-01-02", dateStr); err == nil {
+					month := t.Format("January 2006")
+					sortKey := t.Format("2006-01")
+					if _, exists := monthMap[month]; !exists {
+						monthMap[month] = &ArchiveMonth{Name: month, SortKey: sortKey}
+					}
+					monthMap[month].ItemCount++
+				}
 			}
+		}
+	}
 
-			info, err := entry.Info()
-			if err != nil {
-				continue
-			}
+	// Convert to sorted slice (most recent first)
+	var months []*ArchiveMonth
+	for _, m := range monthMap {
+		months = append(months, m)
+	}
+	sort.Slice(months, func(i, j int) bool {
+		return months[i].SortKey > months[j].SortKey // Descending
+	})
 
+	// Convert to Items
+	var items []Item
+	for _, m := range months {
+		items = append(items, Item{
+			Name:       m.Name,
+			Path:       "ARCHIVE_MONTH:" + m.Name,
+			IsFolder:   true,
+			FolderType: FolderTypeCollection,
+		})
+	}
+
+	return items
+}
+
+// parseMonthSortKey converts "January 2026" to "2026-01"
+func parseMonthSortKey(month string) string {
+	// Try parsing "January 2006" format
+	t, err := time.Parse("January 2006", month)
+	if err != nil {
+		return "0000-00" // Unknown sorts last
+	}
+	return t.Format("2006-01")
+}
+
+// LoadArchiveItemsForMonth returns items for a specific month
+func (l *Loader) LoadArchiveItemsForMonth(month string) []Item {
+	var items []Item
+
+	// Get completed items for this month
+	completed := l.GetCompletedItems()
+	for _, c := range completed {
+		itemMonth := c.Month
+		if itemMonth == "" {
+			itemMonth = "Unknown"
+		}
+		if itemMonth == month {
 			items = append(items, Item{
-				Name:     entry.Name(),
-				Path:     filepath.Join("para", "archive", entry.Name()),
-				IsFolder: true,
-				ModTime:  info.ModTime(),
+				Name:   c.Text,
+				Path:   "COMPLETED:" + c.Text,
+				IsTodo: true,
 			})
+		}
+	}
+
+	// Get archived project folders for this month
+	archivePath := filepath.Join(l.RootDir, "para", "archive")
+	entries, err := os.ReadDir(archivePath)
+	if err == nil {
+		for _, entry := range entries {
+			if !entry.IsDir() || strings.HasPrefix(entry.Name(), ".") {
+				continue
+			}
+			// Parse date from folder name (yyyy-mm-dd-name)
+			if len(entry.Name()) >= 10 {
+				dateStr := entry.Name()[:10]
+				if t, err := time.Parse("2006-01-02", dateStr); err == nil {
+					folderMonth := t.Format("January 2006")
+					if folderMonth == month {
+						info, _ := entry.Info()
+						modTime := time.Time{}
+						if info != nil {
+							modTime = info.ModTime()
+						}
+						items = append(items, Item{
+							Name:     entry.Name(),
+							Path:     filepath.Join("para", "archive", entry.Name()),
+							IsFolder: true,
+							ModTime:  modTime,
+						})
+					}
+				}
+			}
 		}
 	}
 
@@ -583,6 +671,131 @@ func (l *Loader) GetAllProjects(staleDays int) []ProjectItem {
 	})
 
 	return projects
+}
+
+// RestoreCompletedItem moves a completed item back to TODO.md
+func (l *Loader) RestoreCompletedItem(completedText string) error {
+	// Read current COMPLETED.md
+	completedPath := filepath.Join(l.RootDir, "para", "archive", "COMPLETED.md")
+	content, err := os.ReadFile(completedPath)
+	if err != nil {
+		return err
+	}
+
+	// Find and remove the item from COMPLETED.md
+	lines := strings.Split(string(content), "\n")
+	var newLines []string
+	var removedItem string
+	var removedDetails []string
+	inRemovedItem := false
+
+	for _, line := range lines {
+		trimmed := strings.TrimSpace(line)
+
+		// Check if this is the item to remove
+		if strings.HasPrefix(trimmed, "- [x]") && strings.Contains(trimmed, completedText) {
+			inRemovedItem = true
+			removedItem = trimmed
+			continue
+		}
+
+		// If we're in the removed item, capture details
+		if inRemovedItem {
+			if strings.HasPrefix(trimmed, "- ") && !strings.HasPrefix(trimmed, "- [ ]") && !strings.HasPrefix(trimmed, "- [x]") {
+				removedDetails = append(removedDetails, line)
+				continue
+			} else {
+				inRemovedItem = false
+			}
+		}
+
+		newLines = append(newLines, line)
+	}
+
+	if removedItem == "" {
+		return fmt.Errorf("completed item not found: %s", completedText)
+	}
+
+	// Write updated COMPLETED.md
+	err = os.WriteFile(completedPath, []byte(strings.Join(newLines, "\n")), 0644)
+	if err != nil {
+		return err
+	}
+
+	// Add back to TODO.md
+	todoPath := filepath.Join(l.RootDir, "TODO.md")
+
+	// Read existing TODO.md
+	todoContent, err := os.ReadFile(todoPath)
+	if err != nil {
+		return err
+	}
+
+	// Convert - [x] back to - [ ] and strip completion marker
+	restoredItem := strings.Replace(removedItem, "- [x]", "- [ ]", 1)
+	// Remove completion date marker (✓ yyyy-mm-dd)
+	if idx := strings.Index(restoredItem, " ✓ "); idx != -1 {
+		restoredItem = restoredItem[:idx]
+	}
+
+	// Find "## In Progress" or "## Pending" section and insert there
+	todoLines := strings.Split(string(todoContent), "\n")
+	var newTodoLines []string
+	inserted := false
+
+	for i, line := range todoLines {
+		newTodoLines = append(newTodoLines, line)
+
+		// Insert after "## In Progress" or "## Pending" header
+		if !inserted && (strings.HasPrefix(line, "## In Progress") || strings.HasPrefix(line, "## Pending")) {
+			// Find next non-empty line or end of section
+			insertIdx := i + 1
+			for insertIdx < len(todoLines) && strings.TrimSpace(todoLines[insertIdx]) == "" {
+				newTodoLines = append(newTodoLines, todoLines[insertIdx])
+				insertIdx++
+			}
+			// Insert restored item
+			newTodoLines = append(newTodoLines, restoredItem)
+			for _, detail := range removedDetails {
+				newTodoLines = append(newTodoLines, detail)
+			}
+			inserted = true
+		}
+	}
+
+	// If no section found, append at end
+	if !inserted {
+		newTodoLines = append(newTodoLines, "", "## Pending", "", restoredItem)
+		for _, detail := range removedDetails {
+			newTodoLines = append(newTodoLines, detail)
+		}
+	}
+
+	return os.WriteFile(todoPath, []byte(strings.Join(newTodoLines, "\n")), 0644)
+}
+
+// RestoreArchivedFolder moves an archived folder back to para/projects
+func (l *Loader) RestoreArchivedFolder(archivePath string) error {
+	srcPath := filepath.Join(l.RootDir, archivePath)
+	folderName := filepath.Base(archivePath)
+
+	// Remove the date prefix (yyyy-mm-dd-) from folder name
+	originalName := folderName
+	if len(folderName) > 11 && folderName[10] == '-' {
+		// Check if it starts with a date
+		if _, err := time.Parse("2006-01-02", folderName[:10]); err == nil {
+			originalName = folderName[11:]
+		}
+	}
+
+	dstPath := filepath.Join(l.RootDir, "para", "projects", originalName)
+
+	// Check if destination already exists
+	if _, err := os.Stat(dstPath); err == nil {
+		return fmt.Errorf("project folder already exists: %s", originalName)
+	}
+
+	return os.Rename(srcPath, dstPath)
 }
 
 // LoadProjectItems returns Items for sidebar (TODOs + project folders)
