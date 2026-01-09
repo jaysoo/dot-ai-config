@@ -247,6 +247,9 @@ func (l *Loader) GetTodoItems() []TodoItem {
 	for _, line := range lines {
 		trimmed := strings.TrimSpace(line)
 
+		// Check if line is indented (subtask/detail)
+		isIndented := len(line) > 0 && (line[0] == ' ' || line[0] == '\t')
+
 		// Detect section headers
 		if strings.HasPrefix(trimmed, "## In Progress") {
 			currentSection = "in_progress"
@@ -270,8 +273,8 @@ func (l *Loader) GetTodoItems() []TodoItem {
 			continue
 		}
 
-		// Parse checkbox items: - [ ] or - [x]
-		if strings.HasPrefix(trimmed, "- [ ]") {
+		// Parse non-indented checkbox items as top-level tasks
+		if !isIndented && strings.HasPrefix(trimmed, "- [ ]") {
 			// Save previous item if exists
 			if currentItem != nil {
 				items = append(items, *currentItem)
@@ -301,7 +304,7 @@ func (l *Loader) GetTodoItems() []TodoItem {
 				DaysOld: daysOld,
 			}
 		} else if strings.HasPrefix(trimmed, "- ") && currentItem != nil {
-			// Detail line for current item
+			// Indented line or detail line for current item (including subtasks)
 			detail := strings.TrimPrefix(trimmed, "- ")
 			currentItem.Details = append(currentItem.Details, detail)
 		}
@@ -895,6 +898,59 @@ func (l *Loader) CreateResource(title, notes string) error {
 	// Create the file with title and notes
 	content := fmt.Sprintf("# %s\n\n%s\n", title, notes)
 	return os.WriteFile(resourcePath, []byte(content), 0644)
+}
+
+// CreateTodo appends a new TODO item to the TODO.md file
+func (l *Loader) CreateTodo(title, notes string) error {
+	todoPath := filepath.Join(l.RootDir, "TODO.md")
+
+	// Read existing content (if file exists)
+	existingContent := ""
+	if content, err := os.ReadFile(todoPath); err == nil {
+		existingContent = string(content)
+	}
+
+	// Format the new todo item
+	timestamp := time.Now().Format("2006-01-02 15:04")
+	var newItem string
+	if notes != "" {
+		newItem = fmt.Sprintf("- [ ] %s (%s)\n  - %s\n", title, timestamp, notes)
+	} else {
+		newItem = fmt.Sprintf("- [ ] %s (%s)\n", title, timestamp)
+	}
+
+	// If file exists and has content, append after first section
+	if existingContent != "" {
+		// Find the first section or add to the end
+		lines := strings.Split(existingContent, "\n")
+		var result strings.Builder
+		inserted := false
+
+		for i, line := range lines {
+			result.WriteString(line)
+			if i < len(lines)-1 {
+				result.WriteString("\n")
+			}
+
+			// Insert after "## In Progress" or "## Pending" header if found
+			if !inserted && (strings.HasPrefix(line, "## In Progress") || strings.HasPrefix(line, "## Pending") || strings.HasPrefix(line, "## TODO")) {
+				result.WriteString(newItem)
+				inserted = true
+			}
+		}
+
+		// If no section found, append at end
+		if !inserted {
+			result.WriteString("\n")
+			result.WriteString(newItem)
+		}
+
+		return os.WriteFile(todoPath, []byte(result.String()), 0644)
+	}
+
+	// Create new TODO.md file
+	content := fmt.Sprintf("# TODO\n\n## In Progress\n%s\n## Completed\n", newItem)
+	return os.WriteFile(todoPath, []byte(content), 0644)
 }
 
 // sanitizeFolderName converts a title to a valid folder/file name

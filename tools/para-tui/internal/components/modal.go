@@ -10,10 +10,11 @@ import (
 
 // ModalResult is sent when modal is closed
 type ModalResult struct {
-	Cancelled bool
-	Title     string
-	Category  string
-	Notes     string
+	Cancelled  bool
+	Title      string
+	Category   string
+	Notes      string
+	UseClaude  bool
 }
 
 // Modal represents a quick capture modal dialog
@@ -25,7 +26,8 @@ type Modal struct {
 	notesInput textinput.Model
 	categories []string
 	selected   int
-	focused    int // 0=title, 1=category, 2=notes, 3=buttons
+	focused    int  // 0=title, 1=category, 2=notes, 3=claude toggle, 4=buttons
+	useClaude  bool // Whether to use Claude to expand notes
 }
 
 // NewModal creates a new modal
@@ -42,13 +44,14 @@ func NewModal() *Modal {
 
 	return &Modal{
 		Width:      50,
-		Height:     15,
+		Height:     18,
 		Visible:    false,
 		titleInput: ti,
 		notesInput: ni,
-		categories: []string{"Projects", "Areas", "Resources"},
+		categories: []string{"TODO", "Projects", "Areas", "Resources"},
 		selected:   0,
 		focused:    0,
+		useClaude:  true, // On by default
 	}
 }
 
@@ -59,6 +62,7 @@ func (m *Modal) Show() tea.Cmd {
 	m.notesInput.Reset()
 	m.selected = 0
 	m.focused = 0
+	m.useClaude = true // Reset to default (on)
 	m.titleInput.Focus()
 	return textinput.Blink
 }
@@ -86,29 +90,35 @@ func (m *Modal) Update(msg tea.Msg) (*Modal, tea.Cmd) {
 			}
 
 		case "tab", "down":
-			m.focused = (m.focused + 1) % 4
+			m.focused = (m.focused + 1) % 5
 			m.updateFocus()
 			return m, nil
 
 		case "shift+tab", "up":
-			m.focused = (m.focused + 3) % 4
+			m.focused = (m.focused + 4) % 5
 			m.updateFocus()
 			return m, nil
 
-		case "left":
-			if m.focused == 1 && m.selected > 0 {
-				m.selected--
+		case "left", "h":
+			// Only handle for category selector, otherwise let textinput handle it
+			if m.focused == 1 {
+				if m.selected > 0 {
+					m.selected--
+				}
+				return m, nil
 			}
-			return m, nil
 
-		case "right":
-			if m.focused == 1 && m.selected < len(m.categories)-1 {
-				m.selected++
+		case "right", "l":
+			// Only handle for category selector, otherwise let textinput handle it
+			if m.focused == 1 {
+				if m.selected < len(m.categories)-1 {
+					m.selected++
+				}
+				return m, nil
 			}
-			return m, nil
 
 		case "enter":
-			if m.focused == 3 || m.titleInput.Value() != "" {
+			if m.focused == 4 || m.titleInput.Value() != "" {
 				// Submit
 				m.Hide()
 				return m, func() tea.Msg {
@@ -117,10 +127,19 @@ func (m *Modal) Update(msg tea.Msg) (*Modal, tea.Cmd) {
 						Title:     m.titleInput.Value(),
 						Category:  m.categories[m.selected],
 						Notes:     m.notesInput.Value(),
+						UseClaude: m.useClaude,
 					}
 				}
 			}
 			return m, nil
+
+		case " ":
+			// Toggle Claude option only when focused on it
+			if m.focused == 3 {
+				m.useClaude = !m.useClaude
+				return m, nil
+			}
+			// Otherwise fall through to let textinput handle it
 		}
 	}
 
@@ -144,6 +163,7 @@ func (m *Modal) updateFocus() {
 		m.titleInput.Focus()
 	case 2:
 		m.notesInput.Focus()
+	// case 3 is claude toggle, case 4 is buttons - no text input focus needed
 	}
 }
 
@@ -174,6 +194,10 @@ func (m *Modal) View() string {
 
 	unselectedStyle := lipgloss.NewStyle().
 		Foreground(lipgloss.Color("#666666"))
+
+	focusedStyle := lipgloss.NewStyle().
+		Foreground(lipgloss.Color("#7AA2F7")).
+		Bold(true)
 
 	buttonStyle := lipgloss.NewStyle().
 		Foreground(lipgloss.Color("#888888")).
@@ -231,10 +255,29 @@ func (m *Modal) View() string {
 	b.WriteString("  " + m.notesInput.View())
 	b.WriteString("\n\n")
 
+	// Claude toggle
+	focusIndicator = " "
+	if m.focused == 3 {
+		focusIndicator = "▸"
+	}
+	claudeCheckbox := "○"
+	claudeStyle := unselectedStyle
+	if m.useClaude {
+		claudeCheckbox = "●"
+		claudeStyle = selectedStyle
+	}
+	if m.focused == 3 {
+		claudeStyle = focusedStyle
+	}
+	b.WriteString(labelStyle.Render(focusIndicator + " Expand with Claude:"))
+	b.WriteString("\n  ")
+	b.WriteString(claudeStyle.Render(claudeCheckbox + " Use Claude to expand notes"))
+	b.WriteString("\n\n")
+
 	// Buttons
 	cancelBtn := buttonStyle.Render("[Esc] Cancel")
 	createBtn := buttonStyle.Render("[Enter] Create")
-	if m.focused == 3 {
+	if m.focused == 4 {
 		createBtn = activeButtonStyle.Render("[Enter] Create")
 	}
 	b.WriteString("  " + cancelBtn + "  " + createBtn)

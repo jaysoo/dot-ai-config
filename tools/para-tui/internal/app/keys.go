@@ -15,16 +15,17 @@ type KeyMap struct {
 	PageDown key.Binding
 
 	// Actions
-	Enter   key.Binding
-	Edit    key.Binding
-	New     key.Binding
-	Archive key.Binding
-	Restore key.Binding
-	Delete  key.Binding
-	Refresh key.Binding
-	Yank    key.Binding
-	Search  key.Binding
-	Back    key.Binding
+	Enter    key.Binding
+	Edit     key.Binding
+	New      key.Binding
+	Archive  key.Binding
+	Restore  key.Binding
+	Delete   key.Binding
+	Refresh  key.Binding
+	Yank     key.Binding
+	YankPath key.Binding
+	Search   key.Binding
+	Back     key.Binding
 
 	// Category jumps
 	JumpProjects  key.Binding
@@ -105,7 +106,11 @@ func DefaultKeyMap() KeyMap {
 		),
 		Yank: key.NewBinding(
 			key.WithKeys("y"),
-			key.WithHelp("y", "copy path"),
+			key.WithHelp("y", "copy"),
+		),
+		YankPath: key.NewBinding(
+			key.WithKeys("Y"),
+			key.WithHelp("Y", "copy path"),
 		),
 		Search: key.NewBinding(
 			key.WithKeys("/"),

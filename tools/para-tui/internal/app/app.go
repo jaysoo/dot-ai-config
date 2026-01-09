@@ -1,6 +1,8 @@
 package app
 
 import (
+	"bufio"
+	"encoding/json"
 	"fmt"
 	"os"
 	"os/exec"
@@ -66,13 +68,31 @@ type Model struct {
 	homeSelectedIdx int
 
 	// Edit mode
-	editMode    bool
-	editingFile string // Path to file being edited
-	editStatus  string // Status message for edit operation
+	editMode        bool
+	editingFile     string // Path to file being edited
+	editingTodoItem string // For TODO items, the specific item text being edited
+	editStatus      string // Status message for edit operation
+
+	// Vim-style gg tracking
+	lastKeyG    bool  // Was the last key 'g'?
+
+	// Claude expansion state
+	claudeWorking     bool
+	editClaudeWorking bool              // For edit mode Claude calls
+	claudeStatusChan  chan claudeUpdate // Channel for real-time Claude updates
+	pendingCategory   string
+	pendingTitle      string
+	pendingNotes      string
 
 	// Flags
 	showHelp bool
 	quitting bool
+}
+
+// ClaudeResultMsg is sent when Claude finishes expanding notes
+type ClaudeResultMsg struct {
+	ExpandedNotes string
+	Error         error
 }
 
 // New creates a new application model
@@ -140,6 +160,48 @@ type editResultMsg struct {
 	err     error
 }
 
+// claudeUpdate is sent through the channel for real-time updates
+type claudeUpdate struct {
+	Status string // Status message to display
+	Done   bool   // True when Claude is finished
+	Result string // Final result (only when Done=true)
+	Error  error  // Error if any (only when Done=true)
+}
+
+// claudeStatusMsg is sent for Claude status updates (from channel listener)
+type claudeStatusMsg struct {
+	update claudeUpdate
+}
+
+// claudeStreamResult represents the final result from Claude's stream-json output
+type claudeStreamResult struct {
+	Type    string `json:"type"`
+	Subtype string `json:"subtype"`
+	Result  string `json:"result"`
+	IsError bool   `json:"is_error"`
+}
+
+// claudeSystemMessage represents the init message
+type claudeSystemMessage struct {
+	Type    string `json:"type"`
+	Subtype string `json:"subtype"`
+	Model   string `json:"model"`
+}
+
+// claudeStreamMessage represents assistant messages
+type claudeStreamMessage struct {
+	Type    string `json:"type"`
+	Message struct {
+		Model   string `json:"model"`
+		Content []struct {
+			Type  string `json:"type"`
+			Text  string `json:"text"`
+			Name  string `json:"name"`  // for tool_use
+			Input any    `json:"input"` // for tool_use
+		} `json:"content"`
+	} `json:"message"`
+}
+
 // Init initializes the model
 func (m Model) Init() tea.Cmd {
 	return nil
@@ -147,8 +209,27 @@ func (m Model) Init() tea.Cmd {
 
 // Update handles messages
 func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	// Handle Claude status updates (real-time)
+	if msg, ok := msg.(claudeStatusMsg); ok {
+		if msg.update.Done {
+			// Claude finished - send result
+			if msg.update.Error != nil {
+				return m, func() tea.Msg {
+					return editResultMsg{err: msg.update.Error}
+				}
+			}
+			return m, func() tea.Msg {
+				return editResultMsg{content: msg.update.Result}
+			}
+		}
+		// Update status and listen for more
+		m.editStatus = msg.update.Status
+		return m, listenForClaudeStatus(m.claudeStatusChan)
+	}
+
 	// Handle edit result
 	if msg, ok := msg.(editResultMsg); ok {
+		m.editClaudeWorking = false
 		if msg.err != nil {
 			m.editStatus = fmt.Sprintf("Error: %v", msg.err)
 		} else {
@@ -159,29 +240,106 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.editStatus = fmt.Sprintf("Error saving: %v", err)
 			} else {
 				m.editStatus = "File updated successfully!"
-				m.updatePreview() // Refresh preview
+				// Refresh all content after any edit
+				m.updatePreview()
+				m.projects = m.loader.GetAllProjects(21)
+				m.updateContent()
+				m.updateSidebarCounts()
 			}
 		}
 		m.editMode = false
 		m.editInput.Reset()
+		m.editingTodoItem = "" // Clear TODO item context
 		return m, nil
 	}
 
 	// Handle modal result
 	if result, ok := msg.(components.ModalResult); ok {
 		if !result.Cancelled && result.Title != "" {
-			// Create the new item
+			// Expand notes using Claude if enabled and notes exist
+			if result.UseClaude && result.Notes != "" {
+				m.claudeWorking = true
+				m.pendingCategory = result.Category
+				m.pendingTitle = result.Title
+				m.pendingNotes = result.Notes
+				m.editStatus = "Expanding with Claude..."
+
+				// Run Claude async with streaming JSON
+				return m, func() tea.Msg {
+					prompt := fmt.Sprintf("Expand this brief note into a clear, actionable description (2-3 sentences max, no markdown headers): %s", result.Notes)
+					cmd := exec.Command("claude", "-p", prompt, "--output-format", "stream-json", "--verbose")
+					stdout, err := cmd.StdoutPipe()
+					if err != nil {
+						return ClaudeResultMsg{Error: err}
+					}
+
+					if err := cmd.Start(); err != nil {
+						return ClaudeResultMsg{Error: err}
+					}
+
+					scanner := bufio.NewScanner(stdout)
+					var finalResult string
+
+					for scanner.Scan() {
+						line := scanner.Text()
+						var result claudeStreamResult
+						if err := json.Unmarshal([]byte(line), &result); err == nil {
+							if result.Type == "result" {
+								if result.IsError {
+									return ClaudeResultMsg{Error: fmt.Errorf("%s", result.Result)}
+								}
+								finalResult = result.Result
+							}
+						}
+					}
+
+					if err := cmd.Wait(); err != nil {
+						return ClaudeResultMsg{Error: err}
+					}
+
+					return ClaudeResultMsg{ExpandedNotes: strings.TrimSpace(finalResult)}
+				}
+			}
+
+			// No Claude needed, create immediately
 			err := m.createNewItem(result.Category, result.Title, result.Notes)
 			if err != nil {
 				m.editStatus = fmt.Sprintf("Error creating: %v", err)
 			} else {
 				m.editStatus = "Created!"
-				// Refresh content
 				m.updateSidebarCounts()
 				m.projects = m.loader.GetAllProjects(21)
 				m.updateContent()
 			}
 		}
+		return m, nil
+	}
+
+	// Handle Claude completion
+	if result, ok := msg.(ClaudeResultMsg); ok {
+		m.claudeWorking = false
+		notes := m.pendingNotes
+		if result.Error != nil {
+			m.editStatus = fmt.Sprintf("Claude error: %v (using original notes)", result.Error)
+		} else {
+			notes = result.ExpandedNotes
+		}
+
+		// Create the item with expanded notes
+		err := m.createNewItem(m.pendingCategory, m.pendingTitle, notes)
+		if err != nil {
+			m.editStatus = fmt.Sprintf("Error creating: %v", err)
+		} else {
+			m.editStatus = "Created!"
+			m.updateSidebarCounts()
+			m.projects = m.loader.GetAllProjects(21)
+			m.updateContent()
+		}
+
+		// Clear pending state
+		m.pendingCategory = ""
+		m.pendingTitle = ""
+		m.pendingNotes = ""
 		return m, nil
 	}
 
@@ -194,15 +352,26 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 	// Handle edit mode input
 	if m.editMode {
+		// Block all input while Claude is working
+		if m.editClaudeWorking {
+			return m, nil
+		}
+
 		switch msg := msg.(type) {
 		case tea.KeyMsg:
 			switch msg.String() {
 			case "enter":
-				// Execute Claude edit
+				// Execute Claude edit with real-time status updates
 				prompt := m.editInput.Value()
 				if prompt != "" {
-					m.editStatus = "Calling Claude..."
-					return m, m.executeClaudeEdit(prompt)
+					m.editClaudeWorking = true
+					m.editStatus = "Starting..."
+					// Create channel for status updates
+					m.claudeStatusChan = make(chan claudeUpdate, 10)
+					// Start Claude in goroutine
+					go m.runClaudeEdit(prompt, m.claudeStatusChan)
+					// Return listener command
+					return m, listenForClaudeStatus(m.claudeStatusChan)
 				}
 			case "esc":
 				// Cancel edit mode
@@ -345,6 +514,85 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				}
 				m.updateContent()
 				return m, nil
+
+			case key.Matches(msg, m.keys.Yank):
+				// Copy selected item content
+				if m.sidebar.InSubMenu {
+					items := m.sidebar.SubItems[m.sidebar.Selected]
+					if len(items) > 0 {
+						idx := m.sidebar.SelectedSub[m.sidebar.Selected]
+						if idx < len(items) {
+							item := items[idx]
+							var textToCopy string
+							if item.IsTodo {
+								textToCopy = item.Name
+							} else {
+								// Read file content
+								content, err := m.loader.ReadFile(item.Path)
+								if err != nil {
+									content, _ = m.loader.ReadREADME(item.Path)
+								}
+								textToCopy = content
+							}
+							if textToCopy != "" {
+								if err := clipboard.WriteAll(textToCopy); err != nil {
+									m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+								} else {
+									m.editStatus = "Content copied!"
+								}
+							}
+						}
+					}
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.YankPath):
+				// Copy selected item path
+				if m.sidebar.InSubMenu {
+					items := m.sidebar.SubItems[m.sidebar.Selected]
+					if len(items) > 0 {
+						idx := m.sidebar.SelectedSub[m.sidebar.Selected]
+						if idx < len(items) {
+							item := items[idx]
+							if !item.IsTodo {
+								textToCopy := m.loader.RootDir + "/" + item.Path
+								if err := clipboard.WriteAll(textToCopy); err != nil {
+									m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+								} else {
+									m.editStatus = "Path copied!"
+								}
+							}
+						}
+					}
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.Archive):
+				// Archive selected sub-item
+				if m.sidebar.InSubMenu {
+					items := m.sidebar.SubItems[m.sidebar.Selected]
+					if len(items) > 0 {
+						idx := m.sidebar.SelectedSub[m.sidebar.Selected]
+						if idx < len(items) {
+							item := items[idx]
+							var err error
+							if item.IsTodo {
+								err = m.loader.ArchiveTodoItem(item.Name)
+							} else if item.IsFolder {
+								err = m.loader.ArchiveProjectFolder(item.Path)
+							}
+							if err != nil {
+								m.editStatus = fmt.Sprintf("Archive error: %v", err)
+							} else {
+								m.editStatus = "Archived!"
+								m.updateSidebarCounts()
+								m.projects = m.loader.GetAllProjects(21)
+								m.updateContent()
+							}
+						}
+					}
+				}
+				return m, nil
 			}
 		} else if m.focusedPane == PaneContent {
 			// Home view content navigation
@@ -360,6 +608,15 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					if m.homeSelectedIdx < len(m.projects)-1 {
 						m.homeSelectedIdx++
 					}
+					return m, nil
+
+				case key.Matches(msg, m.keys.Bottom):
+					// G - go to bottom
+					m.homeSelectedIdx = len(m.projects) - 1
+					if m.homeSelectedIdx < 0 {
+						m.homeSelectedIdx = 0
+					}
+					m.lastKeyG = false
 					return m, nil
 
 				case key.Matches(msg, m.keys.Left), key.Matches(msg, m.keys.Back):
@@ -418,14 +675,17 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					return m, nil
 
 				case key.Matches(msg, m.keys.Edit):
-					// Edit the selected project
+					// Edit the selected project or TODO item
 					if m.homeSelectedIdx < len(m.projects) {
 						proj := m.projects[m.homeSelectedIdx]
 						m.editMode = true
 						if proj.IsFolder {
 							m.editingFile = proj.Path + "/README.md"
+							m.editingTodoItem = ""
 						} else {
-							m.editingFile = "TODO.md" // Edit entire TODO.md for TODO items
+							// TODO item - store the item text for context
+							m.editingFile = "TODO.md"
+							m.editingTodoItem = proj.Name
 						}
 						m.editInput.Focus()
 						m.editStatus = ""
@@ -434,23 +694,57 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					return m, nil
 
 				case key.Matches(msg, m.keys.Yank):
-					// Copy project name or path to clipboard
+					// Copy project content to clipboard
 					if m.homeSelectedIdx < len(m.projects) {
 						proj := m.projects[m.homeSelectedIdx]
 						var textToCopy string
 						if proj.IsFolder && proj.Path != "" {
-							textToCopy = m.loader.RootDir + "/" + proj.Path
+							// Read README content
+							content, err := m.loader.ReadREADME(proj.Path)
+							if err == nil {
+								textToCopy = content
+							}
 						} else {
 							textToCopy = proj.Name // Copy the TODO text for quick tasks
 						}
-						if err := clipboard.WriteAll(textToCopy); err != nil {
-							m.editStatus = fmt.Sprintf("Copy failed: %v", err)
-						} else {
-							m.editStatus = "Copied!"
+						if textToCopy != "" {
+							if err := clipboard.WriteAll(textToCopy); err != nil {
+								m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+							} else {
+								m.editStatus = "Content copied!"
+							}
+						}
+					}
+					return m, nil
+
+				case key.Matches(msg, m.keys.YankPath):
+					// Copy project path to clipboard
+					if m.homeSelectedIdx < len(m.projects) {
+						proj := m.projects[m.homeSelectedIdx]
+						if proj.IsFolder && proj.Path != "" {
+							textToCopy := m.loader.RootDir + "/" + proj.Path
+							if err := clipboard.WriteAll(textToCopy); err != nil {
+								m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+							} else {
+								m.editStatus = "Path copied!"
+							}
 						}
 					}
 					return m, nil
 				}
+
+				// Handle gg (go to top) - must be outside switch to track state
+				if msg.String() == "g" {
+					if m.lastKeyG {
+						// gg - go to top
+						m.homeSelectedIdx = 0
+						m.lastKeyG = false
+					} else {
+						m.lastKeyG = true
+					}
+					return m, nil
+				}
+				m.lastKeyG = false // Reset for any other key
 				return m, nil
 			}
 
@@ -470,6 +764,16 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					m.ensureSelectedVisible()
 					m.updatePreview()
 				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.Bottom):
+				// G - go to bottom
+				if len(m.items) > 0 {
+					m.selectedIdx = len(m.items) - 1
+					m.ensureSelectedVisible()
+					m.updatePreview()
+				}
+				m.lastKeyG = false
 				return m, nil
 
 			case key.Matches(msg, m.keys.Left), key.Matches(msg, m.keys.Back):
@@ -583,37 +887,92 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				return m, nil
 
 			case key.Matches(msg, m.keys.Yank):
-				// Copy item to clipboard
+				// Copy item content to clipboard
 				if len(m.items) > 0 && m.selectedIdx < len(m.items) {
 					item := m.items[m.selectedIdx]
 					var textToCopy string
-					var label string
 
-					if strings.HasPrefix(item.Path, "TODO:") {
-						// Copy TODO text
+					if strings.HasPrefix(item.Path, "TODO:") || strings.HasPrefix(item.Path, "COMPLETED:") {
+						// Copy task text
 						textToCopy = item.Name
-						label = "TODO copied!"
-					} else if strings.HasPrefix(item.Path, "COMPLETED:") {
-						// Copy completed text
-						textToCopy = item.Name
-						label = "Task copied!"
 					} else if strings.HasPrefix(item.Path, "ARCHIVE_MONTH:") {
 						// Skip month headers
 						return m, nil
+					} else if item.IsFolder {
+						// Copy README content
+						content, err := m.loader.ReadREADME(item.Path)
+						if err == nil {
+							textToCopy = content
+						}
 					} else {
-						// Copy file/folder path
-						textToCopy = m.loader.RootDir + "/" + item.Path
-						label = "Path copied!"
+						// Copy file content
+						content, err := m.loader.ReadFile(item.Path)
+						if err == nil {
+							textToCopy = content
+						}
 					}
 
-					if err := clipboard.WriteAll(textToCopy); err != nil {
-						m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+					if textToCopy != "" {
+						if err := clipboard.WriteAll(textToCopy); err != nil {
+							m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+						} else {
+							m.editStatus = "Content copied!"
+						}
+					}
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.YankPath):
+				// Copy item path to clipboard
+				if len(m.items) > 0 && m.selectedIdx < len(m.items) {
+					item := m.items[m.selectedIdx]
+					if !strings.HasPrefix(item.Path, "TODO:") && !strings.HasPrefix(item.Path, "COMPLETED:") && !strings.HasPrefix(item.Path, "ARCHIVE_MONTH:") {
+						textToCopy := m.loader.RootDir + "/" + item.Path
+						if err := clipboard.WriteAll(textToCopy); err != nil {
+							m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+						} else {
+							m.editStatus = "Path copied!"
+						}
+					}
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.Archive):
+				// Archive selected item (not in archive context)
+				if !m.isArchiveContext() && len(m.items) > 0 && m.selectedIdx < len(m.items) {
+					item := m.items[m.selectedIdx]
+					var err error
+					if item.IsTodo {
+						err = m.loader.ArchiveTodoItem(item.Name)
+					} else if item.IsFolder {
+						err = m.loader.ArchiveProjectFolder(item.Path)
+					}
+					if err != nil {
+						m.editStatus = fmt.Sprintf("Archive error: %v", err)
 					} else {
-						m.editStatus = label
+						m.editStatus = "Archived!"
+						m.updateSidebarCounts()
+						m.projects = m.loader.GetAllProjects(21)
+						m.updateContent()
 					}
 				}
 				return m, nil
 			}
+
+			// Handle gg (go to top) - must be outside switch to track state
+			if msg.String() == "g" {
+				if m.lastKeyG {
+					// gg - go to top
+					m.selectedIdx = 0
+					m.scrollOffset = 0
+					m.updatePreview()
+					m.lastKeyG = false
+				} else {
+					m.lastKeyG = true
+				}
+				return m, nil
+			}
+			m.lastKeyG = false // Reset for any other key
 		} else if m.focusedPane == PanePreview {
 			switch {
 			case key.Matches(msg, m.keys.Left), key.Matches(msg, m.keys.Back):
@@ -630,7 +989,111 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					return m, textinput.Blink
 				}
 				return m, nil
+
+			case key.Matches(msg, m.keys.Yank):
+				// Copy the preview content
+				if m.previewText != "" {
+					if err := clipboard.WriteAll(m.previewText); err != nil {
+						m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+					} else {
+						m.editStatus = "Content copied!"
+					}
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.YankPath):
+				// Copy the previewed file path
+				if m.previewFile != "" {
+					textToCopy := m.loader.RootDir + "/" + m.previewFile
+					if err := clipboard.WriteAll(textToCopy); err != nil {
+						m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+					} else {
+						m.editStatus = "Path copied!"
+					}
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.Archive):
+				// Archive from preview - use the selected content item
+				if !m.isArchiveContext() && len(m.items) > 0 && m.selectedIdx < len(m.items) {
+					item := m.items[m.selectedIdx]
+					var err error
+					if item.IsTodo {
+						err = m.loader.ArchiveTodoItem(item.Name)
+					} else if item.IsFolder {
+						err = m.loader.ArchiveProjectFolder(item.Path)
+					}
+					if err != nil {
+						m.editStatus = fmt.Sprintf("Archive error: %v", err)
+					} else {
+						m.editStatus = "Archived!"
+						m.updateSidebarCounts()
+						m.projects = m.loader.GetAllProjects(21)
+						m.updateContent()
+					}
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.Up):
+				// Navigate items from preview pane
+				if m.viewMode == ViewHome {
+					if m.homeSelectedIdx > 0 {
+						m.homeSelectedIdx--
+					}
+				} else if m.selectedIdx > 0 {
+					m.selectedIdx--
+					m.ensureSelectedVisible()
+					m.updatePreview()
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.Down):
+				// Navigate items from preview pane
+				if m.viewMode == ViewHome {
+					if m.homeSelectedIdx < len(m.projects)-1 {
+						m.homeSelectedIdx++
+					}
+				} else if m.selectedIdx < len(m.items)-1 {
+					m.selectedIdx++
+					m.ensureSelectedVisible()
+					m.updatePreview()
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.Bottom):
+				// G - go to bottom
+				if m.viewMode == ViewHome {
+					m.homeSelectedIdx = len(m.projects) - 1
+					if m.homeSelectedIdx < 0 {
+						m.homeSelectedIdx = 0
+					}
+				} else if len(m.items) > 0 {
+					m.selectedIdx = len(m.items) - 1
+					m.ensureSelectedVisible()
+					m.updatePreview()
+				}
+				m.lastKeyG = false
+				return m, nil
 			}
+
+			// Handle gg (go to top) in preview pane
+			if msg.String() == "g" {
+				if m.lastKeyG {
+					// gg - go to top
+					if m.viewMode == ViewHome {
+						m.homeSelectedIdx = 0
+					} else {
+						m.selectedIdx = 0
+						m.scrollOffset = 0
+						m.updatePreview()
+					}
+					m.lastKeyG = false
+				} else {
+					m.lastKeyG = true
+				}
+				return m, nil
+			}
+			m.lastKeyG = false // Reset for any other key
 		}
 	}
 
@@ -646,8 +1109,24 @@ func (m *Model) executeClaudeEdit(prompt string) tea.Cmd {
 			return editResultMsg{err: err}
 		}
 
-		// Build the prompt for Claude
-		fullPrompt := fmt.Sprintf(`Given this markdown file content:
+		var fullPrompt string
+
+		// Special handling for TODO items
+		if m.editingTodoItem != "" {
+			fullPrompt = fmt.Sprintf(`Given this TODO.md file:
+
+<file>
+%s
+</file>
+
+I want to edit ONLY this specific TODO item: "%s"
+
+My edit request: %s
+
+Output the ENTIRE updated TODO.md file with ONLY that one item modified. Keep all other items exactly as they are. No explanation or markdown code blocks - just the raw file content.`, content, m.editingTodoItem, prompt)
+		} else {
+			// Regular file edit
+			fullPrompt = fmt.Sprintf(`Given this markdown file content:
 
 <file>
 %s
@@ -656,21 +1135,221 @@ func (m *Model) executeClaudeEdit(prompt string) tea.Cmd {
 Make these changes: %s
 
 Output ONLY the updated file content, no explanation or markdown code blocks. Just the raw updated content.`, content, prompt)
-
-		// Execute claude command
-		cmd := exec.Command("claude", "-p", fullPrompt)
-		output, err := cmd.Output()
-		if err != nil {
-			return editResultMsg{err: fmt.Errorf("claude error: %w", err)}
 		}
 
-		return editResultMsg{content: string(output)}
+		// Execute claude command with streaming JSON output
+		cmd := exec.Command("claude", "-p", fullPrompt, "--output-format", "stream-json", "--verbose")
+		stdout, err := cmd.StdoutPipe()
+		if err != nil {
+			return editResultMsg{err: fmt.Errorf("failed to get stdout: %w", err)}
+		}
+
+		if err := cmd.Start(); err != nil {
+			return editResultMsg{err: fmt.Errorf("failed to start claude: %w", err)}
+		}
+
+		// Read and parse streaming JSON output
+		scanner := bufio.NewScanner(stdout)
+		var finalResult string
+		var lastStatus string
+
+		for scanner.Scan() {
+			line := scanner.Text()
+
+			// Try to parse as result message
+			var result claudeStreamResult
+			if err := json.Unmarshal([]byte(line), &result); err == nil {
+				if result.Type == "result" {
+					if result.IsError {
+						return editResultMsg{err: fmt.Errorf("claude error: %s", result.Result)}
+					}
+					finalResult = result.Result
+					continue
+				}
+			}
+
+			// Try to parse as assistant message for status
+			var msg claudeStreamMessage
+			if err := json.Unmarshal([]byte(line), &msg); err == nil {
+				if msg.Type == "assistant" && len(msg.Message.Content) > 0 {
+					for _, c := range msg.Message.Content {
+						if c.Type == "tool_use" && c.Name != "" {
+							lastStatus = fmt.Sprintf("Using: %s", c.Name)
+						} else if c.Type == "text" && c.Text != "" {
+							// Truncate long text
+							text := c.Text
+							if len(text) > 50 {
+								text = text[:47] + "..."
+							}
+							lastStatus = text
+						}
+					}
+				}
+			}
+			_ = lastStatus // Status could be used for real-time updates with subscriptions
+		}
+
+		if err := cmd.Wait(); err != nil {
+			return editResultMsg{err: fmt.Errorf("claude failed: %w", err)}
+		}
+
+		if finalResult == "" {
+			return editResultMsg{err: fmt.Errorf("no result from claude")}
+		}
+
+		return editResultMsg{content: finalResult}
 	}
 }
 
 // writeFile writes content to a file
 func writeFile(path string, content string) error {
 	return os.WriteFile(path, []byte(content), 0644)
+}
+
+// runClaudeEdit runs claude to edit the file and sends status updates via channel
+func (m *Model) runClaudeEdit(prompt string, ch chan claudeUpdate) {
+	defer close(ch)
+
+	ch <- claudeUpdate{Status: "Reading file..."}
+
+	// Read current file content
+	content, err := m.loader.ReadFile(m.editingFile)
+	if err != nil {
+		ch <- claudeUpdate{Done: true, Error: err}
+		return
+	}
+
+	var fullPrompt string
+
+	// Special handling for TODO items
+	if m.editingTodoItem != "" {
+		fullPrompt = fmt.Sprintf(`Given this TODO.md file:
+
+<file>
+%s
+</file>
+
+I want to edit ONLY this specific TODO item: "%s"
+
+My edit request: %s
+
+Output the ENTIRE updated TODO.md file with ONLY that one item modified. Keep all other items exactly as they are. No explanation or markdown code blocks - just the raw file content.`, content, m.editingTodoItem, prompt)
+	} else {
+		// Regular file edit
+		fullPrompt = fmt.Sprintf(`Given this markdown file content:
+
+<file>
+%s
+</file>
+
+Make these changes: %s
+
+Output ONLY the updated file content, no explanation or markdown code blocks. Just the raw updated content.`, content, prompt)
+	}
+
+	ch <- claudeUpdate{Status: "Calling Claude..."}
+
+	// Execute claude command with streaming JSON output
+	cmd := exec.Command("claude", "-p", fullPrompt, "--output-format", "stream-json", "--verbose")
+	stdout, err := cmd.StdoutPipe()
+	if err != nil {
+		ch <- claudeUpdate{Done: true, Error: fmt.Errorf("failed to get stdout: %w", err)}
+		return
+	}
+
+	if err := cmd.Start(); err != nil {
+		ch <- claudeUpdate{Done: true, Error: fmt.Errorf("failed to start claude: %w", err)}
+		return
+	}
+
+	ch <- claudeUpdate{Status: "Waiting for response..."}
+
+	// Read and parse streaming JSON output
+	scanner := bufio.NewScanner(stdout)
+	// Increase scanner buffer for large JSON lines
+	buf := make([]byte, 0, 64*1024)
+	scanner.Buffer(buf, 1024*1024)
+
+	var finalResult string
+	messageCount := 0
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		messageCount++
+
+		// Try to parse the type first
+		var baseMsg struct {
+			Type string `json:"type"`
+		}
+		if err := json.Unmarshal([]byte(line), &baseMsg); err != nil {
+			continue
+		}
+
+		switch baseMsg.Type {
+		case "system":
+			// Init message
+			var sysMsg claudeSystemMessage
+			if err := json.Unmarshal([]byte(line), &sysMsg); err == nil {
+				if sysMsg.Subtype == "init" {
+					ch <- claudeUpdate{Status: "Claude connected..."}
+				}
+			}
+
+		case "assistant":
+			// Assistant response - check for tool use or text
+			var msg claudeStreamMessage
+			if err := json.Unmarshal([]byte(line), &msg); err == nil {
+				for _, c := range msg.Message.Content {
+					if c.Type == "tool_use" && c.Name != "" {
+						ch <- claudeUpdate{Status: fmt.Sprintf("Using: %s", c.Name)}
+					} else if c.Type == "text" && c.Text != "" {
+						// Show first part of response
+						text := c.Text
+						if len(text) > 40 {
+							text = text[:37] + "..."
+						}
+						ch <- claudeUpdate{Status: fmt.Sprintf("Writing: %s", text)}
+					}
+				}
+			}
+
+		case "result":
+			// Final result
+			var result claudeStreamResult
+			if err := json.Unmarshal([]byte(line), &result); err == nil {
+				if result.IsError {
+					ch <- claudeUpdate{Done: true, Error: fmt.Errorf("claude error: %s", result.Result)}
+					cmd.Wait()
+					return
+				}
+				finalResult = result.Result
+			}
+		}
+	}
+
+	if err := cmd.Wait(); err != nil {
+		ch <- claudeUpdate{Done: true, Error: fmt.Errorf("claude failed: %w", err)}
+		return
+	}
+
+	if finalResult == "" {
+		ch <- claudeUpdate{Done: true, Error: fmt.Errorf("no result from claude")}
+		return
+	}
+
+	ch <- claudeUpdate{Done: true, Result: finalResult}
+}
+
+// listenForClaudeStatus returns a command that listens for Claude status updates
+func listenForClaudeStatus(ch chan claudeUpdate) tea.Cmd {
+	return func() tea.Msg {
+		update, ok := <-ch
+		if !ok {
+			// Channel closed
+			return claudeStatusMsg{update: claudeUpdate{Done: true, Error: fmt.Errorf("channel closed unexpectedly")}}
+		}
+		return claudeStatusMsg{update: update}
+	}
 }
 
 // updateContent updates the content pane based on sidebar selection
@@ -953,6 +1632,9 @@ func (m *Model) updateSidebarCounts() {
 // createNewItem creates a new item based on category
 func (m *Model) createNewItem(category, title, notes string) error {
 	switch category {
+	case "TODO":
+		// Add to TODO.md
+		return m.loader.CreateTodo(title, notes)
 	case "Projects":
 		// Create a new project folder with README
 		return m.loader.CreateProject(title, notes)
@@ -1080,11 +1762,17 @@ func (m Model) View() string {
 	var footer string
 	if m.isArchiveContext() {
 		// Show restore option for archived items
-		footer = footerStyle.Render("j/k:move  Enter:open  R:restore  n:new  y:copy  tab:pane  1-4:jump  q:quit")
+		footer = footerStyle.Render("j/k:move  Enter:open  R:restore  n:new  y:copy Y:path  tab:pane  1-4:jump  q:quit")
 	} else if m.viewMode == ViewHome {
-		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  n:new  y:copy  1-4:jump  q:quit")
+		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  n:new  y:copy Y:path  1-4:jump  q:quit")
 	} else {
-		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  n:new  y:copy  tab:pane  1-4:jump  q:quit")
+		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  n:new  y:copy Y:path  tab:pane  1-4:jump  q:quit")
+	}
+
+	// Show status message
+	if m.editStatus != "" {
+		statusStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#9ECE6A"))
+		footer = footer + "  " + statusStyle.Render(m.editStatus)
 	}
 
 	// Compose full view
@@ -1112,10 +1800,25 @@ func (m Model) View() string {
 			Foreground(lipgloss.Color("#9ECE6A")).
 			MarginTop(1)
 
-		modalContent := titleStyle.Render("Edit: "+m.editingFile) + "\n\n" +
-			m.editInput.View() + "\n" +
-			statusStyle.Render(m.editStatus) + "\n\n" +
-			lipgloss.NewStyle().Foreground(lipgloss.Color("#666666")).Render("Enter: submit  Esc: cancel")
+		var modalContent string
+		if m.editClaudeWorking {
+			// Show working indicator - hide input, show spinner
+			workingStyle := lipgloss.NewStyle().
+				Foreground(lipgloss.Color("#F7C67A")).
+				Bold(true)
+			statusText := m.editStatus
+			if statusText == "" {
+				statusText = "Initializing..."
+			}
+			modalContent = titleStyle.Render("Edit: "+m.editingFile) + "\n\n" +
+				workingStyle.Render("⏳ "+statusText) + "\n\n" +
+				lipgloss.NewStyle().Foreground(lipgloss.Color("#666666")).Render("Please wait...")
+		} else {
+			modalContent = titleStyle.Render("Edit: "+m.editingFile) + "\n\n" +
+				m.editInput.View() + "\n" +
+				statusStyle.Render(m.editStatus) + "\n\n" +
+				lipgloss.NewStyle().Foreground(lipgloss.Color("#666666")).Render("Enter: submit  Esc: cancel")
+		}
 
 		modal := modalStyle.Render(modalContent)
 
@@ -1129,6 +1832,25 @@ func (m Model) View() string {
 		)
 
 		return modalPlaced
+	}
+
+	// If Claude is working, show a working indicator
+	if m.claudeWorking {
+		workingStyle := lipgloss.NewStyle().
+			Border(lipgloss.RoundedBorder()).
+			BorderForeground(lipgloss.Color("#7AA2F7")).
+			Padding(2, 4).
+			Foreground(lipgloss.Color("#7AA2F7"))
+
+		workingContent := workingStyle.Render(fmt.Sprintf("⏳ Expanding with Claude...\n\n  Creating: %s", m.pendingTitle))
+		workingPlaced := lipgloss.Place(
+			m.width,
+			m.height,
+			lipgloss.Center,
+			lipgloss.Center,
+			workingContent,
+		)
+		return workingPlaced
 	}
 
 	// If quick capture modal is visible, overlay it
