@@ -54,6 +54,8 @@
     - Files: `dot_ai/2025-12-29/tasks/nxc-3641-template-updater.md`, `/Users/jack/projects/nx-template-updater`
 
 ## In Progress
+- [ ] Effy reviews (2026-01-09 08:42)
+  - Due today, must get done before lunch!
 
 - [ ] Follow-up CLOUD-2614: Investigate discrepancy in contributor count (2025-10-27 09:58)
 
