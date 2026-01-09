@@ -44,17 +44,44 @@
     - Files: `dot_ai/2025-12-29/tasks/nxc-3641-template-updater.md`, `/Users/jack/projects/nx-template-updater`
 
 ## In Progress
+- [ ] Check Mexico travel requirements (2026-01-08 21:06)
+  - Research entry requirements for Mexico trip:
+    - [ ] **Passport**: Verify validity (must be valid for duration of stay; 6+ months recommended)
+    - [ ] **Visa**: Check if visa required based on citizenship (US/Canadian citizens typically visa-free for tourism up to 180 days)
+    - [ ] **FMM (Tourist Card)**: Determine if Forma Migratoria Múltiple is needed and how to obtain (airline may provide or fill out online at INM website)
+    - [ ] **COVID-19 requirements**: Check current vaccination/testing requirements (most restrictions lifted but verify)
+    - [ ] **Travel insurance**: Consider travel medical insurance (recommended but not required)
+    - [ ] **Return/onward ticket**: May be required as proof of departure
+    - [ ] **Proof of accommodation**: Hotel reservations or address where staying
+    - [ ] **Sufficient funds**: May need to show proof of financial means
+    - [ ] **Customs declaration**: Fill out customs form on arrival
+
+- [ ] Test out the para TUI app (2026-01-08 20:28)
+  - This is a comprehensive test of the TUI application to verify all PARA method features work correctly. Test the complete workflow including creating, viewing, editing, and archiving items across all four categories (Projects, Areas, Resources, Archive), as well as navigation, search, and any keyboard shortcuts. Verify that items can be moved between categories and that the UI responds correctly to all user interactions.
+  - Testing plan:
+    - [x] Navigation: Arrow keys (j/k/up/down), Tab between panes, Enter to select
+    - [ ] Projects: Create new project, view details, edit content, archive project
+    - [ ] Areas: Create new area, view details, edit content, archive area
+    - [ ] Resources: Create new resource, view details, edit content, archive resource
+    - [ ] Archive: View archived items, restore item from archive
+    - [ ] Search: Full-text search across all categories, filter by category
+    - [x] Keyboard shortcuts: Test all documented shortcuts (?, q, /, etc.)
+    - [ ] Modal interactions: Create/edit modals open and close correctly
+    - [ ] Error handling: Invalid input, empty states, edge cases
+
 
 - [ ] Discuss Maven paywall decision with Victor (2026-01-07)
   - From Jason 1:1: Push for clarity on revenue path or abandon gating
   - Address underlying motivations not clearly communicated
   - Team pushback: Colum against, James raised issues at all hands
+  - **Update 2026-01-08**: Victor mentioned this is being brought up with execs today. Sync up with him tomorrow (2026-01-09).
 
 - [ ] Cut patch release for PR #34026 (20.8.x and 22.x) (2026-01-07)
   - PR: https://github.com/nrwl/nx/pull/34026
   - Fix: `@nx/plugin:migration` generator failing with ESLint flat configs containing variable references
   - Customer: Fidelity (via Slack: https://nrwl.slack.com/archives/C6WJMCAB1/p1767627484254249)
   - Versions: 20.8.x and 22.x branches
+  - **Action**: Discuss with Jason tomorrow (2026-01-09) to determine who will handle the release
 
 - [ ] Infra Sync
   - Docker Layer Caching as a feature to push, also NPM mirrors
@@ -110,4 +137,3 @@
   - Notes: Reproducible in nx-examples repo, affects run-many and affected commands
 
 - [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
-

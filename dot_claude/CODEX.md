@@ -62,16 +62,34 @@ When commit message is rejected:
 **Complete Workflow**: Verify → Stage (`git add`) → Check count → Squash → Commit with template → Verify
 
 ### Task TODO Format
+
+The `dot_ai/TODO.md` file tracks **In Progress** tasks only. When a task is completed, move it to `.ai/para/archive/COMPLETED.md` instead of keeping it in TODO.md.
+
+**TODO.md format:**
 ```markdown
 ## In Progress
 - [ ] Name of task (yyyy-mm-dd hh:mm)
   - Plan: `dot_ai/yyyy-mm-dd/tasks/name-of-task.md`
   - Goal: The goal according to planned task
-
-## Completed
-- [x] Name of task (yyyy-mm-dd hh:mm)
-  - Plan: `dot_ai/yyyy-mm-dd/tasks/name-of-task.md`
 ```
+
+**COMPLETED.md format** (organized by month):
+```markdown
+## Completed
+
+### January 2026
+
+- [x] Name of task (yyyy-mm-dd)
+  - Plan: `dot_ai/yyyy-mm-dd/tasks/name-of-task.md`
+  - Summary: Brief description of what was accomplished
+
+### December 2025
+...
+```
+
+**When completing a task:**
+1. Remove the task from `dot_ai/TODO.md`
+2. Add it to `.ai/para/archive/COMPLETED.md` under the appropriate month section
 
 ## 🔍 MCP Server Usage (Priority)
 

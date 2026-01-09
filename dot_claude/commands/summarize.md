@@ -2,7 +2,12 @@
 
 Given today's date in `.ai/yyyy-mm-dd` folder or `dot_ai/yyyy-mm-dd` folder, whichever is found first, go through files under specs, dictations, and plans folder and summarize what was accomplished today (where `yyyy-mm-dd` is today's date). Call it `SUMMARY.md`.
 
-Also review the `.ai/TODO.md` or `dot_ai/TODO.md` file to find any completed tasks for the day and mention them in the summary. Note that the completed task may already be in the existing summary file.
+Also review the `.ai/TODO.md` or `dot_ai/TODO.md` file to find any tasks that should be marked as completed. When completing tasks:
+1. Remove completed tasks from `dot_ai/TODO.md`
+2. Add them to `.ai/para/archive/COMPLETED.md` under the appropriate month section
+3. Include them in today's summary
+
+Note that tasks completed today should appear in both the SUMMARY.md and in COMPLETED.md.
 
 ## Update Recent Tasks List
 

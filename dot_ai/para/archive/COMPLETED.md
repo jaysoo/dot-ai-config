@@ -2,6 +2,8 @@
 
 ### January 2026
 
+- [x] Talk to Jason (due 2026-01-09) ✓ 2026-01-08
+
 - [x] 2025 Productivity Report for Victor (2026-01-08)
   - Report: https://docs.google.com/document/d/1AYjxss9Eba0QWuGsx7TZmqsF9FDeurZABi8kjTRQ2Mc/edit?tab=t.0
   - Key findings: August layoffs and AI adoption had net positive impact on productivity
