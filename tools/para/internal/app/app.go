@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jack/para-tui/internal/components"
-	"github.com/jack/para-tui/internal/para"
+	"github.com/jack/para/internal/components"
+	"github.com/jack/para/internal/para"
 
 	"github.com/atotto/clipboard"
 	"github.com/charmbracelet/bubbles/key"

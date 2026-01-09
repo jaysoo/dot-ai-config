@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/jack/para-tui/internal/para"
+	"github.com/jack/para/internal/para"
 
 	"github.com/charmbracelet/lipgloss"
 )

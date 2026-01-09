@@ -1,4 +1,4 @@
-module github.com/jack/para-tui
+module github.com/jack/para
 
 go 1.24.0
 
