@@ -89,6 +89,11 @@ type Model struct {
 	pendingTitle      string
 	pendingNotes      string
 
+	// Undo state for archive operations
+	undoType   string // "folder" or "todo"
+	undoSource string // Original path (for folders) or item name (for todos)
+	undoTarget string // Archive path (for folders)
+
 	// Flags
 	showHelp bool
 	quitting bool
@@ -475,6 +480,33 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.updateContent()
 			return m, nil
 
+		case key.Matches(msg, m.keys.Undo):
+			// Undo last archive operation
+			if m.undoType == "" {
+				m.editStatus = "Nothing to undo"
+				return m, nil
+			}
+			var err error
+			if m.undoType == "folder" {
+				err = m.loader.UndoArchiveFolder(m.undoTarget, m.undoSource)
+			} else if m.undoType == "todo" {
+				err = m.loader.RestoreCompletedItem(m.undoSource)
+			}
+			if err != nil {
+				m.editStatus = fmt.Sprintf("Undo error: %v", err)
+			} else {
+				m.editStatus = "Undone!"
+				m.undoType = ""
+				m.undoSource = ""
+				m.undoTarget = ""
+				m.updateSidebarCounts()
+				m.projects = m.loader.GetAllProjects(21)
+				m.recentFiles = m.loader.GetRecentFiles(10)
+				m.completed = m.loader.GetCompletedItems()
+				m.updateContent()
+			}
+			return m, nil
+
 		case key.Matches(msg, m.keys.New):
 			// Show quick capture modal
 			cmd := m.modal.Show()
@@ -612,13 +644,24 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 							var err error
 							if item.IsTodo {
 								err = m.loader.ArchiveTodoItem(item.Name)
+								if err == nil {
+									m.undoType = "todo"
+									m.undoSource = item.Name
+									m.undoTarget = ""
+								}
 							} else if item.IsFolder {
-								err = m.loader.ArchiveProjectFolder(item.Path)
+								var archivePath string
+								archivePath, err = m.loader.ArchiveProjectFolder(item.Path)
+								if err == nil {
+									m.undoType = "folder"
+									m.undoSource = item.Path
+									m.undoTarget = archivePath
+								}
 							}
 							if err != nil {
 								m.editStatus = fmt.Sprintf("Archive error: %v", err)
 							} else {
-								m.editStatus = "Archived!"
+								m.editStatus = "Archived! Press u to undo"
 								m.updateSidebarCounts()
 								m.projects = m.loader.GetAllProjects(21)
 								m.updateContent()
@@ -758,14 +801,25 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 						proj := m.projects[m.homeSelectedIdx]
 						var err error
 						if proj.IsFolder {
-							err = m.loader.ArchiveProjectFolder(proj.Path)
+							var archivePath string
+							archivePath, err = m.loader.ArchiveProjectFolder(proj.Path)
+							if err == nil {
+								m.undoType = "folder"
+								m.undoSource = proj.Path
+								m.undoTarget = archivePath
+							}
 						} else {
 							err = m.loader.ArchiveTodoItem(proj.Name)
+							if err == nil {
+								m.undoType = "todo"
+								m.undoSource = proj.Name
+								m.undoTarget = ""
+							}
 						}
 						if err != nil {
 							m.editStatus = fmt.Sprintf("Archive error: %v", err)
 						} else {
-							m.editStatus = "Archived!"
+							m.editStatus = "Archived! Press u to undo"
 							// Refresh projects list and recent files
 							m.projects = m.loader.GetAllProjects(21)
 							m.recentFiles = m.loader.GetRecentFiles(10)
@@ -1090,13 +1144,24 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					var err error
 					if item.IsTodo {
 						err = m.loader.ArchiveTodoItem(item.Name)
+						if err == nil {
+							m.undoType = "todo"
+							m.undoSource = item.Name
+							m.undoTarget = ""
+						}
 					} else if item.IsFolder {
-						err = m.loader.ArchiveProjectFolder(item.Path)
+						var archivePath string
+						archivePath, err = m.loader.ArchiveProjectFolder(item.Path)
+						if err == nil {
+							m.undoType = "folder"
+							m.undoSource = item.Path
+							m.undoTarget = archivePath
+						}
 					}
 					if err != nil {
 						m.editStatus = fmt.Sprintf("Archive error: %v", err)
 					} else {
-						m.editStatus = "Archived!"
+						m.editStatus = "Archived! Press u to undo"
 						m.updateSidebarCounts()
 						m.projects = m.loader.GetAllProjects(21)
 						m.updateContent()
@@ -1166,13 +1231,24 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					var err error
 					if item.IsTodo {
 						err = m.loader.ArchiveTodoItem(item.Name)
+						if err == nil {
+							m.undoType = "todo"
+							m.undoSource = item.Name
+							m.undoTarget = ""
+						}
 					} else if item.IsFolder {
-						err = m.loader.ArchiveProjectFolder(item.Path)
+						var archivePath string
+						archivePath, err = m.loader.ArchiveProjectFolder(item.Path)
+						if err == nil {
+							m.undoType = "folder"
+							m.undoSource = item.Path
+							m.undoTarget = archivePath
+						}
 					}
 					if err != nil {
 						m.editStatus = fmt.Sprintf("Archive error: %v", err)
 					} else {
-						m.editStatus = "Archived!"
+						m.editStatus = "Archived! Press u to undo"
 						m.updateSidebarCounts()
 						m.projects = m.loader.GetAllProjects(21)
 						m.updateContent()

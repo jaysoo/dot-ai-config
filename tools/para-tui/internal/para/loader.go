@@ -701,13 +701,22 @@ func (l *Loader) ArchiveTodoItem(todoText string) error {
 }
 
 // ArchiveProjectFolder moves a project folder to archive with date prefix
-func (l *Loader) ArchiveProjectFolder(projectPath string) error {
+// Returns the archive path for undo support
+func (l *Loader) ArchiveProjectFolder(projectPath string) (archivePath string, err error) {
 	srcPath := filepath.Join(l.RootDir, projectPath)
 	projectName := filepath.Base(projectPath)
 	today := time.Now().Format("2006-01-02")
 	archiveName := fmt.Sprintf("%s-%s", today, projectName)
-	dstPath := filepath.Join(l.RootDir, "para", "archive", archiveName)
+	archivePath = filepath.Join("para", "archive", archiveName)
+	dstPath := filepath.Join(l.RootDir, archivePath)
 
+	return archivePath, os.Rename(srcPath, dstPath)
+}
+
+// UndoArchiveFolder moves a folder back from archive to its original location
+func (l *Loader) UndoArchiveFolder(archivePath, originalPath string) error {
+	srcPath := filepath.Join(l.RootDir, archivePath)
+	dstPath := filepath.Join(l.RootDir, originalPath)
 	return os.Rename(srcPath, dstPath)
 }
 

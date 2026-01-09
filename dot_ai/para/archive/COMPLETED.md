@@ -3,6 +3,35 @@
 ### January 2026
 
 
+
+  - URL: https://linear.app/nxdev/issue/CLOUD-2614
+  - Assignee: Nicole Oliver | Priority: High | Status: Todo
+  - Issue: Org shows 7/5 contributors used but list only shows 6 (null contributors not discounted)
+  - Fix: Change in aggregator to discount "null" contributors from count
+  - Customer: Org 65811494657f145ed525b196
+
+
+- [x] Test out the para TUI app (2026-01-08 20:28) ✓ 2026-01-09
+  - This is a comprehensive test of the TUI application to verify all PARA method features work correctly. Test the complete workflow including creating, viewing, editing, and archiving items across all four categories (Projects, Areas, Resources, Archive), as well as navigation, search, and any keyboard shortcuts. Verify that items can be moved between categories and that the UI responds correctly to all user interactions.
+  - Testing plan:
+    - [x] Navigation: Arrow keys (j/k/up/down), Tab between panes, Enter to select
+    - [ ] Projects: Create new project, view details, edit content, archive project
+    - [ ] Areas: Create new area, view details, edit content, archive area
+    - [ ] Resources: Create new resource, view details, edit content, archive resource
+    - [ ] Archive: View archived items, restore item from archive
+    - [ ] Search: Full-text search across all categories, filter by category
+    - [x] Keyboard shortcuts: Test all documented shortcuts (?, q, /, etc.)
+    - [ ] Modal interactions: Create/edit modals open and close correctly
+    - [ ] Error handling: Invalid input, empty states, edge cases
+
+
+
+- [x] Infra Sync (2026-01-06) ✓ 2026-01-09
+  - Docker Layer Caching as a feature to push, also NPM mirrors
+    - Lots of value add for ST
+  - It'd be a lot of work to replicate what our infra does for reliability, etc.
+
+
 - [x] Check Mexico travel requirements (2026-01-08 21:06)
   - Research entry requirements for Mexico trip:
     - [ ] **Passport**: Verify validity (must be valid for duration of stay; 6+ months recommended)

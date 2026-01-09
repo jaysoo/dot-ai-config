@@ -26,6 +26,7 @@ type KeyMap struct {
 	YankPath key.Binding
 	Search   key.Binding
 	Back     key.Binding
+	Undo     key.Binding
 
 	// Category jumps
 	JumpProjects  key.Binding
@@ -119,6 +120,10 @@ func DefaultKeyMap() KeyMap {
 		Back: key.NewBinding(
 			key.WithKeys("esc"),
 			key.WithHelp("esc", "back"),
+		),
+		Undo: key.NewBinding(
+			key.WithKeys("u"),
+			key.WithHelp("u", "undo"),
 		),
 		JumpProjects: key.NewBinding(
 			key.WithKeys("1"),
