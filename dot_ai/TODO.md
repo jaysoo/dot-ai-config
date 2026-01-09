@@ -44,18 +44,6 @@
     - Files: `dot_ai/2025-12-29/tasks/nxc-3641-template-updater.md`, `/Users/jack/projects/nx-template-updater`
 
 ## In Progress
-- [ ] Check Mexico travel requirements (2026-01-08 21:06)
-  - Research entry requirements for Mexico trip:
-    - [ ] **Passport**: Verify validity (must be valid for duration of stay; 6+ months recommended)
-    - [ ] **Visa**: Check if visa required based on citizenship (US/Canadian citizens typically visa-free for tourism up to 180 days)
-    - [ ] **FMM (Tourist Card)**: Determine if Forma Migratoria Múltiple is needed and how to obtain (airline may provide or fill out online at INM website)
-    - [ ] **COVID-19 requirements**: Check current vaccination/testing requirements (most restrictions lifted but verify)
-    - [ ] **Travel insurance**: Consider travel medical insurance (recommended but not required)
-    - [ ] **Return/onward ticket**: May be required as proof of departure
-    - [ ] **Proof of accommodation**: Hotel reservations or address where staying
-    - [ ] **Sufficient funds**: May need to show proof of financial means
-    - [ ] **Customs declaration**: Fill out customs form on arrival
-
 - [ ] Test out the para TUI app (2026-01-08 20:28)
   - This is a comprehensive test of the TUI application to verify all PARA method features work correctly. Test the complete workflow including creating, viewing, editing, and archiving items across all four categories (Projects, Areas, Resources, Archive), as well as navigation, search, and any keyboard shortcuts. Verify that items can be moved between categories and that the UI responds correctly to all user interactions.
   - Testing plan:

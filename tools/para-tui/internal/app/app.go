@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"time"
 
 	"github.com/jack/para-tui/internal/components"
 	"github.com/jack/para-tui/internal/para"
@@ -54,18 +55,22 @@ type Model struct {
 	editInput textinput.Model
 
 	// Content state
-	currentPath  string
-	pathHistory  []string // Stack of previous paths for back navigation
-	items        []para.Item
-	selectedIdx  int
-	scrollOffset int    // Scroll offset for content pane
-	previewText  string
-	previewFile  string // Path to file being previewed (for editing)
+	currentPath         string
+	pathHistory         []string // Stack of previous paths for back navigation
+	items               []para.Item
+	selectedIdx         int
+	scrollOffset        int    // Scroll offset for content pane
+	previewText         string
+	previewFile         string // Path to file being previewed (for editing)
+	previewScrollOffset int    // Scroll offset for preview pane
 
 	// Home dashboard
-	projects        []para.ProjectItem
-	completed       []para.CompletedItem
-	homeSelectedIdx int
+	projects         []para.ProjectItem
+	recentFiles      []para.RecentFile
+	completed        []para.CompletedItem
+	homeSelectedIdx  int
+	homeSection      int // 0 = projects, 1 = recent files
+	homeScrollOffset int // Scroll offset for home content
 
 	// Edit mode
 	editMode        bool
@@ -129,6 +134,9 @@ func New(paraDir string) Model {
 	// Load projects for dashboard (21 days = 3 weeks stale threshold)
 	projects := loader.GetAllProjects(21)
 
+	// Load recent files (top 10)
+	recentFiles := loader.GetRecentFiles(10)
+
 	// Load completed items for archive
 	completed := loader.GetCompletedItems()
 
@@ -146,6 +154,7 @@ func New(paraDir string) Model {
 		focusedPane: PaneSidebar,
 		viewMode:    ViewHome, // Start in home mode
 		projects:    projects,
+		recentFiles: recentFiles,
 		completed:   completed,
 		currentPath: initialPath,
 		items:       items,
@@ -431,7 +440,13 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			// Go to home dashboard
 			m.viewMode = ViewHome
 			m.projects = m.loader.GetAllProjects(21)
+			m.recentFiles = m.loader.GetRecentFiles(10)
 			m.homeSelectedIdx = 0
+			m.homeSection = 0
+			m.homeScrollOffset = 0
+			// Sync sidebar to Home
+			m.sidebar.JumpTo(0) // Home is index 0
+			m.sidebar.InSubMenu = false
 			return m, nil
 
 		case key.Matches(msg, m.keys.JumpProjects):
@@ -469,22 +484,39 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			switch {
 			case key.Matches(msg, m.keys.Up):
 				m.sidebar.MoveUp()
-				m.viewMode = ViewBrowse // Switch to browse when navigating sidebar
-				m.updateContent()
+				// Check if we landed on Home
+				if m.sidebar.SelectedCategory().Path == "_home" && !m.sidebar.InSubMenu {
+					m.viewMode = ViewHome
+					m.projects = m.loader.GetAllProjects(21)
+					m.recentFiles = m.loader.GetRecentFiles(10)
+					m.homeSelectedIdx = 0
+					m.homeSection = 0
+					m.homeScrollOffset = 0
+				} else {
+					m.viewMode = ViewBrowse
+					m.updateContent()
+				}
 				return m, nil
 
 			case key.Matches(msg, m.keys.Down):
 				m.sidebar.MoveDown()
-				m.viewMode = ViewBrowse // Switch to browse when navigating sidebar
-				m.updateContent()
-				return m, nil
-
-			case key.Matches(msg, m.keys.Enter):
-				// Check if Home is selected
+				// Check if we landed on Home
 				if m.sidebar.SelectedCategory().Path == "_home" && !m.sidebar.InSubMenu {
 					m.viewMode = ViewHome
 					m.projects = m.loader.GetAllProjects(21)
+					m.recentFiles = m.loader.GetRecentFiles(10)
 					m.homeSelectedIdx = 0
+					m.homeSection = 0
+					m.homeScrollOffset = 0
+				} else {
+					m.viewMode = ViewBrowse
+					m.updateContent()
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.Enter):
+				// Check if Home is selected - just focus content pane
+				if m.sidebar.SelectedCategory().Path == "_home" && !m.sidebar.InSubMenu {
 					m.focusedPane = PaneContent
 					m.sidebar.Focused = false
 					return m, nil
@@ -597,25 +629,67 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		} else if m.focusedPane == PaneContent {
 			// Home view content navigation
 			if m.viewMode == ViewHome {
+				// Calculate max indices for each section
+				maxProjectIdx := len(m.projects) - 1
+				if maxProjectIdx < 0 {
+					maxProjectIdx = 0
+				}
+				maxRecentIdx := len(m.recentFiles) - 1
+				if maxRecentIdx < 0 {
+					maxRecentIdx = 0
+				}
+
 				switch {
 				case key.Matches(msg, m.keys.Up):
-					if m.homeSelectedIdx > 0 {
-						m.homeSelectedIdx--
+					if m.homeSection == 0 {
+						// In projects section
+						if m.homeSelectedIdx > 0 {
+							m.homeSelectedIdx--
+						}
+					} else {
+						// In recent files section
+						if m.homeSelectedIdx > 0 {
+							m.homeSelectedIdx--
+						} else if len(m.projects) > 0 {
+							// Move to projects section
+							m.homeSection = 0
+							m.homeSelectedIdx = maxProjectIdx
+						}
 					}
+					m.ensureHomeSelectedVisible()
 					return m, nil
 
 				case key.Matches(msg, m.keys.Down):
-					if m.homeSelectedIdx < len(m.projects)-1 {
-						m.homeSelectedIdx++
+					if m.homeSection == 0 {
+						// In projects section
+						if m.homeSelectedIdx < maxProjectIdx {
+							m.homeSelectedIdx++
+						} else if len(m.recentFiles) > 0 {
+							// Move to recent files section
+							m.homeSection = 1
+							m.homeSelectedIdx = 0
+						}
+					} else {
+						// In recent files section
+						if m.homeSelectedIdx < maxRecentIdx {
+							m.homeSelectedIdx++
+						}
 					}
+					m.ensureHomeSelectedVisible()
 					return m, nil
 
 				case key.Matches(msg, m.keys.Bottom):
-					// G - go to bottom
-					m.homeSelectedIdx = len(m.projects) - 1
-					if m.homeSelectedIdx < 0 {
-						m.homeSelectedIdx = 0
+					// G - go to bottom of current section or jump to last item overall
+					if m.homeSection == 0 && len(m.recentFiles) > 0 {
+						// Jump to last recent file
+						m.homeSection = 1
+						m.homeSelectedIdx = maxRecentIdx
+					} else if m.homeSection == 1 {
+						m.homeSelectedIdx = maxRecentIdx
+					} else {
+						m.homeSelectedIdx = maxProjectIdx
 					}
+					m.ensureHomeSelectedVisible()
 					m.lastKeyG = false
 					return m, nil
 
@@ -625,30 +699,60 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					return m, nil
 
 				case key.Matches(msg, m.keys.Enter):
-					// Jump to selected project if it's a folder
-					if m.homeSelectedIdx < len(m.projects) {
-						proj := m.projects[m.homeSelectedIdx]
-						if proj.IsFolder && proj.Path != "" {
-							// Navigate to the project folder
-							m.sidebar.JumpTo(1) // Projects category (index 1, Home is 0)
-							m.sidebar.Expanded[1] = true
+					if m.homeSection == 0 {
+						// Projects section - jump to selected project if it's a folder
+						if m.homeSelectedIdx < len(m.projects) {
+							proj := m.projects[m.homeSelectedIdx]
+							if proj.IsFolder && proj.Path != "" {
+								// Navigate to the project folder
+								m.sidebar.JumpTo(1) // Projects category (index 1, Home is 0)
+								m.sidebar.Expanded[1] = true
+								m.sidebar.InSubMenu = true
+								for i, subItem := range m.sidebar.SubItems[1] {
+									if subItem.Path == proj.Path {
+										m.sidebar.SelectedSub[1] = i
+										break
+									}
+								}
+								m.viewMode = ViewBrowse
+								m.updateContent()
+							}
+							// TODO items just show details in preview
+						}
+					} else {
+						// Recent files section - navigate to the recent file
+						if m.homeSelectedIdx < len(m.recentFiles) {
+							rf := m.recentFiles[m.homeSelectedIdx]
+							// Determine sidebar category index based on rf.Category
+							categoryIdx := 1 // Default to projects
+							switch rf.Category {
+							case "projects":
+								categoryIdx = 1
+							case "areas":
+								categoryIdx = 2
+							case "resources":
+								categoryIdx = 3
+							}
+							// Navigate to the folder
+							m.sidebar.JumpTo(categoryIdx)
+							m.sidebar.Expanded[categoryIdx] = true
 							m.sidebar.InSubMenu = true
-							for i, subItem := range m.sidebar.SubItems[1] {
-								if subItem.Path == proj.Path {
-									m.sidebar.SelectedSub[1] = i
+							// Find the item in sidebar
+							for i, subItem := range m.sidebar.SubItems[categoryIdx] {
+								if subItem.Path == rf.Path {
+									m.sidebar.SelectedSub[categoryIdx] = i
 									break
 								}
 							}
 							m.viewMode = ViewBrowse
 							m.updateContent()
 						}
-						// TODO items just show details in preview
 					}
 					return m, nil
 
 				case key.Matches(msg, m.keys.Archive):
-					// Archive the selected project
-					if m.homeSelectedIdx < len(m.projects) {
+					// Archive only works for projects section
+					if m.homeSection == 0 && m.homeSelectedIdx < len(m.projects) {
 						proj := m.projects[m.homeSelectedIdx]
 						var err error
 						if proj.IsFolder {
@@ -660,8 +764,9 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 							m.editStatus = fmt.Sprintf("Archive error: %v", err)
 						} else {
 							m.editStatus = "Archived!"
-							// Refresh projects list
+							// Refresh projects list and recent files
 							m.projects = m.loader.GetAllProjects(21)
+							m.recentFiles = m.loader.GetRecentFiles(10)
 							// Refresh sidebar counts
 							m.updateSidebarCounts()
 							if m.homeSelectedIdx >= len(m.projects) {
@@ -675,59 +780,96 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					return m, nil
 
 				case key.Matches(msg, m.keys.Edit):
-					// Edit the selected project or TODO item
-					if m.homeSelectedIdx < len(m.projects) {
-						proj := m.projects[m.homeSelectedIdx]
-						m.editMode = true
-						if proj.IsFolder {
-							m.editingFile = proj.Path + "/README.md"
-							m.editingTodoItem = ""
-						} else {
-							// TODO item - store the item text for context
-							m.editingFile = "TODO.md"
-							m.editingTodoItem = proj.Name
+					// Edit the selected item
+					if m.homeSection == 0 {
+						// Projects section
+						if m.homeSelectedIdx < len(m.projects) {
+							proj := m.projects[m.homeSelectedIdx]
+							m.editMode = true
+							if proj.IsFolder {
+								m.editingFile = proj.Path + "/README.md"
+								m.editingTodoItem = ""
+							} else {
+								// TODO item - store the item text for context
+								m.editingFile = "TODO.md"
+								m.editingTodoItem = proj.Name
+							}
+							m.editInput.Focus()
+							m.editStatus = ""
+							return m, textinput.Blink
 						}
-						m.editInput.Focus()
-						m.editStatus = ""
-						return m, textinput.Blink
+					} else {
+						// Recent files section
+						if m.homeSelectedIdx < len(m.recentFiles) {
+							rf := m.recentFiles[m.homeSelectedIdx]
+							m.editMode = true
+							m.editingFile = rf.Path + "/README.md"
+							m.editingTodoItem = ""
+							m.editInput.Focus()
+							m.editStatus = ""
+							return m, textinput.Blink
+						}
 					}
 					return m, nil
 
 				case key.Matches(msg, m.keys.Yank):
-					// Copy project content to clipboard
-					if m.homeSelectedIdx < len(m.projects) {
-						proj := m.projects[m.homeSelectedIdx]
-						var textToCopy string
-						if proj.IsFolder && proj.Path != "" {
-							// Read README content
-							content, err := m.loader.ReadREADME(proj.Path)
+					// Copy content to clipboard
+					var textToCopy string
+					if m.homeSection == 0 {
+						// Projects section
+						if m.homeSelectedIdx < len(m.projects) {
+							proj := m.projects[m.homeSelectedIdx]
+							if proj.IsFolder && proj.Path != "" {
+								content, err := m.loader.ReadREADME(proj.Path)
+								if err == nil {
+									textToCopy = content
+								}
+							} else {
+								textToCopy = proj.Name
+							}
+						}
+					} else {
+						// Recent files section
+						if m.homeSelectedIdx < len(m.recentFiles) {
+							rf := m.recentFiles[m.homeSelectedIdx]
+							content, err := m.loader.ReadREADME(rf.Path)
 							if err == nil {
 								textToCopy = content
 							}
-						} else {
-							textToCopy = proj.Name // Copy the TODO text for quick tasks
 						}
-						if textToCopy != "" {
-							if err := clipboard.WriteAll(textToCopy); err != nil {
-								m.editStatus = fmt.Sprintf("Copy failed: %v", err)
-							} else {
-								m.editStatus = "Content copied!"
-							}
+					}
+					if textToCopy != "" {
+						if err := clipboard.WriteAll(textToCopy); err != nil {
+							m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+						} else {
+							m.editStatus = "Content copied!"
 						}
 					}
 					return m, nil
 
 				case key.Matches(msg, m.keys.YankPath):
-					// Copy project path to clipboard
-					if m.homeSelectedIdx < len(m.projects) {
-						proj := m.projects[m.homeSelectedIdx]
-						if proj.IsFolder && proj.Path != "" {
-							textToCopy := m.loader.RootDir + "/" + proj.Path
-							if err := clipboard.WriteAll(textToCopy); err != nil {
-								m.editStatus = fmt.Sprintf("Copy failed: %v", err)
-							} else {
-								m.editStatus = "Path copied!"
+					// Copy path to clipboard
+					var textToCopy string
+					if m.homeSection == 0 {
+						// Projects section
+						if m.homeSelectedIdx < len(m.projects) {
+							proj := m.projects[m.homeSelectedIdx]
+							if proj.IsFolder && proj.Path != "" {
+								textToCopy = m.loader.RootDir + "/" + proj.Path
 							}
+						}
+					} else {
+						// Recent files section
+						if m.homeSelectedIdx < len(m.recentFiles) {
+							rf := m.recentFiles[m.homeSelectedIdx]
+							textToCopy = m.loader.RootDir + "/" + rf.Path
+						}
+					}
+					if textToCopy != "" {
+						if err := clipboard.WriteAll(textToCopy); err != nil {
+							m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+						} else {
+							m.editStatus = "Path copied!"
 						}
 					}
 					return m, nil
@@ -736,8 +878,10 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				// Handle gg (go to top) - must be outside switch to track state
 				if msg.String() == "g" {
 					if m.lastKeyG {
-						// gg - go to top
+						// gg - go to top of all sections
+						m.homeSection = 0
 						m.homeSelectedIdx = 0
+						m.homeScrollOffset = 0
 						m.lastKeyG = false
 					} else {
 						m.lastKeyG = true
@@ -1035,58 +1179,43 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				return m, nil
 
 			case key.Matches(msg, m.keys.Up):
-				// Navigate items from preview pane
-				if m.viewMode == ViewHome {
-					if m.homeSelectedIdx > 0 {
-						m.homeSelectedIdx--
-					}
-				} else if m.selectedIdx > 0 {
-					m.selectedIdx--
-					m.ensureSelectedVisible()
-					m.updatePreview()
+				// Scroll preview up
+				if m.previewScrollOffset > 0 {
+					m.previewScrollOffset--
 				}
 				return m, nil
 
 			case key.Matches(msg, m.keys.Down):
-				// Navigate items from preview pane
-				if m.viewMode == ViewHome {
-					if m.homeSelectedIdx < len(m.projects)-1 {
-						m.homeSelectedIdx++
-					}
-				} else if m.selectedIdx < len(m.items)-1 {
-					m.selectedIdx++
-					m.ensureSelectedVisible()
-					m.updatePreview()
+				// Scroll preview down (respect max scroll)
+				lines := strings.Split(m.previewText, "\n")
+				visibleLines := m.previewVisibleLines()
+				maxScroll := len(lines) - visibleLines
+				if maxScroll < 0 {
+					maxScroll = 0
+				}
+				if m.previewScrollOffset < maxScroll {
+					m.previewScrollOffset++
 				}
 				return m, nil
 
 			case key.Matches(msg, m.keys.Bottom):
-				// G - go to bottom
-				if m.viewMode == ViewHome {
-					m.homeSelectedIdx = len(m.projects) - 1
-					if m.homeSelectedIdx < 0 {
-						m.homeSelectedIdx = 0
-					}
-				} else if len(m.items) > 0 {
-					m.selectedIdx = len(m.items) - 1
-					m.ensureSelectedVisible()
-					m.updatePreview()
+				// G - scroll to show last page of content
+				lines := strings.Split(m.previewText, "\n")
+				visibleLines := m.previewVisibleLines()
+				maxScroll := len(lines) - visibleLines
+				if maxScroll < 0 {
+					maxScroll = 0
 				}
+				m.previewScrollOffset = maxScroll
 				m.lastKeyG = false
 				return m, nil
 			}
 
-			// Handle gg (go to top) in preview pane
+			// Handle gg (scroll to top of preview)
 			if msg.String() == "g" {
 				if m.lastKeyG {
-					// gg - go to top
-					if m.viewMode == ViewHome {
-						m.homeSelectedIdx = 0
-					} else {
-						m.selectedIdx = 0
-						m.scrollOffset = 0
-						m.updatePreview()
-					}
+					// gg - scroll to top
+					m.previewScrollOffset = 0
 					m.lastKeyG = false
 				} else {
 					m.lastKeyG = true
@@ -1473,6 +1602,9 @@ func (m *Model) updateContent() {
 
 // updatePreview updates the preview pane based on selected item
 func (m *Model) updatePreview() {
+	// Reset scroll when preview changes
+	m.previewScrollOffset = 0
+
 	if len(m.items) == 0 {
 		// Check for special paths that don't need file reading
 		if m.currentPath == "_home" || strings.HasPrefix(m.currentPath, "TODO:") || strings.HasPrefix(m.currentPath, "COMPLETED:") || strings.HasPrefix(m.currentPath, "ARCHIVE_MONTH:") {
@@ -1606,6 +1738,50 @@ func (m *Model) ensureSelectedVisible() {
 	// Ensure scrollOffset is not negative
 	if m.scrollOffset < 0 {
 		m.scrollOffset = 0
+	}
+}
+
+// ensureHomeSelectedVisible adjusts homeScrollOffset to keep selected item visible
+func (m *Model) ensureHomeSelectedVisible() {
+	// Calculate the line number of the selected item
+	// Banner takes ~6 lines, plus 1 empty, plus "Projects" header, plus 1 empty = ~9 lines before projects
+	bannerLines := 6
+	headerLines := 3 // "Projects" + empty line after banner + empty line after header
+
+	var selectedLine int
+	if m.homeSection == 0 {
+		// In projects section
+		selectedLine = bannerLines + headerLines + m.homeSelectedIdx
+	} else {
+		// In recent files section
+		// After projects: 1 empty + "Recent Files" header + 1 empty = 3 lines
+		projectsLines := len(m.projects)
+		if projectsLines == 0 {
+			projectsLines = 1 // "No projects" line
+		}
+		recentHeaderLines := 3
+		selectedLine = bannerLines + headerLines + projectsLines + recentHeaderLines + m.homeSelectedIdx
+	}
+
+	// Estimate visible height
+	visibleHeight := m.height - 10
+	if visibleHeight < 5 {
+		visibleHeight = 5
+	}
+
+	// If selected is above visible area, scroll up
+	if selectedLine < m.homeScrollOffset {
+		m.homeScrollOffset = selectedLine
+	}
+
+	// If selected is below visible area, scroll down
+	if selectedLine >= m.homeScrollOffset+visibleHeight {
+		m.homeScrollOffset = selectedLine - visibleHeight + 1
+	}
+
+	// Ensure scrollOffset is not negative
+	if m.homeScrollOffset < 0 {
+		m.homeScrollOffset = 0
 	}
 }
 
@@ -2064,11 +2240,29 @@ func normalizeHeight(content string, height, width int) string {
 	return strings.Join(lines, "\n")
 }
 
-// renderPreview renders the preview pane with Glamour markdown rendering
+// previewVisibleLines calculates how many lines can be shown in preview pane
+func (m Model) previewVisibleLines() int {
+	paneHeight := m.height - 4
+	if paneHeight < 3 {
+		paneHeight = 3
+	}
+	innerHeight := paneHeight - 2
+	if innerHeight < 1 {
+		innerHeight = 1
+	}
+	// renderPreview uses height - 2 for maxLines
+	maxLines := innerHeight - 2
+	if maxLines < 1 {
+		maxLines = 1
+	}
+	return maxLines
+}
+
+// renderPreview renders the preview pane with markdown syntax highlighting
 func (m Model) renderPreview(width, height int) string {
 	if m.previewText == "" {
 		emptyStyle := lipgloss.NewStyle().
-			Foreground(lipgloss.Color("#666666")).
+			Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#666666"}).
 			Italic(true)
 		return emptyStyle.Render("Select an item to preview")
 	}
@@ -2079,17 +2273,125 @@ func (m Model) renderPreview(width, height int) string {
 		maxLines = 1
 	}
 
-	// Plain text for now (Glamour can be slow)
-	previewStyle := lipgloss.NewStyle().
-		Foreground(lipgloss.Color("#CCCCCC")).
-		Width(width - 2)
-
 	lines := strings.Split(m.previewText, "\n")
-	if len(lines) > maxLines {
-		lines = lines[:maxLines]
-		lines = append(lines, "...")
+
+	// Apply scroll offset
+	startLine := m.previewScrollOffset
+	if startLine >= len(lines) {
+		startLine = len(lines) - 1
 	}
-	return previewStyle.Render(strings.Join(lines, "\n"))
+	if startLine < 0 {
+		startLine = 0
+	}
+
+	endLine := startLine + maxLines
+	if endLine > len(lines) {
+		endLine = len(lines)
+	}
+
+	visibleLines := lines[startLine:endLine]
+
+	// Syntax highlight each line
+	var highlightedLines []string
+	inCodeBlock := false
+
+	for _, line := range visibleLines {
+		highlighted := highlightMarkdownLine(line, &inCodeBlock, width-2)
+		highlightedLines = append(highlightedLines, highlighted)
+	}
+
+	// Show scroll indicator if there's more content
+	scrollStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#666666"}).Italic(true)
+	if endLine < len(lines) {
+		highlightedLines = append(highlightedLines, scrollStyle.Render(fmt.Sprintf("↓ %d more lines", len(lines)-endLine)))
+	}
+	if startLine > 0 {
+		highlightedLines = append([]string{scrollStyle.Render(fmt.Sprintf("↑ %d lines above", startLine))}, highlightedLines...)
+	}
+
+	return strings.Join(highlightedLines, "\n")
+}
+
+// highlightMarkdownLine applies syntax highlighting to a single markdown line
+func highlightMarkdownLine(line string, inCodeBlock *bool, width int) string {
+	trimmed := strings.TrimSpace(line)
+
+	// Adaptive colors: {Light, Dark}
+	h1Style := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#C41A16", Dark: "#F7768E"}).Bold(true)
+	h2Style := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#C45500", Dark: "#FF9E64"}).Bold(true)
+	h3Style := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#786000", Dark: "#E0AF68"}).Bold(true)
+	h4Style := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#177500", Dark: "#9ECE6A"})
+	codeBlockStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#0E6FBF", Dark: "#7DCFFF"})
+	codeStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#0E6FBF", Dark: "#7DCFFF"})
+	linkStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#0550AE", Dark: "#7AA2F7"}).Underline(true)
+	listStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#177500", Dark: "#9ECE6A"})
+	checkboxStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#6F42C1", Dark: "#BB9AF7"})
+	blockquoteStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#565F89"}).Italic(true)
+	boldStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#000000", Dark: "#FFFFFF"}).Bold(true)
+	normalStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#24292F", Dark: "#A9B1D6"})
+
+	// Code block toggle
+	if strings.HasPrefix(trimmed, "```") {
+		*inCodeBlock = !*inCodeBlock
+		return codeBlockStyle.Render(line)
+	}
+
+	// Inside code block
+	if *inCodeBlock {
+		return codeBlockStyle.Render(line)
+	}
+
+	// Headers
+	if strings.HasPrefix(trimmed, "#### ") {
+		return h4Style.Render(line)
+	}
+	if strings.HasPrefix(trimmed, "### ") {
+		return h3Style.Render(line)
+	}
+	if strings.HasPrefix(trimmed, "## ") {
+		return h2Style.Render(line)
+	}
+	if strings.HasPrefix(trimmed, "# ") {
+		return h1Style.Render(line)
+	}
+
+	// Blockquotes
+	if strings.HasPrefix(trimmed, ">") {
+		return blockquoteStyle.Render(line)
+	}
+
+	// Checkboxes
+	if strings.Contains(trimmed, "- [ ]") || strings.Contains(trimmed, "- [x]") || strings.Contains(trimmed, "- [X]") {
+		return checkboxStyle.Render(line)
+	}
+
+	// List items
+	if strings.HasPrefix(trimmed, "- ") || strings.HasPrefix(trimmed, "* ") || strings.HasPrefix(trimmed, "+ ") {
+		return listStyle.Render(line)
+	}
+
+	// Numbered lists
+	if len(trimmed) > 2 && trimmed[0] >= '0' && trimmed[0] <= '9' && strings.Contains(trimmed[:3], ".") {
+		return listStyle.Render(line)
+	}
+
+	// Inline formatting (simplified - just highlight the whole line if it contains these)
+	// For links [text](url)
+	if strings.Contains(line, "](") && strings.Contains(line, "[") {
+		return linkStyle.Render(line)
+	}
+
+	// Bold **text**
+	if strings.Contains(line, "**") {
+		return boldStyle.Render(line)
+	}
+
+	// Inline code `code`
+	if strings.Contains(line, "`") {
+		return codeStyle.Render(line)
+	}
+
+	return normalStyle.Render(line)
 }
 
 // ASCII art raccoon coder ready to get stuff done
@@ -2100,110 +2402,224 @@ const homeBanner = `    ╭─────────────────�
     │ (  /  )                │
     ╰─────────────────────────╯`
 
-// renderHomeContent renders the home dashboard content pane (unified projects list)
+// renderHomeContent renders the home dashboard content pane (projects + recent files)
 func (m Model) renderHomeContent(width, height int) string {
-	var b strings.Builder
+	// Adaptive colors
+	itemStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#57606A", Dark: "#888888"})
+	selectedStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#0550AE", Dark: "#7AA2F7"}).Bold(true)
+	focusedStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#0550AE", Dark: "#7AA2F7"}).Bold(true)
+	titleStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#177500", Dark: "#9ECE6A"}).Bold(true)
+	staleStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#CF222E", Dark: "#F7768E"})
+	freshStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#666666"})
+	bannerStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#0550AE", Dark: "#7AA2F7"})
+	categoryStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#565F89"})
+	scrollStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#565F89"})
 
-	itemStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#888888"))
-	selectedStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#7AA2F7")).Bold(true)
-	focusedStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#7AA2F7")).Bold(true)
-	titleStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#9ECE6A")).Bold(true)
-	staleStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#F7768E"))
-	freshStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#666666"))
-	bannerStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#7AA2F7"))
+	// Build all content lines
+	var allLines []string
 
 	// Banner
-	b.WriteString(bannerStyle.Render(homeBanner))
-	b.WriteString("\n\n")
-	b.WriteString(titleStyle.Render("Projects"))
-	b.WriteString("\n\n")
+	bannerLines := strings.Split(bannerStyle.Render(homeBanner), "\n")
+	allLines = append(allLines, bannerLines...)
+	allLines = append(allLines, "")
+
+	// Projects section header
+	allLines = append(allLines, titleStyle.Render("Projects"))
+	allLines = append(allLines, "")
 
 	if len(m.projects) == 0 {
 		emptyStyle := lipgloss.NewStyle().
-			Foreground(lipgloss.Color("#666666")).
+			Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#666666"}).
 			Italic(true)
-		b.WriteString(emptyStyle.Render("No projects"))
-		b.WriteString("\n")
-		return b.String()
-	}
-
-	for i, proj := range m.projects {
-		if i >= height-4 {
-			b.WriteString(itemStyle.Render(fmt.Sprintf("... +%d more", len(m.projects)-i)))
-			break
-		}
-
-		prefix := "  "
-		style := itemStyle
-		if i == m.homeSelectedIdx {
-			prefix = "▸ "
-			if m.focusedPane == PaneContent {
-				style = focusedStyle
-			} else {
-				style = selectedStyle
+		allLines = append(allLines, emptyStyle.Render("  No projects"))
+	} else {
+		for i, proj := range m.projects {
+			prefix := "  "
+			style := itemStyle
+			if m.homeSection == 0 && i == m.homeSelectedIdx {
+				prefix = "▸ "
+				if m.focusedPane == PaneContent {
+					style = focusedStyle
+				} else {
+					style = selectedStyle
+				}
 			}
-		}
 
-		// Icon: 📌 for quick tasks (TODOs), 📁 for project folders
-		icon := "📌 "
-		if proj.IsFolder {
-			icon = "📁 "
-		}
+			icon := "📌 "
+			if proj.IsFolder {
+				icon = "📁 "
+			}
 
-		name := proj.Name
-		maxLen := width - 12
-		if maxLen > 0 && len(name) > maxLen {
-			name = name[:maxLen-1] + "…"
-		}
+			name := proj.Name
+			maxLen := width - 16
+			if maxLen > 0 && len(name) > maxLen {
+				name = name[:maxLen-1] + "…"
+			}
 
-		// Age indicator
-		var ageStr string
-		if proj.DaysOld == 0 {
-			ageStr = freshStyle.Render("today")
-		} else if proj.IsStale {
-			ageStr = staleStyle.Render(fmt.Sprintf("%dd ⚠", proj.DaysOld))
-		} else {
-			ageStr = freshStyle.Render(fmt.Sprintf("%dd", proj.DaysOld))
-		}
+			var ageStr string
+			if proj.DaysOld == 0 {
+				ageStr = freshStyle.Render("today")
+			} else if proj.IsStale {
+				ageStr = staleStyle.Render(fmt.Sprintf("%dd ⚠", proj.DaysOld))
+			} else {
+				ageStr = freshStyle.Render(fmt.Sprintf("%dd", proj.DaysOld))
+			}
 
-		line := fmt.Sprintf("%s%s%s %s", prefix, icon, name, ageStr)
-		b.WriteString(style.Render(line))
-		b.WriteString("\n")
+			line := fmt.Sprintf("%s%s%s %s", prefix, icon, name, ageStr)
+			allLines = append(allLines, style.Render(line))
+		}
 	}
 
-	return b.String()
+	// Recent Files section
+	allLines = append(allLines, "")
+	allLines = append(allLines, titleStyle.Render("Recent Files"))
+	allLines = append(allLines, "")
+
+	if len(m.recentFiles) == 0 {
+		emptyStyle := lipgloss.NewStyle().
+			Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#666666"}).
+			Italic(true)
+		allLines = append(allLines, emptyStyle.Render("  No recent files"))
+	} else {
+		for i, rf := range m.recentFiles {
+			prefix := "  "
+			style := itemStyle
+			if m.homeSection == 1 && i == m.homeSelectedIdx {
+				prefix = "▸ "
+				if m.focusedPane == PaneContent {
+					style = focusedStyle
+				} else {
+					style = selectedStyle
+				}
+			}
+
+			icon := "📄 "
+
+			name := rf.Name
+			maxLen := width - 20
+			if maxLen > 0 && len(name) > maxLen {
+				name = name[:maxLen-1] + "…"
+			}
+
+			timeAgo := formatTimeAgo(rf.ModTime)
+			catLabel := categoryStyle.Render(rf.Category)
+
+			line := fmt.Sprintf("%s%s%s %s %s", prefix, icon, name, catLabel, freshStyle.Render(timeAgo))
+			allLines = append(allLines, style.Render(line))
+		}
+	}
+
+	// Apply scroll offset
+	visibleHeight := height - 2
+	if visibleHeight < 1 {
+		visibleHeight = 1
+	}
+
+	startLine := m.homeScrollOffset
+	if startLine >= len(allLines) {
+		startLine = len(allLines) - 1
+	}
+	if startLine < 0 {
+		startLine = 0
+	}
+
+	endLine := startLine + visibleHeight
+	if endLine > len(allLines) {
+		endLine = len(allLines)
+	}
+
+	var result []string
+
+	// Show "more above" indicator
+	if startLine > 0 {
+		result = append(result, scrollStyle.Render(fmt.Sprintf("  ↑ %d lines above", startLine)))
+		visibleHeight--
+		endLine = startLine + visibleHeight
+		if endLine > len(allLines) {
+			endLine = len(allLines)
+		}
+	}
+
+	result = append(result, allLines[startLine:endLine]...)
+
+	// Show "more below" indicator
+	remaining := len(allLines) - endLine
+	if remaining > 0 {
+		result = append(result, scrollStyle.Render(fmt.Sprintf("  ↓ %d lines below", remaining)))
+	}
+
+	return strings.Join(result, "\n")
 }
 
-// renderHomePreview renders preview for selected project
-func (m Model) renderHomePreview(width, height int) string {
-	if len(m.projects) == 0 || m.homeSelectedIdx >= len(m.projects) {
-		emptyStyle := lipgloss.NewStyle().
-			Foreground(lipgloss.Color("#666666")).
-			Italic(true)
-		return emptyStyle.Render("No projects")
+// formatTimeAgo returns human-readable time difference
+func formatTimeAgo(t time.Time) string {
+	d := time.Since(t)
+	if d < time.Minute {
+		return "just now"
+	} else if d < time.Hour {
+		mins := int(d.Minutes())
+		return fmt.Sprintf("%dm ago", mins)
+	} else if d < 24*time.Hour {
+		hours := int(d.Hours())
+		return fmt.Sprintf("%dh ago", hours)
+	} else {
+		days := int(d.Hours() / 24)
+		if days == 1 {
+			return "yesterday"
+		}
+		return fmt.Sprintf("%dd ago", days)
 	}
+}
 
-	proj := m.projects[m.homeSelectedIdx]
+// renderHomePreview renders preview for selected project or recent file
+func (m Model) renderHomePreview(width, height int) string {
+	emptyStyle := lipgloss.NewStyle().
+		Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#666666"}).
+		Italic(true)
 
 	var content string
-	if proj.IsFolder {
-		// Read the README for project folder
-		var err error
-		content, err = m.loader.ReadREADME(proj.Path)
-		if err != nil {
-			return fmt.Sprintf("No README in %s", proj.Name)
+
+	if m.homeSection == 0 {
+		// Projects section
+		if len(m.projects) == 0 || m.homeSelectedIdx >= len(m.projects) {
+			return emptyStyle.Render("No projects")
+		}
+
+		proj := m.projects[m.homeSelectedIdx]
+
+		if proj.IsFolder {
+			// Read the README for project folder
+			var err error
+			content, err = m.loader.ReadREADME(proj.Path)
+			if err != nil {
+				return emptyStyle.Render(fmt.Sprintf("No README in %s", proj.Name))
+			}
+		} else {
+			// Show TODO details
+			var b strings.Builder
+			b.WriteString(fmt.Sprintf("📌 Task: %s\n\n", proj.Name))
+			if len(proj.Details) > 0 {
+				b.WriteString("Details:\n")
+				for _, d := range proj.Details {
+					b.WriteString(fmt.Sprintf("  • %s\n", d))
+				}
+			}
+			content = b.String()
 		}
 	} else {
-		// Show TODO details
-		var b strings.Builder
-		b.WriteString(fmt.Sprintf("Task: %s\n\n", proj.Name))
-		if len(proj.Details) > 0 {
-			b.WriteString("Details:\n")
-			for _, d := range proj.Details {
-				b.WriteString(fmt.Sprintf("  • %s\n", d))
-			}
+		// Recent files section
+		if len(m.recentFiles) == 0 || m.homeSelectedIdx >= len(m.recentFiles) {
+			return emptyStyle.Render("No recent files")
 		}
-		content = b.String()
+
+		rf := m.recentFiles[m.homeSelectedIdx]
+
+		// Read the README for the recent file's folder
+		var err error
+		content, err = m.loader.ReadREADME(rf.Path)
+		if err != nil {
+			return emptyStyle.Render(fmt.Sprintf("No README in %s", rf.Name))
+		}
 	}
 
 	// Ensure valid dimensions
@@ -2212,12 +2628,27 @@ func (m Model) renderHomePreview(width, height int) string {
 		maxLines = 1
 	}
 
-	// Simple plain text preview
 	lines := strings.Split(content, "\n")
-	if len(lines) > maxLines {
-		lines = lines[:maxLines]
-		lines = append(lines, "...")
+
+	// Syntax highlight each line
+	var highlightedLines []string
+	inCodeBlock := false
+
+	visibleLines := lines
+	if len(visibleLines) > maxLines {
+		visibleLines = visibleLines[:maxLines]
 	}
 
-	return strings.Join(lines, "\n")
+	for _, line := range visibleLines {
+		highlighted := highlightMarkdownLine(line, &inCodeBlock, width-2)
+		highlightedLines = append(highlightedLines, highlighted)
+	}
+
+	// Show scroll indicator if there's more content
+	if len(lines) > maxLines {
+		scrollStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#666666"}).Italic(true)
+		highlightedLines = append(highlightedLines, scrollStyle.Render(fmt.Sprintf("↓ %d more lines", len(lines)-maxLines)))
+	}
+
+	return strings.Join(highlightedLines, "\n")
 }

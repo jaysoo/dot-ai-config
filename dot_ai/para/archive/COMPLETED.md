@@ -2,6 +2,20 @@
 
 ### January 2026
 
+
+- [x] Check Mexico travel requirements (2026-01-08 21:06)
+  - Research entry requirements for Mexico trip:
+    - [ ] **Passport**: Verify validity (must be valid for duration of stay; 6+ months recommended)
+    - [ ] **Visa**: Check if visa required based on citizenship (US/Canadian citizens typically visa-free for tourism up to 180 days)
+    - [ ] **FMM (Tourist Card)**: Determine if Forma Migratoria Múltiple is needed and how to obtain (airline may provide or fill out online at INM website)
+    - [ ] **COVID-19 requirements**: Check current vaccination/testing requirements (most restrictions lifted but verify)
+    - [ ] **Travel insurance**: Consider travel medical insurance (recommended but not required)
+    - [ ] **Return/onward ticket**: May be required as proof of departure
+    - [ ] **Proof of accommodation**: Hotel reservations or address where staying
+    - [ ] **Sufficient funds**: May need to show proof of financial means
+    - [ ] **Customs declaration**: Fill out customs form on arrival
+
+
 - [x] Talk to Jason (due 2026-01-09) ✓ 2026-01-08
 
 - [x] 2025 Productivity Report for Victor (2026-01-08)

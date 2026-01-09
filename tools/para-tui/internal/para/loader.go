@@ -544,24 +544,44 @@ func (l *Loader) ArchiveTodoItem(todoText string) error {
 	var removedItem string
 	var removedDetails []string
 	inRemovedItem := false
+	baseIndent := 0
 
 	for _, line := range lines {
 		trimmed := strings.TrimSpace(line)
 
-		// Check if this is the item to remove
-		if strings.HasPrefix(trimmed, "- [ ]") && strings.Contains(trimmed, todoText) {
+		// Calculate indentation (number of leading spaces)
+		lineIndent := len(line) - len(strings.TrimLeft(line, " \t"))
+
+		// Check if this is the item to remove (top-level checkbox)
+		if !inRemovedItem && strings.HasPrefix(trimmed, "- [ ]") && strings.Contains(trimmed, todoText) {
 			inRemovedItem = true
 			removedItem = trimmed
+			baseIndent = lineIndent
 			continue
 		}
 
-		// If we're in the removed item, capture details
+		// If we're in the removed item, capture all indented lines
 		if inRemovedItem {
-			if strings.HasPrefix(trimmed, "- ") && !strings.HasPrefix(trimmed, "- [ ]") && !strings.HasPrefix(trimmed, "- [x]") {
+			// Check if this line is more indented than the base item OR is blank
+			// A new top-level item (same or less indent with - [ ] or - [x]) ends the block
+			if trimmed == "" {
+				// Blank line - include it in details
 				removedDetails = append(removedDetails, line)
 				continue
-			} else {
+			} else if lineIndent > baseIndent {
+				// Indented content - part of this item's block
+				removedDetails = append(removedDetails, line)
+				continue
+			} else if lineIndent == baseIndent && (strings.HasPrefix(trimmed, "- [ ]") || strings.HasPrefix(trimmed, "- [x]")) {
+				// Same level checkbox - end of our block
 				inRemovedItem = false
+			} else if lineIndent < baseIndent {
+				// Less indented - definitely end of block (new section)
+				inRemovedItem = false
+			} else {
+				// Same level but not a checkbox - could be continuation, include it
+				removedDetails = append(removedDetails, line)
+				continue
 			}
 		}
 
@@ -582,11 +602,15 @@ func (l *Loader) ArchiveTodoItem(todoText string) error {
 	if existing, err := os.ReadFile(completedPath); err == nil {
 		completedContent = string(existing)
 	} else {
-		completedContent = "# Completed Tasks\n\n"
+		completedContent = "## Completed\n\n"
 	}
 
 	// Create completed entry with date
-	today := time.Now().Format("2006-01-02")
+	now := time.Now()
+	today := now.Format("2006-01-02")
+	monthYear := now.Format("January 2006") // e.g., "January 2026"
+	monthHeading := "### " + monthYear
+
 	// Change - [ ] to - [x] and add completion date
 	completedEntry := strings.Replace(removedItem, "- [ ]", "- [x]", 1)
 	if !strings.Contains(completedEntry, today) {
@@ -594,23 +618,78 @@ func (l *Loader) ArchiveTodoItem(todoText string) error {
 		completedEntry = completedEntry + " ✓ " + today
 	}
 
-	// Insert after header (most recent first)
-	headerEnd := strings.Index(completedContent, "\n\n")
-	if headerEnd == -1 {
-		headerEnd = len(completedContent)
-	}
-
-	var newCompleted strings.Builder
-	newCompleted.WriteString(completedContent[:headerEnd+2])
-	newCompleted.WriteString(completedEntry + "\n")
+	// Build the item block (entry + details)
+	var itemBlock strings.Builder
+	itemBlock.WriteString(completedEntry + "\n")
 	for _, detail := range removedDetails {
-		newCompleted.WriteString(detail + "\n")
-	}
-	if headerEnd+2 < len(completedContent) {
-		newCompleted.WriteString(completedContent[headerEnd+2:])
+		itemBlock.WriteString(detail + "\n")
 	}
 
-	return os.WriteFile(completedPath, []byte(newCompleted.String()), 0644)
+	// Find or create the month heading
+	completedLines := strings.Split(completedContent, "\n")
+	var newCompletedLines []string
+	monthHeadingIdx := -1
+
+	// Find the month heading
+	for i, line := range completedLines {
+		if strings.TrimSpace(line) == monthHeading {
+			monthHeadingIdx = i
+			break
+		}
+	}
+
+	if monthHeadingIdx >= 0 {
+		// Month heading exists, insert after it (skip blank line after heading)
+		insertIdx := monthHeadingIdx + 1
+		// Skip blank lines after heading
+		for insertIdx < len(completedLines) && strings.TrimSpace(completedLines[insertIdx]) == "" {
+			insertIdx++
+		}
+
+		// Insert item at this position
+		newCompletedLines = append(newCompletedLines, completedLines[:insertIdx]...)
+		newCompletedLines = append(newCompletedLines, itemBlock.String())
+		newCompletedLines = append(newCompletedLines, completedLines[insertIdx:]...)
+	} else {
+		// Month heading doesn't exist, need to create it
+		// Insert after main header (## Completed) with the new month section
+		mainHeaderIdx := -1
+		for i, line := range completedLines {
+			if strings.HasPrefix(strings.TrimSpace(line), "## ") {
+				mainHeaderIdx = i
+				break
+			}
+		}
+
+		if mainHeaderIdx >= 0 {
+			// Find where to insert (after main header and blank line, before any ### heading)
+			insertIdx := mainHeaderIdx + 1
+			// Skip blank lines after main header
+			for insertIdx < len(completedLines) && strings.TrimSpace(completedLines[insertIdx]) == "" {
+				insertIdx++
+			}
+
+			// Build new month section
+			var monthSection strings.Builder
+			monthSection.WriteString(monthHeading + "\n\n")
+			monthSection.WriteString(itemBlock.String())
+
+			newCompletedLines = append(newCompletedLines, completedLines[:insertIdx]...)
+			newCompletedLines = append(newCompletedLines, monthSection.String())
+			newCompletedLines = append(newCompletedLines, completedLines[insertIdx:]...)
+		} else {
+			// No main header found, create the whole structure
+			newCompletedLines = []string{
+				"## Completed",
+				"",
+				monthHeading,
+				"",
+				itemBlock.String(),
+			}
+		}
+	}
+
+	return os.WriteFile(completedPath, []byte(strings.Join(newCompletedLines, "\n")), 0644)
 }
 
 // ArchiveProjectFolder moves a project folder to archive with date prefix
@@ -674,6 +753,61 @@ func (l *Loader) GetAllProjects(staleDays int) []ProjectItem {
 	})
 
 	return projects
+}
+
+// RecentFile represents a recently modified README.md
+type RecentFile struct {
+	Name     string    // Folder name
+	Path     string    // Full relative path to folder
+	Category string    // "projects", "areas", or "resources"
+	ModTime  time.Time // Last modification time
+}
+
+// GetRecentFiles returns the most recently updated README.md files
+func (l *Loader) GetRecentFiles(limit int) []RecentFile {
+	var recentFiles []RecentFile
+	categories := []string{"para/projects", "para/areas", "para/resources"}
+
+	for _, cat := range categories {
+		catPath := filepath.Join(l.RootDir, cat)
+		entries, err := os.ReadDir(catPath)
+		if err != nil {
+			continue
+		}
+
+		categoryName := filepath.Base(cat) // "projects", "areas", "resources"
+
+		for _, entry := range entries {
+			if !entry.IsDir() || strings.HasPrefix(entry.Name(), ".") {
+				continue
+			}
+
+			readmePath := filepath.Join(catPath, entry.Name(), "README.md")
+			info, err := os.Stat(readmePath)
+			if err != nil {
+				continue
+			}
+
+			recentFiles = append(recentFiles, RecentFile{
+				Name:     entry.Name(),
+				Path:     filepath.Join(cat, entry.Name()),
+				Category: categoryName,
+				ModTime:  info.ModTime(),
+			})
+		}
+	}
+
+	// Sort by most recent first
+	sort.Slice(recentFiles, func(i, j int) bool {
+		return recentFiles[i].ModTime.After(recentFiles[j].ModTime)
+	})
+
+	// Limit results
+	if len(recentFiles) > limit {
+		recentFiles = recentFiles[:limit]
+	}
+
+	return recentFiles
 }
 
 // RestoreCompletedItem moves a completed item back to TODO.md
