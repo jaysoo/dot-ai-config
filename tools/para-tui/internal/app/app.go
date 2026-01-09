@@ -9,6 +9,7 @@ import (
 	"github.com/jack/para-tui/internal/components"
 	"github.com/jack/para-tui/internal/para"
 
+	"github.com/atotto/clipboard"
 	"github.com/charmbracelet/bubbles/key"
 	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
@@ -47,6 +48,7 @@ type Model struct {
 
 	// Components
 	sidebar   *components.Sidebar
+	modal     *components.Modal
 	editInput textinput.Model
 
 	// Content state
@@ -77,6 +79,7 @@ type Model struct {
 func New(paraDir string) Model {
 	loader := para.NewLoader(paraDir)
 	sidebar := components.NewSidebar()
+	modal := components.NewModal()
 
 	// Load initial sub-items for each category
 	for i, cat := range sidebar.Categories {
@@ -118,6 +121,7 @@ func New(paraDir string) Model {
 		loader:      loader,
 		keys:        DefaultKeyMap(),
 		sidebar:     sidebar,
+		modal:       modal,
 		editInput:   ti,
 		focusedPane: PaneSidebar,
 		viewMode:    ViewHome, // Start in home mode
@@ -161,6 +165,31 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.editMode = false
 		m.editInput.Reset()
 		return m, nil
+	}
+
+	// Handle modal result
+	if result, ok := msg.(components.ModalResult); ok {
+		if !result.Cancelled && result.Title != "" {
+			// Create the new item
+			err := m.createNewItem(result.Category, result.Title, result.Notes)
+			if err != nil {
+				m.editStatus = fmt.Sprintf("Error creating: %v", err)
+			} else {
+				m.editStatus = "Created!"
+				// Refresh content
+				m.updateSidebarCounts()
+				m.projects = m.loader.GetAllProjects(21)
+				m.updateContent()
+			}
+		}
+		return m, nil
+	}
+
+	// Handle modal input when visible
+	if m.modal != nil && m.modal.Visible {
+		var cmd tea.Cmd
+		m.modal, cmd = m.modal.Update(msg)
+		return m, cmd
 	}
 
 	// Handle edit mode input
@@ -259,6 +288,11 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.sidebar.JumpTo(4) // Index 4 = Archive
 			m.updateContent()
 			return m, nil
+
+		case key.Matches(msg, m.keys.New):
+			// Show quick capture modal
+			cmd := m.modal.Show()
+			return m, cmd
 		}
 
 		// Pane-specific keys
@@ -398,6 +432,24 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 						return m, textinput.Blink
 					}
 					return m, nil
+
+				case key.Matches(msg, m.keys.Yank):
+					// Copy project name or path to clipboard
+					if m.homeSelectedIdx < len(m.projects) {
+						proj := m.projects[m.homeSelectedIdx]
+						var textToCopy string
+						if proj.IsFolder && proj.Path != "" {
+							textToCopy = m.loader.RootDir + "/" + proj.Path
+						} else {
+							textToCopy = proj.Name // Copy the TODO text for quick tasks
+						}
+						if err := clipboard.WriteAll(textToCopy); err != nil {
+							m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+						} else {
+							m.editStatus = "Copied!"
+						}
+					}
+					return m, nil
 				}
 				return m, nil
 			}
@@ -526,6 +578,38 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 						// Refresh the view
 						m.updateSidebarCounts()
 						m.updateContent()
+					}
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.Yank):
+				// Copy item to clipboard
+				if len(m.items) > 0 && m.selectedIdx < len(m.items) {
+					item := m.items[m.selectedIdx]
+					var textToCopy string
+					var label string
+
+					if strings.HasPrefix(item.Path, "TODO:") {
+						// Copy TODO text
+						textToCopy = item.Name
+						label = "TODO copied!"
+					} else if strings.HasPrefix(item.Path, "COMPLETED:") {
+						// Copy completed text
+						textToCopy = item.Name
+						label = "Task copied!"
+					} else if strings.HasPrefix(item.Path, "ARCHIVE_MONTH:") {
+						// Skip month headers
+						return m, nil
+					} else {
+						// Copy file/folder path
+						textToCopy = m.loader.RootDir + "/" + item.Path
+						label = "Path copied!"
+					}
+
+					if err := clipboard.WriteAll(textToCopy); err != nil {
+						m.editStatus = fmt.Sprintf("Copy failed: %v", err)
+					} else {
+						m.editStatus = label
 					}
 				}
 				return m, nil
@@ -866,6 +950,23 @@ func (m *Model) updateSidebarCounts() {
 	}
 }
 
+// createNewItem creates a new item based on category
+func (m *Model) createNewItem(category, title, notes string) error {
+	switch category {
+	case "Projects":
+		// Create a new project folder with README
+		return m.loader.CreateProject(title, notes)
+	case "Areas":
+		// Create a new area folder with README
+		return m.loader.CreateArea(title, notes)
+	case "Resources":
+		// Create a new resource file
+		return m.loader.CreateResource(title, notes)
+	default:
+		return fmt.Errorf("unknown category: %s", category)
+	}
+}
+
 // View renders the UI
 func (m Model) View() string {
 	if m.quitting {
@@ -979,11 +1080,11 @@ func (m Model) View() string {
 	var footer string
 	if m.isArchiveContext() {
 		// Show restore option for archived items
-		footer = footerStyle.Render("j/k:move  Enter:open  R:restore  tab:pane  1-4:jump  H:home  q:quit")
+		footer = footerStyle.Render("j/k:move  Enter:open  R:restore  n:new  y:copy  tab:pane  1-4:jump  q:quit")
 	} else if m.viewMode == ViewHome {
-		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  1-4:jump  H:home  q:quit")
+		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  n:new  y:copy  1-4:jump  q:quit")
 	} else {
-		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  tab:pane  1-4:jump  H:home  q:quit")
+		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  n:new  y:copy  tab:pane  1-4:jump  q:quit")
 	}
 
 	// Compose full view
@@ -1027,6 +1128,19 @@ func (m Model) View() string {
 			modal,
 		)
 
+		return modalPlaced
+	}
+
+	// If quick capture modal is visible, overlay it
+	if m.modal != nil && m.modal.Visible {
+		modalContent := m.modal.View()
+		modalPlaced := lipgloss.Place(
+			m.width,
+			m.height,
+			lipgloss.Center,
+			lipgloss.Center,
+			modalContent,
+		)
 		return modalPlaced
 	}
 
@@ -1228,7 +1342,7 @@ func normalizeHeight(content string, height, width int) string {
 	return strings.Join(lines, "\n")
 }
 
-// renderPreview renders the preview pane (plain text for now)
+// renderPreview renders the preview pane with Glamour markdown rendering
 func (m Model) renderPreview(width, height int) string {
 	if m.previewText == "" {
 		emptyStyle := lipgloss.NewStyle().
@@ -1243,7 +1357,7 @@ func (m Model) renderPreview(width, height int) string {
 		maxLines = 1
 	}
 
-	// Simple plain text preview (glamour disabled for debugging)
+	// Plain text for now (Glamour can be slow)
 	previewStyle := lipgloss.NewStyle().
 		Foreground(lipgloss.Color("#CCCCCC")).
 		Width(width - 2)
@@ -1253,7 +1367,6 @@ func (m Model) renderPreview(width, height int) string {
 		lines = lines[:maxLines]
 		lines = append(lines, "...")
 	}
-
 	return previewStyle.Render(strings.Join(lines, "\n"))
 }
 

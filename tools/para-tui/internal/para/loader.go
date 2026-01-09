@@ -853,3 +853,76 @@ func (l *Loader) LoadProjectItems(staleDays int) []Item {
 
 	return items
 }
+
+// CreateProject creates a new project folder with README
+func (l *Loader) CreateProject(title, notes string) error {
+	// Sanitize title for folder name (replace spaces and special chars)
+	folderName := sanitizeFolderName(title)
+	projectPath := filepath.Join(l.RootDir, "para", "projects", folderName)
+
+	// Create the folder
+	if err := os.MkdirAll(projectPath, 0755); err != nil {
+		return err
+	}
+
+	// Create README.md with title and notes
+	readmeContent := fmt.Sprintf("# %s\n\n%s\n", title, notes)
+	readmePath := filepath.Join(projectPath, "README.md")
+	return os.WriteFile(readmePath, []byte(readmeContent), 0644)
+}
+
+// CreateArea creates a new area folder with README
+func (l *Loader) CreateArea(title, notes string) error {
+	folderName := sanitizeFolderName(title)
+	areaPath := filepath.Join(l.RootDir, "para", "areas", folderName)
+
+	// Create the folder
+	if err := os.MkdirAll(areaPath, 0755); err != nil {
+		return err
+	}
+
+	// Create README.md
+	readmeContent := fmt.Sprintf("# %s\n\n%s\n", title, notes)
+	readmePath := filepath.Join(areaPath, "README.md")
+	return os.WriteFile(readmePath, []byte(readmeContent), 0644)
+}
+
+// CreateResource creates a new resource markdown file
+func (l *Loader) CreateResource(title, notes string) error {
+	fileName := sanitizeFolderName(title) + ".md"
+	resourcePath := filepath.Join(l.RootDir, "para", "resources", fileName)
+
+	// Create the file with title and notes
+	content := fmt.Sprintf("# %s\n\n%s\n", title, notes)
+	return os.WriteFile(resourcePath, []byte(content), 0644)
+}
+
+// sanitizeFolderName converts a title to a valid folder/file name
+func sanitizeFolderName(name string) string {
+	// Convert to lowercase and replace spaces with hyphens
+	result := strings.ToLower(name)
+	result = strings.ReplaceAll(result, " ", "-")
+
+	// Remove or replace special characters
+	var sanitized strings.Builder
+	for _, r := range result {
+		if (r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') || r == '-' || r == '_' {
+			sanitized.WriteRune(r)
+		}
+	}
+
+	// Remove consecutive hyphens
+	final := sanitized.String()
+	for strings.Contains(final, "--") {
+		final = strings.ReplaceAll(final, "--", "-")
+	}
+
+	// Trim leading/trailing hyphens
+	final = strings.Trim(final, "-")
+
+	if final == "" {
+		final = "untitled"
+	}
+
+	return final
+}
