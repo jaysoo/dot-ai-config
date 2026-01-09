@@ -4,6 +4,17 @@
 
 
 
+- [x] Effy reviews (2026-01-09 08:42)
+  - Due today, must get done before lunch!
+
+
+- [x] Fix #32439 - MaxListenersExceededWarning with run-many (2025-10-27 09:58) ✓ 2026-01-09
+
+  - URL: https://github.com/nrwl/nx/issues/32439 Goal: Fix event listener management in task runner to prevent MaxListenersExceededWarning
+  - Impact: High (18 engagement - 4 comments, 14 reactions)
+  - Notes: Reproducible in nx-examples repo, affects run-many and affected commands
+
+
   - URL: https://linear.app/nxdev/issue/CLOUD-2614
   - Assignee: Nicole Oliver | Priority: High | Status: Todo
   - Issue: Org shows 7/5 contributors used but list only shows 6 (null contributors not discounted)

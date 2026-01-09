@@ -6,11 +6,13 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"regexp"
+	"runtime"
 	"strings"
 	"time"
 
-	"github.com/jack/para-tui/internal/components"
-	"github.com/jack/para-tui/internal/para"
+	"github.com/jack/para/internal/components"
+	"github.com/jack/para/internal/para"
 
 	"github.com/atotto/clipboard"
 	"github.com/charmbracelet/bubbles/key"
@@ -80,6 +82,10 @@ type Model struct {
 
 	// Vim-style gg tracking
 	lastKeyG    bool  // Was the last key 'g'?
+
+	// URL navigation state
+	detectedURLs   []string // URLs found in current preview
+	selectedURLIdx int      // Currently selected URL index (-1 = none)
 
 	// Claude expansion state
 	claudeWorking     bool
@@ -176,6 +182,11 @@ type editResultMsg struct {
 	err     error
 }
 
+// editorFinishedMsg is sent when external editor exits
+type editorFinishedMsg struct {
+	err error
+}
+
 // claudeUpdate is sent through the channel for real-time updates
 type claudeUpdate struct {
 	Status string // Status message to display
@@ -266,6 +277,22 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.editMode = false
 		m.editInput.Reset()
 		m.editingTodoItem = "" // Clear TODO item context
+		return m, nil
+	}
+
+	// Handle external editor finished
+	if msg, ok := msg.(editorFinishedMsg); ok {
+		if msg.err != nil {
+			m.editStatus = fmt.Sprintf("Editor error: %v", msg.err)
+		} else {
+			m.editStatus = "File saved"
+			// Refresh all content after external edit
+			m.updatePreview()
+			m.projects = m.loader.GetAllProjects(21)
+			m.recentFiles = m.loader.GetRecentFiles(10)
+			m.updateContent()
+			m.updateSidebarCounts()
+		}
 		return m, nil
 	}
 
@@ -868,6 +895,32 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					}
 					return m, nil
 
+				case key.Matches(msg, m.keys.PowerEdit):
+					// Open in external editor
+					var filePath string
+					if m.homeSection == 0 {
+						// Projects section
+						if m.homeSelectedIdx < len(m.projects) {
+							proj := m.projects[m.homeSelectedIdx]
+							if proj.IsFolder {
+								filePath = proj.Path + "/README.md"
+							} else {
+								// TODO item - edit TODO.md
+								filePath = "TODO.md"
+							}
+						}
+					} else {
+						// Recent files section
+						if m.homeSelectedIdx < len(m.recentFiles) {
+							rf := m.recentFiles[m.homeSelectedIdx]
+							filePath = rf.Path + "/README.md"
+						}
+					}
+					if filePath != "" {
+						return m, m.openInEditor(filePath)
+					}
+					return m, nil
+
 				case key.Matches(msg, m.keys.Yank):
 					// Copy content to clipboard
 					var textToCopy string
@@ -929,6 +982,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 						}
 					}
 					return m, nil
+
 				}
 
 				// Handle gg (go to top) - must be outside switch to track state
@@ -1058,6 +1112,13 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					m.editInput.Focus()
 					m.editStatus = ""
 					return m, textinput.Blink
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.PowerEdit):
+				// Open in external editor
+				if m.previewFile != "" && !m.isArchiveContext() {
+					return m, m.openInEditor(m.previewFile)
 				}
 				return m, nil
 
@@ -1201,6 +1262,13 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				}
 				return m, nil
 
+			case key.Matches(msg, m.keys.PowerEdit):
+				// Open in external editor
+				if m.previewFile != "" && !m.isArchiveContext() {
+					return m, m.openInEditor(m.previewFile)
+				}
+				return m, nil
+
 			case key.Matches(msg, m.keys.Yank):
 				// Copy the preview content
 				if m.previewText != "" {
@@ -1253,6 +1321,54 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 						m.projects = m.loader.GetAllProjects(21)
 						m.updateContent()
 					}
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.OpenURL):
+				// Open URL from preview content
+				url := m.getSelectedURL()
+				if url != "" {
+					if err := openURL(url); err != nil {
+						m.editStatus = fmt.Sprintf("Failed to open URL: %v", err)
+					} else {
+						m.editStatus = fmt.Sprintf("Opened: %s", url)
+					}
+				} else {
+					m.editStatus = "No URL found in preview"
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.NextURL):
+				// Cycle to next URL in preview
+				var previewContent string
+				if m.viewMode == ViewHome {
+					previewContent = m.getHomePreviewContent()
+				} else {
+					previewContent = m.previewText
+				}
+				m.detectURLsFromContent(previewContent)
+				if len(m.detectedURLs) > 0 {
+					m.cycleNextURL()
+					m.editStatus = fmt.Sprintf("URL %d/%d", m.selectedURLIdx+1, len(m.detectedURLs))
+				} else {
+					m.editStatus = "No URLs detected in preview"
+				}
+				return m, nil
+
+			case key.Matches(msg, m.keys.PrevURL):
+				// Cycle to previous URL in preview
+				var previewContent string
+				if m.viewMode == ViewHome {
+					previewContent = m.getHomePreviewContent()
+				} else {
+					previewContent = m.previewText
+				}
+				m.detectURLsFromContent(previewContent)
+				if len(m.detectedURLs) > 0 {
+					m.cyclePrevURL()
+					m.editStatus = fmt.Sprintf("URL %d/%d", m.selectedURLIdx+1, len(m.detectedURLs))
+				} else {
+					m.editStatus = "No URLs detected in preview"
 				}
 				return m, nil
 
@@ -1411,6 +1527,22 @@ Output ONLY the updated file content, no explanation or markdown code blocks. Ju
 // writeFile writes content to a file
 func writeFile(path string, content string) error {
 	return os.WriteFile(path, []byte(content), 0644)
+}
+
+// openInEditor opens a file in the user's preferred editor
+func (m *Model) openInEditor(filePath string) tea.Cmd {
+	editor := os.Getenv("EDITOR")
+	if editor == "" {
+		editor = os.Getenv("VISUAL")
+	}
+	if editor == "" {
+		editor = "nvim"
+	}
+	fullPath := m.loader.RootDir + "/" + filePath
+	c := exec.Command(editor, fullPath)
+	return tea.ExecProcess(c, func(err error) tea.Msg {
+		return editorFinishedMsg{err: err}
+	})
 }
 
 // runClaudeEdit runs claude to edit the file and sends status updates via channel
@@ -1680,8 +1812,13 @@ func (m *Model) updateContent() {
 
 // updatePreview updates the preview pane based on selected item
 func (m *Model) updatePreview() {
-	// Reset scroll when preview changes
+	// Reset scroll and URL selection when preview changes
 	m.previewScrollOffset = 0
+	m.detectedURLs = nil
+	m.selectedURLIdx = -1
+
+	// Defer URL detection until preview text is set
+	defer m.detectURLsInPreview()
 
 	if len(m.items) == 0 {
 		// Check for special paths that don't need file reading
@@ -1870,6 +2007,94 @@ func (m *Model) isArchiveContext() bool {
 		strings.HasPrefix(m.currentPath, "COMPLETED:")
 }
 
+// detectURLsInPreview detects URLs in the current preview text and stores them
+func (m *Model) detectURLsInPreview() {
+	if m.previewText == "" {
+		return
+	}
+	m.detectURLsFromContent(m.previewText)
+}
+
+// detectURLsFromContent detects URLs in the given content and stores them
+func (m *Model) detectURLsFromContent(content string) {
+	if content == "" {
+		return
+	}
+	m.detectedURLs = extractAllURLs(content)
+	// Auto-select first URL if any are found, or reset if out of bounds
+	if len(m.detectedURLs) > 0 {
+		if m.selectedURLIdx < 0 || m.selectedURLIdx >= len(m.detectedURLs) {
+			m.selectedURLIdx = 0
+		}
+	} else {
+		m.selectedURLIdx = -1
+	}
+}
+
+// cycleNextURL moves to the next URL in the detected list
+func (m *Model) cycleNextURL() {
+	if len(m.detectedURLs) == 0 {
+		return
+	}
+	m.selectedURLIdx = (m.selectedURLIdx + 1) % len(m.detectedURLs)
+}
+
+// cyclePrevURL moves to the previous URL in the detected list
+func (m *Model) cyclePrevURL() {
+	if len(m.detectedURLs) == 0 {
+		return
+	}
+	m.selectedURLIdx--
+	if m.selectedURLIdx < 0 {
+		m.selectedURLIdx = len(m.detectedURLs) - 1
+	}
+}
+
+// getSelectedURL returns the currently selected URL, or empty string if none
+func (m *Model) getSelectedURL() string {
+	if m.selectedURLIdx >= 0 && m.selectedURLIdx < len(m.detectedURLs) {
+		return m.detectedURLs[m.selectedURLIdx]
+	}
+	return ""
+}
+
+// getHomePreviewContent returns the preview content for the currently selected item in Home view
+// This matches the logic in renderHomePreview to ensure URL detection works on the displayed content
+func (m *Model) getHomePreviewContent() string {
+	if m.homeSection == 0 {
+		// Projects section
+		if m.homeSelectedIdx < len(m.projects) {
+			proj := m.projects[m.homeSelectedIdx]
+			if proj.IsFolder {
+				// Folder - read README
+				if proj.Path != "" {
+					content, _ := m.loader.ReadREADME(proj.Path)
+					return content
+				}
+			} else {
+				// TODO item - build from details
+				var b strings.Builder
+				b.WriteString(fmt.Sprintf("📌 Task: %s\n\n", proj.Name))
+				if len(proj.Details) > 0 {
+					b.WriteString("Details:\n")
+					for _, d := range proj.Details {
+						b.WriteString(fmt.Sprintf("  • %s\n", d))
+					}
+				}
+				return b.String()
+			}
+		}
+	} else {
+		// Recent files section
+		if m.homeSelectedIdx < len(m.recentFiles) {
+			rf := m.recentFiles[m.homeSelectedIdx]
+			content, _ := m.loader.ReadREADME(rf.Path)
+			return content
+		}
+	}
+	return ""
+}
+
 // updateSidebarCounts refreshes the project count in sidebar
 func (m *Model) updateSidebarCounts() {
 	// Update Projects count (index 1)
@@ -2016,11 +2241,11 @@ func (m Model) View() string {
 	var footer string
 	if m.isArchiveContext() {
 		// Show restore option for archived items
-		footer = footerStyle.Render("j/k:move  Enter:open  R:restore  n:new  y:copy Y:path  tab:pane  1-4:jump  q:quit")
+		footer = footerStyle.Render("j/k:move  Enter:open  R:restore  n:new  y:copy Y:path  o/p/P:URL  tab:pane  1-4:jump  q:quit")
 	} else if m.viewMode == ViewHome {
-		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  n:new  y:copy Y:path  1-4:jump  q:quit")
+		footer = footerStyle.Render("j/k:move  Enter:open  e:edit E:vim  a:archive  n:new  y:copy Y:path  o/p/P:URL  1-4:jump  q:quit")
 	} else {
-		footer = footerStyle.Render("j/k:move  Enter:open  e:edit  a:archive  n:new  y:copy Y:path  tab:pane  1-4:jump  q:quit")
+		footer = footerStyle.Render("j/k:move  Enter:open  e:edit E:vim  a:archive  n:new  y:copy Y:path  o/p/P:URL  tab:pane  1-4:jump  q:quit")
 	}
 
 	// Show status message
@@ -2369,12 +2594,18 @@ func (m Model) renderPreview(width, height int) string {
 
 	visibleLines := lines[startLine:endLine]
 
+	// Get selected URL for highlighting
+	var selectedURL string
+	if m.selectedURLIdx >= 0 && m.selectedURLIdx < len(m.detectedURLs) {
+		selectedURL = m.detectedURLs[m.selectedURLIdx]
+	}
+
 	// Syntax highlight each line
 	var highlightedLines []string
 	inCodeBlock := false
 
 	for _, line := range visibleLines {
-		highlighted := highlightMarkdownLine(line, &inCodeBlock, width-2)
+		highlighted := highlightMarkdownLine(line, &inCodeBlock, width-2, selectedURL)
 		highlightedLines = append(highlightedLines, highlighted)
 	}
 
@@ -2391,7 +2622,8 @@ func (m Model) renderPreview(width, height int) string {
 }
 
 // highlightMarkdownLine applies syntax highlighting to a single markdown line
-func highlightMarkdownLine(line string, inCodeBlock *bool, width int) string {
+// selectedURL is the currently selected URL (for highlighting), empty string means none selected
+func highlightMarkdownLine(line string, inCodeBlock *bool, width int, selectedURL string) string {
 	trimmed := strings.TrimSpace(line)
 
 	// Adaptive colors: {Light, Dark}
@@ -2402,6 +2634,7 @@ func highlightMarkdownLine(line string, inCodeBlock *bool, width int) string {
 	codeBlockStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#0E6FBF", Dark: "#7DCFFF"})
 	codeStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#0E6FBF", Dark: "#7DCFFF"})
 	linkStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#0550AE", Dark: "#7AA2F7"}).Underline(true)
+	selectedLinkStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#000000", Dark: "#000000"}).Background(lipgloss.AdaptiveColor{Light: "#FF9E64", Dark: "#FF9E64"}).Bold(true)
 	listStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#177500", Dark: "#9ECE6A"})
 	checkboxStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#6F42C1", Dark: "#BB9AF7"})
 	blockquoteStyle := lipgloss.NewStyle().Foreground(lipgloss.AdaptiveColor{Light: "#6E7781", Dark: "#565F89"}).Italic(true)
@@ -2438,6 +2671,22 @@ func highlightMarkdownLine(line string, inCodeBlock *bool, width int) string {
 		return blockquoteStyle.Render(line)
 	}
 
+	// Check for URLs and style them inline (before bold/code checks so URLs in formatted lines are styled)
+	hasURL := strings.Contains(line, "](") || urlRegex.MatchString(line)
+	if hasURL {
+		return styleLineWithURLs(line, normalStyle, linkStyle, selectedLinkStyle, selectedURL)
+	}
+
+	// Bold **text**
+	if strings.Contains(line, "**") {
+		return boldStyle.Render(line)
+	}
+
+	// Inline code `code`
+	if strings.Contains(line, "`") {
+		return codeStyle.Render(line)
+	}
+
 	// Checkboxes
 	if strings.Contains(trimmed, "- [ ]") || strings.Contains(trimmed, "- [x]") || strings.Contains(trimmed, "- [X]") {
 		return checkboxStyle.Render(line)
@@ -2453,23 +2702,67 @@ func highlightMarkdownLine(line string, inCodeBlock *bool, width int) string {
 		return listStyle.Render(line)
 	}
 
-	// Inline formatting (simplified - just highlight the whole line if it contains these)
-	// For links [text](url)
-	if strings.Contains(line, "](") && strings.Contains(line, "[") {
-		return linkStyle.Render(line)
-	}
-
-	// Bold **text**
-	if strings.Contains(line, "**") {
-		return boldStyle.Render(line)
-	}
-
-	// Inline code `code`
-	if strings.Contains(line, "`") {
-		return codeStyle.Render(line)
-	}
-
 	return normalStyle.Render(line)
+}
+
+// styleLineWithURLs styles a line with URLs highlighted, keeping the rest in normal style
+func styleLineWithURLs(line string, normalStyle, linkStyle, selectedLinkStyle lipgloss.Style, selectedURL string) string {
+	var result strings.Builder
+	remaining := line
+
+	// Combined regex for markdown links and raw URLs
+	mdLinkRegex := regexp.MustCompile(`\[([^\]]+)\]\(([^)]+)\)`)
+
+	for len(remaining) > 0 {
+		// Try to find markdown link first
+		mdMatch := mdLinkRegex.FindStringSubmatchIndex(remaining)
+		rawMatch := urlRegex.FindStringIndex(remaining)
+
+		// Determine which match comes first
+		var matchStart, matchEnd int
+		var matchURL string
+		var isMdLink bool
+
+		if mdMatch != nil && (rawMatch == nil || mdMatch[0] <= rawMatch[0]) {
+			// Markdown link comes first
+			matchStart = mdMatch[0]
+			matchEnd = mdMatch[1]
+			matchURL = remaining[mdMatch[4]:mdMatch[5]] // The URL part
+			isMdLink = true
+		} else if rawMatch != nil {
+			// Raw URL comes first
+			matchStart = rawMatch[0]
+			matchEnd = rawMatch[1]
+			matchURL = remaining[matchStart:matchEnd]
+			isMdLink = false
+		} else {
+			// No more matches
+			result.WriteString(normalStyle.Render(remaining))
+			break
+		}
+
+		// Add text before the match
+		if matchStart > 0 {
+			result.WriteString(normalStyle.Render(remaining[:matchStart]))
+		}
+
+		// Style the URL/link
+		matchText := remaining[matchStart:matchEnd]
+		if matchURL == selectedURL {
+			if isMdLink {
+				// For markdown links, style the whole thing but highlight
+				result.WriteString(selectedLinkStyle.Render(matchText))
+			} else {
+				result.WriteString(selectedLinkStyle.Render(matchText))
+			}
+		} else {
+			result.WriteString(linkStyle.Render(matchText))
+		}
+
+		remaining = remaining[matchEnd:]
+	}
+
+	return result.String()
 }
 
 // ASCII art raccoon coder ready to get stuff done
@@ -2708,6 +3001,12 @@ func (m Model) renderHomePreview(width, height int) string {
 
 	lines := strings.Split(content, "\n")
 
+	// Get selected URL for highlighting
+	var selectedURL string
+	if m.selectedURLIdx >= 0 && m.selectedURLIdx < len(m.detectedURLs) {
+		selectedURL = m.detectedURLs[m.selectedURLIdx]
+	}
+
 	// Syntax highlight each line
 	var highlightedLines []string
 	inCodeBlock := false
@@ -2718,7 +3017,7 @@ func (m Model) renderHomePreview(width, height int) string {
 	}
 
 	for _, line := range visibleLines {
-		highlighted := highlightMarkdownLine(line, &inCodeBlock, width-2)
+		highlighted := highlightMarkdownLine(line, &inCodeBlock, width-2, selectedURL)
 		highlightedLines = append(highlightedLines, highlighted)
 	}
 
@@ -2729,4 +3028,62 @@ func (m Model) renderHomePreview(width, height int) string {
 	}
 
 	return strings.Join(highlightedLines, "\n")
+}
+
+// URL regex pattern for detecting URLs in text
+var urlRegex = regexp.MustCompile(`https?://[^\s<>\[\]()]+`)
+
+// extractFirstURL finds the first URL in a text string
+func extractFirstURL(text string) string {
+	// First check for markdown links [text](url)
+	mdLinkRegex := regexp.MustCompile(`\[([^\]]+)\]\(([^)]+)\)`)
+	if matches := mdLinkRegex.FindStringSubmatch(text); len(matches) > 2 {
+		return matches[2]
+	}
+	// Then check for raw URLs
+	if match := urlRegex.FindString(text); match != "" {
+		return match
+	}
+	return ""
+}
+
+// extractAllURLs finds all URLs in a text string
+func extractAllURLs(text string) []string {
+	var urls []string
+	seen := make(map[string]bool)
+
+	// Extract markdown links [text](url)
+	mdLinkRegex := regexp.MustCompile(`\[([^\]]+)\]\(([^)]+)\)`)
+	for _, matches := range mdLinkRegex.FindAllStringSubmatch(text, -1) {
+		if len(matches) > 2 && !seen[matches[2]] {
+			urls = append(urls, matches[2])
+			seen[matches[2]] = true
+		}
+	}
+
+	// Extract raw URLs
+	for _, match := range urlRegex.FindAllString(text, -1) {
+		if !seen[match] {
+			urls = append(urls, match)
+			seen[match] = true
+		}
+	}
+
+	return urls
+}
+
+// openURL opens a URL in the default browser
+func openURL(url string) error {
+	var cmd *exec.Cmd
+	switch runtime.GOOS {
+	case "darwin":
+		cmd = exec.Command("open", url)
+	case "linux":
+		cmd = exec.Command("xdg-open", url)
+	case "windows":
+		cmd = exec.Command("rundll32", "url.dll,FileProtocolHandler", url)
+	default:
+		return fmt.Errorf("unsupported platform")
+	}
+	return cmd.Start()
 }

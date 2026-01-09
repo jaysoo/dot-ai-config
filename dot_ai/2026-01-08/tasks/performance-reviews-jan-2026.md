@@ -119,35 +119,7 @@ Review period: Last 6 months (July 2025 - January 2026)
 
 ---
 
-## 4. Rares Matei (rarmatei)
-
-**PR Contributions:** 33 total (14 nx, 13 ocean, 6 cloud-infrastructure)
-
-**Key Work (Last 6 Months):**
-- Tracing coordination with Altan and Jason (deadline June 15-20)
-- Cross-platform work spanning nx repo, ocean, and infrastructure
-
-**Personal Note:** Getting married to Mariana in August 2026 in Crete, Greece. Has baby daughter.
-
-**1:1 Notes:** (No detailed recent notes, but mentioned in Altan's 2026-01-08 notes as key coordinator for tracing project)
-
-### Suggested Answers
-
-**Q1 (Skills/Knowledge):** *Exceeds* - Full-stack development, system architecture. Works across nx repo, ocean, and infrastructure - demonstrates breadth. Key technical contributor to tracing project which requires deep system understanding.
-
-**Q2 (Collaboration):** *Exceeds* - Works closely with Altan, Craigory, Jason on tracing. Cross-functional work spanning multiple repos shows strong collaboration skills.
-
-**Q3 (Initiative):** *Often* - Key contributor to cross-team coordination on tracing project. Takes ownership of complex cross-cutting concerns.
-
-**Q4 (Most Valuable Contribution):** Tracing project coordination - this cross-platform work (June 15-20 deadline) requires understanding multiple systems and coordinating across teams.
-
-**Q5 (Increase Impact):** More documentation of decisions and approaches. The cross-platform knowledge is valuable but could be shared more broadly.
-
-**Q6 (Working with them):** *Motivating/Enjoyable* - Collaborative, cross-functional. Reliable partner for complex projects.
-
----
-
-## 5. Nicole Oliver (nixallover)
+## 4. Nicole Oliver (nixallover)
 
 **PR Contributions:** 35 total (9 nx, 26 ocean)
 
@@ -180,7 +152,7 @@ Review period: Last 6 months (July 2025 - January 2026)
 
 ---
 
-## 6. Mark Lindsey (mrl-jr)
+## 5. Mark Lindsey (mrl-jr)
 
 **PR Contributions:** 26 total (1 nx, 25 ocean)
 
@@ -237,7 +209,7 @@ Review period: Last 6 months (July 2025 - January 2026)
 
 ---
 
-## 7. Jonathan Cammisuli (Cammisuli)
+## 6. Jonathan Cammisuli (Cammisuli)
 
 **PR Contributions:** 34 total (2 nx, 32 ocean)
 
@@ -276,7 +248,7 @@ Review period: Last 6 months (July 2025 - January 2026)
 
 ---
 
-## 8. Jason Jean (FrozenPandaz)
+## 7. Jason Jean (FrozenPandaz)
 
 **PR Contributions:** 150 total (134 nx, 13 ocean, 3 nx-console) - **Highest PR count**
 

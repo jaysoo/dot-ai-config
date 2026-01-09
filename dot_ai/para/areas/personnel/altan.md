@@ -29,6 +29,11 @@
 - Continue AI Czar discussion after Jack returns from Cancun
 - Review progress on 2-3 key metrics identification
 
+### 2026-01-12
+
+- Script to produce weekly team updates
+  https://github.com/nrwl/WeekInReview
+
 ### 2026-01-08
 **Quoka Team Status:**
 - Team performing well, kickoffs completed for all first projects

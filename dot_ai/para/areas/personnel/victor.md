@@ -26,7 +26,15 @@
 ## 1:1 Notes
 
 ### Upcoming Topics
+
+- **Patrick L5 Promotion:** Review and discuss Patrick's promotion justification doc
+  - Key contributions: Grafana Cloud migration, cache poisoning vulnerability fix, cost analysis system, single-tenant operations
+  - Observability SME for company
+  - 20+ single-tenant deployments with near 100% uptime
+- Reviews, bonuses
 - **PR Review Goals 2026:** TTM/TTFR under 24 hours (ideally under 12 hours), encourage AI-assisted PR reviews for prioritization and summaries
+- Onboarding metrics looking lower in January
+  - Experiments must be listed
 - Discuss Maven paywall decision - need clarity on revenue path (from Jason 1:1)
 - Netlify analytics - unknown 11k serverless function requests in December (from Docs sync)
 

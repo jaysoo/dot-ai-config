@@ -15,9 +15,10 @@ type KeyMap struct {
 	PageDown key.Binding
 
 	// Actions
-	Enter    key.Binding
-	Edit     key.Binding
-	New      key.Binding
+	Enter     key.Binding
+	Edit      key.Binding
+	PowerEdit key.Binding
+	New       key.Binding
 	Archive  key.Binding
 	Restore  key.Binding
 	Delete   key.Binding
@@ -27,6 +28,9 @@ type KeyMap struct {
 	Search   key.Binding
 	Back     key.Binding
 	Undo     key.Binding
+	OpenURL  key.Binding
+	NextURL  key.Binding
+	PrevURL  key.Binding
 
 	// Category jumps
 	JumpProjects  key.Binding
@@ -85,6 +89,10 @@ func DefaultKeyMap() KeyMap {
 			key.WithKeys("e"),
 			key.WithHelp("e", "edit"),
 		),
+		PowerEdit: key.NewBinding(
+			key.WithKeys("E"),
+			key.WithHelp("E", "open in editor"),
+		),
 		New: key.NewBinding(
 			key.WithKeys("n"),
 			key.WithHelp("n", "new"),
@@ -124,6 +132,18 @@ func DefaultKeyMap() KeyMap {
 		Undo: key.NewBinding(
 			key.WithKeys("u"),
 			key.WithHelp("u", "undo"),
+		),
+		OpenURL: key.NewBinding(
+			key.WithKeys("o"),
+			key.WithHelp("o", "open URL"),
+		),
+		NextURL: key.NewBinding(
+			key.WithKeys("p"),
+			key.WithHelp("p", "next URL"),
+		),
+		PrevURL: key.NewBinding(
+			key.WithKeys("P"),
+			key.WithHelp("P", "prev URL"),
 		),
 		JumpProjects: key.NewBinding(
 			key.WithKeys("1"),

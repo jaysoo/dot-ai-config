@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jack/para-tui/internal/app"
+	"github.com/jack/para/internal/app"
 
 	tea "github.com/charmbracelet/bubbletea"
 )

@@ -26,8 +26,21 @@
 ## 1:1 Notes
 
 ### Upcoming Topics
-- **PR Review Goals 2026:** TTM/TTFR under 24 hours (ideally under 12 hours), encourage AI-assisted PR reviews for prioritization and summaries
 
-- https://www.notion.so/nxnrwl/Nx-Cloud-Github-App-Permissions-2cc69f3c238780229008c36a71324a08 and https://linear.app/nxdev/issue/DOC-179/re-enable-cookiebot
+### 2026-01-09
+
+**Team Performance & Productivity Metrics**
+- Built personal journaling tool with Vim integration and Claude editing
+  - Transitioning from other apps to custom solution
+  - Still needs search functionality implementation
+- 2026 productivity framework based on SPACE
+
+**Topics Discussed**
+- **PR Review Goals 2026:** TTM/TTFR under 24 hours (ideally under 12 hours), encourage AI-assisted PR reviews for prioritization and summaries
+- **Permissions:** https://www.notion.so/nxnrwl/Nx-Cloud-Github-App-Permissions-2cc69f3c238780229008c36a71324a08
+  - Get feedback from Mark, etc. and then Caleb can put it in docs
+- **Cookiebot:** https://linear.app/nxdev/issue/DOC-179/re-enable-cookiebot
+  - Circle back in two weeks
+- **Metrics for 2026:** https://docs.google.com/document/d/1AYjxss9Eba0QWuGsx7TZmqsF9FDeurZABi8kjTRQ2Mc/edit?tab=t.0
 
 ## Random Notes

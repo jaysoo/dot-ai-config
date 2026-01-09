@@ -45,6 +45,39 @@ Here are topics to discuss in the next DPE sync meeting:
 
 ## Meeting Notes
 
+### 2026-01-12
+
+- PRs to remind (Leo):
+  - Block (talk to Jason)
+    - https://github.com/nrwl/nx/pull/33562
+    - https://github.com/nrwl/nx/pull/33572
+- Talk to Jason about logging native logs
+- ProductBoard
+  - Miro's lockfile PR helps, but it's still slow
+  - `package.json` name and version is being checked (Craigory)
+- CPU tracking, rather than combined, also show per-core
+  - Talk to Leo to see if we can get some data immediate
+  - UI and backend changes might be needed
+- ClickUp
+  - Merging configs (Juri and Craigory)
+- Fidelity asking about generator analytics
+  - Likely relevant to out own effort
+- Island not able to get cache hits locally
+  - Lockfiles, git diff changes, etc.
+  - ProductBoard as well
+  - People are confused with cache misses
+  - nxignore vs gitignore
+  - Idea: maybe a brief explanation of why a cache is missed
+  - Altan usually can help, auth is Chau
+- Paylocity postcss
+  - Annual success plan for this week (JVA)
+- 7-11
+  - Conformance is slow to run (30 seconds) -- appears to do nothing
+- Gong using Turborepo (Miro)
+  - Raise with Victor
+  - Creating a document for Turbo vs Nx
+  - Slow Vercel + Remote Cache
+
 ### 2025-12-15
 
 **Updates:**
@@ -60,7 +93,7 @@ Here are topics to discuss in the next DPE sync meeting:
   - The opposite of unused inputs or overly declared inputs
 - Lockfile parsing has slowed down
   - Consider conformance rules for bad performance patterns
-- Gong using Turborepo
+- Gong using Turborepo (Miro)
   - Creating a document for Turbo vs Nx
   - Slow Vercel + Remote Cache
 - MailChimp average CIPE 2-4 minutes
