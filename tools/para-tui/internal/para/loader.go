@@ -283,15 +283,23 @@ func (l *Loader) GetTodoItems() []TodoItem {
 			text := strings.TrimPrefix(trimmed, "- [ ]")
 			text = strings.TrimSpace(text)
 
-			// Extract date if present (yyyy-mm-dd)
+			// Extract date if present (yyyy-mm-dd or yyyy-mm-dd hh:mm)
 			date := ""
 			daysOld := 0
 			if idx := strings.Index(text, "("); idx != -1 {
 				if endIdx := strings.Index(text[idx:], ")"); endIdx != -1 {
 					date = text[idx+1 : idx+endIdx]
 					text = strings.TrimSpace(text[:idx])
-					// Parse date and calculate days old
-					if parsed, err := time.Parse("2006-01-02", date); err == nil {
+					// Parse date and calculate days old - try multiple formats
+					var parsed time.Time
+					var err error
+					// Try date with time first (more specific)
+					parsed, err = time.Parse("2006-01-02 15:04", date)
+					if err != nil {
+						// Fall back to date only
+						parsed, err = time.Parse("2006-01-02", date)
+					}
+					if err == nil {
 						daysOld = int(time.Since(parsed).Hours() / 24)
 					}
 				}

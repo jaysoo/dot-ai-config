@@ -144,6 +144,8 @@ func New(paraDir string) Model {
 	initialPath := sidebar.SelectedPath()
 	items, _ := loader.LoadItems(initialPath)
 
+	sidebar.Focused = false // Start with content pane focused
+
 	m := Model{
 		paraDir:     paraDir,
 		loader:      loader,
@@ -151,7 +153,7 @@ func New(paraDir string) Model {
 		sidebar:     sidebar,
 		modal:       modal,
 		editInput:   ti,
-		focusedPane: PaneSidebar,
+		focusedPane: PaneContent,
 		viewMode:    ViewHome, // Start in home mode
 		projects:    projects,
 		recentFiles: recentFiles,
@@ -2396,10 +2398,10 @@ func highlightMarkdownLine(line string, inCodeBlock *bool, width int) string {
 
 // ASCII art raccoon coder ready to get stuff done
 const homeBanner = `    ╭─────────────────────────╮
-    │   ∧_∧  LET'S GO!       │
-    │  (◕‿◕)っ               │
+    │   ∧_∧  LET'S GO!        │
+    │  (◕‿◕)っ                │
     │  /    つ☕              │
-    │ (  /  )                │
+    │ (  /  )                 │
     ╰─────────────────────────╯`
 
 // renderHomeContent renders the home dashboard content pane (projects + recent files)
