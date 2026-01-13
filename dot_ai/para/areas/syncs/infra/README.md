@@ -25,9 +25,25 @@ Tracking document for Infrastructure team sync meetings.
 
 ## Meeting Notes
 
+### 2026-01-13
+
+- CIBC (Steven) trialing agents needs custom agents, PoV awaiting to start
+- Custom images, customers (Island, ClickUp) need to use them
+  - OIDC to allow pushing image from their GitHub Action
+  - https://nrwl.slack.com/archives/C0976V87CF5/p1768312852392599?thread_ts=1768241206.696399&cid=C0976V87CF5
+  - Joe should be involved
+  - Follow-up with Steve on a list of extra features we can charge for
+- Flip service died due to timeout issues
+  - Pod couldn't download images within startup probe time after 5-month stable period
+  - Helm chart doesn't allow probe value changes - required custom patch
+  - Service now restored and working
+- Enhanced infrastructure too
+
 ### 2025-12-19
 
 **Updates:**
+
+- Talk to Nicole for Flipped
 - Planning meeting - done
 
 ### 2025-12-16

@@ -3,6 +3,7 @@ package components
 import (
 	"strings"
 
+	"github.com/charmbracelet/bubbles/textarea"
 	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
@@ -23,7 +24,7 @@ type Modal struct {
 	Height     int
 	Visible    bool
 	titleInput textinput.Model
-	notesInput textinput.Model
+	notesInput textarea.Model
 	categories []string
 	selected   int
 	focused    int  // 0=title, 1=category, 2=notes, 3=claude toggle, 4=buttons
@@ -37,14 +38,19 @@ func NewModal() *Modal {
 	ti.CharLimit = 100
 	ti.Width = 40
 
-	ni := textinput.New()
-	ni.Placeholder = "Optional notes..."
+	ni := textarea.New()
+	ni.Placeholder = "Optional notes (Shift+Enter for newline)..."
 	ni.CharLimit = 500
-	ni.Width = 40
+	ni.SetWidth(44)
+	ni.SetHeight(3)
+	ni.ShowLineNumbers = false
+	ni.Prompt = ""
+	ni.FocusedStyle.CursorLine = lipgloss.NewStyle()
+	ni.BlurredStyle.CursorLine = lipgloss.NewStyle()
 
 	return &Modal{
 		Width:      50,
-		Height:     18,
+		Height:     20,
 		Visible:    false,
 		titleInput: ti,
 		notesInput: ni,
@@ -59,7 +65,7 @@ func NewModal() *Modal {
 func (m *Modal) Show() tea.Cmd {
 	m.Visible = true
 	m.titleInput.Reset()
-	m.notesInput.Reset()
+	m.notesInput.SetValue("")
 	m.selected = 0
 	m.focused = 0
 	m.useClaude = true // Reset to default (on)
@@ -117,7 +123,15 @@ func (m *Modal) Update(msg tea.Msg) (*Modal, tea.Cmd) {
 				return m, nil
 			}
 
+		case "shift+enter":
+			// Add newline in textarea when focused on notes
+			if m.focused == 2 {
+				m.notesInput.InsertString("\n")
+				return m, nil
+			}
+
 		case "enter":
+			// Submit unless we're in the textarea (which handles its own enter)
 			if m.focused == 4 || m.titleInput.Value() != "" {
 				// Submit
 				m.Hide()

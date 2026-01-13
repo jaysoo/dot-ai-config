@@ -7,6 +7,7 @@ Tracking document for Documentation team sync meetings.
 - Review Caleb's updated POC (after Victor feedback incorporated)
 - Final structure decision (target: January 30th)
 - Netlify serverless function investigation results
+- What do we want to do about reviewing previews?
 
 ## Action Items
 

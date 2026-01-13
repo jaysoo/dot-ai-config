@@ -59,7 +59,7 @@ Fixes DOC-125"
 
 ### Task TODO Format
 
-`dot_ai/TODO.md` tracks **In Progress** only. Completed tasks → `.ai/para/archive/COMPLETED.md`
+`dot_ai/TODO.md` tracks **In Progress** and **Pending** only. Completed tasks → `.ai/para/archive/COMPLETED.md`
 
 **TODO.md:**
 ```markdown
@@ -75,6 +75,21 @@ Fixes DOC-125"
 - [x] Task name (yyyy-mm-dd)
   - Plan: `dot_ai/yyyy-mm-dd/tasks/name.md`
   - Summary: What was accomplished
+```
+
+### Completing Tasks (IMPORTANT)
+
+When a task is completed:
+1. **Remove** the task from `TODO.md` (In Progress or Pending section)
+2. **Add** to `.ai/para/archive/COMPLETED.md` under the current month header
+3. **Create** COMPLETED.md if it doesn't exist (use PARA archive structure)
+4. **Include** in daily `SUMMARY.md` if completing same day
+
+**Quick tasks** (not in TODO.md): Still archive to COMPLETED.md with summary of what was done.
+
+```bash
+# COMPLETED.md location
+.ai/para/archive/COMPLETED.md
 ```
 
 ### Recent Tasks List (Last 10)

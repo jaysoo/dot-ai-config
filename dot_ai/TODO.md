@@ -60,37 +60,9 @@
   - Review list and identify what's solved by roadmap vs change log vs new solutions
   - Discuss with Victor (roadmap owner) and Nicole (change log) about implementation
   - Consider "post-done" status in Linear for released features
-- [ ] Send email for Nrwl Claude team plan (2026-01-12 09:53)
-  - Review the team's Claude.ai usage for this week to identify members actively using the Chat feature. Remove any team members who haven't used the team plan, as they're likely subscribed to their own Max plan individually. Each removed seat saves $30/month on the team subscription.
-  - Ben is now on MAX plan
-  - Chau is on personal MAX plan
-- [ ] DPEs sync (2026-01-12 09:18)
-- [ ] Remix vulnerability (2026-01-09 13:44)
-  - Remix has multiple CVEs requiring updates, but when Chau and Nicole attempted to upgrade to the fixed versions, it caused a regression in production, forcing a rollback. Ben is currently investigating the specific bugs so the team can properly patch and test on snapshot and staging environments before deploying to production again. The most critical bug is currently causing CI failures that need to be resolved first.
-  - Looks like we have multiple version of react router which is leading to problems -- Altan noticed this and Chau found a way to pin the right versions
 - [ ] Follow-up with Victor on Roadmap (2026-01-09 09:41)
   - Platform roadmap should be finalized and ready for review by end of next week. If not completed by then, raise this as a discussion topic during the 1:1 on Monday to address any blockers or get alignment on timeline.
-- [ ] Get a prod banner URL from Ben (2026-01-09 08:50)
-  - Banner is https://ready-knowledge-238309.framer.app/api/banners
-  - Needs to be ready to go live next week
 - [ ] Follow-up CLOUD-2614: Investigate discrepancy in contributor count (2025-10-27 09:58)
-
-- [ ] Review Patrick L5 doc (2026-01-09 08:29)
-  - Steve shared it on Slack, review and give feedback.
-- [ ] Discuss Maven paywall decision with Victor (2026-01-07)
-
-  - From Jason 1:1: Push for clarity on revenue path or abandon gating
-  - Address underlying motivations not clearly communicated
-  - Team pushback: Colum against, James raised issues at all hands
-  - **Update 2026-01-08**: Victor mentioned this is being brought up with execs today. Sync up with him tomorrow (2026-01-09).
-
-- [ ] Cut patch release for PR #34026 (20.8.x and 22.x) (2026-01-07)
-
-  - PR: https://github.com/nrwl/nx/pull/34026
-  - Fix: `@nx/plugin:migration` generator failing with ESLint flat configs containing variable references
-  - Customer: Fidelity (via Slack: https://nrwl.slack.com/archives/C6WJMCAB1/p1767627484254249)
-  - Versions: 20.8.x and 22.x branches
-  - **Action**: Discuss with Jason tomorrow (2026-01-09) to determine who will handle the release
 
 - [ ] NXC-3641: Centralized Template Updater (2025-12-29 11:30)
 
@@ -98,12 +70,8 @@
   - Plan: `.ai/2025-12-29/tasks/nxc-3641-template-updater.md`
   - Repo: `/Users/jack/projects/nx-template-updater`
   - Goal: Create `nrwl/nx-template-updater` repo to auto-update CNW templates when Nx publishes
-  - Status: Implementation complete, pending team review
-  - Remaining:
-    - Test full update workflow via manual trigger
-    - Add post-merge squash workflow to `nrwl/empty-template`
-    - Enable schedule in check-and-update.yml (currently commented out)
-    - Also need to run `npx nx configure-ai-agents` and `npx nx run-many -t lint test typecheck build e2e`
+  - Status: On hold - could be handled as an AI-assisted migration later, so no immediate action needed
+  - Action: Discuss with Colum during 1:1 to confirm deprioritization
 
 - [ ] Fix #33047 - @nx/web:file-server crash on non-GET requests (2025-10-27 09:58)
 

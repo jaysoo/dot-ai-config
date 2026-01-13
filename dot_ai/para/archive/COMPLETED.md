@@ -4,6 +4,41 @@
 
 
 
+- [x] Cut patch release for PR #34026 (20.8.x and 22.x) (2026-01-07) ✓ 2026-01-13
+
+  - PR: https://github.com/nrwl/nx/pull/34026
+  - Fix: `@nx/plugin:migration` generator failing with ESLint flat configs containing variable references
+  - Customer: Fidelity (via Slack: https://nrwl.slack.com/archives/C6WJMCAB1/p1767627484254249)
+  - Versions: 20.8.x and 22.x branches
+  - **Action**: Discuss with Jason tomorrow (2026-01-09) to determine who will handle the release
+
+
+- [x] Discuss Maven paywall decision with Victor (2026-01-07) ✓ 2026-01-13
+
+  - From Jason 1:1: Push for clarity on revenue path or abandon gating
+  - Address underlying motivations not clearly communicated
+  - Team pushback: Colum against, James raised issues at all hands
+  - **Update 2026-01-08**: Victor mentioned this is being brought up with execs today. Sync up with him tomorrow (2026-01-09).
+
+
+- [x] Get a prod banner URL from Ben (2026-01-09 08:50) ✓ 2026-01-13
+  - Banner is https://ready-knowledge-238309.framer.app/api/banners
+  - Needs to be ready to go live next week
+
+- [x] Review Patrick L5 doc (2026-01-09 08:29) ✓ 2026-01-13
+  - Steve shared it on Slack, review and give feedback.
+
+- [x] Remix vulnerability (2026-01-09 13:44) ✓ 2026-01-13
+  - Remix has multiple CVEs requiring updates, but when Chau and Nicole attempted to upgrade to the fixed versions, it caused a regression in production, forcing a rollback. Ben is currently investigating the specific bugs so the team can properly patch and test on snapshot and staging environments before deploying to production again. The most critical bug is currently causing CI failures that need to be resolved first.
+  - Looks like we have multiple version of react router which is leading to problems -- Altan noticed this and Chau found a way to pin the right versions
+
+- [x] Send email for Nrwl Claude team plan (2026-01-12 09:53) ✓ 2026-01-13
+  - Review the team's Claude.ai usage for this week to identify members actively using the Chat feature. Remove any team members who haven't used the team plan, as they're likely subscribed to their own Max plan individually. Each removed seat saves $30/month on the team subscription.
+  - Ben is now on MAX plan
+  - Chau is on personal MAX plan
+
+- [x] DPEs sync (2026-01-12 09:18) ✓ 2026-01-13
+
 - [x] Effy reviews (2026-01-09 08:42)
   - Due today, must get done before lunch!
 
