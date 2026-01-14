@@ -4,57 +4,59 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **AI Trends PARA Area** (2026-01-10)
+1. **DOC-376: GA Scroll Depth Tracking for Marketing Pages** (2026-01-14)
+
+   - Summary: Added `useWindowScrollDepth` hook to track scroll depth on marketing pages (/, /react, /java); fires scroll_0/25/50/75/90 events to GA
+   - Files: `.ai/2026-01-14/SUMMARY.md`, `nx-dev/feature-analytics/src/lib/use-window-scroll-depth.ts`
+
+2. **AI Trends PARA Area** (2026-01-10)
 
    - Summary: Created new PARA area to track AI/LLM trends; first entry documents "Normalization of Deviance" pattern - the Challenger disaster parallel for YOLO mode AI usage
    - Files: `dot_ai/para/areas/ai-trends/README.md`
 
-2. **PARA TUI: Power Edit Feature** (2026-01-09)
+3. **PARA TUI: Power Edit Feature** (2026-01-09)
 
    - Summary: Added `E` keybinding to open files in external editor ($EDITOR/nvim); uses tea.ExecProcess for proper terminal handoff
    - Files: `tools/para/internal/app/app.go`, `tools/para/internal/app/keys.go`
 
-3. **Performance Reviews - January 2026** (2026-01-08)
+4. **Performance Reviews - January 2026** (2026-01-08)
 
    - Summary: Compiled comprehensive performance review notes for 8 engineers using GitHub PRs, Linear issues, 1:1 notes, and hackday data; suggested MC answers for all 6 review questions per engineer
    - Files: `dot_ai/2026-01-08/tasks/performance-reviews-jan-2026.md`
 
-4. **PARA TUI App Specification** (2026-01-08)
+5. **PARA TUI App Specification** (2026-01-08)
 
    - Summary: Created detailed spec for Go TUI app using Bubbletea/Bubbles/Lipgloss/Glamour/Bleve; features action-focused inbox, three-pane layout, full-text search, Linear/Git integrations
    - Files: `dot_ai/2026-01-08/specs/para-tui-spec.md`
 
-5. **2025 Productivity Report for Victor** (2026-01-08)
+6. **2025 Productivity Report for Victor** (2026-01-08)
 
    - Summary: Created comprehensive productivity analysis showing AI tooling and August layoffs had net positive impact; TTFR decreased 68%, PR volume up 22.7%, LOC changed up 133% YoY; recommended SPACE framework for 2026
    - Files: [Google Doc](https://docs.google.com/document/d/1AYjxss9Eba0QWuGsx7TZmqsF9FDeurZABi8kjTRQ2Mc/edit?tab=t.0)
 
-6. **GitHub Issue #34010: Fix replaceOverride for Variable References** (2026-01-07)
+7. **GitHub Issue #34010: Fix replaceOverride for Variable References** (2026-01-07)
 
    - Summary: Fixed `replaceOverride` in ast-utils.ts to handle ESLint flat configs with variable references using property-level AST updates and `structuredClone`
    - Files: `.ai/2026-01-07/SUMMARY.md`, `packages/eslint/src/generators/utils/flat-config/ast-utils.ts`
 
-7. **2026 Engineering Metrics Framework** (2026-01-08)
+8. **2026 Engineering Metrics Framework** (2026-01-08)
 
    - Summary: Designed SPACE-aligned metrics framework for 2026 with 7 key metrics: PR throughput, AI amplification index, planning accuracy, TTFR, code health ratio, developer satisfaction, and stakeholder satisfaction surveys
    - Files: `.ai/2026-01-08/SUMMARY.md`
 
-8. **Work Composition Metrics** (2026-01-07)
+9. **Work Composition Metrics** (2026-01-07)
 
    - Summary: Added Planned Work %, Unplanned Work, and Firefighting % metrics to productivity report; includes YoY analysis script for AI/layoff impact assessment
    - Files: `.ai/2026-01-07/SUMMARY.md`, `collect-productivity-baselines.mjs`, `generate-productivity-report.mjs`, `analyze-yoy.mjs`
 
-9. **Productivity Baseline Script Improvements** (2026-01-07)
+10. **Productivity Baseline Script Improvements** (2026-01-07)
 
-   - Summary: Fixed 0 PRs issue (GraphQL node limit, GitHub token auth), then added per-month caching for fast re-runs
-   - Files: `.ai/2026-01-07/SUMMARY.md`, `collect-productivity-baselines.mjs`, `data/README.md`
-
-10. **AI Usage Tracking Scripts** (2025-12-30)
-
-    - Summary: Created suite of scripts to track AI tool usage (Claude Code, Cursor, VSCode) for team accountability; supports markdown/HTML output, cost estimates, shareable via GitHub Gist
-    - Files: `scripts/ai-usage.mjs`, `scripts/claude-code-usage.mjs`, `scripts/cursor-usage.mjs`, `scripts/vscode-copilot-usage.mjs`
+    - Summary: Fixed 0 PRs issue (GraphQL node limit, GitHub token auth), then added per-month caching for fast re-runs
+    - Files: `.ai/2026-01-07/SUMMARY.md`, `collect-productivity-baselines.mjs`, `data/README.md`
 
 ## In Progress
+- [ ] Follow up on slow jest configs for Island (2026-01-14 09:27)
+  - Steven and Leo for this issue https://linear.app/nxdev/issue/NXC-3718/investigate-slow-nxjest-plugin-createnodes-with-ts-configs
 - [ ] Steven 1:1 follow-up: DPE feature tracking improvements (2026-01-12 10:30)
   - Wait for Steven to create comprehensive feature list with desired metadata fields
   - Review list and identify what's solved by roadmap vs change log vs new solutions

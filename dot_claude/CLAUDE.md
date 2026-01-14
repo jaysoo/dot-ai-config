@@ -13,6 +13,23 @@ file .ai  # Must show "symbolic link"
 ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai
 ```
 
+### Architecture Context Loading (AUTO-LOAD ON START)
+When starting work in a repo, **immediately load** the architecture file before any other work:
+
+1. **Get repo name** from `pwd` basename or git remote
+2. **Check for** `.ai/para/resources/architectures/<repo>-architecture.md`
+3. **If exists, read it first** - this primes critical context
+
+**Known repos with architecture files:**
+| Repo | Architecture File |
+|------|-------------------|
+| `nx` | `.ai/para/resources/architectures/nx-architecture.md` |
+| `ocean` | `.ai/para/resources/architectures/ocean-architecture.md` |
+| `console` | `.ai/para/resources/architectures/console-architecture.md` |
+| `nx-labs` | `.ai/para/resources/architectures/nx-labs-architecture.md` |
+
+**Always search** for `<repo>-architecture.md` even if not in table - new ones may be added.
+
 ### Git Workflow
 - **🔐 NEVER commit tokens, secrets, or API keys**
 - **Never commit to main/master** - use feature branches

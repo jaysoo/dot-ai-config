@@ -2,7 +2,12 @@
 
 ### January 2026
 
-
+- [x] DOC-376: GA Scroll Depth Tracking for Marketing Pages (2026-01-14)
+  - Linear: https://linear.app/nxdev/issue/DOC-376
+  - Added `useWindowScrollDepth` hook to track scroll depth on marketing pages (/, /react, /java, etc.)
+  - Events: scroll_0, scroll_25, scroll_50, scroll_75, scroll_90
+  - Files: `nx-dev/feature-analytics/src/lib/use-window-scroll-depth.ts`, `nx-dev/ui-common/src/lib/default-layout.tsx`
+  - Commit: `897b528155`
 
 - [x] Cut patch release for PR #34026 (20.8.x and 22.x) (2026-01-07) ✓ 2026-01-13
 
