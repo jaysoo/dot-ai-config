@@ -25,4 +25,12 @@
 
 ## 1:1 Notes
 
+### 2026-01-21
+
+- Onboarding for Red Panda for self-healing
+- One page onboarding
+- Put together a list of responsibilities and knowledge transfer
+  - Auth and agent utilization
+- "Ralph" for green PRs
+
 ## Random Notes

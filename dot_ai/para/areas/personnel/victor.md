@@ -26,7 +26,8 @@
 ## 1:1 Notes
 
 ### Upcoming Topics
-
+- Reporting structure and 1:1s
+- **Promotions:** Push for Altan to L5C and Patrick to L4C (if not L5A)
 - **Patrick L5 Promotion:** Review and discuss Patrick's promotion justification doc
   - Key contributions: Grafana Cloud migration, cache poisoning vulnerability fix, cost analysis system, single-tenant operations
   - Observability SME for company

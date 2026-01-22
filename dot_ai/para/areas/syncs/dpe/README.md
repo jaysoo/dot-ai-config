@@ -8,6 +8,11 @@ Here are topics to discuss in the next DPE sync meeting:
 
 - Block should be able to re-enable file watching in Console again after next release
   - https://linear.app/nxdev/issue/NXC-3132/reassess-when-we-disable-the-daemon
+- ClickUp churn risk (10-25%) - IPO cost cutting pressure
+- Value communication strategy - showing time/cost savings in product
+  - GitHub comments, dashboard metrics, baseline comparisons
+- Review #ask-* channels - any confusion in #nx?
+  - Check for common questions/misunderstandings that could inform docs or DX improvements
 
 ## Active Accounts
 
@@ -15,7 +20,7 @@ Here are topics to discuss in the next DPE sync meeting:
 |---------|-----|------------|--------|
 | PowerBI | - | Blockers resolved | ✅ |
 | ProductBoard | Miro, JVA | Lockfile optimizations, affected graph output slow | 🔄 |
-| ClickUp | - | Gradle attached to root busts cache, improve cache hit rates | 🔄 |
+| ClickUp | - | IPO prep, cost cutting pressure, 10-25% churn risk | ⚠️ |
 | MailChimp | - | Average CIPE 2-4 minutes | 🔄 |
 | Gong | - | Using Turborepo, slow Vercel + Remote Cache | 🆕 |
 
@@ -44,6 +49,38 @@ Here are topics to discuss in the next DPE sync meeting:
 ---
 
 ## Meeting Notes
+
+### 2026-01-21 (from Docs sync - Caleb)
+
+**ClickUp Account Issues:**
+- Kyle (Principal Architect) pushing for credit forgiveness after causing system outage
+  - Load tested agents, found limits, crashed control plane
+  - Kept retriggering failed CI jobs on test branch
+  - Wants refund for $10 spent during self-caused failure
+- Context: ClickUp preparing for IPO, cutting costs aggressively
+  - Kyle under pressure from VPs/directors to reduce spending
+  - Different expectations between Kyle and his management
+- Similar to GitHub outages but Microsoft can't be pushed around
+- ClickUp doubled compute usage since February 2025
+  - Still using old cost projections in calculations
+  - Risk of switching away from agents (10-25% chance)
+  - Would revert to self-hosted GitHub runners with manual DTE
+
+**Value Communication Strategy:**
+- Show time saved and cost saved as much as possible throughout product
+  - GitHub comments after CI completion
+  - Dashboard metrics showing concrete savings
+  - Similar to Amazon Prime, Instacart, Uber Eats value messaging
+- Survey teammates on if they understand value of Nx Cloud
+  - Target people without high-touch support interactions
+  - Understand if non-technical stakeholders grasp the value proposition
+- Challenge: People forget pre-Nx Cloud performance once it becomes normal
+  - DSG doesn't remember life before Nx Cloud
+  - Need constant reinforcement of baseline comparisons
+- Potential features:
+  - Performance comparisons week-over-week
+  - Leaderboards showing CI improvements
+  - Early shutdown savings tracking
 
 ### 2026-01-12
 

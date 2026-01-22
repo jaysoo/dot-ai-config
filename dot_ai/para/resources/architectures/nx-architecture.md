@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2025-12-19
+Last Updated: 2026-01-14
 
 ## Directory Overview
 
@@ -29,25 +29,60 @@ Core Nx functionality
 - `packages/nx/src/native/` - Rust native bindings
   - `index.d.ts` - TypeScript definitions for RustPseudoTerminal
 
-### packages/create-nx-workspace/
-CLI tool for creating new Nx workspaces (CNW)
+### packages/create-nx-workspace/ (CNW)
+CLI tool for creating new Nx workspaces. Uses A/B testing for cloud prompt behavior.
 
-- `bin/create-nx-workspace.ts` - Main CLI entry point with yargs middleware
-  - `normalizeArgsMiddleware()` - Handles A/B testing flow (template vs preset)
-  - `determineTemplate()` - Template selection prompt
-  - `determineNxCloud()` / `determineNxCloudV2()` - Nx Cloud setup prompts
-- `src/create-workspace.ts` - Workspace creation logic
-  - `createWorkspace()` - Main function for cloning templates or generating presets
-  - `setupCI()` - CI workflow generation (GitHub, GitLab, Azure, etc.)
-- `src/internal-utils/prompts.ts` - User prompt functions
-  - `determineNxCloud()` - Old flow with CI provider selection
-  - `determineNxCloudV2()` - Simplified "Try the full Nx platform?" prompt
-- `src/internal-utils/yargs-options.ts` - CLI option definitions (`--nxCloud` alias `--ci`)
-- `src/utils/nx/ab-testing.ts` - A/B testing and telemetry
-  - `shouldUseTemplateFlow()` - Determines variant (0=preset, 1=template)
-  - `getFlowVariant()` - Returns current variant for tracking
-  - `recordStat()` - Telemetry recording (start, complete, error, cancel, precreate)
-  - `messages` - Prompt message variants for A/B testing
+**Last Updated**: 2026-01-14
+**Related Issues**: NXC-3628 (current), NXC-3624
+**Status**: NXC-3628 implementation complete, ready for commit
+
+**Key Files**:
+- `bin/create-nx-workspace.ts:446-555` - CLI entry point, flow routing, variant conditional logic
+- `src/create-workspace.ts` - Workspace creation, conditional cloud connection
+- `src/create-workspace-options.ts` - TypeScript interfaces (`skipCloudConnect`, `ghAvailable`)
+- `src/utils/nx/ab-testing.ts` - Variant determination, caching (1-week expiry), telemetry
+- `src/utils/nx/nx-cloud.ts` - Cloud connection, URL generation with variant meta property
+- `src/utils/nx/messages.ts` - Completion messages with `github.com/new` hint
+- `src/utils/git/git.ts` - Git utilities (`isGitAvailable()`, `isGhCliAvailable()`)
+- `src/internal-utils/yargs-options.ts` - CLI options (`--nxCloud` alias `--ci`)
+
+**A/B Testing Variants** (preset flow removed in #33967):
+- **Variant 0**: Shows cloud prompt → user chooses → connects to cloud → generates URL with token
+- **Variant 1**: Skips cloud prompt → always shows platform link → uses GitHub flow (no token)
+
+**Flow Logic (NXC-3628)**:
+```
+getFlowVariant() returns:
+├── '0' → Variant 0 (current behavior)
+│   └── determineNxCloudV2() → "Try the full Nx platform?" Yes/Skip
+│   └── connectToNxCloudForTemplate() → nxCloudId in nx.json
+│   └── readNxCloudToken() → spinner + read token
+│   └── createNxCloudOnboardingUrl(token) → URL with token
+│
+└── '1' → Variant 1 (NXC-3628 - no cloud prompt)
+    └── Skip cloud prompt → nxCloud = 'yes' (unless --nxCloud=skip)
+    └── Skip connectToNxCloudForTemplate() → NO nxCloudId in nx.json
+    └── Skip readNxCloudToken() → no misleading spinner
+    └── createNxCloudOnboardingUrl(undefined) → GitHub flow (accessToken: null)
+    └── Show github.com/new hint if user hasn't pushed
+```
+
+**Key Insight**: `createNxCloudOnboardingURL()` in `url-shorten.ts:38` sends `accessToken: null` for GitHub flow - no token needed.
+
+**Flow Variant Cache**:
+- Location: `os.tmpdir()/nx-cnw-flow-variant`
+- Expiry: 1 week (`FLOW_VARIANT_EXPIRY_MS`)
+- Bug fixed (2026-01-14): Expired files now deleted with `unlinkSync()`, otherwise new variant never written
+
+**nxCloud Values**:
+| Value | Source | CI Generated |
+|-------|--------|--------------|
+| `'github'` | CLI arg `--nxCloud github` | Yes (GitHub) |
+| `'gitlab'` | CLI arg `--nxCloud gitlab` | Yes (GitLab) |
+| `'yes'` | Simplified prompt "Yes" | Yes (GitHub) |
+| `'skip'` | Any prompt "Skip" | No |
+
+**Telemetry Events** (recordStat types): `start`, `precreate`, `complete`, `error`, `cancel`
 
 ### nx-dev/
 The Nx documentation site (docs.nrwl.io) - Next.js application with multiple sub-packages
@@ -58,54 +93,6 @@ The Nx documentation site (docs.nrwl.io) - Next.js application with multiple sub
 - `nx-dev/data-access-documents/` - Document fetching and processing
 
 ## Features & Critical Paths
-
-### Create Nx Workspace (CNW) A/B Testing Flow (2025-12-16)
-**Branch**: NXC-3624
-**Issue**: https://linear.app/nxdev/issue/NXC-3624
-**Status**: Implemented, 4 commits on branch
-
-CNW has two user flows controlled by A/B testing:
-- **Variant 0 (preset flow)**: User selects stack → preset → CI provider
-- **Variant 1 (template flow)**: User selects from predefined templates (nrwl/*)
-
-**Key Files**:
-- `bin/create-nx-workspace.ts:446-555` - Flow routing based on `determineTemplate()` result
-- `src/utils/nx/ab-testing.ts:67-74` - `shouldUseTemplateFlow()` variant determination
-- `src/create-workspace.ts:149-154` - CI generation logic
-
-**Flow Logic**:
-```
-determineTemplate() returns:
-├── 'nrwl/*' template → Template flow (variant 1)
-│   └── determineNxCloudV2() → "Try the full Nx platform?" Yes/Skip
-│   └── No CI generation (templates have own ci.yml)
-│
-└── 'custom' → Preset flow (variant 0)
-    ├── CLI arg provided (--nxCloud gitlab) → determineNxCloud() → CI provider selection
-    │   └── setupCI() generates workflow for selected provider
-    │
-    └── No CLI arg → determineNxCloudV2() → "Try the full Nx platform?" Yes/Skip
-        └── If Yes: nxCloud='yes' → maps to 'github' for setupCI()
-```
-
-**nxCloud Values and Their Meaning**:
-| Value | Source | CI Generated | Push to GitHub |
-|-------|--------|--------------|----------------|
-| `'github'` | CLI arg `--nxCloud github` | Yes (GitHub) | Yes |
-| `'gitlab'` | CLI arg `--nxCloud gitlab` | Yes (GitLab) | No |
-| `'yes'` | Simplified prompt "Yes" | Yes (GitHub) | Yes |
-| `'skip'` | Any prompt "Skip" | No | No |
-
-**Telemetry Events** (recordStat types):
-- `start` - CNW invoked
-- `precreate` - After template/preset selection (tracks flowVariant, template, preset)
-- `complete` - Workspace created successfully
-- `error` - Error occurred (tracks errorCode, errorMessage, errorFile)
-- `cancel` - User cancelled (SIGINT)
-
-**CLI Options** (defined in yargs-options.ts):
-- `--nxCloud` (alias `--ci`) - CI provider or 'skip'
-- Values: github, gitlab, azure, bitbucket-pipelines, circleci, skip, yes
 
 ### Node Executor Signal Handling (2025-11-21)
 **Branch**: NXC-3510
@@ -292,6 +279,32 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 
 ## Personal Work History
 
+### 2026-01-14 - NXC-3628: Remove Cloud Prompt for Variant 1
+- **Task**: NXC-3628 - Remove cloud prompt from CNW for A/B testing variant 1
+- **Branch**: NXC-3628
+- **Status**: Implementation complete, ready for commit
+- **Purpose**: Test if showing platform link without prompt improves conversion
+- **Key Changes**:
+  - Added `isGhCliAvailable()` function to git.ts
+  - Variant 1 conditional logic in create-nx-workspace.ts
+  - Fixed expired cache file bug in ab-testing.ts (delete with `unlinkSync()`)
+  - Made token optional in nx-cloud.ts, added `variant-X` meta property
+  - Added `github.com/new` link to completion messages when user hasn't pushed
+  - Updated 8 snapshot tests in messages.spec.ts
+- **Bug Fixed**: After 1-week cache expiry, every run did 50-50 instead of locking to new variant
+- **Key Insight**: `createNxCloudOnboardingURL()` sends `accessToken: null` for GitHub flow - no token needed
+- **Task Plan**: `.ai/2026-01-14/tasks/nxc-3628-remove-cloud-prompt.md`
+
+### 2026-01-14 - DOC-376: GA Scroll Depth Tracking for Marketing Pages
+- **Task**: DOC-376 - Add scroll depth tracking to marketing pages
+- **Commit**: `4816c5514a` (merged to master)
+- **Purpose**: Track user engagement on marketing pages (previously only docs had this)
+- **Key Changes**:
+  - Created `useWindowScrollDepth` hook in `@nx/nx-dev-feature-analytics`
+  - Hook fires `scroll_0`, `scroll_25`, `scroll_50`, `scroll_75`, `scroll_90` events to GA
+  - Added `'use client'` directive to `default-layout.tsx`
+- **Pages affected**: `/`, `/react`, `/java`, `/angular`, etc.
+
 ### 2025-12-19 - Framer Proxy Middleware Fix (DOC-372)
 - **Task**: DOC-372 - nx.dev changelog page failing on prod and canary
 - **Branch**: DOC-372
@@ -417,6 +430,20 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - **Issue**: When adding dependencies to package.json in Nx monorepo
 - **Solution**: Must run `nx sync` before committing to update inferred targets
 - **Impact**: Ensures workspace configuration stays consistent
+
+### CNW Flow Variant Cache File (2026-01-14)
+- **File Location**: `os.tmpdir()/nx-cnw-flow-variant`
+- **Expiry**: 1 week (locks user to same variant for consistent experience)
+- **Bug**: Expired files were not deleted, so `existsSync()` returned true but value was ignored
+- **Result**: 50-50 randomization on every run instead of locking to new variant
+- **Fix**: Delete expired file with `unlinkSync()` so `existsSync()` returns false
+- **Key Code**: `readCachedFlowVariant()` in ab-testing.ts
+
+### Short URL Meta Property for Analytics (2026-01-14)
+- **Purpose**: Track which CNW variant generated the cloud onboarding URL
+- **Format**: `variant-0` or `variant-1`
+- **Location**: `createNxCloudOnboardingUrl()` in nx-cloud.ts passes `getFlowVariant()` to meta
+- **Cloud side**: Cloud analytics can distinguish conversion rates by variant
 
 ### Astro Migration Pattern
 - Using `NEXT_PUBLIC_ASTRO_URL` as feature flag for progressive migration

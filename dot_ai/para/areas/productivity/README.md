@@ -26,7 +26,7 @@ All metrics align with the SPACE framework (Forsgren et al., GitHub/Microsoft Re
 - **Metric**: AI tokens consumed / PR merged
 - **Source**: Claude/Copilot API logs, IDE telemetry
 - **Target**: Establish baseline Q1 2026, track ratio improvement
-- **Status**: 🔄 Scripts created (`collect-github-stats/scripts/ai-usage.mjs`)
+- **Status**: ✅ Baseline established ([AI Usage Stats](./ai-usage/2025-01-21/SUMMARY.md))
 
 ### 3. Planning Accuracy (Performance)
 - **Metric**: `|Actual planned work % - Target %| / Target %`
@@ -61,6 +61,45 @@ All metrics align with the SPACE framework (Forsgren et al., GitHub/Microsoft Re
 - **Survey**: `collect-github-stats/data/surveys/stakeholder-satisfaction-survey.md`
 - **Status**: 📋 Survey template created
 
+## AI Usage Tracking
+
+**Location:** [`ai-usage/`](./ai-usage/)
+
+Individual AI tool usage statistics collected from the engineering team. Used to calculate AI Amplification Index and track adoption trends.
+
+### Current Data
+
+| Collection Date | Status | Summary |
+|-----------------|--------|---------|
+| [2025-01-21](./ai-usage/2025-01-21/SUMMARY.md) | Complete | 11/18 team members, 3 tools |
+
+### Key Metrics
+
+- **I+O/Day** (Input+Output per Day) - Primary comparison metric (excludes cache reads)
+- **Activity Rate** - Days active / tracking period
+- **Tool Distribution** - Claude Code vs Cursor vs Open Code
+
+### Collection Schedule
+
+**Collect every 30 days** (around the 21st) to track trends over time.
+
+| Date | Folder | Status |
+|------|--------|--------|
+| 2025-01-21 | `ai-usage/2025-01-21/` | Complete |
+| 2025-02-21 | `ai-usage/2025-02-21/` | Scheduled |
+| 2025-03-21 | `ai-usage/2025-03-21/` | Scheduled |
+
+### How to Collect
+
+See [AI Usage README](./ai-usage/2025-01-21/README.md) for detailed methodology.
+
+**Quick reference:**
+- **Claude Code:** `claude "/stats"` → screenshot
+- **Cursor:** Admin exports team CSV from dashboard
+- **Open Code:** `opencode stats --days 7` → screenshot
+
+---
+
 ## Q1 2026 Tasks
 
 - [x] Establish baseline metrics with 2024-2025 data
@@ -68,14 +107,19 @@ All metrics align with the SPACE framework (Forsgren et al., GitHub/Microsoft Re
 - [x] Create stakeholder satisfaction survey template
 - [x] Set up AI usage tracking scripts
 - [x] Add planning accuracy to productivity report
+- [x] Establish AI token usage baseline
+- [ ] Deploy on Lighthouse
 - [ ] Deploy Q1 developer pulse survey (January)
 - [ ] Deploy Q1 stakeholder satisfaction survey (January)
-- [ ] Establish AI token usage baseline
+- [ ] Collect February AI usage stats (2025-02-21)
 
 ## Key Files & Scripts
 
 | File | Purpose |
 |------|---------|
+| `ai-usage/2025-01-21/SUMMARY.md` | AI usage comparison and rankings |
+| `ai-usage/2025-01-21/ai-usage-stats.json` | Structured AI usage data |
+| `ai-usage/2025-01-21/README.md` | Data collection methodology |
 | `collect-github-stats/collect-productivity-baselines.mjs` | Collect PR/review metrics from GitHub |
 | `collect-github-stats/generate-productivity-report.mjs` | Generate HTML productivity reports |
 | `collect-github-stats/analyze-yoy.mjs` | YoY comparison analysis |
@@ -102,6 +146,12 @@ All metrics align with the SPACE framework (Forsgren et al., GitHub/Microsoft Re
 | Median PR Size | ~40 LOC | ~49 LOC | +24% |
 
 ## Notes
+
+### 2026-01-21
+- Established AI usage baseline with 11/18 team members
+- Primary metric: I+O/Day (Input+Output per day, excludes cache reads)
+- Key finding: Cursor vs Claude Code is 3.4x ratio (not 50x) when comparing apples-to-apples
+- Set 30-day collection cadence for trend tracking
 
 ### 2026-01-08
 - Defined SPACE-aligned metrics framework with 7 key metrics

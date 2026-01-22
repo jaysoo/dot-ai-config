@@ -2,6 +2,7 @@
 
 **Team:** Quoka
 **Role:** Team Lead, AI Czar
+**Level:** L5
 **Location:** Atlanta, USA
 
 ## Personal
@@ -26,6 +27,7 @@
 ## 1:1 Notes
 
 ### Upcoming Topics
+- Reporting structure and 1:1s
 - Continue AI Czar discussion after Jack returns from Cancun
 - Review progress on 2-3 key metrics identification
 

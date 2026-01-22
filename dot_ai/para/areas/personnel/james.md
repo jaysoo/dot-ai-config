@@ -25,4 +25,7 @@
 
 ## 1:1 Notes
 
+### Topics to Discuss
+- [ ] Update Effy reporting structure
+
 ## Random Notes

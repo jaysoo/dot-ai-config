@@ -2,6 +2,28 @@
 
 ### January 2026
 
+
+  - URL: https://linear.app/nxdev/issue/NXC-3427
+  - Assignee: Max Kless | Priority: High | Status: In Progress
+  - Issue: Multiple daemons observed after `nx reset`, causes "Waiting for graph construction" hangs
+  - Customer: Block (via Caleb)
+
+
+- [x] DOC-382: Update Releases Page for Nx 22 Details (2026-01-21)
+  - Linear: https://linear.app/nxdev/issue/DOC-382
+  - Updated supported versions table: v22 Current, v21/v20 LTS
+  - Removed expired LTS versions (v19, v18*, v17)
+  - Updated version examples to use v22.2.0
+  - Files: `astro-docs/src/content/docs/reference/releases.mdoc`
+
+- [x] NXC-3628: Remove Cloud Prompt from CNW for Variant 1 (2026-01-14)
+  - Linear: https://linear.app/nxdev/issue/NXC-3628
+  - Implemented A/B testing variant 1: skips cloud prompt, always shows platform link
+  - Variant 1: No `nxCloudId` in nx.json, uses GitHub flow for URL generation
+  - Added `(https://github.com/new)` to completion message when user hasn't pushed
+  - Fixed expired cache file bug in ab-testing.ts (was doing 50-50 after expiry)
+  - Files: 8 files in `packages/create-nx-workspace/`
+
 - [x] DOC-376: GA Scroll Depth Tracking for Marketing Pages (2026-01-14)
   - Linear: https://linear.app/nxdev/issue/DOC-376
   - Added `useWindowScrollDepth` hook to track scroll depth on marketing pages (/, /react, /java, etc.)

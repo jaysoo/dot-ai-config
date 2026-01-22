@@ -25,6 +25,7 @@ Notes on team members for building relationships and effective 1:1s.
 | Chau | O'Fallon, MO | |
 | Colum | UK / Ireland | Daughter: Molly |
 | Craigory | USA | City? |
+| Dillon | | Orca team, conversion optimization |
 | James | EU | Country? |
 | Jason | Toronto, ON | |
 | Jon | London, ON | |

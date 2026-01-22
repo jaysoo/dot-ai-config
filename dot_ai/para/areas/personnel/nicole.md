@@ -26,6 +26,7 @@
 ## 1:1 Notes
 
 ### Upcoming Topics
+- Reporting structure and 1:1s
 
 ### 2026-01-09
 

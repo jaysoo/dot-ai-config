@@ -4,57 +4,59 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-376: GA Scroll Depth Tracking for Marketing Pages** (2026-01-14)
+1. **DOC-382: Update Releases Page for Nx 22 Details** (2026-01-21)
+
+   - Summary: Updated releases.mdoc with Nx 22 as Current (2025-10-22), moved v21 to LTS, removed expired versions (v19, v18*, v17), updated version examples
+   - Files: `.ai/2026-01-21/SUMMARY.md`, `astro-docs/src/content/docs/reference/releases.mdoc`
+
+2. **NXC-3628: Remove Cloud Prompt from CNW for Variant 1** (2026-01-14)
+
+   - Summary: Implemented A/B testing variant 1 that skips cloud prompt, always shows platform link with github.com/new; fixed expired cache file bug in ab-testing.ts
+   - Files: `.ai/2026-01-14/tasks/nxc-3628-remove-cloud-prompt.md`, `packages/create-nx-workspace/`
+
+3. **CLAUDE.md: Auto-load Architecture Files** (2026-01-14)
+
+   - Summary: Added instruction for Claude Code to auto-load `<repo>-architecture.md` files when starting work in nx, ocean, console, nx-labs repos
+   - Files: `dot_claude/CLAUDE.md`, `.ai/2026-01-14/SUMMARY.md`
+
+4. **DOC-376: GA Scroll Depth Tracking for Marketing Pages** (2026-01-14)
 
    - Summary: Added `useWindowScrollDepth` hook to track scroll depth on marketing pages (/, /react, /java); fires scroll_0/25/50/75/90 events to GA
    - Files: `.ai/2026-01-14/SUMMARY.md`, `nx-dev/feature-analytics/src/lib/use-window-scroll-depth.ts`
 
-2. **AI Trends PARA Area** (2026-01-10)
+5. **AI Trends PARA Area** (2026-01-10)
 
    - Summary: Created new PARA area to track AI/LLM trends; first entry documents "Normalization of Deviance" pattern - the Challenger disaster parallel for YOLO mode AI usage
    - Files: `dot_ai/para/areas/ai-trends/README.md`
 
-3. **PARA TUI: Power Edit Feature** (2026-01-09)
+6. **PARA TUI: Power Edit Feature** (2026-01-09)
 
    - Summary: Added `E` keybinding to open files in external editor ($EDITOR/nvim); uses tea.ExecProcess for proper terminal handoff
    - Files: `tools/para/internal/app/app.go`, `tools/para/internal/app/keys.go`
 
-4. **Performance Reviews - January 2026** (2026-01-08)
+7. **Performance Reviews - January 2026** (2026-01-08)
 
    - Summary: Compiled comprehensive performance review notes for 8 engineers using GitHub PRs, Linear issues, 1:1 notes, and hackday data; suggested MC answers for all 6 review questions per engineer
    - Files: `dot_ai/2026-01-08/tasks/performance-reviews-jan-2026.md`
 
-5. **PARA TUI App Specification** (2026-01-08)
+8. **PARA TUI App Specification** (2026-01-08)
 
    - Summary: Created detailed spec for Go TUI app using Bubbletea/Bubbles/Lipgloss/Glamour/Bleve; features action-focused inbox, three-pane layout, full-text search, Linear/Git integrations
    - Files: `dot_ai/2026-01-08/specs/para-tui-spec.md`
 
-6. **2025 Productivity Report for Victor** (2026-01-08)
+9. **2025 Productivity Report for Victor** (2026-01-08)
 
    - Summary: Created comprehensive productivity analysis showing AI tooling and August layoffs had net positive impact; TTFR decreased 68%, PR volume up 22.7%, LOC changed up 133% YoY; recommended SPACE framework for 2026
    - Files: [Google Doc](https://docs.google.com/document/d/1AYjxss9Eba0QWuGsx7TZmqsF9FDeurZABi8kjTRQ2Mc/edit?tab=t.0)
 
-7. **GitHub Issue #34010: Fix replaceOverride for Variable References** (2026-01-07)
+10. **GitHub Issue #34010: Fix replaceOverride for Variable References** (2026-01-07)
 
-   - Summary: Fixed `replaceOverride` in ast-utils.ts to handle ESLint flat configs with variable references using property-level AST updates and `structuredClone`
-   - Files: `.ai/2026-01-07/SUMMARY.md`, `packages/eslint/src/generators/utils/flat-config/ast-utils.ts`
-
-8. **2026 Engineering Metrics Framework** (2026-01-08)
-
-   - Summary: Designed SPACE-aligned metrics framework for 2026 with 7 key metrics: PR throughput, AI amplification index, planning accuracy, TTFR, code health ratio, developer satisfaction, and stakeholder satisfaction surveys
-   - Files: `.ai/2026-01-08/SUMMARY.md`
-
-9. **Work Composition Metrics** (2026-01-07)
-
-   - Summary: Added Planned Work %, Unplanned Work, and Firefighting % metrics to productivity report; includes YoY analysis script for AI/layoff impact assessment
-   - Files: `.ai/2026-01-07/SUMMARY.md`, `collect-productivity-baselines.mjs`, `generate-productivity-report.mjs`, `analyze-yoy.mjs`
-
-10. **Productivity Baseline Script Improvements** (2026-01-07)
-
-    - Summary: Fixed 0 PRs issue (GraphQL node limit, GitHub token auth), then added per-month caching for fast re-runs
-    - Files: `.ai/2026-01-07/SUMMARY.md`, `collect-productivity-baselines.mjs`, `data/README.md`
+    - Summary: Fixed `replaceOverride` in ast-utils.ts to handle ESLint flat configs with variable references using property-level AST updates and `structuredClone`
+    - Files: `.ai/2026-01-07/SUMMARY.md`, `packages/eslint/src/generators/utils/flat-config/ast-utils.ts`
 
 ## In Progress
+- [ ] Get back to Dillon re: 401K (2026-01-21 17:58)
+- [ ] Follow-up NXC-3427: Multiple Nx daemons persist for same workspace in 21.6.8 (2025-10-27 09:58)
 - [ ] Follow up on slow jest configs for Island (2026-01-14 09:27)
   - Steven and Leo for this issue https://linear.app/nxdev/issue/NXC-3718/investigate-slow-nxjest-plugin-createnodes-with-ts-configs
 - [ ] Steven 1:1 follow-up: DPE feature tracking improvements (2026-01-12 10:30)
@@ -82,13 +84,6 @@
   - Impact: Small scoped fix (3 engagement)
   - Notes: Root cause identified - related to http-server issue with SPA proxy
 
-- [ ] Follow-up NXC-3427: Multiple Nx daemons persist for same workspace in 21.6.8 (2025-10-27 09:58)
-
-  - URL: https://linear.app/nxdev/issue/NXC-3427
-  - Assignee: Max Kless | Priority: High | Status: In Progress
-  - Issue: Multiple daemons observed after `nx reset`, causes "Waiting for graph construction" hangs
-  - Customer: Block (via Caleb)
-
 - [ ] Follow-up CLOUD-3924: Compare Tasks doesn't show cache origin unless you click compare
 
   - URL: https://linear.app/nxdev/issue/CLOUD-3924
@@ -104,3 +99,10 @@
   - Notes: Workaround exists (forceExit config), affects only Next.js apps created with nx/next
 
 - [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
+
+- [ ] Follow-up: CNW ASCII Banner A/B Testing (2026-01-14)
+  - When implementing A/B testing for Nx Cloud completion message format (ASCII banner vs bordered/highlighted)
+  - **Important**: Must include message format in short URL meta property for cloud analytics
+  - Example: `variant-0-banner`, `variant-0-bordered`, `variant-1-banner`, `variant-1-bordered`
+  - This allows tracking conversion rates per message format
+  - Related: `.ai/2026-01-14/tasks/nxc-3628-remove-cloud-prompt.md` (see Follow-up Tasks section)

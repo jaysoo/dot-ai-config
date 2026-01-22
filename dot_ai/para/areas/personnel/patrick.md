@@ -1,7 +1,8 @@
 # Patrick
 
 **Team:** Infrastructure
-**Role:** Infrastructure Engineer (pursuing L5)
+**Role:** Infrastructure Engineer
+**Level:** L4B (working towards L5)
 **Location:** Toronto, Ontario, Canada
 
 ## Personal

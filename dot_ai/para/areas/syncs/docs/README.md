@@ -4,24 +4,47 @@ Tracking document for Documentation team sync meetings.
 
 ## Topics for Next Meeting
 
-- Review Caleb's updated POC (after Victor feedback incorporated)
+- Friday alignment meeting before Tuesday final review
+- Review Caleb's advanced section and technology splits
 - Final structure decision (target: January 30th)
-- Netlify serverless function investigation results
-- What do we want to do about reviewing previews?
+- Linking to specific options within pages (Column's concern)
 
 ## Action Items
 
-- [ ] Jack: Talk to Victor about Netlify analytics and unknown serverless functions
-- [ ] Jack: Send Google Analytics insights notes to Caleb via Slack
-- [ ] Jack: Follow up with Nicole on changelog platform integration timeline
-- [ ] Jack: Discuss with Joe about DPE discoverability - explore Salesforce automation with Cory for customer bug fix notifications
-- [ ] Caleb: Continue POC development incorporating Victor's feedback
-- [ ] Caleb: Deliver updated POC version for second review round
-- [ ] Team: Decide on final structure by January 30th
+- [ ] Caleb: Finish advanced section and technology splits (Wednesday afternoon)
+- [ ] Jack: Review branch after Caleb pushes updates
+- [ ] Jack: Deploy custom header by Friday
+- [ ] Ben: Complete docs URL tracking for GA (today/tomorrow)
+- [ ] Team: Schedule Friday alignment meeting
 
 ---
 
 ## Meeting Notes
+
+### 2026-01-21 - Caleb Ukle, Philip Fulcher
+
+**Documentation Platform Updates:**
+- Analytics tracking for AI-focused content in progress
+  - Ben assigned to track docs URLs not hitting GA
+  - Specifically LLMs.txt and .md files for AI consumption
+  - Caleb confirmed improved AI comprehension when using .md URLs
+- Custom header deployment targeted for Friday
+- Astro Starlight styling investigation
+  - Medium priority, due January 30th
+  - Similar to existing custom styling approach
+
+**Sidebar Restructuring Progress:**
+- Caleb posted second Loom video Friday with iteration updates
+- Key changes planned:
+  - Move DevKit into "Extend Nx" section (no standalone top-level)
+  - Technology pages as card links instead of dropdown menus
+  - Click Angular → see generators, executors, migrators as cards
+  - API references linked at bottom of overview pages
+- Rationale: Reduces sidebar clutter, focuses on problem-solving workflow
+- Column raised issue about linking to specific options within pages
+- Friday sync scheduled to review progress before Tuesday meeting
+
+[Granola notes](https://notes.granola.ai/t/b45d3b87-86b5-445b-8b0c-c3d1445804b7-00demib2)
 
 ### 2026-01-08 - Caleb Ukle, Philip Fulcher
 

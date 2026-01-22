@@ -66,6 +66,12 @@ Fixes DOC-125"
 3. Create task plan: `.ai/yyyy-mm-dd/tasks/descriptive-name.md`
 4. Track in `.ai/TODO.md` with timestamps
 
+**IMPORTANT**: Task plan files go in `.ai/yyyy-mm-dd/tasks/`, NOT `~/.claude/plans/`.
+- `~/.claude/plans/` = Claude Code's built-in plan mode (system-managed)
+- `.ai/yyyy-mm-dd/tasks/` = Jack's task documentation convention (what you should use)
+
+When completing tasks, always copy/move the plan to `.ai/` folder for long-term reference.
+
 ### Key Paths
 - Plan tasks: `~/.claude/commands/plan-task.md`
 - Dictation: `~/.claude/commands/dictate.md`
