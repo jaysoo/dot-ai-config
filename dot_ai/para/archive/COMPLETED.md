@@ -9,6 +9,14 @@
   - Customer: Block (via Caleb)
 
 
+- [x] AI Usage Stats Baseline Collection (2026-01-21)
+  - Established baseline for AI Amplification Index metric
+  - Collected data from 11/18 team members across 3 tools (Claude Code, Cursor, Open Code)
+  - Created apples-to-apples I+O/Day metric (excludes cache reads)
+  - Key finding: Cursor vs Claude Code is 3.4x (not 50-100x) when compared fairly
+  - Set 30-day collection cadence for trend tracking
+  - Files: `dot_ai/para/areas/productivity/ai-usage/2025-01-21/`
+
 - [x] DOC-382: Update Releases Page for Nx 22 Details (2026-01-21)
   - Linear: https://linear.app/nxdev/issue/DOC-382
   - Updated supported versions table: v22 Current, v21/v20 LTS

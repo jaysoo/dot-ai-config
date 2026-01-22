@@ -4,55 +4,55 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-382: Update Releases Page for Nx 22 Details** (2026-01-21)
+1. **AI Usage Stats Baseline Collection** (2026-01-21)
+
+   - Summary: Collected AI tool usage for 11 team members, established I+O/Day as apples-to-apples metric (excludes cache reads), set 30-day collection cadence
+   - Files: `dot_ai/para/areas/productivity/ai-usage/2025-01-21/`, `dot_ai/para/areas/productivity/README.md`
+
+2. **DOC-382: Update Releases Page for Nx 22 Details** (2026-01-21)
 
    - Summary: Updated releases.mdoc with Nx 22 as Current (2025-10-22), moved v21 to LTS, removed expired versions (v19, v18*, v17), updated version examples
    - Files: `.ai/2026-01-21/SUMMARY.md`, `astro-docs/src/content/docs/reference/releases.mdoc`
 
-2. **NXC-3628: Remove Cloud Prompt from CNW for Variant 1** (2026-01-14)
+3. **NXC-3628: Remove Cloud Prompt from CNW for Variant 1** (2026-01-14)
 
    - Summary: Implemented A/B testing variant 1 that skips cloud prompt, always shows platform link with github.com/new; fixed expired cache file bug in ab-testing.ts
    - Files: `.ai/2026-01-14/tasks/nxc-3628-remove-cloud-prompt.md`, `packages/create-nx-workspace/`
 
-3. **CLAUDE.md: Auto-load Architecture Files** (2026-01-14)
+4. **CLAUDE.md: Auto-load Architecture Files** (2026-01-14)
 
    - Summary: Added instruction for Claude Code to auto-load `<repo>-architecture.md` files when starting work in nx, ocean, console, nx-labs repos
    - Files: `dot_claude/CLAUDE.md`, `.ai/2026-01-14/SUMMARY.md`
 
-4. **DOC-376: GA Scroll Depth Tracking for Marketing Pages** (2026-01-14)
+5. **DOC-376: GA Scroll Depth Tracking for Marketing Pages** (2026-01-14)
 
    - Summary: Added `useWindowScrollDepth` hook to track scroll depth on marketing pages (/, /react, /java); fires scroll_0/25/50/75/90 events to GA
    - Files: `.ai/2026-01-14/SUMMARY.md`, `nx-dev/feature-analytics/src/lib/use-window-scroll-depth.ts`
 
-5. **AI Trends PARA Area** (2026-01-10)
+6. **AI Trends PARA Area** (2026-01-10)
 
    - Summary: Created new PARA area to track AI/LLM trends; first entry documents "Normalization of Deviance" pattern - the Challenger disaster parallel for YOLO mode AI usage
    - Files: `dot_ai/para/areas/ai-trends/README.md`
 
-6. **PARA TUI: Power Edit Feature** (2026-01-09)
+7. **PARA TUI: Power Edit Feature** (2026-01-09)
 
    - Summary: Added `E` keybinding to open files in external editor ($EDITOR/nvim); uses tea.ExecProcess for proper terminal handoff
    - Files: `tools/para/internal/app/app.go`, `tools/para/internal/app/keys.go`
 
-7. **Performance Reviews - January 2026** (2026-01-08)
+8. **Performance Reviews - January 2026** (2026-01-08)
 
    - Summary: Compiled comprehensive performance review notes for 8 engineers using GitHub PRs, Linear issues, 1:1 notes, and hackday data; suggested MC answers for all 6 review questions per engineer
    - Files: `dot_ai/2026-01-08/tasks/performance-reviews-jan-2026.md`
 
-8. **PARA TUI App Specification** (2026-01-08)
+9. **PARA TUI App Specification** (2026-01-08)
 
    - Summary: Created detailed spec for Go TUI app using Bubbletea/Bubbles/Lipgloss/Glamour/Bleve; features action-focused inbox, three-pane layout, full-text search, Linear/Git integrations
    - Files: `dot_ai/2026-01-08/specs/para-tui-spec.md`
 
-9. **2025 Productivity Report for Victor** (2026-01-08)
+10. **2025 Productivity Report for Victor** (2026-01-08)
 
-   - Summary: Created comprehensive productivity analysis showing AI tooling and August layoffs had net positive impact; TTFR decreased 68%, PR volume up 22.7%, LOC changed up 133% YoY; recommended SPACE framework for 2026
-   - Files: [Google Doc](https://docs.google.com/document/d/1AYjxss9Eba0QWuGsx7TZmqsF9FDeurZABi8kjTRQ2Mc/edit?tab=t.0)
-
-10. **GitHub Issue #34010: Fix replaceOverride for Variable References** (2026-01-07)
-
-    - Summary: Fixed `replaceOverride` in ast-utils.ts to handle ESLint flat configs with variable references using property-level AST updates and `structuredClone`
-    - Files: `.ai/2026-01-07/SUMMARY.md`, `packages/eslint/src/generators/utils/flat-config/ast-utils.ts`
+    - Summary: Created comprehensive productivity analysis showing AI tooling and August layoffs had net positive impact; TTFR decreased 68%, PR volume up 22.7%, LOC changed up 133% YoY; recommended SPACE framework for 2026
+    - Files: [Google Doc](https://docs.google.com/document/d/1AYjxss9Eba0QWuGsx7TZmqsF9FDeurZABi8kjTRQ2Mc/edit?tab=t.0)
 
 ## In Progress
 - [ ] Get back to Dillon re: 401K (2026-01-21 17:58)
