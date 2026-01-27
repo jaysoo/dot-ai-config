@@ -40,7 +40,7 @@ Notes on team members for building relationships and effective 1:1s.
 | Steve Pentland | Welland(?), ON | |
 | Szymon | Poland | |
 | Victor | | CTO |
-| Madeline | | VP of Sales |
+| Madeline | | VP of Sales, monthly 1:1 established |
 | Joe | | |
 
 ## Upcoming Events

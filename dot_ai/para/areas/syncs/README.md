@@ -18,7 +18,7 @@ Notes from recurring team sync meetings.
 | Backend | `backend/` | Backend team sync |
 | Infra | `infra/` | Infrastructure team sync |
 | Docs | `docs/` | Documentation team sync |
-| Framer | `framer/` | Framer team sync |
+| Marketing | `marketing/` | Marketing team sync (includes Framer website) |
 
 ## File Structure
 
