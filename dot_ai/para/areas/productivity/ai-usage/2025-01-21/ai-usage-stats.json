@@ -277,7 +277,20 @@
       }
     },
     "leo": {
-      "tools": ["cursor"],
+      "tools": ["claudeCode", "cursor"],
+      "claudeCode": {
+        "totalTokens": "10.7m",
+        "totalTokensNumeric": 10700000,
+        "sessions": 175,
+        "activeDays": 40,
+        "trackingDays": 73,
+        "activityRate": 0.548,
+        "favoriteModel": "Sonnet 4.5",
+        "longestSession": "29d 14h 40m",
+        "longestStreak": 6,
+        "currentStreak": 0,
+        "mostActiveDay": "Dec 1"
+      },
       "cursor": {
         "dateRange": "2025-10-14 to 2026-01-21",
         "activeDays": 36,
@@ -305,26 +318,144 @@
       }
     }
   },
+  "altan": {
+      "tools": ["claudeCode", "openCode"],
+      "claudeCode": {
+        "totalTokens": "6.9m",
+        "totalTokensNumeric": 6900000,
+        "sessions": 76,
+        "activeDays": 15,
+        "trackingDays": 68,
+        "activityRate": 0.221,
+        "favoriteModel": "Opus 4.5",
+        "longestSession": "17h 34m 44s",
+        "longestStreak": 5,
+        "currentStreak": 0,
+        "mostActiveDay": "Jan 17"
+      },
+      "openCode": {
+        "period": "154 days",
+        "sessions": 1342,
+        "messages": 27264,
+        "totalCost": 310.17,
+        "avgCostPerDay": 2.01,
+        "avgTokensPerSession": 30200,
+        "medianTokensPerSession": 4000,
+        "inputTokens": 28000000,
+        "outputTokens": 10600000,
+        "cacheRead": 1174100000,
+        "cacheWrite": 71300000
+      }
+    },
+    "steve": {
+      "tools": ["claudeCode", "openCode"],
+      "claudeCode": {
+        "totalTokens": "1.6m",
+        "totalTokensNumeric": 1600000,
+        "sessions": 145,
+        "activeDays": 38,
+        "trackingDays": 70,
+        "trackingDaysNote": "estimated from heatmap",
+        "activityRate": 0.54,
+        "favoriteModel": "Opus 4.5",
+        "longestSession": "20h 37m 58s",
+        "longestStreak": 18,
+        "currentStreak": 18,
+        "mostActiveDay": "Jan 14"
+      },
+      "openCode": {
+        "period": "16 days",
+        "sessions": 131,
+        "messages": 1545,
+        "totalCost": 0,
+        "avgTokensPerSession": 13300,
+        "medianTokensPerSession": 3500,
+        "inputTokens": 1200000,
+        "outputTokens": 555200,
+        "cacheRead": 40400000,
+        "cacheWrite": 4200000,
+        "topTools": {
+          "read": { "count": 781, "percent": 34.1 },
+          "grep": { "count": 464, "percent": 20.3 },
+          "glob": { "count": 213, "percent": 9.3 },
+          "bash": { "count": 206, "percent": 9.0 },
+          "edit": { "count": 156, "percent": 6.8 },
+          "task": { "count": 80, "percent": 3.5 },
+          "question": { "count": 70, "percent": 3.1 },
+          "supermemory_memory": { "count": 67, "percent": 2.9 },
+          "webfetch": { "count": 51, "percent": 2.2 },
+          "todowrite": { "count": 49, "percent": 2.1 },
+          "write": { "count": 43, "percent": 1.9 }
+        }
+      }
+    }
+  },
+  "patrick": {
+      "tools": ["claudeCode"],
+      "claudeCode": {
+        "totalTokens": "331.1k",
+        "totalTokensNumeric": 331100,
+        "sessions": 13,
+        "activeDays": 6,
+        "trackingDays": 10,
+        "activityRate": 0.60,
+        "favoriteModel": "Opus 4.5",
+        "longestSession": "1d 1h 32m",
+        "longestStreak": 3,
+        "currentStreak": 2,
+        "mostActiveDay": "Jan 13"
+      }
+    }
+  },
+  "nicole": {
+      "tools": ["claudeCode"],
+      "claudeCode": {
+        "totalTokens": "197.8k",
+        "totalTokensNumeric": 197800,
+        "sessions": 33,
+        "activeDays": 13,
+        "trackingDays": 36,
+        "activityRate": 0.361,
+        "favoriteModel": "Opus 4.5",
+        "longestSession": "4h 58m 23s",
+        "longestStreak": 5,
+        "currentStreak": 0,
+        "mostActiveDay": "Dec 15"
+      }
+    }
+  },
+  "jason": {
+      "tools": ["claudeCode"],
+      "claudeCode": {
+        "totalTokens": "5.1m",
+        "totalTokensNumeric": 5100000,
+        "sessions": 271,
+        "activeDays": 35,
+        "trackingDays": 66,
+        "activityRate": 0.53,
+        "favoriteModel": "Opus 4.5",
+        "longestSession": "17d 7h 12m",
+        "longestStreak": 6,
+        "currentStreak": 0,
+        "mostActiveDay": "Jan 18"
+      }
+    }
+  },
   "missingMembers": [
-    "altan",
-    "jason",
     "jon",
-    "nicole",
-    "patrick",
-    "steve",
     "szymon"
   ],
   "toolBreakdown": {
     "claudeCode": {
-      "userCount": 7,
-      "users": ["chau", "colum", "craigory", "jack", "james", "max", "rares"],
-      "totalTokens": "43.5m",
-      "totalTokensNumeric": 43500000,
-      "avgTokensPerUser": 6214286,
-      "avgActivityRate": 0.589,
+      "userCount": 13,
+      "users": ["altan", "chau", "colum", "craigory", "jack", "james", "jason", "leo", "max", "nicole", "patrick", "rares", "steve"],
+      "totalTokens": "68.3m",
+      "totalTokensNumeric": 68328900,
+      "avgTokensPerUser": 5256069,
+      "avgActivityRate": 0.532,
       "modelPreference": {
-        "opus45": 5,
-        "sonnet45": 2
+        "opus45": 10,
+        "sonnet45": 3
       }
     },
     "cursor": {
@@ -341,24 +472,25 @@
       ]
     },
     "openCode": {
-      "userCount": 1,
-      "users": ["chau"],
-      "avgSessionsPerWeek": 206
+      "userCount": 3,
+      "users": ["altan", "chau", "steve"],
+      "totalSessions": 1679
     }
   },
   "rankings": {
-    "byTokensPerDay": ["ben", "mark", "rares", "leo", "james", "dillon", "craigory", "jack", "colum", "max", "chau"],
-    "byTotalTokens": ["ben", "mark", "rares", "leo", "james", "dillon", "craigory", "jack", "colum", "max", "chau"],
-    "byClaudeCodeTokensPerDay": ["craigory", "jack", "colum", "max", "james", "chau", "rares"],
+    "byInputOutputPerDay": ["ben", "mark", "leo", "altan", "rares", "craigory", "james", "dillon", "jack", "colum", "max", "jason", "chau", "steve", "patrick", "nicole"],
+    "byTotalTokens": ["altan", "ben", "mark", "rares", "leo", "james", "dillon", "craigory", "jack", "colum", "max", "jason", "chau", "steve", "patrick", "nicole"],
+    "byClaudeCodeTokensPerDay": ["craigory", "leo", "altan", "jack", "colum", "max", "jason", "james", "chau", "rares", "patrick", "steve", "nicole"],
     "byCursorTokensPerDay": ["ben", "mark", "rares", "leo", "james", "dillon"],
     "byCursorRequests": ["ben", "james", "mark", "leo", "rares", "dillon"],
-    "byClaudeCodeActivityRate": ["craigory", "chau", "james", "jack", "colum", "max", "rares"]
+    "byClaudeCodeActivityRate": ["craigory", "chau", "patrick", "james", "jack", "leo", "colum", "steve", "jason", "max", "rares", "nicole", "altan"]
   },
   "normalizedMetrics": {
     "_note": "inputOutputPerDay excludes cache reads for apples-to-apples comparison",
     "ben": {"totalTokensPerDay": 10600000, "inputOutputPerDay": 662000, "inputOutput": 50956011, "cacheReadPercent": 90.7, "trackingDays": 77},
     "mark": {"totalTokensPerDay": 5800000, "inputOutputPerDay": 449000, "inputOutput": 50720471, "cacheReadPercent": 90.7, "trackingDays": 113},
-    "leo": {"totalTokensPerDay": 2530000, "inputOutputPerDay": 266000, "inputOutput": 26597975, "cacheReadPercent": 89.1, "trackingDays": 100},
+    "leo": {"totalTokensPerDay": 2640000, "inputOutputPerDay": 373000, "inputOutput": 37297975, "cacheReadPercent": 85.5, "trackingDays": 100, "note": "combined CC + Cursor"},
+    "altan": {"totalTokensPerDay": 8400000, "inputOutputPerDay": 295000, "inputOutput": 45500000, "cacheReadPercent": 96.5, "trackingDays": 154, "note": "combined CC + Open Code"},
     "rares": {"totalTokensPerDay": 3630000, "inputOutputPerDay": 262000, "inputOutput": 19886225, "cacheReadPercent": 89.0, "trackingDays": 76, "note": "combined CC + Cursor"},
     "craigory": {"totalTokensPerDay": 161000, "inputOutputPerDay": 161000, "inputOutput": 11100000, "cacheReadPercent": 0, "trackingDays": 69},
     "james": {"totalTokensPerDay": 1940000, "inputOutputPerDay": 125000, "inputOutput": 13553020, "cacheReadPercent": 94.3, "trackingDays": 108, "note": "combined CC + Cursor"},
@@ -366,16 +498,20 @@
     "jack": {"totalTokensPerDay": 100000, "inputOutputPerDay": 100000, "inputOutput": 7800000, "cacheReadPercent": 0, "trackingDays": 78},
     "colum": {"totalTokensPerDay": 100000, "inputOutputPerDay": 100000, "inputOutput": 7200000, "cacheReadPercent": 0, "trackingDays": 72},
     "max": {"totalTokensPerDay": 95000, "inputOutputPerDay": 95000, "inputOutput": 6900000, "cacheReadPercent": 0, "trackingDays": 73},
-    "chau": {"totalTokensPerDay": 54000, "inputOutputPerDay": 54000, "inputOutput": 3900000, "cacheReadPercent": 0, "trackingDays": 72}
+    "jason": {"totalTokensPerDay": 77000, "inputOutputPerDay": 77000, "inputOutput": 5100000, "cacheReadPercent": 0, "trackingDays": 66},
+    "chau": {"totalTokensPerDay": 54000, "inputOutputPerDay": 54000, "inputOutput": 3900000, "cacheReadPercent": 0, "trackingDays": 72},
+    "steve": {"totalTokensPerDay": 48000, "inputOutputPerDay": 48000, "inputOutput": 3355200, "cacheReadPercent": 0, "trackingDays": 70, "note": "combined CC + Open Code, CC tracking days estimated"},
+    "patrick": {"totalTokensPerDay": 33000, "inputOutputPerDay": 33000, "inputOutput": 331100, "cacheReadPercent": 0, "trackingDays": 10},
+    "nicole": {"totalTokensPerDay": 5500, "inputOutputPerDay": 5500, "inputOutput": 197800, "cacheReadPercent": 0, "trackingDays": 36}
   },
   "dataSources": {
     "claudeCodeScreenshots": {
       "period": "all time",
-      "usersCovered": 7
+      "usersCovered": 13
     },
-    "openCodeScreenshot": {
-      "period": "7 days",
-      "usersCovered": 1
+    "openCodeScreenshots": {
+      "period": "7-154 days",
+      "usersCovered": 3
     },
     "cursorLocalStats": {
       "period": "since May 2025",

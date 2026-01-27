@@ -28,7 +28,7 @@ Notes on team members for building relationships and effective 1:1s.
 | Dillon | | Orca team, conversion optimization |
 | James | EU | Country? |
 | Jason | Toronto, ON | |
-| Jon | London, ON | |
+| Jon | London, ON | Red Panda Team Lead, becoming direct manager for Chau/Mark |
 | Leo | Barcelona, Spain | COI team(?), neighbors with Andrew |
 | Louie | Vancouver or Toronto | |
 | Mark | McKees Rocks, PA | Frontend, self-healing UI onboarding |

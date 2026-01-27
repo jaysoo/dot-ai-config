@@ -3,25 +3,24 @@
 **Date Collected:** 2025-01-21
 
 ## Tools Used
-- [ ] Claude Code
-- [ ] Cursor
-- [ ] Open Code
-- [ ] Other: ___
+- Claude Code
 
-## Stats
+## Claude Code Stats
 
-*No data collected yet. Please provide a screenshot of your AI tool usage statistics.*
-
-### Claude Code
-Run `claude "/stats"` to get your stats, then screenshot.
-
-### Cursor
-Open Settings > AI Usage Statistics, then screenshot.
-
-### Open Code
-Run `opencode stats --days 7` to get your stats, then screenshot.
+| Metric | Value |
+|--------|-------|
+| Total Tokens | 5.1m |
+| Sessions | 271 |
+| Active Days | 35/66 |
+| Activity Rate | 53% |
+| Favorite Model | Opus 4.5 |
+| Longest Session | 17d 7h 12m |
+| Longest Streak | 6 days |
+| Current Streak | 0 days |
+| Most Active Day | Jan 18 |
 
 ## Summary
-- **Activity Rate:** N/A
-- **Primary Model:** N/A
-- **Notable:** N/A
+- **I+O/Day:** 77k (5.1m / 66 days) - **#12 overall** *(no cache overhead)*
+- **Activity Rate:** 53% (35/66 days)
+- **Primary Model:** Opus 4.5
+- **Notable:** Solid Claude Code usage. Impressive 17-day longest session. Most active day was recent (Jan 18).

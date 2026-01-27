@@ -163,7 +163,20 @@ New tasks go at #1, bump others down, remove 11th item.
 **Location:** `.ai/para/areas/syncs/[team]/README.md`
 Teams: DPE, CLI, Orca, Backend, Infra, Docs, Framer
 
-**Structure:** Topics for Next Meeting → Action Items → Meeting Notes (dated)
+**Section Order:**
+1. Topics for Next Meeting
+2. **Upcoming Sync** (accumulated notes between meetings)
+3. Active Accounts (optional)
+4. Action Items
+5. Meeting Notes (dated, reverse chronological)
+
+**Workflow - When updating "today's" sync:**
+1. Move "Upcoming Sync" content into today's dated meeting notes
+2. Clear "Upcoming Sync" section (keep header, remove content)
+3. Add new action items, mark completed ones
+4. Clear discussed items from "Topics for Next Meeting"
+
+**Important:** Never delete "Upcoming Sync" section - just clear it after moving content.
 
 The `/dictate` command auto-detects sync meetings and updates the right file.
 

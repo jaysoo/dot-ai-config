@@ -26,7 +26,21 @@
 ## 1:1 Notes
 
 ### Upcoming Topics
+
+**From Victor (Slack 2026-01-23):**
+
+- **Issue Specificity Problem:** People complain about issues that aren't concrete enough - creates waste with folks having to get clarification or do it and then having to rework it. WDYT about creating a skill for agents that can interview you for a few minutes to get a more specific issue? Finds agents are good at extracting knowledge out of one's head.
+- **Giga Ralph Dogfooding:** The giga ralph (monitor your CI thing) is quite nice and he'd like to see everyone dogfood it. Try to let AI finish the PRs and make the CI green. WDYT?
+  - Max will update ocean and nx repos to enable this by Wednesday
+- Share skill to "interview" workflow to clarify requirements and come up with a spec
+
+**From Jack**
+
+- **What's most important when measuring AI impact:** Raw speed, or time to value / time to feedback?
+- Pushing work and experiments forward
+- **Auth Ownership:** Chau needs to continue owning auth, but start knowledge transfer to Dillon, Ben, and Nicole
 - Reporting structure and 1:1s
+- **Slack App or CLI for Nx Cloud:** Explore @nx Slack bot integration - accept fixes via Slack, get notified when PRs are green after a fix
 - **Promotions:** Push for Altan to L5C and Patrick to L4C (if not L5A)
 - **Patrick L5 Promotion:** Review and discuss Patrick's promotion justification doc
   - Key contributions: Grafana Cloud migration, cache poisoning vulnerability fix, cost analysis system, single-tenant operations
@@ -37,6 +51,7 @@
 - Onboarding metrics looking lower in January
   - Experiments must be listed
 - Discuss Maven paywall decision - need clarity on revenue path (from Jason 1:1)
+  - Paused for now, probably not going to happen
 - Netlify analytics - unknown 11k serverless function requests in December (from Docs sync)
 
 ### 2026-01-08 - 360 Review Feedback (via Matt Hunter, executive coach)

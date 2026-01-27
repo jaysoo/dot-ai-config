@@ -2,6 +2,55 @@
 
 ### January 2026
 
+- [x] CLOUD-4189: CNW Cloud Prompt Variants with Promo Message (2026-01-26)
+  - Linear: https://linear.app/nxdev/issue/CLOUD-4189
+  - Extended CNW flow variants to 3: Variant 0 (current prompt), Variant 1 (old prompt), Variant 2 (no prompt, promo message)
+  - Variant 2 auto-connects and shows "Want faster builds?" completion with promo subtext
+  - Both template and custom flows support all three variants
+  - Commit: `4381fee3d0`
+  - Files: 5 files in `packages/create-nx-workspace/`
+
+- [x] DOC-386: Add Netlify edge function to track .txt and .md asset requests in GA4 (2026-01-23)
+  - Linear: https://linear.app/nxdev/issue/DOC-386
+  - Added `track-asset-requests.ts` edge function to send page_view events to GA4
+  - Tracks all `.txt` and `.md` requests with custom dimensions (is_ai_tool, file_extension, etc.)
+  - Configured in `astro-docs/netlify.toml`
+  - Requires GA4 setup: `GA_MEASUREMENT_ID` and `GA_API_SECRET` env vars in Netlify
+
+- [x] NXC-3754: Clean up CNW GitHub URL Messaging When gh Push Fails (2026-01-23)
+  - Linear: https://linear.app/nxdev/issue/NXC-3754
+  - Consolidated two redundant GitHub URL messages into single message with `?name=...` parameter
+  - Updated error handler, completion messages, and SIGINT handler
+  - Commit: `2d91f52580`
+  - Files: 6 files in `packages/create-nx-workspace/`
+
+- [x] NXC-3718: Implement `NX_PREFER_NODE_STRIP_TYPES` Environment Variable (2026-01-23)
+  - Linear: https://linear.app/nxdev/issue/NXC-3718
+  - Added env var to skip swc-node/ts-node when Node.js 22.6+ native TS type stripping is available
+  - Still registers tsconfig-paths for path mapping support
+  - Documented in `astro-docs/src/content/docs/reference/environment-variables.mdoc`
+  - E2E test: `e2e/js/src/js-strip-types.test.ts` (tests jest, cypress, playwright config loading)
+  - Files: `packages/nx/src/plugins/js/utils/register.ts`
+
+- [x] NXC-3753: Make Nx Cloud CLI commands noop with warning (2026-01-22)
+  - Linear: https://linear.app/nxdev/issue/NXC-3753
+  - Made all Nx Cloud CLI commands check for `nxCloudId` before executing
+  - Commands now show warning and exit gracefully without erroring
+  - Special handling for `record`: still runs underlying command, just warns about recording
+  - Files: `packages/nx/src/command-line/nx-cloud/` (8 files)
+
+- [x] Lighthouse Architecture Documentation (2026-01-22)
+  - Created comprehensive architecture docs for the lighthouse Phoenix app
+  - File: `.ai/para/resources/architectures/lighthouse-architecture.md`
+  - Documented: Expected State, Space Metrics, Emails contexts
+  - Technical: Phoenix 1.8/LiveView, PostgreSQL, GitHub/Linear/Mandrill APIs
+
+- [x] DOC-381: Clean up banner.json and add to gitignore (2026-01-22)
+  - Linear: https://linear.app/nxdev/issue/DOC-381
+  - Removed generated banner.json files from astro-docs and nx-dev
+  - Added both paths to .gitignore
+  - Files are generated during static builds, shouldn't be tracked
+  - Commit: `b35d2a720a`
 
   - URL: https://linear.app/nxdev/issue/NXC-3427
   - Assignee: Max Kless | Priority: High | Status: In Progress

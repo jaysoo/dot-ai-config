@@ -27,6 +27,7 @@
 
 ### Upcoming Topics
 - Reporting structure and 1:1s
+- **Slack App for Nx:** Explore @nx Slack bot integration - accept fixes via Slack, get notified when PRs are green after a fix
 
 ### 2026-01-09
 

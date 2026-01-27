@@ -26,6 +26,7 @@
 ## 1:1 Notes
 
 ### Upcoming Topics
+- **Claude Plugin for Nx Repo:** Discuss creating a plugin to share skills, agents, etc. with the team
 - **PR Review Goals 2026:** TTM/TTFR under 24 hours (ideally under 12 hours), encourage AI-assisted PR reviews for prioritization and summaries
 
 ### 2026-01-07

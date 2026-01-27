@@ -6,6 +6,7 @@ Tracking document for CLI team sync meetings.
 
 - Review Colum's `/identify-closeable-issues` command for CLI team issues
 - CNW: Users re-creating workspaces after successful creation (NPM warnings as errors)
+- CNW: Publish new version with new A/B testing variants on Tuesday (after PR merged)
 
 ## Action Items
 

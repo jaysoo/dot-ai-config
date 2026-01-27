@@ -8,6 +8,8 @@ Tracking document for Documentation team sync meetings.
 - Review Caleb's advanced section and technology splits
 - Final structure decision (target: January 30th)
 - Linking to specific options within pages (Column's concern)
+- **LLM Resource Analytics:** Review GA4 exploration for AI resource usage - need to increase numbers
+  - [GA4 Dashboard](https://analytics.google.com/analytics/web/#/analysis/a88380372p309633468/edit/zY11ZU74TVWBBpgxnIgkEg)
 
 ## Action Items
 

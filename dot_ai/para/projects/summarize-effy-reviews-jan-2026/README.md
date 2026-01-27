@@ -47,7 +47,7 @@ Most valuable contribution:
 
 Improvements:
 
-- More clear vision for the product and features
+- More clear vision for the product and features <- Victor owns full roadmap
 - Providing info like when a feature will be released, or when/which verison it was released on
 - Expanding knowledge to how other parts of the system works (e.g. Agents) would have even wider impact to the company
   - Build on her ability to understand good UX/DX
@@ -177,27 +177,24 @@ Other notes:
 - Go-to person for VCS integrations: Established domain expertise
 - Reliable executor: Delivers good quality work when given clear direction
 - Collaborates well on execution: Works with team on fixes, responds to feedback, helps debug client issues
-- Easy to work with: Open to feedback, follows guidance, personable (talks baseball)
+- Easy to work with: Open to feedback, follows guidance, personable
 - Thinks about product: Not just closing tickets - considers how to make the product better
 
 2) Areas to Improve
 
-- Lacks proactive initiative: Doesn't often identify new problems or suggest alternative solutions; issues in his shipped work found by others (self-healing onboarding, "inspired by")
+- Lacks proactive initiative: Doesn't often identify new problems or suggest alternative solutions; issues in shipped work found by others
 - Needs more testing rigor: Work is good but needs "more testing around the edges"
 - Doesn't share knowledge: Built complex VCS integrations but doesn't document gotchas or learnings; team loses time debugging "black boxes"
 - Doesn't speak up: Has good ideas but doesn't voice disagreement on technical/UI decisions
 - Work is isolated: Rarely reviews others' PRs; limited cross-company communication
 - Requires direction: Sometimes needs guidance on what to do next
-- Untapped potential: James notes he's "easily technically capable of being an L5" but doesn't display those qualities proactively - gap is "frustrating to observe"
 
 3) Action Items
 
-1. Document learnings: Record Looms explaining how integrations work and why (not just demos) - like Chau does
+1. Document learnings: Record Looms explaining how integrations work and why
 2. Take ownership post-merge: Proactively find and resolve issues in shipped work before others discover them
-3. Speak up more: Voice opinions when disagreeing with technical/UI decisions
-4. Increase initiative: Come up with own solutions and push ideas earlier rather than waiting for direction
-5. Review more PRs: Expand involvement beyond own work
-6. Be available for unplanned/maintenance work: Help ensure team success beyond assigned tasks
+3. Increase initiative: Come up with own solutions and push ideas earlier rather than waiting for direction
+4. Speak up more: Voice opinions when disagreeing with technical/UI decisions
 
 4) Most Valuable Contributions
 
@@ -210,7 +207,4 @@ Other notes:
 
 5) Other Notes
 
-- Current level: L4, rated "Meets Expectations"
-- Clear path to L5 if he shows more accountability and proactive ownership
-- Enjoyable to work with personally
-- Key theme: Execution is solid, but needs to level up on ownership, initiative, and knowledge sharing
+- There is a path to higher L4 bands, and a path to L5 that requires more proactive ownership

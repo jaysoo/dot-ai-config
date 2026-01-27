@@ -4,51 +4,124 @@ Tracking document for Developer Productivity Engineering (DPE) sync meetings.
 
 ## Topics for Next Meeting
 
-Here are topics to discuss in the next DPE sync meeting:
+- Input tracing CI deployment status - should be in snapshot/staging mid-week
+- Performance team proposal progress - needs Jason's decision
+- Support tool recommendation review (Miroslav → Jack/Nicole)
+- Graph inconsistency reproduction review (Zack's Loom)
+- Gradle daemon lock solutions (Louis/Max/Jason discussion)
 
-- Block should be able to re-enable file watching in Console again after next release
-  - https://linear.app/nxdev/issue/NXC-3132/reassess-when-we-disable-the-daemon
-- ClickUp churn risk (10-25%) - IPO cost cutting pressure
-- Value communication strategy - showing time/cost savings in product
-  - GitHub comments, dashboard metrics, baseline comparisons
-- Review #ask-* channels - any confusion in #nx?
-  - Check for common questions/misunderstandings that could inform docs or DX improvements
+## Upcoming Sync
+
+*(Add notes/context here between meetings - will be moved into dated notes after sync)*
 
 ## Active Accounts
 
 | Account | DPE | Key Issues | Status |
 |---------|-----|------------|--------|
-| PowerBI | - | Blockers resolved | ✅ |
-| ProductBoard | Miro, JVA | Lockfile optimizations, affected graph output slow | 🔄 |
+| Microsoft | - | Inferred plugins perf blocking enterprise features | ⚠️ |
+| ProductBoard | Miro, JVA | Inferred plugins perf, semi-risky state | ⚠️ |
+| Island | - | 15-20s slowdown, prev 23min graph creation | 🔄 |
+| Amiria | - | Blocked on continuous task architecture (Docker health) | ⚠️ |
+| Crezco | - | POV failed - continuous tasks limitation | ❌ |
+| Paylocity | JVA | Can't access Claude directly (AI migration concerns) | 🔄 |
+| ADP | - | DTE failures - Gradle daemon locks | ⚠️ |
 | ClickUp | - | IPO prep, cost cutting pressure, 10-25% churn risk | ⚠️ |
-| MailChimp | - | Average CIPE 2-4 minutes | 🔄 |
 | Gong | - | Using Turborepo, slow Vercel + Remote Cache | 🆕 |
 
 ## Action Items
 
+### From 2026-01-26 Sync
+- [ ] **Jack**: Get answer from Jason this week on performance issue approach
+- [ ] **Steven**: Create Linear issue for continuous tasks with customer requests
+- [ ] **Zack**: Create reproduction and Loom for graph inconsistency issue
+- [ ] **Zack**: Create Linear issue for Gradle plugin problems with customer context
+- [ ] **Miroslav**: Send support tool recommendations to Jack and Nicole
+
 ### Input Tracing (January Target)
-- The opposite of unused inputs / overly declared inputs
-- Track progress here
+- Raj has working eBPF program for I/O tracing
+- CI work needs completion by mid-week for snapshot/staging testing
+- Will help identify misconfiguration issues in customer projects
+
+### Performance Team Proposal
+- Mixed team from CLI, core, and DPEs focusing on performance
+- Need access to customer repositories for real-world testing
+- CodeSpeed initiative needs revival with baseline benchmarks
+
+### Support & Communication Initiative
+- Jack & Nicole owning communication gap between teams
+- Need end-to-end traceability: Salesforce IDs → Linear tickets → deployment → customer follow-up
+- Miroslav's 3-4 month support tool research ready for recommendation
+
+### Continuous Tasks / Docker Health Checks
+- Multiple customers blocked: Amiria, Crezco (POV failed), Island
+- Need ready-when logic for Docker health checks
+- Customers unwilling to port existing health checks to JavaScript
 
 ### Codspeed Integration
 - Needs to be integrated for Ocean and CLI
+- Need to set a date for this - talk to Jason
 
 ### PR Reminders
 - https://github.com/nrwl/nx/pull/33551
 - https://github.com/nrwl/nx/pull/33562
 - https://github.com/nrwl/nx/pull/33572
 
-### Lockfile Performance
-- Lockfile parsing has slowed down
-- Consider: Conformance rules for bad performance patterns
-
-### Turbo vs Nx Document
-- Creating a comparison document for Gong
-- Context: They're using Turborepo with slow Vercel + Remote Cache
-
 ---
 
 ## Meeting Notes
+
+### 2026-01-26
+
+**Attendees:** Miroslav Jonas, Austin Fahsl, Joshua VanAllen, Steven Nance, Caleb Ukle, Zack DeRose, Jordan Powell
+
+**Support & Communication Gap Solutions:**
+- Jack & Nicole owning initiative to bridge communication gap between teams
+- Need end-to-end traceability: Salesforce IDs → Linear tickets → deployment → customer follow-up
+- Miroslav's 3-4 month support tool research ready - tools will hook into email + Linear for SLA tracking
+- Issue prioritization: Medium priority needs due dates, earlier communication on won't-fix decisions
+
+**Performance Issues with Inferred Plugins:**
+- Critical customer impact blocking enterprise features
+- Microsoft, ProductBoard in semi-risky state
+- Island: 15-20s slowdown, previously 23min graph creation with multiple NX commands
+- Miroslav proposing mixed performance team (CLI + core + DPEs)
+- Need customer repo access for real-world testing - issues only surface at enterprise scale
+- CodeSpeed initiative needs revival with baseline benchmarks and regression prevention
+- **Action:** Jack to get answer from Jason this week
+
+**Customer Migration Challenges:**
+- Paylocity (JVA): Can't access Claude directly, only through Microsoft Copilot
+- Year-over-year perception that migrations getting more difficult
+- Clarification: Base migrations will never go away, AI enhances complex cases (Vitest, Storybook)
+- Consider separating core NX migrations from framework-specific migrations
+
+**Docker Compose & Continuous Tasks:**
+- Multiple customers blocked on Docker health check support
+- Amiria ready but blocked on continuous task architecture
+- Crezco POV failed after multiple weeks due to this limitation
+- Current architecture requires consumers to check task readiness
+- Ready-when logic exists for other executors (parsing output)
+- Customers unwilling to port Docker health checks to JavaScript
+- **Action:** Steven to create Linear issue with customer requests attached
+
+**Input/Output Tracing & Graph Inconsistencies:**
+- Raj has working eBPF program for I/O tracing
+- CI work needs completion by mid-week for snapshot/staging testing
+- Graph visualization doesn't match affected command behavior (Zack)
+- Workspace root inputs causing implicit affected logic not shown in graph
+  - Crexi: TW .html being inputs to everything causing affected to mark everything as affected
+  - FICO hit this problem as well
+  - Things starting workspaceRoot marked as "global" files causing weird behavior
+    https://github.com/nrwl/nx/blob/0137ea2dc918ed669caa08ec39347891afb2c880/packages/nx/src/project-graph/affected/locators/workspace-projects.ts#L95-L98
+- Need better comparison of hash details of tasks to identify what went wrong (Legora, Island, etc.)
+- **Action:** Zack to create reproduction and Loom demonstration
+- ADP: DTE failures due to Gradle daemon locks, multiple Gradle processes on same agent
+  - May need to prevent multiple Gradle processes on same agent
+- **Action:** Zack to create Linear issue for Gradle plugin with customer context
+
+[Granola transcript](https://notes.granola.ai/t/177b50cd-8cf9-48cb-9594-cbdade64feb9-00demib2)
+
+---
 
 ### 2026-01-21 (from Docs sync - Caleb)
 

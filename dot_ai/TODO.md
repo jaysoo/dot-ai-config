@@ -4,57 +4,69 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **AI Usage Stats Baseline Collection** (2026-01-21)
+1. **CLOUD-4189: CNW Cloud Prompt Variants with Promo Message** (2026-01-26)
 
-   - Summary: Collected AI tool usage for 11 team members, established I+O/Day as apples-to-apples metric (excludes cache reads), set 30-day collection cadence
-   - Files: `dot_ai/para/areas/productivity/ai-usage/2025-01-21/`, `dot_ai/para/areas/productivity/README.md`
+   - Summary: Extended CNW flow variants to 3: Variant 0 (current prompt), Variant 1 (old prompt), Variant 2 (no prompt, promo message). Both template and custom flows support all three variants.
+   - Files: `.ai/2026-01-26/SUMMARY.md`, `packages/create-nx-workspace/`
 
-2. **DOC-382: Update Releases Page for Nx 22 Details** (2026-01-21)
+2. **DOC-386: Add Netlify edge function for GA4 asset tracking** (2026-01-23)
 
-   - Summary: Updated releases.mdoc with Nx 22 as Current (2025-10-22), moved v21 to LTS, removed expired versions (v19, v18*, v17), updated version examples
-   - Files: `.ai/2026-01-21/SUMMARY.md`, `astro-docs/src/content/docs/reference/releases.mdoc`
+   - Summary: Added edge function to track `.txt` and `.md` requests in GA4; detects AI tools from user-agent; requires GA4 setup in Netlify
+   - Files: `.ai/2026-01-23/SUMMARY.md`, `astro-docs/netlify/edge-functions/track-asset-requests.ts`
 
-3. **NXC-3628: Remove Cloud Prompt from CNW for Variant 1** (2026-01-14)
+3. **NXC-3754: Clean up CNW GitHub URL Messaging** (2026-01-23)
 
-   - Summary: Implemented A/B testing variant 1 that skips cloud prompt, always shows platform link with github.com/new; fixed expired cache file bug in ab-testing.ts
-   - Files: `.ai/2026-01-14/tasks/nxc-3628-remove-cloud-prompt.md`, `packages/create-nx-workspace/`
+   - Summary: Consolidated two redundant GitHub URL messages into single message with `?name=...` parameter when gh push fails
+   - Files: `.ai/2026-01-23/SUMMARY.md`, `packages/create-nx-workspace/`
 
-4. **CLAUDE.md: Auto-load Architecture Files** (2026-01-14)
+4. **NXC-3753: Update CI Workflow Generator - nx-cloud to nx** (2026-01-23)
 
-   - Summary: Added instruction for Claude Code to auto-load `<repo>-architecture.md` files when starting work in nx, ocean, console, nx-labs repos
-   - Files: `dot_claude/CLAUDE.md`, `.ai/2026-01-14/SUMMARY.md`
+   - Summary: Replaced `nx-cloud record` with `nx record` in ci-workflow generator; addressed PR review by using `isNxCloudUsed()` instead of custom function
+   - Files: `.ai/2026-01-23/SUMMARY.md`, `packages/workspace/src/generators/ci-workflow/`
 
-5. **DOC-376: GA Scroll Depth Tracking for Marketing Pages** (2026-01-14)
+5. **NXC-3718: Implement `NX_PREFER_NODE_STRIP_TYPES` Environment Variable** (2026-01-23)
 
-   - Summary: Added `useWindowScrollDepth` hook to track scroll depth on marketing pages (/, /react, /java); fires scroll_0/25/50/75/90 events to GA
-   - Files: `.ai/2026-01-14/SUMMARY.md`, `nx-dev/feature-analytics/src/lib/use-window-scroll-depth.ts`
+   - Summary: Added env var to skip swc-node/ts-node when Node.js 22.6+ has native TS support; still registers tsconfig-paths; created e2e test for jest/cypress/playwright config loading
+   - Files: `.ai/2026-01-23/SUMMARY.md`, `packages/nx/src/plugins/js/utils/register.ts`, `e2e/js/src/js-strip-types.test.ts`
 
-6. **AI Trends PARA Area** (2026-01-10)
+6. **NXC-3718: Deep Investigation - @nx/jest Plugin Slowness** (2026-01-22)
 
-   - Summary: Created new PARA area to track AI/LLM trends; first entry documents "Normalization of Deviance" pattern - the Challenger disaster parallel for YOLO mode AI usage
-   - Files: `dot_ai/para/areas/ai-trends/README.md`
+   - Summary: Ran controlled experiments isolating imports vs tsconfig variation; confirmed imports don't cause slowdown, only varying tsconfig options (rootDir, baseUrl, paths) bust the transpiler cache
+   - Files: `.ai/2026-01-22/tasks/NXC-3718-investigation-results.md`
 
-7. **PARA TUI: Power Edit Feature** (2026-01-09)
+7. **NXC-3753: Make Nx Cloud CLI commands noop with warning** (2026-01-22)
 
-   - Summary: Added `E` keybinding to open files in external editor ($EDITOR/nvim); uses tea.ExecProcess for proper terminal handoff
-   - Files: `tools/para/internal/app/app.go`, `tools/para/internal/app/keys.go`
+   - Summary: Made all Nx Cloud CLI commands check for `nxCloudId` first; commands now warn and exit gracefully instead of erroring; `record` still runs underlying command
+   - Files: `.ai/2026-01-22/SUMMARY.md`, `packages/nx/src/command-line/nx-cloud/`
 
-8. **Performance Reviews - January 2026** (2026-01-08)
+8. **Lighthouse Architecture Documentation** (2026-01-22)
 
-   - Summary: Compiled comprehensive performance review notes for 8 engineers using GitHub PRs, Linear issues, 1:1 notes, and hackday data; suggested MC answers for all 6 review questions per engineer
-   - Files: `dot_ai/2026-01-08/tasks/performance-reviews-jan-2026.md`
+   - Summary: Created comprehensive architecture docs for the lighthouse Phoenix app (tenant management, SPACE metrics); documented Expected State, Space Metrics, and Emails contexts
+   - Files: `.ai/para/resources/architectures/lighthouse-architecture.md`, `.ai/2026-01-22/SUMMARY.md`
 
-9. **PARA TUI App Specification** (2026-01-08)
+9. **DOC-381: Clean up banner.json and add to gitignore** (2026-01-22)
 
-   - Summary: Created detailed spec for Go TUI app using Bubbletea/Bubbles/Lipgloss/Glamour/Bleve; features action-focused inbox, three-pane layout, full-text search, Linear/Git integrations
-   - Files: `dot_ai/2026-01-08/specs/para-tui-spec.md`
+   - Summary: Removed generated banner.json files from astro-docs and nx-dev, added to .gitignore
+   - Files: `.ai/2026-01-22/SUMMARY.md`
 
-10. **2025 Productivity Report for Victor** (2026-01-08)
+10. **AI Usage Stats Baseline Collection** (2026-01-21)
 
-    - Summary: Created comprehensive productivity analysis showing AI tooling and August layoffs had net positive impact; TTFR decreased 68%, PR volume up 22.7%, LOC changed up 133% YoY; recommended SPACE framework for 2026
-    - Files: [Google Doc](https://docs.google.com/document/d/1AYjxss9Eba0QWuGsx7TZmqsF9FDeurZABi8kjTRQ2Mc/edit?tab=t.0)
+    - Summary: Collected AI tool usage for 11 team members, established I+O/Day as apples-to-apples metric (excludes cache reads), set 30-day collection cadence
+    - Files: `dot_ai/para/areas/productivity/ai-usage/2025-01-21/`, `dot_ai/para/areas/productivity/README.md`
+
+## Pending
+- [ ] Claude plugin for Nx repo (2026-01-26)
+  - Create a plugin to share skills, agents, etc. with the Nx team
+  - Discuss with Jason during 1:1
+- [ ] Potential: Consolidate CNW short URL generation (2026-01-26)
+  - Currently two calls to `createNxCloudOnboardingURL`: one for README (source='readme'), one for completion message (source='create-nx-workspace-success-*')
+  - Files: `packages/workspace/src/generators/new/generate-workspace-files.ts:311`, `packages/create-nx-workspace/src/utils/nx/nx-cloud.ts:100`
+  - May be intentional for separate tracking (discussed with Jason)
 
 ## In Progress
+- [ ] Check on Divvy vendor card that it works (2026-01-23 09:40)
+- [ ] Add nx-console to SPACE metrics (2026-01-22 13:50)
+- [ ] Follow-up CLOUD-2614: Investigate discrepancy in contributor count (2025-10-27 09:58)
 - [ ] Get back to Dillon re: 401K (2026-01-21 17:58)
 - [ ] Follow-up NXC-3427: Multiple Nx daemons persist for same workspace in 21.6.8 (2025-10-27 09:58)
 - [ ] Follow up on slow jest configs for Island (2026-01-14 09:27)
@@ -66,8 +78,6 @@
   - Consider "post-done" status in Linear for released features
 - [ ] Follow-up with Victor on Roadmap (2026-01-09 09:41)
   - Platform roadmap should be finalized and ready for review by end of next week. If not completed by then, raise this as a discussion topic during the 1:1 on Monday to address any blockers or get alignment on timeline.
-- [ ] Follow-up CLOUD-2614: Investigate discrepancy in contributor count (2025-10-27 09:58)
-
 - [ ] NXC-3641: Centralized Template Updater (2025-12-29 11:30)
 
   - Linear: https://linear.app/nxdev/issue/NXC-3641
