@@ -2,6 +2,17 @@
 
 ### January 2026
 
+- [x] DOC-236: Support Markdown, llms.txt, and llms-full.txt (2026-01-27)
+  - Linear: https://linear.app/nxdev/issue/DOC-236
+  - Implemented LLM-friendly resource discovery following llmstxt.org specification
+  - Created `/docs/llms-full.txt` endpoint concatenating all docs (~2.87MB, 503 pages)
+  - Created `add-link-headers.ts` edge function for HTTP Link headers on docs pages
+  - Edge function only processes `Accept: text/html` requests to minimize costs
+  - Added nx-dev rewrite for llms-full.txt, fixed trailing slash normalization
+  - Fixed Netlify edge function immutable response issue in both edge functions
+  - Commit: `cf1b252d19`
+  - Files: `astro-docs/src/pages/llms-full.txt.ts`, `astro-docs/netlify/edge-functions/add-link-headers.ts`, `astro-docs/netlify.toml`, `nx-dev/nx-dev/next.config.js`
+
 - [x] CLOUD-4189: CNW Cloud Prompt Variants with Promo Message (2026-01-26)
   - Linear: https://linear.app/nxdev/issue/CLOUD-4189
   - Extended CNW flow variants to 3: Variant 0 (current prompt), Variant 1 (old prompt), Variant 2 (no prompt, promo message)

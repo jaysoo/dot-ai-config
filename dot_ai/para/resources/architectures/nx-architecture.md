@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2026-01-14
+Last Updated: 2026-01-27
 
 ## Directory Overview
 
@@ -84,6 +84,22 @@ getFlowVariant() returns:
 
 **Telemetry Events** (recordStat types): `start`, `precreate`, `complete`, `error`, `cancel`
 
+### astro-docs/
+The new Nx documentation site (nx.dev/docs) - Astro/Starlight application
+
+**Key Files**:
+- `astro-docs/src/pages/` - Static page endpoints
+  - `llms.txt.ts` - LLM documentation index following llmstxt.org spec
+  - `llms-full.txt.ts` - Concatenated full documentation for LLMs (~2.87MB, 503 pages)
+  - `[...slug].md.ts` - Dynamic .md file endpoint for any docs page
+- `astro-docs/netlify/edge-functions/` - Netlify Edge Functions
+  - `add-link-headers.ts` - Content negotiation (Accept: text/markdown → rewrite to .md) and HTTP Link headers
+  - `track-asset-requests.ts` - GA4 analytics for .txt and .md requests
+- `astro-docs/src/content/docs/` - Documentation content in .mdoc format
+- `astro-docs/sidebar.mts` - Sidebar structure configuration
+
+**Important**: Netlify Edge Function responses from `context.next()` are **immutable**. Must create new Response objects with cloned headers - cannot use `response.headers.set()`.
+
 ### nx-dev/
 The Nx documentation site (docs.nrwl.io) - Next.js application with multiple sub-packages
 
@@ -91,6 +107,7 @@ The Nx documentation site (docs.nrwl.io) - Next.js application with multiple sub
 - `nx-dev/ui-blog/` - Blog listing and display components
 - `nx-dev/ui-common/` - Shared UI components
 - `nx-dev/data-access-documents/` - Document fetching and processing
+- `nx-dev/nx-dev/next.config.js` - Rewrites to proxy to astro-docs (llms.txt, llms-full.txt)
 
 ## Features & Critical Paths
 
@@ -279,6 +296,34 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 
 ## Personal Work History
 
+### 2026-01-27 - DOC-389: Content Negotiation for LLM-Friendly Docs Access
+- **Task**: DOC-389 - Return markdown content when Accept does not contain text/html
+- **Branch**: DOC-389
+- **Commit**: `56aacac256` - feat(nx-dev): content negotiation for LLM-friendly docs access
+- **Status**: Complete, merged
+- **Purpose**: Allow LLM tools to get markdown by requesting standard URL with `Accept: text/markdown`
+- **Key Changes**:
+  - Modified `astro-docs/netlify/edge-functions/add-link-headers.ts` - content negotiation via rewrite
+- **Design Decisions**:
+  - Explicit opt-in (`Accept: text/markdown`) rather than implicit (`!text/html`)
+  - Netlify rewrite (return URL object) instead of redirect - single request, works with all HTTP clients
+- **Task Plan**: `.ai/2026-01-27/SUMMARY.md`
+
+### 2026-01-27 - DOC-236: LLM-Friendly Resource Discovery
+- **Task**: DOC-236 - Support Markdown, llms.txt, and llms-full.txt
+- **Branch**: DOC-236
+- **Commit**: `6fb48d340d` - feat(nx-dev): add llms-full.txt and HTTP Link headers for LLM discovery
+- **Status**: Complete, merged
+- **Purpose**: Implement llmstxt.org spec for better LLM access to Nx documentation
+- **Key Changes**:
+  - Created `astro-docs/src/pages/llms-full.txt.ts` - concatenates all docs (~2.87MB, 503 pages)
+  - Created `astro-docs/netlify/edge-functions/add-link-headers.ts` - HTTP Link headers for HTML pages
+  - Updated `nx-dev/nx-dev/next.config.js` - rewrites for llms-full.txt with trailing slash fix
+  - Fixed `track-asset-requests.ts` - immutable response issue (Graphite Agent feedback)
+- **Bug Fixed**: Netlify Edge Function responses are immutable - `response.headers.set()` doesn't work; must create new Response
+- **Bug Fixed**: `NEXT_PUBLIC_ASTRO_URL` trailing slash caused double slashes in rewrite destinations
+- **Task Plan**: `.ai/2026-01-27/SUMMARY.md`
+
 ### 2026-01-14 - NXC-3628: Remove Cloud Prompt for Variant 1
 - **Task**: NXC-3628 - Remove cloud prompt from CNW for A/B testing variant 1
 - **Branch**: NXC-3628
@@ -444,6 +489,34 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - **Format**: `variant-0` or `variant-1`
 - **Location**: `createNxCloudOnboardingUrl()` in nx-cloud.ts passes `getFlowVariant()` to meta
 - **Cloud side**: Cloud analytics can distinguish conversion rates by variant
+
+### Netlify Edge Function Response Immutability (2026-01-27)
+- **Issue**: Edge function responses from `context.next()` are immutable
+- **Wrong Approach**: `response.headers.set('Header', 'value')` - silently fails
+- **Correct Approach**: Create new Response with cloned headers
+- **Pattern**:
+  ```typescript
+  const response = await context.next();
+  const newHeaders = new Headers(response.headers);
+  newHeaders.set('Custom-Header', 'value');
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: newHeaders,
+  });
+  ```
+- **Detection**: Graphite Agent / PR review tooling can catch this
+- **Files affected**: Any edge function under `astro-docs/netlify/edge-functions/`
+
+### Netlify Edge Function Rewrites (2026-01-27)
+- **Purpose**: Serve content from different URL without redirect (single request)
+- **Pattern**: Return `URL` object instead of `Response`
+  ```typescript
+  return new URL('/path/to/serve', request.url);
+  ```
+- **Key**: Use `request.url` as base (not `url.origin`) per Netlify docs
+- **Use Case**: Content negotiation - serve `.md` for `Accept: text/markdown` requests
+- **vs Redirect**: Rewrite = single request, works with all HTTP clients; Redirect = extra round trip
 
 ### Astro Migration Pattern
 - Using `NEXT_PUBLIC_ASTRO_URL` as feature flag for progressive migration

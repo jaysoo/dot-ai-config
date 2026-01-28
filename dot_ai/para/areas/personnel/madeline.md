@@ -72,6 +72,26 @@
   - Predictability: 2-3 (internal requests delayed)
   - Value delivery: 4
 
+#### Engineering Partnership Survey (Detailed Responses)
+
+| Question | Score | Notes |
+|----------|-------|-------|
+| **Value Delivery** - "Engineering delivers features that help me do my job" | 5 | |
+| **Predictability** - "Engineering delivers on time and as expected" | 1-2 | "Lots of non-dev work isn't followed up on" |
+| **Responsiveness** - "When I report a bug or issue, it gets resolved in a reasonable time" | 5 | |
+| **Transparency** - "I understand what engineering is working on and why" | 5 | "But I know what's going on because of Victor" |
+| **Collaboration** - "Engineering is easy to collaborate with" | 5 | |
+
+**Open-Ended Feedback:**
+
+- **What could engineering do better?**
+  - The way we think about pricing strategy
+  - Need more holistic understanding: Is feature for one person (Hobby), small team (Teams), or enterprise (Enterprise)?
+
+- **What has engineering done well recently?**
+  - Self-healing CI
+  - Pro to Teams transition
+
 #### Next Steps
 
 - [ ] Jack to provide Jason feedback on communication style

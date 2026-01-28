@@ -30,6 +30,15 @@ When starting work in a repo, **immediately load** the architecture file before 
 
 **Always search** for `<repo>-architecture.md` even if not in table - new ones may be added.
 
+### Session Continuation Verification (After Context Compaction)
+When continuing a session from a compaction summary:
+1. **Always verify git status first** - summaries may be stale about commit state
+2. **Don't trust commit hashes from summary** - commits may have been amended
+3. **Check actual file state** - files mentioned as "uncommitted" may already be committed
+4. **Run `git status` and `git log --oneline -3`** before taking any commit-related actions
+
+**Why**: Compaction summaries capture state at summary time, but the session may have continued and committed changes before the actual compaction point.
+
 ### Git Workflow
 - **🔐 NEVER commit tokens, secrets, or API keys**
 - **Never commit to main/master** - use feature branches
