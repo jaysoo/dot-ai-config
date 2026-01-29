@@ -4,24 +4,71 @@ Tracking document for Documentation team sync meetings.
 
 ## Topics for Next Meeting
 
-- Friday alignment meeting before Tuesday final review
-- Review Caleb's advanced section and technology splits
-- Final structure decision (target: January 30th)
-- Linking to specific options within pages (Column's concern)
-- **LLM Resource Analytics:** Review GA4 exploration for AI resource usage - need to increase numbers
-  - [GA4 Dashboard](https://analytics.google.com/analytics/web/#/analysis/a88380372p309633468/edit/zY11ZU74TVWBBpgxnIgkEg)
+- Review Caleb's initial sidebar structure
+- Technology hub page template design
+- Canary deployment planning
+- API docs placement in References section
+
+## Upcoming Sync
+
+(Notes accumulated between meetings go here)
 
 ## Action Items
 
-- [ ] Caleb: Finish advanced section and technology splits (Wednesday afternoon)
-- [ ] Jack: Review branch after Caleb pushes updates
-- [ ] Jack: Deploy custom header by Friday
-- [ ] Ben: Complete docs URL tracking for GA (today/tomorrow)
-- [ ] Team: Schedule Friday alignment meeting
+- [ ] Caleb: Create basic sidebar structure by end of week (content lift first)
+- [ ] Caleb: Create follow-up tasks for hub page templates and content editing
+- [ ] Jack: Collaborate on structure once initial version complete
+- [x] Team: Align on IA principles (progressive disclosure, type-based navigation)
 
 ---
 
 ## Meeting Notes
+
+### 2026-01-28 - Caleb Ukle, Philip Fulcher
+
+**Documentation Restructure Principles:**
+- Progressive disclosure framework - prioritize immediate needs vs future information
+- Type-based navigation following Vercel/Shopify model
+  - Guides vs reference materials clearly separated
+  - Universal features (CI, orchestration) vs technology-specific content
+- Five core principles finalized:
+  1. Progressive disclosure for getting started content
+  2. Core concepts section (intentionally dry theory - Project Graph, tasks)
+  3. Universal vs specific categorization
+  4. Technology hub approach with overview pages
+  5. Knowledge base for specific recipes/solutions
+
+**Proposed Site Structure:**
+- Getting Started section remains unchanged
+- How Nx Works/Core Concepts for foundational theory
+- Features/Capabilities section for universal tools
+  - CI orchestration, release management, affected commands
+  - Technology-agnostic functionality everyone uses
+- Technology Hub with comprehensive overview pages
+  - Single hub page per technology (React, Angular, etc.)
+  - Maximum 5 sub-pages for critical topics
+  - Community plugins integrated into main technology index
+- Knowledge Base replaces current scattered recipe/troubleshooting content
+  - Low-friction dumping ground for specific solutions
+  - Proper tagging system for discoverability
+
+**Analytics Insights:**
+- Code generation remains top traffic driver despite AI assumptions
+- Current feature pages buried - CI/remote cache getting minimal views
+- "Maintaining TypeScript monorepos" (page 10) shows high engagement
+- Most feature traffic has low entrance rates - users arrive via other docs pages
+- Pages under 5,000 views over 90 days likely not worth prominent placement
+
+**Next Steps:**
+- Caleb to create basic sidebar structure by end of week
+  - Content lift first, cleanup iterations follow
+  - Create separate tasks for follow-up work (hub page templates, content editing)
+- Technology pages need standardized structure across all frameworks
+- Move API docs back into References section
+- Plan Canary deployment once structure makes logical sense
+- Jack available for collaboration once initial structure complete
+
+[Granola notes](https://notes.granola.ai/t/6413f843-1471-411c-a267-5e5de56a8f68-00demib2)
 
 ### 2026-01-21 - Caleb Ukle, Philip Fulcher
 

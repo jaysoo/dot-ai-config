@@ -4,55 +4,55 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-389: Content Negotiation for LLM-Friendly Docs Access** (2026-01-27)
+1. **L4 to L5 Strategic Thinking Guidance Spec** (2026-01-29)
+
+   - Summary: Brainstormed and created self-assessment guide for L4 engineers to demonstrate L5-level strategic thinking; focuses on outcome ownership, proposing projects, and monitoring metrics
+   - Files: `.ai/2026-01-29/specs/l4-to-l5-strategic-thinking-guidance.md`
+
+2. **CLOUD-4211: Add 10% Scroll Depth Tracking to Docs and Non-Docs Pages** (2026-01-28)
+
+   - Summary: Added scroll depth tracking at 10% threshold to both nx-dev (Next.js) and astro-docs; fixed bug where early scroll events were lost during 500ms initialization delay
+   - Files: `.ai/2026-01-28/SUMMARY.md`, `nx-dev/feature-analytics/src/lib/use-window-scroll-depth.ts`, `astro-docs/public/global-scripts.js`
+
+3. **NXC-3783: Add Nx Cloud Connect URL to Template README** (2026-01-28)
+
+   - Summary: Implemented dynamic insertion of Nx Cloud connect URL into template READMEs using marker-based replacement (`<!-- BEGIN: nx-cloud -->` / `<!-- END: nx-cloud -->`); pure function design with 6 test cases using inline snapshots
+   - Files: `.ai/2026-01-28/SUMMARY.md`, `packages/create-nx-workspace/src/utils/template/update-readme.ts`
+
+4. **Nx.dev GA4 Analytics Analysis - Feature Pages** (2026-01-28)
+
+   - Summary: Analyzed GA4 page view data for `/docs/features/*` pages; identified high bounce rate pages (flaky-tasks 47%, self-healing-ci 44%) and hidden gems (distribute-task-execution with 8+ min sessions)
+   - Files: `dot_ai/2026-01-28/SUMMARY.md`
+
+5. **DOC-389: Content Negotiation for LLM-Friendly Docs Access** (2026-01-27)
 
    - Summary: Added `Accept: text/markdown` content negotiation to edge function - serves markdown directly via rewrite (no redirect) for LLM tools.
    - Files: `.ai/2026-01-27/SUMMARY.md`, `astro-docs/netlify/edge-functions/add-link-headers.ts`
 
-2. **DOC-236: Support Markdown, llms.txt, and llms-full.txt** (2026-01-27)
+6. **DOC-236: Support Markdown, llms.txt, and llms-full.txt** (2026-01-27)
 
    - Summary: Implemented LLM-friendly resource discovery - created llms-full.txt endpoint, HTTP Link headers edge function, and fixed Netlify edge function immutable response issue.
    - Files: `.ai/2026-01-27/SUMMARY.md`, `astro-docs/src/pages/llms-full.txt.ts`, `astro-docs/netlify/edge-functions/add-link-headers.ts`
 
-3. **CLOUD-4189: CNW Cloud Prompt Variants with Promo Message** (2026-01-26)
+7. **CLOUD-4189: CNW Cloud Prompt Variants with Promo Message** (2026-01-26)
 
    - Summary: Extended CNW flow variants to 3: Variant 0 (current prompt), Variant 1 (old prompt), Variant 2 (no prompt, promo message). Both template and custom flows support all three variants.
    - Files: `.ai/2026-01-26/SUMMARY.md`, `packages/create-nx-workspace/`
 
-4. **DOC-386: Add Netlify edge function for GA4 asset tracking** (2026-01-23)
+8. **DOC-386: Add Netlify edge function for GA4 asset tracking** (2026-01-23)
 
    - Summary: Added edge function to track `.txt` and `.md` requests in GA4; detects AI tools from user-agent; requires GA4 setup in Netlify
    - Files: `.ai/2026-01-23/SUMMARY.md`, `astro-docs/netlify/edge-functions/track-asset-requests.ts`
 
-5. **NXC-3754: Clean up CNW GitHub URL Messaging** (2026-01-23)
+9. **NXC-3754: Clean up CNW GitHub URL Messaging** (2026-01-23)
 
    - Summary: Consolidated two redundant GitHub URL messages into single message with `?name=...` parameter when gh push fails
    - Files: `.ai/2026-01-23/SUMMARY.md`, `packages/create-nx-workspace/`
 
-6. **NXC-3753: Update CI Workflow Generator - nx-cloud to nx** (2026-01-23)
+10. **NXC-3753: Update CI Workflow Generator - nx-cloud to nx** (2026-01-23)
 
-   - Summary: Replaced `nx-cloud record` with `nx record` in ci-workflow generator; addressed PR review by using `isNxCloudUsed()` instead of custom function
-   - Files: `.ai/2026-01-23/SUMMARY.md`, `packages/workspace/src/generators/ci-workflow/`
-
-7. **NXC-3718: Implement `NX_PREFER_NODE_STRIP_TYPES` Environment Variable** (2026-01-23)
-
-   - Summary: Added env var to skip swc-node/ts-node when Node.js 22.6+ has native TS support; still registers tsconfig-paths; created e2e test for jest/cypress/playwright config loading
-   - Files: `.ai/2026-01-23/SUMMARY.md`, `packages/nx/src/plugins/js/utils/register.ts`, `e2e/js/src/js-strip-types.test.ts`
-
-8. **NXC-3718: Deep Investigation - @nx/jest Plugin Slowness** (2026-01-22)
-
-   - Summary: Ran controlled experiments isolating imports vs tsconfig variation; confirmed imports don't cause slowdown, only varying tsconfig options (rootDir, baseUrl, paths) bust the transpiler cache
-   - Files: `.ai/2026-01-22/tasks/NXC-3718-investigation-results.md`
-
-9. **NXC-3753: Make Nx Cloud CLI commands noop with warning** (2026-01-22)
-
-   - Summary: Made all Nx Cloud CLI commands check for `nxCloudId` first; commands now warn and exit gracefully instead of erroring; `record` still runs underlying command
-   - Files: `.ai/2026-01-22/SUMMARY.md`, `packages/nx/src/command-line/nx-cloud/`
-
-10. **Lighthouse Architecture Documentation** (2026-01-22)
-
-    - Summary: Created comprehensive architecture docs for the lighthouse Phoenix app (tenant management, SPACE metrics); documented Expected State, Space Metrics, and Emails contexts
-    - Files: `.ai/para/resources/architectures/lighthouse-architecture.md`, `.ai/2026-01-22/SUMMARY.md`
+    - Summary: Replaced `nx-cloud record` with `nx record` in ci-workflow generator; addressed PR review by using `isNxCloudUsed()` instead of custom function
+    - Files: `.ai/2026-01-23/SUMMARY.md`, `packages/workspace/src/generators/ci-workflow/`
 
 ## Pending
 - [ ] Claude plugin for Nx repo (2026-01-26)

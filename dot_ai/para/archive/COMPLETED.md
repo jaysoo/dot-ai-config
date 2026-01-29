@@ -2,6 +2,24 @@
 
 ### January 2026
 
+- [x] CLOUD-4211: Add 10% Scroll Depth Tracking to Docs and Non-Docs Pages (2026-01-28)
+  - Linear: https://linear.app/nxdev/issue/CLOUD-4211
+  - Added 10% threshold to scroll tracking on both nx-dev and astro-docs
+  - Fixed bug where early scroll events were lost during 500ms initialization delay
+  - astro-docs now has scroll tracking (previously had none)
+  - Final thresholds: `[10, 25, 50, 75, 90]`
+  - Commit: `8bc5c81eff`
+  - Files: `nx-dev/feature-analytics/src/lib/use-window-scroll-depth.ts`, `astro-docs/public/global-scripts.js`
+
+- [x] NXC-3783: Add Nx Cloud Connect URL to Template README (2026-01-28)
+  - Linear: https://linear.app/nxdev/issue/NXC-3783
+  - Implemented dynamic insertion of Nx Cloud connect URL into template READMEs
+  - Pure function `updateReadmeContent()` replaces content between `<!-- BEGIN: nx-cloud -->` and `<!-- END: nx-cloud -->` markers
+  - Section format: "## Finish your Nx platform setup" with link to connect URL
+  - 6 test cases using inline snapshots (no mocking)
+  - Commit: `5f46f71f62`
+  - Files: `packages/create-nx-workspace/src/utils/template/update-readme.ts`, `packages/create-nx-workspace/src/utils/template/update-readme.spec.ts`
+
 - [x] DOC-236: Support Markdown, llms.txt, and llms-full.txt (2026-01-27)
   - Linear: https://linear.app/nxdev/issue/DOC-236
   - Implemented LLM-friendly resource discovery following llmstxt.org specification

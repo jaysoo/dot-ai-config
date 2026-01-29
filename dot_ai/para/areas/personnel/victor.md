@@ -36,6 +36,7 @@
 
 **From Jack**
 
+- **Review Product Roadmap:** https://docs.google.com/document/d/1yjWGaQyxa5JEslNFNXWjlyQZl0HBEAbkpbDUZ8B46TM/edit?tab=t.0#heading=h.1qbb86lfqtq4
 - **What's most important when measuring AI impact:** Raw speed, or time to value / time to feedback?
 - Pushing work and experiments forward
 - **Auth Ownership:** Chau needs to continue owning auth, but start knowledge transfer to Dillon, Ben, and Nicole
