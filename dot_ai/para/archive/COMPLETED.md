@@ -1,6 +1,88 @@
 ## Completed
 
+### February 2026
+
+- [x] Agentic CNW Implementation - AI Agent Detection & NDJSON Output (2026-02-04)
+  - Linear: https://linear.app/nrwl/issue/NXC-3815, https://linear.app/nrwl/issue/NXC-3628
+  - Branch: `agentic-onboarding`
+  - Commit: `f79065d44a` - feat(core): add AI agent detection and NDJSON output for CNW
+  - Implemented AI detection via env vars (CLAUDECODE, OPENCODE)
+  - NDJSON streaming output with progress stages
+  - Non-interactive mode with explicit `--template` requirement
+  - GitHub setup instructions (gh CLI with timeout, fallback to /new URL)
+  - Structured success/error results with hints
+  - Spec: `.ai/2026-02-03/specs/agentic-cnw-onboarding.md`
+  - Summary: `.ai/2026-02-04/SUMMARY.md`
+
+- [x] Google Apps Script PTO Calendar: Daily "Today + Tomorrow" Feature (2026-02-04)
+  - Project: `/Users/jack/projects/gcal/script.js`
+  - Extended daily notifications to show both today AND tomorrow's events
+  - Added event filtering by day (`filterEventsForDay`, `eventOverlapsDay`)
+  - New formatting for Today/Tomorrow sections (`formatDaySection`, `formatDailySlackPayload`)
+  - Gives advance notice of tomorrow's PTOs for better planning
+  - Summary: `.ai/2026-02-04/SUMMARY.md`
+
+- [x] DOC-395: Server-Side Page View Tracking (2026-02-02)
+  - Linear: https://linear.app/nxdev/issue/DOC-395
+  - PR #1: https://github.com/nrwl/nx/pull/34283 (merged - initial implementation)
+  - PR #2: https://github.com/nrwl/nx/pull/34286 (follow-up fixes)
+  - Created `track-page-requests.ts` edge function for HTML pages on `/docs/*`
+  - Fixed double-counting in `track-asset-requests.ts` (simplified path patterns)
+  - Added comprehensive `excludedPath` for fonts, images, pagefind, OG images
+  - Uses `server_page_view` event name in GA4
+  - Plan: `.ai/2026-02-02/tasks/DOC-395-server-page-tracking.md`
+
+- [x] NXC-3806: Nx Worktree Cache Sharing (2026-02-02)
+  - Linear: https://linear.app/nxdev/issue/NXC-3806
+  - Commit: `36466fb1b0` - feat(core): share cache between git worktrees
+  - Implemented automatic cache sharing between git worktrees
+  - Worktrees use main repo's `.nx/cache` instead of separate caches
+  - Key insight: workspace-data must remain per-workspace (daemon state)
+  - Cache DB moved to cache directory with `linkTaskDetails=false`
+  - Files: `cache-directory.ts`, `cache.ts`, `cache-directory.spec.ts`
+  - Plan: `.ai/2026-02-02/tasks/worktree-cache-sharing.md`
+
 ### January 2026
+
+- [x] Google Apps Script PTO Calendar Fix (2026-01-31)
+  - Project: `/Users/jack/projects/gcal/script.js`
+  - Fixed timezone issues causing "end before start" display bug
+  - Removed brittle manual +5h/+8h offsets, implemented consistent UTC formatting
+  - Fixed multi-day all-day events showing only first day (now shows full range)
+  - Grouped events by person, merged consecutive days into ranges
+  - Separated holidays into dedicated section
+  - New output format with emojis and improved readability
+  - Summary: `.ai/2026-01-31/SUMMARY.md`
+
+- [x] DOC-380: Docs Layout Whitespace on Large Screens (2026-01-30)
+  - Linear: https://linear.app/nxdev/issue/DOC-380
+  - Fixed excessive whitespace on large screens (>1600px) in Astro docs
+  - Final approach: Push TOC to right edge using `justify-content: space-between`
+  - Initially tried max-width centered layout but reverted per user preference
+  - Files: `astro-docs/src/styles/global.css`
+  - Branch: DOC-380
+
+- [x] DOC-392: Reduce nx-dev Next.js Build Memory Usage Below 8 GB (2026-01-30)
+  - Linear: https://linear.app/nxdev/issue/DOC-392
+  - Fixed OOM errors on Netlify (11+ GB → under 8 GB)
+  - Added `experimental.cpus: 1` to limit static generation workers
+  - Upgraded Next.js from 14.2.28 to 14.2.35
+  - Added `NODE_OPTIONS: "--max-old-space-size=4096"` to deploy-build target
+  - Created `netlify.toml` with `@netlify/plugin-nextjs` for proper SSR deployment
+  - Added platform-specific `netlify` configurations to build targets
+  - Updated `next-sitemap.config.js` to detect `NETLIFY` env for correct paths
+  - Branch: DOC-392
+  - Files: `next.config.js`, `project.json`, `netlify.toml`, `next-sitemap.config.js`, `package.json`
+
+- [x] DOC-385: Fix Failing Internal Link Checks After /launch-nx Removal (2026-01-29)
+  - Linear: https://linear.app/nxdev/issue/DOC-385
+  - PR: https://github.com/nrwl/nx/pull/34255
+  - Fixed broken `/launch-nx` link in release-notes.mdoc → `/blog/launch-nx-week-recap`
+  - Root cause: `/launch-nx` was in ignore list since Sept 2025 when I created the file
+  - Found cache input bug: `sitemap.xml` (index) cached instead of `sitemap-0.xml` (URLs)
+  - Fixed cache inputs to use `sitemap*.xml` glob patterns
+  - Commit: `f46c029cac`
+  - Files: `astro-docs/validate-links.ts`, `nx-dev/nx-dev/project.json`, `release-notes.mdoc`
 
 - [x] CLOUD-4211: Add 10% Scroll Depth Tracking to Docs and Non-Docs Pages (2026-01-28)
   - Linear: https://linear.app/nxdev/issue/CLOUD-4211

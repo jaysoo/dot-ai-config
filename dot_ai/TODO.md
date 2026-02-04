@@ -4,57 +4,60 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **L4 to L5 Strategic Thinking Guidance Spec** (2026-01-29)
+1. **Agentic CNW Implementation - AI Agent Detection & NDJSON Output** (2026-02-04)
 
-   - Summary: Brainstormed and created self-assessment guide for L4 engineers to demonstrate L5-level strategic thinking; focuses on outcome ownership, proposing projects, and monitoring metrics
-   - Files: `.ai/2026-01-29/specs/l4-to-l5-strategic-thinking-guidance.md`
+   - Summary: Implemented AI agent detection and NDJSON output for create-nx-workspace; AI detected via env vars, non-interactive mode, structured JSON results with GitHub setup instructions
+   - Files: `.ai/2026-02-04/SUMMARY.md`, `packages/create-nx-workspace/src/utils/ai/ai-output.ts`
 
-2. **CLOUD-4211: Add 10% Scroll Depth Tracking to Docs and Non-Docs Pages** (2026-01-28)
+2. **Google Apps Script PTO Calendar: Daily "Today + Tomorrow" Feature** (2026-02-04)
 
-   - Summary: Added scroll depth tracking at 10% threshold to both nx-dev (Next.js) and astro-docs; fixed bug where early scroll events were lost during 500ms initialization delay
-   - Files: `.ai/2026-01-28/SUMMARY.md`, `nx-dev/feature-analytics/src/lib/use-window-scroll-depth.ts`, `astro-docs/public/global-scripts.js`
+   - Summary: Extended daily notifications to show both today AND tomorrow's events for better planning; added day filtering and new Today/Tomorrow section formatting
+   - Files: `.ai/2026-02-04/SUMMARY.md`, `/Users/jack/projects/gcal/script.js`
 
-3. **NXC-3783: Add Nx Cloud Connect URL to Template README** (2026-01-28)
+3. **DOC-395: Server-Side Page View Tracking** (2026-02-02)
 
-   - Summary: Implemented dynamic insertion of Nx Cloud connect URL into template READMEs using marker-based replacement (`<!-- BEGIN: nx-cloud -->` / `<!-- END: nx-cloud -->`); pure function design with 6 test cases using inline snapshots
-   - Files: `.ai/2026-01-28/SUMMARY.md`, `packages/create-nx-workspace/src/utils/template/update-readme.ts`
+   - Summary: Created track-page-requests edge function for HTML pages; fixed double-counting in track-asset-requests; added comprehensive excludedPath for fonts/images/pagefind
+   - Files: `.ai/2026-02-02/tasks/DOC-395-server-page-tracking.md`, `astro-docs/netlify/edge-functions/track-page-requests.ts`
 
-4. **Nx.dev GA4 Analytics Analysis - Feature Pages** (2026-01-28)
+4. **NXC-3806: Nx Worktree Cache Sharing** (2026-02-02)
 
-   - Summary: Analyzed GA4 page view data for `/docs/features/*` pages; identified high bounce rate pages (flaky-tasks 47%, self-healing-ci 44%) and hidden gems (distribute-task-execution with 8+ min sessions)
-   - Files: `dot_ai/2026-01-28/SUMMARY.md`
+   - Summary: Implemented automatic cache sharing between git worktrees; worktrees use main repo's `.nx/cache`; discovered cache DB must be co-located with files and workspace-data must stay per-workspace
+   - Files: `.ai/2026-02-02/tasks/worktree-cache-sharing.md`, `packages/nx/src/utils/cache-directory.ts`
 
-5. **DOC-389: Content Negotiation for LLM-Friendly Docs Access** (2026-01-27)
+5. **Google Apps Script PTO Calendar Fix** (2026-01-31)
 
-   - Summary: Added `Accept: text/markdown` content negotiation to edge function - serves markdown directly via rewrite (no redirect) for LLM tools.
-   - Files: `.ai/2026-01-27/SUMMARY.md`, `astro-docs/netlify/edge-functions/add-link-headers.ts`
+   - Summary: Fixed timezone issues (end before start bug), multi-day event handling, grouped events by person, separated holidays, improved output format
+   - Files: `.ai/2026-01-31/SUMMARY.md`, `/Users/jack/projects/gcal/script.js`
 
-6. **DOC-236: Support Markdown, llms.txt, and llms-full.txt** (2026-01-27)
+6. **Lighthouse SPACE Metrics UI Improvement** (2026-01-30)
 
-   - Summary: Implemented LLM-friendly resource discovery - created llms-full.txt endpoint, HTTP Link headers edge function, and fixed Netlify edge function immutable response issue.
-   - Files: `.ai/2026-01-27/SUMMARY.md`, `astro-docs/src/pages/llms-full.txt.ts`, `astro-docs/netlify/edge-functions/add-link-headers.ts`
+   - Summary: Improved metric target legends with colored square emojis and cleaner legend format across all 4 metrics sections
+   - Files: `.ai/2026-01-30/SUMMARY.md`, PR: https://github.com/nrwl/lighthouse/pull/29
 
-7. **CLOUD-4189: CNW Cloud Prompt Variants with Promo Message** (2026-01-26)
+7. **Leo 1:1 Notes** (2026-01-30)
 
-   - Summary: Extended CNW flow variants to 3: Variant 0 (current prompt), Variant 1 (old prompt), Variant 2 (no prompt, promo message). Both template and custom flows support all three variants.
-   - Files: `.ai/2026-01-26/SUMMARY.md`, `packages/create-nx-workspace/`
+   - Summary: Updated Leo's personnel file with comprehensive notes from 2026-01-26 1:1 covering Swedbank onsite, L5 career development, and AI automation initiatives
+   - Files: `.ai/para/areas/personnel/leo.md`
 
-8. **DOC-386: Add Netlify edge function for GA4 asset tracking** (2026-01-23)
+8. **DOC-380: Docs Layout Whitespace on Large Screens** (2026-01-30)
 
-   - Summary: Added edge function to track `.txt` and `.md` requests in GA4; detects AI tools from user-agent; requires GA4 setup in Netlify
-   - Files: `.ai/2026-01-23/SUMMARY.md`, `astro-docs/netlify/edge-functions/track-asset-requests.ts`
+   - Summary: Fixed excessive whitespace on large screens in Astro docs by pushing TOC to right edge; initially tried max-width centered layout but reverted to simpler flex approach
+   - Files: `.ai/2026-01-30/SUMMARY.md`, `astro-docs/src/styles/global.css`
 
-9. **NXC-3754: Clean up CNW GitHub URL Messaging** (2026-01-23)
+9. **DOC-392: Reduce nx-dev Next.js Build Memory Usage Below 8 GB** (2026-01-30)
 
-   - Summary: Consolidated two redundant GitHub URL messages into single message with `?name=...` parameter when gh push fails
-   - Files: `.ai/2026-01-23/SUMMARY.md`, `packages/create-nx-workspace/`
+   - Summary: Fixed OOM errors on Netlify by adding `experimental.cpus: 1`, upgrading Next.js to 14.2.35, and configuring proper Netlify deployment with `@netlify/plugin-nextjs`
+   - Files: `.ai/2026-01-30/SUMMARY.md`, `nx-dev/nx-dev/next.config.js`, `nx-dev/nx-dev/project.json`, `nx-dev/nx-dev/netlify.toml`
 
-10. **NXC-3753: Update CI Workflow Generator - nx-cloud to nx** (2026-01-23)
+10. **DOC-385: Fix Failing Internal Link Checks After /launch-nx Removal** (2026-01-29)
 
-    - Summary: Replaced `nx-cloud record` with `nx record` in ci-workflow generator; addressed PR review by using `isNxCloudUsed()` instead of custom function
-    - Files: `.ai/2026-01-23/SUMMARY.md`, `packages/workspace/src/generators/ci-workflow/`
+    - Summary: Fixed broken `/launch-nx` link in release-notes.mdoc, removed from ignore list, and fixed cache input bug where `sitemap.xml` (index) was cached instead of `sitemap-0.xml` (actual URLs)
+    - Files: `.ai/2026-01-29/SUMMARY.md`, `astro-docs/validate-links.ts`, `nx-dev/nx-dev/project.json`
 
 ## Pending
+- [ ] Follow-up on Paylocity issue (2026-02-04 12:28)
+  - https://linear.app/nxdev/issue/NXC-3388/typeerror-0-configurationgetprojectname-is-not-a-function-when-running
+- [ ] Talk to Thomas about reporting structure in Wagepoint (2026-01-30 16:04)
 - [ ] Claude plugin for Nx repo (2026-01-26)
   - Create a plugin to share skills, agents, etc. with the Nx team
   - Discuss with Jason during 1:1

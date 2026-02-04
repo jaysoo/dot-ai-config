@@ -4,11 +4,68 @@ Tracking document for Marketing team sync meetings (includes Framer website work
 
 ## Upcoming Sync
 
-*(cleared after 2026-01-27 meeting)*
+*(Cleared after 2026-02-03 sync)*
 
 ---
 
 ## Meeting Notes
+
+### 2026-02-03
+
+**Attendees:** Benjamin Cabanes, Caitlin Cashin, Heidi Grutter, Juri Strumpflohner, Philip Fulcher, Caleb Ukle, Nicole Oliver
+
+#### Homepage & Cloud Page Launch
+
+- Next.js version ready to deploy with language updates
+  - Ben's PR contains additive content changes
+  - Can launch this week as foundation
+- Framer version nearly complete
+  - Ben needs to add GA tracking and fix links
+  - Video placement decision deferred to Framer iteration
+  - Target: Friday launch for Framer homepage
+- Themes accidentally deployed during NX patch release
+  - Marketing pages auto-deploy with NX releases
+  - Issue resolved, themes now live
+
+#### Framer Development & Tooling
+
+- Component system and plugin ready for landing pages
+  - Copy/paste between projects works for quick builds
+  - Plugin maintains component updates, manual copy doesn't
+  - A/B testing functionality available with paid workspace
+- Upcoming ad campaign landing page
+  - Can build in Framer immediately, doesn't require full site migration
+  - Need path rewrite setup for nx.dev domain deployment
+  - 30-minute training session planned for Caitlin/Heidi
+- Blog migration deferred, courses to remain static
+  - Case studies moving to Framer
+  - Resources page contains only external links
+
+#### Product & Pricing Updates
+
+- IO tracing feature top engineering priority
+  - Name debate: "sandboxing" vs "IO tracing"
+  - Marketing meeting with Alton/Madeline/Victor tomorrow
+  - Technical difference: allows access but flags issues vs true sandboxing
+- Pricing strategy discussion ongoing
+  - Jeff and Madeline owning pricing decisions
+  - Go-to-market team meeting today
+  - Cards implementation approved for pricing page
+- Free feature monetization review needed
+  - Multiple features currently given away free
+  - Victor wants to avoid losses on compute/disk usage
+  - Enterprise compute charging conversation separate
+
+#### Action Items
+
+- **Jack:** Set up path rewrites for campaign landing page deployment
+- **Ben:** Complete GA tracking and links for Framer homepage by Friday
+- **Caitlin:** Schedule 30-minute Framer training with Ben
+- **Marketing team:** Finalize pricing content and IO tracing naming decision
+
+**Transcript:** [Granola Notes](https://notes.granola.ai/t/88dab14c-dba5-493e-8326-fe9b713a3ab9-00demib2)
+
+---
 
 ### 2026-01-27
 

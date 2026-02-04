@@ -37,6 +37,7 @@
 
 ### Topics to Discuss
 - [ ] Update Effy reporting structure
+- [ ] Look at Effy Reviews and how people can get their past reviews
 
 ### 2026-01-23
 

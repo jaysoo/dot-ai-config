@@ -85,7 +85,14 @@ getFlowVariant() returns:
 **Telemetry Events** (recordStat types): `start`, `precreate`, `complete`, `error`, `cancel`
 
 ### astro-docs/
-The new Nx documentation site (nx.dev/docs) - Astro/Starlight application
+The Nx documentation site (nx.dev/docs) - Astro/Starlight application
+
+**Writing New Pages**: Before creating or reorganizing docs, review the 5 IA Principles in `.ai/para/resources/docs-information-architecture/README.md`:
+1. Progressive Disclosure - Is this for First 30 Minutes, First 30 Days, or Forever?
+2. Category Homogeneity - Don't mix concepts, tasks, and products in lists
+3. Type-Based Navigation - Separate learning (guides) from looking up (reference)
+4. Pen & Paper Test - Can explain without terminal → How Nx Works; needs terminal → Platform Capabilities
+5. Universal vs Specific - Applies to everyone → Platform Capabilities; only React users → Technologies
 
 **Key Files**:
 - `astro-docs/src/pages/` - Static page endpoints
@@ -101,7 +108,7 @@ The new Nx documentation site (nx.dev/docs) - Astro/Starlight application
 **Important**: Netlify Edge Function responses from `context.next()` are **immutable**. Must create new Response objects with cloned headers - cannot use `response.headers.set()`.
 
 ### nx-dev/
-The Nx documentation site (docs.nrwl.io) - Next.js application with multiple sub-packages
+The marketing Nx site (nx.dev) - Next.js application with multiple sub-packages
 
 - `nx-dev/feature-search/` - Algolia search integration
 - `nx-dev/ui-blog/` - Blog listing and display components
@@ -518,15 +525,17 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - **Use Case**: Content negotiation - serve `.md` for `Accept: text/markdown` requests
 - **vs Redirect**: Rewrite = single request, works with all HTTP clients; Redirect = extra round trip
 
+### Nested node_modules Causing Stale Module Resolution (2026-01-30)
+- **Symptom**: `Cannot find module` error referencing old package version path (e.g., `typescript@5.8.3` when you're on `5.9.2`)
+- **Example**: `Error: Cannot find module '/path/to/nx/node_modules/.pnpm/typescript@5.8.3/node_modules/typescript/bin/tsc'`
+- **Root Cause**: Nested `node_modules` folder somewhere in the repo that shouldn't exist
+- **Why it happens**: pnpm/npm resolution walks up the directory tree; a nested node_modules with old dependencies can get picked up
+- **What doesn't fix it**: `nx reset`, `pnpm store prune`, clearing caches - these don't touch nested node_modules
+- **Solution**: Find and remove the rogue node_modules: `find . -name node_modules -type d | grep -v "^\./node_modules"`
+- **Prevention**: Check for nested node_modules when encountering mysterious "old version" module resolution errors
+
 ### Astro Migration Pattern
 - Using `NEXT_PUBLIC_ASTRO_URL` as feature flag for progressive migration
 - Blog remains in Next.js while docs move to Astro
 - Search needs special handling to work across both platforms
 
-## Technology Stack
-
-### Documentation Site (nx-dev)
-- **Framework**: Next.js
-- **Search**: Algolia DocSearch
-- **Styling**: Tailwind CSS
-- **Migration Target**: Astro/Starlight (in progress)

@@ -1,7 +1,7 @@
 # Victor
 
-**Team:**
-**Role:** CTO
+**Team:** Leadership
+**Role:** CEO
 **Location:**
 
 ## Personal
@@ -19,85 +19,74 @@
 
 ## Professional
 
-- **Current Focus:** Platform roadmap (writing comprehensive version), Maven paywall decision
+- **Current Focus:** AI agent onboarding, company growth, product launches
 - **Goals:**
-- **Strengths:** Technical skills, speed in production and learning new tech, stays current (blogs, books, courses), considers impact on product and internal processes, strong work ethic
+- **Strengths:**
 
 ## 1:1 Notes
 
-### Upcoming Topics
+### 2026-02-02
 
-**From Victor (Slack 2026-01-23):**
+**Board Meeting & Company Performance**
+- Recent board meeting much less gloomy than Q3 meeting three months ago
+- Q4 performance decent (not excellent but improved from very bad Q3)
+- Better trends emerging, need to maintain momentum
+- AI story clear with strong value proposition
+  - Inevitable market direction
+  - Limited competition in current space
+- Company bonus increased from 0.5% to 0.9% to send positive message without being too harsh
 
-- **Issue Specificity Problem:** People complain about issues that aren't concrete enough - creates waste with folks having to get clarification or do it and then having to rework it. WDYT about creating a skill for agents that can interview you for a few minutes to get a more specific issue? Finds agents are good at extracting knowledge out of one's head.
-- **Giga Ralph Dogfooding:** The giga ralph (monitor your CI thing) is quite nice and he'd like to see everyone dogfood it. Try to let AI finish the PRs and make the CI green. WDYT?
-  - Max will update ocean and nx repos to enable this by Wednesday
-- Share skill to "interview" workflow to clarify requirements and come up with a spec
+**Team Structure & Performance Management**
+- Nicole remains L5, considering team lead promotion this year
+  - Alton stronger as de facto tech and project lead
+  - Nicole needs stronger tech lead presence
+  - Goal: 4.5 ARR self-serve (80% growth from current 2.5)
+    - Realistic target based on 60% growth last year with minimal effort
+    - Focus on UX optimization for onboarding/activation
+- Chao and Mark reporting structure change
+  - Move 1:1s from Nicole to John (Red Panda project)
+  - Nicole lacks visibility into their work
+  - Career growth discussions remain with Jack
 
-**From Jack**
+**AI Agent Onboarding Project**
+- Nicole owns overall experience, Max/Colin handle technical components
+- Target: autonomous setup of new repos with full cloud connection
+- Two-week timeline for initial implementation
+  - Week 1: CNW build functionality
+  - Week 2: INIT experience improvements
+- Technical requirements
+  - Single API endpoint for cloud setup
+  - GitHub CLI integration (install app once, then autonomous)
+  - Prompt iteration for coherent instructions
+- 20-30% of website traffic now AI-driven (corrected from initial 60% miscalculation)
 
-- **Review Product Roadmap:** https://docs.google.com/document/d/1yjWGaQyxa5JEslNFNXWjlyQZl0HBEAbkpbDUZ8B46TM/edit?tab=t.0#heading=h.1qbb86lfqtq4
-- **What's most important when measuring AI impact:** Raw speed, or time to value / time to feedback?
-- Pushing work and experiments forward
-- **Auth Ownership:** Chau needs to continue owning auth, but start knowledge transfer to Dillon, Ben, and Nicole
-- Reporting structure and 1:1s
-- **Slack App or CLI for Nx Cloud:** Explore @nx Slack bot integration - accept fixes via Slack, get notified when PRs are green after a fix
-- **Promotions:** Push for Altan to L5C and Patrick to L4C (if not L5A)
-- **Patrick L5 Promotion:** Review and discuss Patrick's promotion justification doc
-  - Key contributions: Grafana Cloud migration, cache poisoning vulnerability fix, cost analysis system, single-tenant operations
-  - Observability SME for company
-  - 20+ single-tenant deployments with near 100% uptime
-- Reviews, bonuses
-- **PR Review Goals 2026:** TTM/TTFR under 24 hours (ideally under 12 hours), encourage AI-assisted PR reviews for prioritization and summaries
-- Onboarding metrics looking lower in January
-  - Experiments must be listed
-- Discuss Maven paywall decision - need clarity on revenue path (from Jason 1:1)
-  - Paused for now, probably not going to happen
-- Netlify analytics - unknown 11k serverless function requests in December (from Docs sync)
+**Product Development Updates**
+- Reverse trial feature technically complete
+  - Requires manual approval process (1-day delay acceptable)
+  - 300+ open source form submissions show user willingness to wait
+  - Enterprise prospects likely won't be deterred by approval delay
+- Polygraph progress
+  - Current focus: dogfooding for internal use
+  - Next phase: external usability for Nx users
+  - Future: support non-Nx workspaces with manual edge drawing
+  - 10-minute "time to wow" target for new users
 
-### 2026-01-08 - 360 Review Feedback (via Matt Hunter, executive coach)
+**Marketing & Communication**
+- Homepage and cloud pages must launch this week
+  - Delayed multiple weeks despite minor AI/monetization language tweaks
+  - Could be completed in one day of focused work
+- Internal communication improvements needed
+  - Weekly team lead updates to reduce information silos
+  - Manual quarterly summary document for cross-team visibility
+  - Jack to increase platform team familiarity to reduce Victor's context-spreading load
 
-**Context:** Anonymous feedback session - Jack chosen as one of 6 interviewees
+**Action Items for Jack**
+- Continue career growth discussions with Chao and Mark
+- Increase platform team familiarity to reduce Victor's context-spreading load
 
-**Strengths Highlighted:**
-- Technical skills highly regarded by team
-- Speed in production and learning new technologies
-- Stays current with tech trends, blogs, books, courses
-- Considers impact on both product and internal processes
-- Hard worker with strong work ethic
+---
 
-**Building Teams & Results: 7/10**
-- Strong when focused on specific metrics/deliverables - can pull 5+ person teams together effectively
-- Weaker on overall multi-team management - less aware of teams he doesn't work with directly
-- Example: Infrastructure team (3 people) - minimal touchpoints beyond cost discussions
-- Relies on Jack for updates on team performance
-- Missing metrics to properly assess team performance across organization
-
-**Key Concerns Shared:**
-- *Trust and autonomy:* Frequently overrides team lead decisions despite their closer product proximity; strong personality wears people down in debates; paywall implementation example
-- *Communication:* Makes work appear more urgent than necessary; junior staff afraid to push back; lacks clarity on priorities for individuals and teams
-- *Outdated perceptions:* Opinions based on year+ old impressions; doesn't recognize employee improvements over time; needs to trust team lead assessments more
-
-**Relationship Context:**
-- Jack and Victor were former coworkers (pre-Google, Toronto company)
-- Worked as peers for ~1 year before Victor left to start current company
-- Jack comfortable pushing back due to peer history
-- Currently pushes back mainly on issues affecting team morale
-- Weekly check-ins to discuss team performance and priorities
-
-[Granola notes](https://notes.granola.ai/t/4e3b9861-9539-4efa-9772-ec80b4b519a6-00demib2)
-
-### 2025-12-29 (Upcoming)
-- **Topic:** AI productivity metrics for investor conversations
-- Discuss: Can we show rough numbers on engineering productivity increases from AI adoption?
-- Pitch angle: Flat headcount + increased revenue = productivity gains from AI
-- Related: Previous AI ROI video from 2025-12-12
-
-### 2025-12-12
-- AI Czar
-- Altan working on non-Red Panda work -- one day a week? Refactors, etc. team multiplier work -- talk to Nicole, Louie, etc. to coordinate
-- Leo and Max unhappiness
-- https://www.youtube.com/watch?v=JvosMkuNxF8&t=951s AI ROI
-- Tracing I/O for Enterprise -- talk to Steve about concerns
+Chat with meeting transcript: [https://notes.granola.ai/t/ce387484-aebf-4eee-967f-20437b32dc41-00demib2](https://notes.granola.ai/t/ce387484-aebf-4eee-967f-20437b32dc41-00demib2)
 
 ## Random Notes
+

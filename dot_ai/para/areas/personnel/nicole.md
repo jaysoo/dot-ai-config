@@ -26,8 +26,53 @@
 ## 1:1 Notes
 
 ### Upcoming Topics
+
 - Reporting structure and 1:1s
 - **Slack App for Nx:** Explore @nx Slack bot integration - accept fixes via Slack, get notified when PRs are green after a fix
+- GTM for pricing, etc.
+- Priorities for enterprise, teams, hobby
+
+### 2026-02-03 - NX Cloud Onboarding Strategy for Agent Integrations
+
+**CNW Agent Integration Timeline**
+- Next two weeks: CNW experience implementation
+- End of month: Extend and NX Connect features
+  - Both in same bucket for development
+  - NX Connect trickier (existing repos) but starting with workspace setup only
+
+**GitHub CLI Detection & Setup Flow**
+- Need to detect if user has GitHub CLI installed
+- Two user groups to handle differently:
+  1. Never connected (said no/opted out)
+  2. Connected but didn't finish setup
+- Focus optimization on second group using agents
+- First group handling strategy still unclear
+
+**Cloud Onboarding Strategy Decision**
+- Key question: Should CNW prompt for Cloud opt-in/out or auto-connect?
+- Different messaging needed based on approach:
+  - With prompting: Surface platform benefits, provide connection guidance
+  - Without prompting: Agent explains speed benefits, handles connection
+- Can customize output based on invoking agent (environment variable detection)
+
+**Agent Experience Scope**
+- Initially building for Claude specifically, but should be generic across agents
+- Focus on Claude Code first, ensure good experience before broadening
+- Core focus areas:
+  1. Messaging optimization for agent understanding
+  2. Helping users complete workspace setup
+  3. API endpoint integration for connection status checks
+
+**Implementation Gaps & Next Steps**
+- Need to identify missing Cloud-side endpoints
+- Dylan/Lou/Ulta to build missing pieces
+- Document CNW flow gaps through testing
+- JSON structured output experiment running for CI agent optimization
+- Max and Colum available for agent implementation help
+- Onboarding numbers low last week but expected to recover with recent changes
+- Target: 600 mark within one month
+
+[Meeting transcript](https://notes.granola.ai/t/3ba55663-5159-4d28-9f92-0359004166bb-00demib2)
 
 ### 2026-01-09
 

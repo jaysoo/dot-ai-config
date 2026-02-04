@@ -289,27 +289,6 @@ Run `pnpm install && pnpm build` in background when starting work.
 
 Always spell out on first use: "NXC-3464: CNW (Create Nx Workspace) Templates"
 
-### CNW Quick Reference
-```bash
-# Non-interactive
-npx -y create-nx-workspace@latest myworkspace --preset=react-monorepo --no-interactive
-
-# Common presets
---preset=react-monorepo|angular-monorepo|node-monorepo|vue-monorepo
---preset=next|nest|express|ts|npm
-
-# Options
---packageManager=pnpm --nxCloud=skip --e2eTestRunner=playwright --unitTestRunner=vitest
-```
-
-**A/B Testing:** `--nxCloud` and `--ci` are aliases (yargs-options.ts:10)
-Values: github, gitlab, azure, bitbucket-pipelines, circleci, skip, yes
-
-**Key Files:**
-- `bin/create-nx-workspace.ts:446-555` - Flow routing
-- `src/utils/nx/ab-testing.ts` - Variant determination
-- `src/create-workspace.ts:149-154` - CI generation
-
 ### Commands & Testing
 - Use `nx run PROJECT:target` not `npm run`
 - Use `.spec.ts` extension for tests (not `.test.ts`)

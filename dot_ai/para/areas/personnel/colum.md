@@ -27,6 +27,10 @@
 ## 1:1 Notes
 
 ### Upcoming Topics
+
+- Jason should put something in lighthouse for our metrics
+- Need a way to check if the workspace is connected or not
+  - CLI need a way to check
 - **PR Review Goals 2026:** TTM/TTFR under 24 hours (ideally under 12 hours), encourage AI-assisted PR reviews for prioritization and summaries
 
 ### 2026-01-06
