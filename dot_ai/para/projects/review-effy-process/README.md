@@ -9,6 +9,11 @@ The review process has two issues to address:
 5. Do managers need to spend more time gather and providing their reviews outside of summarizing Effy?
 6. The open-ended question "What's one thign they could do to increase their impact" provides very little value --- it's always "share more Loom", "Speak up more", etc.
 
+## Action Item
+
+- Talk to Victor about doing bonus in Feb and extend the review deadline
+- James to fill in the new questions before next cycle
+
 ---
 
 ## Recommended question set

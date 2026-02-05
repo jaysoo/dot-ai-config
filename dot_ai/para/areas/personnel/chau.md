@@ -1,7 +1,7 @@
 # Chau
 
-**Team:** Nx Cloud (Backend/Frontend)
-**Role:** Senior Engineer
+**Team:** Red Panda
+**Role:** Senior Engineer (L4C)
 **Location:** O'Fallon, MO, USA
 
 ## Personal
@@ -19,8 +19,8 @@
 
 ## Professional
 
-- **Current Focus:** Auth, Agent Utilization, Self-Healing onboarding
-- **Goals:** L5 promotion
+- **Current Focus:** Self-Healing CI, MCP Tools, Monitor CI
+- **Goals:** L5 promotion (focus on micro-strategy docs, code reviews, leveling up teammates)
 - **Strengths:** Auth expertise, frontend architecture, performance optimization
 
 ## Promotion History
@@ -83,6 +83,17 @@ Keeps Remix/React Router/TypeScript resources up to date and educates team throu
 - Auth-related packages (auth0 and all strategies: SAML, GitHub, GitLab, Bitbucket)
 
 ## 1:1 Notes
+
+### 2026-02-05
+
+- **Red Panda Progress:** Self-healing board, AT Gentex CLI/Monitor CI ongoing
+- **MCP Tools:** Context length issues with e2e test logs; updated to return in-progress status
+- **L5 Path:** John to schedule regular 1:1s; focus on micro-strategy docs, code reviews, leveling up teammates
+- **Auth Transition:** Remains SME but Dylan/Nicole (Orca) handle most fixes; knowledge transfer via Looms
+- **Testing Challenges:** Local testing pain points for self-healing; exploring PR environments
+- **Action Items:**
+  - Jack: Follow up with John on 1:1s, discuss PR environments with Steve
+  - Chau: Document local testing pain points, continue MCP iteration with strategic docs focus
 
 ### 2026-01-21
 
