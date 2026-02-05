@@ -4,55 +4,55 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **Agentic CNW Implementation - AI Agent Detection & NDJSON Output** (2026-02-04)
+1. **Nx Cloud Workspace Claim Enforcement Spec** (2026-02-04)
+
+   - Summary: Brainstormed structural changes to increase Nx Cloud onboarding; spec proposes 7-day claim enforcement where CI fails after grace period until workspace is claimed
+   - Files: `.ai/2026-02-04/specs/cloud-claim-enforcement.md`
+
+2. **Agentic CNW Implementation - AI Agent Detection & NDJSON Output** (2026-02-04)
 
    - Summary: Implemented AI agent detection and NDJSON output for create-nx-workspace; AI detected via env vars, non-interactive mode, structured JSON results with GitHub setup instructions
    - Files: `.ai/2026-02-04/SUMMARY.md`, `packages/create-nx-workspace/src/utils/ai/ai-output.ts`
 
-2. **Google Apps Script PTO Calendar: Daily "Today + Tomorrow" Feature** (2026-02-04)
+3. **Google Apps Script PTO Calendar: Daily "Today + Tomorrow" Feature** (2026-02-04)
 
    - Summary: Extended daily notifications to show both today AND tomorrow's events for better planning; added day filtering and new Today/Tomorrow section formatting
    - Files: `.ai/2026-02-04/SUMMARY.md`, `/Users/jack/projects/gcal/script.js`
 
-3. **DOC-395: Server-Side Page View Tracking** (2026-02-02)
+4. **DOC-395: Server-Side Page View Tracking** (2026-02-02)
 
    - Summary: Created track-page-requests edge function for HTML pages; fixed double-counting in track-asset-requests; added comprehensive excludedPath for fonts/images/pagefind
    - Files: `.ai/2026-02-02/tasks/DOC-395-server-page-tracking.md`, `astro-docs/netlify/edge-functions/track-page-requests.ts`
 
-4. **NXC-3806: Nx Worktree Cache Sharing** (2026-02-02)
+5. **NXC-3806: Nx Worktree Cache Sharing** (2026-02-02)
 
    - Summary: Implemented automatic cache sharing between git worktrees; worktrees use main repo's `.nx/cache`; discovered cache DB must be co-located with files and workspace-data must stay per-workspace
    - Files: `.ai/2026-02-02/tasks/worktree-cache-sharing.md`, `packages/nx/src/utils/cache-directory.ts`
 
-5. **Google Apps Script PTO Calendar Fix** (2026-01-31)
+6. **Google Apps Script PTO Calendar Fix** (2026-01-31)
 
    - Summary: Fixed timezone issues (end before start bug), multi-day event handling, grouped events by person, separated holidays, improved output format
    - Files: `.ai/2026-01-31/SUMMARY.md`, `/Users/jack/projects/gcal/script.js`
 
-6. **Lighthouse SPACE Metrics UI Improvement** (2026-01-30)
+7. **Lighthouse SPACE Metrics UI Improvement** (2026-01-30)
 
    - Summary: Improved metric target legends with colored square emojis and cleaner legend format across all 4 metrics sections
    - Files: `.ai/2026-01-30/SUMMARY.md`, PR: https://github.com/nrwl/lighthouse/pull/29
 
-7. **Leo 1:1 Notes** (2026-01-30)
+8. **Leo 1:1 Notes** (2026-01-30)
 
    - Summary: Updated Leo's personnel file with comprehensive notes from 2026-01-26 1:1 covering Swedbank onsite, L5 career development, and AI automation initiatives
    - Files: `.ai/para/areas/personnel/leo.md`
 
-8. **DOC-380: Docs Layout Whitespace on Large Screens** (2026-01-30)
+9. **DOC-380: Docs Layout Whitespace on Large Screens** (2026-01-30)
 
    - Summary: Fixed excessive whitespace on large screens in Astro docs by pushing TOC to right edge; initially tried max-width centered layout but reverted to simpler flex approach
    - Files: `.ai/2026-01-30/SUMMARY.md`, `astro-docs/src/styles/global.css`
 
-9. **DOC-392: Reduce nx-dev Next.js Build Memory Usage Below 8 GB** (2026-01-30)
+10. **DOC-392: Reduce nx-dev Next.js Build Memory Usage Below 8 GB** (2026-01-30)
 
-   - Summary: Fixed OOM errors on Netlify by adding `experimental.cpus: 1`, upgrading Next.js to 14.2.35, and configuring proper Netlify deployment with `@netlify/plugin-nextjs`
-   - Files: `.ai/2026-01-30/SUMMARY.md`, `nx-dev/nx-dev/next.config.js`, `nx-dev/nx-dev/project.json`, `nx-dev/nx-dev/netlify.toml`
-
-10. **DOC-385: Fix Failing Internal Link Checks After /launch-nx Removal** (2026-01-29)
-
-    - Summary: Fixed broken `/launch-nx` link in release-notes.mdoc, removed from ignore list, and fixed cache input bug where `sitemap.xml` (index) was cached instead of `sitemap-0.xml` (actual URLs)
-    - Files: `.ai/2026-01-29/SUMMARY.md`, `astro-docs/validate-links.ts`, `nx-dev/nx-dev/project.json`
+    - Summary: Fixed OOM errors on Netlify by adding `experimental.cpus: 1`, upgrading Next.js to 14.2.35, and configuring proper Netlify deployment with `@netlify/plugin-nextjs`
+    - Files: `.ai/2026-01-30/SUMMARY.md`, `nx-dev/nx-dev/next.config.js`, `nx-dev/nx-dev/project.json`, `nx-dev/nx-dev/netlify.toml`
 
 ## Pending
 - [ ] Follow-up on Paylocity issue (2026-02-04 12:28)
