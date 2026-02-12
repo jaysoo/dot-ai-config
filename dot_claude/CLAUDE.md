@@ -43,7 +43,7 @@ When continuing a session from a compaction summary:
 - **🔐 NEVER commit tokens, secrets, or API keys**
 - **Never commit to main/master** - use feature branches
 - **Always squash commits** before pushing: `git reset --soft HEAD~n && git commit`
-- **NEVER push branches or create PRs unless explicitly asked**
+- **NEVER push main/master branches directly unless instructed** - use branches and PRs
 - Linear: `DOC-125` format (no #) | GitHub: `Fixes #123` format
 
 **Commit format:**
