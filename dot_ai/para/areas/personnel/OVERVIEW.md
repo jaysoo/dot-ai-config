@@ -1,8 +1,9 @@
 # Personnel Overview
 
-Quick reference for team members.
+Quick reference for colleagues and direct reports.
 
-| Name | Team | Focus | Last 1:1 |
-|------|------|-------|----------|
-| [Rares Matei](rares-matei.md) | Alton/Louis | Koka, Sandboxing, Prometheus metrics | 2026-01-14 |
-| [Victor](victor.md) | Leadership | CEO - AI strategy, company growth | 2026-02-02 |
+| Name | Role | Team | Expertise | Last 1:1 |
+|------|------|------|-----------|----------|
+| Altan Stalker | Engineering Lead | Quolka | Tracing, sandboxing, metrics | 2026-02-05 |
+| Joshua VanAllen (JVA) | DPE | DPE | Paylocity, Maven/Gradle polyglot | - |
+| Mark Lindsey | VCS Integration Expert | Red Panda | VCS integrations, GitHub OAuth | 2026-02-05 |

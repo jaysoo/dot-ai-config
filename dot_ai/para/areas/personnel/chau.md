@@ -84,6 +84,13 @@ Keeps Remix/React Router/TypeScript resources up to date and educates team throu
 
 ## 1:1 Notes
 
+### Upcoming
+
+- Time zone expectations conversation (from Victor 1:1 2026-02-09)
+  - Victor mentioned overlap concerns - need to clarify since MO is Central time (1hr behind Eastern)
+  - May be about working hours/availability rather than actual timezone
+- Backup coverage for critical areas Chau owns (knowledge sharing concern)
+
 ### 2026-02-05
 
 - **Red Panda Progress:** Self-healing board, AT Gentex CLI/Monitor CI ongoing

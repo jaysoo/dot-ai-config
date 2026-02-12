@@ -2,6 +2,58 @@
 
 ### February 2026
 
+- [x] NXC-3898: Clarify security email usage in SECURITY.md (2026-02-11)
+  - Linear: https://linear.app/nxdev/issue/NXC-3898
+  - PR: https://github.com/nrwl/nx/pull/34411
+  - Added "What Should Be Reported" section to clarify security email is for demonstrable, verified vulnerabilities in Nx codebase
+  - Summary: `.ai/2026-02-11/SUMMARY.md`
+
+- [x] CLOUD-4246: Add confirmation dialog for access control settings (2026-02-11)
+  - PR: https://github.com/nrwl/ocean/pull/9985
+  - Replaced inline Save/Cancel buttons with modal confirmation dialogs
+  - Prevents accidental changes from trackpad gestures
+  - Summary: `.ai/2026-02-11/SUMMARY.md`
+
+- [x] CLOUD-3924: Show cache origin on Compare Tasks without comparison selection (2026-02-11)
+  - Linear: https://linear.app/nxdev/issue/CLOUD-3924
+  - PR: https://github.com/nrwl/ocean/pull/9992 (merged)
+  - Fixed "Originated from" link not showing on Investigate tab unless comparison task was selected
+  - Root cause: `getCacheCreationRun` calls required both baseTask AND comparorTask
+  - Summary: `.ai/2026-02-11/SUMMARY.md`
+
+- [x] Get back to Dillon re: 401K (2026-01-21 17:58) ✓ 2026-02-09
+
+- [x] Claude plugin for Nx repo (2026-01-26) ✓ 2026-02-09
+  - Create a plugin to share skills, agents, etc. with the Nx team
+  - Discuss with Jason during 1:1
+
+- [x] Potential: Consolidate CNW short URL generation (2026-01-26) ✓ 2026-02-09
+  - Currently two calls to `createNxCloudOnboardingURL`: one for README (source='readme'), one for completion message (source='create-nx-workspace-success-*')
+  - Files: `packages/workspace/src/generators/new/generate-workspace-files.ts:311`, `packages/create-nx-workspace/src/utils/nx/nx-cloud.ts:100`
+  - May be intentional for separate tracking (discussed with Jason)
+
+## In Progress
+
+- [x] Check on Divvy vendor card that it works (2026-01-23 09:40) ✓ 2026-02-09
+
+- [x] Add nx-console to SPACE metrics (2026-01-22 13:50) ✓ 2026-02-09
+
+- [x] Follow-up: CNW ASCII Banner A/B Testing (2026-01-14) ✓ 2026-02-09
+  - When implementing A/B testing for Nx Cloud completion message format (ASCII banner vs bordered/highlighted)
+  - **Important**: Must include message format in short URL meta property for cloud analytics
+  - Example: `variant-0-banner`, `variant-0-bordered`, `variant-1-banner`, `variant-1-bordered`
+  - This allows tracking conversion rates per message format
+  - Related: `.ai/2026-01-14/tasks/nxc-3628-remove-cloud-prompt.md` (see Follow-up Tasks section)
+
+
+- [x] Google Apps Script PTO Calendar: Bug Fixes (2026-02-06)
+  - Project: `/Users/jack/projects/gcal/script.js`
+  - Fixed duplicate PTO bug where single-day events appeared in both Today AND Tomorrow sections
+  - Root cause: time-based overlap failed for all-day events due to timezone offset
+  - Fix: Added date key comparison for all-day events instead of timestamp overlap
+  - Also fixed Friday display: skip "Tomorrow" section on Fridays (weekend)
+  - Summary: `.ai/2026-02-06/SUMMARY.md`
+
 - [x] Agentic CNW Implementation - AI Agent Detection & NDJSON Output (2026-02-04)
   - Linear: https://linear.app/nrwl/issue/NXC-3815, https://linear.app/nrwl/issue/NXC-3628
   - Branch: `agentic-onboarding`

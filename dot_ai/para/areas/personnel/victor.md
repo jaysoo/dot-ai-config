@@ -25,6 +25,58 @@
 
 ## 1:1 Notes
 
+### Upcoming
+
+- Legal questions on terms for CLI stats tracking (GA) - what are the requirements?
+- Team prioritization: how should teams balance revenue vs growth vs AI vs maintenance/general work?
+
+### 2026-02-09
+
+**Time Zone Expectations**
+- Need better overlap between remote team members
+- Max and Chau (both in Europe/Asia) have minimal overlap with Eastern team
+  - Currently ~2 hours overlap, need 3-4 hours minimum
+  - European team should work until noon Eastern (5-6pm local)
+  - Not about working Eastern hours, but ensuring collaboration windows
+- Flexible schedule acceptable with exceptions, but general availability expected during overlap hours
+- West Coast team (Nicole, Louis) less problematic due to fewer people
+
+**Max Performance Feedback**
+- Consistently delivers behind schedule despite capability
+- European work-life balance approach less suitable for startup pace
+- Needs to be more reliable for urgent tasks and team dependencies
+- Less available than James (who's also remote but more responsive)
+- Impacts ability to assign critical responsibilities
+- Weekly sync with Jack starting to improve oversight
+
+**Team Redundancy & Knowledge Sharing**
+- Single points of failure problematic when people offline
+- Need backup coverage for critical areas Chau owns
+- Better documentation/handoff processes required
+- Example: CNW changes worked well with detailed context sharing via Claude
+- Knowledge base articles could help with migration examples and AI-assisted troubleshooting
+
+**Agentic Onboarding Progress**
+- CNW changes merged, JSON planning release this week
+- Testing full end-to-end onboarding with Nicole's team
+  - Goal: AI creates NX workspace with cloud setup via "YOLO mode"
+  - Need to identify gaps where manual intervention required
+- NX init improvements needed for AI compatibility
+- Platform API changes required for full automation
+- Considering embedding AI assistance directly in CNW/init commands
+- Survey results show engineering teams don't understand how current work helps them
+
+**Action Items**
+- Jack: Talk to Max and Chau about time zone expectations
+- Jack: Follow up with Nicole on agentic onboarding testing results
+- Jack: Review init experience and sync with Nicole tomorrow
+- Jack: Continue Orca triage support
+- Victor: Explore API endpoints for automated platform setup
+
+---
+
+Chat with meeting transcript: [https://notes.granola.ai/t/616b8869-8c83-4074-9075-119e76fa66fc-00demib2](https://notes.granola.ai/t/616b8869-8c83-4074-9075-119e76fa66fc-00demib2)
+
 ### 2026-02-02
 
 **Board Meeting & Company Performance**

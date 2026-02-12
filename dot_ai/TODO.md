@@ -4,73 +4,84 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **Nx Cloud Workspace Claim Enforcement Spec** (2026-02-04)
+1. **NXC-3898: Clarify Security Email Usage** (2026-02-11)
+
+   - Summary: Updated SECURITY.md to clarify security email is for demonstrable, verified vulnerabilities in Nx codebase, not outdated dependencies or scanner output
+   - Files: `.ai/2026-02-11/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34411
+
+2. **CLOUD-4246: Access Control Confirmation Dialog** (2026-02-11)
+
+   - Summary: Replaced inline Save/Cancel buttons with modal confirmation dialogs for access control settings to prevent accidental changes from trackpad gestures
+   - Files: `.ai/2026-02-11/SUMMARY.md`, PR: https://github.com/nrwl/ocean/pull/9985
+
+3. **CLOUD-3924: Compare Tasks Cache Origin Fix** (2026-02-11)
+
+   - Summary: Fixed "Originated from" link not showing on Compare Tasks page without selecting a comparison task; cache origin now displays immediately for remote-cache-hit tasks
+   - Files: `.ai/2026-02-11/SUMMARY.md`, PR: https://github.com/nrwl/ocean/pull/9992
+
+4. **Victor 1:1 Notes** (2026-02-09)
+
+   - Summary: Timezone expectations for Max/Chau, Max performance feedback, team redundancy concerns, agentic onboarding progress
+   - Files: `.ai/para/areas/personnel/victor.md`
+
+4. **Google Apps Script PTO Calendar: Bug Fixes** (2026-02-06)
+
+   - Summary: Fixed duplicate PTO bug (single-day events showing in Today AND Tomorrow) and skip Tomorrow section on Fridays
+   - Files: `.ai/2026-02-06/SUMMARY.md`, `/Users/jack/projects/gcal/script.js`
+
+5. **SPACE Metrics Port & UI Fix** (2026-02-05)
+
+   - Summary: Ported SPACE metrics improvements from space-metrics to lighthouse (expanded Misc detection, Quokka team-specific rules, 365-day cap); fixed Target legend to use colored emoji squares
+   - Files: `.ai/2026-02-05/SUMMARY.md`, `lib/lighthouse/space_metrics/calculators/linear_metrics.ex`
+
+6. **Nx Cloud Workspace Claim Enforcement Spec** (2026-02-04)
 
    - Summary: Brainstormed structural changes to increase Nx Cloud onboarding; spec proposes 7-day claim enforcement where CI fails after grace period until workspace is claimed
    - Files: `.ai/2026-02-04/specs/cloud-claim-enforcement.md`
 
-2. **Agentic CNW Implementation - AI Agent Detection & NDJSON Output** (2026-02-04)
+7. **Agentic CNW Implementation - AI Agent Detection & NDJSON Output** (2026-02-04)
 
    - Summary: Implemented AI agent detection and NDJSON output for create-nx-workspace; AI detected via env vars, non-interactive mode, structured JSON results with GitHub setup instructions
    - Files: `.ai/2026-02-04/SUMMARY.md`, `packages/create-nx-workspace/src/utils/ai/ai-output.ts`
 
-3. **Google Apps Script PTO Calendar: Daily "Today + Tomorrow" Feature** (2026-02-04)
+8. **Google Apps Script PTO Calendar: Daily "Today + Tomorrow" Feature** (2026-02-04)
 
    - Summary: Extended daily notifications to show both today AND tomorrow's events for better planning; added day filtering and new Today/Tomorrow section formatting
    - Files: `.ai/2026-02-04/SUMMARY.md`, `/Users/jack/projects/gcal/script.js`
 
-4. **DOC-395: Server-Side Page View Tracking** (2026-02-02)
+9. **DOC-395: Server-Side Page View Tracking** (2026-02-02)
 
    - Summary: Created track-page-requests edge function for HTML pages; fixed double-counting in track-asset-requests; added comprehensive excludedPath for fonts/images/pagefind
    - Files: `.ai/2026-02-02/tasks/DOC-395-server-page-tracking.md`, `astro-docs/netlify/edge-functions/track-page-requests.ts`
 
-5. **NXC-3806: Nx Worktree Cache Sharing** (2026-02-02)
-
-   - Summary: Implemented automatic cache sharing between git worktrees; worktrees use main repo's `.nx/cache`; discovered cache DB must be co-located with files and workspace-data must stay per-workspace
-   - Files: `.ai/2026-02-02/tasks/worktree-cache-sharing.md`, `packages/nx/src/utils/cache-directory.ts`
-
-6. **Google Apps Script PTO Calendar Fix** (2026-01-31)
-
-   - Summary: Fixed timezone issues (end before start bug), multi-day event handling, grouped events by person, separated holidays, improved output format
-   - Files: `.ai/2026-01-31/SUMMARY.md`, `/Users/jack/projects/gcal/script.js`
-
-7. **Lighthouse SPACE Metrics UI Improvement** (2026-01-30)
-
-   - Summary: Improved metric target legends with colored square emojis and cleaner legend format across all 4 metrics sections
-   - Files: `.ai/2026-01-30/SUMMARY.md`, PR: https://github.com/nrwl/lighthouse/pull/29
-
-8. **Leo 1:1 Notes** (2026-01-30)
-
-   - Summary: Updated Leo's personnel file with comprehensive notes from 2026-01-26 1:1 covering Swedbank onsite, L5 career development, and AI automation initiatives
-   - Files: `.ai/para/areas/personnel/leo.md`
-
-9. **DOC-380: Docs Layout Whitespace on Large Screens** (2026-01-30)
-
-   - Summary: Fixed excessive whitespace on large screens in Astro docs by pushing TOC to right edge; initially tried max-width centered layout but reverted to simpler flex approach
-   - Files: `.ai/2026-01-30/SUMMARY.md`, `astro-docs/src/styles/global.css`
-
-10. **DOC-392: Reduce nx-dev Next.js Build Memory Usage Below 8 GB** (2026-01-30)
-
-    - Summary: Fixed OOM errors on Netlify by adding `experimental.cpus: 1`, upgrading Next.js to 14.2.35, and configuring proper Netlify deployment with `@netlify/plugin-nextjs`
-    - Files: `.ai/2026-01-30/SUMMARY.md`, `nx-dev/nx-dev/next.config.js`, `nx-dev/nx-dev/project.json`, `nx-dev/nx-dev/netlify.toml`
-
 ## Pending
+- [ ] Write a proposal for stats for generators and other CLI commands (2026-02-11 09:11)
+  - https://nrwl.slack.com/archives/C6WJMCAB1/p1770674582319699
+- [ ] SPACE Metrics (Lighthouse) Feedback from Jason Jean (2026-02-10 16:26)
+  - PR Throughput: Show baseline context (what does "red 42" mean?)
+  - Planning Accuracy: Add better description of what the metric measures
+  - Issue Resolution:
+    - Clarify it's for Misc/unassigned tasks only (definition differs for Red Panda vs Quokka)
+    - Extend target to 14 days for Dolphin team (cycle-based workflow)
+    - P75 targets should be more lenient than P50 (~50% more time as starting point)
+    - Add asterisk noting Q1 is partial/in-progress quarter
+- [ ] add Jeff to future planning meetings (2026-02-10 14:39)
+- [ ] Talk to Max about time zone expectations (2026-02-09 14:00)
+  - Need 3-4 hours overlap with Eastern team (noon ET = 6pm CET)
+  - Address performance reliability concerns from Victor
+- [ ] Talk to Chau about time zone expectations (2026-02-09 14:00)
+  - Clarify Victor's overlap concerns (Chau is Central time, only 1hr behind Eastern)
+  - Discuss backup coverage for critical areas
+- [ ] Follow up with Nicole on agentic onboarding testing results (2026-02-09 14:00)
+  - Goal: AI creates NX workspace with cloud setup via "YOLO mode"
+  - Identify gaps where manual intervention required
+- [ ] Review init experience and sync with Nicole (2026-02-10)
+  - NX init improvements needed for AI compatibility
+- [ ] Talk to Thomas to update Ben and others to be under me or Nicole, etc. for wagepoint (2026-02-09 11:45)
 - [ ] Follow-up on Paylocity issue (2026-02-04 12:28)
   - https://linear.app/nxdev/issue/NXC-3388/typeerror-0-configurationgetprojectname-is-not-a-function-when-running
 - [ ] Talk to Thomas about reporting structure in Wagepoint (2026-01-30 16:04)
-- [ ] Claude plugin for Nx repo (2026-01-26)
-  - Create a plugin to share skills, agents, etc. with the Nx team
-  - Discuss with Jason during 1:1
-- [ ] Potential: Consolidate CNW short URL generation (2026-01-26)
-  - Currently two calls to `createNxCloudOnboardingURL`: one for README (source='readme'), one for completion message (source='create-nx-workspace-success-*')
-  - Files: `packages/workspace/src/generators/new/generate-workspace-files.ts:311`, `packages/create-nx-workspace/src/utils/nx/nx-cloud.ts:100`
-  - May be intentional for separate tracking (discussed with Jason)
-
-## In Progress
-- [ ] Check on Divvy vendor card that it works (2026-01-23 09:40)
-- [ ] Add nx-console to SPACE metrics (2026-01-22 13:50)
 - [ ] Follow-up CLOUD-2614: Investigate discrepancy in contributor count (2025-10-27 09:58)
-- [ ] Get back to Dillon re: 401K (2026-01-21 17:58)
 - [ ] Follow-up NXC-3427: Multiple Nx daemons persist for same workspace in 21.6.8 (2025-10-27 09:58)
 - [ ] Follow up on slow jest configs for Island (2026-01-14 09:27)
   - Steven and Leo for this issue https://linear.app/nxdev/issue/NXC-3718/investigate-slow-nxjest-plugin-createnodes-with-ts-configs
@@ -97,13 +108,6 @@
   - Impact: Small scoped fix (3 engagement)
   - Notes: Root cause identified - related to http-server issue with SPA proxy
 
-- [ ] Follow-up CLOUD-3924: Compare Tasks doesn't show cache origin unless you click compare
-
-  - URL: https://linear.app/nxdev/issue/CLOUD-3924
-  - Assignee: Unassigned | Priority: High | Status: Todo
-  - Issue: Cache origin not visible on Investigate tab until you click "Check for task"
-  - Created by: Miro (DPE request)
-
 - [ ] Fix #32880 - Next.js Jest tests do not exit properly (2025-10-27 09:58)
 
   - URL: https://github.com/nrwl/nx/issues/32880
@@ -112,10 +116,3 @@
   - Notes: Workaround exists (forceExit config), affects only Next.js apps created with nx/next
 
 - [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
-
-- [ ] Follow-up: CNW ASCII Banner A/B Testing (2026-01-14)
-  - When implementing A/B testing for Nx Cloud completion message format (ASCII banner vs bordered/highlighted)
-  - **Important**: Must include message format in short URL meta property for cloud analytics
-  - Example: `variant-0-banner`, `variant-0-bordered`, `variant-1-banner`, `variant-1-bordered`
-  - This allows tracking conversion rates per message format
-  - Related: `.ai/2026-01-14/tasks/nxc-3628-remove-cloud-prompt.md` (see Follow-up Tasks section)

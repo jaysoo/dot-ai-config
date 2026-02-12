@@ -24,25 +24,39 @@
 - **Strengths:**
 
 
-## Upcoming
-
-- Measure reverted PRs
-- Make sure Effy, Wagepoint, etc. all have the same levels
-- Send employee satisfaction survey to James for review
-- Discuss Victor's 360 review lessons learned
-- Implement AI champion role (one person per team, half day bi-weekly)
-- Complete People by Wage Point level corrections before next review cycle
-
 ## 1:1 Notes
 
+### Upcoming
+
+- Measure reverted PRs
+
 ### Topics to Discuss
+
 - [ ] Update Effy reporting structure
 - [ ] Look at Effy Reviews and how people can get their past reviews
+
+### 2026-02-10
+
+**Effy Review Process Feedback (from Heidi)**
+
+1. **STOP** - questions that don't yield valuable info:
+   - "What is the most valuable contribution they have made to the company during the last six months?" — This one often gets answered by way of the other questions like "How well have they demonstrated the skills/knowledge required for their role/level?"
+
+2. **CONTINUE** - questions that do yield valuable info:
+   - "How often do they take the initiative in identifying and solving problems (irrespective of their role/level)?" — Heidi's favorite question because it aids in helpful feedback on what they're doing well or growth opportunities. It's a clear indicator no matter the role if they're on the path to promotion or need coaching.
+   - "What's one thing they could do to increase their impact?" — Shows growth opportunity, applies to everyone
+
+3. **START** - suggestions:
+   - A lot of the questions are about how people perform for their level; for engineers it's easier because there's documentation
+   - Helpful for non-eng teams for team leads to put something together that explains what's expected of their team
+   - Example: Juri reviewed Caitlin but said a few times he wasn't sure what her role entailed
+   - Philip's role has shifted a bit in the last few years so people expected him to be doing things that weren't his priorities anymore
+   - Heidi could write up a bulleted list of what a Marketing Manager is responsible for and people could reference that before they review Caitlin moving forward
 
 ### 2026-01-23
 
 **Performance Review Process Discussion**
-- Need specific feedback from stakeholders (Made, Line, Joe) and non-engineering teams
+- Need specific feedback from stakeholders (Madeline, Joe) and non-engineering teams
 - Focus on actionable items for engineers rather than general "does it work well" questions
 - Key areas to explore:
   - Actionable items coming out of reviews (promotions, PIPs, assessments)
@@ -54,7 +68,7 @@
   - End users don't see feedback, should enable more direct comments
 
 **Reporting Structure Changes**
-- Mark and Chow moved from Jack's reviews to John's management
+- Mark and Chau moved from Jack's reviews to John's management
   - Reduces Jack's review load
   - John has better context for specific feedback and quality issues
   - Makes more sense given team alignment

@@ -4,64 +4,65 @@ Tracking document for Developer Productivity Engineering (DPE) sync meetings.
 
 ## Topics for Next Meeting
 
-- Input tracing CI deployment status - should be in snapshot/staging mid-week
-- Performance team proposal progress - needs Jason's decision
-- Support tool recommendation review (Miroslav → Jack/Nicole)
-- Graph inconsistency reproduction review (Zack's Loom)
-- Gradle daemon lock solutions (Louis/Max/Jason discussion)
+- JVA connectivity status after farm move (Verizon 5G)
+- Tracing deployment status - Alton update follow-up
+- Metrics API documentation and client usage
+- ClickUp scaling limits - what's safe before infrastructure breaks?
+- DTE simulation tooling prioritization (planning team discussion)
 
 ## Upcoming Sync
 
-*(Add notes/context here between meetings - will be moved into dated notes after sync)*
+_Notes accumulated between meetings go here_
 
 ## Active Accounts
 
-| Account | DPE | Key Issues | Status |
-|---------|-----|------------|--------|
-| Microsoft | - | Inferred plugins perf blocking enterprise features | ⚠️ |
-| ProductBoard | Miro, JVA | Inferred plugins perf, semi-risky state | ⚠️ |
-| Island | - | 15-20s slowdown, prev 23min graph creation | 🔄 |
-| Amiria | - | Blocked on continuous task architecture (Docker health) | ⚠️ |
-| Crezco | - | POV failed - continuous tasks limitation | ❌ |
-| Paylocity | JVA | Can't access Claude directly (AI migration concerns) | 🔄 |
-| ADP | - | DTE failures - Gradle daemon locks | ⚠️ |
-| ClickUp | - | IPO prep, cost cutting pressure, 10-25% churn risk | ⚠️ |
-| Gong | - | Using Turborepo, slow Vercel + Remote Cache | 🆕 |
+| Account      | DPE       | Key Issues                                              | Status |
+| ------------ | --------- | ------------------------------------------------------- | ------ |
+| Microsoft    | -         | Inferred plugins perf blocking enterprise features      | ⚠️     |
+| ProductBoard | Miro, JVA | Inferred plugins perf, semi-risky state                 | ⚠️     |
+| Island       | -         | 15-20s slowdown, prev 23min graph creation              | 🔄     |
+| Emeria       | -         | Blocked on continuous task architecture (Docker health) | ⚠️     |
+| Crezco       | -         | POV failed - continuous tasks limitation                | ❌     |
+| Paylocity    | JVA       | Can't access Claude directly (AI migration concerns)    | 🔄     |
+| ADP          | -         | DTE failures - Gradle daemon locks                      | ⚠️     |
+| ClickUp      | -         | IPO prep, cost cutting pressure, 10-25% churn risk      | ⚠️     |
+| Gong         | -         | Using Turborepo, slow Vercel + Remote Cache             | 🆕     |
 
 ## Action Items
 
-### From 2026-01-26 Sync
-- [ ] **Jack**: Get answer from Jason this week on performance issue approach
-- [ ] **Steven**: Create Linear issue for continuous tasks with customer requests
-- [ ] **Zack**: Create reproduction and Loom for graph inconsistency issue
-- [ ] **Zack**: Create Linear issue for Gradle plugin problems with customer context
-- [ ] **Miroslav**: Send support tool recommendations to Jack and Nicole
+### From 2026-02-09 Sync
 
-### Input Tracing (January Target)
-- Raj has working eBPF program for I/O tracing
-- CI work needs completion by mid-week for snapshot/staging testing
-- Will help identify misconfiguration issues in customer projects
+- **Jack**: Ping Zack about ADP contract details and support strategy
+- **Jack**: Follow up with Raj on metrics API completion status and documentation needs
+- **Jack**: Create issue for Celonis transitive outputs performance problem
+- **Jack**: Talk to planning team about DTE simulation tooling prioritization
+- **Steven**: Add Jack to Atlas and Pilon demo calls
+- **JVA**: Ping Jack about Paylocity environment variable issue for assignment
+- **Miro**: Investigate Skyscanner TypeScript references sync issue
+- **Zack**: Get config diff from ADP (month ago vs. current) to identify changes
 
-### Performance Team Proposal
-- Mixed team from CLI, core, and DPEs focusing on performance
-- Need access to customer repositories for real-world testing
-- CodeSpeed initiative needs revival with baseline benchmarks
+### From 2026-01-26 Sync (Carryover)
 
-### Support & Communication Initiative
-- Jack & Nicole owning communication gap between teams
-- Need end-to-end traceability: Salesforce IDs → Linear tickets → deployment → customer follow-up
-- Miroslav's 3-4 month support tool research ready for recommendation
+- **Steven**: Create Linear issue for continuous tasks with customer requests
+- **Zack**: Create reproduction and Loom for graph inconsistency issue
 
-### Continuous Tasks / Docker Health Checks
-- Multiple customers blocked: Amiria, Crezco (POV failed), Island
-- Need ready-when logic for Docker health checks
-- Customers unwilling to port existing health checks to JavaScript
+### Input Tracing
 
-### Codspeed Integration
-- Needs to be integrated for Ocean and CLI
-- Need to set a date for this - talk to Jason
+- Raj got tracing data flowing last week
+- CPU/memory usage monitoring looks acceptable
+- Plan to enable in NX Cloud and NX soon
+- Latest beta includes all required components
+- Alton providing update later today (2026-02-09)
+
+### Support Tools Evaluation
+
+- Steven leading demos with Atlas and Pilon this week
+- Jack added to demo calls (30-minute intro sessions)
+- Key requirement: Current tools like Waypoint lack APIs, causing workflow issues
 
 ### PR Reminders
+
+- Block Square socket closure PR - Gregory approved, waiting on Jason review
 - https://github.com/nrwl/nx/pull/33551
 - https://github.com/nrwl/nx/pull/33562
 - https://github.com/nrwl/nx/pull/33572
@@ -70,17 +71,118 @@ Tracking document for Developer Productivity Engineering (DPE) sync meetings.
 
 ## Meeting Notes
 
+### 2026-02-09
+
+**Attendees:** Miroslav Jonas, Austin Fahsl, Joshua VanAllen, Steven Nance, Caleb Ukle, Zack DeRose, Jordan Powell
+
+**Technical Issues & Hardware Setup:**
+
+- JVA moving to Central PA farm this weekend
+  - Verizon 5G network only internet option
+  - May impact meeting attendance quality
+- General hardware/driver frustrations discussed
+  - Mac USB-C docking issues with cameras
+  - Windows handles peripherals more reliably
+
+**ADP Contract & Support Strategy:**
+
+- Current contract: $183K → $225K renewal (225 people)
+  - Renewal not until September
+- Support approach: balanced effort vs. contract size
+  - Help enough to avoid blocking/unhappiness
+  - Don't over-invest given contract limitations
+- Louis working on Gradle plugin issues for them
+  - Few PRs here and there, not drop-everything priority
+
+**Tracing Implementation Update:**
+
+- Raj got tracing data flowing last week
+- CPU/memory usage monitoring looks acceptable
+- Plan to enable in NX Cloud and NX soon
+- Latest beta includes all required components
+- Alton providing update later today
+
+**Support Tools Evaluation:**
+
+- Steven leading demos with Atlas and Pilon this week
+- Jack added to demo calls (30-minute intro sessions)
+- Key requirement: Current tools like Waypoint lack APIs, causing workflow issues
+
+**Customer Issues & Performance:**
+
+- **Paylocity environment variable issue**
+  - Testing environment variable fix for transpile/SWC errors
+  - Multiple processes causing conflicts with Playwright directories
+  - JVA hit "object object" error - needs investigation
+- **Celonis transitive outputs CPU spike**
+  - Massive CPU pressure when using transitive dependencies as inputs
+  - 18 cores → 180 cores usage spike
+  - Issue resolved by disabling transitive inputs
+  - Leo investigating root cause
+  - Only known customer using transitive outputs feature
+- **Block Square socket closure PR**
+  - Breaking Build Kite integration
+  - Gregory approved, waiting on Jason review
+  - Meeting with them today about enterprise value
+
+**Strategic Initiatives & Scaling:**
+
+- **Prometheus integration (Rares)**
+  - Documentation and related work in progress
+- **Metrics API endpoint status**
+  - Supposedly wrapped up by Raj
+  - Need clarification on completion status and documentation
+  - Multiple clients interested in using it
+- **ClickUp scaling challenges**
+  - Requesting 10-minute CI with unlimited agents
+  - Current bottlenecks identified:
+    1. ~70-100 agent limit per cluster (workflow controller)
+    2. Kubernetes disk provisioning can't keep up
+    3. Docker hub proxy cache CPU spikes under load
+  - Need to determine safe scaling limits before infrastructure breaks
+- **DTE simulation capabilities**
+  - Caseware burning 17 hours compute per PR in 10 minutes
+  - 90% compute reduction achieved with DTE subset
+  - Need tooling to simulate DTE impact before implementation
+  - Could unlock revenue opportunities and reduce support cycles
+
+**Development & Customer Work:**
+
+- **UKG migration project (Zack)**
+  - Stuck on NX15, requires custom patching for NX Cloud
+  - Dependencies severely outdated (5+ years)
+  - Working toward full migration in coming months
+- **ADP cache integrity investigation**
+  - Claims missing outputs in DTE runs
+  - Sonar reports missing coverage dependencies
+  - Using end-to-end encryption, limiting diagnostics
+  - Leo/Jason working on potential NX fix
+  - Started failing ~2 weeks ago, need config diff analysis
+- **Skyscanner sync expectations**
+  - Expected TypeScript references auto-addition
+  - Current sync functionality not meeting expectations
+- **Maven/Gradle polyglot testing**
+  - JVA dogfooding real-world Syncster example app
+  - Angular + Maven/Gradle integration issues discovered
+  - Not customer-blocking, potential Polish Week candidate
+
+[Granola transcript](https://notes.granola.ai/t/d3cde347-2113-4b4e-a147-132957497d37-00demib2)
+
+---
+
 ### 2026-01-26
 
 **Attendees:** Miroslav Jonas, Austin Fahsl, Joshua VanAllen, Steven Nance, Caleb Ukle, Zack DeRose, Jordan Powell
 
 **Support & Communication Gap Solutions:**
+
 - Jack & Nicole owning initiative to bridge communication gap between teams
 - Need end-to-end traceability: Salesforce IDs → Linear tickets → deployment → customer follow-up
 - Miroslav's 3-4 month support tool research ready - tools will hook into email + Linear for SLA tracking
 - Issue prioritization: Medium priority needs due dates, earlier communication on won't-fix decisions
 
 **Performance Issues with Inferred Plugins:**
+
 - Critical customer impact blocking enterprise features
 - Microsoft, ProductBoard in semi-risky state
 - Island: 15-20s slowdown, previously 23min graph creation with multiple NX commands
@@ -90,12 +192,14 @@ Tracking document for Developer Productivity Engineering (DPE) sync meetings.
 - **Action:** Jack to get answer from Jason this week
 
 **Customer Migration Challenges:**
+
 - Paylocity (JVA): Can't access Claude directly, only through Microsoft Copilot
 - Year-over-year perception that migrations getting more difficult
 - Clarification: Base migrations will never go away, AI enhances complex cases (Vitest, Storybook)
 - Consider separating core NX migrations from framework-specific migrations
 
 **Docker Compose & Continuous Tasks:**
+
 - Multiple customers blocked on Docker health check support
 - Amiria ready but blocked on continuous task architecture
 - Crezco POV failed after multiple weeks due to this limitation
@@ -105,6 +209,7 @@ Tracking document for Developer Productivity Engineering (DPE) sync meetings.
 - **Action:** Steven to create Linear issue with customer requests attached
 
 **Input/Output Tracing & Graph Inconsistencies:**
+
 - Raj has working eBPF program for I/O tracing
 - CI work needs completion by mid-week for snapshot/staging testing
 - Graph visualization doesn't match affected command behavior (Zack)
@@ -126,6 +231,7 @@ Tracking document for Developer Productivity Engineering (DPE) sync meetings.
 ### 2026-01-21 (from Docs sync - Caleb)
 
 **ClickUp Account Issues:**
+
 - Kyle (Principal Architect) pushing for credit forgiveness after causing system outage
   - Load tested agents, found limits, crashed control plane
   - Kept retriggering failed CI jobs on test branch
@@ -140,6 +246,7 @@ Tracking document for Developer Productivity Engineering (DPE) sync meetings.
   - Would revert to self-hosted GitHub runners with manual DTE
 
 **Value Communication Strategy:**
+
 - Show time saved and cost saved as much as possible throughout product
   - GitHub comments after CI completion
   - Dashboard metrics showing concrete savings
@@ -191,6 +298,7 @@ Tracking document for Developer Productivity Engineering (DPE) sync meetings.
 ### 2025-12-15
 
 **Updates:**
+
 - PowerBI blockers are gone ✅
 - ProductBoard (Miro and JVA)
   - Optimizations for lockfile needed
@@ -209,6 +317,7 @@ Tracking document for Developer Productivity Engineering (DPE) sync meetings.
 - MailChimp average CIPE 2-4 minutes
 
 **PR Reminders:**
+
 - https://github.com/nrwl/nx/pull/33551
 - https://github.com/nrwl/nx/pull/33562
 - https://github.com/nrwl/nx/pull/33572

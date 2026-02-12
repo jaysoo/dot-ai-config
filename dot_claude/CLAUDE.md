@@ -63,6 +63,8 @@ Fixes DOC-125"
 - Test-only: `chore(testing):` not `test(misc):`
 - If commit rejected, use `--amend` to fix (avoid multiple commits)
 
+**CRITICAL**: Never co-author the commit, the commit MUST come only from me.
+
 ### Date & Time
 - Always ET timezone: `date '+%Y-%m-%d'`
 - Task files: `.ai/yyyy-mm-dd/tasks/`
@@ -186,6 +188,17 @@ Teams: DPE, CLI, Orca, Backend, Infra, Docs, Framer
 4. Clear discussed items from "Topics for Next Meeting"
 
 **Important:** Never delete "Upcoming Sync" section - just clear it after moving content.
+
+### Meeting Notes Processing
+- **Don't blindly copy meeting notes** - AI transcription tools (Granola, etc.) sometimes misattribute statements to wrong attendees
+- When processing meeting notes, cross-reference with context (who is it logical for?)
+- If user corrects attribution, update ALL instances (topics, action items, meeting notes)
+
+### Clearing Upcoming Sync Section
+- **Don't remove items unless explicitly addressed** in meeting notes
+- Items in "Upcoming Sync" should be preserved or moved to meeting notes - not deleted
+- Ask user about items that appear in Upcoming Sync but not in provided meeting notes
+- Better to include something brief than to lose context entirely
 
 The `/dictate` command auto-detects sync meetings and updates the right file.
 
@@ -441,4 +454,42 @@ op signin  # Select: tuskteam.1password.com
 op account list  # Check current account
 ```
 
+### Environment Variable Load Order
+
+The `op run --env-file=FILE` flag loads env files AFTER shell vars, meaning they OVERRIDE:
+```bash
+# ❌ WRONG - env.base's E2E_TEST_MODE=false overrides shell var
+E2E_TEST_MODE=true op run --env-file=env.base -- npx nx serve
+
+# ✅ CORRECT - Put overrides AFTER the -- separator
+op run --env-file=env.base -- E2E_TEST_MODE=true npx nx serve
+```
+
 **CRITICAL**: Use Nx MCP's nx_workspace or nx_docs tools for workspace/project info.
+
+## 🌊 Ocean (Nx Cloud) Specifics
+
+### Version Plans (Required for feat/fix PRs)
+
+Ocean PRs with `feat` or `fix` commits require a version plan at `.nx/version-plans/`:
+```markdown
+# .nx/version-plans/yyyy-mm-dd-hh-mm-descriptive-name.md
+---
+nx-cloud: fix
+---
+
+Customer-facing changelog description.
+```
+Options: `fix`, `minor` (feature), `patch`. Not needed for `chore`/`docs` commits.
+
+### E2E Testing
+
+```bash
+# Start server in e2e mode (fake credentials, no 1Password needed)
+nx serve nx-cloud --configuration=e2e  # port 4202
+
+# Run tests
+nx run nx-cloud-e2e-playwright:e2e --grep "pattern"
+```
+
+The `--configuration=e2e` loads `.env.serve.e2e`. Don't use `op run` with e2e mode.

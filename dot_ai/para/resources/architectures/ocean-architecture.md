@@ -107,6 +107,19 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 
 ## Personal Work History
 
+### 2026-02-11
+- **CLOUD-4246: Access Control Confirmation Dialog** (branch: CLOUD-4246, PR: #9985)
+  - Task: Replace inline Save/Cancel buttons with modal confirmation for access control settings
+  - Created `change-access-level-confirmation-dialog.tsx` using existing `ConfirmationDialog` with `variant="blue"`
+  - Modified `workspace-id-access-level.tsx` and `workspace-pat-access-level.tsx` to show modal on radio change
+  - Updated e2e tests in `access-control.spec.ts` (3 locations)
+  - Key pattern: Use `pendingAccessLevel` state to track selection before confirmation
+
+- **CLOUD-3924: Compare Tasks Cache Origin Fix** (branch: CLOUD-3924, commit: 009a28ff77)
+  - Task: Show "Originated from" link on Compare Tasks page without requiring comparison task selection
+  - Fixed `compare-tasks-loader.server.ts` to fetch cache origin independently for each task
+  - Added e2e test for cache origin display
+
 ### 2025-09-10
 - **Docker Nx Release Migration** (branch: NXC-2493, commit: 7a146758b)
   - Task: Enable nx release for Docker images per NXC-2493
@@ -128,6 +141,72 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
   - Problem: nx-cloud binary failed in workspaces without root node_modules
   - Solution: Added customRequire helper to check .nx/installation/node_modules
   - Files: custom-require.ts (new), nx-imports.ts, nx-imports-light.ts
+
+## UI Patterns
+
+### Confirmation Dialogs (2026-02-11)
+
+For destructive or significant settings changes, use the `ConfirmationDialog` component from `@nx-cloud/ui-primitives`:
+
+```tsx
+import {
+  ConfirmationDialog,
+  ConfirmationDialogContent,
+  ConfirmationDialogTitle,
+} from '@nx-cloud/ui-primitives';
+
+<ConfirmationDialog
+  isOpen={isOpen}
+  handleConfirm={handleConfirm}
+  handleCancel={handleCancel}
+  handleClose={handleCancel}
+  confirmText="Save changes"
+  variant="blue"  // or "red" for destructive actions
+>
+  <ConfirmationDialogTitle>Title</ConfirmationDialogTitle>
+  <ConfirmationDialogContent>Message</ConfirmationDialogContent>
+</ConfirmationDialog>
+```
+
+**Pattern for settings changes:**
+1. Use `pendingValue` state to track the new selection before confirmation
+2. On change event, set `pendingValue` and open dialog (don't update actual value yet)
+3. On confirm: call mutation with `pendingValue`, clear `pendingValue`
+4. On cancel: just clear `pendingValue`
+
+**Examples:**
+- `EnableNxReplayConfirmationDialog` - Red variant for enabling cache from NO_CACHE
+- `ChangeAccessLevelConfirmationDialog` - Blue variant for access level changes
+
+## PR Requirements
+
+### Version Plans (Required for feat/fix PRs)
+
+Most PRs with `feat` or `fix` commits require a version plan for changelog generation. Create one at `.nx/version-plans/`:
+
+```bash
+# Naming convention: yyyy-mm-dd-hh-mm-descriptive-name.md
+.nx/version-plans/2026-02-10-16-26-confirming-access-levels.md
+```
+
+**Format:**
+```markdown
+---
+nx-cloud: fix
+---
+
+Customer-facing description of the change. This becomes the changelog entry.
+```
+
+**Frontmatter options:**
+- `nx-cloud: fix` - Bug fix
+- `nx-cloud: minor` - New feature
+- `nx-cloud: patch` - Small improvement
+
+**When NOT needed:**
+- `chore` commits (internal tooling, CI changes)
+- `docs` commits
+- Test-only changes
 
 ## Design Decisions & Gotchas
 
@@ -194,17 +273,25 @@ op signin
 
 ### Running Nx Cloud Locally
 
-**With API (full stack):**
+**With API (full stack, recommended):**
 ```bash
-npx nps nxCloud.serve.withApi
+TARGET_ENV=Staging op run --env-file=env.base --env-file=env.override -- npx nx serve nx-cloud --configuration=development
 ```
 Requires: MongoDB running, 1Password authenticated to tuskteam
 
-**Frontend only (no API):**
+`TARGET_ENV` options: `Base`, `Staging`, `Snapshot` (determines which 1Password secrets to use)
+
+**Legacy commands (may have stale env setup):**
 ```bash
-npx nps nxCloud.serve
+npx nps nxCloud.serve.withApi  # Full stack
+npx nps nxCloud.serve          # Frontend only, port 4202
 ```
-Serves on port 4202, uses mock/hardcoded data
+
+**E2E mode (fake credentials, no 1Password needed):**
+```bash
+nx serve nx-cloud --configuration=e2e
+```
+Uses `.env.serve.e2e` with fake GitHub/GitLab credentials. Good for UI testing.
 
 ### E2E Testing
 
@@ -212,6 +299,21 @@ E2E tests bypass Auth0 by creating public organizations:
 ```bash
 nx run nx-cloud-e2e-playwright:e2e --grep "pattern"
 ```
+
+**Running e2e tests locally:**
+```bash
+# Start server in e2e mode first (uses fake credentials, no 1Password needed)
+nx serve nx-cloud --configuration=e2e
+
+# In another terminal, run tests
+nx run nx-cloud-e2e-playwright:e2e --grep "pattern"
+```
+
+**Important:** The `E2E_TEST_MODE` environment variable controls e2e mode:
+- Set in `.env.serve.e2e` which is loaded by `--configuration=e2e`
+- `env.base` has `E2E_TEST_MODE=false` hardcoded
+- 1Password `op run --env-file` loads env files AFTER shell vars, overriding them
+- To override when using 1Password: `op run --env-file=env.base -- E2E_TEST_MODE=true npx nx serve...`
 
 Key fixtures:
 - `db.createTestOrganization({ isPublic: true })` - Creates org viewable without login

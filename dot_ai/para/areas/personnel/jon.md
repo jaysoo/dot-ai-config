@@ -20,7 +20,7 @@
 
 ## Professional
 
-- **Current Focus:** Red Panda team leadership, SPACE metrics implementation
+- **Current Focus:** Red Panda team leadership, Polygraph AI (UI), Self-healing CI maintenance
 - **Goals:** More ownership of product direction and longer-term vision (6+ months)
 - **Strengths:** Technical skills, calm communication, accountability, responsive to customer feedback
 
@@ -55,6 +55,39 @@ Improvements:
 - Make sure "unplanned" work is defined correctly
 
 ## 1:1 Notes
+
+### 2025-02-10
+
+**Timezone Coordination & Workflow Efficiency:**
+- Deadlines compound timezone issues - tighter schedules make delays more painful
+- Need better overlap management, especially with Chau and Max in Vietnam
+- When someone's work blocks others, avoid full-day waits for responses
+  - Cross-training so others can pick up work even if slower
+  - Better to have James spend 2 hours figuring out Max's work than wait 8 hours
+- Encourage proactive handoffs when going offline
+  - Ping relevant team members with context before signing off
+  - Share information needed to push work through
+
+**Project Management & Clarity:**
+- Victor sets aggressive deadlines (Polygraph AI demo needed by Chinese New Year)
+- Common issues with task clarity and scope management
+  - Linear tasks often lack proper descriptions
+  - People need to clarify urgency before dropping other work
+  - Example: Agent onboarding task unclear - team built API endpoints without understanding end goal
+- Recommend AI brainstorming sessions before starting work
+- People should push back appropriately and ask clarifying questions rather than assume urgency
+
+**Team Capacity & Current Projects:**
+- Jon feels current workload manageable with AI assistance (Claude)
+  - Self-healing CI in good state after cooldown period
+  - Polygraph AI focus: Jon on UI (challenging for him), Victor on orchestration
+  - Mark or Chau will join Polygraph team after self-healing work complete
+- Unplanned work tracking: Use DPE/Support labels for customer requests
+- Jon taking Capital One trip in couple weeks, may swap Friday/Monday for President's Day
+
+**Transcript:** [Granola notes](https://notes.granola.ai/t/3f12b2d2-455c-45d2-ac51-a83a0ea4ab29-00demib2)
+
+---
 
 ### 2025-01-22
 

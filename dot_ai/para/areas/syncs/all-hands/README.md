@@ -6,6 +6,11 @@
 
 - Docs team restructuring work update
 - AI consumption of docs content findings
+- Docs infrastructure updates:
+  - New sidebar/IA
+  - Banner now controlled from Framer
+  - Pages going live in Framer
+  - Moved off of Vercel
 
 ## Upcoming Sync (2026-02-02)
 
