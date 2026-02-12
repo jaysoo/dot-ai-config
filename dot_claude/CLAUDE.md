@@ -63,7 +63,7 @@ Fixes DOC-125"
 - Test-only: `chore(testing):` not `test(misc):`
 - If commit rejected, use `--amend` to fix (avoid multiple commits)
 
-**CRITICAL**: Never co-author the commit, the commit MUST come only from me.
+**CRITICAL**: Never co-author the commit, the commit MUST come only from me. Also do not mention yourself (Claude Code) in the commit body.
 
 ### Date & Time
 - Always ET timezone: `date '+%Y-%m-%d'`
