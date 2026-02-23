@@ -113,4 +113,7 @@
 
 ## Random Notes
 
-<!-- Miscellaneous things to remember -->
+- **Departing** (announced 2026-02-23 all-hands) — 2 weeks notice
+  - Joining former colleagues/mentors at new opportunity
+  - Praised recent sales team growth and strong Q4 performance
+  - Available for 1-on-1 coordination during transition

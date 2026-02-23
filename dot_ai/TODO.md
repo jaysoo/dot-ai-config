@@ -4,115 +4,110 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **NXC-3898: Clarify Security Email Usage** (2026-02-11)
+1. **#30146: Pruning docs guide + error message fix** (2026-02-23)
 
-   - Summary: Updated SECURITY.md to clarify security email is for demonstrable, verified vulnerabilities in Nx codebase, not outdated dependencies or scanner output
-   - Files: `.ai/2026-02-11/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34411
+   - Summary: Created pruning deployment guide, updated bundling guide to match, added error message docs link in esbuild/rollup. Two branches: docs-only + error message.
+   - Files: `.ai/2026-02-23/SUMMARY.md`, `.ai/2026-02-23/tasks/issue-30146-investigation.md`
 
-2. **CLOUD-4246: Access Control Confirmation Dialog** (2026-02-11)
+2. **Nx Easy Issues: Top 11 AI-Suitable Issues** (2026-02-23)
 
-   - Summary: Replaced inline Save/Cancel buttons with modal confirmation dialogs for access control settings to prevent accidental changes from trackpad gestures
-   - Files: `.ai/2026-02-11/SUMMARY.md`, PR: https://github.com/nrwl/ocean/pull/9985
+   - Summary: Scanned 381 open issues, ranked by AI suitability. Top picks: #32126 (bun publish), #34492 (esbuild type-check), #34391 cluster (git tag interpolation), #34279 (webpack process.env regression).
+   - Files: `.ai/2026-02-23/tasks/nx-easy-issues-top11.md`
 
-3. **CLOUD-3924: Compare Tasks Cache Origin Fix** (2026-02-11)
+3. **Fix: Prevent nxCloudId for new workspaces** (2026-02-20)
 
-   - Summary: Fixed "Originated from" link not showing on Compare Tasks page without selecting a comparison task; cache origin now displays immediately for remote-cache-hit tasks
-   - Files: `.ai/2026-02-11/SUMMARY.md`, PR: https://github.com/nrwl/ocean/pull/9992
+   - Summary: Added `nxCloud: 'skip'` to custom CNW flow so new workspaces don't get `nxCloudId` in `nx.json`. Updated 8 e2e tests.
+   - Files: `.ai/2026-02-20/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34532
 
-4. **Victor 1:1 Notes** (2026-02-09)
+4. **DOC-406: Dedupe Content & Style Guide Fixes** (2026-02-19)
 
-   - Summary: Timezone expectations for Max/Chau, Max performance feedback, team redundancy concerns, agentic onboarding progress
-   - Files: `.ai/para/areas/personnel/victor.md`
+   - Summary: Content deduplication across concepts/ and features/ pages (trimmed mental-model, consolidated remote-cache intro, added cross-references) + style guide compliance fixes across 10 pages. Created `STYLE_GUIDE.md`.
+   - Files: `.ai/2026-02-19/tasks/doc-406-dedupe-getting-started.md`
 
-4. **Google Apps Script PTO Calendar: Bug Fixes** (2026-02-06)
+5. **Fix #32880: Next.js Jest Tests Don't Exit** (2026-02-19)
 
-   - Summary: Fixed duplicate PTO bug (single-day events showing in Today AND Tomorrow) and skip Tomorrow section on Fridays
-   - Files: `.ai/2026-02-06/SUMMARY.md`, `/Users/jack/projects/gcal/script.js`
+   - Summary: Root caused and fixed — Nx daemon socket left open by `withNx` calling `createProjectGraphAsync()`. One-line fix: `resetDaemonClient: true`.
+   - Files: `.ai/2026-02-19/tasks/issue-32880-jest-not-exiting.md`, PR: https://github.com/nrwl/nx/pull/34518
 
-5. **SPACE Metrics Port & UI Fix** (2026-02-05)
+6. **DOC-405: Intro Page & Getting Started Improvements** (2026-02-13)
 
-   - Summary: Ported SPACE metrics improvements from space-metrics to lighthouse (expanded Misc detection, Quokka team-specific rules, 365-day cap); fixed Target legend to use colored emoji squares
-   - Files: `.ai/2026-02-05/SUMMARY.md`, `lib/lighthouse/space_metrics/calculators/linear_metrics.ex`
+   - Summary: Restructured intro challenges/solutions, added plugin-registry links, added global Nx update instructions to installation page
+   - Files: `.ai/2026-02-13/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34410
 
-6. **Nx Cloud Workspace Claim Enforcement Spec** (2026-02-04)
+7. **Nx.dev Website Update** (2026-02-13)
 
-   - Summary: Brainstormed structural changes to increase Nx Cloud onboarding; spec proposes 7-day claim enforcement where CI fails after grace period until workspace is claimed
-   - Files: `.ai/2026-02-04/specs/cloud-claim-enforcement.md`
+   - Summary: Cherry-picked docs commits from master to website-22 branch; 1 commit for AX improvements on getting started pages
+   - Files: `.ai/2026-02-13/SUMMARY.md`
 
-7. **Agentic CNW Implementation - AI Agent Detection & NDJSON Output** (2026-02-04)
+8. **SPACE Metrics UI Improvements** (2026-02-13)
 
-   - Summary: Implemented AI agent detection and NDJSON output for create-nx-workspace; AI detected via env vars, non-interactive mode, structured JSON results with GitHub setup instructions
-   - Files: `.ai/2026-02-04/SUMMARY.md`, `packages/create-nx-workspace/src/utils/ai/ai-output.ts`
+   - Summary: Implemented YoY comparison for PR Throughput, classification footer, Dolphin 14-day target, P75 ~1.5x P50 thresholds, in-progress quarter asterisks, and planning accuracy logic fix (above budget = green)
+   - Files: `.ai/2026-02-13/SUMMARY.md`, PR: https://github.com/nrwl/lighthouse/pull/35
 
-8. **Google Apps Script PTO Calendar: Daily "Today + Tomorrow" Feature** (2026-02-04)
+9. **CLI Analytics for Enterprise Customers - Proposal** (2026-02-12)
 
-   - Summary: Extended daily notifications to show both today AND tomorrow's events for better planning; added day filtering and new Today/Tomorrow section formatting
-   - Files: `.ai/2026-02-04/SUMMARY.md`, `/Users/jack/projects/gcal/script.js`
+   - Summary: Created proposal spec for CLI analytics; matches GA PR #34144 1:1 for all commands, enterprise-only, fire-and-forget ingestion
+   - Files: `.ai/2026-02-12/specs/generator-metrics.md`
 
-9. **DOC-395: Server-Side Page View Tracking** (2026-02-02)
+10. **CLOUD-4255: Remove Misleading Title for Deferred Connection** (2026-02-12)
 
-   - Summary: Created track-page-requests edge function for HTML pages; fixed double-counting in track-asset-requests; added comprehensive excludedPath for fonts/images/pagefind
-   - Files: `.ai/2026-02-02/tasks/DOC-395-server-page-tracking.md`, `astro-docs/netlify/edge-functions/track-page-requests.ts`
+    - Summary: Fixed misleading "Nx Cloud configuration was successfully added" title for variant 2 deferred connection; added `writeLines()` to CLIOutput to output banner without NX badge
+    - Files: `.ai/2026-02-12/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34416
 
 ## Pending
-- [ ] Write a proposal for stats for generators and other CLI commands (2026-02-11 09:11)
-  - https://nrwl.slack.com/archives/C6WJMCAB1/p1770674582319699
-- [ ] SPACE Metrics (Lighthouse) Feedback from Jason Jean (2026-02-10 16:26)
-  - PR Throughput: Show baseline context (what does "red 42" mean?)
-  - Planning Accuracy: Add better description of what the metric measures
-  - Issue Resolution:
-    - Clarify it's for Misc/unassigned tasks only (definition differs for Red Panda vs Quokka)
-    - Extend target to 14 days for Dolphin team (cycle-based workflow)
-    - P75 targets should be more lenient than P50 (~50% more time as starting point)
-    - Add asterisk noting Q1 is partial/in-progress quarter
-- [ ] add Jeff to future planning meetings (2026-02-10 14:39)
-- [ ] Talk to Max about time zone expectations (2026-02-09 14:00)
-  - Need 3-4 hours overlap with Eastern team (noon ET = 6pm CET)
-  - Address performance reliability concerns from Victor
-- [ ] Talk to Chau about time zone expectations (2026-02-09 14:00)
-  - Clarify Victor's overlap concerns (Chau is Central time, only 1hr behind Eastern)
-  - Discuss backup coverage for critical areas
-- [ ] Follow up with Nicole on agentic onboarding testing results (2026-02-09 14:00)
-  - Goal: AI creates NX workspace with cloud setup via "YOLO mode"
-  - Identify gaps where manual intervention required
-- [ ] Review init experience and sync with Nicole (2026-02-10)
-  - NX init improvements needed for AI compatibility
-- [ ] Talk to Thomas to update Ben and others to be under me or Nicole, etc. for wagepoint (2026-02-09 11:45)
-- [ ] Follow-up on Paylocity issue (2026-02-04 12:28)
-  - https://linear.app/nxdev/issue/NXC-3388/typeerror-0-configurationgetprojectname-is-not-a-function-when-running
-- [ ] Talk to Thomas about reporting structure in Wagepoint (2026-01-30 16:04)
-- [ ] Follow-up CLOUD-2614: Investigate discrepancy in contributor count (2025-10-27 09:58)
-- [ ] Follow-up NXC-3427: Multiple Nx daemons persist for same workspace in 21.6.8 (2025-10-27 09:58)
-- [ ] Follow up on slow jest configs for Island (2026-01-14 09:27)
-  - Steven and Leo for this issue https://linear.app/nxdev/issue/NXC-3718/investigate-slow-nxjest-plugin-createnodes-with-ts-configs
-- [ ] Steven 1:1 follow-up: DPE feature tracking improvements (2026-01-12 10:30)
-  - Wait for Steven to create comprehensive feature list with desired metadata fields
-  - Review list and identify what's solved by roadmap vs change log vs new solutions
-  - Discuss with Victor (roadmap owner) and Nicole (change log) about implementation
-  - Consider "post-done" status in Linear for released features
-- [ ] Follow-up with Victor on Roadmap (2026-01-09 09:41)
-  - Platform roadmap should be finalized and ready for review by end of next week. If not completed by then, raise this as a discussion topic during the 1:1 on Monday to address any blockers or get alignment on timeline.
+- [ ] Nx Easy Issues: Work through top 11 AI-suitable issues (2026-02-23 15:00)
+  - Plan: `.ai/2026-02-23/tasks/nx-easy-issues-top11.md`
+  - Goal: Triage and fix community issues ranked by AI suitability
+  - Top picks: #32126, #34492, #34391 cluster, #34399, #34279, #34172, #34542, #34300, #32832, #32481, #31495
+
+- [ ] Update all links for docs to use new URL (2026-02-23 11:57)
+
 - [ ] NXC-3641: Centralized Template Updater (2025-12-29 11:30)
 
-  - Linear: https://linear.app/nxdev/issue/NXC-3641
-  - Plan: `.ai/2025-12-29/tasks/nxc-3641-template-updater.md`
-  - Repo: `/Users/jack/projects/nx-template-updater`
-  - Goal: Create `nrwl/nx-template-updater` repo to auto-update CNW templates when Nx publishes
-  - Status: On hold - could be handled as an AI-assisted migration later, so no immediate action needed
-  - Action: Discuss with Colum during 1:1 to confirm deprioritization
+- [ ] Consolidate Netlify edge functions & add error handling (2026-02-19 19:45)
+  - Context: Edge function timeout crash reported on nx.dev (`01KHW77GJRWVJH26SK2C16RYG5`). Two chained edge functions on every `/docs/*` request add overhead.
+  - Files: `astro-docs/netlify/edge-functions/`
+  - Tasks:
+    1. Merge `add-link-headers.ts` and `track-page-requests.ts` into a single edge function (both match `/docs/*` for HTML requests, currently chained via `context.next()`)
+    2. Add `try/catch` + `console.error` around `context.next()` calls for better diagnostics on timeouts
+    3. Add `AbortController` timeout (5s) to GA4 fetch in `context.waitUntil` to prevent hung isolates
+    4. Review `track-asset-requests.ts` for the same improvements (matches `*.txt`, `*.md`)
+    5. Test locally with `netlify dev` and verify edge function logs show correctly
+    6. Check Netlify dashboard edge function logs around 4:31 PM ET Feb 19 for the crash details
 
-- [ ] Fix #33047 - @nx/web:file-server crash on non-GET requests (2025-10-27 09:58)
+## In Progress
 
-  - URL: https://github.com/nrwl/nx/issues/33047
-  - Goal: Handle non-GET requests properly in file-server to prevent crashes with SPA mode
-  - Impact: Small scoped fix (3 engagement)
-  - Notes: Root cause identified - related to http-server issue with SPA proxy
+This week:
 
-- [ ] Fix #32880 - Next.js Jest tests do not exit properly (2025-10-27 09:58)
+- [ ] Framer _must_ launch this week
 
-  - URL: https://github.com/nrwl/nx/issues/32880
-  - Goal: Configure Jest properly for Next.js apps to avoid hanging after test completion
-  - Impact: Medium (4 engagement)
-  - Notes: Workaround exists (forceExit config), affects only Next.js apps created with nx/next
+- [ ] Sandboxing, get the list of problems by EOD Wednesday
+
+- [ ] Investigate if we need to update our edge functions, e.g. move the redirects from next.js to proper Netlify redirects file
+  - Could help with any connectivity or latency issues
+
+- [ ] Help Nicole with onboarding to hit 600 per week
+
+- [ ] Help Max with AX and migrations specs before March starts
+
+- [ ] Follow up on `op` and `gh` CLI usage with 1Password (2026-02-18 17:15)
+
+  - Victor noticed people rarely have 1Password popping up during screenshares
+  - Check with everyone that they're using `gh` CLI with 1Password integration
+  - Post reminder message in #dev channel
+  - Mention during all hands
+
+- [ ] Slack #nx heads-up on cooldown week (2026-02-13 11:21)
+
+  - https://nrwl.slack.com/archives/C6WJMCAB1/p1770987986210599
+
+- [ ] Look through all TODO(v23) comments and add tasks for them
 
 - [ ] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110)
+
+- [ ] Follow-up on Paylocity issue (2026-02-04 12:28)
+  - https://linear.app/nxdev/issue/NXC-3388/typeerror-0-configurationgetprojectname-is-not-a-function-when-running
+  - They verified the fix so we just need to port it back to the plugin
+  - JVA said that he will open a PR
+
+Later:

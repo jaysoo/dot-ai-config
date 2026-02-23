@@ -2,6 +2,121 @@
 
 ### February 2026
 
+
+- [x] #30146: Pruning docs guide + error message fix (2026-02-23)
+  - Plan: `.ai/2026-02-23/tasks/issue-30146-investigation.md`
+  - Summary: Created "Pruning Projects for Deployment" guide, updated "Bundling Projects for Deployment" to match, added docs link to esbuild/rollup error messages. Two branches: `issues-30146` (docs) and `issues-30146-error-msg` (code).
+
+- [x] CS-84: Connect Pylon to Linear (2026-02-23 14:34)
+  - Plan: `.ai/2026-02-23/tasks/cs-84-connect-pylon-to-linear.md`
+  - Goal: Enable Pylon-Linear integration for support issue tracking and sync
+
+
+  - Linear: https://linear.app/nxdev/issue/NXC-3641
+  - Plan: `.ai/2025-12-29/tasks/nxc-3641-template-updater.md`
+  - Repo: `/Users/jack/projects/nx-template-updater`
+  - Goal: Create `nrwl/nx-template-updater` repo to auto-update CNW templates when Nx publishes
+  - Status: On hold - could be handled as an AI-assisted migration later, so no immediate action needed
+  - Action: Discuss with Colum during 1:1 to confirm deprioritization
+
+
+- [x] Fix: Prevent nxCloudId from being generated for new workspaces (2026-02-20) ✓ 2026-02-20
+  - Plan: N/A (direct fix)
+  - Summary: Added `nxCloud: 'skip'` to custom CNW flow so new workspaces don't get `nxCloudId` in `nx.json`. Updated 8 e2e tests to verify. Removed `--nxCloud=skip` from e2e utils (now handled in source).
+  - PR: https://github.com/nrwl/nx/pull/34532
+
+- [x] DOC-406: Dedupe Content & Style Guide Fixes (2026-02-19) ✓ 2026-02-19
+  - Plan: `.ai/2026-02-19/tasks/doc-406-dedupe-getting-started.md`
+  - Summary: Content deduplication across concepts/ and features/ pages (trimmed mental-model, consolidated remote-cache intro, added cross-references) + style guide compliance fixes across 10 pages. Created `STYLE_GUIDE.md`. Initially built custom Markdoc components but reverted — raw markdown must stay readable for AI agents.
+
+- [x] Fix #32880 - Next.js Jest tests don't exit through Nx (2026-02-19) ✓ 2026-02-19
+  - Plan: `.ai/2026-02-19/tasks/issue-32880-jest-not-exiting.md`
+  - Summary: Root cause was Nx daemon socket left open by `withNx` calling `createProjectGraphAsync()` without `resetDaemonClient: true`. One-line fix in `packages/next/plugins/with-nx.ts`.
+  - PR: https://github.com/nrwl/nx/pull/34518
+
+- [x] Fix #33047 - @nx/web:file-server crash on non-GET requests (2025-10-27 09:58) ✓ 2026-02-18
+
+  - URL: https://github.com/nrwl/nx/issues/33047
+  - Goal: Handle non-GET requests properly in file-server to prevent crashes with SPA mode
+  - Impact: Small scoped fix (3 engagement)
+  - Notes: Root cause identified - related to http-server issue with SPA proxy
+
+
+- [x] Follow up on slow jest configs for Island (2026-01-14 09:27) ✓ 2026-02-18
+  - Steven and Leo for this issue https://linear.app/nxdev/issue/NXC-3718/investigate-slow-nxjest-plugin-createnodes-with-ts-configs
+
+- [x] Follow-up CLOUD-2614: Investigate discrepancy in contributor count (2025-10-27 09:58) ✓ 2026-02-18
+
+- [x] Follow-up NXC-3427: Multiple Nx daemons persist for same workspace in 21.6.8 (2025-10-27 09:58) ✓ 2026-02-18
+
+- [x] Planning Meeting (2026-02-17 current) ✓ 2026-02-18
+  - Plan: `.ai/2026-02-17/tasks/planning-meeting.md`
+  - Topics: Blog migration to Framer, Cloud UI stats exposure
+
+## Pending
+
+- [x] DOC-405: Intro Page & Getting Started Improvements (2026-02-13)
+  - PR: https://github.com/nrwl/nx/pull/34410
+  - Restructured "Challenges of Monorepos" section with 4 focused challenges
+  - Updated "What Nx Does" with 5 solutions (caching, graphs, orchestration, module boundaries, flakiness handling)
+  - Updated plugin links to `/docs/plugin-registry` for better discoverability
+  - Added "Update Global Installation" section to installation page (npm, Homebrew, Chocolatey, apt)
+  - Summary: `.ai/2026-02-13/SUMMARY.md`
+
+- [x] Nx.dev Website Update (2026-02-13)
+  - Cherry-picked docs commits from master to website-22
+  - Commit: `c0540c8846` - docs(misc): improve AX for getting started pages (#34410)
+
+- [x] Steven 1:1 follow-up: DPE feature tracking improvements (2026-01-12 10:30) ✓ 2026-02-13
+  - Wait for Steven to create comprehensive feature list with desired metadata fields
+  - Review list and identify what's solved by roadmap vs change log vs new solutions
+  - Discuss with Victor (roadmap owner) and Nicole (change log) about implementation
+  - Consider "post-done" status in Linear for released features
+
+- [x] Follow up with Nicole on agentic onboarding testing results (2026-02-09 14:00) ✓ 2026-02-13
+  - Goal: AI creates NX workspace with cloud setup via "YOLO mode"
+  - Identify gaps where manual intervention required
+
+- [x] SPACE Metrics UI Improvements (2026-02-13)
+  - Origin: Jason Jean feedback (2026-02-10)
+  - PR: https://github.com/nrwl/lighthouse/pull/35
+  - Implemented: YoY comparison for PR Throughput, classification footer, Dolphin 14-day target, P75 ~1.5x P50 thresholds, in-progress quarter asterisks, planning accuracy logic (above budget = green)
+  - Plan: `.ai/2026-02-12/tasks/space-metrics-ui-improvements.md`
+  - Summary: `.ai/2026-02-13/SUMMARY.md`
+
+- [x] CLI Analytics for Enterprise Customers - Proposal (2026-02-12)
+  - Slack: https://nrwl.slack.com/archives/C6WJMCAB1/p1770674582319699
+  - Spec: `.ai/2026-02-12/specs/generator-metrics.md`
+  - Created proposal for CLI analytics targeting Fidelity and Block/Square
+  - Matches GA Analytics PR #34144 1:1 (all commands, not just generators)
+  - Enterprise-only data collection, fire-and-forget ingestion, weekly aggregates, 1-year retention
+  - Summary: `.ai/2026-02-12/SUMMARY.md`
+
+- [x] CLOUD-4255: Remove Misleading Title for Deferred Connection (2026-02-12)
+  - Linear: https://linear.app/nxdev/issue/CLOUD-4255
+  - PR: https://github.com/nrwl/nx/pull/34416 (merged)
+  - Fixed misleading "Nx Cloud configuration was successfully added" title for variant 2 deferred connection
+  - Added `writeLines()` method to output banner without NX badge
+  - Summary: `.ai/2026-02-12/SUMMARY.md`
+
+- [x] Talk to Thomas about reporting structure in Wagepoint (2026-01-30 16:04) ✓ 2026-02-12
+
+- [x] Follow-up with Victor on Roadmap (2026-01-09 09:41) ✓ 2026-02-12
+  - Platform roadmap should be finalized and ready for review by end of next week. If not completed by then, raise this as a discussion topic during the 1:1 on Monday to address any blockers or get alignment on timeline.
+
+- [x] Talk to Thomas to update Ben and others to be under me or Nicole, etc. for wagepoint (2026-02-09 11:45) ✓ 2026-02-12
+
+- [x] Talk to Max about time zone expectations (2026-02-09 14:00) ✓ 2026-02-12
+  - Need 3-4 hours overlap with Eastern team (noon ET = 6pm CET)
+  - Address performance reliability concerns from Victor
+
+- [x] Review init experience and sync with Nicole (2026-02-10) ✓ 2026-02-12
+  - NX init improvements needed for AI compatibility
+
+- [x] add Jeff to future planning meetings (2026-02-10 14:39) ✓ 2026-02-12
+
+- [x] send email to lawyer (2026-02-12 11:49)
+
 - [x] NXC-3898: Clarify security email usage in SECURITY.md (2026-02-11)
   - Linear: https://linear.app/nxdev/issue/NXC-3898
   - PR: https://github.com/nrwl/nx/pull/34411

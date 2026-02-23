@@ -4,7 +4,7 @@ Tracking document for Infrastructure team sync meetings.
 
 ## Topics for Next Meeting
 
--
+- Synthetic checks: How do they alert us? What's the notification flow?
 
 ## Action Items
 

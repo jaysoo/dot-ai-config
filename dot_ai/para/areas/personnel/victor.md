@@ -27,6 +27,10 @@
 
 ### Upcoming
 
+- `op` and `gh` CLI usage - confirm follow-up complete, discuss enforcement/reminders
+  - Victor noticed 1Password rarely pops up during screenshares
+  - Need to verify everyone is using gh with 1Password properly
+- Laptop refreshes - policy/timeline/budget?
 - Legal questions on terms for CLI stats tracking (GA) - what are the requirements?
 - Team prioritization: how should teams balance revenue vs growth vs AI vs maintenance/general work?
 

@@ -6,4 +6,6 @@ Quick reference for colleagues and direct reports.
 |------|------|------|-----------|----------|
 | Altan Stalker | Engineering Lead | Quolka | Tracing, sandboxing, metrics | 2026-02-05 |
 | Joshua VanAllen (JVA) | DPE | DPE | Paylocity, Maven/Gradle polyglot | - |
+| Alexis Martinez | Operations Manager | Operations | Office operations (Gilbert) | - |
+| Madeline ⚠️ | VP of Sales (departing) | Sales | CI roadmap, Cloud pricing | 2026-01-27 |
 | Mark Lindsey | VCS Integration Expert | Red Panda | VCS integrations, GitHub OAuth | 2026-02-05 |

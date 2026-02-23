@@ -2,18 +2,6 @@
 
 Tracking document for Developer Productivity Engineering (DPE) sync meetings.
 
-## Topics for Next Meeting
-
-- JVA connectivity status after farm move (Verizon 5G)
-- Tracing deployment status - Alton update follow-up
-- Metrics API documentation and client usage
-- ClickUp scaling limits - what's safe before infrastructure breaks?
-- DTE simulation tooling prioritization (planning team discussion)
-
-## Upcoming Sync
-
-_Notes accumulated between meetings go here_
-
 ## Active Accounts
 
 | Account      | DPE       | Key Issues                                              | Status |
@@ -29,6 +17,15 @@ _Notes accumulated between meetings go here_
 | Gong         | -         | Using Turborepo, slow Vercel + Remote Cache             | 🆕     |
 
 ## Action Items
+
+### From 2026-02-23 Sync
+
+- **Team**: Validate Prometheus endpoint with customers — PayFit as starting point (already on production)
+- **Team**: Fix plugin bugs before sandboxing customer rollout
+- **Team**: Infrastructure setup for sandboxing (Raj documented in Notion)
+- **Jason**: Explore benchmarking suite options for graph performance regression detection
+- **Miro**: Get sync generator PR approved by Leo; splitting Picocli replacement PR
+- **JVA**: Continue Paylocity upgrade analysis; AI migration documentation needed
 
 ### From 2026-02-09 Sync
 
@@ -46,30 +43,66 @@ _Notes accumulated between meetings go here_
 - **Steven**: Create Linear issue for continuous tasks with customer requests
 - **Zack**: Create reproduction and Loom for graph inconsistency issue
 
-### Input Tracing
+### Topics for Next Meeting
 
-- Raj got tracing data flowing last week
-- CPU/memory usage monitoring looks acceptable
-- Plan to enable in NX Cloud and NX soon
-- Latest beta includes all required components
-- Alton providing update later today (2026-02-09)
+- JVA connectivity status after farm move (Verizon 5G)
+- Tracing deployment status - Alton update follow-up
+- ClickUp scaling limits - what's safe before infrastructure breaks?
+- DTE simulation tooling prioritization (planning team discussion)
+- Support tool update?
+- How to communicate value (Caleb)
+- Sandboxing: Gradle daemon process capture — any progress?
+- Prometheus: PayFit validation results
 
-### Support Tools Evaluation
-
-- Steven leading demos with Atlas and Pilon this week
-- Jack added to demo calls (30-minute intro sessions)
-- Key requirement: Current tools like Waypoint lack APIs, causing workflow issues
-
-### PR Reminders
-
-- Block Square socket closure PR - Gregory approved, waiting on Jason review
-- https://github.com/nrwl/nx/pull/33551
-- https://github.com/nrwl/nx/pull/33562
-- https://github.com/nrwl/nx/pull/33572
+### Upcoming Sync
 
 ---
 
 ## Meeting Notes
+
+### 2026-02-23
+
+**Attendees:** Miroslav Jonas, Austin Fahsl, Joshua VanAllen, Steven Nance, Caleb Ukle, Zack DeRose
+
+**Sandboxing Feature Update:**
+
+- Testing phase underway on Ocean and staging environments
+- UI showing warnings for sandbox violations with task-level badges
+- Go-to-market planning targeting March launch
+  - Requires battle testing on both Ocean and NX first
+  - Need to fix plugin bugs before customer rollout
+  - Infrastructure setup required (documented by Raj in Notion)
+- Technical limitations:
+  - Requires latest NX beta (NX22 minimum for PID reporting)
+  - Gradle daemon processes not currently captured
+  - Works well for JS tooling, other tools may have issues
+- Miro feedback: Would be valuable to detect external dependencies used by executors beyond just file I/O
+
+**Prometheus Metrics Initiative:**
+
+- Three potential customers identified: Casework, ClickUp, PayFit
+- Major uncertainty: Unknown if customers can actually use current Prometheus solution
+- Next steps require validation before additional development
+  - Need to test if customers can consume the endpoint
+  - PayFit suggested as starting point (already on production)
+  - Amir interested, uses DataDog setup with post-task execution hooks
+- Alternative considered: Raw endpoint data (rejected as too expensive/noisy)
+
+**Performance & Development Updates:**
+
+- Graph performance regression concerns
+  - Jason exploring benchmarking suite options (synthetic testing)
+  - Proposed: Cloud-side analysis tracking graph timings across CI runs
+  - Steven emphasized need for percentage-based performance tracking vs absolute times
+- Team updates:
+  - Miro: Sync generator PR ready for Leo's approval, splitting Picocli replacement PR
+  - Joshua: Paylocity upgrade analysis progressing, AI migration documentation needed
+  - Playwright executor now supports cache directory specification for parallelization
+  - Steven: Documentation updates ongoing
+
+[Granola transcript](https://notes.granola.ai/t/61d6f2c3-06be-4638-b394-cc11b3b00465-00demib2)
+
+---
 
 ### 2026-02-09
 

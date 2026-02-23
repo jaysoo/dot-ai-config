@@ -29,6 +29,76 @@
 ## 1:1 Notes
 
 ### Upcoming Topics
+
+- Follow up on Prometheus communication with Raresh and Caleb
+- Sandboxing progress check (top priority)
+- Ocean setup improvements - Raw as potential owner
+- March cycle planning for Ocean dev setup
+
+### 2026-02-19
+
+**CI/Scheduling Issues**
+- 3 tasks not starting despite being ready, most agents shut down with only 2 remaining
+- Tasks not running on extra large agent
+- Recent whack-a-mole issues mostly resolved, fixes coming in upcoming PRs
+- Ocean repo performing better than main repo
+- NPM audit endpoint was down this morning, caused Ocean Sea breakage (NPM didn't report outage)
+
+**Unplanned Work Review**
+- Two high priority unplanned items identified this quarter
+- Lighter load than September complaints
+- DPE and support labeled issues should be marked high priority
+- Items causing customer problems get escalated
+- Need to mark additional DPE/support issues as high priority
+
+**Prometheus Metrics Work**
+- Engineering paused until customer feedback received
+- Caleb already provided list of desired metrics from ClickUp and PayFit
+- Two-part effort:
+  1. January start - Raresh investigating if Prometheus is preferred channel
+  2. Need commitment from customers to actually use the solution
+- Current exposed metrics not final exhaustive list
+- Service account integration needed (~1 day of work)
+  - Change endpoint authorization method
+  - Manual service account generation currently
+  - Postman collection available for DPEs
+  - Built functionality works but not productized
+- Next steps: Follow up with Raresh and Caleb for communication effort
+
+**Ocean Setup Improvements**
+- Victor's feedback after returning from year off dev work
+- Nicole has no time to fix everything (shouldn't be solely responsible)
+- Nicole created pre-task execution hook for 1Password loading
+- Victor wants: configuration-based runs, automatic snapshot pointing, clean switching between local/staging/snapshot environments
+- Proposal: Dedicate couple days at start of March cycle
+- Potential owner: Raw (less sales work than expected, fits DX improvement focus)
+- Dependencies: Sandboxing needs to reach acceptable state first
+
+**Planning & Project Focus Discussion**
+- Jeff's email about engineering direction and company goals
+- Need better connection between projects and revenue/customer impact
+- Engineering team historically shielded from sales/revenue concerns
+- 2025 project work generally had value but lacked outcome validation
+- Required improvements:
+  1. Tie projects back to measurable customer outcomes
+  2. Connect work to POV pain points and feedback
+  3. Validate intuition-based projects with success metrics
+  4. Be ready to kill projects quickly if not working
+- 10-20% of work can remain unscrutinized (technical/QoL improvements)
+- CLI discussion dominated last planning meeting
+- Future planning meetings need more fleshed-out proposals
+- Customer requests and POV ties make stronger arguments for projects
+
+**Action Items**
+- [ ] Jack: Follow up on Prometheus communication with Raresh and Caleb
+- [ ] Altan: Coordinate with Raresh and Jason on sandboxing (Altan out next week)
+- [ ] Sandboxing remains top priority
+- PayFit successfully using continuous assignment despite current issues
+
+**Source**: [Granola notes](https://notes.granola.ai/t/381dcf69-52f4-4ac1-8aee-c6c5bfb496f4-00demib2)
+
+### 2026-02-12
+
 - Reporting structure and 1:1s
 - Continue AI Czar discussion after Jack returns from Cancun
 - Review progress on 2-3 key metrics identification

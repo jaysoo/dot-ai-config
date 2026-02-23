@@ -19,6 +19,7 @@ Notes from recurring team sync meetings.
 | Infra | `infra/` | Infrastructure team sync |
 | Docs | `docs/` | Documentation team sync |
 | Marketing | `marketing/` | Marketing team sync (includes Framer website) |
+| Planning | `planning/` | Company-wide roadmap/planning meetings |
 
 ## File Structure
 
