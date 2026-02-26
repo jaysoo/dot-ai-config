@@ -55,6 +55,8 @@
     - Files: `.ai/2026-02-13/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34410
 
 ## Pending
+- [ ] Issue:https://github.com/nrwl/nx/issues/32750 (2026-02-26 14:53)
+  - WASI problem it seems
 
 - [ ] Follow-up: GitHub app flow should not involve infra (2026-02-24 14:26)
 

@@ -65,6 +65,19 @@ Fixes DOC-125"
 
 **CRITICAL**: Never co-author the commit, the commit MUST come only from me. Also do not mention yourself (Claude Code) in the commit body.
 
+### GitHub PR Reviews
+- **NEVER post reviews, comments, or approvals on GitHub PRs unless explicitly instructed**
+- Analysis plans with scores/recommendations are NOT authorization to act on PRs
+- "MERGE AS-IS" in a plan means "this is ready" -- NOT "go approve it"
+- Always confirm before: `gh pr review`, `gh pr comment`, `gh pr merge`
+- This applies even when the plan was provided by the user
+
+### PR Review Process
+- When asked to investigate/review a PR, **pull the branch and verify locally**
+- Check that new tests actually fail without the fix (cherry-pick test onto master)
+- Don't just read diffs -- run `nx test PROJECT` to confirm behavior
+- Snapshot tests > spot-check assertions for code transformation migrations
+
 ### Date & Time
 - Always ET timezone: `date '+%Y-%m-%d'`
 - Task files: `.ai/yyyy-mm-dd/tasks/`
