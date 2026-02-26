@@ -2,6 +2,22 @@
 
 ### February 2026
 
+- [x] DOC-415: Move nx-dev redirects to Netlify _redirects (2026-02-25)
+  - Summary: Moved 1,231 redirect rules from Next.js serverless `redirects()` config to a plain Netlify `_redirects` file processed at CDN edge. Faster, more resilient to outages.
+  - PR: https://github.com/nrwl/nx/pull/34612
+
+- [x] Fix #34399: Redundant vite.config.ts generation for vitest projects (2026-02-25)
+  - Summary: Removed redundant `createOrEditViteConfig` call from `@nx/js` library generator that was creating a `vite.config.ts` with ESM-only `import.meta.dirname` alongside the correct `vitest.config.mts`. Fixed tests in js and plugin packages.
+  - PR: https://github.com/nrwl/nx/pull/34603
+
+
+- [x] Follow up on `op` and `gh` CLI usage with 1Password (2026-02-18 17:15) ✓ 2026-02-25
+
+  - Victor noticed people rarely have 1Password popping up during screenshares
+  - Check with everyone that they're using `gh` CLI with 1Password integration
+  - Post reminder message in #dev channel
+  - Mention during all hands
+
 
 - [x] #30146: Pruning docs guide + error message fix (2026-02-23)
   - Plan: `.ai/2026-02-23/tasks/issue-30146-investigation.md`

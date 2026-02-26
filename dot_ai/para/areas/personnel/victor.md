@@ -33,6 +33,10 @@
 - Laptop refreshes - policy/timeline/budget?
 - Legal questions on terms for CLI stats tracking (GA) - what are the requirements?
 - Team prioritization: how should teams balance revenue vs growth vs AI vs maintenance/general work?
+- **Content & test harness help** - Need more content and assistance building giant test harnesses
+  - "Harness Driven Development" (HDD): AI agents are too goal-oriented and will break things to achieve their goal
+  - Humans don't need massive test harnesses because we're more mindful/careful, but AI *needs* them as guardrails
+  - Want to discuss resourcing and prioritization for building these out
 
 ### 2026-02-09
 

@@ -27,11 +27,63 @@
 
 ### Upcoming
 
-- Java: Gradle patch runner status - may reassign to Louis or Max takes few days to complete
 - Backlog grooming - remove items without descriptions, add due dates to all TODOs
   - Currently 21 items, could grow to 40+; with Colum at 1-2 issues/week = 20+ week burn-down
   - Higher quality gate: spec out or remove
 - Agent tutorials may move to docs team (overlap with NX Learn)
+
+### 2026-02-26
+
+**Travel & Montreal Conference Planning**
+- Booked flights for Montreal conference
+  - Lands Sunday, leaves following Sunday
+  - Planning Saturday-Sunday solo road trip/exploration around Montreal area
+  - 8h 5min flight from Munich
+- Jack suggested asking Ben for outdoor activity recommendations
+  - Via Ferrata climbing option (weather dependent)
+  - Quebec City area has better nature/mountains than Montreal proper
+
+**Console Java & Work Allocation Updates**
+- Maven dogfooding continues with ongoing issue discovery
+  - Finding new problems through dogfooding, keeping as background work
+- Gradle patch runner deprioritized
+  - Missing logs functionality (DX improvement, not critical)
+  - No customer requests; communicated to Jason - will reassign or backlog
+- Team alignment: reduced team size driving focus on high-impact items (AX, onboarding)
+  - Only working on customer-requested or completely broken items
+
+**AX Migration Board & Implementation Strategy**
+- Max created separate board with 3 milestones:
+  1. MVP implementation
+  2. Polish and cloud app integration
+  3. Launch readiness
+- Marketing strategy meeting scheduled tomorrow with Heidi, Jeff, Jo and execs
+- Validation approach:
+  - 80-90% confidence in current direction
+  - Considering quick demo/prototype for early feedback
+  - Max will discuss with Yuri about creating stylized demo videos
+- Testing strategy:
+  - Jason as primary contact (has existing update scripts)
+  - Need test cases from older versions and customer scenarios
+  - PayFit upgrade issues noted as concrete example of migration pain points
+
+**Import Functionality & Documentation Gaps**
+- Connect import waiting on Dylan and Louis reviews
+  - Louis also working on sandboxing (higher priority); expected to merge soon
+- Import tool analysis reveals documentation needs
+  - Tool handles low-level git merging and plugin detection well
+  - Major gaps in technology-specific guidance (ESLint configs, Turbo-to-NX mapping)
+  - Agent skill development highlighting missing human documentation
+- Documentation improvement plan:
+  1. Max finishing benchmark and blog post outline
+  2. Create issues for each technology (React, Angular, etc.)
+  3. Assign team members to test import processes and document gaps
+  4. Focus on "golden path" technologies first
+- Current state: Import tool is "half-baked" without proper post-import guidance
+
+---
+
+Chat with meeting transcript: [https://notes.granola.ai/t/ee522984-7854-4492-9d83-2d377759d554-00demib2](https://notes.granola.ai/t/ee522984-7854-4492-9d83-2d377759d554-00demib2)
 
 ### 2026-02-19
 

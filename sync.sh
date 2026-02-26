@@ -20,4 +20,7 @@ if [ -d "$GIT_ROOT/dot_claude/skills" ]; then
     cp -r "$GIT_ROOT/dot_claude/skills" "$TARGET_DIR"
 fi
 
+# Sync tmux config
+cp "$GIT_ROOT/tmux.conf" "$HOME/.tmux.conf"
+
 echo "✅ Claude global config synced from $GIT_ROOT"

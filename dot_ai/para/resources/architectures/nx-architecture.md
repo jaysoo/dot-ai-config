@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2026-01-27
+Last Updated: 2026-02-25
 
 ## Directory Overview
 
@@ -14,6 +14,9 @@ ESLint plugin and generators for Nx workspaces
 ### packages/js/
 JavaScript/TypeScript build and execution tools
 
+- `packages/js/src/generators/library/` - JS/TS library generator
+  - `library.ts` - Main generator; delegates to vitest/jest config generators. When `unitTestRunner === 'vitest'` and `bundler !== 'vite'`, calls `@nx/vitest` configurationGenerator (which handles vite config creation internally).
+  - `library.spec.ts` - Tests for library generator
 - `packages/js/src/executors/node/` - Node.js executor for running applications
   - `node.impl.ts` - Main executor implementation with signal handling
   - `lib/kill-tree.ts` - Process tree termination utility
@@ -28,6 +31,28 @@ Core Nx functionality
   - `pseudo-terminal.ts` - PTY wrapper for native Rust implementation
 - `packages/nx/src/native/` - Rust native bindings
   - `index.d.ts` - TypeScript definitions for RustPseudoTerminal
+
+### packages/plugin/
+Nx plugin generator for creating custom Nx plugins
+
+- `packages/plugin/src/generators/plugin/` - Plugin generator
+  - `plugin.ts` - Delegates to `@nx/js` library generator with `useTscExecutor: true`
+  - `plugin.spec.ts` - Tests including vitest/jest config generation
+
+### packages/vite/
+Vite build tool integration
+
+- `packages/vite/src/utils/generator-utils.ts` - Vite config generation utilities
+  - `createOrEditViteConfig()` - Creates `vite.config.*` files; always uses `root: import.meta.dirname`
+  - **Important**: This is a DIFFERENT function from the one in `packages/vitest/`
+
+### packages/vitest/
+Vitest test runner integration
+
+- `packages/vitest/src/generators/configuration/` - Vitest configuration generator
+  - `configuration.ts` - Sets up vitest for a project; `shouldUseVitestConfig()` determines whether to create `vitest.config.mts` (for non-framework projects) vs `vite.config.mts`
+- `packages/vitest/src/utils/generator-utils.ts` - Vitest-specific config generation
+  - `createOrEditViteConfig()` - Separate copy from `@nx/vite`; supports `vitestFileName` option, uses `root: __dirname`
 
 ### packages/create-nx-workspace/ (CNW)
 CLI tool for creating new Nx workspaces. Uses A/B testing for cloud prompt behavior.
@@ -303,6 +328,18 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 
 ## Personal Work History
 
+### 2026-02-25 - Fix #34399: Redundant vite.config.ts for vitest projects
+- **Issue**: https://github.com/nrwl/nx/issues/34399
+- **Branch**: issue-34399
+- **PR**: https://github.com/nrwl/nx/pull/34603
+- **Status**: PR open, CI green
+- **Purpose**: Fix TS1470 error caused by redundant `vite.config.ts` with ESM-only `import.meta.dirname` when generating vitest projects
+- **Root Cause**: `@nx/js` library generator called `createOrEditViteConfig` from `@nx/vite` AFTER `@nx/vitest` configurationGenerator already created the correct `vitest.config.mts`. Two different functions with the same name in different packages.
+- **Key Changes**:
+  - Removed redundant `createOrEditViteConfig` call and `ensurePackage('@nx/vite')` from `packages/js/src/generators/library/library.ts`
+  - Updated tests in `packages/js/` and `packages/plugin/` to assert `vitest.config.mts` instead of `vite.config.ts`
+- **Key Learning**: The vitest and vite packages have separate copies of `createOrEditViteConfig` with different behavior. The vitest version supports `vitestFileName` and uses `__dirname`; the vite version always uses `import.meta.dirname`.
+
 ### 2026-01-27 - DOC-389: Content Negotiation for LLM-Friendly Docs Access
 - **Task**: DOC-389 - Return markdown content when Accept does not contain text/html
 - **Branch**: DOC-389
@@ -419,6 +456,14 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - **Purpose**: Preserve blog search functionality during docs migration to Astro
 
 ## Design Decisions & Gotchas
+
+### Duplicate Utility Functions Across Nx Packages (vite vs vitest)
+- **Issue**: `createOrEditViteConfig` exists in BOTH `packages/vite/src/utils/generator-utils.ts` AND `packages/vitest/src/utils/generator-utils.ts` with different behavior
+- **Vite version**: Always creates `vite.config.*`, uses `root: import.meta.dirname`, no `vitestFileName` support
+- **Vitest version**: Supports `vitestFileName` option (creates `vitest.config.mts`), uses `root: __dirname`, takes `extraOptions` object as 4th param
+- **Trap**: When importing `createOrEditViteConfig`, the source package matters. Using `ensurePackage('@nx/vite')` gets the vite version; the vitest configurationGenerator uses its own local copy.
+- **Impact**: #34399 — duplicate config file with wrong ESM syntax
+- **Rule**: When the vitest configurationGenerator is called, do NOT also call `createOrEditViteConfig` from `@nx/vite` — the vitest generator handles config creation internally.
 
 ### getStaticProps vs getServerSideProps for File-Reading Pages
 - **Issue**: Pages that read from filesystem work in dev but fail in production with ENOENT

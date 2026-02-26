@@ -26,7 +26,7 @@
 
 ## 1:1 Notes
 
-### Upcoming 1:1
+### Effy Reviews
 
 Strengths:
 
@@ -57,6 +57,48 @@ Improvements:
 Others:
 
 - Andrew: " Working with Rares has been one of the highlights of 2025."
+
+### 2026-02-26
+
+**eBPF Sandboxing Progress & Customer Issues**
+- Past two weeks focused on eBPF sandboxing feature development
+- New process tracking capability completed
+  - Shows which process wrote/read specific files
+  - Helps identify why certain files are accessed (e.g., project graph JSON)
+  - Addresses J and Gregor's debugging requests
+- Plugin configuration issues blocking customer rollout
+  - Need Jason's assessment of current problems this week
+  - Plan: Fix all plugins over next 1-2 weeks before external testing
+  - Timeline: ASAP March launch, potentially April if issues arise
+- Workflow controller cleanup planned for April
+  - Too many components in same container causing permission confusion
+  - Infra team to own workflow controller, separate other components
+  - Duplicate shared utils rather than maintain dependencies
+
+**Sales Pipeline & Customer Development**
+- Wix POV started and showing strong promise
+  - Frontend team using Bazel but nobody likes it
+  - Built internal CI tool with NX-like concepts but poor performance
+  - Major pain point: flaky tests requiring full job restarts
+  - Interested in granular re-runs capability
+  - **Deadline: Results needed by Friday next week**
+  - Risk: Main contact leaving for France business trip
+- Jest sharding requirement from multiple customers
+  - Essent abandoned POV due to lack of sharding (Miro has utilization screenshots)
+  - Wix also needs sharding for ~3,000 test files
+  - Need Jason's decision on official sharding support
+  - Related issue: Large task graphs causing DTE performance problems (Emeria example)
+- Andrew collaboration ongoing for customer outreach and workspace analysis
+
+**Action Items**
+- Jack: Get Jason's assessment on plugin issues and Jest sharding decision
+- Jack: Follow up on Prometheus metrics with customers (Stephen, Miro, Caleb)
+- Rares: Continue eBPF development while remaining available for I/O tracing support
+- Team: Coordinate with go-to-market team (Heidi, Madeline) before launch
+
+---
+
+Chat with meeting transcript: [https://notes.granola.ai/t/e9749c84-b16c-4b8c-9d34-c119a0641e89-00demib2](https://notes.granola.ai/t/e9749c84-b16c-4b8c-9d34-c119a0641e89-00demib2)
 
 ### 2026-01-29
 

@@ -28,6 +28,19 @@ Updated the `generatePackageJson` error messages in `@nx/esbuild` and `@nx/rollu
 - `packages/esbuild/src/executors/esbuild/lib/normalize.ts`
 - `packages/rollup/src/plugins/with-nx/with-nx.ts`
 
+## PR #34493: Fix esbuild noEmit/composite tsbuildinfo
+
+**PR:** https://github.com/nrwl/nx/pull/34493
+**Branch:** `fix/js-noEmit-composite-tsbuildinfo`
+
+Monitored CI pipeline via `/ci-monitor`. CI passed successfully on first attempt — no self-healing needed. CIPE: https://staging.nx.app/cipes/699cd370bfad71a77bca474e
+
+Related to issue #34492 from the easy issues scan (esbuild type-check skip when `skipTypeCheck: true`).
+
+## Nx Easy Issues Scan
+
+Scanned 381 open issues from nrwl/nx (past year), ranked 11 by AI suitability and engineering impact. Analysis saved to `.ai/2026-02-23/tasks/nx-easy-issues-top11.md`. Top picks: #32126 (bun publish), #34492 (esbuild type-check), #34391 cluster (git tag interpolation).
+
 ### Other
 
 - **CS-84: Connect Pylon to Linear** — Task plan created (`.ai/2026-02-23/tasks/cs-84-connect-pylon-to-linear.md`)
