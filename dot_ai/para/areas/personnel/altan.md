@@ -30,6 +30,7 @@
 
 ### Upcoming Topics
 
+- Promotion to L6 in June — vsavkin will communicate to Altan first, follow up on how it went
 - Follow up on Prometheus communication with Raresh and Caleb
 - Sandboxing progress check (top priority)
 - Ocean setup improvements - Raw as potential owner

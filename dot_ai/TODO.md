@@ -63,27 +63,7 @@
   - Present it to DPEs and Red Panda (Mark). It is prone to human errors and is annoyign to set up when we run out of callback URLs.
 - [ ] NXC-3641: Centralized Template Updater (2025-12-29 11:30)
 
-- [ ] Nx Easy Issues: Work through top 11 AI-suitable issues (2026-02-23 15:00)
-  - Plan: `.ai/2026-02-23/tasks/nx-easy-issues-top11.md`
-  - Goal: Triage and fix community issues ranked by AI suitability
-  - Top picks: #32126, #34492, #34391 cluster, #34399, #34279, #34172, #34542, #34300, #32832, #32481, #31495
-
 - [ ] Update all links for docs to use new URL (2026-02-23 11:57)
-
-- [ ] Consolidate Netlify edge functions & add error handling (2026-02-19 19:45)
-  - Context: Edge function timeout crash reported on nx.dev (`01KHW77GJRWVJH26SK2C16RYG5`). Two chained edge functions on every `/docs/*` request add overhead.
-  - Files: `astro-docs/netlify/edge-functions/`
-  - Tasks:
-    1. Merge `add-link-headers.ts` and `track-page-requests.ts` into a single edge function (both match `/docs/*` for HTML requests, currently chained via `context.next()`)
-    2. Add `try/catch` + `console.error` around `context.next()` calls for better diagnostics on timeouts
-    3. Add `AbortController` timeout (5s) to GA4 fetch in `context.waitUntil` to prevent hung isolates
-    4. Review `track-asset-requests.ts` for the same improvements (matches `*.txt`, `*.md`)
-    5. Test locally with `netlify dev` and verify edge function logs show correctly
-    6. Check Netlify dashboard edge function logs around 4:31 PM ET Feb 19 for the crash details
-
-## In Progress
-
-This week:
 
 - [ ] Framer _must_ launch this week
 
