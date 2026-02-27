@@ -65,8 +65,6 @@
 
 - [ ] Update all links for docs to use new URL (2026-02-23 11:57)
 
-- [ ] Framer _must_ launch this week
-
 - [ ] Sandboxing, get the list of problems by EOD Wednesday
 
 - [x] Investigate if we need to update our edge functions, e.g. move the redirects from next.js to proper Netlify redirects file ✓ 2026-02-25

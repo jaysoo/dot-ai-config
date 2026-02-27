@@ -2,6 +2,9 @@
 
 ### February 2026
 
+- [x] Framer _must_ launch this week ✓ 2026-02-27
+
+
 - [x] Nx Easy Issues: Work through top 11 AI-suitable issues (2026-02-23 15:00) ✓ 2026-02-26
   - Plan: `.ai/2026-02-23/tasks/nx-easy-issues-top11.md`
   - Goal: Triage and fix community issues ranked by AI suitability
