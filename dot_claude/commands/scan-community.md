@@ -59,14 +59,23 @@ patterns for product and roadmap decisions.
 - [YYYY-MM](./YYYY-MM.md) — {one-line: top theme}
 ```
 
-## Source 1: GitHub Issues (nrwl/nx)
+## Source 1: GitHub Issues (nrwl/nx + nrwl/nx-cloud)
+
+Run the following for **both** `nrwl/nx` and `nrwl/nx-cloud` (if accessible).
+If `nrwl/nx-cloud` is private and inaccessible, note it and continue with
+`nrwl/nx` only.
 
 ### Unresponded issues
 
 ```bash
-# Issues opened this month with no comments from maintainers
-gh issue list --repo nrwl/nx --state open --json number,title,createdAt,comments,labels,reactions \
-  --jq '[.[] | select(.comments == 0)] | length'
+# For each repo: nrwl/nx and nrwl/nx-cloud
+for REPO in nrwl/nx nrwl/nx-cloud; do
+  echo "=== $REPO ==="
+  gh issue list --repo "$REPO" --state open \
+    --json number,title,createdAt,comments,labels,reactions \
+    --jq '[.[] | select(.comments == 0)] | length' 2>/dev/null \
+    || echo "No access to $REPO"
+done
 
 # Get details on unresponded issues
 gh issue list --repo nrwl/nx --state open \
@@ -77,9 +86,11 @@ gh issue list --repo nrwl/nx --state open \
 ### High-signal issues (by reactions)
 
 ```bash
-# Issues with most reactions (community wants this)
-gh api "repos/nrwl/nx/issues?state=open&sort=reactions-+1&direction=desc&per_page=20" \
-  --jq '.[] | {number, title, reactions: .reactions["+1"], comments, created_at}'
+# Check both repos
+for REPO in nrwl/nx nrwl/nx-cloud; do
+  gh api "repos/$REPO/issues?state=open&sort=reactions-+1&direction=desc&per_page=20" \
+    --jq '.[] | {number, title, reactions: .reactions["+1"], comments, created_at}' 2>/dev/null
+done
 ```
 
 ### Recurring themes

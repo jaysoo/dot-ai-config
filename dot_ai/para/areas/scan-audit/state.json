@@ -1,0 +1,15 @@
+{
+  "lastRun": "2026-02-27T23:00:00Z",
+  "lastWeeklyReport": "2026-W09",
+  "lastMonthlyDigest": "2026-02",
+  "findings": {
+    "dependencies": { "critical": 1, "warning": 2, "watch": 3 },
+    "supply-chain": { "status": "partial-scan", "oidc": true },
+    "api-surface": { "high": 4, "medium": 7, "low": 6 },
+    "competitors": { "highlights": 5 },
+    "frameworks": { "compat-risks": 4 },
+    "runtimes": { "action-items": 2 },
+    "ai-landscape": { "highlights": 5, "opportunities": 4 },
+    "community": { "top-pain-points": 10, "unresponded-rate": 0.60, "monthly-downloads-nx": 34060126 }
+  }
+}
