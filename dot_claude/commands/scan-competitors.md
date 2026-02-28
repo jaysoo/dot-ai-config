@@ -54,6 +54,24 @@ Used for roadmap planning and strategic positioning.
 - [YYYY-MM](./YYYY-MM.md) — {one-line highlight}
 ```
 
+## CRITICAL: Use live data, not training data
+
+Your training data about competitor versions and features is stale.
+**Always verify against live sources before writing the report:**
+
+```bash
+# Current versions — run ALL of these before writing
+npm view turbo version
+gh release list --repo vercel/turborepo --limit 5 --json tagName,publishedAt
+gh release list --repo moonrepo/moon --limit 5 --json tagName,publishedAt
+gh release list --repo bazelbuild/bazel --limit 5 --json tagName,publishedAt
+gh release list --repo pantsbuild/pants --limit 5 --json tagName,publishedAt
+```
+
+Do NOT write "Turborepo 2.x shipped feature Y" from memory. Check the
+actual release notes via `gh release view`. Every version number and
+feature claim must come from a live source.
+
 ## Competitors and Sources
 
 ### Turborepo

@@ -391,6 +391,17 @@ Tell them where the full report is saved. Offer to:
   last run. The individual reports have the full picture.
 - **No invention**: Every finding must trace to a source. Don't speculate
   about risks that aren't evidenced by the data.
+- **LIVE DATA OVER TRAINING DATA**: This is the #1 quality rule. For
+  every factual claim (version numbers, release status, issue state,
+  EOL dates, download counts), verify against a live source BEFORE
+  writing it. Training data is stale by definition. Use:
+  - `npm view <pkg> version` for package versions
+  - `gh release list` for release status
+  - `gh issue view <N> --json state` for issue state
+  - `WebFetch` for changelogs, blogs, and EOL dates
+  - `npm view <pkg> time.modified` for last-publish dates
+  If a live API is unavailable, explicitly mark the claim as
+  "unverified (from training data)" in the report.
 - **Verify issue state**: Before listing any GitHub issue as an active
   pain point or action item, verify it is still OPEN using
   `gh issue view <N> --json state`. Closed issues should be noted as

@@ -98,6 +98,28 @@ Also check official blogs:
 | Rspack | https://rspack.dev/blog |
 | Rolldown | https://rolldown.rs/blog |
 
+## CRITICAL: Verify release status against npm
+
+**Do NOT rely on training data for release status.** Always verify the
+current stable version on npm before writing the report:
+
+```bash
+# For every framework/bundler, check the actual latest version:
+npm view next version          # NOT "RC" if already stable
+npm view @angular/core version
+npm view vite version
+npm view @rspack/core version
+npm view react version
+npm view nuxt version
+npm view vue version
+npm view esbuild version
+npm view @swc/core version
+```
+
+If you write "RC available" or "beta expected" without checking npm,
+you WILL produce stale information. Check npm first, then supplement
+with blog posts and GitHub releases for context.
+
 ## For each project, analyze:
 
 ### Breaking changes

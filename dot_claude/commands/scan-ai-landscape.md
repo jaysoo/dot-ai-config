@@ -57,6 +57,23 @@ This scan tracks the ecosystem we're building into.
 - [YYYY-MM](./YYYY-MM.md) — {one-line highlight}
 ```
 
+## CRITICAL: Use live data, not training data
+
+The AI tools landscape moves fast — your training data is stale within
+weeks. **Every claim about tool versions, features, and adoption MUST
+come from a live source** (WebFetch, WebSearch, gh release, npm view).
+
+```bash
+# Verify current versions before writing
+gh release list --repo anthropics/claude-code --limit 5 --json tagName,publishedAt 2>/dev/null
+gh release list --repo modelcontextprotocol/specification --limit 5 --json tagName,publishedAt
+```
+
+Use `WebSearch` for recent announcements, blog posts, and product
+launches. If you can't verify a claim from a live source, mark it as
+"unverified (from training data)" in the report. Never state a tool
+"launched feature X" or "reached version Y" without a source URL.
+
 ## Categories to Track
 
 ### 1. MCP Ecosystem

@@ -55,6 +55,26 @@ _Update this table when support policy changes._
 - [YYYY-MM](./YYYY-MM.md) — {one-line: key risk or highlight}
 ```
 
+## CRITICAL: Use live data, not training data
+
+Your training data about runtime versions, EOL dates, and release status
+is almost certainly stale. **Always check live sources first:**
+
+```bash
+# Current stable versions — run these BEFORE writing anything
+node --version                    # Local Node version
+npm view node dist-tags --json    # All Node.js dist-tags
+npm view bun version              # Latest Bun
+npm view deno version 2>/dev/null # Latest Deno (if published to npm)
+
+# EOL schedule — the authoritative source
+WebFetch https://endoflife.date/api/nodejs.json
+```
+
+If you write "Node 20 EOL is April 2026" without checking endoflife.date,
+or "Bun 1.x is latest" without running `npm view`, you WILL produce
+incorrect information. Check first, write second.
+
 ## Sources
 
 ### Node.js
