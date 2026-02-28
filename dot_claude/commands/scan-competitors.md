@@ -20,14 +20,25 @@ shipped, where they're investing, and what it means for Nx.
 
 $ARGUMENTS
 
-If no arguments: analyze all tracked competitors for the current month.
-If arguments provided (e.g., "turborepo only", "January 2026"): scope accordingly.
+If no arguments: analyze all tracked competitors for the lookback window
+(default: 60 days from today). If arguments provided (e.g., "turborepo only",
+"January 2026"): scope accordingly.
+
+## Lookback Window
+
+By default, scan the last **60 days** of releases and activity. This ensures
+coverage across the current and prior month. The orchestrator passes
+`LOOKBACK_START` (an ISO date like `2025-12-29`). If not provided, compute:
+
+```bash
+LOOKBACK_START=$(date -v-60d '+%Y-%m-%d')
+```
 
 ## File Management
 
 Area directory: `.ai/para/areas/competitor-intel/`
 
-1. Current month as `YYYY-MM`.
+1. Current month as `YYYY-MM` (for report naming).
 2. If `.ai/para/areas/competitor-intel/YYYY-MM.md` exists, read it and
    **update in place** — append new releases found, refresh analysis.
    Preserve lines starting with `> NOTE:` or `<!-- manual -->` sections.
@@ -54,6 +65,22 @@ Used for roadmap planning and strategic positioning.
 - [YYYY-MM](./YYYY-MM.md) — {one-line highlight}
 ```
 
+## Cached Data (from orchestrator)
+
+If the orchestrator provides `SCAN_DATA_DIR`, read release data from cached
+JSON files instead of calling `gh` directly. This avoids repeated 1Password
+auth prompts when `gh` wraps `op`.
+
+```bash
+# Read cached releases (falls back to live gh if no cache)
+cat "$SCAN_DATA_DIR/releases/vercel-turborepo.json" 2>/dev/null \
+  || gh release list --repo vercel/turborepo --limit 15 --json tagName,publishedAt,body
+```
+
+Cache files are at `$SCAN_DATA_DIR/releases/<owner>-<repo>.json` and contain
+the same JSON format as `gh release list --json tagName,publishedAt,body`.
+The `body` field is included, so separate `gh release view` calls are unnecessary.
+
 ## CRITICAL: Use live data, not training data
 
 Your training data about competitor versions and features is stale.
@@ -62,33 +89,40 @@ Your training data about competitor versions and features is stale.
 ```bash
 # Current versions — run ALL of these before writing
 npm view turbo version
-gh release list --repo vercel/turborepo --limit 5 --json tagName,publishedAt
-gh release list --repo moonrepo/moon --limit 5 --json tagName,publishedAt
-gh release list --repo bazelbuild/bazel --limit 5 --json tagName,publishedAt
-gh release list --repo pantsbuild/pants --limit 5 --json tagName,publishedAt
+cat "$SCAN_DATA_DIR/releases/vercel-turborepo.json" 2>/dev/null \
+  || gh release list --repo vercel/turborepo --limit 5 --json tagName,publishedAt
+cat "$SCAN_DATA_DIR/releases/moonrepo-moon.json" 2>/dev/null \
+  || gh release list --repo moonrepo/moon --limit 5 --json tagName,publishedAt
+cat "$SCAN_DATA_DIR/releases/bazelbuild-bazel.json" 2>/dev/null \
+  || gh release list --repo bazelbuild/bazel --limit 5 --json tagName,publishedAt
+cat "$SCAN_DATA_DIR/releases/pantsbuild-pants.json" 2>/dev/null \
+  || gh release list --repo pantsbuild/pants --limit 5 --json tagName,publishedAt
 ```
 
 Do NOT write "Turborepo 2.x shipped feature Y" from memory. Check the
-actual release notes via `gh release view`. Every version number and
-feature claim must come from a live source.
+actual release notes. Every version number and feature claim must come
+from a live source (cached or fetched).
 
 ## Competitors and Sources
 
 ### Turborepo
 ```bash
-gh release list --repo vercel/turborepo --limit 10 --json tagName,publishedAt,body
+cat "$SCAN_DATA_DIR/releases/vercel-turborepo.json" 2>/dev/null \
+  || gh release list --repo vercel/turborepo --limit 10 --json tagName,publishedAt,body
 ```
 Also check: `https://turbo.build/blog`
 
 ### Moon
 ```bash
-gh release list --repo moonrepo/moon --limit 10 --json tagName,publishedAt,body
+cat "$SCAN_DATA_DIR/releases/moonrepo-moon.json" 2>/dev/null \
+  || gh release list --repo moonrepo/moon --limit 10 --json tagName,publishedAt,body
 ```
 Also check: `https://moonrepo.dev/blog`
 
 ### Bazel
 ```bash
-gh release list --repo bazelbuild/bazel --limit 10 --json tagName,publishedAt,body
+cat "$SCAN_DATA_DIR/releases/bazelbuild-bazel.json" 2>/dev/null \
+  || gh release list --repo bazelbuild/bazel --limit 10 --json tagName,publishedAt,body
 ```
 Also check: `https://blog.bazel.build/`
 
@@ -98,12 +132,13 @@ Also: `https://blog.gradle.org/`
 
 ### Pants
 ```bash
-gh release list --repo pantsbuild/pants --limit 10 --json tagName,publishedAt,body
+cat "$SCAN_DATA_DIR/releases/pantsbuild-pants.json" 2>/dev/null \
+  || gh release list --repo pantsbuild/pants --limit 10 --json tagName,publishedAt,body
 ```
 
 ## For each competitor
 
-Filter to releases within the target month. For each release:
+Filter to releases within the lookback window (since `LOOKBACK_START`). For each release:
 
 1. Fetch the full release body
 2. Categorize changes:

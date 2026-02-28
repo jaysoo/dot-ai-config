@@ -55,6 +55,10 @@
     - Files: `.ai/2026-02-13/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34410
 
 ## Pending
+- [ ] Review nx-import VITE.md final validation report (2026-02-28 16:00)
+  - File: `dot_ai/2026-02-28/tasks/nx-import-vite-final-validation.md`
+  - 6 scenarios tested, all passing. Review config snippets and findings.
+- [ ] Take cloud stats script and build into lighthouse (2026-02-28 09:09)
 - [ ] Issue:https://github.com/nrwl/nx/issues/32750 (2026-02-26 14:53)
   - WASI problem it seems
 

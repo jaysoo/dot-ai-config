@@ -38,11 +38,21 @@ If arguments (e.g., "packages/nx", "@nx/devkit", "ocean only"): scope to those.
 When scanning ocean, note that its internal APIs are intentionally not
 documented — only flag drift in packages published to npm.
 
+## Lookback Window
+
+By default, use a **60-day** lookback window for comparing against prior
+reports. The orchestrator passes `LOOKBACK_START` (an ISO date like
+`2025-12-29`). If not provided, compute:
+
+```bash
+LOOKBACK_START=$(date -v-60d '+%Y-%m-%d')
+```
+
 ## File Management
 
 Area directory: `.ai/para/areas/api-surface-audit/`
 
-1. Current month as `YYYY-MM`.
+1. Current month as `YYYY-MM` (for report naming).
 2. If `.ai/para/areas/api-surface-audit/YYYY-MM.md` exists, read and
    **update in place**. Preserve `> NOTE:` and `<!-- manual -->` sections.
 3. If not, create new. Ensure README.md exists and links the report.

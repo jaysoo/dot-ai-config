@@ -47,11 +47,42 @@ When scanning both, keep findings separate by repo in the analysis but
 merge them for cross-cutting themes (e.g., "caching" issues may span
 both CLI cache misses and Cloud remote cache problems).
 
+## Lookback Window
+
+By default, scan the last **60 days** of issues, discussions, and activity.
+The orchestrator passes `LOOKBACK_START` (an ISO date like `2025-12-29`).
+If not provided, compute:
+
+```bash
+LOOKBACK_START=$(date -v-60d '+%Y-%m-%d')
+```
+
+Use `LOOKBACK_START` wherever `<LOOKBACK_START>` appears in queries below.
+
+## Cached Data (from orchestrator)
+
+If the orchestrator provides `SCAN_DATA_DIR`, read GitHub data from cached
+JSON files instead of calling `gh` directly. This avoids repeated 1Password
+auth prompts when `gh` wraps `op`.
+
+Available cache files:
+- `$SCAN_DATA_DIR/issues/nrwl-nx-open.json` — open issues with metadata
+- `$SCAN_DATA_DIR/issues/nrwl-nx-all.json` — all issues with state/dates
+- `$SCAN_DATA_DIR/issues/nrwl-nx-cloud-open.json` — nx-cloud open issues
+- `$SCAN_DATA_DIR/api/nrwl-nx-top-reactions.json` — issues sorted by reactions
+- `$SCAN_DATA_DIR/api/nrwl-nx-cloud-top-reactions.json` — cloud issues by reactions
+- `$SCAN_DATA_DIR/api/nrwl-nx-discussions.json` — recent discussions (GraphQL)
+
+All files are JSON in the same format `gh` outputs. Use `cat file || gh ...`
+fallback pattern when reading. For issue state verification, use
+`jq '.[] | select(.number == N)' "$SCAN_DATA_DIR/issues/nrwl-nx-all.json"`
+instead of `gh issue view`.
+
 ## File Management
 
 Area directory: `.ai/para/areas/community-sentiment/`
 
-1. Current month as `YYYY-MM`.
+1. Current month as `YYYY-MM` (for report naming).
 2. If report exists, **update in place**. Preserve `> NOTE:` / `<!-- manual -->`.
 3. If not, create new. Ensure README.md links it.
 
@@ -78,38 +109,51 @@ If `nrwl/nx-cloud` is private and inaccessible, note it and continue with
 ### Unresponded issues
 
 ```bash
-# For each repo: nrwl/nx and nrwl/nx-cloud
-for REPO in nrwl/nx nrwl/nx-cloud; do
-  echo "=== $REPO ==="
-  gh issue list --repo "$REPO" --state open \
-    --json number,title,createdAt,comments,labels,reactions \
-    --jq '[.[] | select(.comments == 0)] | length' 2>/dev/null \
-    || echo "No access to $REPO"
-done
+# Read from cache or fetch live
+NX_OPEN=$(cat "$SCAN_DATA_DIR/issues/nrwl-nx-open.json" 2>/dev/null)
+if [ -z "$NX_OPEN" ]; then
+  NX_OPEN=$(gh issue list --repo nrwl/nx --state open --limit 200 \
+    --json number,title,createdAt,comments,labels,reactions)
+fi
 
-# Get details on unresponded issues
-gh issue list --repo nrwl/nx --state open \
-  --json number,title,createdAt,comments,labels,reactions \
-  --jq '[.[] | select(.comments == 0 and (.createdAt >= "<MONTH_START>"))]'
+CLOUD_OPEN=$(cat "$SCAN_DATA_DIR/issues/nrwl-nx-cloud-open.json" 2>/dev/null)
+if [ -z "$CLOUD_OPEN" ]; then
+  CLOUD_OPEN=$(gh issue list --repo nrwl/nx-cloud --state open --limit 100 \
+    --json number,title,createdAt,comments,labels,reactions 2>/dev/null || echo "[]")
+fi
+
+# Count unresponded
+echo "$NX_OPEN" | jq '[.[] | select(.comments == 0)] | length'
+echo "$CLOUD_OPEN" | jq '[.[] | select(.comments == 0)] | length'
+
+# Details on unresponded issues in lookback window
+echo "$NX_OPEN" | jq '[.[] | select(.comments == 0 and (.createdAt >= "<LOOKBACK_START>"))]'
 ```
 
 ### High-signal issues (by reactions)
 
 ```bash
-# Check both repos
-for REPO in nrwl/nx nrwl/nx-cloud; do
-  gh api "repos/$REPO/issues?state=open&sort=reactions-+1&direction=desc&per_page=20" \
-    --jq '.[] | {number, title, reactions: .reactions["+1"], comments, created_at}' 2>/dev/null
-done
+# Read from cache or fetch live
+cat "$SCAN_DATA_DIR/api/nrwl-nx-top-reactions.json" 2>/dev/null \
+  || gh api "repos/nrwl/nx/issues?state=open&sort=reactions-+1&direction=desc&per_page=50" \
+  | jq '.[] | {number, title, reactions: .reactions["+1"], comments, created_at}'
+
+cat "$SCAN_DATA_DIR/api/nrwl-nx-cloud-top-reactions.json" 2>/dev/null \
+  || gh api "repos/nrwl/nx-cloud/issues?state=open&sort=reactions-+1&direction=desc&per_page=20" \
+  | jq '.[] | {number, title, reactions: .reactions["+1"], comments, created_at}'
 ```
 
 ### Recurring themes
 
 ```bash
-# Most common words in issue titles this month
-gh issue list --repo nrwl/nx --state all --limit 100 \
-  --json title,createdAt \
-  --jq '[.[] | select(.createdAt >= "<MONTH_START>")] | .[].title'
+# Most common words in issue titles in the lookback window
+# Use all-issues cache (has title + createdAt) or fetch live
+ALL_ISSUES=$(cat "$SCAN_DATA_DIR/issues/nrwl-nx-all.json" 2>/dev/null)
+if [ -z "$ALL_ISSUES" ]; then
+  ALL_ISSUES=$(gh issue list --repo nrwl/nx --state all --limit 200 \
+    --json number,title,state,createdAt,closedAt)
+fi
+echo "$ALL_ISSUES" | jq -r '[.[] | select(.createdAt >= "<LOOKBACK_START>")] | .[].title'
 ```
 
 Cluster these into themes. Look for patterns like:
@@ -121,46 +165,50 @@ Cluster these into themes. Look for patterns like:
 ### Issue resolution health
 
 ```bash
-# Issues opened vs closed this month
-gh issue list --repo nrwl/nx --state all --json state,createdAt,closedAt \
-  --jq '{
-    opened: [.[] | select(.createdAt >= "<MONTH_START>")] | length,
-    closed: [.[] | select(.closedAt != null and .closedAt >= "<MONTH_START>")] | length
-  }'
+# Issues opened vs closed in the lookback window (use cached all-issues)
+if [ -z "$ALL_ISSUES" ]; then
+  ALL_ISSUES=$(cat "$SCAN_DATA_DIR/issues/nrwl-nx-all.json" 2>/dev/null \
+    || gh issue list --repo nrwl/nx --state all --limit 200 \
+      --json number,title,state,createdAt,closedAt)
+fi
+echo "$ALL_ISSUES" | jq '{
+  opened: [.[] | select(.createdAt >= "<LOOKBACK_START>")] | length,
+  closed: [.[] | select(.closedAt != null and .closedAt >= "<LOOKBACK_START>")] | length
+}'
 ```
 
 ### Stale issues
 
 ```bash
 # Open issues >90 days old with >5 reactions (high community interest, no resolution)
-gh api "repos/nrwl/nx/issues?state=open&sort=reactions-+1&direction=desc&per_page=50" \
-  --jq '[.[] | select(.reactions["+1"] >= 5)] | .[0:20] | .[] | {number, title, reactions: .reactions["+1"], age_days: ((now - (.created_at | fromdateiso8601)) / 86400 | floor)}'
+# Reuse the top-reactions cache
+cat "$SCAN_DATA_DIR/api/nrwl-nx-top-reactions.json" 2>/dev/null \
+  || gh api "repos/nrwl/nx/issues?state=open&sort=reactions-+1&direction=desc&per_page=50" \
+  | jq '[.[] | select(.reactions["+1"] >= 5)] | .[0:20] | .[] | {number, title, reactions: .reactions["+1"], age_days: ((now - (.created_at | fromdateiso8601)) / 86400 | floor)}'
 ```
 
 ## Source 2: GitHub Discussions (nrwl/nx)
 
 ```bash
-# Recent discussions
-gh api "repos/nrwl/nx/discussions?per_page=30" 2>/dev/null \
-  || echo "Discussions API may need GraphQL — fall back to web scraping"
-```
-
-If the REST API doesn't work for discussions, use:
-```bash
-gh api graphql -f query='
-{
-  repository(owner: "nrwl", name: "nx") {
-    discussions(first: 30, orderBy: {field: CREATED_AT, direction: DESC}) {
-      nodes {
-        title
-        createdAt
-        upvoteCount
-        comments { totalCount }
-        category { name }
+# Read from cache or fetch live
+DISCUSSIONS=$(cat "$SCAN_DATA_DIR/api/nrwl-nx-discussions.json" 2>/dev/null)
+if [ -z "$DISCUSSIONS" ] || [ "$DISCUSSIONS" = "{}" ]; then
+  DISCUSSIONS=$(gh api graphql -f query='
+  {
+    repository(owner: "nrwl", name: "nx") {
+      discussions(first: 30, orderBy: {field: CREATED_AT, direction: DESC}) {
+        nodes {
+          title
+          createdAt
+          upvoteCount
+          comments { totalCount }
+          category { name }
+        }
       }
     }
-  }
-}'
+  }' 2>/dev/null || echo "{}")
+fi
+echo "$DISCUSSIONS" | jq '.data.repository.discussions.nodes'
 ```
 
 Categorize discussions by:
@@ -186,16 +234,16 @@ Look for:
 ## Source 4: npm Download Trends
 
 ```bash
-# Core package downloads (weekly trend)
-WebFetch "https://api.npmjs.org/downloads/range/last-month/nx"
+# Core package downloads (use LOOKBACK_START for range start)
+WebFetch "https://api.npmjs.org/downloads/range/${LOOKBACK_START}:$(date '+%Y-%m-%d')/nx"
 
 # Plugin download comparison
 for pkg in @nx/react @nx/angular @nx/next @nx/vite @nx/jest @nx/webpack @nx/rspack @nx/playwright; do
-  WebFetch "https://api.npmjs.org/downloads/point/last-month/$pkg" 2>/dev/null
+  WebFetch "https://api.npmjs.org/downloads/point/${LOOKBACK_START}:$(date '+%Y-%m-%d')/$pkg" 2>/dev/null
 done
 ```
 
-Compare with previous month to spot:
+Compare with previous period to spot:
 - Overall growth/decline
 - Plugins gaining or losing traction
 - Framework adoption shifts (React vs Angular vs Next)
@@ -256,9 +304,12 @@ verify it is still OPEN.** Many issues get resolved quickly. Reporting
 closed issues as active pain points produces misleading reports.
 
 ```bash
-# For every issue number you plan to reference, check its state:
-gh issue view <NUMBER> --repo nrwl/nx --json state,closedAt \
-  --jq '{state, closedAt}'
+# For every issue number you plan to reference, check its state.
+# Use the cached all-issues file instead of per-issue gh calls:
+jq '.[] | select(.number == <NUMBER>) | {state, closedAt}' \
+  "$SCAN_DATA_DIR/issues/nrwl-nx-all.json" 2>/dev/null \
+  || gh issue view <NUMBER> --repo nrwl/nx --json state,closedAt \
+    --jq '{state, closedAt}'
 ```
 
 - If CLOSED: Note it as "resolved" — do NOT list as an active pain point

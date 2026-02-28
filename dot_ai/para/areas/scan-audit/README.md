@@ -16,10 +16,10 @@ framework ecosystem, runtime changes, and AI tool landscape.
 ## Latest Reports
 
 ### Weekly
-- [2026-W09](./weekly/2026-W09.md) — First full scan; 4 framework compat risks, ESLint 10 top pain point, 34M downloads
+- [2026-W09](./weekly/2026-W09.md)
 
 ### Monthly Digests
-- See `dot_ai/2026-02-27/tasks/nx-digest-2026-02-crossfunctional.md`
+- [2026-02](./monthly-digests/2026-02-crossfunctional.md) — Task Sandboxing, Self-Healing CI GA, Polygraph AI, 454 issues across 6 teams
 
 ## Individual Scan Areas
 - [Dependency Health](../dependency-health/)

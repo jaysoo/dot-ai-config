@@ -41,11 +41,21 @@ When scanning ocean, focus on:
 - Shared internal dependencies that could affect cloud stability
 - Dependencies not present in the nx repo (ocean-specific risk)
 
+## Lookback Window
+
+By default, use a **60-day** lookback window for comparing against prior
+reports and identifying trends. The orchestrator passes `LOOKBACK_START`
+(an ISO date like `2025-12-29`). If not provided, compute:
+
+```bash
+LOOKBACK_START=$(date -v-60d '+%Y-%m-%d')
+```
+
 ## File Management
 
 Area directory: `.ai/para/areas/dependency-health/`
 
-1. Determine the current month as `YYYY-MM` (e.g., `2026-02`).
+1. Determine the current month as `YYYY-MM` (e.g., `2026-02`) for report naming.
 2. Check if `.ai/para/areas/dependency-health/YYYY-MM.md` exists.
    - If yes: read it, then **update in place** with fresh data. Preserve any
      manual notes or annotations the user may have added (look for lines

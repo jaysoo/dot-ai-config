@@ -24,11 +24,21 @@ $ARGUMENTS
 
 Default: all tracked runtimes. Can scope to "node only", "tc39 only", etc.
 
+## Lookback Window
+
+By default, scan the last **60 days** of releases and activity. The
+orchestrator passes `LOOKBACK_START` (an ISO date like `2025-12-29`).
+If not provided, compute:
+
+```bash
+LOOKBACK_START=$(date -v-60d '+%Y-%m-%d')
+```
+
 ## File Management
 
 Area directory: `.ai/para/areas/runtime-tracking/`
 
-1. Current month as `YYYY-MM`.
+1. Current month as `YYYY-MM` (for report naming).
 2. If report exists, **update in place**. Preserve `> NOTE:` / `<!-- manual -->`.
 3. If not, create new. Ensure README.md links it.
 
@@ -75,6 +85,14 @@ If you write "Node 20 EOL is April 2026" without checking endoflife.date,
 or "Bun 1.x is latest" without running `npm view`, you WILL produce
 incorrect information. Check first, write second.
 
+## Cached Data (from orchestrator)
+
+If the orchestrator provides `SCAN_DATA_DIR`, read release data from cached
+JSON files instead of calling `gh` directly. Cache includes `body` field.
+
+Available: `$SCAN_DATA_DIR/releases/nodejs-node.json`,
+`oven-sh-bun.json`, `denoland-deno.json`.
+
 ## Sources
 
 ### Node.js
@@ -83,8 +101,9 @@ incorrect information. Check first, write second.
 # Recent releases
 WebFetch https://nodejs.org/en/blog
 
-# Changelog for current major
-gh release list --repo nodejs/node --limit 15 --json tagName,publishedAt,body
+# Changelog for current major (cache or live)
+cat "$SCAN_DATA_DIR/releases/nodejs-node.json" 2>/dev/null \
+  || gh release list --repo nodejs/node --limit 15 --json tagName,publishedAt,body
 ```
 
 Focus on:
@@ -102,7 +121,7 @@ Focus on:
 WebFetch https://github.com/tc39/proposals/blob/main/README.md
 ```
 
-Filter for proposals that advanced stage this month. Focus on:
+Filter for proposals that advanced stage within the lookback window. Focus on:
 - Stage 3 → 4 (shipping in engines soon, may need polyfill review)
 - Stage 2 → 3 (start planning, check if any Nx code patterns conflict)
 - Anything related to: modules, import assertions, decorators, async patterns,
@@ -111,7 +130,8 @@ Filter for proposals that advanced stage this month. Focus on:
 ### Bun
 
 ```bash
-gh release list --repo oven-sh/bun --limit 10 --json tagName,publishedAt
+cat "$SCAN_DATA_DIR/releases/oven-sh-bun.json" 2>/dev/null \
+  || gh release list --repo oven-sh/bun --limit 10 --json tagName,publishedAt
 ```
 
 Check `https://bun.sh/blog` for release posts. Focus on:
@@ -122,7 +142,8 @@ Check `https://bun.sh/blog` for release posts. Focus on:
 ### Deno
 
 ```bash
-gh release list --repo denoland/deno --limit 10 --json tagName,publishedAt
+cat "$SCAN_DATA_DIR/releases/denoland-deno.json" 2>/dev/null \
+  || gh release list --repo denoland/deno --limit 10 --json tagName,publishedAt
 ```
 
 Check `https://deno.com/blog`. Focus on:

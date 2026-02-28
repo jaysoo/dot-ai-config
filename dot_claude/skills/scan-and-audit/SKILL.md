@@ -37,6 +37,7 @@ $ARGUMENTS
   Only run web-research scans (competitors, frameworks, runtimes, ai-landscape).
 - Specific scan names: `competitors`, `frameworks`, `runtimes`, `ai-landscape`,
   `community`, `dependencies`, `supply-chain`, `api-surface`, `digest`.
+- `lookback=N`: override the lookback window to N days (default: 60).
 
 ## Directory Structure
 
@@ -96,11 +97,20 @@ Read `.ai/para/areas/scan-audit/state.json` if it exists. Structure:
 
 This lets us compute deltas ("2 new critical deps since last week").
 
-### 0c. Compute current week number
+### 0c. Compute current week number and lookback window
 
 ```bash
 date '+%Y-W%V'
+
+# Lookback window (default: 60 days, override with lookback=N argument)
+LOOKBACK_DAYS=60
+LOOKBACK_START=$(date -v-${LOOKBACK_DAYS}d '+%Y-%m-%d')
+echo "Lookback window: $LOOKBACK_START to today"
 ```
+
+The `LOOKBACK_START` date is passed to every subagent so they scan data
+going back 60 days (not just the current calendar month). This ensures
+coverage of events that happened in the prior month as well.
 
 ### 0d. Determine what to run
 
@@ -132,6 +142,101 @@ nx-only scans. Never block on ocean access.
 Store paths for subagents:
 - `NX_REPO_PATH=$NX_TMP`
 - `OCEAN_REPO_PATH=$OCEAN_TMP` (or empty if failed)
+
+## Step 1.5: Pre-fetch GitHub Data
+
+**Why**: Jack's `gh` wraps `op` (1Password CLI). Each `gh` invocation in a
+separate subagent triggers a 1Password auth prompt. 8 parallel agents × 5+
+`gh` calls = 40+ auth interruptions. Instead, run ALL `gh` calls here in the
+orchestrator (single auth session) and cache results for subagents.
+
+```bash
+SCAN_DATA_DIR="/tmp/scan-data-$(date +%s)"
+mkdir -p "$SCAN_DATA_DIR"/{releases,issues,api}
+```
+
+### Release lists (21 repos)
+
+Fetch releases for every repo any scan command needs. Include `body` so
+subagents don't need separate `gh release view` calls.
+
+```bash
+for repo in \
+  vercel/turborepo moonrepo/moon bazelbuild/bazel pantsbuild/pants \
+  nodejs/node oven-sh/bun denoland/deno \
+  anthropics/claude-code modelcontextprotocol/specification \
+  angular/angular facebook/react vercel/next.js remix-run/remix \
+  nuxt/nuxt vuejs/core vitejs/vite webpack/webpack \
+  web-infra-dev/rspack rolldown/rolldown evanw/esbuild swc-project/swc; do
+  slug="${repo//\//-}"
+  gh release list --repo "$repo" --limit 15 --json tagName,publishedAt,body \
+    > "$SCAN_DATA_DIR/releases/$slug.json" 2>/dev/null \
+    || echo "[]" > "$SCAN_DATA_DIR/releases/$slug.json"
+done
+```
+
+### Issue data (nrwl/nx + nrwl/nx-cloud)
+
+```bash
+# Open issues with metadata (community scan needs this)
+gh issue list --repo nrwl/nx --state open --limit 200 \
+  --json number,title,createdAt,comments,labels,reactions \
+  > "$SCAN_DATA_DIR/issues/nrwl-nx-open.json"
+
+# All issues — for resolution health + state verification
+gh issue list --repo nrwl/nx --state all --limit 200 \
+  --json number,title,state,createdAt,closedAt \
+  > "$SCAN_DATA_DIR/issues/nrwl-nx-all.json"
+
+# nx-cloud open issues
+gh issue list --repo nrwl/nx-cloud --state open --limit 100 \
+  --json number,title,createdAt,comments,labels,reactions \
+  > "$SCAN_DATA_DIR/issues/nrwl-nx-cloud-open.json" 2>/dev/null \
+  || echo "[]" > "$SCAN_DATA_DIR/issues/nrwl-nx-cloud-open.json"
+```
+
+### REST API + GraphQL
+
+```bash
+# High-reaction issues (sorted by thumbs-up)
+gh api "repos/nrwl/nx/issues?state=open&sort=reactions-+1&direction=desc&per_page=50" \
+  > "$SCAN_DATA_DIR/api/nrwl-nx-top-reactions.json" 2>/dev/null \
+  || echo "[]" > "$SCAN_DATA_DIR/api/nrwl-nx-top-reactions.json"
+
+gh api "repos/nrwl/nx-cloud/issues?state=open&sort=reactions-+1&direction=desc&per_page=20" \
+  > "$SCAN_DATA_DIR/api/nrwl-nx-cloud-top-reactions.json" 2>/dev/null \
+  || echo "[]" > "$SCAN_DATA_DIR/api/nrwl-nx-cloud-top-reactions.json"
+
+# Discussions
+gh api graphql -f query='
+{
+  repository(owner: "nrwl", name: "nx") {
+    discussions(first: 30, orderBy: {field: CREATED_AT, direction: DESC}) {
+      nodes {
+        title
+        createdAt
+        upvoteCount
+        comments { totalCount }
+        category { name }
+      }
+    }
+  }
+}' > "$SCAN_DATA_DIR/api/nrwl-nx-discussions.json" 2>/dev/null \
+  || echo "{}" > "$SCAN_DATA_DIR/api/nrwl-nx-discussions.json"
+```
+
+### Search queries
+
+```bash
+gh search repos "ai agent developer tools" --sort=stars --limit=10 \
+  --json name,description,stargazersCount,updatedAt \
+  > "$SCAN_DATA_DIR/api/ai-agent-repos.json" 2>/dev/null \
+  || echo "[]" > "$SCAN_DATA_DIR/api/ai-agent-repos.json"
+```
+
+**Total**: ~30 sequential `gh` calls, single `op` auth session, ~60-90 seconds.
+All files are JSON matching the same format `gh --json` outputs, so existing
+`jq` filters in subagents work unchanged.
 
 ## Step 2: Launch All Scans in Parallel
 
@@ -192,7 +297,9 @@ For each subagent, provide:
 - The full command file content (read from `dot_claude/commands/<name>.md`)
 - Any repo paths
 - Current date/month
-- Path to previous month's report (for delta comparison)
+- The `LOOKBACK_START` date (e.g., `2025-12-29` for a 60-day window)
+- The `SCAN_DATA_DIR` path (e.g., `/tmp/scan-data-1772253563`) for cached GitHub data
+- Path to previous report(s) within the lookback window (for delta comparison)
 
 ## Step 3: Wait for All Scans to Complete
 
@@ -365,8 +472,8 @@ framework ecosystem, runtime changes, and AI tool landscape.
 ## Step 8: Cleanup
 
 ```bash
-# Remove cloned repos
-rm -rf "$NX_TMP" "$OCEAN_TMP" 2>/dev/null
+# Remove cloned repos and cached GitHub data
+rm -rf "$NX_TMP" "$OCEAN_TMP" "$SCAN_DATA_DIR" 2>/dev/null
 ```
 
 ## Step 9: Present Results
@@ -396,8 +503,8 @@ Tell them where the full report is saved. Offer to:
   EOL dates, download counts), verify against a live source BEFORE
   writing it. Training data is stale by definition. Use:
   - `npm view <pkg> version` for package versions
-  - `gh release list` for release status
-  - `gh issue view <N> --json state` for issue state
+  - `$SCAN_DATA_DIR/releases/*.json` for release data (pre-fetched)
+  - `$SCAN_DATA_DIR/issues/*.json` for issue data (pre-fetched)
   - `WebFetch` for changelogs, blogs, and EOL dates
   - `npm view <pkg> time.modified` for last-publish dates
   If a live API is unavailable, explicitly mark the claim as

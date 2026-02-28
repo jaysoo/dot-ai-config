@@ -27,11 +27,21 @@ $ARGUMENTS
 Default: all tracked frameworks and bundlers. Can scope to "react only",
 "bundlers only", "angular", etc.
 
+## Lookback Window
+
+By default, scan the last **60 days** of releases and activity. The
+orchestrator passes `LOOKBACK_START` (an ISO date like `2025-12-29`).
+If not provided, compute:
+
+```bash
+LOOKBACK_START=$(date -v-60d '+%Y-%m-%d')
+```
+
 ## File Management
 
 Area directory: `.ai/para/areas/framework-ecosystem/`
 
-1. Current month as `YYYY-MM`.
+1. Current month as `YYYY-MM` (for report naming).
 2. If report exists, **update in place**. Preserve `> NOTE:` / `<!-- manual -->`.
 3. If not, create new. Ensure README.md links it.
 
@@ -71,17 +81,39 @@ reach users.
 - [YYYY-MM](./YYYY-MM.md) — {one-line: key risk or opportunity}
 ```
 
-## Sources for each framework/bundler
+## Cached Data (from orchestrator)
 
-For each tracked project, check:
+If the orchestrator provides `SCAN_DATA_DIR`, read release data from cached
+JSON files instead of calling `gh` directly. Cache files include the `body`
+field, so separate `gh release view` calls are unnecessary.
 
 ```bash
-gh release list --repo <owner>/<repo> --limit 10 --json tagName,publishedAt
+# Read cached releases (falls back to live gh if no cache)
+cat "$SCAN_DATA_DIR/releases/<owner>-<repo>.json" 2>/dev/null \
+  || gh release list --repo <owner>/<repo> --limit 15 --json tagName,publishedAt,body
 ```
 
-Then for releases within the target month, fetch release details:
+Available cache files:
+- `angular-angular.json`, `facebook-react.json`, `vercel-next.js.json`
+- `remix-run-remix.json`, `nuxt-nuxt.json`, `vuejs-core.json`
+- `vitejs-vite.json`, `webpack-webpack.json`, `web-infra-dev-rspack.json`
+- `rolldown-rolldown.json`, `evanw-esbuild.json`, `swc-project-swc.json`
+
+## Sources for each framework/bundler
+
+For each tracked project, read from cache or fetch live:
+
 ```bash
-gh release view <tag> --repo <owner>/<repo> --json body
+cat "$SCAN_DATA_DIR/releases/<owner>-<repo>.json" 2>/dev/null \
+  || gh release list --repo <owner>/<repo> --limit 15 --json tagName,publishedAt,body
+```
+
+The cached data includes `body` (release notes), so separate detail fetches
+are not needed:
+```bash
+# Extract body for a specific tag from cached data
+jq '.[] | select(.tagName == "<tag>") | .body' \
+  "$SCAN_DATA_DIR/releases/<owner>-<repo>.json"
 ```
 
 Also check official blogs:

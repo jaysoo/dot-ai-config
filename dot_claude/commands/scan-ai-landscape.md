@@ -25,11 +25,21 @@ $ARGUMENTS
 
 Default: full scan. Can scope to "MCP only", "coding tools only", etc.
 
+## Lookback Window
+
+By default, scan the last **60 days** of releases and activity. The
+orchestrator passes `LOOKBACK_START` (an ISO date like `2025-12-29`).
+If not provided, compute:
+
+```bash
+LOOKBACK_START=$(date -v-60d '+%Y-%m-%d')
+```
+
 ## File Management
 
 Area directory: `.ai/para/areas/ai-dev-landscape/`
 
-1. Current month as `YYYY-MM`.
+1. Current month as `YYYY-MM` (for report naming).
 2. If report exists, **update in place**. Preserve `> NOTE:` / `<!-- manual -->`.
 3. If not, create new. Ensure README.md links it.
 
@@ -57,16 +67,28 @@ This scan tracks the ecosystem we're building into.
 - [YYYY-MM](./YYYY-MM.md) — {one-line highlight}
 ```
 
+## Cached Data (from orchestrator)
+
+If the orchestrator provides `SCAN_DATA_DIR`, read release and search data
+from cached JSON files instead of calling `gh` directly.
+
+Available:
+- `$SCAN_DATA_DIR/releases/anthropics-claude-code.json`
+- `$SCAN_DATA_DIR/releases/modelcontextprotocol-specification.json`
+- `$SCAN_DATA_DIR/api/ai-agent-repos.json` (search results)
+
 ## CRITICAL: Use live data, not training data
 
 The AI tools landscape moves fast — your training data is stale within
 weeks. **Every claim about tool versions, features, and adoption MUST
-come from a live source** (WebFetch, WebSearch, gh release, npm view).
+come from a live source** (cached data, WebFetch, WebSearch, npm view).
 
 ```bash
-# Verify current versions before writing
-gh release list --repo anthropics/claude-code --limit 5 --json tagName,publishedAt 2>/dev/null
-gh release list --repo modelcontextprotocol/specification --limit 5 --json tagName,publishedAt
+# Verify current versions before writing (cache or live)
+cat "$SCAN_DATA_DIR/releases/anthropics-claude-code.json" 2>/dev/null \
+  || gh release list --repo anthropics/claude-code --limit 5 --json tagName,publishedAt
+cat "$SCAN_DATA_DIR/releases/modelcontextprotocol-specification.json" 2>/dev/null \
+  || gh release list --repo modelcontextprotocol/specification --limit 5 --json tagName,publishedAt
 ```
 
 Use `WebSearch` for recent announcements, blog posts, and product
@@ -90,8 +112,9 @@ Search for:
 - Community MCP servers that compete with or complement `nx-mcp`
 
 ```bash
-# Check MCP spec for recent changes
-gh release list --repo modelcontextprotocol/specification --limit 5
+# Check MCP spec for recent changes (cache or live)
+cat "$SCAN_DATA_DIR/releases/modelcontextprotocol-specification.json" 2>/dev/null \
+  || gh release list --repo modelcontextprotocol/specification --limit 5 --json tagName,publishedAt,body
 ```
 
 ### 2. AI Coding Tools
@@ -136,8 +159,9 @@ Track emerging patterns:
 
 Search for recent blog posts and announcements:
 ```bash
-# Search GitHub for trending repos
-gh search repos "ai agent developer tools" --sort=stars --limit=10 --json name,description,stargazersCount,updatedAt
+# Search GitHub for trending repos (cache or live)
+cat "$SCAN_DATA_DIR/api/ai-agent-repos.json" 2>/dev/null \
+  || gh search repos "ai agent developer tools" --sort=stars --limit=10 --json name,description,stargazersCount,updatedAt
 ```
 
 ### 5. Academic / Research

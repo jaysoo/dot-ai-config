@@ -46,6 +46,16 @@ accordingly.
 - `create-nx-workspace` — CNW
 - `create-nx-plugin` — CNP
 
+## Lookback Window
+
+By default, use a **60-day** lookback window for comparing against prior
+reports and identifying trends. The orchestrator passes `LOOKBACK_START`
+(an ISO date like `2025-12-29`). If not provided, compute:
+
+```bash
+LOOKBACK_START=$(date -v-60d '+%Y-%m-%d')
+```
+
 ## File Management
 
 Area directory: `.ai/para/areas/supply-chain-security/`
