@@ -192,10 +192,26 @@ Compare with previous month to spot:
 
 ## Analysis
 
+### CRITICAL: Verify Issue State Before Reporting
+
+**Before listing any issue as a pain point, action item, or finding,
+verify it is still OPEN.** Many issues get resolved quickly. Reporting
+closed issues as active pain points produces misleading reports.
+
+```bash
+# For every issue number you plan to reference, check its state:
+gh issue view <NUMBER> --repo nrwl/nx --json state,closedAt \
+  --jq '{state, closedAt}'
+```
+
+- If CLOSED: Note it as "resolved" — do NOT list as an active pain point
+- If OPEN: Include in the report with (OPEN) tag
+- For pain point rankings, only count OPEN issues
+
 ### Pain Point Ranking
 
 Across all sources, identify the top 5-10 pain points by frequency
-and severity. For each:
+and severity. **Only include issues that are currently OPEN.** For each:
 - What's the problem?
 - How many signals point to it? (N issues + N discussions + N SO questions)
 - Is it getting better or worse vs. last month?

@@ -391,6 +391,11 @@ Tell them where the full report is saved. Offer to:
   last run. The individual reports have the full picture.
 - **No invention**: Every finding must trace to a source. Don't speculate
   about risks that aren't evidenced by the data.
+- **Verify issue state**: Before listing any GitHub issue as an active
+  pain point or action item, verify it is still OPEN using
+  `gh issue view <N> --json state`. Closed issues should be noted as
+  resolved, not listed as current problems. This applies to ALL scans
+  that reference GitHub issues (community, dependencies, supply-chain).
 - **Thoroughness over speed**: Use many tokens and subagent passes. It's
   better to spend 15 minutes and catch everything than to skim in 5
   minutes and miss a CVE or a competitor launch.
