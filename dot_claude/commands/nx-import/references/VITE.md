@@ -1,22 +1,8 @@
 ## Vite
 
-Vite-specific guidance for `nx import`. For generic import issues (pnpm globs, root deps, project references, name collisions, ESLint pinning, non-Nx source handling), see `SKILL.md`.
+Vite-specific guidance for `nx import`. For generic import issues (pnpm globs, root deps, project references, name collisions, ESLint, frontend tsconfig base settings, `@nx/react` typings, Jest preset, non-Nx source handling), see `SKILL.md`.
 
 ---
-
-### Root tsconfig Settings That Vite Projects Need (Critical)
-
-Vite projects depend on specific `tsconfig.base.json` settings that may differ from the dest workspace defaults. After import, verify these in the dest root tsconfig:
-
-- **`moduleResolution`**: Must be `"bundler"` (not `"nodenext"`)
-- **`module`**: Must be `"esnext"` (not `"nodenext"`)
-- **`lib`**: Must include `"dom"` and `"dom.iterable"` (frontend projects need these)
-
-For **subdirectory imports**, the dest root tsconfig is authoritative — update it. For **whole-repo imports**, imported projects typically extend their own nested `tsconfig.base.json`, so this is less of an issue.
-
-If the dest also has non-Vite projects needing `nodenext`, use per-project overrides instead of changing the root.
-
-**Gotcha**: TypeScript does NOT merge `lib` arrays — a project-level override **replaces** the base array entirely. Always include all needed entries (e.g. `es2022`, `dom`, `dom.iterable`) in any project-level `lib`.
 
 ### `@nx/vite/plugin` Typecheck Target
 
@@ -213,9 +199,8 @@ Remove `@nx/js/typescript` if all projects use Vite. Keep it (renamed to `"tsc-t
 
 ### Nx Source
 
-1. Generic fixes from SKILL.md (pnpm globs, root deps, executor paths, targetDefaults)
-2. Verify root tsconfig settings (module resolution, lib — see "Root tsconfig Settings" above)
-3. Configure `@nx/vite/plugin` typecheck target
+1. Generic fixes from SKILL.md (pnpm globs, root deps, executor paths, frontend tsconfig base settings, `@nx/react` typings)
+2. Configure `@nx/vite/plugin` typecheck target
 4. **React**: `jsx: "react-jsx"` (root or per-project)
 5. **Vue**: `jsx: "preserve"` + `jsxImportSource: "vue"`; verify `vue-shims.d.ts`; install ESLint deps before `@nx/eslint`
 6. **Mixed**: `jsx` per-project; remove/rename `@nx/js/typescript`
@@ -223,7 +208,7 @@ Remove `@nx/js/typescript` if all projects use Vite. Keep it (renamed to `"tsc-t
 
 ### Non-Nx Source (additional steps)
 
-1. Generic fixes from SKILL.md (stale node_modules, pnpm globs, rewritten scripts, noEmit→composite, ESLint handling)
+1. Generic fixes from SKILL.md (stale files cleanup, pnpm globs, rewritten scripts, target name prefixing, noEmit→composite, ESLint handling)
 2. Fix `noEmit` in **all** tsconfigs (app, node, etc. — non-Nx projects often have multiple)
 3. Add `extends` to solution-style tsconfigs so root settings apply
 4. Fix `resolve.alias` / `__dirname` / `baseUrl`

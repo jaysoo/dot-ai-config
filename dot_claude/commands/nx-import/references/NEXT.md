@@ -1,19 +1,8 @@
 ## Next.js
 
-Next.js-specific guidance for `nx import`. For generic import issues (pnpm globs, root deps, project references, name collisions, ESLint pinning, non-Nx source handling), see `SKILL.md`.
+Next.js-specific guidance for `nx import`. For generic import issues (pnpm globs, root deps, project references, name collisions, ESLint, frontend tsconfig base settings, `@nx/react` typings, Jest preset, target name prefixing, non-Nx source handling), see `SKILL.md`.
 
 ---
-
-### Root tsconfig Settings That Next.js Projects Need (Critical)
-
-Next.js projects depend on specific `tsconfig.base.json` settings that differ from the TS preset defaults. After import, verify these in the dest root tsconfig:
-
-- **`moduleResolution`**: Must be `"bundler"` (not `"nodenext"`)
-- **`module`**: Must be `"esnext"` (not `"nodenext"`)
-- **`lib`**: Must include `"dom"` and `"dom.iterable"` (frontend projects need these)
-- **`jsx`**: Must be `"react-jsx"` for single-framework workspaces, or set per-project for mixed
-
-**Gotcha**: TypeScript does NOT merge `lib` arrays — a project-level override **replaces** the base array entirely. Always include all needed entries in any project-level `lib`.
 
 ### `@nx/next/plugin` Inferred Targets
 
@@ -32,20 +21,14 @@ Next.js projects depend on specific `tsconfig.base.json` settings that differ fr
 
 Nx-generated Next.js projects use `composePlugins(withNx)` from `@nx/next`. This wrapper is optional for `next build` via the inferred plugin (which just runs `next build`), but it provides Nx-specific configuration. Keep it if present.
 
-### Root Dependencies Not Imported (Critical)
+### Root Dependencies for Next.js
 
-`nx import` does NOT bring root devDependencies. For Next.js projects, you'll typically need to add:
+Beyond the generic root deps issue (see SKILL.md), Next.js projects typically need:
 
-**Core**: `react`, `react-dom`, `@types/react`, `@types/react-dom`, `@types/node`
-**Nx plugins**: `@nx/next` (auto-installed by import), `@nx/react` (for CSS module/image typings in libs), `@nx/eslint`, `@nx/jest`
-**Testing**: `jest`, `@types/jest`, `jest-environment-jsdom`, `ts-jest`, `@testing-library/react`, `@testing-library/jest-dom`, `identity-obj-proxy`
-**ESLint**: `eslint@^9`, `@nx/eslint-plugin`, `@next/eslint-plugin-next`, `typescript-eslint`, `eslint-plugin-import`, `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks`
-
-### `@nx/react` Typings for Libraries (Critical)
-
-React libraries generated with `@nx/react:library` reference `@nx/react/typings/cssmodule.d.ts` and `@nx/react/typings/image.d.ts` in their tsconfig `types`. These fail with `Cannot find type definition file` unless `@nx/react` is installed in the dest workspace.
-
-**Fix**: `pnpm add -wD @nx/react`
+**Core**: `react`, `react-dom`, `@types/react`, `@types/react-dom`, `@types/node`, `@nx/react` (see SKILL.md for `@nx/react` typings)
+**Nx plugins**: `@nx/next` (auto-installed by import), `@nx/eslint`, `@nx/jest`
+**Testing**: see SKILL.md "Jest Preset Missing" section
+**ESLint**: `@next/eslint-plugin-next` (in addition to generic ESLint deps from SKILL.md)
 
 ### Next.js Auto-Installing Dependencies via Wrong Package Manager
 
@@ -53,19 +36,6 @@ Next.js detects missing `@types/react` during `next build` and tries to install 
 
 **Root cause**: `@types/react` is missing from root devDependencies.
 **Fix**: Install deps at the root before building: `pnpm add -wD @types/react @types/react-dom`
-
-### Jest Configuration (Nx Source)
-
-The Next.js preset creates jest configs referencing `../../jest.preset.js`, which lives at the source root and is **not imported** by subdirectory import.
-
-**Fix**:
-1. Install `@nx/jest`: `npx nx add @nx/jest`
-2. Create `jest.preset.js` at dest root:
-   ```js
-   const nxPreset = require('@nx/jest/preset').default;
-   module.exports = { ...nxPreset };
-   ```
-3. Install test runner deps: `pnpm add -wD jest jest-environment-jsdom ts-jest @types/jest`
 
 ### Next.js TypeScript Config Specifics
 
@@ -79,26 +49,9 @@ Next.js app tsconfigs have unique patterns compared to Vite:
 
 **Gotcha**: The Next.js tsconfig sets `"noEmit": true` which disables `composite` mode. This is fine because Next.js projects use `next build` for building, not `tsc`. The `@nx/js/typescript` plugin's `typecheck` target is not needed for Next.js apps.
 
-### ESLint Setup (Subdirectory Import)
-
-Subdirectory import brings project-level eslint configs but NOT the root config they extend.
-
-**Fix order**:
-1. Install ESLint deps (see "Root Dependencies" above)
-2. Create root `eslint.config.mjs` with `@nx/eslint-plugin` base rules
-3. Run `npx nx add @nx/eslint` to register the plugin in `nx.json`
-
-Next.js project configs use `@next/eslint-plugin-next` — ensure it's installed at root.
-
 ### `next.config.js` Lint Warning
 
 Imported Next.js configs may have `// eslint-disable-next-line @typescript-eslint/no-var-requires` but the project ESLint config enables different rule sets. This produces `Unused eslint-disable directive` warnings. Harmless — remove the comment or ignore.
-
-### `namedInputs` and `targetDefaults`
-
-The Next.js preset defines `namedInputs.production` with test file exclusions and `targetDefaults` for test ordering. These are NOT imported by subdirectory import.
-
-**Fix**: Diff source and dest `nx.json`. Add missing `production` exclusion patterns and `targetDefaults` (e.g. `"test": { "dependsOn": ["^build"] }`).
 
 ---
 
@@ -110,21 +63,6 @@ For single-project `create-next-app` repos, use whole-repo import into a subdire
 ```bash
 nx import /path/to/source apps/web --ref=main --source=. --no-interactive
 ```
-
-### Target Name Prefixing
-
-When importing a project with existing npm scripts (`build`, `dev`, `start`, `lint`), `@nx/next/plugin` and `@nx/eslint/plugin` auto-prefix target names to avoid conflicts: `next:build`, `next:dev`, `next:start`, `eslint:lint`.
-
-**Fix**: Remove the rewritten npm scripts from the imported `package.json` (Nx rewrites `"build": "next build"` → `"build": "nx next:build"`). Or rename plugin targets in `nx.json` to use unprefixed names if you prefer.
-
-### Stale Root Files from Source
-
-Whole-repo import brings ALL source root files into the dest subdirectory. Clean up:
-- `pnpm-lock.yaml` — stale; dest has its own lockfile
-- `pnpm-workspace.yaml` — source workspace config; delete
-- `node_modules/` — stale symlinks; delete
-- `.gitignore` — redundant with dest root `.gitignore`
-- `README.md` — optional; keep or remove
 
 ### ESLint: Self-Contained `eslint-config-next`
 
@@ -159,15 +97,6 @@ When both Next.js and Vite projects exist in the same workspace.
 
 Both `@nx/next/plugin` and `@nx/vite/plugin` can coexist in `nx.json`. They detect different config files (`next.config.*` vs `vite.config.*`) so there are no conflicts. The `@nx/js/typescript` plugin handles libraries.
 
-### ESLint Version Conflicts (Critical)
-
-`@nx/eslint` may peer-depend on ESLint 8, but flat configs and modern plugins need ESLint 9. If lint fails with `Cannot read properties of undefined (reading 'allow')`, the wrong ESLint version is being resolved.
-
-**Fix**: Add `pnpm.overrides` in root `package.json`:
-```json
-{ "pnpm": { "overrides": { "eslint": "^9.0.0" } } }
-```
-
 ### Vite Standalone Project tsconfig Fixes
 
 Vite standalone projects (imported as whole-repo) have self-contained tsconfigs without `composite: true`. The `@nx/js/typescript` plugin's typecheck target runs `tsc --build --emitDeclarationOnly` which requires `composite`.
@@ -190,21 +119,17 @@ No naming conflicts between frameworks.
 
 ## Fix Order — Nx Source (Subdirectory Import)
 
-1. Generic fixes from SKILL.md (pnpm globs `apps/*`/`libs/*`, root deps, `.gitkeep` removal)
-2. Install core deps: `pnpm add -wD react react-dom @types/react @types/react-dom @types/node @nx/react`
-3. Update root `tsconfig.base.json`: `module: "esnext"`, `moduleResolution: "bundler"`, `lib: ["es2022", "dom", "dom.iterable"]`, `jsx: "react-jsx"`
-4. Install ESLint deps, create root `eslint.config.mjs`, run `npx nx add @nx/eslint`
-5. Install Jest deps, create `jest.preset.js`, run `npx nx add @nx/jest`
-6. `nx reset && nx sync --yes && nx run-many -t typecheck,build,test,lint`
+1. Generic fixes from SKILL.md (pnpm globs, root deps, `.gitkeep` removal, frontend tsconfig base settings, `@nx/react` typings)
+2. Install Next.js-specific deps: `pnpm add -wD @next/eslint-plugin-next`
+3. ESLint setup (see SKILL.md: "Root ESLint Config Missing")
+4. Jest setup (see SKILL.md: "Jest Preset Missing")
+5. `nx reset && nx sync --yes && nx run-many -t typecheck,build,test,lint`
 
 ## Fix Order — Non-Nx Source (create-next-app)
 
-1. Generic fixes from SKILL.md (pnpm globs, stale node_modules/lockfile)
-2. Delete stale source root files: `pnpm-lock.yaml`, `pnpm-workspace.yaml`, `.gitignore`, `node_modules/`
-3. Remove Nx-rewritten npm scripts from imported `package.json`
-4. (Optional) Rename prefixed targets in `nx.json` plugin config if desired
-5. (Optional) If app needs to export types for other workspace projects: fix `noEmit` → `composite` (see SKILL.md)
-6. `nx reset && nx run-many -t next:build,eslint:lint` (or unprefixed names if renamed)
+1. Generic fixes from SKILL.md (pnpm globs, stale files cleanup, script rewriting, target name prefixing)
+2. (Optional) If app needs to export types for other workspace projects: fix `noEmit` → `composite` (see SKILL.md)
+3. `nx reset && nx run-many -t next:build,eslint:lint` (or unprefixed names if renamed)
 
 ---
 

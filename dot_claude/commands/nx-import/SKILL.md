@@ -47,9 +47,10 @@ Read the nx docs if you have the tools for it.
 `nx import` does **NOT** merge from the source's root:
 - `dependencies`/`devDependencies` from `package.json`
 - `targetDefaults` from `nx.json` (e.g. `"@nx/esbuild:esbuild": { "dependsOn": ["^build"] }` — critical for build ordering)
+- `namedInputs` from `nx.json` (e.g. `production` exclusion patterns for test files)
 - Plugin configurations from `nx.json`
 
-**Fix**: Diff source and dest `package.json` + `nx.json`. Add missing deps, merge relevant `targetDefaults`.
+**Fix**: Diff source and dest `package.json` + `nx.json`. Add missing deps, merge relevant `targetDefaults` and `namedInputs`.
 
 ### TypeScript Project References
 
@@ -67,17 +68,35 @@ Inferred targets (via Nx plugins) resolve config relative to project root — no
 
 ### Redundant Root Files (Whole-Repo Only)
 
-All root config lands in the import directory. **Don't blindly delete** `tsconfig.base.json` — imported projects extend it via relative paths.
+Whole-repo import brings ALL source root files into the dest subdirectory. Clean up:
+- `pnpm-lock.yaml` — stale; dest has its own lockfile
+- `pnpm-workspace.yaml` — source workspace config; conflicts with dest
+- `node_modules/` — stale symlinks pointing to source filesystem
+- `.gitignore` — redundant with dest root `.gitignore`
+- `nx.json` — source Nx config; dest has its own
+- `README.md` — optional; keep or remove
+
+**Don't blindly delete** `tsconfig.base.json` — imported projects may extend it via relative paths.
 
 ### Root ESLint Config Missing (Subdirectory Import)
 
-Subdirectory import doesn't bring the source's root `eslint.config.mjs`, but project configs reference `../../eslint.config.mjs`. Create one, or copy from the source.
+Subdirectory import doesn't bring the source's root `eslint.config.mjs`, but project configs reference `../../eslint.config.mjs`.
 
-Also install `typescript-eslint` explicitly — pnpm's strict hoisting won't auto-resolve this transitive dep of `@nx/eslint-plugin`.
+**Fix order**:
+1. Install ESLint deps first: `pnpm add -wD eslint@^9 @nx/eslint-plugin typescript-eslint` (plus framework-specific plugins)
+2. Create root `eslint.config.mjs` (copy from source or create with `@nx/eslint-plugin` base rules)
+3. Then `npx nx add @nx/eslint` to register the plugin in `nx.json`
+
+Install `typescript-eslint` explicitly — pnpm's strict hoisting won't auto-resolve this transitive dep of `@nx/eslint-plugin`.
 
 ### ESLint Version Pinning (Critical)
 
 **Pin ESLint to v9** (`eslint@^9.0.0`). ESLint 10 breaks `@nx/eslint` and many plugins with cryptic errors like `Cannot read properties of undefined (reading 'version')`.
+
+`@nx/eslint` may peer-depend on ESLint 8, causing the wrong version to resolve. If lint fails with `Cannot read properties of undefined (reading 'allow')`, add `pnpm.overrides`:
+```json
+{ "pnpm": { "overrides": { "eslint": "^9.0.0" } } }
+```
 
 ### Dependency Version Conflicts
 
@@ -99,6 +118,48 @@ Same `name` in `package.json` across source and dest causes `MultipleProjectsWit
 
 The TS preset creates `packages/.gitkeep`. Remove it and commit before importing.
 
+### Frontend tsconfig Base Settings (Critical)
+
+The TS preset defaults (`module: "nodenext"`, `moduleResolution: "nodenext"`, `lib: ["es2022"]`) are incompatible with frontend frameworks (React, Next.js, Vue, Vite). After importing frontend projects, verify the dest root `tsconfig.base.json`:
+
+- **`moduleResolution`**: Must be `"bundler"` (not `"nodenext"`)
+- **`module`**: Must be `"esnext"` (not `"nodenext"`)
+- **`lib`**: Must include `"dom"` and `"dom.iterable"` (frontend projects need these)
+- **`jsx`**: `"react-jsx"` for React-only workspaces, per-project for mixed frameworks
+
+For **subdirectory imports**, the dest root tsconfig is authoritative — update it. For **whole-repo imports**, imported projects may extend their own nested `tsconfig.base.json`, making this less critical.
+
+If the dest also has backend projects needing `nodenext`, use per-project overrides instead of changing the root.
+
+**Gotcha**: TypeScript does NOT merge `lib` arrays — a project-level override **replaces** the base array entirely. Always include all needed entries (e.g. `es2022`, `dom`, `dom.iterable`) in any project-level `lib`.
+
+### `@nx/react` Typings for Libraries
+
+React libraries generated with `@nx/react:library` reference `@nx/react/typings/cssmodule.d.ts` and `@nx/react/typings/image.d.ts` in their tsconfig `types`. These fail with `Cannot find type definition file` unless `@nx/react` is installed in the dest workspace.
+
+**Fix**: `pnpm add -wD @nx/react`
+
+### Jest Preset Missing (Subdirectory Import)
+
+Nx presets create `jest.preset.js` at the workspace root, and project jest configs reference it (e.g. `../../jest.preset.js`). Subdirectory import does NOT bring this file.
+
+**Fix**:
+1. Install `@nx/jest`: `npx nx add @nx/jest`
+2. Create `jest.preset.js` at dest root:
+   ```js
+   const nxPreset = require('@nx/jest/preset').default;
+   module.exports = { ...nxPreset };
+   ```
+3. Install test runner deps: `pnpm add -wD jest jest-environment-jsdom ts-jest @types/jest`
+
+### Target Name Prefixing (Whole-Repo Import)
+
+When importing a project with existing npm scripts (`build`, `dev`, `start`, `lint`), Nx plugins auto-prefix inferred target names to avoid conflicts: e.g. `next:build`, `vite:build`, `eslint:lint`.
+
+**Fix**: Remove the Nx-rewritten npm scripts from the imported `package.json`, then either:
+- Accept the prefixed names (e.g. `nx run app:next:build`)
+- Rename plugin target names in `nx.json` to use unprefixed names
+
 ## Non-Nx Source Issues
 
 When the source is a plain pnpm/npm workspace without `nx.json`.
@@ -119,9 +180,11 @@ Plain TS projects use `"noEmit": true`, incompatible with Nx project references.
 3. Add `"outDir": "dist"` and `"tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"`
 4. Add `"extends": "../../tsconfig.base.json"` if missing. Remove settings now inherited from base.
 
-### Stale node_modules
+### Stale node_modules and Lockfiles
 
-`nx import` may bring pnpm symlinks pointing to the source filesystem. Fix: `find imported/ -name node_modules -type d -prune -exec rm -rf {} +`, then `pnpm install`.
+`nx import` may bring `node_modules/` (pnpm symlinks pointing to the source filesystem) and `pnpm-lock.yaml` from the source. Both are stale.
+
+**Fix**: `rm -rf imported/node_modules imported/pnpm-lock.yaml imported/pnpm-workspace.yaml imported/.gitignore`, then `pnpm install`.
 
 ### ESLint Config Handling
 
@@ -139,6 +202,6 @@ Identify technologies in the source repo, then read and apply the matching refer
 
 Available references:
 - `references/GRADLE.md`
-- `references/NEXT.md` — Next.js projects (App Router, Pages Router): root tsconfig, `withNx`, jest setup, ESLint, non-Nx create-next-app imports, mixed Next.js+Vite coexistence. Covers both Nx and non-Nx sources.
+- `references/NEXT.md` — Next.js projects: `@nx/next/plugin` targets, `withNx`, Next.js TS config (`noEmit`, `jsx: "preserve"`), auto-installing deps via wrong PM, non-Nx `create-next-app` imports, mixed Next.js+Vite coexistence.
 - `references/TURBOREPO.md`
-- `references/VITE.md` — Vite projects (React, Vue, or both): module resolution, tsconfig, framework deps, ESLint configs, mixed-framework coexistence. Covers both Nx and non-Nx sources.
+- `references/VITE.md` — Vite projects (React, Vue, or both): `@nx/vite/plugin` typecheck target, `resolve.alias`/`__dirname` fixes, framework deps, Vue-specific setup, mixed React+Vue coexistence.

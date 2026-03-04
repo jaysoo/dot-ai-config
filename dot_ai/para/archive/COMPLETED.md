@@ -2,7 +2,10 @@
 
 ### March 2026
 
-- [x] Sandboxing, get the list of problems by EOD Wednesday ✓ 2026-03-04
+
+- [x] DOC-429: Task Sandboxing Documentation (2026-03-04) ✓ 2026-03-04
+  - Summary: Created full sandboxing feature doc page with SVG diagram, 6 screenshots, examples, cloud settings section. Multiple rounds of feedback from Rareș. PR #34686 (draft, CI green).
+  - Files: `.ai/2026-03-04/SUMMARY.md`
 
 
 - [x] NXC-4020: Restore CNW prompt flow to v22.1.3 (2026-03-02) ✓ 2026-03-02
