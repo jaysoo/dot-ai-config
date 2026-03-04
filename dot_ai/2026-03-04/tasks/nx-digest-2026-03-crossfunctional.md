@@ -1,124 +1,163 @@
-# Nx Platform Update — March 1–4, 2026
+# Nx Platform Update — March 2026 (Week 1: March 1–4)
 
-> **Data gaps:** No blog posts published yet. Only 2 of ~13 active projects have posted March status updates — most screenshots will come later in the month. No screenshots available from Linear project updates yet.
+> **Data gaps:** No stable CLI release yet this month (22.6.0 in beta). No blog posts published in March yet. Linear issue-level data derived from Notion all-hands notes, Slack, and Pylon — direct Linear API not used.
 
 ## TL;DR
 
-- Codex agent support added, Polygraph AI ships repo summarization and PR syncing, Self-Healing CI drops its "Experimental" label, and nx.dev now publishes LLM discovery files (llms.txt).
-- Task sandboxing continues hardening with file deletion tracking, UI cleanup, and fewer false positives. The feature monitors file system access during task execution to flag undeclared inputs and outputs.
-- Caseware single-tenant instance fully provisioned on AWS with CI/CD and monitoring.
-- Customer support cut over from Salesforce to Pylon with SSO, custom domains, and Google Workspace integration.
-- 66 issues completed across 7 teams in 4 days, with Red Panda (26 issues) and Infrastructure (12 issues) leading throughput.
+- **AI agent support expanded** — Codex (OpenAI) joins Claude Code and Cursor as a supported AI agent, and Polygraph AI now integrates with GitHub Actions for CI-aware sessions.
+- **Self-Healing CI is now a first-class feature** — no longer labeled "experimental," with auto-apply recommendations made more prominent in the UI.
+- **Native core upgraded to napi-rs v3** — removes 86 lines of unsafe Rust code and fixes a class of build-time bugs, improving long-term stability.
+- **Onboarding flow restored and new PLG task force launched** — the Create Nx Workspace experience is back to its polished v22.1.3 state, and a cross-team "Quark-A" initiative is attacking activation friction end-to-end.
+- **Enterprise infrastructure investments** — regional failover technical design published (targeting single-digit-minute recovery), Caseware single tenant onboarded, and Pylon is now the primary support platform for all enterprise customers.
 
 ---
 
 ## AI-Powered Development
 
-The `configure-ai-agents` command now supports OpenAI Codex as a subagent, joining Claude Code and Cursor. Its UX was improved, and Nx Console shows a clickable link to run it directly. A new agentic `nx init` flow lets AI agents adopt Nx in existing workspaces.
+Nx continues to be the only build system with deep AI agent integration. This month:
 
-Polygraph AI, the in-cloud coding agent, shipped repo summarization, PR status syncing, automatic PR cleanup on session end, and several security/stability fixes. The `.nx/polygraph` directory is now automatically added to `.gitignore`.
+- **Codex subagent support** is now available in `nx configure-ai-agents`. Teams using OpenAI's Codex can now get the same zero-config Nx integration that Claude Code and Cursor users already enjoy — MCP server configuration, subagent TOML files, and version-aware setup are all handled automatically.
+- **Polygraph AI** (Nx's AI-powered CI assistant) now integrates with GitHub Actions, bringing CI pipeline visibility directly into AI sessions. PR status tracking and repo summarization are available, and the team is actively dogfooding across Nx's own repos.
+- The `.nx/polygraph` directory is now auto-added to `.gitignore` via a migration (runs on upgrade to 22.7) and during AI agent setup, keeping AI session artifacts out of version control.
+- **Docs "Copy Prompt" feature** shipped — documentation pages now include a button to copy AI-optimized prompts, making it easier to use Nx docs with any AI coding tool.
 
-Self-Healing CI dropped its "Experimental" label — it's now GA. The auto-apply recommendation is now more prominent in terminal output, VCS comments, and the Cloud UI. Cloudinary had self-healing CI enabled on their enterprise instance. Active rollouts in progress for: Emeria, CREXi, MailChimp, Moderna, PayFit, ClickUp, and Island.
+**Questions?** Jason, Max, Jon
 
-nx.dev now publishes `llms.txt` and `llms-full.txt` files plus `.md` URL variants for better AI agent discoverability.
+---
 
-## Task Sandboxing & Hermetic Builds
+## Self-Healing CI
 
-Task sandboxing monitors file system access during task execution, flagging any reads or writes that fall outside declared `inputs` and `outputs` in your project configuration. A hermetic task only reads from its declared inputs and writes to its declared outputs, which is critical for cache correctness. Undeclared dependencies can cause false cache hits (stale results served when undeclared inputs change) or missing artifacts (outputs not captured in the cache).
+Self-Healing CI has graduated from experimental to a **first-class Nx Cloud feature**:
 
-The feature operates in two enforcement modes: warning mode reports violations in the Nx Cloud UI but allows task completion, while strict mode fails tasks immediately on violation. Teams can exclude paths via `.nx/workflows/sandboxing-config.yaml` using glob patterns.
+- The "auto-apply" toggle for self-healing recommendations is now more prominent in the Cloud UI, making it easier for teams to opt into automatic fixes.
+- Enterprise customer enablement is underway (e.g., Cloudinary enabled this week).
+- Self-Healing CI is moving toward a paid tier for enterprise customers — CS is beginning those conversations.
 
-For more details, see [sandboxing documentation](https://nx.dev/docs/features/ci-features/sandboxing). Requires Nx 22.5+, Nx Enterprise plan, and single-tenant deployment with Nx Agents.
+**Questions?** James, Jon
 
-This week's hardening work:
+---
 
-- File deletions and renames are now properly tracked, which matters for Gradle PID marker files that disappear during builds.
-- Folder reads are filtered out from tracing since folders cannot be task inputs. This eliminates a category of false positives.
-- Task ID encoding fixed where special characters like `:` were incorrectly coerced to `_` in sandbox reports.
-- The violations warning now caps at 5 tasks with a link to the sorted run view. The separate violations tab was removed in favor of inline reporting.
-- IO trace daemon ring buffer reduced to 512MB on dev/staging for resource optimization.
+## Onboarding & Product-Led Growth
 
-## Workspace Access & Onboarding
+A new cross-team **Quark-A task force** was established on March 3 with a clear mandate: **remove all friction from discovering Nx → creating a workspace → activating cloud features**. The team includes leads for instrumentation, app onboarding, and Nx Agents activation.
 
-A new repository-access-based workspace visibility setting shipped across multiple components. Users authenticating via GitHub/GitLab OAuth are now automatically added to workspace access policies based on their repository memberships, with a background sync job keeping permissions current.
+Alongside this strategic initiative:
 
-After account creation, users are now immediately prompted to connect their GitHub or GitLab account, improving the first-run experience for users joining through organization invitations.
+- The **Create Nx Workspace (CNW)** interactive flow was restored to match the polished v22.1.3 experience — the recent agentic onboarding work had introduced UI regressions (wrong prompts, missing cloud tokens, broken completion messages) that are now fixed.
+- A new **Welcome View** is on staging (`staging.nx.app/welcome`), designed to guide new users through their first cloud activation steps.
+- The **Framer-based website** is essentially complete (minus blog migration), and Nx will soon be fully off Vercel.
 
-The Create Nx Workspace (CNW) prompt flow was restored to match the v22.1.3 experience while preserving new capabilities like NDJSON AI output and template flags.
+**Questions?** Jason, Craigory, Mark
 
-## Enterprise Customers
+---
 
-- Caseware's new single-tenant AWS instance is fully provisioned with Terraform, Spacelift, lighthouse rotation, GitHub app variables, and CI/CD pipeline.
-- Cloudinary had self-healing CI enabled on their enterprise instance.
-- Vattenfall and Entain both confirmed successfully using `@nx/dotnet` in CI, validating the .NET plugin for enterprise adoption.
-- McGraw Hill Education now has P95 percentile CIPE duration on their analytics graph, supporting their ongoing proof-of-value evaluation.
-- A customer-escalated fix resolved an issue where `stop-agents-after` was ignored with hybrid changesets when software was affected, causing agents to burn unnecessary credits.
+## Workspace Visibility & Access Control
 
-## Observability & Analytics
+- **"Sync with repository access"** launched — workspace permissions are now automatically managed based on repository access, eliminating manual permission configuration.
+- **Bitbucket OAuth** integration is complete, expanding cloud connectivity beyond GitHub and GitLab.
+- Workspace visibility environment variables are rolling out to staging and dev environments.
 
-- Grafana billing alerts are fully implemented with cost alert conditions defined, Grafana space added to Spacelift, and monitoring dashboards provisioned across environments.
-- CI pipeline analytics now shows percentile breakdown (P5, P25, P50, P75, P95) for execution durations.
-- PostHog proxy consolidated to a common reverse proxy endpoint, cleaning up extra proxy configurations across staging and production.
+**Questions?** Mark, Jon
 
-## Security
+---
 
-- **Polygraph session scoping fix**: `getSession` now constrains queries to the workspace ID, preventing potential cross-workspace session leakage. Flagged as urgent.
-- **IAM key rotation**: Remediated IAM user access keys older than 90 days for Vanta compliance.
-- **Workspace visibility**: Repository-access-based access policies ensure users only see workspaces they have repository membership for.
-- IAM permissions tightened across dev/staging/prod for service accounts and GCP image operations.
+## Task Sandboxing & IO Tracing
 
-## Support Infrastructure
+The sandboxing initiative (hermetic task execution) continues with active dogfooding:
 
-The customer support stack completed its migration from Salesforce to Pylon. SSO is configured, custom domains are set up (help.nx.app for knowledge base, support.nx.app for customer portal), DNS is configured for sending from cloud-support@nrwl.io, and Google Workspace is connected. Full cutover is complete.
+- **IO-trace daemon ring buffer reduced to 512MB** on dev and staging — a tuning change to reduce memory overhead while maintaining tracing fidelity.
+- The Quokka and Dolphin teams are dogfooding sandboxing on real CI pipelines, identifying and fixing edge cases with plugin interactions.
+- **Continuous task assignment** is also being dogfooded — customers will need to adopt Prometheus metrics for full observability.
+
+**Questions?** Rares, Philip
+
+---
+
+## Native Core & Performance
+
+- **napi-rs migrated from v2 to v3** — this is a significant internal upgrade that removes 86 lines of unsafe Rust code (replaced with safe `Arc<T>` patterns), fixes a build-time bug with duplicate TypeScript declarations, and modernizes the Nx native module's threading model. Users won't see a feature change, but this improves long-term reliability and developer safety.
+- **Deps cache writes optimized** — Nx now skips writing the dependency cache when it's already up-to-date, reducing unnecessary disk I/O.
+- **TUI improvements and memory footprint reduction** continue as an ongoing effort.
+
+**Questions?** Jason, Craigory
+
+---
 
 ## Ecosystem & Framework Support
 
-- Angular Rspack: fixed PostCSS CLI resources to use relative paths (cross-platform fix).
-- Vitest reporter configuration from target options is now properly respected.
-- Gradle batch runner output now tees to stderr for proper terminal display.
-- Resolved false positive loop detection when running Nx with Bun.
+Several fixes improve Nx compatibility across runtimes and frameworks:
 
-## Performance & Core Improvements
+- **Bun runtime**: Fixed a false-positive loop detection that prevented `bunx --bun nx` from working. Bun's async stack traces include extra frames that confused Nx's recursion guard.
+- **Gradle**: Batch task runner output is now visible in the terminal (was being swallowed), fixing a significant usability gap for JVM teams.
+- **Vitest**: The executor now respects custom reporter configurations from target options.
+- **Angular + Rspack**: Fixed PostCSS resource path resolution and cross-platform path handling (unblocked Paylocity's upgrade to latest CLI).
+- **ESLint v10**: Support landed via community contribution.
+- **Package manager detection**: Improved fallback behavior when `pnpm dlx nx@latest init` was incorrectly using npm.
 
-- napi-rs migrated from v2 to v3, modernizing the native Rust bindings.
-- Telemetry rewritten in Rust, moving another subsystem from JavaScript to native code.
-- Reduced misc allocations: structuredClone replaces JSON deep clone, precomputed hash externals, optimized sort operations.
-- Deps cache writes now skipped when already up-to-date.
-- Input file resolution fixed for targets using `defaultConfiguration`.
+**Questions?** Leo, Jason, Craigory
+
+---
+
+## Infrastructure & Reliability
+
+- **Regional failover technical design published** (March 3) — a new architecture for automatic failover targeting single-digit-minute recovery time (down from 60–90 minutes). Aimed at banking, healthcare, and government customers with contractual failover requirements. Roughly doubles application cluster cost. Phases: infrastructure primitives → dual-region app → multi-region DB → agents mesh → production.
+- **Multi-cluster agent setups** in progress (prerequisite for regional failover).
+- **Grafana monitoring stack** being deployed — new Spacelift spaces, GCP IAM bindings, and cost alerting added.
+- **PostHog analytics** migrated to reverse proxy setup across staging and production (NA).
+- **Caseware** single tenant onboarded to AWS with Terraform, added to lighthouse rotation.
+
+**Questions?** Szymon, Phil, Steve
+
+---
+
+## Enterprise & Customer Operations
+
+- **Pylon is now the primary support platform** — cutover from Salesforce email completed March 2. All enterprise customers now route through Pylon for support. 50+ tickets migrated.
+- **Active customer engagements**: Legora (Nx 22 upgrade + Okta SAML), Fidelity (deploying latest Cloud version), Entain (monthly check-in), Paylocity (upgrade unblocked by PostCSS fix), DNB (churn review — interested in AI/self-healing/Polygraph features).
+- **Support themes this week**: billing/contributor counting (3 tickets), agent/DTE issues (3 tickets), authentication/OAuth (4 tickets). An OAuth connection outage was identified and resolved on March 3.
+
+**Questions?** Steven, Cory, Jimmy
+
+---
 
 ## Breaking Changes / Action Required
 
-None so far.
+None this month (no stable release yet). 22.6.0 is in beta — breaking changes, if any, will be documented at release.
+
+Note: There will be upcoming communications about support tier changes for Self-Healing CI (moving to paid for enterprise).
+
+---
 
 ## Coming Soon
 
-| Initiative                                        | Target      | Notes                                            |
-| ------------------------------------------------- | ----------- | ------------------------------------------------ |
-| Nx Local Dist Migration                           | Mar 13      | Moving local distribution to new architecture    |
-| Allow new users to immediately opt into Team plan | Mar 6       | Streamlined upgrade path                         |
-| Azure Hosted Redis/Valkey                         | In progress | Azure enterprise infrastructure                  |
-| Multi-Cluster Agent Setups                        | In progress | main.go audit completed, implementation upcoming |
+- **22.6.0 stable release** — currently at beta.9, expected later this month.
+- **Quark-A PLG initiative** — expect onboarding flow improvements throughout March.
+- **Regional failover** — moving from design to infrastructure primitives phase.
+- **Framer website** go-live (blog migration remaining).
+- **Powerpack 5.0.1** — patch release cut March 3 with release matrix fixes.
+
+---
 
 ## By the Numbers
 
-| Metric                         | Count                                                           |
-| ------------------------------ | --------------------------------------------------------------- |
-| CLI pre-releases               | 2 (22.6.0-beta.8, beta.9)                                       |
-| Cloud releases                 | 2 (2603.04.2, 2603.04.3)                                        |
-| Linear issues completed        | 67+ across 7 teams                                              |
-| Enterprise customers onboarded | 1 (Caseware)                                                    |
-| Projects completed             | 3 (Grafana Billing Alerts, IO Trace Helm Chart, Q Jan-Feb Misc) |
+| Metric | Count |
+|---|---|
+| CLI releases (beta) | 2 (22.6.0-beta.8, beta.9) |
+| Cloud releases | 2 (2603.04.2, 2603.04.3) |
+| Infrastructure commits | 29 human-authored |
+| Pylon support tickets | 50+ active |
+| Enterprise customer syncs | 6 (Legora, Fidelity, Entain, Brain.co, McGraw Hill, Attentive) |
+
+---
 
 ## Questions? Contact
 
-- AI / Agentic Experience / Polygraph: Max, Jonathan, Victor
-- Task Sandboxing / IO Tracing: Rares, Louie
-- Workspace Access & Onboarding: Mark, Nicole
-- Enterprise / Single Tenant: Patrick, Steve
-- Self-Healing CI: James
-- Infrastructure / Observability: Szymon, Steve
-- CLI Core / Performance: Jason, Leosvel, Jack
-- Docs: Jack, Caleb
-- Support / Pylon: Steven, Benjamin
+- **AI / Polygraph / Self-Healing**: James, Jon, Max
+- **Onboarding / PLG / CNW**: Jason, Craigory, Mark
+- **Sandboxing / IO Tracing**: Rares, Philip
+- **Native Core / CLI**: Jason, Craigory, Leo
+- **Infrastructure / Reliability**: Szymon, Phil, Steve
+- **Enterprise / CS**: Steven, Cory, Jimmy
+- **Docs**: Jack, Caleb
 
-_Generated on 2026-03-04. For the full technical changelog, see the companion changelog document._
+_Generated on 2026-03-04. Early-month snapshot — Week 1 only. For the full technical changelog, see the companion document._
