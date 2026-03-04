@@ -3,6 +3,10 @@
 ### March 2026
 
 
+- [x] DOC-436: Fix broken Netlify image URLs on docs (2026-03-04) ✓ 2026-03-04
+  - Summary: Added `/.netlify/*` to Framer proxy edge function excludedPath so image CDN URLs pass through to Next.js→astro-docs rewrite chain.
+  - Files: `.ai/2026-03-04/SUMMARY.md`
+
 - [x] DOC-429: Task Sandboxing Documentation (2026-03-04) ✓ 2026-03-04
   - Summary: Created full sandboxing feature doc page with SVG diagram, 6 screenshots, examples, cloud settings section. Multiple rounds of feedback from Rareș. PR #34686 (draft, CI green).
   - Files: `.ai/2026-03-04/SUMMARY.md`

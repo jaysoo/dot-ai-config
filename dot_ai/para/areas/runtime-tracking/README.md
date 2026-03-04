@@ -13,6 +13,7 @@ Monthly reports tracking Node.js, Bun, and Deno runtime releases and their impac
 
 | Month | File | Key Items |
 |-------|------|-----------|
+| 2026-03 | `2026-03.md` | Nx 23.0.0 (no engines field), Node 25.8.0, Bun 1.3.10 (ES decorators), Deno 2.7.3 (V8 14.6), Node 20 EOL Apr 30 |
 | 2026-02 | `2026-02.md` | Node 20 EOL April 2026, Jan security CVEs, Node 25 breaking changes, Bun 1.3.x, Deno 2.7 |
 
 ## Report Structure

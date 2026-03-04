@@ -31,6 +31,14 @@ Drafted, iterated, and pushed the new Task Sandboxing feature documentation page
 - Requires Nx Agents, not supported with manual DTE
 - Minimum version is 22.5, not 21.5
 
+## DOC-436: Fix Broken Netlify Image URLs on Docs
+
+Fixed broken `/.netlify/images` URLs on astro-docs pages (e.g. sandboxing page). The Framer proxy edge function (`netlify/edge-functions/rewrite-framer-urls.ts`) was intercepting `/.netlify/*` requests and forwarding them to Framer instead of letting them pass through to Next.js (which rewrites them to the astro-docs site).
+
+**Fix:** Added `'/.netlify/*'` to `excludedPath` in the Framer proxy edge function config.
+
+**Branch:** `DOC-436` pushed, ready for PR.
+
 ## Other
 
 - Generated Director of Engineering briefing (capacity/risk analysis for April/May)

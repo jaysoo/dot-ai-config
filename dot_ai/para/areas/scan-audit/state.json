@@ -1,16 +1,19 @@
 {
-  "lastRun": "2026-03-02T18:00:00Z",
+  "lastRun": "2026-03-04T15:00:00Z",
   "lastWeeklyReport": "2026-W10",
-  "lastMonthlyDigest": "2026-02",
+  "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
   "findings": {
-    "dependencies": { "critical": 15, "warning": 11, "watch": 39 },
-    "supply-chain": { "status": "warning", "cves": 0, "dev-vulns": 197 },
-    "api-surface": { "high": 2, "medium": 4, "low": 3 },
-    "competitors": { "highlights": 5 },
+    "dependencies": { "critical": 28, "warning": 13, "watch": 11 },
+    "supply-chain": { "status": "clear", "cves": 0, "dev-vulns": 200 },
+    "api-surface": { "high": 3, "medium": 5, "low": 3 },
+    "competitors": { "highlights": 6 },
     "frameworks": { "compat-risks": 4 },
-    "runtimes": { "action-items": 2 },
+    "runtimes": { "action-items": 3 },
     "ai-landscape": { "highlights": 6, "opportunities": 4, "risks": 4 },
-    "community": { "top-pain-points": 5, "downloads-feb": "36.4M", "yoy-growth": "75%" }
+    "community": { "top-pain-points": 5, "unresponded-issues": 70, "downloads-60d": "39.5M" },
+    "capacity": { "high-risk-people": 3, "overdue-items": 14 },
+    "project-health": { "zombies": 2, "overdue-projects": 4 },
+    "customer-deps": { "churned": 1, "cooling": 1, "concentration-risks": 1 }
   }
 }

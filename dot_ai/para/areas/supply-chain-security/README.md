@@ -15,6 +15,7 @@ Verify that Nx published packages maintain a secure supply chain:
 
 | Month | Status | File |
 |-------|--------|------|
+| 2026-03 | Clear (with recommendations) | [2026-03.md](2026-03.md) |
 | 2026-02 | Clear (with recommendations) | [2026-02.md](2026-02.md) |
 
 ## Scope
