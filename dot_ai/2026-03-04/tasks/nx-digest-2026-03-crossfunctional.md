@@ -96,38 +96,39 @@ The following docs pages contain version-conditional content referencing Nx vers
 
 These files use tab pairs like "Nx 18+" / "Nx < 18". The "< 18" tab can be removed entirely and the "18+" content shown as the default:
 
-| File | Tabs | Action |
-|------|------|--------|
+| File                             | Tabs                 | Action                                            |
+| -------------------------------- | -------------------- | ------------------------------------------------- |
 | `react-native/introduction.mdoc` | "Nx 18+" / "Nx < 18" | Remove "Nx < 18" tab, keep 18+ content as default |
-| `cypress/introduction.mdoc` | "Nx 18+" / "Nx < 18" | Remove "Nx < 18" tab, keep 18+ content as default |
+| `cypress/introduction.mdoc`      | "Nx 18+" / "Nx < 18" | Remove "Nx < 18" tab, keep 18+ content as default |
 
 These files use "Nx 22+" / "Nx < 22" tabs — keep both for now (Nx 20/21 users still active):
 
-| File | Tabs | Action |
-|------|------|--------|
-| `nx-json.mdoc` | "Nx 22+" / "Nx < 22" | Keep both (active versions) |
-| `release-npm-packages.mdoc` | "Nx 22+" / "Nx < 22" | Keep both |
-| `release-docker-images.mdoc` | "Nx 22+" / "Nx < 22" | Keep both |
-| `publish-rust-crates.mdoc` | "Nx 22+" / "Nx < 22" | Keep both |
-| `release-projects-independently.mdoc` | "Nx 22+" / "Nx < 22" | Keep both |
+| File                                  | Tabs                 | Action                      |
+| ------------------------------------- | -------------------- | --------------------------- |
+| `nx-json.mdoc`                        | "Nx 22+" / "Nx < 22" | Keep both (active versions) |
+| `release-npm-packages.mdoc`           | "Nx 22+" / "Nx < 22" | Keep both                   |
+| `release-docker-images.mdoc`          | "Nx 22+" / "Nx < 22" | Keep both                   |
+| `publish-rust-crates.mdoc`            | "Nx 22+" / "Nx < 22" | Keep both                   |
+| `release-projects-independently.mdoc` | "Nx 22+" / "Nx < 22" | Keep both                   |
 
 ### Outdated Version References to Clean Up
 
-| File | Reference | Action |
-|------|-----------|--------|
-| `next-config-setup.mdoc` | "Nx 15 and prior" section (L102), "Nx 16's composePlugins" (L54) | Remove "Nx 15 and prior" section entirely; drop "Nx 16" qualifier (composePlugins is standard now) |
-| `deploy-nextjs-to-vercel.mdoc` | "Starting from Nx 11" (L9) | Remove version qualifier — just say it works |
-| `faster-builds-with-module-federation.mdoc` | "Starting in Nx 14" (L22) | Remove version qualifier |
-| `webpack-plugins.mdoc` | "Prior to Nx 18" (L16, L388) | Remove pre-18 content, keep current approach |
-| `webpack-config-setup.mdoc` | "introduced in Nx 18" (L60) | Remove version qualifier |
-| `use-environment-variables-in-react.mdoc` | "with the release of Nx 19" (L78) | Remove version qualifier |
-| `environment-variables.mdoc` | "Workspaces created before Nx 18" (L15) | Remove historical context |
-| `configure-inputs.mdoc` | "As of Nx 18" (L327) | Remove version qualifier |
-| `configure-outputs.mdoc` | "As of Nx 18" (L58) | Remove version qualifier |
+| File                                        | Reference                                                        | Action                                                                                             |
+| ------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `next-config-setup.mdoc`                    | "Nx 15 and prior" section (L102), "Nx 16's composePlugins" (L54) | Remove "Nx 15 and prior" section entirely; drop "Nx 16" qualifier (composePlugins is standard now) |
+| `deploy-nextjs-to-vercel.mdoc`              | "Starting from Nx 11" (L9)                                       | Remove version qualifier — just say it works                                                       |
+| `faster-builds-with-module-federation.mdoc` | "Starting in Nx 14" (L22)                                        | Remove version qualifier                                                                           |
+| `webpack-plugins.mdoc`                      | "Prior to Nx 18" (L16, L388)                                     | Remove pre-18 content, keep current approach                                                       |
+| `webpack-config-setup.mdoc`                 | "introduced in Nx 18" (L60)                                      | Remove version qualifier                                                                           |
+| `use-environment-variables-in-react.mdoc`   | "with the release of Nx 19" (L78)                                | Remove version qualifier                                                                           |
+| `environment-variables.mdoc`                | "Workspaces created before Nx 18" (L15)                          | Remove historical context                                                                          |
+| `configure-inputs.mdoc`                     | "As of Nx 18" (L327)                                             | Remove version qualifier                                                                           |
+| `configure-outputs.mdoc`                    | "As of Nx 18" (L58)                                              | Remove version qualifier                                                                           |
 
 ### Deprecated Reference Pages (Already in `/reference/Deprecated/`)
 
 These are fine as-is — they're explicitly in the Deprecated section and serve as migration references:
+
 - `rescope.mdoc` — @nrwl → @nx migration (Nx 15/16/17 table)
 - `npm-scope.mdoc` — npmScope property (Nx 16/17)
 - `angular-schematics-builders.mdoc` — Angular CLI compat (Nx 17)

@@ -8,22 +8,22 @@ Monthly changelog analysis of competitors to understand where they're investing,
 
 ## Tracked Competitors
 
-| Tool | Category | Overlap with Nx |
-|------|----------|-----------------|
-| **Turborepo** | JS/TS monorepo | Direct competitor |
-| **Moon** | Polyglot monorepo | Growing competitor |
-| **Bazel** | Enterprise build | Low overlap (enterprise/polyglot) |
-| **Gradle** | JVM build | Low overlap (Nx JVM plugin) |
-| **Pants** | Python/Go build | Minimal overlap |
-| **Vite+** | Unified JS toolchain + monorepo | Growing competitor (entry-level) |
+| Tool          | Category                        | Overlap with Nx                   |
+| ------------- | ------------------------------- | --------------------------------- |
+| **Turborepo** | JS/TS monorepo                  | Direct competitor                 |
+| **Moon**      | Polyglot monorepo               | Growing competitor                |
+| **Bazel**     | Enterprise build                | Low overlap (enterprise/polyglot) |
+| **Gradle**    | JVM build                       | Low overlap (Nx JVM plugin)       |
+| **Pants**     | Python/Go build                 | Minimal overlap                   |
+| **Vite+**     | Unified JS toolchain + monorepo | Growing competitor (entry-level)  |
 
 ## Reports
 
-| Month | File | Key Events |
-|-------|------|------------|
-| 2026-02 | `2026-02.md` | Moon v2.0, Bazel 9.0, Turborepo 2.8 AI push |
-| 2026-03 | `2026-03.md` | Turborepo 2.8.13 OTel + perf sprint, Gradle 9.4, Vite+ Oxfmt beta |
-| 2026-03 | `viteplus-analysis-2026-03.md` | Deep-dive: Vite+ (VoidZero) competitive analysis |
+| Month   | File                           | Key Events                                                        |
+| ------- | ------------------------------ | ----------------------------------------------------------------- |
+| 2026-02 | `2026-02.md`                   | Moon v2.0, Bazel 9.0, Turborepo 2.8 AI push                       |
+| 2026-03 | `2026-03.md`                   | Turborepo 2.8.13 OTel + perf sprint, Gradle 9.4, Vite+ Oxfmt beta |
+| 2026-03 | `viteplus-analysis-2026-03.md` | Deep-dive: Vite+ (VoidZero) competitive analysis                  |
 
 ## How to Run
 

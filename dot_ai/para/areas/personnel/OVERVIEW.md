@@ -1,13 +1,46 @@
 # Personnel Overview
 
-Quick reference for colleagues and direct reports.
+## Org Structure
 
-| Name | Role | Team | Expertise | Last 1:1 |
-|------|------|------|-----------|----------|
-| Altan Stalker | Engineering Lead | Quolka | Tracing, sandboxing, metrics | 2026-02-05 |
-| Joshua VanAllen (JVA) | DPE | DPE | Paylocity, Maven/Gradle polyglot | - |
-| Alexis Martinez | Operations Manager | Operations | Office operations (Gilbert) | - |
-| Madeline ⚠️ | VP of Sales (departing) | Sales | CI roadmap, Cloud pricing | 2026-01-27 |
-| Mark Lindsey | VCS Integration Expert | Red Panda | VCS integrations, GitHub OAuth | 2026-02-05 |
-| Nicole Oliver | Engineering Lead | Orca | Onboarding, PostHog, growth metrics, agent experience | 2026-02-26 |
-| Steve Pentland | Infrastructure Engineer | Backend/Infra | Grafana, synthetic monitoring, workflow controller, audit logs | 2026-02-26 |
+Jack Hsu (Director of Engineering) reports to Victor Savkin.
+
+### Direct Reports to Jack
+| Name | Team | Title |
+|---|---|---|
+| Altan Stalker | Quokka | L5 Engineer |
+| Jason Jean | Dolphin | L6 Engineer |
+| Steve Pentland | Kraken | L6 Engineer |
+| Nicole Oliver | Orca | L5 Engineer |
+| Jonathan Cammisuli | Red Panda | L6 Engineer |
+
+### Quokka (Manager: Altan Stalker)
+| Name | Title |
+|---|---|
+| Louie Weng | L4 Engineer |
+| Rares Matei | L5 Engineer |
+
+### Dolphin (Manager: Jason Jean)
+| Name | Title |
+|---|---|
+| Craigory Coppola | L4 Engineer |
+| Leosvel Pérez Espinosa | L4 Engineer |
+| Colum Ferry | L5 Engineer |
+| Max Kless | L4 Engineer |
+
+### Kraken (Manager: Steve Pentland)
+| Name | Title |
+|---|---|
+| Patrick Mariglia | L5 Engineer |
+| Szymon Wojciechowski | L4 Engineer |
+
+### Orca (Manager: Nicole Oliver)
+| Name | Title |
+|---|---|
+| Benjamin Cabanes | L6 Engineer |
+| Dillon Chanis | L4 Engineer |
+
+### Red Panda (Manager: Jonathan Cammisuli)
+| Name | Title |
+|---|---|
+| Chau Tran | L4 Engineer |
+| Mark Lindsey | L4 Engineer |

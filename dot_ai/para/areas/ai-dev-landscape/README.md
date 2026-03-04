@@ -5,6 +5,7 @@ Monthly scan of the AI developer tools ecosystem, tracking developments relevant
 ## Purpose
 
 Provide structured intelligence on the competitive landscape and emerging patterns in AI-assisted development, with specific focus on:
+
 - MCP ecosystem and agentic standards
 - AI coding tools (Claude Code, Copilot, Cursor, Windsurf, Codex, Jules, Kiro)
 - AI-powered CI/CD and test automation
@@ -13,14 +14,15 @@ Provide structured intelligence on the competitive landscape and emerging patter
 
 ## Reports
 
-| Month | File | Lookback Window |
-|-------|------|-----------------|
+| Month    | File                       | Lookback Window          |
+| -------- | -------------------------- | ------------------------ |
 | Mar 2026 | [2026-03.md](./2026-03.md) | 2026-01-03 to 2026-03-04 |
 | Feb 2026 | [2026-02.md](./2026-02.md) | 2025-12-29 to 2026-02-27 |
 
 ## Structure
 
 Each monthly report follows a consistent format:
+
 1. **TL;DR** -- executive summary
 2. **MCP Ecosystem** -- spec changes, server growth, governance
 3. **AI Coding Tools** -- releases, features, model benchmarks

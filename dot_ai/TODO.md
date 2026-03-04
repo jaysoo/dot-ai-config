@@ -24,7 +24,7 @@
    - Summary: Full audit of nx.dev links in nx + ocean repos. Found 10 broken 404s, fixed ordering bugs, deleted legacy redirect-rules.js files, applied all fixes directly to `_redirects`.
    - Files: `.ai/2026-03-02/tasks/DOC-428-review-cli-cloud-links.md`
 
-6. **DOC-415: Move nx-dev redirects to Netlify _redirects** (2026-02-25)
+6. **DOC-415: Move nx-dev redirects to Netlify \_redirects** (2026-02-25)
    - Summary: Moved 1,231 redirect rules from Next.js serverless to Netlify CDN edge `_redirects` file. Preview deployment verified working.
    - Files: `.ai/2026-02-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34612
 
@@ -45,6 +45,7 @@
     - Files: `.ai/2026-02-23/SUMMARY.md`, `.ai/2026-02-23/tasks/issue-30146-investigation.md`
 
 ## Pending
+
 - [ ] Ask Alexis to move people to the right manager in Wagepoint (2026-03-03 13:53)
 - [ ] Ask Alexis to update levels in Wagepoint and TriNet (2026-03-03 13:53)
 - [ ] Ask Alexis about Colum sending hardware back (2026-03-03 13:52)
@@ -59,8 +60,8 @@
   - 6 scenarios tested, all passing. Review config snippets and findings.
 - [ ] Take cloud stats script and build into lighthouse (2026-02-28 09:09)
 - [ ] Follow-up: GitHub app flow should not involve infra (2026-02-24 14:26)
-
   - Present it to DPEs and Red Panda (Mark). It is prone to human errors and is annoyign to set up when we run out of callback URLs.
+
 - [ ] NXC-3641: Centralized Template Updater (2025-12-29 11:30)
 
 - [ ] Help Nicole with onboarding to hit 600 per week
@@ -68,7 +69,6 @@
 - [ ] https://linear.app/nxdev/issue/NXA-1075/import-test-and-document-import-gaps-for-nxvite
 
 - [ ] Slack #nx heads-up on cooldown week (2026-02-13 11:21)
-
   - https://nrwl.slack.com/archives/C6WJMCAB1/p1770987986210599
 
 - [ ] Look through all TODO(v23) comments and add tasks for them

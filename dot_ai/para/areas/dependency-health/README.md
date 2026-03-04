@@ -19,7 +19,7 @@ Run on or near the 1st of each month. Reports are named `YYYY-MM.md`.
 
 ## Reports
 
-| Month | File |
-|-------|------|
+| Month   | File         |
+| ------- | ------------ |
 | 2026-03 | `2026-03.md` |
 | 2026-02 | `2026-02.md` |

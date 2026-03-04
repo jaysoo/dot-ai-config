@@ -4,9 +4,9 @@ Monthly scan of Nx platform community health, covering GitHub Issues, Discussion
 
 ## Reports
 
-| Month | File | Notes |
-|-------|------|-------|
-| 2026-02 | `2026-02.md` | First run. 60-day lookback from 2025-12-29. |
+| Month   | File         | Notes                                                |
+| ------- | ------------ | ---------------------------------------------------- |
+| 2026-02 | `2026-02.md` | First run. 60-day lookback from 2025-12-29.          |
 | 2026-03 | `2026-03.md` | 60-day lookback from 2026-01-03. Updated 2026-03-04. |
 
 ## Sources
@@ -27,6 +27,7 @@ Monthly scan of Nx platform community health, covering GitHub Issues, Discussion
 ## How to Run
 
 Invoke the Community & Customer Sentiment Analysis scan via Claude Code. The scan:
+
 1. Queries GitHub Issues and Discussions via `gh` CLI
 2. Fetches npm download data via public API
 3. Verifies issue state before including in report

@@ -5,6 +5,7 @@ Monthly scan reports tracking releases, breaking changes, and Nx plugin impact f
 ## Tracked Projects
 
 ### Frameworks
+
 - **Angular** (@angular/core) -- `@nx/angular`
 - **React** (react) -- `@nx/react`
 - **Next.js** (next) -- `@nx/next`
@@ -13,6 +14,7 @@ Monthly scan reports tracking releases, breaking changes, and Nx plugin impact f
 - **React Router / Remix** (react-router, remix) -- `@nx/remix`
 
 ### Bundlers
+
 - **Vite** (vite) -- `@nx/vite`
 - **Webpack** (webpack) -- `@nx/webpack`
 - **Rspack** (@rspack/core) -- `@nx/rspack`
@@ -22,8 +24,8 @@ Monthly scan reports tracking releases, breaking changes, and Nx plugin impact f
 
 ## Reports
 
-| Month | File |
-|-------|------|
+| Month   | File         |
+| ------- | ------------ |
 | 2026-03 | `2026-03.md` |
 | 2026-02 | `2026-02.md` |
 

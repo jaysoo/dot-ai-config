@@ -7,6 +7,7 @@ Drafted, iterated, and pushed the new Task Sandboxing feature documentation page
 **PR:** https://github.com/nrwl/nx/pull/34686 (draft, CI green)
 
 **What was created:**
+
 - New doc page at `astro-docs/src/content/docs/features/CI Features/sandboxing.mdoc`
 - SVG diagram (`sandboxing-cache-flow.svg`) showing declared inputs → build → declared outputs → cache key flow
 - 6 screenshots: CIPE violations, task violations, sandbox analysis, raw report, cloud settings, settings sidebar
@@ -14,6 +15,7 @@ Drafted, iterated, and pushed the new Task Sandboxing feature documentation page
 - Sidebar entry with "New" badge under Orchestration & CI
 
 **Key sections:**
+
 - Why hermeticity matters (with `app.yaml` undeclared input + `vite-plugin-dts` undeclared output examples)
 - How sandboxing works (Warning vs Strict modes)
 - Investigating violations (CIPE → task details → sandbox analysis → raw report flow)
@@ -23,6 +25,7 @@ Drafted, iterated, and pushed the new Task Sandboxing feature documentation page
 - Cloud settings (Strict / Warning / Off enforcement modes)
 
 **Feedback incorporated from Rareș:**
+
 - Don't reference `@nx/vite` plugin specifically (avoid implying plugin defaults are wrong)
 - Use `app.yaml` instead of `.env` for undeclared input example (`.env` env input syntax not supported)
 - Remove `NX_CLOUD_IO_TRACING_DIRECTORY` (will be enabled by default on agents soon, NXC-3973)
@@ -38,6 +41,10 @@ Fixed broken `/.netlify/images` URLs on astro-docs pages (e.g. sandboxing page).
 **Fix:** Added `'/.netlify/*'` to `excludedPath` in the Framer proxy edge function config.
 
 **Branch:** `DOC-436` pushed, ready for PR.
+
+## Netlify Deploy Triage
+
+Triaged and rejected 34 pending deploy previews across nx-docs (18) and nx-dev (16). All 6 PRs were core/plugin changes with no docs or marketing file changes — none needed manual review.
 
 ## Other
 
