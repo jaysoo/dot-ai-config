@@ -18,7 +18,7 @@ The `configure-ai-agents` command now supports OpenAI Codex as a subagent, joini
 
 Polygraph AI, the in-cloud coding agent, shipped repo summarization, PR status syncing, automatic PR cleanup on session end, and several security/stability fixes. The `.nx/polygraph` directory is now automatically added to `.gitignore`.
 
-Self-Healing CI dropped its "Experimental" label. The auto-apply recommendation is now more prominent in terminal output, VCS comments, and the Cloud UI. Cloudinary had self-healing CI enabled on their enterprise instance.
+Self-Healing CI dropped its "Experimental" label — it's now GA. The auto-apply recommendation is now more prominent in terminal output, VCS comments, and the Cloud UI. Cloudinary had self-healing CI enabled on their enterprise instance. Active rollouts in progress for: Emeria, CREXi, MailChimp, Moderna, PayFit, ClickUp, and Island.
 
 nx.dev now publishes `llms.txt` and `llms-full.txt` files plus `.md` URL variants for better AI agent discoverability.
 
@@ -62,8 +62,10 @@ The Create Nx Workspace (CNW) prompt flow was restored to match the v22.1.3 expe
 
 ## Security
 
-- Remediated IAM user access keys older than 90 days for Vanta compliance.
-- New authentication-based workspace access policies ensure users only see workspaces they have repository access to.
+- **Polygraph session scoping fix**: `getSession` now constrains queries to the workspace ID, preventing potential cross-workspace session leakage. Flagged as urgent.
+- **IAM key rotation**: Remediated IAM user access keys older than 90 days for Vanta compliance.
+- **Workspace visibility**: Repository-access-based access policies ensure users only see workspaces they have repository membership for.
+- IAM permissions tightened across dev/staging/prod for service accounts and GCP image operations.
 
 ## Support Infrastructure
 
@@ -88,59 +90,6 @@ The customer support stack completed its migration from Salesforce to Pylon. SSO
 
 None so far.
 
-## Docs Cleanup: Outdated Version References
-
-The following docs pages contain version-conditional content referencing Nx versions older than 20. Since the current version is 22 (23 in beta), content gated on versions < 20 can be removed — keep only the modern path.
-
-### Version-Conditional Tabs to Simplify
-
-These files use tab pairs like "Nx 18+" / "Nx < 18". The "< 18" tab can be removed entirely and the "18+" content shown as the default:
-
-| File                             | Tabs                 | Action                                            |
-| -------------------------------- | -------------------- | ------------------------------------------------- |
-| `react-native/introduction.mdoc` | "Nx 18+" / "Nx < 18" | Remove "Nx < 18" tab, keep 18+ content as default |
-| `cypress/introduction.mdoc`      | "Nx 18+" / "Nx < 18" | Remove "Nx < 18" tab, keep 18+ content as default |
-
-These files use "Nx 22+" / "Nx < 22" tabs — keep both for now (Nx 20/21 users still active):
-
-| File                                  | Tabs                 | Action                      |
-| ------------------------------------- | -------------------- | --------------------------- |
-| `nx-json.mdoc`                        | "Nx 22+" / "Nx < 22" | Keep both (active versions) |
-| `release-npm-packages.mdoc`           | "Nx 22+" / "Nx < 22" | Keep both                   |
-| `release-docker-images.mdoc`          | "Nx 22+" / "Nx < 22" | Keep both                   |
-| `publish-rust-crates.mdoc`            | "Nx 22+" / "Nx < 22" | Keep both                   |
-| `release-projects-independently.mdoc` | "Nx 22+" / "Nx < 22" | Keep both                   |
-
-### Outdated Version References to Clean Up
-
-| File                                        | Reference                                                        | Action                                                                                             |
-| ------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `next-config-setup.mdoc`                    | "Nx 15 and prior" section (L102), "Nx 16's composePlugins" (L54) | Remove "Nx 15 and prior" section entirely; drop "Nx 16" qualifier (composePlugins is standard now) |
-| `deploy-nextjs-to-vercel.mdoc`              | "Starting from Nx 11" (L9)                                       | Remove version qualifier — just say it works                                                       |
-| `faster-builds-with-module-federation.mdoc` | "Starting in Nx 14" (L22)                                        | Remove version qualifier                                                                           |
-| `webpack-plugins.mdoc`                      | "Prior to Nx 18" (L16, L388)                                     | Remove pre-18 content, keep current approach                                                       |
-| `webpack-config-setup.mdoc`                 | "introduced in Nx 18" (L60)                                      | Remove version qualifier                                                                           |
-| `use-environment-variables-in-react.mdoc`   | "with the release of Nx 19" (L78)                                | Remove version qualifier                                                                           |
-| `environment-variables.mdoc`                | "Workspaces created before Nx 18" (L15)                          | Remove historical context                                                                          |
-| `configure-inputs.mdoc`                     | "As of Nx 18" (L327)                                             | Remove version qualifier                                                                           |
-| `configure-outputs.mdoc`                    | "As of Nx 18" (L58)                                              | Remove version qualifier                                                                           |
-
-### Deprecated Reference Pages (Already in `/reference/Deprecated/`)
-
-These are fine as-is — they're explicitly in the Deprecated section and serve as migration references:
-
-- `rescope.mdoc` — @nrwl → @nx migration (Nx 15/16/17 table)
-- `npm-scope.mdoc` — npmScope property (Nx 16/17)
-- `angular-schematics-builders.mdoc` — Angular CLI compat (Nx 17)
-- `cacheable-operations.mdoc` — cacheableOperations → cache property (Nx 17)
-- `as-provided-vs-derived.mdoc` — generator naming (Nx 17/20)
-- `workspace-generators.mdoc` — workspace generators (Nx 16)
-- `global-implicit-dependencies.mdoc` — implicit deps (Nx 15)
-
-### Plugin Compatibility Page (Keep as-is)
-
-`createnodes-compatibility.mdoc` documents plugin API compatibility across Nx 17-22+ — this is a reference table for plugin authors and should stay.
-
 ## Coming Soon
 
 | Initiative                                        | Target      | Notes                                            |
@@ -156,20 +105,20 @@ These are fine as-is — they're explicitly in the Deprecated section and serve 
 | ------------------------------ | --------------------------------------------------------------- |
 | CLI pre-releases               | 2 (22.6.0-beta.8, beta.9)                                       |
 | Cloud releases                 | 2 (2603.04.2, 2603.04.3)                                        |
-| Linear issues completed        | 66 across 7 teams                                               |
+| Linear issues completed        | 67+ across 7 teams                                              |
 | Enterprise customers onboarded | 1 (Caseware)                                                    |
 | Projects completed             | 3 (Grafana Billing Alerts, IO Trace Helm Chart, Q Jan-Feb Misc) |
 
 ## Questions? Contact
 
-- AI / Agentic Experience / Polygraph: Max Kless, Jonathan Cammisuli, Victor Savkin
-- Task Sandboxing / IO Tracing: Rares Matei, Louie Weng
-- Workspace Access & Onboarding: Mark Lindsey, Nicole Oliver
-- Enterprise / Single Tenant: Patrick Mariglia, Steve Pentland
-- Self-Healing CI: James Henry
-- Infrastructure / Observability: Szymon Wojciechowski, Steve Pentland
-- CLI Core / Performance: Jason Jean, Leosvel Perez Espinosa, Jack Hsu
-- Docs: Jack Hsu, Benjamin Cabanes
-- Support / Pylon: Steven Nance, Benjamin Cabanes
+- AI / Agentic Experience / Polygraph: Max, Jonathan, Victor
+- Task Sandboxing / IO Tracing: Rares, Louie
+- Workspace Access & Onboarding: Mark, Nicole
+- Enterprise / Single Tenant: Patrick, Steve
+- Self-Healing CI: James
+- Infrastructure / Observability: Szymon, Steve
+- CLI Core / Performance: Jason, Leosvel, Jack
+- Docs: Jack, Caleb
+- Support / Pylon: Steven, Benjamin
 
 _Generated on 2026-03-04. For the full technical changelog, see the companion changelog document._

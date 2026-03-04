@@ -144,13 +144,13 @@ React libraries generated with `@nx/react:library` reference `@nx/react/typings/
 Nx presets create `jest.preset.js` at the workspace root, and project jest configs reference it (e.g. `../../jest.preset.js`). Subdirectory import does NOT bring this file.
 
 **Fix**:
-1. Install `@nx/jest`: `npx nx add @nx/jest`
-2. Create `jest.preset.js` at dest root:
-   ```js
-   const nxPreset = require('@nx/jest/preset').default;
-   module.exports = { ...nxPreset };
-   ```
-3. Install test runner deps: `pnpm add -wD jest jest-environment-jsdom ts-jest @types/jest`
+1. Run `npx nx add @nx/jest` — this creates `jest.preset.js` AND registers `@nx/jest/plugin` in `nx.json`
+2. Install test runner deps: `pnpm add -wD jest jest-environment-jsdom ts-jest @types/jest`
+3. Install framework-specific test deps as needed (see `references/JEST.md`)
+
+**Gotcha**: Manually creating `jest.preset.js` without running `npx nx add @nx/jest` means the plugin won't be registered — `test` targets won't be inferred.
+
+For deeper Jest issues (tsconfig.spec.json, Babel transforms, CI atomization, Jest vs Vitest coexistence), see `references/JEST.md`.
 
 ### Target Name Prefixing (Whole-Repo Import)
 
@@ -202,6 +202,7 @@ Identify technologies in the source repo, then read and apply the matching refer
 
 Available references:
 - `references/GRADLE.md`
+- `references/JEST.md` — Jest testing: `@nx/jest/plugin` setup, jest.preset.js, testing deps by framework, tsconfig.spec.json, Jest vs Vitest coexistence, Babel transforms, CI atomization.
 - `references/NEXT.md` — Next.js projects: `@nx/next/plugin` targets, `withNx`, Next.js TS config (`noEmit`, `jsx: "preserve"`), auto-installing deps via wrong PM, non-Nx `create-next-app` imports, mixed Next.js+Vite coexistence.
 - `references/TURBOREPO.md`
 - `references/VITE.md` — Vite projects (React, Vue, or both): `@nx/vite/plugin` typecheck target, `resolve.alias`/`__dirname` fixes, framework deps, Vue-specific setup, mixed React+Vue coexistence.
