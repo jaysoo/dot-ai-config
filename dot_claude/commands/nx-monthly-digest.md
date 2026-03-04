@@ -27,6 +27,7 @@ Generate a unified monthly digest that presents the Nx **platform as a whole**
 multiple components should be grouped by theme, not by team.
 
 Two audiences:
+
 1. **Cross-functional teams** (Sales, CS, Marketing, Leadership): customer-facing
    summary of what changed, why it matters, who to contact for details.
 2. **Engineering**: comprehensive changelog across all components.
@@ -55,6 +56,7 @@ Collect raw data from all four sources **in parallel**:
   issues (not just counts), all project updates, and all status changes.
 
 Additionally, check for **blog posts** published during the target month:
+
 - Fetch `https://nx.dev/blog` via WebFetch and look for posts from the month.
 - Check the nx repo for blog-related commits if applicable.
 
@@ -69,6 +71,7 @@ After Pass 1 completes, identify 5-10 themes from the raw data (see
 major theme** to do an exhaustive deep dive.
 
 Each theme subagent should:
+
 1. Read ALL related Linear issues in full (not just titles — descriptions,
    comments, linked PRs, linked issues).
 2. Read full PR descriptions for key GitHub PRs in this theme.
@@ -92,6 +95,7 @@ directly from the Pass 1 data.
 ### Pass 3: Synthesis & Writing
 
 With all theme briefs in hand:
+
 1. Rank themes by customer impact (most impactful first).
 2. Write the cross-functional digest from the "customer-facing summary"
    and "why it matters" sections of each brief.
@@ -117,11 +121,13 @@ gh release list --repo nrwl/nx --limit 50
 
 For each relevant release (stable + backports; skip pre-releases unless
 specifically requested), fetch the full body:
+
 ```bash
 gh release view <tag> --repo nrwl/nx --json tagName,body,publishedAt
 ```
 
 Releases use conventional commit format with sections:
+
 - 🚀 Features
 - 🩹 Fixes
 - ⚠️ Breaking Changes
@@ -176,6 +182,7 @@ gh api repos/nrwl/cloud-infrastructure/commits --paginate \
 ```
 
 If the repo is not accessible (permissions error), note this clearly:
+
 > "Infrastructure changes not included — no access to nrwl/cloud-infrastructure.
 > Contact the Infrastructure team lead for this month's updates."
 
@@ -190,6 +197,7 @@ Use the Linear MCP to pull **exhaustive** data. This is the richest source
 for understanding what actually happened — don't skim it.
 
 1. **All completed issues** for the target month across ALL teams:
+
    - CLI team (NXC-)
    - Cloud team (CLOUD-)
    - Infrastructure team (INF-)
@@ -226,6 +234,7 @@ platform as a unified whole.
 After collecting raw data from all sources:
 
 1. **Scan all changes for keyword clusters** that indicate shared initiatives:
+
    - "sandbox", "io-trace", "hermetic", "signal file" → **Task Sandboxing**
    - "self-healing", "fix-ci", "auto-apply" → **Self-Healing CI**
    - "configure-ai-agents", "MCP", "CLAUDE.md", "agentic", "AX" → **AI/Agentic Experience**
@@ -281,41 +290,51 @@ For Sales, CS, Marketing, and Leadership. Organized by **theme**, not product.
 > **Data gaps:** {List any sources that were unavailable, or "None"}
 
 ## TL;DR
+
 {3-5 bullet summary of the most impactful changes. Lead with what
 matters to customers. Each bullet should span CLI+Cloud+Infra as relevant.}
 
 ## {Theme 1: e.g., "Task Sandboxing & Hermetic Builds"}
+
 {Plain-language narrative combining CLI, Cloud, and Infra changes into
 one story. No commit hashes, no jargon. Focus on: what can customers
 DO now that they couldn't before?}
 
 {Include where applicable:}
+
 - **Blog posts**: Link to any published blog posts related to this theme
 - **Docs**: Link to new or updated documentation pages (from nx repo commits or Linear tasks)
 - **Screenshots**: Embed screenshots from Linear project updates or project details
   that help readers quickly understand the change visually
 
 ## {Theme 2: e.g., "Self-Healing CI"}
+
 {Same treatment — include blog posts, docs links, and screenshots where available.}
 
 ## {Theme N}
+
 ...
 
 ## Breaking Changes / Action Required
+
 {Anything customers need to act on. If nothing, say "None this month."}
 
 ## Coming Soon
+
 {Notable in-progress work from Linear that stakeholders should preview.}
 
 ## By the Numbers
-| Metric | Count |
-|--------|-------|
-| CLI releases | N |
-| Cloud releases | N |
+
+| Metric                  | Count            |
+| ----------------------- | ---------------- |
+| CLI releases            | N                |
+| Cloud releases          | N                |
 | Linear issues completed | N across M teams |
 
 ## Questions? Contact
+
 {Map each THEME to the relevant leads — not each product. Use first names only:}
+
 - **Task Sandboxing / IO Tracing**: {first names from Linear project}
 - **Self-Healing CI / AI**: {first names}
 - **Onboarding & Cloud**: {first names}
@@ -340,37 +359,45 @@ with PR-level detail.
 ## {Theme 1: e.g., "Task Sandboxing & Hermetic Builds"}
 
 ### CLI
+
 - {description} ([#NNNN](github-pr-link)) — {version}
 - ...
 
 ### Cloud
+
 - {description} ({cloud version})
 - ...
 
 ### Linear
+
 - {description} ([NXC-NNNN](https://linear.app/nrwl/issue/NXC-NNNN))
 - ...
 
 ### Infrastructure
+
 - {description}
 - ...
 
 ## {Theme 2}
+
 ...
 
 ## Linear Project Status
 
 ### Completed in {Month}
-| Project | Lead | Link |
-|---------|------|------|
-| {name} | {first name} | [View](https://linear.app/nrwl/project/{slug}) |
+
+| Project | Lead         | Link                                           |
+| ------- | ------------ | ---------------------------------------------- |
+| {name}  | {first name} | [View](https://linear.app/nrwl/project/{slug}) |
 
 ### Active
-| Project | Lead | Target | Link |
-|---------|------|--------|------|
-| {name} | {first name} | {date} | [View](https://linear.app/nrwl/project/{slug}) |
+
+| Project | Lead         | Target | Link                                           |
+| ------- | ------------ | ------ | ---------------------------------------------- |
+| {name}  | {first name} | {date} | [View](https://linear.app/nrwl/project/{slug}) |
 
 ### Issues Completed: {N} across {M} teams
+
 {team} {count} · {team} {count} · ...
 
 _Generated on {date}._
@@ -424,11 +451,18 @@ email, Notion page).
   - **Screenshots**: Extract and embed screenshots from Linear project
     updates, project descriptions, and issue attachments that help readers
     visually understand changes at a glance.
-  The goal: a reader can quickly scan the digest and understand what's
-  interesting to them, then drill into the changelog for details.
+    The goal: a reader can quickly scan the digest and understand what's
+    interesting to them, then drill into the changelog for details.
 
 ### Team Composition Reference
 
 Use these team assignments (do NOT deviate):
+
 - **Docs**: Jack, Caleb
 - Other teams: derive from Linear project/issue assignments
+
+### CRITICAL: Be Thorough
+
+Err on the side of reading and including too much rather than missing important. I don't care how long this
+task takes, it can be 30-60 mins as long as it has as much detail as possibel in changelog, which is then filtered
+and distilled in a digestable format in the cross-functional digest. The more thorough the data collection and theme deep dives, the richer and more accurate the final output will be.
