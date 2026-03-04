@@ -21,7 +21,7 @@ Nx continues to be the only build system with deep AI agent integration. This mo
 - The `.nx/polygraph` directory is now auto-added to `.gitignore` via a migration (runs on upgrade to 22.7) and during AI agent setup, keeping AI session artifacts out of version control.
 - **Docs "Copy Prompt" feature** shipped — documentation pages now include a button to copy AI-optimized prompts, making it easier to use Nx docs with any AI coding tool.
 
-**Questions?** Jason, Max, Jon
+**Questions?** Victor, Jon, James
 
 ---
 
@@ -33,7 +33,7 @@ Self-Healing CI has graduated from experimental to a **first-class Nx Cloud feat
 - Enterprise customer enablement is underway (e.g., Cloudinary enabled this week).
 - Self-Healing CI is moving toward a paid tier for enterprise customers — CS is beginning those conversations.
 
-**Questions?** James, Jon
+**Questions?** Victor, Jon, James
 
 ---
 
@@ -47,7 +47,7 @@ Alongside this strategic initiative:
 - A new **Welcome View** is on staging (`staging.nx.app/welcome`), designed to guide new users through their first cloud activation steps.
 - The **Framer-based website** is essentially complete (minus blog migration), and Nx will soon be fully off Vercel.
 
-**Questions?** Jason, Craigory, Mark
+**Questions?** Nicole, Altan, Jack
 
 ---
 
@@ -61,15 +61,17 @@ Alongside this strategic initiative:
 
 ---
 
-## Task Sandboxing & IO Tracing
+## Task Sandboxing
 
-The sandboxing initiative (hermetic task execution) continues with active dogfooding:
+The [sandboxing](https://deploy-preview-34707--nx-docs.netlify.app/docs/features/ci-features/sandboxing) initiative (hermetic task execution) continues with active dogfooding:
+
+- Ready soon for single-tenant customers to be onboarded (must use Nx agents not manual DTEs).
 
 - **IO-trace daemon ring buffer reduced to 512MB** on dev and staging — a tuning change to reduce memory overhead while maintaining tracing fidelity.
 - The Quokka and Dolphin teams are dogfooding sandboxing on real CI pipelines, identifying and fixing edge cases with plugin interactions.
 - **Continuous task assignment** is also being dogfooded — customers will need to adopt Prometheus metrics for full observability.
 
-**Questions?** Rares, Philip
+**Questions?** Rares, Altan, Jason
 
 ---
 
@@ -79,7 +81,7 @@ The sandboxing initiative (hermetic task execution) continues with active dogfoo
 - **Deps cache writes optimized** — Nx now skips writing the dependency cache when it's already up-to-date, reducing unnecessary disk I/O.
 - **TUI improvements and memory footprint reduction** continue as an ongoing effort.
 
-**Questions?** Jason, Craigory
+**Questions?** Jason
 
 ---
 
@@ -94,7 +96,7 @@ Several fixes improve Nx compatibility across runtimes and frameworks:
 - **ESLint v10**: Support landed via community contribution.
 - **Package manager detection**: Improved fallback behavior when `pnpm dlx nx@latest init` was incorrectly using npm.
 
-**Questions?** Leo, Jason, Craigory
+**Questions?** Jason
 
 ---
 
@@ -106,7 +108,7 @@ Several fixes improve Nx compatibility across runtimes and frameworks:
 - **PostHog analytics** migrated to reverse proxy setup across staging and production (NA).
 - **Caseware** single tenant onboarded to AWS with Terraform, added to lighthouse rotation.
 
-**Questions?** Szymon, Phil, Steve
+**Questions?** Steve, Patrick
 
 ---
 
@@ -116,7 +118,7 @@ Several fixes improve Nx compatibility across runtimes and frameworks:
 - **Active customer engagements**: Legora (Nx 22 upgrade + Okta SAML), Fidelity (deploying latest Cloud version), Entain (monthly check-in), Paylocity (upgrade unblocked by PostCSS fix), DNB (churn review — interested in AI/self-healing/Polygraph features).
 - **Support themes this week**: billing/contributor counting (3 tickets), agent/DTE issues (3 tickets), authentication/OAuth (4 tickets). An OAuth connection outage was identified and resolved on March 3.
 
-**Questions?** Steven, Cory, Jimmy
+**Questions?** Steven, Cory
 
 ---
 
@@ -133,31 +135,29 @@ Note: There will be upcoming communications about support tier changes for Self-
 - **22.6.0 stable release** — currently at beta.9, expected later this month.
 - **Quark-A PLG initiative** — expect onboarding flow improvements throughout March.
 - **Regional failover** — moving from design to infrastructure primitives phase.
-- **Framer website** go-live (blog migration remaining).
-- **Powerpack 5.0.1** — patch release cut March 3 with release matrix fixes.
 
 ---
 
 ## By the Numbers
 
-| Metric | Count |
-|---|---|
-| CLI releases (beta) | 2 (22.6.0-beta.8, beta.9) |
-| Cloud releases | 2 (2603.04.2, 2603.04.3) |
-| Infrastructure commits | 29 human-authored |
-| Pylon support tickets | 50+ active |
+| Metric                    | Count                                                          |
+| ------------------------- | -------------------------------------------------------------- |
+| CLI releases (beta)       | 2 (22.6.0-beta.8, beta.9)                                      |
+| Cloud releases            | 2 (2603.04.2, 2603.04.3)                                       |
+| Infrastructure commits    | 29 human-authored                                              |
+| Pylon support tickets     | 50+ active                                                     |
 | Enterprise customer syncs | 6 (Legora, Fidelity, Entain, Brain.co, McGraw Hill, Attentive) |
 
 ---
 
 ## Questions? Contact
 
-- **AI / Polygraph / Self-Healing**: James, Jon, Max
-- **Onboarding / PLG / CNW**: Jason, Craigory, Mark
-- **Sandboxing / IO Tracing**: Rares, Philip
-- **Native Core / CLI**: Jason, Craigory, Leo
-- **Infrastructure / Reliability**: Szymon, Phil, Steve
-- **Enterprise / CS**: Steven, Cory, Jimmy
+- **AI / Polygraph / Self-Healing**: Victor, James, Jon
+- **Onboarding / PLG / CNW**: Nicole, Altan
+- **Sandboxing / IO Tracing**: Rares, Altan, Jason
+- **Native Core / CLI**: Jason
+- **Infrastructure / Reliability**: Steve, Patrick
+- **Enterprise / CS**: Steven, Cory
 - **Docs**: Jack, Caleb
 
 _Generated on 2026-03-04. Early-month snapshot — Week 1 only. For the full technical changelog, see the companion document._
