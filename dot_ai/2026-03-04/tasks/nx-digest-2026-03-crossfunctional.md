@@ -1,6 +1,6 @@
 # Nx Platform Update — March 1–4, 2026
 
-> **Data gaps:** None. All four sources (CLI GitHub releases, Cloud changelog, cloud-infrastructure repo, Linear) were accessible.
+> **Data gaps:** No blog posts published yet. Only 2 of ~13 active projects have posted March status updates — most screenshots will come later in the month. No screenshots available from Linear project updates yet.
 
 ## TL;DR
 

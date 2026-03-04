@@ -144,11 +144,10 @@ React libraries generated with `@nx/react:library` reference `@nx/react/typings/
 Nx presets create `jest.preset.js` at the workspace root, and project jest configs reference it (e.g. `../../jest.preset.js`). Subdirectory import does NOT bring this file.
 
 **Fix**:
-1. Run `npx nx add @nx/jest` — this creates `jest.preset.js` AND registers `@nx/jest/plugin` in `nx.json`
-2. Install test runner deps: `pnpm add -wD jest jest-environment-jsdom ts-jest @types/jest`
-3. Install framework-specific test deps as needed (see `references/JEST.md`)
-
-**Gotcha**: Manually creating `jest.preset.js` without running `npx nx add @nx/jest` means the plugin won't be registered — `test` targets won't be inferred.
+1. Run `npx nx add @nx/jest` — registers `@nx/jest/plugin` in `nx.json` and updates `namedInputs`
+2. Create `jest.preset.js` at workspace root (see `references/JEST.md` for content) — `nx add` only creates this when a generator runs, not on bare `nx add`
+3. Install test runner deps: `pnpm add -wD jest jest-environment-jsdom ts-jest @types/jest`
+4. Install framework-specific test deps as needed (see `references/JEST.md`)
 
 For deeper Jest issues (tsconfig.spec.json, Babel transforms, CI atomization, Jest vs Vitest coexistence), see `references/JEST.md`.
 

@@ -18,12 +18,13 @@ Jest-specific guidance for `nx import`. For the basic "Jest Preset Missing" fix 
 }
 ```
 
-`npx nx add @nx/jest` does three things:
-1. Creates `jest.preset.js` at workspace root
-2. **Registers `@nx/jest/plugin` in `nx.json`** — without this, no `test` targets are inferred
-3. Updates `namedInputs.production` to exclude test files
+`npx nx add @nx/jest` does two things:
+1. **Registers `@nx/jest/plugin` in `nx.json`** — without this, no `test` targets are inferred
+2. Updates `namedInputs.production` to exclude test files
 
-**Gotcha**: If you create `jest.preset.js` manually but skip `npx nx add @nx/jest`, the plugin won't be registered and `nx run PROJECT:test` will fail with "Cannot find target 'test'".
+**Gotcha**: `nx add @nx/jest` does NOT create `jest.preset.js` — that file is only generated when you run a generator (e.g. `@nx/jest:configuration`). For imports, you must create it manually (see "Jest Preset" section below).
+
+**Other gotcha**: If you create `jest.preset.js` manually but skip `npx nx add @nx/jest`, the plugin won't be registered and `nx run PROJECT:test` will fail with "Cannot find target 'test'". You need both.
 
 ---
 
@@ -191,17 +192,19 @@ This creates `test-ci--src/lib/foo.spec.ts` targets for each test file, enabling
 
 ### Subdirectory Import (Nx Source)
 
-1. `npx nx add @nx/jest` — creates preset AND registers plugin
-2. Install deps: `pnpm add -wD jest jest-environment-jsdom ts-jest @types/jest`
-3. Install framework test deps: `@testing-library/react @testing-library/jest-dom` (React), `@vue/test-utils` (Vue)
-4. Verify `tsconfig.spec.json` has `"types": ["jest", "node"]`
-5. `nx run-many -t test`
+1. `npx nx add @nx/jest` — registers plugin in `nx.json` (does NOT create `jest.preset.js`)
+2. Create `jest.preset.js` manually (see "Jest Preset" section above)
+3. Install deps: `pnpm add -wD jest jest-environment-jsdom ts-jest @types/jest`
+4. Install framework test deps: `@testing-library/react @testing-library/jest-dom` (React), `@vue/test-utils` (Vue)
+5. Verify `tsconfig.spec.json` has `"types": ["jest", "node"]`
+6. `nx run-many -t test`
 
 ### Whole-Repo Import (Non-Nx Source)
 
 1. Remove rewritten test scripts from `package.json`
-2. `npx nx add @nx/jest` — registers plugin, creates preset
-3. Install deps (same as above)
-4. Verify/fix `jest.config.*` — ensure `preset` path points to root `jest.preset.js`
-5. Verify/fix `tsconfig.spec.json` — add `types`, `module`, `include` if missing
-6. `nx run-many -t test`
+2. `npx nx add @nx/jest` — registers plugin (does NOT create preset)
+3. Create `jest.preset.js` manually
+4. Install deps (same as above)
+5. Verify/fix `jest.config.*` — ensure `preset` path points to root `jest.preset.js`
+6. Verify/fix `tsconfig.spec.json` — add `types`, `module`, `include` if missing
+7. `nx run-many -t test`
