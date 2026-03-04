@@ -1,7 +1,8 @@
 # Dillon Chanis
 
 **Team:** Orca
-**Role:**
+**Role:** L4 Engineer
+**Manager:** Nicole
 **Location:**
 
 ## Personal

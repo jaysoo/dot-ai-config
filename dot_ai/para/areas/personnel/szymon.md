@@ -1,7 +1,8 @@
 # Szymon
 
-**Team:**
-**Role:**
+**Team:** Kraken
+**Role:** L4 Engineer
+**Manager:** Steve
 **Location:** Poland, EU
 
 ## Personal

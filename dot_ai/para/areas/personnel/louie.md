@@ -1,7 +1,8 @@
 # Louie
 
-**Team:**
-**Role:**
+**Team:** Quokka
+**Role:** L4 Engineer
+**Manager:** Altan
 **Location:** Vancouver or Toronto, Canada (?)
 
 ## Personal

@@ -1,7 +1,8 @@
 # Rares
 
-**Team:**
-**Role:**
+**Team:** Quokka
+**Role:** L5 Engineer
+**Manager:** Altan
 **Location:** Scotland, UK
 
 ## Personal

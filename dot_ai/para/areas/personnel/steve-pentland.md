@@ -1,7 +1,8 @@
 # Steve Pentland
 
-**Team:** Backend/Infrastructure
-**Role:** Infrastructure Engineer
+**Team:** Kraken
+**Role:** L6 Engineer
+**Manager:** Jack
 **Location:** Welland(?), Ontario, Canada
 
 ## Personal

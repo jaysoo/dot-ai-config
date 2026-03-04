@@ -1,10 +1,11 @@
 # Altan Stalker
 
-**Team:** Quoka
+**Team:** Quokka
 **Role:** Team Lead, AI Czar
 **Level:** L5
+**Manager:** Jack
 **Location:** Atlanta, USA
-**Reports:** Louie, Raj
+**Reports:** Louie, Rares
 **Expertise:** Tracing, sandboxing, metrics, resource allocation
 
 ## Personal

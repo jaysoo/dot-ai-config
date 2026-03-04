@@ -1,7 +1,8 @@
 # Leo
 
 **Team:** Dolphin
-**Role:**
+**Role:** L4 Engineer
+**Manager:** Jason
 **Location:** Barcelona, Spain
 
 ## Personal

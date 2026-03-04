@@ -1,9 +1,9 @@
 # Ben (Benjamin Cabanes)
 
-**Team:** Frontend vertical
-**Role:** L6
+**Team:** Orca
+**Role:** L6 Engineer
+**Manager:** Nicole
 **Location:** Montreal, QC, Canada
-**Effy Manager:** Victor
 
 ## Personal
 

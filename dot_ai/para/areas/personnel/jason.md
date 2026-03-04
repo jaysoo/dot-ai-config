@@ -1,7 +1,8 @@
 # Jason
 
-**Team:**
-**Role:**
+**Team:** Dolphin
+**Role:** L6 Engineer
+**Manager:** Jack
 **Location:** Toronto, Ontario, Canada
 
 ## Personal

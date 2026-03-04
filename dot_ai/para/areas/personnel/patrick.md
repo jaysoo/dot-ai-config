@@ -1,8 +1,8 @@
 # Patrick
 
-**Team:** Infrastructure
-**Role:** Infrastructure Engineer
-**Level:** L4B (working towards L5)
+**Team:** Kraken
+**Role:** L5 Engineer
+**Manager:** Steve
 **Location:** Toronto, Ontario, Canada
 
 ## Personal

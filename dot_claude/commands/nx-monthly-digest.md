@@ -54,6 +54,10 @@ Collect raw data from all four sources **in parallel**:
   calls are needed across teams. This subagent should pull ALL completed
   issues (not just counts), all project updates, and all status changes.
 
+Additionally, check for **blog posts** published during the target month:
+- Fetch `https://nx.dev/blog` via WebFetch and look for posts from the month.
+- Check the nx repo for blog-related commits if applicable.
+
 Do NOT wait for one source before starting another. Launch subagents for
 Sources 2 and 4 immediately, then collect Sources 1 and 3 via Bash while
 the subagents work in the background.
@@ -75,9 +79,10 @@ Each theme subagent should:
 5. Return a **theme brief** (1-2 pages) covering:
    - **What changed** (comprehensive list of all work)
    - **Why it matters** (customer impact, business value)
-   - **Who led it** (project leads, key contributors)
+   - **Who led it** (project leads, key contributors — first names only)
    - **What's next** (remaining work, upcoming milestones)
    - **Customer-facing summary** (1-2 sentences, no jargon)
+   - **Related content** (blog posts, docs pages, screenshots from project updates)
 
 Launch theme subagents **in parallel** for independent themes.
 
@@ -190,7 +195,7 @@ for understanding what actually happened — don't skim it.
    - Infrastructure team (INF-)
    - Red Panda team (NXA-)
    - Quokka team (Q-)
-   - Docs team (DOC-)
+   - Docs team (DOC-) — **Team members: Jack, Caleb only** (not Ben)
 
    For each team: pull ALL completed issues (filter by `completedAt` within
    the month). Read titles AND descriptions — titles alone miss context.
@@ -199,6 +204,8 @@ for understanding what actually happened — don't skim it.
 2. **Project updates** for the target month across all teams:
    Look for project status changes, milestone completions, and updates.
    Read project descriptions to understand goals and scope.
+   **Extract any screenshots** from project updates and project details —
+   these will be embedded in the cross-functional digest.
 
 3. **Notable in-progress work** that stakeholders should be aware of
    (large initiatives, things that affect customers, upcoming breaking changes).
@@ -282,8 +289,14 @@ matters to customers. Each bullet should span CLI+Cloud+Infra as relevant.}
 one story. No commit hashes, no jargon. Focus on: what can customers
 DO now that they couldn't before?}
 
+{Include where applicable:}
+- **Blog posts**: Link to any published blog posts related to this theme
+- **Docs**: Link to new or updated documentation pages (from nx repo commits or Linear tasks)
+- **Screenshots**: Embed screenshots from Linear project updates or project details
+  that help readers quickly understand the change visually
+
 ## {Theme 2: e.g., "Self-Healing CI"}
-{Same treatment.}
+{Same treatment — include blog posts, docs links, and screenshots where available.}
 
 ## {Theme N}
 ...
@@ -302,12 +315,12 @@ DO now that they couldn't before?}
 | Linear issues completed | N across M teams |
 
 ## Questions? Contact
-{Map each THEME to the relevant leads — not each product:}
-- **Task Sandboxing / IO Tracing**: {leads from Linear project}
-- **Self-Healing CI / AI**: {leads}
-- **Onboarding & Cloud**: {leads}
-- **CLI Core**: {leads}
-- **Infrastructure**: {leads}
+{Map each THEME to the relevant leads — not each product. Use first names only:}
+- **Task Sandboxing / IO Tracing**: {first names from Linear project}
+- **Self-Healing CI / AI**: {first names}
+- **Onboarding & Cloud**: {first names}
+- **CLI Core**: {first names}
+- **Infrastructure**: {first names}
 
 _Generated on {date}. For the full technical changelog, see Document 2._
 ```
@@ -327,11 +340,15 @@ with PR-level detail.
 ## {Theme 1: e.g., "Task Sandboxing & Hermetic Builds"}
 
 ### CLI
-- {description} ([#NNNN](link)) — {version}
+- {description} ([#NNNN](github-pr-link)) — {version}
 - ...
 
 ### Cloud
 - {description} ({cloud version})
+- ...
+
+### Linear
+- {description} ([NXC-NNNN](https://linear.app/nrwl/issue/NXC-NNNN))
 - ...
 
 ### Infrastructure
@@ -344,14 +361,14 @@ with PR-level detail.
 ## Linear Project Status
 
 ### Completed in {Month}
-| Project | Lead |
-|---------|------|
-| ... | ... |
+| Project | Lead | Link |
+|---------|------|------|
+| {name} | {first name} | [View](https://linear.app/nrwl/project/{slug}) |
 
 ### Active
-| Project | Lead | Target |
-|---------|------|--------|
-| ... | ... | ... |
+| Project | Lead | Target | Link |
+|---------|------|--------|------|
+| {name} | {first name} | {date} | [View](https://linear.app/nrwl/project/{slug}) |
 
 ### Issues Completed: {N} across {M} teams
 {team} {count} · {team} {count} · ...
@@ -390,3 +407,28 @@ email, Notion page).
   of both documents so the reader knows the digest is incomplete.
 - **Err on the side of inclusion** for the technical changelog. Err on the
   side of exclusion (customer-relevant only) for the cross-functional digest.
+- **First names only.** Everyone knows each other — use "Jason" not
+  "Jason Powers" or "Jason P." throughout both documents.
+- **Linear issues MUST have URLs.** Every Linear issue referenced in the
+  changelog must include a clickable link: `[NXC-123](https://linear.app/nrwl/issue/NXC-123)`.
+  Same format for CLOUD-, INF-, DOC-, NXA-, Q- prefixes.
+- **Linear projects MUST have URLs.** Where projects are listed (status
+  tables, theme narratives), link to them:
+  `[Project Name](https://linear.app/nrwl/project/{slug})`.
+- **Include supporting content.** For the cross-functional digest, actively
+  look for and include:
+  - **Blog posts**: Check nx.dev blog and Nx social channels for posts
+    related to themes in this month's work.
+  - **Docs pages**: If nx repo commits or Linear tasks reference new/updated
+    docs, link them (e.g., `https://nx.dev/docs/...`).
+  - **Screenshots**: Extract and embed screenshots from Linear project
+    updates, project descriptions, and issue attachments that help readers
+    visually understand changes at a glance.
+  The goal: a reader can quickly scan the digest and understand what's
+  interesting to them, then drill into the changelog for details.
+
+### Team Composition Reference
+
+Use these team assignments (do NOT deviate):
+- **Docs**: Jack, Caleb
+- Other teams: derive from Linear project/issue assignments

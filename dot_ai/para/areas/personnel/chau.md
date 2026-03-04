@@ -1,7 +1,8 @@
 # Chau
 
 **Team:** Red Panda
-**Role:** Senior Engineer (L4C)
+**Role:** L4 Engineer
+**Manager:** Jon
 **Location:** O'Fallon, MO, USA
 
 ## Personal

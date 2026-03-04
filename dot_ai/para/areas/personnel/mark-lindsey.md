@@ -1,9 +1,11 @@
 # Mark Lindsey
 
+**Team:** Red Panda
+**Role:** L4 Engineer
+**Manager:** Jon
+
 ## Professional
 
-- **Role**: VCS Integration Expert
-- **Team**: Red Panda team involvement
 - **Expertise**: VCS integrations, GitHub app/OAuth flows
 - **Collaborates with**: Orca team (Nicole, Ben, Dylan), Chow (auth)
 

@@ -1,7 +1,8 @@
 # Jon (Jonathan Cammisuli)
 
-**Team:** Red Panda (Lead)
-**Role:** Team Lead → becoming direct manager for Red Panda
+**Team:** Red Panda
+**Role:** L6 Engineer
+**Manager:** Jack
 **Location:** London, Ontario, Canada
 
 ## Personal

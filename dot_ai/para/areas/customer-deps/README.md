@@ -5,4 +5,4 @@ engagement health, DPE capacity, and concentration risk.
 
 ## Reports
 
-- [2026-03](./2026-03.md) — Caesars churned, CIBC PoV at risk, Miroslav covers 6 enterprise customers (critical concentration)
+- [2026-03](./2026-03.md) — Caesars churned, CIBC PoV at risk, Miroslav covers 6 enterprise customers (critical concentration). Validated 2026-03-04.

@@ -1,7 +1,8 @@
 # Max
 
-**Team:** CLI
-**Role:** Engineer
+**Team:** Dolphin
+**Role:** L4 Engineer
+**Manager:** Jason
 **Location:** Munich, Germany (CET - 6 hours ahead of Eastern)
 
 ## Personal

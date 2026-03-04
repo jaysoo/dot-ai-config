@@ -1,7 +1,8 @@
 # Nicole
 
 **Team:** Orca
-**Role:** Engineering Lead
+**Role:** L5 Engineer
+**Manager:** Jack
 **Location:** San Diego, CA, USA
 
 ## Personal

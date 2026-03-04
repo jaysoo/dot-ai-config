@@ -1,7 +1,8 @@
 # Craigory
 
-**Team:**
-**Role:**
+**Team:** Dolphin
+**Role:** L4 Engineer
+**Manager:** Jason
 **Location:** USA (city?)
 
 ## Personal
