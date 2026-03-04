@@ -216,6 +216,27 @@ _Last updated: {datetime}_
 {Patterns visible across multiple competitors:
 e.g., "3 of 5 competitors shipped remote caching improvements this month"}
 
+## Competitive Gap Analysis
+
+For each feature Nx is actively developing (pull from Linear active projects),
+assess competitive status:
+
+| Nx Feature | Competitor Status | Gap Direction | Urgency |
+|------------|-------------------|---------------|---------|
+| {feature} | {who has it, who doesn't} | Ahead / Behind / Contested | High / Medium / Low |
+
+### Where Nx Is Behind
+{Features competitors shipped that Nx doesn't have. Be specific about
+which competitor, when they shipped, and what Nx would need to match.}
+
+### Where Nx Is Ahead
+{Features Nx has that no competitor offers. Rate defensibility:
+how hard would it be for a competitor to replicate?}
+
+### Unassailable Moats
+{Nx capabilities that competitors cannot easily replicate due to
+architectural differences, ecosystem lock-in, or sustained investment.}
+
 ## Recommended Actions
 {Specific suggestions for Nx roadmap or positioning. Each should be
 actionable: "Consider X because Y" not "Keep an eye on Z"}

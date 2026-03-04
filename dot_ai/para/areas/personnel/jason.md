@@ -33,6 +33,7 @@
 - **Scorecards:** Lock them in for H1 2026
 - **PR Review Goals 2026:** TTM/TTFR under 24 hours (ideally under 12 hours), encourage AI-assisted PR reviews for prioritization and summaries
 - **Agent Skills:** Max is setting something up for Ocean and Nx, Victor said to wait. We also have the `claude-skills-and-commands` that we can use, unsure if they overlap in concerns.
+- **Management & Soft Skills:** Discuss lack of recognition, soft skills development
 
 
 #### Effy Reviews

@@ -15,12 +15,14 @@ Monthly changelog analysis of competitors to understand where they're investing,
 | **Bazel** | Enterprise build | Low overlap (enterprise/polyglot) |
 | **Gradle** | JVM build | Low overlap (Nx JVM plugin) |
 | **Pants** | Python/Go build | Minimal overlap |
+| **Vite+** | Unified JS toolchain + monorepo | Growing competitor (entry-level) |
 
 ## Reports
 
 | Month | File | Key Events |
 |-------|------|------------|
 | 2026-02 | `2026-02.md` | Moon v2.0, Bazel 9.0, Turborepo 2.8 AI push |
+| 2026-03 | `viteplus-analysis-2026-03.md` | Deep-dive: Vite+ (VoidZero) competitive analysis |
 
 ## How to Run
 

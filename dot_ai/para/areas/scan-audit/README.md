@@ -2,14 +2,17 @@
 
 Weekly intelligence scans across the Nx platform. Covers dependency health,
 supply chain security, API drift, community sentiment, competitor activity,
-framework ecosystem, runtime changes, and AI tool landscape.
+framework ecosystem, runtime changes, AI tool landscape, team capacity,
+project health, and customer dependencies.
 
 ## How to Run
 
 ```
-/scan-and-audit           # Full weekly scan (all 9)
-/scan-and-audit quick     # Web-research scans only (fast, ~5 min)
-/scan-and-audit digest    # Monthly digest only
+/scan-and-audit              # Full scan (all 12)
+/scan-and-audit quick        # Web-research scans only (fast, ~5 min)
+/scan-and-audit internal     # Internal management audits only (capacity, project-health, customer-deps)
+/scan-and-audit briefing     # Director briefing: internal audits + competitors + digest
+/scan-and-audit digest       # Monthly digest only
 /scan-and-audit competitors frameworks  # Specific scans
 ```
 
@@ -21,7 +24,7 @@ framework ecosystem, runtime changes, and AI tool landscape.
 ### Monthly Digests
 - [2026-02](./monthly-digests/2026-02-crossfunctional.md) — Task Sandboxing, Self-Healing CI GA, Polygraph AI, 454 issues across 6 teams
 
-## Individual Scan Areas
+## External Scans (GitHub, npm, web)
 - [Dependency Health](../dependency-health/)
 - [Supply Chain Security](../supply-chain-security/)
 - [API Surface Audit](../api-surface-audit/)
@@ -30,3 +33,8 @@ framework ecosystem, runtime changes, and AI tool landscape.
 - [Framework Ecosystem](../framework-ecosystem/)
 - [Runtime Tracking](../runtime-tracking/)
 - [AI Dev Landscape](../ai-dev-landscape/)
+
+## Internal Audits (Linear MCP)
+- [Team Capacity](../team-capacity/) — Capacity bottlenecks, sequencing risks, overdue items
+- [Project Health](../project-health/) — Zombie projects, exit criteria, revenue coordination
+- [Customer Dependencies](../customer-deps/) — Concentration risk, engagement health, DPE load

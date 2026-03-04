@@ -12,7 +12,7 @@ Projects are time-bound work with clear completion criteria:
 
 ## Current Projects
 
-*No active projects*
+- **[nx-import-vite](nx-import-vite/)** — NXA-1075: Skill reference for importing Vite projects into Nx workspaces
 
 ## Adding New Projects
 

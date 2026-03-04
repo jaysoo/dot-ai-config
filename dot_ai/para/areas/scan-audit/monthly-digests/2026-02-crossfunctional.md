@@ -119,25 +119,26 @@ The terminal UI received significant stability improvements:
 
 ## By the Numbers
 
-| Metric | Count |
-|--------|-------|
-| CLI releases (stable) | 4 (22.5.0, 22.5.1, 22.5.2, 22.5.3) |
-| CLI backport | 1 (21.3.12) |
-| CLI beta releases | 10 (22.5.0-beta.3 through 22.6.0-beta.7) |
-| Cloud releases | 24 (11 features, 13 fixes) |
-| Infrastructure commits | ~130 (meaningful, filtered) |
-| Linear issues completed | 454 across 6 teams |
+| Metric                  | Count                                    |
+| ----------------------- | ---------------------------------------- |
+| CLI releases (stable)   | 4 (22.5.0, 22.5.1, 22.5.2, 22.5.3)       |
+| CLI backport            | 1 (21.3.12)                              |
+| CLI beta releases       | 10 (22.5.0-beta.3 through 22.6.0-beta.7) |
+| Cloud releases          | 24 (11 features, 13 fixes)               |
+| Infrastructure commits  | ~130 (meaningful, filtered)              |
+| Linear issues completed | 454 across 6 teams                       |
 
-| Team | Issues Completed |
-|------|-----------------|
-| NXC (CLI) | 84 |
-| CLOUD | 85 |
-| NXA (RedPanda) | 111 |
-| Q (Quokka) | 89 |
-| INF (Infrastructure) | 60 |
-| DOC (Docs) | 25 |
+| Team                 | Issues Completed |
+| -------------------- | ---------------- |
+| NXC (CLI)            | 84               |
+| CLOUD                | 85               |
+| NXA (RedPanda)       | 111              |
+| Q (Quokka)           | 89               |
+| INF (Infrastructure) | 60               |
+| DOC (Docs)           | 25               |
 
 ### Projects Completed
+
 - Framer Migration (CLOUD) — Benjamin Cabanes
 - Lighthouse: Google Auth & Remove IaP (INF) — Steve Pentland
 - Bucket access binding → memberships (INF) — Patrick Mariglia

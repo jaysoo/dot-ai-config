@@ -1,5 +1,25 @@
 ## Completed
 
+### March 2026
+
+- [x] Sandboxing, get the list of problems by EOD Wednesday ✓ 2026-03-04
+
+
+- [x] NXC-4020: Restore CNW prompt flow to v22.1.3 (2026-03-02) ✓ 2026-03-02
+  - Plan: `.ai/2026-03-02/tasks/cnw-revert-prompts-to-22.1.3.md`
+  - Summary: Reverted human-visible CNW flow to match v22.1.3 exactly. Fixed `accessToken=undefined` bug, restored cloud prompt wording, split preset/template flows. PR #34671, CI green.
+
+- [x] February 2026 Cross-Functional Digest (2026-03-02) ✓ 2026-03-02
+  - Plan: `.ai/2026-03-02/tasks/nx-digest-2026-02-crossfunctional.md`
+  - Summary: Generated monthly digest covering 457 issues across 6 teams, 6 CLI releases, 24 Cloud releases, ~160 infra commits. Companion technical changelog also produced.
+
+- [x] DOC-428: Review All CLI and Cloud Links ✓ 2026-03-02
+  - Plan: `.ai/2026-03-02/tasks/DOC-428-review-cli-cloud-links.md`
+  - Summary: Full audit of nx.dev links in nx + ocean repos. Found 10 broken 404s, fixed `:slug*` generator bug, fixed redirect ordering, deleted legacy redirect-rules.js files, applied all fixes to `_redirects` + `netlify.toml`.
+
+- [x] Update all links for docs to use new URL ✓ 2026-03-02
+  - Covered by DOC-428 above.
+
 ### February 2026
 
 - [x] Framer _must_ launch this week ✓ 2026-02-27

@@ -2,7 +2,7 @@
 name: scan-and-audit
 description: >
   Weekly scan and audit orchestrator for Nx platform intelligence. Runs all
-  8 scan/audit commands plus the monthly digest via parallel subagents, then
+  11 scan/audit commands plus the monthly digest via parallel subagents, then
   synthesizes a unified report with delta tracking. Use when user says
   "run scans", "weekly scan", "scan and audit", "run audits", "weekly report",
   "what's new this week", or any variation. Also use for "monthly scan" or
@@ -29,14 +29,20 @@ week (or day) to give Jack a quick picture of what changed.
 
 $ARGUMENTS
 
-- No arguments: run all 9 scans (8 commands + monthly digest) for the
-  current week.
-- `monthly only`: skip the 8 scans, just run the monthly digest.
-- `scans only`: skip the monthly digest, just run the 8 scans.
-- `quick`: skip slow scans (community, dependencies, supply-chain, api-surface).
+- No arguments: run all 12 scans (8 external + 3 internal audits + monthly
+  digest) for the current week.
+- `monthly only`: skip scans, just run the monthly digest.
+- `scans only`: skip the monthly digest, just run scans/audits.
+- `quick`: skip slow scans (community, dependencies, supply-chain, api-surface,
+  capacity, project-health, customer-deps).
   Only run web-research scans (competitors, frameworks, runtimes, ai-landscape).
+- `internal`: run only the 3 internal management audits (capacity, project-health,
+  customer-deps). These use Linear MCP — no GitHub cloning needed.
+- `briefing`: run internal audits + competitors + monthly digest. Produces
+  the full director-level monthly briefing.
 - Specific scan names: `competitors`, `frameworks`, `runtimes`, `ai-landscape`,
-  `community`, `dependencies`, `supply-chain`, `api-surface`, `digest`.
+  `community`, `dependencies`, `supply-chain`, `api-surface`, `capacity`,
+  `project-health`, `customer-deps`, `digest`.
 - `lookback=N`: override the lookback window to N days (default: 60).
 
 ## Directory Structure
@@ -55,6 +61,8 @@ All orchestrator output goes to `.ai/para/areas/scan-audit/`.
 ```
 
 Individual scan reports live in their own PARA areas (managed by each command):
+
+**External scans (GitHub, npm, web):**
 - `.ai/para/areas/dependency-health/`
 - `.ai/para/areas/competitor-intel/`
 - `.ai/para/areas/api-surface-audit/`
@@ -63,6 +71,11 @@ Individual scan reports live in their own PARA areas (managed by each command):
 - `.ai/para/areas/framework-ecosystem/`
 - `.ai/para/areas/runtime-tracking/`
 - `.ai/para/areas/ai-dev-landscape/`
+
+**Internal audits (Linear MCP):**
+- `.ai/para/areas/team-capacity/`
+- `.ai/para/areas/project-health/`
+- `.ai/para/areas/customer-deps/`
 
 ## Step 0: Setup & State
 
@@ -90,7 +103,10 @@ Read `.ai/para/areas/scan-audit/state.json` if it exists. Structure:
     "frameworks": { "compat-risks": 1 },
     "runtimes": { "action-items": 0 },
     "ai-landscape": { "highlights": 6 },
-    "community": { "top-pain-points": 5 }
+    "community": { "top-pain-points": 5 },
+    "capacity": { "high-risk-people": 2, "overdue-items": 8 },
+    "project-health": { "zombies": 2, "overdue-projects": 3 },
+    "customer-deps": { "churned": 1, "cooling": 0, "concentration-risks": 2 }
   }
 }
 ```
@@ -280,12 +296,33 @@ Launch each scan as a **background Task subagent**. Each subagent receives:
 
 Each writes to its own `.ai/para/areas/` directory.
 
-**Group C — Monthly digest** (only if needed):
+**Group C — Internal management audits** (Linear MCP, no repo access needed):
 
-9. **nx-monthly-digest** — Cross-functional digest + technical changelog
-   - Only runs if: current month > lastMonthlyDigest, OR explicitly requested.
-   - Uses the full `/nx-monthly-digest` skill instructions.
-   - Writes to `.ai/para/areas/scan-audit/monthly-digests/`.
+9. **audit-capacity** — Team capacity & sequencing risk analysis
+   - Subagent instruction: "Run the team capacity audit. Use Linear MCP to
+     pull issue assignments, project leads, and due dates across all active
+     teams. Analyze the next 4-6 week window for conflicts. Write report
+     to `.ai/para/areas/team-capacity/YYYY-MM.md`."
+
+10. **audit-project-health** — Long-running project & exit criteria audit
+    - Subagent instruction: "Run the project health audit. Use Linear MCP to
+      pull all In Progress projects, check milestone completion, identify
+      zombies (all milestones done, project still open), flag overdue target
+      dates and scope creep. Track revenue projects. Write report to
+      `.ai/para/areas/project-health/YYYY-MM.md`."
+
+11. **audit-customer-deps** — Customer dependency concentration mapping
+    - Subagent instruction: "Run the customer dependency audit. Use Linear MCP
+      to search for known strategic customers across all teams. Map customer
+      to feature dependencies, check engagement recency, assess DPE capacity.
+      Write report to `.ai/para/areas/customer-deps/YYYY-MM.md`."
+
+**Group D — Monthly digest** (only if needed):
+
+12. **nx-monthly-digest** — Cross-functional digest + technical changelog
+    - Only runs if: current month > lastMonthlyDigest, OR explicitly requested.
+    - Uses the full `/nx-monthly-digest` skill instructions.
+    - Writes to `.ai/para/areas/scan-audit/monthly-digests/`.
 
 ### Launching
 
@@ -323,6 +360,9 @@ After all scans complete, read each report file:
 .ai/para/areas/framework-ecosystem/YYYY-MM.md
 .ai/para/areas/runtime-tracking/YYYY-MM.md
 .ai/para/areas/ai-dev-landscape/YYYY-MM.md
+.ai/para/areas/team-capacity/YYYY-MM.md
+.ai/para/areas/project-health/YYYY-MM.md
+.ai/para/areas/customer-deps/YYYY-MM.md
 ```
 
 Extract from each:
@@ -366,6 +406,10 @@ Example:
 | Frameworks | {status emoji} | {N compat risks} | {+/-N} |
 | Runtimes | {status emoji} | {N action items} | {+/-N} |
 | AI Landscape | {status emoji} | {N highlights} | {new items} |
+| **Internal Audits** | | | |
+| Team Capacity | {status emoji} | {N high-risk people} | {+/-N overdue} |
+| Project Health | {status emoji} | {N zombies, N overdue} | {change} |
+| Customer Deps | {status emoji} | {N concentration risks} | {churned/cooling} |
 
 Status: ✅ = no action needed, ⚠️ = items to review, 🔴 = action required
 
@@ -416,6 +460,18 @@ If nothing, say "None this week."}
 ### AI Dev Tools Landscape
 {2-3 sentence summary.}
 [Full report](.ai/para/areas/ai-dev-landscape/YYYY-MM.md)
+
+### Team Capacity & Sequencing
+{2-3 sentence summary: who's overloaded, what projects are at risk.}
+[Full report](.ai/para/areas/team-capacity/YYYY-MM.md)
+
+### Project Health
+{2-3 sentence summary: zombie projects, overdue targets, scope creep.}
+[Full report](.ai/para/areas/project-health/YYYY-MM.md)
+
+### Customer Dependencies
+{2-3 sentence summary: concentration risks, engagement changes, DPE load.}
+[Full report](.ai/para/areas/customer-deps/YYYY-MM.md)
 
 ## Monthly Digest
 {If digest ran this cycle, include TL;DR + link. Otherwise:

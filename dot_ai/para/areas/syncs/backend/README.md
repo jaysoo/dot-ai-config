@@ -4,24 +4,16 @@ Tracking document for Backend team sync meetings (Quokka).
 
 **Attendees:** Altan, Louie, Rares
 
-## Topics for Next Meeting
-
--
-
-## Upcoming Sync
-
--
-
-## Action Items
-
-- [ ] Follow up with RBC on Enterprise Audit Log call/curl testing
-- [ ] Gregory's outputs PR needed for full Ocean testing
-- [ ] Deploy I/O tracing infra changes to Ocean
-- [ ] NX API endpoint creation for anomaly reporting
-
 ---
 
 ## Meeting Notes
+
+### Upcoming
+
+- We may need API endpoint to check if a workspace is connected fully or not
+- Enterprise customers that need metrics
+  - https://linear.app/nxdev/project/enterprise-analytics-api-cleanup-73da7b8ab2e6/overview
+  - Emeria is already consuming Prometheus
 
 ### 2026-02-02
 

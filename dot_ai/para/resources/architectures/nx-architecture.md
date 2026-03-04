@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2026-02-26
+Last Updated: 2026-03-02
 
 ## Directory Overview
 
@@ -55,57 +55,51 @@ Vitest test runner integration
   - `createOrEditViteConfig()` - Separate copy from `@nx/vite`; supports `vitestFileName` option, uses `root: __dirname`
 
 ### packages/create-nx-workspace/ (CNW)
-CLI tool for creating new Nx workspaces. Uses A/B testing for cloud prompt behavior.
+CLI tool for creating new Nx workspaces. Two separate code paths: preset flow (default) and template flow (`--template`).
 
-**Last Updated**: 2026-01-14
-**Related Issues**: NXC-3628 (current), NXC-3624
-**Status**: NXC-3628 implementation complete, ready for commit
+**Last Updated**: 2026-03-02
+**Related Issues**: NXC-4020 (restored v22.1.3 flow), NXC-3628, NXC-3624
+**Status**: NXC-4020 merged (PR #34671). Human-visible flow matches v22.1.3. A/B testing and template prompt code commented out (not deleted) with `NXC-4020` tags.
 
 **Key Files**:
-- `bin/create-nx-workspace.ts:446-555` - CLI entry point, flow routing, variant conditional logic
-- `src/create-workspace.ts` - Workspace creation, conditional cloud connection
-- `src/create-workspace-options.ts` - TypeScript interfaces (`skipCloudConnect`, `ghAvailable`)
-- `src/utils/nx/ab-testing.ts` - Variant determination, caching (1-week expiry), telemetry
-- `src/utils/nx/nx-cloud.ts` - Cloud connection, URL generation with variant meta property
-- `src/utils/nx/messages.ts` - Completion messages with `github.com/new` hint
-- `src/utils/git/git.ts` - Git utilities (`isGitAvailable()`, `isGhCliAvailable()`)
+- `bin/create-nx-workspace.ts` - CLI entry point; preset flow uses simple `determineNxCloud` → `determineIfGitHubWillBeUsed` (v22.1.3 pattern)
+- `src/create-workspace.ts` - Workspace creation; preset and template flows are **completely separate code paths**
+- `src/create-workspace-options.ts` - TypeScript interfaces
+- `src/internal-utils/prompts.ts` - `determineTemplate()` returns `'custom'` directly (template prompt commented out)
+- `src/utils/nx/ab-testing.ts` - `getFlowVariant()` returns `'0'`, `getBannerVariant()` returns `'0'`, `shouldShowCloudPrompt()` returns `false`
+- `src/utils/nx/nx-cloud.ts` - Cloud connection, URL generation; `getNxCloudInfo(nxCloud, url, pushStatus, rawNxCloud?)` uses `rawNxCloud` to hide URL when user passed `--nxCloud` explicitly
+- `src/utils/nx/messages.ts` - Completion messages (no github.com/new URLs)
+- `src/utils/git/git.ts` - Git utilities
 - `src/internal-utils/yargs-options.ts` - CLI options (`--nxCloud` alias `--ci`)
 
-**A/B Testing Variants** (preset flow removed in #33967):
-- **Variant 0**: Shows cloud prompt → user chooses → connects to cloud → generates URL with token
-- **Variant 1**: Skips cloud prompt → always shows platform link → uses GitHub flow (no token)
-
-**Flow Logic (NXC-3628)**:
+**Preset Flow (v22.1.3 behavior)**:
 ```
-getFlowVariant() returns:
-├── '0' → Variant 0 (current behavior)
-│   └── determineNxCloudV2() → "Try the full Nx platform?" Yes/Skip
-│   └── connectToNxCloudForTemplate() → nxCloudId in nx.json
-│   └── readNxCloudToken() → spinner + read token
-│   └── createNxCloudOnboardingUrl(token) → URL with token
-│
-└── '1' → Variant 1 (NXC-3628 - no cloud prompt)
-    └── Skip cloud prompt → nxCloud = 'yes' (unless --nxCloud=skip)
-    └── Skip connectToNxCloudForTemplate() → NO nxCloudId in nx.json
-    └── Skip readNxCloudToken() → no misleading spinner
-    └── createNxCloudOnboardingUrl(undefined) → GitHub flow (accessToken: null)
-    └── Show github.com/new hint if user hasn't pushed
+1. determineNxCloud(argv) → CI provider prompt or "Would you like remote caching?"
+2. determineIfGitHubWillBeUsed(argv)
+3. createEmptyWorkspace() — passes actual nxCloud value → nxCloudId set in nx.json
+4. readNxCloudToken() → reads nxCloudId back
+5. setupCI() (only for specific CI providers, NOT 'yes')
+6. createNxCloudOnboardingUrl(token) → short URL
+7. initializeGitRepo(connectUrl) — connectUrl baked into initial commit
+8. pushToGitHub() — only for nxCloud === 'github'
+9. getNxCloudInfo() → completion message
 ```
 
-**Key Insight**: `createNxCloudOnboardingURL()` in `url-shorten.ts:38` sends `accessToken: null` for GitHub flow - no token needed.
-
-**Flow Variant Cache**:
-- Location: `os.tmpdir()/nx-cnw-flow-variant`
-- Expiry: 1 week (`FLOW_VARIANT_EXPIRY_MS`)
-- Bug fixed (2026-01-14): Expired files now deleted with `unlinkSync()`, otherwise new variant never written
+**Template Flow** (CLI-only, `--template=nrwl/...`):
+- Clones GitHub template repo, installs deps
+- Cloud connection via `connectToNxCloudForTemplate()` (separate from preset)
+- CI setup, URL generation, README update handled independently
 
 **nxCloud Values**:
-| Value | Source | CI Generated |
-|-------|--------|--------------|
-| `'github'` | CLI arg `--nxCloud github` | Yes (GitHub) |
-| `'gitlab'` | CLI arg `--nxCloud gitlab` | Yes (GitLab) |
-| `'yes'` | Simplified prompt "Yes" | Yes (GitHub) |
-| `'skip'` | Any prompt "Skip" | No |
+| Value | Source | Cloud Connected | CI Generated |
+|-------|--------|----------------|--------------|
+| `'github'` | CI provider prompt | Yes | Yes (GitHub) |
+| `'gitlab'` | CI provider prompt | Yes | Yes (GitLab) |
+| `'yes'` | Caching prompt "Yes" | Yes | No |
+| `'skip'` | Skip/default | No | No |
+| `'never'` | Explicit opt-out | No (neverConnectToCloud) | No |
+
+**Key Insight (NXC-4020)**: The preset flow MUST pass the actual `nxCloud` value to `createEmptyWorkspace` — overriding to `'skip'` prevents `nxCloudId` from being set in nx.json, causing `readNxCloudToken()` to return undefined and breaking the short URL.
 
 **Telemetry Events** (recordStat types): `start`, `precreate`, `complete`, `error`, `cancel`
 
@@ -328,6 +322,23 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 
 ## Personal Work History
 
+### 2026-03-02 - NXC-4020: Restore CNW Prompt Flow to v22.1.3
+- **Branch**: NXC-4020
+- **Commit**: `b693b01625`
+- **PR**: https://github.com/nrwl/nx/pull/34671
+- **Status**: Merged, CI green
+- **Purpose**: Revert Jan-Feb 2026 CNW experiments — make human-visible flow identical to v22.1.3 while preserving agentic/NDJSON, `--template`, telemetry
+- **Key Changes**:
+  - Commented out template prompt in prompts.ts (NXC-4020 tags, not deleted)
+  - Restored `setupNxCloud` to "Would you like remote caching?" wording in ab-testing.ts
+  - Simplified preset flow in create-nx-workspace.ts to v22.1.3 pattern
+  - Split preset/template flows completely in create-workspace.ts
+  - Fixed `accessToken=undefined` bug by passing actual nxCloud to createEmptyWorkspace
+  - Restored `getNxCloudInfo` v22.1.3 signature with `rawNxCloud` in nx-cloud.ts
+  - Locked `getBannerVariant()` to `'0'` (plain text, not box banner)
+- **Key Bug**: `nxCloud: 'skip'` override prevented nxCloudId from being written → readNxCloudToken returned undefined → manual URL with `accessToken=undefined`
+- **Task Plan**: `.ai/2026-03-02/tasks/cnw-revert-prompts-to-22.1.3.md`
+
 ### 2026-02-26 - Community PR Review (24 PRs)
 - **Status**: Complete
 - **Purpose**: Batch review all open community PRs that close issues
@@ -537,19 +548,11 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - **Solution**: Must run `nx sync` before committing to update inferred targets
 - **Impact**: Ensures workspace configuration stays consistent
 
-### CNW Flow Variant Cache File (2026-01-14)
-- **File Location**: `os.tmpdir()/nx-cnw-flow-variant`
-- **Expiry**: 1 week (locks user to same variant for consistent experience)
-- **Bug**: Expired files were not deleted, so `existsSync()` returned true but value was ignored
-- **Result**: 50-50 randomization on every run instead of locking to new variant
-- **Fix**: Delete expired file with `unlinkSync()` so `existsSync()` returns false
-- **Key Code**: `readCachedFlowVariant()` in ab-testing.ts
-
-### Short URL Meta Property for Analytics (2026-01-14)
-- **Purpose**: Track which CNW variant generated the cloud onboarding URL
-- **Format**: `variant-0` or `variant-1`
-- **Location**: `createNxCloudOnboardingUrl()` in nx-cloud.ts passes `getFlowVariant()` to meta
-- **Cloud side**: Cloud analytics can distinguish conversion rates by variant
+### CNW Preset Flow: nxCloud Value Must Pass Through (2026-03-02)
+- **Issue**: Overriding `nxCloud: 'skip'` in `createEmptyWorkspace()` prevents `nxCloudId` from being set in nx.json
+- **Impact**: `readNxCloudToken()` returns undefined → onboarding URL contains `accessToken=undefined`
+- **Rule**: The preset flow MUST pass the actual `nxCloud` value so cloud connection happens during workspace creation
+- **Context**: NXC-4020 fixed this by removing the override; template flow handles cloud separately via `connectToNxCloudForTemplate()`
 
 ### Netlify Edge Function Response Immutability (2026-01-27)
 - **Issue**: Edge function responses from `context.next()` are immutable
