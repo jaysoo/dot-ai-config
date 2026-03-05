@@ -31,7 +31,7 @@ Self-Healing CI has graduated from experimental to a **first-class Nx Cloud feat
 
 - The "auto-apply" toggle for self-healing recommendations is now more prominent in the Cloud UI, making it easier for teams to opt into automatic fixes.
 - Enterprise customer enablement is underway (e.g., Cloudinary enabled this week).
-- Self-Healing CI is moving toward a paid tier for enterprise customers — CS is beginning those conversations.
+- Self-Healing CI is moving toward a paid tier for enterprise customers — CS is beginning those conversations ([Feb 16 All-hands](https://www.notion.so/30569f3c23878012bb79cffed36a0f09), [Tier/Plan Engagement Model](https://www.notion.so/2a369f3c2387803996a6ec89f0a17500)).
 
 **Questions?** Victor, Jon, James
 
@@ -39,7 +39,7 @@ Self-Healing CI has graduated from experimental to a **first-class Nx Cloud feat
 
 ## Onboarding & Product-Led Growth
 
-A new cross-team **Quark-A task force** was established on March 3 with a clear mandate: **remove all friction from discovering Nx → creating a workspace → activating cloud features**. The team includes leads for instrumentation, app onboarding, and Nx Agents activation.
+A new cross-team **[Quark-A task force](https://www.notion.so/31969f3c23878093acfad49fd64be54c)** was established on March 3 with a clear mandate: **remove all friction from discovering Nx → creating a workspace → activating cloud features**. The team includes leads for instrumentation, app onboarding, and Nx Agents activation.
 
 Alongside this strategic initiative:
 
@@ -102,11 +102,11 @@ Several fixes improve Nx compatibility across runtimes and frameworks:
 
 ## Infrastructure & Reliability
 
-- **Regional failover technical design published** (March 3) — a new architecture for automatic failover targeting single-digit-minute recovery time (down from 60–90 minutes). Aimed at banking, healthcare, and government customers with contractual failover requirements. Roughly doubles application cluster cost. Phases: infrastructure primitives → dual-region app → multi-region DB → agents mesh → production.
-- **Multi-cluster agent setups** in progress (prerequisite for regional failover).
+- **[Regional failover technical design](https://www.notion.so/31869f3c23878166adcdf2ba7404f82b) published** (March 3) — a new architecture for automatic failover targeting single-digit-minute recovery time (down from 60–90 minutes). Aimed at banking, healthcare, and government customers with contractual failover requirements. Roughly doubles application cluster cost. Phases: infrastructure primitives → dual-region app → multi-region DB → agents mesh → production.
+- **[Multi-cluster agent setups](https://www.notion.so/30369f3c2387817fbf94f38a0ffed522)** in progress (prerequisite for regional failover).
 - **Grafana monitoring stack** being deployed — new Spacelift spaces, GCP IAM bindings, and cost alerting added.
 - **PostHog analytics** migrated to reverse proxy setup across staging and production (NA).
-- **Caseware** single tenant onboarded to AWS with Terraform, added to lighthouse rotation.
+- **[Caseware](https://www.notion.so/cb193389e13f428ca11338849cd6318f)** single tenant onboarded to AWS with Terraform, added to lighthouse rotation.
 
 **Questions?** Steve, Patrick
 
@@ -115,7 +115,7 @@ Several fixes improve Nx compatibility across runtimes and frameworks:
 ## Enterprise & Customer Operations
 
 - **Pylon is now the primary support platform** — cutover from Salesforce email completed March 2. All enterprise customers now route through Pylon for support. 50+ tickets migrated.
-- **Active customer engagements**: Legora (Nx 22 upgrade + Okta SAML), Fidelity (deploying latest Cloud version), Entain (monthly check-in), Paylocity (upgrade unblocked by PostCSS fix), DNB (churn review — interested in AI/self-healing/Polygraph features).
+- **Active customer engagements**: [Legora](https://www.notion.so/26469f3c238780529e80cb076ebfe8d1) (Nx 22 upgrade + Okta SAML), [Fidelity](https://www.notion.so/4b72ec2586684cfcb4ff070dd2ddf774) (deploying latest Cloud version), [Entain](https://www.notion.so/1c2a440d9354443097762f8d347c9ea4) (monthly check-in), Paylocity (upgrade unblocked by PostCSS fix), [DNB](https://www.notion.so/31869f3c238780759bd8ca6d4923a02d) (churn review — interested in AI/self-healing/Polygraph features).
 - **Support themes this week**: billing/contributor counting (3 tickets), agent/DTE issues (3 tickets), authentication/OAuth (4 tickets). An OAuth connection outage was identified and resolved on March 3.
 
 **Questions?** Steven, Cory
@@ -126,14 +126,14 @@ Several fixes improve Nx compatibility across runtimes and frameworks:
 
 None this month (no stable release yet). 22.6.0 is in beta — breaking changes, if any, will be documented at release.
 
-Note: There will be upcoming communications about support tier changes for Self-Healing CI (moving to paid for enterprise).
+Note: There will be upcoming communications about support tier changes for Self-Healing CI (moving to paid for enterprise). See [Feb 16 All-hands](https://www.notion.so/30569f3c23878012bb79cffed36a0f09) and [Tier/Plan Engagement Model](https://www.notion.so/2a369f3c2387803996a6ec89f0a17500).
 
 ---
 
 ## Coming Soon
 
 - **22.6.0 stable release** — currently at beta.9, expected later this month.
-- **Quark-A PLG initiative** — expect onboarding flow improvements throughout March.
+- **[Quark-A](https://www.notion.so/31969f3c23878093acfad49fd64be54c) PLG initiative** — expect onboarding flow improvements throughout March.
 - **Regional failover** — moving from design to infrastructure primitives phase.
 
 ---

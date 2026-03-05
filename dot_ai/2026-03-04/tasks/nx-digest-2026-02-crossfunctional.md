@@ -1,6 +1,6 @@
 # Nx Platform Update — February 2026
 
-> **Data gaps:** None. All four sources (CLI GitHub releases, Cloud changelog, cloud-infrastructure repo, Linear) were accessible.
+> **Data gaps:** None. All four sources (CLI GitHub releases, Cloud changelog, cloud-infrastructure repo, Linear) were accessible. [Notion](https://www.notion.so/nxnrwl/) and [Pylon](https://app.usepylon.com/) used for customer engagement and support context.
 
 ## TL;DR
 
@@ -47,7 +47,7 @@ SEO titles and descriptions were reviewed across all pages. The Framer rewrite h
 
 ## Performance & Reliability
 
-The "Review Nx Resource Usage" project delivered dramatic wins:
+The "[Review Nx Resource Usage](https://linear.app/nxdev/project/review-nx-resource-usage)" project delivered dramatic wins:
 
 - **jemalloc allocator**: -81% memory fragmentation, -26% RSS. Tuned decay timers prevent premature memory return to the OS.
 - **Glob pattern caching**: 95.6% cache hit rate (9,758/10,202 calls cached), eliminating redundant glob compilations.
@@ -60,7 +60,7 @@ The Nx CLI also removed the `shellapi` Windows API feature to eliminate antiviru
 
 ## Onboarding & Workspace Connection
 
-The "600 Workspaces Connected Every Week" initiative ran multiple A/B experiments on the Cloud onboarding flow throughout February, testing different welcome views, cloud prompts, and explicit opt-out options. The browser-based CNW bottom sheet was replaced, and the one-page connect workspace flow for GitHub and GitLab was streamlined.
+The "[600 Workspaces Connected Every Week](https://www.notion.so/2fe69f3c238780858153f7166ddbe886)" initiative ran multiple A/B experiments on the Cloud onboarding flow throughout February, testing different welcome views, cloud prompts, and explicit opt-out options. The browser-based CNW bottom sheet was replaced, and the one-page connect workspace flow for GitHub and GitLab was streamlined.
 
 Users can now connect workspaces using PNPM catalogs through GitHub and GitLab. A link was added for users arriving from `create-nx-workspace` to easily create a new workspace.
 
@@ -85,17 +85,17 @@ Gradle and Maven plugins received substantial investment:
 
 ## Enterprise Operations
 
-- **New single tenants provisioned**: Wix (GCP) and Legora (GCP) — both fully deployed with Terraform, Spacelift, lighthouse, and monitoring.
+- **New single tenants provisioned**: Wix (GCP) and [Legora](https://www.notion.so/26469f3c238780529e80cb076ebfe8d1) (GCP) — both fully deployed with Terraform, Spacelift, lighthouse, and monitoring.
 - **Cloudinary**: SAML enabled, GitHub app variables configured, new secrets for env vars.
-- **Celonis**: S3 VPC endpoint support for single-tenant artifacts. API replicas bumped 3→6 to handle load.
-- **ClickUp**: C3D (Compute-optimized) nodes made generally available.
+- **[Celonis](https://www.notion.so/cb4bb6535ae944deb403c2c43d278c85)**: S3 VPC endpoint support for single-tenant artifacts. API replicas bumped 3→6 to handle load.
+- **[ClickUp](https://www.notion.so/ba36374fd6874fb787c40bc511682868)**: C3D (Compute-optimized) nodes made generally available.
 - **Emeria**: Node pool size increased.
 - **AL2 → AL2023 migration**: Completed for all AWS agent nodegroups ahead of EKS 1.33 deprecation.
 - **Workflow Controller**: Multi-replica support completed — async processing enabled in production and all single tenants, feature flag removed. Signal handling (SIGTERM/SIGINT) now works correctly. Graceful rollouts fixed.
 
 ## Support Infrastructure
 
-The customer support stack completed a massive migration from Salesforce to Pylon (42 issues). The new system includes:
+The customer support stack completed a massive migration from Salesforce to [Pylon](https://app.usepylon.com/) ([design doc](https://www.notion.so/27d69f3c2387803f81e2c281f57c3841)) (42 issues). The new system includes:
 
 - Slack and Teams integration (connected to each enterprise customer channel)
 - Gmail forwarding and cloud-support@nrwl.io integration
@@ -136,11 +136,11 @@ The docs site got a major structural overhaul:
 
 ## Enterprise PoV Updates
 
-- **Anaplan**: Seeing value (2+ hrs/week dev time saved, 10-15% faster pipeline). Goal posts moving on cost justification.
-- **CIBC**: Blocked on encryption key issue with Azure (PoV blocker).
+- **[Anaplan](https://www.notion.so/1f569f3c238780509431d6d3bc7ac87c)**: Seeing value (2+ hrs/week dev time saved, 10-15% faster pipeline). Goal posts moving on cost justification.
+- **[CIBC](https://www.notion.so/13f69f3c238780edb774c191ee86be3a)**: Blocked on encryption key issue with Azure (PoV blocker).
 - **Cisco**: Security review in progress, waiting on MSA.
 - **Rocket Mortgage**: At Risk — no recent customer updates.
-- **McGraw Hill**: Building business case before proceeding.
+- **[McGraw Hill](https://www.notion.so/28169f3c2387803289bbfca5b6d1cd6c)**: Building business case before proceeding.
 
 ## Breaking Changes / Action Required
 

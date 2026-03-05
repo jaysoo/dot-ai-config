@@ -1,6 +1,6 @@
 # Nx Platform Changelog — February 2026
 
-> **Sources:** Nx CLI GitHub releases (nrwl/nx), Nx Cloud public changelog, nrwl/cloud-infrastructure commits, Linear (all teams).
+> **Sources:** Nx CLI GitHub releases (nrwl/nx), Nx Cloud public changelog, nrwl/cloud-infrastructure commits, Linear (all teams), [Notion](https://www.notion.so/nxnrwl/) (account pages, design docs), [Pylon](https://app.usepylon.com/).
 
 ---
 
@@ -475,10 +475,10 @@
 ### Infrastructure
 
 - New single tenant: Wix (GCP) ([INF-1200](https://linear.app/nrwl/issue/INF-1200))
-- New single tenant: Legora (GCP) ([INF-1217](https://linear.app/nrwl/issue/INF-1217))
+- New single tenant: [Legora](https://www.notion.so/26469f3c238780529e80cb076ebfe8d1) (GCP) ([INF-1217](https://linear.app/nrwl/issue/INF-1217))
 - Cloudinary: SAML enabled, GitHub app vars configured ([INF-1213](https://linear.app/nrwl/issue/INF-1213), [INF-1214](https://linear.app/nrwl/issue/INF-1214))
-- Celonis: S3 VPC endpoint support for ST artifacts ([INF-1194](https://linear.app/nrwl/issue/INF-1194))
-- ClickUp: C3D nodes made generally available ([INF-1186](https://linear.app/nrwl/issue/INF-1186))
+- [Celonis](https://www.notion.so/cb4bb6535ae944deb403c2c43d278c85): S3 VPC endpoint support for ST artifacts ([INF-1194](https://linear.app/nrwl/issue/INF-1194))
+- [ClickUp](https://www.notion.so/ba36374fd6874fb787c40bc511682868): C3D nodes made generally available ([INF-1186](https://linear.app/nrwl/issue/INF-1186))
 - Emeria: Node pool size increased
 - Migrate AL2 agent nodegroups to AL2023 for tenants ([INF-969](https://linear.app/nrwl/issue/INF-969))
 - Fix non-nx agent image story (forcing ENTRYPOINT)
@@ -489,7 +489,7 @@
 
 ### Cloud
 
-- CIBC Custom Encryption Key Not Working with Azure — PoV blocker ([Q-221](https://linear.app/nrwl/issue/Q-221))
+- [CIBC](https://www.notion.so/13f69f3c238780edb774c191ee86be3a) Custom Encryption Key Not Working with Azure — PoV blocker ([Q-221](https://linear.app/nrwl/issue/Q-221))
 - 2026.01 on-prem release changelog ([Q-178](https://linear.app/nrwl/issue/Q-178))
 - Itemize/audit transactional emails for enterprise trial expiry ([Q-132](https://linear.app/nrwl/issue/Q-132))
 - RBC accepts audit log functionality ([Q-131](https://linear.app/nrwl/issue/Q-131))

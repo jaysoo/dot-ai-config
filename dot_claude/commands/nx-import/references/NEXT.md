@@ -7,6 +7,7 @@ Next.js-specific guidance for `nx import`. For generic import issues (pnpm globs
 ### `@nx/next/plugin` Inferred Targets
 
 `@nx/next/plugin` detects `next.config.{ts,js,cjs,mjs}` and creates these targets:
+
 - `build` → `next build` (with `dependsOn: ['^build']`)
 - `dev` → `next dev`
 - `start` → `next start` (depends on `build`)
@@ -60,6 +61,7 @@ Imported Next.js configs may have `// eslint-disable-next-line @typescript-eslin
 ### Whole-Repo Import Recommended
 
 For single-project `create-next-app` repos, use whole-repo import into a subdirectory:
+
 ```bash
 nx import /path/to/source apps/web --ref=main --source=. --no-interactive
 ```
@@ -77,6 +79,7 @@ Non-Nx Next.js projects have self-contained tsconfigs with `noEmit: true`, their
 ### `noEmit: true` and TS Solution Setup
 
 Non-Nx Next.js projects use `noEmit: true`, which conflicts with Nx's TS solution setup (`composite: true`). If the dest workspace uses project references and you want the Next.js app to participate:
+
 1. Remove `noEmit: true`, add `composite: true`, `emitDeclarationOnly: true`
 2. Add `extends: "../../tsconfig.base.json"`
 3. Add `outDir` and `tsBuildInfoFile`
@@ -102,6 +105,7 @@ Both `@nx/next/plugin` and `@nx/vite/plugin` can coexist in `nx.json`. They dete
 Vite standalone projects (imported as whole-repo) have self-contained tsconfigs without `composite: true`. The `@nx/js/typescript` plugin's typecheck target runs `tsc --build --emitDeclarationOnly` which requires `composite`.
 
 **Fix**:
+
 1. Add `extends: "../../tsconfig.base.json"` to the root project tsconfig
 2. Add `composite: true`, `declaration: true`, `declarationMap: true`, `tsBuildInfoFile` to `tsconfig.app.json` and `tsconfig.spec.json`
 3. Set `moduleResolution: "bundler"` (replace `"node"`)
@@ -130,48 +134,3 @@ No naming conflicts between frameworks.
 1. Generic fixes from SKILL.md (pnpm globs, stale files cleanup, script rewriting, target name prefixing)
 2. (Optional) If app needs to export types for other workspace projects: fix `noEmit` → `composite` (see SKILL.md)
 3. `nx reset && nx run-many -t next:build,eslint:lint` (or unprefixed names if renamed)
-
----
-
-## Iteration Log
-
-### Scenario 1: Basic Nx Next.js App Router + Shared Lib → TS preset (PASS)
-- Source: CNW next preset (Next.js 16, App Router) + `@nx/react:library` shared-ui
-- Dest: CNW ts preset (Nx 23)
-- Import: subdirectory-at-a-time (apps, libs separately)
-- Errors found & fixed:
-  1. pnpm-workspace.yaml: `apps`/`libs` → `apps/*`/`libs/*`
-  2. Root tsconfig: `nodenext` → `bundler`, add `dom`/`dom.iterable` to `lib`, add `jsx: react-jsx`
-  3. Missing `@nx/react` (for CSS module/image type defs in lib)
-  4. Missing `@types/react`, `@types/react-dom`, `@types/node`
-  5. Next.js trying `yarn add @types/react` — fixed by installing at root
-  6. Missing `@nx/eslint`, root `eslint.config.mjs`, ESLint plugins
-  7. Missing `@nx/jest`, `jest.preset.js`, `jest-environment-jsdom`, `ts-jest`
-- All targets green: typecheck, build, test, lint
-
-### Scenario 3: Non-Nx create-next-app (App Router + Tailwind) → TS preset (PASS)
-- Source: `create-next-app@latest` (Next.js 16.1.6, App Router, Tailwind v4, flat ESLint config)
-- Dest: CNW ts preset (Nx 23)
-- Import: whole-repo into `apps/web`
-- Errors found & fixed:
-  1. pnpm-workspace.yaml: `apps/web` → `apps/*`
-  2. Stale files: `node_modules/`, `pnpm-lock.yaml`, `pnpm-workspace.yaml`, `.gitignore` — deleted
-  3. Nx-rewritten npm scripts (`"build": "nx next:build"`, etc.) — removed
-- No tsconfig changes needed — self-contained config with `noEmit: true`
-- ESLint self-contained via `eslint-config-next` — no root config needed
-- No test setup (create-next-app doesn't include tests)
-- All targets green: next:build, eslint:lint
-
-### Scenario 5: Mixed Next.js (Nx) + Vite React (standalone) → TS preset (PASS)
-- Source A: CNW next preset (Next.js 16, App Router) — subdirectory import of `apps/`
-- Source B: CNW react-standalone preset (Vite 7, React 19) — whole-repo import into `apps/vite-app`
-- Dest: CNW ts preset (Nx 23)
-- Errors found & fixed:
-  1. All Scenario 1 fixes for the Next.js app
-  2. Stale files from Vite source: `node_modules/`, `pnpm-lock.yaml`, `pnpm-workspace.yaml`, `.gitignore`, `nx.json`
-  3. Removed rewritten scripts from Vite app's `package.json`
-  4. ESLint 8 vs 9 conflict — `@nx/eslint` peer on ESLint 8 resolved wrong version. Fixed with `pnpm.overrides`
-  5. Vite tsconfigs missing `composite: true`, `declaration: true` — needed for `tsc --build --emitDeclarationOnly`
-  6. Vite `tsconfig.spec.json` `include` missing source files — specs import app code
-  7. Vite tsconfig `moduleResolution: "node"` → `"bundler"`, added `extends: "../../tsconfig.base.json"`
-- All targets green: typecheck, build, test, lint for both projects

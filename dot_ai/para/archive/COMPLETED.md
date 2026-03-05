@@ -2,6 +2,14 @@
 
 ### March 2026
 
+- [x] NXA-1075: nx-import Skill — Rounds 3-4 Validation + JEST.md + Gaps Report (2026-03-04) ✓ 2026-03-04
+  - Summary: Created JEST.md reference file, ran rounds 3-4 validation (8 scenarios × 4 rounds, all PASS), updated TESTING-PLAYBOOK.md with lessons learned, generated comprehensive GAPS-REPORT.md (14 outstanding gaps prioritized), pushed VITE.md/NEXT.md/JEST.md + updated SKILL.md to nx-ai-agents-config PR #74 (28 files across 6 agent formats).
+  - Files: `.ai/2026-03-04/SUMMARY.md`, `~/.claude/commands/nx-import/GAPS-REPORT.md`
+
+- [x] Review Vite import results and make it repeatable (2026-03-04) ✓ 2026-03-04
+  - Summary: Completed as part of NXA-1075. Created TESTING-PLAYBOOK.md for repeatable process, validated all scenarios, generated gaps report.
+  - Files: `~/.claude/commands/nx-import/TESTING-PLAYBOOK.md`
+
 - [x] DOC-436: Fix broken Netlify image URLs on docs (2026-03-04) ✓ 2026-03-04
   - Summary: Added `/.netlify/*` to Framer proxy edge function excludedPath so image CDN URLs pass through to Next.js→astro-docs rewrite chain.
   - Files: `.ai/2026-03-04/SUMMARY.md`

@@ -201,10 +201,10 @@ Remove `@nx/js/typescript` if all projects use Vite. Keep it (renamed to `"tsc-t
 
 1. Generic fixes from SKILL.md (pnpm globs, root deps, executor paths, frontend tsconfig base settings, `@nx/react` typings)
 2. Configure `@nx/vite/plugin` typecheck target
-4. **React**: `jsx: "react-jsx"` (root or per-project)
-5. **Vue**: `jsx: "preserve"` + `jsxImportSource: "vue"`; verify `vue-shims.d.ts`; install ESLint deps before `@nx/eslint`
-6. **Mixed**: `jsx` per-project; remove/rename `@nx/js/typescript`
-7. `nx sync --yes && nx reset && nx run-many -t typecheck,build,test,lint`
+3. **React**: `jsx: "react-jsx"` (root or per-project)
+4. **Vue**: `jsx: "preserve"` + `jsxImportSource: "vue"`; verify `vue-shims.d.ts`; install ESLint deps before `@nx/eslint`
+5. **Mixed**: `jsx` per-project; remove/rename `@nx/js/typescript`
+6. `nx sync --yes && nx reset && nx run-many -t typecheck,build,test,lint`
 
 ### Non-Nx Source (additional steps)
 

@@ -46,7 +46,28 @@ Fixed broken `/.netlify/images` URLs on astro-docs pages (e.g. sandboxing page).
 
 Triaged and rejected 34 pending deploy previews across nx-docs (18) and nx-dev (16). All 6 PRs were core/plugin changes with no docs or marketing file changes — none needed manual review.
 
+## NXA-1075: nx-import Skill — Rounds 3-4 Validation + JEST.md + Gaps Report
+
+Continued iterative validation of `nx import` skill reference files. Created JEST.md, ran rounds 3-4 (8 parallel scenarios each), compiled final gaps report, and pushed updates to the `nx-ai-agents-config` repo.
+
+**What was accomplished:**
+
+- **Created `references/JEST.md`** — Jest testing guidance for nx import: @nx/jest/plugin setup, jest.preset.js manual creation (nx add does NOT create it), testing deps by framework, babel-jest for @nx/react:library, tsconfig.spec.json, Jest vs Vitest coexistence
+- **Updated `SKILL.md`** — Expanded Jest Preset Missing section, added JEST.md to references list, corrected `nx add @nx/jest` behavior
+- **Round 3** — All 8 scenarios PASS. Key finding: N1 gaps from round 2 resolved by JEST.md. N5 found `jest.preset.js` not auto-created (corrected in docs).
+- **Round 4** — All 8 scenarios PASS. JEST.md correctly guided agents. Remaining gaps are minor/medium.
+- **Updated `TESTING-PLAYBOOK.md`** — Added lessons from rounds 3-4 (context compaction, duplicate agents, diminishing returns, scenario design insights)
+- **Generated `GAPS-REPORT.md`** — 14 outstanding gaps prioritized: 3 critical (ndjson two-step, Next.js composite override, path depth mismatch), 4 medium, 7 minor. Plus 9 previously-resolved gaps.
+- **Pushed to PR #74** on `nrwl/nx-ai-agents-config` — Added VITE.md, NEXT.md, JEST.md references + updated SKILL.md, synced to all 6 agent formats (Claude, OpenCode, Copilot, Cursor, Gemini, Codex). https://github.com/nrwl/nx-ai-agents-config/pull/74
+
+**Files modified (canonical locations):**
+- `~/.claude/commands/nx-import/references/JEST.md` (new)
+- `~/.claude/commands/nx-import/SKILL.md` (updated)
+- `~/.claude/commands/nx-import/TESTING-PLAYBOOK.md` (updated)
+- `~/.claude/commands/nx-import/GAPS-REPORT.md` (new)
+- `nrwl/nx-ai-agents-config` PR #74 branch `codex/import-skill` (28 files)
+
 ## Other
 
 - Generated Director of Engineering briefing (capacity/risk analysis for April/May)
-- Started nx-import Next.js skill development (NXA-1075, Phase 2)
+- Triaged and rejected 34 pending Netlify deploy previews

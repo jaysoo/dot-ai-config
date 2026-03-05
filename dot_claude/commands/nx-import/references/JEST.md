@@ -9,6 +9,7 @@ Jest-specific guidance for `nx import`. For the basic "Jest Preset Missing" fix 
 `@nx/jest/plugin` scans for `jest.config.{ts,js,cjs,mjs,cts,mts}` and creates a `test` target for each project.
 
 **Plugin options:**
+
 ```json
 {
   "plugin": "@nx/jest/plugin",
@@ -19,6 +20,7 @@ Jest-specific guidance for `nx import`. For the basic "Jest Preset Missing" fix 
 ```
 
 `npx nx add @nx/jest` does two things:
+
 1. **Registers `@nx/jest/plugin` in `nx.json`** — without this, no `test` targets are inferred
 2. Updates `namedInputs.production` to exclude test files
 
@@ -33,16 +35,18 @@ Jest-specific guidance for `nx import`. For the basic "Jest Preset Missing" fix 
 The preset provides shared Jest configuration (test patterns, ts-jest transform, resolver, jsdom environment).
 
 **Root `jest.preset.js`:**
+
 ```js
-const nxPreset = require('@nx/jest/preset').default;
+const nxPreset = require("@nx/jest/preset").default;
 module.exports = { ...nxPreset };
 ```
 
 **Project `jest.config.ts`:**
+
 ```ts
 export default {
-  displayName: 'my-lib',
-  preset: '../../jest.preset.js',
+  displayName: "my-lib",
+  preset: "../../jest.preset.js",
   // project-specific overrides
 };
 ```
@@ -54,30 +58,38 @@ The `preset` path is relative from the project root to the workspace root. Subdi
 ### Testing Dependencies
 
 #### Core (always needed)
+
 ```
 pnpm add -wD jest ts-jest @types/jest @nx/jest
 ```
 
 #### Environment-specific
+
 - **DOM testing** (React, Vue, browser libs): `jest-environment-jsdom`
 - **Node testing** (APIs, CLIs): no extra deps (Jest defaults to `node` env, but Nx preset defaults to `jsdom`)
 
 #### React testing
+
 ```
 pnpm add -wD @testing-library/react @testing-library/jest-dom
 ```
 
 #### React with Babel (non-ts-jest transform)
+
 Some React projects use Babel instead of ts-jest for JSX transformation:
+
 ```
 pnpm add -wD babel-jest @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript
 ```
+
 **When**: Project `jest.config` has `transform` using `babel-jest` instead of `ts-jest`. Common in older Nx workspaces and CRA migrations.
 
 #### Vue testing
+
 ```
 pnpm add -wD @vue/test-utils
 ```
+
 Vue projects typically use Vitest (not Jest) — see VITE.md.
 
 ---
@@ -104,6 +116,7 @@ Jest projects need a `tsconfig.spec.json` that includes test files:
 ```
 
 **Common issues after import:**
+
 - Missing `"types": ["jest", "node"]` — causes `describe`/`it`/`expect` to be unrecognized
 - Missing `"module": "commonjs"` — Jest doesn't support ESM by default (ts-jest transpiles to CJS)
 - `include` array missing test patterns — TypeScript won't check test files
@@ -113,12 +126,14 @@ Jest projects need a `tsconfig.spec.json` that includes test files:
 ### Jest vs Vitest Coexistence
 
 Workspaces can have both:
+
 - **Jest**: Next.js apps, older React libs, Node libraries
 - **Vitest**: Vite-based React/Vue apps and libs
 
 Both `@nx/jest/plugin` and `@nx/vite/plugin` (which infers Vitest targets) coexist without conflicts — they detect different config files (`jest.config.*` vs `vite.config.*`).
 
 **Target naming**: Both default to `test`. If a project somehow has both config files, rename one:
+
 ```json
 {
   "plugin": "@nx/jest/plugin",
@@ -133,13 +148,15 @@ Both `@nx/jest/plugin` and `@nx/vite/plugin` (which infers Vitest targets) coexi
 Projects migrating from Jest to Vitest (or workspaces with both) need different imports:
 
 **Jest** (in `test-setup.ts`):
+
 ```ts
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 ```
 
 **Vitest** (in `test-setup.ts`):
+
 ```ts
-import '@testing-library/jest-dom/vitest';
+import "@testing-library/jest-dom/vitest";
 ```
 
 If the source used Jest but the dest workspace uses Vitest for that project type, update the import path. Also add `@testing-library/jest-dom` to tsconfig `types` array.
@@ -149,6 +166,7 @@ If the source used Jest but the dest workspace uses Vitest for that project type
 ### Non-Nx Source: Test Script Rewriting
 
 Nx rewrites `package.json` scripts during init. Test scripts get broken:
+
 - `"test": "jest"` → `"test": "nx test"` (circular if no executor configured)
 - `"test": "vitest run"` → `"test": "nx test run"` (broken — `run` becomes an argument)
 

@@ -1,6 +1,6 @@
 # Nx Platform Changelog — March 2026 (Partial: March 1–4)
 
-> **Sources:** Nx CLI GitHub releases (nrwl/nx), Nx Cloud public changelog, nrwl/cloud-infrastructure commits, Notion all-hands notes, Slack, Pylon.
+> **Sources:** Nx CLI GitHub releases (nrwl/nx), Nx Cloud public changelog, nrwl/cloud-infrastructure commits, Linear, [Notion](https://www.notion.so/nxnrwl/) (all-hands notes, design docs, account pages), [Pylon](https://app.usepylon.com/).
 
 ---
 
@@ -67,8 +67,9 @@
 
 ### Cross-Team
 
-- **Quark-A task force** established March 3 — mandate to remove all friction in discover → create workspace → activate cloud journey
+- **[Quark-A task force](https://www.notion.so/31969f3c23878093acfad49fd64be54c)** established March 3 — mandate to remove all friction in discover → create workspace → activate cloud journey
   - Core team: instrumentation/measurement lead, frictionless app onboarding lead, frictionless Nx Agents lead
+  - Related: [Nx Cloud activation metrics](https://www.notion.so/31869f3c238780789f7ff89a93787840), [PLG Metrics Brainstorm](https://www.notion.so/31969f3c238780ee8a71c93890e35601)
 
 ### Website
 
@@ -168,13 +169,13 @@
 
 ### Regional Failover (Design Phase)
 
-- Technical design document published March 3
+- [Technical design document](https://www.notion.so/31869f3c23878166adcdf2ba7404f82b) published March 3
 - Architecture: deploy standby app in second region within same cloud provider + global load balancer
 - Target: TTR from 60–90 minutes → low single-digit minutes
 - Customer segment: banking, healthcare, government (contractual failover requirements)
 - Cost: roughly doubles application cluster infrastructure
 - Phases: infrastructure primitives → dual-region app → multi-region DB → agents mesh → production
-- Dependency: Multi-Cluster Workflow Execution
+- Dependency: [Multi-Cluster Workflow Execution](https://www.notion.so/30369f3c2387817fbf94f38a0ffed522)
 
 ### Monitoring & Observability
 
@@ -213,12 +214,13 @@
 
 ## Cloud Changelog
 
-| Version | Date | Changes |
-|---|---|---|
+| Version   | Date    | Changes                                                                                      |
+| --------- | ------- | -------------------------------------------------------------------------------------------- |
 | 2603.04.2 | March 4 | Workspace analytics CIPE duration chart now shows percentile values (p95, p75, p50, p25, p5) |
-| 2603.04.3 | March 4 | More descriptive warnings for GitHub app configuration in new workspace creation flow |
+| 2603.04.3 | March 4 | More descriptive warnings for GitHub app configuration in new workspace creation flow        |
 
 Additional cloud versions staged but not yet on public changelog:
+
 - 2603.02.3 (Jon, March 2)
 - 2603.02.5 (staging)
 - 2603.03.3 (Rares, March 3)
@@ -254,43 +256,44 @@ Note: 2603.04.3 staging was reverted back to 2603.03.7 (Nicole, March 4) due to 
 
 ### Active Support Themes (50+ tickets)
 
-| Theme | Ticket Count | Notable |
-|---|---|---|
-| Billing / contributor counting | 3 | #174, #130, #124 |
-| Agent / DTE issues | 3 | #169, #168, #122 |
-| Authentication / OAuth | 4 | #172, #129, #123, #127 — OAuth outage March 3 |
-| Nx v22 upgrade paths | 2 | #159 (Expo blockers), #147 (PostCSS Windows) |
-| GDPR deletion | 1 | #138 |
-| Self-Healing on GitLab | 1 | #133 (closed) |
+| Theme                          | Ticket Count | Notable                                                                                                                                                                                                                                                   |
+| ------------------------------ | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Billing / contributor counting | 3            | [#174](https://app.usepylon.com/issues?issueNumber=174), [#130](https://app.usepylon.com/issues?issueNumber=130), [#124](https://app.usepylon.com/issues?issueNumber=124)                                                                                 |
+| Agent / DTE issues             | 3            | [#169](https://app.usepylon.com/issues?issueNumber=169), [#168](https://app.usepylon.com/issues?issueNumber=168), [#122](https://app.usepylon.com/issues?issueNumber=122)                                                                                 |
+| Authentication / OAuth         | 4            | [#172](https://app.usepylon.com/issues?issueNumber=172), [#129](https://app.usepylon.com/issues?issueNumber=129), [#123](https://app.usepylon.com/issues?issueNumber=123), [#127](https://app.usepylon.com/issues?issueNumber=127) — OAuth outage March 3 |
+| Nx v22 upgrade paths           | 2            | [#159](https://app.usepylon.com/issues?issueNumber=159) (Expo blockers), [#147](https://app.usepylon.com/issues?issueNumber=147) (PostCSS Windows)                                                                                                        |
+| GDPR deletion                  | 1            | [#138](https://app.usepylon.com/issues?issueNumber=138)                                                                                                                                                                                                   |
+| Self-Healing on GitLab         | 1            | [#133](https://app.usepylon.com/issues?issueNumber=133) (closed)                                                                                                                                                                                          |
 
 ### Customer Engagements
 
-- **Legora**: Weekly sync March 3 — Nx 22 upgrade PR review, Okta SAML config, migration branch on single tenant
-- **Fidelity**: Monthly sync March 3 — deploying latest Nx Cloud version (2026.01), base image compliance
-- **Entain**: Monthly check-in March 4 (Jeff Cross, Jimmy, Miroslav attending)
+- **[Legora](https://www.notion.so/26469f3c238780529e80cb076ebfe8d1)**: Weekly sync March 3 — Nx 22 upgrade PR review, Okta SAML config, migration branch on single tenant
+- **[Fidelity](https://www.notion.so/4b72ec2586684cfcb4ff070dd2ddf774)**: Monthly sync March 3 — deploying latest Nx Cloud version (2026.01), base image compliance
+- **[Entain](https://www.notion.so/1c2a440d9354443097762f8d347c9ea4)**: Monthly check-in March 4 (Jeff Cross, Jimmy, Miroslav attending)
 - **Brain.co**: Check-in March 3
-- **McGraw Hill**: Check-in March 2
+- **[McGraw Hill](https://www.notion.so/28169f3c2387803289bbfca5b6d1cd6c)**: Check-in March 2
 - **Attentive**: Time to Green measurements March 3
-- **DNB**: Churn review — only used remote caching and UI, never expanded to backend; interested in AI/self-healing/Polygraph
+- **[DNB](https://www.notion.so/31869f3c238780759bd8ca6d4923a02d)**: Churn review — only used remote caching and UI, never expanded to backend; interested in AI/self-healing/Polygraph
 - **Paylocity**: Upgrade to latest CLI unblocked by PostCSS fix ([#34676](https://github.com/nrwl/nx/pull/34676))
+- **[Essent](https://www.notion.so/25c69f3c238780d4b701c24b0c5d8bd1)**: Deal loss review — chose in-house DTE solution over Nx Cloud
 
 ---
 
 ## Notable In-Progress / Strategic
 
-| Initiative | Team | Status | Notes |
-|---|---|---|---|
-| Quark-A (PLG activation) | Cross-team | NEW — task force established March 3 | Remove all friction in discover → create → activate |
-| Regional Failover | Infrastructure | Design phase | Tech design doc published March 3 |
-| Multi-Cluster Agent Setups | Infrastructure | In progress | Prerequisite for Regional Failover |
-| Polygraph AI (multi-repo) | Red Panda | Active | GitHub Actions integration, dogfooding |
-| Continuous Task Assignment | Quokka | Dogfooding | Need customer Prometheus adoption |
-| Sandboxing | Quokka/Dolphin | Dogfooding | Fixing plugin edge cases |
-| Framer Website | Orca | Done (minus blog) | Moving off Vercel |
-| ESLint v10 | CLI/Community | Landed | Community contribution |
-| TUI improvements | Dolphin | Ongoing | Memory footprint reduction |
-| Pricing & Packaging | Sales | Evaluation | Optimizing PLG and Enterprise |
-| Self-Healing CI → Paid | CS | Planning | Enterprise customers being notified |
+| Initiative                                                                           | Team           | Status                               | Notes                                               |
+| ------------------------------------------------------------------------------------ | -------------- | ------------------------------------ | --------------------------------------------------- |
+| [Quark-A](https://www.notion.so/31969f3c23878093acfad49fd64be54c) (PLG activation)   | Cross-team     | NEW — task force established March 3 | Remove all friction in discover → create → activate |
+| [Regional Failover](https://www.notion.so/31869f3c23878166adcdf2ba7404f82b)          | Infrastructure | Design phase                         | Tech design doc published March 3                   |
+| [Multi-Cluster Agent Setups](https://www.notion.so/30369f3c2387817fbf94f38a0ffed522) | Infrastructure | In progress                          | Prerequisite for Regional Failover                  |
+| Polygraph AI (multi-repo)                                                            | Red Panda      | Active                               | GitHub Actions integration, dogfooding              |
+| Continuous Task Assignment                                                           | Quokka         | Dogfooding                           | Need customer Prometheus adoption                   |
+| Sandboxing                                                                           | Quokka/Dolphin | Dogfooding                           | Fixing plugin edge cases                            |
+| Framer Website                                                                       | Orca           | Done (minus blog)                    | Moving off Vercel                                   |
+| ESLint v10                                                                           | CLI/Community  | Landed                               | Community contribution                              |
+| TUI improvements                                                                     | Dolphin        | Ongoing                              | Memory footprint reduction                          |
+| Pricing & Packaging                                                                  | Sales          | Evaluation                           | Optimizing PLG and Enterprise                       |
+| Self-Healing CI → Paid                                                               | CS             | Planning                             | Enterprise customers being notified                 |
 
 ---
 
