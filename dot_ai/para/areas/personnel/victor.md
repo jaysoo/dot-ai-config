@@ -27,6 +27,24 @@
 
 ### Upcoming
 
+- **Craigory echoes Dolphin morale concerns (from Craigory 1:1 2026-03-05)**
+  - Also flagged departure quantity as concerning — pattern now confirmed across multiple ICs
+  - ByteDance lost to Turbo due to rollup setup issues — peripheral plugin failures eroding core product trust, supports deprecation strategy
+  - Heidi's go-to-market gap visible at IC level — marketing replacement strategy unclear
+  - "Less proud of the tool vs. 2 years ago" — consistent with Max's feedback below
+- **Dolphin team morale & retention risk (from Max 1:1 2026-03-05)**
+  - Heidi/Madeline departures seen as Nx not being competitive (not just bad fits)
+  - Team less proud of the tool than in earlier years; Gregory embarrassed about quality
+  - Engineers still anxious from layoffs (echoes Madeline's Jan feedback)
+  - Max worried about status quo — needs visible follow-through on changes
+  - Tension with Victor's earlier feedback on Max delivering late: may be a symptom of focus overload (3+ projects per person), not individual performance
+- **Leo confirms Dolphin capacity/morale crisis (from Leo 1:1 2026-03-05)**
+  - Third IC independently flagging same themes: burnout from maintenance, moving deadlines, competing priorities
+  - Colin's departure creates major CLI capacity gap — team was already strained before
+  - Aggressive maintenance reduction required: deprecate webpack/rspack/rollup config, underused plugins (Nuxt, Detox)
+  - Revenue-focused work coming at cost of team morale and product quality (TUI launch cited as cautionary tale)
+  - Planning feels top-down — team wants voice in proposals before commitments are made
+  - Directly relevant to Victor's "team prioritization" topic below — Leo is living the revenue vs maintenance tension daily
 - `op` and `gh` CLI usage - confirm follow-up complete, discuss enforcement/reminders
   - Victor noticed 1Password rarely pops up during screenshares
   - Need to verify everyone is using gh with 1Password properly

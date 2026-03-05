@@ -28,6 +28,19 @@
 
 ### Upcoming Topics
 
+- **Craigory morale & retention signal (from 2026-03-05 1:1)**
+  - Said he's "less proud of the tool now vs. 2 years ago" — check if this is temporary frustration or deeper disengagement
+  - Advocated strongly for one project per person max — likely felt stretched thin
+  - Frustrated by maintaining plugins the team doesn't use daily (expertise dilution)
+  - Protect his focus on sandboxing target defaults — don't let scope creep in
+- **Max team concerns (from Max 1:1 2026-03-05)**
+  - Reports broader team morale declining — Gregory embarrassed about quality/speed
+  - Echoes Craigory: people juggling 3+ projects, wants hard cap of 1-2 per person
+  - GitHub issue debt demoralizing (2023 issues open, public OSS visibility makes it worse)
+  - Wants higher quality bar: auto-close without repro, AI triage
+  - Recognition gap: kudos channel underutilized, maintenance work unrewarded
+  - Departures (Heidi/Madeline) raising "is Nx competitive?" concerns on team
+  - Max is engaged — channel into ownership of solutions (issue triage process, project scoping)
 - **Effy Review**
 - **Feedback from Jeff and Madeline**
 - **L5 Stuff**
@@ -35,6 +48,16 @@
 - **PR Review Goals 2026:** TTM/TTFR under 24 hours (ideally under 12 hours), encourage AI-assisted PR reviews for prioritization and summaries
 - **Agent Skills:** Max is setting something up for Ocean and Nx, Victor said to wait. We also have the `claude-skills-and-commands` that we can use, unsure if they overlap in concerns.
 - **Management & Soft Skills:** Discuss lack of recognition, soft skills development
+- **Leo Burnout/Morale Risk (from 2026-03-05 1:1):**
+  - Stressed by competing priorities, burnout concerns from maintenance burden
+  - Constantly moving deadlines in syncs is demoralizing the team
+  - Wants planning to start from team proposals — echoes Jason's own Effy feedback about decision communication
+  - CLI team needs autonomy for smaller customer-requested improvements (e.g., target defaults)
+  - Shield team from low-quality DPE requests — require repros/logs before engineering involvement
+- **Post-Departure Capacity Plan:**
+  - Colin's departure creates major CLI capacity gap — need plan to redistribute
+  - Aggressive maintenance reduction not optional: deprecate webpack/rspack/rollup config, underused plugins (Nuxt, Detox)
+  - Leo's L5 career progression stalling — criteria feel outdated for current team size, needs clearer path
 
 
 #### Effy Reviews

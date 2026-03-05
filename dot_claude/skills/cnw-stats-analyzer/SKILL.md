@@ -148,14 +148,3 @@ with open('commandStats-export.json') as f:
             if valid_node(parsed.get('nodeVersion', '')):
                 errors[dt][parsed.get('errorCode', 'UNKNOWN')] += 1
 ```
-
-## Reference Files (nx repo)
-
-- `packages/create-nx-workspace/bin/create-nx-workspace.ts` — entry, `recordStat()` calls
-- `packages/create-nx-workspace/src/create-workspace.ts` — creation orchestrator
-- `packages/create-nx-workspace/src/create-empty-workspace.ts` — `WORKSPACE_CREATION_FAILED`
-- `packages/create-nx-workspace/src/utils/child-process-utils.ts` — `execAndWait()` error handling
-- `packages/create-nx-workspace/src/utils/nx/ab-testing.ts` — `recordStat()`, flow variants
-- `packages/create-nx-workspace/src/utils/error-utils.ts` — `CnwError` class, error codes
-- `packages/create-nx-workspace/src/utils/git/git.ts` — VCS push logic
-
