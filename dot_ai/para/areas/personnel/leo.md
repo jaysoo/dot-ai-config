@@ -20,19 +20,76 @@
 
 ## Professional
 
-- **Current Focus:** Angular upgrade automation, AI skills tooling
+- **Current Focus:** Angular upgrade automation, AI skills tooling, maintenance reduction strategy
 - **Goals:**
   - Strong interest in AI efforts for career development
   - Wants to participate in enterprise AI migration system
 - **Strengths:**
+  - Candid about team concerns and morale
+  - Proactive on automation (Angular upgrade skill, plugin version updates)
 
 
 ## Upcoming 1:1
 
-- Project delivery tracking improvements
-- AI skills tooling progress
+- Follow up on maintenance reduction progress (webpack/rspack/rollup deprecation)
+- CLI team autonomy for smaller improvements - target defaults status
+- AI skills progress (Angular upgrade skill)
+- Burnout/morale check-in
 
 ## 1:1 Notes
+
+### 2026-03-05
+
+**Team Departures Impact**
+- Three key people leaving simultaneously: Colin, Madeline, and one other
+  - Colin was major CLI contributor, creates significant capacity gap
+  - Madeline's departure less concerning due to move toward PLG strategy
+  - Financial impact appears manageable based on Q4 pipeline improvements
+- Engineering capacity already strained before departures
+  - Team was struggling with competing priorities and maintenance burden
+  - Moving deadlines frequently in syncs, demotivating for team
+
+**Capacity and Maintenance Strategy**
+- Need to protect time from DPEs more
+  - DPEs should handle more issue resolution with proper vetting
+  - Issues need repro or logs before engineering involvement
+  - Pylon implementation helping organize support workflows
+- Aggressive maintenance reduction required:
+  1. Remove webpack, rspack, rollup configuration support
+  2. Deprecate underused plugins (Nuxt, Detox, potentially rollup)
+  3. Focus on core competencies vs bundling tools
+  4. Close low-quality GitHub issues more aggressively
+- CLI team autonomy needed for smaller improvements
+  - Target defaults project example - customer-requested, relatively small effort
+  - Balance between revenue-focused work and reputation maintenance
+
+**Process Improvements and Automation**
+- Claude/AI skills development for routine tasks
+  - Leo creating Angular upgrade skill, testing on major version
+  - Jack has CNW stats skill for team use
+  - Opportunity to automate plugin version updates
+- Issue quality enforcement
+  - Require reproductions or detailed logs
+  - Bot/automated closure of incomplete issues
+  - Learn from other OSS projects with stricter requirements
+
+**Release Quality Concerns**
+- TUI launch example of premature default rollout
+  - Took year of fixes after buggy initial release
+  - Hurt first impressions, users disabled and may not retry
+  - Negative impact on team pride and external perception
+- Future releases should be experimental/opt-in until polished
+  - New workspaces could default to new features
+  - Existing workspaces require explicit opt-in
+
+**Team Morale and Support**
+- Leo enjoys work and team but stressed by competing priorities
+- Burnout concerns from too many maintenance tasks
+- Recent months better due to interesting projects (memory tracking, Rust, TUI)
+- Need balance between revenue focus and addressing customer frustrations
+- Planning process should start from team proposals, not top-down mandates
+
+[Transcript](https://notes.granola.ai/t/e3d342c9-e289-424a-9a83-107e475315dc-00demib2)
 
 ### 2026-01-26
 

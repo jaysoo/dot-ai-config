@@ -28,14 +28,57 @@
 
 ### Upcoming
 
-- Backlog grooming - remove items without descriptions, add due dates to all TODOs
-  - Currently 21 items, could grow to 40+; with Colum at 1-2 issues/week = 20+ week burn-down
-  - Higher quality gate: spec out or remove
-- Agent tutorials may move to docs team (overlap with NX Learn)
+- Follow up on concrete changes post-departures
+- Check on workload distribution after team reduction
+
+### 2026-03-05
+
+**Team Impact from Recent Departures**
+
+- Colm and Heidi departures create concern about workload distribution
+  - Lost Colm who wasn't fitting well with current situation
+  - Heidi/Madeline left for better opportunities - concerning if Nx isn't competitive
+  - Team now has one less person to handle existing workload
+- Max worried about status quo continuing without meaningful changes
+  - Immediate meeting called day after Colm departure shows leadership taking it seriously
+  - Need concrete changes beyond just deprecating obvious items
+
+**Core Team Challenges & Solutions**
+
+- Multiple surface areas per person creating stress
+  - Public nature of open source makes issues more embarrassing than private SaaS complaints
+  - Lack of clarity on project priorities - people juggling 3+ projects simultaneously
+  - Need maximum 1-2 projects per person requiring actual movement/delivery
+- GitHub issue management overwhelming
+  - Gregory mentioned feeling embarrassed about grass speed/tool quality
+  - 2023 issues still unaddressed while new similar issues get fixed in hours
+  - Need higher quality bar for issues - auto-close those without repro/details
+  - AI automation can help with issue classification and investigation
+- Recognition and motivation gaps
+  - Team less proud of tool they're building compared to earlier years
+  - Kudos channel underutilized - need more recognition culture
+  - Work on customer-facing features (like polygraph, self-healing CI) more motivating than maintenance
+
+**Moving Forward**
+
+- Focus on high-impact work with clear customer value
+  - Q4 was actually positive despite pipeline concerns
+  - Faster iterations with customer feedback loops
+  - Align work with both short-term and long-term company goals
+- Upcoming changes
+  - Jack off next week but will stay minimally in loop
+  - April team gathering anticipated to help with alignment
+  - More aggressive about closing low-quality issues and AI-generated PRs
+  - Better filtering of inputs before they reach team members
+
+---
+
+Chat with meeting transcript: [https://notes.granola.ai/t/ade156d8-db71-4d08-a867-d002b3294e1f-00demib2](https://notes.granola.ai/t/ade156d8-db71-4d08-a867-d002b3294e1f-00demib2)
 
 ### 2026-02-26
 
 **Travel & Montreal Conference Planning**
+
 - Booked flights for Montreal conference
   - Lands Sunday, leaves following Sunday
   - Planning Saturday-Sunday solo road trip/exploration around Montreal area
@@ -45,6 +88,7 @@
   - Quebec City area has better nature/mountains than Montreal proper
 
 **Console Java & Work Allocation Updates**
+
 - Maven dogfooding continues with ongoing issue discovery
   - Finding new problems through dogfooding, keeping as background work
 - Gradle patch runner deprioritized
@@ -54,6 +98,7 @@
   - Only working on customer-requested or completely broken items
 
 **AX Migration Board & Implementation Strategy**
+
 - Max created separate board with 3 milestones:
   1. MVP implementation
   2. Polish and cloud app integration
@@ -69,6 +114,7 @@
   - PayFit upgrade issues noted as concrete example of migration pain points
 
 **Import Functionality & Documentation Gaps**
+
 - Connect import waiting on Dylan and Louis reviews
   - Louis also working on sandboxing (higher priority); expected to merge soon
 - Import tool analysis reveals documentation needs
@@ -88,7 +134,13 @@ Chat with meeting transcript: [https://notes.granola.ai/t/ee522984-7854-4492-9d8
 
 ### 2026-02-19
 
+- Backlog grooming - remove items without descriptions, add due dates to all TODOs
+  - Currently 21 items, could grow to 40+; with Colum at 1-2 issues/week = 20+ week burn-down
+  - Higher quality gate: spec out or remove
+- Agent tutorials may move to docs team (overlap with NX Learn)
+
 #### Migration Project Planning
+
 - Overall approach approved - break into milestones and tasks
 - Most work outside CLI scope; Colum has working local example proving minimal CLI changes needed
 - Keep Leo in loop for debugging migrate issues and CLI improvements
@@ -97,6 +149,7 @@ Chat with meeting transcript: [https://notes.granola.ai/t/ee522984-7854-4492-9d8
   - Framework updates where agentic approach helps most
 
 #### Verification and Documentation
+
 - Need verification steps beyond automated tasks
   - Angular: check component patterns updated correctly
   - React 19: verify deprecated features replaced
@@ -105,6 +158,7 @@ Chat with meeting transcript: [https://notes.granola.ai/t/ee522984-7854-4492-9d8
 - Generate summary blocks for humans post-migration
 
 #### Timeline and Resources
+
 - Start first week of March (post-cooldown)
 - Max ~70% agentic migrations, remainder Console/Java maintenance
 - Colum contributing 1 day/week but need faster feedback cycles
@@ -112,6 +166,7 @@ Chat with meeting transcript: [https://notes.granola.ai/t/ee522984-7854-4492-9d8
 - Java wrapping up next week except Gradle patch runner
 
 #### CLI and Agent Integration
+
 - Import command enhancement: separate plugin selection step
   - Don't default to all plugins; let agents ask users which ones
   - Provide educational links about plugin benefits through agent
@@ -120,6 +175,7 @@ Chat with meeting transcript: [https://notes.granola.ai/t/ee522984-7854-4492-9d8
   - Experiment with Claude integration later
 
 #### Project Management
+
 - QA column currently ad-hoc waiting on Cursor/Claude feedback
   - Will use proper QA step going forward, review in syncs
 - All TODO items need due dates
@@ -141,4 +197,3 @@ Chat with meeting transcript: [https://notes.granola.ai/t/ee522984-7854-4492-9d8
 - Less available than James (who's also remote but more responsive)
 - Impacts ability to assign critical responsibilities
 - Weekly sync with Jack starting to improve oversight
-

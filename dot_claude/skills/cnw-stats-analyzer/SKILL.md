@@ -159,6 +159,3 @@ with open('commandStats-export.json') as f:
 - `packages/create-nx-workspace/src/utils/error-utils.ts` — `CnwError` class, error codes
 - `packages/create-nx-workspace/src/utils/git/git.ts` — VCS push logic
 
-## Output
-
-Save analysis results to `.ai/yyyy-mm-dd/tasks/cnw-error-analysis.md`.
