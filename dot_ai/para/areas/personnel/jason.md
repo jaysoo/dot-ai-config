@@ -41,6 +41,10 @@
   - Recognition gap: kudos channel underutilized, maintenance work unrewarded
   - Departures (Heidi/Madeline) raising "is Nx competitive?" concerns on team
   - Max is engaged — channel into ownership of solutions (issue triage process, project scoping)
+- **AI leverage: test harnesses & issue quality**
+  - Better test harnesses needed so AI agents can be used more effectively (ties into Victor's HDD concept)
+  - Better Linear and GitHub issues — clear repro steps, expected behavior, etc. so issues can be thrown to AI
+  - Aggressively close low-quality issue reports — no repro = auto-close
 - **Effy Review**
 - **Feedback from Jeff and Madeline**
 - **L5 Stuff**

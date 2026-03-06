@@ -4,45 +4,45 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **NXC-4035: Surface clearer CNW SANDBOX_FAILED error** (2026-03-04)
-   - Summary: Removed `--silent` from PM install commands (output captured by exec, never shown), increased maxBuffer, added structured error with exit code/log file/actionable hint. Needs build validation (disk full).
-   - Files: `dot_ai/2026-03-04/tasks/nxc-4035-cnw-sandbox-error-surfacing.md`
+1. **NXC-4030: Security CVE Cluster** (2026-03-05, completed)
+   - Summary: Bumped copy-webpack-plugin, css-minimizer-webpack-plugin, MF packages, koa, Next.js to patched versions. Added noErrorOnMissing compat fix, migrations for 22.6.0-beta.10. PR #34708, CI green.
+   - Files: `dot_ai/2026-03-05/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34708
 
-2. **NXA-1075: nx-import Skill Rounds 3-4 + JEST.md + Gaps Report** (2026-03-04)
+2. **NXC-4035: Surface clearer CNW SANDBOX_FAILED error** (2026-03-05, completed)
+   - Summary: Removed `--silent` from PM install commands, increased maxBuffer, structured error with exit code/log file/hint, added AI agent telemetry, migrated to CnwError. PR #34724.
+   - Files: `dot_ai/2026-03-04/tasks/nxc-4035-cnw-sandbox-error-surfacing.md`, PR: https://github.com/nrwl/nx/pull/34724
+
+3. **NXA-1075: nx-import Skill Rounds 3-4 + JEST.md + Gaps Report** (2026-03-04)
    - Summary: Created JEST.md, ran rounds 3-4 validation (8 scenarios each, all PASS), generated gaps report (14 gaps), pushed to nx-ai-agents-config PR #74.
    - Files: `.ai/2026-03-04/SUMMARY.md`, `~/.claude/commands/nx-import/GAPS-REPORT.md`
 
-3. **DOC-436: Fix broken Netlify image URLs on docs** (2026-03-04)
+4. **DOC-436: Fix broken Netlify image URLs on docs** (2026-03-04)
    - Summary: Added `/.netlify/*` to Framer proxy edge function excludedPath so image CDN URLs pass through to astro-docs.
    - Files: `.ai/2026-03-04/SUMMARY.md`
 
-4. **DOC-429: Task Sandboxing Documentation** (2026-03-04)
+5. **DOC-429: Task Sandboxing Documentation** (2026-03-04)
    - Summary: Created full sandboxing feature doc page with SVG diagram, 6 screenshots, examples, cloud settings. Multiple feedback rounds from Rareș. PR #34686 (draft, CI green).
    - Files: `.ai/2026-03-04/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34686
 
-5. **NXC-4020: Restore CNW prompt flow to v22.1.3** (2026-03-02)
+6. **NXC-4020: Restore CNW prompt flow to v22.1.3** (2026-03-02)
    - Summary: Reverted human-visible CNW flow to match v22.1.3, fixed `accessToken=undefined` bug, restored cloud prompt wording, split preset/template flows. CI green.
    - Files: `.ai/2026-03-02/tasks/cnw-revert-prompts-to-22.1.3.md`, PR: https://github.com/nrwl/nx/pull/34671
 
-6. **February 2026 Cross-Functional Digest** (2026-03-02)
+7. **February 2026 Cross-Functional Digest** (2026-03-02)
    - Summary: Generated monthly digest covering 457 issues across 6 teams, 6 CLI releases, 24 Cloud releases, ~160 infra commits. Plus technical changelog.
    - Files: `.ai/2026-03-02/tasks/nx-digest-2026-02-crossfunctional.md`, `.ai/2026-03-02/tasks/nx-digest-2026-02-changelog.md`
 
-7. **DOC-428: Review All CLI and Cloud Links** (2026-03-02)
+8. **DOC-428: Review All CLI and Cloud Links** (2026-03-02)
    - Summary: Full audit of nx.dev links in nx + ocean repos. Found 10 broken 404s, fixed ordering bugs, deleted legacy redirect-rules.js files, applied all fixes directly to `_redirects`.
    - Files: `.ai/2026-03-02/tasks/DOC-428-review-cli-cloud-links.md`
 
-8. **DOC-415: Move nx-dev redirects to Netlify \_redirects** (2026-02-25)
+9. **DOC-415: Move nx-dev redirects to Netlify \_redirects** (2026-02-25)
    - Summary: Moved 1,231 redirect rules from Next.js serverless to Netlify CDN edge `_redirects` file. Preview deployment verified working.
    - Files: `.ai/2026-02-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34612
 
-9. **Fix #34399: Redundant vite.config.ts for vitest projects** (2026-02-25)
-   - Summary: Removed redundant `createOrEditViteConfig` call from `@nx/js` library generator that created a `vite.config.ts` with ESM-only syntax alongside the correct `vitest.config.mts`. CI green.
-   - Files: `.ai/2026-02-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34603
-
-10. **DOC-406: Address PR review comments** (2026-02-24)
-    - Summary: Fixed 3 nits from Robb on PR #34521 — missed `just` removal, confusing `locally` wording in DTE section, inconsistent `Nx's` possessive.
-    - Files: `.ai/2026-02-24/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34521
+10. **Fix #34399: Redundant vite.config.ts for vitest projects** (2026-02-25)
+    - Summary: Removed redundant `createOrEditViteConfig` call from `@nx/js` library generator that created a `vite.config.ts` with ESM-only syntax alongside the correct `vitest.config.mts`. CI green.
+    - Files: `.ai/2026-02-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34603
 
 ## Pending
 

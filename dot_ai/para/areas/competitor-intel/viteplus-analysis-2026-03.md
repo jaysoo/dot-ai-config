@@ -7,6 +7,7 @@ _Research date: 2026-03-02_
 Vite+ is a **source-available, commercially-licensed, drop-in superset of Vite** built by VoidZero, the company founded by Evan You (creator of Vue.js and Vite). It packages a Rust-based toolchain -- Rolldown (bundler), Oxc (parser/linter/formatter), and Vitest (testing) -- into a single unified CLI that extends the standard `vite` command with additional subcommands for testing, linting, formatting, library bundling, code scaffolding, and **monorepo task orchestration with caching**.
 
 **Company:** VoidZero Inc.
+
 - Founded by Evan You
 - **$17.1M total funding** ($4.6M seed Nov 2024, $12.5M Series A Oct 2025)
 - Series A led by Accel, with Peak XV Partners, Sunflower Capital, Koen Bok (Framer co-founder), Eric Simons (StackBlitz)
@@ -14,6 +15,7 @@ Vite+ is a **source-available, commercially-licensed, drop-in superset of Vite**
 - 127,000+ combined GitHub stars across their open-source projects
 
 **Timeline:**
+
 - Oct 2025: Announced at first in-person ViteConf in Amsterdam
 - Early 2026: Targeting public preview (currently in early adopter / technical preview)
 - npm package `vite-plus` exists with 52 versions, all pre-release (`0.0.0-gXXXXXXXX` format)
@@ -24,6 +26,7 @@ Vite+ is a **source-available, commercially-licensed, drop-in superset of Vite**
 ## Core Features
 
 ### Build System
+
 - **Dev server:** Always-instant HMR, inherited from Vite
 - **Production builds:** Rolldown-powered (Rust), claiming **40x faster than webpack**, 10-30x faster than Rollup
 - **Opt-in full-bundle dev mode** for large applications (consistency between dev/prod)
@@ -31,6 +34,7 @@ Vite+ is a **source-available, commercially-licensed, drop-in superset of Vite**
 - Extensive Vite plugin ecosystem compatibility (Rolldown supports Rollup/Vite plugin API)
 
 ### Testing (`vite test`)
+
 - Powered by Vitest
 - Jest-compatible API
 - Test isolation enabled by default
@@ -39,6 +43,7 @@ Vite+ is a **source-available, commercially-licensed, drop-in superset of Vite**
 - Sharding support for CI parallelization
 
 ### Linting (`vite lint`)
+
 - Powered by Oxlint (Rust)
 - 600+ ESLint-compatible rules
 - Claims **up to 100x faster than ESLint**
@@ -46,22 +51,26 @@ Vite+ is a **source-available, commercially-licensed, drop-in superset of Vite**
 - Type-aware linting
 
 ### Formatting (`vite fmt`)
+
 - Powered by Oxfmt (Rust, not yet released)
 - Targeting 99%+ Prettier compatibility
 - More flexible line-wrapping options
 
 ### Library Bundling (`vite lib`)
+
 - Powered by tsdown + Rolldown
 - Blazing-fast bundled DTS generation (isolated declarations transform)
 - Automatic `package.json` exports generation
 - Transform-only unbundled mode option
 
 ### Scaffolding & Code Generation (`vite new`)
+
 - Project scaffolding optimized for Vite+ monorepo structure
 - Code generation for adding new packages to monorepo
 - Custom generators support
 
 ### Monorepo Task Runner (`vite run`) -- THE KEY COMPETITIVE FEATURE
+
 - **Built-in task runner with intelligent caching**
 - "Sophisticated task input inference" -- claims most tasks can be cached **without explicit configuration**
 - Works with arbitrary tasks, not just built-in Vite+ commands
@@ -72,23 +81,27 @@ Vite+ is a **source-available, commercially-licensed, drop-in superset of Vite**
 - **No evidence of distributed task execution** (like Nx Agents)
 
 ### DevTools UI (`vite ui`)
+
 - Transform pipeline inspector
 - Module dependency graph visualization
 - Bundle analyzer
 - Framework-specific integrations
 
 ### Enterprise Features
+
 - Supply chain security with dependency vetting
 - SLAs for medium+ teams
 - Commercial licensing and support
 
 ### Framework & Runtime Support
+
 - Runtimes: Node, Bun, Deno
 - Frameworks: React, Vue, Svelte, Solid, and 20+ more
 - Fullstack via Nitro integration
 - Deployment targets: Vercel, Netlify, Cloudflare, Render
 
 ### What is NOT mentioned (notable gaps)
+
 - No remote caching / cloud caching
 - No distributed task execution / CI distribution
 - No `affected` command (run only what changed)
@@ -104,40 +117,42 @@ Vite+ is a **source-available, commercially-licensed, drop-in superset of Vite**
 
 ## Feature Comparison Matrix
 
-| Feature | Nx | Vite+ | Notes |
-|---------|-----|----------|-------|
-| **Task orchestration** | Yes (advanced) | Yes (`vite run`) | Nx has topological ordering, parallel execution, task pipelines. Vite+ details sparse. |
-| **Local caching** | Yes | Yes | Vite+ claims zero-config smart inference. Nx requires some config but has mature heuristics. |
-| **Remote caching** | Yes (Nx Replay) | **No evidence** | Major Nx advantage. Critical for CI. |
-| **Distributed task execution** | Yes (Nx Agents) | **No** | Nx splits CI across agents automatically. |
-| **Affected / incremental** | Yes (`nx affected`) | **No evidence** | Nx analyzes project graph to run only affected tasks. |
-| **Project graph** | Yes (rich, visual) | Limited (module dep graph in `vite ui`) | Nx project graph is workspace-level. Vite+ graph is module-level within a project. |
-| **Code generators** | Yes (extensive) | Basic (`vite new`) | Nx has generators for adding apps, libs, components, configs. |
-| **Migration generators** | Yes (`nx migrate`) | **No** | Nx can auto-migrate across versions. Major advantage. |
-| **Build (bundling)** | Via plugins (@nx/vite, @nx/webpack, etc.) | Yes (Rolldown, Rust, very fast) | Vite+ has faster raw build speed. Nx delegates to underlying tools. |
-| **Dev server** | Via plugins | Yes (Vite HMR) | Same underlying Vite for both when using @nx/vite. |
-| **Testing** | Via plugins (Jest, Vitest, Playwright) | Yes (Vitest built-in) | Vite+ is more integrated. Nx is more flexible (multiple test runners). |
-| **Linting** | Via plugins (ESLint) | Yes (Oxlint, 100x faster) | Vite+ significantly faster. Nx uses standard ESLint. |
-| **Formatting** | External (Prettier) | Yes (Oxfmt built-in) | Vite+ is integrated. Nx doesn't own formatting. |
-| **Library bundling** | Via plugins | Yes (`vite lib`, DTS) | Vite+ has dedicated command. |
-| **Framework support** | 15+ (React, Angular, Vue, Node, Go, .NET, etc.) | 20+ JS frameworks | Nx is polyglot. Vite+ is JS/TS only. |
-| **Language support** | JS/TS + Java, Go, .NET, Rust, etc. | **JS/TS only** | Nx is significantly broader. |
-| **Angular support** | First-class | **None** | Angular doesn't use Vite (uses esbuild). Huge Nx advantage. |
-| **Plugin system** | Yes (rich, third-party ecosystem) | Vite plugins (inherited) | Different scope. Nx plugins add workspace capabilities. |
-| **CI/CD helpers** | Yes (generate CI configs) | **No** | Nx generates GitHub Actions, CircleCI, etc. |
-| **Module federation** | Yes (@nx/module-federation) | **No** (on Rolldown roadmap) | Nx has mature MF support. |
-| **Workspace conformance** | Yes (Nx Powerpack) | **No** | Nx can enforce rules across workspace. |
-| **CODEOWNERS** | Yes (Nx Powerpack) | **No** | |
-| **Crystal plugins** | Yes (zero-config inference) | N/A | Nx infers targets from config files automatically. |
-| **Supply chain security** | No | Yes (enterprise tier) | Vite+ enterprise feature. Nx doesn't offer this. |
-| **Integrated DevTools UI** | Project graph viewer | Transform inspector, bundle analyzer | Different focus areas. |
-| **Licensing** | MIT (open source) | Source-available (commercial) | Nx is fully open source. Vite+ is NOT open source. |
-| **Pricing** | Free (Nx Cloud paid for remote cache) | Free for OSS/small; paid for enterprise | Different commercial models. |
+| Feature                        | Nx                                              | Vite+                                   | Notes                                                                                        |
+| ------------------------------ | ----------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **Task orchestration**         | Yes (advanced)                                  | Yes (`vite run`)                        | Nx has topological ordering, parallel execution, task pipelines. Vite+ details sparse.       |
+| **Local caching**              | Yes                                             | Yes                                     | Vite+ claims zero-config smart inference. Nx requires some config but has mature heuristics. |
+| **Remote caching**             | Yes (Nx Replay)                                 | **No evidence**                         | Major Nx advantage. Critical for CI.                                                         |
+| **Distributed task execution** | Yes (Nx Agents)                                 | **No**                                  | Nx splits CI across agents automatically.                                                    |
+| **Affected / incremental**     | Yes (`nx affected`)                             | **No evidence**                         | Nx analyzes project graph to run only affected tasks.                                        |
+| **Project graph**              | Yes (rich, visual)                              | Limited (module dep graph in `vite ui`) | Nx project graph is workspace-level. Vite+ graph is module-level within a project.           |
+| **Code generators**            | Yes (extensive)                                 | Basic (`vite new`)                      | Nx has generators for adding apps, libs, components, configs.                                |
+| **Migration generators**       | Yes (`nx migrate`)                              | **No**                                  | Nx can auto-migrate across versions. Major advantage.                                        |
+| **Build (bundling)**           | Via plugins (@nx/vite, @nx/webpack, etc.)       | Yes (Rolldown, Rust, very fast)         | Vite+ has faster raw build speed. Nx delegates to underlying tools.                          |
+| **Dev server**                 | Via plugins                                     | Yes (Vite HMR)                          | Same underlying Vite for both when using @nx/vite.                                           |
+| **Testing**                    | Via plugins (Jest, Vitest, Playwright)          | Yes (Vitest built-in)                   | Vite+ is more integrated. Nx is more flexible (multiple test runners).                       |
+| **Linting**                    | Via plugins (ESLint)                            | Yes (Oxlint, 100x faster)               | Vite+ significantly faster. Nx uses standard ESLint.                                         |
+| **Formatting**                 | External (Prettier)                             | Yes (Oxfmt built-in)                    | Vite+ is integrated. Nx doesn't own formatting.                                              |
+| **Library bundling**           | Via plugins                                     | Yes (`vite lib`, DTS)                   | Vite+ has dedicated command.                                                                 |
+| **Framework support**          | 15+ (React, Angular, Vue, Node, Go, .NET, etc.) | 20+ JS frameworks                       | Nx is polyglot. Vite+ is JS/TS only.                                                         |
+| **Language support**           | JS/TS + Java, Go, .NET, Rust, etc.              | **JS/TS only**                          | Nx is significantly broader.                                                                 |
+| **Angular support**            | First-class                                     | **None**                                | Angular doesn't use Vite (uses esbuild). Huge Nx advantage.                                  |
+| **Plugin system**              | Yes (rich, third-party ecosystem)               | Vite plugins (inherited)                | Different scope. Nx plugins add workspace capabilities.                                      |
+| **CI/CD helpers**              | Yes (generate CI configs)                       | **No**                                  | Nx generates GitHub Actions, CircleCI, etc.                                                  |
+| **Module federation**          | Yes (@nx/module-federation)                     | **No** (on Rolldown roadmap)            | Nx has mature MF support.                                                                    |
+| **Workspace conformance**      | Yes (Nx Powerpack)                              | **No**                                  | Nx can enforce rules across workspace.                                                       |
+| **CODEOWNERS**                 | Yes (Nx Powerpack)                              | **No**                                  |                                                                                              |
+| **Crystal plugins**            | Yes (zero-config inference)                     | N/A                                     | Nx infers targets from config files automatically.                                           |
+| **Supply chain security**      | No                                              | Yes (enterprise tier)                   | Vite+ enterprise feature. Nx doesn't offer this.                                             |
+| **Integrated DevTools UI**     | Project graph viewer                            | Transform inspector, bundle analyzer    | Different focus areas.                                                                       |
+| **Licensing**                  | MIT (open source)                               | Source-available (commercial)           | Nx is fully open source. Vite+ is NOT open source.                                           |
+| **Pricing**                    | Free (Nx Cloud paid for remote cache)           | Free for OSS/small; paid for enterprise | Different commercial models.                                                                 |
 
 ## Architecture & Approach
 
 ### Vite+ Architecture
+
 Vite+ takes a **"unified toolchain" approach** -- one CLI that owns the entire inner-loop development experience:
+
 - Parser, resolver, transformer, minifier, bundler all written in Rust (Oxc + Rolldown)
 - Testing via Vitest (shares Vite's transform pipeline)
 - Linting via Oxlint (shares Oxc parser)
@@ -149,7 +164,9 @@ The key architectural insight is **shared infrastructure**: because the parser, 
 Think of it as: **Vite+ is vertically integrated** (owns the whole stack from parser to task runner), while **Nx is horizontally integrated** (orchestrates any tool, doesn't own the build/lint/test layer).
 
 ### Nx Architecture
+
 Nx is a **"smart orchestrator" approach** -- it doesn't own the build/test/lint tools but provides:
+
 - Project graph analysis (understands workspace structure)
 - Task pipeline (defines task dependencies)
 - Caching layer (local + remote)
@@ -158,15 +175,18 @@ Nx is a **"smart orchestrator" approach** -- it doesn't own the build/test/lint 
 - Plugin system to integrate with any tool
 
 ### Key Difference
+
 **Vite+ replaces your tools. Nx orchestrates your tools.**
 
 This is the fundamental architectural divergence:
+
 - Vite+ says: "Use OUR bundler, OUR linter, OUR formatter, OUR test runner, and we'll make them fast and cache them."
 - Nx says: "Use WHATEVER bundler, linter, formatter, test runner you want, and we'll orchestrate, cache, and distribute them."
 
 ## Target Audience
 
 ### Vite+ is targeting:
+
 1. **Existing Vite users** who want a more complete, integrated experience (this is the largest funnel -- Vite has 36M+ weekly npm downloads)
 2. **Teams drowning in toolchain configuration** -- managing separate configs for bundler, linter, formatter, test runner
 3. **Vue ecosystem** specifically (Evan You's core community)
@@ -175,6 +195,7 @@ This is the fundamental architectural divergence:
 6. **Enterprises** wanting a single vendor for their JS toolchain with SLA support
 
 ### Who Vite+ is NOT targeting (Nx's safe segments):
+
 1. **Angular teams** (Angular doesn't use Vite; deep Nx integration)
 2. **Polyglot monorepos** (Java, Go, .NET, Rust alongside JS)
 3. **Very large enterprises** needing distributed CI, workspace conformance, CODEOWNERS
@@ -182,6 +203,7 @@ This is the fundamental architectural divergence:
 5. **Teams deeply invested in Nx's generator/plugin ecosystem**
 
 ### Overlap zone (where both compete):
+
 - **Mid-size JS/TS monorepos** using Vite for build, wanting task caching
 - **React + Vite teams** evaluating monorepo tools for the first time
 - **Vue teams** in monorepos (historically lighter Nx usage)
@@ -189,12 +211,14 @@ This is the fundamental architectural divergence:
 ## Adoption & Traction
 
 ### Current State (as of 2026-03-02)
+
 - **npm package:** `vite-plus` with 52 pre-release versions, ~16,238 weekly downloads
 - **Status:** Technical preview / early adopter phase. No stable release.
 - **GitHub:** No public source repo for Vite+ itself (source-available but not public during preview). `vite-plus-discussions` repo exists for issue tracking.
 - **GitHub Action:** `setup-vp` exists for CI integration with dependency caching.
 
 ### Underlying Ecosystem (Vite+'s growth flywheel)
+
 - **Vite:** 36M+ weekly npm downloads, 75K+ GitHub stars, 3 billion total npm downloads
 - **Vitest:** 16.5M+ weekly downloads, 15K stars
 - **Oxc/Oxlint:** 3.8M+ weekly downloads, 16.5K stars
@@ -202,12 +226,14 @@ This is the fundamental architectural divergence:
 - **Vite 8 Beta:** Ships with Rolldown by default, production-ready path
 
 ### Adoption Signals
+
 - Notable companies already using underlying tools: Framer, Linear, Atlassian, Shopify
 - Christoph Nakazawa (Jest/Yarn/Metro creator) joining as Product lead is a strong hire signal
 - $17.1M funding with Accel leading shows serious VC backing
 - Vite 8 + Rolldown creates a natural upgrade path from Vite -> Vite+
 
 ### Risk Factors for Adoption
+
 - Source-available licensing is controversial (HN discussion was heated)
 - "Open core" model raises vendor lock-in concerns
 - No stable release yet -- timeline slipping from "early 2026" with only pre-release builds
@@ -216,12 +242,14 @@ This is the fundamental architectural divergence:
 ## Overlap with Nx
 
 ### Direct Competition Areas
+
 1. **Monorepo task caching** -- Both cache task outputs. Vite+ claims zero-config. Nx has mature, battle-tested caching.
 2. **Task orchestration** -- Both run tasks across packages in the right order.
 3. **Project scaffolding** -- `vite new` vs `nx generate`. Different scope but similar entry point.
 4. **DevTools visualization** -- Both have visual tools (project graph vs module graph).
 
 ### Where They Diverge
+
 - Nx is **tool-agnostic**; Vite+ is **Vite-ecosystem-specific**
 - Nx has **remote caching**; Vite+ appears local-only
 - Nx has **affected commands**; Vite+ has no evidence of this
@@ -275,12 +303,14 @@ This is the fundamental architectural divergence:
    - `vite new` generators could coexist with `nx generate` (different purposes)
 
 ### Tension Points
+
 - If Vite+ adds remote caching, the overlap grows significantly
 - If Vite+ adds affected/incremental commands, teams may not need Nx's project graph
 - The "single dependency" narrative of Vite+ works against "add Nx on top"
 - Teams that start with Vite+ may never evaluate Nx if Vite+ is "good enough"
 
 ### Strategic Opportunity
+
 Nx should position itself as the **orchestration layer** that makes Vite+ even better -- providing remote caching, distribution, and affected commands that Vite+ lacks. "Use Vite+ for speed, Nx for scale."
 
 ## Threat Assessment
@@ -288,6 +318,7 @@ Nx should position itself as the **orchestration layer** that makes Vite+ even b
 ### Risk Level: **MEDIUM-HIGH** (Long-term strategic threat)
 
 ### Why MEDIUM-HIGH, not CRITICAL:
+
 1. **No stable release yet** -- Still in pre-release. Execution risk is real (Rome failed at this).
 2. **No remote caching** -- The most valuable Nx feature for enterprise is not on Vite+'s radar.
 3. **No affected commands** -- Large monorepo productivity depends on this.
@@ -297,6 +328,7 @@ Nx should position itself as the **orchestration layer** that makes Vite+ even b
 7. **Licensing concerns** -- Source-available model is controversial; many enterprises prefer MIT.
 
 ### Why NOT LOW:
+
 1. **Evan You's track record** -- Vue and Vite both achieved massive adoption. He knows how to build developer communities.
 2. **Christoph Nakazawa hiring** -- Jest/Yarn/Metro creator adds serious product credibility.
 3. **$17.1M funding** -- Well-capitalized with top-tier investors (Accel).
@@ -307,11 +339,13 @@ Nx should position itself as the **orchestration layer** that makes Vite+ even b
 8. **Vue ecosystem capture** -- Vue teams may default to Vite+ over Nx.
 
 ### Timeline & Trajectory
+
 - **2026 H1:** Public preview / early stable release. Limited monorepo features. Low immediate threat.
 - **2026 H2-2027:** If Vite+ ships stable with good task runner + adds remote caching, threat escalates significantly.
 - **2027+:** If adoption reaches critical mass (>100K weekly downloads), Vite+ becomes a serious Turborepo-level competitor. If they add remote caching and affected commands, they move into Nx's core territory.
 
 ### Recommended Response
+
 1. **Ensure @nx/vite integration is best-in-class** -- Teams using Vite should see Nx as the obvious orchestrator on top. Make the DX seamless.
 2. **Emphasize Nx's unique advantages** in content/marketing: remote caching, affected commands, distributed CI, polyglot, Angular, migration generators. These are defensible moats.
 3. **Monitor `vite run` closely** -- When it ships stable, evaluate its caching semantics, project graph understanding, and whether it adds remote caching.
@@ -320,6 +354,7 @@ Nx should position itself as the **orchestration layer** that makes Vite+ even b
 6. **Track VoidZero's enterprise strategy** -- If they add remote caching as a paid cloud service, that directly competes with Nx Cloud.
 
 ### Bottom Line
+
 Vite+ is a **real competitor at the entry level** (small-to-medium JS/TS monorepos) but **not yet a threat to Nx's core enterprise value** (remote caching, distribution, affected commands, polyglot, Angular). The biggest risk is **market narrative capture** -- if "Vite+" becomes the default answer to "how do I manage my monorepo" for new Vite projects, Nx loses the top-of-funnel. The next 12 months will determine whether Vite+ ships a credible monorepo story or remains focused on the unified toolchain angle.
 
 ## Sources

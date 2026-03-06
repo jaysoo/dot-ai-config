@@ -2,6 +2,14 @@
 
 ### March 2026
 
+- [x] NXC-4030: Security CVE Cluster (2026-03-05) ✓ 2026-03-05
+  - Summary: Bumped copy-webpack-plugin to ^14.0.0, css-minimizer-webpack-plugin to ^8.0.0, @module-federation/* to ^2.1.0, koa to ^3.1.2, next to ~16.1.6. Added noErrorOnMissing for copy-webpack-plugin v14 compat. Added migrations for 22.6.0-beta.10. PR #34708, CI green.
+  - Files: `dot_ai/2026-03-05/SUMMARY.md`
+
+- [x] NXC-4035: Surface clearer CNW SANDBOX_FAILED error (2026-03-05) ✓ 2026-03-05
+  - Plan: `dot_ai/2026-03-04/tasks/nxc-4035-cnw-sandbox-error-surfacing.md`
+  - Summary: Removed `--silent` from PM install commands, increased maxBuffer, added structured error with exit code/log file/actionable hint, added missing telemetry for AI agent `needs_input`, migrated to CnwError. PR #34724.
+
 - [x] NXA-1075: nx-import Skill — Rounds 3-4 Validation + JEST.md + Gaps Report (2026-03-04) ✓ 2026-03-04
   - Summary: Created JEST.md reference file, ran rounds 3-4 validation (8 scenarios × 4 rounds, all PASS), updated TESTING-PLAYBOOK.md with lessons learned, generated comprehensive GAPS-REPORT.md (14 outstanding gaps prioritized), pushed VITE.md/NEXT.md/JEST.md + updated SKILL.md to nx-ai-agents-config PR #74 (28 files across 6 agent formats).
   - Files: `.ai/2026-03-04/SUMMARY.md`, `~/.claude/commands/nx-import/GAPS-REPORT.md`

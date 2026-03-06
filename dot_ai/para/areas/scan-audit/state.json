@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-03-04T18:00:00Z",
+  "lastRun": "2026-03-05T10:00:00Z",
   "lastWeeklyReport": "2026-W10",
   "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
@@ -10,7 +10,7 @@
     "competitors": { "highlights": 6 },
     "frameworks": { "compat-risks": 4 },
     "runtimes": { "action-items": 3 },
-    "ai-landscape": { "highlights": 6, "opportunities": 4, "risks": 4 },
+    "ai-landscape": { "highlights": 6, "opportunities": 6, "risks": 5 },
     "community": { "top-pain-points": 5, "unresponded-issues": 120, "downloads-60d": "85.4M" },
     "capacity": { "high-risk-people": 3, "overdue-items": 14 },
     "project-health": { "zombies": 2, "overdue-projects": 4 },
