@@ -14,9 +14,29 @@ Analyze create-nx-workspace telemetry from the `commandStats` MongoDB collection
 
 ## Connection
 
+### 1. Whitelist your IP in MongoDB Atlas
+
+MongoDB Atlas requires your current IP on the access list. Run this before connecting:
+
+```bash
+# Get current IP and add to Atlas access list (use PROD or STAGING)
+ip="$(curl -4 -sS --fail --max-time 5 https://ifconfig.me)" \
+  && printf '%s\n' "$ip" | awk -F. 'NF==4 && $1>=0 && $1<=255 && $2>=0 && $2<=255 && $3>=0 && $3<=255 && $4>=0 && $4<=255 {exit 0} {exit 1}' \
+  && gh workflow run add-ip-to-atlas-access-list.yaml \
+       -F "clusterName=PROD" \
+       -F "ipAddress=${ip}" \
+       -R nrwl/cloud-infrastructure
+```
+
+Replace `PROD` with `STAGING` if connecting to the staging cluster.
+
+### 2. Authenticate with gcloud
+
 Before you can read password from `gcloud` command you must login first via `gcloud auth login`.
 
 Check with `gcloud auth list` to ensure that your `@nrwl.io` account is credentialed. Do this before proceeding.
+
+### 3. Connect
 
 ```bash
 # Prod

@@ -28,41 +28,32 @@
 
 ### Upcoming Topics
 
+- **Follow-up from 2026-03-06 1:1:**
+  - V23 deprecation list finalization — Jason + Victor to create removal list, send to DPEs for customer impact
+  - Collect deprecation feedback this month, finalize during onsite for May V23 release
+  - Pylon rollout progress — check DPE adoption (1 PR/week requirement, knowledge base)
+  - Gregory's triage process — how is automated vs human triage balance working?
+
 - **Craigory morale & retention signal (from 2026-03-05 1:1)**
   - Said he's "less proud of the tool now vs. 2 years ago" — check if this is temporary frustration or deeper disengagement
   - Advocated strongly for one project per person max — likely felt stretched thin
   - Frustrated by maintaining plugins the team doesn't use daily (expertise dilution)
   - Protect his focus on sandboxing target defaults — don't let scope creep in
-- **Max team concerns (from Max 1:1 2026-03-05)**
-  - Reports broader team morale declining — Gregory embarrassed about quality/speed
-  - Echoes Craigory: people juggling 3+ projects, wants hard cap of 1-2 per person
-  - GitHub issue debt demoralizing (2023 issues open, public OSS visibility makes it worse)
-  - Wants higher quality bar: auto-close without repro, AI triage
-  - Recognition gap: kudos channel underutilized, maintenance work unrewarded
-  - Departures (Heidi/Madeline) raising "is Nx competitive?" concerns on team
-  - Max is engaged — channel into ownership of solutions (issue triage process, project scoping)
-- **AI leverage: test harnesses & issue quality**
-  - Better test harnesses needed so AI agents can be used more effectively (ties into Victor's HDD concept)
-  - Better Linear and GitHub issues — clear repro steps, expected behavior, etc. so issues can be thrown to AI
-  - Aggressively close low-quality issue reports — no repro = auto-close
-- **Effy Review**
-- **Feedback from Jeff and Madeline**
-- **L5 Stuff**
-- **Scorecards:** Lock them in for H1 2026
-- **PR Review Goals 2026:** TTM/TTFR under 24 hours (ideally under 12 hours), encourage AI-assisted PR reviews for prioritization and summaries
-- **Agent Skills:** Max is setting something up for Ocean and Nx, Victor said to wait. We also have the `claude-skills-and-commands` that we can use, unsure if they overlap in concerns.
-- **Management & Soft Skills:** Discuss lack of recognition, soft skills development
+
 - **Leo Burnout/Morale Risk (from 2026-03-05 1:1):**
   - Stressed by competing priorities, burnout concerns from maintenance burden
   - Constantly moving deadlines in syncs is demoralizing the team
   - Wants planning to start from team proposals — echoes Jason's own Effy feedback about decision communication
   - CLI team needs autonomy for smaller customer-requested improvements (e.g., target defaults)
   - Shield team from low-quality DPE requests — require repros/logs before engineering involvement
-- **Post-Departure Capacity Plan:**
-  - Colin's departure creates major CLI capacity gap — need plan to redistribute
-  - Aggressive maintenance reduction not optional: deprecate webpack/rspack/rollup config, underused plugins (Nuxt, Detox)
-  - Leo's L5 career progression stalling — criteria feel outdated for current team size, needs clearer path
 
+- **Leo's L5 career progression** — criteria feel outdated for current team size, needs clearer path
+
+- **AI leverage: test harnesses & issue quality**
+  - Better test harnesses needed so AI agents can be used more effectively (ties into Victor's HDD concept)
+  - Better Linear and GitHub issues — clear repro steps, expected behavior, etc. so issues can be thrown to AI
+
+- **Recognition culture:** Start giving more anticipatory kudos during projects, not just after completion
 
 #### Effy Reviews
 
@@ -103,26 +94,77 @@ Jason's questioning during Madeline's sales update caused concern/confusion amon
 
 **Takeaway:** The questioning came across as skepticism about whether Sales is prioritizing correctly. This reinforces the earlier topic about perception - his analytical approach can land as challenging the team's competence.
 
+### 2026-03-06
+
+**V23 Release Planning & Node 20 Deprecation:**
+- V23 discussion to continue during onsite
+- Node 20 support ends April 11th — version matrix won't include Node 20 after V23
+- Thomas confirmed band changes approved for March 31st paycheck (EU)
+- Max bumped to L4 (double promotion discussed with Thomas)
+
+**Deprecation Strategy for V23:**
+- Need clarity on what to remove before announcing deprecations
+- Obvious candidates: Nuxt, Detox (minimal user impact expected)
+- Larger questions: Rollup, Webpack configs (not core competency, minimal testing), Module Federation (Colum departure = knowledge gap)
+- Proposed approach:
+  1. Jason + Victor create removal list for team review
+  2. Send to DPEs for customer impact assessment
+  3. Collect feedback this month
+  4. Finalize during onsite for May V23 release
+- Migration strategy: eject configs so users aren't blocked
+- Consider telemetry data to track actual plugin usage vs NPM download stats
+
+**Support & Maintenance Improvements:**
+- Pylon implementation: tracks Slack threads + support emails in unified system, blocks engineering from direct support
+- DPEs get 1 PR/week requirement + knowledge base creation, AI-powered article generation
+- GitHub issue quality: raise submission bar (repro links, logs, screenshots), AI-assisted triage, community assignment for non-priority items, Gregory handles human triage vs automated closure
+
+**Team Morale & Management Feedback:**
+- Recognition gaps: team focuses on problems, skips celebrating wins; contributions feel unnoticed; need anticipatory kudos during projects
+- 1:1 structure: too project-focused, not enough individual development; consider banning project talk, start with career/personal topics
+- Deadline pressure: high priority = urgent in current system; consider dropping due dates, use 2-week assumption; most high-priority items resolved timely
+
+**Post-Departure Team Dynamics:**
+- Colum's departure due to stress/maintenance burden
+- Team wants hiring commitment signal (not just maintenance reduction)
+- CLI team lacks autonomy — too many external requests
+- Need more social interaction beyond work topics
+- Trust rebuilding through transparency
+- Systemic issues: too many features without clear priority, lack of focus vs headcount problem, need product direction clarity
+
+**Action Items:**
+- [ ] Jason + Victor: Create V23 removal/deprecation list
+- [ ] Jason: Send deprecation list to DPEs for customer impact assessment
+- [ ] Jack: Follow up on recognition culture improvements
+- [ ] Jack: Restructure 1:1 format — career/personal first, project updates at end
+
+[Granola notes](https://notes.granola.ai/t/8b5d2a24-1756-43d7-9dca-3a32ac447d68-00demib2)
+
 ### 2026-01-07
 
 **Maven Plugin Paywall Discussion:**
+
 - Strong internal pushback: Colum against it, James raised issues at all hands, general team opposed
 - Victor wants to proceed despite feedback - no clear path to revenue generation identified
 - Jason's perspective: feels like "extreme measure" due to resource constraints, concerned about underlying company health implications, not motivated by growth but by survival/funding needs
 
 **Strategic Concerns & Alternative Approach:**
+
 - Current approach lacks clarity on: where to draw paid vs free line, how Maven gating generates enterprise revenue, differentiation from AI-powered features (V+)
 - Jason's proposed focus shift: prioritize existing revenue features (CPU tracking, I/O tracing), gate new Maven features that integrate with Cloud, develop pipeline of paid features instead of retroactive gating
 
 **Team Capacity & Priorities:**
+
 - Jason committed to focusing on revenue-generating features, willing to let maintenance slide (e.g., delay Prettier V3 support)
 - Week priorities: catching up on FE reviews, tracing coordination with Altan, UI work with Nicole can wait
 
 **Upcoming Deliverables:**
+
 - Jason attending Zach's CLI/Nx 22.3 livestream instead of Jack - focus on shipped features, not roadmap; can mention beta features like full screen
 - Platform roadmap: Victor writing comprehensive platform roadmap, team roadmap publication delayed until Victor's complete
 
 **Action Items:**
+
 - Jack: Discuss Maven decision with Victor this week - push for clarity on revenue path or abandon gating
 - Jason: Focus on revenue-generating features
 - Jason: Coordinate with Altan on tracing work

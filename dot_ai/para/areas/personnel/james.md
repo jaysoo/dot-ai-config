@@ -28,12 +28,60 @@
 
 ### Upcoming
 
-- Measure reverted PRs
+- Lerna -> Nx migration guides
 
-### Topics to Discuss
+### 2026-03-06
 
-- [ ] Update Effy reporting structure
-- [ ] Look at Effy Reviews and how people can get their past reviews
+**Team Impact from Recent Departures**
+- Colin's departure primarily burnout-related
+  - Struggled with maintenance workload across too much surface area
+  - Higher salary offer played minor role
+  - Team retention historically strong, natural turnover expected
+- Broader context: 3 departures in quick succession (Madeline, Heidi, Colin)
+  - Creates perception of shrinking vs growing team
+  - All unrelated decisions but poor optics timing
+- Financial impact positive: revenue up, costs down with expensive resource cuts
+  - Q4 and Q1 performance strong after weak Q1-Q3 last year
+
+**Reducing Maintenance Burden**
+- Aggressive feature trimming needed
+  - Remove low-usage tools: Nuxt, Detox, similar integrations
+  - De-emphasize experimental features (release for apps) until clear demand
+  - Question marks around module federation - not core competency
+- Build tool configs creating unnecessary burden
+  - Pack, Rollup configs maintained without internal usage
+  - No visibility into quality/effectiveness
+  - Should remove despite potential user complaints
+- Focus clarity issues
+  - Mixed messaging from leadership causing stress
+  - Weekly status updates on stalled projects creating embarrassment
+  - Need clearer priorities and communication
+
+**AI Integration and Issue Management**
+- GitHub/Linear issue quality enforcement
+  - Auto-close issues without proper repros/descriptions
+  - Lock threads, require fresh issues with complete information
+  - Frame as faster resolution initiative
+- Performance benchmarking priority
+  - Need benchmarks for AI-generated optimizations
+  - Recent 50+ micro-optimization PRs couldn't be validated
+  - Turbo repo increasing development pace, competitive pressure
+- Low-effort PR detection
+  - Multiple instances of AI-generated fixes unrelated to actual issues
+  - 20+ PRs in one hour indicates insufficient validation
+
+**Pylon Integration and AI Experimentation**
+- Pylon DX protecting support team time
+  - Linear integration with bi-directional comment sync
+  - AI suggestions for related issues working well
+  - Knowledge base product potential for common support topics
+- James exploring dedicated AI machine setup
+  - Mac Mini for isolated AI agent experimentation
+  - Separate GitHub identity ($4/month cost negligible)
+  - Security vs autonomy balance - current sandbox solutions inadequate
+  - Open Claw orchestration possibility for multiple agents
+
+**Source:** [Granola transcript](https://notes.granola.ai/t/7f32e40b-1f0d-4e0b-9b0a-1855b5a3a2fa-00demib2)
 
 ### 2026-02-10
 

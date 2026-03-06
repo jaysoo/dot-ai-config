@@ -2,6 +2,10 @@
 
 ### March 2026
 
+- [x] DOC-393: Writing Style Linting — Vale + Claude Skill (2026-03-06) ✓ 2026-03-06
+  - Summary: Added Vale prose linter with 11 custom Nx rules (3 tiers), `.vale.ini` config, cacheable Nx target, mise.toml integration, and `nx-docs-style-check` Claude skill with IA audit + style validation. Commit `15d9a0ab9b`. CI green.
+  - Files: `.ai/2026-03-06/specs/writing-style-linting.md`
+
 - [x] NXC-4030: Security CVE Cluster (2026-03-05) ✓ 2026-03-05
   - Summary: Bumped copy-webpack-plugin to ^14.0.0, css-minimizer-webpack-plugin to ^8.0.0, @module-federation/* to ^2.1.0, koa to ^3.1.2, next to ~16.1.6. Added noErrorOnMissing for copy-webpack-plugin v14 compat. Added migrations for 22.6.0-beta.10. PR #34708, CI green.
   - Files: `dot_ai/2026-03-05/SUMMARY.md`
