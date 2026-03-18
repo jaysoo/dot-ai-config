@@ -4,40 +4,44 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-393: Writing Style Linting — Vale + Claude Skill** (2026-03-06, completed)
+1. **DOC-446: Telemetry Documentation** (2026-03-17, completed)
+   - Summary: Created telemetry reference page, nx.json analytics property docs, sidebar entry. PR #34884.
+   - Files: `.ai/2026-03-17/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34884
+
+2. **DOC-393: Writing Style Linting — Vale + Claude Skill** (2026-03-06, completed)
    - Summary: Added Vale prose linter with 11 custom Nx rules, cacheable Nx target, mise.toml integration, and `nx-docs-style-check` Claude skill. CI green.
    - Files: `.ai/2026-03-06/specs/writing-style-linting.md`
 
-2. **NXC-4030: Security CVE Cluster** (2026-03-05, completed)
+3. **NXC-4030: Security CVE Cluster** (2026-03-05, completed)
    - Summary: Bumped copy-webpack-plugin, css-minimizer-webpack-plugin, MF packages, koa, Next.js to patched versions. Added noErrorOnMissing compat fix, migrations for 22.6.0-beta.10. PR #34708, CI green.
    - Files: `dot_ai/2026-03-05/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34708
 
-3. **NXC-4035: Surface clearer CNW SANDBOX_FAILED error** (2026-03-05, completed)
+4. **NXC-4035: Surface clearer CNW SANDBOX_FAILED error** (2026-03-05, completed)
    - Summary: Removed `--silent` from PM install commands, increased maxBuffer, structured error with exit code/log file/hint, added AI agent telemetry, migrated to CnwError. PR #34724.
    - Files: `dot_ai/2026-03-04/tasks/nxc-4035-cnw-sandbox-error-surfacing.md`, PR: https://github.com/nrwl/nx/pull/34724
 
-4. **NXA-1075: nx-import Skill Rounds 3-4 + JEST.md + Gaps Report** (2026-03-04)
+5. **NXA-1075: nx-import Skill Rounds 3-4 + JEST.md + Gaps Report** (2026-03-04)
    - Summary: Created JEST.md, ran rounds 3-4 validation (8 scenarios each, all PASS), generated gaps report (14 gaps), pushed to nx-ai-agents-config PR #74.
    - Files: `.ai/2026-03-04/SUMMARY.md`, `~/.claude/commands/nx-import/GAPS-REPORT.md`
 
-5. **DOC-436: Fix broken Netlify image URLs on docs** (2026-03-04)
+6. **DOC-436: Fix broken Netlify image URLs on docs** (2026-03-04)
    - Summary: Added `/.netlify/*` to Framer proxy edge function excludedPath so image CDN URLs pass through to astro-docs.
    - Files: `.ai/2026-03-04/SUMMARY.md`
 
-6. **DOC-429: Task Sandboxing Documentation** (2026-03-04)
+7. **DOC-429: Task Sandboxing Documentation** (2026-03-04)
    - Summary: Created full sandboxing feature doc page with SVG diagram, 6 screenshots, examples, cloud settings. Multiple feedback rounds from Rareș. PR #34686 (draft, CI green).
    - Files: `.ai/2026-03-04/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34686
 
-7. **NXC-4020: Restore CNW prompt flow to v22.1.3** (2026-03-02)
+8. **NXC-4020: Restore CNW prompt flow to v22.1.3** (2026-03-02)
    - Summary: Reverted human-visible CNW flow to match v22.1.3, fixed `accessToken=undefined` bug, restored cloud prompt wording, split preset/template flows. CI green.
    - Files: `.ai/2026-03-02/tasks/cnw-revert-prompts-to-22.1.3.md`, PR: https://github.com/nrwl/nx/pull/34671
 
-8. **February 2026 Cross-Functional Digest** (2026-03-02)
+9. **February 2026 Cross-Functional Digest** (2026-03-02)
    - Summary: Generated monthly digest covering 457 issues across 6 teams, 6 CLI releases, 24 Cloud releases, ~160 infra commits. Plus technical changelog.
    - Files: `.ai/2026-03-02/tasks/nx-digest-2026-02-crossfunctional.md`, `.ai/2026-03-02/tasks/nx-digest-2026-02-changelog.md`
 
-9. **DOC-428: Review All CLI and Cloud Links** (2026-03-02)
-   - Summary: Full audit of nx.dev links in nx + ocean repos. Found 10 broken 404s, fixed ordering bugs, deleted legacy redirect-rules.js files, applied all fixes directly to `_redirects`.
+10. **DOC-428: Review All CLI and Cloud Links** (2026-03-02)
+    - Summary: Full audit of nx.dev links in nx + ocean repos. Found 10 broken 404s, fixed ordering bugs, deleted legacy redirect-rules.js files, applied all fixes directly to `_redirects`.
    - Files: `.ai/2026-03-02/tasks/DOC-428-review-cli-cloud-links.md`
 
 10. **DOC-415: Move nx-dev redirects to Netlify \_redirects** (2026-02-25)
@@ -45,6 +49,7 @@
     - Files: `.ai/2026-02-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34612
 
 ## Pending
+- [ ] remove colum from tools (2026-03-17 09:59)
 - [ ] follow up on next.js cleanup pr (2026-03-06 15:50)
   - https://github.com/nrwl/nx/pull/34730
 

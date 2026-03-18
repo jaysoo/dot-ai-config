@@ -2,6 +2,10 @@
 
 ### March 2026
 
+- [x] DOC-446: Telemetry Documentation (2026-03-17) ✓ 2026-03-17
+  - Summary: Created telemetry reference page, added analytics property to nx.json reference, sidebar entry. Modeled after Turborepo/Astro docs. PR #34884.
+  - Files: `.ai/2026-03-17/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34884
+
 - [x] DOC-393: Writing Style Linting — Vale + Claude Skill (2026-03-06) ✓ 2026-03-06
   - Summary: Added Vale prose linter with 11 custom Nx rules (3 tiers), `.vale.ini` config, cacheable Nx target, mise.toml integration, and `nx-docs-style-check` Claude skill with IA audit + style validation. Commit `15d9a0ab9b`. CI green.
   - Files: `.ai/2026-03-06/specs/writing-style-linting.md`
