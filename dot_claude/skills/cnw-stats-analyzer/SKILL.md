@@ -12,6 +12,27 @@ description: >
 
 Analyze create-nx-workspace telemetry from the `commandStats` MongoDB collection.
 
+## Default Filters
+
+**Always apply** these filters to all queries unless the user explicitly asks to include them:
+
+1. **Exclude CI runs** — `{ isCI: false }` — CI runs (e.g. `@schenker/workspace@e2e`, automated pipelines) heavily skew funnels since they often fire `start` but never reach `precreate`. Only ~18% of CI starts convert to precreate vs ~79% for humans.
+2. **Exclude AI agent runs** — `{ meta: { $not: { $regex: "\"aiAgent\":true" } } }` — AI agents have very different error profiles (high `DIRECTORY_EXISTS` and `INVALID_WORKSPACE_NAME` from retries and invalid names like `"."` or numeric prefixes). They also heavily favor pnpm, skewing package manager stats.
+3. **Exclude @contentful/nx** — `{ meta: { $not: { $regex: "contentful" } } }` — High-volume automated preset that drowns out organic usage.
+
+**Standard base filter for all queries:**
+```js
+const base = [
+  { meta: { $regex: versionRegex } },
+  { isCI: false },
+  { meta: { $not: { $regex: "contentful" } } },
+  { meta: { $not: { $regex: "\"aiAgent\":true" } } }
+];
+// Use with: { $and: [...base, { meta: { $regex: "\"type\":\"start\"" } }] }
+```
+
+If the user asks for AI or CI stats specifically, run those as a **separate breakdown** alongside the main (filtered) numbers.
+
 ## Connection
 
 ### 1. Whitelist your IP in MongoDB Atlas
@@ -73,7 +94,7 @@ For large exports use `mongoexport` (streams without memory issues) instead of `
 
 | Type        | When                         | Key Fields                                                 |
 | ----------- | ---------------------------- | ---------------------------------------------------------- |
-| `start`     | Beginning of CLI run         | `nxVersion`, `nodeVersion`, `flowVariant`, `aiAgent`       |
+| `start`     | Beginning of CLI run         | `nxVersion`, `nodeVersion`, `flowVariant`, `aiAgent` (boolean) |
 | `precreate` | After prompts, before create | `template`, `preset`, `packageManager`, `ghAvailable`      |
 | `complete`  | Workspace created            | `pushedToVcs`, `nxCloudArg`, `connectUrl`, `setupCIPrompt` |
 | `error`     | Creation threw exception     | `errorCode`, `errorMessage`, `errorFile`                   |
@@ -167,4 +188,30 @@ with open('commandStats-export.json') as f:
             parsed = json.loads(meta)
             if valid_node(parsed.get('nodeVersion', '')):
                 errors[dt][parsed.get('errorCode', 'UNKNOWN')] += 1
+```
+
+## Common Pitfalls
+
+### MongoDB: Never use duplicate field names in match
+
+MongoDB (and JS objects) silently drop duplicate keys. The second overwrites the first.
+
+```js
+// ❌ Only matches B — first `meta` key is silently dropped
+{ meta: { $regex: "A" }, meta: { $regex: "B" } }
+
+// ✅ Use $and for multiple conditions on the same field
+{ $and: [{ meta: { $regex: "A" } }, { meta: { $regex: "B" } }] }
+```
+
+### Always anchor version regexes to the field name
+
+Bare version strings match unintended versions (e.g. `22.6.0` matches inside `22.16.0` or `22.5.0`).
+
+```js
+// ❌ Matches 22.5.0, 22.16.0, 22.6.0-beta.0, etc.
+{ meta: { $regex: "22\\.6\\.0" } }
+
+// ✅ Anchored to the JSON field name
+{ meta: { $regex: "\"nxVersion\":\"22\\.6\\.0\"" } }
 ```

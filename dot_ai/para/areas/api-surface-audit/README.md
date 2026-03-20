@@ -31,7 +31,7 @@ Detect:
 | Month   | File                       | Nx Version               |
 | ------- | -------------------------- | ------------------------ |
 | 2026-02 | [2026-02.md](./2026-02.md) | v22.5 (commit `0975384`) |
-| 2026-03 | [2026-03.md](./2026-03.md) | v22.x (commit `bdfef86`) — expanded generator/executor drift analysis |
+| 2026-03 | [2026-03.md](./2026-03.md) | v22.x (commit `56acdf7`, last updated 2026-03-20) — expanded generator/executor drift analysis, CLI command audit |
 
 ## Cadence
 

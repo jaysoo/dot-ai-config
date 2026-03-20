@@ -1,14 +1,12 @@
 # Nx Platform Update — March 2026
 
-> **Data gaps:** Blog posts — no March 2026 blog posts found on nx.dev (most recent is February 25). Cloud changelog covers 11 releases through March 12. Linear data through March 17. Month still in progress (through March 18).
-
 ## TL;DR
 
-- **Nx 22.6.0 released** (March 18): Major release with jemalloc memory optimization, Angular v21.2 support, ESLint v10 support, agentic sandboxing, and 40+ new features.
-- **Task Sandboxing is production-ready**: eBPF-based I/O tracing detects undeclared inputs/outputs in CI, with a full analysis UI, docs, and violation counts trending down. 40+ issues closed across CLI, Cloud, and Infrastructure. Now rolling out to enterprise single-tenant customers.
-- **AI-Powered Development goes deeper**: Polygraph AI cross-repo sessions, agentic sandboxing for AI agents, auto-configured AI agents during `nx init`/`create-nx-workspace`, shared skills directory across Claude Code/Codex/Cursor/Gemini. Self-Healing CI now respects git hooks.
-- **Surface-level telemetry ships**: Anonymous, opt-in usage analytics with Rust-native implementation. Prompted during workspace creation.
-- **Six enterprise PoVs active**: CIBC kicked off, MNP.ca seeing 50% CI reduction, Anaplan wrapping up with business case, Caseware fully provisioned on AWS.
+- **Nx 22.6.0 released** (March 18): Major release with jemalloc memory optimization, Angular v21.2 support, ESLint v10 support, agentic sandboxing, and 40+ new features. 22.7.0 betas already shipping with DB corruption prevention and shell metacharacter quoting fixes.
+- **Task Sandboxing is production-ready**: eBPF-based I/O tracing detects undeclared inputs/outputs in CI, with a full analysis UI, docs, and violation counts trending down. 40+ issues closed across CLI, Cloud, and Infrastructure. Now rolling out to enterprise single-tenant customers (Legora first on GCP).
+- **AI-Powered Development goes deeper**: Polygraph AI cross-repo sessions, agentic sandboxing for AI agents, auto-configured AI agents during `nx init`/`create-nx-workspace`, shared skills directory across Claude Code/Codex/Cursor/Gemini. Self-Healing CI now respects git hooks and prevents formatting hooks from resolving prettier config outside the workspace.
+- **Surface-level telemetry ships**: Anonymous, opt-in usage analytics with Rust-native implementation. Prompted during workspace creation. DB corruption guard and analytics skip for handoff scenarios added post-release.
+- **Six enterprise PoVs active**: CIBC kicked off, MNP.ca seeing 50% CI reduction, Anaplan wrapping up with business case, Caseware fully provisioned on AWS with SCIM token and new access control.
 
 ---
 
@@ -27,6 +25,8 @@ The headline release of the month. 22.6.0 is a major milestone with 40+ features
 - **`--otp` for `nx release`**: One-time password support for npm publishing, with EOTP error detection
 - **`preferBatch` executor option**: Opt into batched execution per target
 - **Cache debugging commands**: New commands to inspect cache inputs/outputs
+
+**Post-release (22.7.0 betas, March 19):** DB corruption prevention from concurrent initialization, shell metacharacter quoting fix (long-standing issue), ESLint `require()` detection in module boundaries, and CRA migration logic removal from `nx init`.
 
 ---
 
@@ -70,6 +70,7 @@ This represents a significant step toward Nx becoming the orchestration layer fo
 Self-Healing CI — which uses AI to automatically propose fixes for failing CI pipelines — received important reliability and usability improvements:
 
 - **Git hooks support**: AI-generated commit messages now pass through registered `prepare-commit-msg` and `commit-msg` hooks before saving, respecting team conventions
+- **Prettier config isolation** (March 20): Formatting hooks no longer resolve prettier config from outside the workspace, eliminating cases where fix suggestion diffs were unnecessarily large
 - **Model provider health**: When the AI provider (Anthropic) experienced issues during fix generation, the UI now shows a clear banner explaining the context
 - **Permissions expansion**: Users with allowed email domains can now accept, reject, and revert AI suggestions without needing explicit role assignment
 - **Onboarding**: New option during workspace setup to open a PR enabling self-healing in the repo
@@ -88,7 +89,7 @@ The 22.6.0 release is packed with AX improvements — making Nx the most AI-agen
 - **`--json` for `nx list`**: Better machine-readable output for agents
 - **`NX_SKIP_FORMAT`**: Env var to skip Prettier formatting in generators, reducing friction for AI workflows
 - **AI traffic tracking**: nx.dev now tracks server page views categorized by AI agent traffic via Netlify-Agent-Category
-- **`.claude/settings.local.json` and `.claude/worktrees`** added to `.gitignore` templates
+- **`.nx/self-healing` and `.claude/settings.local.json`** added to `.gitignore` templates
 - Import skill now has tech-specific guidance for Gradle, Vite, and Next.js
 
 - **Contacts**: Max, Victor, James, Chau
@@ -104,6 +105,8 @@ The 22.6.0 release is packed with AX improvements — making Nx the most AI-agen
 - Implemented in Rust for minimal performance impact
 - GA events capture commands, project graph creation time, and task/project counts
 - Cloud commands skip the analytics prompt to avoid blocking CI flows
+- **Post-release fix**: Analytics and DB connection skipped when global Nx binary hands off to local installation (22.7.0-beta.0)
+- **Post-release fix**: DB corruption prevention from concurrent initialization (22.7.0-beta.1)
 
 **Cloud analytics** also improved: the CI pipeline execution durations chart now shows percentile values (p5, p25, p50, p75, p95), giving teams clearer visibility into CI performance distribution.
 
@@ -118,13 +121,14 @@ The 22.6.0 release is packed with AX improvements — making Nx the most AI-agen
 - **Critical frontend CVE** (CVE-2025-15467) remediated in Nx Cloud (CLOUD-4351)
 - **Nuxt vulnerability**: Bumped nuxt to 3.21.1 to resolve critical audit finding
 - **Clickjacking protection**: Added security headers to Netlify configs for nx.dev ([#34893](https://github.com/nrwl/nx/pull/34893))
+- **Shell metacharacter quoting**: CLI now properly quotes shell metacharacters in args passed to tasks, fixing a longstanding injection risk ([#34491](https://github.com/nrwl/nx/pull/34491))
 - **Windows AV false positives**: Removed `shellapi` from winapi featureset to minimize antivirus false positives on the Nx binary
 - **Pentest findings addressed** (3 issues):
   - Unauthenticated access to workspace achievements endpoint — now gated
   - Email verification enforcement added
   - Refresh token exposure in session cookies — fixed
 - **Vanta remediation**: Security training records updated, IAM access keys rotated
-- **Infrastructure**: OpenTofu now manages IAM permissions for new AWS accounts automatically; Grafana billing alerts prevent cost spikes from ingestion anomalies
+- **Infrastructure**: OpenTofu now manages IAM permissions for new AWS accounts automatically; Grafana billing alerts prevent cost spikes from ingestion anomalies; SCIM token and new access control added for Caseware (enterprise)
 
 - **Contacts**: Szymon, Nicole, Chau, Altan
 
@@ -137,6 +141,8 @@ The 22.6.0 release is packed with AX improvements — making Nx the most AI-agen
 **Workspace visibility**: New workspaces now default to repository-level access (not org-wide). Azure DevOps OAuth integration added. Organization-level visibility controls cleaned up and can be disabled per-environment.
 
 **Create Nx Workspace improvements**: The CNW user flow was restored after a regression, cloud prompts and templates brought back, clearer error messages for sandbox failures and missing package managers, and explicit cloud opt-out option added.
+
+**Nx Cloud UI**: Changelog link added to the app footer (changelog.nx.app), improved Nx Cloud console redirect flow.
 
 - **Contacts**: Benjamin, Mark, Nicole
 
@@ -167,18 +173,33 @@ Significant progress for Java/Kotlin teams using Nx:
 | **Cisco**           | At risk                   | Security questionnaire done. MSA stuck in global procurement.                                   |
 | **McGraw Hill**     | Pushed to ~May            | Customer completing Angular 20 upgrade first. Success criteria: 20% P95 CI improvement.         |
 
+### Customer Success: SiriusXM
+
+Published March 6: [How SiriusXM Stays Competitive by Iterating and Getting to Market Fast](https://nx.dev/blog/siriusxm-success-story). SiriusXM runs 1,400+ projects in their monorepo, saving 61+ days of compute per month with Nx.
+
 ### New Customer: Caseware
 
-Fully provisioned as a new single-tenant instance on AWS — Terraform, Spacelift, GitHub app, SAML, and lighthouse rotation all configured.
+Fully provisioned as a new single-tenant instance on AWS — Terraform, Spacelift, GitHub app, SAML, lighthouse rotation, SCIM token, and new access control all configured.
+
+**Active support (9 Pylon tickets in March — most active PoV customer):**
+- **Cache corruption** (High priority, Mar 19): Developer needs to forcibly remove a corrupted remote cache entry — no self-service option exists today
+- **Project graph slowdown on Windows** (Mar 13): ~100-126s loading project graph/plugins, compounded by stale serve processes
+- **Codeowners gap** (Mar 9, on hold): `@nx/workspace:remove` doesn't clean up nx.json owners; requesting sub-project file ownership override ([nrwl/nx#34815](https://github.com/nrwl/nx/issues/34815))
+- **SCIM/SAML migration** (Mar 9): Customer-side IT ticket in progress, linked to [INF-1242](https://linear.app/nxdev/issue/INF-1242)
+- **IP allow-list for runners** (Mar 4): Verifying runner IPs don't need explicit allow-listing
+- **Cloud access** (Mar 20): New admin credentials requested
+
+**Rocket Mortgage** also had 1 Pylon ticket — `nx login` 400 error when not pre-authenticated in browser (closed, linked to [CLOUD-3732](https://linear.app/nxdev/issue/CLOUD-3732)).
 
 ### Infrastructure Modernization
 
-- **K8S Gateway API**: Terraform abstraction for GCP complete, Helm chart with cert-manager and TLS support being finalized. Will replace legacy Ingress resources as the modern Kubernetes standard. Now also being deployed to workflows cluster. AWS/Azure next.
-- **Multi-cluster agent setups**: Foundation implementation progressing (16%). Controller facade mode audit complete, client/endpoints built. Enables running agents across separate Kubernetes clusters.
-- **Secrets management**: Development and staging secrets split into smaller, more granular units for improved security posture.
+- **K8S Gateway API**: Terraform abstraction for GCP complete, Helm chart with cert-manager, TLS, and health check policies. Now deployed to workflows cluster in dev, staging, and prod. External DNS integration added. AWS/Azure next.
+- **Multi-cluster agent setups**: Foundation implementation progressing (16%). Controller facade mode audit complete, client/endpoints built, config path defined for downstream checks. Enables running agents across separate Kubernetes clusters.
+- **Secrets management**: Development, staging, and production secrets split into smaller, more granular units. New secrets deployed across all environments including EU and NA regions.
 - **Identity portal in OpenTofu**: Existing IAM resources fully imported; new AWS accounts get automatic access provisioning.
 - **IO tracing for enterprise ST**: New AppSet pattern enables io-trace daemon deployment to GCP enterprise single-tenant customers.
 - **Claude MCP for nx-data**: Service account and IAM configured for Claude MCP access to analytics data.
+- **Flipt feature flags**: Debug/profiling endpoints moved off public routes, metrics secured.
 
 - **Contacts**: Austin, Steve, Patrick, Szymon
 
@@ -193,11 +214,13 @@ Fully provisioned as a new single-tenant instance on AWS — Terraform, Spacelif
 - **Recursive FSEvents on macOS**: Replaced non-recursive kqueue with recursive FSEvents for more reliable file watching
 - **Plugin cache**: Safe write utilities with LRU eviction prevent JSON stringify errors from corrupting cache
 - **SQLite retry**: Entire transactions retried on DatabaseBusy errors
+- **DB corruption prevention**: Concurrent initialization now guarded (22.7.0-beta.1)
 - **Gitignore matching**: Replaced buggy ignore-files trie with correct path-component matching
 - **Daemon improvements**: Skip stale recomputations, prevent lost file changes, clean up stale socket files
 - **TUI fixes**: Fixed panic when Nx Console is connected, help text layout corrected, TUI logger gated behind env var, PTY resize no longer blocks event loop
 - **Bun compatibility**: Resolved false positive loop detection; release-publish executor supports Bun-only environments
 - **Workers shutdown**: Ensured workers shut down after phase cancelled
+- **Angular ngcli adapter**: Avoid redundant project graph requests (22.7.0-beta.0)
 
 ---
 
@@ -206,6 +229,7 @@ Fully provisioned as a new single-tenant instance on AWS — Terraform, Spacelif
 - Sandboxing docs published ([nx.dev/docs/features/ci-features/sandboxing](https://nx.dev/docs/features/ci-features/sandboxing))
 - Self-healing auto-apply video merged
 - Docker layer caching documentation added
+- Telemetry documentation added
 - Legacy redirect cleanup and broken link fixes across nx.dev
 - Outdated version references (< Nx 20) cleaned up
 - Storybook version support clarified
@@ -213,6 +237,8 @@ Fully provisioned as a new single-tenant instance on AWS — Terraform, Spacelif
 - YouTube channel callout added to courses page
 - Clickjacking protection headers added
 - Cross-site link checks now working
+- Changelog page 500 error resolved (22.7.0-beta.0)
+- Batch mode clarified in docs
 
 - **Contacts**: Jack, Caleb
 
@@ -226,26 +252,28 @@ Fully provisioned as a new single-tenant instance on AWS — Terraform, Spacelif
 
 ## Coming Soon
 
-- **Polygraph AI general availability**: Cross-repo agent sessions being battle-tested
+- **Polygraph AI general availability**: Cross-repo agent sessions being battle-tested. Product naming being finalized (Polygraph vs Polar).
+- **Self-Healing CI billing**: Starting April 1, enterprise customers will be charged for self-healing CI credits. Plan modifiers already applied to MailChimp, Moderna, Cloudinary.
 - **Multi-cluster agents**: Foundation being built for running agents across Kubernetes clusters
 - **Agentic migrations**: Local `nx migrate` will get an improved agentic loop (Leosvel leading)
 - **Agent sandboxing**: Socket path alignment and docs updates for running AI agents in sandboxed environments
 - **K8S Gateway API**: AWS and Azure support following GCP completion
 - **Feature demos in Cloud**: In-app demos of analytics, run details for prospects (target: March 31)
 - **IO tracing enterprise rollout**: Expanding to more GCP single-tenant customers
+- **Quark-A Task Force**: New cross-functional team (Quokka + Orca) focused on improving workspace activation and conversion — targeting 2x baseline conversion rate for "serious workspaces" (5+ projects)
 
 ---
 
 ## By the Numbers
 
-| Metric                    | Count                                       |
-| ------------------------- | ------------------------------------------- |
-| CLI releases              | 2 stable (22.5.4, 22.6.0) + 7 betas + 3 RCs |
-| Cloud releases            | 11                                          |
-| Linear issues completed   | ~218 across 6 teams                         |
-| Enterprise PoVs active    | 6                                           |
-| New ST instances          | 1 (Caseware)                                |
-| Security issues addressed | 7+ (4 CVEs, 3 pentest findings)             |
+| Metric                    | Count                                                      |
+| ------------------------- | ---------------------------------------------------------- |
+| CLI releases              | 2 stable (22.5.4, 22.6.0) + 7 betas + 3 RCs + 2 next-betas |
+| Cloud releases            | 13                                                         |
+| Linear issues completed   | ~230+ across 6 teams                                       |
+| Enterprise PoVs active    | 6                                                          |
+| New ST instances          | 1 (Caseware)                                               |
+| Security issues addressed | 8+ (4 CVEs, 3 pentest findings, 1 shell injection)         |
 
 ---
 
@@ -260,4 +288,4 @@ Fully provisioned as a new single-tenant instance on AWS — Terraform, Spacelif
 - **Enterprise / DPE**: Austin, Steve, Patrick, Szymon
 - **Docs**: Jack, Caleb
 
-_Generated on 2026-03-18. For the full technical changelog, see Document 2._
+_Generated on 2026-03-20. For the full technical changelog, see Document 2._

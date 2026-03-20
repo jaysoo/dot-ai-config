@@ -22,7 +22,7 @@ Monthly changelog analysis of competitors to understand where they're investing,
 | Month   | File                           | Key Events                                                                        |
 | ------- | ------------------------------ | --------------------------------------------------------------------------------- |
 | 2026-02 | `2026-02.md`                   | Moon v2.0, Bazel 9.0, Turborepo 2.8 AI push                                       |
-| 2026-03 | `2026-03.md`                   | Turborepo 2.8.18 task-level intelligence platform, cache provenance, Moon 2.1 exec plans, Bazel 9.0.1, Gradle 9.4 |
+| 2026-03 | `2026-03.md`                   | Turborepo 2.8.20 (`turbo-ignore` deprecated, query engine consolidation), Moon 2.1, Bazel 9.0.1, Gradle 9.4.1 |
 | 2026-03 | `viteplus-analysis-2026-03.md` | Deep-dive: Vite+ (VoidZero) competitive analysis                                  |
 
 ## How to Run

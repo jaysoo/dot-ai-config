@@ -5,6 +5,12 @@ Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse
 
 ## 🔴 Critical Setup & Verification
 
+### dot-ai-config is the Source of Truth
+- **NEVER edit files directly in `~/.claude/`** — those are synced copies
+- **Always edit in `~/projects/dot-ai-config/dot_claude/`** then sync
+- Skills: `~/projects/dot-ai-config/dot_claude/skills/` (NOT `~/.claude/skills/`)
+- Commands: `~/projects/dot-ai-config/dot_claude/commands/` (NOT `~/.claude/commands/`)
+
 ### .ai Folder Symlink (MUST CHECK FIRST)
 ```bash
 file .ai  # Must show "symbolic link"

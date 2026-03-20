@@ -13,7 +13,7 @@ Monthly reports tracking Node.js, Bun, and Deno runtime releases and their impac
 
 | Month   | File         | Key Items                                                                                                       |
 | ------- | ------------ | --------------------------------------------------------------------------------------------------------------- |
-| 2026-03 | `2026-03.md` | Nx 23.0.0 (no engines field), Node 25.8.0 (permission-audit), merve replaces cjs-module-lexer, Bun 1.3.10 (ES decorators), Deno 2.7.3 (V8 14.6), 6 CVEs patched Jan 13, Node 20 EOL Apr 30 |
+| 2026-03 | `2026-03.md` | Node release schedule overhaul (1 major/year from Node 27), Mar 24 security releases pending, Deno 2.7.7 (node:dns, GCM timing fix), Bun 1.3.11 (Bun.cron, 105 fixes), Nx 22.6.0 (no engines field), Node 20 EOL Apr 30 (41 days) |
 | 2026-02 | `2026-02.md` | Node 20 EOL April 2026, Jan security CVEs, Node 25 breaking changes, Bun 1.3.x, Deno 2.7                        |
 
 ## Report Structure

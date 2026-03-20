@@ -19,7 +19,7 @@ Run on or near the 1st of each month. Reports are named `YYYY-MM.md`.
 
 ## Reports
 
-| Month   | File         |
-| ------- | ------------ |
-| 2026-03 | `2026-03.md` |
-| 2026-02 | `2026-02.md` |
+| Month   | File         | Summary |
+| ------- | ------------ | ------- |
+| 2026-03 | `2026-03.md` | 24 critical, 12 warning, 13 watch, 117 healthy (166 total) |
+| 2026-02 | `2026-02.md` | |

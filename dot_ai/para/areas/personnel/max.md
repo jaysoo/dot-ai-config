@@ -7,10 +7,11 @@
 
 ## Personal
 
-- **Partner:**
+- **Partner:** Wife (injured ankle in bike accident 2026-03-19, front wheel caught in tram tracks)
 - **Children:**
 - **Pets:**
 - **Hobbies:**
+- **Upcoming Travel:** Georgia trip on hold pending wife's MRI results
 
 ## Preferences
 
@@ -20,7 +21,7 @@
 
 ## Professional
 
-- **Current Focus:** Agentic migrations (~70%), Console/Java maintenance (~30%)
+- **Current Focus:** Polygraph (orchestration owner), Agentic migrations, Console/Java maintenance
 - **Goals:**
 - **Strengths:**
 
@@ -28,8 +29,61 @@
 
 ### Upcoming
 
-- Follow up on concrete changes post-departures
-- Check on workload distribution after team reduction
+- Follow up on wife's ankle MRI results / Georgia travel plans
+- Check on Polygraph progress toward April 7th launch
+- Follow up on tutorial review issues reassigned to Jack
+- Check on Dylan's CLI documentation status
+
+### 2026-03-19
+
+**Personal Updates & Travel**
+
+- Jack back from Galapagos - got severely sunburned despite sunscreen
+  - Day in Bogota, Colombia - tried local coffee (less acidic due to unique climate)
+- Max's wife injured ankle in bike accident (front wheel caught in tram tracks)
+  - Awaiting MRI results tomorrow
+  - Georgia travel plans on hold
+
+**Polygraph Product Development**
+
+- April 7th launch target - aggressive but achievable
+  - Foundation solid and functional
+  - Full Red Panda team allocated
+  - Cross-functional vertical owners: Sean (front-end), James (CLI), Max (orchestration)
+  - Plans established through April 7th and beyond
+- Outstanding business questions unresolved:
+  - Pricing, marketing positioning (NX vs Cloud vs standalone)
+  - Company integration approach
+  - Resource allocation between OSS/Cloud vs Polygraph
+  - Team structure implications for CI team members
+
+**NX Platform Strategy & Maintenance**
+
+- CI team shifting to core performance and intelligence
+  - Targeting 80-90% time on strategic priorities
+- Planned deprecations to reduce surface area:
+  - Webpack, RSPack, Rollup plugin configs
+  - Remix, Nuxt, potentially Vue integrations
+  - Strategy: eject configs to user repos, maintain base configs only
+- Automation initiatives (Jason leading):
+  - GitHub issue quality enforcement with auto-closure
+  - Claude-powered PR generation for community-labeled issues
+  - Slack bots for nightly summaries and issue triage
+- Tutorial restructuring:
+  - Reverting to CNW experience due to decreased tool invocations
+  - Extracting self-healing content into separate CI-focused tutorial
+  - Agentic testing: Claude should complete tutorials zero-friction
+
+**Next Steps**
+
+- Jack to discuss OSS sync format changes with Jason today
+- Max to reassign tutorial review issues to Jack
+- Awaiting Dylan's documentation for CLI changes before production deployment
+- Montreal team gathering in less than one month
+
+---
+
+Chat with meeting transcript: [https://notes.granola.ai/t/0f6e7712-c400-41f7-934c-30d8627d5972-00demib2](https://notes.granola.ai/t/0f6e7712-c400-41f7-934c-30d8627d5972-00demib2)
 
 ### 2026-03-05
 

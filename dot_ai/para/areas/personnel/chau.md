@@ -20,24 +20,27 @@
 
 ## Professional
 
-- **Current Focus:** Self-Healing CI, MCP Tools, Monitor CI
+- **Current Focus:** Polygraph (new app), wrapping up Red Panda
 - **Goals:** L5 promotion (focus on micro-strategy docs, code reviews, leveling up teammates)
 - **Strengths:** Auth expertise, frontend architecture, performance optimization
 
 ## Promotion History
 
 ### L4C (2026-01 Cycle)
+
 - **Decision:** Bumped to L4C, working towards L5
 
 ## L5 Promotion Evidence (Working Towards)
 
 ### 1. Enterprise Auth with SAML + SCIM
+
 - Enabled SAML enterprise customers to use SCIM for provisioning/deprovisioning users
 - Made the permissions framework more robust
 - Addressed significant customer complaints about missing functionality
 - **Impact:** Enables ClickUp, Carvana, SiriusXM, Omnicell to seamlessly manage access to their instance
 
 ### 2. Nx Graph Rework
+
 - Introduced new graph experience with more efficient, intuitive interactions
 - Made graph visualization usable for customers with huge dependency graphs (Fidelity, ClickUp, MECCA) - previous implementation was unusable
 - Improved task graph performance to be actually usable
@@ -46,31 +49,38 @@
 - **Impact:** Visible to ALL Nx users and Nx Cloud customers
 
 ### 3. Enterprise Usage Analytics
+
 - Redesigned enterprise license model to support multiple licenses and track historical data
 - Designed and implemented enterprise usage screen showing contract details across entire period or monthly
 - Shows projections to highlight if customers are on track - helps DPEs/AEs understand credit needs
 - **Impact:** All enterprise customers, DPEs, and AEs
 
 ### 4. Resource Usage Screen
+
 - Designed and created Resource Usage screen to visualize Agent instance CPU/Memory usage from collected metrics
 - Ensured performance with loading/rendering metrics files using workers on both Node.js and browsers
 - **Spinoff:** Worker Pool abstraction can be reused for any stream-related operations (e.g., Terminal Output logs)
 
 ### 5. Auth Ownership & Bug Bounty Response
+
 Handled almost all auth-related issues over the last couple of years, including several bug bounty investigations:
 
 **Session Invalidation Issues:**
+
 - Implemented DB sessions
 - Invalidate sessions after password reset
 - Allow users to invalidate all sessions
 
 **Reset Password Security:**
+
 - Implemented confirmation on reset password from within Nx Cloud UI
 
 **Verify Email Spam:**
+
 - Implemented verify email timestamp to prevent spamming
 
 ### 6. Error Handling Framework Rewrite
+
 - Implemented `NxCloudError` and subclass domain-specific errors (`WorkspaceError`, `OrganizationError`)
 - Implemented `createLoader` and `createAction` abstractions with built-in error handling for `NxCloudError` that plays nice with Remix
   - Ensures Rollbar errors are sent properly without spamming
@@ -78,7 +88,9 @@ Handled almost all auth-related issues over the last couple of years, including 
   - Ensures proper serialization for client-side and server-side errors
 
 ### 7. Framework/Library Stewardship
+
 Keeps Remix/React Router/TypeScript resources up to date and educates team through technical documentation and Looms:
+
 - All `@remix-run/*` packages
 - All `remix-*` packages (remix-auth, remix-utils, etc.)
 - Auth-related packages (auth0 and all strategies: SAML, GitHub, GitLab, Bitbucket)
@@ -87,10 +99,36 @@ Keeps Remix/React Router/TypeScript resources up to date and educates team throu
 
 ### Upcoming
 
-- Time zone expectations conversation (from Victor 1:1 2026-02-09)
-  - Victor mentioned overlap concerns - need to clarify since MO is Central time (1hr behind Eastern)
-  - May be about working hours/availability rather than actual timezone
 - Backup coverage for critical areas Chau owns (knowledge sharing concern)
+- Framework decision follow-up: did they go Remix V2 or greenfield for polygraph?
+
+### 2026-03-19
+
+- **Schedule:** Moving 1:1 to later time slot; next 1:1 in 6 weeks
+- **Productivity & AI Tooling:**
+  - Team showing increased PR commits and code changes — AI tooling having positive impact
+  - Year's focus theme: prioritize important work, reduce maintenance burden
+  - Proposed automations: reject poorly written bug reports, require Claude-processable descriptions, overnight automated fixes with review workflow
+- **Polygraph (New App):**
+  - About to kickstart new frontend application (internal codename "polygraph", external branding TBD)
+  - Naming decisions pending (Yuri/Victor involvement)
+  - Creating new frontend app entry in Notion
+- **Framework Decision:**
+  - Victor wants Remix V2 to reuse existing components/logic (VCS integration, custom workflows, Lotus logic)
+  - Chau prefers avoiding Remix V2 — uncertain longevity, risk of adding more Remix dependencies
+  - Estimated code overlap between apps: 5-10%, not 80% — greenfield opportunity
+  - Deadline pressure: Lotus One in 2 weeks
+  - Fallback option: Remix V2 with future flags
+  - Chau has Claude Opus branch attempting NX Cloud migration to React Router 7 — nearly successful but blocked by NX Remix plugin React Router DOM V6 dependency
+  - Jack: consider removing Remix as official NX plugin
+  - Jack available for framework discussions as needed
+- **Security / Pen Test:**
+  - Completed pen test issue fixes: encryption/decryption for stored tokens, reused existing encryption utils, wrapped Remix's create cookie function
+  - Implementation: one morning + week of monitoring
+- **Red Panda:** Wrapping up to focus on polygraph
+- **Action Items:**
+  - Framework decision pending further evaluation
+  - Jack: consider Remix plugin removal from NX
 
 ### 2026-02-05
 

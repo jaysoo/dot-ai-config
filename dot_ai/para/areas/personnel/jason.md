@@ -28,11 +28,12 @@
 
 ### Upcoming Topics
 
-- **Follow-up from 2026-03-06 1:1:**
-  - V23 deprecation list finalization — Jason + Victor to create removal list, send to DPEs for customer impact
-  - Collect deprecation feedback this month, finalize during onsite for May V23 release
-  - Pylon rollout progress — check DPE adoption (1 PR/week requirement, knowledge base)
-  - Gregory's triage process — how is automated vs human triage balance working?
+- **Follow-up from 2026-03-19 1:1:**
+  - Philip missing blog posts and livestreams — Jack to chase down
+  - AI automation workflow for community-labeled GitHub issues — progress check
+  - Plugin deprecation process for 23.x — status update
+  - Sandbox violation fixes before Ligora rollout — did the rollout proceed?
+  - CNW template updates (CVE + new release) — Jack to complete
 
 - **Craigory morale & retention signal (from 2026-03-05 1:1)**
   - Said he's "less proud of the tool now vs. 2 years ago" — check if this is temporary frustration or deeper disengagement
@@ -49,9 +50,7 @@
 
 - **Leo's L5 career progression** — criteria feel outdated for current team size, needs clearer path
 
-- **AI leverage: test harnesses & issue quality**
-  - Better test harnesses needed so AI agents can be used more effectively (ties into Victor's HDD concept)
-  - Better Linear and GitHub issues — clear repro steps, expected behavior, etc. so issues can be thrown to AI
+- **Jason capacity/burnout** — was at 120% capacity with 120% workload; check if AI automation + plugin deprecation is relieving pressure
 
 - **Recognition culture:** Start giving more anticipatory kudos during projects, not just after completion
 
@@ -93,6 +92,48 @@ Jason's questioning during Madeline's sales update caused concern/confusion amon
 - **Madeline:** "This is 100% taken into consideration. Please put time on my calendar so I can build more trust into the process of pipeline management"
 
 **Takeaway:** The questioning came across as skepticism about whether Sales is prioritizing correctly. This reinforces the earlier topic about perception - his analytical approach can land as challenging the team's competence.
+
+### 2026-03-19
+
+**AI Automation for GitHub Issues:**
+- Jason has 123 open issues, 13 labeled as community (~1/6)
+- Claude successfully handling simple issues — 4-5 PRs opened, 2 merged easily
+- Works for straightforward fixes, struggles with complex problems
+- Proposal: label easy issues as "community" for AI processing
+- Human-supervised automation — kick off AI at night, review results in morning
+- Could reduce developer workload from 6/6 issues to 5/6
+
+**Plugin Maintenance Strategy:**
+- React dominates plugin usage, RS Pack at 11 events
+- Deprecation plan for 23.x: mark low-usage plugins as deprecated, provide migration generators for webpack/RS Pack configs
+- Full removal in 24.x (or 25.x)
+- Focus shift: core development over maintenance of niche plugins
+- No new lint rules unless Miro owns maintenance
+- Eject configurations to user repos where possible
+- Community maintainer program considered but deemed too complex
+
+**Performance and CI Issues:**
+- CI consistently takes 1+ hours, creating 2-3 hour release cycles
+- Performance benchmarks currently poor, would have been P0 priority previously
+- Target defaults project significantly overdue
+- Sandbox mode has violations on every NX run
+- Ligora rollout planned next week despite issues — need aggressive warning suppression for initial rollout
+
+**Team Capacity and Burnout:**
+- Jason feeling overwhelmed with 100+ assigned issues
+- Working at 120% capacity with 120% workload assigned
+- Key frustrations: CI reliability, GitHub issue volume, constant context switching
+- Marketing support gaps: Philip missing, no blog posts or livestreams
+- Colum departure attributed to workload pressure
+
+**Action Items:**
+- [ ] Jack: Chase down Philip on missing blog posts and livestreams
+- [ ] Jack: Update Create NX Workspace templates (CVE + new release)
+- [ ] Jason: Push harder on sandbox violation fixes before Ligora rollout
+- [ ] Team: Implement AI automation workflow for community-labeled issues
+- [ ] Team: Begin plugin deprecation process for 23.x release
+
+[Granola notes](https://notes.granola.ai/t/8045c305-ee8a-495c-93a9-7304e66a78af-00demib2)
 
 ### 2026-03-06
 

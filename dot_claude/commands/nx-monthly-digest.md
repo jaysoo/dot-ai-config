@@ -18,6 +18,10 @@ allowed-tools:
   - Glob
   - Write
   - Task
+  - mcp__pylon__search_issues
+  - mcp__pylon__search_accounts
+  - mcp__pylon__get_issue
+  - mcp__pylon__get_account
 ---
 
 # Nx Monthly Digest
@@ -46,7 +50,7 @@ summarize down to the final output.
 
 ### Pass 1: Broad Data Collection (parallel)
 
-Collect raw data from all four sources **in parallel**:
+Collect raw data from all five sources **in parallel**:
 
 - **Sources 1 and 3** (GitHub repos): Use Bash `gh` commands directly (fast).
 - **Source 2** (Cloud changelog): **Launch a Task subagent** — there are often
@@ -54,6 +58,8 @@ Collect raw data from all four sources **in parallel**:
 - **Source 4** (Linear): **Launch a Task subagent** — multiple paginated API
   calls are needed across teams. This subagent should pull ALL completed
   issues (not just counts), all project updates, and all status changes.
+- **Source 5** (Pylon): Pull support tickets for enterprise/PoV customers
+  directly via Pylon MCP (fast — no subagent needed).
 
 Additionally, check for **blog posts** published during the target month:
 
@@ -61,8 +67,8 @@ Additionally, check for **blog posts** published during the target month:
 - Check the nx repo for blog-related commits if applicable.
 
 Do NOT wait for one source before starting another. Launch subagents for
-Sources 2 and 4 immediately, then collect Sources 1 and 3 via Bash while
-the subagents work in the background.
+Sources 2 and 4 immediately, then collect Sources 1, 3, and 5 via Bash/MCP
+while the subagents work in the background.
 
 ### Pass 2: Theme Deep Dives (parallel subagents)
 
@@ -104,7 +110,7 @@ With all theme briefs in hand:
 
 ## Data Sources
 
-Collect data from ALL four sources. If any source is unavailable, note it
+Collect data from ALL five sources. If any source is unavailable, note it
 and continue with what you have. Never block the entire digest on one source.
 
 ---
@@ -225,6 +231,48 @@ If Linear MCP is not available, skip and note it.
 
 ---
 
+### Source 5: Pylon — Customer Support Tickets
+
+Use the Pylon MCP to pull support tickets for enterprise and PoV customers.
+This surfaces real customer friction that should be flagged in the digest.
+
+1. **Identify customer accounts to query.** Pull from:
+   - Enterprise PoV customers found in Linear projects (e.g., Anaplan, CIBC,
+     MNP.ca, Rocket Mortgage, Cisco, McGraw Hill, Caseware)
+   - Major enterprise customers (e.g., SiriusXM, ClickUp, Moderna, Cloudinary,
+     Mimecast, Mailchimp)
+   - Any customer names mentioned in Linear issues during the month
+
+2. **For each customer**, search for issues created during the target month:
+   ```
+   mcp__pylon__search_issues(account: "<name>", created_after: "<month-start>")
+   ```
+   Run these searches **in parallel** — one call per customer.
+
+3. **For any customer with tickets**, fetch full issue details using
+   `mcp__pylon__get_issue` for each ticket. Extract:
+   - Title and description (what the customer is struggling with)
+   - Priority (High/Medium/Low)
+   - State (open, closed, waiting on customer, etc.)
+   - Linked Linear issues or GitHub issues (cross-reference with other sources)
+   - Tags (e.g., "Bug", "Feature Request")
+
+4. **Surface in the digest:**
+   - In the **cross-functional digest**: Add a "Support activity" subsection
+     under the Enterprise section. Flag high-priority tickets, open bugs,
+     and feature requests. This is critical context for Sales and CS.
+   - In the **technical changelog**: Link Pylon tickets to related Linear
+     issues or PRs where applicable.
+   - In **"By the Numbers"**: Include total Pylon tickets across enterprise
+     customers.
+
+**Key fields to extract**: customer name, ticket count, priority, state,
+linked Linear/GitHub issues, themes (what are customers asking about?).
+
+If Pylon MCP is not available, skip and note it.
+
+---
+
 ## Theme Detection & Clustering
 
 **CRITICAL:** Do NOT organize output by product (CLI / Cloud / Infra).
@@ -273,8 +321,11 @@ activity. They should never be folded into other sections or omitted:
 - If a GitHub release commit references a Linear issue ID (e.g., `#NX-1234`),
   link them together.
 - If a cloud changelog entry maps to a Linear project, note the connection.
-- If a Pylon/support ticket is referenced in any Linear issue, flag the
-  change as **customer-escalated** and note which customer or ticket.
+- If a Pylon ticket is linked to a Linear issue (check `external_issues`
+  field in Pylon response), flag the change as **customer-escalated** and
+  note which customer and ticket.
+- If a Pylon ticket describes a problem that maps to a fix in the CLI
+  releases or Cloud changelog, connect them even if not formally linked.
 
 ---
 
@@ -330,6 +381,7 @@ DO now that they couldn't before?}
 | CLI releases            | N                |
 | Cloud releases          | N                |
 | Linear issues completed | N across M teams |
+| Pylon support tickets   | N across M customers |
 
 ## Questions? Contact
 
@@ -354,7 +406,7 @@ with PR-level detail.
 # Nx Platform Changelog — {Month Year}
 
 > **Sources:** Nx CLI GitHub releases, Nx Cloud public changelog,
-> nrwl/cloud-infrastructure commits, Linear.
+> nrwl/cloud-infrastructure commits, Linear, Pylon support tickets.
 
 ## {Theme 1: e.g., "Task Sandboxing & Hermetic Builds"}
 

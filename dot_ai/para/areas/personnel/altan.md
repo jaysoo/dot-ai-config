@@ -34,12 +34,13 @@
 - Promotion to L6 in June — vsavkin will communicate to Altan first, follow up on how it went
 - Follow up on Prometheus communication with Raresh and Caleb
 - Sandboxing progress check (top priority)
-- Ocean setup improvements - Raw as potential owner
+- Ocean setup improvements - Rares as potential owner
 - March cycle planning for Ocean dev setup
 
 ### 2026-02-19
 
 **CI/Scheduling Issues**
+
 - 3 tasks not starting despite being ready, most agents shut down with only 2 remaining
 - Tasks not running on extra large agent
 - Recent whack-a-mole issues mostly resolved, fixes coming in upcoming PRs
@@ -47,6 +48,7 @@
 - NPM audit endpoint was down this morning, caused Ocean Sea breakage (NPM didn't report outage)
 
 **Unplanned Work Review**
+
 - Two high priority unplanned items identified this quarter
 - Lighter load than September complaints
 - DPE and support labeled issues should be marked high priority
@@ -54,6 +56,7 @@
 - Need to mark additional DPE/support issues as high priority
 
 **Prometheus Metrics Work**
+
 - Engineering paused until customer feedback received
 - Caleb already provided list of desired metrics from ClickUp and PayFit
 - Two-part effort:
@@ -68,6 +71,7 @@
 - Next steps: Follow up with Raresh and Caleb for communication effort
 
 **Ocean Setup Improvements**
+
 - Victor's feedback after returning from year off dev work
 - Nicole has no time to fix everything (shouldn't be solely responsible)
 - Nicole created pre-task execution hook for 1Password loading
@@ -77,6 +81,7 @@
 - Dependencies: Sandboxing needs to reach acceptable state first
 
 **Planning & Project Focus Discussion**
+
 - Jeff's email about engineering direction and company goals
 - Need better connection between projects and revenue/customer impact
 - Engineering team historically shielded from sales/revenue concerns
@@ -92,6 +97,7 @@
 - Customer requests and POV ties make stronger arguments for projects
 
 **Action Items**
+
 - [ ] Jack: Follow up on Prometheus communication with Raresh and Caleb
 - [ ] Altan: Coordinate with Raresh and Jason on sandboxing (Altan out next week)
 - [ ] Sandboxing remains top priority
@@ -110,6 +116,7 @@
 ### 2026-02-05
 
 **Tracing Feature Progress**
+
 - Raj got tracing working on Snapshot
   - Successfully writing reads and writes
   - Infrastructure running properly
@@ -127,6 +134,7 @@
   - Advantage: Won't kill process immediately on offending file read, allowing more iterations to debug
 
 **Team Metrics & Project Management**
+
 - Creating PR for metrics dashboard
   - Blue/cold data should be correct
   - Everything showing red due to Q1 comparison vs last year
@@ -144,6 +152,7 @@
   - Use AI to categorize Linear tasks by effort (5-minute vs 1-week tasks)
 
 **Resource Allocation & Planning**
+
 - Gradle plugin maintenance discussion
   - Currently unplanned work consuming significant time
   - Louie spending too much time on non-critical Gradle issues
@@ -155,6 +164,7 @@
   - Quolka team (Altan, Louie, Raj) to align on priorities and capacity before larger meeting
 
 **Action Items**
+
 - [ ] Add Cluster repo to metrics tracking
 - [ ] Schedule planning meeting (before end of Feb, ideally in 2 weeks)
 - [ ] Quolka team alignment on priorities before larger meeting
@@ -168,17 +178,21 @@
   https://github.com/nrwl/WeekInReview
 
 ### 2026-01-08
+
 **Quoka Team Status:**
+
 - Team performing well, kickoffs completed for all first projects
 - Declaring bankruptcy on leftover Orca projects (reprioritized or changing hands)
 - Real efforts begin next week; no major fires with new releases
 
 **Tracing Project:**
+
 - Key coordination between Rares, Craigory, and Jason
 - Need 80% certainty on approach; deadline June 15-20th
 - Milestones established, Craigory's team already started
 
 **Team Performance Metrics (2026):**
+
 - Five core metrics using SPACE framework:
   1. PR Throughput (monitoring post-layoff regression)
   2. AI Usage Efficiency (tokens vs output)
@@ -187,14 +201,15 @@
   5. P1 Issue Resolution (continue Linear tracking)
 
 **Action Items:**
+
 - [ ] Altan & Louis: Identify 2-3 key metrics for team (end of January)
 - [ ] Add Jack and Victor to Quoka channel
 
 ### 2025-12-12
+
 - Working on continuous non-cacheable DTE
 - Ship these things but dogfood is slow
 - Generally okay with Red Panda work but feels like he doesn't add much value beyond execution
 - Would like some time to do team multiplier work
 
 ## Random Notes
-
