@@ -10,6 +10,8 @@ Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse
 - **Always edit in `~/projects/dot-ai-config/dot_claude/`** then sync
 - Skills: `~/projects/dot-ai-config/dot_claude/skills/` (NOT `~/.claude/skills/`)
 - Commands: `~/projects/dot-ai-config/dot_claude/commands/` (NOT `~/.claude/commands/`)
+- **If about to edit `~/.claude/` files**, invoke the `dot-claude-guard` skill first
+- **After invoking any skill or command**, update `~/projects/dot-ai-config/USAGE.md` with the invocation date and count
 
 ### .ai Folder Symlink (MUST CHECK FIRST)
 ```bash

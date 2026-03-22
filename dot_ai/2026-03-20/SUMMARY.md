@@ -55,3 +55,22 @@ Nothing systemic. Clusters:
 - **npm errors** (~5) — ERESOLVE peer dep conflicts, deprecated warnings
 - **Custom preset tarball** (~4) — one user repeatedly hitting corrupted tarball
 - **Unsupported Node** (~2) — odd-major Node versions (23.x, 24.x)
+
+## DOC-418: nx-dev Build In-Place and Target Cleanup
+
+Continued work on PR #34730 to fix nx-dev build and simplify project targets.
+
+### Changes Made
+- **Rebased on master**, squashed 4 commits into one clean `fix(nx-dev)` commit, pushed
+- **Fixed `deploy-build:netlify`** — reverted from running `next build` directly (which broke module resolution with `useContext` errors) back to using `nx run nx-dev:build`
+- **Fixed `check-links` dependency** — changed from `nx-dev:next:build` to `nx-dev:sitemap` so `sitemap.xml` exists when link checker runs
+- **Added `serve` target** — combines docs watcher + `next dev` in parallel (replaces old `serve-docs`)
+- **Added `/` → `/blog` redirect** in `next.config.js` (temporary 302)
+- **Investigated faro-web-sdk `useContext` error** — turned out to be caused by wrong cwd for `next build`, not the import itself. Reverted unnecessary dynamic import change.
+
+### Key Debugging Insight
+Running `next build` from `cd nx-dev/nx-dev` (inside the project dir) causes React context errors because module resolution differs from running at workspace root. The `@nx/next:build` executor and the `nx:run-commands` with `cwd` handle this correctly.
+
+- PR: https://github.com/nrwl/nx/pull/34730
+- CI: Passing (https://staging.nx.app/cipes/69bd8eac0444357a072e3e91)
+- Status: In progress — uncommitted local changes (redirect, serve target, check-links fix) still need to be pushed

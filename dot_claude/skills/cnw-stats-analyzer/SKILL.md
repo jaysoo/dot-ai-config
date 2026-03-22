@@ -12,6 +12,47 @@ description: >
 
 Analyze create-nx-workspace telemetry from the `commandStats` MongoDB collection.
 
+## Default Output
+
+**Always break down results per day** unless the user explicitly asks for totals only. All dates must be in **EST/EDT** using `timezone: "America/New_York"` in `$dateToString`.
+
+The default report includes these sections (all per-day):
+
+1. **Daily Completion Funnel** — starts, precreate, complete, error, cancel counts with conversion rates (precreate/starts, complete/starts, error/starts)
+2. **Daily Cloud Adoption** — `nxCloudArg` from complete events (skip, never, yes, github, gitlab, azure, bitbucket) with cloud opt-in rate (yes + CI providers / completes)
+3. **Daily Error Breakdown** — error codes by day as both counts and **rates (% of that day's starts)**
+4. **INVALID_WORKSPACE_NAME Detail** — actual workspace names attempted, grouped by name and day, sorted by count
+5. **WORKSPACE_CREATION_FAILED Detail** — categorize error messages by pattern (see categorization list below), grouped by pattern and day
+6. **Package Manager Distribution** — from precreate events
+7. **Preset/Template Distribution** — from precreate events (top 15)
+8. **Nx Version Distribution** — from start events
+9. **Flow Variant Distribution** — from start events
+10. **VCS Push Status** — from complete events
+
+### WORKSPACE_CREATION_FAILED Categorization
+
+When reporting WORKSPACE_CREATION_FAILED errors, classify each `errorMessage` into these categories:
+
+| Pattern to match in errorMessage | Category |
+|----------------------------------|----------|
+| `ERESOLVE` | ERESOLVE dependency conflict |
+| `native-bindings` or `native binding` | Native bindings not found (Termux/Android) |
+| `ENOENT` | ENOENT (file/command not found) |
+| `ETARGET` | ETARGET (version not found) |
+| `EACCES` | EACCES (permission denied) |
+| `ETIMEDOUT`, `ECONNRESET`, `EAI_AGAIN`, `ENOTFOUND` | Network error |
+| `startsWith` | pnpm null startsWith bug |
+| `deprecated` | npm deprecation warning (false positive) |
+| `CommaExpected` or `parse` | JSON parse error |
+| `spawnSync` | spawnSync ENOENT |
+| `EPERM` | EPERM (Windows permission) |
+| `ERR_PNPM` | pnpm error |
+| `Cannot find module` | Cannot find module |
+| `ENOMEM` or `heap` | Out of memory |
+| `must provide string spec` | npm must provide string spec |
+| `does not match the schema` | Schema validation error |
+| (none of the above) | Other: (first 120 chars of message) |
+
 ## Default Filters
 
 **Always apply** these filters to all queries unless the user explicitly asks to include them:
@@ -23,7 +64,7 @@ Analyze create-nx-workspace telemetry from the `commandStats` MongoDB collection
 **Standard base filter for all queries:**
 ```js
 const base = [
-  { meta: { $regex: versionRegex } },
+  { createdAt: { $gte: startDate, $lte: endDate } },
   { isCI: false },
   { meta: { $not: { $regex: "contentful" } } },
   { meta: { $not: { $regex: "\"aiAgent\":true" } } }
@@ -32,6 +73,13 @@ const base = [
 ```
 
 If the user asks for AI or CI stats specifically, run those as a **separate breakdown** alongside the main (filtered) numbers.
+
+### Date Range Handling
+
+- Convert user-provided dates to UTC, accounting for EST/EDT offset (EDT = UTC-4, EST = UTC-5)
+- "Last N days" includes today's partial day
+- Always use `America/New_York` timezone in `$dateToString` for grouping by EST date
+- When user says "EST", use ET (handles DST automatically with `America/New_York`)
 
 ## Connection
 
@@ -67,6 +115,12 @@ mongosh "mongodb+srv://readOnlyUser:${PASS}@nrwl-api-prod.dhknt.mongodb.net/nrwl
 # Staging
 PASS=$(gcloud secrets versions access latest --project="nxcloudoperations" --secret="staging-mongodb-readonly-user-pass")
 mongosh "mongodb+srv://readOnlyUser:${PASS}@nrwl.bdi7j.mongodb.net/nrwl-api"
+```
+
+Save the URI to `/tmp/cnw-mongo-uri.txt` for reuse across queries:
+```bash
+PASS=$(gcloud secrets versions access latest --project="nxcloudoperations" --secret="production-mongodb-readonly-user-pass-na")
+echo "mongodb+srv://readOnlyUser:${PASS}@nrwl-api-prod.dhknt.mongodb.net/nrwl-api" > /tmp/cnw-mongo-uri.txt
 ```
 
 For large exports use `mongoexport` (streams without memory issues) instead of `mongosh`.
@@ -111,12 +165,25 @@ For large exports use `mongoexport` (streams without memory issues) instead of `
 | `TEMPLATE_CLONE_FAILED`     | Git clone of template repo failed         |
 | `CI_WORKFLOW_FAILED`        | CI workflow generation failed             |
 | `DIRECTORY_EXISTS`          | Target directory already exists           |
+| `INVALID_WORKSPACE_NAME`    | Name doesn't match validation (most common: `"."`) |
+| `INVALID_PACKAGE_MANAGER`   | Unsupported or missing package manager    |
+| `INVALID_PRESET`            | Preset name not recognized                |
 
 ### VCS Push Status (`pushedToVcs` in `complete` events)
 
 - `PushedToVcs` / `FailedToPushToVcs` / `OptedOutOfPushingToVcs` / `SkippedGit`
 
 **Note**: `FailedToPushToVcs` is `type: "complete"`, not `type: "error"`.
+
+## Query Strategy
+
+Run queries in **two batches** to avoid timeout and keep output manageable:
+
+**Batch 1** (single mongosh call): Daily funnel, error breakdown by code, package manager, preset/template, Nx version, flow variant, VCS push, CI setup prompt, Nx Cloud arg by day.
+
+**Batch 2** (single mongosh call): INVALID_WORKSPACE_NAME detail (names by day), WORKSPACE_CREATION_FAILED categorized patterns by day, sample UNKNOWN errors.
+
+Use `$function` with `lang: "js"` for parsing JSON meta fields in aggregation pipelines.
 
 ## Common Queries
 
@@ -148,7 +215,12 @@ db.commandStats.aggregate([
 
 ```bash
 mongosh "$URI" --quiet --eval '
-db.commandStats.find({ meta: { $regex: "22.5.4" }, meta: { $regex: "\"type\":\"error\"" } })'
+db.commandStats.find({
+  $and: [
+    { meta: { $regex: "\"nxVersion\":\"22\\.5\\.4\"" } },
+    { meta: { $regex: "\"type\":\"error\"" } }
+  ]
+})'
 ```
 
 ### Export for local analysis
@@ -214,4 +286,13 @@ Bare version strings match unintended versions (e.g. `22.6.0` matches inside `22
 
 // ✅ Anchored to the JSON field name
 { meta: { $regex: "\"nxVersion\":\"22\\.6\\.0\"" } }
+```
+
+### Projection exclusion/inclusion cannot be mixed
+
+```js
+// ❌ Fails — can't mix inclusion (meta:1) with exclusion (_id:0)
+{ projection: { meta: 1, createdAt: 1, _id: 0 } }
+
+// ✅ Just use inclusion fields and accept _id, or use aggregation $project
 ```
