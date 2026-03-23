@@ -142,6 +142,23 @@ For large exports use `mongoexport` (streams without memory issues) instead of `
 
 **Legacy CSV** (pre-22.2.2): `"enable-ci"`, `"start"`, `"which-ci-provider,github,FailedToPushToVcs"`
 
+Starting ~Nov 2025 (22.1.x), a version prefix was added: `"22.1.3,which-ci-provider,github,FailedToPushToVcs"` and `"22.1.3,start"`.
+
+**CRITICAL**: When querying legacy CSV completions, always use `{ meta: { $regex: "which-ci-provider" } }` (contains), NOT `{ meta: { $regex: "^which-ci-provider," } }` (starts-with). The starts-with pattern misses version-prefixed rows, which undercounts Nov 2025 by ~6,000 events. To extract the cloud arg from version-prefixed rows, find the index of `"which-ci-provider"` in the comma-split array and take the next element:
+
+```js
+// ✅ CORRECT - handles both "which-ci-provider,github,..." and "22.1.3,which-ci-provider,github,..."
+{ $function: {
+  body: function(meta) {
+    var parts = meta.split(",");
+    var idx = parts.indexOf("which-ci-provider");
+    return idx >= 0 && idx+1 < parts.length ? parts[idx+1] : "unknown";
+  },
+  args: ["$meta"],
+  lang: "js"
+}}
+```
+
 **JSON** (22.2.2+, Dec 2025 onward): Stringified JSON with `type` field.
 
 ### Event Lifecycle (`type` field)
@@ -153,6 +170,21 @@ For large exports use `mongoexport` (streams without memory issues) instead of `
 | `complete`  | Workspace created            | `pushedToVcs`, `nxCloudArg`, `connectUrl`, `setupCIPrompt` |
 | `error`     | Creation threw exception     | `errorCode`, `errorMessage`, `errorFile`                   |
 | `cancel`    | User cancelled (Ctrl+C)      | `flowVariant`                                              |
+
+### Telemetry Feature Timeline
+
+Understanding when features were introduced is critical for cross-month comparisons:
+
+| Feature | First Appeared | Notes |
+| ------- | -------------- | ----- |
+| Completion events only | Pre-Nov 2025 | 1 event per CNW invocation — completions **are** total usage |
+| `start` events (funnel) | **Nov 13, 2025** | Multiple events per invocation from this point |
+| Version prefix in CSV | ~Nov 2025 (22.1.x) | e.g. `"22.1.3,which-ci-provider,..."` |
+| JSON meta format | Dec 2025 (22.2.2) | Replaces CSV; Dec is mixed ~64% JSON / 36% CSV |
+| `aiAgent` field | Feb 2026 | 0 AI events in Jan 2026 |
+| `INVALID_WORKSPACE_NAME` error code | Mar 18, 2026 | New categorization, not a regression |
+
+**IMPORTANT for cross-month comparisons**: Before Nov 2025, completions = total invocations. After Nov 2025, you need `start` events for total invocations. Comparing Oct completions to Jan completions is **not** apples-to-apples — use Jan starts instead.
 
 ### Error Codes
 

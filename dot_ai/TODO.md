@@ -45,6 +45,12 @@
     - Files: `.ai/2026-03-04/SUMMARY.md`
 
 ## Pending
+- [ ] CNW: Add "use `nx init` instead" hint for INVALID_WORKSPACE_NAME with `.` (2026-03-23 14:00)
+  - 92% of INVALID_WORKSPACE_NAME errors are `.` or `./` — users trying to init in current dir
+  - Update validation error message to suggest `nx init` when name is `.`, `./`, `..`, or absolute path
+  - Also covers full paths like `/tmp/...`, `/Users/...`
+  - ~309 errors/week (Mar 18-23), became #1 error code
+- [ ] Review PR #34890 (2026-03-23 08:45)
 - [ ] Look at removing push to github since it errors sometimes (2026-03-22 12:11)
   - Evaluate whether the "auto-push repo" feature in Nx Cloud onboarding actually provides meaningful value to users. If most users don't expect or want their repos pushed automatically, we should remove or de-prioritize that flow and instead optimize the cloud onboarding experience around the assumption that repos are connected manually — simplifying setup steps and reducing confusion.
 - [ ] Chase down Philip on missing blog posts and livestreams (2026-03-20 09:00)

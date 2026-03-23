@@ -1,19 +1,19 @@
 {
-  "lastRun": "2026-03-20T15:00:00Z",
-  "lastWeeklyReport": "2026-W12",
+  "lastRun": "2026-03-23T16:00:00Z",
+  "lastWeeklyReport": "2026-W13",
   "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
   "findings": {
-    "dependencies": { "critical": 24, "warning": 12, "watch": 13 },
-    "supply-chain": { "status": "clear", "cves": 0, "latest-nx": "22.6.0" },
-    "api-surface": { "high": 5, "medium": 10, "low": 5 },
+    "dependencies": { "critical": 24, "warning": 13, "watch": 12 },
+    "supply-chain": { "status": "clear", "cves": 0, "latest-nx": "22.6.1" },
+    "api-surface": { "high": 5, "medium": 10, "low": 6 },
     "competitors": { "highlights": 7 },
-    "frameworks": { "compat-risks": 4 },
+    "frameworks": { "compat-risks": 3 },
     "runtimes": { "action-items": 3 },
     "ai-landscape": { "highlights": 10, "opportunities": 6, "risks": 5 },
-    "community": { "top-pain-points": 5, "resolution-rate": "60%", "mf-pain": true, "vite8-demand": true },
-    "capacity": { "high-risk-people": 3, "overdue-items": 18 },
-    "project-health": { "zombies": 4, "overdue-projects": 13, "zombie-escalation": 4 },
-    "customer-deps": { "churned": 1, "cooling": 0, "concentration-risks": 2 }
+    "community": { "top-pain-points": 5, "resolution-rate": "60%", "open-issues": 468, "vite8-demand": true },
+    "capacity": { "high-risk-people": 4, "overdue-items": 20 },
+    "project-health": { "zombies": 2, "overdue-projects": 13, "zombie-escalation": 5 },
+    "customer-deps": { "churned": 1, "cooling": 1, "concentration-risks": 2 }
   }
 }

@@ -19,6 +19,7 @@ project health, and customer dependencies.
 ## Latest Reports
 
 ### Weekly
+- [2026-W13](./weekly/2026-W13.md)
 - [2026-W12](./weekly/2026-W12.md)
 - [2026-W10](./weekly/2026-W10.md)
 - [2026-W09](./weekly/2026-W09.md)

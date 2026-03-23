@@ -16,7 +16,7 @@ Provide structured intelligence on the competitive landscape and emerging patter
 
 | Month    | File                       | Lookback Window          |
 | -------- | -------------------------- | ------------------------ |
-| Mar 2026 | [2026-03.md](./2026-03.md) | 2026-01-19 to 2026-03-20 |
+| Mar 2026 | [2026-03.md](./2026-03.md) | 2026-01-22 to 2026-03-23 |
 | Feb 2026 | [2026-02.md](./2026-02.md) | 2025-12-29 to 2026-02-27 |
 
 ## Structure

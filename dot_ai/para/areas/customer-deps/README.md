@@ -5,4 +5,4 @@ engagement health, DPE capacity, and concentration risk.
 
 ## Reports
 
-- [2026-03](./2026-03.md) — Celonis CPU deadline TODAY, Emeria Prometheus 3 days overdue, Capital One S3 blocker, Caseware elevated (SAML/SCIM done), Caesars churned. Refreshed 2026-03-20.
+- [2026-03](./2026-03.md) — Celonis CPU 3d overdue, Emeria Prometheus 6d overdue, RBC Maven 25d overdue, Medianet 31d overdue, Caseware SAML/SCIM fully done, Capital One S3 blocker, Caesars churned. Refreshed 2026-03-23.

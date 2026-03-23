@@ -8,3 +8,5 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 |------|------|-------------|-------|
 | cnw-stats-analyzer | skill | 2026-03-22 | 1 |
 | dot-claude-guard | skill | 2026-03-22 | 1 |
+| scan-and-audit | skill | 2026-03-23 | 1 |
+| scan-competitors | command | 2026-03-23 | 1 |
