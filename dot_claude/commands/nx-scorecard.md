@@ -34,9 +34,19 @@ Use `gh` CLI for all GitHub queries. The repo is `nrwl/nx`.
 gh api "search/issues?q=repo:nrwl/nx+is:issue+state:open+created:2017-09-01..{LAST_DAY}&per_page=1" --jq '.total_count'
 ```
 
+**Open issues created this month:**
+```bash
+gh api "search/issues?q=repo:nrwl/nx+is:issue+state:open+created:{FIRST_DAY}..{LAST_DAY}&per_page=1" --jq '.total_count'
+```
+
 **Open high-priority issues (snapshot):**
 ```bash
 gh api 'search/issues?q=repo:nrwl/nx+is:issue+state:open+created:2017-09-01..{LAST_DAY}+label:"priority: high"&per_page=1' --jq '.total_count'
+```
+
+**Open high-priority issues created this month:**
+```bash
+gh api 'search/issues?q=repo:nrwl/nx+is:issue+state:open+created:{FIRST_DAY}..{LAST_DAY}+label:"priority: high"&per_page=1' --jq '.total_count'
 ```
 
 **Closed issues (during target month):**
@@ -54,6 +64,11 @@ gh api 'search/issues?q=repo:nrwl/nx+is:issue+state:closed+closed:{FIRST_DAY}..{
 **Total open PRs (snapshot):**
 ```bash
 gh api "search/issues?q=repo:nrwl/nx+is:pr+state:open&per_page=1" --jq '.total_count'
+```
+
+**Open PRs created this month:**
+```bash
+gh api "search/issues?q=repo:nrwl/nx+is:pr+state:open+created:{FIRST_DAY}..{LAST_DAY}&per_page=1" --jq '.total_count'
 ```
 
 ### 3. Linear High-Priority Misc Issues
@@ -104,12 +119,12 @@ Print a clean markdown table with the results:
 
 | Metric | Value |
 |--------|-------|
-| Open issues | {count} |
-| Open high-priority issues | {count} |
+| Open issues | {total} ({this_month} this month) |
+| Open high-priority issues | {total} ({this_month} this month) |
 | Closed issues | {count} |
 | Closed high-priority issues | {count} |
 | Open Linear high-priority misc issues | {count} |
-| Total PRs (open) | {count} |
+| Total PRs (open) | {total} ({this_month} this month) |
 | Total monthly downloads | {formatted, e.g. 36.0M} |
 | YoY growth (monthly downloads) | {percent}% |
 ```
