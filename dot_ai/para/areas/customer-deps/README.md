@@ -1,5 +1,7 @@
 # Customer Dependency Analysis
 
+**Priority: LOW** | Cadence: Monthly (escalate on churn risk or key customer escalation)
+
 Monthly mapping of customer dependencies on strategic features. Tracks
 engagement health, DPE capacity, and concentration risk.
 

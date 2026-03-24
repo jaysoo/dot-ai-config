@@ -1,5 +1,7 @@
 # Community & Customer Sentiment
 
+**Priority: LOW** | Cadence: Monthly (escalate on viral negative thread or complaint pattern)
+
 Monthly scan of Nx platform community health, covering GitHub Issues, Discussions, npm downloads, Stack Overflow, and customer signals (Pylon).
 
 ## Reports

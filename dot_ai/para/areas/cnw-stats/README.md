@@ -1,5 +1,7 @@
 # CNW Stats Tracking
 
+**Priority: HIGH** | Cadence: Weekly (experiments + stats review)
+
 Ongoing tracking of create-nx-workspace (CNW) telemetry from the `commandStats` MongoDB collection.
 
 ## Purpose

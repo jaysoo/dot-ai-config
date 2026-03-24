@@ -60,19 +60,21 @@ All orchestrator output goes to `.ai/para/areas/scan-audit/`.
     └── ...
 ```
 
-Individual scan reports live in their own PARA areas (managed by each command):
+Scan reports live in `scans/` sub-directories (consolidated from former top-level areas):
 
-**External scans (GitHub, npm, web):**
-- `.ai/para/areas/dependency-health/`
+**External scans (in `scan-audit/scans/`):**
+- `scans/supply-chain-security/` — **HIGH PRIORITY, WEEKLY CADENCE**
+- `scans/dependency-health/`
+- `scans/api-surface-audit/`
+- `scans/ai-dev-landscape/` (includes archived ai-trends)
+- `scans/framework-ecosystem/`
+- `scans/runtime-tracking/`
+
+**Still top-level areas (referenced independently):**
 - `.ai/para/areas/competitor-intel/`
-- `.ai/para/areas/api-surface-audit/`
-- `.ai/para/areas/supply-chain-security/`
 - `.ai/para/areas/community-sentiment/`
-- `.ai/para/areas/framework-ecosystem/`
-- `.ai/para/areas/runtime-tracking/`
-- `.ai/para/areas/ai-dev-landscape/`
 
-**Internal audits (Linear MCP):**
+**Internal audits (Linear MCP, still top-level):**
 - `.ai/para/areas/team-capacity/`
 - `.ai/para/areas/project-health/`
 - `.ai/para/areas/customer-deps/`

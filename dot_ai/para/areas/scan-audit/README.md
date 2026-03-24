@@ -1,5 +1,7 @@
 # Scan & Audit
 
+**Priority: LOW (orchestrator)** — but **Supply Chain Security is HIGH (weekly)**
+
 Weekly intelligence scans across the Nx platform. Covers dependency health,
 supply chain security, API drift, community sentiment, competitor activity,
 framework ecosystem, runtime changes, AI tool landscape, team capacity,
@@ -16,6 +18,15 @@ project health, and customer dependencies.
 /scan-and-audit competitors frameworks  # Specific scans
 ```
 
+## Supply Chain Security — WEEKLY CADENCE
+
+**This is the one scan that MUST run every week.** Don't let it slip to monthly.
+
+- Location: `scans/supply-chain-security/`
+- Checks: npm audit, 2FA enforcement, OIDC/SLSA provenance, typosquat monitoring
+- Scope: 39 publishable Nx CLI packages
+- Action: Verify scan ran + review findings weekly via `/plan-week`
+
 ## Latest Reports
 
 ### Weekly
@@ -27,17 +38,28 @@ project health, and customer dependencies.
 ### Monthly Digests
 - [2026-02](./monthly-digests/2026-02-crossfunctional.md) — Task Sandboxing, Self-Healing CI GA, Polygraph AI, 454 issues across 6 teams
 
-## External Scans (GitHub, npm, web)
-- [Dependency Health](../dependency-health/)
-- [Supply Chain Security](../supply-chain-security/)
-- [API Surface Audit](../api-surface-audit/)
-- [Community Sentiment](../community-sentiment/)
-- [Competitor Intel](../competitor-intel/)
-- [Framework Ecosystem](../framework-ecosystem/)
-- [Runtime Tracking](../runtime-tracking/)
-- [AI Dev Landscape](../ai-dev-landscape/)
+## Scan Sub-Areas (scans/)
+
+All scan reports live in `scans/` sub-directories:
+
+| Sub-Area | Cadence | Priority Within |
+|----------|---------|----------------|
+| [Supply Chain Security](./scans/supply-chain-security/) | **Weekly** | **HIGH** |
+| [Dependency Health](./scans/dependency-health/) | Monthly | Medium |
+| [API Surface Audit](./scans/api-surface-audit/) | Monthly | Medium |
+| [AI Dev Landscape](./scans/ai-dev-landscape/) | Monthly | Low |
+| [Framework Ecosystem](./scans/framework-ecosystem/) | Monthly | Low |
+| [Runtime Tracking](./scans/runtime-tracking/) | Monthly | Low |
 
 ## Internal Audits (Linear MCP)
+
+These remain as separate top-level areas since they're management responsibilities:
 - [Team Capacity](../team-capacity/) — Capacity bottlenecks, sequencing risks, overdue items
 - [Project Health](../project-health/) — Zombie projects, exit criteria, revenue coordination
 - [Customer Dependencies](../customer-deps/) — Concentration risk, engagement health, DPE load
+
+## Community & Competitor Intel
+
+These remain as separate top-level areas since they're referenced independently:
+- [Community Sentiment](../community-sentiment/)
+- [Competitor Intel](../competitor-intel/)

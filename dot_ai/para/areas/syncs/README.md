@@ -1,5 +1,7 @@
 # Team Syncs
 
+**Priority: LOW** | Cadence: Prep happens naturally before each sync
+
 Notes from recurring team sync meetings.
 
 ## Purpose

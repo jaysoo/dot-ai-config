@@ -14,4 +14,8 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | runtime-tracking-scan | task | 2026-03-24 | 1 |
 | team-capacity-audit | task | 2026-03-24 | 8 |
 | community-sentiment | task | 2026-03-24 | 6 |
+| kudos | command | 2026-03-24 | 0 |
+| plan-week | command | 2026-03-24 | 0 |
+| plan-week | skill | 2026-03-24 | 0 |
+| metrics-review | skill | 2026-03-24 | 1 |
 | nx-scorecard | command | 2026-03-24 | 0 |

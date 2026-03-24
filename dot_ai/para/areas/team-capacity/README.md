@@ -1,5 +1,7 @@
 # Team Capacity Analysis
 
+**Priority: LOW** | Cadence: Monthly (escalate if someone overloaded or key person OOO)
+
 Monthly analysis of engineering team capacity, sequencing risks, and
 workload distribution. Used for sprint planning and resource allocation.
 

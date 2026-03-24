@@ -1,5 +1,7 @@
 # Personnel
 
+**Priority: LOW** | Cadence: Updated during 1:1s and review cycles
+
 Team roster, org structure, and individual notes for engineering direct reports and skip-levels.
 
 ## Files

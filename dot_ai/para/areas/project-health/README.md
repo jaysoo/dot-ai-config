@@ -1,5 +1,7 @@
 # Project Health
 
+**Priority: MEDIUM** | Cadence: Monthly (scan for blocked/zombie projects)
+
 Monthly audit of Linear project health. Identifies zombie projects, scope creep,
 missing exit criteria, and revenue coordination gaps.
 

@@ -1,5 +1,7 @@
 # Competitor Intelligence
 
+**Priority: MEDIUM** | Cadence: Monthly (glance at latest scan, act if response needed)
+
 Ongoing area for tracking competitor build tools and monorepo platforms.
 
 ## Purpose
