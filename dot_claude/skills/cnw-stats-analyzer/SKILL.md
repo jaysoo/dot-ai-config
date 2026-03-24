@@ -175,16 +175,25 @@ Starting ~Nov 2025 (22.1.x), a version prefix was added: `"22.1.3,which-ci-provi
 
 Understanding when features were introduced is critical for cross-month comparisons:
 
-| Feature | First Appeared | Notes |
-| ------- | -------------- | ----- |
-| Completion events only | Pre-Nov 2025 | 1 event per CNW invocation — completions **are** total usage |
-| `start` events (funnel) | **Nov 13, 2025** | Multiple events per invocation from this point |
-| Version prefix in CSV | ~Nov 2025 (22.1.x) | e.g. `"22.1.3,which-ci-provider,..."` |
-| JSON meta format | Dec 2025 (22.2.2) | Replaces CSV; Dec is mixed ~64% JSON / 36% CSV |
-| `aiAgent` field | Feb 2026 | 0 AI events in Jan 2026 |
-| `INVALID_WORKSPACE_NAME` error code | Mar 18, 2026 | New categorization, not a regression |
+| Feature | First Appeared | Version | Notes |
+| ------- | -------------- | ------- | ----- |
+| Completion events only | Pre-Nov 2025 | ≤22.0.2 | 1 event per CNW invocation — completions **are** total usage. Meta is CSV: `"which-ci-provider,github,FailedToPushToVcs"` |
+| CSV `start` events | **Nov 13, 2025** (ramped Nov 17-18) | **22.0.4** (released Nov 17) | Meta is bare `"start"` or version-prefixed `"22.1.1,start"`. Nov 13-16 was ~33 events (likely internal testing). Real adoption started Nov 17 (203/day) ramping to 1,500+/day by Nov 18. |
+| Version prefix in CSV | ~Nov 2025 | 22.1.x | e.g. `"22.1.3,which-ci-provider,..."` |
+| JSON meta format | **Dec 12, 2025** | **22.2.2** | Replaces CSV with stringified JSON containing `type` field. Dec is mixed ~64% JSON / 36% CSV. Jan 2026+ is fully JSON. |
+| `aiAgent` field | Feb 2026 | | 0 AI events in Jan 2026 |
+| `INVALID_WORKSPACE_NAME` error code | Mar 18, 2026 | | New categorization, not a regression |
 
-**IMPORTANT for cross-month comparisons**: Before Nov 2025, completions = total invocations. After Nov 2025, you need `start` events for total invocations. Comparing Oct completions to Jan completions is **not** apples-to-apples — use Jan starts instead.
+**Telemetry eras:**
+
+| Era | Date Range | What exists | How to count usage |
+| --- | ---------- | ----------- | ------------------ |
+| **Completions only** | Pre-Oct 2025 and earlier | 1 doc per successful workspace creation. CSV meta. No starts, errors, or cancels. | Total docs = completions = usage |
+| **CSV starts + completions** | Nov 17, 2025 – Dec 11, 2025 | `"start"` events added alongside existing CSV completions. No precreate/error/cancel yet. | Starts for invocations (but only from Nov 17+), completions for success count |
+| **Mixed CSV + JSON** | Dec 12, 2025 – Dec 31, 2025 | 22.2.2+ emits JSON with full funnel (start/precreate/complete/error/cancel). Older versions still emit CSV. ~64% JSON / 36% CSV. | Use both formats; funnel only reliable for JSON portion |
+| **Full JSON funnel** | Jan 2026+ | All events are JSON with `type` field. Full funnel available. | Starts for invocations, full funnel for conversion analysis |
+
+**IMPORTANT for cross-month comparisons**: Before Nov 17, 2025, only completions exist — there are no starts, errors, or cancels. When comparing months across eras, **use completions as the common metric**. Do NOT compare Oct completions to Jan starts — compare Oct completions to Jan completions. Funnel metrics (start→precreate→complete, error rates as % of starts) are only available from Jan 2026+ (fully reliable) or the JSON portion of Dec 2025 (partial).
 
 ### Error Codes
 

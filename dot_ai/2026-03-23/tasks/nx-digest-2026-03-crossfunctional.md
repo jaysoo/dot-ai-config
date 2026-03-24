@@ -1,10 +1,10 @@
 # Nx Platform Update — March 2026
 
-> **Data gaps:** Month is still in progress (data through March 23). Cloud infrastructure commits are included but may miss some context without PR descriptions.
+> **Data gaps:** Month is still in progress (data through March 24). Cloud infrastructure commits are included but may miss some context without PR descriptions.
 
 ## TL;DR
 
-- **Task Sandboxing is production-ready** — eBPF-based I/O tracing now tracks every file read/write during builds, catches undeclared dependencies, and surfaces violations in a revamped Cloud UI. Over 40 issues shipped across CLI, Cloud, and Infrastructure to make builds hermetic.
+- **Task Sandboxing is production-ready** — eBPF-based I/O tracing now tracks every file read/write during builds, catches undeclared dependencies, and surfaces violations in a revamped Cloud UI. Over 45 issues shipped across CLI, Cloud, and Infrastructure to make builds hermetic. The sandboxing feature flag has been removed — it's now automatically enabled when the io-trace-daemon is deployed.
 - **AI-Powered Development expanded significantly** — `configure-ai-agents` now auto-detects Claude Code, Codex, Cursor, and Gemini; Polygraph (cross-repo AI planning) entered active development; Self-Healing CI learned to respect git hooks and gained GitHub Check Run integration.
 - **Nx 22.6.0 shipped** with jemalloc memory optimization, Yarn Berry catalog support, CLI telemetry, `--stdin` for affected, Angular v21.2 support, ESLint v10 support, and dozens of core fixes.
 - **Security patches addressed 4 CVEs** including minimatch, copy-webpack-plugin, koa, and a critical frontend vulnerability (CVE-2025-15467), plus pentest remediations across Cloud.
@@ -25,6 +25,10 @@ Nx can now verify that every task only reads and writes the files it declares. T
 - The daemon embeds a default exclusion list and handles file deletions correctly
 - Enterprise single-tenant customers can now toggle sandboxing via an environment variable
 - Internal sandboxing routes moved to `/private` endpoints for security
+- Sandboxing feature flag removed from nx-api — sandboxing is now automatically enabled when the io-trace-daemon infrastructure is deployed
+- Batch tasks now handled correctly for sandboxing — previously merged inputs could hide violations
+- IO-trace daemon kernel compatibility issue investigated and fixed for newer kernel versions
+- Task IO service fixed to correctly populate inputs for sandbox reports
 
 **Who to contact:** Rares, Louie, Craigory
 
@@ -47,7 +51,7 @@ Key improvements:
 
 ### Polygraph (New Product)
 
-Polygraph is a new cross-repo AI planning tool entering active development. It enables AI agents to work across multiple repositories with shared context. The frontend app was bootstrapped, a separate MCP server was created, and GitHub Actions integration was added. Victor is leading this initiative.
+Polygraph is a new cross-repo AI planning tool entering active development. It enables AI agents to work across multiple repositories with shared context. The frontend app was bootstrapped, a separate MCP server was created, and GitHub Actions integration was added. Long-term storage for child agent logs now uses blob storage (previously only Valkey with 2-hour TTL), the MCP response size was reduced by 78% by collapsing dependency graphs, and agent activity indicators were added for child agents. Victor is leading this initiative.
 
 ### Self-Healing CI
 
@@ -58,6 +62,11 @@ Self-Healing CI now discovers and runs `prepare-commit-msg` and `commit-msg` git
 - Users with allowed email domains can accept, reject, and revert suggestions
 - Fixed formatting hook resolving prettier config from outside the workspace (reducing large diffs)
 - Self-serve adoption docs and UI messaging cleaned up
+- Fixed GitHub Check Run showing "failed" when CI actually succeeded
+- Fixed apply-fix failures caused by duplicate RERUN_REQUESTED state transitions
+- BYOK and written-off credits now properly reflected on the enterprise usage screen
+- `.nx/self-healing` directory auto-added to `.gitignore`
+- Fixed agent clone failures for plugin repos needed for MCP setup
 
 **Who to contact:** Max (Agentic/Polygraph), James (Self-Healing CI), Juri
 
@@ -74,6 +83,7 @@ Self-Healing CI now discovers and runs `prepare-commit-msg` and `commit-msg` git
 - **Nuxt**: Bumped to 3.21.1 to resolve critical audit vulnerability
 - **Windows**: `windowsHide: true` set on all child process spawns to reduce AV false positives; removed `shellapi` from winapi features
 - **Shell injection**: CLI args now properly quote shell metacharacters ([#34491](https://github.com/nrwl/nx/pull/34491))
+- **Information disclosure**: CI API error messages no longer expose internal Java/Kotlin class names and package structure (pentest finding, CVSS 3.7)
 
 **Who to contact:** Nicole (Cloud pentest), Jack (CLI CVEs)
 
@@ -162,9 +172,9 @@ Customer context: Multiple enterprise customers (Mimecast, Cisco, FICO) are eval
 
 Caseware single-tenant onboarding completed across AWS — Terraform provisioned, SAML secrets configured, GitHub variables added, Lighthouse rotation enabled, and self-healing CI turned on.
 
-### Multi-Cluster Agent Setups (40% complete)
+### Multi-Cluster Agent Setups (40%+ complete)
 
-The workflow controller is being extended to support facade mode, where one app cluster can route workflows to multiple downstream agent clusters. Base framework, routing engine, capability-based filtering, and workflow status fan-out are implemented. Log streaming is next.
+The workflow controller is being extended to support facade mode, where one app cluster can route workflows to multiple downstream agent clusters. The Facade Runner core implementation is complete, along with the controller bootstrap, helm chart, log streaming endpoints (facade → downstream), and handler tidying. Gateway API resources are now deployed to GCP single tenants by default.
 
 ### Kubernetes Gateway API (68% complete)
 
@@ -250,9 +260,9 @@ Notable customer activity: SiriusXM, Mimecast, FICO, Caseware, Cisco, CIBC, MNP.
 | ----------------------- | -------------------------------------------------------------- |
 | CLI releases            | 3 (22.5.4, 22.6.0, 22.6.1)                                     |
 | Cloud releases          | 13                                                             |
-| Infrastructure commits  | 124                                                            |
-| Linear issues completed | 252+ across 7 teams                                            |
-| Pylon support tickets   | 287 across 50+ customers                                       |
+| Infrastructure commits  | 141                                                            |
+| Linear issues completed | 289+ across 7 teams                                            |
+| Pylon support tickets   | 309 across 50+ customers                                       |
 | Enterprise PoVs active  | 6 (Anaplan, CIBC, MNP.ca, Rocket Mortgage, Cisco, McGraw Hill) |
 
 ---
@@ -270,4 +280,4 @@ Notable customer activity: SiriusXM, Mimecast, FICO, Caseware, Cisco, CIBC, MNP.
 - **Observability / Metrics**: Rares, Nicole, Altan
 - **Customer Success / PoVs**: Austin, Miroslav, Steven
 
-_Generated on 2026-03-23. For the full technical changelog, see Document 2._
+_Generated on 2026-03-24 (updated). For the full technical changelog, see Document 2._

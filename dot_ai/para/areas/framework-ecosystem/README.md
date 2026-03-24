@@ -22,6 +22,10 @@ Monthly scan reports tracking releases, breaking changes, and Nx plugin impact f
 - **esbuild** (esbuild) -- `@nx/esbuild`
 - **SWC** (@swc/core) -- used by Next.js, Angular, `@nx/js`
 
+### Cross-Cutting
+
+- **TypeScript** (typescript) -- affects all Nx generators and tsconfig management
+
 ## Reports
 
 | Month   | File         |

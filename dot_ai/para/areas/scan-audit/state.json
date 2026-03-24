@@ -1,19 +1,19 @@
 {
-  "lastRun": "2026-03-23T16:00:00Z",
+  "lastRun": "2026-03-24T16:00:00Z",
   "lastWeeklyReport": "2026-W13",
   "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
   "findings": {
     "dependencies": { "critical": 24, "warning": 13, "watch": 12 },
-    "supply-chain": { "status": "clear", "cves": 0, "latest-nx": "22.6.1" },
+    "supply-chain": { "status": "clear", "cves": 0, "advisories-high": 82, "latest-nx": "22.6.1" },
     "api-surface": { "high": 5, "medium": 10, "low": 6 },
-    "competitors": { "highlights": 7 },
-    "frameworks": { "compat-risks": 3 },
-    "runtimes": { "action-items": 3 },
-    "ai-landscape": { "highlights": 10, "opportunities": 6, "risks": 5 },
-    "community": { "top-pain-points": 5, "resolution-rate": "60%", "open-issues": 468, "vite8-demand": true },
-    "capacity": { "high-risk-people": 4, "overdue-items": 20 },
-    "project-health": { "zombies": 2, "overdue-projects": 13, "zombie-escalation": 5 },
-    "customer-deps": { "churned": 1, "cooling": 1, "concentration-risks": 2 }
+    "competitors": { "highlights": 8, "turbo-query-stable": true, "cache-provenance-attack": true },
+    "frameworks": { "compat-risks": 3, "ts6-ga": true },
+    "runtimes": { "action-items": 2, "node-security-delayed": true },
+    "ai-landscape": { "highlights": 12, "opportunities": 6, "risks": 5 },
+    "community": { "top-pain-points": 5, "open-issues": 474, "vite8-demand": true },
+    "capacity": { "high-risk-people": 4, "overdue-items": 22, "projects-started": 3 },
+    "project-health": { "zombies": 2, "overdue-projects": 13, "zombie-escalation": 6, "local-dist-regressing": true },
+    "customer-deps": { "churned": 1, "cooling": 1, "concentration-risks": 2, "task-sandboxing-derisked": true }
   }
 }

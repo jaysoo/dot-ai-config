@@ -1,8 +1,8 @@
 # Nx Platform Changelog — March 2026
 
-> **Sources:** Nx CLI GitHub releases (22.5.4, 22.6.0, 22.6.1), Nx Cloud public changelog (13 versions), nrwl/cloud-infrastructure commits (124), Linear (252+ issues across 7 teams), Pylon support tickets (287).
+> **Sources:** Nx CLI GitHub releases (22.5.4, 22.6.0, 22.6.1), Nx Cloud public changelog (13 versions), nrwl/cloud-infrastructure commits (141), Linear (289+ issues across 7 teams), Pylon support tickets (309).
 >
-> **Data gaps:** Month in progress (through March 23). Some cloud-infrastructure PRs may lack full context.
+> **Data gaps:** Month in progress (through March 24). Some cloud-infrastructure PRs may lack full context.
 
 ---
 
@@ -73,6 +73,12 @@
 - Mismatch between files written count and file tree ([Q-283](https://linear.app/nrwl/issue/Q-283))
 - Unexpected reads exceed total files read in report ([Q-281](https://linear.app/nrwl/issue/Q-281))
 - Add run details filters for flaky and sandbox violations ([Q-265](https://linear.app/nrwl/issue/Q-265))
+- Handle Batch Tasks for Sandboxing — prevent merged inputs from hiding violations ([NXC-4118](https://linear.app/nrwl/issue/NXC-4118))
+- Task IO service missing inputs for sandbox reports ([NXC-4108](https://linear.app/nrwl/issue/NXC-4108))
+- Remove target default for typecheck in ocean (sandboxing fix) ([NXC-3964](https://linear.app/nrwl/issue/NXC-3964))
+- Investigate io-trace-daemon failures on newer kernels ([Q-314](https://linear.app/nrwl/issue/Q-314))
+- Remove sandboxing feature flag on nx-api ([Q-317](https://linear.app/nrwl/issue/Q-317))
+- Dev io-tracing daemonset uses new Gateway API address ([INF-1259](https://linear.app/nrwl/issue/INF-1259))
 
 ---
 
@@ -131,6 +137,12 @@
 - Test e2e experience for metadata-only workspaces ([NXA-1091](https://linear.app/nrwl/issue/NXA-1091))
 - Explore sessions without initiator ([NXA-1095](https://linear.app/nrwl/issue/NXA-1095))
 - Detailed plan on supporting two types of orgs in nx-api ([NXA-1170](https://linear.app/nrwl/issue/NXA-1170))
+- Fix delegating tasks to child agents in completed sessions ([NXA-1168](https://linear.app/nrwl/issue/NXA-1168))
+- Explore agent activity indicators for child agents ([NXA-1144](https://linear.app/nrwl/issue/NXA-1144))
+- Move Mongo queries to PolygraphAgentSessionRepository ([NXA-1159](https://linear.app/nrwl/issue/NXA-1159))
+- Reduce size of cloud_polygraph_candidates response by collapsing dependency graph ([NXA-1165](https://linear.app/nrwl/issue/NXA-1165))
+- Implement long-term storage in buckets for child agent logs ([NXA-1134](https://linear.app/nrwl/issue/NXA-1134))
+- Lift MongoUser up to libs/ocean ([NXA-1190](https://linear.app/nrwl/issue/NXA-1190))
 
 ### Linear (Self-Healing CI)
 
@@ -146,6 +158,13 @@
 - Self-healing task fix statistics view location (Pylon #348)
 - Self-healing task time limit inquiry (Pylon #367)
 - Self-healing CI questions (Pylon #300)
+- Add `.nx/self-healing` to `.gitignore` ([NXA-1127](https://linear.app/nrwl/issue/NXA-1127))
+- Agent cannot clone plugin repos for MCP setup ([NXA-1150](https://linear.app/nrwl/issue/NXA-1150))
+- Account for BYOK and written-off credits on usage screen ([NXA-953](https://linear.app/nrwl/issue/NXA-953))
+- GitHub Self Healing check shows failed when CI succeeds ([NXA-1118](https://linear.app/nrwl/issue/NXA-1118))
+- Applying self-healing fix can fail after creating commit ([NXA-1155](https://linear.app/nrwl/issue/NXA-1155))
+- Suggested commit messages not complying with workspace commit hooks ([NXA-1147](https://linear.app/nrwl/issue/NXA-1147))
+- Fix brain co not getting to verification step ([NXA-1167](https://linear.app/nrwl/issue/NXA-1167))
 
 ### Infrastructure
 
@@ -181,6 +200,7 @@
 
 - Remove /nx-cloud/private from prod; route to 404 (`448aab74`, `e5fcd2a7`, `cb4a040e`)
 - Admin push for tofu deny rules (`d79fbf30`)
+- Pentest: CI API Error Messages Expose Internal Class Names ([Q-253](https://linear.app/nrwl/issue/Q-253))
 
 ---
 
@@ -315,6 +335,9 @@
 - Implicit dependencies using project.json name not detected ([NXC-4034](https://linear.app/nrwl/issue/NXC-4034))
 - Atomized depends-on targets ignore target name override ([NXC-4056](https://linear.app/nrwl/issue/NXC-4056))
 - Version catalogs invalidate gradle project graph cache ([Q-294](https://linear.app/nrwl/issue/Q-294))
+- Fix exclude depends-on in batch mode — extra tasks running in Ocean Docker builds ([NXC-4070](https://linear.app/nrwl/issue/NXC-4070))
+- Unblock Ocean with excludesDependsOn ([NXC-4071](https://linear.app/nrwl/issue/NXC-4071))
+- Skip Gradle invocation in Ocean when unnecessary ([NXC-4055](https://linear.app/nrwl/issue/NXC-4055))
 
 ---
 
@@ -340,6 +363,9 @@
 - Implement reverse proxy for PostHog ([CLOUD-4261](https://linear.app/nrwl/issue/CLOUD-4261))
 - Determine which feature flags can be retired ([CLOUD-4278](https://linear.app/nrwl/issue/CLOUD-4278))
 - Turn PostHog on in staging ([CLOUD-4265](https://linear.app/nrwl/issue/CLOUD-4265))
+- Record TTG daily stats for workspaces that had CIPEs ([Q-311](https://linear.app/nrwl/issue/Q-311))
+- Collect info about team vs. free plan usage ([Q-290](https://linear.app/nrwl/issue/Q-290))
+- Assignment gaps in DTE due to WaitingAgents ([Q-319](https://linear.app/nrwl/issue/Q-319))
 
 ### Infrastructure
 
@@ -376,6 +402,12 @@
 - Spike facade mode gating prototype ([INF-1151](https://linear.app/nrwl/issue/INF-1151))
 - Document cross-dependencies for selective disabling ([INF-1150](https://linear.app/nrwl/issue/INF-1150))
 - Audit main.go startup and map subsystems ([INF-1149](https://linear.app/nrwl/issue/INF-1149))
+- Implement Facade Runner Core ([INF-1144](https://linear.app/nrwl/issue/INF-1144))
+- Facade Configuration & Controller Bootstrap ([INF-1146](https://linear.app/nrwl/issue/INF-1146))
+- Create Helm Chart for Facade ([INF-1179](https://linear.app/nrwl/issue/INF-1179))
+- Logs Endpoints Facade -> Downstream ([INF-1279](https://linear.app/nrwl/issue/INF-1279))
+- Tidy facade handler endpoints ([INF-1282](https://linear.app/nrwl/issue/INF-1282))
+- Create internal chart for facade controller (`f18f3966`)
 
 ### K8S Gateway API
 
@@ -386,6 +418,15 @@
 - Gateway API helm chart (`4ea56524`)
 - Enable gatewayapi on wf clusters in staging/prod (`c277bdf9`)
 - Gateway API Infrastructure for staging/production (`0a5b7a4e`)
+- GatewayAPI resources deployed to GCP single tenants by flag (`8a9af832`, `34e3db90`, `aa67ca65`)
+- GatewayAPI CHANNEL_STANDARD for all GCP clusters (`b2e43bd0`)
+- Dev io-tracing daemonset uses new gatewayapi address ([INF-1259](https://linear.app/nrwl/issue/INF-1259))
+
+### Valkey Env Var Aliases (New)
+
+- Add valkey env var aliases to nx-api ([INF-1274](https://linear.app/nrwl/issue/INF-1274))
+- Add valkey env var aliases to wf-controller ([INF-1275](https://linear.app/nrwl/issue/INF-1275))
+- Use valkey env var aliases in dev ([INF-1278](https://linear.app/nrwl/issue/INF-1278))
 
 ### Secrets Management
 
@@ -584,6 +625,9 @@
 - Ensure postTasksExecution fires on SIGINT for continuous tasks ([#34876](https://github.com/nrwl/nx/pull/34876)) — 22.6.1
 - Improve error handling in nx migrate registry fetching ([#34926](https://github.com/nrwl/nx/pull/34926)) — 22.6.1
 - Remove CRA migration logic from nx init ([#34912](https://github.com/nrwl/nx/pull/34912)) — 22.6.1
+- Lint plugin performance improvement (customer-escalated via Pylon) ([NXC-4010](https://linear.app/nrwl/issue/NXC-4010))
+- Golden test failures across multiple e2e projects ([NXC-3990](https://linear.app/nrwl/issue/NXC-3990))
+- Pin vite for nightly failure ([NXC-4090](https://linear.app/nrwl/issue/NXC-4090))
 
 ### Cloud
 
@@ -660,10 +704,10 @@
 | Quark-a task force | Cory | 2026-04-30 | [View](https://linear.app/nrwl/project/quark-a-task-force) |
 | Enterprise Analytics API Cleanup | Rares | — | [View](https://linear.app/nrwl/project/enterprise-analytics-cleanup) |
 
-### Issues Completed: 252+ across 7 teams
+### Issues Completed: 289+ across 7 teams
 
-NXC 50+ · CLOUD 33 · INF 49+ · NXA 50+ · Q 32 · DOC 28 · CS 10
+NXC 60+ · CLOUD 33 · INF 59+ · NXA 63+ · Q 39 · DOC 28 · CS 10
 
 ---
 
-_Generated on 2026-03-23._
+_Generated on 2026-03-24 (updated)._
