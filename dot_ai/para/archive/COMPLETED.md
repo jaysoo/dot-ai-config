@@ -2,6 +2,29 @@
 
 ### March 2026
 
+- [x] NXC-4112: Auto-open browser on Cloud "yes" (2026-03-25) ✓ 2026-03-25
+  - Summary: Added auto-open browser for Cloud setup URL during CNW. Skips in CI, fails gracefully. PR #35014.
+  - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/35014
+
+- [x] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110) ✓ 2026-03-25
+
+
+- [x] Look through all TODO(v23) comments and add tasks for them ✓ 2026-03-25
+
+
+- [x] Help Nicole with onboarding to hit 600 per week ✓ 2026-03-25
+
+
+- [x] Take cloud stats script and build into lighthouse (2026-02-28 09:09) ✓ 2026-03-25
+
+- [x] Ask Alexis about Colum sending hardware back (2026-03-03 13:52) ✓ 2026-03-25
+  - For offboarding
+
+
+- [x] Ask Alexis to update levels in Wagepoint and TriNet (2026-03-03 13:53) ✓ 2026-03-25
+
+- [x] Ask Alexis to move people to the right manager in Wagepoint (2026-03-03 13:53) ✓ 2026-03-25
+
 - [x] DOC-446: Telemetry Documentation (2026-03-17) ✓ 2026-03-17
   - Summary: Created telemetry reference page, added analytics property to nx.json reference, sidebar entry. Modeled after Turborepo/Astro docs. PR #34884.
   - Files: `.ai/2026-03-17/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34884

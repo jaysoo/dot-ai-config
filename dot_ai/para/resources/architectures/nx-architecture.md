@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2026-03-02
+Last Updated: 2026-03-25
 
 ## Directory Overview
 
@@ -57,9 +57,9 @@ Vitest test runner integration
 ### packages/create-nx-workspace/ (CNW)
 CLI tool for creating new Nx workspaces. Two separate code paths: preset flow (default) and template flow (`--template`).
 
-**Last Updated**: 2026-03-02
-**Related Issues**: NXC-4020 (restored v22.1.3 flow), NXC-3628, NXC-3624
-**Status**: NXC-4020 merged (PR #34671). Human-visible flow matches v22.1.3. A/B testing and template prompt code commented out (not deleted) with `NXC-4020` tags.
+**Last Updated**: 2026-03-25
+**Related Issues**: NXC-4112 (auto-open browser), NXC-4020 (restored v22.1.3 flow), NXC-3628, NXC-3624
+**Status**: NXC-4020 merged (PR #34671). NXC-4112 in review (PR #35014). Human-visible flow matches v22.1.3. A/B testing and template prompt code commented out (not deleted) with `NXC-4020` tags.
 
 **Key Files**:
 - `bin/create-nx-workspace.ts` - CLI entry point; preset flow uses simple `determineNxCloud` → `determineIfGitHubWillBeUsed` (v22.1.3 pattern)
@@ -67,7 +67,7 @@ CLI tool for creating new Nx workspaces. Two separate code paths: preset flow (d
 - `src/create-workspace-options.ts` - TypeScript interfaces
 - `src/internal-utils/prompts.ts` - `determineTemplate()` returns `'custom'` directly (template prompt commented out)
 - `src/utils/nx/ab-testing.ts` - `getFlowVariant()` returns `'0'`, `getBannerVariant()` returns `'0'`, `shouldShowCloudPrompt()` returns `false`
-- `src/utils/nx/nx-cloud.ts` - Cloud connection, URL generation; `getNxCloudInfo(nxCloud, url, pushStatus, rawNxCloud?)` uses `rawNxCloud` to hide URL when user passed `--nxCloud` explicitly
+- `src/utils/nx/nx-cloud.ts` - Cloud connection, URL generation, browser auto-open; `getNxCloudInfo(nxCloud, url, pushStatus, rawNxCloud?)` uses `rawNxCloud` to hide URL when user passed `--nxCloud` explicitly; `openCloudSetupUrl()` opens browser (skips CI, fails gracefully)
 - `src/utils/nx/messages.ts` - Completion messages (no github.com/new URLs)
 - `src/utils/git/git.ts` - Git utilities
 - `src/internal-utils/yargs-options.ts` - CLI options (`--nxCloud` alias `--ci`)
@@ -321,6 +321,21 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - Environment variable `NEXT_PUBLIC_ASTRO_URL` for feature flag
 
 ## Personal Work History
+
+### 2026-03-25 - NXC-4112: Auto-open Browser on Cloud "Yes"
+- **Branch**: NXC-4112
+- **Commit**: `a88aa249f0`
+- **PR**: https://github.com/nrwl/nx/pull/35014
+- **Status**: In review
+- **Purpose**: Auto-open the Nx Cloud setup URL in the user's browser after selecting "yes" during CNW, reducing friction at the Cloud conversion moment
+- **Key Changes**:
+  - Added `open` (^8.4.0) dependency to `create-nx-workspace/package.json`
+  - New `openCloudSetupUrl()` in `nx-cloud.ts` — skips in CI (`isCI()`), catches errors silently
+  - Called from `create-workspace.ts` after `getNxCloudInfo()`, gated on `!skipCloudConnect`
+- **Design Decisions**:
+  - Reused same `open` package version as `packages/nx/` (which uses it in `nx connect`)
+  - Opens after banner display so user sees URL even if browser fails
+  - No spinner/delay unlike `nx connect` — keeps it lightweight
 
 ### 2026-03-02 - NXC-4020: Restore CNW Prompt Flow to v22.1.3
 - **Branch**: NXC-4020

@@ -327,6 +327,7 @@ Always spell out on first use: "NXC-3464: CNW (Create Nx Workspace) Templates"
 - Use `nx run PROJECT:target` not `npm run`
 - Use `.spec.ts` extension for tests (not `.test.ts`)
 - **ALWAYS run `nx sync` after modifying package.json**
+- **ALWAYS run `pnpm install` after modifying any package.json** — lockfile must be regenerated and committed
 
 ### Migration Testing
 ```bash
