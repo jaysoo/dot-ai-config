@@ -4,45 +4,45 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-452: Topic-Based Tutorial Series** (2026-03-25, in progress)
+1. **NXC-3345: Rollup + SWC rootDir fix for workspace libs** (2026-03-25, in progress)
+   - Summary: Fixed TS6059 rootDir error when building libs that import workspace libs. Rollup: rootDir=workspaceRoot + filterRoot + typeDefinitions adjustment. SWC: suppress TS6059 in runTypeCheck. Two commits, not yet pushed.
+   - Files: `packages/rollup/src/plugins/with-nx/with-nx.ts`, `packages/js/src/plugins/rollup/type-definitions.ts`, `packages/js/src/utils/typescript/run-type-check.ts`
+
+2. **DOC-452: Topic-Based Tutorial Series** (2026-03-25, in progress)
    - Summary: Replaced monolithic tutorials with 7+1 focused topic pages. Progressive disclosure, AI-agent friendly, workspace-agnostic. PR #34998.
    - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34998
 
-2. **NXC-4141: Reduce Push to GitHub Errors** (2026-03-25, completed)
+3. **NXC-4141: Reduce Push to GitHub Errors** (2026-03-25, completed)
    - Summary: Added tiered timeouts (1s/10s/30s) to CNW GitHub push flow, switched to execAndWait, eliminated error.log, added GitHubPushError telemetry. PR #35011.
    - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/35011
 
-3. **Vite 8 Support (community PR #34850)** (2026-03-25, in progress)
+4. **Vite 8 Support (community PR #34850)** (2026-03-25, in progress)
    - Summary: Full Vite 8 support across Nx ecosystem — rolldown, plugin-react v6, type fixes, env API fix, Cypress CT error guard, version preservation in generators. 46 files, 6 packages.
    - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34850
 
-4. **CLOUD-4390: ClickUp Exit Code 2 Investigation** (2026-03-25, completed)
+5. **CLOUD-4390: ClickUp Exit Code 2 Investigation** (2026-03-25, completed)
    - Summary: Investigated DTE status:2 bug. Root cause: latent `maxOf(task.code)` in Cloud + tsc exit code 2 + continuous assignments batching. UI fix in ocean#10513.
    - Files: `.ai/2026-03-25/SUMMARY.md`, `/tmp/nx-exit-code-2-analysis.md`
 
-5. **NXC-4112: Auto-open browser on Cloud "yes"** (2026-03-25, completed)
+6. **NXC-4112: Auto-open browser on Cloud "yes"** (2026-03-25, completed)
    - Summary: Added auto-open browser for Cloud setup URL during CNW. Skips in CI, fails gracefully. PR #35014.
    - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/35014
 
-6. **DOC-418: nx-dev Build In-Place and Target Cleanup** (2026-03-20)
+7. **DOC-418: nx-dev Build In-Place and Target Cleanup** (2026-03-20)
    - Summary: Fixed nx-dev build, simplified project targets, added serve with docs watcher, root redirect to /blog. CI passing, PR #34730 in progress.
    - Files: `.ai/2026-03-20/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34730
 
-7. **SPACE Metrics: Simplify Quokka Unplanned Classification** (2026-03-20)
+8. **SPACE Metrics: Simplify Quokka Unplanned Classification** (2026-03-20)
    - Summary: Changed Quokka planned? logic — only misc project + DPE/Support label = unplanned. No-project issues excluded. PR #50.
    - Files: `.ai/2026-03-20/SUMMARY.md`, PR: https://github.com/nrwl/lighthouse/pull/50
 
-8. **SPACE Metrics: Exclude draft time from TTM** (2026-03-18)
+9. **SPACE Metrics: Exclude draft time from TTM** (2026-03-18)
    - Summary: TTM now uses ReadyForReviewEvent timestamp instead of created_at for draft PRs. Added ready_at column, updated GraphQL query, calculator, tests. PR #48.
    - Files: `.ai/2026-03-18/SUMMARY.md`, PR: https://github.com/nrwl/lighthouse/pull/48
 
-9. **March 2026 Cross-Functional Digest** (2026-03-18)
+10. **March 2026 Cross-Functional Digest** (2026-03-18)
    - Summary: Monthly digest covering Nx 22.6.0, task sandboxing, AI dev, telemetry, 6 enterprise PoVs. Plus technical changelog.
    - Files: `.ai/2026-03-18/tasks/nx-digest-2026-03-crossfunctional.md`, `.ai/2026-03-18/tasks/nx-digest-2026-03-changelog.md`
-
-10. **DOC-446: Telemetry Documentation** (2026-03-17, completed)
-   - Summary: Created telemetry reference page, nx.json analytics property docs, sidebar entry. PR #34884.
-   - Files: `.ai/2026-03-17/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34884
 
 ## Pending
 - [x] ~~follow-up: CLOUD-4390 ClickUp exit code 2 investigation~~ (2026-03-25 10:05, completed)
@@ -93,6 +93,8 @@
 <!-- Directories with active or resumable Claude sessions. Use `cd <dir> && claude -r` to resume. -->
 <!-- Managed by /end-session and /list-sessions commands. /summarize cleans up stale entries. -->
 
+- `/Users/jack/projects/nx-worktrees/NXC-3345` — NXC-3345: Rollup + SWC rootDir fix for workspace libs (2026-03-25)
 - `/Users/jack/projects/nx-worktrees/NXC-4143` — NXC-4143: cycle reminder script + workflow (2026-03-25)
+- `/Users/jack/projects/nx-blog` — nx-blog development (2026-03-25)
 
 ## Later
