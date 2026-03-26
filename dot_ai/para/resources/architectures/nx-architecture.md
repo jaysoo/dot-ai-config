@@ -40,11 +40,19 @@ Nx plugin generator for creating custom Nx plugins
   - `plugin.spec.ts` - Tests including vitest/jest config generation
 
 ### packages/vite/
-Vite build tool integration
+Vite build tool integration (supports Vite 5-8)
 
+- `packages/vite/src/utils/versions.ts` - Version constants; `viteVersion` is the default (^8.0.0), `viteV7/V6/V5Version` for backward compat
+  - `vitePluginReactVersion` (^6.0.0) for Vite 8, `vitePluginReactV4Version` (^4.2.0) for Vite <=7
+- `packages/vite/src/utils/version-utils.ts` - `getInstalledViteVersion()`, `getInstalledViteMajorVersion()` — detect installed vite from package.json using semver
+- `packages/vite/src/utils/ensure-dependencies.ts` - Installs framework-specific deps; detects vite major version to pick correct `@vitejs/plugin-react` version
 - `packages/vite/src/utils/generator-utils.ts` - Vite config generation utilities
   - `createOrEditViteConfig()` - Creates `vite.config.*` files; always uses `root: import.meta.dirname`
   - **Important**: This is a DIFFERENT function from the one in `packages/vitest/`
+- `packages/vite/src/generators/init/lib/utils.ts` - `checkDependenciesInstalled()` preserves existing vite version; only installs latest for new workspaces
+- `packages/vite/src/plugins/plugin.ts` - Plugin detection checks both `rollupOptions.input` (Vite <8) and `rolldownOptions.input` (Vite >=8)
+- `packages/vite/src/executors/build/build.impl.ts` - Build executor; skips env config overwrite when `useEnvironmentsApi` is true (Vite 8 builder API)
+- **Vite 8 type workaround**: ESM-only `.d.mts` types not resolvable under `moduleResolution: "node"`. Uses `as any` casts with `TODO(jack)` comments across vite, vitest, cypress, react, angular, remix packages. Remove when switching to `moduleResolution: "nodenext"`.
 
 ### packages/vitest/
 Vitest test runner integration
@@ -58,7 +66,7 @@ Vitest test runner integration
 CLI tool for creating new Nx workspaces. Two separate code paths: preset flow (default) and template flow (`--template`).
 
 **Last Updated**: 2026-03-25
-**Related Issues**: NXC-4112 (auto-open browser), NXC-4020 (restored v22.1.3 flow), NXC-3628, NXC-3624
+**Related Issues**: NXC-4141 (push timeout/error handling), NXC-4112 (auto-open browser), NXC-4020 (restored v22.1.3 flow), NXC-3628, NXC-3624
 **Status**: NXC-4020 merged (PR #34671). NXC-4112 in review (PR #35014). Human-visible flow matches v22.1.3. A/B testing and template prompt code commented out (not deleted) with `NXC-4020` tags.
 
 **Key Files**:
@@ -69,7 +77,8 @@ CLI tool for creating new Nx workspaces. Two separate code paths: preset flow (d
 - `src/utils/nx/ab-testing.ts` - `getFlowVariant()` returns `'0'`, `getBannerVariant()` returns `'0'`, `shouldShowCloudPrompt()` returns `false`
 - `src/utils/nx/nx-cloud.ts` - Cloud connection, URL generation, browser auto-open; `getNxCloudInfo(nxCloud, url, pushStatus, rawNxCloud?)` uses `rawNxCloud` to hide URL when user passed `--nxCloud` explicitly; `openCloudSetupUrl()` opens browser (skips CI, fails gracefully)
 - `src/utils/nx/messages.ts` - Completion messages (no github.com/new URLs)
-- `src/utils/git/git.ts` - Git utilities
+- `src/utils/git/git.ts` - Git utilities; `GitHubPushError` class with `reason` field for telemetry; `pushToGitHub()` throws on failure (caller handles gracefully); tiered timeouts: `GH_CLI_TIMEOUT_MS` (1s), `GH_LIST_TIMEOUT_MS` (10s), `GH_PUSH_TIMEOUT_MS` (30s)
+- `src/utils/child-process-utils.ts` - `execAndWait()` and `spawnAndWait()` with optional `timeout` param; `silenceErrors` mode passes `{timedOut: true}` on timeout kills
 - `src/internal-utils/yargs-options.ts` - CLI options (`--nxCloud` alias `--ci`)
 
 **Preset Flow (v22.1.3 behavior)**:
@@ -123,6 +132,15 @@ The Nx documentation site (nx.dev/docs) - Astro/Starlight application
   - `track-asset-requests.ts` - GA4 analytics for .txt and .md requests
 - `astro-docs/src/content/docs/` - Documentation content in .mdoc format
 - `astro-docs/sidebar.mts` - Sidebar structure configuration
+- `astro-docs/src/content/docs/getting-started/Tutorials/` - Topic-based tutorials (DOC-452, 2026-03-25)
+  - 7 new focused tutorials: crafting-your-workspace, managing-dependencies, configuring-tasks, running-tasks, caching, understanding-your-workspace, reducing-configuration-boilerplate
+  - Each has `llm_copy_prompt` for AI agent tutoring and prev/next navigation cards
+  - Old framework tutorials (react/angular/typescript) kept but hidden from sidebar for link compat
+- `astro-docs/src/assets/tutorials/` - SVG diagrams and screenshots for tutorials
+- `astro-docs/markdoc.config.mjs` - Custom Markdoc tags (graph, project_details, llm_copy_prompt, llm_only, cards, tabs, etc.)
+  - `cards` tag: `cols` must be Number not String (`cols=2` not `cols="2"`)
+  - `graph` tag: requires inline JSON code fence (not `jsonFile` attribute for custom data)
+  - Code block filenames: use `// filename` comment inside block, NOT `title=` attribute (Starlight ignores `title=`)
 
 **Important**: Netlify Edge Function responses from `context.next()` are **immutable**. Must create new Response objects with cloned headers - cannot use `response.headers.set()`.
 
@@ -321,6 +339,26 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - Environment variable `NEXT_PUBLIC_ASTRO_URL` for feature flag
 
 ## Personal Work History
+
+### 2026-03-25 - NXC-4141: Reduce Push to GitHub Errors
+- **Branch**: NXC-4141
+- **Commit**: `b7bf7fba07`
+- **PR**: https://github.com/nrwl/nx/pull/35011
+- **Status**: In review
+- **Purpose**: Fix 96.3% push failure rate in CNW by adding timeouts and graceful error handling
+- **Key Changes**:
+  - Tiered timeouts: 1s for `gh --version`/`gh api user`, 10s for `gh repo list`, 30s for `gh repo create --push`
+  - Switched push from `spawnAndWait` (stdio:inherit) to `execAndWait` — prevents git output bleeding after CNW exits
+  - All `gh` commands use `silenceErrors: true` — no more stray `error.log` in workspaces (#34482)
+  - `getGitHubUsername()` returns `null` on failure (gh is optional)
+  - New `GitHubPushError` class replaces `GitHubPushSkippedError` — has `reason` field for telemetry
+  - `pushToGitHub()` throws `GitHubPushError` (not `CnwError`) — caller in `create-workspace.ts` catches and handles gracefully
+  - Only `push-failed`/`push-timeout` show `github.com/new` hint; pre-flight failures are silent
+  - `pushFailReason` added to `recordStat` telemetry
+- **Design Decisions**:
+  - FrozenPandaz review: throw error instead of return status — follows existing GitHub error patterns
+  - Pre-flight failures (gh not installed, auth failed) are silent to user but logged in telemetry
+  - CNW always succeeds — push failures are warnings, never fatal
 
 ### 2026-03-25 - NXC-4112: Auto-open Browser on Cloud "Yes"
 - **Branch**: NXC-4112
@@ -562,6 +600,18 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - **Issue**: When adding dependencies to package.json in Nx monorepo
 - **Solution**: Must run `nx sync` before committing to update inferred targets
 - **Impact**: Ensures workspace configuration stays consistent
+
+### CNW Push to GitHub: stdio:inherit Causes Output Bleeding (2026-03-25)
+- **Issue**: `spawnAndWait` with `stdio: 'inherit'` for `gh repo create --push` causes git push output to bleed into terminal after CNW exits
+- **Root Cause**: SIGTERM kills the `gh` wrapper but not the underlying `git push` subprocess; orphaned process output goes to inherited stdio
+- **Solution**: Use `execAndWait` instead — output captured in buffers, Node's `exec` timeout kills entire process tree
+- **Also**: `execAndWait` with `silenceErrors: true` prevents `error.log` from being written to workspace directory
+
+### CNW Push to GitHub: Error Handling Pattern (2026-03-25)
+- **Pattern**: `pushToGitHub()` throws `GitHubPushError` (not `CnwError`) on failure
+- **Caller** (`create-workspace.ts`) catches `GitHubPushError` separately from other errors
+- **Key**: Only `push-failed` and `push-timeout` reasons show user-facing message; pre-flight failures (gh not installed, auth failed) are silent
+- **Rule**: CNW must always succeed regardless of gh push outcome — push is a nice-to-have, not a requirement
 
 ### CNW Preset Flow: nxCloud Value Must Pass Through (2026-03-02)
 - **Issue**: Overriding `nxCloud: 'skip'` in `createEmptyWorkspace()` prevents `nxCloudId` from being set in nx.json

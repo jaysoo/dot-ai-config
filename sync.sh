@@ -23,4 +23,26 @@ fi
 # Sync tmux config
 cp "$GIT_ROOT/tmux.conf" "$HOME/.tmux.conf"
 
+# Sync kitty config
+mkdir -p "$HOME/.config/kitty"
+cp "$GIT_ROOT/kitty/"* "$HOME/.config/kitty/"
+
+# Sync fish config (excludes fish_variables and nxcloud.fish — sensitive)
+mkdir -p "$HOME/.config/fish/conf.d" "$HOME/.config/fish/functions"
+cp "$GIT_ROOT/fish/config.fish" "$HOME/.config/fish/config.fish"
+cp "$GIT_ROOT/fish/conf.d/"* "$HOME/.config/fish/conf.d/"
+cp "$GIT_ROOT/fish/functions/"* "$HOME/.config/fish/functions/"
+
+# Sync nvim config
+mkdir -p "$HOME/.config/nvim"
+cp "$GIT_ROOT/nvim/"* "$HOME/.config/nvim/"
+
+# Sync mise config
+mkdir -p "$HOME/.config/mise"
+cp "$GIT_ROOT/mise.toml" "$HOME/.config/mise/config.toml"
+
+# Sync git config
+cp "$GIT_ROOT/gitconfig" "$HOME/.gitconfig"
+cp "$GIT_ROOT/gitignore_global" "$HOME/.gitignore_global"
+
 echo "✅ Claude global config synced from $GIT_ROOT"

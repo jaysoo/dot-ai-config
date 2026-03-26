@@ -85,6 +85,33 @@ Ocean uses a CalVer-based tagging system (yymm.dd.build-number) for Docker image
 
 ## Features & Critical Paths
 
+### DTE Exit Code / Run Status Flow
+**Last Updated:** 2026-03-25
+**Related:** CLOUD-4390, ocean#10513
+
+How DTE run status codes flow from task execution to UI display.
+
+#### Key Files
+- `apps/nx-api/src/main/kotlin/services/dtes/operations/MarkTasksAsCompleted.kt:155-170` — Sets `de.statusCode` from task codes. Uses `maxOf(task.code)` for partial batches (can leak raw exit codes like tsc's 2)
+- `apps/nx-api/src/main/kotlin/services/dtes/operations/CreateRunFromDistributedExecution.kt:179` — Creates MRun with `status = e.statusCode.toInt()`
+- `apps/nx-api/src/main/kotlin/handlers/DistributedExecutionV2Handlers.kt:560-585` — Returns `commandStatus` = `r.statusCode` to DTE client
+- `apps/nx-api/src/main/kotlin/handlers/RunHandlers.kt:628-629` — Non-DTE: normalizes `null` task status → `2`
+- `libs/nx-cloud/data-access-api/src/lib/make-uniform-cipe-runs.server.ts:292-314` — `getNamedStatus()`: maps numeric status to UI string
+- `libs/nx-packages/client-bundle/src/lib/core/runners/distributed-execution/runner.ts:169` — DTE client: `process.exit(r.commandStatus)`
+- `libs/nx-packages/client-bundle/src/lib/core/runners/distributed-agent/v4/execute-tasks-v4.ts:317,1140` — Agent: raw `code = r.code`, normalized `statusCode = some(code !== 0) ? 1 : 0`
+
+#### Status Code Meanings (MongoRun.status)
+- `0` = Success (COMPLETED in UI)
+- `1` = Failure (FAILED in UI)
+- `130` = SIGINT cancel (CANCELED in UI)
+- Any other non-zero = now mapped to FAILED (post CLOUD-4390 fix)
+
+#### Gotchas
+- DTE agents send **raw** task exit codes (e.g., tsc=2, eslint=2) but normalize overall `statusCode` to 0/1
+- `MarkTasksAsCompleted` uses `maxOf(task.code)` for partial batches, which can leak raw codes to `de.statusCode`
+- Once `de.statusCode != 0`, it's **never overwritten** by subsequent batches (guard: `de.statusCode == 0L`)
+- `RunHandlers.kt` defaults null task status to `2` — ancient code (2021), affects non-DTE runs
+
 ### Nx Cloud Binary Module Resolution (2025-01-09)
 **Branch**: chore/rename-upstream-docs
 **Last Updated**: 2025-01-09
@@ -106,6 +133,13 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 - Pattern already existed in client-bundle but couldn't be reused due to circular dependency concerns
 
 ## Personal Work History
+
+### 2026-03-25
+- **CLOUD-4390: ClickUp Exit Code 2 Investigation** (PR: #10513, by Caleb)
+  - Investigation only (no code changes by me). ClickUp DTE runs showed `status: 2` after Nx 22.3.3 → 22.6.1 upgrade.
+  - Root cause: latent `maxOf(task.code)` bug in `MarkTasksAsCompleted.kt` + tsc exit code 2 + continuous assignments changing batch timing
+  - Fix: UI patch in `getNamedStatus()` to treat non-zero/non-130 as FAILED
+  - Also found separate Nx CLI SIGTERM exit code regression (1 → 130 in 22.6.x) — not yet filed
 
 ### 2026-02-11
 - **CLOUD-4246: Access Control Confirmation Dialog** (branch: CLOUD-4246, PR: #9985)

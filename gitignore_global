@@ -1,0 +1,15 @@
+jack-ai/
+.playwright-mcp/
+.rawdocs.local.json
+CLAUDE.local.md
+.ai
+_ai
+docs/tasks
+.claude/
+.tool-versions
+.idea/
+TODO-*
+todo-*
+tmp*
+tmp/
+_.*

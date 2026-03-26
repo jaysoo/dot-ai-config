@@ -116,8 +116,14 @@ cd ~/projects/nx
     - Later on, if old commits aren't found, then mark that work/feature as possibly not merged or reverted
     - It's possible a PR was opened, but it did not finish, in which case I can review and delete them from the doc manually
 - Look for mistakes or places where I corrected you and make sure you do not repeat the same mistakes by updating CLAUDE.md
-  - If a correction can be distilled into a reusable skill (e.g. a workflow, a multi-step process), suggest creating a new skill in `$HOME/projects/dot-ai-config/dot_claude/commands/` instead of bloating CLAUDE.md
+  - If a correction can be distilled into a reusable skill (e.g. a workflow, a multi-step process), suggest creating a new skill in `$HOME/projects/dot-ai-config/dot_claude/skills/` instead of bloating CLAUDE.md
   - Only add to CLAUDE.md if it's a critical, cross-cutting rule that must always be top-of-mind
+- **Identify reusable skill patterns**: Look for multi-step workflows that were repeated 2+ times during the session or that the user asked for explicitly. Signs of a skill candidate:
+  - A sequence of steps that was run multiple times (e.g., "check all pages for X, fix, validate, push")
+  - A QA/validation workflow the user will want to rerun on future work
+  - A process with clear inputs (files, flags) and outputs (report, fixes)
+  - Something the user said "can you do this again" or "run this on all pages"
+  - Suggest skills in `$HOME/projects/dot-ai-config/dot_claude/skills/` with clear trigger words and a structured process
 - Review commands that needed user permission during this session and suggest safe, non-destructive additions to `$HOME/projects/dot-ai-config/dot_claude/settings.json` allowlist
   - Safe examples: read-only commands, scoped delete patterns (`rm -rf tmp/*`), dev tooling (`npx prettier`, `npx serve`)
   - Never suggest: `gh` (affects shared state), unscoped `rm`, `git push`, `git reset --hard`, or anything that modifies remote/shared resources

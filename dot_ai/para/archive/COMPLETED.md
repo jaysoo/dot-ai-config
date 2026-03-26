@@ -2,6 +2,12 @@
 
 ### March 2026
 
+- [x] NXC-4141: Reduce Push to GitHub Errors (2026-03-25) ✓ 2026-03-25
+  - Summary: Added timeouts to CNW GitHub push flow (1s/10s/30s tiered), switched to execAndWait, eliminated error.log (#34482), added GitHubPushError with telemetry. PR #35011.
+
+- [x] CLOUD-4390: ClickUp Exit Code 2 Investigation (2026-03-25) ✓ 2026-03-25
+  - Summary: Investigated DTE runs showing status:2. Root cause: latent `maxOf(task.code)` bug in MarkTasksAsCompleted.kt + tsc exit code 2 + continuous assignments batching. UI fix in ocean#10513.
+
 - [x] NXC-4112: Auto-open browser on Cloud "yes" (2026-03-25) ✓ 2026-03-25
   - Summary: Added auto-open browser for Cloud setup URL during CNW. Skips in CI, fails gracefully. PR #35014.
   - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/35014

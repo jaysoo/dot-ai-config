@@ -1,0 +1,9 @@
+[tools]
+node = "24"
+java = "24"
+python = "3.11"
+go = "1.23.0"
+ruby = "3"
+
+[settings]
+idiomatic_version_file_enable_tools = ["java"]

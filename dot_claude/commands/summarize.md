@@ -28,6 +28,16 @@ Example entry:
    - Files: `dot_ai/2025-12-16/tasks/task-file.md`
 ```
 
+## Clean Up Active Sessions
+
+After summarizing, review the **Active Claude Sessions** section in `dot_ai/TODO.md`:
+
+1. For each session entry, check if the work described sounds completed based on today's summary
+2. If a session's task was completed today, remove it from Active Sessions
+3. Mention any removed sessions in the summary output so the user knows
+
+Do NOT remove sessions that are still in progress — only ones clearly finished.
+
 ## IMPORTANT
 
 This file should be concise, but offer a good high-level view of accomplishments for today. It will be used by:

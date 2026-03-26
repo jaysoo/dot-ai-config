@@ -7,10 +7,11 @@ Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse
 
 ### dot-ai-config is the Source of Truth
 - **NEVER edit files directly in `~/.claude/`** — those are synced copies
-- **Always edit in `~/projects/dot-ai-config/dot_claude/`** then sync
+- **NEVER edit dotfiles directly in `~/.config/` or `~/`** — kitty, fish, nvim, mise, gitconfig, gitignore_global, tmux.conf are all synced copies
+- **Always edit in `~/projects/dot-ai-config/`** then sync
 - Skills: `~/projects/dot-ai-config/dot_claude/skills/` (NOT `~/.claude/skills/`)
 - Commands: `~/projects/dot-ai-config/dot_claude/commands/` (NOT `~/.claude/commands/`)
-- **If about to edit `~/.claude/` files**, invoke the `dot-claude-guard` skill first
+- **If about to edit `~/.claude/` or any synced dotfile**, invoke the `dot-claude-guard` skill first
 - **After invoking any skill or command**, update `~/projects/dot-ai-config/USAGE.md` with the invocation date and count
 
 ### .ai Folder Symlink (MUST CHECK FIRST)
@@ -72,6 +73,11 @@ Fixes DOC-125"
 - If commit rejected, use `--amend` to fix (avoid multiple commits)
 
 **CRITICAL**: Never co-author the commit, the commit MUST come only from me. Also do not mention yourself (Claude Code) in the commit body.
+
+### Pre-Push Validation (Nx Repo)
+- **ALWAYS run `nx affected -t build-base,lint,test` locally before pushing** — CI failures that could be caught locally waste time and require workflow approvals on fork PRs
+- For community PRs from forks, each push requires manual workflow approval — minimize push iterations
+- Run relevant e2e tests locally (`nx run e2e-vite:e2e-local -- --testPathPatterns='...'`) before pushing e2e-related changes
 
 ### GitHub PR Reviews
 - **NEVER post reviews, comments, or approvals on GitHub PRs unless explicitly instructed**
@@ -288,6 +294,11 @@ Use Playwright MCP for UI verification.
 - JSON in graph/project_details: Use code fences (```json), not inline
 - Never escape template blocks: `{% %}` not `\{% %\}`
 - HTML entity decoding: Handle &quot;, &#34;, &#x22;
+- Code block filenames: Use `// filename` comment as FIRST LINE inside block, NOT `title=` attribute
+  - ✅ ` ```jsonc \n // nx.json`
+  - ❌ ` ```json title="nx.json"`
+- Markdoc tag attributes: Number types must NOT be quoted (`cols=2` not `cols="2"`)
+- `{% graph %}` tag requires inline JSON code fence for custom data
 
 ### Starlight Migration
 - `{% tabs %}` → headers (#### Tab Label)
@@ -322,6 +333,12 @@ Run `pnpm install && pnpm build` in background when starting work.
 - **NXC**: Nx CLI issues | **DOC**: Docs issues | **CLOUD**: Cloud issues
 
 Always spell out on first use: "NXC-3464: CNW (Create Nx Workspace) Templates"
+
+### Version Management in Generators
+- Version constants go in `versions.ts`, never hardcoded in generator code
+- Follow existing patterns: `getInstalledViteMajorVersion`, `getInstalledAngularVersion` — use `getDependencyVersionFromPackageJson` + `semver.coerce/major`
+- Init generators must detect and preserve existing dependency versions — don't bump users to latest without explicit opt-in
+- When adding version detection, always add unit tests for: not installed (default), existing older version (preserved), existing same version (preserved), explicit flag override
 
 ### Commands & Testing
 - Use `nx run PROJECT:target` not `npm run`
@@ -363,6 +380,8 @@ Debug by adding logging to `node_modules/nx/src/executors/run-commands/`. Don't 
 - TSC errors in isolation normal (use project-level checks)
 - Stuck processes: `lsof -i :PORT` then `kill PID`
 - File reversions = linting/formatting (check `git diff`)
+- pnpm-lock.yaml rebase conflicts: NEVER use `git checkout --theirs pnpm-lock.yaml`.
+  Use: `git checkout origin/master -- pnpm-lock.yaml && pnpm install --no-frozen-lockfile`
 
 ### GitHub Actions Side Effects
 `setup-node` with `registry-url` sets `NODE_AUTH_TOKEN` (even dummy placeholder). When migrating to mise, this side effect is lost. CI detection should use `GITHUB_ACTIONS` env var.

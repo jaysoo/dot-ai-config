@@ -4,48 +4,50 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **NXC-4112: Auto-open browser on Cloud "yes"** (2026-03-25, completed)
+1. **DOC-452: Topic-Based Tutorial Series** (2026-03-25, in progress)
+   - Summary: Replaced monolithic tutorials with 7+1 focused topic pages. Progressive disclosure, AI-agent friendly, workspace-agnostic. PR #34998.
+   - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34998
+
+2. **NXC-4141: Reduce Push to GitHub Errors** (2026-03-25, completed)
+   - Summary: Added tiered timeouts (1s/10s/30s) to CNW GitHub push flow, switched to execAndWait, eliminated error.log, added GitHubPushError telemetry. PR #35011.
+   - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/35011
+
+3. **Vite 8 Support (community PR #34850)** (2026-03-25, in progress)
+   - Summary: Full Vite 8 support across Nx ecosystem — rolldown, plugin-react v6, type fixes, env API fix, Cypress CT error guard, version preservation in generators. 46 files, 6 packages.
+   - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34850
+
+4. **CLOUD-4390: ClickUp Exit Code 2 Investigation** (2026-03-25, completed)
+   - Summary: Investigated DTE status:2 bug. Root cause: latent `maxOf(task.code)` in Cloud + tsc exit code 2 + continuous assignments batching. UI fix in ocean#10513.
+   - Files: `.ai/2026-03-25/SUMMARY.md`, `/tmp/nx-exit-code-2-analysis.md`
+
+5. **NXC-4112: Auto-open browser on Cloud "yes"** (2026-03-25, completed)
    - Summary: Added auto-open browser for Cloud setup URL during CNW. Skips in CI, fails gracefully. PR #35014.
    - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/35014
 
-2. **DOC-418: nx-dev Build In-Place and Target Cleanup** (2026-03-20)
+6. **DOC-418: nx-dev Build In-Place and Target Cleanup** (2026-03-20)
    - Summary: Fixed nx-dev build, simplified project targets, added serve with docs watcher, root redirect to /blog. CI passing, PR #34730 in progress.
    - Files: `.ai/2026-03-20/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34730
 
-3. **SPACE Metrics: Simplify Quokka Unplanned Classification** (2026-03-20)
+7. **SPACE Metrics: Simplify Quokka Unplanned Classification** (2026-03-20)
    - Summary: Changed Quokka planned? logic — only misc project + DPE/Support label = unplanned. No-project issues excluded. PR #50.
    - Files: `.ai/2026-03-20/SUMMARY.md`, PR: https://github.com/nrwl/lighthouse/pull/50
 
-4. **SPACE Metrics: Exclude draft time from TTM** (2026-03-18)
+8. **SPACE Metrics: Exclude draft time from TTM** (2026-03-18)
    - Summary: TTM now uses ReadyForReviewEvent timestamp instead of created_at for draft PRs. Added ready_at column, updated GraphQL query, calculator, tests. PR #48.
    - Files: `.ai/2026-03-18/SUMMARY.md`, PR: https://github.com/nrwl/lighthouse/pull/48
 
-5. **March 2026 Cross-Functional Digest** (2026-03-18)
+9. **March 2026 Cross-Functional Digest** (2026-03-18)
    - Summary: Monthly digest covering Nx 22.6.0, task sandboxing, AI dev, telemetry, 6 enterprise PoVs. Plus technical changelog.
    - Files: `.ai/2026-03-18/tasks/nx-digest-2026-03-crossfunctional.md`, `.ai/2026-03-18/tasks/nx-digest-2026-03-changelog.md`
 
-6. **DOC-446: Telemetry Documentation** (2026-03-17, completed)
+10. **DOC-446: Telemetry Documentation** (2026-03-17, completed)
    - Summary: Created telemetry reference page, nx.json analytics property docs, sidebar entry. PR #34884.
    - Files: `.ai/2026-03-17/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34884
 
-7. **DOC-393: Writing Style Linting — Vale + Claude Skill** (2026-03-06, completed)
-   - Summary: Added Vale prose linter with 11 custom Nx rules, cacheable Nx target, mise.toml integration, and `nx-docs-style-check` Claude skill. CI green.
-   - Files: `.ai/2026-03-06/specs/writing-style-linting.md`
-
-8. **NXC-4030: Security CVE Cluster** (2026-03-05, completed)
-   - Summary: Bumped copy-webpack-plugin, css-minimizer-webpack-plugin, MF packages, koa, Next.js to patched versions. Added noErrorOnMissing compat fix, migrations for 22.6.0-beta.10. PR #34708, CI green.
-   - Files: `dot_ai/2026-03-05/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34708
-
-9. **NXC-4035: Surface clearer CNW SANDBOX_FAILED error** (2026-03-05, completed)
-   - Summary: Removed `--silent` from PM install commands, increased maxBuffer, structured error with exit code/log file/hint, added AI agent telemetry, migrated to CnwError. PR #34724.
-   - Files: `dot_ai/2026-03-04/tasks/nxc-4035-cnw-sandbox-error-surfacing.md`, PR: https://github.com/nrwl/nx/pull/34724
-
-10. **NXA-1075: nx-import Skill Rounds 3-4 + JEST.md + Gaps Report** (2026-03-04)
-    - Summary: Created JEST.md, ran rounds 3-4 validation (8 scenarios each, all PASS), generated gaps report (14 gaps), pushed to nx-ai-agents-config PR #74.
-    - Files: `.ai/2026-03-04/SUMMARY.md`, `~/.claude/commands/nx-import/GAPS-REPORT.md`
-
 ## Pending
-- [ ] follow-up: https://nrwl.slack.com/archives/C09DU17EUSD/p1774446678727519 (2026-03-25 10:05)
+- [x] ~~follow-up: CLOUD-4390 ClickUp exit code 2 investigation~~ (2026-03-25 10:05, completed)
+  - Root cause: latent `maxOf(task.code)` bug in Cloud + tsc exit code 2 + continuous assignments batching
+  - Fix: ocean#10513, UI maps non-zero/non-130 → FAILED
 - [ ] Create task for blog new repo/deploy (2026-03-24 18:51)
   - let philip and juri know
 - [ ] CNW: Add "use `nx init` instead" hint for INVALID_WORKSPACE_NAME with `.` (2026-03-23 14:00)
@@ -54,8 +56,8 @@
   - Also covers full paths like `/tmp/...`, `/Users/...`
   - ~309 errors/week (Mar 18-23), became #1 error code
 - [ ] Review PR #34890 (2026-03-23 08:45)
-- [ ] Look at removing push to github since it errors sometimes (2026-03-22 12:11)
-  - Evaluate whether the "auto-push repo" feature in Nx Cloud onboarding actually provides meaningful value to users. If most users don't expect or want their repos pushed automatically, we should remove or de-prioritize that flow and instead optimize the cloud onboarding experience around the assumption that repos are connected manually — simplifying setup steps and reducing confusion.
+- [x] ~~Look at removing push to github since it errors sometimes~~ (2026-03-22 12:11, completed via NXC-4141)
+  - Added timeouts and graceful error handling instead of removing. PR #35011.
 - [ ] Chase down Philip on missing blog posts and livestreams (2026-03-20 09:00)
   - Marketing support gaps flagged in Jason 1:1 (2026-03-19)
   - No blog posts or livestreams being produced
@@ -85,5 +87,12 @@
   - https://linear.app/nxdev/issue/NXC-3388/typeerror-0-configurationgetprojectname-is-not-a-function-when-running
   - They verified the fix so we just need to port it back to the plugin
   - JVA said that he will open a PR
+
+## Active Claude Sessions
+
+<!-- Directories with active or resumable Claude sessions. Use `cd <dir> && claude -r` to resume. -->
+<!-- Managed by /end-session and /list-sessions commands. /summarize cleans up stale entries. -->
+
+- `/Users/jack/projects/nx-worktrees/NXC-4143` — NXC-4143: cycle reminder script + workflow (2026-03-25)
 
 ## Later

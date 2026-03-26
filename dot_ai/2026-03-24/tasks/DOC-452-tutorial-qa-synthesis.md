@@ -1,8 +1,18 @@
-# Tutorial Series QA Synthesis Report (Round 4 - Final)
+# Tutorial Series QA Synthesis Report (Round 5 - Final)
 
 **PR**: #34998 - Replace monolithic tutorials with focused topic-based tutorials
 **Date**: 2026-03-25
-**Tested across**: 4 workspace setups, 8 tutorials each, 4 rounds, ~270 branches total
+**Tested across**: 4 workspace setups, 8 tutorials each, 5 rounds
+
+## Round 5 Update
+
+All R5 changes verified:
+- **Tutorial 5 "try it" exercise moved after inputs/outputs**: VERIFIED WORKING. With outputs configured, revert-and-rebuild correctly restores dist/ from cache on first run. This was the main R5 fix.
+- **Tutorial 1 restructured** (Adding a project after Creating a workspace): Better flow, verified.
+- **Tutorial 1 Python/uv mentions**: uv mentioned in workspace structure, new "Non-JavaScript workspaces" aside about project.json discovery. Helpful but not sufficient alone for Python users — a dedicated Python tutorial (like Gradle's) would be the biggest improvement.
+- **New finding**: Default `namedInputs.default` of `{projectRoot}/**/*` includes build artifacts (dist/, tsbuildinfo) for tsc workflows, causing cache hash to change after every build. Tutorial could note to exclude these.
+
+---
 
 ---
 

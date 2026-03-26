@@ -1,0 +1,32 @@
+[alias]
+	rh = reset --hard HEAD
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
+    ft = fetch origin tmo/main
+    rt = rebase origin/tmo/main
+    po = !git push origin \"$(git symbolic-ref --short HEAD)\"
+[core]
+	excludesfile = /Users/jack/.gitignore_global
+	eol = crlf
+	ignorecase = false
+	autocrlf = input
+	editor = nvim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[author]
+	name = Jack Hsu
+	email = jack.hsu@gmail.com
+[user]
+	email = jack.hsu@gmail.com
+	name = Jack Hsu
+	signingkey = 95F5E92C5A790087
+[init]
+	defaultBranch = main
+[status]
+	aheadBehind = false
+[commit]
+	gpgsign = false

@@ -25,6 +25,11 @@
 - **Goals:**
 - **Strengths:**
 
+## Kudos
+
+- **2026-03-25** | **Truth over Comfort** | Flagged that remaining AX issues won't fit capacity due to new Polygraph product, proactively suggested sitting down to review remaining tasks and determine which can be closed or treated as bug/misc
+- **2026-03-25** | **Highly Aligned Efforts** | Proactively reached out about AX capacity concerns before being asked, ensuring early visibility into the prioritization gap
+
 ## 1:1 Notes
 
 ### Upcoming

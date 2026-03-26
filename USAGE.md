@@ -19,3 +19,5 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | plan-week | skill | 2026-03-24 | 0 |
 | metrics-review | skill | 2026-03-24 | 1 |
 | nx-scorecard | command | 2026-03-24 | 0 |
+| brainstorm | skill | 2026-03-25 | 1 |
+| reflect | skill | 2026-03-25 | 1 |
