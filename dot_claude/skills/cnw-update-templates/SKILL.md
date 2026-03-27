@@ -38,6 +38,15 @@ For each template repo, verify:
 
 If any repo has uncommitted changes, **stop and report** — do not proceed.
 
+**Registry check:** Before running any `npm install`, verify there are no localhost/local registry URLs:
+
+```bash
+# Check ~/.npmrc for local registries
+grep -i 'registry.*localhost\|registry.*127\.0\.0\|registry.*0\.0\.0\.0' ~/.npmrc 2>/dev/null
+```
+
+If a local registry is detected, **stop and report** — local registry URLs will leak into `package-lock.json` and get committed.
+
 ### 2. Run Migrations (all 4 templates sequentially)
 
 For each template, run these commands. **All commands MUST use `CI=true` prefix** to skip interactive prompts:
@@ -59,8 +68,36 @@ After migration, for each template:
 
 - Run `git diff --stat` to show what changed
 - Run `grep '"nx"' package.json` to confirm target version
+- **Lockfile registry check:** Verify no localhost URLs leaked into `package-lock.json`:
+  ```bash
+  grep -i 'localhost\|127\.0\.0\|0\.0\.0\.0' package-lock.json | head -5
+  ```
+  If found, **stop and report** — do not commit. User must fix `~/.npmrc` and re-run `npm install`.
+- Run `CI=true npm audit --audit-level=critical` — if critical vulnerabilities found, **stop and report** before committing. List the affected packages so user can decide how to proceed.
 - Run `CI=true npx nx run-many -t test build lint typescript` to verify migrations didn't break anything
 - If any target fails, **stop and report the error** for that template — do not commit broken code
+
+### 3a. Check Framework Package Versions
+
+After nx migrate, check if framework-specific packages have updates that nx migrate missed. `nx migrate` only updates `nx` and `@nx/*` packages — framework packages (Angular, React, Vite, etc.) may need separate updates.
+
+For each template, check key framework packages:
+
+```bash
+# angular-template: check Angular packages
+npm view @angular/core version  # latest stable
+grep '"@angular/core"' package.json  # current
+
+# react-template: check React packages
+npm view react version
+grep '"react"' package.json
+
+# all templates with vite: check Vite
+npm view vite version
+grep '"vite"' package.json
+```
+
+If any framework package is behind by a **minor or major** version, **report it** in the summary with the current and latest versions. Do not auto-update — these may require their own migration steps (e.g., `ng update`, peer dep changes). Let the user decide.
 
 ### 4. Commit Changes
 
@@ -107,3 +144,5 @@ After committing, remind the user:
 - Minor/major releases may generate `migrations.json` with code changes — review carefully
 - If `nx migrate` fails for a template, report the error and continue with remaining templates
 - The `react-template` previously had a pre-existing unrelated change — always check for clean working tree first
+- **localhost registry leak (2026-03-27):** `~/.npmrc` with a local registry causes localhost URLs in `package-lock.json`. Always check before and after install.
+- **Framework packages lag behind (2026-03-27):** `nx migrate` only handles `nx`/`@nx/*` packages. Angular, React, Vite, etc. versions may fall behind if their update migrations were in a version range the template already passed through. Always check and report.

@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2026-03-25
+Last Updated: 2026-03-27
 
 ## Directory Overview
 
@@ -53,6 +53,26 @@ Vite build tool integration (supports Vite 5-8)
 - `packages/vite/src/plugins/plugin.ts` - Plugin detection checks both `rollupOptions.input` (Vite <8) and `rolldownOptions.input` (Vite >=8)
 - `packages/vite/src/executors/build/build.impl.ts` - Build executor; skips env config overwrite when `useEnvironmentsApi` is true (Vite 8 builder API)
 - **Vite 8 type workaround**: ESM-only `.d.mts` types not resolvable under `moduleResolution: "node"`. Uses `as any` casts with `TODO(jack)` comments across vite, vitest, cypress, react, angular, remix packages. Remove when switching to `moduleResolution: "nodenext"`.
+
+### packages/cypress/
+Cypress test runner integration
+
+- `packages/cypress/src/utils/versions.ts` - Version constants and detection utilities
+  - `cypressVersion` (^15.8.0), `cypressViteDevServerVersion` (^7.0.1), `viteVersion` (^6.0.0)
+  - Version map for Cypress 13/14 compat; `versions(tree)` returns correct versions based on installed Cypress
+  - `getInstalledCypressVersion()`, `getInstalledCypressMajorVersion()`, `assertMinimumCypressVersion()`
+- `packages/cypress/src/generators/component-configuration/component-configuration.ts` - Component testing setup
+  - **Vite 8 guard** (added in beta.5): `getDependencyVersionFromPackageJson(tree, 'vite')` — throws if vite major >= 8
+  - Cypress CT doesn't support Vite 8 yet (`@cypress/vite-dev-server` peer dep is `^5 || ^6 || ^7`)
+  - Upstream issue: https://github.com/cypress-io/cypress/issues/33078
+- `packages/cypress/src/plugins/preprocessor-vite.ts` - Vite 8 ESM type workaround (dynamic import)
+- `packages/cypress/plugins/cypress-preset.ts` - Shared preset for Angular/React CT
+
+**Angular CT**: `packages/angular/src/generators/cypress-component-configuration/` — uses webpack bundler for CT (hardcoded). Calls `ensurePackage('@nx/cypress')` → `baseCyCTConfig()`.
+
+**React CT**: `packages/react/src/generators/cypress-component-configuration/` — supports both vite and webpack. `packages/react/src/utils/ct-utils.ts` has `configureCypressCT()` and bundler detection.
+
+**Test workaround**: Both Angular/React CT test files use `useVite7ForCypressCT(tree)` helper to downgrade vite to ^7.0.0 in the tree before calling cypress config generator. Must be called AFTER app generators (which add vite 8) but BEFORE cypress config generator. Cannot go in `beforeEach` because app generators run after it.
 
 ### packages/vitest/
 Vitest test runner integration
@@ -132,10 +152,11 @@ The Nx documentation site (nx.dev/docs) - Astro/Starlight application
   - `track-asset-requests.ts` - GA4 analytics for .txt and .md requests
 - `astro-docs/src/content/docs/` - Documentation content in .mdoc format
 - `astro-docs/sidebar.mts` - Sidebar structure configuration
-- `astro-docs/src/content/docs/getting-started/Tutorials/` - Topic-based tutorials (DOC-452, 2026-03-25)
-  - 7 new focused tutorials: crafting-your-workspace, managing-dependencies, configuring-tasks, running-tasks, caching, understanding-your-workspace, reducing-configuration-boilerplate
+- `astro-docs/src/content/docs/getting-started/Tutorials/` - Topic-based tutorials (DOC-452, merged 2026-03-26)
+  - 8 focused tutorials: crafting-your-workspace, managing-dependencies, configuring-tasks, running-tasks, caching, understanding-your-workspace, reducing-configuration-boilerplate, self-healing-ci-tutorial
   - Each has `llm_copy_prompt` for AI agent tutoring and prev/next navigation cards
   - Old framework tutorials (react/angular/typescript) kept but hidden from sidebar for link compat
+- `astro-docs/src/content/docs/getting-started/` - Getting started pages all have consistent "Next steps" bullet lists linking to tutorial series, editor setup, and CI (PR #35024, 2026-03-26)
 - `astro-docs/src/assets/tutorials/` - SVG diagrams and screenshots for tutorials
 - `astro-docs/markdoc.config.mjs` - Custom Markdoc tags (graph, project_details, llm_copy_prompt, llm_only, cards, tabs, etc.)
   - `cards` tag: `cols` must be Number not String (`cols=2` not `cols="2"`)
@@ -339,6 +360,16 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - Environment variable `NEXT_PUBLIC_ASTRO_URL` for feature flag
 
 ## Personal Work History
+
+### 2026-03-27 - NXC-4152: Fix Vite 8 Cypress CT Test Failures
+- **Branch**: NXC-4152
+- **Status**: Complete (not yet pushed)
+- **Purpose**: Fix Angular and React cypress-component-configuration unit tests that break when `@nx/cypress` is bumped to 22.7.0-beta.5
+- **Root Cause**: beta.5 added a Vite 8 guard in `componentConfigurationGenerator` — reads `vite` from tree's `package.json`, throws if major >= 8. Our generators install `vite: '^8.0.0'`, so all CT tests fail.
+- **Fix**: Added `useVite7ForCypressCT(tree)` helper to both test files. Downgrades vite to `^7.0.0` in tree before calling cypress config generator.
+- **Key Constraint**: Cannot go in `beforeEach` — app generators run after `beforeEach` and re-add `vite: '^8.0.0'`.
+- **Files**: `packages/angular/src/generators/cypress-component-configuration/cypress-component-configuration.spec.ts`, `packages/react/src/generators/cypress-component-configuration/cypress-component-configuration.spec.ts`
+- **TODO**: Remove `useVite7ForCypressCT` when Cypress adds Vite 8 support (https://github.com/cypress-io/cypress/issues/33078)
 
 ### 2026-03-25 - NXC-4141: Reduce Push to GitHub Errors
 - **Branch**: NXC-4141

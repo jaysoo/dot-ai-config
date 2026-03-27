@@ -2,6 +2,24 @@
 
 ### March 2026
 
+- [x] NXC-4152: Fix Cypress CT tests failing with Vite 8 (2026-03-27) ✓ 2026-03-27
+  - Summary: Added `useVite7ForCypressCT(tree)` helper to Angular and React cypress-component-configuration tests to work around Vite 8 guard in `@nx/cypress@22.7.0-beta.5`.
+
+- [x] CNW Template Updates 22.6.1 → 22.6.2 (2026-03-27) ✓ 2026-03-27
+  - Summary: Migrated all 4 CNW templates to Nx 22.6.2. Manual fixes needed for Vite 8, Angular 21.2.5, and localhost registry leak.
+
+- [x] CNW Skill Improvements (2026-03-27) ✓ 2026-03-27
+  - Summary: Added 3 guardrails to cnw-update-templates skill: localhost registry check, npm audit, framework version staleness detection.
+
+- [x] DOC-452: Topic-Based Tutorial Series (2026-03-25) ✓ 2026-03-26
+  - Summary: Replaced monolithic tutorials with 8 focused topic pages. Progressive disclosure, AI-agent friendly, workspace-agnostic. PR #34998 merged.
+
+- [x] DOC-457: Webinar banner light mode support (2026-03-26) ✓ 2026-03-26
+  - Summary: Made WebinarNotifier theme-aware — light mode gets white bg/dark text/dark CTA matching Framer marketing site; dark mode unchanged. PR #35029.
+
+- [x] Docs: Getting started tutorial links (2026-03-26) ✓ 2026-03-26
+  - Summary: Added consistent next steps and tutorial links across all getting started pages. Replaced cards with bullet lists. PR #35024.
+
 - [x] NXC-4141: Reduce Push to GitHub Errors (2026-03-25) ✓ 2026-03-25
   - Summary: Added timeouts to CNW GitHub push flow (1s/10s/30s tiered), switched to execAndWait, eliminated error.log (#34482), added GitHubPushError with telemetry. PR #35011.
 

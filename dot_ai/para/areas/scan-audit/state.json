@@ -1,19 +1,19 @@
 {
-  "lastRun": "2026-03-24T16:00:00Z",
+  "lastRun": "2026-03-27T15:30:00Z",
   "lastWeeklyReport": "2026-W13",
   "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
   "findings": {
     "dependencies": { "critical": 24, "warning": 13, "watch": 12 },
-    "supply-chain": { "status": "clear", "cves": 0, "advisories-high": 82, "latest-nx": "22.6.1" },
-    "api-surface": { "high": 5, "medium": 10, "low": 6 },
-    "competitors": { "highlights": 8, "turbo-query-stable": true, "cache-provenance-attack": true },
-    "frameworks": { "compat-risks": 3, "ts6-ga": true },
-    "runtimes": { "action-items": 2, "node-security-delayed": true },
-    "ai-landscape": { "highlights": 12, "opportunities": 6, "risks": 5 },
-    "community": { "top-pain-points": 5, "open-issues": 474, "vite8-demand": true },
-    "capacity": { "high-risk-people": 4, "overdue-items": 22, "projects-started": 3 },
-    "project-health": { "zombies": 2, "overdue-projects": 13, "zombie-escalation": 6, "local-dist-regressing": true },
-    "customer-deps": { "churned": 1, "cooling": 1, "concentration-risks": 2, "task-sandboxing-derisked": true }
+    "supply-chain": { "status": "issues-found", "cves": 0, "advisories-high": 82, "latest-nx": "22.6.2", "next-tag-broken": true },
+    "api-surface": { "high": 6, "medium": 11, "low": 7 },
+    "competitors": { "highlights": 8, "turbo-napi-binding": true, "moon-ts6-support": true },
+    "frameworks": { "compat-risks": 6, "ts6-ga": true, "angular-onpush-default": true },
+    "runtimes": { "action-items": 2, "node-security-shipped": true, "node20-eol-days": 34 },
+    "ai-landscape": { "highlights": 12, "opportunities": 9, "risks": 5, "jetbrains-central": true },
+    "community": { "top-pain-points": 5, "open-issues": 464, "vite8-resolved": true, "downloads-weekly-avg": "9.19M" },
+    "capacity": { "high-risk-people": 4, "overdue-items": 18, "dillon-unblocked": true },
+    "project-health": { "zombies": 4, "overdue-projects": 6, "zombie-escalation": 7, "completions-this-week": 5, "local-dist-recovered": true },
+    "customer-deps": { "churned": 1, "cooling": 1, "concentration-risks": 2, "shci-customers": 8 }
   }
 }

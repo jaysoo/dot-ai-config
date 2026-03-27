@@ -7,4 +7,4 @@ missing exit criteria, and revenue coordination gaps.
 
 ## Reports
 
-- [2026-03](./2026-03.md) — Gradle (14.5mo) and Self-Healing (10.7mo) are zombies (6th consecutive closure recommendation — CRITICAL ESCALATION); Nx Local Dist 4th missed deadline, core milestone REGRESSED (17%, down from 20%); K8S Gateway target extended to 4/3; 6 projects 30+ days overdue; Anaplan PoV 12d overdue no movement; CIBC implementation at 0% with 7d left; MNP.ca 3d to target will miss; nx migrate Revamp spikes 5d overdue no movement; deprecated-team projects unchanged 6 cycles
+- [2026-03](./2026-03.md) — 48 In Progress projects; Gradle (14.6mo) and Self-Healing (10.8mo) are zombies (7th consecutive closure recommendation — CRITICAL); 5 projects completed (MNP.ca PoV on target, Pylon Rollout, 3 infra); Nx Local Dist RECOVERED to 38% (was 17%); Anaplan Wrap-Up at 81% due 3/31; CIBC implementation unblocked at 33%; nx migrate Revamp target extended to 5/8; CLI AX moved to Paused; 6 projects 30+ days overdue; deprecated-team projects unchanged 7 cycles

@@ -31,27 +31,98 @@ The default report includes these sections (all per-day):
 
 ### WORKSPACE_CREATION_FAILED Categorization
 
-When reporting WORKSPACE_CREATION_FAILED errors, classify each `errorMessage` into these categories:
+**IMPORTANT: Strip npm noise lines before categorizing.** The `errorMessage` field contains the full stderr from `npm install` / `nx new`. npm writes deprecation warnings and notices to stderr alongside real errors. If you categorize the raw message, you'll match `deprecated` or `npm notice` noise instead of the actual failure buried underneath.
 
-| Pattern to match in errorMessage | Category |
-|----------------------------------|----------|
+**Step 1 — Strip noise lines** from `errorMessage` before pattern matching:
+
+```js
+// Strip lines that are npm noise, not real errors.
+// KEEP: npm warn EBADENGINE, npm warn peerDependencies, npm error — these are real.
+// STRIP: npm warn deprecated, npm warn cleanup, npm notice, "Failed to create a workspace:" prefix.
+function stripNpmNoise(msg) {
+  var lines = msg.split("\n");
+  var filtered = lines.filter(function(l) {
+    if (l.match(/^npm warn deprecated\s/)) return false;
+    if (l.match(/^npm warn cleanup\s/)) return false;
+    if (l.match(/^npm notice\s/)) return false;
+    if (l.match(/^Failed to create a workspace:\s/)) return false;
+    return true;
+  });
+  var result = filtered.join("\n").trim();
+  return result.length > 0 ? result : msg;
+}
+```
+
+**Step 2 — Categorize the stripped message** using these patterns:
+
+| Pattern to match in **stripped** errorMessage | Category |
+|-----------------------------------------------|----------|
 | `ERESOLVE` | ERESOLVE dependency conflict |
 | `native-bindings` or `native binding` | Native bindings not found (Termux/Android) |
 | `ENOENT` | ENOENT (file/command not found) |
 | `ETARGET` | ETARGET (version not found) |
 | `EACCES` | EACCES (permission denied) |
-| `ETIMEDOUT`, `ECONNRESET`, `EAI_AGAIN`, `ENOTFOUND` | Network error |
+| `ETIMEDOUT`, `ECONNRESET`, `EAI_AGAIN`, `ENOTFOUND`, `UNABLE_TO_GET_ISSUER_CERT` | Network/TLS error |
 | `startsWith` | pnpm null startsWith bug |
-| `deprecated` | npm deprecation warning (false positive) |
 | `CommaExpected` or `parse` | JSON parse error |
 | `spawnSync` | spawnSync ENOENT |
 | `EPERM` | EPERM (Windows permission) |
+| `EISDIR` | EISDIR (symlink/directory conflict) |
 | `ERR_PNPM` | pnpm error |
 | `Cannot find module` | Cannot find module |
 | `ENOMEM` or `heap` | Out of memory |
 | `must provide string spec` | npm must provide string spec |
 | `does not match the schema` | Schema validation error |
-| (none of the above) | Other: (first 120 chars of message) |
+| `EBADENGINE` | EBADENGINE (Node version mismatch) |
+| `E404` | E404 (package not found) |
+| `E401` | E401 (auth/token error) |
+| Stripped message is empty (only noise was present) | npm warnings only (no real error) |
+| (none of the above) | Other: (first 120 chars of **stripped** message) |
+
+**Why this matters (discovered Mar 2026):** ~79% of errors previously categorized as "npm deprecation warning (false positive)" actually had real errors (ERESOLVE, ECONNRESET, ETARGET, EPERM, TLS cert errors, etc.) hidden under the warnings. Only ~21% were truly warning-only (npm exited non-zero with only deprecation output — almost all `angular-monorepo` preset).
+
+**Reference `$function` for use in mongosh queries:**
+
+```js
+// Full categorization function for use in $function
+function categorize(meta) {
+  var p = JSON.parse(meta);
+  var msg = p.errorMessage || "";
+  // Step 1: strip npm noise (keep EBADENGINE, peerDependencies, npm error)
+  var lines = msg.split("\n");
+  var filtered = lines.filter(function(l) {
+    if (l.match(/^npm warn deprecated\s/)) return false;
+    if (l.match(/^npm warn cleanup\s/)) return false;
+    if (l.match(/^npm notice\s/)) return false;
+    if (l.match(/^Failed to create a workspace:\s?/)) return false;
+    return true;
+  });
+  var stripped = filtered.join("\n").trim();
+  // Step 2: categorize on stripped (or original if empty)
+  var m = stripped.length > 0 ? stripped : msg;
+  if (stripped.length === 0) return "npm warnings only (no real error)";
+  if (m.indexOf("ERESOLVE") >= 0) return "ERESOLVE dependency conflict";
+  if (m.indexOf("native-bindings") >= 0 || m.indexOf("native binding") >= 0) return "Native bindings (Termux/Android)";
+  if (m.indexOf("ENOENT") >= 0) return "ENOENT (file/command not found)";
+  if (m.indexOf("ETARGET") >= 0) return "ETARGET (version not found)";
+  if (m.indexOf("EACCES") >= 0) return "EACCES (permission denied)";
+  if (m.indexOf("ETIMEDOUT") >= 0 || m.indexOf("ECONNRESET") >= 0 || m.indexOf("EAI_AGAIN") >= 0 || m.indexOf("ENOTFOUND") >= 0 || m.indexOf("UNABLE_TO_GET_ISSUER_CERT") >= 0) return "Network/TLS error";
+  if (m.indexOf("startsWith") >= 0) return "pnpm null startsWith bug";
+  if (m.indexOf("CommaExpected") >= 0 || m.indexOf("parse") >= 0) return "JSON parse error";
+  if (m.indexOf("spawnSync") >= 0) return "spawnSync ENOENT";
+  if (m.indexOf("EPERM") >= 0) return "EPERM (Windows permission)";
+  if (m.indexOf("EISDIR") >= 0) return "EISDIR (symlink/directory conflict)";
+  if (m.indexOf("ERR_PNPM") >= 0) return "pnpm error";
+  if (m.indexOf("Cannot find module") >= 0) return "Cannot find module";
+  if (m.indexOf("ENOMEM") >= 0 || m.indexOf("heap") >= 0) return "Out of memory";
+  if (m.indexOf("must provide string spec") >= 0) return "npm must provide string spec";
+  if (m.indexOf("does not match the schema") >= 0) return "Schema validation error";
+  if (m.indexOf("EBADENGINE") >= 0) return "EBADENGINE (Node version mismatch)";
+  if (m.indexOf("E404") >= 0) return "E404 (package not found)";
+  if (m.indexOf("E401") >= 0) return "E401 (auth/token error)";
+  return "Other: " + m.substring(0, 120);
+}
+```
 
 ## Default Filters
 
@@ -199,8 +270,8 @@ Understanding when features were introduced is critical for cross-month comparis
 
 | Code                        | Description                               |
 | --------------------------- | ----------------------------------------- |
-| `WORKSPACE_CREATION_FAILED` | `npx nx new` failed (often npm stderr)    |
-| `UNKNOWN`                   | Uncategorized (missing PM, git issues)    |
+| `WORKSPACE_CREATION_FAILED` | `npx nx new` failed (often npm stderr — see noise stripping note above) |
+| `UNKNOWN`                   | Catch-all from `execAndWait` (see common patterns below) |
 | `PRESET_FAILED`             | Preset application failed                 |
 | `SANDBOX_FAILED`            | Dependency install in temp sandbox failed |
 | `TEMPLATE_CLONE_FAILED`     | Git clone of template repo failed         |
@@ -209,6 +280,8 @@ Understanding when features were introduced is critical for cross-month comparis
 | `INVALID_WORKSPACE_NAME`    | Name doesn't match validation (most common: `"."`) |
 | `INVALID_PACKAGE_MANAGER`   | Unsupported or missing package manager    |
 | `INVALID_PRESET`            | Preset name not recognized                |
+
+**UNKNOWN error patterns (Mar 2026 data):** ~65% are "Preset is required when not using a template" (users calling CNW without `--preset` or `--template` in non-interactive mode). ~10% are "Invalid template. Only templates from 'nrwl' org supported." The rest are misc (missing pnpm, EACCES, network errors that `execAndWait` categorized as UNKNOWN instead of a specific code). Apply the same noise-stripping approach when analyzing UNKNOWN errorMessages.
 
 ### VCS Push Status (`pushedToVcs` in `complete` events)
 

@@ -7,4 +7,4 @@ engagement health, DPE capacity, and concentration risk.
 
 ## Reports
 
-- [2026-03](./2026-03.md) — Celonis CPU 4d overdue (DTE gaps resolved same-day), Emeria Prometheus 7d overdue, RBC Maven 26d overdue (CI usage Canceled), Medianet 32d overdue, Wix io-trace fix landed (Task Sandboxing now 2 customers), Capital One S3 blocker, Caesars churned. Refreshed 2026-03-24.
+- [2026-03](./2026-03.md) — Celonis Self-Healing CI onboarding started (NXA-1211), CPU 7d overdue. Emeria Prometheus 10d overdue. RBC Maven 29d overdue (approaching Cold). Medianet 35d overdue (Cold). Self-Healing CI now 8 customers. Wix io-trace fix landed. CIBC MSA progressing. Caesars churned. Refreshed 2026-03-27.

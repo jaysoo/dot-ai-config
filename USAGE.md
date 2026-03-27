@@ -8,12 +8,12 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 |------|------|-------------|-------|
 | cnw-stats-analyzer | skill | 2026-03-22 | 1 |
 | dot-claude-guard | skill | 2026-03-22 | 1 |
-| scan-and-audit | skill | 2026-03-24 | 3 |
-| scan-competitors | command | 2026-03-24 | 3 |
-| customer-deps-audit | task | 2026-03-24 | 1 |
-| runtime-tracking-scan | task | 2026-03-24 | 1 |
-| team-capacity-audit | task | 2026-03-24 | 8 |
-| community-sentiment | task | 2026-03-24 | 6 |
+| scan-and-audit | skill | 2026-03-27 | 4 |
+| scan-competitors | command | 2026-03-27 | 4 |
+| customer-deps-audit | task | 2026-03-27 | 2 |
+| runtime-tracking-scan | task | 2026-03-27 | 2 |
+| team-capacity-audit | task | 2026-03-27 | 9 |
+| community-sentiment | task | 2026-03-27 | 7 |
 | kudos | command | 2026-03-24 | 0 |
 | plan-week | command | 2026-03-24 | 0 |
 | plan-week | skill | 2026-03-24 | 0 |
@@ -21,3 +21,13 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | nx-scorecard | command | 2026-03-24 | 0 |
 | brainstorm | skill | 2026-03-25 | 1 |
 | reflect | skill | 2026-03-25 | 1 |
+| cnw-update-templates | skill | 2026-03-27 | 1 |
+| summarize | command | 2026-03-27 | 1 |
+| audit-supply-chain | skill | 2026-03-27 | 1 |
+| audit-dependencies | skill | 2026-03-27 | 1 |
+| pylon-support | skill | 2026-03-27 | 1 |
+| scan-community | skill | 2026-03-27 | 7 |
+| scan-frameworks | skill | 2026-03-27 | 1 |
+| scan-ai-landscape | skill | 2026-03-27 | 1 |
+| audit-api-surface | skill | 2026-03-27 | 7 |
+| audit-project-health | skill | 2026-03-27 | 8 |

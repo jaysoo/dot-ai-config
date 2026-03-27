@@ -39,10 +39,11 @@ Activate whenever you are about to:
    | `~/.gitignore_global` | `~/projects/dot-ai-config/gitignore_global` |
    | `~/.tmux.conf` | `~/projects/dot-ai-config/tmux.conf` |
 
-2. **After editing**, run the sync script to propagate changes:
+2. **Immediately after editing**, run the sync script so changes take effect right away (don't wait for git push):
    ```bash
    ~/projects/dot-ai-config/sync.sh
    ```
+   This copies the edited files to their active locations (`~/.claude/`, `~/.config/`, etc.).
 
 3. **Log the invocation** — update the usage tracker (see below).
 
