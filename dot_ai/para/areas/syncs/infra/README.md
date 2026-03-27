@@ -4,44 +4,89 @@ Tracking document for Infrastructure team sync meetings.
 
 ## Topics for Next Meeting
 
-- Synthetic checks: How do they alert us? What's the notification flow?
-- GitHub integration automation - follow up with Red Panda team
+- Follow up on pentest retest confirmation
+- Sandboxing/Prometheus rollout progress — which clients onboarded?
+- ClickUp GitHub rate limiting — Altan's spam reduction solution
+- Private link research status (Hilton use case)
+- Multi-cluster controller facade — dev deployment feedback
+- Istio implementation timeline
 
 ## Upcoming Sync
 
 ## Action Items
 
-### Metrics Endpoint
-- Patrick to complete service account setup for remaining environments
-- Szymon to deploy metrics endpoint to staging
+- [ ] Altan: Investigate ClickUp GitHub rate limiting / spam reduction
+- [ ] Backend team: Test Prometheus metrics on dev environments (AWS/Azure)
+- [ ] Frontend team: Coordinate URL structure for public vs private endpoints (GH app consolidation)
+- [ ] Steve: Continue private link research for enterprise customers
+- [ ] Team: Await pentest retest confirmation
 
-### Key Container Registry
-- Ask Thomas to add Steve to vendor card for Key registry billing (~$150/mo)
-- Investigate billing discrepancy (shows 24/24 but plan should be 50+)
+### Older
+- [ ] Patrick: Complete service account setup for remaining environments
+- [ ] Ask Thomas to add Steve to vendor card for Key registry billing (~$150/mo)
 
-### GitHub Integration
-- Jack to discuss GitHub integration automation with Red Panda team
-- Steve granted GitHub org admin access to reduce coordination overhead
-
-### Password Visibility
-- Fix SSR password visibility security gap (passwords visible in server-rendered source)
-
-### Code Architecture
-- Plan workflow controller refactoring - separate shared components into libraries (~1 week effort)
-
-### Linear as Source of Truth
-- Ensure Linear tasks are the source of truth
-- Attach relevant docs, links, PRs to issues
-
-### Docker Layer Caching
-- Follow up on project success metrics
-
-### Hosted Redis
-- Follow up on project success metrics
+### Reference
+- GH app consolidation project: https://linear.app/nxdev/project/infra-take-control-of-gh-app-for-tenants-do-central-callback-10b97b2cec45/overview
 
 ---
 
 ## Meeting Notes
+
+### 2026-03-24
+
+**Attendees:** Patrick, Steve, Altan, Szymon, Louie
+
+**Security & Infrastructure Issues**
+- Microsoft false positive flagging client bundle as malware
+  - Glass worm Trojan detection in virus scanner
+  - Only Microsoft flagging, other scanners clean
+  - Microsoft confirmed false positive and removed detection
+  - Caused customer concerns and support tickets
+
+**Feature Rollout Status**
+- Sandboxing and Prometheus metrics ready for deployment
+  - GCP tenants fully supported with internal routing
+  - AWS and Azure support requires additional work
+    - Can expose single route on public ingress for testing
+    - Backend team needs to test on dev environments first
+  - Rollout will be gradual with initial 1-3 clients for feedback
+- ClickUp GitHub rate limiting ongoing
+  - Altan investigating spam reduction solutions
+
+**Multi-Cloud Infrastructure Planning**
+- Private link research for enterprise customers
+  - Hilton previously requested VPN-only access
+  - Would require additional networking costs and complexity
+  - Support team access challenges with private-only setup
+  - Research phase only, not immediate implementation
+- Multi-cluster deployment progress
+  - Controller facade ready for dev deployment
+  - Will enable workload distribution across clusters
+  - Single API interface maintained
+
+**Security & Email System Improvements**
+- Penetration test findings addressed
+  - Critical and high findings resolved
+  - Awaiting retest confirmation
+- Email system vulnerability fixes
+  - Preventing malicious org names in URLs
+  - Proposed sending limits based on account tier
+    - Free: 5 invites at a time
+    - Paid: higher limits
+    - Enterprise: unrestricted
+- Istio implementation planned for traffic control and billing visibility
+
+**GitHub App Consolidation**
+- New polygraph feature requires separate GitHub app initially
+- Centralized login solution in development
+  - Single callback URL for all environments
+  - Route users based on context variables
+  - Will eliminate multiple app requirements
+- Frontend team coordination needed for URL structure
+  - Require proper prefixes for public vs private endpoints
+  - Avoid exposing internal metrics/debugging endpoints
+
+[Transcript](https://notes.granola.ai/t/46b1fb61-d735-4007-b564-faf891d27726-00demib2)
 
 ### 2026-02-24
 
