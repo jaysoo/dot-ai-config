@@ -2,6 +2,12 @@
 
 ### March 2026
 
+- [x] NXC-4153: Fix CNW Non-Interactive Mode + Template Shorthands (2026-03-27) ✓ 2026-03-27
+  - Summary: Fixed 22.6.0 regression where non-interactive mode crashed without `--preset`. Default to `nrwl/empty-template`. Added shorthand template names (angular, react, typescript, empty). PR #35045.
+
+- [x] NXC-4113: A/B Test Cloud Prompt Copy in CNW (2026-03-27) ✓ 2026-03-27
+  - Summary: Re-enabled cloud prompt with 3 A/B copy variants tied to flow variant. Emphasizes remote caching, CI speed, mentions GitHub/GitLab, free tier, 2-min setup. Dimmed "never" option. Branch pushed.
+
 - [x] NXC-4152: Fix Cypress CT tests failing with Vite 8 (2026-03-27) ✓ 2026-03-27
   - Summary: Added `useVite7ForCypressCT(tree)` helper to Angular and React cypress-component-configuration tests to work around Vite 8 guard in `@nx/cypress@22.7.0-beta.5`.
 

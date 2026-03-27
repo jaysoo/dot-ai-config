@@ -340,6 +340,13 @@ Always spell out on first use: "NXC-3464: CNW (Create Nx Workspace) Templates"
 - Init generators must detect and preserve existing dependency versions — don't bump users to latest without explicit opt-in
 - When adding version detection, always add unit tests for: not installed (default), existing older version (preserved), existing same version (preserved), explicit flag override
 
+### CNW A/B Testing Infrastructure
+- `NX_CNW_FLOW_VARIANT` controls BOTH flow behavior AND prompt copy variant — NEVER add a separate env var for prompt selection
+- `PromptMessages.getPrompt(key)` selects from the `messageOptions[key]` array using the flow variant index
+- To add new A/B test variants: add entries to the relevant `messageOptions` array (e.g., `setupNxCloudV2`), each with a unique `code` for tracking
+- Flow variant is cached per-user for 1 week (tmpfile) — same user sees same variant consistently
+- Don't use `parseInt` on values that are already validated single-digit strings — use `Number()` or direct indexing
+
 ### Commands & Testing
 - Use `nx run PROJECT:target` not `npm run`
 - Use `.spec.ts` extension for tests (not `.test.ts`)

@@ -85,16 +85,16 @@ Vitest test runner integration
 ### packages/create-nx-workspace/ (CNW)
 CLI tool for creating new Nx workspaces. Two separate code paths: preset flow (default) and template flow (`--template`).
 
-**Last Updated**: 2026-03-25
-**Related Issues**: NXC-4141 (push timeout/error handling), NXC-4112 (auto-open browser), NXC-4020 (restored v22.1.3 flow), NXC-3628, NXC-3624
-**Status**: NXC-4020 merged (PR #34671). NXC-4112 in review (PR #35014). Human-visible flow matches v22.1.3. A/B testing and template prompt code commented out (not deleted) with `NXC-4020` tags.
+**Last Updated**: 2026-03-27
+**Related Issues**: NXC-4153 (non-interactive fix + template shorthands), NXC-4113 (A/B test cloud prompt copy), NXC-4141 (push timeout/error handling), NXC-4112 (auto-open browser), NXC-4020 (restored v22.1.3 flow), NXC-3628, NXC-3624
+**Status**: NXC-4153 PR #35045 (non-interactive fix + shorthands). NXC-4113 branch pushed. NXC-4020 merged (PR #34671). NXC-4112 in review (PR #35014).
 
 **Key Files**:
 - `bin/create-nx-workspace.ts` - CLI entry point; preset flow uses simple `determineNxCloud` → `determineIfGitHubWillBeUsed` (v22.1.3 pattern)
-- `src/create-workspace.ts` - Workspace creation; preset and template flows are **completely separate code paths**
+- `src/create-workspace.ts` - Workspace creation; preset and template flows are **completely separate code paths**; `resolveTemplateShorthand()` maps shorthand names (angular, react, typescript, empty) to `nrwl/*-template` format
 - `src/create-workspace-options.ts` - TypeScript interfaces
-- `src/internal-utils/prompts.ts` - `determineTemplate()` returns `'custom'` directly (template prompt commented out)
-- `src/utils/nx/ab-testing.ts` - `getFlowVariant()` returns `'0'`, `getBannerVariant()` returns `'0'`, `shouldShowCloudPrompt()` returns `false`
+- `src/internal-utils/prompts.ts` - `determineTemplate()` returns template name or `'custom'`; non-interactive/CI defaults to `'nrwl/empty-template'` (fixed in NXC-4153, was returning `'custom'` causing crashes)
+- `src/utils/nx/ab-testing.ts` - A/B testing infrastructure. `getFlowVariant()` returns `'0'`/`'1'`/`'2'` (cached, overridable via `NX_CNW_FLOW_VARIANT`). Flow variant controls BOTH which prompt copy is shown (via `PromptMessages.getPrompt()`) AND tracking. `setupNxCloudV2` has 3 copy variants. `shouldShowCloudPrompt()` removed (prompt always shown).
 - `src/utils/nx/nx-cloud.ts` - Cloud connection, URL generation, browser auto-open; `getNxCloudInfo(nxCloud, url, pushStatus, rawNxCloud?)` uses `rawNxCloud` to hide URL when user passed `--nxCloud` explicitly; `openCloudSetupUrl()` opens browser (skips CI, fails gracefully)
 - `src/utils/nx/messages.ts` - Completion messages (no github.com/new URLs)
 - `src/utils/git/git.ts` - Git utilities; `GitHubPushError` class with `reason` field for telemetry; `pushToGitHub()` throws on failure (caller handles gracefully); tiered timeouts: `GH_CLI_TIMEOUT_MS` (1s), `GH_LIST_TIMEOUT_MS` (10s), `GH_PUSH_TIMEOUT_MS` (30s)
@@ -361,6 +361,17 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 
 ## Personal Work History
 
+### 2026-03-27 - NXC-4153: Fix CNW Non-Interactive Mode + Template Shorthands
+- **Branch**: NXC-4153
+- **Commit**: `ebc19c7785`
+- **PR**: https://github.com/nrwl/nx/pull/35045
+- **Status**: PR created
+- **Purpose**: Fix 22.6.0 regression where non-interactive contexts crash without `--preset`, and add shorthand template names
+- **Root Cause**: `determineTemplate()` returned `'custom'` in non-interactive mode, routing to preset flow which requires `--preset`. ~145 errors Mar 18-27.
+- **Fix 1**: Changed non-interactive/CI fallback to `'nrwl/empty-template'` (template flow). Removed dead ternary branch (`parsedArgs.preset` check was unreachable since line 110 already handles it).
+- **Fix 2**: Added `resolveTemplateShorthand()` — maps `angular`, `react`, `typescript`, `empty` to full `nrwl/*-template` paths. Updated `--help` examples.
+- **Files**: `prompts.ts`, `prompts.spec.ts` (new), `create-workspace.ts`, `create-workspace.spec.ts`, `bin/create-nx-workspace.ts`
+
 ### 2026-03-27 - NXC-4152: Fix Vite 8 Cypress CT Test Failures
 - **Branch**: NXC-4152
 - **Status**: Complete (not yet pushed)
@@ -370,6 +381,20 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - **Key Constraint**: Cannot go in `beforeEach` — app generators run after `beforeEach` and re-add `vite: '^8.0.0'`.
 - **Files**: `packages/angular/src/generators/cypress-component-configuration/cypress-component-configuration.spec.ts`, `packages/react/src/generators/cypress-component-configuration/cypress-component-configuration.spec.ts`
 - **TODO**: Remove `useVite7ForCypressCT` when Cypress adds Vite 8 support (https://github.com/cypress-io/cypress/issues/33078)
+
+### 2026-03-27 - NXC-4113: A/B Test Cloud Prompt Copy
+- **Branch**: NXC-4113
+- **Commit**: `50fef73acf`
+- **Status**: Branch pushed, PR not yet created
+- **Purpose**: Re-enable cloud prompt in CNW with 3 A/B test copy variants to increase "yes" and reduce "never" rates
+- **Key Changes**:
+  - Removed `shouldShowCloudPrompt()` (was returning `false`, unused)
+  - `PromptMessages.getPrompt()` now uses `getFlowVariant()` to select prompt copy variant (was independent random)
+  - 3 variants in `setupNxCloudV2`: baseline ("Connect to Nx Cloud?"), remote-cache-focused, CI-speed-focused
+  - "No, don't ask again" dimmed via `chalk.dim()` to reduce "never" selections
+  - Each variant has unique tracking code for measurement
+- **Design Decision**: Prompt copy variant tied to flow variant (`NX_CNW_FLOW_VARIANT`) rather than separate randomization — single env var controls both for testing and tracking consistency
+- **Files**: `packages/create-nx-workspace/src/utils/nx/ab-testing.ts`, `ab-testing.spec.ts`
 
 ### 2026-03-25 - NXC-4141: Reduce Push to GitHub Errors
 - **Branch**: NXC-4141

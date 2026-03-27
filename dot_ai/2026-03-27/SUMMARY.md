@@ -2,6 +2,26 @@
 
 ## Completed
 
+### NXC-4113: A/B Test Cloud Prompt Copy in CNW
+
+- **Issue**: https://linear.app/nxdev/issue/NXC-4113
+- **Goal**: Increase "yes" rate and reduce "never" rate on the Nx Cloud prompt during `create-nx-workspace`
+- **Changes**:
+  - Re-enabled cloud prompt (was disabled since CLOUD-4255)
+  - Added 3 A/B test copy variants tied to `NX_CNW_FLOW_VARIANT` (existing infra):
+    - Variant 0 (baseline): "Connect to Nx Cloud?"
+    - Variant 1 (remote caching): "Enable remote caching to speed up builds with Nx Cloud?"
+    - Variant 2 (CI-first): "Speed up your CI with Nx Cloud?"
+  - New variants emphasize concrete benefits (remote caching, CI speed), mention CI providers (GitHub, GitLab), and note free tier + 2-minute setup
+  - Made "No, don't ask again" dimmed via `chalk.dim()` to reduce "never" selections
+  - Removed unused `shouldShowCloudPrompt()` function
+  - Prompt variant selection now uses `getFlowVariant()` instead of independent random — same env var (`NX_CNW_FLOW_VARIANT`) controls both flow and prompt copy
+- **Files changed**:
+  - `packages/create-nx-workspace/src/utils/nx/ab-testing.ts`
+  - `packages/create-nx-workspace/src/utils/nx/ab-testing.spec.ts`
+- **Branch**: `NXC-4113` (pushed, PR not yet created)
+- **Next**: Create PR, then do similar for `nx init`
+
 ### NXC-4152: Fix unit tests failing with Vite 8 on @nx/cypress beta.5
 
 - **Issue**: https://linear.app/nxdev/issue/NXC-4152
@@ -37,3 +57,18 @@
   1. **Registry check**: Pre-flight check for localhost/local registry in `~/.npmrc`; post-install validation of `package-lock.json`
   2. **npm audit**: Run `npm audit --audit-level=critical` after install, stop on criticals
   3. **Framework version check**: After `nx migrate`, compare Angular/React/Vite versions against latest stable and report if behind by minor/major
+
+### NXC-4153: Fix CNW Non-Interactive Mode + Template Shorthands
+
+- **Issue**: https://linear.app/nxdev/issue/NXC-4153
+- **PR**: https://github.com/nrwl/nx/pull/35045
+- **Problem**: 22.6.0 regression — `determineTemplate()` returned `'custom'` in non-interactive contexts (IDE terminals, scripts, SSH without `-t`), requiring `--preset`. Without it, threw "Preset is required". ~145 occurrences Mar 18-27, ~15 users/day.
+- **Fix 1**: Changed non-interactive/CI fallback from `'custom'` to `'nrwl/empty-template'` (template flow). Removed dead ternary branch that could never execute.
+- **Fix 2**: Added `resolveTemplateShorthand()` — maps `angular`, `react`, `typescript`, `empty` to full `nrwl/*-template` paths. Updated `--help` examples to show shorthands.
+- **Tests**: 10 new tests (6 for shorthand resolution, 4 for `determineTemplate` behavior in non-interactive/CI mode)
+- **Files changed**:
+  - `packages/create-nx-workspace/src/internal-utils/prompts.ts`
+  - `packages/create-nx-workspace/src/internal-utils/prompts.spec.ts` (new)
+  - `packages/create-nx-workspace/src/create-workspace.ts`
+  - `packages/create-nx-workspace/src/create-workspace.spec.ts`
+  - `packages/create-nx-workspace/bin/create-nx-workspace.ts`
