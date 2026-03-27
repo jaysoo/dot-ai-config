@@ -1,5 +1,5 @@
 function gh
-    set -l pending_file /tmp/op-gh-pending
+    set -l pending_dir /tmp/op-gh-pending
     set -l reason ""
     set -l gh_args
 
@@ -19,29 +19,22 @@ function gh
         set i (math $i + 1)
     end
 
-    # Build pending entry
+    # Each invocation gets its own file, named by PID
+    mkdir -p $pending_dir
+    set -l entry_file $pending_dir/$fish_pid
+
+    # Build entry
     set -l entry (date '+%H:%M:%S')" "(pwd)" gh $gh_args"
     if test -n "$reason"
         set entry "$entry  # $reason"
     end
-
-    # Append to pending file
-    echo $entry >>$pending_file
+    echo $entry >$entry_file
 
     # Run gh via op plugin
     op plugin run -- gh $gh_args
     set -l exit_code $status
 
-    # Remove our entry from pending file
-    if test -f $pending_file
-        set -l escaped (string escape --style=regex -- $entry)
-        string match -v -- $entry (cat $pending_file) >$pending_file.tmp
-        mv $pending_file.tmp $pending_file
-        # Clean up empty file
-        if test ! -s $pending_file
-            rm -f $pending_file
-        end
-    end
+    rm -f $entry_file
 
     return $exit_code
 end
