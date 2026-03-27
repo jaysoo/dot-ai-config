@@ -42,71 +42,44 @@ Two audiences:
   Default to the current month if not specified.
 - **Output format**: Default is markdown. User may request other formats.
 
-## Execution Strategy: Multi-Pass Deep Dive
+## Execution Strategy: Two-Pass Pipeline
 
-This digest uses a **3-pass pipeline**. Prefer thoroughness over speed —
-use many tokens and subagents to get a precise picture, then progressively
-summarize down to the final output.
+This digest uses a **2-pass pipeline**. Prefer thoroughness over speed —
+use many tokens and subagents to get a precise picture, then synthesize
+into the final output.
 
 ### Pass 1: Broad Data Collection (parallel)
 
 Collect raw data from all five sources **in parallel**:
 
 - **Sources 1 and 3** (GitHub repos): Use Bash `gh` commands directly (fast).
-- **Source 2** (Cloud changelog): **Launch a Task subagent** — there are often
-  20+ version pages to fetch individually via WebFetch.
-- **Source 4** (Linear): **Launch a Task subagent** — multiple paginated API
-  calls are needed across teams. This subagent should pull ALL completed
+- **Source 2** (Cloud changelog): **Launch a background Agent** — there are
+  often 20+ version pages to fetch individually via WebFetch.
+- **Source 4** (Linear): **Launch a background Agent** — multiple paginated
+  API calls are needed across teams. This agent should pull ALL completed
   issues (not just counts), all project updates, and all status changes.
 - **Source 5** (Pylon): Pull support tickets for enterprise/PoV customers
-  directly via Pylon MCP (fast — no subagent needed).
+  directly via Pylon MCP (fast — no agent needed).
 
 Additionally, check for **blog posts** published during the target month:
 
 - Fetch `https://nx.dev/blog` via WebFetch and look for posts from the month.
 - Check the nx repo for blog-related commits if applicable.
 
-Do NOT wait for one source before starting another. Launch subagents for
-Sources 2 and 4 immediately, then collect Sources 1, 3, and 5 via Bash/MCP
-while the subagents work in the background.
+Do NOT wait for one source before starting another. Launch background agents
+for Sources 2 and 4 immediately, then collect Sources 1, 3, and 5 via
+Bash/MCP while the agents work in the background.
 
-### Pass 2: Theme Deep Dives (parallel subagents)
+### Pass 2: Theme Detection & Writing
 
-After Pass 1 completes, identify 5-10 themes from the raw data (see
-"Theme Detection" below). Then **launch a dedicated subagent for each
-major theme** to do an exhaustive deep dive.
+Once Pass 1 data is collected (including background agent results):
 
-Each theme subagent should:
-
-1. Read ALL related Linear issues in full (not just titles — descriptions,
-   comments, linked PRs, linked issues).
-2. Read full PR descriptions for key GitHub PRs in this theme.
-3. Check for customer-facing impact: Pylon tickets, support mentions,
-   customer names in Linear issues.
-4. Identify the full story: what was the problem, what shipped, what's
-   the customer impact, what's still in progress.
-5. Return a **theme brief** (1-2 pages) covering:
-   - **What changed** (comprehensive list of all work)
-   - **Why it matters** (customer impact, business value)
-   - **Who led it** (project leads, key contributors — first names only)
-   - **What's next** (remaining work, upcoming milestones)
-   - **Customer-facing summary** (1-2 sentences, no jargon)
-   - **Related content** (blog posts, docs pages, screenshots from project updates)
-
-Launch theme subagents **in parallel** for independent themes.
-
-For smaller themes (< 5 related items), a subagent isn't needed — summarize
-directly from the Pass 1 data.
-
-### Pass 3: Synthesis & Writing
-
-With all theme briefs in hand:
-
-1. Rank themes by customer impact (most impactful first).
-2. Write the cross-functional digest from the "customer-facing summary"
-   and "why it matters" sections of each brief.
-3. Write the technical changelog from the "what changed" sections.
-4. Cross-reference to ensure nothing was dropped between passes.
+1. Identify 5-10 cross-cutting **themes** from the raw data (see
+   "Theme Detection" below).
+2. Rank themes by customer impact (most impactful first).
+3. Write both documents directly from the collected data — the Pass 1
+   data is comprehensive enough to write without additional deep dives.
+4. Cross-reference to ensure nothing was dropped.
 
 ## Data Sources
 
@@ -144,7 +117,7 @@ Releases use conventional commit format with sections:
 
 ### Source 2: Nx Cloud — Public Changelog
 
-Nx Cloud changelog lives at: `https://nrwl.github.io/nx-cloud-changelog/public/`
+Nx Cloud changelog lives at: `https://changelog.nx.app/public/`
 
 Version format is `YYMM.DD.N` (e.g., `2602.26.2` = 2026, Feb 26, build 2).
 
@@ -159,7 +132,7 @@ try to parse the index with curl. Instead:
    - For January 2026: prefix is `2601`
 4. **Launch a Task subagent** to fetch all matching version pages in parallel
    (there may be 20+ versions in a busy month). Each version page is at:
-   `https://nrwl.github.io/nx-cloud-changelog/public/{VERSION}/`
+   `https://changelog.nx.app/public/{VERSION}/`
 
 **Key fields to extract**: version, date (from version string), features, fixes.
 
@@ -226,6 +199,12 @@ for understanding what actually happened — don't skim it.
 
 **Important:** Use pagination (limit: 50) and pull multiple pages if needed.
 It's better to spend tokens reading everything than to miss important context.
+
+**Known limitation:** `list_projects` with milestones hits Linear's query
+complexity limit (~10,000). Instead of listing projects directly, derive
+project information from the `project` and `projectMilestone` fields on
+completed issues. This gives you project names, leads, and milestone status
+without hitting the complexity cap.
 
 If Linear MCP is not available, skip and note it.
 
@@ -347,20 +326,33 @@ matters to customers. Each bullet should span CLI+Cloud+Infra as relevant.}
 
 ## {Theme 1: e.g., "Task Sandboxing & Hermetic Builds"}
 
-{Plain-language narrative combining CLI, Cloud, and Infra changes into
-one story. No commit hashes, no jargon. Focus on: what can customers
-DO now that they couldn't before?}
+{1-2 sentence narrative intro for the theme. No commit hashes, no jargon.
+Focus on: what can customers DO now that they couldn't before?}
 
-{Include where applicable:}
+**CLI:**
+- {bullet points for CLI changes in this theme}
+
+**Cloud:**
+- {bullet points for Cloud changes in this theme}
+
+**Infrastructure:**
+- {bullet points for Infra changes in this theme}
+
+**Docs:**
+- {bullet points for Docs changes in this theme}
+
+{Only include component sub-headers that have items. Include where applicable:}
 
 - **Blog posts**: Link to any published blog posts related to this theme
 - **Docs**: Link to new or updated documentation pages (from nx repo commits or Linear tasks)
 - **Screenshots**: Embed screenshots from Linear project updates or project details
   that help readers quickly understand the change visually
 
+**Who to contact:** {first names}
+
 ## {Theme 2: e.g., "Self-Healing CI"}
 
-{Same treatment — include blog posts, docs links, and screenshots where available.}
+{Same treatment — group by CLI/Cloud/Infrastructure/Docs within the theme.}
 
 ## {Theme N}
 
@@ -422,7 +414,7 @@ with PR-level detail.
 
 ### Linear
 
-- {description} ([NXC-NNNN](https://linear.app/nrwl/issue/NXC-NNNN))
+- {description} ([NXC-NNNN](https://linear.app/nxdev/issue/NXC-NNNN))
 - ...
 
 ### Infrastructure
@@ -440,13 +432,13 @@ with PR-level detail.
 
 | Project | Lead         | Link                                           |
 | ------- | ------------ | ---------------------------------------------- |
-| {name}  | {first name} | [View](https://linear.app/nrwl/project/{slug}) |
+| {name}  | {first name} | [View](https://linear.app/nxdev/project/{slug}) |
 
 ### Active
 
 | Project | Lead         | Target | Link                                           |
 | ------- | ------------ | ------ | ---------------------------------------------- |
-| {name}  | {first name} | {date} | [View](https://linear.app/nrwl/project/{slug}) |
+| {name}  | {first name} | {date} | [View](https://linear.app/nxdev/project/{slug}) |
 
 ### Issues Completed: {N} across {M} teams
 
@@ -478,8 +470,10 @@ email, Notion page).
 - **Dates matter.** Only include changes within the target month.
   The Nx Cloud version format encodes the date: `YYMM.DD.N`.
 - **Present the platform as a whole.** Never use "Nx CLI" or "Nx Cloud"
-  as top-level sections. Group by theme and mention which component(s)
-  are involved within each theme.
+  as top-level sections. Group by theme, then within each theme use
+  **CLI:** / **Cloud:** / **Infrastructure:** / **Docs:** bold headers
+  to sub-group bullet points by component. Only include component
+  sub-headers that have items for that theme.
 - **The cross-functional digest should be readable by someone who has
   never seen a terminal.** No commit SHAs, no CLI flags, no code snippets.
 - **Flag gaps.** If a source was unavailable, say so prominently at the top
@@ -489,11 +483,11 @@ email, Notion page).
 - **First names only.** Everyone knows each other — use "Jason" not
   "Jason Powers" or "Jason P." throughout both documents.
 - **Linear issues MUST have URLs.** Every Linear issue referenced in the
-  changelog must include a clickable link: `[NXC-123](https://linear.app/nrwl/issue/NXC-123)`.
+  changelog must include a clickable link: `[NXC-123](https://linear.app/nxdev/issue/NXC-123)`.
   Same format for CLOUD-, INF-, DOC-, NXA-, Q- prefixes.
 - **Linear projects MUST have URLs.** Where projects are listed (status
   tables, theme narratives), link to them:
-  `[Project Name](https://linear.app/nrwl/project/{slug})`.
+  `[Project Name](https://linear.app/nxdev/project/{slug})`.
 - **Include supporting content.** For the cross-functional digest, actively
   look for and include:
   - **Blog posts**: Check nx.dev blog and Nx social channels for posts

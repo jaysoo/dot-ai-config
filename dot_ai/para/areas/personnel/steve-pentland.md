@@ -28,6 +28,86 @@
 
 ### Upcoming Topics
 
+**Reference: Infra Pricing / Chargeable Components (captured 2026-03-27)**
+- Not to bring up directly, just context for future discussions
+- Components to charge for (pricing page): CPU, Memory, Disk, Networking, Cache storage
+- Other non-agent hosting costs (harder to align): Cluster charges, IP addresses, Certs, Buckets, Image repositories, Gateway uptime, Load balancers
+- Value-Add Features: Docker Hub Read-Through Mirror, NPM Read-Through, Docker Layer Caching, Static IP Addresses via NAT, Private Network Connections, In-Project Custom Image Repositories (specifically custom agent images)
+- Stability Additions: In-project Application Image Mirroring, Dedicated Infrastructure
+- Note: pretty much every feature/stability addition is single-tenant focused
+
+
+### 2026-03-26
+
+**Infrastructure Cost Management Challenges**
+- Amir disk space issue escalated to Steve - customer expects free resolution
+- Steve perceived Steve's response as hostile when asking "did something change?"
+- Pattern: customers claim "nothing changed" then reveal changes after investigation
+  - Wastes days of engineering time ($2-3k in labor costs)
+  - Erodes margins on existing contracts
+- Current reality: money no longer free, need actual profitability
+  - Japan raised interest rates - free money era over
+  - Must transition from "burn money" to conventional business management
+
+**Pricing Strategy & Contract Issues**
+- Need baseline pricing for Enterprise features on new pricing page
+- Current gravy train contracts (ClickUp example):
+  - Extremely cheap compute pricing - bad reference point
+  - Every freebie becomes new baseline for contract renegotiations
+  - Customers don't account for free additions when negotiating
+- Steve to provide list of chargeable features:
+  - Private networking, static IPs
+  - NPM cache ($100/month)
+  - Docker layer caching ($100/month)
+  - Storage (customizable per resource class)
+  - Multi-cluster capabilities
+
+**Operational Boundaries & Expectations**
+- Steve's role: keep systems running 24/7 + cost-effective operations
+- Cannot authorize contract modifications or margin degradation
+- Escalation path: pricing/contract decisions go to Jeff/Joe
+- DPEs need to investigate before escalating:
+  - Check recent changes in customer environment
+  - Review logs with Claude/AI assistance
+  - Traditional troubleshooting before assuming infrastructure issue
+
+**Pentest Status & Security**
+- Pentest fixes still pending completion this week
+- Outstanding items mostly low severity - can accept some through pentest process
+- Waiting on Nicole (returns next week) for final review
+- Security email volume manageable after Microsoft false positive cleanup
+  - Generic template now handles low-value submissions
+  - Fixed DNS/header issues to reduce noise
+
+**Technical Architecture Considerations**
+- Current Kubernetes model showing limitations:
+  - Can't offer true 4/16 runners (overhead reduces to 3/14)
+  - Complex charging model due to resource sharing
+  - $75/month cluster costs for limited actual usage
+- VM-based architecture would provide:
+  - Better resource visibility and charging granularity
+  - Cleaner customer experience matching GitHub runners
+  - Reduced operational complexity
+- Gradual transition pieces already in development
+
+**Customer Relationship Dynamics**
+- Learned behavior: customers expect free solutions vs. self-investigation
+- Need to incentivize proper diagnosis before escalation
+- Current model creates unlimited downside risk with known upside (contract value)
+- Goal: more harmonious relationships while maintaining fiscal responsibility
+
+**Vacation Debrief**
+- Jack's Galapagos trip successful despite severe sunburn
+- Ecuador mainland stopover helped with flight connections
+
+**Action Items**
+- Steve: Provide Enterprise feature pricing list by end of week
+- Jack: Update pricing page with new feature information
+- Jack: Discuss cost management mandate with Victor/Jeff
+- Steve: Complete remaining pentest fixes this week
+- Ongoing: Establish clearer escalation expectations with DPEs
+
+[Transcript](https://notes.granola.ai/t/e0726a29-49a8-4b86-a13b-a1561ba93a3f-00demib2)
 
 ### 2026-02-26
 

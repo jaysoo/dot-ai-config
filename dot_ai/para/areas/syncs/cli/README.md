@@ -5,31 +5,85 @@ Tracking document for CLI team sync meetings.
 ## Topics for Next Meeting
 
 - Review Colum's `/identify-closeable-issues` command for CLI team issues
+- Follow up on sandbox strict mode — any violations after Friday deadline?
+- Next major branch status (targeting May 10th)
+- TypeScript 6 third-party compatibility status
+
+## Upcoming Sync
 
 ## Action Items
 
-### Performance & CPU Investigation
+- [ ] Jack: Ping team for PR reviews on minor onboarding tweaks
+- [ ] Leo: Complete final migration spike, record Loom findings
+- [ ] Craigory: Address sandbox violations before Friday strict mode deadline
+- [ ] Team: Report sandbox violations immediately in dedicated channel
+- [ ] Leo: Create next major branch by end of week
+- [ ] Juri: Continue TypeScript 6 base URL removal, ping Jack when ready for review
+
+### Older (from 2026-02-10)
 - [ ] Leosvel: Push performance research branch and merge findings-based changes
-- [ ] Leosvel: Coordinate with Miro for proper logs/metrics from Lonnie's CPU issue
-
-### TUI & I/O Tracing
-- [ ] Austin: Complete TUI tickets and coordinate with Leo on remaining items
-- March 13 milestone for I/O tracing resolution
-
-### .NET & Telemetry
-- [ ] Colum: Investigate PowerShell repo for .NET plugin showcase
 - [ ] Colum: Split telemetry PR to command-only scope
-
-### Onboarding & Analytics
 - [ ] Jack: Follow up on legal requirements for analytics collection
-- [ ] Jack: Schedule sync with onboarding project stakeholders
-
-### Metrics Access
-- [ ] Steven: Add team members to metrics access group as needed
 
 ---
 
 ## Meeting Notes
+
+### 2026-03-24
+
+**Attendees:** Craigory, Max, Juri, Leosvel, Austin, Miro, Colum, James, Jason, Steven, Joshua, Philip, Caleb, Louie
+
+**Scorecard Updates & Analytics**
+- 101 PRs total, 40 opened this month (likely AI-assisted contributions)
+- High priority issues around target of 8, some relabeled for V-Day
+- Onboarding metrics showing concerning trends
+  - CNW invocations down despite docs traffic initially appearing up
+  - Getting started pages: 1,500/day (down from 2,500/day previously)
+  - All metrics trending down year-over-year, aligning with funnel reduction
+  - 10% of traffic now AI-driven, doesn't visit docs unless specifically asked
+  - NPM downloads up but other adoption metrics declining
+- Jack taking over docs/CLI onboarding from Nicole
+  - Running experiments to improve cloud acceptance rate (currently 9-12%)
+  - Minor messaging tweaks planned
+
+**Development Progress & Sandboxing**
+- Local disk migration core complete, moving to dev kit
+  - Should see performance improvements in different repos
+  - Sandboxing progress targeting strict mode by end of week
+  - Exclusions for index.js processes and plugin workers in progress
+- Gradle batch processing excluded from sandboxing
+  - No violations reported for batch tasks due to complexity
+  - Customers can run nightly jobs without batch for violation checking
+  - Documentation needed for batch task limitations
+- End-to-end test violations down to just tsconfig issues
+  - Builds will fail when strict mode enabled Friday
+  - Team urged to report sandbox violations immediately
+
+**Major Version & Migration Work**
+- Next major branch creation delayed until local disk work complete
+  - Timeline shifted from April to May 10th due to NX migrate dependencies
+  - V8 Angular support PR ready, waiting for proper branch
+- NX migrate revamp spikes nearly complete
+  - Leo finishing final spike tomorrow, will record findings via Loom
+  - Milestone tasks being created with due dates for timeline tracking
+- TypeScript 6 support in progress
+  - Base URL removal PR active, fixing e2e test failures
+  - Third-party tool compatibility still pending (Angular, TS Query, TS Morph)
+  - May require version-specific compatibility warnings
+
+**Infrastructure & Telemetry**
+- Telemetry dashboards complete
+  - Generator usage generally low across board
+  - Executor usage data available on request for deprecation decisions
+  - Temporary event tracking possible for specific features
+- Database improvements
+  - Work tree support PR in review, expected completion by April 3rd
+  - Shared database for work trees with local fallback
+  - Database versioning changes should resolve existing table issues
+- Connect feature still pending Dylan's backend changes
+  - Targeting completion this week with full documentation
+
+[Transcript](https://notes.granola.ai/t/304e9c5a-e77b-4ee2-9304-764fb22284d2-00demib2)
 
 ### 2026-02-10
 

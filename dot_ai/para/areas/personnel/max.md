@@ -36,8 +36,51 @@
 
 - Follow up on wife's ankle MRI results / Georgia travel plans
 - Check on Polygraph progress toward April 7th launch
-- Follow up on tutorial review issues reassigned to Jack
-- Check on Dylan's CLI documentation status
+- Follow up on Dylan's CLI documentation status
+- Follow up on benchmark reviews (bi-weekly cadence)
+- Check on Philip re: delayed launch status
+- Ask Jason about sandbox requirements and timeline
+
+### 2026-03-26
+
+**NX Tutorials & AI Enhancement Progress**
+- Reworked tutorials into topic-based structure
+  - Tested on new repos and turbo repos
+  - Copy-paste walkthrough format for new team members
+  - Streamlined getting started experience without overwhelming details
+- Technology-specific tutorials hidden but preserved
+  - Focus on general concepts applicable across languages
+  - AI integration for personalized learning paths
+  - Plugin/inference concepts delayed until advanced topics
+- CI and remote cache mentions removed from early tutorials
+  - Cloud promotion only when actually needed
+  - Self-healing feature integration with AI tutor
+- Dylan's work pending review
+  - Need huddle to understand implementation
+  - Yuri to test and provide feedback next week
+  - Promotion queue ready once feedback received
+
+**Project Status & Ownership Updates**
+- Benchmarks ownership clarified
+  - Max owns benchmarks moving forward
+  - Bi-weekly review cadence established
+  - No longer discussed in Red Panda sync
+- Plugin submissions waiting on external feedback
+  - Reached out before feature launch for priority treatment
+  - Similar to Chocolatey package manager delays (months-long process)
+- Sandbox issues assigned to Gregory
+  - Three implementation issues created
+  - Not critical priority until sandbox launch readiness
+  - Current workaround: disabled daemon and plugin isolation
+
+**Action Items**
+- Jack: Sync with Dylan for implementation walkthrough
+- Max: Set bi-weekly reminder for benchmark reviews
+- Max: Reach out to Philip on delayed launch status
+- Max: Tag Yuri on abandoned feature for movement check
+- Jack: Ask Jason about sandbox requirements and timeline
+
+[Transcript](https://notes.granola.ai/t/3ccb70f3-1b7f-436e-ad53-3e5d3916bebc-00demib2)
 
 ### 2026-03-19
 

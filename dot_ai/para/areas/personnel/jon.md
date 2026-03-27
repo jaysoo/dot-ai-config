@@ -7,10 +7,10 @@
 
 ## Personal
 
-- **Partner:**
-- **Children:**
+- **Partner:** Wife
+- **Children:** 3 kids — grade 4, senior kindergarten, 15 months (walking at 10 months, very active)
 - **Pets:**
-- **Hobbies:** International travel (Philippines trip Jan 2025)
+- **Hobbies:** International travel (Philippines trip Jan 2025), DIY home projects (lumber calculations, electrical diagrams — uses AI for these)
 - **Notes:** Has driveway requiring snow management; researching snowblowers ($800-1500)
 
 ## Preferences
@@ -56,6 +56,60 @@ Improvements:
 - Make sure "unplanned" work is defined correctly
 
 ## 1:1 Notes
+
+### Upcoming
+
+- Follow up on Montreal trip experience
+- Check on Polygraph post-launch status (April 7 target)
+- Ocean CLAUDE.md ownership — who picks this up?
+- Hiring to replace Collin — any progress?
+
+### 2026-03-24
+
+**Personal Updates & Travel**
+- Jack returned from Galapagos - hands still peeling after 2 weeks from sunburn
+- Jon driving to Montreal with family (7-hour drive)
+  - Wife + 3 kids, youngest very active
+  - Concerned about leaving wife alone with kids in new city
+
+**Red Panda Team - Polygraph Development**
+- Full steam ahead for April 7 launch deadline
+  - Webinar scheduled around that date
+  - 2 weeks remaining for demo-ready state
+- Team allocation:
+  - Jon, Max, James: CLI portion
+  - Ciao, Mark: UI side
+  - Alton: Core support with Victor
+- Parallel development approach with frequent syncing
+- Self-healing remains stable with James maintaining it
+
+**Maintenance & Capacity Concerns**
+- Surface area expansion: now supporting both self-healing and polygraph
+- Current capacity seems manageable:
+  - ClickUp stress-testing with thousands of runs, no complaints
+  - Most issues found through dogfooding
+  - Claude 4.6 Sonnet hardcoded for consistency
+- Monitoring unplanned issues through proper labeling
+
+**AI Tools & Automation Discussion**
+- Jon's VM sandbox setup for AI development
+  - Uses Tart with macOS virtualization
+  - SSH key forwarding with 1Password authentication
+  - Mounts dev folder, no secrets in VM
+  - Will demo at Montreal engineering session
+- Ocean lacks proper CLAUDE.md documentation
+  - No clear ownership (Nicola stressed, no capacity)
+  - Everyone maintaining local skills/contexts
+  - Jon using GSD framework with milestone documentation
+
+**Hiring & Team Structure**
+- Need to replace Collin's departure
+- Consider adding capacity if feature load becomes unsustainable
+- Focus on automation to handle maintenance tasks
+- Priority: ensure teams focus only on high-impact work
+- Gradle support intentionally deprioritized (Louis + Jason only)
+
+[Transcript](https://notes.granola.ai/t/630b9b40-5199-4156-bc01-3c317d907b82-00demib2)
 
 ### 2025-02-10
 
