@@ -103,6 +103,15 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Status:** Draft
 - **Draft:** [`10-management-as-code.md`](10-management-as-code.md)
 
+### 11. Claude Code as Your Nx Tutor: Learning a Monorepo from the Inside Out
+
+- **Appetite:** Very High
+- **Core hook:** Documentation is evolving from "read this page" to "paste this prompt and have a conversation." Nx tutorials now include AI-ready prompts for Claude Code.
+- **Key insight:** Monorepos + AI tutoring are a natural fit because Nx exposes structured metadata (project graph, task graph, tags) that AI can reason about. Unlike unstructured repos, the AI can traverse the knowledge graph.
+- **Audience:** Developers new to Nx, team leads onboarding new members, anyone adopting Nx
+- **Status:** Draft
+- **Draft:** [`11-ai-tutor-for-nx.md`](11-ai-tutor-for-nx.md)
+
 ## Meta-Narrative
 
 The common thread: **AI workflows that compound over time** rather than one-shot interactions. If doing a series, this is the unifying theme.
