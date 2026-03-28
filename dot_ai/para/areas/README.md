@@ -17,6 +17,7 @@ Areas represent continuous aspects of work that need maintenance:
 | Personnel | `personnel/` | Team member notes for 1:1s and relationships |
 | Syncs | `syncs/` | Recurring team meeting notes |
 | Productivity | `productivity/` | Engineering productivity metrics and tracking |
+| Blog Ideas | `blog-ideas/` | Content ideas for AI-assisted dev workflows, Nx + AI blog posts |
 | CNW Stats | `cnw-stats/` | create-nx-workspace telemetry, funnel health, and regression tracking |
 
 ## Adding New Areas

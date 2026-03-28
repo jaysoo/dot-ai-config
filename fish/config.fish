@@ -99,3 +99,10 @@ fish_add_path /Users/jack/.opencode/bin
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jack/google-cloud-sdk/path.fish.inc' ]; . '/Users/jack/google-cloud-sdk/path.fish.inc'; end
 source /Users/jack/.config/op/plugins.sh
+
+# Swap cat with bat
+# Do not page when cat or bat
+alias cat bat
+set -Ux BAT_PAGER ""
+set -Ux BAT_STYLE numbers
+
