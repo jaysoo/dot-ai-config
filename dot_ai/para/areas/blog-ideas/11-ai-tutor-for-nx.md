@@ -11,7 +11,7 @@ You just joined a new team. The repo has 200 projects, a maze of task pipelines,
 
 Sound familiar?
 
-I work on the Nx team, and this is the most common pain point we hear about. Not "how does Nx work?" — the docs cover that. The real question is: "how does Nx work *in this specific repo*, with *these* specific projects and *this* particular setup?"
+I work on the Nx team, and this is the most common pain point we hear about. Not "how does Nx work?" — the docs cover that. The real question is: "how does Nx work _in this specific repo_, with _these_ specific projects and _this_ particular setup?"
 
 That question used to require cornering a senior engineer. Now there's another option.
 
@@ -23,11 +23,11 @@ When a new developer joins a team, they face a wall of context they need to abso
 
 The same problem hits developers adopting Nx for the first time. You hear that Nx can speed up your CI by 80%, but your existing repo has its own build scripts, its own conventions, and you're not sure where to start without breaking something.
 
-Traditional documentation can't solve this because the answer depends entirely on *your* codebase.
+Traditional documentation can't solve this because the answer depends entirely on _your_ codebase.
 
 ## AI Agents as Interactive Tutors
 
-Here's what changed: AI coding assistants like Claude Code can be dropped into any repository and asked questions about it. Not generic questions about Nx — questions about *your* workspace.
+Here's what changed: AI coding assistants like Claude Code can be dropped into any repository and asked questions about it. Not generic questions about Nx — questions about _your_ workspace.
 
 ```
 > Explain the structure of this Nx workspace. What are the main
@@ -40,7 +40,7 @@ Unlike static docs, it answers in context. Unlike a teammate, it's available at 
 
 ## Why Monorepos and AI Tutoring Are a Perfect Match
 
-This isn't just "throw AI at a codebase and hope for the best." Nx workspaces are uniquely well-suited for AI-assisted learning because Nx *already structures the information that AI needs to reason about*.
+This isn't just "throw AI at a codebase and hope for the best." Nx workspaces are uniquely well-suited for AI-assisted learning because Nx _already structures the information that AI needs to reason about_.
 
 Think about what Nx provides:
 
@@ -61,7 +61,7 @@ Setting it up is one command:
 npx nx-mcp
 ```
 
-This configures the MCP server, installs relevant skills, and sets up guidelines so Claude Code doesn't just *read* your files — it *understands* your workspace topology. It can query the project graph, resolve task dependencies, and access workspace metadata through purpose-built tools rather than grep.
+This configures the MCP server, installs relevant skills, and sets up guidelines so Claude Code doesn't just _read_ your files — it _understands_ your workspace topology. It can query the project graph, resolve task dependencies, and access workspace metadata through purpose-built tools rather than grep.
 
 ## Tutorials You Can Paste Into Your Terminal
 
