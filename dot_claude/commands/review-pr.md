@@ -42,6 +42,10 @@ Analyze the code changes:
 - Are there regressions? Edge cases missed?
 - Is the approach overly broad or too narrow?
 - Are there unrelated changes mixed in (e.g., lockfile diffs)?
+- **Minimality check for fixes**: Is this the smallest set of changes needed? Specifically:
+  - If branching logic is added (if/else on version, feature detection), verify it's actually required. Check whether the new dependency version is backward-compatible — if so, the branch is unnecessary maintenance burden.
+  - If new version constants are introduced for backward compat, verify the old version range is actually incompatible with the new target. Don't trust the PR's assumption — check `npm view <pkg>@<version> peerDependencies` yourself.
+  - A version bump that works across all supported versions is always preferable to a version fork with detection logic.
 
 ### Step 4: Checkout and Verify Locally
 
@@ -108,6 +112,7 @@ Output a structured analysis:
 
 ### Fix Assessment
 - [ ] Addresses root cause (not just symptom)
+- [ ] Minimal change — no unnecessary branching or backward-compat logic
 - [ ] No regressions identified
 - [ ] No unrelated changes mixed in
 
@@ -142,4 +147,5 @@ git branch -D pr-<PR_NUMBER>
 3. **Snapshots > spot-checks** for code transformations
 4. **Check the linked issue** -- does the fix actually solve what was reported?
 5. **Watch for AI-generated code** -- contrived fixtures, excessive comments explaining obvious things, verbose PR descriptions
-6. **Do NOT post to GitHub** unless explicitly instructed
+6. **Smallest fix wins** -- for bug fixes, prefer the minimal change that solves the problem. If a version bump's new range already covers all supported targets, don't add branching logic and backward-compat constants. Every fork in logic is maintenance surface. When you fetch npm metadata (peer deps, version ranges), actively ask: "does this data eliminate the need for the branching in this diff?"
+7. **Do NOT post to GitHub** unless explicitly instructed

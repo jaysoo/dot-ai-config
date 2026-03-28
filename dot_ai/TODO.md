@@ -4,45 +4,56 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-455: Blog/Changelog Reverse Proxy in Edge Function** (2026-03-27, completed)
+1. **NXC-4167: CNW Yarn 4 PnP Fix** (2026-03-28, pending review)
+   - Summary: Changed yarn berry exec from `npx` to `yarn` in CNW; added `enableScripts: false` to workspace generator's `.yarnrc.yml`.
+   - Files: `.ai/2026-03-28/tasks/cnw-yarn-pnp-fix.md`
+   - Worktree: `/Users/jack/projects/nx-worktrees/NXC-4167`
+
+2. **NXC-4165: CNW apps preset Cannot find module nx/bin/nx** (2026-03-28, in progress)
+   - Summary: Skip `generatePreset` for apps preset since preset generator does nothing. Eliminates unnecessary require.resolve and child process fork.
+   - Files: `.ai/2026-03-28/tasks/nxc-4165-cnw-apps-preset-fix.md`
+   - Worktree: `/Users/jack/projects/nx-worktrees/NXC-4165`
+
+2. **NXC-4166: CNW Angular Bundler Validation** (2026-03-28, in progress)
+   - Summary: Added early validation in `determineAngularOptions` to reject invalid bundlers (e.g. `vite`) for Angular presets. Build/lint/tests pass, pending commit+PR.
+   - Files: `.ai/2026-03-28/tasks/cnw-angular-bundler-validation.md`
+   - Worktree: `/Users/jack/projects/nx-worktrees/NXC-4166`
+
+2. **DOC-455: Blog/Changelog Reverse Proxy in Edge Function** (2026-03-27, completed)
    - Summary: Added conditional blog/changelog proxy to Netlify edge function. Toggled via `BLOG_URL` env var. Also fixed favicon 404s. PR #35043.
    - Files: `netlify/edge-functions/rewrite-framer-urls.ts`, PR: https://github.com/nrwl/nx/pull/35043
 
-2. **NXC-4153: Fix CNW Non-Interactive Mode + Template Shorthands** (2026-03-27, completed)
+3. **NXC-4153: Fix CNW Non-Interactive Mode + Template Shorthands** (2026-03-27, completed)
    - Summary: Fixed 22.6.0 regression in non-interactive mode, added template shorthand names. PR #35045.
    - Files: `.ai/2026-03-27/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/35045
 
-3. **NXC-4113: A/B Test Cloud Prompt Copy in CNW** (2026-03-27, completed)
+4. **NXC-4113: A/B Test Cloud Prompt Copy in CNW** (2026-03-27, completed)
    - Summary: Re-enabled cloud prompt with 3 A/B copy variants tied to flow variant. Emphasizes remote caching, CI speed, mentions GitHub/GitLab, free tier, 2-min setup. Dimmed "never" option.
    - Files: `packages/create-nx-workspace/src/utils/nx/ab-testing.ts`, branch `NXC-4113`
 
-4. **NXC-3711: Remove Tailwind Support** (2026-03-27, in progress)
+5. **NXC-3711: Remove Tailwind Support** (2026-03-27, in progress)
    - Summary: Removed all tailwind generators, style options, barrel exports, version constants from packages/. Implementation complete, pending commit/push/PR.
    - Files: `.ai/2026-03-27/tasks/remove-tailwind-support.md`
 
-5. **CNW Template Updates 22.6.2 + Vite 8 + Angular 21.2.5** (2026-03-27, completed)
+6. **CNW Template Updates 22.6.2 + Vite 8 + Angular 21.2.5** (2026-03-27, completed)
    - Summary: Migrated all 4 templates to Nx 22.6.2, bumped Vite 8 and Angular 21.2.5. Updated cnw-update-templates skill with registry/audit/framework checks.
    - Files: `.ai/2026-03-27/SUMMARY.md`, `dot_claude/skills/cnw-update-templates/SKILL.md`
 
-6. **NXC-4152: Fix Vite 8 cypress-component-configuration test failures** (2026-03-27)
+7. **NXC-4152: Fix Vite 8 cypress-component-configuration test failures** (2026-03-27)
    - Summary: Added `useVite7ForCypressCT` helper to Angular/React test files — downgrades vite to v7 in tree before cypress config generator.
    - Files: `packages/angular/src/generators/cypress-component-configuration/cypress-component-configuration.spec.ts`
 
-7. **DOC-457: Webinar banner light mode support** (2026-03-26)
+8. **DOC-457: Webinar banner light mode support** (2026-03-26)
    - Summary: Made WebinarNotifier theme-aware — light bg in light mode, dark bg in dark mode. Close button now visible. PR #35029.
    - Files: `nx-dev/ui-common/src/lib/webinar-notifier.tsx`, PR: https://github.com/nrwl/nx/pull/35029
 
-8. **Docs: Getting started tutorial links** (2026-03-26)
+9. **Docs: Getting started tutorial links** (2026-03-26)
    - Summary: Added consistent next steps and tutorial links across all getting started pages. Replaced cards with bullet lists. PR #35024.
    - Files: `.ai/2026-03-26/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/35024
 
-9. **NXC-3345: Rollup + SWC rootDir fix for workspace libs** (2026-03-25, in progress)
+10. **NXC-3345: Rollup + SWC rootDir fix for workspace libs** (2026-03-25, in progress)
    - Summary: Fixed TS6059 rootDir error when building libs that import workspace libs. Two commits, not yet pushed.
    - Files: `packages/rollup/src/plugins/with-nx/with-nx.ts`, `packages/js/src/plugins/rollup/type-definitions.ts`
-
-10. **Vite 8 Support (community PR #34850)** (2026-03-25, in progress)
-    - Summary: Full Vite 8 support across Nx ecosystem — rolldown, plugin-react v6, type fixes, env API fix, Cypress CT error guard, version preservation in generators.
-    - Files: `.ai/2026-03-25/SUMMARY.md`, PR: https://github.com/nrwl/nx/pull/34850
 
 
 ## Pending
