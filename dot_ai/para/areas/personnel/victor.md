@@ -27,6 +27,14 @@
 
 ### Upcoming
 
+**DevRel Content Output**
+
+- Blog and changelog output seems very quiet — are we churning out enough content?
+- What are the current 1-2 things the devrel/content team is focused on?
+- AI should be a force multiplier here — rough drafts, idea generation, review/validation
+  - Shouldn't we see significantly more content output with AI assistance?
+- What's blocking higher throughput? Capacity? Review bottleneck? Prioritization?
+
 ### March 2, 2026
 
 **Dolphin Morale & Retention**

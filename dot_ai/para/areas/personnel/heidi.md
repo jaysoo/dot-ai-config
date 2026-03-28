@@ -25,6 +25,17 @@
 
 ## 1:1 Notes
 
+### Upcoming
+
+**DevRel Content Output**
+
+- Blog and changelog output feels very quiet — what's the current state?
+- What are the 1-2 things the content/devrel team is focused on right now?
+- AI as a force multiplier for content:
+  - Should be helping with idea generation, rough drafts to review and validate
+  - Expectation: noticeably higher content throughput with AI assistance
+- What's needed to increase output? More writers? Better process? AI tooling adoption?
+
 ### 2026-02-10
 
 **Effy Review Process Feedback**

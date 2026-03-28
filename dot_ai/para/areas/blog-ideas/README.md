@@ -19,7 +19,8 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Core hook:** Most "custom instructions" articles are static. Ours _evolve_. The `/reflect` -> detect repeatable patterns -> create skill -> track with USAGE.md -> prune unused skills loop is novel.
 - **Key insight:** USAGE.md invocation tracking as a pruning signal -- if a skill isn't getting invoked, either the trigger instructions are wrong or it's not useful.
 - **Audience:** Developers using Claude Code, Cursor, or any AI coding tool
-- **Status:** Idea
+- **Status:** Draft
+- **Draft:** [`01-self-improving-ai-workflow.md`](01-self-improving-ai-workflow.md)
 
 ### 2. How We Use Nx + AI Agents to Triage 450+ Issues Without Burning Out
 
@@ -27,7 +28,8 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Core hook:** Monorepo + AI is "the topic of 2026." The scan-and-audit pipeline (12 parallel scans, pre-fetched GitHub data to avoid 40 auth prompts, delta tracking, graceful degradation) is production-grade.
 - **Key insight:** Full loop from scan -> triage -> auto-fix candidates -> human reviews design decisions only. `/identify-closeable-issues` and `/nx-easy-issues` as concrete examples.
 - **Audience:** OSS maintainers, engineering managers, monorepo teams
-- **Status:** Idea
+- **Status:** Draft
+- **Draft:** [`02-nx-ai-triage.md`](02-nx-ai-triage.md)
 
 ### 3. CLAUDE.md as Project Governance: Why Your AI Config Belongs in Version Control
 
@@ -35,7 +37,8 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Core hook:** The dot-ai-config pattern (single source of truth, git-synced, auto-sync hooks, guard skill to prevent direct edits). Most devs dump instructions into a chat window. This is versioned, reviewable, PR-able.
 - **Key insight:** Treat AI instructions like infrastructure code. Dual CLAUDE.md/CODEX.md for different tools adds depth.
 - **Audience:** Any developer using AI tools, broadest reach
-- **Status:** Idea
+- **Status:** Draft
+- **Draft:** [`03-claude-md-as-governance.md`](03-claude-md-as-governance.md)
 
 ### 4. Living Architecture Docs That Actually Stay Current
 
@@ -43,7 +46,8 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Core hook:** Architecture files that update incrementally via `/reflect` after each session. Captures not just _what_ code does but _why_ (design decisions, workarounds, gotchas).
 - **Key insight:** Loading architecture context at session start means every AI interaction starts with accurate context. Solves "docs are always stale."
 - **Audience:** Tech leads, staff engineers, anyone who writes (or avoids writing) architecture docs
-- **Status:** Idea
+- **Status:** Draft
+- **Draft:** [`04-living-architecture-docs.md`](04-living-architecture-docs.md)
 
 ### 5. Parallel Intelligence Pipelines: Scanning Competitors, Dependencies, and Community Sentiment with AI Agents
 
@@ -51,7 +55,8 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Core hook:** Director/staff-level audience. Scan-and-audit orchestrator running 8 external + 3 internal audits + monthly digest in parallel, with delta tracking.
 - **Key insight:** Pre-fetching pattern (one 1Password auth -> cached JSON -> subagents read cache). "Building your own CI for market intelligence."
 - **Audience:** Engineering directors, heads of platform, OSS maintainers
-- **Status:** Idea
+- **Status:** Draft
+- **Draft:** [`05-parallel-intelligence-pipelines.md`](05-parallel-intelligence-pipelines.md)
 
 ### 6. From Voice Notes to Structured Knowledge: The Dictation-to-Action Pipeline
 
@@ -59,7 +64,8 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Core hook:** `/dictate` auto-detects sync meetings, routes to correct team file, updates personnel notes, feeds into weekly planning.
 - **Key insight:** "I talk, Claude organizes" -- but the substance is routing logic and structured output via PARA.
 - **Audience:** Engineering managers, anyone managing multiple teams/meetings
-- **Status:** Idea
+- **Status:** Draft
+- **Draft:** [`06-dictation-to-action.md`](06-dictation-to-action.md)
 
 ### 7. Measuring What Matters: Tracking AI Skill Effectiveness Without a Dashboard
 
@@ -67,7 +73,8 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Core hook:** Lightweight approach (USAGE.md counts, COMPLETED.md archives, daily SUMMARY.md, feedback memory loop) vs heavyweight metrics platforms.
 - **Key insight:** "You don't need DORA dashboards if you have a text file that tracks what shipped and which AI skills contributed." Controversial enough to get engagement.
 - **Audience:** Engineering managers, productivity nerds, DORA skeptics
-- **Status:** Idea
+- **Status:** Draft
+- **Draft:** [`07-measuring-ai-skill-effectiveness.md`](07-measuring-ai-skill-effectiveness.md)
 
 ### 8. The Task Planning Pattern: Why AI Should Plan Before It Codes
 
@@ -75,7 +82,8 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Core hook:** Counter-narrative to "just vibe code it." Plan-task -> approve -> execute -> reflect cycle with explicit separation of planning from execution.
 - **Key insight:** `.ai/yyyy-mm-dd/tasks/` convention with alternatives explored, expected outcomes, one-commit-per-step granularity produces better outcomes than yolo prompting.
 - **Audience:** Developers learning to work with AI agents effectively
-- **Status:** Idea
+- **Status:** Draft
+- **Draft:** [`08-plan-before-code.md`](08-plan-before-code.md)
 
 ### 9. MCP as Your Personal Knowledge Layer: Building a MyNotes Server for AI Context
 
@@ -83,7 +91,8 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Core hook:** Most MCP content focuses on external APIs (Slack, GitHub). MyNotes indexes `.ai/` content for semantic search over your own task history, specs, TODOs.
 - **Key insight:** MCP as _personal_ infrastructure. The "ALWAYS use MyNotes MCP first" priority rule shows how to compose MCP servers with clear precedence.
 - **Audience:** Developers building MCP servers, Claude Code power users
-- **Status:** Idea
+- **Status:** Draft
+- **Draft:** [`09-mcp-personal-knowledge.md`](09-mcp-personal-knowledge.md)
 
 ### 10. Encoding Team Knowledge into AI Skills: From 1:1 Prep to Kudos to Capacity Audits
 
@@ -91,7 +100,8 @@ Content ideas for blog posts about AI-assisted development workflows, Nx + AI, a
 - **Core hook:** `/1-on-1-prep` pulls from personnel notes + Linear + recent PRs. `/kudos` captures recognition. `/audit-capacity` detects overloaded individuals. Management practices as executable AI skills.
 - **Key insight:** "What if your management playbook was executable?" Audience is engineering managers who want to be intentional but don't have time.
 - **Audience:** Engineering managers, directors
-- **Status:** Idea
+- **Status:** Draft
+- **Draft:** [`10-management-as-code.md`](10-management-as-code.md)
 
 ## Meta-Narrative
 
