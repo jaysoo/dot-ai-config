@@ -51,6 +51,24 @@
   - Angular 21.1.1 → 21.2.5: `nx migrate` didn't bump Angular — the 21.2 migrations were gated at an older Nx version the templates had already passed through
   - localhost registry URLs leaked into `package-lock.json` from `~/.npmrc` — had to be cleaned manually
 
+### DOC-455: Blog/Changelog Reverse Proxy in Edge Function
+
+- **Issue**: https://linear.app/nxdev/issue/DOC-455
+- **PR**: https://github.com/nrwl/nx/pull/35043
+- **Goal**: Enable proxying `/blog/*` and `/changelog/*` to standalone blog site (`nrwl-blog.netlify.app`) via env var toggle
+- **Approach**: Modified existing Netlify edge function (`netlify/edge-functions/rewrite-framer-urls.ts`) instead of Next.js rewrites — cleaner since the edge function is already the routing decision point
+- **Changes**:
+  - Added `BLOG_URL` env var support (reads via `Netlify.env.get`)
+  - Conditionally removes `/blog` and `/changelog` from `nextjsPaths` when `BLOG_URL` is set
+  - Removed `/blog/*` and `/changelog` from static `excludedPath` so edge function can intercept
+  - Added blog proxy branch with URL rewriting (`blogUrl` → `https://nx.dev`) and security headers
+  - When `BLOG_URL` is unset, blog/changelog paths fall through to Next.js via `context.next()` (no behavior change)
+  - Also fixed `/favicon.ico` and `/favicon.svg` 404s — added redirects to `/favicon/` subdirectory
+- **Netlify config**: `BLOG_URL` set for Deploy Previews and Branch deploys only (prod left empty for safe rollout)
+- **Files changed**:
+  - `netlify/edge-functions/rewrite-framer-urls.ts`
+  - `nx-dev/nx-dev/_redirects`
+
 ### CNW Skill Improvements (`cnw-update-templates`)
 
 - Updated `dot_claude/skills/cnw-update-templates/SKILL.md` with 3 new guardrails:

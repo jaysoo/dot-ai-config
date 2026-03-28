@@ -173,6 +173,21 @@ The marketing Nx site (nx.dev) - Next.js application with multiple sub-packages
 - `nx-dev/ui-common/` - Shared UI components
 - `nx-dev/data-access-documents/` - Document fetching and processing
 - `nx-dev/nx-dev/next.config.js` - Rewrites to proxy to astro-docs (llms.txt, llms-full.txt)
+- `nx-dev/nx-dev/_redirects` - Static 301 redirects (1300+ rules) processed by Netlify. Copied to `.next/` during build.
+
+### netlify/ (repo root)
+Netlify Edge Functions for nx-dev (must be at repo root due to Netlify base directory config).
+
+- `netlify/edge-functions/rewrite-framer-urls.ts` - Primary routing edge function. Handles three proxy targets:
+  1. **Framer proxy** (default): All paths proxied to Framer unless excluded. Rewrites `framerUrl` → `https://nx.dev` in HTML.
+  2. **Blog proxy** (opt-in via `BLOG_URL` env var): `/blog/*` and `/changelog/*` proxied to standalone blog site. Rewrites `blogUrl` → `https://nx.dev`.
+  3. **Next.js passthrough**: Paths in `nextjsPaths` set or `excludedPath` config fall through to Next.js.
+  - `excludedPath` is static (build-time), `nextjsPaths` is dynamic (reads env vars at module load)
+  - `accept: ['text/html']` — only HTML requests hit this function. CSS/JS/images bypass entirely.
+  - GA4 tracking via `sendToGA4()` for both Framer and blog proxied responses
+- `netlify/edge-functions/framer-sitemap.ts` - Proxies Framer sitemap at `/sitemap-1.xml`
+- `netlify/edge-functions/track-page-requests.ts` - GA4 tracking for non-Framer HTML pages
+- `netlify/edge-functions/track-asset-requests.ts` - Asset request tracking
 
 ## Features & Critical Paths
 
@@ -360,6 +375,19 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - Environment variable `NEXT_PUBLIC_ASTRO_URL` for feature flag
 
 ## Personal Work History
+
+### 2026-03-27 - DOC-455: Blog/Changelog Reverse Proxy in Edge Function
+- **Branch**: DOC-455
+- **Commit**: `a7ba2fd93c`
+- **PR**: https://github.com/nrwl/nx/pull/35043
+- **Status**: PR created, testing on deploy preview
+- **Purpose**: Proxy `/blog/*` and `/changelog/*` to standalone blog site (`nrwl-blog.netlify.app`), toggled via `BLOG_URL` env var
+- **Approach**: Modified existing Netlify edge function (`rewrite-framer-urls.ts`) instead of Next.js `beforeFiles` rewrites — edge function is already the routing decision point
+- **Key Decision**: Used edge function over Next.js config because blog/changelog have local routes (`app/blog/`, `pages/changelog.tsx`) that would shadow afterFiles rewrites. Edge function runs before Next.js entirely.
+- **Design**: Three-way routing: `nextjsPaths` exact match → Next.js, `isBlogPath && !blogUrl` → Next.js, `isBlogPath && blogUrl` → blog proxy, else → Framer proxy
+- **Asset concern**: Edge function only handles `text/html`. Blog site assets need to be served from blog's own CDN (configured via Vite `base` in blog repo).
+- **Also fixed**: `/favicon.ico` and `/favicon.svg` 404s — added redirects in `_redirects`
+- **Files**: `netlify/edge-functions/rewrite-framer-urls.ts`, `nx-dev/nx-dev/_redirects`
 
 ### 2026-03-27 - NXC-4153: Fix CNW Non-Interactive Mode + Template Shorthands
 - **Branch**: NXC-4153
