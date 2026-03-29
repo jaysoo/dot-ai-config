@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2026-03-27
+Last Updated: 2026-03-28
 
 ## Directory Overview
 
@@ -31,6 +31,10 @@ Core Nx functionality
   - `pseudo-terminal.ts` - PTY wrapper for native Rust implementation
 - `packages/nx/src/native/` - Rust native bindings
   - `index.d.ts` - TypeScript definitions for RustPseudoTerminal
+- `packages/nx/src/plugins/js/lock-file/` - Lockfile parsers for npm, yarn, pnpm, bun
+  - `npm-parser.ts` / `npm-parser.spec.ts` - NPM lockfile parser (v1/v2/v3 formats)
+  - `project-graph-pruning.ts` - Prunes dependency graph to subset for a given package.json
+  - `__fixtures__/` - Test fixture lockfiles. Package names use `@nx-testing/*` scoped fakes to avoid Dependabot false positives. Tests use `jest.mock('fs')` with memfs — `require('fs')` and `node:fs` are intercepted.
 
 ### packages/plugin/
 Nx plugin generator for creating custom Nx plugins
@@ -375,6 +379,17 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - Environment variable `NEXT_PUBLIC_ASTRO_URL` for feature flag
 
 ## Personal Work History
+
+### 2026-03-28 - NXC-4169: Dependabot Fixture Noise Reduction
+- **Branch**: `NXC-4169`
+- **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4169`
+- **Status**: Committed, pending push + PR
+- **Purpose**: Rename vulnerable package names in test fixture lockfiles to `@nx-testing/*` to suppress false Dependabot security alerts
+- **Impact**: Clears 44 of 83 open alerts (53%), including 25 of 44 high-severity (57%)
+- **Approach**: JSON-aware rename script (`tmp/rename-fixture-packages.mjs`) that preserves key ordering, handles nested dependency paths, and processes all npm lockfile formats (v1/v2/v3)
+- **Gotcha**: JS object key ordering matters — `delete + insert` moves keys to end. Must rebuild objects to preserve position. The lockfile pruning serializer depends on root lockfile key order.
+- **Follow-up**: NXC-4170 for 19 remaining high-severity alerts in real deps
+- **Files**: `packages/nx/src/plugins/js/lock-file/__fixtures__/` (15 files), `npm-parser.spec.ts`
 
 ### 2026-03-27 - DOC-455: Blog/Changelog Reverse Proxy in Edge Function
 - **Branch**: DOC-455

@@ -18,9 +18,9 @@ Analyze create-nx-workspace telemetry from the `commandStats` MongoDB collection
 
 The default report includes these sections (all per-day):
 
-1. **Daily Completion Funnel** — starts, precreate, complete, error, cancel counts with conversion rates (precreate/starts, complete/starts, error/starts)
-2. **Daily Cloud Adoption** — `nxCloudArg` from complete events (skip, never, yes, github, gitlab, azure, bitbucket) with cloud opt-in rate (yes + CI providers / completes)
-3. **Daily Error Breakdown** — error codes by day as both counts and **rates (% of that day's starts)**
+1. **Daily Completion Funnel** — starts, precreate, complete, creation errors, input errors, cancel counts with conversion rates (precreate/starts, complete/starts, **creation error rate = creation errors/starts**)
+2. **Daily Cloud Adoption** — `nxCloudArg` from complete events (skip, never, yes, github, gitlab, azure, bitbucket) with cloud opt-in rate (yes + CI providers / completes). **IMPORTANT**: 22.5.4 cloud opt-in (~42%) is artificially inflated by the CI provider prompt experiment — users were tricked into Cloud via "What CI provider do you use?" but never activated accounts. The 22.6.x rate (~9-12%) reflects genuine opt-in. When comparing versions, flag this context.
+3. **Daily Error Breakdown** — error codes by day as both counts and **rates (% of that day's starts)**, grouped into input validation vs creation errors
 4. **INVALID_WORKSPACE_NAME Detail** — actual workspace names attempted, grouped by name and day, sorted by count
 5. **WORKSPACE_CREATION_FAILED Detail** — categorize error messages by pattern (see categorization list below), grouped by pattern and day
 6. **Package Manager Distribution** — from precreate events
@@ -28,6 +28,35 @@ The default report includes these sections (all per-day):
 8. **Nx Version Distribution** — from start events
 9. **Flow Variant Distribution** — from start events
 10. **VCS Push Status** — from complete events
+
+### Error Classification: Input Validation vs Creation Errors
+
+Errors are split into two categories because they represent fundamentally different failure modes:
+
+**Input validation errors** (pre-precreate) — These fire before workspace creation even begins. They represent invalid user input, not bugs or environment issues. **Do NOT include these in the error rate.**
+
+| Error Code | Why it's input validation |
+|------------|--------------------------|
+| `INVALID_WORKSPACE_NAME` | User typed an invalid name (e.g. `"."`, numeric prefix) |
+| `DIRECTORY_EXISTS` | User picked a name that already exists on disk |
+| `INVALID_PACKAGE_MANAGER` | User specified unsupported package manager |
+| `INVALID_PRESET` | User specified unrecognized preset name |
+
+**Creation errors** (post-precreate) — These fire during actual workspace creation. They represent real failures worth investigating.
+
+| Error Code | Category |
+|------------|----------|
+| `WORKSPACE_CREATION_FAILED` | npm/pnpm/yarn install or `nx new` failed |
+| `UNKNOWN` | Catch-all (see UNKNOWN patterns section) |
+| `PRESET_FAILED` | Preset application failed |
+| `SANDBOX_FAILED` | Dependency install in temp sandbox failed |
+| `TEMPLATE_CLONE_FAILED` | Git clone of template repo failed |
+| `CI_WORKFLOW_FAILED` | CI workflow generation failed |
+
+**In the Daily Completion Funnel**, always show:
+- `input_err` — count of input validation errors (for context, not in rate)
+- `create_err` — count of creation errors
+- `err_rate` — **creation errors / starts** (this is the meaningful error rate)
 
 ### WORKSPACE_CREATION_FAILED Categorization
 
@@ -254,6 +283,7 @@ Understanding when features were introduced is critical for cross-month comparis
 | JSON meta format | **Dec 12, 2025** | **22.2.2** | Replaces CSV with stringified JSON containing `type` field. Dec is mixed ~64% JSON / 36% CSV. Jan 2026+ is fully JSON. |
 | `aiAgent` field | Feb 2026 | | 0 AI events in Jan 2026 |
 | `INVALID_WORKSPACE_NAME` error code | Mar 18, 2026 | | New categorization, not a regression |
+| 22.5.4 cloud prompt experiment | Mar 4–28, 2026 | **22.5.4** | Changed cloud prompt to ask "What CI provider do you use?" (github, gitlab, azure, etc.) instead of asking about Nx Cloud directly. If user selected a CI provider, they were auto-connected to Cloud. This was an experiment to replicate Nov 2025 prompt behavior that had higher cloud opt-in rates. **Results: inflated `nxCloudArg` opt-in to ~42% (vs ~9-12% in 22.6.x) but did NOT improve actual Cloud onboarding** — users got `nxCloudId` but never enabled their accounts. The high CI provider counts (github: 1,898, gitlab: 400) in 22.5.4 are NOT genuine Cloud adoption. Reverted in 22.6.0 to direct cloud prompt with skip/never/yes options. |
 
 **Telemetry eras:**
 
@@ -268,18 +298,20 @@ Understanding when features were introduced is critical for cross-month comparis
 
 ### Error Codes
 
-| Code                        | Description                               |
-| --------------------------- | ----------------------------------------- |
-| `WORKSPACE_CREATION_FAILED` | `npx nx new` failed (often npm stderr — see noise stripping note above) |
-| `UNKNOWN`                   | Catch-all from `execAndWait` (see common patterns below) |
-| `PRESET_FAILED`             | Preset application failed                 |
-| `SANDBOX_FAILED`            | Dependency install in temp sandbox failed |
-| `TEMPLATE_CLONE_FAILED`     | Git clone of template repo failed         |
-| `CI_WORKFLOW_FAILED`        | CI workflow generation failed             |
-| `DIRECTORY_EXISTS`          | Target directory already exists           |
-| `INVALID_WORKSPACE_NAME`    | Name doesn't match validation (most common: `"."`) |
-| `INVALID_PACKAGE_MANAGER`   | Unsupported or missing package manager    |
-| `INVALID_PRESET`            | Preset name not recognized                |
+See **Error Classification** section above for which codes are input validation vs creation errors.
+
+| Code                        | Classification     | Description                               |
+| --------------------------- | ------------------ | ----------------------------------------- |
+| `WORKSPACE_CREATION_FAILED` | Creation error     | `npx nx new` failed (often npm stderr — see noise stripping note above) |
+| `UNKNOWN`                   | Creation error     | Catch-all from `execAndWait` (see common patterns below) |
+| `PRESET_FAILED`             | Creation error     | Preset application failed                 |
+| `SANDBOX_FAILED`            | Creation error     | Dependency install in temp sandbox failed |
+| `TEMPLATE_CLONE_FAILED`     | Creation error     | Git clone of template repo failed         |
+| `CI_WORKFLOW_FAILED`        | Creation error     | CI workflow generation failed             |
+| `DIRECTORY_EXISTS`          | Input validation   | Target directory already exists           |
+| `INVALID_WORKSPACE_NAME`    | Input validation   | Name doesn't match validation (most common: `"."`) |
+| `INVALID_PACKAGE_MANAGER`   | Input validation   | Unsupported or missing package manager    |
+| `INVALID_PRESET`            | Input validation   | Preset name not recognized                |
 
 **UNKNOWN error patterns (Mar 2026 data):** ~65% are "Preset is required when not using a template" (users calling CNW without `--preset` or `--template` in non-interactive mode). ~10% are "Invalid template. Only templates from 'nrwl' org supported." The rest are misc (missing pnpm, EACCES, network errors that `execAndWait` categorized as UNKNOWN instead of a specific code). Apply the same noise-stripping approach when analyzing UNKNOWN errorMessages.
 
