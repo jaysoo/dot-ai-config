@@ -7,4 +7,4 @@ workload distribution. Used for sprint planning and resource allocation.
 
 ## Reports
 
-- [2026-03](./2026-03.md) -- Nicole HIGH (10 IP, 7 project leads, CVE 7d overdue), Craigory HIGH (5 IP, 7 overdue, oldest 42d, project starts in 3d), Leosvel HIGH (6 IP, 1 overdue, Mar 30 double-booking 3d away). Dillon shipped CLOUD-4254 + NXA-922 in QA (dropped to LOW). NXC-3480 in review. Szymon driving 3 INF projects. Worktrees started.
+- [2026-03](./2026-03.md) -- Nicole HIGH (11 IP, 9 project leads, CVE 10d overdue, Feature Demos due tomorrow), Craigory HIGH (6 IP, 2 overdue oldest 45d, Extending Target Defaults starts today), Leosvel HIGH (6 IP, 1 overdue, nx migrate already started but Generator Metadata today). Jack MEDIUM-HIGH (7 IP, up from 3). Szymon completed 3 projects (LOW). Dillon MEDIUM (2 items overdue). Polygraph Standalone active dev.

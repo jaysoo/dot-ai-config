@@ -94,6 +94,7 @@ Fixes DOC-125"
 
 ### Date & Time
 - Always ET timezone: `date '+%Y-%m-%d'`
+- **Never guess day-of-week** — run `date -d '2026-03-29' '+%A'` (Linux) or `date -j -f '%Y-%m-%d' '2026-03-29' '+%A'` (macOS) to verify
 - Task files: `.ai/yyyy-mm-dd/tasks/`
 
 ## 📋 Task Management

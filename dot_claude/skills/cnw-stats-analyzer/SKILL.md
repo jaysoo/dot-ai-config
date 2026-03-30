@@ -12,6 +12,23 @@ description: >
 
 Analyze create-nx-workspace telemetry from the `commandStats` MongoDB collection.
 
+## Goals (Target: End of April 2026)
+
+When the user asks about goals, targets, or whether metrics are on track, compare current data against these targets. The "current" baselines below were set in early March 2026.
+
+| Metric | Baseline (when set) | Nov 2025 Baseline | Target | How to Measure |
+|--------|---------------------|-------------------|--------|----------------|
+| **CNW completions/day** | 1,368 | 1,915 | **3,000** | All `complete` events, no filters (includes CI, AI, contentful). Use `$or: [{meta: {$regex: "\"type\":\"complete\""}}, {meta: {$regex: "which-ci-provider"}}]` with NO exclusion filters. |
+| **Init invocations/day** | 164 | 247 | **300** | `command: "init"` in commandStats. No type filter needed — each doc is one invocation. |
+| **Cloud "yes" rate** | ~3.7% (22.6.0) | ~50% (inflated by CI prompt) | **15%** | `nxCloudArg: "yes"` as % of human completions (excl CI/AI/contentful). Do NOT count CI providers (github, gitlab, etc.) — only explicit "yes". Nov was inflated by the 22.5.4 CI provider prompt experiment (see Telemetry Feature Timeline). |
+| **Claimed/Completed CNW %** | ~1-2.5% | — | **5%** | Cannot be calculated from commandStats alone — requires Nx Cloud activation data. Flag as unmeasurable when reporting. |
+
+**When reporting goal progress:**
+1. Show monthly averages (Jan, Feb, Mar) and weekly trend for current month
+2. Calculate linear extrapolation to end of April
+3. Flag whether each metric is trending up, flat, or down
+4. Note that the Nov baseline for cloud "yes" is NOT comparable due to the CI prompt experiment
+
 ## Default Output
 
 **Always break down results per day** unless the user explicitly asks for totals only. All dates must be in **EST/EDT** using `timezone: "America/New_York"` in `$dateToString`.
@@ -407,6 +424,14 @@ with open('commandStats-export.json') as f:
             if valid_node(parsed.get('nodeVersion', '')):
                 errors[dt][parsed.get('errorCode', 'UNKNOWN')] += 1
 ```
+
+## Watchlist
+
+When running reports, flag these patterns if they appear in non-trivial volume:
+
+| Pattern | What to look for | Context |
+|---------|-----------------|---------|
+| `nx/bin/nx` in "Cannot find module" errors | Count by preset, package manager, and Nx version | Fixed for `apps` preset in NXC-4165 (skipped unnecessary `generatePreset`). If it recurs for other presets, the root cause is `installPackagesTask` failing to install `nx` in the new workspace before `generate-preset.ts` tries to resolve it. Likely pnpm-specific. |
 
 ## Common Pitfalls
 

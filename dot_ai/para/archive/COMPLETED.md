@@ -2,6 +2,30 @@
 
 ### March 2026
 
+- [x] #35068: Bump picomatch 4.0.2 → 4.0.4 (2026-03-30) ✓ 2026-03-30
+  - Summary: Security fix — bumped picomatch in pnpm catalog to resolve two high-severity CVEs (method injection + ReDoS) across 6 @nx/* packages. PR #35081.
+
+- [x] NXC-4172: Handle "." and absolute paths as workspace name in CNW (2026-03-30) ✓ 2026-03-30
+  - Summary: Added `resolveSpecialFolderName()` to detect `.`/`./` and absolute paths before validation. Threaded `workingDir` through `CreateWorkspaceOptions`. PR #35083 merged.
+
+- [x] NXC-4168: Add JSON Meta Telemetry to nx init (2026-03-28) ✓ 2026-03-30
+  - Summary: Switched `recordStat` from CSV to JSON meta matching CNW format. Added start/complete/error/cancel events to `nx init`. PR #35076 merged.
+
+- [x] NXC-4166: CNW Angular Bundler Validation (2026-03-28) ✓ 2026-03-30
+  - Summary: Added early validation in `determineAngularOptions` to reject invalid bundlers for Angular presets. PR #35074 merged.
+
+- [x] NXC-4171: Bump sass for vue/nuxt Vite 8 compat (2026-03-28) ✓ 2026-03-30
+  - Summary: Bumped sass version for vue/nuxt presets for Vite 8 compatibility. PR #35073 merged.
+
+- [x] NXC-4165: CNW apps preset fix — cancelled (2026-03-28) ✓ 2026-03-30
+  - Summary: Cancelled — not worth addressing, will monitor CNW errors.
+
+- [x] NXC-4167: CNW Yarn 4 PnP Fix — cancelled (2026-03-28) ✓ 2026-03-30
+  - Summary: Cancelled — not worth addressing, will monitor CNW errors.
+
+- [x] Follow up on Next.js cleanup PR #34730 (2026-03-06) ✓ 2026-03-20
+  - Summary: PR #34730 merged 2026-03-20.
+
 - [x] NXC-4153: Fix CNW Non-Interactive Mode + Template Shorthands (2026-03-27) ✓ 2026-03-27
   - Summary: Fixed 22.6.0 regression where non-interactive mode crashed without `--preset`. Default to `nrwl/empty-template`. Added shorthand template names (angular, react, typescript, empty). PR #35045.
 

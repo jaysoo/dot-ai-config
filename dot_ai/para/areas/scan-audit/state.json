@@ -1,19 +1,19 @@
 {
-  "lastRun": "2026-03-27T15:30:00Z",
-  "lastWeeklyReport": "2026-W13",
+  "lastRun": "2026-03-30T12:30:00Z",
+  "lastWeeklyReport": "2026-W14",
   "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
   "findings": {
-    "dependencies": { "critical": 24, "warning": 13, "watch": 12 },
-    "supply-chain": { "status": "issues-found", "cves": 0, "advisories-high": 82, "latest-nx": "22.6.2", "next-tag-broken": true },
-    "api-surface": { "high": 6, "medium": 11, "low": 7 },
-    "competitors": { "highlights": 8, "turbo-napi-binding": true, "moon-ts6-support": true },
-    "frameworks": { "compat-risks": 6, "ts6-ga": true, "angular-onpush-default": true },
-    "runtimes": { "action-items": 2, "node-security-shipped": true, "node20-eol-days": 34 },
-    "ai-landscape": { "highlights": 12, "opportunities": 9, "risks": 5, "jetbrains-central": true },
-    "community": { "top-pain-points": 5, "open-issues": 464, "vite8-resolved": true, "downloads-weekly-avg": "9.19M" },
-    "capacity": { "high-risk-people": 4, "overdue-items": 18, "dillon-unblocked": true },
-    "project-health": { "zombies": 4, "overdue-projects": 6, "zombie-escalation": 7, "completions-this-week": 5, "local-dist-recovered": true },
-    "customer-deps": { "churned": 1, "cooling": 1, "concentration-risks": 2, "shci-customers": 8 }
+    "dependencies": { "critical": 7, "warning": 19, "watch": 13 },
+    "supply-chain": { "status": "yellow", "cves": 0, "advisories-high": 111, "latest-nx": "22.6.3", "nx-cloud-provenance-gap": true },
+    "api-surface": { "high": 13, "medium": 50, "low": 18 },
+    "competitors": { "highlights": 9, "turbo-experimentalCI": true, "turbo-stable": "2.8.21" },
+    "frameworks": { "compat-risks": 6, "vite8-shipped": true, "angular22-node20-drop": true, "rspack2-beta": true },
+    "runtimes": { "action-items": 2, "node-security-9cves": true, "node20-eol-days": 31 },
+    "ai-landscape": { "highlights": 12, "opportunities": 9, "risks": 5, "mcp-v2-oauth": true },
+    "community": { "top-pain-points": 5, "open-issues": 97, "node25-crash": true, "picomatch-cve": true, "downloads-weekly-avg": "8.89M" },
+    "capacity": { "high-risk-people": 3, "overdue-items": 20, "szymon-completed-3": true },
+    "project-health": { "zombies": 4, "overdue-projects": 7, "zombie-escalation": 8, "completions-this-week": 1, "due-tomorrow": 3 },
+    "customer-deps": { "churned": 1, "cooling": 1, "concentration-risks": 2, "rbc-resolved": true }
   }
 }
