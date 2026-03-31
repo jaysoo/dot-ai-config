@@ -103,7 +103,7 @@ function stripNpmNoise(msg) {
 
 | Pattern to match in **stripped** errorMessage | Category |
 |-----------------------------------------------|----------|
-| `ERESOLVE` | ERESOLVE dependency conflict |
+| `ERESOLVE` | ERESOLVE dependency conflict (drill into details — see note below) |
 | `native-bindings` or `native binding` | Native bindings not found (Termux/Android) |
 | `ENOENT` | ENOENT (file/command not found) |
 | `ETARGET` | ETARGET (version not found) |
@@ -124,6 +124,8 @@ function stripNpmNoise(msg) {
 | `E401` | E401 (auth/token error) |
 | Stripped message is empty (only noise was present) | npm warnings only (no real error) |
 | (none of the above) | Other: (first 120 chars of **stripped** message) |
+
+**IMPORTANT — ERESOLVE drill-down (discovered 2026-03-31):** When ERESOLVE errors appear in non-trivial volume (>5/day), don't just count them — extract the specific conflicting packages from the full error message. The `errorMessage` field contains the npm ERESOLVE output with "While resolving: X / Found: Y / peer Z required by W" details. Use a query that extracts the package name after "While resolving:" to group ERESOLVE by root cause. This is critical because a single upstream release (e.g. vite 8.0.3) can cause a wave of ERESOLVE errors across multiple presets, and the generic "ERESOLVE dependency conflict" category hides the common root cause.
 
 **Why this matters (discovered Mar 2026):** ~79% of errors previously categorized as "npm deprecation warning (false positive)" actually had real errors (ERESOLVE, ECONNRESET, ETARGET, EPERM, TLS cert errors, etc.) hidden under the warnings. Only ~21% were truly warning-only (npm exited non-zero with only deprecation output — almost all `angular-monorepo` preset).
 
@@ -432,6 +434,8 @@ When running reports, flag these patterns if they appear in non-trivial volume:
 | Pattern | What to look for | Context |
 |---------|-----------------|---------|
 | `nx/bin/nx` in "Cannot find module" errors | Count by preset, package manager, and Nx version | Fixed for `apps` preset in NXC-4165 (skipped unnecessary `generatePreset`). If it recurs for other presets, the root cause is `installPackagesTask` failing to install `nx` in the new workspace before `generate-preset.ts` tries to resolve it. Likely pnpm-specific. |
+| ERESOLVE with `vite@8` and `@react-router/dev` | Count by preset and Nx version. Check if `@vitejs/plugin-rsc` peer dep conflict is present. | Discovered 2026-03-31: `@react-router/dev@7.13.x` has `peerOptional: @vitejs/plugin-rsc@~0.5.7`, which pulls in `@vitejs/plugin-rsc@0.5.21` — this conflicts with `vite@8.0.3`. Affects `react-monorepo` preset heavily (25+ errors in 5 days). Also affects `angular-template` (esbuild peer dep) and `vue-monorepo` (sass peer dep). Nx pins `viteVersion = '^8.0.0'` in `packages/vite/src/utils/versions.ts`. Fix requires either pinning vite 7 for affected presets or waiting for upstream react-router fix. |
+| `Unable to resolve @nx/workspace:preset` with `tsconfig.base.json` | Count by preset, version. New in 22.6.3 (3 occurrences on 3/30, all angular-monorepo/npm). | May be a regression where tsconfig.base.json isn't generated before preset runs. Monitor if volume increases. |
 
 ## Common Pitfalls
 

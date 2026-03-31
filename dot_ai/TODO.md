@@ -4,54 +4,67 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **#35068: Bump picomatch 4.0.2 → 4.0.4** (2026-03-30, PR #35081)
+1. **NXC-4176: React Router + Vite 8 peer dep conflict** (2026-03-31, PR #35101)
+
+   - Summary: Force Vite 7 when React Router is used in framework mode. Passed `useViteV7` through vite configuration generator.
+   - Files: `.ai/2026-03-31/SUMMARY.md`
+
+2. **CLOUD-4029: Node 22/24 agent base images** (2026-03-30, merged PR #10571)
+
+   - Summary: Added Node 22.22 and Node 24.14 agent images with Go 1.26 and pnpm 10. Closed stale PR #9093. Created follow-up CLOUD-4403 for cloud-infrastructure.
+   - Files: `.ai/2026-03-30/SUMMARY.md`
+
+3. **CLOUD-4401: Ctrl+C during onboarding prints readline stacktrace** (2026-03-30, merged PR #10568)
+
+   - Summary: Added global uncaughtException/unhandledRejection handlers using `isPromptCancelledError` to exit cleanly on Ctrl+C during enquirer prompts.
+   - Files: `.ai/2026-03-30/SUMMARY.md`
+
+4. **CLOUD-4400: Suppress url.parse() deprecation warning** (2026-03-30, PR #10569)
+
+   - Summary: Monkey-patched `process.emitWarning` in client-bundle entry to suppress DEP0169 from follow-redirects/axios. CI green.
+   - Files: `.ai/2026-03-30/SUMMARY.md`
+
+5. **DOC-451: Cloud bundle local testing script & skill** (2026-03-30)
+
+   - Summary: Created `tools/scripts/nx-cloud-local.sh` and `cloud-bundle-tester` skill for testing nx-cloud CLI commands against snapshot/staging/local. Found `--help` bug in client-bundle.
+   - Files: `.ai/2026-03-30/SUMMARY.md`
+
+6. **#35068: Bump picomatch 4.0.2 → 4.0.4** (2026-03-30, PR #35081)
 
    - Summary: Security fix — bumped picomatch in pnpm catalog to resolve two high-severity CVEs across 6 @nx/* packages.
    - Files: `.ai/2026-03-30/SUMMARY.md`
 
-2. **NXC-4172: Handle "." and absolute paths in CNW** (2026-03-30, merged PR #35083)
+7. **NXC-4172: Handle "." and absolute paths in CNW** (2026-03-30, merged PR #35083)
 
    - Summary: Added `resolveSpecialFolderName()` to handle `.`/`./` and absolute paths. Threaded `workingDir` through `CreateWorkspaceOptions`.
    - Files: `.ai/2026-03-30/SUMMARY.md`
 
-3. **NXC-4168: Add JSON Meta Telemetry to nx init** (2026-03-30, merged PR #35076)
+8. **NXC-4168: Add JSON Meta Telemetry to nx init** (2026-03-30, merged PR #35076)
 
    - Summary: Switched `recordStat` from CSV to JSON meta matching CNW format. Added start/complete/error/cancel events.
    - Files: `.ai/2026-03-28/tasks/nxc-4168-init-json-meta-telemetry.md`
 
-4. **NXC-4166: CNW Angular Bundler Validation** (2026-03-30, merged PR #35074)
+9. **NXC-4166: CNW Angular Bundler Validation** (2026-03-30, merged PR #35074)
 
    - Summary: Added early validation in `determineAngularOptions` to reject invalid bundlers for Angular presets.
    - Files: `.ai/2026-03-28/tasks/cnw-angular-bundler-validation.md`
 
-5. **NXC-4171: Bump sass for vue/nuxt Vite 8 compat** (2026-03-30, merged PR #35073)
+10. **NXC-4171: Bump sass for vue/nuxt Vite 8 compat** (2026-03-30, merged PR #35073)
 
-   - Summary: Bumped sass version for vue/nuxt presets for Vite 8 compatibility.
-
-6. **NXC-4169: Dependabot fixture noise reduction** (2026-03-30, PR #35072 updated)
-
-   - Summary: Renamed 35 fixture files to `.json.fixture`, added `loadJsonFixture()` helper. Eliminates 45 of 83 Dependabot alerts.
-   - Files: `.ai/2026-03-30/SUMMARY.md`
-   - Follow-up: NXC-4170 for 19 high-severity alerts in real deps
-
-7. **DOC-455: Blog/Changelog Reverse Proxy in Edge Function** (2026-03-27, completed)
-
-   - Summary: Added conditional blog/changelog proxy to Netlify edge function. Toggled via `BLOG_URL` env var. PR #35043.
-
-8. **NXC-4153: Fix CNW Non-Interactive Mode + Template Shorthands** (2026-03-27, merged PR #35045)
-
-   - Summary: Fixed 22.6.0 regression in non-interactive mode, added template shorthand names.
-
-9. **NXC-4113: A/B Test Cloud Prompt Copy in CNW** (2026-03-27, completed)
-
-   - Summary: Re-enabled cloud prompt with 3 A/B copy variants tied to flow variant.
-
-10. **CNW Template Updates 22.6.2 + Vite 8 + Angular 21.2.5** (2026-03-27, completed)
-
-    - Summary: Migrated all 4 templates to Nx 22.6.2, bumped Vite 8 and Angular 21.2.5.
+    - Summary: Bumped sass version for vue/nuxt presets for Vite 8 compatibility.
+    - Follow-up: NXC-4170 for 19 high-severity alerts in real deps
 
 ## TODO
 
+- [ ] NXC-3947: Update all CLI/Cloud links to new URL structure (due 2026-03-31)
+- [ ] NXC-4170: Address 19 high-severity Dependabot alerts in real dependencies (due 2026-04-01)
+- [ ] NXC-3345: Investigate issue with Rollup + SWC for workspace libs (due 2026-04-03)
+  - Active session: `/Users/jack/projects/nx-worktrees/NXC-3345`
+- [ ] NXC-3510: Node executor may not release ports on shutdown (due 2026-04-03)
+- [ ] CLOUD-4403: Add Node 22/24 image tags to cloud-infrastructure config map (due 2026-04-03)
+  - Blocked by CLOUD-4029 (merged). Add `ubuntu22.04-node22.22-v1` and `ubuntu22.04-node24.14-v1` to agent-configuration.
+- [ ] NXC-2793: Lockfile throws errors intermittently (due 2026-04-03)
+- [ ] DOC-69: What to do about versioned docs? (due 2026-04-03)
 - [ ] Triage #35061: Nx 22.6.3 stack overflow on Node 25 + Windows (2026-03-30)
   - Forward-compat blocker for next Node LTS. Raise in CLI sync for assignment.
 - [ ] NXC-4169: Dependabot fixture noise reduction (2026-03-28)

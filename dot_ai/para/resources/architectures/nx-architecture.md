@@ -380,6 +380,17 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 
 ## Personal Work History
 
+### 2026-03-31 - NXC-4176: Force Vite 7 for React Router Framework Mode
+- **Branch**: `NXC-4176`
+- **PR**: https://github.com/nrwl/nx/pull/35101
+- **Purpose**: Fix peer dependency conflict between Vite 8 (new default) and `@react-router/dev` when creating React workspace with React Router in framework/server mode
+- **Approach**: Pass `useViteV7: true` through vite configuration generator chain when `useReactRouter` is true
+- **Key insight**: Vite version selection flows through `setupViteConfiguration` → `viteConfigurationGenerator` → `initGenerator` → `checkDependenciesInstalled`. The `useViteV7` flag was already supported in `InitGeneratorSchema` but not exposed in `ViteConfigurationGeneratorSchema`.
+- **Files**:
+  - `packages/react/src/generators/application/lib/bundlers/add-vite.ts` — conditional `useViteV7` pass-through
+  - `packages/vite/src/generators/configuration/schema.d.ts` — added `useViteV7` to type
+  - `packages/react/src/generators/application/application.spec.ts` — test for vite 7 assertion
+
 ### 2026-03-28 - NXC-4169: Dependabot Fixture Noise Reduction
 - **Branch**: `NXC-4169`
 - **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4169`

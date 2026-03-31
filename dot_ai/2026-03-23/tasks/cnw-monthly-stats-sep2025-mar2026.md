@@ -1,6 +1,6 @@
 # CNW Monthly Stats: March 2025 – March 2026
 
-Generated 2026-03-23. Excludes CI runs. AI vs non-AI split where available.
+Generated 2026-03-23, updated 2026-03-30. Excludes CI runs. AI vs non-AI split where available.
 
 ## Data Availability by Month
 
@@ -18,7 +18,7 @@ Generated 2026-03-23. Excludes CI runs. AI vs non-AI split where available.
 | Dec 2025 | Mixed (CSV + JSON)          | Partial (~64% JSON has funnel)    | Yes (both formats) | N/A (`aiAgent` not yet shipped)        | 22.3.3, 22.2.3, 22.3.1, 22.2.7, 22.2.5 (JSON portion only)                   |
 | Jan 2026 | JSON                        | Yes                               | Yes                | 0% (0 AI events)                       | 22.3.3, 22.4.1, 22.4.2, 22.4.0, 22.4.3, 22.4.4                              |
 | Feb 2026 | JSON                        | Yes                               | Yes                | **6.9%** (2,366 / 34,055 starts)      | 22.5.1, 22.4.5, 22.5.2, 22.5.0, 22.4.4, 22.5.3                              |
-| Mar 2026 | JSON                        | Yes                               | Yes                | **13.1%** (2,873 / 21,974 starts)     | 22.5.4, 22.5.3, 22.6.1, 22.6.0 (partial — through Mar 23)                    |
+| Mar 2026 | JSON                        | Yes                               | Yes                | **13.7%** (3,976 / 28,947 starts)     | 22.5.4, 22.6.1, 22.5.3, 22.6.3, 22.6.0 (through Mar 30)                      |
 
 ---
 
@@ -38,16 +38,14 @@ Generated 2026-03-23. Excludes CI runs. AI vs non-AI split where available.
 | Dec 2025¹ | ~31,479 | ~11,768+  | ~23,423   | ~2,149+ | ~74.4%     | —         |
 | Jan 2026  | 36,679  | 28,227    | 23,155    | 3,078   | 63.1%      | 8.4%      |
 | Feb 2026  | 31,689  | 25,194    | 20,803    | 2,699   | 65.7%      | 8.5%      |
-| Mar 2026² | 19,101  | 15,190    | 12,661    | 2,055   | 66.3%      | 10.8%     |
+| Mar 2026  | 24,971  | 19,828    | 17,537    | 3,189   | 70.2%      | 12.8%     |
 
 ¹ Dec 2025 is a mixed-format month (~64% JSON, ~36% legacy CSV). JSON portion: 20,081 starts / 12,547 completes. CSV portion: 11,398 starts / 10,876 completes. Funnel ratios are approximate because CSV events don't track precreate/error.
 
-² Mar 2026 is partial (through Mar 23).
-
 **Observations:**
 
-- Completion rate has been **stable at 63-66%** since Jan 2026.
-- Error rate was steady at 8-9% in Jan-Feb, but **rose to 10.8% in March** due to INVALID_WORKSPACE_NAME errors appearing starting Mar 18. This is a **new error code we started reporting**, not a regression — these users were always failing, we just weren't categorizing them before. The majority (87%) pass `"."` as the workspace name, suggesting they're trying to initialize Nx in the current directory and should be directed to `nx init` instead.
+- Completion rate **improved to 70.2%** in March (up from 63-66% in Jan-Feb), partly due to 22.6.x improvements.
+- Error rate rose to **12.8%** in March, driven by INVALID_WORKSPACE_NAME errors (new error code added Mar 18, not a regression). The majority (87%) pass `"."` as the workspace name, suggesting they're trying to initialize Nx in the current directory and should be directed to `nx init` instead.
 - Completions peaked in **Apr 2025 (36K)** and gradually declined to **24K in Nov** — a mix of seasonality and the Thanksgiving holiday (Nov had very low volume in its final week).
 
 ---
@@ -68,7 +66,7 @@ Generated 2026-03-23. Excludes CI runs. AI vs non-AI split where available.
 | Dec 2025³ | 23,423    | 7,871        | **33.6%** | 2,968    | 12.7%    | 11,235 | —     | 3,772  | 786    | 216   | 108 | 21       |
 | Jan 2026  | 23,155    | 6,888        | **29.8%** | 5,862    | 25.3%    | 16,267 | —     | 971    | 48     | 5     | 2   | —        |
 | Feb 2026  | 20,803    | 10,518       | **50.6%** | 2,362    | 11.4%    | 9,960  | 321   | 8,096  | 29     | 23    | 6   | 2        |
-| Mar 2026² | 12,661    | 3,700        | **29.2%** | 1,088    | 8.6%     | 7,121  | 1,840 | 1,986  | 412    | 117   | 82  | 15       |
+| Mar 2026  | 17,537    | 4,174        | **23.8%** | 1,425    | 8.1%     | 10,180 | 2,939 | 2,075  | 444    | 126   | 89  | 15       |
 
 ³ Dec 2025 combines JSON + CSV portions. The `enable-caching2` option (3,659 CSV events) is counted as non-opt-in (caching only, no CI).
 
@@ -78,17 +76,17 @@ Generated 2026-03-23. Excludes CI runs. AI vs non-AI split where available.
 - **Dec 2025 (drop to 34%):** Transition month. New JSON telemetry format shipped (22.2.2+). New `yes` option appeared, absorbing some CI provider selections. `enable-caching2` being phased out.
 - **Jan 2026 (drop to 30%):** CI provider prompts removed. `yes` became the primary opt-in (25% of completions). GitHub dropped from ~32% → 4.2%. `skip` ballooned to 70%.
 - **Feb 2026 (spike to 51%):** 22.5.x versions brought back CI provider prompts. GitHub surged back to 39% of completions. Highest opt-in rate in the 7-month window.
-- **Mar 2026 (drop to 29%):** 22.6.x transition (starting ~Mar 19) removed CI provider prompts again. `never` option surged (14.5% of completions). March is a blended month — early March (22.5.4) had ~42% opt-in, late March (22.6.x) dropped to ~10%.
+- **Mar 2026 (drop to 24%):** 22.6.x transition (starting ~Mar 18) removed CI provider prompts again. `never` option surged (16.8% of completions). March is a blended month — early March (22.5.4) had ~42% opt-in, late March (22.6.x) dropped to ~9%.
 
 ### March 2026 Phase Breakdown
 
-| Phase      | Dates     | Version       | Completes | Opt-in %   | Notes                                          |
-| ---------- | --------- | ------------- | --------- | ---------- | ---------------------------------------------- |
-| Pre-22.5.4 | Mar 1-4   | 22.5.3        | 2,578     | ~9-11%     | No CI provider prompt                          |
-| 22.5.4     | Mar 5-17  | 22.5.4        | 7,355     | **42.7%**  | CI provider prompts restored                   |
-| 22.6.x     | Mar 18-23 | 22.6.0/22.6.1 | 2,728     | **10-13%** | CI provider prompts gone again, `never` surged |
+| Phase      | Dates     | Version              | Completes | Yes    | Yes %    | Notes                                          |
+| ---------- | --------- | -------------------- | --------- | ------ | -------- | ---------------------------------------------- |
+| Pre-22.5.4 | Mar 1-4   | 22.5.3               | 2,345     | 192    | **8.2%** | No CI provider prompt                          |
+| 22.5.4     | Mar 5-17  | 22.5.4               | 6,904     | 591    | **8.6%** | CI provider prompts restored (inflated total opt-in to ~42% via CI selections) |
+| 22.6.x     | Mar 18-30 | 22.6.0/22.6.1/22.6.3 | 6,456     | 587    | **9.1%** | CI provider prompts gone again, `never` surged |
 
-**22.5.4 successfully restored October/November-era cloud adoption rates (~42%).** The 22.6.x transition then dropped it back to ~10%.
+**Cloud "yes" rate has been remarkably stable at 8-9% across all March phases.** The 22.5.4 experiment inflated *total* opt-in to ~42% via CI provider selections, but genuine "yes" remained flat. 22.6.x is slightly higher at 9.1%.
 
 ---
 
@@ -102,14 +100,14 @@ AI agent tracking (`aiAgent: true`) was introduced in late Jan / early Feb 2026.
 | -------- | ------- | --------- | --------- | ------- | ---------- | --------- |
 | Feb 2026 | Non-AI  | 31,689    | 20,803    | 2,699   | 65.7%      | 8.5%      |
 | Feb 2026 | **AI**  | **2,366** | **1,403** | **143** | **59.3%**  | **6.0%**  |
-| Mar 2026 | Non-AI  | 19,101    | 12,661    | 2,055   | 66.3%      | 10.8%     |
-| Mar 2026 | **AI**  | **2,873** | **1,609** | **640** | **56.0%**  | **22.3%** |
+| Mar 2026 | Non-AI  | 24,971    | 17,537    | 3,189   | 70.2%      | 12.8%     |
+| Mar 2026 | **AI**  | **3,976** | **2,295** | **1,253** | **57.7%**  | **31.5%** |
 
 **Observations:**
 
-- AI agents are **7-13% of all starts** (growing: 7% in Feb → 13% in Mar).
-- AI completion rate is **lower** (56-59% vs 66%) — they drop off more between start and precreate.
-- AI error rate **spiked in March** (6% → 22.3%) — likely the INVALID_WORKSPACE_NAME issue (AI agents passing `.` as name).
+- AI agents are **7-14% of all starts** (growing: 7% in Feb → 14% in Mar).
+- AI completion rate is **lower** (58% vs 70%) — they drop off more between start and precreate.
+- AI error rate **spiked in March** (6% → 31.5%) — driven by INVALID_WORKSPACE_NAME errors (AI agents passing `.` as name) and other retry-related failures.
 
 ### Cloud Adoption Comparison
 
@@ -117,10 +115,10 @@ AI agent tracking (`aiAgent: true`) was introduced in late Jan / early Feb 2026.
 | -------- | ------- | --------- | --------- | --------- | ------------ |
 | Feb 2026 | Non-AI  | 20,803    | 10,518    | **50.6%** | github (39%) |
 | Feb 2026 | **AI**  | **1,403** | **1,162** | **82.8%** | github (59%) |
-| Mar 2026 | Non-AI  | 12,661    | 3,700     | **29.2%** | github (16%) |
-| Mar 2026 | **AI**  | **1,609** | **1,296** | **80.5%** | yes (80%)    |
+| Mar 2026 | Non-AI  | 17,537    | 4,174     | **23.8%** | skip (58%)   |
+| Mar 2026 | **AI**  | **2,295** | **1,860** | **81.0%** | yes (81%)    |
 
-**AI agents opt into cloud at 2-3x the rate of humans** (81-83% vs 29-51%). In Feb they heavily selected `github`; in Mar they shifted to `yes` — likely the AI agents are configured to pass `--nxCloud=yes` by default.
+**AI agents opt into cloud at 3-4x the rate of humans** (81% vs 24%). In Feb they heavily selected `github`; in Mar they shifted to `yes` — likely the AI agents are configured to pass `--nxCloud=yes` by default.
 
 ---
 
@@ -170,20 +168,22 @@ _Only ~17K of ~35K+ events had version prefix. Version tracking was added mid-No
 | 22.4.4  | 3,468  |
 | 22.5.3  | 1,818  |
 
-### Mar 2026 (through Mar 23)
+### Mar 2026 (through Mar 30)
 
-| Version | Starts         |
-| ------- | -------------- |
-| 22.5.4  | 10,924 (57.2%) |
-| 22.5.3  | 3,583          |
-| 22.6.1  | 2,130          |
-| 22.6.0  | 2,013          |
+| Version | Starts          |
+| ------- | --------------- |
+| 22.5.4  | 10,974 (44.0%)  |
+| 22.6.1  | 4,841 (19.4%)   |
+| 22.5.3  | 3,633 (14.6%)   |
+| 22.6.3  | 2,199 (8.8%)    |
+| 22.6.0  | 2,018 (8.1%)    |
+| 22.6.2  | 725 (2.9%)      |
 
 **Version adoption patterns:**
 
 - Patch versions typically reach majority share within 1-2 weeks.
 - 22.3.3 was unusually long-lived (dominated Dec + Jan).
-- 22.5.4 dominated March but 22.6.x is ramping up quickly (22% of Mar starts already).
+- **22.6.x now accounts for 39% of March starts** (9,783 combined), having overtaken 22.5.4 in daily volume since Mar 18. 22.6.1 is the leading 22.6.x patch.
 
 ---
 

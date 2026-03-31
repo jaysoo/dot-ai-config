@@ -134,6 +134,21 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 
 ## Personal Work History
 
+### 2026-03-30
+- **CLOUD-4401: Ctrl+C during onboarding prints readline stacktrace** (branch: CLOUD-4401, PR: #10568, merged)
+  - Fixed enquirer prompt cancellation in `onboarding-interactive.ts`
+  - Key finding: enquirer throws `ERR_USE_AFTER_CLOSE` from an internal keypress event handler — a separate async call chain that `try/catch` around `await prompt()` cannot catch
+  - Fix: `process.on('uncaughtException'/'unhandledRejection')` handlers using existing `isPromptCancelledError` utility
+  - Related: `libs/nx-packages/client-bundle/src/lib/utilities/prompt-utils.ts` has the shared utility
+
+- **CLOUD-4400: Suppress url.parse() deprecation warning** (branch: CLOUD-4400, PR: #10569)
+  - Monkey-patched `process.emitWarning` in client-bundle entry point to suppress DEP0169
+
+- **DOC-451: Cloud bundle local testing tooling** (branch: main, uncommitted)
+  - Created `tools/scripts/nx-cloud-local.sh` — multi-environment wrapper for running locally-built client-bundle commands
+  - Created `cloud-bundle-tester` Claude Code skill
+  - Discovered top-level `--help` side-effect bug in client-bundle (module-scope `process.argv` checks)
+
 ### 2026-03-25
 - **CLOUD-4390: ClickUp Exit Code 2 Investigation** (PR: #10513, by Caleb)
   - Investigation only (no code changes by me). ClickUp DTE runs showed `status: 2` after Nx 22.3.3 → 22.6.1 upgrade.
@@ -353,6 +368,37 @@ Key fixtures:
 - `db.createTestOrganization({ isPublic: true })` - Creates org viewable without login
 - `db.createTestCIPE()` - Creates test pipeline execution
 - `auth.login('DAVID_SMITH')` - Handles Auth0 login when needed
+
+### Client Bundle CLI Commands (2026-03-30)
+**Last Updated:** 2026-03-30
+
+The client-bundle (`libs/nx-packages/client-bundle/`) is the npm-distributed binary that runs `npx nx-cloud <command>`. It's built as a single JS bundle.
+
+#### Testing Locally
+
+Use `tools/scripts/nx-cloud-local.sh` to run commands from the locally-built bundle against any environment:
+
+```bash
+# Build first
+nx build nx-packages-client-bundle
+
+# Configure PAT (one-time per environment)
+npx nx-cloud configure --personal-access-token=<PAT> --nx-cloud-url=https://snapshot.nx.app
+
+# Run commands (defaults to snapshot if env omitted)
+./tools/scripts/nx-cloud-local.sh onboard
+./tools/scripts/nx-cloud-local.sh staging onboard status --json
+./tools/scripts/nx-cloud-local.sh local validate
+```
+
+#### Key Files
+- `libs/nx-packages/client-bundle/src/index.ts` — command map (lazy `require()` per command)
+- `libs/nx-packages/client-bundle/src/lib/core/commands/` — individual command implementations
+- `libs/nx-packages/client-bundle/src/lib/core/commands/onboarding/` — onboard subcommands
+- `dist/libs/nx-packages/client-bundle/src/index.js` — built output
+
+#### Known Issue: Top-Level `--help` Side Effects
+Many command files (e.g., `convert-to-nx-cloud-id.ts`, `configure.ts`, `login.ts`) have `process.argv.includes('--help')` checks **at module scope** (outside exported functions). When another command imports from these files, the `--help` check fires at import time and prints the wrong help. Example: `onboard --help` shows `convert-to-nx-cloud-id` help because `onboarding-utils.ts` imports `updateNxJsonWithNxCloudId` from `convert-to-nx-cloud-id.ts`.
 
 ## Technology Stack
 

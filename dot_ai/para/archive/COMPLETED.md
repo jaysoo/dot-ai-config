@@ -2,6 +2,18 @@
 
 ### March 2026
 
+- [x] NXC-4176: Custom React workspace fails with Vite 8 and React Router (2026-03-31) ✓ 2026-03-31
+  - Summary: Force Vite 7 when React Router is used in framework mode via `useViteV7` flag passed through vite configuration generator. PR #35101.
+
+- [x] CLOUD-4029: Track Node 22 default agent image request (2026-03-30) ✓ 2026-03-30
+  - Summary: Added Node 22.22 and Node 24.14 agent base images with Go 1.26 and pnpm 10. Closed stale PR #9093, created PR #10571 (ocean), merged. Follow-up CLOUD-4403 for cloud-infrastructure config map.
+
+- [x] CLOUD-4401: Ctrl+C during onboarding prints readline stacktrace (2026-03-30) ✓ 2026-03-30
+  - Summary: Added global uncaughtException/unhandledRejection handlers in `interactiveOnboarding()` using `isPromptCancelledError` to exit cleanly on Ctrl+C. PR #10568 (ocean), merged.
+
+- [x] CLOUD-4400: Suppress url.parse() deprecation warning during CLI commands (2026-03-30) ✓ 2026-03-30
+  - Summary: Monkey-patched `process.emitWarning` in client-bundle entry point to suppress DEP0169 from follow-redirects. PR #10569 (ocean), CI green.
+
 - [x] #35068: Bump picomatch 4.0.2 → 4.0.4 (2026-03-30) ✓ 2026-03-30
   - Summary: Security fix — bumped picomatch in pnpm catalog to resolve two high-severity CVEs (method injection + ReDoS) across 6 @nx/* packages. PR #35081.
 

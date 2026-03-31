@@ -518,6 +518,11 @@ op run --env-file=env.base -- E2E_TEST_MODE=true npx nx serve
 
 ## 🌊 Ocean (Nx Cloud) Specifics
 
+### Commit Scopes
+- Use the **library/project name** as scope, not the app name
+  - ✅ `fix(client-bundle):` for changes in `libs/nx-packages/client-bundle/`
+  - ❌ `fix(nx-cloud):` — too broad, `nx-cloud` is the app, not the library
+
 ### Version Plans (Required for feat/fix PRs)
 
 Ocean PRs with `feat` or `fix` commits require a version plan at `.nx/version-plans/`:
