@@ -37,6 +37,8 @@ Understand the actual bug/feature request. Does the PR description accurately re
 gh pr diff <PR_NUMBER> --repo nrwl/nx
 ```
 
+**If the diff touches `project.json`, `package.json` targets, or `nx.json` (targetDefaults/namedInputs)**: invoke the `nx-config-cache-check` skill to validate cache input/output alignment.
+
 Analyze the code changes:
 - Does the fix address the root cause or just a symptom?
 - Are there regressions? Edge cases missed?

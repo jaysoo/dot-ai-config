@@ -2,6 +2,9 @@
 
 ### March 2026
 
+- [x] CLOUD-4403: Add Node 22/24 agent image tags to cloud-infrastructure config maps (2026-03-31) ✓ 2026-03-31
+  - Summary: Added `ubuntu22.04-node22.22-v1` and `ubuntu22.04-node24.14-v1` to all 12 agent-configuration config maps across all environments and enterprise customers. PR #4702 (cloud-infrastructure).
+
 - [x] NXC-4176: Custom React workspace fails with Vite 8 and React Router (2026-03-31) ✓ 2026-03-31
   - Summary: Force Vite 7 when React Router is used in framework mode via `useViteV7` flag passed through vite configuration generator. PR #35101.
 

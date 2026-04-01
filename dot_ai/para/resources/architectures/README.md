@@ -17,6 +17,7 @@ Repository architecture documentation for quick context when working on differen
 | ocean | `ocean-architecture.md` | Ocean project |
 | console | `console-architecture.md` | Nx Cloud console |
 | eng-wrapped | `eng-wrapped-architecture.md` | Engineering wrapped project |
+| cloud-infrastructure | `cloud-infrastructure-architecture.md` | Multi-cloud IaC for Nx Cloud (OpenTofu + K8s GitOps) |
 | dot-ai-config | `dot-ai-config-architecture.md` | This config repo |
 
 ## File Naming

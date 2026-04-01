@@ -303,6 +303,26 @@ Understanding when features were introduced is critical for cross-month comparis
 | `aiAgent` field | Feb 2026 | | 0 AI events in Jan 2026 |
 | `INVALID_WORKSPACE_NAME` error code | Mar 18, 2026 | | New categorization, not a regression |
 | 22.5.4 cloud prompt experiment | Mar 4–28, 2026 | **22.5.4** | Changed cloud prompt to ask "What CI provider do you use?" (github, gitlab, azure, etc.) instead of asking about Nx Cloud directly. If user selected a CI provider, they were auto-connected to Cloud. This was an experiment to replicate Nov 2025 prompt behavior that had higher cloud opt-in rates. **Results: inflated `nxCloudArg` opt-in to ~42% (vs ~9-12% in 22.6.x) but did NOT improve actual Cloud onboarding** — users got `nxCloudId` but never enabled their accounts. The high CI provider counts (github: 1,898, gitlab: 400) in 22.5.4 are NOT genuine Cloud adoption. Reverted in 22.6.0 to direct cloud prompt with skip/never/yes options. |
+| 22.6.3 cloud prompt A/B test | **Mar 27, 2026** | **22.6.3** (PR #35039) | A/B tests three cloud prompt copy variants using `flowVariant` (0, 1, 2). All have the same choices: Yes / Skip for now / No, don't ask again. **Variant details below.** Baseline (22.6.0–2 pooled): 9.0% yes, 33.5% never. Early results (5 days, ~2,000 completions): FV 1 and FV 2 outperform FV 0 on "yes" rate and dramatically reduce "never" rate. |
+
+#### 22.6.3 Cloud Prompt A/B Variants
+
+| Variant | Code | Prompt | Footer |
+|---------|------|--------|--------|
+| **FV 0** (baseline) | `connect-to-cloud` | "Connect to Nx Cloud?" | "Automatically fix broken PRs, 70% faster CI: https://nx.dev/nx-cloud" |
+| **FV 1** (remote cache) | `cloud-ab-remote-cache-speed` | "Enable remote caching to speed up builds with Nx Cloud?" | "Free for small teams. 2-minute setup with GitHub — cache locally and in CI: https://nx.dev/nx-cloud" |
+| **FV 2** (fast CI) | `cloud-ab-fast-ci-setup` | "Speed up your CI with Nx Cloud?" | "70% faster CI on GitHub, GitLab, and more. Free tier, 2-minute setup: https://nx.dev/nx-cloud" |
+
+**Early results (22.6.3 all-time as of 2026-03-31):**
+
+| | Comp | yes % | skip % | never % |
+|--|--:|--:|--:|--:|
+| 22.6.0–2 baseline | 5,036 | 9.0% | 55.7% | 33.5% |
+| FV 0 | 627 | 7.5% | 62.0% | 28.7% |
+| FV 1 | 735 | **10.5%** | 67.8% | 20.0% |
+| FV 2 | 673 | **10.0%** | 68.9% | 19.8% |
+
+**Key findings:** FV 1 ("remote caching") and FV 2 ("fast CI") both mention "free" and "2-minute setup", reducing perceived commitment. FV 0 (generic "Connect to Nx Cloud?") underperforms baseline — possibly because the new "No, don't ask again" option with `chalk.dim()` styling makes refusal easier. The big win is the "never" collapse: all variants reduced hard refusals, with FV 1/2 cutting "never" nearly in half. When analyzing cloud rates on 22.6.3+, always break down by flow variant.
 
 **Telemetry eras:**
 
