@@ -15,6 +15,26 @@ function wtclean
     set -l i 1
     while test $i -le (count $argv)
         switch $argv[$i]
+            case --help -h
+                echo "Usage: wtclean [project] [options]"
+                echo ""
+                echo "Clean up old git worktrees: remove folder, unregister from git, delete local branch."
+                echo ""
+                echo "Arguments:"
+                echo "  project       Repository name (default: nx). Looks for ~/projects/<project>-worktrees/"
+                echo ""
+                echo "Options:"
+                echo "  --dry-run     Show what would be cleaned without doing it"
+                echo "  --days N      Age threshold in days (default: 21)"
+                echo "  --all         Clean ALL worktrees, not just old ones"
+                echo "  --help, -h    Show this help"
+                echo ""
+                echo "Examples:"
+                echo "  wtclean                    # clean nx worktrees older than 21 days"
+                echo "  wtclean ocean --dry-run    # preview ocean worktree cleanup"
+                echo "  wtclean --all --days 7     # clean all nx worktrees older than 1 week"
+                echo "  wtclean nrwl-blog --all    # clean all nrwl-blog worktrees"
+                return 0
             case --dry-run
                 set dry_run true
             case --days
