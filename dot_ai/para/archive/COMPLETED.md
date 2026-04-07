@@ -1,5 +1,16 @@
 ## Completed
 
+### April 2026
+
+- [x] DOC-463: Match Framer header and footer (2026-04-01) ✓ 2026-04-01
+  - Summary: Pixel-matched blog header/footer to Framer (nx.dev). Inter font, exact layout measurements via Playwright/ImageMagick. Added hover dropdown menus for Solutions and Resources. Footer updated to 5 columns with copyright bar.
+
+- [x] DOC-466: Add tutorial series ToC to tutorial pages (2026-04-01) ✓ 2026-04-01
+  - Summary: Added "Tutorial Series" aside with numbered list to all 8 tutorial pages. Prerequisites standardized as plain paragraphs. PR #35120.
+
+- [x] DOC-465: Build-time image optimization for blog (2026-04-01) ✓ 2026-04-01
+  - Summary: Added sharp-based responsive WebP generation (640w, 1280w, original) for 1064 blog images. Nx task pipeline with caching. Fixed broken /documentation/ media paths across 15 posts. Filed DOC-469 for testimonial styling. PR nrwl/nx-blog#1.
+
 ### March 2026
 
 - [x] CLOUD-4403: Add Node 22/24 agent image tags to cloud-infrastructure config maps (2026-03-31) ✓ 2026-03-31

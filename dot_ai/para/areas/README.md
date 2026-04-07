@@ -19,6 +19,7 @@ Areas represent continuous aspects of work that need maintenance:
 | Productivity | `productivity/` | Engineering productivity metrics and tracking |
 | Blog Ideas | `blog-ideas/` | Content ideas for AI-assisted dev workflows, Nx + AI blog posts |
 | CNW Stats | `cnw-stats/` | create-nx-workspace telemetry, funnel health, and regression tracking |
+| Incidents | `incidents/` | Security incidents, data exposure events, remediation and disclosure tracking |
 
 ## Adding New Areas
 

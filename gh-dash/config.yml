@@ -1,0 +1,82 @@
+# gh-dash configuration
+# Synced from ~/projects/dot-ai-config/gh-dash/config.yml
+# Docs: https://www.gh-dash.dev/configuration/
+
+prSections:
+  - title: Needs My Review
+    filters: is:open review-requested:@me
+    layout:
+      author:
+        width: 10
+      repo:
+        width: 20
+      title:
+        grow: true
+      ci:
+        width: 8
+      reviewStatus:
+        width: 8
+      lines:
+        width: 8
+      updatedAt:
+        width: 10
+
+  - title: My PRs
+    filters: is:open author:@me
+    layout:
+      repo:
+        width: 20
+      title:
+        grow: true
+      ci:
+        width: 8
+      reviewStatus:
+        width: 8
+      lines:
+        width: 8
+      updatedAt:
+        width: 10
+
+  - title: Nrwl/Nx PRs
+    filters: is:open repo:nrwl/nx
+    limit: 20
+    layout:
+      author:
+        width: 15
+      title:
+        grow: true
+      ci:
+        width: 8
+      reviewStatus:
+        width: 8
+      lines:
+        width: 8
+      updatedAt:
+        width: 10
+
+issuesSections:
+  - title: My Issues
+    filters: is:open assignee:@me
+  - title: Nx Issues
+    filters: is:open repo:nrwl/nx label:type:bug
+    limit: 20
+
+defaults:
+  prsLimit: 20
+  issuesLimit: 20
+  preview:
+    open: true
+    width: 60
+
+keybindings:
+  prs:
+    - key: e
+      command: cd {{.RepoPath}} && nvim -c "Octo pr edit {{.PrNumber}}"
+    - key: b
+      command: gh pr view {{.PrNumber}} -R {{.RepoName}} --web
+    - key: C
+      command: gh pr checkout {{.PrNumber}} -R {{.RepoName}}
+
+repoPaths:
+  nrwl/nx: ~/projects/nx
+  nrwl/nx-cloud: ~/projects/ocean

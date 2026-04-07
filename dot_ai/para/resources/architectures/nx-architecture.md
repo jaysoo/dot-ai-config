@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2026-03-28
+Last Updated: 2026-04-01
 
 ## Directory Overview
 
@@ -158,7 +158,8 @@ The Nx documentation site (nx.dev/docs) - Astro/Starlight application
 - `astro-docs/sidebar.mts` - Sidebar structure configuration
 - `astro-docs/src/content/docs/getting-started/Tutorials/` - Topic-based tutorials (DOC-452, merged 2026-03-26)
   - 8 focused tutorials: crafting-your-workspace, managing-dependencies, configuring-tasks, running-tasks, caching, understanding-your-workspace, reducing-configuration-boilerplate, self-healing-ci-tutorial
-  - Each has `llm_copy_prompt` for AI agent tutoring and prev/next navigation cards
+  - Each has `llm_copy_prompt` for AI agent tutoring, prev/next navigation cards, and a "Tutorial Series" ToC aside (DOC-466, PR #35120, 2026-04-01)
+  - Markdoc `{% aside %}` with ordered lists: must have blank line before `{% /aside %}` or prettier indents the closing tag into the list, breaking Markdoc parsing
   - Old framework tutorials (react/angular/typescript) kept but hidden from sidebar for link compat
 - `astro-docs/src/content/docs/getting-started/` - Getting started pages all have consistent "Next steps" bullet lists linking to tutorial series, editor setup, and CI (PR #35024, 2026-03-26)
 - `astro-docs/src/assets/tutorials/` - SVG diagrams and screenshots for tutorials
@@ -378,7 +379,47 @@ Adds dedicated blog search functionality when Astro docs migration is enabled.
 - Algolia DocSearch Modal component
 - Environment variable `NEXT_PUBLIC_ASTRO_URL` for feature flag
 
+## Build Target Cache Architecture
+
+### How Inputs, Outputs, and Dependencies Interact
+
+- **`inputs`** control the cache hash — what Nx checks to decide if a target needs to re-run
+- **`outputs`** control what gets restored on a cache hit — NOT what affects the hash
+- **`dependsOn`** runs dependency tasks first, but if the parent gets a cache hit, its cached outputs are restored AFTER dependencies run — potentially overwriting their fresh output
+
+**Dangerous pattern**: A cacheable target whose `outputs` overlap with a dependency's outputs, but whose `inputs` are too narrow to detect source changes. The dependency rebuilds correctly, but the parent's stale cache restore overwrites the fresh files.
+
+**Safe pattern**: If a target's `outputs` don't overlap with dependency outputs (e.g., only a README), narrow inputs are harmless.
+
+**Correct input for dependency outputs**: Use `dependentTasksOutputFiles` (not the source `.ts` file):
+```json
+"inputs": [
+  { "dependentTasksOutputFiles": "**/bin/create-nx-workspace.js" },
+  "{workspaceRoot}/scripts/replace-versions.js"
+]
+```
+
+**Verification**: `nx show target PROJECT:build inputs --check dist/path/to/file.js`
+
+### packages/ Build Target Structure
+
+Most packages have a `build` target that runs post-compilation steps (chmod, copy-readme, replace-versions) after `build-base` (tsc compilation). The `build` target's `inputs` must cover everything that affects its declared `outputs`.
+
+- 34 packages have `"inputs": ["copyReadme"]` on `build` — only watches README files
+- For packages where `build` outputs are only `README.md`: harmless (no overlap with `build-base`)
+- For CNW/CNP where `build` outputs include the bin `.js` file: **broken** — stale cache overwrites `build-base`'s fresh compile
+- Fix applied 2026-04-01: added `dependentTasksOutputFiles` for the bin `.js` files
+
 ## Personal Work History
+
+### 2026-04-01 - Fix Build Cache Input/Output Misalignment (CNW/CNP)
+- **Branch**: `debug-cache`
+- **Worktree**: `/Users/jack/projects/nx-worktrees/debug-cache`
+- **Status**: Fix applied, pending commit/PR
+- **Root Cause**: Commit `6522c2344f` (Mar 25) added `"inputs": ["copyReadme"]` to 34 package `build` targets, overriding `targetDefaults` inputs. For CNW/CNP, the `build` target's outputs include the bin `.js` file (also produced by `build-base`), so stale cache restores overwrite fresh compiles.
+- **Fix**: Used `dependentTasksOutputFiles` as input for the bin `.js` files, plus `replace-versions.js` and `chmod.js` scripts
+- **Also created**: `nx-config-cache-check` skill for future PR reviews
+- **Files**: `packages/create-nx-workspace/project.json`, `packages/create-nx-plugin/project.json`
 
 ### 2026-03-31 - NXC-4176: Force Vite 7 for React Router Framework Mode
 - **Branch**: `NXC-4176`

@@ -4,7 +4,7 @@
 
 -- Set leader key first
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 -- Check Neovim version
 if vim.fn.has("nvim-0.11") == 0 then
@@ -543,16 +543,68 @@ require("lazy").setup({
 		},
 	},
 
-	-- Better git diff view
+	-- Better git diff view + merge conflict resolution
 	{
 		"sindrets/diffview.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
+		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory", "DiffviewToggleFiles" },
 		keys = {
 			{ "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
 			{ "<leader>gD", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
 			{ "<leader>gh", "<cmd>DiffviewFileHistory<cr>", desc = "File History" },
 			{ "<leader>gH", "<cmd>DiffviewFileHistory %<cr>", desc = "Current File History" },
+			{ "<leader>gm", "<cmd>DiffviewOpen<cr>", desc = "Merge conflicts (during merge/rebase)" },
 		},
+		opts = {
+			enhanced_diff_hl = true,
+			view = {
+				merge_tool = {
+					layout = "diff3_mixed",
+					disable_diagnostics = true,
+				},
+			},
+			keymaps = {
+				view = {
+					{ "n", "<leader>co", "<cmd>diffget //2<cr>", { desc = "Choose OURS" } },
+					{ "n", "<leader>ct", "<cmd>diffget //3<cr>", { desc = "Choose THEIRS" } },
+				},
+			},
+		},
+	},
+
+	-- GitHub PR review
+	{
+		"pwntester/octo.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+		cmd = "Octo",
+		keys = {
+			{ "<leader>gp", "<cmd>Octo pr list<cr>", desc = "List PRs" },
+			{ "<leader>gP", "<cmd>Octo pr search<cr>", desc = "Search PRs" },
+			{ "<leader>gi", "<cmd>Octo issue list<cr>", desc = "List Issues" },
+			{ "<leader>gI", "<cmd>Octo issue search<cr>", desc = "Search Issues" },
+			{ "<leader>gr", "<cmd>Octo review start<cr>", desc = "Start PR Review" },
+			{ "<leader>gR", "<cmd>Octo review submit<cr>", desc = "Submit PR Review" },
+		},
+		config = function()
+			require("octo").setup({
+				enable_builtin = true,
+				picker = "telescope",
+				default_merge_method = "squash",
+				default_delete_branch = false,
+				reviews = {
+					auto_show_threads = true,
+				},
+				suppress_missing_scope = {
+					projects_v2 = true,
+				},
+			})
+			-- Register treesitter markdown for octo buffers
+			vim.treesitter.language.register("markdown", "octo")
+		end,
 	},
 
 	-- Sticky lines / context (like IntelliJ)
@@ -622,10 +674,10 @@ require("lazy").setup({
 				python = { "isort", "black" },
 				--
 				-- You can use stop_after_first to run until a formatter is found
-				javascript = { "prettierd", "prettier", stop_after_first = true },
-				typescript = { "prettierd", "prettier", stop_after_first = true },
-				javascriptreact = { "prettierd", "prettier", stop_after_first = true },
-				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+				javascript = { "prettierd", "prettier", "oxfmt", stop_after_first = true },
+				typescript = { "prettierd", "prettier", "oxfmt", stop_after_first = true },
+				javascriptreact = { "prettierd", "prettier", "oxfmt", stop_after_first = true },
+				typescriptreact = { "prettierd", "prettier", "oxfmt", stop_after_first = true },
 				json = { "prettierd", "prettier", stop_after_first = true },
 				html = { "prettierd", "prettier", stop_after_first = true },
 				css = { "prettierd", "prettier", stop_after_first = true },

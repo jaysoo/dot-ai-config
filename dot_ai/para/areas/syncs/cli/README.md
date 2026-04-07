@@ -11,6 +11,11 @@ Tracking document for CLI team sync meetings.
 
 ## Upcoming Sync
 
+- GHSA publication for Nx security vulnerability (CVSS 5.4 Medium — nx graph /help endpoint, CORS header, execSync)
+  - Steve to author advisory if we don't publish; will provide context if needed
+  - Jack to create a task for the advisory and find something to work on for the fix
+  - Need to sync with Jason and Steve on timeline and ownership
+
 ## Action Items
 
 - [ ] Jack: Ping team for PR reviews on minor onboarding tweaks

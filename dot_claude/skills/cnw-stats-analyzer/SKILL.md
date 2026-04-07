@@ -19,7 +19,7 @@ When the user asks about goals, targets, or whether metrics are on track, compar
 | Metric | Baseline (when set) | Nov 2025 Baseline | Target | How to Measure |
 |--------|---------------------|-------------------|--------|----------------|
 | **CNW completions/day** | 1,368 | 1,915 | **3,000** | All `complete` events, no filters (includes CI, AI, contentful). Use `$or: [{meta: {$regex: "\"type\":\"complete\""}}, {meta: {$regex: "which-ci-provider"}}]` with NO exclusion filters. |
-| **Init invocations/day** | 164 | 247 | **300** | `command: "init"` in commandStats. No type filter needed — each doc is one invocation. |
+| **Init invocations/day** | 164 | 247 | **300** | `command: "init"` in commandStats. Pre-22.6.4: each doc is one invocation (no type field). 22.6.4+: emits JSON meta with `type` field (start/complete/error), so count `start` events or total docs depending on era. See "Init Command Stats" section. |
 | **Cloud "yes" rate** | ~3.7% (22.6.0) | ~50% (inflated by CI prompt) | **15%** | `nxCloudArg: "yes"` as % of human completions (excl CI/AI/contentful). Do NOT count CI providers (github, gitlab, etc.) — only explicit "yes". Nov was inflated by the 22.5.4 CI provider prompt experiment (see Telemetry Feature Timeline). |
 | **Claimed/Completed CNW %** | ~1-2.5% | — | **5%** | Cannot be calculated from commandStats alone — requires Nx Cloud activation data. Flag as unmeasurable when reporting. |
 
@@ -183,6 +183,7 @@ function categorize(meta) {
 **Standard base filter for all queries:**
 ```js
 const base = [
+  { command: "create-nx-workspace" },
   { createdAt: { $gte: startDate, $lte: endDate } },
   { isCI: false },
   { meta: { $not: { $regex: "contentful" } } },
@@ -191,7 +192,32 @@ const base = [
 // Use with: { $and: [...base, { meta: { $regex: "\"type\":\"start\"" } }] }
 ```
 
+**CRITICAL (discovered Apr 2026):** Always include `{ command: "create-nx-workspace" }` in the base filter. Starting in 22.6.4, `init` and `migrate` commands also emit JSON meta with `nxVersion`, so filtering only on meta fields will pull in non-CNW events. The `init` events have no `flowVariant`, no `nxCloudArg`, and no `precreate` — they show up as "FV unknown" with `nxCloudArg: "unknown"` and inflate error rates.
+
 If the user asks for AI or CI stats specifically, run those as a **separate breakdown** alongside the main (filtered) numbers.
+
+### Init Command Stats
+
+When the user asks about `init` stats, funnel, or cloud adoption, use `{ command: "init" }` instead of `{ command: "create-nx-workspace" }`. The init command shares the same `commandStats` collection and JSON meta format (since 22.6.4).
+
+**Key differences from CNW:**
+- Init has no `flowVariant` (no A/B testing)
+- Init has `setupCloudPrompt: "enable-ci"` instead of `nxCloudArg` — the cloud prompt is different
+- Init has no `precreate` event — the funnel is just start → complete/error/cancel
+- Init has no `template` or `preset` fields
+- Init events may have `nxCloudArg` missing entirely — check for `setupCloudPrompt` field instead
+
+**Init base filter:**
+```js
+const initBase = [
+  { command: "init" },
+  { createdAt: { $gte: startDate, $lte: endDate } },
+  { isCI: false },
+  { meta: { $not: { $regex: "\"aiAgent\":true" } } }
+];
+```
+
+**Init cloud adoption:** Extract from the `useCloud` field on the document (not from meta). For JSON meta events, also check `setupCloudPrompt` value in meta for prompt variant tracking.
 
 ### Date Range Handling
 
@@ -303,9 +329,10 @@ Understanding when features were introduced is critical for cross-month comparis
 | `aiAgent` field | Feb 2026 | | 0 AI events in Jan 2026 |
 | `INVALID_WORKSPACE_NAME` error code | Mar 18, 2026 | | New categorization, not a regression |
 | 22.5.4 cloud prompt experiment | Mar 4–28, 2026 | **22.5.4** | Changed cloud prompt to ask "What CI provider do you use?" (github, gitlab, azure, etc.) instead of asking about Nx Cloud directly. If user selected a CI provider, they were auto-connected to Cloud. This was an experiment to replicate Nov 2025 prompt behavior that had higher cloud opt-in rates. **Results: inflated `nxCloudArg` opt-in to ~42% (vs ~9-12% in 22.6.x) but did NOT improve actual Cloud onboarding** — users got `nxCloudId` but never enabled their accounts. The high CI provider counts (github: 1,898, gitlab: 400) in 22.5.4 are NOT genuine Cloud adoption. Reverted in 22.6.0 to direct cloud prompt with skip/never/yes options. |
-| 22.6.3 cloud prompt A/B test | **Mar 27, 2026** | **22.6.3** (PR #35039) | A/B tests three cloud prompt copy variants using `flowVariant` (0, 1, 2). All have the same choices: Yes / Skip for now / No, don't ask again. **Variant details below.** Baseline (22.6.0–2 pooled): 9.0% yes, 33.5% never. Early results (5 days, ~2,000 completions): FV 1 and FV 2 outperform FV 0 on "yes" rate and dramatically reduce "never" rate. |
+| 22.6.3 cloud prompt A/B test | **Mar 27, 2026** | **22.6.3** (PR #35039) | A/B tests three cloud prompt copy variants using `flowVariant` (0, 1, 2). All have the same choices: Yes / Skip for now / No, don't ask again. **Variant details below.** Same experiment continues in 22.6.4. Baseline (22.6.0–2 pooled): 9.0% yes, 33.5% never. Results (7 days, ~2,900 CNW completions across 22.6.3+22.6.4): FV 1 (12.1% yes) and FV 2 (10.0% yes) outperform FV 0 (7.6% yes) and dramatically reduce "never" rate. |
+| 22.6.4 release | **Apr 1, 2026** | **22.6.4** | Continues the same cloud prompt A/B test from 22.6.3. Introduces new `PACKAGE_INSTALL_ERROR` error code. **IMPORTANT**: 22.6.4 also makes `init` and `migrate` commands emit JSON meta with `nxVersion` to `commandStats` — queries MUST filter on `command: "create-nx-workspace"` to avoid pulling in init/migrate events (which have no flowVariant, no nxCloudArg, no precreate). See base filter note above. |
 
-#### 22.6.3 Cloud Prompt A/B Variants
+#### 22.6.3 Cloud Prompt A/B Variants (concluded)
 
 | Variant | Code | Prompt | Footer |
 |---------|------|--------|--------|
@@ -313,16 +340,28 @@ Understanding when features were introduced is critical for cross-month comparis
 | **FV 1** (remote cache) | `cloud-ab-remote-cache-speed` | "Enable remote caching to speed up builds with Nx Cloud?" | "Free for small teams. 2-minute setup with GitHub — cache locally and in CI: https://nx.dev/nx-cloud" |
 | **FV 2** (fast CI) | `cloud-ab-fast-ci-setup` | "Speed up your CI with Nx Cloud?" | "70% faster CI on GitHub, GitLab, and more. Free tier, 2-minute setup: https://nx.dev/nx-cloud" |
 
-**Early results (22.6.3 all-time as of 2026-03-31):**
+**Final results (~2,900 completions across 22.6.3+22.6.4):**
 
 | | Comp | yes % | skip % | never % |
 |--|--:|--:|--:|--:|
 | 22.6.0–2 baseline | 5,036 | 9.0% | 55.7% | 33.5% |
-| FV 0 | 627 | 7.5% | 62.0% | 28.7% |
-| FV 1 | 735 | **10.5%** | 67.8% | 20.0% |
-| FV 2 | 673 | **10.0%** | 68.9% | 19.8% |
+| FV 0 | 915 | 7.5% | — | 27.7% |
+| FV 1 | 1,040 | **12.2%** | — | 18.8% |
+| FV 2 | 974 | **10.0%** | — | 19.5% |
 
-**Key findings:** FV 1 ("remote caching") and FV 2 ("fast CI") both mention "free" and "2-minute setup", reducing perceived commitment. FV 0 (generic "Connect to Nx Cloud?") underperforms baseline — possibly because the new "No, don't ask again" option with `chalk.dim()` styling makes refusal easier. The big win is the "never" collapse: all variants reduced hard refusals, with FV 1/2 cutting "never" nearly in half. When analyzing cloud rates on 22.6.3+, always break down by flow variant.
+**Key findings:** FV 1 ("remote caching") is the clear winner — 63% relative lift in "yes" over FV 0, nearly halving the "never" rate. FV 0 (generic "Connect to Nx Cloud?") underperforms baseline — the "No, don't ask again" option with `chalk.dim()` styling makes refusal easier. The big win is the "never" collapse: FV 1/2 cut hard refusals nearly in half. **Test concluded — FV 1 locked in as new baseline in NXC-4190.**
+
+#### Next A/B round (pending 22.6.5 or 22.7.0, NXC-4190)
+
+FV 1's copy becomes the new baseline. Two new variants test "never rebuild" messaging and CI provider name-dropping:
+
+| Variant | Code | Prompt | Footer |
+|---------|------|--------|--------|
+| **FV 0** (new baseline) | `connect-to-cloud` | "Enable remote caching to speed up builds with Nx Cloud?" | "Free for small teams. 2-minute setup with GitHub — cache locally and in CI: https://nx.dev/nx-cloud" |
+| **FV 1** (never rebuild) | `cloud-ab-never-rebuild` | "Never rebuild the same code twice — enable Nx Cloud?" | "Free for small teams. Remote caching for local dev and CI. 2-minute setup: https://nx.dev/nx-cloud" |
+| **FV 2** (CI providers) | `cloud-ab-ci-providers-speed` | "Speed up GitHub Actions, GitLab CI, and more with Nx Cloud?" | "Free remote caching and task distribution. 2-minute setup: https://nx.dev/nx-cloud" |
+
+**When this ships:** Update the Telemetry Feature Timeline with the release version and date. Old codes `cloud-ab-remote-cache-speed` and `cloud-ab-fast-ci-setup` will stop appearing; new codes `cloud-ab-never-rebuild` and `cloud-ab-ci-providers-speed` will start.
 
 **Telemetry eras:**
 

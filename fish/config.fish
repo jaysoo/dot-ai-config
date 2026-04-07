@@ -28,6 +28,7 @@ set -gx PHP_MEMORY_LIMIT 8G
 set -x EDITOR nvim
 
 set -x NX_E2E_RUN_E2E 'true'
+set -x NX_E2E_SKIP_CLEANUP 'true'
 
 #set -x NX_CLOUD_API 'https://snapshot.nx.app'
 

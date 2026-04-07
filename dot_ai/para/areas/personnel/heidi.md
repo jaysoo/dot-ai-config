@@ -27,6 +27,14 @@
 
 ### Upcoming
 
+**Promote Sandboxing + Developer Commands (Blog Post Idea)**
+
+- Sandboxing feature is landing — great opportunity for content around it
+- `nx show target` is a killer command for verifying sandbox inputs/outputs (Jason loves it)
+- Blog post idea: developer workflow around sandboxing — how to use `nx show target` to check inputs, verify no violations, debug sandbox issues
+- Could also highlight other underused commands and skills that complement sandboxing
+- Content angle: practical "how I fixed my sandbox violations" walkthrough
+
 **DevRel Content Output**
 
 - Blog and changelog output feels very quiet — what's the current state?

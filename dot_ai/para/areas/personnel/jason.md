@@ -28,6 +28,12 @@
 
 ### Upcoming Topics
 
+- **Promote Sandboxing + Developer Commands (Blog Post Idea):**
+  - `nx show target` is great for verifying sandbox inputs/outputs — Jason already a fan
+  - Blog post idea: developer workflow around sandboxing, how to use `nx show target --check` to catch violations
+  - Promote underused commands and skills alongside sandboxing rollout
+  - Jason's team is closest to this — could provide technical content or review
+
 - **Follow-up from 2026-03-19 1:1:**
   - Philip missing blog posts and livestreams — Jack to chase down
   - AI automation workflow for community-labeled GitHub issues — progress check

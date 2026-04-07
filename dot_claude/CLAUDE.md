@@ -300,6 +300,8 @@ Use Playwright MCP for UI verification.
   - ❌ ` ```json title="nx.json"`
 - Markdoc tag attributes: Number types must NOT be quoted (`cols=2` not `cols="2"`)
 - `{% graph %}` tag requires inline JSON code fence for custom data
+- `{% aside %}` with block content (lists): blank line before `{% /aside %}` required, or prettier indents it into the list and breaks Markdoc parsing
+- Prefer existing Starlight/Markdoc tags over custom components for docs content (e.g. `{% aside %}` with a list over a custom Astro component)
 
 ### Starlight Migration
 - `{% tabs %}` → headers (#### Tab Label)
@@ -312,6 +314,14 @@ Use Playwright MCP for UI verification.
 - Mobile menu: `src/components/layout/PageFrame.astro`
 - Theme switcher handled by Starlight - DO NOT duplicate
 - Tailwind breakpoints: `md`: 768px, `lg`: 1024px, `xl`: 1280px
+
+### Pixel-Matching UI to External Sites
+- **Measure first, code second**: Use Playwright `page.evaluate()` to extract computed styles (color, padding, font, dimensions) from the target site BEFORE writing any CSS
+- **Verify with ImageMagick**: `magick site1.png site2.png -compose difference -composite -auto-level diff.png` — do this early and often, not as an afterthought
+- **Don't guess colors**: Extract exact `rgb()` values via computed styles. Tailwind color names (zinc-400 vs zinc-500) are approximations — verify the actual rendered value matches
+- **SVG logo sizing**: Check the viewBox aspect ratio. `viewBox="0 0 24 24"` is square; `viewBox="0 0 40 26"` is wide. `w-auto` respects aspect ratio — don't force dimensions that distort
+- **Flex gap spacing**: Separator/divider elements contribute to flex gap calculations. A 1px vs 5px separator shifts ALL downstream items cumulatively. Measure the target's separator container width
+- **Line-height matters for button heights**: Tailwind's default `text-sm` line-height is 20px. If the target uses 16.8px (1.2), buttons will be 3-6px too tall without `leading-[1.2]`
 
 ### Common Mistakes
 - ❌ Duplicate theme switcher in mobile menu

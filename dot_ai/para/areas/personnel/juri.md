@@ -1,6 +1,6 @@
-# Philip Fulcher
+# Juri
 
-**Team:** Documentation
+**Team:**
 **Role:**
 **Location:**
 
@@ -23,6 +23,11 @@
 - **Goals:**
 - **Strengths:**
 
+## Kudos
+
+<!-- Value-aligned recognition. Format: date | value | what they did -->
+<!-- Values: Camaraderie, Truth over Comfort, Tackling Impossible Problems, Highly Aligned Efforts, Powerful & Easy Product -->
+
 ## 1:1 Notes
 
 ### Upcoming
@@ -33,11 +38,6 @@
 - `nx show target` is a killer command for verifying sandbox inputs/outputs
 - Blog post idea: developer workflow around sandboxing — how to use `nx show target` to check inputs, verify no violations, debug sandbox issues
 - Could also highlight other underused commands and skills that complement sandboxing
-- Philip should own or coordinate this content piece
-
-### 2026-01-08
-
-- Attended Docs sync with Caleb
 
 ## Random Notes
 

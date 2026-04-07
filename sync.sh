@@ -41,6 +41,13 @@ cp "$GIT_ROOT/nvim/"* "$HOME/.config/nvim/"
 mkdir -p "$HOME/.config/mise"
 cp "$GIT_ROOT/mise.toml" "$HOME/.config/mise/config.toml"
 
+# Sync gh-dash config
+mkdir -p "$HOME/.config/gh-dash"
+cp "$GIT_ROOT/gh-dash/config.yml" "$HOME/.config/gh-dash/config.yml"
+
+# Sync bash config
+cp "$GIT_ROOT/bashrc" "$HOME/.bashrc"
+
 # Sync git config
 cp "$GIT_ROOT/gitconfig" "$HOME/.gitconfig"
 cp "$GIT_ROOT/gitignore_global" "$HOME/.gitignore_global"
