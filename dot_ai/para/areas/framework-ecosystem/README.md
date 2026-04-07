@@ -11,6 +11,7 @@ Monthly reports tracking frameworks and bundlers that Nx wraps via plugins.
 
 | Month | Key Events |
 |-------|-----------|
+| [2026-04](./2026-04.md) | Rspack 2 reaches RC, Vite 8.0.6 stabilizing, esbuild 0.28, Remix 3 alpha appears, Angular 22 next.6 |
 | [2026-03](./2026-03.md) | Vite 8 + Rolldown ships, Angular 22 preview drops Node 20, Rspack 2 beta, Next.js 16.2 Adapters stable |
 
 ## How to Use

@@ -11,8 +11,8 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | reflect               | command | 2026-04-01   | 5     |
 | summarize             | command | 2026-04-01   | 5     |
 | dot-claude-guard      | skill   | 2026-04-01   | 4     |
-| scan-and-audit        | skill   | 2026-03-30   | 5     |
-| scan-competitors      | command | 2026-03-30   | 5     |
+| scan-and-audit        | skill   | 2026-04-07   | 6     |
+| scan-competitors      | command | 2026-04-07   | 6     |
 | customer-deps-audit   | task    | 2026-03-30   | 3     |
 | runtime-tracking-scan | task    | 2026-03-30   | 3     |
 | team-capacity-audit   | task    | 2026-03-30   | 10    |
@@ -27,7 +27,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | reflect               | skill   | 2026-04-01   | 2     |
 | cnw-update-templates  | skill   | 2026-03-27   | 1     |
 | summarize             | command | 2026-04-01   | 2     |
-| audit-supply-chain    | skill   | 2026-03-30   | 2     |
+| audit-supply-chain    | skill   | 2026-04-07   | 3     |
 | audit-dependencies    | skill   | 2026-03-30   | 2     |
 | pylon-support         | skill   | 2026-03-27   | 1     |
 | scan-community        | skill   | 2026-03-30   | 8     |

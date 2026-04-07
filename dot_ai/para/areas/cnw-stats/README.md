@@ -21,6 +21,11 @@ Monitor CNW funnel health, error rates, cloud adoption, and regressions across N
 
 All queries exclude CI runs, AI agent runs, and @contentful/nx preset (see `/cnw-stats-analyzer` skill for details).
 
+## Targets
+
+- **Daily starts**: 2K/day (revised 2026-04-07 — original 3K target was based on double-counted events)
+- **Cloud opt-in**: 200 yes/day (20% of starts)
+
 ## Baseline Metrics (22.5.4, as of Mar 17 2026)
 
 - **Start → Precreate**: ~78%

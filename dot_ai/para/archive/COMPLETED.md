@@ -2,6 +2,9 @@
 
 ### April 2026
 
+- [x] NXC-4169: Dependabot fixture noise reduction (2026-03-28) ✓ 2026-04-07
+  - Summary: Reduced Dependabot alert noise from test fixtures. PR #35072. Follow-up NXC-4170 for 19 high-severity alerts in real deps.
+
 - [x] DOC-463: Match Framer header and footer (2026-04-01) ✓ 2026-04-01
   - Summary: Pixel-matched blog header/footer to Framer (nx.dev). Inter font, exact layout measurements via Playwright/ImageMagick. Added hover dropdown menus for Solutions and Resources. Footer updated to 5 columns with copyright bar.
 

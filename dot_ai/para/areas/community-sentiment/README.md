@@ -10,6 +10,7 @@ Monthly scan of Nx platform community health, covering GitHub Issues, Discussion
 | ------- | ------------ | ---------------------------------------------------- |
 | 2026-02 | `2026-02.md` | First run. 60-day lookback from 2025-12-29.          |
 | 2026-03 | `2026-03.md` | 60-day lookback from 2026-01-29. Updated 2026-03-30 (7th scan). Windows emerged as major theme. Node 25 compat, picomatch CVE. |
+| 2026-04 | `2026-04.md` | 60-day lookback from 2026-02-06. Downloads up 17% to 10.5M/week. LGPL licensing concern surfaced + fast-tracked. 3 security issues resolved. Release/versioning top theme. |
 
 ## Sources
 

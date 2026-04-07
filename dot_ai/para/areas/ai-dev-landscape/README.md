@@ -6,6 +6,7 @@ Monthly scan of the AI-native development tools ecosystem, tracking signals rele
 
 | Month | File | Key Themes |
 |-------|------|------------|
+| 2026-04 | [2026-04.md](./2026-04.md) | Cursor 3 Agents Window, Copilot cloud agent expands, Claude Code v2.1.92, A2A v0.3, MCP 10K+ servers, AI guardrails market, Kiro escalating outages |
 | 2026-03 | [2026-03.md](./2026-03.md) | MCP spec v2 + OAuth 2.1, Claude Code v2.1.76, Google Antigravity launch, Codex desktop app, agentic CI maturing |
 
 ## Categories Tracked

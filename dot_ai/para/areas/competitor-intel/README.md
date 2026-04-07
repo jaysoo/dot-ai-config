@@ -26,6 +26,7 @@ Monthly changelog analysis of competitors to understand where they're investing,
 | 2026-02 | `2026-02.md`                   | Moon v2.0, Bazel 9.0, Turborepo 2.8 AI push                                       |
 | 2026-03 | `2026-03.md`                   | Turborepo 2.8.21 (`experimentalCI` task config, query engine stable, NAPI bindings, AI doc auto-rewrite, 9 stable + 28 canaries), Moon 2.1.3 (on-demand affected perf, TS v6), Bazel 9.0.1, Gradle 9.4.1, Pants `pants-ng` |
 | 2026-03 | `viteplus-analysis-2026-03.md` | Deep-dive: Vite+ (VoidZero) competitive analysis                                  |
+| 2026-04 | `2026-04.md`                   | Turborepo 2.9.4 (96% faster TTFT, `turbo query` stable, OTel, incremental caching, cache eviction, threat upgraded to HIGH), Moon 2.1.4 (v2.0 WASM plugins, migration extensions), Bazel 9.0.1, Gradle 9.4.1, Pants 2.32.0.dev7 (`pants-ng`, uv PEX) |
 
 ## How to Run
 

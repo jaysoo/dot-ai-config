@@ -69,6 +69,14 @@
 
 ## TODO
 
+- [ ] Prep for Montreal Off-site Day 2 — "State of the Union" morning session (2026-04-07, ~1-2 hrs)
+  - Plan: `dot_ai/2026-04-07/tasks/state-of-the-union-prep.md`
+  - Sections prefilled from digest/scan data: hero numbers, wins, shipped features, competitive landscape, team health
+  - **Remaining prep work:**
+    - [ ] Pull SPACE metrics from Lighthouse dashboard (live data)
+    - [ ] Pick 3-5 top wins to spotlight with 1-sentence talking points
+    - [ ] Decide "2025→2026 progression" stories (eng-wrapped → now)
+    - [ ] Compile into slides or talking points
 - [ ] NXC-4197: Supply chain hardening — pin transitive deps as direct deps (2026-04-02)
   - Linear: https://linear.app/nxdev/issue/NXC-4197
   - PR: https://github.com/nrwl/nx/pull/35159
@@ -114,11 +122,13 @@
 - [ ] DOC-69: What to do about versioned docs? (due 2026-04-03)
 - [ ] Triage #35061: Nx 22.6.3 stack overflow on Node 25 + Windows (2026-03-30)
   - Forward-compat blocker for next Node LTS. Raise in CLI sync for assignment.
-- [ ] NXC-4169: Dependabot fixture noise reduction (2026-03-28)
-  - PR: https://github.com/nrwl/nx/pull/35072
-  - Follow-up: NXC-4170 (19 high-severity alerts in real deps)
 - [ ] Create task for blog new repo/deploy (2026-03-24)
   - let philip and juri know
+- [ ] Test Turborepo incremental task caching (2026-04-07)
+  - Turbo 2.9.4 ships `futureFlags.incrementalTasks` — persists `.tsbuildinfo` etc in remote cache, restores on cache miss so tools do incremental builds instead of full rebuilds
+  - PR: https://github.com/vercel/turborepo/pull/12531
+  - Test on a TS monorepo: enable flag, configure `incremental` outputs, measure cache-miss rebuild times vs without
+  - Evaluate whether Nx should offer equivalent (separate cache partition for tool-level incremental state)
 - [ ] Review PR #34890 (2026-03-23)
 - [ ] Chase down Philip on missing blog posts and livestreams (2026-03-20)
   - Marketing support gaps flagged in Jason 1:1 (2026-03-19)
@@ -140,7 +150,6 @@
 
 - `/Users/jack/projects/nx-worktrees/NXC-4182` — NXC-4182: React Router + Vite 8 compat (2026-04-01)
 - `/Users/jack/projects/nx-worktrees/NXC-4197` — NXC-4197: Supply chain hardening expand-deps (2026-04-02)
-- `/Users/jack/projects/nx-worktrees/NXC-4169` — NXC-4169: Dependabot fixture noise reduction (2026-03-28)
 - `/Users/jack/projects/nx-worktrees/NXC-3345` — NXC-3345: Rollup + SWC rootDir fix for workspace libs (2026-03-25)
 - `/Users/jack/projects/nx-worktrees/NXC-4143` — NXC-4143: cycle reminder script + workflow (2026-03-25)
 
