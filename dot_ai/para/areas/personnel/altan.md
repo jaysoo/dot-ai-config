@@ -36,6 +36,23 @@
 - Sandboxing progress check (top priority)
 - Ocean setup improvements - Rares as potential owner
 - March cycle planning for Ocean dev setup
+- **SPACE: Review Quokka planned/unplanned classification rules** — Current Quokka-specific rules inflate planning accuracy (93.2% vs 77.3% under standard rules). Two issues:
+  1. Most misc-project issues lack DPE/Support labels so they count as planned. These should be unplanned:
+     - https://linear.app/nxdev/issue/Q-318 — Gate heartbeat behind real CI detection
+     - https://linear.app/nxdev/issue/Q-253 — Pentest: CI API Error Messages Expose Internal Class Names
+     - https://linear.app/nxdev/issue/Q-282 — WaitingAgents should be backed by valkey
+     - https://linear.app/nxdev/issue/Q-212 — Redisson + Netty Upgrade increased direct memory use
+     - https://linear.app/nxdev/issue/Q-176 — Snapshot aggregator restarting
+     - https://linear.app/nxdev/issue/Q-171 — nx-api memory leak investigation
+     - https://linear.app/nxdev/issue/Q-112 — Concurrent modification bug with dteMap
+     - https://linear.app/nxdev/issue/Q-102 — Heavy CPU workloads cause contention
+     - https://linear.app/nxdev/issue/Q-98 — Empty transformed task graph (P2/High!)
+     - https://linear.app/nxdev/issue/Q-35 — Aggregator hangs when mongo client fails
+  2. No-project issues treated as planned. Some are clearly reactive/unplanned:
+     - https://linear.app/nxdev/issue/Q-192 — Enterprise usage page blocks Clickup re-up (P2/High, DPE)
+     - https://linear.app/nxdev/issue/Q-104 — Investigate agent idleness for Essent (P2/High)
+     - https://linear.app/nxdev/issue/Q-43 — Mongo timeouts causing restarts (P2/High)
+  - **Ask:** Should we simplify to standard rules (no project or misc = unplanned)? Or enforce labeling discipline? Also, many issues have no priority set — should that change?
 
 ### 2026-02-19
 

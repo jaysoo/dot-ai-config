@@ -2,6 +2,9 @@
 
 ### April 2026
 
+- [x] DOC-474: Update docs sidebar for tutorial engagement (2026-04-07) ✓ 2026-04-07
+  - Summary: Removed "New" badge from Tutorials, expanded Tutorials by default, collapsed "How Nx Works" and "Platform Features". PR #35194.
+
 - [x] NXC-4169: Dependabot fixture noise reduction (2026-03-28) ✓ 2026-04-07
   - Summary: Reduced Dependabot alert noise from test fixtures. PR #35072. Follow-up NXC-4170 for 19 high-severity alerts in real deps.
 
