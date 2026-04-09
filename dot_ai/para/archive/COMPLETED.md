@@ -2,6 +2,9 @@
 
 ### April 2026
 
+- [x] Netlify edge function perf: streaming + CDN cache + timing (2026-04-08) ✓ 2026-04-09
+  - Summary: Streamed Framer proxy via TransformStream, added Netlify-CDN-Cache-Control with stale-while-revalidate, added timing logs + Server-Timing headers across all edge functions. PR #35215.
+
 - [x] NXC-4210: Fix generateLockfile ignoring npm overrides (2026-04-07) ✓ 2026-04-09
   - Summary: Fixed two bugs: `normalizePackageJson()` stripping `overrides` field, and `findTarget()` dropping dependency edges when npm overrides force versions outside declared semver range. PR #35192.
 

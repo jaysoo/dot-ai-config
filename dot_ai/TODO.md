@@ -143,7 +143,6 @@
 <!-- Directories with active or resumable Claude sessions. Use `cd <dir> && claude -r` to resume. -->
 <!-- Managed by /end-session and /list-sessions commands. /summarize cleans up stale entries. -->
 
-- `/Users/jack/projects/nx` (branch: `netlify_edge_debug`) — Netlify edge function perf: streaming + CDN cache + timing (2026-04-08)
 - `/Users/jack/projects/nx-worktrees/NXC-4182` — NXC-4182: React Router + Vite 8 compat (2026-04-01)
 - `/Users/jack/projects/nx-worktrees/NXC-3345` — NXC-3345: Rollup + SWC rootDir fix for workspace libs (2026-03-25)
 

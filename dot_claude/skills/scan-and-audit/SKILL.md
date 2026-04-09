@@ -2,7 +2,7 @@
 name: scan-and-audit
 description: >
   Weekly scan and audit orchestrator for Nx platform intelligence. Runs all
-  11 scan/audit commands plus the monthly digest via parallel subagents, then
+  12 scan/audit commands plus the monthly digest via parallel subagents, then
   synthesizes a unified report with delta tracking. Use when user says
   "run scans", "weekly scan", "scan and audit", "run audits", "weekly report",
   "what's new this week", or any variation. Also use for "monthly scan" or
@@ -29,20 +29,21 @@ week (or day) to give Jack a quick picture of what changed.
 
 $ARGUMENTS
 
-- No arguments: run all 12 scans (8 external + 3 internal audits + monthly
-  digest) for the current week.
+- No arguments: run all 13 scans (8 external + 1 CNW template validation +
+  3 internal audits + monthly digest) for the current week.
 - `monthly only`: skip scans, just run the monthly digest.
 - `scans only`: skip the monthly digest, just run scans/audits.
 - `quick`: skip slow scans (community, dependencies, supply-chain, api-surface,
   capacity, project-health, customer-deps).
-  Only run web-research scans (competitors, frameworks, runtimes, ai-landscape).
+  Only run web-research scans (competitors, frameworks, runtimes, ai-landscape)
+  plus cnw-templates (fast, critical).
 - `internal`: run only the 3 internal management audits (capacity, project-health,
   customer-deps). These use Linear MCP — no GitHub cloning needed.
 - `briefing`: run internal audits + competitors + monthly digest. Produces
   the full director-level monthly briefing.
 - Specific scan names: `competitors`, `frameworks`, `runtimes`, `ai-landscape`,
   `community`, `dependencies`, `supply-chain`, `api-surface`, `capacity`,
-  `project-health`, `customer-deps`, `digest`.
+  `project-health`, `customer-deps`, `cnw-templates`, `digest`.
 - `lookback=N`: override the lookback window to N days (default: 60).
 
 ## Directory Structure
@@ -69,6 +70,7 @@ Scan reports live in `scans/` sub-directories (consolidated from former top-leve
 - `scans/ai-dev-landscape/` (includes archived ai-trends)
 - `scans/framework-ecosystem/`
 - `scans/runtime-tracking/`
+- `scans/cnw-templates/` — **CRITICAL PRIORITY, WEEKLY CADENCE** (CNW template health)
 
 **Still top-level areas (referenced independently):**
 - `.ai/para/areas/competitor-intel/`
@@ -109,7 +111,8 @@ Read `.ai/para/areas/scan-audit/state.json` if it exists. Structure:
     "capacity": { "high-risk-people": 2, "overdue-items": 8 },
     "project-health": { "zombies": 2, "overdue-projects": 3 },
     "customer-deps": { "churned": 1, "cooling": 0, "concentration-risks": 2 },
-    "priority-mismatch": { "bump-candidates": 3, "stale-hot": 5 }
+    "priority-mismatch": { "bump-candidates": 3, "stale-hot": 5 },
+    "cnw-templates": { "critical": 0, "high": 0, "medium": 1, "low": 0, "presets-tested": 4 }
   }
 }
 ```
@@ -304,31 +307,114 @@ Launch each scan as a **background Task subagent**. Each subagent receives:
      `nrwl/nx` and `nrwl/nx-cloud` (if public) GitHub issues and discussions.
      Write report to `.ai/para/areas/community-sentiment/YYYY-MM.md`."
 
+**Group A2 — CNW Template Validation** (no repo access needed, CRITICAL PRIORITY):
+
+5. **cnw-templates** — Create-Nx-Workspace template health check
+   - Subagent instruction: "Validate all nrwl/ CNW (Create Nx Workspace) templates
+     by scaffolding workspaces and checking for npm audit warnings. This scan
+     MUST be reported first in the unified report — do not bury it.
+
+     **Presets to test:** `empty`, `ts`, `angular-monorepo`, `react-monorepo`
+
+     **For each preset**, run in a temp directory:
+     ```bash
+     CNW_TMP=$(mktemp -d)
+     cd $CNW_TMP
+     npx create-nx-workspace@latest test-$PRESET \
+       --preset=$PRESET --nxCloud=skip --no-interactive 2>&1
+     cd test-$PRESET
+     npm audit --json 2>&1 > audit-$PRESET.json
+     npm audit 2>&1 > audit-$PRESET.txt
+     ```
+
+     **Parse npm audit output** for each preset:
+     - Count vulnerabilities by severity: critical, high, moderate (medium), low
+     - For each critical or high vulnerability, record: package name, severity,
+       vulnerability title, path (dependency chain), CVE if available, and
+       whether it's a direct or transitive dependency
+     - Note which presets share the same vulnerability (likely same root dep)
+
+     **Severity classification for the report:**
+     - 🔴 **Critical**: npm audit critical vulnerabilities — fix ASAP
+     - 🟠 **High**: npm audit high vulnerabilities — resolve this week
+     - 🟡 **Medium**: npm audit moderate vulnerabilities — note, no immediate action
+     - ⚪ **Low**: npm audit low vulnerabilities — note, no immediate action
+
+     **Also check:**
+     - Does `npx create-nx-workspace` itself succeed without errors for each preset?
+     - Are there any deprecation warnings during workspace creation?
+     - Does `npm install` complete cleanly (no peer dep conflicts)?
+
+     **Write report to** `.ai/para/areas/scan-audit/scans/cnw-templates/YYYY-MM.md`
+     with format:
+     ```markdown
+     # CNW Template Health — YYYY-MM
+
+     ## Summary
+     Tested N presets against create-nx-workspace@VERSION.
+     {overall status: clean / warnings found / action required}
+
+     ## Results by Preset
+
+     ### empty
+     - Creation: ✅/❌
+     - npm audit: N critical, N high, N moderate, N low
+     - Vulnerabilities:
+       - [severity] package-name: description (CVE-XXXX) — direct/transitive
+
+     ### ts
+     ...
+
+     ### angular-monorepo
+     ...
+
+     ### react-monorepo
+     ...
+
+     ## Cross-Preset Analysis
+     {Which vulnerabilities appear across multiple presets — likely from shared
+     Nx core dependencies vs preset-specific deps}
+
+     ## Action Items
+     ### Fix ASAP (Critical)
+     - ...
+     ### Resolve This Week (High)
+     - ...
+     ### Noted (Medium/Low)
+     - ...
+     ```
+
+     Clean up temp directories when done:
+     ```bash
+     rm -rf $CNW_TMP
+     ```
+     "
+
 **Group B — Web research scans** (no repo access needed):
 
-5. **scan-competitors** — Competitor changelog analysis
-6. **scan-frameworks** — Framework & bundler ecosystem tracking
-7. **scan-runtimes** — Node.js & runtime tracking
-8. **scan-ai-landscape** — AI dev tools landscape scan
+6. **scan-competitors** — Competitor changelog analysis
+7. **scan-frameworks** — Framework & bundler ecosystem tracking
+8. **scan-runtimes** — Node.js & runtime tracking
+9. **scan-ai-landscape** — AI dev tools landscape scan
 
 Each writes to its own `.ai/para/areas/` directory.
 
 **Group C — Internal management audits** (Linear MCP, no repo access needed):
 
-9. **audit-capacity** — Team capacity & sequencing risk analysis
+10. **audit-capacity** — Team capacity & sequencing risk analysis
    - Subagent instruction: "Run the team capacity audit. Use Linear MCP to
      pull issue assignments, project leads, and due dates across all active
      teams. Analyze the next 4-6 week window for conflicts. Write report
      to `.ai/para/areas/team-capacity/YYYY-MM.md`."
 
-10. **audit-project-health** — Long-running project & exit criteria audit
+11. **audit-project-health** — Long-running project & exit criteria audit
     - Subagent instruction: "Run the project health audit. Use Linear MCP to
       pull all In Progress projects, check milestone completion, identify
       zombies (all milestones done, project still open), flag overdue target
       dates and scope creep. Track revenue projects. Write report to
       `.ai/para/areas/project-health/YYYY-MM.md`."
 
-11. **audit-customer-deps** — Customer dependency concentration mapping
+12. **audit-customer-deps** — Customer dependency concentration mapping
     - Subagent instruction: "Run the customer dependency audit. Use Linear MCP
       to search for known strategic customers across all teams. Map customer
       to feature dependencies, check engagement recency, assess DPE capacity.
@@ -336,7 +422,7 @@ Each writes to its own `.ai/para/areas/` directory.
 
 **Group D — Monthly digest** (only if needed):
 
-12. **nx-monthly-digest** — Cross-functional digest + technical changelog
+13. **nx-monthly-digest** — Cross-functional digest + technical changelog
     - Only runs if: current month > lastMonthlyDigest, OR explicitly requested.
     - Uses the full `/nx-monthly-digest` skill instructions.
     - Writes to `.ai/para/areas/scan-audit/monthly-digests/`.
@@ -369,6 +455,7 @@ If a scan fails, log the error but don't retry — note it in the report.
 After all scans complete, read each report file:
 
 ```
+.ai/para/areas/scan-audit/scans/cnw-templates/YYYY-MM.md   ← READ FIRST (critical priority)
 .ai/para/areas/dependency-health/YYYY-MM.md
 .ai/para/areas/api-surface-audit/YYYY-MM.md
 .ai/para/areas/supply-chain-security/YYYY-MM.md
@@ -401,12 +488,14 @@ _Scans failed: {list of any that failed, or "None"}_
 
 ## TL;DR — What's New Since Last Week
 
-{5-10 bullets, ranked by urgency. Each bullet should be actionable
+{5-10 bullets, ranked by urgency. CNW template vulnerabilities ALWAYS
+go first if any critical/high exist. Each bullet should be actionable
 or informative enough to decide whether to dig deeper. Format:}
 
 - **[AREA]** {finding}. {action needed or "FYI only"}.
 
 Example:
+- **[CNW Templates]** 2 high vulns in `angular-monorepo` preset via `postcss`. Resolve this week.
 - **[Security]** New CVE in `minimatch` affects nx@22.5.2. Already patched in 22.5.3. FYI only.
 - **[Competitors]** Turborepo shipped remote caching v2 with content-addressable storage. Review implications for Nx Cloud positioning.
 - **[Dependencies]** `chalk` hasn't published in 14 months. Now 🟠 Warning. We already migrated to picocolors — can remove.
@@ -415,6 +504,7 @@ Example:
 
 | Scan | Status | Findings | Delta |
 |------|--------|----------|-------|
+| **CNW Templates** | {status emoji} | {N critical, N high, N medium, N low} | {+/-N vs last week} |
 | Dependencies | {status emoji} | {N critical, N warning} | {+/-N vs last week} |
 | Supply Chain | {status emoji} | {status} | {change} |
 | API Surface | {status emoji} | {N high, N medium} | {+/-N} |
@@ -471,6 +561,15 @@ If nothing, say "None this week."}
 {Monitor, no action yet}
 
 ## Scan Summaries
+
+### CNW Template Health (REPORT FIRST)
+{Summary of npm audit results across all 4 presets. Lead with critical/high
+findings. List affected presets per vulnerability. Note if any preset failed
+to create.}
+**Critical (fix ASAP):** {list or "None"}
+**High (resolve this week):** {list or "None"}
+**Medium/Low (noted):** {list or "None"}
+[Full report](.ai/para/areas/scan-audit/scans/cnw-templates/YYYY-MM.md)
 
 ### Dependencies
 {2-3 sentence summary from dependency-health report. Link to full report.}
@@ -558,6 +657,7 @@ framework ecosystem, runtime changes, and AI tool landscape.
 - [{latest month}](./monthly-digests/{latest}.md)
 
 ## Individual Scan Areas
+- [CNW Template Health](./scans/cnw-templates/)
 - [Dependency Health](../dependency-health/)
 - [Supply Chain Security](../supply-chain-security/)
 - [API Surface Audit](../api-surface-audit/)
@@ -577,7 +677,11 @@ rm -rf "$NX_TMP" "$OCEAN_TMP" "$SCAN_DATA_DIR" 2>/dev/null
 
 ## Step 9: Present Results
 
-Print the TL;DR section and Dashboard table directly to the user.
+**IMPORTANT: Present CNW Template Health findings FIRST**, before the TL;DR
+and Dashboard. If there are any critical or high vulnerabilities, lead with
+those — they must not be buried in the full report. Then print the TL;DR
+section and Dashboard table.
+
 Tell them where the full report is saved. Offer to:
 - Dive deeper into any specific scan
 - Re-run a specific scan with different scope
