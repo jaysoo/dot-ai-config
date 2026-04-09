@@ -1,19 +1,20 @@
 {
-  "lastRun": "2026-04-07T14:00:00Z",
+  "lastRun": "2026-04-09T18:00:00Z",
   "lastWeeklyReport": "2026-W15",
   "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
   "findings": {
-    "dependencies": { "critical": 23, "warning": 14, "watch": 8 },
-    "supply-chain": { "status": "yellow", "cves": 0, "advisories-high": 111, "latest-nx": "22.6.4", "nx-cloud-provenance-gap": true },
-    "api-surface": { "high": 14, "medium": 48, "low": 25 },
-    "competitors": { "highlights": 12, "turbo-v2.9-marquee": true, "turbo-stable": "2.9.4", "moon-2.0-wasm": true, "turbo-threat-HIGH": true },
-    "frameworks": { "compat-risks": 8, "vite8-stabilizing": true, "rspack2-rc": true, "esbuild-0.28": true, "remix-3-alpha": true, "rolldown-approaching-1.0": true },
-    "runtimes": { "action-items": 7, "node20-eol-days": 23, "node-security-7cves-march24": true, "node-bounty-paused": true, "node25-9-asynclocalstorage": true },
-    "ai-landscape": { "highlights": 12, "opportunities": 9, "risks": 5, "cursor3-agents": true, "mcp-10k-servers": true, "a2a-linux-foundation": true, "windsurf-acquired": true },
-    "community": { "top-pain-points": 5, "open-issues": 99, "lgpl-concern": true, "downloads-weekly-avg": "10.5M", "issue-34529-overdue": true },
-    "capacity": { "high-risk-people": 3, "overdue-items": 12, "nicole-7-projects": true, "jack-cnw-apr10": true },
-    "project-health": { "zombies": 4, "overdue-projects": 8, "zombie-escalation": 9, "completions-this-week": 5, "cloud-pricing-67d-overdue": true },
-    "customer-deps": { "churned": 1, "cooling": 2, "concentration-risks": 3, "docker-multiarch-risk": true, "medianet-maven-46d": true, "steven-nance-critical": true }
+    "dependencies": { "critical": 23, "warning": 14, "watch": 7 },
+    "supply-chain": { "status": "yellow", "cves": 0, "advisories-total": 309, "advisories-high": 111, "latest-nx": "22.6.4", "nx-cloud-provenance-gap": true },
+    "api-surface": { "high": 15, "medium": 47, "low": 23 },
+    "competitors": { "highlights": 5, "turbo-2.9.5-boundaries": true, "turbo-stable": "2.9.5", "turbo-threat-HIGH": true },
+    "frameworks": { "compat-risks": 8, "p0-risks": 4, "angular22-p0": true, "vite8-security-fixes": true, "rspack2-rc1": true, "rolldown-rc15": true },
+    "runtimes": { "action-items": 8, "node20-eol-days": 21, "dep0205-module-register": true, "node-bounty-paused": true },
+    "ai-landscape": { "highlights": 15, "opportunities": 11, "risks": 6, "a2a-v1.0": true, "copilot-sdk-preview": true, "claude-code-bedrock": true },
+    "community": { "top-pain-points": 5, "open-issues": 101, "lgpl-concern": true, "downloads-weekly-avg": "10.05M", "issue-34529-resolved": true, "js-node-regression": true },
+    "capacity": { "high-risk-people": 3, "overdue-items": 13, "jack-trending-high": true, "projects-due-apr10": 3 },
+    "project-health": { "zombies": 4, "overdue-projects": 8, "zombie-escalation": 10, "completions-since-apr7": 6, "cloud-pricing-69d-overdue": true },
+    "customer-deps": { "churned": 1, "cooling": 0, "concentration-risks": 3, "self-healing-customers": 13, "skyscanner-reengaged": true, "emeria-io-trace": true },
+    "priority-mismatch": { "bump-candidates": 0, "stale-hot": 2 }
   }
 }

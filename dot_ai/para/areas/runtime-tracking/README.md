@@ -13,5 +13,5 @@ Monthly tracking of JavaScript runtime ecosystem changes relevant to Nx CLI and 
 
 | Month | File | Key Events |
 |-------|------|------------|
-| 2026-04 | [2026-04.md](2026-04.md) | Node 20 EOL in 23 days, Node 25.9.0 (`using` for ALS), bug bounty paused, Deno Deploy GA |
+| 2026-04 | [2026-04.md](2026-04.md) | Node 20 EOL in 21 days, `module.register()` deprecated (DEP0205), Node 25.9.0 (`using` for ALS), bug bounty paused, Deno Deploy GA |
 | 2026-03 | [2026-03.md](2026-03.md) | Node.js security release (9 CVEs), Bun 1.3.11, Deno 2.7 |

@@ -30,7 +30,7 @@ project health, and customer dependencies.
 ## Latest Reports
 
 ### Weekly
-- [2026-W15](./weekly/2026-W15.md) -- Node 20 EOL 23d, Turbo 2.9 HIGH threat, deps critical 7→23, Rspack 2 RC
+- [2026-W15](./weekly/2026-W15.md) -- Angular 22 P0, DEP0205, LGPL concern, Self-Healing CI 13 customers, A2A v1.0
 - [2026-W14](./weekly/2026-W14.md) -- Node.js 9 CVEs, Turbo experimentalCI, Vite 8 Rolldown, MCP v2 OAuth
 - [2026-W13](./weekly/2026-W13.md)
 - [2026-W12](./weekly/2026-W12.md)

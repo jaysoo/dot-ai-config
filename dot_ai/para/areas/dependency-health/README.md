@@ -6,7 +6,7 @@ Monthly audit of direct external dependencies across Nx CLI packages. Tracks unm
 
 | Month | File | Summary |
 |-------|------|---------|
-| 2026-04 | [2026-04.md](./2026-04.md) | 168 deps: 23 critical (+16), 14 warning (-5), 8 watch (-5) |
+| 2026-04 | [2026-04.md](./2026-04.md) | 164 deps: 23 critical (0), 14 warning (0), 7 watch (-1). tinyglobby graduated to Healthy |
 | 2026-03 | [2026-03.md](./2026-03.md) | Initial audit: 169 core deps |
 
 ## Classification
