@@ -103,13 +103,20 @@ Fixes DOC-125"
 1. Create .ai symlink if missing
 2. Read full issue description (Linear/GitHub) - never assume from title
 3. Create task plan: `.ai/yyyy-mm-dd/tasks/descriptive-name.md`
-4. Track in `.ai/TODO.md` with timestamps
+4. **Add to `.ai/TODO.md` Recent Tasks list** (bump others down, remove 11th)
+5. **Add to Active Claude Sessions** in TODO.md with working directory and branch
 
 **IMPORTANT**: Task plan files go in `.ai/yyyy-mm-dd/tasks/`, NOT `~/.claude/plans/`.
 - `~/.claude/plans/` = Claude Code's built-in plan mode (system-managed)
 - `.ai/yyyy-mm-dd/tasks/` = Jack's task documentation convention (what you should use)
 
 When completing tasks, always copy/move the plan to `.ai/` folder for long-term reference.
+
+### Active Session Tracking (IMPORTANT)
+- **Every task** must be added to the "Active Claude Sessions" section in TODO.md at start
+- Format: `- /path/to/working/dir (branch: branch-name) — description (date)`
+- **When completing a task**: remove from Active Claude Sessions, add to COMPLETED.md
+- Sessions are considered stale after 7 days — clean up on next visit
 
 ### Key Paths
 - Plan tasks: `~/.claude/commands/plan-task.md`
@@ -143,9 +150,10 @@ When completing tasks, always copy/move the plan to `.ai/` folder for long-term 
 
 When a task is completed:
 1. **Remove** the task from `TODO.md` (In Progress or Pending section)
-2. **Add** to `.ai/para/archive/COMPLETED.md` under the current month header
-3. **Create** COMPLETED.md if it doesn't exist (use PARA archive structure)
-4. **Include** in daily `SUMMARY.md` if completing same day
+2. **Remove** from "Active Claude Sessions" in TODO.md
+3. **Add** to `.ai/para/archive/COMPLETED.md` under the current month header
+4. **Create** COMPLETED.md if it doesn't exist (use PARA archive structure)
+5. **Include** in daily `SUMMARY.md` if completing same day
 
 **Quick tasks** (not in TODO.md): Still archive to COMPLETED.md with summary of what was done.
 

@@ -2,6 +2,15 @@
 
 ### April 2026
 
+- [x] NXC-4210: Fix generateLockfile ignoring npm overrides (2026-04-07) ✓ 2026-04-09
+  - Summary: Fixed two bugs: `normalizePackageJson()` stripping `overrides` field, and `findTarget()` dropping dependency edges when npm overrides force versions outside declared semver range. PR #35192.
+
+- [x] NXC-4197: Supply chain hardening — pin transitive deps as direct deps (2026-04-02) ✓ 2026-04-08
+  - Summary: Flattened 110 deps (34 direct + 76 transitive) to pinned versions via `scripts/expand-deps.ts`. Inlined `@yarnpkg/parsers`, removed `front-matter`, replaced `jest-diff` with `@jest/diff-sequences`. PR #35159.
+
+- [x] NXC-4143: Cycle reminder script + workflow (2026-03-25) ✓ 2026-04-08
+  - Summary: Cycle reminder script and GitHub Actions workflow for automated Linear cycle reminders.
+
 - [x] DOC-474: Update docs sidebar for tutorial engagement (2026-04-07) ✓ 2026-04-07
   - Summary: Removed "New" badge from Tutorials, expanded Tutorials by default, collapsed "How Nx Works" and "Platform Features". PR #35194.
 

@@ -108,7 +108,8 @@ Read `.ai/para/areas/scan-audit/state.json` if it exists. Structure:
     "community": { "top-pain-points": 5 },
     "capacity": { "high-risk-people": 2, "overdue-items": 8 },
     "project-health": { "zombies": 2, "overdue-projects": 3 },
-    "customer-deps": { "churned": 1, "cooling": 0, "concentration-risks": 2 }
+    "customer-deps": { "churned": 1, "cooling": 0, "concentration-risks": 2 },
+    "priority-mismatch": { "bump-candidates": 3, "stale-hot": 5 }
   }
 }
 ```
@@ -241,6 +242,20 @@ gh api graphql -f query='
   }
 }' > "$SCAN_DATA_DIR/api/nrwl-nx-discussions.json" 2>/dev/null \
   || echo "{}" > "$SCAN_DATA_DIR/api/nrwl-nx-discussions.json"
+```
+
+### Priority mismatch detection (medium-priority issues with high engagement)
+
+```bash
+# Medium-priority issues with high reactions — candidates for priority bump
+gh api "repos/nrwl/nx/issues?state=open&labels=priority:%20medium&sort=reactions-+1&direction=desc&per_page=50" \
+  > "$SCAN_DATA_DIR/api/nrwl-nx-medium-priority-hot.json" 2>/dev/null \
+  || echo "[]" > "$SCAN_DATA_DIR/api/nrwl-nx-medium-priority-hot.json"
+
+# Stale issues (>6 months old) with high engagement — may need triage
+gh api "repos/nrwl/nx/issues?state=open&sort=reactions-+1&direction=desc&per_page=100" \
+  > "$SCAN_DATA_DIR/api/nrwl-nx-stale-hot.json" 2>/dev/null \
+  || echo "[]" > "$SCAN_DATA_DIR/api/nrwl-nx-stale-hot.json"
 ```
 
 ### Search queries
@@ -414,6 +429,32 @@ Example:
 | Customer Deps | {status emoji} | {N concentration risks} | {churned/cooling} |
 
 Status: ✅ = no action needed, ⚠️ = items to review, 🔴 = action required
+
+## Priority Mismatch — Issues That May Need Bumping
+
+Analyze `$SCAN_DATA_DIR/api/nrwl-nx-medium-priority-hot.json` and
+`$SCAN_DATA_DIR/api/nrwl-nx-stale-hot.json` to surface:
+
+### Medium Priority with High Engagement
+Issues labeled `priority: medium` but with disproportionate community
+engagement (reactions or comments). Thresholds:
+- **Bump candidate**: 10+ total reactions OR 15+ comments
+- **Strong bump candidate**: 20+ reactions OR 25+ comments
+
+For each, list: issue number, title, reaction count, comment count,
+age, and a one-line recommendation (bump to high? needs triage?).
+
+### Stale High-Engagement Issues
+Open issues older than 6 months with significant engagement (10+
+reactions or 15+ comments) regardless of priority label. These are
+long-standing pain points the community cares about. Filter
+`nrwl-nx-stale-hot.json` by `createdAt` older than 180 days.
+
+For each, list: issue number, title, age, reaction count, comment
+count, current priority label, and whether it's been commented on
+by maintainers recently.
+
+If either list is empty, say so. Don't invent issues.
 
 ## Action Required
 

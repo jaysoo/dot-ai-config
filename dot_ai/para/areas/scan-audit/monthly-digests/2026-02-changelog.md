@@ -5,6 +5,7 @@
 ## Task Sandboxing & IO Tracing
 
 ### CLI
+
 - Add initial impl of task io service ([#34205](https://github.com/nrwl/nx/pull/34205)) — 22.5.0
 - Handle agentic sandboxing ([#34402](https://github.com/nrwl/nx/pull/34402)) — 22.5.1
 - Extract sandbox detection into reusable utility ([#34408](https://github.com/nrwl/nx/pull/34408)) — 22.5.1
@@ -12,10 +13,12 @@
 - Disable ignore filters for outputs expansion ([#34316](https://github.com/nrwl/nx/pull/34316)) — 22.5.0
 
 ### Cloud
+
 - Add API endpoint to support persisting io tracing reports sent from Nx Agents (2602.12.11)
 - Enable sandbox endpoints on snapshot (fa415a4b, 2026-02-12)
 
 ### Infrastructure
+
 - Enable sandboxing on staging (ca1fc1f2, 2026-02-24)
 - Enable io tracing signal files on snapshot (97e7084b, 2026-02-05)
 - Deploy io-trace-daemon helm chart to development (1187c07b, 2026-02-24)
@@ -33,6 +36,7 @@
 ## Self-Healing CI
 
 ### Cloud
+
 - Self-Healing CI setup for BitBucket and Azure DevOps (2602.02.4)
 - Auto-apply recommendations for tasks in Self-Healing CI settings (2602.03.2)
 - Detailed failure reasons in Technical Details for failed fixes (2602.12.5)
@@ -41,11 +45,13 @@
 - Enable Self-Healing CI during repository onboarding, auto-create PR for CI config (2602.26.2)
 
 ### CLI
+
 - Add passthrough for nx-cloud apply-locally command ([#34557](https://github.com/nrwl/nx/pull/34557)) — 22.5.3
 
 ## AI-Powered Development
 
 ### CLI
+
 - Improve configure-ai-agents to copy nx skills/subagents/plugins ([#34176](https://github.com/nrwl/nx/pull/34176)) — 22.5.0
 - Improve AI agent rules for CLAUDE.md generation ([#34304](https://github.com/nrwl/nx/pull/34304)) — 22.5.0
 - Add AI agent detection and NDJSON output for CNW ([#34320](https://github.com/nrwl/nx/pull/34320)) — 22.5.0
@@ -61,14 +67,17 @@
 ## Security
 
 ### CLI
+
 - **CVE-2026-26996**: Bump minimatch to 10.2.1 ([#34509](https://github.com/nrwl/nx/pull/34509)) — 22.5.3
 - Prevent command injection in getNpmPackageVersion ([#34309](https://github.com/nrwl/nx/pull/34309)) — 22.5.0
 - Remove shellapi from winapi featureset to minimize AV false positives ([#34208](https://github.com/nrwl/nx/pull/34208)) — 22.5.1
 
 ### Cloud
+
 - Access control settings now require confirmation before saving (2602.11.1)
 
 ### Infrastructure
+
 - Lighthouse: Move to secure db password (5d26273a, 2026-02-19)
 - Lighthouse: Remove IAP connections, wire up new Google secrets (77fcf5b3, c39965ec, 2026-02-18)
 - Lighthouse: Add Google credentials for app access (f652b8ec, 2026-02-18)
@@ -76,6 +85,7 @@
 ## CNW & Onboarding
 
 ### CLI
+
 - Add variant 2 to CNW cloud prompts with promo message ([#34223](https://github.com/nrwl/nx/pull/34223)) — 22.5.0
 - Add Nx Cloud connect URL to template README ([#34249](https://github.com/nrwl/nx/pull/34249)) — 22.5.0
 - Add decorative banners for Nx Cloud CNW completion message ([#34270](https://github.com/nrwl/nx/pull/34270)) — 22.5.0
@@ -90,6 +100,7 @@
 - Add command to download cloud client ([#34333](https://github.com/nrwl/nx/pull/34333)) — 22.5.0
 
 ### Cloud
+
 - Update back links in connect workspace flows (2602.04.2)
 - Fix create-nx-workspace form permissions button (2602.03.1)
 - Streamline VCS integration forms (2602.17.4)
@@ -99,15 +110,18 @@
 ## Workspace Access & Permissions
 
 ### Cloud
+
 - Workspace-Repository Access Syncing — match workspace access to VCS repo permissions (2602.27.5)
 
 ### Infrastructure
+
 - Enable NX_CLOUD_WORKSPACE_VISIBILITY_ENABLED env var on dev (8816589d, 2026-02-13)
 - Enable NX_CLOUD_REPOSITORY_ACCESS_ENABLED env var on dev (fba05e1b, 2026-02-27)
 
 ## Nx Cloud Client & Artifact Encryption
 
 ### Cloud
+
 - `decrypt-artifact` CLI command for E2E-encrypted artifact decryption (2602.12.6)
 - Fix client crash for large runs with daemon enabled (2602.10.2)
 - Runner properly constructs URLs when Cloud URL has trailing slash (2602.13.2)
@@ -115,6 +129,7 @@
 ## JVM Ecosystem (Gradle & Maven)
 
 ### CLI
+
 - Add debug env var to gradle batch executor ([#34259](https://github.com/nrwl/nx/pull/34259)) — 22.5.0
 - Load Maven classes at runtime for version-agnostic batch execution ([#34180](https://github.com/nrwl/nx/pull/34180)) — 22.5.0
 - Bump maven plugin version to 0.0.13 ([#34318](https://github.com/nrwl/nx/pull/34318)) — 22.5.0
@@ -134,6 +149,7 @@
 ## TUI & CLI Stability
 
 ### CLI
+
 - Display batch tasks in the TUI ([#33695](https://github.com/nrwl/nx/pull/33695)) — 22.5.0
 - Move tui to parking lot rwlock to avoid hang ([#34187](https://github.com/nrwl/nx/pull/34187)) — 22.5.0
 - Handle resizing for inline_tui ([#34006](https://github.com/nrwl/nx/pull/34006)) — 22.5.0
@@ -150,6 +166,7 @@
 ## Daemon & Performance
 
 ### CLI
+
 - Clean up daemon workspace data directory on nx reset ([#34174](https://github.com/nrwl/nx/pull/34174)) — 22.5.0
 - Resolve daemon client reconnect queue deadlock ([#34284](https://github.com/nrwl/nx/pull/34284)) — 22.5.0
 - Handle EPIPE errors gracefully in daemon socket writes ([#34311](https://github.com/nrwl/nx/pull/34311)) — 22.5.0
@@ -179,6 +196,7 @@
 ## Docs & nx.dev
 
 ### CLI
+
 - Add llms-full.txt and HTTP Link headers for LLM discovery ([#34232](https://github.com/nrwl/nx/pull/34232)) — 22.5.0
 - Add server-side page view tracking for docs ([#34283](https://github.com/nrwl/nx/pull/34283)) — 22.5.0
 - Reformat sidebar into topics ([#34265](https://github.com/nrwl/nx/pull/34265)) — 22.5.0
@@ -189,7 +207,7 @@
 - Widen search dialog ([#34504](https://github.com/nrwl/nx/pull/34504)) — 22.5.2
 - Update breadcrumb links to match sidebar ([#34500](https://github.com/nrwl/nx/pull/34500)) — 22.5.2
 - Correct interpolate sub command for cli reference ([#34585](https://github.com/nrwl/nx/pull/34585)) — 22.5.3
-- Move redirects from Next.js config to Netlify _redirects ([#34612](https://github.com/nrwl/nx/pull/34612)) — 22.5.3
+- Move redirects from Next.js config to Netlify \_redirects ([#34612](https://github.com/nrwl/nx/pull/34612)) — 22.5.3
 - Fix broken /launch-nx links ([#34192](https://github.com/nrwl/nx/pull/34192), [#34255](https://github.com/nrwl/nx/pull/34255)) — 22.5.0
 - Update dead links across nx-dev UI libraries ([#34238](https://github.com/nrwl/nx/pull/34238)) — 22.5.0
 - Make headers and table options linkable ([#34267](https://github.com/nrwl/nx/pull/34267)) — 22.5.0
@@ -203,6 +221,7 @@
 ## Ecosystem & Framework Support
 
 ### CLI
+
 - **TypeScript**: Add NX_PREFER_NODE_STRIP_TYPES to use Node's strip types feature ([#34202](https://github.com/nrwl/nx/pull/34202)) — 22.5.0
 - **SWC**: Bump swc to latest versions ([#34215](https://github.com/nrwl/nx/pull/34215)), update swc/cli to 0.8.0 ([#34365](https://github.com/nrwl/nx/pull/34365)) — 22.5.0
 - **SWC**: Use caret range for swc dependencies in pnpm catalog ([#34487](https://github.com/nrwl/nx/pull/34487)) — 22.5.2
@@ -236,6 +255,7 @@
 ## Nx Cloud UI Fixes
 
 ### Cloud
+
 - Fixed search parameters persisting between task and flaky task analytics (2602.09.7)
 - Enterprise contributor data rendered regardless of license duration (2602.09.5)
 - Verification tasks tab shows "In progress" status while running (2602.04.3)
@@ -247,22 +267,26 @@
 ## Infrastructure
 
 ### Enterprise Tenant Deployments
+
 - **Wix**: Full deployment — Terraform, YAML, Lighthouse, SAML enabled (674137ce → b1c1c43c, 2026-02-18–23)
 - **Legora**: Full GCP single tenant deployment with Terraform, Spacelift, and MongoDB user (96f4801e → 878c6b8f, 2026-02-25)
 - **Celonis**: Bump nx-api 3→6 replicas (724c3ced, 2026-02-12)
 - **Island**: Bump nx-api 3→6 replicas (b4c1b1c3, 2026-02-03)
 
 ### Controller & Workflow
+
 - Enable async status updates for controllers: Flutter, Mimecast, Clickup, Emeria, Island (26802a1c → 376077b4, 2026-02-11)
 - Bump wf controller to 2 replicas for production na/eu (6d70b2f4, 2026-02-05)
 - Enable async status updates in production na/eu (a41bc05b, 2026-02-05)
 
 ### Caching & NPM Infrastructure
+
 - Deploy nginx-backed npm read-through cache to enterprise GCP (a5659653, 2026-02-12)
 - Test deployment on development with npm caching metrics (8684f6b9 → 1fc8b44f, 2026-02-12)
 - ClickUp: Add nginx as frontline cache, bump resources (4b6eb4a2 → 449ee2ab, 2026-02-11)
 
 ### Monitoring & Operations
+
 - Add Grafana billing alerts (970f0df9, 2026-02-27)
 - Add synthetic checks for tenants (0858195b, 2026-02-26)
 - Enable Valkey Metrics scraping for workflow queue data in prod/enterprise (10ccbda3, 2026-02-05)
@@ -270,6 +294,7 @@
 - Lighthouse: Auto-update setup, secure credentials migration, IAP removal (a20054b5 → 846bc0cb, 2026-02-18–19)
 
 ### Provider & Tooling Updates
+
 - Update OpenTofu version (e53cf3cf, 2026-02-23)
 - Update GCP, Azure, AWS, MongoDB, Grafana provider versions across all tenants
 - Upgrade Spacelift provider and admin stack
@@ -277,6 +302,7 @@
 - Multi-zone nodegroup split for AWS agents (d257ac8a, 2026-02-17)
 
 ### Bitbucket & GitHub Apps
+
 - Add Bitbucket Cloud app secrets to development (5f9d1f59, 2026-02-25)
 - Modify GitHub app slug on dev for new GitHub app (d0e0114b, 2026-02-18)
 - Add new secret for GitHub app for enterprise tenants (cf627422, 2026-02-24)
@@ -284,6 +310,7 @@
 ## CI & Build Fixes
 
 ### CLI
+
 - Align pnpm version in CI workflows with package.json ([#34370](https://github.com/nrwl/nx/pull/34370)) — 22.5.0
 - Use sudo for global npm install in publish workflow ([#34409](https://github.com/nrwl/nx/pull/34409)), reverted ([#34451](https://github.com/nrwl/nx/pull/34451)) — 22.5.1
 - Replace addnab/docker-run-action with direct docker run ([#34448](https://github.com/nrwl/nx/pull/34448)) — 22.5.1
@@ -317,6 +344,7 @@
 ## Framer Migration (Cloud)
 
 ~30 issues. All marketing pages migrated from Framer to nx.dev:
+
 - Homepage, pricing, enterprise, solutions, contact, community, company
 - Brands, webinar, careers, resources, blog index, 404, Java, React pages
 - SEO handling and tracking bridge (GTM)
@@ -341,31 +369,34 @@
 ## Linear Project Status
 
 ### Completed in February
-| Project | Team | Lead |
-|---------|------|------|
-| Framer Migration | CLOUD | Benjamin Cabanes |
-| Lighthouse: Google Auth & Remove IaP | INF | Steve Pentland |
-| Bucket access binding → memberships | INF | Patrick Mariglia |
-| Remove ability to use non-signed storage | INF | Szymon Wojciechowski |
-| Pylon Rollout & Evaluation | CS | Steven Nance |
-| In-depth Podman/Buildah validation | INF | Patrick Mariglia |
-| Update and unify terraform provider versions | INF | Szymon Wojciechowski |
-| Improve workspace analytics UX | CLOUD | Dillon |
+
+| Project                                      | Team  | Lead                 |
+| -------------------------------------------- | ----- | -------------------- |
+| Framer Migration                             | CLOUD | Benjamin Cabanes     |
+| Lighthouse: Google Auth & Remove IaP         | INF   | Steve Pentland       |
+| Bucket access binding → memberships          | INF   | Patrick Mariglia     |
+| Remove ability to use non-signed storage     | INF   | Szymon Wojciechowski |
+| Pylon Rollout & Evaluation                   | CS    | Steven Nance         |
+| In-depth Podman/Buildah validation           | INF   | Patrick Mariglia     |
+| Update and unify terraform provider versions | INF   | Szymon Wojciechowski |
+| Improve workspace analytics UX               | CLOUD | Dillon               |
 
 ### Active
-| Project | Team | Lead | Notes |
-|---------|------|------|-------|
-| Polygraph AI | NXA | Jonathan Cammisuli, Victor Savkin | Cross-repo plan mode |
-| Task Sandboxing | NXC/Q | Rares Matei, Craigory Coppola | Inputs vs expected outputs |
-| CLI Agentic Experience (AX) | NXA | Max Kless, Colum Ferry | Agentic nx connect |
-| Self-Healing CI (BYOK) | NXA | James Henry | Enterprise AI credits |
-| Workspace Visibility | NXA | Mark Lindsey, Chau Tran | Azure DevOps OAuth |
-| .NET Support | NXC | Craigory Coppola | New ecosystem |
-| Maven Support | NXC | Jason Jean | External deps, test sources |
-| Surface Level Telemetry | NXC | Jason Jean | Rust rewrite |
-| Continuous Assignment | Q | Altan Stalker | DTE benchmarking |
+
+| Project                     | Team  | Lead                              | Notes                       |
+| --------------------------- | ----- | --------------------------------- | --------------------------- |
+| Polygraph AI                | NXA   | Jonathan Cammisuli, Victor Savkin | Cross-repo plan mode        |
+| Task Sandboxing             | NXC/Q | Rares Matei, Craigory Coppola     | Inputs vs expected outputs  |
+| CLI Agentic Experience (AX) | NXA   | Max Kless, Colum Ferry            | Agentic nx connect          |
+| Self-Healing CI (BYOK)      | NXA   | James Henry                       | Enterprise AI credits       |
+| Workspace Visibility        | NXA   | Mark Lindsey, Chau Tran           | Azure DevOps OAuth          |
+| .NET Support                | NXC   | Craigory Coppola                  | New ecosystem               |
+| Maven Support               | NXC   | Jason Jean                        | External deps, test sources |
+| Surface Level Telemetry     | NXC   | Jason Jean                        | Rust rewrite                |
+| Continuous Assignment       | Q     | Altan Stalker                     | DTE benchmarking            |
 
 ### Issues Completed: 454 across 6 teams
+
 NXC 84 · CLOUD 85 · NXA 111 · Q 89 · INF 60 · DOC 25
 
 _Generated on 2026-02-28._
