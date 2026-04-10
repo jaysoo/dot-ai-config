@@ -30,7 +30,7 @@ project health, and customer dependencies.
 ## Latest Reports
 
 ### Weekly
-- [2026-W15](./weekly/2026-W15.md) -- Angular 22 P0, DEP0205, LGPL concern, Self-Healing CI 13 customers, A2A v1.0
+- [2026-W15](./weekly/2026-W15.md) -- CNW 2 HIGH, Angular 22 P0, Node 20 EOL 21d, LGPL blocker, 11 zombies, Gradle 9.5.0-RC2
 - [2026-W14](./weekly/2026-W14.md) -- Node.js 9 CVEs, Turbo experimentalCI, Vite 8 Rolldown, MCP v2 OAuth
 - [2026-W13](./weekly/2026-W13.md)
 - [2026-W12](./weekly/2026-W12.md)
@@ -46,6 +46,7 @@ All scan reports live in `scans/` sub-directories:
 
 | Sub-Area | Cadence | Priority Within |
 |----------|---------|----------------|
+| [CNW Templates](./scans/cnw-templates/) | **Weekly** | **CRITICAL** |
 | [Supply Chain Security](./scans/supply-chain-security/) | **Weekly** | **HIGH** |
 | [Dependency Health](./scans/dependency-health/) | Monthly | Medium |
 | [API Surface Audit](./scans/api-surface-audit/) | Monthly | Medium |

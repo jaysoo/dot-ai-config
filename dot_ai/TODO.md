@@ -4,49 +4,63 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **NXC-4210: Fix generateLockfile ignoring npm overrides** (2026-04-09)
+1. **Night-shift community fixes batch** (2026-04-09)
+   - Summary: 11 worktrees created from session-2026-04-10 night-shift run. All patches applied and committed.
+   - Session: `night-shift/sessions/session-2026-04-10.md`
+
+2. **NXC-4210: Fix generateLockfile ignoring npm overrides** (2026-04-09)
    - Summary: Fixed `normalizePackageJson()` stripping overrides + `findTarget()` dropping edges for overridden versions. PR #35192.
    - Files: `.ai/2026-04-09/SUMMARY.md`
 
-2. **Netlify edge function perf: streaming + CDN cache + timing** (2026-04-08)
+3. **Netlify edge function perf: streaming + CDN cache + timing** (2026-04-08)
    - Summary: Streamed Framer proxy via TransformStream, added Netlify-CDN-Cache-Control with stale-while-revalidate, added timing logs + Server-Timing headers across all edge functions.
    - PR: https://github.com/nrwl/nx/pull/35215
 
-3. **Night-shift community fixes batch** (2026-04-08)
+4. **Night-shift community fixes batch** (2026-04-08)
    - Summary: 22 worktrees created in ~/projects/nx-worktrees/issue-* from automated night-shift run. 9 patches applied cleanly, 12 need manual apply, 1 already fixed upstream.
    - Files: `night-shift/sessions/session-2026-04-08.md`
 
-4. **DOC-474: Update docs sidebar for tutorial engagement** (2026-04-07)
+5. **DOC-474: Update docs sidebar for tutorial engagement** (2026-04-07)
    - Summary: Removed "New" badge, expanded Tutorials, collapsed Concepts and Platform Features. PR #35194.
    - Files: `.ai/2026-04-07/SUMMARY.md`
 
-5. **NXC-4182: React Router + Vite 8 compat fix** (2026-04-01 → 2026-04-03)
+6. **NXC-4182: React Router + Vite 8 compat fix** (2026-04-01 → 2026-04-03)
    - Summary: Re-enabled skipped typecheck e2e test. Added guards (throw on vite 8, vitest 4) + fix-up (remove @vitejs/plugin-react, downgrade vitest 4→3.x). Changed RR SSR prompt default to No.
    - PR: https://github.com/nrwl/nx/pull/35126
 
-6. **Incident tracking & Security IR process** (2026-04-02)
+7. **Incident tracking & Security IR process** (2026-04-02)
    - Summary: Created incidents PARA area with March org-access-leakage write-up. Drafted Security IR Plan and IR Process update for Notion.
    - Files: `dot_ai/2026-04-02/SUMMARY.md`
 
-7. **NXC-3711: Remove Tailwind CSS setup-tailwind generators** (2026-04-03, PR #35049)
+8. **NXC-3711: Remove Tailwind CSS setup-tailwind generators** (2026-04-03, PR #35049)
    - Summary: Removed all setup-tailwind generators from 5 plugins. Deprecated @nx/*/tailwind barrel exports.
    - Files: `memory/project_nxc3711_tailwind_removal.md`
 
-8. **NXC-3345: Rollup rootDir fix for workspace libs** (2026-03-30, in progress)
+9. **NXC-3345: Rollup rootDir fix for workspace libs** (2026-03-30, in progress)
    - Summary: Fix TS6059 when rollup-built libs import workspace libs. PR #35082.
    - Files: `packages/rollup/src/plugins/with-nx/with-nx.ts`
 
-9. **DOC-465: Build-time image optimization for blog** (2026-04-01, PR nrwl/nx-blog#1)
+10. **DOC-465: Build-time image optimization for blog** (2026-04-01, PR nrwl/nx-blog#1)
    - Summary: Sharp-based responsive WebP generation for 1064 blog images. Fixed broken media paths.
-   - Files: `.ai/2026-04-01/SUMMARY.md`
-
-10. **DOC-463: Match Framer header and footer** (2026-04-01)
-   - Summary: Pixel-matched blog header/footer to nx.dev. Inter font, hover dropdown menus, footer 5-col layout.
    - Files: `.ai/2026-04-01/SUMMARY.md`
 
 ## TODO
 
-- [ ] Review night-shift fixes from 2026-04-08 session (22 fixes, 46 issues triaged)
+- [ ] 🤖 Review night-shift fixes from 2026-04-10 session (11 applied, 29 fixed / 44 total)
+  - Session report: `/Users/jack/projects/night-shift/sessions/session-2026-04-10.md`
+  - Worktrees: `~/projects/nx-worktrees/issue-*` — review code, run tests, create PRs
+    - [ ] #32567 — swc-node/ts-node warning on Node 22.18+ (conf: 82, ⚠️ concerns) `issue-32567` | reports: `/tmp/nightshift-work-M5QYzE/reports/`
+    - [ ] #32864 — Rspack Angular i18n Windows paths (conf: 0→approved) `issue-32864` | reports: `/tmp/nightshift-work-xJap7t/reports/`
+    - [ ] #33051 — Angular lib secondary entry point test-setup.ts (conf: 0→approved) `issue-33051` | reports: `/tmp/nightshift-work-sagVTL/reports/`
+    - [ ] #33523 — npm support for copy-workspace-modules (conf: 82, ✅ approved) `issue-33523` | reports: `/tmp/nightshift-work-xzmX6E/reports/`
+    - [ ] #34095 — @nx/next:build missing semver dep (conf: 82, ✅ approved) `issue-34095` | reports: `/tmp/nightshift-work-R1OwZd/reports/`
+    - [ ] #34281 — @nx/s3-cache non-pinned AWS SDK (conf: 90, ✅ approved) — applied to ocean repo | reports: `/tmp/nightshift-work-drAGdC/reports/`
+    - [ ] #34531 — isMigrationToMonorepoNeeded uses graph (conf: 82, ✅ approved) `issue-34531` | reports: `/tmp/nightshift-work-DVTAk2/reports/`
+    - [ ] #34680 — storybook-configuration Windows paths (conf: 80, ✅ approved) `issue-34680` | reports: `/tmp/nightshift-work-viX2gJ/reports/`
+    - [ ] #34593 — jest migration crashes on non-plugin workspaces (conf: 0, ⚠️ concerns) `issue-34593` | reports: `/tmp/nightshift-work-fF3JdH/reports/`
+    - [ ] #34756 — docs: run-commands args interpolation (conf: 85, ✅ approved) `issue-34756` | reports: `/tmp/nightshift-work-AGV2hy/reports/`
+    - [ ] #34987 — gradle plugin Windows paths (conf: 85, ✅ approved) `issue-34987` | reports: `/tmp/nightshift-work-hA39f2/reports/`
+- [ ] 🤖 Review night-shift fixes from 2026-04-08 session (22 fixes, 46 issues triaged)
   - Session report: `/Users/jack/projects/night-shift/sessions/session-2026-04-08.md`
   - Worktrees: `~/projects/nx-worktrees/issue-*`
   - Each worktree has `reports/` with final-report.md, theories.md, confidence.json

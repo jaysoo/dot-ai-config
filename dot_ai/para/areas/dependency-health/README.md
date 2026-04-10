@@ -6,7 +6,7 @@ Monthly audit of direct external dependencies across Nx CLI packages. Tracks unm
 
 | Month | File | Summary |
 |-------|------|---------|
-| 2026-04 | [2026-04.md](./2026-04.md) | 164 deps: 23 critical (0), 14 warning (0), 7 watch (-1). tinyglobby graduated to Healthy |
+| 2026-04 | [2026-04.md](./2026-04.md) | 146 deps: 21 critical (+14), 15 warning (-4), 7 watch (-6). @ltd/j-toml removed (replaced by smol-toml). 14 Warning->Critical from aging. 5 deps removed. |
 | 2026-03 | [2026-03.md](./2026-03.md) | Initial audit: 169 core deps |
 
 ## Classification

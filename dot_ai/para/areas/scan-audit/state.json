@@ -1,20 +1,21 @@
 {
-  "lastRun": "2026-04-09T18:00:00Z",
+  "lastRun": "2026-04-09T22:30:00Z",
   "lastWeeklyReport": "2026-W15",
   "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
   "findings": {
-    "dependencies": { "critical": 23, "warning": 14, "watch": 7 },
-    "supply-chain": { "status": "yellow", "cves": 0, "advisories-total": 309, "advisories-high": 111, "latest-nx": "22.6.4", "nx-cloud-provenance-gap": true },
-    "api-surface": { "high": 15, "medium": 47, "low": 23 },
-    "competitors": { "highlights": 5, "turbo-2.9.5-boundaries": true, "turbo-stable": "2.9.5", "turbo-threat-HIGH": true },
-    "frameworks": { "compat-risks": 8, "p0-risks": 4, "angular22-p0": true, "vite8-security-fixes": true, "rspack2-rc1": true, "rolldown-rc15": true },
+    "cnw-templates": { "critical": 7, "high": 7, "medium": 53, "low": 6, "templates-tested": 4, "axios-ssrf-angular-react": true, "picomatch-all-templates": true, "vite-angular-only": true, "lodash-minimatch-ts-only": true },
+    "dependencies": { "critical": 21, "warning": 15, "watch": 7, "enquirer-33mo": true, "webpack-aging": true },
+    "supply-chain": { "status": "yellow", "cves": 0, "advisories-total": 309, "advisories-high": 136, "latest-nx": "22.6.4", "nx-cloud-provenance-gap": true, "provenance-gap-month": 2 },
+    "api-surface": { "high": 15, "medium": 47, "low": 23, "undocumented-ai-cli": 3 },
+    "competitors": { "highlights": 5, "turbo-stable": "2.9.5", "turbo-threat-HIGH": true, "gradle-9.5.0-rc2": true },
+    "frameworks": { "compat-risks": 8, "p0-risks": 4, "angular22-p0": true, "vite8-stabilizing": true, "rspack2-rc1": true },
     "runtimes": { "action-items": 8, "node20-eol-days": 21, "dep0205-module-register": true, "node-bounty-paused": true },
-    "ai-landscape": { "highlights": 15, "opportunities": 11, "risks": 6, "a2a-v1.0": true, "copilot-sdk-preview": true, "claude-code-bedrock": true },
-    "community": { "top-pain-points": 5, "open-issues": 101, "lgpl-concern": true, "downloads-weekly-avg": "10.05M", "issue-34529-resolved": true, "js-node-regression": true },
-    "capacity": { "high-risk-people": 3, "overdue-items": 13, "jack-trending-high": true, "projects-due-apr10": 3 },
-    "project-health": { "zombies": 4, "overdue-projects": 8, "zombie-escalation": 10, "completions-since-apr7": 6, "cloud-pricing-69d-overdue": true },
-    "customer-deps": { "churned": 1, "cooling": 0, "concentration-risks": 3, "self-healing-customers": 13, "skyscanner-reengaged": true, "emeria-io-trace": true },
-    "priority-mismatch": { "bump-candidates": 0, "stale-hot": 2 }
+    "ai-landscape": { "highlights": 18, "opportunities": 12, "risks": 7, "claude-agent-sdk": true, "mcp-v2.1": true, "agents-md-linux-foundation": true, "paperclip-46k-stars": true },
+    "community": { "top-pain-points": 5, "open-issues": 102, "lgpl-concern": true, "downloads-weekly-avg": "9.58M", "pylon-tickets": 158, "billing-churn-risk": true },
+    "capacity": { "high-risk-people": 3, "overdue-items": 13, "jack-trending-high": true, "projects-due-apr10": 3, "cnw-funnel-due-today": true },
+    "project-health": { "zombies": 4, "overdue-projects": 8, "zombie-escalation": 11, "paused-projects": 9, "cloud-pricing-69d-overdue": true },
+    "customer-deps": { "churned": 1, "cooling": 0, "concentration-risks": 3, "self-healing-customers": 13, "medianet-maven-48d": true, "steven-nance-overloaded": true },
+    "priority-mismatch": { "bump-candidates": 0, "stale-hot": 0 }
   }
 }

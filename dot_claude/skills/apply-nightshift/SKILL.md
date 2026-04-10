@@ -121,21 +121,50 @@ For each selected issue:
    - Use `fix` for bug fixes, `docs` for documentation, `chore` for cleanup/TODOs
 8. **Report status** for each issue applied
 
-#### Step 4: Summary
+#### Step 4: Update TODO.md
+
+After all patches are applied, update `~/projects/dot-ai-config/dot_ai/TODO.md`:
+
+1. **Add to Recent Tasks** (item #1, bump others down, drop 11th):
+   ```markdown
+   1. **Night-shift community fixes batch** (YYYY-MM-DD)
+      - Summary: N worktrees created from session-YYYY-MM-DD night-shift run. All patches applied and committed.
+      - Session: `night-shift/sessions/session-YYYY-MM-DD.md`
+   ```
+
+2. **Add a TODO checklist** with 🤖 prefix, listing each applied issue with:
+   - Issue number + short title
+   - Confidence score and peer review status
+   - Worktree name (e.g., `issue-32864`)
+   - **Original night-shift work dir** with reports path (e.g., `reports: /tmp/nightshift-work-XXXXX/reports/`)
+
+   Format:
+   ```markdown
+   - [ ] 🤖 Review night-shift fixes from YYYY-MM-DD session (N applied, M fixed / T total)
+     - Session report: `/Users/jack/projects/night-shift/sessions/session-YYYY-MM-DD.md`
+     - Worktrees: `~/projects/nx-worktrees/issue-*` — review code, run tests, create PRs
+       - [ ] #NNNNN — short title (conf: NN, ✅ approved) `issue-NNNNN` | reports: `/tmp/nightshift-work-XXXXX/reports/`
+       - [ ] #NNNNN — short title (conf: NN, ⚠️ concerns) `issue-NNNNN` | reports: `/tmp/nightshift-work-XXXXX/reports/`
+   ```
+
+   The `reports:` path is critical — it lets Jack quickly read `final-report.md`, `theories.md`, `confidence.json`, and `peer-review.md` when reviewing each fix.
+
+#### Step 5: Summary
 
 After all selected issues are applied, show:
 
 ```
 ## Applied Fixes
 
-| Issue | Worktree | Branch | Status |
-|-------|----------|--------|--------|
-| #32864 | ~/projects/nx-worktrees/issue-32864 | fix/issue-32864 | Ready for review |
-| NXC-4157 | ~/projects/nx-worktrees/NXC-4157 | fix/NXC-4157 | Ready for review |
+| Issue | Worktree | Branch | Reports | Status |
+|-------|----------|--------|---------|--------|
+| #32864 | ~/projects/nx-worktrees/issue-32864 | fix/issue-32864 | /tmp/nightshift-work-XXXXX/reports/ | Ready for review |
+| NXC-4157 | ~/projects/nx-worktrees/NXC-4157 | fix/NXC-4157 | /tmp/nightshift-work-XXXXX/reports/ | Ready for review |
 ```
 
 Remind the user:
 - `cd ~/projects/nx-worktrees/<name>` to review
+- Read `<reports-dir>/final-report.md` for root cause analysis and fix details
 - Run `nx affected -t build-base,lint,test` before pushing
 - Do NOT open PRs automatically
 

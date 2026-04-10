@@ -10,7 +10,7 @@ Monthly scan of Nx platform community health, covering GitHub Issues, Discussion
 | ------- | ------------ | ---------------------------------------------------- |
 | 2026-02 | `2026-02.md` | First run. 60-day lookback from 2025-12-29.          |
 | 2026-03 | `2026-03.md` | 60-day lookback from 2026-01-29. Updated 2026-03-30 (7th scan). Windows emerged as major theme. Node 25 compat, picomatch CVE. |
-| 2026-04 | `2026-04.md` | 60-day lookback from 2026-02-08. Updated 2026-04-09. Downloads ~10.05M/week (+13%). LGPL licensing concern (#35156). Pylon refreshed: 157 tickets, billing/churn risk. #34529 resolved. All security CVEs closed. @nx/angular +43.6% growth. |
+| 2026-04 | `2026-04.md` | 60-day lookback from 2026-02-08. Updated 2026-04-09 (2nd pass). Downloads ~9.6M/week (stable). LGPL licensing concern (#35156). Pylon refreshed: 158 tickets -- CI/Pipeline (39), Billing (16), Setup/Auth (14) dominate. #34529 resolved. All security CVEs closed. |
 
 ## Sources
 

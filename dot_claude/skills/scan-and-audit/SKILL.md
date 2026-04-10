@@ -112,7 +112,7 @@ Read `.ai/para/areas/scan-audit/state.json` if it exists. Structure:
     "project-health": { "zombies": 2, "overdue-projects": 3 },
     "customer-deps": { "churned": 1, "cooling": 0, "concentration-risks": 2 },
     "priority-mismatch": { "bump-candidates": 3, "stale-hot": 5 },
-    "cnw-templates": { "critical": 0, "high": 0, "medium": 1, "low": 0, "presets-tested": 4 }
+    "cnw-templates": { "critical": 0, "high": 0, "medium": 1, "low": 0, "templates-tested": 4 }
   }
 }
 ```
@@ -314,25 +314,34 @@ Launch each scan as a **background Task subagent**. Each subagent receives:
      by scaffolding workspaces and checking for npm audit warnings. This scan
      MUST be reported first in the unified report — do not bury it.
 
-     **Presets to test:** `empty`, `ts`, `angular-monorepo`, `react-monorepo`
+     **IMPORTANT: Use `--template=nrwl/*-template`, NOT `--preset=*-monorepo`.**
+     The `--template` flag uses the actual nrwl template repos which include
+     additional packages (e.g., `@nx/module-federation` in react/angular templates)
+     that `--preset` does not. Using `--preset` will produce falsely clean results.
 
-     **For each preset**, run in a temp directory:
+     **Templates to test:**
+     - `nrwl/empty-template`
+     - `nrwl/typescript-template`
+     - `nrwl/angular-template`
+     - `nrwl/react-template`
+
+     **For each template**, run in a temp directory:
      ```bash
      CNW_TMP=$(mktemp -d)
      cd $CNW_TMP
-     npx create-nx-workspace@latest test-$PRESET \
-       --preset=$PRESET --nxCloud=skip --no-interactive 2>&1
-     cd test-$PRESET
-     npm audit --json 2>&1 > audit-$PRESET.json
-     npm audit 2>&1 > audit-$PRESET.txt
+     npx create-nx-workspace@latest test-$NAME \
+       --template=nrwl/$NAME-template --nxCloud=skip --no-interactive 2>&1
+     cd test-$NAME
+     npm audit --json 2>&1 > audit-$NAME.json
+     npm audit 2>&1 > audit-$NAME.txt
      ```
 
-     **Parse npm audit output** for each preset:
+     **Parse npm audit output** for each template:
      - Count vulnerabilities by severity: critical, high, moderate (medium), low
      - For each critical or high vulnerability, record: package name, severity,
        vulnerability title, path (dependency chain), CVE if available, and
        whether it's a direct or transitive dependency
-     - Note which presets share the same vulnerability (likely same root dep)
+     - Note which templates share the same vulnerability (likely same root dep)
 
      **Severity classification for the report:**
      - 🔴 **Critical**: npm audit critical vulnerabilities — fix ASAP
@@ -341,7 +350,7 @@ Launch each scan as a **background Task subagent**. Each subagent receives:
      - ⚪ **Low**: npm audit low vulnerabilities — note, no immediate action
 
      **Also check:**
-     - Does `npx create-nx-workspace` itself succeed without errors for each preset?
+     - Does `npx create-nx-workspace` itself succeed without errors for each template?
      - Are there any deprecation warnings during workspace creation?
      - Does `npm install` complete cleanly (no peer dep conflicts)?
 
@@ -351,29 +360,29 @@ Launch each scan as a **background Task subagent**. Each subagent receives:
      # CNW Template Health — YYYY-MM
 
      ## Summary
-     Tested N presets against create-nx-workspace@VERSION.
+     Tested N templates against create-nx-workspace@VERSION.
      {overall status: clean / warnings found / action required}
 
-     ## Results by Preset
+     ## Results by Template
 
-     ### empty
+     ### nrwl/empty-template
      - Creation: ✅/❌
      - npm audit: N critical, N high, N moderate, N low
      - Vulnerabilities:
        - [severity] package-name: description (CVE-XXXX) — direct/transitive
 
-     ### ts
+     ### nrwl/typescript-template
      ...
 
-     ### angular-monorepo
+     ### nrwl/angular-template
      ...
 
-     ### react-monorepo
+     ### nrwl/react-template
      ...
 
-     ## Cross-Preset Analysis
-     {Which vulnerabilities appear across multiple presets — likely from shared
-     Nx core dependencies vs preset-specific deps}
+     ## Cross-Template Analysis
+     {Which vulnerabilities appear across multiple templates — likely from shared
+     Nx core dependencies vs template-specific deps}
 
      ## Action Items
      ### Fix ASAP (Critical)
