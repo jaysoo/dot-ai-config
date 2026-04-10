@@ -588,6 +588,8 @@ require("lazy").setup({
 			{ "<leader>gI", "<cmd>Octo issue search<cr>", desc = "Search Issues" },
 			{ "<leader>gr", "<cmd>Octo review start<cr>", desc = "Start PR Review" },
 			{ "<leader>gR", "<cmd>Octo review submit<cr>", desc = "Submit PR Review" },
+			{ "<leader>gc", "<cmd>Octo comment add<cr>", desc = "Add PR comment" },
+			{ "<leader>ga", "<cmd>Octo review comments<cr>", desc = "Add review comment" },
 		},
 		config = function()
 			require("octo").setup({

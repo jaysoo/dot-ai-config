@@ -49,6 +49,29 @@ Analyze the code changes:
   - If new version constants are introduced for backward compat, verify the old version range is actually incompatible with the new target. Don't trust the PR's assumption — check `npm view <pkg>@<version> peerDependencies` yourself.
   - A version bump that works across all supported versions is always preferable to a version fork with detection logic.
 
+### Step 3b: Triage the Diff (Large PRs)
+
+For PRs with 15+ changed files, triage before deep-diving. Most large PRs have a small core of meaningful changes surrounded by mechanical updates.
+
+**Categorize every changed file into one of:**
+1. **Core changes** — new functions, new files, removed logic, behavioral changes. This is where bugs live.
+2. **Consumption changes** — other packages importing/using a new API. Verify the call site is correct, then move on.
+3. **Pattern updates** — test assertions, snapshots, templates updating to match a new format (e.g., `'libs/foo'` → `'./libs/foo'` across 30 spec files). Spot-check 2-3 to confirm they fit the pattern, then skip the rest.
+
+**Then:**
+- Identify which packages actually have **core changes** (often 1-2 packages, not 15)
+- Spend 80% of review effort on core changes — line-by-line, trace the logic, question assumptions
+- For functions that **reimplement behavior from another system** (e.g., TypeScript's tsconfig resolution, webpack's module resolution), verify against that system's actual spec/docs. Don't trust the PR's comments or test assertions as evidence of correctness — the tests may be asserting the wrong behavior.
+- Check for: JSONC handling (tsconfig files have comments), array vs string inputs (TS 5.0+ `extends` arrays), cycle detection, error swallowing (`catch` that silently breaks a loop)
+
+**Report the triage in your review:**
+```
+Core: packages/js/src/utils/typescript/ts-config.ts (new resolvePathsBaseUrl)
+Core: packages/js/src/utils/buildable-libs-utils.ts (path resolution rewrite)
+Consumption: 12 plugin packages importing resolvePathsBaseUrl
+Pattern: 30 spec files updating path assertions from bare to ./ prefix
+```
+
 ### Step 4: Checkout and Verify Locally
 
 **Use a git worktree to avoid disrupting current work:**
@@ -151,3 +174,5 @@ git branch -D pr-<PR_NUMBER>
 5. **Watch for AI-generated code** -- contrived fixtures, excessive comments explaining obvious things, verbose PR descriptions
 6. **Smallest fix wins** -- for bug fixes, prefer the minimal change that solves the problem. If a version bump's new range already covers all supported targets, don't add branching logic and backward-compat constants. Every fork in logic is maintenance surface. When you fetch npm metadata (peer deps, version ranges), actively ask: "does this data eliminate the need for the branching in this diff?"
 7. **Do NOT post to GitHub** unless explicitly instructed
+8. **Triage large diffs** -- categorize files into core/consumption/pattern, then focus deep review on core changes. Don't spread attention equally across 60 files.
+9. **Verify reimplemented semantics** -- if a function reimplements behavior from another system (TS config resolution, webpack module resolution, etc.), check the actual spec. Passing tests don't prove correctness if the tests assert the wrong behavior.
