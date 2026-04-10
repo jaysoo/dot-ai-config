@@ -330,7 +330,7 @@ require("lazy").setup({
 				renderer = { highlight_git = true, icons = { show = { git = true } } },
 			})
       vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFile<cr>", { desc = "Find file in [E]xplorer" })
-			vim.keymap.set("n", "<leader>E", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file [E]xplorer" })
+			vim.keymap.set("n", "<leader>w", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file [E]xplorer" })
 		end,
 	},
 

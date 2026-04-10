@@ -255,7 +255,7 @@ func (l *Loader) GetTodoItems() []TodoItem {
 			currentSection = "in_progress"
 			continue
 		}
-		if strings.HasPrefix(trimmed, "## Pending") || strings.HasPrefix(trimmed, "## Todo") {
+		if strings.HasPrefix(trimmed, "## Pending") || strings.EqualFold(trimmed, "## TODO") || strings.HasPrefix(trimmed, "## Todo") {
 			currentSection = "pending"
 			continue
 		}
