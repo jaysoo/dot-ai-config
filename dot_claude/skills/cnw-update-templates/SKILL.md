@@ -73,11 +73,35 @@ After migration, for each template:
   grep -i 'localhost\|127\.0\.0\|0\.0\.0\.0' package-lock.json | head -5
   ```
   If found, **stop and report** — do not commit. User must fix `~/.npmrc` and re-run `npm install`.
-- Run `CI=true npm audit --audit-level=critical` — if critical vulnerabilities found, **stop and report** before committing. List the affected packages so user can decide how to proceed.
 - Run `CI=true npx nx run-many -t test build lint typescript` to verify migrations didn't break anything
 - If any target fails, **stop and report the error** for that template — do not commit broken code
 
-### 3a. Check Framework Package Versions
+### 3a. Security Audit
+
+Run `CI=true npm audit --audit-level=critical` for each template. Check the exit code:
+- Exit 0 = no critical vulnerabilities, proceed.
+- Exit 1 = critical vulnerabilities found.
+
+**If any template has critical vulnerabilities, you MUST pause before committing and present a clear warning block like this:**
+
+```
+⚠️  CRITICAL VULNERABILITIES DETECTED
+
+| Template           | Critical Packages                              |
+|--------------------|------------------------------------------------|
+| angular-template   | axios (SSRF via @module-federation)             |
+| react-template     | axios (SSRF via @module-federation)             |
+
+These are [pre-existing / newly introduced by this update]. Shall I proceed with committing, or do you want to address these first?
+```
+
+Key points:
+- List the actual vulnerable package names and which transitive dependency pulls them in
+- Note whether the vulns are **pre-existing** (already in origin/main) or **newly introduced** by this migration — run `git stash && npm audit --audit-level=critical; git stash pop` against the pre-migration state if needed, or compare with `origin/main`
+- **Do NOT silently commit past critical audit failures** — always get explicit user confirmation first
+- Non-critical vulnerabilities (moderate, high) should be noted in the final summary table but do not block committing
+
+### 3b. Check Framework Package Versions
 
 After nx migrate, check if framework-specific packages have updates that nx migrate missed. `nx migrate` only updates `nx` and `@nx/*` packages — framework packages (Angular, React, Vite, etc.) may need separate updates.
 

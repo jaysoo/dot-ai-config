@@ -10,7 +10,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | netlify-deploy-status | skill   | 2026-03-27   | 1     |
 | reflect               | command | 2026-04-01   | 5     |
 | summarize             | command | 2026-04-01   | 5     |
-| dot-claude-guard      | skill   | 2026-04-01   | 4     |
+| dot-claude-guard      | skill   | 2026-04-10   | 5     |
 | scan-and-audit        | skill   | 2026-04-09   | 8     |
 | scan-competitors      | command | 2026-04-09   | 8     |
 | customer-deps-audit   | task    | 2026-04-09   | 5     |
@@ -25,7 +25,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | nx-scorecard          | command | 2026-03-24   | 0     |
 | brainstorm            | skill   | 2026-03-25   | 1     |
 | reflect               | skill   | 2026-04-01   | 2     |
-| cnw-update-templates  | skill   | 2026-03-27   | 1     |
+| cnw-update-templates  | skill   | 2026-04-10   | 2     |
 | summarize             | command | 2026-04-01   | 2     |
 | audit-supply-chain    | skill   | 2026-04-09   | 5     |
 | audit-dependencies    | skill   | 2026-03-30   | 2     |
