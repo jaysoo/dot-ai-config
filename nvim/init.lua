@@ -959,6 +959,40 @@ require("lazy").setup({
 			},
 		},
 	},
+
+-- In your lazy.setup({...}) list, add:
+
+-- Markdown slide presentations
+{
+  "https://github.com/sotte/presenting.nvim",
+  opts = {},
+  cmd = { "Presenting" },
+},
+
+-- Distraction-free / zen mode
+{
+  "folke/zen-mode.nvim",
+  opts = {
+    window = {
+      width = 80,
+      options = {
+        number = false,
+        relativenumber = false,
+        signcolumn = "no",
+        cursorline = false,
+      },
+    },
+    plugins = {
+      options = { laststatus = 0 },
+      twilight = { enabled = false },
+      gitsigns = { enabled = false },
+      tmux = { enabled = true }, -- hides tmux statusbar too
+    },
+  },
+  keys = {
+    { "<leader>z", "<cmd>ZenMode<cr>", desc = "Toggle [Z]en Mode" },
+  },
+},
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
@@ -1105,3 +1139,4 @@ vim.filetype.add({
 		astro = "astro",
 	},
 })
+
