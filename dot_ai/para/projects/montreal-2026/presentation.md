@@ -125,7 +125,7 @@ We've built the engine. 2026 points it at the right things.
 - Proposals are projects in backlog. Planning every two months to accept a limited number of them.
 - Projects that run over -> carry over or cancel (Shape Up). Trim scope aggressively.
 
-### Shipping ≠ Success
+### Shipping != Success
 
 - Features that launch without adoption are failures
 - Stop thinking "we built it, now marketing sells it"
@@ -147,7 +147,9 @@ Reminder: P0 = drop everything. P1 = 7 days (14 for CLI).
 
 ---
 
-## PLG Funnel and Signals
+### Shfit: PLG Funnel and Signals
+
+
 
 Acquisition - workspace claimed in Cloud
 - Increase "yes" to Cloud prompt, reduce CNW/init errors, one-page onboarding in 20s
@@ -165,7 +167,7 @@ Question: What are the signals for CLI, for Polygraph?
 
 ---
 
-# AI Workflow Demos
+## AI Workflow Demos
 
 Handling the tedious work so we can stay focused on 1–2 things.
 
@@ -174,9 +176,9 @@ James — Mac Mini agents for maintenance tasks
 
 ---
 
-# Group Discussion
+## Group Discussion
 
-Leads present 4–5 candidate topics (from pre-submitted questions + what we know needs discussion). Leads choose 2–3 for this session.
+
 
 Small groups (40–45 min) — self-select by topic. Each group has a lead and scribe. Work toward:
 1. What's the actual problem?
