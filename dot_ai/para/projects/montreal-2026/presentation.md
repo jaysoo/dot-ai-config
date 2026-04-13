@@ -2,11 +2,11 @@
 
 Agenda:
 
-- How we're doing (SPACE)
-- What we shipped
-- How we work
-- AI demos
-- Group discussion on one topic
+- How we're doing (5 mins)
+- What we shipped (5 mins)
+- How we work (10 mins)
+- AI demos (30 mins)
+- Group discussion on one topic (60 mins)
 
 Note: Many tie-ins with PLG
 
@@ -54,20 +54,18 @@ Satisfaction:
   - Sustainability 3.4/5
   - Recognition 3.5/5
 
----
-
 ### _S_PACE - What the Surveys Are Telling Us
 
 Sustainability - work smart, not hard.
 
 - "Clearer understanding of priorities"
 - "More focused work, less urgent interruptions"
-- "Priority shifts cause the feeling of over-promise and under-deliver" (stakeholder)
+- "Priority shifts cause the feeling of over-promise and under-deliver"
 
 Visibility — people don't know what we're working on or why.
 
 - "Understanding longer-term goals for the team"
-- "A list of features with expected impact, reviewed on a cadence" (stakeholder)
+- "A list of features with expected impact, reviewed on a cadence"
 
 Recognition — 3.5/5 avg but bimodal (5s and 1s).
 
@@ -78,15 +76,12 @@ Stakeholders want work tied to revenue.
 - "Customer validation before development"
 - "Non-urgent customer issues rarely get resolved"
 
+**Takeaway:**
 
-**Takeaway:** We've built the engine. Throughput is up 50% YoY. But we're spreading that energy too thin, 
-priorities are unclear, and it's hard to tie work into revenue. We need **sharper focus** not more hours.
-
-Use AI do remove the tedium while we do deep work in the most impactful projects.
-
-From yesterday: "Teams are working separately rather than together" ~Jeff
-
----
+- We've built the engine. Throughput is up 50% YoY. 
+- __But__ we're spreading that energy too thin, priorities are unclear, and it's hard to tie work into revenue. 
+- We need **sharper focus** not more hours.
+- From yesterday: "Teams are working separately rather than together" ~Jeff
 
 ## What We Shipped 🚀
 
@@ -113,8 +108,6 @@ Question #2: How do you know if/when a feature is successful?
 
 We need an __engineering shift__ to align with PLG.
 
----
-
 ## How We Work
 
 We've built the engine. 2026 points it at the right things.
@@ -127,23 +120,16 @@ We've built the engine. 2026 points it at the right things.
 
 ### Shipping != Success
 
-- Features that launch without adoption are failures.
-- Stop thinking "we built it, now marketing sells it".
+- Features that launch without adoption are __failures__.
+- __Stop__ thinking "we built it, now marketing sells it".
 
 ### Planned Work Needs Three Things
 
 1. A funnel stage (Acquisition / Activation / Adoption / Conversion).
-2. A success metric - Not "we shipped it" but "600 claimed workspaces a week for Cloud" or "500 nx init with Cloud each week".
+2. A success metric - Not "we shipped it" but "600 claimed workspaces a week for Cloud" or "100 nx init with Cloud each week".
 3. A measurement plan - Do the signals exist today, or do we need to build them?.
 
-### Unplanned Work Happens, But Should Not Slow Us Down
-
-- Unplanned work is tracked in Linear, not Slack. Each team budgets a % for unplanned.
-- We need to know how much time spent on planned vs unplanned so we know if there's a problem.
-  Without the data, we're flying blind.
-- Reminder: P0 = drop everything. P1 = 7 days (14 for CLI).
-
----
+Project have micro metrics that tie into the macro business goals.
 
 ### Engineering Shfit: The Modern Engineer
 
@@ -154,9 +140,7 @@ Instead of "what can we build" it is "what behavior are we trying to drive"?
 - Not when the feature is merged, or when it is deployed/published but...
 - When the user __does the thing__ we wanted them to.
 
-__No signl, no launch__
-
----
+Takeaway: __No signl, no launch__
 
 ### Projects -> PLG Funnel Stage
 
@@ -176,7 +160,14 @@ Conversion - they pay
 
 Question: What are the signals for CLI, for Polygraph?
 
----
+### Unplanned Work Happens, But Should Not Slow Us Down
+
+- Unplanned work is tracked in Linear, not Slack. Each team budgets a % for unplanned.
+- We need to know how much time spent on planned vs unplanned so we know if there's a problem.
+  Without the data, we're flying blind.
+- Reminder: P0 = drop everything. P1 = 7 days (14 for CLI).
+
+What about capacity? "We have too much to do!"
 
 ## AI Workflow Demos
 
@@ -185,8 +176,6 @@ Handling the tedious work so we can stay focused on 1–2 things.
 Jon — Sandbox workflow on Mac
 James — Pi agents for maintenance tasks
 Juri - Agent factory
-
----
 
 ## Group Discussion
 
