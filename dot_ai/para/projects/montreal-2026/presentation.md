@@ -127,29 +127,40 @@ We've built the engine. 2026 points it at the right things.
 
 ### Shipping != Success
 
-- Features that launch without adoption are failures
-- Stop thinking "we built it, now marketing sells it"
+- Features that launch without adoption are failures.
+- Stop thinking "we built it, now marketing sells it".
 
-### Planned work needs three things
+### Planned Work Needs Three Things
 
-1. A funnel stage (Acquisition / Activation / Adoption / Conversion)
-2. A success metric - Not "we shipped it" but "600 claimed workspaces a week for Cloud" or "1000 successful nx init a week"
-3. A measurement plan - Do the signals exist today, or do we need to build them?
+1. A funnel stage (Acquisition / Activation / Adoption / Conversion).
+2. A success metric - Not "we shipped it" but "600 claimed workspaces a week for Cloud" or "500 nx init with Cloud each week".
+3. A measurement plan - Do the signals exist today, or do we need to build them?.
 
-### Unplanned work happens, but should not slow us down
+### Unplanned Work Happens, But Should Not Slow Us Down
 
-Unplanned work is tracked in Linear, not Slack. Each team budgets a % for unplanned. 
-
-We need to know how much time spent on planned vs unplanned so we know if there's a problem. 
-Without the data, we're flying blind.
-
-Reminder: P0 = drop everything. P1 = 7 days (14 for CLI).
+- Unplanned work is tracked in Linear, not Slack. Each team budgets a % for unplanned.
+- We need to know how much time spent on planned vs unplanned so we know if there's a problem.
+  Without the data, we're flying blind.
+- Reminder: P0 = drop everything. P1 = 7 days (14 for CLI).
 
 ---
 
-### Shfit: PLG Funnel and Signals
+### Engineering Shfit: The Modern Engineer
 
+You don't just ship code, you ship sensors (aka machines + gauges). A great feature without signal means we're flyning blind.
 
+Instead of "what can we build" it is "what behavior are we trying to drive"? 
+
+- Not when the feature is merged, or when it is deployed/published but...
+- When the user __does the thing__ we wanted them to.
+
+__No signl, no launch__
+
+---
+
+### Projects -> PLG Funnel Stage
+
+These are the entry signals for Cloud (Quork-A):
 
 Acquisition - workspace claimed in Cloud
 - Increase "yes" to Cloud prompt, reduce CNW/init errors, one-page onboarding in 20s
@@ -172,33 +183,24 @@ Question: What are the signals for CLI, for Polygraph?
 Handling the tedious work so we can stay focused on 1–2 things.
 
 Jon — Sandbox workflow on Mac
-James — Mac Mini agents for maintenance tasks
+James — Pi agents for maintenance tasks
+Juri - Agent factory
 
 ---
 
 ## Group Discussion
 
-
+Based on questionnaire responses, or topics raised in the morning session, we'll pick one topic for people to discuss in small groups.
+Let's reconvene for the last 15 mins for each group to summarize their discussions, including commitments they want Jeff/Victor/A Lead to commit to.
 
 Small groups (40–45 min) — self-select by topic. Each group has a lead and scribe. Work toward:
+
 1. What's the actual problem?
 2. What are the options?
 3. What does this group recommend?
 
-Reconvene (15–20 min) — each group presents (4–5 min). Jeff/Victor respond:
-- "Yes — here's who owns it and by when."
-- "Not yet — we need [X] first, answer by [date]."
-- "No — here's why."
+Reconvene (15 min) - each group presents (5 min). Jeff/Victor/leads respond:
+- "Yes, here's who owns it and by when."
+- "Not yet, we need [X] first, answer by [date]."
+- "No, here's why."
 
-All commitments: owner + date. Photographed. Sent out tomorrow.
-
----
-
-# Afternoon
-
-Jack + leads in sales/marketing session. Engineers can:
-
-- Continue morning topics — go deeper on anything that needs more time
-- Automation audit + hackathon — list tedious/repetitive tasks, cluster, form teams, build PoCs
-
-Anything needing leadership input must be resolved in the morning.
