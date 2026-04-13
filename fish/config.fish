@@ -107,3 +107,6 @@ alias cat bat
 set -Ux BAT_PAGER ""
 set -Ux BAT_STYLE numbers
 
+alias ccat cat --color=never
+
+

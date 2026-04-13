@@ -4,55 +4,48 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **Night-shift community fixes batch** (2026-04-09)
+1. **DOC-69: Versioned docs snapshot script** (2026-04-10)
+   - Summary: Script + skill to create orphan branches with pre-built static docs for Netlify branch deploys. Supports v18-v22, auto Node switching via mise, tested v19-v21.
+   - Files: `.ai/2026-04-10/SUMMARY.md`, `scripts/create-versioned-docs.mts`
+
+2. **DOC-476: Bring back "no workspace" CTA in CI tutorial** (2026-04-10)
+   - Summary: Restored cloud.nx.app CTA and skip-ahead flow for cloud onboarding users in self-healing CI tutorial.
+   - Files: `.ai/2026-04-10/SUMMARY.md`
+
+3. **Night-shift community fixes batch** (2026-04-09)
 
    - Summary: 11 worktrees created from session-2026-04-10 night-shift run. All patches applied and committed.
    - Session: `night-shift/sessions/session-2026-04-10.md`
 
-2. **NXC-4210: Fix generateLockfile ignoring npm overrides** (2026-04-09)
+4. **NXC-4210: Fix generateLockfile ignoring npm overrides** (2026-04-09)
 
    - Summary: Fixed `normalizePackageJson()` stripping overrides + `findTarget()` dropping edges for overridden versions. PR #35192.
    - Files: `.ai/2026-04-09/SUMMARY.md`
 
-3. **Netlify edge function perf: streaming + CDN cache + timing** (2026-04-08)
+5. **Netlify edge function perf: streaming + CDN cache + timing** (2026-04-08)
 
    - Summary: Streamed Framer proxy via TransformStream, added Netlify-CDN-Cache-Control with stale-while-revalidate, added timing logs + Server-Timing headers across all edge functions.
    - PR: https://github.com/nrwl/nx/pull/35215
 
-4. **Night-shift community fixes batch** (2026-04-08)
+6. **Night-shift community fixes batch** (2026-04-08)
 
    - Summary: 22 worktrees created in ~/projects/nx-worktrees/issue-\* from automated night-shift run. 9 patches applied cleanly, 12 need manual apply, 1 already fixed upstream.
    - Files: `night-shift/sessions/session-2026-04-08.md`
 
-5. **DOC-474: Update docs sidebar for tutorial engagement** (2026-04-07)
+7. **DOC-474: Update docs sidebar for tutorial engagement** (2026-04-07)
 
    - Summary: Removed "New" badge, expanded Tutorials, collapsed Concepts and Platform Features. PR #35194.
    - Files: `.ai/2026-04-07/SUMMARY.md`
 
-6. **NXC-4182: React Router + Vite 8 compat fix** (2026-04-01 → 2026-04-03)
+8. **NXC-4182: React Router + Vite 8 compat fix** (2026-04-01 → 2026-04-03)
 
    - Summary: Re-enabled skipped typecheck e2e test. Added guards (throw on vite 8, vitest 4) + fix-up (remove @vitejs/plugin-react, downgrade vitest 4→3.x). Changed RR SSR prompt default to No.
    - PR: https://github.com/nrwl/nx/pull/35126
 
-7. **Incident tracking & Security IR process** (2026-04-02)
+9. **Incident tracking & Security IR process** (2026-04-02)
 
    - Summary: Created incidents PARA area with March org-access-leakage write-up. Drafted Security IR Plan and IR Process update for Notion.
    - Files: `dot_ai/2026-04-02/SUMMARY.md`
-
-8. **NXC-3711: Remove Tailwind CSS setup-tailwind generators** (2026-04-03, PR #35049)
-
-   - Summary: Removed all setup-tailwind generators from 5 plugins. Deprecated @nx/\*/tailwind barrel exports.
-   - Files: `memory/project_nxc3711_tailwind_removal.md`
-
-9. **NXC-3345: Rollup rootDir fix for workspace libs** (2026-03-30, in progress)
-
-   - Summary: Fix TS6059 when rollup-built libs import workspace libs. PR #35082.
-   - Files: `packages/rollup/src/plugins/with-nx/with-nx.ts`
-
-10. **DOC-465: Build-time image optimization for blog** (2026-04-01, PR nrwl/nx-blog#1)
-
-- Summary: Sharp-based responsive WebP generation for 1064 blog images. Fixed broken media paths.
-- Files: `.ai/2026-04-01/SUMMARY.md`
 
 ## TODO
 
@@ -108,6 +101,9 @@
       - This was deleted due to computer restart
     - [ ] #34987 — gradle plugin Windows paths (conf: 85, ✅ approved) `issue-34987` | reports: `/tmp/nightshift-work-hA39f2/reports/`
       - This was deleted due to computer restart
+- [ ] Update Day 2 Montreal on-site agenda with PLG talking points (2026-04-11)
+  - From Joe 1:1 (2026-04-10): 80/20 rule, sticky notes funnel exercise, activation metric (20+ runs / 24hr target), weekly metric reviews
+  - Key themes: every engineer maps their work to a funnel stage, micro→macro metric connection, backend/infra teams included in PLG scrutiny
 - [ ] nx-graph RCE: GHSA + CORS tightening follow-up (2026-04-02)
   - Steve settling on CVE 6.0 medium severity; needs a GHSA filed
   - Jason: CORS wildcard on nx console's PDV (Project Details View) needs major refactor or tightening
@@ -140,6 +136,7 @@
 <!-- Directories with active or resumable Claude sessions. Use `cd <dir> && claude -r` to resume. -->
 <!-- Managed by /end-session and /list-sessions commands. /summarize cleans up stale entries. -->
 
+- `/Users/jack/projects/nx-worktrees/DOC-69` — DOC-69: Versioned docs snapshot script (2026-04-10)
 - `/Users/jack/projects/nx-worktrees/NXC-4182` — NXC-4182: React Router + Vite 8 compat (2026-04-01)
 - `/Users/jack/projects/nx-worktrees/NXC-3345` — NXC-3345: Rollup + SWC rootDir fix for workspace libs (2026-03-25)
 
