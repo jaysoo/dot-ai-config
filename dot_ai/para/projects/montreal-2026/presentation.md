@@ -6,6 +6,7 @@ Agenda:
 - What we shipped (5 mins)
 - How we work (10 mins)
 - AI demos (30 mins)
+- Questionnaire responses, discussion with leadership
 - Group discussion on one topic (60 mins)
 
 Note: Many tie-ins with PLG
@@ -202,12 +203,82 @@ so we can stay focused on 1–2 important things.
 - James — Pi agents for maintenance tasks
 - Juri - Agent factory
 
+
+## Questionnaire Responses
+
+Strategic clarity / prioritization (4 mentions):
+
+- "Some decisions feel like they were made too hastily because we often lack wider context"
+- "How do we decide that something is important to build? Why was self-healing CI, sandboxing, and now polygraph chosen?"
+- "What signals do you use to prioritize what to work on"
+- "Some folks have struggled with the strategic shifts in direction... do you foresee us getting to a place where 
+  we can plan a year or more out?"
+
+PLG direction — is this durable, and what does it mean for us? (4 mentions):
+
+- "How can I be sure the recent shift to PLG is for good and we won't reactively shift back to enterprise focus in 6 months?"
+- "Will the target audience shift from large enterprise clients to smaller business customers? What shifts to pricing?"
+- "How PLG translates into our roadmap and what we prioritize as features"
+- "There are 0 users of nx cloud that don't also use Nx. If we convert at a higher rate but kill net new Nx adoption, 
+  we've traded long-term for short-term."
+
+Community and PLG:
+
+- "How do we manage community wants vs PLG? vite+ and the ox stack — building them out won't equal ARR but community 
+  wants it. Losing the perception of 'if you use nx, you're doing things the modern way' is a risk."*
+
+Split focus / competing priorities (4 mentions):
+
+- "Getting pulled in a lot of different directions / competing priorities"
+- "Split focus — linear issues vs support queue vs gh issues vs effort work... operating in high-priority-only stance 
+  that feels unsustainable"
+- "Cooldown was supposed to be for burning through GH issues but we can't use it that way"
+- "Split in focus between different areas of responsibility and a lack of AI automations for maintenance"
+
+Shipping quality vs. velocity (2 mentions):
+
+- "Shipping half-baked solutions and testing features on enterprise workspaces"
+- "More efforts to improve existing features rather than always building new ones... improve stability in Nx, make graph
+  calculation faster, reduce the need to run nx reset"
+
+Infrastructure / dev experience pain:
+
+- "CI being slow and unreliable is hurting the CLI team's work"
+- "Security incidents (supply chain attacks) have become a consistent disruption"
+
+Process gaps — what does "done" mean?:
+
+- "Streamlining the processes where teams integrate with each other. What should be part of shipping a feature? 
+  Documentation, blog drafts, release excerpts..."
+- "Lack of change log / feature discovery / usage tracking for nx cloud features"
+- "As a DPE there's a lot of work to onboard customers and no great way to distill that understanding into functionality"
+
+Product org / team structure:
+
+- "How will we organize the split between polygraph and nx/cloud within the product org long term? Team cohesion and 
+  potential tension when priorities conflict"
+
+ICs and marketing:
+
+- "What's the most effective marketing ICs could be doing? Social media, blogs, webinars?"
+
 ## Group Discussion
 
-Based on questionnaire responses, or topics raised in the morning session,
-we'll pick 1-2 topics for people to discuss in small groups.
+Based on questionnaire responses, or topics raised in the morning session, we'll pick 1-2 topics for people to 
+discuss in small groups.
 
 Small groups (40–45 min) - self-select by topic. Each group has a lead and scribe.
+
+Suggestions:
+
+- PLG Pricing — What Has to Change in the Product (Joe / Heidi / Jeff / Steve)
+  - "What does self-serve conversion actually require in the product, and how do we grow paid Cloud usage without 
+  slowing net-new Nx adoption?"
+- Focus and Unplanned Work  (Jack / Victor/ Jason/ Altan / Nicole)
+  - "Cooldown is being consumed by high-priority work. How do we structure time so planned, unplanned, and 
+    maintenance work each have a real place?""
+- Polygraph and Nx as Two Product Lines (Joe / Heidi / Jeff)
+  - "How do we organize teams and prioritize across Polygraph and Nx/Cloud so both can grow without conflicting roadmaps?"
 
 Work toward:
 
