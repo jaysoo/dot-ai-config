@@ -160,7 +160,10 @@ Instead of "what can we build" it is "what behavior are we trying to drive"?
 - Not when the feature is merged, or when it is deployed/published but...
 - When the user **does the thing** we wanted them to.
 
-Takeaway: **No signl, no launch**
+**No signl, no launch**
+
+Values & Standards: https://www.notion.so/nxnrwl/Nx-Manifesto-31c69f3c238780728852d7f1b8a3e54d
+  - Give kudos to colleagues who did something worthy of note.
 
 ### Projects -> PLG Funnel Stage
 
