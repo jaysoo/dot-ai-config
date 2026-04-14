@@ -79,8 +79,7 @@ Stakeholders want work tied to revenue.
 **Takeaway:**
 
 - We've built the engine. Throughput is up 50% YoY.
-- **But** we're spreading that energy too thin, priorities are unclear,
-  and it's hard to tie work into revenue.
+- **But** we're spreading that energy too thin, priorities are unclear, and it's hard to tie work into revenue.
 - We need **sharper focus** not more hours.
 - From yesterday: "Teams are working separately rather than together" ~Jeff
 
@@ -89,15 +88,28 @@ Stakeholders want work tied to revenue.
 - TUI and continuous tasks — launch + many fixes/enhancements
 - Self-Healing CI — ClickUp, Mailchimp, Cloudinary, Mimecast, and more
 - Task Sandboxing — Legora, ClickUp, Island, Wix
-- Cloud onboarding — streamlined VCS, one-page flow,
-  template-based flow, `nx-cloud onboard`
-- Agentic Experience (AX) — llms.txt, llms-full.txt, `.md` URLs,
-  agent-friendly `init`/CNW
+- Cloud onboarding — streamlined VCS, one-page flow, template-based flow, `nx-cloud onboard`
+- Agentic Experience (AX) — llms.txt, llms-full.txt, `.md` URLs, agent-friendly `init`/CNW
 - NPM read-through cache, Docker Hub mirror, Docker layer cache
 - Framer, Astro docs, new blog
 - Analytics/telemetry — CLI telemetry, PostHog, Netlify server events
-- Ecosystem — Node 24, Vite 8, Vitest 4, Prettier 3, ESLint 10, Storybook 10,
-  Next.js 16, Cypress 15, .NET and Maven plugins
+- Ecosystem — Node 24, Vite 8, Vitest 4, Prettier 3, ESLint 10, Storybook 10, Next.js 16,
+  Cypress 15, .NET and Maven plugins
+- Lighthouse
+- And more!
+
+## What We Shipped 🚀 (Cont)
+
+- TUI and continuous tasks — launch + many fixes/enhancements
+- Self-Healing CI — ClickUp, Mailchimp, Cloudinary, Mimecast, and more
+- Task Sandboxing — Legora, ClickUp, Island, Wix
+- Cloud onboarding — streamlined VCS, one-page flow, template-based flow, `nx-cloud onboard`
+- Agentic Experience (AX) — llms.txt, llms-full.txt, `.md` URLs, agent-friendly `init`/CNW
+- NPM read-through cache, Docker Hub mirror, Docker layer cache
+- Framer, Astro docs, new blog
+- Analytics/telemetry — CLI telemetry, PostHog, Netlify server events
+- Ecosystem — Node 24, Vite 8, Vitest 4, Prettier 3, ESLint 10, Storybook 10, Next.js 16,
+  Cypress 15, .NET and Maven plugins
 - Lighthouse
 - And more!
 
@@ -118,12 +130,9 @@ We've built the engine. 2026 points it at the right things.
 
 - Each team focuses on **1–2 projects** at a time. Depth over breadth.
 - Active projects updated at least once a week in Linear.
-  - Jeff should be able to open a short list and find everything
-    without asking on Slack.
-- Proposals are projects in backlog. Planning every two months to accept
-  a limited number of them.
-- Projects that run over -> carry over or cancel (Shape Up).
-  Trim scope aggressively.
+  - Jeff should be able to open a short list and find everything without asking on Slack.
+- Proposals are projects in backlog. Planning every two months to accept a limited number of them.
+- Projects that run over -> carry over or cancel (Shape Up). Trim scope aggressively.
 
 ### Shipping != Success
 
@@ -133,8 +142,7 @@ We've built the engine. 2026 points it at the right things.
 ### Planned Work Needs Three Things
 
 1. A funnel stage (Acquisition / Activation / Adoption / Conversion).
-2. A success metric - Not "we shipped it" but
-   "600 claimed workspaces a week for Cloud"
+2. A success metric - Not "we shipped it" but "600 claimed workspaces a week for Cloud"
    or "100 nx init with Cloud each week".
 3. A measurement plan - Do the signals exist, or do we need to build them?.
 
@@ -159,8 +167,7 @@ These are the entry signals for Cloud (Quork-A):
 
 Acquisition - workspace claimed in Cloud
 
-- Increase "yes" to Cloud prompt, reduce CNW/init errors,
-  one-page onboarding in 20s
+- Increase "yes" to Cloud prompt, reduce CNW/init errors, one-page onboarding in 20s
 
 Activation - 20+ successful CIPE runs
 
@@ -168,23 +175,20 @@ Activation - 20+ successful CIPE runs
 
 Adoption - would they notice if the product disappeared?
 
-- Second team member invited, self-healing fixes applied,
-  growing CIPE runs
+- Second team member invited, self-healing fixes applied, growing CIPE runs
 
 Conversion - they pay
 
-- Credit limit -> upgrade, growing billing, self-serve upgrades
-  enterprise features (self-healing, SCIM, private links,
-  npm/docker read-through),
+- Credit limit -> upgrade, growing billing, self-serve upgrades, enterprise features
+  e.g. self-healing, SCIM, private links, npm/docker read-through
 
 Question: What are the signals for CLI, for Polygraph?
 
 ### Unplanned Work Happens, But Should Not Slow Us Down (Too Much)
 
-- Unplanned work is tracked in Linear, not Slack.
-  Each team budgets a % for unplanned.
-- Need to know how much time spent on planned vs unplanned
-  so we know if there's a problem. Without data, we're flying blind.
+- Unplanned work is tracked in Linear, not Slack. Each team budgets a % for unplanned.
+- Need to know how much time spent on planned vs unplanned so we know if there's a problem.
+  Without data, we're flying blind.
 - Reminder: P0 = drop everything. P1 = 7 days (14 for CLI).
 
 What about capacity? "We have too much to do!"
