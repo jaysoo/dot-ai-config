@@ -329,7 +329,7 @@ require("lazy").setup({
 				git = { enable = true, ignore = false },
 				renderer = { highlight_git = true, icons = { show = { git = true } } },
 			})
-      vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFile<cr>", { desc = "Find file in [E]xplorer" })
+			vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFile<cr>", { desc = "Find file in [E]xplorer" })
 			vim.keymap.set("n", "<leader>w", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file [E]xplorer" })
 		end,
 	},
@@ -960,39 +960,46 @@ require("lazy").setup({
 		},
 	},
 
--- In your lazy.setup({...}) list, add:
+	-- In your lazy.setup({...}) list, add:
 
--- Markdown slide presentations
-{
-  "https://github.com/sotte/presenting.nvim",
-  opts = {},
-  cmd = { "Presenting" },
-},
+	-- Markdown slide presentations
+	{
+		"https://github.com/sotte/presenting.nvim",
+		config = function()
+			require("presenting").setup({
+				options = {
+					width = vim.o.columns - 12,
+					height = vim.o.lines - 12,
+				},
+			})
+		end,
+		cmd = { "Presenting" },
+	},
 
--- Distraction-free / zen mode
-{
-  "folke/zen-mode.nvim",
-  opts = {
-    window = {
-      width = 80,
-      options = {
-        number = false,
-        relativenumber = false,
-        signcolumn = "no",
-        cursorline = false,
-      },
-    },
-    plugins = {
-      options = { laststatus = 0 },
-      twilight = { enabled = false },
-      gitsigns = { enabled = false },
-      tmux = { enabled = true }, -- hides tmux statusbar too
-    },
-  },
-  keys = {
-    { "<leader>z", "<cmd>ZenMode<cr>", desc = "Toggle [Z]en Mode" },
-  },
-},
+	-- Distraction-free / zen mode
+	{
+		"folke/zen-mode.nvim",
+		opts = {
+			window = {
+				width = 120,
+				options = {
+					number = false,
+					relativenumber = false,
+					signcolumn = "no",
+					cursorline = false,
+				},
+			},
+			plugins = {
+				options = { laststatus = 0 },
+				twilight = { enabled = false },
+				gitsigns = { enabled = false },
+				tmux = { enabled = true }, -- hides tmux statusbar too
+			},
+		},
+		keys = {
+			{ "<leader>z", "<cmd>ZenMode<cr>", desc = "Toggle [Z]en Mode" },
+		},
+	},
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
@@ -1139,4 +1146,3 @@ vim.filetype.add({
 		astro = "astro",
 	},
 })
-

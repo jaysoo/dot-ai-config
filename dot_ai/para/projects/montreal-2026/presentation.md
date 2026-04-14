@@ -12,27 +12,27 @@ Note: Many tie-ins with PLG
 
 ## SPACE Metrics — How We're Doing
 
-We're healthy, but can do better in the __satisfaction__ dimension.
+We're healthy, but can do better in the **satisfaction** dimension.
 
-Throughput (Activity): 
+Throughput (Activity):
 
-  - 2,215 PRs in Q1 2026 vs 1,475 in Q1 2025
-  - __50% YoY increase__
+- 2,215 PRs in Q1 2026 vs 1,475 in Q1 2025
+- **50% YoY increase**
 
 Planning Accuracy Q1 2026 (Performance)
 
-| Team       | Actual | Planned |
-|------------|--------|---------|
-| Orca       | 60.2%  | 75%     |
-| Kraken     | 50%    | 75%     |
-| Red Panda  | 88.8%  | 80%     |
-| Dolphin    | 70.3%  | 50%     |
-| Quokka     | 93.2%  | 75%     |
+| Team      | Actual | Planned |
+| --------- | ------ | ------- |
+| Orca      | 60.2%  | 75%     |
+| Kraken    | 50%    | 75%     |
+| Red Panda | 88.8%  | 80%     |
+| Dolphin   | 70.3%  | 50%     |
+| Quokka    | 93.2%  | 75%     |
 
 Median PR Cycle Time Q1 2026 (Collaboration & Efficiency)
 
 | Repo                 | Cycle Time |
-|----------------------|------------|
+| -------------------- | ---------- |
 | nx                   | 6.5h       |
 | ocean                | 3.3h       |
 | nx-console           | 2.1h       |
@@ -40,21 +40,21 @@ Median PR Cycle Time Q1 2026 (Collaboration & Efficiency)
 
 MTTR for P0/P1 Issues Q1 2026 (Collaboration & Efficiency)
 
-| Team      | MTTR    |
-|-----------|---------|
-| Orca      | 6.4d    |
-| Kraken    | 0.1d    |
-| Dolphin   | 5.1d    |
-| Quokka    | 2.5d    |
-| Red Panda | 285.1d* |
+| Team      | MTTR     |
+| --------- | -------- |
+| Orca      | 6.4d     |
+| Kraken    | 0.1d     |
+| Dolphin   | 5.1d     |
+| Quokka    | 2.5d     |
+| Red Panda | 285.1d\* |
 
-Satisfaction: 
+Satisfaction:
 
-  - Autonomy/growth 4.3/5
-  - Sustainability 3.4/5
-  - Recognition 3.5/5
+- Autonomy/growth 4.3/5
+- Sustainability 3.4/5
+- Recognition 3.5/5
 
-### _S_PACE - What the Surveys Are Telling Us
+### \_S_PACE - What the Surveys Are Telling Us
 
 Sustainability - work smart, not hard.
 
@@ -78,9 +78,9 @@ Stakeholders want work tied to revenue.
 
 **Takeaway:**
 
-- We've built the engine. Throughput is up 50% YoY. 
-- __But__ we're spreading that energy too thin, priorities are unclear, 
-  and it's hard to tie work into revenue. 
+- We've built the engine. Throughput is up 50% YoY.
+- **But** we're spreading that energy too thin, priorities are unclear,
+  and it's hard to tie work into revenue.
 - We need **sharper focus** not more hours.
 - From yesterday: "Teams are working separately rather than together" ~Jeff
 
@@ -103,14 +103,14 @@ Stakeholders want work tied to revenue.
 
 Question #1: Which of these tie to a stage in PLG funnel?
 
-  1. Acquisition
-  2. Activation
-  3. Adoption
-  4. Conversion
+1. Acquisition
+2. Activation
+3. Adoption
+4. Conversion
 
 Question #2: How do you know if/when a feature is successful?
 
-We need an __engineering shift__ to align with PLG.
+We need an **engineering shift** to align with PLG.
 
 ## How We Work
 
@@ -119,23 +119,23 @@ We've built the engine. 2026 points it at the right things.
 - Each team focuses on **1–2 projects** at a time. Depth over breadth.
 - Active projects updated at least once a week in Linear.
   - Jeff should be able to open a short list and find everything
-  without asking on Slack.
-- Proposals are projects in backlog. Planning every two months to accept 
+    without asking on Slack.
+- Proposals are projects in backlog. Planning every two months to accept
   a limited number of them.
 - Projects that run over -> carry over or cancel (Shape Up).
   Trim scope aggressively.
 
 ### Shipping != Success
 
-- Features that launch without adoption are __failures__.
-- __Stop__ thinking "we built it, now marketing sells it".
+- Features that launch without adoption are **failures**.
+- **Stop** thinking "we built it, now marketing sells it".
 
 ### Planned Work Needs Three Things
 
 1. A funnel stage (Acquisition / Activation / Adoption / Conversion).
-2. A success metric - Not "we shipped it" but 
-  "600 claimed workspaces a week for Cloud" 
-  or "100 nx init with Cloud each week".
+2. A success metric - Not "we shipped it" but
+   "600 claimed workspaces a week for Cloud"
+   or "100 nx init with Cloud each week".
 3. A measurement plan - Do the signals exist, or do we need to build them?.
 
 Project have micro metrics that tie into the macro business goals.
@@ -146,32 +146,36 @@ We'll review them during all-hands meetings.
 You don't just ship code, you ship sensors (aka machines + gauges).
 A great feature without signal means we're flyning blind.
 
-Instead of "what can we build" it is "what behavior are we trying to drive"? 
+Instead of "what can we build" it is "what behavior are we trying to drive"?
 
 - Not when the feature is merged, or when it is deployed/published but...
-- When the user __does the thing__ we wanted them to.
+- When the user **does the thing** we wanted them to.
 
-Takeaway: __No signl, no launch__
+Takeaway: **No signl, no launch**
 
 ### Projects -> PLG Funnel Stage
 
 These are the entry signals for Cloud (Quork-A):
 
 Acquisition - workspace claimed in Cloud
+
 - Increase "yes" to Cloud prompt, reduce CNW/init errors,
   one-page onboarding in 20s
 
 Activation - 20+ successful CIPE runs
+
 - Reduce time to first "aha" moment, feature demos
 
 Adoption - would they notice if the product disappeared?
+
 - Second team member invited, self-healing fixes applied,
   growing CIPE runs
 
 Conversion - they pay
+
 - Credit limit -> upgrade, growing billing, self-serve upgrades
-  enterprise features (self-healing, SCIM, private links, 
-  npm/docker read-through), 
+  enterprise features (self-healing, SCIM, private links,
+  npm/docker read-through),
 
 Question: What are the signals for CLI, for Polygraph?
 
@@ -179,7 +183,7 @@ Question: What are the signals for CLI, for Polygraph?
 
 - Unplanned work is tracked in Linear, not Slack.
   Each team budgets a % for unplanned.
-- Need to know how much time spent on planned vs unplanned 
+- Need to know how much time spent on planned vs unplanned
   so we know if there's a problem. Without data, we're flying blind.
 - Reminder: P0 = drop everything. P1 = 7 days (14 for CLI).
 
@@ -196,17 +200,19 @@ so we can stay focused on 1–2 important things.
 
 ## Group Discussion
 
-Based on questionnaire responses, or topics raised in the morning session, we'll pick one topic for people to discuss in small groups.
-Let's reconvene for the last 15 mins for each group to summarize their discussions, including commitments they want Jeff/Victor/A Lead to commit to.
+Based on questionnaire responses, or topics raised in the morning session,
+we'll pick 1-2 topics for people to discuss in small groups.
 
-Small groups (40–45 min) — self-select by topic. Each group has a lead and scribe. Work toward:
+Small groups (40–45 min) - self-select by topic. Each group has a lead and scribe.
+
+Work toward:
 
 1. What's the actual problem?
 2. What are the options?
 3. What does this group recommend?
 
 Reconvene (15 min) - each group presents (5 min). Jeff/Victor/leads respond:
+
 - "Yes, here's who owns it and by when."
 - "Not yet, we need [X] first, answer by [date]."
 - "No, here's why."
-

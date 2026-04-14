@@ -6,7 +6,7 @@ Monthly audit of direct external dependencies across Nx CLI packages. Tracks unm
 
 | Month | File | Summary |
 |-------|------|---------|
-| 2026-04 | [2026-04.md](./2026-04.md) | 146 deps: 21 critical (+14), 15 warning (-4), 7 watch (-6). @ltd/j-toml removed (replaced by smol-toml). 14 Warning->Critical from aging. 5 deps removed. |
+| 2026-04 | [2026-04.md](./2026-04.md) | 173 deps: 21 critical (+14), 15 warning (-4), 14 watch (+1). @ltd/j-toml + front-matter removed (March actions). 9 Warning->Critical from aging. enquirer + tcp-port-used still top priorities. |
 | 2026-03 | [2026-03.md](./2026-03.md) | Initial audit: 169 core deps |
 
 ## Classification
