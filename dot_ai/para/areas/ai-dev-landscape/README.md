@@ -6,7 +6,7 @@ Monthly scan of the AI-native development tools ecosystem, tracking signals rele
 
 | Month | File | Key Themes |
 |-------|------|------------|
-| 2026-04 | [2026-04.md](./2026-04.md) | A2A v1.0 (150+ orgs), Copilot SDK + Autopilot + agent firewall + data controversy, Claude Code v2.1.97 + Bedrock + Agent SDK, Cursor 3 Agents Window + /best-of-n + Bugbot 78%, AGENTS.md Linux Foundation, MCP Server Cards + 10K+ servers, Paperclip 46.9K stars, Jules proactive tasks, monorepo+AI narrative validated externally |
+| 2026-04 | [2026-04.md](./2026-04.md) | **Claude Opus 4.7 GA** (+ `xhigh` effort), Claude Code v2.1.114 (`/ultrareview`, `/less-permission-prompts`, PowerShell tool, native binary CLI, 3x Bash CVE waves), **Claude Design** launch, **Windsurf 2.0 with Devin integrated**, Codex 26.415 computer-use, Cursor 3.1 + canvases + Bugbot 78%, Copilot SDK + Autopilot + Opus 4.7 + `gh skill` + Pro trials still paused + data residency, A2A v1.0 (150+ orgs), AGENTS.md Linux Foundation, **MCP Skills WG + `.well-known/agent-skills/`** + Roots/Sampling/Logging deprecation proposed, 10K+ MCP servers, Paperclip 46.9K stars, monorepo+AI narrative validated externally |
 | 2026-03 | [2026-03.md](./2026-03.md) | MCP spec v2 + OAuth 2.1, Claude Code v2.1.76, Google Antigravity launch, Codex desktop app, agentic CI maturing |
 
 ## Categories Tracked

@@ -11,7 +11,7 @@ Monthly reports tracking frameworks and bundlers that Nx wraps via plugins.
 
 | Month | Key Events |
 |-------|-----------|
-| [2026-04](./2026-04.md) | Angular 22 next.7 drops TS<6 + removes CFR (escalated to P0), Rspack 2 RC.1, Vite 8.0.8 stabilizing, React 19.2.5 RSC fix |
+| [2026-04](./2026-04.md) | Angular SSRF backport (19/20/21/22-next), Angular 22 next.8 incremental hydration default, Rspack 2 RC.2, Next.js 16.2.4 Turbopack fixes, Vite 8.0.8 / Rolldown rc.16 active churn |
 | [2026-03](./2026-03.md) | Vite 8 + Rolldown ships, Angular 22 preview drops Node 20, Rspack 2 beta, Next.js 16.2 Adapters stable |
 
 ## How to Use

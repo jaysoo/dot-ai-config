@@ -15,5 +15,5 @@ Monthly supply chain security reviews for Nx published packages.
 
 | Month | File | Status |
 |-------|------|--------|
-| 2026-04 | [2026-04.md](./2026-04.md) | Current |
-| 2026-03 | [2026-03.md](./2026-03.md) | Previous |
+| 2026-04 | [2026-04.md](./2026-04.md) | Current — YELLOW, nx-cloud provenance gap (month 3), new polygraph-mcp supply chain concern |
+| 2026-03 | [2026-03.md](./2026-03.md) | Previous — YELLOW |

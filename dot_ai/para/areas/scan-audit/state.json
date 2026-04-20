@@ -1,21 +1,21 @@
 {
-  "lastRun": "2026-04-13T23:40:00Z",
+  "lastRun": "2026-04-16T13:50:00Z",
   "lastWeeklyReport": "2026-W16",
   "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
   "findings": {
-    "cnw-templates": { "critical": 0, "high": 4, "medium": 21, "low": 6, "templates-tested": 4, "cnw-version": "22.6.5", "axios-ssrf-resolved": true, "picomatch-resolved": true, "vite-angular-only": true, "lodash-minimatch-ts-only": true },
-    "dependencies": { "critical": 21, "warning": 15, "watch": 14, "enquirer-990d": true, "smol-toml-swapped": true },
-    "supply-chain": { "status": "yellow", "cves": 0, "advisories-total": 309, "advisories-high": 136, "latest-nx": "22.6.5", "latest-nx-cloud": "19.1.3", "nx-cloud-provenance-gap": true, "provenance-gap-month": 2 },
-    "api-surface": { "high": 15, "medium": 47, "low": 23, "undocumented-ai-cli": 3, "past-deadline-deprecations": 7 },
-    "competitors": { "highlights": 5, "turbo-stable": "2.9.6", "turbo-threat-HIGH": true, "turbo-3-planted": true, "moon-v2.2-daemon": true, "bazel-9.1.0rc1": true },
-    "frameworks": { "compat-risks": 8, "p0-risks": 4, "vite-8-ga": "8.0.8", "rspack-2-rc1": true, "next-cve-16.2.3": true, "angular-22-ts6": true },
-    "runtimes": { "action-items": 9, "node20-eol-days": 17, "dep0205-module-register": true, "node-bounty-paused": true, "bun-cgroup-parallelism": true },
-    "ai-landscape": { "highlights": 18, "opportunities": 12, "risks": 7, "cursor-3": true, "claude-code": "v2.1.97", "mcp-servers-indexed": 10000, "server-cards-progressing": true },
-    "community": { "top-pain-points": 5, "closure-rate-pct": 59, "lgpl-issue-35156": true, "downloads-weekly-avg": "10.58M", "pylon-refresh-needed": true },
-    "capacity": { "high-risk-people": 2, "medium-high-risk-people": 3, "overdue-items": 13, "overdues-resolved-4d": 0, "max-escalated": true, "projects-past-target": 6 },
-    "project-health": { "zombies": 4, "zombie-consecutive-flags": 12, "overdue-projects": 13, "paused-projects": 9, "nicole-revenue-overdue-count": 9 },
-    "customer-deps": { "churned": 1, "cooling": 4, "concentration-risks": 3, "clickup-features": 6, "fidelity-urgent-apr17": true, "medianet-maven-52d": true, "steven-nance-overloaded": true },
-    "priority-mismatch": { "bump-candidates": 0, "stale-hot": 0 }
+    "cnw-templates": { "critical": 0, "high": 4, "medium": 21, "low": 6, "templates-tested": 4, "cnw-version": "22.6.5", "unchanged-since": "2026-04-13" },
+    "dependencies": { "critical": 21, "warning": 15, "watch": 13, "healthy": 124, "unchanged-since": "2026-04-13", "flat-gh-pushed": "2026-03-19", "last-scanned": "2026-04-20", "dotenv-expand-republished": "2026-04-17" },
+    "supply-chain": { "status": "yellow", "cves": 0, "advisories-total": 309, "advisories-high": 136, "latest-nx": "22.6.5", "latest-nx-cloud": "19.1.3", "nx-cloud-provenance-gap": true, "provenance-gap-month": 3, "polygraph-mcp-new": "0.1.6", "npm-audit-v1-retired": true },
+    "api-surface": { "high": 15, "medium": 47, "low": 23, "consecutive-identical-scans": 3 },
+    "competitors": { "highlights": 5, "turbo-stable": "2.9.6", "turbo-threat-HIGH": true, "moon-ai-skills-shipped": true, "bazel-9.1.0rc3": true, "pants-alpha-channel": true },
+    "frameworks": { "compat-risks": 10, "p0-risks": 3, "p1-risks": 5, "p2-risks": 2, "new-p0-angular-ssrf": true, "next-16.2.4": true, "rspack-2-rc2": true, "angular-22-hydration-default": true },
+    "runtimes": { "action-items": 9, "node20-eol-days": 14, "node-24.15.0-lts": true, "require-esm-stable": true, "compile-cache-stable": true },
+    "ai-landscape": { "highlights": 22, "opportunities": 15, "risks": 8, "claude-code": "v2.1.110", "claude-code-release-burst": 13, "copilot-pro-trials-paused": true, "cursor-canvases": true, "windsurf-gemini3-pro": true },
+    "community": { "top-pain-points": 5, "closure-rate-pct": 62, "lgpl-issue-35156-days": 14, "downloads-weekly-avg": "9.31M", "new-cve-35311": true, "pylon-refresh-needed": true },
+    "capacity": { "high-risk-people": 2, "medium-high-risk-people": 3, "overdue-items": 13, "overdues-resolved-7d": 0, "linear-mcp-unavailable": true, "refresh-required": "2026-04-20" },
+    "project-health": { "zombies": 4, "zombie-consecutive-flags": 13, "overdue-projects": 13, "paused-projects": 9, "admin-close-window-expires": "2026-04-18", "linear-mcp-unavailable": true },
+    "customer-deps": { "churned": 1, "lost-cumulative": 3, "cooling-total": 16, "concentration-risks": 3, "clickup-features": 6, "fidelity-deadline": "2026-04-17", "steven-nance-overloaded": true, "linear-mcp-unavailable": true },
+    "priority-mismatch": { "bump-candidates": 1, "stale-hot": 0, "notes": "github label taxonomy uses different format than expected query" }
   }
 }

@@ -18,7 +18,7 @@ When the user asks about goals, targets, or whether metrics are on track, compar
 
 | Metric | Baseline (when set) | Nov 2025 Baseline | Target | How to Measure |
 |--------|---------------------|-------------------|--------|----------------|
-| **CNW completions/day** | 1,368 | 1,915 | **3,000** | All `complete` events, no filters (includes CI, AI, contentful). Use `$or: [{meta: {$regex: "\"type\":\"complete\""}}, {meta: {$regex: "which-ci-provider"}}]` with NO exclusion filters. |
+| **CNW completions/day** | 1,368 | 1,915 | **2,000** | All `complete` events, no filters (includes CI, AI, contentful) — apples-to-apples with baseline. Use `$or: [{meta: {$regex: "\"type\":\"complete\""}}, {meta: {$regex: "which-ci-provider"}}]` with NO exclusion filters. Target reduced from 3,000 → 2,000 on 2026-04-20. |
 | **Init invocations/day** | 164 | 247 | **300** | `command: "init"` in commandStats. Pre-22.6.4: each doc is one invocation (no type field). 22.6.4+: emits JSON meta with `type` field (start/complete/error), so count `start` events or total docs depending on era. See "Init Command Stats" section. |
 | **Cloud "yes" rate** | ~3.7% (22.6.0) | ~50% (inflated by CI prompt) | **15%** | `nxCloudArg: "yes"` as % of human completions (excl CI/AI/contentful). Do NOT count CI providers (github, gitlab, etc.) — only explicit "yes". Nov was inflated by the 22.5.4 CI provider prompt experiment (see Telemetry Feature Timeline). |
 | **Claimed/Completed CNW %** | ~1-2.5% | — | **5%** | Cannot be calculated from commandStats alone — requires Nx Cloud activation data. Flag as unmeasurable when reporting. |
@@ -174,27 +174,45 @@ function categorize(meta) {
 
 ## Default Filters
 
-**Always apply** these filters to all queries unless the user explicitly asks to include them:
+### Headline "completions/day" metric — NO exclusions
 
-1. **Exclude CI runs** — `{ isCI: false }` — CI runs (e.g. `@schenker/workspace@e2e`, automated pipelines) heavily skew funnels since they often fire `start` but never reach `precreate`. Only ~18% of CI starts convert to precreate vs ~79% for humans.
-2. **Exclude AI agent runs** — `{ meta: { $not: { $regex: "\"aiAgent\":true" } } }` — AI agents have very different error profiles (high `DIRECTORY_EXISTS` and `INVALID_WORKSPACE_NAME` from retries and invalid names like `"."` or numeric prefixes). They also heavily favor pnpm, skewing package manager stats.
-3. **Exclude @contentful/nx** — `{ meta: { $not: { $regex: "contentful" } } }` — High-volume automated preset that drowns out organic usage.
+**The 2,000 completions/day target is measured against ALL completions**, including CI, AI agents, and @contentful/nx. The Nov 2025 / Mar 2026 baselines (1,368 / 1,915) were computed this way, so apples-to-apples comparison requires keeping those populations in. When reporting the headline completions number, do NOT apply the funnel filters below.
 
-**Standard base filter for all queries:**
 ```js
-const base = [
+// Headline completions — NO exclusions beyond command + date
+const headlineBase = [
+  { command: "create-nx-workspace" },
+  { createdAt: { $gte: startDate, $lte: endDate } }
+];
+```
+
+### Funnel + cloud breakdown — split by population
+
+The funnel and cloud opt-in analysis should separate two populations so CI noise doesn't distort conversion rates:
+
+1. **Human + AI** (`isCI: false`, excl. @contentful) — the meaningful funnel. AI agents are kept in alongside humans because they represent real CNW usage; their error profile is noted in the AI breakdown.
+2. **CI-only** (`isCI: true`) — reported separately. CI runs often fire `start` but never reach `precreate` (~18% conversion vs ~79% for humans), so mixing them into the funnel hides real conversion issues.
+
+```js
+// Human + AI funnel base (exclude only CI and contentful)
+const funnelBase = [
   { command: "create-nx-workspace" },
   { createdAt: { $gte: startDate, $lte: endDate } },
   { isCI: false },
-  { meta: { $not: { $regex: "contentful" } } },
-  { meta: { $not: { $regex: "\"aiAgent\":true" } } }
+  { meta: { $not: { $regex: "contentful" } } }
 ];
-// Use with: { $and: [...base, { meta: { $regex: "\"type\":\"start\"" } }] }
+
+// CI-only base (for separate breakdown)
+const ciBase = [
+  { command: "create-nx-workspace" },
+  { createdAt: { $gte: startDate, $lte: endDate } },
+  { isCI: true }
+];
 ```
 
-**CRITICAL (discovered Apr 2026):** Always include `{ command: "create-nx-workspace" }` in the base filter. Starting in 22.6.4, `init` and `migrate` commands also emit JSON meta with `nxVersion`, so filtering only on meta fields will pull in non-CNW events. The `init` events have no `flowVariant`, no `nxCloudArg`, and no `precreate` — they show up as "FV unknown" with `nxCloudArg: "unknown"` and inflate error rates.
+Within the human+AI funnel, also report an **AI-only sub-breakdown** (`meta: { $regex: "\"aiAgent\":true" }`) so the AI error profile (high `DIRECTORY_EXISTS`, `INVALID_WORKSPACE_NAME` from retries) is visible but doesn't hide the human numbers.
 
-If the user asks for AI or CI stats specifically, run those as a **separate breakdown** alongside the main (filtered) numbers.
+**CRITICAL (discovered Apr 2026):** Always include `{ command: "create-nx-workspace" }` in any base filter. Starting in 22.6.4, `init` and `migrate` commands also emit JSON meta with `nxVersion`, so filtering only on meta fields will pull in non-CNW events. The `init` events have no `flowVariant`, no `nxCloudArg`, and no `precreate` — they show up as "FV unknown" with `nxCloudArg: "unknown"` and inflate error rates.
 
 ### Init Command Stats
 

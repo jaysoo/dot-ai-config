@@ -10,7 +10,7 @@ Monthly scan of Nx platform community health, covering GitHub Issues, Discussion
 | ------- | ------------ | ---------------------------------------------------- |
 | 2026-02 | `2026-02.md` | First run. 60-day lookback from 2025-12-29.          |
 | 2026-03 | `2026-03.md` | 60-day lookback from 2026-01-29. Updated 2026-03-30 (7th scan). Windows emerged as major theme. Node 25 compat, picomatch CVE. |
-| 2026-04 | `2026-04.md` | 60-day lookback from 2026-02-08. Updated 2026-04-09 (2nd pass). Downloads ~9.6M/week (stable). LGPL licensing concern (#35156). Pylon refreshed: 158 tickets -- CI/Pipeline (39), Billing (16), Setup/Auth (14) dominate. #34529 resolved. All security CVEs closed. |
+| 2026-04 | `2026-04.md` | 60-day lookback from 2026-02-19. Updated 2026-04-20 (refresh #2). Downloads ~10.22M/week (record). Closure rate 65.8% (98/149). **#35156 LGPL RESOLVED Apr 16** (14d, enterprise blocker closed). **#35270 pnpm 11 Bun merged Apr 17**. #35311 Axios CVE OPEN but maintainer-answered Apr 16 (workaround + ^2.3.3 bump pledged). New Windows regression cluster: #35339 WAL crash, #35345 ARM64 Asahi, #35344 Docker. Top unresponded shifted to #34542 (nx release workspace-file bumps, 57d, 3 upvotes). Pylon auth flow started but requires user browser. |
 
 ## Sources
 

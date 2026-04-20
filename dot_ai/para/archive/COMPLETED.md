@@ -2,6 +2,9 @@
 
 ### April 2026
 
+- [x] DOC-478: Clean up nx-dev to ai-chat, api, courses only (2026-04-16) ✓ 2026-04-17
+  - Summary: Stripped nx-dev down to /ai-chat, /api/query-ai-handler, /api/query-ai-embeddings, /courses. Deleted top-level docs/ (~333MB). Removed 9 unused nx-dev/* libs, simplified feature-ai, removed conformance rules and scripts. ~148k lines deleted. PR #35315.
+
 - [x] DOC-69: Versioned docs snapshot script (2026-04-10) ✓ 2026-04-10
   - Summary: Built `scripts/create-versioned-docs.mts` — creates orphan branches with pre-built static docs for Netlify branch deploys (v18-v22). Auto Node switching via mise, `NETLIFY_NEXT_PLUGIN_SKIP` for static serving. PR #35264.
 
