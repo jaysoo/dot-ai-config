@@ -1,21 +1,21 @@
 {
-  "lastRun": "2026-04-16T13:50:00Z",
-  "lastWeeklyReport": "2026-W16",
+  "lastRun": "2026-04-20T14:00:00Z",
+  "lastWeeklyReport": "2026-W17",
   "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
   "findings": {
-    "cnw-templates": { "critical": 0, "high": 4, "medium": 21, "low": 6, "templates-tested": 4, "cnw-version": "22.6.5", "unchanged-since": "2026-04-13" },
-    "dependencies": { "critical": 21, "warning": 15, "watch": 13, "healthy": 124, "unchanged-since": "2026-04-13", "flat-gh-pushed": "2026-03-19", "last-scanned": "2026-04-20", "dotenv-expand-republished": "2026-04-17" },
-    "supply-chain": { "status": "yellow", "cves": 0, "advisories-total": 309, "advisories-high": 136, "latest-nx": "22.6.5", "latest-nx-cloud": "19.1.3", "nx-cloud-provenance-gap": true, "provenance-gap-month": 3, "polygraph-mcp-new": "0.1.6", "npm-audit-v1-retired": true },
-    "api-surface": { "high": 15, "medium": 47, "low": 23, "consecutive-identical-scans": 3 },
-    "competitors": { "highlights": 5, "turbo-stable": "2.9.6", "turbo-threat-HIGH": true, "moon-ai-skills-shipped": true, "bazel-9.1.0rc3": true, "pants-alpha-channel": true },
-    "frameworks": { "compat-risks": 10, "p0-risks": 3, "p1-risks": 5, "p2-risks": 2, "new-p0-angular-ssrf": true, "next-16.2.4": true, "rspack-2-rc2": true, "angular-22-hydration-default": true },
-    "runtimes": { "action-items": 9, "node20-eol-days": 14, "node-24.15.0-lts": true, "require-esm-stable": true, "compile-cache-stable": true },
-    "ai-landscape": { "highlights": 22, "opportunities": 15, "risks": 8, "claude-code": "v2.1.110", "claude-code-release-burst": 13, "copilot-pro-trials-paused": true, "cursor-canvases": true, "windsurf-gemini3-pro": true },
-    "community": { "top-pain-points": 5, "closure-rate-pct": 62, "lgpl-issue-35156-days": 14, "downloads-weekly-avg": "9.31M", "new-cve-35311": true, "pylon-refresh-needed": true },
-    "capacity": { "high-risk-people": 2, "medium-high-risk-people": 3, "overdue-items": 13, "overdues-resolved-7d": 0, "linear-mcp-unavailable": true, "refresh-required": "2026-04-20" },
-    "project-health": { "zombies": 4, "zombie-consecutive-flags": 13, "overdue-projects": 13, "paused-projects": 9, "admin-close-window-expires": "2026-04-18", "linear-mcp-unavailable": true },
-    "customer-deps": { "churned": 1, "lost-cumulative": 3, "cooling-total": 16, "concentration-risks": 3, "clickup-features": 6, "fidelity-deadline": "2026-04-17", "steven-nance-overloaded": true, "linear-mcp-unavailable": true },
-    "priority-mismatch": { "bump-candidates": 1, "stale-hot": 0, "notes": "github label taxonomy uses different format than expected query" }
+    "cnw-templates": { "critical": 0, "high": 5, "medium": 21, "low": 6, "templates-tested": 4, "cnw-version": "22.6.5", "new-angular-ssrf": "GHSA-45q2-gjvg-7973" },
+    "dependencies": { "critical": 21, "warning": 15, "watch": 13, "healthy": 124, "total": 173, "dotenv-expand-resolved": "2026-04-17", "flat-gh-pending-since": "2026-03-19" },
+    "supply-chain": { "status": "yellow", "new-critical-dev-only": "CVE-2026-41242 protobufjs", "latest-nx": "22.6.5", "latest-nx-cloud": "19.1.3", "nx-cloud-provenance-gap-months": 3, "polygraph-mcp-latest": "0.1.7", "hardening-pr-35159": "2026-04-07", "files-allowlist-pr-35109": "2026-04-01" },
+    "api-surface": { "high": 5, "medium": 4, "low": 4, "total": 13, "delta-vs-last-week": -72, "docs-consolidation-pr": "35315", "methodology-needs-narrowing": true },
+    "competitors": { "highlights": 6, "turbo-threat-HIGH": true, "turbo-stable": "2.9.6", "turbo-canary": "2.9.7-canary.13", "moon-latest": "2.2.2", "gradle-rc": "9.5.0-RC3", "gradle-task-provenance-new": true },
+    "frameworks": { "compat-risks": 11, "p0-risks": 3, "p1-risks": 5, "p2-risks": 3, "angular-ssrf-upstream-patched": true, "rspack-2-rc3": true, "next-canary": "16.3.0-canary.2", "vite-latest": "8.0.9" },
+    "runtimes": { "action-items": 13, "node20-eol-days": 10, "node20-eol-date": "2026-04-30", "node-24.15.0-lts": true, "bun-1.3.13-test-parity-threat": true, "bun-test-new-flags": ["--parallel","--shard","--changed","--isolate"] },
+    "ai-landscape": { "highlights": 26, "opportunities": 18, "risks": 10, "claude-code": "v2.1.114", "claude-opus-4-7-ga": "2026-04-16", "claude-design-launch": "2026-04-17", "windsurf-2-0": "2026-04-15", "mcp-sep-2586-skills-wg": true, "mcp-sep-2577-deprecation-draft": true },
+    "community": { "top-pain-points": 11, "closure-rate-pct": 65.8, "lgpl-35156-closed": "2026-04-16", "cve-35311-defanged": true, "downloads-weekly": "10.22M", "windows-regression-cluster": true, "pylon-oauth-incomplete": true },
+    "capacity": { "high-risk-people": 2, "medium-high-risk-people": 3, "overdue-items": 14, "overdues-resolved-7d": 0, "new-overdue-nxc-4238": true, "silent-target-drift-systemic": true, "linear-mcp-flaky": true },
+    "project-health": { "zombies": 4, "zombie-consecutive-flags": 14, "overdue-projects": 11, "admin-close-window-FAILED": true, "admin-close-failed-date": "2026-04-18", "nicole-self-triaged-3": true, "cibc-data-correction": true },
+    "customer-deps": { "churned-cycle": 0, "lost-cumulative": 3, "cooling-total": 15, "concentration-risks": 4, "hilton-critical": true, "fidelity-MISSED": "2026-04-17", "steven-nance-worse": true, "rares-escalated-HIGH": true, "island-re-engaged": "2026-04-17" },
+    "priority-mismatch": { "bump-candidates": 1, "stale-hot": 0, "notes": "only #34083 Module Federation production config (15 comments); taxonomy remains sparse" }
   }
 }

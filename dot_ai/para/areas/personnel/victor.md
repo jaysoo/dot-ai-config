@@ -27,6 +27,15 @@
 
 ### Upcoming
 
+- Post-Montreal
+  - Discussions not done, next time plan more time and space activities out
+  - Priorities: Init/docs/marketing onboarding (600 claimed per week)
+  - v23 - lots of deprecations, already communicated with DPEs
+  - Billing and pricing changes
+    - Enables many features to generate revenue
+    - Needs Orca
+  - Tracking: Onboarding, Sandboxing
+
 **Promote Sandboxing + Developer Commands (Blog Post Idea)**
 
 - Sandboxing feature is landing — great opportunity for content around it

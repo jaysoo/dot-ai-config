@@ -4,52 +4,51 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-478: Clean up nx-dev to ai-chat/api/courses** (2026-04-17)
+1. **Init error investigation plan (Mar/Apr CNW+init telemetry)** (2026-04-20)
+   - Summary: Pulled Mar/Apr CNW + init funnel/cloud stats via cnw-stats-analyzer. Updated skill (target 3k→2k, headline no-filter vs funnel human+AI/CI split). Wrote init error fix plan — ~22% of init starts fail with no stderr captured; `./nx --version` probe accounts for 9.8% of starts on its own.
+   - Files: `.ai/2026-04-20/tasks/init-error-investigation.md`
+
+2. **DOC-478: Clean up nx-dev to ai-chat/api/courses** (2026-04-17)
    - Summary: Stripped nx-dev down to 4 routes, deleted top-level docs/ (~333MB), removed unused libs, simplified feature-ai. ~148k lines deleted.
    - Files: `.ai/2026-04-17/SUMMARY.md`, PR #35315
 
-2. **DOC-69: Versioned docs snapshot script** (2026-04-10)
+3. **DOC-69: Versioned docs snapshot script** (2026-04-10)
    - Summary: Script + skill to create orphan branches with pre-built static docs for Netlify branch deploys. Supports v18-v22, auto Node switching via mise, tested v19-v21.
    - Files: `.ai/2026-04-10/SUMMARY.md`, `scripts/create-versioned-docs.mts`
 
-3. **DOC-476: Bring back "no workspace" CTA in CI tutorial** (2026-04-10)
+4. **DOC-476: Bring back "no workspace" CTA in CI tutorial** (2026-04-10)
    - Summary: Restored cloud.nx.app CTA and skip-ahead flow for cloud onboarding users in self-healing CI tutorial.
    - Files: `.ai/2026-04-10/SUMMARY.md`
 
-4. **Night-shift community fixes batch** (2026-04-09)
+5. **Night-shift community fixes batch** (2026-04-09)
 
    - Summary: 11 worktrees created from session-2026-04-10 night-shift run. All patches applied and committed.
    - Session: `night-shift/sessions/session-2026-04-10.md`
 
-5. **NXC-4210: Fix generateLockfile ignoring npm overrides** (2026-04-09)
+6. **NXC-4210: Fix generateLockfile ignoring npm overrides** (2026-04-09)
 
    - Summary: Fixed `normalizePackageJson()` stripping overrides + `findTarget()` dropping edges for overridden versions. PR #35192.
    - Files: `.ai/2026-04-09/SUMMARY.md`
 
-6. **Netlify edge function perf: streaming + CDN cache + timing** (2026-04-08)
+7. **Netlify edge function perf: streaming + CDN cache + timing** (2026-04-08)
 
    - Summary: Streamed Framer proxy via TransformStream, added Netlify-CDN-Cache-Control with stale-while-revalidate, added timing logs + Server-Timing headers across all edge functions.
    - PR: https://github.com/nrwl/nx/pull/35215
 
-7. **Night-shift community fixes batch** (2026-04-08)
+8. **Night-shift community fixes batch** (2026-04-08)
 
    - Summary: 22 worktrees created in ~/projects/nx-worktrees/issue-\* from automated night-shift run. 9 patches applied cleanly, 12 need manual apply, 1 already fixed upstream.
    - Files: `night-shift/sessions/session-2026-04-08.md`
 
-8. **DOC-474: Update docs sidebar for tutorial engagement** (2026-04-07)
+9. **DOC-474: Update docs sidebar for tutorial engagement** (2026-04-07)
 
    - Summary: Removed "New" badge, expanded Tutorials, collapsed Concepts and Platform Features. PR #35194.
    - Files: `.ai/2026-04-07/SUMMARY.md`
 
-9. **NXC-4182: React Router + Vite 8 compat fix** (2026-04-01 → 2026-04-03)
+10. **NXC-4182: React Router + Vite 8 compat fix** (2026-04-01 → 2026-04-03)
 
-   - Summary: Re-enabled skipped typecheck e2e test. Added guards (throw on vite 8, vitest 4) + fix-up (remove @vitejs/plugin-react, downgrade vitest 4→3.x). Changed RR SSR prompt default to No.
-   - PR: https://github.com/nrwl/nx/pull/35126
-
-10. **Incident tracking & Security IR process** (2026-04-02)
-
-    - Summary: Created incidents PARA area with March org-access-leakage write-up. Drafted Security IR Plan and IR Process update for Notion.
-    - Files: `dot_ai/2026-04-02/SUMMARY.md`
+    - Summary: Re-enabled skipped typecheck e2e test. Added guards (throw on vite 8, vitest 4) + fix-up (remove @vitejs/plugin-react, downgrade vitest 4→3.x). Changed RR SSR prompt default to No.
+    - PR: https://github.com/nrwl/nx/pull/35126
 
 ## TODO
 
@@ -140,6 +139,7 @@
 <!-- Directories with active or resumable Claude sessions. Use `cd <dir> && claude -r` to resume. -->
 <!-- Managed by /end-session and /list-sessions commands. /summarize cleans up stale entries. -->
 
+- `/Users/jack/projects/nx` (branch: master) — init error investigation (Apr/Mar CNW+init stats analysis) (2026-04-20)
 - `/Users/jack/projects/nx-worktrees/DOC-478` (branch: DOC-478) — DOC-478: nx-dev cleanup (2026-04-16)
 - `/Users/jack/projects/nx-worktrees/NXC-3345` — NXC-3345: Rollup + SWC rootDir fix for workspace libs (2026-03-25)
 
