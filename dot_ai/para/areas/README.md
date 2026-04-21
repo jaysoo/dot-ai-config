@@ -20,6 +20,7 @@ Areas represent continuous aspects of work that need maintenance:
 | Blog Ideas | `blog-ideas/` | Content ideas for AI-assisted dev workflows, Nx + AI blog posts |
 | CNW Stats | `cnw-stats/` | create-nx-workspace telemetry, funnel health, and regression tracking |
 | Incidents | `incidents/` | Security incidents, data exposure events, remediation and disclosure tracking |
+| Onboarding & Activation | `onboarding-activation/` | Self-serve funnel (CLI → Cloud) — 550 new workspaces / $3.3M ARR target, Quark-a team |
 
 ## Adding New Areas
 

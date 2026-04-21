@@ -27,7 +27,8 @@ If the user points to a specific `/tmp/nightshift-work-XXXXX/` directory:
 2. Read `reports/confidence.json` for confidence score
 3. Check if patches exist in `patches/`
 4. Create a git worktree and branch, apply the patch, commit
-5. Report back — do NOT open a PR
+5. Invoke `plannotator-review` pointed at the worktree branch so Jack can review in browser
+6. Report back — do NOT open a PR
 
 ### Mode B: Session Review (Default)
 
@@ -167,6 +168,30 @@ Remind the user:
 - Read `<reports-dir>/final-report.md` for root cause analysis and fix details
 - Run `nx affected -t build-base,lint,test` before pushing
 - Do NOT open PRs automatically
+
+#### Step 6: Open Plannotator for Browser Review
+
+After the summary, open each applied worktree in Plannotator so Jack can review the diff
+in the browser UI and leave comments / approvals / change requests.
+
+For each applied worktree, invoke the `plannotator-review` skill pointed at that worktree's
+branch. Plannotator needs to know which diff to show — pass the worktree path or branch so
+it picks up the commit made in that worktree (not the current working directory's changes).
+
+**How to invoke:**
+
+```
+Skill(skill: "plannotator-review", args: "<worktree-path-or-branch>")
+```
+
+- If applying a single worktree, invoke Plannotator once for that worktree.
+- If applying multiple worktrees, invoke Plannotator once per worktree (sequentially — do
+  not parallelize skill invocations). Mention to Jack that a review tab will open for each
+  one, so he can tab through them.
+- Do not produce an inline chat review summary — Plannotator is the review surface.
+
+If a worktree's commit failed or the patch didn't apply cleanly, skip Plannotator for that
+one and report the failure instead.
 
 ## Important Notes
 
