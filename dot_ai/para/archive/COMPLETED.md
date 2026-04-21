@@ -2,6 +2,12 @@
 
 ### April 2026
 
+- [x] NXC-4182: Revert React Router Vite 7 workaround (now supports Vite 8) (2026-04-21) ✓ 2026-04-21
+  - Summary: `@react-router/dev` 7.14.2 expanded its Vite peer dep to include `^8.0.0`, so the workarounds across #35101, #35110, and this branch's prior commits are no longer needed. Bumped `reactRouterVersion` to ^7.14.2, added a 22.7.0 packageJsonUpdate migrating `@react-router/*` to 7.14.2, removed the `useViteV7: true` force-flag in the React app generator, removed dead `useViteV7` schema field, and removed the pre-generate Vite/Vitest downgrade block in the e2e test. PR #35365 (squashed commit `4ff192abc7`, 6 files, +43/-20).
+
+- [x] DOC-486: Sitemap needs to include blog (2026-04-21) ✓ 2026-04-21
+  - Summary: Shipped both sides of the blog-sitemap wiring. **nx repo** (`DOC-486` branch, commit `c0085fcebb`): new consolidated `additional-sitemaps.ts` edge function proxying `/sitemap-1.xml` (Framer) and `/sitemap-2.xml` (nx-blog), replacing the previous `framer-sitemap.ts`. Updated `patch-sitemap-index.mjs` to reference `/sitemap-2.xml`. **nx-blog repo** (`feature/doc-486-publish-sitemap`, commit `09531fd`): new `generate-sitemap.mjs` (196 URLs), and full build refactor — scripts pared to `dev`/`build`/`preview`, all build steps are now cacheable `nx:run-commands` targets, `build` is `nx:noop` fanning out to `generate-feeds`/`generate-sitemap`/`pagefind` in parallel after `vite-build`.
+
 - [x] DOC-479: Low-effort agent-readiness improvements for nx.dev (2026-04-20) ✓ 2026-04-20
   - Summary: Shipped Link response headers (RFC 8288) on Framer-proxied pages, Content-Signal directive in robots.txt, and Next.js `beforeFiles` rewrite routing `nx.dev/robots.txt` through astro-docs. PR #35348. Follow-up #35351 restored sitemap generation (removed as side effect of DOC-478 cleanup). Deferred Agent Skills Discovery index after research — no major agent client consumes `.well-known/agent-skills/` yet.
 

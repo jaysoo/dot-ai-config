@@ -4,50 +4,48 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-479: Agent-readiness signals for nx.dev + sitemap regression fix** (2026-04-20)
+1. **NXC-4182: Revert React Router Vite 7 workaround (now supports Vite 8)** (2026-04-21)
+   - Summary: `@react-router/dev` 7.14.2 expanded its Vite peer dep to include `^8.0.0`. Bumped `reactRouterVersion` to ^7.14.2, added a 22.7.0 packageJsonUpdate migration, removed `useViteV7: true` force-flag, dead schema field, and e2e test downgrade block. Squashed to single commit. PR #35365.
+   - Files: `.ai/2026-04-21/tasks/nxc-4182-react-router-vite-8.md`, PR #35365
+
+2. **DOC-486: Blog sitemap in root nx.dev sitemap index** (2026-04-21)
+   - Summary: Added `/sitemap-2.xml` for nx-blog via consolidated `additional-sitemaps.ts` edge function. In nx-blog, added `generate-sitemap.mjs` and refactored build into cacheable Nx targets (nx:run-commands + nx:noop fan-out). Both repos committed, PRs pending.
+   - Files: `.ai/2026-04-21/SUMMARY.md`, `.ai/2026-04-21/tasks/doc-486-blog-sitemap.md`
+
+3. **DOC-479: Agent-readiness signals for nx.dev + sitemap regression fix** (2026-04-20)
    - Summary: Shipped Link headers (RFC 8288), Content-Signal in robots.txt, routed nx.dev/robots.txt through astro-docs via beforeFiles rewrite (#35348). Follow-up #35351 restored sitemap generation removed by DOC-478 cleanup.
    - Files: `.ai/2026-04-20/tasks/doc-479-agent-readiness.md`, PRs #35348, #35351
 
-2. **Init error investigation plan (Mar/Apr CNW+init telemetry)** (2026-04-20)
+4. **Init error investigation plan (Mar/Apr CNW+init telemetry)** (2026-04-20)
    - Summary: Pulled Mar/Apr CNW + init funnel/cloud stats via cnw-stats-analyzer. Updated skill (target 3k→2k, headline no-filter vs funnel human+AI/CI split). Wrote init error fix plan — ~22% of init starts fail with no stderr captured; `./nx --version` probe accounts for 9.8% of starts on its own.
    - Files: `.ai/2026-04-20/tasks/init-error-investigation.md`
 
-3. **DOC-478: Clean up nx-dev to ai-chat/api/courses** (2026-04-17)
+5. **DOC-478: Clean up nx-dev to ai-chat/api/courses** (2026-04-17)
    - Summary: Stripped nx-dev down to 4 routes, deleted top-level docs/ (~333MB), removed unused libs, simplified feature-ai. ~148k lines deleted.
    - Files: `.ai/2026-04-17/SUMMARY.md`, PR #35315
 
-4. **DOC-69: Versioned docs snapshot script** (2026-04-10)
+6. **DOC-69: Versioned docs snapshot script** (2026-04-10)
    - Summary: Script + skill to create orphan branches with pre-built static docs for Netlify branch deploys. Supports v18-v22, auto Node switching via mise, tested v19-v21.
    - Files: `.ai/2026-04-10/SUMMARY.md`, `scripts/create-versioned-docs.mts`
 
-5. **DOC-476: Bring back "no workspace" CTA in CI tutorial** (2026-04-10)
+7. **DOC-476: Bring back "no workspace" CTA in CI tutorial** (2026-04-10)
    - Summary: Restored cloud.nx.app CTA and skip-ahead flow for cloud onboarding users in self-healing CI tutorial.
    - Files: `.ai/2026-04-10/SUMMARY.md`
 
-6. **Night-shift community fixes batch** (2026-04-09)
+8. **Night-shift community fixes batch** (2026-04-09)
 
    - Summary: 11 worktrees created from session-2026-04-10 night-shift run. All patches applied and committed.
    - Session: `night-shift/sessions/session-2026-04-10.md`
 
-7. **NXC-4210: Fix generateLockfile ignoring npm overrides** (2026-04-09)
+9. **NXC-4210: Fix generateLockfile ignoring npm overrides** (2026-04-09)
 
    - Summary: Fixed `normalizePackageJson()` stripping overrides + `findTarget()` dropping edges for overridden versions. PR #35192.
    - Files: `.ai/2026-04-09/SUMMARY.md`
 
-8. **Netlify edge function perf: streaming + CDN cache + timing** (2026-04-08)
+10. **Netlify edge function perf: streaming + CDN cache + timing** (2026-04-08)
 
-   - Summary: Streamed Framer proxy via TransformStream, added Netlify-CDN-Cache-Control with stale-while-revalidate, added timing logs + Server-Timing headers across all edge functions.
-   - PR: https://github.com/nrwl/nx/pull/35215
-
-9. **Night-shift community fixes batch** (2026-04-08)
-
-   - Summary: 22 worktrees created in ~/projects/nx-worktrees/issue-\* from automated night-shift run. 9 patches applied cleanly, 12 need manual apply, 1 already fixed upstream.
-   - Files: `night-shift/sessions/session-2026-04-08.md`
-
-10. **DOC-474: Update docs sidebar for tutorial engagement** (2026-04-07)
-
-    - Summary: Removed "New" badge, expanded Tutorials, collapsed Concepts and Platform Features. PR #35194.
-    - Files: `.ai/2026-04-07/SUMMARY.md`
+    - Summary: Streamed Framer proxy via TransformStream, added Netlify-CDN-Cache-Control with stale-while-revalidate, added timing logs + Server-Timing headers across all edge functions.
+    - PR: https://github.com/nrwl/nx/pull/35215
 
 ## TODO
 
