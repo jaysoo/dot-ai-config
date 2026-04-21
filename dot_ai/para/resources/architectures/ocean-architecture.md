@@ -400,6 +400,25 @@ npx nx-cloud configure --personal-access-token=<PAT> --nx-cloud-url=https://snap
 #### Known Issue: Top-Level `--help` Side Effects
 Many command files (e.g., `convert-to-nx-cloud-id.ts`, `configure.ts`, `login.ts`) have `process.argv.includes('--help')` checks **at module scope** (outside exported functions). When another command imports from these files, the `--help` check fires at import time and prints the wrong help. Example: `onboard --help` shows `convert-to-nx-cloud-id` help because `onboarding-utils.ts` imports `updateNxJsonWithNxCloudId` from `convert-to-nx-cloud-id.ts`.
 
+## Deployed Surfaces
+
+### Domains
+- **`cloud.nx.app`** — The actual Nx Cloud Remix app (`apps/nx-cloud`), deployed from `master`. This is where all authenticated routes live (`/go/*`, `/orgs/*`, `/get-started`, etc.).
+- **`nx.app`** — A separate **Netlify-hosted** marketing/redirect site deployed from the **`website-maintenance`** branch of this repo. Source is `apps/nx-cloud-marketing` (Next.js static export). Redirect rules live in the top-level `netlify.toml`.
+- **`staging.nx.app`** / **`snapshot.nx.app`** — Staging/snapshot environments of the cloud app.
+
+### nx.app Netlify Redirects (`netlify.toml` on `website-maintenance`)
+The `nx.app` site is mostly redirect rules plus a small static marketing layer. Key points:
+- Specific path rules forward to `cloud.nx.app` (`/orgs/*`, `/runs/*`, `/branch*`, `/private-cloud/*`, `/terms`, `/privacy`, `/`) or to `nx.dev` (`/enterprise`, `/products/*`, `/brands`, `/careers`, `/company`, `/pricing`).
+- A **catch-all `from = "*"` rule sends anything unmatched to `https://nx.dev/nx-cloud`** (the marketing page on nx.dev). This is why short links like `nx.app/go/workspace/settings/self-healing-ci` land on the marketing page — `/go/*` has no explicit rule, so the catch-all fires.
+- To add a new short-link or passthrough to the cloud app, add a `[[redirects]]` entry on `website-maintenance` **before** the catch-all. Example: `/go/*` → `https://cloud.nx.app/go/:splat` would let the Ocean `GoRedirectLoader` handle the request (including Auth0 login for unauthenticated users).
+
+### Related Ocean Code for `/go/*`
+- Route: `apps/nx-cloud/app/routes/_auth.go.$entity.$.tsx`
+- Loader: `libs/nx-cloud/feature-redirects/src/lib/go-redirect-loader.server.ts` (`GoRedirectLoader`)
+- Wrapped in `createAuthenticatedSessionLoader` — unauthenticated hits go through `authenticate()` → `authenticator.logout()` (forceAuth0Logout) → Auth0 → back to `/?redirectTo=...` → `_index.tsx` → Auth0 login.
+- `/get-started` route (`_auth.get-started.tsx`) uses `createLoader` (not authenticated) so it works for anonymous visitors.
+
 ## Technology Stack
 
 ### Core Technologies

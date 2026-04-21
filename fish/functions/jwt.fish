@@ -27,4 +27,6 @@ function jwt
   else
     cd $worktree_path
   end
+
+  touch $worktree_path
 end

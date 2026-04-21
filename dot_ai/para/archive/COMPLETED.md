@@ -2,6 +2,9 @@
 
 ### April 2026
 
+- [x] DOC-479: Low-effort agent-readiness improvements for nx.dev (2026-04-20) ✓ 2026-04-20
+  - Summary: Shipped Link response headers (RFC 8288) on Framer-proxied pages, Content-Signal directive in robots.txt, and Next.js `beforeFiles` rewrite routing `nx.dev/robots.txt` through astro-docs. PR #35348. Follow-up #35351 restored sitemap generation (removed as side effect of DOC-478 cleanup). Deferred Agent Skills Discovery index after research — no major agent client consumes `.well-known/agent-skills/` yet.
+
 - [x] DOC-478: Clean up nx-dev to ai-chat, api, courses only (2026-04-16) ✓ 2026-04-17
   - Summary: Stripped nx-dev down to /ai-chat, /api/query-ai-handler, /api/query-ai-embeddings, /courses. Deleted top-level docs/ (~333MB). Removed 9 unused nx-dev/* libs, simplified feature-ai, removed conformance rules and scripts. ~148k lines deleted. PR #35315.
 
