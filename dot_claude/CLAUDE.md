@@ -217,7 +217,14 @@ Teams: DPE, CLI, Orca, Backend, Infra, Docs, Framer
 4. Action Items
 5. Meeting Notes (dated, reverse chronological)
 
-**Workflow - When updating "today's" sync:**
+**Ad-hoc additions ("add this to the infra sync", "add to my 1:1 with X"):**
+- **Default destination is `## Upcoming Sync`** — for both team syncs AND 1:1 personnel files
+- Do NOT add to `## Topics for Next Meeting` (that's a curated agenda)
+- Do NOT add to `## Action Items` unless the user explicitly frames it as an action item
+- Do NOT create a new dated `## Meeting Notes` entry — those only go in when a meeting actually happened
+- For 1:1 files under `.ai/para/areas/personnel/[name].md`, create an `## Upcoming Sync` section directly above `## 1:1 Notes` if it doesn't exist
+
+**Workflow - When updating "today's" sync (actual meeting happened):**
 1. Move "Upcoming Sync" content into today's dated meeting notes
 2. Clear "Upcoming Sync" section (keep header, remove content)
 3. Add new action items, mark completed ones
