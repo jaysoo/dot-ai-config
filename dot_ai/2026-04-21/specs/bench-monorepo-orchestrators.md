@@ -196,10 +196,10 @@ All branches fork from `main` and carry only orchestrator deltas. No divergence 
   ```jsonc
   {
     "scripts": {
-      "bench:build":  "pnpm -r --filter='./apps/*' run build",
-      "bench:lint":   "pnpm -r run lint",
-      "bench:format": "pnpm -r run format",
-      "bench:test":   "pnpm -r run test"
+      "build":  "pnpm -r --filter='./apps/*' run build",
+      "lint":   "pnpm -r run lint",
+      "format": "pnpm -r run format",
+      "test":   "pnpm -r run test"
     }
   }
   ```
@@ -227,10 +227,10 @@ All branches fork from `main` and carry only orchestrator deltas. No divergence 
 - Root scripts:
   ```jsonc
   {
-    "bench:build":  "nx run-many -t build",
-    "bench:lint":   "nx run-many -t lint",
-    "bench:format": "nx run-many -t format",
-    "bench:test":   "nx run-many -t test"
+    "build":  "nx run-many -t build",
+    "lint":   "nx run-many -t lint",
+    "format": "nx run-many -t format",
+    "test":   "nx run-many -t test"
   }
   ```
 
