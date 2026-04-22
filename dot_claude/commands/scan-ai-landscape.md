@@ -164,7 +164,51 @@ cat "$SCAN_DATA_DIR/api/ai-agent-repos.json" 2>/dev/null \
   || gh search repos "ai agent developer tools" --sort=stars --limit=10 --json name,description,stargazersCount,updatedAt
 ```
 
-### 5. Academic / Research
+### 5. AI Security Threats (NEW — weight heavily)
+
+Track AI model / agent developments that change the **threat model** for
+orgs shipping code and running CI. This section is explicitly about
+offensive-security uplift and misuse risk, not general model news.
+
+Look for:
+
+- **Frontier model releases with strong vulnerability-discovery or
+  exploit-generation capability** (e.g. a hypothetical "Claude Mythos"
+  that reliably finds real CVEs in OSS). Sources: Anthropic, OpenAI,
+  Google DeepMind, Meta, DeepSeek, xAI, Mistral, Qwen, and open-weight
+  model announcements. Look specifically for:
+  - Benchmark claims on Cybench, SWE-bench-Security, CTF benchmarks,
+    HackerOne-style eval harnesses.
+  - "Red-team" / "security research" framing in release blog posts.
+  - Reports of real-world CVE discovery attributable to the model.
+- **Jailbreak or alignment regressions** in widely-deployed models that
+  lower the cost of misuse.
+- **Agentic capabilities** that unlock autonomous recon, credential
+  harvesting, lateral movement, or repo exfiltration (e.g. browser-use,
+  computer-use, long-horizon agents with shell access).
+- **Prompt-injection / indirect prompt-injection research** affecting
+  tools we ship or embed: `nx-mcp`, Self-Healing CI, AI code review,
+  agentic CI. Including: tool-poisoning, MCP-server-in-the-middle,
+  malicious-README attacks, supply-chain-via-agent.
+- **Published attacks using AI** against package registries (npm, PyPI)
+  or CI/CD — AI-assisted typosquatting, dependency confusion at scale,
+  malware authored by agents.
+
+Sources to check:
+```bash
+WebSearch "AI model vulnerability discovery benchmark 2026"
+WebSearch "LLM exploit generation CVE"
+WebSearch "MCP prompt injection attack"
+WebSearch "agent supply chain attack npm"
+WebFetch https://simonwillison.net/tags/prompt-injection/
+WebFetch https://embracethered.com/blog/
+```
+
+For each finding, record: source URL, date, brief description,
+**severity** (Low / Medium / High — High means it changes what we ship
+or how we defend), and **action** (monitor / evaluate / mitigate now).
+
+### 6. Academic / Research
 
 Search for recent papers on:
 - AI-assisted software engineering
@@ -228,6 +272,24 @@ _Last updated: {datetime}_
 
 ## Agentic Development
 {Emerging patterns, new frameworks, notable projects}
+
+## AI Security Threats
+### Model Releases (offensive-security uplift)
+{Frontier models with notable vuln-discovery or exploit-generation
+capability. For each: model, source, benchmark claims, severity,
+action.}
+
+### Prompt Injection & Agent Attacks
+{Research / real-world incidents affecting MCP, agents, AI code review.}
+
+### Jailbreaks & Alignment Regressions
+{Widely-deployed models with new misuse vectors.}
+
+### Implications for Nx
+{What changes in our threat model this month. Does `nx-mcp`, Self-Healing
+CI, or AI code review need new mitigations? Do we need to reassess
+secrets handling, CI token scope, or supply-chain posture given new
+offensive capability?}
 
 ## Implications for Nx Roadmap
 

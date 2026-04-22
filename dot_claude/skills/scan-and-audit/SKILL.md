@@ -405,6 +405,25 @@ Launch each scan as a **background Task subagent**. Each subagent receives:
 7. **scan-frameworks** — Framework & bundler ecosystem tracking
 8. **scan-runtimes** — Node.js & runtime tracking
 9. **scan-ai-landscape** — AI dev tools landscape scan
+   - Subagent instruction: "Run the AI landscape scan. In addition to the
+     standard coverage (MCP, coding tools, CI/CD, agentic patterns), also
+     research **AI model security threats** — specifically, new model
+     releases (Anthropic, OpenAI, Google, Meta, DeepSeek, xAI, open-weight
+     models, etc.) whose capabilities materially change the threat model
+     for orgs like ours. Flag:
+     - Models advertised or benchmarked as strong at **vulnerability
+       discovery / exploit generation** in real codebases (e.g. a hypothetical
+       'Claude Mythos' release that finds CVEs easily). These shift the
+       offensive-security balance and matter for our supply-chain posture.
+     - Models with notable jailbreak / alignment regressions that increase
+       misuse risk.
+     - Agentic capabilities that enable autonomous recon, credential
+       harvesting, or repo exfiltration.
+     - Prompt-injection / indirect-injection research that affects tools
+       we ship or embed (nx-mcp, Self-Healing CI, AI code review).
+     Surface findings under a dedicated **'AI Security Threats'** section in
+     the AI landscape report. If any are High severity, include them in the
+     weekly TL;DR alongside CNW template and supply-chain findings."
 
 Each writes to its own `.ai/para/areas/` directory.
 
@@ -505,6 +524,7 @@ or informative enough to decide whether to dig deeper. Format:}
 
 Example:
 - **[CNW Templates]** 2 high vulns in `angular-monorepo` preset via `postcss`. Resolve this week.
+- **[AI Threat]** New frontier model claims SOTA on exploit-generation benchmarks — reassess supply-chain posture and secrets exposure.
 - **[Security]** New CVE in `minimatch` affects nx@22.5.2. Already patched in 22.5.3. FYI only.
 - **[Competitors]** Turborepo shipped remote caching v2 with content-addressable storage. Review implications for Nx Cloud positioning.
 - **[Dependencies]** `chalk` hasn't published in 14 months. Now 🟠 Warning. We already migrated to picocolors — can remove.
