@@ -27,6 +27,11 @@
 - **Goals:**
 - **Strengths:**
 
+## Upcoming Sync
+
+- Delivery of criticism around our onboarding focus — the recent framing was a bit harsh; worth softening the tone without losing the urgency
+- Progress on DTE onboarding improvements
+
 ## 1:1 Notes
 
 ### Upcoming Topics
