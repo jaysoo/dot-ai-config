@@ -3,6 +3,10 @@ Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse
 
 **IMPORTANT**: This file lives in `~/projects/dot-ai-config/dot_claude/CLAUDE.md` and syncs to `~/.claude/CLAUDE.md`. Always edit the `dot-ai-config` version.
 
+## 🔴 Critical
+
+In any new session, ALWAYS use /caveman skill to go into full (default) cavement mode. Let me know and I can tell you to turn it off if needed or switch to other modes.
+
 ## 🔴 Critical Setup & Verification
 
 ### dot-ai-config is the Source of Truth
