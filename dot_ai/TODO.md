@@ -4,51 +4,69 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **NXC-4182: Revert React Router Vite 7 workaround (now supports Vite 8)** (2026-04-21)
+1. **Night-shift community fixes batch** (2026-04-22)
+   - Summary: 2 new worktrees created from session-2026-04-22 night-shift run (#33488, #33971). 3 approved fixes already applied in prior runs (#32595, #33523, #34095). #32579 skipped — core maintainer PR already addresses it. #34281 applied in ocean repo from pre-existing branch.
+   - Session: `night-shift/sessions/session-2026-04-22.md`
+
+2. **Night-shift community fixes batch** (2026-04-21)
+   - Summary: 5 worktrees created from session-2026-04-21 night-shift run. All patches applied and committed (4 Nx + 1 Ocean + greenfield bench repo).
+   - Session: `night-shift/sessions/session-2026-04-21.md`
+
+3. **NXC-4182: Revert React Router Vite 7 workaround (now supports Vite 8)** (2026-04-21)
    - Summary: `@react-router/dev` 7.14.2 expanded its Vite peer dep to include `^8.0.0`. Bumped `reactRouterVersion` to ^7.14.2, added a 22.7.0 packageJsonUpdate migration, removed `useViteV7: true` force-flag, dead schema field, and e2e test downgrade block. Squashed to single commit. PR #35365.
    - Files: `.ai/2026-04-21/tasks/nxc-4182-react-router-vite-8.md`, PR #35365
 
-2. **DOC-486: Blog sitemap in root nx.dev sitemap index** (2026-04-21)
+4. **DOC-486: Blog sitemap in root nx.dev sitemap index** (2026-04-21)
    - Summary: Added `/sitemap-2.xml` for nx-blog via consolidated `additional-sitemaps.ts` edge function. In nx-blog, added `generate-sitemap.mjs` and refactored build into cacheable Nx targets (nx:run-commands + nx:noop fan-out). Both repos committed, PRs pending.
    - Files: `.ai/2026-04-21/SUMMARY.md`, `.ai/2026-04-21/tasks/doc-486-blog-sitemap.md`
 
-3. **DOC-479: Agent-readiness signals for nx.dev + sitemap regression fix** (2026-04-20)
+5. **DOC-479: Agent-readiness signals for nx.dev + sitemap regression fix** (2026-04-20)
    - Summary: Shipped Link headers (RFC 8288), Content-Signal in robots.txt, routed nx.dev/robots.txt through astro-docs via beforeFiles rewrite (#35348). Follow-up #35351 restored sitemap generation removed by DOC-478 cleanup.
    - Files: `.ai/2026-04-20/tasks/doc-479-agent-readiness.md`, PRs #35348, #35351
 
-4. **Init error investigation plan (Mar/Apr CNW+init telemetry)** (2026-04-20)
+6. **Init error investigation plan (Mar/Apr CNW+init telemetry)** (2026-04-20)
    - Summary: Pulled Mar/Apr CNW + init funnel/cloud stats via cnw-stats-analyzer. Updated skill (target 3k→2k, headline no-filter vs funnel human+AI/CI split). Wrote init error fix plan — ~22% of init starts fail with no stderr captured; `./nx --version` probe accounts for 9.8% of starts on its own.
    - Files: `.ai/2026-04-20/tasks/init-error-investigation.md`
 
-5. **DOC-478: Clean up nx-dev to ai-chat/api/courses** (2026-04-17)
+7. **DOC-478: Clean up nx-dev to ai-chat/api/courses** (2026-04-17)
    - Summary: Stripped nx-dev down to 4 routes, deleted top-level docs/ (~333MB), removed unused libs, simplified feature-ai. ~148k lines deleted.
    - Files: `.ai/2026-04-17/SUMMARY.md`, PR #35315
 
-6. **DOC-69: Versioned docs snapshot script** (2026-04-10)
+8. **DOC-69: Versioned docs snapshot script** (2026-04-10)
    - Summary: Script + skill to create orphan branches with pre-built static docs for Netlify branch deploys. Supports v18-v22, auto Node switching via mise, tested v19-v21.
    - Files: `.ai/2026-04-10/SUMMARY.md`, `scripts/create-versioned-docs.mts`
 
-7. **DOC-476: Bring back "no workspace" CTA in CI tutorial** (2026-04-10)
+9. **DOC-476: Bring back "no workspace" CTA in CI tutorial** (2026-04-10)
    - Summary: Restored cloud.nx.app CTA and skip-ahead flow for cloud onboarding users in self-healing CI tutorial.
    - Files: `.ai/2026-04-10/SUMMARY.md`
 
-8. **Night-shift community fixes batch** (2026-04-09)
+10. **Night-shift community fixes batch** (2026-04-09)
 
-   - Summary: 11 worktrees created from session-2026-04-10 night-shift run. All patches applied and committed.
-   - Session: `night-shift/sessions/session-2026-04-10.md`
-
-9. **NXC-4210: Fix generateLockfile ignoring npm overrides** (2026-04-09)
-
-   - Summary: Fixed `normalizePackageJson()` stripping overrides + `findTarget()` dropping edges for overridden versions. PR #35192.
-   - Files: `.ai/2026-04-09/SUMMARY.md`
-
-10. **Netlify edge function perf: streaming + CDN cache + timing** (2026-04-08)
-
-    - Summary: Streamed Framer proxy via TransformStream, added Netlify-CDN-Cache-Control with stale-while-revalidate, added timing logs + Server-Timing headers across all edge functions.
-    - PR: https://github.com/nrwl/nx/pull/35215
+    - Summary: 11 worktrees created from session-2026-04-10 night-shift run. All patches applied and committed.
+    - Session: `night-shift/sessions/session-2026-04-10.md`
 
 ## TODO
 
+- [x] 🤖 Review night-shift fixes from 2026-04-22 session (2 newly applied, 20 fixed / 23 total) — **ALL REVIEWED**
+  - Session report: `/Users/jack/projects/night-shift/sessions/session-2026-04-22.md`
+  - 7 approved peer reviews processed:
+    - [x] #33488 — prerelease (--preid) not applied to dependent patch bumps (conf: 88, ✅ approved) — newly committed `issue-33488` | reports: `/tmp/nightshift-work-Buhhez/reports/` — **REVIEWED: APPROVE WITH CHANGES** — fix correct, dead-code concern confirmed (`const sideEffectBump = 'patch'` on line 963 must be removed before PR), test only covers independent-group path. Report: `nx-worktrees/issue-33488/REVIEW_REPORT.md`
+      - Note: Patch hunk counts were wrong; hand-applied the 3rd hunk in `release-group-processor.ts`. Leaves `const sideEffectBump = 'patch';` as dead code (matches reviewed patch shape but may need cleanup).
+    - [x] #33971 — @nx/dotnet generates incorrect obj path for webapp/webapi (conf: 82, ✅ approved) — newly committed `issue-33971` | reports: `/tmp/nightshift-work-qcuhLJ/reports/` — **REVIEWED: APPROVE WITH CHANGES** — fix logic verified (5 new tests fail without fix, pass with it), BUT two blocking integration issues: new `tests/` folder sits inside MsbuildAnalyzer.csproj compile glob so `dotnet publish` fails with 11 CS0246 xUnit errors (breaks `nx run dotnet:build-analyzer`); no `test-analyzer` target wired up so new tests never run in CI. Report: `nx-worktrees/issue-33971/REVIEW_REPORT.md`
+      - Note: Patch was structurally broken; applied 6 `MakeRelativeToWorkspace` → `MakeRelativeToProject` changes manually + extracted 2 new test files. Run `dotnet test` before merging.
+    - [x] #32595 — @nx/angular-rspack-compiler defaults override user tsconfig (conf: 78, ✅ approved) — already committed in prior run `issue-32595` | reports: `/tmp/nightshift-work-zYArqC/reports/`
+    - [x] #33523 — npm support for copy-workspace-modules (conf: 85, ✅ approved) — already committed in prior run `issue-33523` | reports: `/tmp/nightshift-work-BYtAKt/reports/`
+    - [x] #34095 — @nx/next:build missing semver dependency (conf: 82, ✅ approved) — already committed in prior run `issue-34095` | reports: `/tmp/nightshift-work-uYb5CC/reports/`
+    - [x] #34281 — @nx/s3-cache non-pinned AWS SDK (conf: 92, ✅ approved) — applied in ocean `ocean-worktrees/issue-34281` (branch `fix/issue-34281-s3-cache-unpinned-aws-deps`) | reports: `/tmp/nightshift-work-I6dNQK/reports/`
+    - [x] #32579 — nx:run-script pnpm workspace detection (conf: 82, ✅ approved) — SKIPPED: core maintainer PR `origin/fix/32579-detect-pnpm-workspace` already addresses it | reports: `/tmp/nightshift-work-0QwmBM/reports/`
+- [x] 🤖 Review night-shift fixes from 2026-04-21 session (5 applied, 9 fixed / 12 total) — **ALL REVIEWED**
+  - Session report: `/Users/jack/projects/night-shift/sessions/session-2026-04-21.md`
+  - Worktrees: `~/projects/nx-worktrees/issue-*` and `~/projects/ocean-worktrees/issue-33335` — review code, run tests, create PRs
+    - [x] #32595 — @nx/angular-rspack-compiler: defaults override user tsconfig (conf: 82, ⚠️ concerns) `issue-32595` | reports: `/tmp/nightshift-work-pWyqfW/reports/` — **REVIEWED: REJECT** — PR #35004 from core maintainer FrozenPandaz already fixes the same bug in 16 lines (CI green, awaiting review) vs. the bot's 267-line extends-chain walker. Of the 9 new tests, 3 pass both with and without the fix (they inline the algorithm); none actually exercise `setupCompilation` against `readConfiguration`. Also doesn't handle TS 5.0 array `extends`. Nudge #35004 forward instead of pushing this. Report: `nx-worktrees/issue-32595/REVIEW_REPORT.md`
+    - [x] #33113 — Local generators: wrong path argument in schema docs (conf: 82, ✅ approved) `issue-33113` | reports: `/tmp/nightshift-work-SQVzFs/reports/` — **REVIEWED: APPROVE WITH CHANGES** — fix is correct and the regression test reproduces the user scenario, but scope is too narrow: PR #31856 added the same "path without extension = directory" logic to BOTH generator and executor, but this only updates the generator side. Executor's `executor-examples.md` (rendered on nx.dev) and `executor/schema.json` still have the stale docs. Expand scope or file follow-up. Report: `nx-worktrees/issue-33113/REVIEW_REPORT.md`
+    - [x] #33331 — Next.js Vercel deploy docs: root dir + NEXT_PUBLIC_ caching (conf: 82, ⚠️ concerns) `issue-33331` | reports: `/tmp/nightshift-work-1tLpci/reports/` — **REVIEWED: APPROVE WITH CHANGES** — NEXT_PUBLIC_ build-time inlining and `inputs` guidance are technically accurate, but the example `inputs` array tells users `["default", "^production", ...]` while `@nx/next`'s plugin.ts actually infers `["default", "^default", { externalDependencies: ["next"] }, { dependentTasksOutputFiles: "**/*.d.ts", transitive: true }]`. Copy-pasters silently drop real inferred inputs. Also the link `/reference/inputs#environment-variables` is missing the `/docs/` prefix — will 404. Report: `nx-worktrees/issue-33331/REVIEW_REPORT.md`
+    - [x] #33335 — S3 cache read-only mode value mismatch (conf: 90, ✅ approved) — applied to ocean repo `ocean-worktrees/issue-33335` | reports: `/tmp/nightshift-work-2MTk2q/reports/` — **REVIEWED: APPROVE WITH CHANGES** — core fix aligns `"read"`/`"read-only"` correctly across schemas, generator prompt, runtime (with backward-compat normalization in `powerpack-utils`); 12 powerpack-utils tests pass. Three gaps: (1) NO Ocean version plan was added despite Ocean requiring them for `fix()` commits, (2) s3/gcs/azure READMEs still document the broken `"read"` value even though issue reporter flagged the npm docs inconsistency, (3) out-of-scope `isPromptCancelledError` helper silently added with `process.exit(0)` behavior change and no tests. Minor: `NX_POWERPACK_CACHE_MODE=read` env path short-circuits before normalization. Report: `ocean-worktrees/issue-33335/REVIEW_REPORT.md`
+    - [x] Spec #0 — bench-monorepo-orchestrators greenfield benchmark repo (conf: 70, ⚠️ concerns) — new repo at `~/projects/bench-monorepo-orchestrators` | reports: `/tmp/nightshift-work-29pdaR/reports/` — **REVIEWED: APPROVE WITH CHANGES** — scaffolding is real and produces a valid 110-node/300-edge/zero-cross-domain graph that Nx and Turbo both cache correctly, but spec §11 acceptance criteria don't pass: (1) `pnpm run format` fails everywhere (generator emits single quotes, oxfmt defaults to double), (2) `pnpm run test` fails on all five apps (no `.spec.tsx` files generated under `apps/*/src/`), (3) `vp run lint` on add_vp reports 0/0 cache hit and runs zero tasks (vite.config.ts shape wrong). Also: add_nx does NOT inject per-package `nx` blocks as §6 required (unused `scripts/add-nx-blocks.mjs` is dead code); silent scale reduction from 250/50 → 30/10 leaves README claim of matching `vsavkin/large-monorepo` scale stale. Report: `bench-monorepo-orchestrators/REVIEW_REPORT.md`
 - [x] 🤖 Review night-shift fixes from 2026-04-10 session (11 applied, 29 fixed / 44 total)
   - Session report: `/Users/jack/projects/night-shift/sessions/session-2026-04-10.md`
   - Worktrees: `~/projects/nx-worktrees/issue-*` — review code, run tests, create PRs
@@ -90,17 +108,6 @@
     - [x] #34095 — @nx/next:build missing semver dep (conf: 82, ✅ approved) `issue-34095` | reports: `/tmp/nightshift-work-R1OwZd/reports/`
       - My notes: REJECTED. The fix looks reasonable at first, but we should NOT be importing semver statically in the first place, it needs to be dynamic when needed. THe withNx function needs more deps at build time than at run time, which is why the phase guard check is there. The original change by Colum should have put the semver import exactly when needed instead of the top-level import. Needs rework.
     - [ ] #34281 — @nx/s3-cache non-pinned AWS SDK (conf: 90, ✅ approved) — applied to ocean repo | reports: `/tmp/nightshift-work-drAGdC/reports/`
-      - This was deleted due to computer restart
-    - [ ] #34531 — isMigrationToMonorepoNeeded uses graph (conf: 82, ✅ approved) `issue-34531` | reports: `/tmp/nightshift-work-DVTAk2/reports/`
-      - This was deleted due to computer restart
-    - [ ] #34680 — storybook-configuration Windows paths (conf: 80, ✅ approved) `issue-34680` | reports: `/tmp/nightshift-work-viX2gJ/reports/`
-      - This was deleted due to computer restart
-    - [ ] #34593 — jest migration crashes on non-plugin workspaces (conf: 0, ⚠️ concerns) `issue-34593` | reports: `/tmp/nightshift-work-fF3JdH/reports/`
-      - This was deleted due to computer restart
-    - [ ] #34756 — docs: run-commands args interpolation (conf: 85, ✅ approved) `issue-34756` | reports: `/tmp/nightshift-work-AGV2hy/reports/`
-      - This was deleted due to computer restart
-    - [ ] #34987 — gradle plugin Windows paths (conf: 85, ✅ approved) `issue-34987` | reports: `/tmp/nightshift-work-hA39f2/reports/`
-      - This was deleted due to computer restart
 - [ ] Update Day 2 Montreal on-site agenda with PLG talking points (2026-04-11)
   - From Joe 1:1 (2026-04-10): 80/20 rule, sticky notes funnel exercise, activation metric (20+ runs / 24hr target), weekly metric reviews
   - Key themes: every engineer maps their work to a funnel stage, micro→macro metric connection, backend/infra teams included in PLG scrutiny

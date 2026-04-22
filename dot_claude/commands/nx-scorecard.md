@@ -61,14 +61,16 @@ gh api 'search/issues?q=repo:nrwl/nx+is:issue+state:closed+closed:{FIRST_DAY}..{
 
 ### 2. GitHub PRs (nrwl/nx)
 
-**Total open PRs (snapshot):**
+Count only **non-draft** PRs. Use `draft:false` to exclude drafts from both queries.
+
+**Open non-draft PRs (snapshot):**
 ```bash
-gh api "search/issues?q=repo:nrwl/nx+is:pr+state:open&per_page=1" --jq '.total_count'
+gh api "search/issues?q=repo:nrwl/nx+is:pr+state:open+draft:false&per_page=1" --jq '.total_count'
 ```
 
-**Open PRs created this month:**
+**Open non-draft PRs created this month:**
 ```bash
-gh api "search/issues?q=repo:nrwl/nx+is:pr+state:open+created:{FIRST_DAY}..{LAST_DAY}&per_page=1" --jq '.total_count'
+gh api "search/issues?q=repo:nrwl/nx+is:pr+state:open+draft:false+created:{FIRST_DAY}..{LAST_DAY}&per_page=1" --jq '.total_count'
 ```
 
 ### 3. Linear High-Priority Misc Issues
@@ -124,7 +126,7 @@ Print a clean markdown table with the results:
 | Closed issues | {count} |
 | Closed high-priority issues | {count} |
 | Open Linear high-priority misc issues | {count} |
-| Total PRs (open) | {total} ({this_month} this month) |
+| Non-draft PRs (open) | {total} ({this_month} this month) |
 | Total monthly downloads | {formatted, e.g. 36.0M} |
 | YoY growth (monthly downloads) | {percent}% |
 ```
