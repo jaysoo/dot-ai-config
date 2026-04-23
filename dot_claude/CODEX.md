@@ -103,8 +103,8 @@ The `dot_ai/TODO.md` file tracks **In Progress** tasks only. When a task is comp
 - `mcp__MyNotes__get_task_context` - Resume specific task
 - `mcp__MyNotes__find_specs` - Find specifications
 - `mcp__MyNotes__extract_todos` - Find TODO items
-- `mcp__gemini-collb__ask_gemini` - Verify facts
-- `mcp__gemini-collb__gemini_code_review` - Code review
+
+**Gemini collaboration**: Use the `gemini-collab` skill (shells out to the `gemini` CLI in headless mode) for fact-checking, code review, and deep research. The old `mcp__gemini-*` MCP tools have been retired — use the skill instead.
 
 ### MCP Trigger Phrases
 **MyNotes triggers**: "my notes", "my tasks", "previous work", "what did I work on", "find my", "search my"

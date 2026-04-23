@@ -12,7 +12,6 @@ For Jack's personal preferences, workflow conventions, and tech-specific guidanc
 | `dot_claude/settings.json` | `~/.claude/settings.json` | Claude Code settings |
 | `dot_claude/commands/` | `~/.claude/commands/` | Slash commands |
 | `dot_claude/skills/` | `~/.claude/skills/` | Skills |
-| `mcp-gemini/` | `~/.claude/mcp-gemini/` | Gemini MCP integration |
 | `dot_ai/` | symlinked as `.ai/` in every work repo | Dictations, daily notes, tasks, PARA knowledge base |
 | `fish/` | `~/.config/fish/` | Fish shell config (excludes `fish_variables`, `nxcloud.fish`) |
 | `nvim/` | `~/.config/nvim/` | Neovim config |
@@ -56,7 +55,7 @@ ln -s $HOME/projects/dot-ai-config/dot_ai .ai
 Run `./sync.sh` manually if you want to sync without pushing.
 
 **Never edit these destinations directly** — they'll be overwritten on the next push:
-- `~/.claude/` (CLAUDE.md, commands/, skills/, settings.json, mcp-gemini/)
+- `~/.claude/` (CLAUDE.md, commands/, skills/, settings.json)
 - `~/.config/fish|nvim|kitty|mise|gh-dash/`
 - `~/.tmux.conf`, `~/.bashrc`, `~/.gitconfig`, `~/.gitignore_global`
 

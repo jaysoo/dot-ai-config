@@ -37,6 +37,54 @@
 - Note: pretty much every feature/stability addition is single-tenant focused
 
 
+### 2026-04-23
+
+**Dedicated Compute Cluster Project Update**
+- Steve completed comprehensive documentation for dedicated compute clusters
+  - Summary document: https://notion.so/nxnrwl/Dedicated-Compute-Cluster-Summary-34b69f3c2387811ca6e1fd3dd240a26e?source=copy_link
+  - Consolidates 5 separate documents covering pricing, security, planning
+  - Targeting delivery by June 1st
+- Infrastructure components mostly ready
+  - Small API changes needed in controller for org ID routing
+  - Will use "compute routing key" instead of org ID terminology
+  - Leverages existing multi-downstream work with minor edits
+- Revenue projections per cluster
+  - 55 total customers maximum capacity
+  - $30-40k monthly margin even without usage billing
+  - Additional usage charges when billing decomposition implemented
+
+**Missing Components & Ownership Gaps**
+- Billing automation and customer onboarding flow undefined
+  - No mechanism for customers to opt into clusters
+  - Temporary solution: manual process via support/email
+  - Full automation deferred until after June 1st launch
+- Project ownership unclear across teams
+  - No single person responsible end-to-end
+  - Victor focused on Polygraph until July 1st
+  - Jack concerned about project falling to him given other commitments
+- Need product team member to bridge infra and business requirements
+  - Nicole potential candidate for ownership role
+  - Someone must coordinate between Steve's infra work and app integration
+
+**Strategic Context & Prioritization**
+- Polygraph vs NX Cloud platform trade-offs discussed
+  - Polygraph high-risk, high-reward (potential $10M+ ARR)
+  - NX Cloud more predictable revenue stream with known customer base
+  - Even 1% of user base paying would significantly improve company position
+- Resource allocation challenges
+  - Louis pulled in multiple directions between teams
+  - Need clearer boundaries on unplanned CI work
+  - Focus on delivering core billing functionality over feature work
+
+**Next Steps**
+- Jack will review documentation and provide feedback via Slack
+- Steve sending summary to executives: Joe, Victor, Jeff, others
+- Project ownership decision needed within next week
+- Infrastructure team starting implementation tasks by end of month
+- Patrick finishing sandboxing/AWS work before transitioning to cluster project
+
+[Transcript](https://notes.granola.ai/t/1aebde9c-3080-48bb-9e22-b2b38f1b8f0a-00demib2)
+
 ### 2026-03-26
 
 **Infrastructure Cost Management Challenges**

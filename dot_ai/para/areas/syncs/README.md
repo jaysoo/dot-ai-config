@@ -22,6 +22,7 @@ Notes from recurring team sync meetings.
 | Docs | `docs/` | Documentation team sync |
 | Marketing | `marketing/` | Marketing team sync (includes Framer website) |
 | Planning | `planning/` | Company-wide roadmap/planning meetings |
+| Quark-A | `quark-a/` | PLG funnel & experiments to hit self-serve revenue goal |
 
 ## File Structure
 

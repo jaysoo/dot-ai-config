@@ -259,10 +259,10 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 | `mcp__MyNotes__get_task_context` | Resume specific task |
 | `mcp__MyNotes__find_specs` | Find specifications |
 | `mcp__MyNotes__extract_todos` | Find TODO items |
-| `mcp__gemini-collb__ask_gemini` | Verify facts |
-| `mcp__gemini-collb__gemini_code_review` | Code review |
 
 **Triggers**: "my notes", "my tasks", "previous work", "what did I work on"
+
+**Gemini collaboration**: Use the `gemini-collab` skill (shells out to the `gemini` CLI in headless mode) for fact-checking, code review, and deep research. Do **not** use any `mcp__gemini-*` MCP tools — they've been replaced by the skill.
 
 **Linear MCP:**
 - Confirm team: "Nx CLI" (NXC-) vs "Nx Cloud" (CLOUD-)
