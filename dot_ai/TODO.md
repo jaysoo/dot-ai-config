@@ -148,6 +148,7 @@
   - PR: https://github.com/vercel/turborepo/pull/12531
   - Test on a TS monorepo: enable flag, configure `incremental` outputs, measure cache-miss rebuild times vs without
   - Evaluate whether Nx should offer equivalent (separate cache partition for tool-level incremental state)
+- [ ] Publish remote cache packages to address CVEs and close GH issue (2026-04-23)
 - [ ] Review PR #34890 (2026-03-23)
 - [ ] Review Ben's 3 Ocean PRs — structural/dev improvements (2026-04-10)
   - #10265 — fixes `op-secrets`, not injecting env vars for e2e dev (adds fallback when 1Password CLI unavailable)
