@@ -52,6 +52,48 @@
   - Shouldn't we see significantly more content output with AI assistance?
 - What's blocking higher throughput? Capacity? Review bottleneck? Prioritization?
 
+**Montreal Meeting Feedback & Polygraph Context** (follow-up from 2026-04-20)
+
+- Only feedback received was about Jeff's CI explanation lacking clarity
+  - Participants confused about moonshot context and CI system options
+  - Polygraph chosen over independent CI system alternative
+- Success probability ranges need clearer communication:
+  - 30-50% chance of complete failure
+  - 10% chance of huge success (6M ARR projection)
+  - 40% chance of modest success (few million ARR, growing next year)
+- Enterprise/Cloud projections more reliable (80% accuracy, known path to 6-9M)
+- Polygraph projections uncertain due to lack of data
+  - 2M ARR in 6 months would be massive success
+  - Could enable fundraising in Q1 2027
+
+**Project Tracking & Execution Improvements**
+
+- Need earlier information gathering for future large meetings
+  - Heidi provided materials on time and was helpful
+- Jeff's execution issues identified as main focus area with coach
+  - Needs better follow-through on commitments
+- Project tracking framework established:
+  - Tier 1: Heidi/Jeff care about (major launches, business impact)
+  - Tier 2: Engineers/DPEs care about
+  - Tier 3: Only engineers care about (maintenance, small improvements)
+- Focus on 4-5 high-impact business projects per quarter vs. 10 mediocre ones
+- Sandboxing project template approved for tracking major initiatives
+
+**Platform Onboarding & Pricing Strategy**
+
+- CLI docs and Cloud converting to ongoing projects with proper milestones
+- Current metrics: 300+ daily completions, 23% cloud conversion rate
+- Browser fork being deprecated due to agent incompatibility issues
+- Remote caching positioned as primary onboarding driver by June
+- Coordination ownership unclear between teams
+  - Jack coordinating technical aspects across CLI/platform teams
+  - Nicole owns feature activation
+  - Need clarity on overall POG (platform onboarding) ownership
+- V23 deprecation planned except inference plugins and Angular
+  - Module Federation and other used features being removed
+  - Will provide ejection path for users to maintain features locally
+- Transcript: https://notes.granola.ai/t/b581b5e1-a705-4f85-8487-e0b53445b51c-00demib2
+
 ### March 2, 2026
 
 **Dolphin Morale & Retention**
