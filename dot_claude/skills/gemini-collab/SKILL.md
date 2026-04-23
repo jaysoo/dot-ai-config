@@ -9,14 +9,14 @@ This skill allows Claude to delegate complex, research-heavy, or "grounded" task
 
 ## How to Delegate to Gemini
 
-Use your shell tool to execute the `gemini` command in **Headless Mode**.
+Use your shell tool to execute the `gemini` command in non-interactive mode (`-p`/`--prompt` alone triggers headless execution — there is no separate `--headless` flag).
 
 ### 1. Code Review & Auditing
 
 Delegating a review ensures a rigorous check against the actual codebase state.
 
 ```bash
-gemini --prompt "Review the current staged changes. Focus on potential memory leaks in the aggregator and verify that all new MongoDB queries have corresponding indexes." --headless --approval-mode yolo
+gemini --prompt "Review the current staged changes. Focus on potential memory leaks in the aggregator and verify that all new MongoDB queries have corresponding indexes." --approval-mode yolo
 ```
 
 ### 2. Implementation Brainstorming
@@ -24,7 +24,7 @@ gemini --prompt "Review the current staged changes. Focus on potential memory le
 Use Gemini to generate and verify ideas based on existing patterns.
 
 ```bash
-gemini --prompt "Brainstorm three different approaches for implementing the new 'Project Analytics' dashboard. For each approach, identify which existing UI components in 'libs/nx-cloud/feature-analytics' can be reused." --headless --approval-mode yolo
+gemini --prompt "Brainstorm three different approaches for implementing the new 'Project Analytics' dashboard. For each approach, identify which existing UI components in 'libs/nx-cloud/feature-analytics' can be reused." --approval-mode yolo
 ```
 
 ### 3. Deep Research & Investigation
@@ -32,7 +32,7 @@ gemini --prompt "Brainstorm three different approaches for implementing the new 
 Offload the "heavy lifting" of tracing complex logic or dependencies.
 
 ```bash
-gemini --prompt "Trace the entire lifecycle of a 'task-retry' event. Start from the runner's emission and follow it through the API to the database persistence layer." --headless --approval-mode yolo
+gemini --prompt "Trace the entire lifecycle of a 'task-retry' event. Start from the runner's emission and follow it through the API to the database persistence layer." --approval-mode yolo
 ```
 
 ## Protocol for Claude
