@@ -489,6 +489,7 @@ Fix source files rather than making regex handle edge cases.
 ### Investigation Best Practices
 - **Verify actual code path FIRST** - add logging to node_modules
 - **Don't document theories as facts** - mark as "HYPOTHESIS: needs verification"
+- **Endorsing another reviewer's code-logic-only claim**: if the claim is purely "the code does X, therefore Y will happen", reproduce Y before acting. Reading the code only validates the "does X" half; the "therefore Y" half needs a repro, a locally-published version, or a unit test. If uncertain, ask me to verify before proceeding rather than propagating an unverified prediction.
 - Watch for multiple implementations (PTY vs spawn vs exec, native vs JS)
 
 **Example (NXC-3505):** Assumed `exec()` with piped stdio, but single commands use PTY.
