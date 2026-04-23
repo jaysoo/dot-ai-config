@@ -1,245 +1,131 @@
-# NXC-4262: Common `nx init` Issues — Fixes & Repros
+# NXC-4262: Instrument `nx init` errors for root-cause discovery
 
 **Linear:** https://linear.app/nxdev/issue/NXC-4262/common-init-issues
 **Branch:** `NXC-4262`
 **Plan:** `.ai/2026-04-20/tasks/init-error-investigation.md`
 
-Implements the five fixes from the `init-error-investigation.md` plan, driven
-by the `nx init` error telemetry for 2026-04-01 → 2026-04-20 (26.2% error
-rate, ~24% of starts concentrated in 6 buckets).
+## Scope
+
+Telemetry-only. The investigation showed `nx init` has a 26.2% error rate
+but ~24% of that is concentrated in opaque buckets (`UNKNOWN` / empty
+errorMessage / bare `Command failed: <cmd>`). We can't prioritize the real
+fixes without first knowing what the errors actually are. This PR adds the
+instrumentation; targeted behavioral fixes come in follow-ups driven by
+what the enriched telemetry reveals.
+
+Explicitly **not** in this PR: any `try/catch` that swallows a failure, any
+fallback path that changes whether init succeeds, any UX change to the
+terminal output during normal operation.
 
 ## Changes
 
-| #   | Fix                                                                  | Files                                                                                                                       |
-| --- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Capture stderr on child-process failures + include tail in telemetry | `implementation/utils.ts`, `implementation/angular/legacy-angular-versions.ts`, `configure-plugins.ts`, `command-object.ts` |
-| 2   | Make `./nx --version` warm-up non-fatal                              | `implementation/dot-nx/add-nx-scripts.ts`, `init-v1.ts`                                                                     |
-| 3   | Angular version detection warns + falls through instead of throwing  | `implementation/angular/legacy-angular-versions.ts`                                                                         |
-| 4   | Bail with friendly message if `cwd` is a system dir                  | `command-object.ts`                                                                                                         |
-| 5   | Friendly error for invalid `package.json`                            | `init-v2.ts`, `init-v1.ts`                                                                                                  |
+### 1. Capture child-process stderr on failure (`implementation/utils.ts`)
 
-Unit tests added:
+New helper `runCapturingStderr` that runs a shell command with
+`stdio: ['ignore', 'inherit', 'pipe']` and, on non-zero exit, throws an
+`Error` with:
+- `stderr` (full captured)
+- `stdout`
+- `exitCode`
+- `code` — structured token extracted from stderr matching
+  `/\b(E[A-Z0-9_]{2,}|ERR_[A-Z0-9_]+)\b/` (E404, ERESOLVE, EACCES,
+  EINTEGRITY, ERR_PNPM_*, …)
 
-- `implementation/utils.spec.ts` — `runCapturingStderr` success + failure paths
-- `command-object.spec.ts` — `detectSystemDirectory` (win32 + posix)
+The message embeds the stderr tail so `error.message` carries the real
+failure cause instead of bare `Command failed: <cmd>`.
 
-## Repro Steps
+Applied at:
+- `runInstall` (all preset paths: monorepo/npm/turborepo/nest/angular)
+- `legacy-angular-versions.ts` → install + `ng g <pkg>:ng-add` migration
+- `configure-plugins.ts` → dot-nx `runNxSync('--version')` wrapper invocation
 
-All repros assume a linked local build of the `nx` package. From this
-worktree:
+### 2. Telemetry payload enrichment (`command-object.ts`)
 
-```bash
-pnpm install && pnpm nx build nx
-# creates packages/nx/dist; link or copy to repro fixture as needed
+On error events, emit the same environment context we already emit on
+`start`/`complete`, plus the structured error code:
+
+```diff
+  meta: {
+    type: 'error',
+    errorCode,
++   errorName,          // e.g. "E404", "ERESOLVE", "ENOENT", "Error"
+    errorMessage,       // now always non-empty; includes stderr tail
+    aiAgent,
++   isCI,
++   nodeVersion,
++   os,
++   packageManager,
+  }
 ```
 
-For quick repros, you can run the compiled CLI directly:
+### 3. Robust `errorMessage` extraction (`command-object.ts`)
 
-```bash
-NODE=packages/nx/dist/bin/nx.js
+Replaces `error instanceof Error ? error.message : String(error)` with a
+`toErrorString()` helper. The old logic produced `""` when a bare
+`new Error()` was thrown (one of the reported telemetry buckets had 217
+events with empty `errorMessage`). New fallback order:
+
+1. `error.message` if truthy
+2. `error.name` if set and not the default `"Error"`
+3. JSON of own properties (excluding `stack` — PII + bulk)
+4. Literal `"Error"` for a bare `new Error()`
+5. `String(error)` / `"[object Object]"` / `"Unknown error"` for
+   primitives, plain objects, and null/undefined respectively
+
+### 4. Tests
+
+- `utils.spec.ts` — `runCapturingStderr` success + failure + E-code
+  extraction (4 parametrized cases: E404, ERESOLVE, EINTEGRITY,
+  ERR_PNPM_PEER_DEP_ISSUES)
+- `command-object.spec.ts` (new) — `toErrorString` across error.message
+  present/empty, custom names, primitives, null/undefined, plain objects,
+  and unserializable (circular) objects
+
+## Verified payload shape
+
+Captured from a real `npm install` failure via module-load intercept:
+
+```json
+{
+  "type": "error",
+  "errorCode": "PACKAGE_INSTALL_ERROR",
+  "errorName": "E404",
+  "errorMessage": "Failed to install dependencies (exit code 1): npm install\nnpm error code E404\nnpm error 404 Not Found ...",
+  "aiAgent": false,
+  "isCI": false,
+  "nodeVersion": "24.11.0",
+  "os": "darwin",
+  "packageManager": "npm",
+  "nxVersion": "22.7.0"
+}
 ```
-
----
-
-### Fix 1 — stderr capture on child-process failures
-
-**Telemetry buckets covered:** `UNKNOWN` "bare `./nx --version` fail, no
-stderr" (397), `UNKNOWN` empty errorMessage (217), `PACKAGE_INSTALL_ERROR`
-bare `{npm,pnpm,yarn} install` fail (287 combined). ~22% of starts.
-
-**Root cause:** `runInstall` and related child-process helpers used
-`execSync` with `stdio: ['ignore', 'ignore', 'inherit']`. Node's
-`child_process` only captures `error.stderr` / `error.stdout` when the
-respective stream is `'pipe'` — with `'inherit'` they stream directly to the
-terminal and are not available on the thrown error. Telemetry therefore
-received `Command failed: npm install` with no context.
-
-**Repro (before fix):**
-
-```bash
-mkdir /tmp/init-repro-fix1 && cd /tmp/init-repro-fix1
-echo '{"name":"demo","dependencies":{"definitely-not-a-real-package-xyzqwe":"99.99.99"}}' > package.json
-# Run init with the OLD code path:
-git stash && node $NODE init --no-interactive
-# Observed: process crashes with "Failed to install dependencies:" and no stderr body;
-# telemetry receives errorMessage="Command failed: npm install" with no diagnostic.
-git stash pop
-```
-
-**Repro (after fix):**
-
-```bash
-node $NODE init --no-interactive
-# Observed: the bogus-package install error from npm/pnpm/yarn is emitted to
-# stderr AND included in the thrown error message. Telemetry receives
-# errorMessage="Failed to install dependencies (exit code N): <cmd> | stderr: ...npm ERR! 404 Not Found ...".
-```
-
-**Unit test:** `utils.spec.ts > runCapturingStderr > attaches stderr, stdout, and exit code to the thrown error`.
-
----
-
-### Fix 2 — `./nx --version` warm-up is now non-fatal
-
-**Telemetry bucket covered:** `UNKNOWN` "bare `./nx --version` fail, no
-stderr" — 9.8% of all starts by itself.
-
-**Root cause:** Two call sites bootstrap the dot-nx wrapper by invoking
-`./nx --version` (or `runNxSync('--version')`) right after writing the
-wrapper files. If that bootstrap fails (network blip, missing shell on
-Windows elevated cmd, sandboxed FS), the whole `nx init` aborts with a
-useless `Command failed: ./nx --version` error even though the wrapper is
-already on disk and would bootstrap fine on next invocation.
-
-Sites:
-
-- `implementation/dot-nx/add-nx-scripts.ts:68`
-- `init-v1.ts:116`
-
-**Repro (before fix):**
-
-```bash
-mkdir /tmp/init-repro-fix2 && cd /tmp/init-repro-fix2
-# Simulate a failing warm-up: make node unavailable to the child (shell on
-# Unix will refuse to exec `./nx`). Use an empty PATH so `command -v node`
-# fails in the generated shell script:
-PATH= node $NODE init --no-interactive --useDotNxInstallation
-# Before: init crashes near the end with "Command failed: ./nx --version"
-# and telemetry records UNKNOWN.
-```
-
-**Repro (after fix):**
-
-```bash
-PATH= node $NODE init --no-interactive --useDotNxInstallation
-# After: init finishes successfully, wrapper files are on disk,
-# next `./nx` invocation bootstraps `.nx/installation`. No telemetry error.
-# With NX_VERBOSE_LOGGING=true, a single warning line is printed.
-```
-
----
-
-### Fix 3 — Angular version detection warns instead of throwing
-
-**Telemetry bucket covered:** `UNKNOWN` "Could not determine the existing
-Angular version" — 82 events / 2.0% of starts.
-
-**Root cause:** `getLegacyMigrationFunctionIfApplicable` throws if
-`@angular/core` cannot be resolved from the workspace root. This is the
-common case for `ng new` projects where `npm install` has not run yet. The
-throw aborts `nx init` even though the modern Nx flow would work fine.
-
-**Repro (before fix):**
-
-```bash
-mkdir /tmp/init-repro-fix3 && cd /tmp/init-repro-fix3
-cat > angular.json <<'JSON'
-{ "$schema": "./node_modules/@angular/cli/lib/config/schema.json", "version": 1, "projects": {} }
-JSON
-cat > package.json <<'JSON'
-{ "name": "ng-demo", "dependencies": { "@angular/core": "^19.0.0" } }
-JSON
-# No node_modules — @angular/core isn't resolvable.
-node $NODE init --no-interactive
-# Before: crashes with "Could not determine the existing Angular version" → UNKNOWN telemetry.
-```
-
-**Repro (after fix):**
-
-```bash
-node $NODE init --no-interactive
-# After: prints a warning and continues with the latest Nx flow.
-# A user with an older Angular can still run `npm install && nx init`
-# if they want the legacy path.
-```
-
----
-
-### Fix 4 — Windows system dir guard
-
-**Telemetry bucket covered:** `EPERM` on `C:\Windows\nx.json` — 12 events.
-
-**Root cause:** An elevated `cmd`/PowerShell starts in `C:\Windows\System32`.
-`npx nx init` then tries to write `nx.json` there and crashes with EPERM.
-Same issue on macOS/Linux when a shell opens at `/` or `/System`.
-
-**Repro (before fix) — macOS/Linux analogue:**
-
-```bash
-# Simulate running init at filesystem root
-cd / && node $NODE init --no-interactive || echo "exit $?"
-# Before: crashes writing nx.json with EACCES/EPERM deep inside the stack
-# and telemetry records UNKNOWN with a stack-trace-ish message.
-```
-
-**Repro (after fix):**
-
-```bash
-cd / && node $NODE init --no-interactive
-# After: bails immediately with:
-#   nx init: refusing to initialize an Nx workspace inside /.
-#   Please change into your project directory first (e.g. `cd path/to/your/project`) and re-run `nx init`.
-```
-
-**Unit test:** `command-object.spec.ts > detectSystemDirectory` covers
-`C:\Windows`, `C:\Program Files`, `/`, `/System`, plus happy paths.
-
----
-
-### Fix 5 — Friendly error for invalid `package.json`
-
-**Telemetry bucket covered:** `ValueExpected` / `CommaExpected` JSON parse
-errors on existing `package.json` — ~17 events / 0.3% of starts.
-
-**Root cause:** `readJsonFile('package.json')` throws a raw parser error
-when the file is empty or malformed. The user sees e.g.
-`ValueExpected in JSON at 0:0` with no indication of which file or how to
-fix it.
-
-**Repro (before fix):**
-
-```bash
-mkdir /tmp/init-repro-fix5 && cd /tmp/init-repro-fix5
-: > package.json   # zero-byte package.json
-node $NODE init --no-interactive
-# Before: crashes with "ValueExpected at 0:0" or similar; telemetry: UNKNOWN.
-```
-
-**Repro (after fix):**
-
-```bash
-node $NODE init --no-interactive
-# After:
-#   Your `package.json` is not valid JSON and cannot be parsed.
-#     <parser message>
-#   Fix the syntax errors in `package.json` and re-run `nx init`.
-```
-
-Telemetry errorMessage now includes `is not valid JSON and cannot be parsed`
-so the bucket is identifiable.
-
----
-
-## Execution plan mapping
-
-Following the `init-error-investigation.md` execution order:
-
-1. **Fix 1** — ships biggest telemetry win; stderr on every failure path.
-2. **Fix 2 + Fix 3** — paired graceful-degradation changes (UNKNOWN bucket).
-3. **Fix 4 + Fix 5** — low-priority user-facing polish for long-tail errors.
-
-All five are bundled together here because the diffs are small, touch the
-same files, and share regression coverage.
 
 ## Verification
 
-- `pnpm nx run-many -t build,lint -p nx` — green.
-- `pnpm nx test nx -- --testPathPatterns='(init/implementation/utils.spec|command-line/init/command-object.spec|init/init-v2.spec)'` — 30/30 pass, includes 2 new tests for `runCapturingStderr` and 6 parameterised cases for `detectSystemDirectory`.
+- `pnpm nx run-many -t build,lint -p nx` — green
+- `pnpm nx test nx -- --testPathPatterns='command-line/init'` — 37/37
 
-Post-release, re-run the `cnw-stats-analyzer` skill after 7 and 14 days and
-check:
+## Expected telemetry impact
 
-- Bucket #1 (bare `./nx --version`) disappears entirely.
-- Bucket #4 (Angular version) disappears (Fix 3).
-- Buckets #2, #3, #5, #6 either shrink or reveal new patterns through the
-  newly-captured stderr tails, which will inform the next wave.
+One week post-release, re-run `cnw-stats-analyzer`:
+- `errorName` distribution across the ~287 monthly `PACKAGE_INSTALL_ERROR`
+  events will tell us the real failure mix (ERESOLVE vs EACCES vs
+  EINTEGRITY vs 401 vs 404 vs ENOTFOUND vs …).
+- The 217-event "empty errorMessage" bucket should disappear entirely.
+- `os` / `nodeVersion` / `packageManager` slices will show whether any
+  failure mode is concentrated on a specific platform.
+
+That distribution is the input to the follow-up PRs that actually *fix*
+things (Fix 2–5 from the investigation plan, whichever turn out to be
+material once we have real data).
+
+## Not in this PR (deferred)
+
+Originally scoped on this branch but removed:
+- Fix 2: make `./nx --version` warm-up non-fatal
+- Fix 3: Angular version detection warn-and-fallthrough
+- Fix 4: Windows system-directory guard
+- Fix 5: Friendly invalid-`package.json` message
+
+Each should be revisited once telemetry confirms the bucket is real and
+quantifies the impact.

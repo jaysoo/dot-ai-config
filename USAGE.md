@@ -11,7 +11,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | reflect               | command | 2026-04-01   | 5     |
 | summarize             | command | 2026-04-01   | 5     |
 | dot-claude-guard      | skill   | 2026-04-10   | 5     |
-| scan-and-audit        | skill   | 2026-04-09   | 8     |
+| scan-and-audit        | skill   | 2026-04-22   | 9     |
 | scan-competitors      | command | 2026-04-09   | 8     |
 | customer-deps-audit   | task    | 2026-04-09   | 5     |
 | runtime-tracking-scan | task    | 2026-04-09   | 4     |
@@ -36,3 +36,6 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | audit-api-surface     | skill   | 2026-04-09   | 9     |
 | audit-project-health  | skill   | 2026-04-09   | 11    |
 | site-checker          | skill   | 2026-04-01   | 0     |
+| caveman               | skill   | 2026-04-22   | 1     |
+| review-pr             | command | 2026-04-22   | 1     |
+| cnw-stats-local-server | skill  | 2026-04-23   | 0     |

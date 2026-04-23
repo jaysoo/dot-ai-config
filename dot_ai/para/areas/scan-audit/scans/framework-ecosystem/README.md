@@ -30,6 +30,7 @@ Monthly scan reports tracking releases, breaking changes, and Nx plugin impact f
 
 | Month   | File         |
 | ------- | ------------ |
+| 2026-04 | `2026-04.md` |
 | 2026-03 | `2026-03.md` |
 | 2026-02 | `2026-02.md` |
 

@@ -4,6 +4,8 @@ Thoroughly review a GitHub PR by checking out the branch locally, verifying test
 
 **CRITICAL**: Do NOT post reviews, comments, or approvals on GitHub unless explicitly told to. This command produces a local analysis only.
 
+**OUTPUT MODE**: Invoke `caveman` skill with `ultra` arg at start. All user-facing output (status updates, findings, final report) in caveman ultra: abbreviate (DB/auth/config/req/res/fn/impl), strip articles + conjunctions, arrows for causality (X → Y), one word when one word enough. Code/commands/quoted errors/file paths unchanged. Auto-clarity exceptions apply: security warnings, irreversible ops, multi-step sequences → normal prose.
+
 ## Arguments
 
 - `$ARGUMENTS` - PR number or URL (e.g., `34350` or `https://github.com/nrwl/nx/pull/34350`)
@@ -125,35 +127,33 @@ For code transformation PRs (migrations, codemods, AST rewrites):
 
 ### Step 8: Produce Report
 
-Output a structured analysis:
+Caveman ultra. Fragments. Arrows for causality. No filler.
 
 ```markdown
-## PR #NNNN Review: <title>
+## PR #NNNN: <title>
 
-**Author**: @username | **Issue**: #NNNN | **LOC**: +N/-N
+@author | #issue | +N/-N
 
-### Summary
-<1-2 sentence summary of what the PR does>
+### TL;DR
+<1 line: what PR do>
 
-### Fix Assessment
-- [ ] Addresses root cause (not just symptom)
-- [ ] Minimal change — no unnecessary branching or backward-compat logic
-- [ ] No regressions identified
-- [ ] No unrelated changes mixed in
+### Fix
+- [ ] root cause (not symptom)
+- [ ] minimal (no extra branching/compat)
+- [ ] no regressions
+- [ ] no unrelated diff
 
-### Test Assessment
-- [ ] New tests fail without the fix
-- [ ] New tests pass with the fix
-- [ ] Test fixtures represent real-world patterns
-- [ ] Adequate coverage (snapshots for transforms, edge cases)
+### Tests
+- [ ] fail w/o fix
+- [ ] pass w/ fix
+- [ ] real-world fixtures
+- [ ] coverage OK (snapshots for transforms, edges)
 
-### Issues Found
-<numbered list of problems, if any>
+### Issues
+1. ...
 
 ### Verdict
-MERGE / NEEDS CHANGES / REJECT
-
-<explanation>
+MERGE | NEEDS CHANGES | REJECT — <one-line reason>
 ```
 
 ### Step 9: Cleanup

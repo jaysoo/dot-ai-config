@@ -13,6 +13,7 @@ Monthly reports tracking Node.js, Bun, and Deno runtime releases and their impac
 
 | Month   | File         | Key Items                                                                                                       |
 | ------- | ------------ | --------------------------------------------------------------------------------------------------------------- |
+| 2026-04 | `2026-04.md` | Node 20 EOL in 8 days (Apr 30) with Nx 22.6.5 still no engines field, Node 24.15.0 LTS (require(esm)/compile-cache stable, Module.register DEP0205), Bun 1.3.13 ships test parallel/shard/changed/isolate (Jest/Vitest parity on CI), Deno 2.7.13 rewrites node:http, TC39 Import Text → Stage 3 |
 | 2026-03 | `2026-03.md` | Node release schedule overhaul (1 major/year from Node 27), Mar 24 security releases scheduled but NOT YET SHIPPED (2H/5M/2L CVEs), Deno 2.7.7 (node:dns, GCM timing fix), Bun 1.3.11 (Bun.cron, 105 fixes), Nx 22.6.1 (no engines field), Node 20 EOL Apr 30 (37 days) |
 | 2026-02 | `2026-02.md` | Node 20 EOL April 2026, Jan security CVEs, Node 25 breaking changes, Bun 1.3.x, Deno 2.7                        |
 

@@ -1,21 +1,21 @@
 {
-  "lastRun": "2026-04-20T14:00:00Z",
+  "lastRun": "2026-04-22T10:05:00Z",
   "lastWeeklyReport": "2026-W17",
   "lastMonthlyDigest": "2026-03",
   "lookbackDays": 60,
   "findings": {
-    "cnw-templates": { "critical": 0, "high": 5, "medium": 21, "low": 6, "templates-tested": 4, "cnw-version": "22.6.5", "new-angular-ssrf": "GHSA-45q2-gjvg-7973" },
-    "dependencies": { "critical": 21, "warning": 15, "watch": 13, "healthy": 124, "total": 173, "dotenv-expand-resolved": "2026-04-17", "flat-gh-pending-since": "2026-03-19" },
-    "supply-chain": { "status": "yellow", "new-critical-dev-only": "CVE-2026-41242 protobufjs", "latest-nx": "22.6.5", "latest-nx-cloud": "19.1.3", "nx-cloud-provenance-gap-months": 3, "polygraph-mcp-latest": "0.1.7", "hardening-pr-35159": "2026-04-07", "files-allowlist-pr-35109": "2026-04-01" },
-    "api-surface": { "high": 5, "medium": 4, "low": 4, "total": 13, "delta-vs-last-week": -72, "docs-consolidation-pr": "35315", "methodology-needs-narrowing": true },
-    "competitors": { "highlights": 6, "turbo-threat-HIGH": true, "turbo-stable": "2.9.6", "turbo-canary": "2.9.7-canary.13", "moon-latest": "2.2.2", "gradle-rc": "9.5.0-RC3", "gradle-task-provenance-new": true },
-    "frameworks": { "compat-risks": 11, "p0-risks": 3, "p1-risks": 5, "p2-risks": 3, "angular-ssrf-upstream-patched": true, "rspack-2-rc3": true, "next-canary": "16.3.0-canary.2", "vite-latest": "8.0.9" },
-    "runtimes": { "action-items": 13, "node20-eol-days": 10, "node20-eol-date": "2026-04-30", "node-24.15.0-lts": true, "bun-1.3.13-test-parity-threat": true, "bun-test-new-flags": ["--parallel","--shard","--changed","--isolate"] },
-    "ai-landscape": { "highlights": 26, "opportunities": 18, "risks": 10, "claude-code": "v2.1.114", "claude-opus-4-7-ga": "2026-04-16", "claude-design-launch": "2026-04-17", "windsurf-2-0": "2026-04-15", "mcp-sep-2586-skills-wg": true, "mcp-sep-2577-deprecation-draft": true },
-    "community": { "top-pain-points": 11, "closure-rate-pct": 65.8, "lgpl-35156-closed": "2026-04-16", "cve-35311-defanged": true, "downloads-weekly": "10.22M", "windows-regression-cluster": true, "pylon-oauth-incomplete": true },
-    "capacity": { "high-risk-people": 2, "medium-high-risk-people": 3, "overdue-items": 14, "overdues-resolved-7d": 0, "new-overdue-nxc-4238": true, "silent-target-drift-systemic": true, "linear-mcp-flaky": true },
-    "project-health": { "zombies": 4, "zombie-consecutive-flags": 14, "overdue-projects": 11, "admin-close-window-FAILED": true, "admin-close-failed-date": "2026-04-18", "nicole-self-triaged-3": true, "cibc-data-correction": true },
-    "customer-deps": { "churned-cycle": 0, "lost-cumulative": 3, "cooling-total": 15, "concentration-risks": 4, "hilton-critical": true, "fidelity-MISSED": "2026-04-17", "steven-nance-worse": true, "rares-escalated-HIGH": true, "island-re-engaged": "2026-04-17" },
-    "priority-mismatch": { "bump-candidates": 1, "stale-hot": 0, "notes": "only #34083 Module Federation production config (15 comments); taxonomy remains sparse" }
+    "cnw-templates": { "critical": 0, "high": 3, "medium": 19, "low": 6, "templates-tested": 4, "cnw-version": "22.6.5", "angular-ssrf-resolved-upstream": true, "typescript-verdaccio-chain-sole-remaining": true },
+    "dependencies": { "critical": 21, "warning": 15, "watch": 13, "healthy": 124, "total": 173, "rspack-rsbuild-2.0-shipped": "2026-04-22", "flat-gh-pending-since": "2026-03-19" },
+    "supply-chain": { "status": "yellow", "protobufjs-cve-patched": "2026-04-22", "protobufjs-nx-affected": false, "latest-nx": "22.6.5", "latest-nx-cloud": "19.1.3", "polygraph-mcp-latest": "0.1.8", "ocean-provenance-gap-structural": true },
+    "api-surface": { "high": 2, "medium": 3, "low": 2, "total": 7, "delta-vs-last-month": -6, "methodology-narrowed": true, "march-extraction-bug-corrected": true, "only-new-drift": "json-input-type-PR-35248" },
+    "competitors": { "highlights": 6, "turbo-threat-HIGH": true, "turbo-stable": "2.9.6", "turbo-canary": "2.9.7-canary.13", "turbo-canary-frozen-days": 6, "moon-latest": "2.2.3", "moon-deadlock-patch-2026-04-21": true, "bazel-stable": "9.1.0", "gradle-rc": "9.5.0-RC3" },
+    "frameworks": { "compat-risks": 11, "p0-risks": 3, "p1-risks": 5, "p2-risks": 3, "rspack-2-ga-today": true, "rspack-2-promoted-p1-to-p0": true, "angular-ssrf-closed-upstream": true, "vue-3.5.33": true, "typescript": "6.0.3" },
+    "runtimes": { "action-items": 13, "node20-eol-days": 8, "node20-eol-date": "2026-04-30", "node24-lts": "24.15.0", "nx-engines-field-missing": true, "bun-1.3.13-test-parity-threat-real": true, "deno-2.7.13": "2026-04-22", "node-parity-gap-narrowed": true },
+    "ai-landscape": { "highlights": 30, "opportunities": 21, "risks": 14, "high-ai-security-threats": 4, "mcp-stdio-rce": true, "comment-and-control-cvss": "9.4", "claude-mythos-preview": true, "axios-npm-compromise": true, "claude-code": "v2.1.117", "codex-cli": "0.122.0", "mcp-sep-2575-accepted-with-changes": true },
+    "community": { "top-pain-points": 11, "closure-rate-pct": 64.7, "downloads-weekly-corrected": "9.23M", "downloads-prior-week-artifact": "10.22M", "new-closes-since-last-week": 4, "windows-35036-upvotes": 4, "pylon-tickets-apr-1-22": 84, "cross-source-triangulation-35372": true },
+    "capacity": { "high-risk-people": 2, "medium-high-risk-people": 3, "overdue-items": 14, "overdues-resolved-9d": 0, "craigory-new-high-risk": true, "jack-sequencing-conflict-nxc-4238-cnw-funnel": true, "benjamin-waterfall-viz-started": "2026-04-20" },
+    "project-health": { "zombies": 3, "zombies-prior": 4, "template-onboarding-closed": "2026-04-21", "zombie-consecutive-flags-gradle-shci": 15, "overdue-projects": 10, "nicole-revenue-concentration": 4, "pricing-page-refresh-82d-stalled": true },
+    "customer-deps": { "churned-cycle": 0, "lost-cumulative": 3, "cooling-total": 13, "concentration-risks": 3, "hilton-downgraded-critical-to-high": true, "island-very-active": true, "fidelity-nxc-4238-may-be-resolved": true, "medianet-overdue-days": 61, "pylon-required-for-audit": true },
+    "priority-mismatch": { "bump-candidates": 0, "stale-hot": 0, "notes": "no medium-priority issues meet 10+ reactions or 15+ comments threshold; no 6mo+ stale issues with 10+ engagement; taxonomy remains sparse" }
   }
 }
