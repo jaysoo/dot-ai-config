@@ -36,6 +36,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | audit-api-surface     | skill   | 2026-04-09   | 9     |
 | audit-project-health  | skill   | 2026-04-09   | 11    |
 | site-checker          | skill   | 2026-04-01   | 0     |
-| caveman               | skill   | 2026-04-22   | 1     |
+| caveman               | skill   | 2026-04-24   | 2     |
+| skill-creator         | skill   | 2026-04-24   | 1     |
 | review-pr             | command | 2026-04-22   | 1     |
 | cnw-stats-local-server | skill  | 2026-04-23   | 0     |
