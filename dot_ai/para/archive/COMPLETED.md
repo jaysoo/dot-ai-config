@@ -2,6 +2,10 @@
 
 ### April 2026
 
+- [x] Ban `{% callout %}` in astro-docs, migrate to `{% aside %}` + new `{% deep_dive %}` (2026-04-24) ✓ 2026-04-24
+  - Summary: Removed `callout` tag from `markdoc.config.mjs` (build hard-errors on reuse), added `{% deep_dive %}` tag (transform fixes `type: 'deepdive'`, reuses `Callout.astro`). Migrated 8 callouts across 8 files: 5 → `deep_dive`, 3 → `aside` (one `warning` → `caution` since Starlight has no warning type). Added "Markdoc tags" section to `STYLE_GUIDE.md` with old→new mapping. Added `.vale/styles/Nx/MarkdocCallout.yml` error-level rule (pattern `callout\s+(type|title)` — Vale's `TokenIgnores` blocks any regex containing `{`, `%`, `/` from matching Markdoc braces even with `scope: raw`, so the rule anchors on the required attribute instead). Verified on positive/negative cases + clean full-docs run across 498 files. Changes live on `fix/issue-33331` branch, uncommitted. Full build not run — worktree missing `node_modules`.
+  - Files: `dot_ai/2026-04-24/tasks/callout-to-aside-migration.md`, `dot_ai/2026-04-24/SUMMARY.md`
+
 - [x] DOC-462: KB article for migrating `nx` imports to `@nx/devkit` (2026-04-23) ✓ 2026-04-23
   - Summary: New recipe under Guides → Tips & Tricks explaining `nx` = CLI, `@nx/devkit` = public API. Includes `{% llm_copy_prompt %}` block for AI-driven migration, before/after code (project graph, generator, executor), common-symbols table by category, `@nx/devkit/testing` + `@nx/devkit/ngcli-adapter` subsections, and a "file an issue" escape hatch. Gemini review caught a non-existent `nx/src/generators/utils/format-files` Before path and flagged the missing testing-entry guidance in the LLM prompt — both fixed. Side fix in `markdoc.config.mjs`: the `llm_copy_prompt` `extractText` was stripping inline code (backticks), links, and ordered-list numbering from every page using the tag. Commit `6ddad14371`, pushed to `origin/DOC-462`. Also added a "Commit body style" rule to CLAUDE.md enforcing caveman-style terse commit bodies.
 

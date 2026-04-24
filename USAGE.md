@@ -19,7 +19,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | community-sentiment   | task    | 2026-04-09   | 10    |
 | kudos                 | command | 2026-03-24   | 0     |
 | plan-week             | command | 2026-03-30   | 1     |
-| nx-monthly-digest     | skill   | 2026-03-30   | 1     |
+| nx-monthly-digest     | skill   | 2026-04-24   | 2     |
 | plan-week             | skill   | 2026-03-30   | 1     |
 | metrics-review        | skill   | 2026-03-24   | 1     |
 | nx-scorecard          | command | 2026-03-24   | 0     |
@@ -28,7 +28,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | cnw-update-templates  | skill   | 2026-04-10   | 2     |
 | summarize             | command | 2026-04-01   | 2     |
 | audit-supply-chain    | skill   | 2026-04-09   | 5     |
-| audit-dependencies    | skill   | 2026-03-30   | 2     |
+| audit-dependencies    | skill   | 2026-04-24   | 3     |
 | pylon-support         | skill   | 2026-03-27   | 1     |
 | scan-community        | skill   | 2026-03-30   | 8     |
 | scan-frameworks       | skill   | 2026-04-09   | 3     |
