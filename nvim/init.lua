@@ -552,13 +552,20 @@ require("lazy").setup({
 			{
 				"<leader>gd",
 				function()
-					local base = vim.fn
-						.system("git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null")
-						:gsub("%s+", "")
-					if base == "" then
-						base = vim.fn.system("git rev-parse --verify origin/main 2>/dev/null"):gsub("%s+", "") ~= ""
-								and "origin/main"
-							or "origin/master"
+					local function git(args)
+						local out = vim.fn.system(vim.list_extend({ "git" }, args))
+						if vim.v.shell_error ~= 0 then
+							return nil
+						end
+						return (out:gsub("^%s+", ""):gsub("%s+$", ""))
+					end
+					local base = git({ "symbolic-ref", "--short", "refs/remotes/origin/HEAD" })
+					if not base or base == "" then
+						if git({ "rev-parse", "--verify", "origin/main" }) then
+							base = "origin/main"
+						else
+							base = "origin/master"
+						end
 					end
 					vim.cmd("DiffviewOpen " .. base .. "...HEAD")
 				end,
