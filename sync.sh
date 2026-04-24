@@ -23,9 +23,6 @@ fi
 GEMINI_TARGET_DIR="$HOME/.gemini"
 mkdir -p "$GEMINI_TARGET_DIR"
 
-if [ -f "$GIT_ROOT/dot_gemini/settings.json" ]; then
-    cp "$GIT_ROOT/dot_gemini/settings.json" "$GEMINI_TARGET_DIR/settings.json"
-fi
 if [ -f "$GIT_ROOT/dot_gemini/GEMINI.md" ]; then
     cp "$GIT_ROOT/dot_gemini/GEMINI.md" "$GEMINI_TARGET_DIR/GEMINI.md"
 fi
