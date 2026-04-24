@@ -549,7 +549,22 @@ require("lazy").setup({
 		dependencies = "nvim-lua/plenary.nvim",
 		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory", "DiffviewToggleFiles" },
 		keys = {
-			{ "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
+			{
+				"<leader>gd",
+				function()
+					local base = vim.fn
+						.system("git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null")
+						:gsub("%s+", "")
+					if base == "" then
+						base = vim.fn.system("git rev-parse --verify origin/main 2>/dev/null"):gsub("%s+", "") ~= ""
+								and "origin/main"
+							or "origin/master"
+					end
+					vim.cmd("DiffviewOpen " .. base .. "...HEAD")
+				end,
+				desc = "Diff branch vs base (committed)",
+			},
+			{ "<leader>gu", "<cmd>DiffviewOpen<cr>", desc = "Diff uncommitted + untracked" },
 			{ "<leader>gD", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
 			{ "<leader>gh", "<cmd>DiffviewFileHistory<cr>", desc = "File History" },
 			{ "<leader>gH", "<cmd>DiffviewFileHistory %<cr>", desc = "Current File History" },

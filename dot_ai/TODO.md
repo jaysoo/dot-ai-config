@@ -4,55 +4,55 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **Night-shift community fixes batch** (2026-04-22)
+1. **NXC-4353: Powerpack release dry-run root-cause + Linear filing** (2026-04-23)
+
+   - Summary: Diagnosed powerpack dry-run failure as latent bug from pnpm migration (Dec 2025), surfaced by Mar 24 exit-code fix. Disproved initial `supportedArchitectures` theory via local repro on Mac. Real fix: always pass `--dry-run false` to version step in workflow. No Nx regression (diffed release code 22.6→22.7). Filed NXC-4353 low-priority, due 2026-05-23.
+   - Files: `.ai/2026-04-23/SUMMARY.md`, [NXC-4353](https://linear.app/nxdev/issue/NXC-4353)
+
+2. **DOC-462: KB article for migrating `nx` imports to `@nx/devkit`** (2026-04-23)
+
+   - Summary: New recipe under Guides → Tips & Tricks with AI-copy prompt, before/after code, common-symbols table, and `@nx/devkit/testing` + `ngcli-adapter` sections. Also fixed `llm_copy_prompt` Markdoc transform (inline code/links/ordered lists were being stripped) and added a caveman commit-body style rule to CLAUDE.md. Branch `DOC-462` pushed.
+   - Files: `.ai/2026-04-23/SUMMARY.md`, commit `6ddad14371`
+
+3. **Night-shift community fixes batch** (2026-04-22)
 
    - Summary: 2 new worktrees created from session-2026-04-22 night-shift run (#33488, #33971). 3 approved fixes already applied in prior runs (#32595, #33523, #34095). #32579 skipped — core maintainer PR already addresses it. #34281 applied in ocean repo from pre-existing branch.
    - Session: `night-shift/sessions/session-2026-04-22.md`
 
-2. **Night-shift community fixes batch** (2026-04-21)
+4. **Night-shift community fixes batch** (2026-04-21)
 
    - Summary: 5 worktrees created from session-2026-04-21 night-shift run. All patches applied and committed (4 Nx + 1 Ocean + greenfield bench repo).
    - Session: `night-shift/sessions/session-2026-04-21.md`
 
-3. **NXC-4182: Revert React Router Vite 7 workaround (now supports Vite 8)** (2026-04-21)
+5. **NXC-4182: Revert React Router Vite 7 workaround (now supports Vite 8)** (2026-04-21)
 
    - Summary: `@react-router/dev` 7.14.2 expanded its Vite peer dep to include `^8.0.0`. Bumped `reactRouterVersion` to ^7.14.2, added a 22.7.0 packageJsonUpdate migration, removed `useViteV7: true` force-flag, dead schema field, and e2e test downgrade block. Squashed to single commit. PR #35365.
    - Files: `.ai/2026-04-21/tasks/nxc-4182-react-router-vite-8.md`, PR #35365
 
-4. **DOC-486: Blog sitemap in root nx.dev sitemap index** (2026-04-21)
+6. **DOC-486: Blog sitemap in root nx.dev sitemap index** (2026-04-21)
 
    - Summary: Added `/sitemap-2.xml` for nx-blog via consolidated `additional-sitemaps.ts` edge function. In nx-blog, added `generate-sitemap.mjs` and refactored build into cacheable Nx targets (nx:run-commands + nx:noop fan-out). Both repos committed, PRs pending.
    - Files: `.ai/2026-04-21/SUMMARY.md`, `.ai/2026-04-21/tasks/doc-486-blog-sitemap.md`
 
-5. **DOC-479: Agent-readiness signals for nx.dev + sitemap regression fix** (2026-04-20)
+7. **DOC-479: Agent-readiness signals for nx.dev + sitemap regression fix** (2026-04-20)
 
    - Summary: Shipped Link headers (RFC 8288), Content-Signal in robots.txt, routed nx.dev/robots.txt through astro-docs via beforeFiles rewrite (#35348). Follow-up #35351 restored sitemap generation removed by DOC-478 cleanup.
    - Files: `.ai/2026-04-20/tasks/doc-479-agent-readiness.md`, PRs #35348, #35351
 
-6. **Init error investigation plan (Mar/Apr CNW+init telemetry)** (2026-04-20)
+8. **Init error investigation plan (Mar/Apr CNW+init telemetry)** (2026-04-20)
 
    - Summary: Pulled Mar/Apr CNW + init funnel/cloud stats via cnw-stats-analyzer. Updated skill (target 3k→2k, headline no-filter vs funnel human+AI/CI split). Wrote init error fix plan — ~22% of init starts fail with no stderr captured; `./nx --version` probe accounts for 9.8% of starts on its own.
    - Files: `.ai/2026-04-20/tasks/init-error-investigation.md`
 
-7. **DOC-478: Clean up nx-dev to ai-chat/api/courses** (2026-04-17)
+9. **DOC-478: Clean up nx-dev to ai-chat/api/courses** (2026-04-17)
 
    - Summary: Stripped nx-dev down to 4 routes, deleted top-level docs/ (~333MB), removed unused libs, simplified feature-ai. ~148k lines deleted.
    - Files: `.ai/2026-04-17/SUMMARY.md`, PR #35315
 
-8. **DOC-69: Versioned docs snapshot script** (2026-04-10)
+10. **DOC-69: Versioned docs snapshot script** (2026-04-10)
 
-   - Summary: Script + skill to create orphan branches with pre-built static docs for Netlify branch deploys. Supports v18-v22, auto Node switching via mise, tested v19-v21.
-   - Files: `.ai/2026-04-10/SUMMARY.md`, `scripts/create-versioned-docs.mts`
-
-9. **DOC-476: Bring back "no workspace" CTA in CI tutorial** (2026-04-10)
-
-   - Summary: Restored cloud.nx.app CTA and skip-ahead flow for cloud onboarding users in self-healing CI tutorial.
-   - Files: `.ai/2026-04-10/SUMMARY.md`
-
-10. **Night-shift community fixes batch** (2026-04-09)
-
-    - Summary: 11 worktrees created from session-2026-04-10 night-shift run. All patches applied and committed.
-    - Session: `night-shift/sessions/session-2026-04-10.md`
+    - Summary: Script + skill to create orphan branches with pre-built static docs for Netlify branch deploys. Supports v18-v22, auto Node switching via mise, tested v19-v21.
+    - Files: `.ai/2026-04-10/SUMMARY.md`, `scripts/create-versioned-docs.mts`
 
 ## TODO
 

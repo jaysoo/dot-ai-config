@@ -2,6 +2,9 @@
 
 ### April 2026
 
+- [x] DOC-462: KB article for migrating `nx` imports to `@nx/devkit` (2026-04-23) ✓ 2026-04-23
+  - Summary: New recipe under Guides → Tips & Tricks explaining `nx` = CLI, `@nx/devkit` = public API. Includes `{% llm_copy_prompt %}` block for AI-driven migration, before/after code (project graph, generator, executor), common-symbols table by category, `@nx/devkit/testing` + `@nx/devkit/ngcli-adapter` subsections, and a "file an issue" escape hatch. Gemini review caught a non-existent `nx/src/generators/utils/format-files` Before path and flagged the missing testing-entry guidance in the LLM prompt — both fixed. Side fix in `markdoc.config.mjs`: the `llm_copy_prompt` `extractText` was stripping inline code (backticks), links, and ordered-list numbering from every page using the tag. Commit `6ddad14371`, pushed to `origin/DOC-462`. Also added a "Commit body style" rule to CLAUDE.md enforcing caveman-style terse commit bodies.
+
 - [x] NXC-4182: Revert React Router Vite 7 workaround (now supports Vite 8) (2026-04-21) ✓ 2026-04-21
   - Summary: `@react-router/dev` 7.14.2 expanded its Vite peer dep to include `^8.0.0`, so the workarounds across #35101, #35110, and this branch's prior commits are no longer needed. Bumped `reactRouterVersion` to ^7.14.2, added a 22.7.0 packageJsonUpdate migrating `@react-router/*` to 7.14.2, removed the `useViteV7: true` force-flag in the React app generator, removed dead `useViteV7` schema field, and removed the pre-generate Vite/Vitest downgrade block in the e2e test. PR #35365 (squashed commit `4ff192abc7`, 6 files, +43/-20).
 

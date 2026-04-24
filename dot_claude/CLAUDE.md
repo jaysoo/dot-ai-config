@@ -78,6 +78,8 @@ Fixes DOC-125"
 
 **CRITICAL**: Never co-author the commit, the commit MUST come only from me. Also do not mention yourself (Claude Code) in the commit body.
 
+**Commit body style**: Keep bodies terse (caveman style applies to commits too, despite the caveman skill's default carve-out). Still use the Nx template sections, but each section should be 1–3 short sentences/fragments. No filler, no restating the same idea twice, no marketing recap. A reader should skim the whole body in under 15 seconds.
+
 ### Pre-Push Validation (Nx Repo)
 - **ALWAYS run `nx affected -t build-base,lint,test` locally before pushing** — CI failures that could be caught locally waste time and require workflow approvals on fork PRs
 - For community PRs from forks, each push requires manual workflow approval — minimize push iterations
@@ -370,6 +372,13 @@ Always spell out on first use: "NXC-3464: CNW (Create Nx Workspace) Templates"
 - Init generators must detect and preserve existing dependency versions — don't bump users to latest without explicit opt-in
 - When adding version detection, always add unit tests for: not installed (default), existing older version (preserved), existing same version (preserved), explicit flag override
 
+### nx release: config inheritance
+When debugging `nx release version` / `nx release publish` behavior, check BOTH:
+- Per-group config under `nx.json` → `release.groups.<group>.version`
+- **Top-level defaults** under `nx.json` → `release.version` (e.g. `preserveLocalDependencyProtocols`, `manifestRootsToUpdate`)
+
+Group config inherits from top-level defaults when not overridden. Easy to grep only in a group and miss the setting entirely.
+
 ### CNW A/B Testing Infrastructure
 - `NX_CNW_FLOW_VARIANT` controls BOTH flow behavior AND prompt copy variant — NEVER add a separate env var for prompt selection
 - `PromptMessages.getPrompt(key)` selects from the `messageOptions[key]` array using the flow variant index
@@ -491,6 +500,12 @@ Fix source files rather than making regex handle edge cases.
 - **Don't document theories as facts** - mark as "HYPOTHESIS: needs verification"
 - **Endorsing another reviewer's code-logic-only claim**: if the claim is purely "the code does X, therefore Y will happen", reproduce Y before acting. Reading the code only validates the "does X" half; the "therefore Y" half needs a repro, a locally-published version, or a unit test. If uncertain, ask me to verify before proceeding rather than propagating an unverified prediction.
 - Watch for multiple implementations (PTY vs spawn vs exec, native vs JS)
+- **Verify the baseline before calling it a regression.** When you hear "this worked before, now it fails":
+  1. First check whether the earlier "success" was actually a silent failure. Diff the script/workflow between the working and failing runs — look for exit-code checks, error swallowing, stdout parsing that might crash silently. A CI run showing green ≠ the thing actually worked.
+  2. Only then look for real regressions.
+  - **Why:** NXC-4353 — spent an hour chasing a "Nx 22.6 → 22.7 release code regression" that didn't exist. The Jan 8 dry-run "success" was a lie; the script returned 0 regardless of pnpm publish result until PR #10489 (Mar 24) added exit-code propagation. Bug had been there since Dec 3, just invisible.
+- **Reproduce locally before recommending a CI fix.** When a CI failure has a deterministic, isolated signature (e.g. `ERR_PNPM_CANNOT_RESOLVE_WORKSPACE_PROTOCOL`), reproduce it on your machine before committing to a fix. Pattern-matching the error message against common causes (or having another model confirm your guess) frequently lands on the wrong root cause.
+  - **Why:** NXC-4353 — recommended `pnpm.supportedArchitectures` based on the error phrasing, Gemini agreed, both wrong. One minute of local repro on Mac (where the "missing" darwin binary was already present) immediately disproved it.
 
 **Example (NXC-3505):** Assumed `exec()` with piped stdio, but single commands use PTY.
 
