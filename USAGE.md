@@ -38,5 +38,6 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | site-checker          | skill   | 2026-04-01   | 0     |
 | caveman               | skill   | 2026-04-24   | 2     |
 | skill-creator         | skill   | 2026-04-24   | 1     |
+| terminal-demo-recorder | skill   | 2026-04-24   | 1     |
 | review-pr             | command | 2026-04-22   | 1     |
 | cnw-stats-local-server | skill  | 2026-04-23   | 0     |
