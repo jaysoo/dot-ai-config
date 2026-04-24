@@ -83,11 +83,12 @@
     "deny": []
   },
   "hooks": {
-    "PostToolUse": [
+    "AfterTool": [
       {
-        "matcher": "Edit|Write",
+        "matcher": "replace|write_file",
         "hooks": [
           {
+            "name": "sync-dot-ai-config",
             "type": "command",
             "command": "jq -r '.tool_input.file_path // .tool_response.filePath // empty' | { read -r f; echo \"$f\" | grep -qE '/projects/dot-ai-config/(dot_gemini|kitty|fish|nvim|dot_ai|tmux|mise|gitconfig|gitignore_global)' && bash /Users/jack/projects/dot-ai-config/sync.sh; } 2>/dev/null || true",
             "timeout": 10,
