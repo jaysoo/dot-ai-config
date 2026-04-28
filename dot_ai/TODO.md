@@ -2,11 +2,15 @@
 
 ## Recent Tasks (Last 10)
 
-1. **NXC-3711: Remove Tailwind setup-tailwind generators — MERGED** (2026-04-28)
+1. **NXC-4178: Remove deprecated stylesheet options — MERGED** (2026-04-28)
+   - Summary: PR #35103 merged. Removed less/styled-components/styled-jsx/@emotion/styled from non-Angular generators; added deprecated-less-loader wrapper. Rebased after #35049 (Tailwind) merged — 27 conflicts resolved, PR shrank 214→93 files. Three Plannotator rounds; learned to trust CI over local when generator output diverges.
+   - Files: `.ai/2026-04-28/SUMMARY.md`, PR #35103, merge commit `d1e9a4349a`
+
+2. **NXC-3711: Remove Tailwind setup-tailwind generators — MERGED** (2026-04-28)
    - Summary: PR #35049 merged. Addressed leosvelperez review (institutional comment, BYO-Tailwind detect, deprecation warning specs), consolidated graph tailwind configs to `ui-*/src` globs, rewrote PR description caveman-lite, two rebases on master.
    - Files: `.ai/2026-04-28/SUMMARY.md`, PR #35049, merge commit `933eb69826`
 
-2. **NXC-4355: Nx tail overhead investigation (2026-04-24)**
+3. **NXC-4355: Nx tail overhead investigation (2026-04-24)**
    - Summary: Precise measurement (22ms) contradicts issue's premise (205ms). Baseline Node teardown cost with native binary is ~20ms.
    - Files: `.ai/2026-04-24/tasks/nxc-4355-investigation.md`
 

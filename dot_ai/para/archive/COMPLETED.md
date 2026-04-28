@@ -2,6 +2,10 @@
 
 ### April 2026
 
+- [x] NXC-4178: Remove deprecated stylesheet options from non-Angular generators (2026-04-28) ✓ 2026-04-28
+  - Summary: PR [#35103](https://github.com/nrwl/nx/pull/35103) merged (commit `d1e9a4349a`). Removed `--style=less`, `--style=styled-components`, `--style=styled-jsx`, `--style=@emotion/styled` from React/Next/Nuxt/Vue/Web/Workspace generator schemas + `VALID_STYLES`. Existing `.less` keeps compiling via new `deprecated-less-loader.js` wrappers in webpack/rspack with `__NX_LESS_DEPRECATION_WARNED` env-var dedup. Public-API drops: `cssInJsDependenciesBabel` (`@nx/react`), `lessVersion` (`@nx/vue`). Internal dead version constants removed from next/react/vue/rsbuild. Final day: rebased on master after #35049 (Tailwind) merged — 27 conflicts resolved by keeping master's tailwind + our additional removals; PR shrank 214→93 files. Three Plannotator review rounds: glob tightening, env-var-based HMR-safe dedup, stale URL drop, breaking-change marker, snapshot restoration after an earlier `-u` regenerate against broken local env baked in pre-#34965 legacy snapshots, dead-version cleanup.
+  - Files: `dot_ai/2026-04-28/SUMMARY.md`, PR #35103, merge commit `d1e9a4349a`
+
 - [x] NXC-3711: Remove Tailwind CSS setup-tailwind generators (2026-04-28) ✓ 2026-04-28
   - Summary: PR [#35049](https://github.com/nrwl/nx/pull/35049) merged (commit `933eb69826`). Removed 5 `setup-tailwind` generators (angular/react/next/vue/remix), `--style=tailwind`, `--addTailwind`, and `tailwind` style from CNW. `@nx/{angular,react,next,vue}/tailwind` kept but warn at runtime, full removal in Nx 24. Final day: addressed leosvelperez review (restored institutional catch-comment, BYO-Tailwind auto-detect in next cypress-component-configuration, added 4 deprecation-warning specs). Consolidated `graph/*/tailwind.config.js` to `ui-*/src` + `shared/src` globs. PR description rewritten caveman-lite. Two rebases on master.
   - Files: `dot_ai/2026-04-28/SUMMARY.md`, PR #35049, merge commit `933eb69826`

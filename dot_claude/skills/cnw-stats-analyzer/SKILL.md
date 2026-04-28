@@ -401,6 +401,7 @@ Understanding when features were introduced is critical for cross-month comparis
 | Feature | First Appeared | Version | Notes |
 | ------- | -------------- | ------- | ----- |
 | Completion events only | Pre-Nov 2025 | ≤22.0.2 | 1 event per CNW invocation — completions **are** total usage. Meta is CSV: `"which-ci-provider,github,FailedToPushToVcs"` |
+| Tutorials switch to Cloud CTA | **July 10, 2025** | | Tutorials in `nx.dev` (later `astro-docs`) changed primary onboarding from CLI to `cloud.nx.app/create-nx-workspace`. Reverted on 2026-03-20 (see below). |
 | CSV `start` events | **Nov 13, 2025** (ramped Nov 17-18) | **22.0.4** (released Nov 17) | Meta is bare `"start"` or version-prefixed `"22.1.1,start"`. Nov 13-16 was ~33 events (likely internal testing). Real adoption started Nov 17 (203/day) ramping to 1,500+/day by Nov 18. |
 | Version prefix in CSV | ~Nov 2025 | 22.1.x | e.g. `"22.1.3,which-ci-provider,..."` |
 | JSON meta format | **Dec 12, 2025** | **22.2.2** | Replaces CSV with stringified JSON containing `type` field. Dec is mixed ~64% JSON / 36% CSV. Jan 2026+ is fully JSON. |

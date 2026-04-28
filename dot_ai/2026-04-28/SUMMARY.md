@@ -48,6 +48,30 @@ Walked the Nx Cloud (Ocean) Kotlin billing system to understand current tracking
 - Self-contained HTML dashboard with Mermaid diagrams: `.ai/2026-04-28/tasks/billing-architecture-summary.html`
   - Sections: at-a-glance, 3-stream cards, pricing formulas, data model graph, code map, sequence diagram, 5-phase roadmap for adding network/disk
 
+## NXC-4178: Remove deprecated stylesheet options from non-Angular generators — MERGED
+
+PR [#35103](https://github.com/nrwl/nx/pull/35103) merged at 18:25 UTC (merge commit `d1e9a4349a`).
+
+### Final-day work
+
+- **Rebased on master after #35049 merged** — NXC-3711 (Tailwind removal) and NXC-4178 (less/styled-* removal) overlapped on 27 files; saved pre-rebase HEAD as temp branch, reset to master, cherry-picked our commit, resolved each conflict by keeping master's tailwind handling + our additional removals on top. PR shrank from 214 files / +3810 / -3503 → 93 files / +181 / -2745.
+- **Addressed Plannotator review (round 1)**: tightened `assets.json` globs (`src/**/*.js` → specific loader path) in rspack/webpack, dropped Tailwind from less-loader deprecation message, switched `hasWarned` module-scope to `process.env.__NX_LESS_DEPRECATION_WARNED` for HMR robustness, added `less-loader` to rspack eslint `ignoredDependencies`.
+- **Addressed Plannotator review (round 2)**: dropped stale `nx.dev/recipes/...` URL from deprecation message (will be covered by separate bundler-eject follow-up), reflagged commit `feat(misc)!:` with explicit `BREAKING CHANGE:` footer listing rejected `--style` flags + `cssInJsDependenciesBabel` removal from `@nx/react`.
+- **Re-corrected stale snapshots**: an earlier `-u` regenerate against a broken local env had baked in pre-#34965 legacy snapshots. CI failure log made the divergence obvious — restored master's modern snapshots in `next/library.spec.ts` and `next/application.spec.ts`, only stripping tests that exercise removed `--style` values. Removed an over-eager template-comment promotion in `next.config.js__tmpl__`.
+- **Dead version-constant cleanup** (Plannotator round 3 / Issue 1): dropped `lessLoader`/`emotionServerVersion`/`babelPluginStyledComponentsVersion` from `next/utils/versions.ts`; 12 dead constants from `react/utils/versions.ts`; `lessVersion` from `vue/utils/versions.ts` (public via `export *`); and 4 rsbuild plugin/swc-plugin constants. BREAKING CHANGE footer updated to mention public-API drops.
+
+### Key learning (logged for future PRs)
+
+- "Tests fail on master too" ≠ "tests are broken on master." Local environment was emitting legacy generator output for unknown reasons (stale build artifact, cache, or daemon state — never fully tracked down). When CI failure log diverged from local, **trust CI**, not local. Reviewer was right; I dismissed the snapshot regression for two iterations before the CI log forced the issue.
+
+### Cumulative scope (as merged)
+
+- `--style=less`, `--style=styled-components`, `--style=styled-jsx`, `--style=@emotion/styled` rejected at schema validation in React/Next/Nuxt/Vue/Web/Workspace generators.
+- Existing `.less` imports keep compiling via new `deprecated-less-loader.js` wrappers in webpack/rspack that emit a one-time build-time warning.
+- Public-API drops: `cssInJsDependenciesBabel` (`@nx/react`), `lessVersion` (`@nx/vue`).
+- Internal version-constant cleanup across next/react/vue/rsbuild.
+- Angular generators unchanged.
+
 ## Active Sessions
 
-No changes — NXC-3711 was not in active sessions list.
+No changes — NXC-3711 and NXC-4178 were not in active sessions list.
