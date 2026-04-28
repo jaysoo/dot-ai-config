@@ -11,8 +11,8 @@ Monthly audit detecting drift between Nx's public API surface and its documentat
 ## Reports
 | Month | File | Severity | Findings |
 |-------|------|----------|----------|
-| 2026-04 | [2026-04.md](2026-04.md) | **MEDIUM-LOW** (plateau broken) | 5H/4M/4L -- down from 15H/47M/23L. `docs/` folder deleted Apr-17 (#35315); auto-generated docs from schemas resolved ~72 findings structurally |
-| 2026-03 | [2026-03.md](2026-03.md) | HIGH | 13H/50M/18L -- 13 undocumented packages, 50 undocumented generators, systemic rename drift |
+| 2026-04 | [2026-04.md](2026-04.md) | LOW-MEDIUM | 1H/4M/3L/2I — JsonInput still undocumented; new vite `compiler` option + `nx.sync.ignoredDependencies` introduced this window without docs |
+| 2026-03 | [2026-03.md](2026-03.md) | HIGH | 13H/50M/18L — 13 undocumented packages, 50 undocumented generators, systemic rename drift |
 
 ## Key Systemic Issues (2026-04 post-plateau-break)
 1. **`@nx/angular-rsbuild` package documented but doesn't exist** in repo (new High)

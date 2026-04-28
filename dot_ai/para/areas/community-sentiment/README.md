@@ -10,7 +10,7 @@ Monthly scan of Nx platform community health, covering GitHub Issues, Discussion
 | ------- | ------------ | ---------------------------------------------------- |
 | 2026-02 | `2026-02.md` | First run. 60-day lookback from 2025-12-29.          |
 | 2026-03 | `2026-03.md` | 60-day lookback from 2026-01-29. Updated 2026-03-30 (7th scan). Windows emerged as major theme. Node 25 compat, picomatch CVE. |
-| 2026-04 | `2026-04.md` | 60-day lookback from 2026-02-19. Updated 2026-04-20 (refresh #2). Downloads ~10.22M/week (record). Closure rate 65.8% (98/149). **#35156 LGPL RESOLVED Apr 16** (14d, enterprise blocker closed). **#35270 pnpm 11 Bun merged Apr 17**. #35311 Axios CVE OPEN but maintainer-answered Apr 16 (workaround + ^2.3.3 bump pledged). New Windows regression cluster: #35339 WAL crash, #35345 ARM64 Asahi, #35344 Docker. Top unresponded shifted to #34542 (nx release workspace-file bumps, 57d, 3 upvotes). Pylon auth flow started but requires user browser. |
+| 2026-04 | `2026-04.md` | 60-day lookback. Latest refresh 2026-04-28. Downloads ~9.6M/week durable baseline. Closure rate 64.8% (94/145). **22.7.0 GA week regression cluster**: #35444 (auto-update without asking, 13 +1, NEW), #35455 (s3-cache 5.0.3 panic, 9 +1), #35424 (@nx/key panic), #35461 (Windows broken). #35411 $schema RC regression CLOSED Apr 24. Lockfile correctness still hot (9 issues). Self-healing CI customer trust drift in Pylon (#683, #784, #636). TS 6.0 prep now public-top-voted (5 upvotes). Pylon ~205 tickets Apr 1-28, ~7-8/day cadence. |
 
 ## Sources
 

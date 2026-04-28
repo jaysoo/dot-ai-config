@@ -59,6 +59,49 @@ Others:
 
 - Andrew: " Working with Rares has been one of the highlights of 2025."
 
+### 2026-04-24
+
+**PLG Metrics & Team Structure**
+- Core team expanded: Jack, Nicole, Corey, sometimes Joe and Heidi
+- Focus on top-funnel: acquisition, activation
+- Core team sets revenue targets, presents at all-hands
+- Teams get projects tied to specific funnel stages (onboarding, activation optimization)
+- No individual contributor metrics — teams track collective metrics
+- Future: feature-specific activation tracking once revenue impact clearer
+
+**Activation Rate Challenge**
+- Current claim rate: 2.2–2.5%
+- Target: 4.5–4.7% to hit yearly goal
+- Need 550 additional claimed workspaces before next fiscal year
+- High-quality orgs (5+ projects) more likely to convert and pay
+- Activation up YoY, but quality-org acquisition needs work
+
+**Feature Development & Usage Tracking**
+- All new features must show actual usage + tie to revenue conversion
+- Manual resource metrics upload example: Rares fixed critical UX bug (file disappeared on browser refresh) — 2hr fix with Claude after spotting it in customer support
+- Track: who uses features + successful usage patterns
+- Add more telemetry/PostHog to kill blind spots
+
+**Sales Support vs Product Focus**
+- Rares covering 3–4 POVs this week due to Jack's inbox chaos
+- Also covering for Steven (out) on Lara and other accounts
+- Transition: reduce Rares' sales support, shift focus back to Quokka team dev work
+- Smoother self-serve onboarding should cut support burden
+  - Surface existing knowledge/tooling (cache optimization, etc.) in user dashboards
+  - Proactive suggestions when issues detected
+  - More scalable than hiring more support
+
+**Action Items**
+- Jack: sync with Joe bi-weekly on work allocation
+- Rares: get Sigma dashboard access (ping Corey if needed)
+- Continue current sales support during transition
+- Weekly top-level funnel reviews planned
+- All team experiments/efforts transparent — no surprises at all-hands
+
+---
+
+Chat with meeting transcript: https://notes.granola.ai/t/0d7a2618-9696-4b09-855c-343fead28280-00demib2
+
 ### 2026-02-26
 
 **eBPF Sandboxing Progress & Customer Issues**

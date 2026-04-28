@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CNW + Init: Goal Tracking</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+<style>
+  :root {
+    --bg: #f6f8fa;
+    --panel: #ffffff;
+    --panel2: #eef1f4;
+    --text: #1f2328;
+    --muted: #656d76;
+    --green: #1a7f37;
+    --yellow: #9a6700;
+    --red: #cf222e;
+    --blue: #0969da;
+    --purple: #8250df;
+    --cyan: #1b7c83;
+    --border: #d0d7de;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+  }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  .subtitle { color: var(--muted); margin-bottom: 24px; font-size: 13px; }
+
+  .grid-summary {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .card .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .card .value { font-size: 28px; font-weight: 600; margin: 6px 0 4px; }
+  .card .target { color: var(--muted); font-size: 12px; }
+  .card .delta { font-size: 12px; margin-top: 8px; font-weight: 500; }
+  .pct-bar { height: 6px; background: var(--panel2); border-radius: 3px; margin-top: 10px; overflow: hidden; }
+  .pct-fill { height: 100%; transition: width 0.3s; }
+  .status-green { color: var(--green); } .bg-green { background: var(--green); }
+  .status-yellow { color: var(--yellow); } .bg-yellow { background: var(--yellow); }
+  .status-red { color: var(--red); } .bg-red { background: var(--red); }
+
+  .milestones {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .milestones strong { color: var(--text); }
+  .milestones .item { display: inline-block; margin-right: 18px; }
+  .ms-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+
+  .grid-charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .chart-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px 12px;
+  }
+  .chart-card h2 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .chart-card .meta {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .chart-card .canvas-wrap {
+    position: relative;
+    height: 290px;
+  }
+  .err-month-title { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .err-row { display: grid; grid-template-columns: 200px 1fr 50px; align-items: center; gap: 8px; font-size: 12px; margin-bottom: 4px; }
+  .err-row .name { color: var(--text); font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; }
+  .err-row .bar-wrap { background: var(--panel2); height: 14px; border-radius: 3px; overflow: hidden; }
+  .err-row .bar { height: 100%; }
+  .err-row .count { text-align: right; color: var(--muted); }
+  .err-row.input .name { color: var(--muted); }
+  .err-row.input .bar { background: #afb8c1; }
+  .err-row.creation .bar { background: var(--yellow); }
+
+  .footer {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+  .footer ul { margin: 4px 0; padding-left: 18px; }
+  @media (max-width: 1280px) {
+    .grid-summary { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 980px) {
+    .grid-summary { grid-template-columns: repeat(2, 1fr); }
+    .grid-charts { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CNW + Init: Goal Tracking</h1>
+<div class="subtitle">Apr 2025 → Apr 2026 (today: 2026-04-27, Apr 2026 = 27 days partial). Source: prod commandStats.</div>
+
+<div class="grid-summary" id="summary"></div>
+
+<div class="milestones">
+  <strong>Milestones &mdash;</strong>
+  <span class="item"><span class="ms-dot" style="background:#656d76;"></span>Pre-22.5.3: leading "What CI provider?" prompt (picking github/gitlab implicitly enabled Cloud)</span>
+  <span class="item"><span class="ms-dot" style="background:#0969da;"></span>Nov 17 2025: 22.0.4 start events</span>
+  <span class="item"><span class="ms-dot" style="background:#8250df;"></span>Dec 12 2025: 22.2.2 JSON era</span>
+  <span class="item"><span class="ms-dot" style="background:#cf222e;"></span><strong>Late Feb 2026: 22.5.3 REMOVED leading CI prompt</strong> &mdash; replaced with direct yes/skip/never &mdash; <em>CI-provider channel collapsed</em></span>
+  <span class="item"><span class="ms-dot" style="background:#9a6700;"></span>Early Mar 2026: 22.5.4 RE-TRIED leading CI prompt (enable-caching2) &mdash; brief revival, didn't recover claim rate</span>
+  <span class="item"><span class="ms-dot" style="background:#1a7f37;"></span>Mar 20 2026: tutorials swap Cloud onboarding for CNW/init (PR #34935; partial walk-back Apr 10 #35257) &middot; Mar 27: 22.6.3 A/B variants on direct prompt</span>
+  <span class="item"><span class="ms-dot" style="background:#1b7c83;"></span>Apr 7 2026: 22.6.5 FV1 baseline lock-in &middot; Apr 8: init adopts CNW variant 1 prompt + adds "Never" option (PR #35155)</span>
+</div>
+
+<div class="grid-charts">
+  <div class="chart-card">
+    <h2>CNW completions/day</h2>
+    <div class="meta">Target: 2,000/day &mdash; lines: Human+AI vs All (incl CI &amp; @contentful)</div>
+    <div class="canvas-wrap"><canvas id="cnwChart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <h2>Init invocations/day</h2>
+    <div class="meta">Target: 300/day &mdash; lines: Human+AI vs All</div>
+    <div class="canvas-wrap"><canvas id="initChart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <h2>CNW Cloud opt-in rate (strict yes)</h2>
+    <div class="meta"><strong>Methodology B</strong> (prompt-driven yes for Human-only; all strict yes for Human+AI/All). Excludes CSV-era CI-provider contamination. Pre-Dec 2025 = null (can't separate prompt yes from CI-provider picks in CSV docs). Dec 2025+ uses JSON-era <code>nxCloudArg</code>. Human-only restricts numerator to <code>setupCloudPrompt</code> non-empty so AI's CLI-flag opt-ins don't pollute the human signal.</div>
+    <div class="canvas-wrap"><canvas id="cloudChart"></canvas></div>
+  </div>
+  <div class="chart-card" style="grid-column: span 2;">
+    <h2>CNW cloud opt-ins/day &mdash; by source (broad view)</h2>
+    <div class="meta">
+      Stacked absolute volume per day, humans only (isCI=false, AI excl, Contentful excl). Counterpoint to the strict-yes rate &mdash;
+      shows the absolute funnel including the implicit-opt-in CI-provider channel that pre-22.5.3 had.
+      <strong>Key insight:</strong> we went from ~800/day total opt-ins (Nov) to ~65/day (Apr). Even at low activation rates, the CI-provider channel was load-bearing.
+    </div>
+    <div class="canvas-wrap"><canvas id="cloudSourceChart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <h2>Init Cloud opt-in rate (strict yes)</h2>
+    <div class="meta">Same definition as CNW. Pre-22.6.4 (Apr 8 2026): doc-level <code>useCloud</code>. 22.6.4+: strict <code>nxCloudArg == "yes"</code>. Apr drop reflects the new direct prompt with "Never" option.</div>
+    <div class="canvas-wrap"><canvas id="initCloudChart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <h2>CNW creation-error rate</h2>
+    <div class="meta">Excludes input validation (DIRECTORY_EXISTS, INVALID_*). JSON era only.</div>
+    <div class="canvas-wrap"><canvas id="cnwErrChart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <h2>Init creation-error rate</h2>
+    <div class="meta">Init JSON funnel only since 22.6.4 (Apr 2026). Codes: UNKNOWN, PACKAGE_INSTALL_ERROR.</div>
+    <div class="canvas-wrap"><canvas id="initErrChart"></canvas></div>
+  </div>
+  <div class="chart-card" style="grid-column: span 2;">
+    <h2>Top errors &mdash; Mar &amp; Apr 2026 (Human+AI)</h2>
+    <div class="meta">Creation errors (orange) vs input validation (gray, excluded from rate). DIRECTORY_EXISTS dominates Apr &mdash; likely AI agent retries.</div>
+    <div id="errBreakdown" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 4px;"></div>
+  </div>
+  <div class="chart-card" style="grid-column: span 2;">
+    <h2>WORKSPACE_CREATION_FAILED root causes (Human+AI)</h2>
+    <div class="meta">Stripped of npm noise lines, then categorized. "Other" = uncategorized long tail.</div>
+    <div id="wcfBreakdown" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 4px;"></div>
+  </div>
+</div>
+
+<div class="footer">
+  <strong>Notes:</strong>
+  <ul>
+    <li>AI agent flag (<code>aiAgent:true</code>) shipped Feb 2026 &mdash; pre-Feb AI volume = 0.</li>
+    <li><strong>Cloud opt-in metric definition (chart):</strong> Strict <code>nxCloudArg == "yes"</code>, matching the goal table. Excludes github/gitlab/etc CI provider selections — those came from leading prompts pre-22.5.3 and inflate the rate without representing user intent. Pre-Dec 2025 (CSV era) uses doc-level <code>useCloud</code> as a fallback since nxCloudArg wasn't emitted; those numbers aren't directly comparable to the modern target.</li>
+    <li><strong>Dec 2025 → Apr 2026 trajectory:</strong> Direct prompt era. Dec/Jan still had older single-step "yes/skip" prompts (no Never option) → 23-25% yes. Late Feb introduced 22.5.3's direct yes/skip/never → rate dropped to 8-12%. Mar 8.6% Human-only matches the project update on Mar 30 ("9-10% in 22.6.x"). Apr 11.1% Human-only matches the Apr 8 update ("CNW rate is 10.2%").</li>
+    <li><strong>The CI-provider channel collapse:</strong> Pre-22.5.3 (through Feb 2026), the CLI's first prompt was "What CI provider do you use?" — picking github/gitlab/etc <em>implicitly enabled Cloud</em>. 22.5.3 (late Feb) replaced this with a direct yes/skip/never prompt. 22.5.4 briefly re-tried the leading CI prompt (<code>enable-caching2</code>) and got 2,508 picks before being removed again. <strong>Net effect:</strong> total cloud opt-ins per day dropped from ~800 (Nov 2025) to ~65 (Apr 2026). The strict-yes rate chart shows the optimization wins on the new prompt; the by-source chart shows the absolute funnel loss the redesign caused.</li>
+    <li><strong>Reading the two cloud charts together:</strong> Strict-yes rate (line chart) tracks our goal metric and shows incremental A/B wins (8% &rarr; 14.7%). The by-source chart (stacked bars) shows that the absolute funnel got smaller because the implicit-opt-in CI channel was removed. Even at 10% true activation rate, the pre-22.5.3 CI channel produced more activated workspaces than today's strict-yes channel. Open question: is the trade-off (explicit consent vs absolute volume) worth it? Needs Cloud activation data to answer.</li>
+    <li>CI + Contentful overlap (Contentful runs are largely automated CI builds), so stacks are not strictly additive.</li>
+    <li>Apr 2026 is partial &mdash; per-day rates are valid, monthly totals are not.</li>
+    <li>Init error rate only observable since 22.6.4 (Apr 2026) when init started emitting JSON funnel events.</li>
+  </ul>
+</div>
+
+<script>
+// ===== DATA =====
+const months = [
+  "2025-04","2025-05","2025-06","2025-07","2025-08","2025-09",
+  "2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04"
+];
+const days = [30,31,30,31,31,30,31,30,31,31,28,31,27]; // Apr 2026 = partial
+
+// CNW completions
+const cnwHumanAI  = [36192,35624,31752,33190,28675,28877,26640,23658,23377,24573,23390,20955,16647];
+const cnwAll      = [40605,39415,35365,37946,34902,36132,33670,30545,28782,37658,35565,38887,29501];
+const cnwAI       = [    0,    0,    0,    0,    0,    0,    0,    0,    0,    0, 1635, 2613, 2352];
+const cnwHumanOnly= [36192,35624,31752,33190,28675,28877,26640,23658,23377,24573,21755,18342,14295];
+
+// Init
+const initHuman   = [9862,9484,8320,9775,7803,7318,6992,6303,5936,5877,4823,4228,5911];
+const initAI      = [   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 607];
+const initAll     = [9868,9502,8324,9782,7811,7324,7025,6326,5942,5883,4829,4358,8190];
+
+// CNW Cloud opt-in — METHODOLOGY B: prompt-driven yes / all completions (humans), or all strict yes / total (Human+AI/All).
+//   - Human-only: prompt-driven yes ONLY (cloudArg=yes AND setupCloudPrompt is non-empty), AI excluded.
+//                 Most honest "did the human-facing prompt succeed?" metric. Excludes CLI-flag yes (mostly AI).
+//   - Human+AI:   any strict yes (prompt OR CLI-flag), AI included (since AI's main path is --nxCloud=yes via CLI).
+//   - All:        any strict yes including CI runs and Contentful.
+// Pre-Dec 2025 (CSV era): NULL — can't compute prompt-driven yes from CSV docs (no nxCloudArg field, useCloud=true
+// rolls explicit yes + CI-provider picks into one bucket and is not directly comparable).
+const cnwCloudHumanOnly = [null,null,null,null,null,null,null,null, 8.3,18.1, 0.6, 7.2, 9.3];
+const cnwCloudHumanAI   = [null,null,null,null,null,null,null,null, 8.3,23.5,11.6,16.3,20.5];
+const cnwCloudAll       = [null,null,null,null,null,null,null,null, 6.9,15.1, 7.5, 9.1,11.7];
+
+// CNW cloud opt-in by source — humans only (isCI=false), excl AI, excl Contentful.
+// Buckets:
+//   - csv_true: CSV-era opt-in (no nxCloudArg field, useCloud=true) — pre-Dec mostly, residual after
+//   - yes_strict: nxCloudArg in (yes, Yes) — explicit "Yes" pick on direct prompt
+//   - ci_provider_pre: nxCloudArg in CI providers — pre-22.5.3 leading prompt era (Dec - early Feb)
+//   - ci_provider_2254: nxCloudArg in CI providers — specifically from 22.5.4 retry (early Mar - late Mar)
+// Months align with `months` array (Apr 2025 - Apr 2026).
+const cnwOptInCsvTrue        = [20915,19771,16947,17454,14838,14882,13448,24934,14007,  341,  228,  146,  118];
+const cnwOptInYesStrict      = [    0,    0,    0,    0,    0,    0,    0,    0, 2961, 5862, 2365, 1491, 1501];
+const cnwOptInCiProvPre      = [    0,    0,    0,    0,    0,    0,    0,    0, 1209, 1025, 8156,  180,  146];
+const cnwOptInCiProv2254     = [    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0, 2506,    2];
+
+// Init Cloud opt-in — same definition as CNW.
+// Pre-22.6.4 (Apr 2026): doc-level useCloud (CSV era — init didn't emit nxCloudArg).
+// 22.6.4+ (Apr 2026 onward): strict nxCloudArg == "yes" on complete events.
+const initCloudHumanOnly = [37.0,38.6,36.3,34.2,30.5,31.7,31.1,29.6,29.2,27.8,27.3,28.3,11.6];
+const initCloudHumanAI   = [37.0,38.6,36.3,34.2,30.5,31.7,31.1,29.6,29.2,27.8,27.3,28.3,10.9];
+const initCloudAll       = [37.0,38.5,36.3,34.2,30.5,31.8,31.0,29.5,29.2,27.8,27.3,27.5, 6.2];
+
+// CNW error rate — CREATION errors only (excludes INVALID_*, DIRECTORY_EXISTS).
+// JSON era only, null pre-Dec 2025
+const cnwErrHumanAI = [null,null,null,null,null,null,null,null, 10.3, 8.4, 8.4, 7.9, 7.2];
+const cnwErrAll     = [null,null,null,null,null,null,null,null,  9.7, 7.1, 7.1, 5.9, 5.4];
+
+// Init error rate (creation only) — Apr 2026 only.
+// 1401 creation errors / 6172 starts = 22.7% human; 1574/7854 = 20.0% all (no input-validation codes seen)
+const initErrHuman = [null,null,null,null,null,null,null,null,null,null,null,null,22.7];
+const initErrAll   = [null,null,null,null,null,null,null,null,null,null,null,null,20.0];
+
+// Apr 2026 error code breakdowns (top creation errors, Human+AI)
+const aprErrCnw = [
+  { code: "WORKSPACE_CREATION_FAILED", count: 681 },
+  { code: "UNKNOWN",                   count: 578 },
+  { code: "TEMPLATE_CLONE_FAILED",     count: 221 },
+  { code: "PRESET_FAILED",             count: 143 },
+  { code: "SANDBOX_FAILED",            count:  60 },
+  { code: "CI_WORKFLOW_FAILED",        count:  40 }
+];
+const aprErrInputCnw = [
+  { code: "DIRECTORY_EXISTS",        count: 3586 },
+  { code: "INVALID_PACKAGE_MANAGER", count:  221 },
+  { code: "INVALID_WORKSPACE_NAME",  count:  210 },
+  { code: "INVALID_BUNDLER",         count:   22 },
+  { code: "INVALID_PRESET",          count:   15 }
+];
+const marErrCnw = [
+  { code: "WORKSPACE_CREATION_FAILED", count: 1256 },
+  { code: "UNKNOWN",                   count:  585 },
+  { code: "TEMPLATE_CLONE_FAILED",     count:  164 },
+  { code: "SANDBOX_FAILED",            count:  144 },
+  { code: "PRESET_FAILED",             count:  134 },
+  { code: "CI_WORKFLOW_FAILED",        count:  105 }
+];
+const marErrInputCnw = [
+  { code: "INVALID_WORKSPACE_NAME",  count: 1263 },
+  { code: "DIRECTORY_EXISTS",        count: 1052 },
+  { code: "INVALID_PACKAGE_MANAGER", count:  122 },
+  { code: "INVALID_PRESET",          count:   19 }
+];
+const aprErrInit = [
+  { code: "UNKNOWN",               count: 959 },
+  { code: "PACKAGE_INSTALL_ERROR", count: 442 }
+];
+
+// ===== HELPERS =====
+const perDay = (arr) => arr.map((v,i) => Math.round(v / days[i]));
+const cnwHumanOnlyPerDay= perDay(cnwHumanOnly);
+const cnwHumanAIPerDay  = perDay(cnwHumanAI);
+const cnwAllPerDay      = perDay(cnwAll);
+const initHumanOnlyPerDay= perDay(initHuman);
+const initHumanAIPerDay = initHuman.map((v,i) => Math.round((v + initAI[i]) / days[i]));
+const initAllPerDay     = perDay(initAll);
+const cnwOptInCsvTruePerDay    = perDay(cnwOptInCsvTrue);
+const cnwOptInYesStrictPerDay  = perDay(cnwOptInYesStrict);
+const cnwOptInCiProvPrePerDay  = perDay(cnwOptInCiProvPre);
+const cnwOptInCiProv2254PerDay = perDay(cnwOptInCiProv2254);
+
+const targets = { cnw: 2000, init: 300, cloud: 15, claimed: 5 };
+
+const latest = {
+  cnwHumanOnly:      cnwHumanOnlyPerDay[cnwHumanOnlyPerDay.length-1],
+  cnwHumanAI:        cnwHumanAIPerDay[cnwHumanAIPerDay.length-1],
+  cnwAll:            cnwAllPerDay[cnwAllPerDay.length-1],
+  initHumanOnly:     initHumanOnlyPerDay[initHumanOnlyPerDay.length-1],
+  initHumanAI:       initHumanAIPerDay[initHumanAIPerDay.length-1],
+  initAll:           initAllPerDay[initAllPerDay.length-1],
+  cnwCloudHumanOnly: cnwCloudHumanOnly[cnwCloudHumanOnly.length-1],
+  cnwCloudHumanAI:   cnwCloudHumanAI[cnwCloudHumanAI.length-1],
+  cnwCloudAll:       cnwCloudAll[cnwCloudAll.length-1],
+  initCloudHumanOnly:initCloudHumanOnly[initCloudHumanOnly.length-1],
+  initCloudHumanAI:  initCloudHumanAI[initCloudHumanAI.length-1],
+  initCloudAll:      initCloudAll[initCloudAll.length-1]
+};
+
+// ===== SUMMARY CARDS =====
+function statusFor(actual, target) {
+  const pct = (actual / target) * 100;
+  if (pct >= 95) return "green";
+  if (pct >= 70) return "yellow";
+  return "red";
+}
+function fmt(n, suffix="") { return (typeof n === "number" ? n.toLocaleString() : n) + suffix; }
+
+const cards = [
+  { label: "CNW comp/day",        value: latest.cnwAll,           target: targets.cnw,     suffix: "",  sub: `Human+AI: ${latest.cnwHumanAI.toLocaleString()} &middot; Human only: ${latest.cnwHumanOnly.toLocaleString()}` },
+  { label: "Init inv/day",        value: latest.initAll,          target: targets.init,    suffix: "",  sub: `Human+AI: ${latest.initHumanAI.toLocaleString()} &middot; Human only: ${latest.initHumanOnly.toLocaleString()}` },
+  { label: 'CNW Cloud opt-in %',  value: latest.cnwCloudAll,      target: targets.cloud,   suffix: "%", sub: `Human+AI: ${latest.cnwCloudHumanAI}% &middot; Human only: ${latest.cnwCloudHumanOnly}%` },
+  { label: 'Init Cloud opt-in %', value: latest.initCloudAll,     target: targets.cloud,   suffix: "%", sub: `Human+AI: ${latest.initCloudHumanAI}% &middot; Human only: ${latest.initCloudHumanOnly}%` },
+  { label: "Claimed/Comp %",      value: 2.7,                     target: targets.claimed, suffix: "%", sub: "From prior calculation (not in commandStats)" }
+];
+
+const summaryEl = document.getElementById("summary");
+cards.forEach(c => {
+  const div = document.createElement("div");
+  div.className = "card";
+  if (c.value === null) {
+    div.innerHTML = `
+      <div class="label">${c.label}</div>
+      <div class="value" style="color: var(--muted);">&mdash;</div>
+      <div class="target">Target: ${c.target}${c.suffix}</div>
+      <div class="delta" style="color: var(--muted);">${c.sub}</div>`;
+  } else {
+    const status = statusFor(c.value, c.target);
+    const pctOfTarget = Math.round((c.value / c.target) * 100);
+    const fillPct = Math.min(100, pctOfTarget);
+    div.innerHTML = `
+      <div class="label">${c.label}</div>
+      <div class="value">${fmt(c.value, c.suffix)}</div>
+      <div class="target">Target: ${fmt(c.target, c.suffix)} (${pctOfTarget}%)</div>
+      <div class="pct-bar"><div class="pct-fill bg-${status}" style="width: ${fillPct}%;"></div></div>
+      <div class="delta status-${status}">${c.sub}</div>`;
+  }
+  summaryEl.appendChild(div);
+});
+
+// ===== MILESTONES (chart annotations) =====
+function milestoneAnnotations() {
+  const items = [
+    { x: "2025-11", color: "#0969da", label: "22.0.4 starts" },
+    { x: "2025-12", color: "#8250df", label: "22.2.2 JSON + new prompt" },
+    { x: "2026-02", color: "#9a6700", label: "22.5.3 direct cloud prompt" },
+    { x: "2026-03", color: "#1a7f37", label: "22.6.3 A/B + tutorial Cloud CTA removed" },
+    { x: "2026-04", color: "#1b7c83", label: "22.6.5 lock-in" }
+  ];
+  const out = {};
+  items.forEach((it, i) => {
+    out["ms" + i] = {
+      type: "line",
+      xMin: it.x, xMax: it.x,
+      borderColor: it.color,
+      borderWidth: 1,
+      borderDash: [3, 3]
+    };
+  });
+  return out;
+}
+
+// ===== CHARTS =====
+Chart.defaults.color = "#656d76";
+Chart.defaults.borderColor = "#d0d7de";
+Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, system-ui, sans-serif";
+
+function lineChart(canvasId, datasets, target, ySuffix="") {
+  const data = { labels: months, datasets: datasets.slice() };
+  if (target !== null) {
+    data.datasets.push({
+      label: `Target (${target}${ySuffix})`,
+      data: months.map(() => target),
+      borderColor: "#cf222e",
+      borderDash: [6, 4],
+      borderWidth: 1.5,
+      pointRadius: 0,
+      fill: false
+    });
+  }
+  return new Chart(document.getElementById(canvasId), {
+    type: "line",
+    data,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 11 } } },
+        annotation: { annotations: milestoneAnnotations() },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y === null ? "n/a" : ctx.parsed.y.toLocaleString() + ySuffix}`
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false } },
+        y: {
+          beginAtZero: true,
+          ticks: { callback: v => v.toLocaleString() + ySuffix },
+          grid: { color: "rgba(0,0,0,0.06)" }
+        }
+      }
+    }
+  });
+}
+
+lineChart("cnwChart", [
+  { label: "Human only", data: cnwHumanOnlyPerDay, borderColor: "#1a7f37", tension: 0.3, fill: false },
+  { label: "Human+AI", data: cnwHumanAIPerDay, borderColor: "#0969da", tension: 0.3, fill: false },
+  { label: "All (incl CI + Contentful)", data: cnwAllPerDay, borderColor: "#8250df", tension: 0.3, fill: false }
+], targets.cnw);
+
+lineChart("initChart", [
+  { label: "Human only", data: initHumanOnlyPerDay, borderColor: "#1a7f37", tension: 0.3, fill: false },
+  { label: "Human+AI", data: initHumanAIPerDay, borderColor: "#0969da", tension: 0.3, fill: false },
+  { label: "All (incl CI)", data: initAllPerDay, borderColor: "#8250df", tension: 0.3, fill: false }
+], targets.init);
+
+lineChart("cloudChart", [
+  { label: "Human only %", data: cnwCloudHumanOnly, borderColor: "#1a7f37", tension: 0.3, fill: false },
+  { label: "Human+AI opt-in %", data: cnwCloudHumanAI, borderColor: "#0969da", tension: 0.3, fill: false },
+  { label: "All opt-in %", data: cnwCloudAll, borderColor: "#8250df", tension: 0.3, fill: false }
+], targets.cloud, "%");
+
+function stackedBarChart(canvasId, datasets, ySuffix="") {
+  return new Chart(document.getElementById(canvasId), {
+    type: "bar",
+    data: { labels: months, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 11 } } },
+        annotation: { annotations: milestoneAnnotations() },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}${ySuffix}/day`,
+            footer: items => {
+              const total = items.reduce((s, i) => s + i.parsed.y, 0);
+              return `Total: ${total.toLocaleString()}${ySuffix}/day`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { stacked: true, grid: { display: false } },
+        y: { stacked: true, beginAtZero: true,
+             ticks: { callback: v => v.toLocaleString() + ySuffix },
+             grid: { color: "rgba(0,0,0,0.06)" } }
+      }
+    }
+  });
+}
+
+stackedBarChart("cloudSourceChart", [
+  { label: "CSV-era opt-in (useCloud=true, no nxCloudArg)", data: cnwOptInCsvTruePerDay, backgroundColor: "#afb8c1" },
+  { label: "CI provider pick (pre-22.5.3 leading prompt)", data: cnwOptInCiProvPrePerDay, backgroundColor: "#8b5a00" },
+  { label: "CI provider pick (22.5.4 retry — Mar 2026)", data: cnwOptInCiProv2254PerDay, backgroundColor: "#e0a82e" },
+  { label: "Strict yes (explicit)", data: cnwOptInYesStrictPerDay, backgroundColor: "#1a7f37" }
+]);
+
+lineChart("initCloudChart", [
+  { label: "Human only %", data: initCloudHumanOnly, borderColor: "#1a7f37", tension: 0.3, fill: false },
+  { label: "Human+AI opt-in %", data: initCloudHumanAI, borderColor: "#0969da", tension: 0.3, fill: false },
+  { label: "All opt-in %", data: initCloudAll, borderColor: "#8250df", tension: 0.3, fill: false }
+], targets.cloud, "%");
+
+lineChart("cnwErrChart", [
+  { label: "Human+AI err %", data: cnwErrHumanAI, borderColor: "#cf222e", tension: 0.3, fill: false, spanGaps: false },
+  { label: "All err %", data: cnwErrAll, borderColor: "#9a6700", tension: 0.3, fill: false, spanGaps: false }
+], null, "%");
+
+lineChart("initErrChart", [
+  { label: "Human err %", data: initErrHuman, borderColor: "#cf222e", tension: 0.3, fill: false, spanGaps: false, pointRadius: 5 },
+  { label: "All err %", data: initErrAll, borderColor: "#9a6700", tension: 0.3, fill: false, spanGaps: false, pointRadius: 5 }
+], null, "%");
+
+// ===== Error breakdown rendering =====
+function renderErrSection(creation, input, monthLabel) {
+  const all = creation.concat(input);
+  const max = Math.max.apply(null, all.map(e => e.count));
+  const totalCreation = creation.reduce((a, b) => a + b.count, 0);
+  const totalInput = input.reduce((a, b) => a + b.count, 0);
+  const lines = [];
+  lines.push(`<div class="err-month-title">${monthLabel} &mdash; ${totalCreation.toLocaleString()} creation, ${totalInput.toLocaleString()} input-validation</div>`);
+  creation.forEach(e => {
+    const w = (e.count / max) * 100;
+    lines.push(`<div class="err-row creation"><div class="name">${e.code}</div><div class="bar-wrap"><div class="bar" style="width: ${w}%;"></div></div><div class="count">${e.count.toLocaleString()}</div></div>`);
+  });
+  input.forEach(e => {
+    const w = (e.count / max) * 100;
+    lines.push(`<div class="err-row input"><div class="name">${e.code}</div><div class="bar-wrap"><div class="bar" style="width: ${w}%;"></div></div><div class="count">${e.count.toLocaleString()}</div></div>`);
+  });
+  return `<div>${lines.join("")}</div>`;
+}
+document.getElementById("errBreakdown").innerHTML =
+  renderErrSection(marErrCnw, marErrInputCnw, "March 2026") +
+  renderErrSection(aprErrCnw, aprErrInputCnw, "April 2026 (27d)");
+
+// WCF root cause breakdown — Mar/Apr 2026 (Human+AI), categorized after stripping npm noise
+const wcfMar = [
+  { code: "ERESOLVE: unknown root", count: 146, type: "creation" },
+  { code: "npm warnings only (no real error)", count: 97, type: "noise" },
+  { code: "ENOENT", count: 71, type: "creation" },
+  { code: "ERESOLVE: vite", count: 57, type: "creation" },
+  { code: "Cannot find module", count: 57, type: "creation" },
+  { code: "EACCES", count: 54, type: "creation" },
+  { code: "pnpm null startsWith bug", count: 49, type: "creation" },
+  { code: "Network/TLS", count: 33, type: "creation" },
+  { code: "EPERM", count: 28, type: "creation" },
+  { code: "JSON parse error", count: 27, type: "creation" },
+  { code: "ETARGET (version not found)", count: 16, type: "creation" },
+  { code: "pnpm error", count: 14, type: "creation" },
+  { code: "EBADENGINE", count: 14, type: "creation" },
+  { code: "Native bindings (Termux/Android)", count: 12, type: "creation" },
+  { code: "Other (long tail)", count: 561, type: "creation" }
+];
+const wcfApr = [
+  { code: "npm warnings only (no real error)", count: 58, type: "noise" },
+  { code: "ENOENT", count: 38, type: "creation" },
+  { code: "pnpm null startsWith bug", count: 36, type: "creation" },
+  { code: "ERESOLVE (all roots)", count: 32, type: "creation" },
+  { code: "EPERM", count: 25, type: "creation" },
+  { code: "JSON parse error", count: 21, type: "creation" },
+  { code: "EACCES", count: 21, type: "creation" },
+  { code: "Network/TLS", count: 20, type: "creation" },
+  { code: "Cannot find module", count: 20, type: "creation" },
+  { code: "pnpm error", count: 8, type: "creation" },
+  { code: "ETARGET (version not found)", count: 7, type: "creation" },
+  { code: "Native bindings (Termux/Android)", count: 5, type: "creation" },
+  { code: "EBADENGINE", count: 5, type: "creation" },
+  { code: "Other (long tail)", count: 385, type: "creation" }
+];
+
+function renderWcfSection(items, monthLabel, totalWcf) {
+  const max = Math.max.apply(null, items.map(e => e.count));
+  const lines = [];
+  lines.push(`<div class="err-month-title">${monthLabel} &mdash; ${totalWcf.toLocaleString()} total WCF errors</div>`);
+  items.forEach(e => {
+    const w = (e.count / max) * 100;
+    const cls = e.type === "noise" ? "input" : "creation";
+    lines.push(`<div class="err-row ${cls}"><div class="name">${e.code}</div><div class="bar-wrap"><div class="bar" style="width: ${w}%;"></div></div><div class="count">${e.count.toLocaleString()}</div></div>`);
+  });
+  return `<div>${lines.join("")}</div>`;
+}
+document.getElementById("wcfBreakdown").innerHTML =
+  renderWcfSection(wcfMar, "March 2026", 1256) +
+  renderWcfSection(wcfApr, "April 2026 (27d)", 681);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nx Cloud Billing Architecture</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --panel-2: #1c2129;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --orange: #d29922;
+    --red: #f85149;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 32px 24px 80px;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  header { margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  h1 { font-size: 26px; margin: 0 0 6px; font-weight: 600; }
+  .sub { color: var(--muted); font-size: 13px; }
+  h2 {
+    font-size: 18px;
+    margin: 36px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+  }
+  h3 { font-size: 14px; margin: 18px 0 8px; color: var(--accent); font-weight: 600; }
+  .grid { display: grid; gap: 14px; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 800px) {
+    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .card h3 { margin-top: 0; }
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    background: var(--panel-2);
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+  .pill.green { color: var(--green); border-color: rgba(63, 185, 80, .4); }
+  .pill.orange { color: var(--orange); border-color: rgba(210, 153, 34, .4); }
+  .pill.red { color: var(--red); border-color: rgba(248, 81, 73, .4); }
+  .pill.purple { color: var(--purple); border-color: rgba(163, 113, 247, .4); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 13px;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; }
+  code, .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12.5px;
+    background: var(--panel-2);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #ffa657;
+  }
+  .mermaid {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+    margin: 12px 0;
+    text-align: center;
+  }
+  ul { margin: 6px 0 6px 18px; padding: 0; }
+  li { margin: 3px 0; }
+  .num {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .num.green { color: var(--green); }
+  .num.orange { color: var(--orange); }
+  .num.red { color: var(--red); }
+  .label { color: var(--muted); font-size: 12px; }
+  .formula {
+    background: var(--panel-2);
+    border-left: 3px solid var(--accent);
+    padding: 8px 12px;
+    margin: 6px 0;
+    font-family: ui-monospace, monospace;
+    font-size: 12.5px;
+    border-radius: 0 4px 4px 0;
+  }
+  .gap { color: var(--red); font-weight: 600; }
+  .ok { color: var(--green); }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin: 8px 0 16px; font-size: 12px; }
+  .legend span::before {
+    content: "●";
+    margin-right: 4px;
+  }
+  .legend .compute::before { color: var(--accent); }
+  .legend .exec::before { color: var(--green); }
+  .legend .ai::before { color: var(--purple); }
+  .legend .gap-l::before { color: var(--red); }
+  details summary { cursor: pointer; color: var(--accent); padding: 4px 0; }
+  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Nx Cloud Billing Architecture</h1>
+  <div class="sub">High-level review · what gets tracked · what gets charged · gaps for itemized network/disk billing</div>
+</header>
+
+<div class="legend">
+  <span class="compute">Compute stream</span>
+  <span class="exec">Execution stream</span>
+  <span class="ai">AI Fix stream</span>
+  <span class="gap-l">Not tracked today</span>
+</div>
+
+<!-- ============== AT A GLANCE ============== -->
+<h2>At a Glance</h2>
+<div class="grid grid-3">
+  <div class="card">
+    <div class="label">Usage streams tracked</div>
+    <div class="num">3</div>
+    <div class="label">Compute · Execution · AI Fix</div>
+  </div>
+  <div class="card">
+    <div class="label">Billing cycle</div>
+    <div class="num green">Monthly</div>
+    <div class="label">UTC month boundaries · Stripe invoices</div>
+  </div>
+  <div class="card">
+    <div class="label">Itemized for network/disk?</div>
+    <div class="num red">No</div>
+    <div class="label">Zero capture · zero schema fields</div>
+  </div>
+</div>
+
+<!-- ============== HIGH-LEVEL FLOW ============== -->
+<h2>High-Level Flow</h2>
+
+<div class="mermaid">
+flowchart LR
+  subgraph RT["RUNTIME · nx-api writes"]
+    direction TB
+    W["workflows<br/>(MWorkflow)"]
+    C["ciPipelineExecutions"]
+    F["cipeFixes / aiFixes"]
+  end
+
+  subgraph AGG["MONTHLY · aggregator (1st UTC)"]
+    direction TB
+    CC["ComputeCreditUsage"]
+    EC["ExecutionCreditUsage"]
+    AC["AiCreditUsage"]
+    CB["CreateBillingRecords"]
+    CC --> CB
+    EC --> CB
+    AC --> CB
+  end
+
+  subgraph INV["INVOICE · Tue/Wed/Thu 5pm UTC"]
+    direction TB
+    HR["HandleUnprocessed<br/>BillingRecords"]
+    SP["Stripe API"]
+    EM["Email admins"]
+    HR --> SP
+    HR --> EM
+  end
+
+  W --> CC
+  C --> EC
+  F --> AC
+  CB --> MBR[("MBillingRecord<br/>(per org · per month)")]
+  MBR --> HR
+
+  classDef rt fill:#1c2129,stroke:#58a6ff,color:#e6edf3
+  classDef agg fill:#1c2129,stroke:#3fb950,color:#e6edf3
+  classDef inv fill:#1c2129,stroke:#a371f7,color:#e6edf3
+  class W,C,F rt
+  class CC,EC,AC,CB agg
+  class HR,SP,EM inv
+</div>
+
+<!-- ============== THREE STREAMS ============== -->
+<h2>What Gets Tracked — 3 Independent Streams</h2>
+
+<div class="grid grid-3">
+
+  <div class="card">
+    <span class="pill" style="color: var(--accent); border-color: rgba(88,166,255,.4)">COMPUTE</span>
+    <h3>Workflow steps</h3>
+    <div class="label">Source</div>
+    <div><code>MWorkflow</code> → details.steps[].instances</div>
+    <div class="label" style="margin-top:8px">Unit</div>
+    <div>milliseconds × resource class multiplier</div>
+    <div class="label" style="margin-top:8px">Dimensions</div>
+    <ul>
+      <li><code>resourceClass</code> (small/medium/large/XL)</li>
+      <li><code>startTime</code>, <code>endTime</code></li>
+      <li><code>workspaceId</code> → <code>orgId</code></li>
+    </ul>
+    <div class="label" style="margin-top:8px">Code</div>
+    <div class="mono">credit-usage-kotlin/<br/>ComputeCreditUsage.kt:55-185</div>
+  </div>
+
+  <div class="card">
+    <span class="pill green">EXECUTION</span>
+    <h3>CI Pipeline Executions</h3>
+    <div class="label">Source</div>
+    <div><code>MCiPipelineExecution</code></div>
+    <div class="label" style="margin-top:8px">Unit</div>
+    <div>count of cache-enabled CIPEs</div>
+    <div class="label" style="margin-top:8px">Dimensions</div>
+    <ul>
+      <li><code>cacheEnabled</code> (boolean filter)</li>
+      <li><code>createdAt</code>, <code>workspaceId</code></li>
+    </ul>
+    <div class="label" style="margin-top:8px">Code</div>
+    <div class="mono">credit-usage-kotlin/<br/>ExecutionCreditUsage.kt:19-61</div>
+  </div>
+
+  <div class="card">
+    <span class="pill purple">AI FIX</span>
+    <h3>Self-healing CI fixes</h3>
+    <div class="label">Source</div>
+    <div><code>MCipeFix</code> + <code>MAIFix</code> (legacy)</div>
+    <div class="label" style="margin-top:8px">Unit</div>
+    <div>USD cost (pre-computed by Anthropic)</div>
+    <div class="label" style="margin-top:8px">Dimensions</div>
+    <ul>
+      <li><code>cost</code> (Double, USD)</li>
+      <li><code>apiKeySource</code> (NX_CLOUD vs CUSTOMER)</li>
+      <li><code>cipeId</code>, <code>workspaceId</code></li>
+    </ul>
+    <div class="label" style="margin-top:8px">Billable filter</div>
+    <div>Only NX_CLOUD key counted · customer-key fixes excluded</div>
+  </div>
+
+</div>
+
+<!-- ============== PRICING ============== -->
+<h2>What Gets Charged — Pricing Model</h2>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>Conversion to credits</h3>
+    <div class="formula">execution = count × <b>500</b></div>
+    <div class="formula">compute  = ⌈ms ÷ 60000⌉ × resourceClass.multiplier<br/>
+      <span style="color:var(--muted)">small=5x · medium=10x · large=20x · XL=40x</span></div>
+    <div class="formula">ai = (10000 ÷ 5.5) × usd × <b>1.2</b><br/>
+      <span style="color:var(--muted)">1.2 = 20% margin baked in</span></div>
+    <div style="margin-top:10px" class="label">Constants in <code>Constants.kt:98-109</code> · <code>ResourceClasses.kt:122-150</code></div>
+  </div>
+
+  <div class="card">
+    <h3>Plan inclusions &amp; rates</h3>
+    <table>
+      <tr><th>Plan</th><th>Included</th><th>Rate</th></tr>
+      <tr><td>FREE</td><td>50k credits</td><td>—</td></tr>
+      <tr><td>PRO</td><td>300k credits</td><td>$2.49/mo + $0.55/1k</td></tr>
+      <tr><td>PRO_STARTUPS</td><td>300k credits</td><td>$0.747/mo + $0.165/1k</td></tr>
+      <tr><td>TEAM</td><td>50k credits</td><td>flat + per-contributor</td></tr>
+      <tr><td>ENTERPRISE</td><td>0 (custom)</td><td>negotiated</td></tr>
+      <tr><td>OSS</td><td>0</td><td>—</td></tr>
+    </table>
+    <div class="label">Modifiers (<code>Plan.kt:553-585</code>) add temporally-scoped pools: ALL · EXECUTION · COMPUTE · EXCLUDE_AI</div>
+  </div>
+</div>
+
+<!-- ============== DATA MODEL ============== -->
+<h2>Data Model</h2>
+
+<div class="mermaid">
+flowchart TB
+  subgraph SRC["Source collections (raw events)"]
+    direction LR
+    S1["workflows"]
+    S2["ciPipelineExecutions"]
+    S3["cipeFixes / aiFixes"]
+  end
+
+  subgraph BILL["Billing collections (aggregated)"]
+    direction LR
+    B1["billing.billingRecords<br/>MBillingRecord<br/><i>(orgId+periodStart+periodEnd)</i>"]
+    B2["billing.organizationCreditUsage<br/>MOrganizationCreditUsage"]
+    B3["billing.workspaceCreditUsage<br/>MWorkspaceCreditUsage"]
+    B4["billing.organizationCapPeriodCreditUsage<br/><i>enterprise trial caps</i>"]
+  end
+
+  subgraph ORG["Org / plan state"]
+    direction LR
+    O1["organizations<br/>MCloudOrganization<br/><i>(plan, stripeCustomerId, trial dates)</i>"]
+    O2["MOrganizationPlanLimits<br/><i>(credit pools, contributor limits)</i>"]
+  end
+
+  S1 --> B1
+  S2 --> B1
+  S3 --> B1
+  O1 -.->|plan rules| B1
+  O2 -.->|limits| B1
+  B1 --> B2
+  B1 --> B3
+
+  classDef src fill:#1c2129,stroke:#58a6ff,color:#e6edf3
+  classDef bil fill:#1c2129,stroke:#3fb950,color:#e6edf3
+  classDef org fill:#1c2129,stroke:#a371f7,color:#e6edf3
+  class S1,S2,S3 src
+  class B1,B2,B3,B4 bil
+  class O1,O2 org
+</div>
+
+<!-- ============== CODE MAP ============== -->
+<h2>Code Map</h2>
+
+<div class="card">
+<pre style="margin:0; font-family: ui-monospace, monospace; font-size:12.5px; line-height:1.7; color: var(--text); white-space: pre-wrap;">
+<span style="color:var(--muted)"># Mongo schemas</span>
+libs/shared/db-schema-kotlin/
+  ├─ <span style="color:var(--accent)">MBillingRecord</span>                 1 doc per (org, period) · idempotent
+  ├─ MOrganizationCreditUsage      rolled-up org summary
+  ├─ MWorkspaceCreditUsage         per-workspace breakdown
+  ├─ MCloudOrganization            plan, stripeCustomerId, trial
+  └─ MOrganizationPlanLimits       credit pools, contributor caps
+
+<span style="color:var(--muted)"># Aggregation pipelines (Mongo $unwind/$group)</span>
+libs/shared/utils/credit-usage-kotlin/
+  ├─ <span style="color:var(--accent)">ComputeCreditUsage.kt</span>          minutes × class multiplier → credits
+  ├─ <span style="color:var(--green)">ExecutionCreditUsage.kt</span>        count × 500
+  └─ <span style="color:var(--purple)">AiCreditUsage.kt</span>               USD × margin → credits
+
+<span style="color:var(--muted)"># Orchestration (cron jobs)</span>
+apps/aggregator/src/main/kotlin/operations/billing/
+  ├─ <span style="color:#ffa657">CreateBillingRecords.kt:59-262</span>     main monthly job
+  ├─ ProcessOrgsByPlan.kt                cron entry · 1st of month UTC
+  ├─ HandleUnprocessedBillingRecords.kt  Stripe push + email
+  └─ BillingUtils.kt:33-51               period boundary helpers
+
+<span style="color:var(--muted)"># nx-api (thin · runtime capture only)</span>
+apps/nx-api/src/main/kotlin/handlers/
+  └─ CreditUsageHandlers.kt:34          POST /private/credit-usage/ai-usage
+</pre>
+</div>
+
+<!-- ============== SEQUENCE ============== -->
+<h2>Monthly Run — Sequence</h2>
+
+<div class="mermaid">
+sequenceDiagram
+  participant Cron as Cron (1st UTC)
+  participant POBP as ProcessOrgsByPlan
+  participant CBR as CreateBillingRecords
+  participant Mongo as MongoDB
+  participant HUR as HandleUnprocessedBillingRecords
+  participant Stripe as Stripe API
+  participant Email as Email service
+
+  Cron->>POBP: trigger
+  POBP->>CBR: per org
+  CBR->>Mongo: aggregate workflows (compute)
+  CBR->>Mongo: count CIPEs (execution)
+  CBR->>Mongo: sum cipeFixes.cost (ai)
+  CBR->>Mongo: load org · plan · trial · modifiers
+  CBR->>Mongo: upsert MBillingRecord
+  Note over CBR,Mongo: idempotent via (orgId, periodStart, periodEnd)
+
+  Note over HUR: Tue/Wed/Thu 5pm UTC
+  HUR->>Mongo: load unprocessed billing records
+  HUR->>HUR: skip if isPrepaid · in-trial-under-limit · no stripeCustomerId
+  HUR->>Stripe: create line items (flat + overage + discounts)
+  HUR->>Email: notify org admins
+  HUR->>Mongo: mark processed
+</div>
+
+<!-- ============== GAPS ============== -->
+<h2>Gaps for Itemized Network &amp; Disk Billing</h2>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3 style="color: var(--red)">What's missing today</h3>
+    <ul>
+      <li><span class="gap">Zero capture</span> — no <code>bytes</code>, <code>networkBytes</code>, <code>storageBytes</code> on any usage model</li>
+      <li>No time-series usage table — all aggregation is monthly</li>
+      <li>Compute granularity = step level · no per-task line items</li>
+      <li>No artifact-upload metering hooks in nx-api</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 class="ok">What's already in place to leverage</h3>
+    <ul>
+      <li>Plan modifier system supports new credit pools (<code>Plan.kt:553</code>)</li>
+      <li><code>MBillingRecord</code> easy to extend with new credit fields</li>
+      <li>Stripe handler iterates credit types — auto-emits new line items</li>
+      <li>Aggregation pattern is repeatable per stream</li>
+    </ul>
+  </div>
+</div>
+
+<h3>5-Phase Path to Add Network/Disk</h3>
+<div class="mermaid">
+flowchart LR
+  P1["1. CAPTURE<br/>+ optional fields on<br/>MWorkflow steps[].instances<br/>networkBytes · diskBytesR/W"]
+  P2["2. AGGREGATE<br/>$sum + $ifNull in<br/>ComputeCreditUsage.kt<br/>new helper structs"]
+  P3["3. RECORD<br/>+ networkCredits<br/>+ storageCredits on<br/>MBillingRecord"]
+  P4["4. PRICE<br/>Constants.kt<br/>$/GB rates · tiers?<br/>included pools?"]
+  P5["5. INVOICE<br/>HandleUnprocessed...<br/>auto-emits line items<br/>(no change needed)"]
+
+  P1 --> P2 --> P3 --> P4 --> P5
+
+  classDef phase fill:#1c2129,stroke:#d29922,color:#e6edf3
+  class P1,P2,P3,P4,P5 phase
+</div>
+
+<h3>Decisions needed before coding</h3>
+<div class="card">
+<ul>
+  <li><b>Capture point</b> — agent self-reports? server measures from artifact uploads? both?</li>
+  <li><b>Granularity</b> — per-step (matches compute) or per-task (new dimension)?</li>
+  <li><b>Pricing model</b> — flat $/GB · tiered · or included pool + overage like compute</li>
+  <li><b>Net vs gross</b> — cache-hit downloads billable? probably yes, but PRO needs included pool or churn risk</li>
+  <li><b>Backfill</b> — synthesize from existing artifact metadata? or forward-only after rollout?</li>
+</ul>
+</div>
+
+<!-- ============== KEY NUMBERS ============== -->
+<h2>Numbers Worth Remembering</h2>
+<div class="grid grid-3">
+  <div class="card">
+    <div class="label">Credits per CIPE</div>
+    <div class="num green">500</div>
+    <div class="label">cache-enabled only</div>
+  </div>
+  <div class="card">
+    <div class="label">PRO included credits</div>
+    <div class="num">300k</div>
+    <div class="label">/ month</div>
+  </div>
+  <div class="card">
+    <div class="label">AI margin multiplier</div>
+    <div class="num orange">1.2×</div>
+    <div class="label">on Anthropic cost</div>
+  </div>
+  <div class="card">
+    <div class="label">Resource class spread</div>
+    <div class="num">5–40×</div>
+    <div class="label">small → XL multiplier</div>
+  </div>
+  <div class="card">
+    <div class="label">PRO rate</div>
+    <div class="num">$0.55</div>
+    <div class="label">per 1k credits + $2.49/mo</div>
+  </div>
+  <div class="card">
+    <div class="label">Invoice cadence</div>
+    <div class="num">3×/wk</div>
+    <div class="label">Tue/Wed/Thu 5pm UTC</div>
+  </div>
+</div>
+
+<div class="footer">
+  Source review · 2026-04-28 · code paths from <code>libs/shared/utils/credit-usage-kotlin/</code> · <code>apps/aggregator/.../billing/</code> · <code>libs/shared/db-schema-kotlin/</code>
+</div>
+
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      darkMode: true,
+      background: '#161b22',
+      primaryColor: '#1c2129',
+      primaryTextColor: '#e6edf3',
+      primaryBorderColor: '#30363d',
+      lineColor: '#8b949e',
+      secondaryColor: '#1c2129',
+      tertiaryColor: '#0d1117',
+      fontFamily: '-apple-system, BlinkMacSystemFont, system-ui, sans-serif'
+    },
+    flowchart: { curve: 'basis', padding: 20 },
+    sequence: { useMaxWidth: true }
+  });
+</script>
+
+</body>
+</html>

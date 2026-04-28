@@ -85,6 +85,69 @@ Ocean uses a CalVer-based tagging system (yymm.dd.build-number) for Docker image
 
 ## Features & Critical Paths
 
+### Billing & Credit Usage (2026-04-28)
+**Last Updated:** 2026-04-28
+**Related:** research only · `.ai/2026-04-28/tasks/billing-architecture-summary.html`
+
+Monthly subscription + credit-consumption model. Three independent usage streams tracked at runtime, aggregated monthly into `MBillingRecord`, pushed to Stripe.
+
+#### Three Usage Streams
+
+| Stream | Source collection | Unit | Conversion |
+|---|---|---|---|
+| Compute | `MWorkflow.details.steps[].instances` | ms × resourceClass | `ceil(ms/60000) × multiplier` (5x small → 40x XL) |
+| Execution | `MCiPipelineExecution` (cacheEnabled=true) | count | `count × 500` credits |
+| AI Fix | `MCipeFix` + `MAIFix` | USD | `(10000/5.5) × usd × 1.2` (1.2 = 20% margin) |
+
+AI billable filter: only `apiKeySource=NX_CLOUD` (customer-key fixes excluded).
+
+#### Files Involved
+
+**Aggregation pipelines** (`libs/shared/utils/credit-usage-kotlin/`):
+- `ComputeCreditUsage.kt:55-185` — Mongo `$unwind` steps/instances → `$group` by workspace+resourceClass → cost multiplier
+- `ExecutionCreditUsage.kt:19-61` — count cache-enabled CIPEs
+- `AiCreditUsage.kt:66-302` — sum costs with apiKeySource filter; `convertAiDollarsToCredits()` at line 299
+
+**Orchestration** (`apps/aggregator/src/main/kotlin/operations/billing/`):
+- `CreateBillingRecords.kt:59-262` — main monthly composer, upserts `MBillingRecord` (idempotent on `orgId+periodStart+periodEnd`)
+- `ProcessOrgsByPlan.kt` — cron entry; 1st of month UTC creates, Tue/Wed/Thu 5pm UTC processes
+- `HandleUnprocessedBillingRecords.kt` — Stripe push, line items, email
+- `BillingUtils.kt:33-51` — period boundary helpers
+
+**Pricing & plans**:
+- `Constants.kt:98-109` — `CREDITS_PER_CI_PIPELINE_EXECUTION=500`, `PRICE_PER_CREDIT_PRO=0.00055`, flat rates
+- `ResourceClasses.kt:122-150` — resource-class multipliers
+- `Plan.kt:10-90` — plan tiers (FREE 50k / PRO 300k / PRO_STARTUPS 300k+20% / TEAM / ENTERPRISE / OSS)
+- `Plan.kt:553-585` — modifier system (temporally-scoped credit pools: ALL / EXECUTION / COMPUTE / EXCLUDE_AI)
+
+**Schemas** (`libs/shared/db-schema-kotlin/`):
+- `MBillingRecord` — composite key (orgId, periodStart, periodEnd)
+- `MOrganizationCreditUsage`, `MWorkspaceCreditUsage`, `MOrganizationCapPeriodCreditUsage`
+- `MCloudOrganization` (plan, stripeCustomerId, trial dates, isPrepaid)
+- `MOrganizationPlanLimits`
+
+**nx-api surface** (thin — runtime capture only):
+- `apps/nx-api/src/main/kotlin/handlers/CreditUsageHandlers.kt:34` — `POST /nx-cloud/private/credit-usage/ai-usage`
+
+#### Stripe Integration
+- Line items per credit type: flat sub (prorated via `calculateFlatPricePercentage`), per-credit overage, discounts (`calculateStartupPlanDiscountAmount` `Plan.kt:266-290`).
+- Skip invoice when: `isPrepaid`, in-trial-under-limit, no `stripeCustomerId`.
+- Feature flags: `NX_CLOUD_AGGREGATOR_FORCE_CREATE_BILLING_RECORDS`, `..._DISABLE_...`, `..._FORCE_PROCESS_BILLING`, `..._DISABLE_PROCESS_BILLING`.
+
+#### Gaps for Itemized Network/Disk Billing
+- **Zero capture today** — no `bytes`/`networkBytes`/`storageBytes`/`dataTransferred`/`diskUsage` fields on any usage model.
+- No time-series/metered usage table; all aggregation monthly.
+- Compute granularity = step level; no per-task line items.
+
+**5-phase path to add**:
+1. Capture: extend `MWorkflow.details.steps[].instances` with optional `networkBytesTransferred`, `diskBytesWritten/Read` fields
+2. Aggregate: `$sum`/`$ifNull` in `ComputeCreditUsage.kt`-style pipelines; new helper structs
+3. Record: `networkCredits`/`storageCredits` fields on `MBillingRecord`
+4. Price: `PRICE_PER_GB_NETWORK`/`PRICE_PER_GB_STORAGE` in `Constants.kt`; tier strategy TBD
+5. Invoice: `HandleUnprocessedBillingRecords` already iterates credit types — auto-emits new line items
+
+**Open decisions**: capture point (agent vs server vs both), granularity (step vs task), pricing model (flat vs tiered vs included pool), cache-hit billability, backfill vs forward-only.
+
 ### DTE Exit Code / Run Status Flow
 **Last Updated:** 2026-03-25
 **Related:** CLOUD-4390, ocean#10513
@@ -133,6 +196,13 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 - Pattern already existed in client-bundle but couldn't be reused due to circular dependency concerns
 
 ## Personal Work History
+
+### 2026-04-28
+- **Billing architecture review** (branch: main, no commits — research only)
+  - Walked Nx Cloud Kotlin billing system (compute / execution / AI fix streams → `MBillingRecord` → Stripe).
+  - Identified that **network bandwidth and disk usage are not captured anywhere today** — no fields on any usage model. Plan modifier system + Stripe handler already extensible for new credit types.
+  - Documented architecture in `.ai/para/resources/architectures/ocean-architecture.md` (Billing & Credit Usage section) and produced a self-contained HTML dashboard with Mermaid diagrams: `.ai/2026-04-28/tasks/billing-architecture-summary.html`.
+  - Goal: scope the work needed for itemized billing on network/disk.
 
 ### 2026-03-30
 - **CLOUD-4401: Ctrl+C during onboarding prints readline stacktrace** (branch: CLOUD-4401, PR: #10568, merged)

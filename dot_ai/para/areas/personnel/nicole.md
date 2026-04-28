@@ -33,6 +33,97 @@
 - GTM for pricing, etc.
 - Priorities for enterprise, teams, hobby
 
+### 2026-04-24 - 1:1 Nicole & Jack
+
+**Team Updates & Collaboration**
+- Nicole working effectively with Ben as smaller team
+  - Independent work with regular syncs
+  - Efficient working relationship established
+- Jack feeling under the weather but managing workload
+- Dashboard cleanup progress for all-hands presentation next week
+  - PostHog integration improvements
+  - Fixed manual flow data issues
+  - Web traffic tracking still relies heavily on Google Analytics
+
+**Init Performance & Analysis**
+- Current init numbers: ~220 daily with ~25% success rate
+- Significant drop from October (previously 20-30 workspaces/day)
+  - Likely caused by metadata structure changes (JSON vs comma-separated)
+  - Stats calculation may need updates
+- Recent improvements from reverting docs changes
+- Acquired workspace count trending upward despite lower init volume
+  - More serious users converting
+  - Needs deeper analysis to understand correlation
+
+**Experiments and Changes**
+- Init error fixes in progress for better debugging
+- Confirmation screen for PR links restored to production
+- Manual onboarding flow ready for launch (pending Ben's review)
+- Upcoming benchmarks comparing Nx vs Turbo vs Vite
+  - Turbo showing faster performance in some cases
+  - Vite significantly slower than Nx and Turbo
+
+**Pricing & Dedicated Cloud Initiative**
+- Target launch: June 1st (infrastructure guaranteed by Steve)
+- Initial approach: manual provisioning with 72-hour setup
+- Pricing structure: $200-300/month base for dedicated compute
+  - Unlocks sandboxing, Docker layer caching, other premium features
+  - Additional features available as add-ons
+- UI/UX considerations needed for feature discovery and upgrade flow
+- Cross-team project spanning all departments
+- Jack owning end-to-end delivery with team input on respective portions
+
+**Team Focus & Strategy**
+- Activation rate improvement priority (2.5% to 4.5% would meet targets)
+- Need team alignment on experiment priorities before May
+- Faster iteration cycles needed - less waiting, quicker testing
+- Documentation in Linear for experiment tracking
+- PostHog integration for measurable experiments
+
+[Transcript](https://notes.granola.ai/t/19975476-d49e-4a94-b70e-ce84afd8ee08-00demib2)
+
+### 2026-04-22 - Review Onboarding/Activation Metrics
+
+**Team Dynamics & Communication**
+- Nicole feeling insecure about growth numbers and recent feedback
+  - Alton's presentation at Orca meeting felt aggressive/frustrating
+  - Good ideas but delivery made her feel bad about 6 months of onboarding work
+  - Concerns about role clarity and being excluded from pricing discussions
+- Jack to address delivery style with Alton separately
+  - Focus on exploring global vs local optimization approach
+  - Acknowledge team stress during difficult company period
+
+**Onboarding Metrics & Performance**
+- CNW completion rates improved significantly
+  - Stable 20% conversion rate (up from 7%)
+  - 1000 CNW + 300 init completions daily = 260 front-end sources
+- VCS flow performance breakdown:
+  - GitHub: ~70% of traffic
+  - GitLab one-page flow: 2x higher conversion than previous
+  - Manual flow conversion needs improvement (currently <50%)
+- Guided onboarding without GitHub admin permission should boost continuation rates
+- PostHog implementation planned for docs analytics and session replay
+
+**Current Optimization Focus**
+- Manual onboarding flow improvements
+  - One-page onboarding in PR review, launching soon
+  - Making VCS setup step more friendly/skippable
+  - Target: >50% completion rate for committed users
+- Tracking methodology updates needed
+  - Base metrics on first interaction vs page navigation
+  - Better correlation between CNW/init and claim rates
+  - Fix database connection issues affecting dashboard
+
+**Action Items**
+- Jack: Implement PostHog for docs (May/June timeline)
+- Jack: One-on-one with Alton about communication style
+- Jack: Follow up with Jeff on DTE onboarding commitments
+- Nicole: Update tracking spreadsheet to focus on current priorities
+- Nicole: Launch one-page manual onboarding flow
+- Team: Present combined CNW + onboarding metrics at Orca updates
+
+[Transcript](https://notes.granola.ai/t/06c4ec28-744f-4729-a952-227b9ec93d1b-00demib2)
+
 ### 2026-02-26
 
 **Capital One Visit Debrief**

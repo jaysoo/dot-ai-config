@@ -5,12 +5,51 @@ description: >
   Supports prod and staging environments. Use for error analysis, funnel
   metrics, version comparisons, and usage trends. Triggers on "CNW stats",
   "workspace stats", "error rates", "telemetry", "commandStats", "CNW errors",
-  "CNW analysis".
+  "CNW analysis". Also triggers on "show CNW UI", "CNW dashboard", "CNW
+  report", "show me visually" — generates a self-contained HTML dashboard
+  from the bundled template.
 ---
 
 # CNW Stats Analyzer
 
 Analyze create-nx-workspace telemetry from the `commandStats` MongoDB collection.
+
+## When user asks for "UI", "dashboard", "chart", "report", "show me visually"
+
+Generate a self-contained HTML dashboard at `/tmp/cnw-dashboard.html` and open it. The template lives at `~/.claude/skills/cnw-stats-analyzer/dashboard-template.html` (and is also at `~/projects/dot-ai-config/dot_claude/skills/cnw-stats-analyzer/dashboard-template.html`).
+
+**Workflow:**
+1. **Read the template** with the Read tool to inspect the data arrays you need to update
+2. **Run the standard queries** to get the latest monthly numbers (see "Standard dashboard queries" below)
+3. **Update the data arrays** in a copy of the template — the template uses these arrays:
+   - `months` (e.g. ["2025-04", ..., "2026-04"]) — extend whenever a new month begins
+   - `days` — calendar days per month, partial for current month (so per-day rates stay correct)
+   - CNW volume: `cnwHumanOnly`, `cnwHumanAI`, `cnwAll`, `cnwAI`, `cnwHumanOnly`, plus stack components `cnwCI`, `cnwContentful`
+   - Init volume: `initHumanOnly` (just `initHuman`), `initAI`, `initAll`
+   - Cloud opt-in: `cnwCloudHumanOnly`, `cnwCloudHumanAI`, `cnwCloudAll`; `initCloudHumanOnly`, `initCloudHumanAI`, `initCloudAll`
+   - Error rates: `cnwErrHumanAI`, `cnwErrAll`, `initErrHuman`, `initErrAll` (creation-only — see Error Classification section)
+   - Apr 2026 error breakdowns + WCF root causes (`marErrCnw`, `aprErrCnw`, `marErrInputCnw`, `aprErrInputCnw`, `wcfMar`, `wcfApr`) — replace with the most recent two months
+4. **Save** the populated HTML to `/tmp/cnw-dashboard.html`
+5. **Open** with `open /tmp/cnw-dashboard.html`
+
+**The template includes:**
+- 5 summary cards: CNW comp/day, Init inv/day, CNW Cloud opt-in %, Init Cloud opt-in %, Claimed/Comp %. Each shows All as headline + Human+AI and Human-only sub-lines.
+- Milestone legend with color-coded vertical lines on every chart
+- 8 chart cards (line + bar): CNW volume, Init volume, CNW cloud opt-in, Init cloud opt-in, Population stack, CNW error rate, Init error rate, plus two grid-spanning panels for top errors and WCF root causes
+
+**Targets:** CNW 2,000/day, Init 300/day, Cloud 15%, Claimed/Comp 5%. Update `targets = { cnw, init, cloud, claimed }` in the template if the goals change.
+
+**Don't reinvent the layout.** Always start from the template — it has the correct structure (Chart.js + chartjs-plugin-annotation CDN, dark-mode CSS, responsive grid). Just substitute data and milestone dates.
+
+## Standard dashboard queries
+
+Run these in order — the dashboard needs all of them. Save outputs to `/tmp/cnw-batchN-out.txt` files for cross-reference.
+
+1. Per-month volume by population (CNW + init): see "AI vs Human vs Combined breakdown" later in this skill — the unified opt-in calculation also lives there.
+2. Cloud opt-in: use the unified definition (CSV era → `useCloud` doc field; JSON era → `nxCloudArg` not in skip/never). NEVER parse the CSV-meta string to derive opt-in — see "CRITICAL — CSV completion meta is `[setupCIPrompt, setupCloudPrompt, nxCloudArg, vcsStatus]`" warning below.
+3. Error rates: creation errors only (exclude `INVALID_*`, `DIRECTORY_EXISTS`) — see "Error Classification" section.
+4. Top error codes Mar/Apr (or current month + previous): split creation vs input validation.
+5. WORKSPACE_CREATION_FAILED categorization for Mar/Apr — strip npm noise lines first.
 
 ## Goals (Target: End of April 2026)
 
@@ -20,7 +59,7 @@ When the user asks about goals, targets, or whether metrics are on track, compar
 |--------|---------------------|-------------------|--------|----------------|
 | **CNW completions/day** | 1,368 | 1,018 (verified 2026-04-21) | **2,000** | All `complete` events, no filters (includes CI, AI, contentful) — apples-to-apples with baseline. Use `$or: [{meta: {$regex: "\"type\":\"complete\""}}, {meta: {$regex: "which-ci-provider"}}]` with NO exclusion filters. Target reduced from 3,000 → 2,000 on 2026-04-20. **Historical context:** Sep 2025 = 1,204/day, Oct = 1,086/day, Nov = 1,018/day. Rate has been ~1,000–1,200/day since at least Sep 2025 — April 2026 (1,098/day) is flat with this range, not a regression. (Previous 1,915 Nov figure in this table was incorrect — never matched raw data.) |
 | **Init invocations/day** | 164 | 210 (human, verified 2026-04-21) | **300** | `command: "init"` in commandStats. Pre-22.6.4: each doc is one invocation (no type field). 22.6.4+: emits JSON meta with `type` field (start/complete/error), so count `start` events + legacy CSV docs depending on era. See "Init Command Stats" section. **Historical context:** Sep 2025 = 244/day, Oct = 226/day, Nov = 210/day (all human, pre-22.6.4 CSV-era so 1 doc = 1 invocation). (Previous 247 Nov figure in this table was incorrect.) |
-| **Cloud "yes" rate** | ~3.7% (22.6.0) | ~50% (inflated by CI prompt) | **15%** | `nxCloudArg: "yes"` as % of human completions (excl CI/AI/contentful). Do NOT count CI providers (github, gitlab, etc.) — only explicit "yes". Nov was inflated by the 22.5.4 CI provider prompt experiment (see Telemetry Feature Timeline). |
+| **Cloud "yes" rate** | ~3.7% (22.6.0) | ~50% (inflated by CI prompt) | **15%** | **Methodology B (chart default):** `nxCloudArg == "yes"` AND `setupCloudPrompt != ""` (prompt-driven only) as % of human completions (excl CI/AI/contentful). Excludes CLI-flag yes (mostly AI agents passing `--nxCloud=yes`) so the rate measures the human-facing prompt's success. Do NOT count CI providers (github, gitlab, etc.) — only explicit "yes". Pre-Dec 2025 (CSV era) is NOT comparable: doc-level `useCloud=true` rolls explicit yes + CI-provider picks into one bucket, so the chart sets pre-Dec to null. Human+AI / All lines use any-source strict yes (prompt OR CLI-flag) since AI agents legitimately use the CLI-flag path. |
 | **Claimed/Completed CNW %** | ~1-2.5% | — | **5%** | Cannot be calculated from commandStats alone — requires Nx Cloud activation data. Flag as unmeasurable when reporting. |
 
 **When reporting goal progress:**
@@ -30,6 +69,9 @@ When the user asks about goals, targets, or whether metrics are on track, compar
 4. Note that the Nov baseline for cloud "yes" is NOT comparable due to the CI prompt experiment
 
 ## Default Output
+
+> 🛑 **CRITICAL — Error rate must exclude input validation errors.**
+> Any time you report a CNW or init "error rate", it MUST be `creation_errors / starts`, NOT `all_errors / starts`. Input validation codes (`INVALID_*`, `DIRECTORY_EXISTS`) represent invalid user input, not failures — including them inflates the rate by 2–3x and produces misleading regression signals (e.g. AI agent retry storms look like product bugs). See **Error Classification** section below for the full code list. This applies to summary cards, charts, headlines, monthly comparisons — every error-rate number you produce.
 
 **Always break down results per day** unless the user explicitly asks for totals only. All dates must be in **EST/EDT** using `timezone: "America/New_York"` in `$dateToString`.
 
@@ -58,6 +100,9 @@ Errors are split into two categories because they represent fundamentally differ
 | `DIRECTORY_EXISTS` | User picked a name that already exists on disk |
 | `INVALID_PACKAGE_MANAGER` | User specified unsupported package manager |
 | `INVALID_PRESET` | User specified unrecognized preset name |
+| `INVALID_BUNDLER` | User specified unrecognized bundler (newly observed Apr 2026) |
+
+**Naming convention shortcut:** any error code prefixed with `INVALID_` is input validation, plus `DIRECTORY_EXISTS`. If you see a new `INVALID_*` code, treat it as input validation by default unless you have evidence it fires after precreate.
 
 **Creation errors** (post-precreate) — These fire during actual workspace creation. They represent real failures worth investigating.
 
@@ -212,18 +257,18 @@ const ciBase = [
 
 Within the human+AI funnel, also report an **AI-only sub-breakdown** (`meta: { $regex: "\"aiAgent\":true" }`) so the AI error profile (high `DIRECTORY_EXISTS`, `INVALID_WORKSPACE_NAME` from retries) is visible but doesn't hide the human numbers.
 
-**CRITICAL (discovered Apr 2026):** Always include `{ command: "create-nx-workspace" }` in any base filter. Starting in 22.6.4, `init` and `migrate` commands also emit JSON meta with `nxVersion`, so filtering only on meta fields will pull in non-CNW events. The `init` events have no `flowVariant`, no `nxCloudArg`, and no `precreate` — they show up as "FV unknown" with `nxCloudArg: "unknown"` and inflate error rates.
+**CRITICAL (discovered Apr 2026):** Always include `{ command: "create-nx-workspace" }` in any base filter. Starting in 22.6.4, `init` and `migrate` commands also emit JSON meta with `nxVersion`, so filtering only on meta fields will pull in non-CNW events. Init events have no `flowVariant` (A/B variant is signaled via `setupCloudPrompt` code instead) and no `precreate` event, but they DO emit `nxCloudArg` from 22.6.4+ — so cloud opt-in for init can be computed the same way as CNW.
 
 ### Init Command Stats
 
 When the user asks about `init` stats, funnel, or cloud adoption, use `{ command: "init" }` instead of `{ command: "create-nx-workspace" }`. The init command shares the same `commandStats` collection and JSON meta format (since 22.6.4).
 
 **Key differences from CNW:**
-- Init has no `flowVariant` (no A/B testing)
-- Init has `setupCloudPrompt: "enable-ci"` instead of `nxCloudArg` — the cloud prompt is different
+- Init has no `flowVariant` field — the A/B variant is signaled directly via the `setupCloudPrompt` code (e.g. `cloud-ab-remote-cache-speed`, `cloud-ci-providers-speed`, `cloud-ci-providers-ai-self-healing`, `enable-ci`)
 - Init has no `precreate` event — the funnel is just start → complete/error/cancel
 - Init has no `template` or `preset` fields
-- Init events may have `nxCloudArg` missing entirely — check for `setupCloudPrompt` field instead
+- Pre-22.6.4: init only emits a single CSV doc per invocation with top-level `useCloud` boolean. No `nxCloudArg`, no JSON meta.
+- 22.6.4+: init emits the full JSON funnel (start/complete/error) and includes `nxCloudArg` with the same value space as CNW (`skip`, `yes`, `never`, `github`, etc.)
 
 **Init base filter:**
 ```js
@@ -235,7 +280,7 @@ const initBase = [
 ];
 ```
 
-**Init cloud adoption:** Extract from the `useCloud` field on the document (not from meta). For JSON meta events, also check `setupCloudPrompt` value in meta for prompt variant tracking.
+**Init cloud opt-in (unified across eras):** Use the same definition as CNW — opt-in = `nxCloudArg` not in `[skip, never, unknown]`. When the meta contains `nxCloudArg` (22.6.4+ JSON era), prefer it; otherwise fall back to the doc-level `useCloud` boolean (pre-22.6.4 CSV era). Always rename to "Cloud opt-in %", **not** "useCloud %", to keep terminology consistent with CNW. For JSON era, count complete events only (1 per invocation) — start/error events also carry `useCloud:false` and inflate the denominator.
 
 ### Date Range Handling
 
@@ -307,10 +352,23 @@ For large exports use `mongoexport` (streams without memory issues) instead of `
 
 Starting ~Nov 2025 (22.1.x), a version prefix was added: `"22.1.3,which-ci-provider,github,FailedToPushToVcs"` and `"22.1.3,start"`.
 
-**CRITICAL**: When querying legacy CSV completions, always use `{ meta: { $regex: "which-ci-provider" } }` (contains), NOT `{ meta: { $regex: "^which-ci-provider," } }` (starts-with). The starts-with pattern misses version-prefixed rows, which undercounts Nov 2025 by ~6,000 events. To extract the cloud arg from version-prefixed rows, find the index of `"which-ci-provider"` in the comma-split array and take the next element:
+**CRITICAL — CSV completion meta is `[setupCIPrompt, setupCloudPrompt, nxCloudArg, vcsStatus]`** (verified by reading `recordStat` source in commit `302905ea9e`). The second field is a **prompt VARIANT name**, not a user response:
+- `which-ci-provider,enable-caching2,skip,SkippedGit` → user was shown the "enable-caching2" prompt variant and answered SKIP. useCloud=false.
+- `which-ci-provider,enable-caching2,yes,SkippedGit` → user was shown that variant and answered YES. useCloud=true.
+- `which-ci-provider,github,FailedToPushToVcs` → user picked github CI provider directly (only 3 fields, no second prompt). useCloud=true.
+- `which-ci-provider,skip,skip,SkippedGit` → user skipped both prompts. useCloud=false.
+
+Common prompt variant names that appear at index 2: `enable-caching2`, `cloud-v2-remote-cache-visit`, `cloud-v2-fast-ci-visit`, `cloud-v2-green-prs-visit`, `cloud-v2-full-platform-visit`. **Do NOT count these as opt-ins by their name** — check `useCloud` doc field or extract `nxCloudArg` (index 3 in the array, after the variant name).
+
+**🛑 DO NOT count `enable-caching2` (or other variant names) as an opt-in response.** Verified Apr 2025: of 16,200 docs with `enable-caching2`, only 4,179 had useCloud=true (26%) — the other 74% saw the prompt and skipped. Earlier dashboard versions over-counted CSV-era cloud opt-in by ~30pp by misclassifying these.
+
+**Use the doc-level `useCloud` boolean as the source of truth for CSV-era cloud opt-in:**
 
 ```js
-// ✅ CORRECT - handles both "which-ci-provider,github,..." and "22.1.3,which-ci-provider,github,..."
+// ✅ CORRECT - simple, accurate for CSV era
+{ $cond: [{ $eq: ["$useCloud", true] }, 1, 0] }
+
+// ❌ WRONG - the value at index after which-ci-provider is often a prompt VARIANT name, not a response
 { $function: {
   body: function(meta) {
     var parts = meta.split(",");
@@ -321,6 +379,8 @@ Starting ~Nov 2025 (22.1.x), a version prefix was added: `"22.1.3,which-ci-provi
   lang: "js"
 }}
 ```
+
+For finer-grained CSV analysis (e.g. which prompt variant performed best), extract BOTH the variant name (index after which-ci-provider) AND the response (index after that), and ALSO cross-tab with useCloud to validate.
 
 **JSON** (22.2.2+, Dec 2025 onward): Stringified JSON with `type` field.
 
@@ -346,7 +406,11 @@ Understanding when features were introduced is critical for cross-month comparis
 | JSON meta format | **Dec 12, 2025** | **22.2.2** | Replaces CSV with stringified JSON containing `type` field. Dec is mixed ~64% JSON / 36% CSV. Jan 2026+ is fully JSON. |
 | `aiAgent` field | Feb 2026 | | 0 AI events in Jan 2026 |
 | `INVALID_WORKSPACE_NAME` error code | Mar 18, 2026 | | New categorization, not a regression |
-| 22.5.4 cloud prompt experiment | Mar 4–28, 2026 | **22.5.4** | Changed cloud prompt to ask "What CI provider do you use?" (github, gitlab, azure, etc.) instead of asking about Nx Cloud directly. If user selected a CI provider, they were auto-connected to Cloud. This was an experiment to replicate Nov 2025 prompt behavior that had higher cloud opt-in rates. **Results: inflated `nxCloudArg` opt-in to ~42% (vs ~9-12% in 22.6.x) but did NOT improve actual Cloud onboarding** — users got `nxCloudId` but never enabled their accounts. The high CI provider counts (github: 1,898, gitlab: 400) in 22.5.4 are NOT genuine Cloud adoption. Reverted in 22.6.0 to direct cloud prompt with skip/never/yes options. |
+| Leading "What CI provider?" prompt era | Pre-Dec 2025 → Feb 2026 | **≤22.5.2** | The CNW flow asked "What CI provider do you use?" (github, gitlab, azure, etc.) without a separate "Connect to Cloud?" prompt. **Picking any CI provider implicitly opted the user into Nx Cloud** — `setupCloudPrompt` is empty string `""` in these events, `nxCloudArg` is the CI provider name. Inflates the opt-in rate dramatically (76% github in 22.5.1, 67% in 22.5.2). NOT genuine Cloud adoption — users got `nxCloudId` but rarely activated accounts. Earlier skill versions claimed this was a "22.5.4 experiment Mar 4–28"; that was wrong — the leading prompt was the original behavior across all pre-22.5.3 versions. |
+| Direct cloud prompt introduced | Late Feb 2026 | **22.5.3** | First version with "Connect to Nx Cloud? yes/skip/never" — the `never` response value appears here for the first time. github responses crash from 67% (22.5.2) to ~1% (22.5.3). This is the prompt redesign that exposed the "honest" cloud opt-in rate. Cloud opt-in (Human+AI) drops from ~50% to ~25%. |
+| Tutorials swap Cloud onboarding for CNW | **2026-03-20** | docs (PR #34935) | nx.dev tutorials previously routed users into the Cloud onboarding flow; this change replaced the Cloud CTA with `npx create-nx-workspace` + `nx init` instructions in the CLI. Drives more CLI traffic from tutorial readers — those users now see the regular CLI cloud prompt (which they can skip/never). Partial walk-back on 2026-04-10 (PR #35257) added the Cloud CTA back in the CI tutorial specifically. Useful context when interpreting CNW/init volume changes from late Mar 2026 onward. |
+| Init telemetry → JSON | **2026-03-30** | nx (PR #35076) | `nx init` migrated from CSV meta to JSON meta matching CNW format. After this, init events have `nxCloudArg` in meta. **However**, the prompt code wasn't updated yet — events from Mar 30 → Apr 7 emit JSON meta but with no `nxCloudArg` field (shows as "missing" in queries). Use `useCloud` fallback for this window. |
+| Init prompt redesign + "Never" option | **2026-04-08** | nx (PR #35155) | Init switched from its own simple prompt (`code: "enable-ci"`, message *"Would you like to enable AI-powered Self-Healing CI and Remote Caching?"*, choices Yes/Skip only) to **CNW variant 1**: *"Enable remote caching to speed up builds with Nx Cloud?"* with **Yes / Skip / Never**. The "Never" choice is brand new — sets `neverConnectToCloud: true` in nx.json. **This is the dominant driver of the Apr 2026 init cloud rate drop** (Mar 28% → Apr 17% yes; +22% never absorbed from former skip-repeatedly users). NOTE: init was NEVER on the CI-provider+remote-cache dual prompt — that was CNW-only. Init had its own one-step prompt the entire time before this PR. |
 | 22.6.3 cloud prompt A/B test | **Mar 27, 2026** | **22.6.3** (PR #35039) | A/B tests three cloud prompt copy variants using `flowVariant` (0, 1, 2). All have the same choices: Yes / Skip for now / No, don't ask again. **Variant details below.** Same experiment continues in 22.6.4. Baseline (22.6.0–2 pooled): 9.0% yes, 33.5% never. Results (7 days, ~2,900 CNW completions across 22.6.3+22.6.4): FV 1 (12.1% yes) and FV 2 (10.0% yes) outperform FV 0 (7.6% yes) and dramatically reduce "never" rate. |
 | 22.6.4 release | **Apr 1, 2026** | **22.6.4** | Continues the same cloud prompt A/B test from 22.6.3. Introduces new `PACKAGE_INSTALL_ERROR` error code. **IMPORTANT**: 22.6.4 also makes `init` and `migrate` commands emit JSON meta with `nxVersion` to `commandStats` — queries MUST filter on `command: "create-nx-workspace"` to avoid pulling in init/migrate events (which have no flowVariant, no nxCloudArg, no precreate). See base filter note above. |
 | 22.6.5 release (NXC-4190 A/B round 2) | **~Apr 7, 2026** | **22.6.5** | Locks in FV 1 copy from round 1 as new baseline (FV 0 = `connect-to-cloud`, "Enable remote caching to speed up builds with Nx Cloud?"). Tests two new variants: FV 1 = `cloud-ab-never-rebuild` and FV 2 = `cloud-ab-ci-providers-speed`. Old codes (`cloud-ab-remote-cache-speed`, `cloud-ab-fast-ci-setup`) no longer appear. **Schema change**: `flowVariant` is now a **quoted string** in meta (`"flowVariant":"1"`) instead of bare integer — regex extraction must allow optional quotes: `/"flowVariant":"?([0-9]+)"?/`. |
@@ -389,6 +453,23 @@ FV 1's copy from round 1 became the new baseline. Two new variants test "never r
 | FV 2 (cloud-ab-ci-providers-speed) | 1,286 | **18.5%** | **21.2%** |
 
 **Interim findings:** FV 2 ("Speed up GitHub Actions, GitLab CI...") leading — +21% relative lift in yes over baseline and lowest "never" rate. FV 1 ("never rebuild") underperforming the new baseline. Not yet conclusive; need more volume.
+
+#### Init Cloud Prompt A/B (NXC-4363) — init-only, in progress
+
+Added in commit `daa4ae6665` on branch NXC-4363 (target Nx version TBD — watch for which release ships this). **Init only**, NOT CNW. CNW remains locked on `cloud-ci-providers-speed` from 22.7.0 (PR #35390).
+
+`packages/nx/src/utils/ab-testing.ts` `setupNxCloud` now has 2 entries. Init uses `Math.floor(Math.random() * length)` per invocation → 50/50 split. Variant identified by `setupCloudPrompt` code in telemetry (init has no `flowVariant` field).
+
+| Code | Prompt | Footer |
+|---|---|---|
+| `cloud-ci-providers-speed` (control) | "Speed up GitHub Actions, GitLab CI, and more with Nx Cloud?" | "Free for small teams. Remote caching and task distribution. 2-minute setup: https://nx.dev/nx-cloud" |
+| `cloud-ci-providers-ai-self-healing` (variant) | (same prompt) | "Free for small teams. AI-powered self-healing and remote caching. 2-minute setup: https://nx.dev/nx-cloud" |
+
+**Hypothesis:** pre-Apr-8 init prompt led with "AI-powered Self-Healing CI and Remote Caching" and got ~28% yes (Yes/Skip only — not directly comparable). Test whether AI framing still resonates under Yes/Skip/Never. Watch never-rate too — current locked-in baseline is 22.4% never (CNW A/B); want to keep it under that.
+
+**Decision criteria:** higher yes-rate wins, tie-break on lower never-rate. Run ~2 weeks for sample sizes comparable to round 1/round 2.
+
+**To analyze:** filter `{ command: "init", "meta.setupCloudPrompt": { $in: ["cloud-ci-providers-speed", "cloud-ci-providers-ai-self-healing"] } }` and split yes/skip/never rates by the code value. **Update this section with the version once known.**
 
 **IMPORTANT — filter to "prompt-shown" only when analyzing variants.** The same `flowVariant` field appears on completions where `setupCloudPrompt` is empty string `""` — those are CLI-arg users (e.g. `--nxCloud yes`) who never saw the prompt. Pool with `setupCloudPrompt != ""` to measure the A/B effect fairly. Empty-prompt rows have 33-41% yes rates because those users pre-selected cloud via CLI.
 
@@ -526,6 +607,25 @@ When running reports, flag these patterns if they appear in non-trivial volume:
 | `Unable to resolve @nx/workspace:preset` with `tsconfig.base.json` | Count by preset, version. New in 22.6.3 (3 occurrences on 3/30, all angular-monorepo/npm). | May be a regression where tsconfig.base.json isn't generated before preset runs. Monitor if volume increases. |
 
 ## Common Pitfalls
+
+### Error rate must exclude input validation errors
+
+Counting *all* errors as the error rate is the single easiest way to produce misleading regression signals. AI agents and confused users repeatedly hit `DIRECTORY_EXISTS` and `INVALID_*` codes; these are not failures of the product.
+
+```js
+// ❌ Inflates rate 2-3x with input validation noise
+const errRate = totalErrors / starts;
+
+// ✅ Filter to creation errors only
+const creationCodes = ["WORKSPACE_CREATION_FAILED", "UNKNOWN", "PRESET_FAILED",
+                       "SANDBOX_FAILED", "TEMPLATE_CLONE_FAILED", "CI_WORKFLOW_FAILED",
+                       "PACKAGE_INSTALL_ERROR"];
+const errRate = creationErrors / starts;
+```
+
+**Real example (Apr 2026):** Raw error count was 5,777 → looked like a 24% error rate (catastrophic). After excluding 4,054 input validation errors (3,586 of which were `DIRECTORY_EXISTS` from AI agent retries), the true creation-error rate was 1,723/24,041 = **7.2%** — actually *down* from Dec's 10.3%. The "regression" was an artifact of including validation noise.
+
+See **Error Classification: Input Validation vs Creation Errors** section above for the full code list.
 
 ### MongoDB: Never use duplicate field names in match
 

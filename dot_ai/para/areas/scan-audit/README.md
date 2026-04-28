@@ -30,6 +30,8 @@ project health, and customer dependencies.
 ## Latest Reports
 
 ### Weekly
+- [2026-W18](./weekly/2026-W18.md) -- Ocean trusted publishing live, Node 20 EOL in 2d, 22.7 GA regressions (#35444), 4 zombies (17th flag), Apr 30 cliff, Mythos hype check
+- [2026-W17](./weekly/2026-W17.md)
 - [2026-W15](./weekly/2026-W15.md) -- CNW 2 HIGH, Angular 22 P0, Node 20 EOL 21d, LGPL blocker, 11 zombies, Gradle 9.5.0-RC2
 - [2026-W14](./weekly/2026-W14.md) -- Node.js 9 CVEs, Turbo experimentalCI, Vite 8 Rolldown, MCP v2 OAuth
 - [2026-W13](./weekly/2026-W13.md)
@@ -38,6 +40,7 @@ project health, and customer dependencies.
 - [2026-W09](./weekly/2026-W09.md)
 
 ### Monthly Digests
+- [2026-04 cross-functional](./monthly-digests/2026-04-crossfunctional.md) | [technical changelog](./monthly-digests/2026-04-changelog.md) — Nx 22.7.0, Polygraph Standalone, Self-Healing customer friction, fairsdotcom dispute
 - [2026-02](./monthly-digests/2026-02-crossfunctional.md) — Task Sandboxing, Self-Healing CI GA, Polygraph AI, 454 issues across 6 teams
 
 ## Scan Sub-Areas (scans/)

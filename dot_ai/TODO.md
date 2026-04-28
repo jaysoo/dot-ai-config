@@ -2,6 +2,15 @@
 
 ## Recent Tasks (Last 10)
 
+1. **NXC-3711: Remove Tailwind setup-tailwind generators — MERGED** (2026-04-28)
+   - Summary: PR #35049 merged. Addressed leosvelperez review (institutional comment, BYO-Tailwind detect, deprecation warning specs), consolidated graph tailwind configs to `ui-*/src` globs, rewrote PR description caveman-lite, two rebases on master.
+   - Files: `.ai/2026-04-28/SUMMARY.md`, PR #35049, merge commit `933eb69826`
+
+2. **NXC-4355: Nx tail overhead investigation (2026-04-24)**
+   - Summary: Precise measurement (22ms) contradicts issue's premise (205ms). Baseline Node teardown cost with native binary is ~20ms.
+   - Files: `.ai/2026-04-24/tasks/nxc-4355-investigation.md`
+
+
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
 1. **Ban `{% callout %}` in astro-docs, migrate to `{% aside %}` + new `{% deep_dive %}`** (2026-04-24)
@@ -55,6 +64,10 @@
     - Files: `.ai/2026-04-17/SUMMARY.md`, PR #35315
 
 ## TODO
+
+- [ ] NXC-4355 Investigation (2026-04-24 10:00)
+  - Plan: `.ai/2026-04-24/tasks/nxc-4355-investigation.md`
+
 
 - [ ] Benchmarks repo
 - [x] 🤖 Review night-shift fixes from 2026-04-22 session (2 newly applied, 20 fixed / 23 total) — **ALL REVIEWED**
@@ -156,6 +169,8 @@
   - #10635 — renames 3 misnamed `feature-*` libs to `util-*` + adds `nx_tags` to 5 untagged libs (~300 files)
 
 ## Active Claude Sessions
+
+- /Users/jack/projects/bench-monorepo-orchestrators (branch: main) — Nx tail overhead investigation (2026-04-24)
 
 <!-- Directories with active or resumable Claude sessions. Use `cd <dir> && claude -r` to resume. -->
 <!-- Managed by /end-session and /list-sessions commands. /summarize cleans up stale entries. -->

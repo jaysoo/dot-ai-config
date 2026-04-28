@@ -2,6 +2,10 @@
 
 ### April 2026
 
+- [x] NXC-3711: Remove Tailwind CSS setup-tailwind generators (2026-04-28) ✓ 2026-04-28
+  - Summary: PR [#35049](https://github.com/nrwl/nx/pull/35049) merged (commit `933eb69826`). Removed 5 `setup-tailwind` generators (angular/react/next/vue/remix), `--style=tailwind`, `--addTailwind`, and `tailwind` style from CNW. `@nx/{angular,react,next,vue}/tailwind` kept but warn at runtime, full removal in Nx 24. Final day: addressed leosvelperez review (restored institutional catch-comment, BYO-Tailwind auto-detect in next cypress-component-configuration, added 4 deprecation-warning specs). Consolidated `graph/*/tailwind.config.js` to `ui-*/src` + `shared/src` globs. PR description rewritten caveman-lite. Two rebases on master.
+  - Files: `dot_ai/2026-04-28/SUMMARY.md`, PR #35049, merge commit `933eb69826`
+
 - [x] Ban `{% callout %}` in astro-docs, migrate to `{% aside %}` + new `{% deep_dive %}` (2026-04-24) ✓ 2026-04-24
   - Summary: Removed `callout` tag from `markdoc.config.mjs` (build hard-errors on reuse), added `{% deep_dive %}` tag (transform fixes `type: 'deepdive'`, reuses `Callout.astro`). Migrated 8 callouts across 8 files: 5 → `deep_dive`, 3 → `aside` (one `warning` → `caution` since Starlight has no warning type). Added "Markdoc tags" section to `STYLE_GUIDE.md` with old→new mapping. Added `.vale/styles/Nx/MarkdocCallout.yml` error-level rule (pattern `callout\s+(type|title)` — Vale's `TokenIgnores` blocks any regex containing `{`, `%`, `/` from matching Markdoc braces even with `scope: raw`, so the rule anchors on the required attribute instead). Verified on positive/negative cases + clean full-docs run across 498 files. Changes live on `fix/issue-33331` branch, uncommitted. Full build not run — worktree missing `node_modules`.
   - Files: `dot_ai/2026-04-24/tasks/callout-to-aside-migration.md`, `dot_ai/2026-04-24/SUMMARY.md`

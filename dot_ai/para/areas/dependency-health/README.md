@@ -6,7 +6,7 @@ Monthly audit of direct external dependencies across Nx CLI packages. Tracks unm
 
 | Month | File | Summary |
 |-------|------|---------|
-| 2026-04 | [2026-04.md](./2026-04.md) | 173 deps: 21 critical (+14 vs Mar), 15 warning (-4), 15 watch (+2), 122 healthy. Scan 2026-04-24 (latest): no bucket transitions since 2026-04-22 intra-month run. All 21 critical items unchanged since 2026-04-16. Rspack 2.0 (GA 2026-04-22) + Rsbuild 2.0.1 live. `@ltd/j-toml` and `front-matter` removed since March. Ocean not audited this cycle (clone access denied). |
+| 2026-04 | [2026-04.md](./2026-04.md) | 194 deps (nx + ocean): 25 critical, 16 warning, 16 watch, 137 healthy. Scan 2026-04-28: ocean now in scope (+23 ocean-only deps). 6 new findings, all ocean: 4 criticals (`cytoscape-avsdf/dagre/fcose`, `node-machine-id`), 1 warning (`axios-retry`), 1 watch (`cmdk`). All 21 prior nx criticals timestamps unchanged since 2026-04-16. `@nx/graph` is largest ocean-side cluster (4 of 5 ocean criticals). |
 | 2026-03 | [2026-03.md](./2026-03.md) | Initial audit: 169 core deps |
 
 ## Classification
