@@ -32,15 +32,6 @@
 
 ## 1:1 Notes
 
-### Upcoming
-
-- Follow up on wife's ankle MRI results / Georgia travel plans
-- Check on Polygraph progress toward April 7th launch
-- Follow up on Dylan's CLI documentation status
-- Follow up on benchmark reviews (bi-weekly cadence)
-- Check on Philip re: delayed launch status
-- Ask Jason about sandbox requirements and timeline
-
 ### 2026-03-26
 
 **NX Tutorials & AI Enhancement Progress**
@@ -81,6 +72,15 @@
 - Jack: Ask Jason about sandbox requirements and timeline
 
 [Transcript](https://notes.granola.ai/t/3ccb70f3-1b7f-436e-ad53-3e5d3916bebc-00demib2)
+
+**Carry-over from prep topics:**
+
+- Follow up on wife's ankle MRI results / Georgia travel plans
+- Check on Polygraph progress toward April 7th launch
+- Follow up on Dylan's CLI documentation status
+- Follow up on benchmark reviews (bi-weekly cadence)
+- Check on Philip re: delayed launch status
+- Ask Jason about sandbox requirements and timeline
 
 ### 2026-03-19
 

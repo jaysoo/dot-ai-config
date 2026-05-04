@@ -1,10 +1,26 @@
 {
+  "sandbox": {
+    "network": {
+      "allowedDomains": [
+        "*.mongodb.net",
+        "secretmanager.googleapis.com",
+        "ifconfig.me",
+        "oauth2.googleapis.com",
+        "accounts.google.com"
+      ],
+      "allowLocalBinding": true
+    },
+    "filesystem": {
+      "allowWrite": ["~/.config/gcloud/", "~/.mongodb/"]
+    }
+  },
   "permissions": {
     "allow": [
       "Read",
       "List",
       "Edit(.ai/**)",
       "Bash(nx:*)",
+      "Bash(npx nx:*)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
@@ -19,7 +35,7 @@
       "Bash(git merge-base:*)",
       "Bash(git blame:*)",
       "Bash(git cherry-pick:*)",
-      "Bash(npm:*)", 
+      "Bash(npm:*)",
       "Bash(yarn:*)",
       "Bash(pnpm:*)",
       "Bash(bun:*)",

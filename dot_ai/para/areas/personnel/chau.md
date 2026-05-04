@@ -3,12 +3,12 @@
 **Team:** Red Panda
 **Role:** L4 Engineer
 **Manager:** Jon
-**Location:** O'Fallon, MO, USA
+**Location:** Atlanta, GA, USA (moved from O'Fallon, MO in late April 2026; ~1 hour from Altan)
 
 ## Personal
 
 - **Partner:**
-- **Children:**
+- **Children:** Brian (son) — school class full triggered the accelerated Atlanta move
 - **Pets:**
 - **Hobbies:**
 
@@ -97,10 +97,33 @@ Keeps Remix/React Router/TypeScript resources up to date and educates team throu
 
 ## 1:1 Notes
 
-### Upcoming
+### 2026-04-30
 
-- Backup coverage for critical areas Chau owns (knowledge sharing concern)
-- Framework decision follow-up: did they go Remix V2 or greenfield for polygraph?
+- **Personal / Relocation:**
+  - Moved to Atlanta last week — house buying accelerated; son Brian couldn't get back into school (class full), forced immediate move
+  - Originally planned ~1 year ago, delayed by Vietnam trip
+  - Still unpacking, planning flooring work
+  - ~1 hour from Altan; not close neighbors despite both being in Atlanta metro
+- **Team Transitions / Orca:**
+  - Mark mentioned a possible move back to Orca to Chau without official lead communication
+  - Earliest June, more likely July — Victor wants Polygraph handoff complete first (2-4 weeks of follow-up after feature completion)
+  - Move depends on Nicole's capacity assessment; if Nicole + Ben sufficient for Orca, may not happen
+  - Current directive: stay focused on Polygraph; still considered auth domain expert
+- **Polygraph:**
+  - Core functionality: repository relationship mapping (repo-to-repo, not project-to-project) — indexes published packages, APIs, consumption patterns; can suggest candidate repos at session start based on changes
+  - Technical pain points: CLI weak with OSS (skills not globally installed), session starts in config folder instead of repo dir, can't use `@file` for agent context
+  - PLG integration: monetization considered from design phase, moving away from "talk to sales" toward self-service; ~30% feature build / 70% activation + marketing; need activation demos, guides, in-app discovery
+  - Victor wants terminal graph rendering — team questioning necessity vs difficulty ("because it's cool")
+- **Auth0 Migration:**
+  - Nicole driving move to FusionAuth
+  - Primary motivation: better onboarding flows, callback URL flexibility
+  - Secondary: resolve recurring pen test issues
+- **Action Items:**
+  - Defer Orca transition decision to July capacity review
+  - Keep Chau on Polygraph through handoff + 2-4 week tail
+- **Carry-over from prep topics:**
+  - Backup coverage for critical areas Chau owns (knowledge sharing concern)
+  - Framework decision follow-up: did they go Remix V2 or greenfield for polygraph?
 
 ### 2026-03-19
 

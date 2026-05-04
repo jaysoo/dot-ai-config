@@ -29,13 +29,6 @@
   - Proactive on automation (Angular upgrade skill, plugin version updates)
 
 
-## Upcoming 1:1
-
-- Follow up on maintenance reduction progress (webpack/rspack/rollup deprecation)
-- CLI team autonomy for smaller improvements - target defaults status
-- AI skills progress (Angular upgrade skill)
-- Burnout/morale check-in
-
 ## 1:1 Notes
 
 ### 2026-03-05
@@ -90,6 +83,13 @@
 - Planning process should start from team proposals, not top-down mandates
 
 [Transcript](https://notes.granola.ai/t/e3d342c9-e289-424a-9a83-107e475315dc-00demib2)
+
+**Carry-over from prep topics:**
+
+- Follow up on maintenance reduction progress (webpack/rspack/rollup deprecation)
+- CLI team autonomy for smaller improvements - target defaults status
+- AI skills progress (Angular upgrade skill)
+- Burnout/morale check-in
 
 ### 2026-01-26
 

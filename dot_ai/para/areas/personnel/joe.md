@@ -25,6 +25,63 @@
 
 ## 1:1 Notes
 
+### 2026-04-28
+
+**Topics:** Cookie Banner Compliance, Dedicated Compute Pricing, Feature Bundling, Usage-Based Pricing
+
+**Cookie Banner Compliance:**
+- Turn on cookie banner next week; Joe going to lawyer
+- California legal notice received threatening formal complaint
+  - Company claims improper notification/opt-in language
+- Capability exists, was turned off for analytics concerns
+  - Victor worried about analytics impact at Nicola
+  - Can estimate traffic ratios for accept/decline to maintain signals
+- Likely more EU/GDPR issue than California law requirement
+- Timeline: end of next week implementation if lawyer approves
+
+**Dedicated Compute Pricing Strategy:**
+- Pricing approach shift from profit-focused to access-focused
+  - Victor suggested lower pricing to unlock agent compute features
+  - Some workspaces blocked from using compute due to missing Docker support
+- Proposed pricing tiers
+  - $199 initial recommendation (vs $750 PostHog, $599 Supabase)
+  - $99 alternative if $199 doesn't gain traction
+  - Easier to lower prices than raise them
+- Target: pass-through pricing model to unlock agent compute usage
+- Enterprise customers already on single tenant, shouldn't need this add-on
+
+**Feature Bundling and Add-ons:**
+- Base features for dedicated compute
+  - Docker and Docker layer caching (essential)
+  - Private Docker registry (likely included)
+  - NPM read-through cache (low cost, good reliability feature)
+- Excluded/separate pricing
+  - Docker read-through cache (expensive, needs Steve approval)
+  - Static IPs (technically possible, Steve has reservations for initial launch)
+  - SAML SSO (Enterprise only, never provided otherwise)
+- Sandboxing capabilities
+  - Currently available on prod/single tenant (Legora using it)
+  - Requires dedicated compute to enable
+  - Provides cache configuration analysis and false positive/negative prevention
+  - Pricing model TBD (per-run vs flat fee)
+
+**Usage-Based Pricing Evolution:**
+- Long-term vision: reduce seat costs, increase usage-based charges
+  - Current Enterprise pricing 5x team plan creates awkward positioning
+  - AI coding agents changing employee productivity ratios
+- Proposed usage charges
+  - Team/dedicated: 10GB base
+  - Enterprise: 25GB base
+  - Overage pricing for additional storage
+- Implementation phases
+  - Phase 1: basic dedicated compute with bundled features
+  - Phase 1.5/July: itemized billing for usage components
+  - Phase 2: advanced features like sandboxing with proper usage tracking
+
+**Transcript:** https://notes.granola.ai/t/9c540cfd-3e18-4442-9c7e-2a9ba650a6d6-00demib2
+
+---
+
 ### 2026-04-10
 
 **Topics:** PLG Strategy, Metrics Dashboard, Pricing Model

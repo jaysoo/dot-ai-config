@@ -26,13 +26,6 @@
 
 ## 1:1 Notes
 
-### Upcoming Topics
-
-- Reporting structure and 1:1s
-- **Slack App for Nx:** Explore @nx Slack bot integration - accept fixes via Slack, get notified when PRs are green after a fix
-- GTM for pricing, etc.
-- Priorities for enterprise, teams, hobby
-
 ### 2026-04-24 - 1:1 Nicole & Jack
 
 **Team Updates & Collaboration**
@@ -81,6 +74,13 @@
 - PostHog integration for measurable experiments
 
 [Transcript](https://notes.granola.ai/t/19975476-d49e-4a94-b70e-ce84afd8ee08-00demib2)
+
+**Carry-over from prep topics:**
+
+- Reporting structure and 1:1s
+- **Slack App for Nx:** Explore @nx Slack bot integration — accept fixes via Slack, get notified when PRs are green after a fix
+- GTM for pricing, etc.
+- Priorities for enterprise, teams, hobby
 
 ### 2026-04-22 - Review Onboarding/Activation Metrics
 

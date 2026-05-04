@@ -1,6 +1,6 @@
 # Nx Repository Architecture
 
-Last Updated: 2026-04-01
+Last Updated: 2026-04-30
 
 ## Directory Overview
 
@@ -44,18 +44,22 @@ Nx plugin generator for creating custom Nx plugins
   - `plugin.spec.ts` - Tests including vitest/jest config generation
 
 ### packages/vite/
-Vite build tool integration (supports Vite 5-8)
+Vite build tool integration (supports Vite 5-8). **As of v23, vitest is fully owned by `@nx/vitest`** — no vitest constants, executor, generator, or plugin inference here. See NXC-4158 (2026-04-30).
 
-- `packages/vite/src/utils/versions.ts` - Version constants; `viteVersion` is the default (^8.0.0), `viteV7/V6/V5Version` for backward compat
+- `packages/vite/src/utils/versions.ts` - Vite-only version constants; `viteVersion` is the default (^8.0.0), `viteV7/V6/V5Version` for backward compat
   - `vitePluginReactVersion` (^6.0.0) for Vite 8, `vitePluginReactV4Version` (^4.2.0) for Vite <=7
 - `packages/vite/src/utils/version-utils.ts` - `getInstalledViteVersion()`, `getInstalledViteMajorVersion()` — detect installed vite from package.json using semver
-- `packages/vite/src/utils/ensure-dependencies.ts` - Installs framework-specific deps; detects vite major version to pick correct `@vitejs/plugin-react` version
+- `packages/vite/src/utils/ensure-dependencies.ts` - Installs framework-specific deps (vite-plugin-react, vite-plugin-dts, ajv); detects vite major version to pick correct `@vitejs/plugin-react` version. **Does not install jsdom/happy-dom/edge-runtime/analog vitest packages** — those moved to `@nx/vitest`.
 - `packages/vite/src/utils/generator-utils.ts` - Vite config generation utilities
   - `createOrEditViteConfig()` - Creates `vite.config.*` files; always uses `root: import.meta.dirname`
   - **Important**: This is a DIFFERENT function from the one in `packages/vitest/`
-- `packages/vite/src/generators/init/lib/utils.ts` - `checkDependenciesInstalled()` preserves existing vite version; only installs latest for new workspaces
-- `packages/vite/src/plugins/plugin.ts` - Plugin detection checks both `rollupOptions.input` (Vite <8) and `rolldownOptions.input` (Vite >=8)
-- `packages/vite/src/executors/build/build.impl.ts` - Build executor; skips env config overwrite when `useEnvironmentsApi` is true (Vite 8 builder API)
+- `packages/vite/src/generators/init/lib/utils.ts` - `checkDependenciesInstalled()` preserves existing vite version; only installs latest for new workspaces. **Does not install vitest/@vitest/ui** (post-NXC-4158).
+- `packages/vite/src/generators/configuration/configuration.ts` - `viteConfigurationGenerator`. When `includeVitest: true`, calls `ensurePackage('@nx/vitest')` + dynamic import to delegate to @nx/vitest's `configurationGenerator`. Caller surface preserved for @nx/js, @nx/web, @nx/vue, @nx/react-native.
+- `packages/vite/src/plugins/plugin.ts` - Vite-only target inference (build/serve/preview/serve-static/typecheck). Plugin detection checks both `rollupOptions.input` (Vite <8) and `rolldownOptions.input` (Vite >=8). **Does NOT create test targets** — that is `@nx/vitest/plugin`'s job.
+- `packages/vite/src/executors/` - `build`, `dev-server`, `preview-server`. **No `test` executor** — use `@nx/vitest:test`.
+- `packages/vite/src/generators/` - `init`, `configuration`, `setup-paths-plugin`, `convert-to-inferred`. **No `vitest` generator** — use `@nx/vitest:configuration`.
+- `packages/vite/src/migrations/update-22-2-0/migrate-vitest-to-vitest-package.ts` - Original migration (Nx 22.2.0). Installs @nx/vitest, swaps `@nx/vite:test` → `@nx/vitest:test`, splits @nx/vite/plugin registrations with explicit test options, migrates targetDefaults.
+- `packages/vite/src/migrations/update-23-0-0/ensure-vitest-package-migration.ts` - v23 safety net. Re-runs the 22.2.0 swap logic (self-contained — old migrations get removed at next major) AND closes the 22.2.0 gap by registering `@nx/vitest` plugin alongside any default-config `@nx/vite/plugin` registration so test inference is preserved.
 - **Vite 8 type workaround**: ESM-only `.d.mts` types not resolvable under `moduleResolution: "node"`. Uses `as any` casts with `TODO(jack)` comments across vite, vitest, cypress, react, angular, remix packages. Remove when switching to `moduleResolution: "nodenext"`.
 
 ### packages/cypress/
@@ -411,6 +415,43 @@ Most packages have a `build` target that runs post-compilation steps (chmod, cop
 - Fix applied 2026-04-01: added `dependentTasksOutputFiles` for the bin `.js` files
 
 ## Personal Work History
+
+### 2026-04-30 - NXC-4401: Agentic Cloud Onboarding (draft PR)
+- **Branch**: `NXC-4401` (worktree path still `nx-worktrees/DOC-490`)
+- **PR**: https://github.com/nrwl/nx/pull/35520 (DRAFT)
+- **Status**: Draft, smoke-tested end-to-end against staging
+- **Purpose**: In agent mode (`isAiAgent()`), `nx connect` / `nx init` / CNW route Cloud setup through `nx-cloud onboard connect-workspace --json` and stream NDJSON. Browser-open replaced with structured `needs_input` / `connected` payloads. Human flows untouched.
+- **New module**: `packages/nx/src/command-line/nx-cloud/onboard/agentic-onboard.ts` — pure `translateOnboardPayload` + `extractJsonObject` + spawn wrapper `runAgenticOnboard`. Translator handles ocean's actual payload shapes: object-form `actionRequired` (`{ type: 'github_oauth' | 'github_app_install', deviceCode, ... }`), nested `workspace.nxCloudId` on success, multi-line pretty-printed JSON, mixed human/JSON output, 409 already-exists.
+- **CNW dup**: `packages/create-nx-workspace/src/utils/nx/agentic-onboard.ts` (~80% identical, justified by CNW self-containment — same pattern as `src/utils/ai/ai-output.ts`).
+- **Wired**:
+  - `packages/nx/src/command-line/nx-cloud/connect/connect-to-nx-cloud.ts:163-180` — agent-mode pre-check (short-circuit if `nx.json` already has `nxCloudId`) + PAT check + `runAgenticOnboard` dispatch
+  - `packages/nx/src/command-line/init/init-v2.ts:462-479` — agent-mode cloud step
+  - `packages/create-nx-workspace/src/create-workspace.ts:152, 327` — template + preset flows
+  - `packages/create-nx-workspace/src/utils/ai/ai-output.ts` — added `NeedsAuthResult` to strict union
+- **Connected payload contract** — `{ status: 'connected', nxCloudId, nxCloudUrl?, verifyCommand: 'npx nx-cloud onboard status', nextSteps: { description, steps[] } }`. `nextSteps` directs the agent to demo cache replay on an existing project (no scaffolding).
+- **`extractJsonObject`** — brace-balanced, string-aware. Slices a JSON object out of a buffer that may also contain human-readable text (ocean prints `output.note('Updating nx.json...')` to stdout in `--json` mode — CLOUD-4496).
+- **Ocean follow-ups filed in CNW/Init Funnel project**: CLOUD-4493 (payload shape), CLOUD-4494 (auto-poll device flow), CLOUD-4495 (wrong help text), CLOUD-4496 (--json human text), CLOUD-4498 (already-connected short-circuit), CLOUD-4501 (re-run-after-poll OAuth loop). Workarounds for all six landed in this PR.
+- **Tests**: 21 nx-side + 9 CNW-side, pure data-in/data-out (no mocks). Pin all known ocean payload shapes (success / github_oauth / github_app_install / login_required / unknown action / multi-org / 409 / multi-line JSON / mixed content / brace-in-string / escaped quote).
+
+### 2026-04-30 - NXC-4158: Remove vitest support from @nx/vite (v23 breaking)
+- **Branch**: `NXC-4158`
+- **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4158`
+- **PR**: https://github.com/nrwl/nx/pull/35517
+- **Status**: Pushed, PR open against `master`
+- **Purpose**: Strip vitest from @nx/vite in v23. @nx/vitest is sole owner. Resolves the `TODO(v23)` in `packages/vite/src/utils/versions.ts`.
+- **Removed surface**: vitest version constants, `@nx/vite:test` executor, `@nx/vite:vitest` generator, `@nx/vite/plugin` test inference + atomization (`testTargetName`/`ciTargetName`/`ciGroupName` options), vitest install in init, `vitest` peer dep
+- **Migration**: `packages/vite/src/migrations/update-23-0-0/ensure-vitest-package-migration.ts` — self-contained (no import from 22.2.0 since old migrations get removed at next major). Installs @nx/vitest, swaps executors (project + targetDefaults Patterns A + B), splits explicit-options plugin registrations, **closes 22.2.0 gap** by registering `@nx/vitest` plugin alongside any default-config `@nx/vite/plugin` so test inference is preserved.
+- **Caller surface preserved**: `viteConfigurationGenerator` with `includeVitest: true` still works — `ensurePackage('@nx/vitest')` + dynamic import to delegate to @nx/vitest's `configurationGenerator`. Callers in @nx/js, @nx/web, @nx/vue, @nx/react-native need no changes.
+- **Stats**: 45 files, +386/-2686
+- **Files**:
+  - `packages/vite/src/utils/{versions,version-utils,ensure-dependencies,executor-utils,generator-utils,options-utils}.ts` — strip vitest
+  - `packages/vite/src/plugins/plugin.ts` — remove test target creation, vitest config glob, atomization, `getTestPathsRelativeToProjectRoot`
+  - `packages/vite/src/generators/init/lib/utils.ts` — drop vitest install
+  - `packages/vite/src/generators/configuration/configuration.ts` — `includeVitest` delegates to @nx/vitest via ensurePackage
+  - `packages/vite/src/generators/convert-to-inferred/convert-to-inferred.ts` — drop @nx/vite:test handler
+  - `packages/vite/src/migrations/update-23-0-0/ensure-vitest-package-migration.{ts,spec.ts}` — new safety-net migration
+  - `packages/vite/{executors,generators}.json`, `executors.ts`, `index.ts` — drop vitest entries
+  - `packages/vite/package.json` — drop `vitest` peer dep
 
 ### 2026-04-01 - Fix Build Cache Input/Output Misalignment (CNW/CNP)
 - **Branch**: `debug-cache`

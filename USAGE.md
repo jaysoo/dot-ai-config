@@ -45,3 +45,5 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | 2026-04-24 | terminal-demo-recorder | 1 |
 ## USAGE UPDATE
 2026-04-24: invoked caveman skill
+\n2026-04-28: configured whitelist.toml policy for non-destructive tools
+cnw-stats-analyzer (2026-04-29): 1

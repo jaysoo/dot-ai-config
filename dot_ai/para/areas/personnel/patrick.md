@@ -27,11 +27,6 @@
 
 ## 1:1 Notes
 
-### Upcoming Topics
-- **L5 Promotion Discussion:** Review promotion justification doc together
-  - Discuss any gaps or additional evidence needed
-  - Align on timeline and next steps
-
 ### L5 Promotion Doc Summary (2026-01)
 
 **Key Contributions:**

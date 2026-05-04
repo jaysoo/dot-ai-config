@@ -80,6 +80,10 @@ Fixes DOC-125"
 
 **Commit body style**: Keep bodies terse (caveman style applies to commits too, despite the caveman skill's default carve-out). Still use the Nx template sections, but each section should be 1–3 short sentences/fragments. No filler, no restating the same idea twice, no marketing recap. A reader should skim the whole body in under 15 seconds.
 
+**Inline code comment style**: Same caveman discipline. 1-2 lines max, "explain *why*, not *what*". If a comment recaps mechanics already visible in code, delete it. Bullet points OK for migration/transformation logic where each rule is independent. JSDoc on public APIs may go longer when documenting non-obvious contracts; everything else is terse.
+
+**PR description style**: Minimal. 1–3 sentences for Current Behavior, 1–3 for Expected Behavior, just `NXC-XXXX` (or equivalent) for Related Issue. No test plan, no file list, no Linear details — Linear is the source of truth and the PR just links by ID. Lean even shorter for drafts. If I want a longer description, I'll ask.
+
 ### Pre-Push Validation (Nx Repo)
 - **ALWAYS run `nx affected -t build-base,lint,test` locally before pushing** — CI failures that could be caught locally waste time and require workflow approvals on fork PRs
 - For community PRs from forks, each push requires manual workflow approval — minimize push iterations
@@ -280,6 +284,9 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - **One property > Many hacks** - Check if single CSS property works
 - **Ask before assuming** - Multiple approaches? Ask.
 - **Iterate, don't defend** - Change based on feedback
+- **Realistic examples > hypothetical edge cases** - Before writing code to handle an edge case, find a concrete test fixture that exercises it in a real workspace. Don't add defensive branching, retries, fallback paths, or generalized loops to handle scenarios that never occur in practice. If unsure whether a case is realistic, ASK before coding for it.
+  - **Why:** NXC-4157 — wrote tsquery migration with reverse-walk loop + leading-comma fallback + whitespace nibble. Pushed back twice on hypothetical-only complexity. Final form ended up at ~5 lines after stripping unjustified branches.
+  - **How to apply:** When tempted to write a loop, ask "is there a real-world file with multiple matches?" When tempted to add a fallback path, ask "what test would exercise it?" If the answer is "I'm being defensive," delete it and ask Jack.
 
 ### Component Order
 1. Tailwind/CSS (try `align-items`, `justify-content` first)
@@ -404,6 +411,13 @@ npx nx migrate 22.0.0-beta.7
 **Steps:** migrate → install → run-migrations → **verify** `cat package.json | grep '"nx"'`
 
 Always verify with `npm view nx@next version` before using tags.
+
+### Migration Isolation (CRITICAL)
+- Nx migrations are **self-contained**. **Never import** from a previous-major-version migration directory.
+  - ❌ `import migrate from '../update-22-2-0/...'` in a `update-23-0-0/` migration
+  - ✅ Duplicate the logic into the new migration file
+- **Why:** Old migrations get removed at the next major bump. Cross-major imports break.
+- **How to apply:** When writing a v(N+1) safety-net or follow-up migration, copy the relevant functions inline. DRY across versions does not apply here.
 
 ### Nx Docker Plugin (@nx/docker)
 - Target: `docker:build` (not `docker-build`)

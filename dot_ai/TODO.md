@@ -2,72 +2,53 @@
 
 ## Recent Tasks (Last 10)
 
-1. **NXC-4178: Remove deprecated stylesheet options — MERGED** (2026-04-28)
-   - Summary: PR #35103 merged. Removed less/styled-components/styled-jsx/@emotion/styled from non-Angular generators; added deprecated-less-loader wrapper. Rebased after #35049 (Tailwind) merged — 27 conflicts resolved, PR shrank 214→93 files. Three Plannotator rounds; learned to trust CI over local when generator output diverges.
+<!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
+
+1. **DOC-498: Edge function rewrite-framer-urls 500s on bot probes with leading //** (2026-04-30)
+   - Summary: WP vuln scanners send `GET //wp/wp-includes/wlwmanifest.xml`; `new URL(pathname, framerUrl)` parses `//wp/...` as protocol-relative, promoting `wp` to upstream host → DNS error → 500s. Fix collapses leading `/+` to `/` and short-circuits common probes (`wp-(includes|admin|content)`, `xmlrpc.php`, `wlwmanifest`, `.env`, `.git/`) with 404. Reproduced on prod with `curl --path-as-is`.
+   - Files: `.ai/2026-04-30/tasks/doc-498-edge-function-bot-probe-fix.md`, PR #35527, commit `62a48ca6e7`
+
+2. **Intro page conversion improvements (P0/P1 draft)** (2026-04-30)
+   - Summary: Critical analysis of nx.dev/docs/getting-started/intro vs Turbo/Vercel/Bun. Drafted P0/P1 edits in worktree: tabbed install block above the fold (npm/pnpm/yarn/bun, both `nx init` and `create-nx-workspace`), demoted YouTube embed below "What Nx does", reframed Nx Cloud table row to outcome statements, added soft `npx nx connect` seed. Vale clean on edited lines.
+   - Files: `.ai/2026-04-30/tasks/intro-page-conversion-improvements.md`, branch `docs/intro-conversion-improvements`
+
+3. **Issue #35455: `@nx/s3-cache 5.0.3` panic — diagnosed + 5.0.4 published** (2026-04-29)
+   - Summary: Root-caused tokio panic to 36-byte UUID-format `NX_POWERPACK_ENCRYPTION_KEY` (vs AES-256's required 32 bytes) baked into 5.0.3 binary at `crypto.rs:37`. Pulled correct key from prod, republished as 5.0.4 (first attempt 5.0.4-beta.1 failed due to Nx Cloud cache hit on `build-rust`; second attempt with `--skip-nx-cache` worked). Surfaced 6 follow-up hygiene issues.
+   - Files: `.ai/2026-04-29/SUMMARY.md`, `.ai/2026-04-29/tasks/issue-35455-s3-cache-panic.md`
+
+4. **NXC-4178: Remove deprecated stylesheet options — MERGED** (2026-04-28)
+   - Summary: PR #35103 merged. Removed less/styled-components/styled-jsx/@emotion/styled from non-Angular generators; added deprecated-less-loader wrapper. Rebased after #35049 (Tailwind) merged — 27 conflicts resolved, PR shrank 214→93 files.
    - Files: `.ai/2026-04-28/SUMMARY.md`, PR #35103, merge commit `d1e9a4349a`
 
-2. **NXC-3711: Remove Tailwind setup-tailwind generators — MERGED** (2026-04-28)
-   - Summary: PR #35049 merged. Addressed leosvelperez review (institutional comment, BYO-Tailwind detect, deprecation warning specs), consolidated graph tailwind configs to `ui-*/src` globs, rewrote PR description caveman-lite, two rebases on master.
+5. **NXC-3711: Remove Tailwind setup-tailwind generators — MERGED** (2026-04-28)
+   - Summary: PR #35049 merged. Addressed leosvelperez review (institutional comment, BYO-Tailwind detect, deprecation warning specs), consolidated graph tailwind configs to `ui-*/src` globs.
    - Files: `.ai/2026-04-28/SUMMARY.md`, PR #35049, merge commit `933eb69826`
 
-3. **NXC-4355: Nx tail overhead investigation (2026-04-24)**
+6. **NXC-4355: Nx tail overhead investigation** (2026-04-24)
    - Summary: Precise measurement (22ms) contradicts issue's premise (205ms). Baseline Node teardown cost with native binary is ~20ms.
    - Files: `.ai/2026-04-24/tasks/nxc-4355-investigation.md`
 
-
-<!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
-
-1. **Ban `{% callout %}` in astro-docs, migrate to `{% aside %}` + new `{% deep_dive %}`** (2026-04-24)
-
-   - Summary: Removed `callout` tag from `markdoc.config.mjs`, added `{% deep_dive %}` (aliased to `Callout.astro` with `type: 'deepdive'`). Migrated 8 callouts (5 → `deep_dive`, 3 → `aside`). Added `STYLE_GUIDE.md` Markdoc tags section + old→new mapping. Added `.vale/styles/Nx/MarkdocCallout.yml` (error-level rule; pattern anchors on `type|title` attribute because Vale's `TokenIgnores` blocks regex containing `{`/`%`/`/`). Uncommitted on `fix/issue-33331`.
+7. **Ban `{% callout %}` in astro-docs, migrate to `{% aside %}` + new `{% deep_dive %}`** (2026-04-24)
+   - Summary: Removed `callout` tag from `markdoc.config.mjs`, added `{% deep_dive %}` (aliased to `Callout.astro` with `type: 'deepdive'`). Migrated 8 callouts (5 → `deep_dive`, 3 → `aside`). Added `STYLE_GUIDE.md` Markdoc tags section. Added `.vale/styles/Nx/MarkdocCallout.yml` error-level rule. Uncommitted on `fix/issue-33331`.
    - Files: `.ai/2026-04-24/SUMMARY.md`, `.ai/2026-04-24/tasks/callout-to-aside-migration.md`
 
-2. **NXC-4353: Powerpack release dry-run root-cause + Linear filing** (2026-04-23)
-
-   - Summary: Diagnosed powerpack dry-run failure as latent bug from pnpm migration (Dec 2025), surfaced by Mar 24 exit-code fix. Disproved initial `supportedArchitectures` theory via local repro on Mac. Real fix: always pass `--dry-run false` to version step in workflow. No Nx regression (diffed release code 22.6→22.7). Filed NXC-4353 low-priority, due 2026-05-23.
+8. **NXC-4353: Powerpack release dry-run root-cause + Linear filing** (2026-04-23)
+   - Summary: Diagnosed powerpack dry-run failure as latent bug from pnpm migration (Dec 2025), surfaced by Mar 24 exit-code fix. Disproved initial `supportedArchitectures` theory via local repro on Mac. Real fix: always pass `--dry-run false` to version step in workflow.
    - Files: `.ai/2026-04-23/SUMMARY.md`, [NXC-4353](https://linear.app/nxdev/issue/NXC-4353)
 
-3. **DOC-462: KB article for migrating `nx` imports to `@nx/devkit`** (2026-04-23)
-
+9. **DOC-462: KB article for migrating `nx` imports to `@nx/devkit`** (2026-04-23)
    - Summary: New recipe under Guides → Tips & Tricks with AI-copy prompt, before/after code, common-symbols table, and `@nx/devkit/testing` + `ngcli-adapter` sections. Also fixed `llm_copy_prompt` Markdoc transform (inline code/links/ordered lists were being stripped) and added a caveman commit-body style rule to CLAUDE.md. Branch `DOC-462` pushed.
    - Files: `.ai/2026-04-23/SUMMARY.md`, commit `6ddad14371`
 
-4. **Night-shift community fixes batch** (2026-04-22)
-
-   - Summary: 2 new worktrees created from session-2026-04-22 night-shift run (#33488, #33971). 3 approved fixes already applied in prior runs (#32595, #33523, #34095). #32579 skipped — core maintainer PR already addresses it. #34281 applied in ocean repo from pre-existing branch.
-   - Session: `night-shift/sessions/session-2026-04-22.md`
-
-5. **Night-shift community fixes batch** (2026-04-21)
-
-   - Summary: 5 worktrees created from session-2026-04-21 night-shift run. All patches applied and committed (4 Nx + 1 Ocean + greenfield bench repo).
-   - Session: `night-shift/sessions/session-2026-04-21.md`
-
-6. **NXC-4182: Revert React Router Vite 7 workaround (now supports Vite 8)** (2026-04-21)
-
-   - Summary: `@react-router/dev` 7.14.2 expanded its Vite peer dep to include `^8.0.0`. Bumped `reactRouterVersion` to ^7.14.2, added a 22.7.0 packageJsonUpdate migration, removed `useViteV7: true` force-flag, dead schema field, and e2e test downgrade block. Squashed to single commit. PR #35365.
-   - Files: `.ai/2026-04-21/tasks/nxc-4182-react-router-vite-8.md`, PR #35365
-
-7. **DOC-486: Blog sitemap in root nx.dev sitemap index** (2026-04-21)
-
-   - Summary: Added `/sitemap-2.xml` for nx-blog via consolidated `additional-sitemaps.ts` edge function. In nx-blog, added `generate-sitemap.mjs` and refactored build into cacheable Nx targets (nx:run-commands + nx:noop fan-out). Both repos committed, PRs pending.
-   - Files: `.ai/2026-04-21/SUMMARY.md`, `.ai/2026-04-21/tasks/doc-486-blog-sitemap.md`
-
-8. **DOC-479: Agent-readiness signals for nx.dev + sitemap regression fix** (2026-04-20)
-
-   - Summary: Shipped Link headers (RFC 8288), Content-Signal in robots.txt, routed nx.dev/robots.txt through astro-docs via beforeFiles rewrite (#35348). Follow-up #35351 restored sitemap generation removed by DOC-478 cleanup.
-   - Files: `.ai/2026-04-20/tasks/doc-479-agent-readiness.md`, PRs #35348, #35351
-
-9. **Init error investigation plan (Mar/Apr CNW+init telemetry)** (2026-04-20)
-
-   - Summary: Pulled Mar/Apr CNW + init funnel/cloud stats via cnw-stats-analyzer. Updated skill (target 3k→2k, headline no-filter vs funnel human+AI/CI split). Wrote init error fix plan — ~22% of init starts fail with no stderr captured; `./nx --version` probe accounts for 9.8% of starts on its own.
-   - Files: `.ai/2026-04-20/tasks/init-error-investigation.md`
-
-10. **DOC-478: Clean up nx-dev to ai-chat/api/courses** (2026-04-17)
-
-    - Summary: Stripped nx-dev down to 4 routes, deleted top-level docs/ (~333MB), removed unused libs, simplified feature-ai. ~148k lines deleted.
-    - Files: `.ai/2026-04-17/SUMMARY.md`, PR #35315
+10. **Night-shift community fixes batch** (2026-04-22)
+    - Summary: 2 new worktrees created from session-2026-04-22 night-shift run (#33488, #33971). 3 approved fixes already applied in prior runs (#32595, #33523, #34095). #32579 skipped — core maintainer PR already addresses it. #34281 applied in ocean repo from pre-existing branch.
+    - Session: `night-shift/sessions/session-2026-04-22.md`
 
 ## TODO
+
+- [ ] NXC-4401: E2E agentic Cloud onboarding (2026-04-29)
+  - Plan: `.ai/2026-04-29/tasks/doc-490-agentic-cloud-onboarding.md`
+  - Goal: route `nx connect`, `nx init`, and CNW through `nx-cloud onboard connect-workspace --json` in agent mode so Cloud setup stays in the terminal
 
 - [ ] NXC-4355 Investigation (2026-04-24 10:00)
   - Plan: `.ai/2026-04-24/tasks/nxc-4355-investigation.md`
@@ -174,6 +155,8 @@
 
 ## Active Claude Sessions
 
+- /Users/jack/projects/nx-worktrees/intro-conversion (branch: docs/intro-conversion-improvements) — Intro page conversion improvements: install block + Cloud reframe (2026-04-30)
+- /Users/jack/projects/nx-worktrees/DOC-490 (branch: NXC-4401) — E2E agentic Cloud onboarding (2026-04-29)
 - /Users/jack/projects/bench-monorepo-orchestrators (branch: main) — Nx tail overhead investigation (2026-04-24)
 
 <!-- Directories with active or resumable Claude sessions. Use `cd <dir> && claude -r` to resume. -->

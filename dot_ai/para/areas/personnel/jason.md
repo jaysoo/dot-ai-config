@@ -26,41 +26,7 @@
 
 ## 1:1 Notes
 
-### Upcoming Topics
-
-- **Promote Sandboxing + Developer Commands (Blog Post Idea):**
-  - `nx show target` is great for verifying sandbox inputs/outputs — Jason already a fan
-  - Blog post idea: developer workflow around sandboxing, how to use `nx show target --check` to catch violations
-  - Promote underused commands and skills alongside sandboxing rollout
-  - Jason's team is closest to this — could provide technical content or review
-
-- **Follow-up from 2026-03-19 1:1:**
-  - Philip missing blog posts and livestreams — Jack to chase down
-  - AI automation workflow for community-labeled GitHub issues — progress check
-  - Plugin deprecation process for 23.x — status update
-  - Sandbox violation fixes before Ligora rollout — did the rollout proceed?
-  - CNW template updates (CVE + new release) — Jack to complete
-
-- **Craigory morale & retention signal (from 2026-03-05 1:1)**
-  - Said he's "less proud of the tool now vs. 2 years ago" — check if this is temporary frustration or deeper disengagement
-  - Advocated strongly for one project per person max — likely felt stretched thin
-  - Frustrated by maintaining plugins the team doesn't use daily (expertise dilution)
-  - Protect his focus on sandboxing target defaults — don't let scope creep in
-
-- **Leo Burnout/Morale Risk (from 2026-03-05 1:1):**
-  - Stressed by competing priorities, burnout concerns from maintenance burden
-  - Constantly moving deadlines in syncs is demoralizing the team
-  - Wants planning to start from team proposals — echoes Jason's own Effy feedback about decision communication
-  - CLI team needs autonomy for smaller customer-requested improvements (e.g., target defaults)
-  - Shield team from low-quality DPE requests — require repros/logs before engineering involvement
-
-- **Leo's L5 career progression** — criteria feel outdated for current team size, needs clearer path
-
-- **Jason capacity/burnout** — was at 120% capacity with 120% workload; check if AI automation + plugin deprecation is relieving pressure
-
-- **Recognition culture:** Start giving more anticipatory kudos during projects, not just after completion
-
-#### Effy Reviews
+### Reference: Effy Reviews
 
 Strengths:
 
@@ -84,7 +50,7 @@ Action items:
 
 - Team-wide planning sessions, review previous proposals with the team
 
-#### Concerns about communication style
+### Reference: Concerns about communication style
 
 **Sales Pipeline Discussion - Concern from Sales Team:**
 
@@ -140,6 +106,16 @@ Jason's questioning during Madeline's sales update caused concern/confusion amon
 - [ ] Team: Begin plugin deprecation process for 23.x release
 
 [Granola notes](https://notes.granola.ai/t/8045c305-ee8a-495c-93a9-7304e66a78af-00demib2)
+
+**Carry-over from prep topics:**
+
+- **Promote Sandboxing + Developer Commands (Blog Post Idea):** `nx show target --check` for verifying sandbox inputs/outputs; Jason's team closest to this — could provide content or review
+- **Follow-ups from this 1:1:** Philip blog posts/livestreams (Jack to chase), AI automation for community-labeled GitHub issues, plugin deprecation 23.x, sandbox violation fixes before Ligora rollout, CNW template updates (CVE)
+- **Craigory morale & retention signal (from 2026-03-05 1:1)** — "less proud of the tool now vs. 2 years ago"; advocated for one project per person max; protect his focus on sandboxing target defaults
+- **Leo Burnout/Morale Risk (from 2026-03-05 1:1)** — competing priorities, moving deadlines demoralizing; wants planning to start from team proposals; CLI team needs autonomy for smaller customer-requested improvements
+- **Leo's L5 career progression** — criteria feel outdated for current team size, needs clearer path
+- **Jason capacity/burnout** — was at 120% capacity with 120% workload; check if AI automation + plugin deprecation is relieving pressure
+- **Recognition culture:** Start giving more anticipatory kudos during projects, not just after completion
 
 ### 2026-03-06
 

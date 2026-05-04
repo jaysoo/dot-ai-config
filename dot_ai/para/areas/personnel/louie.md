@@ -24,10 +24,6 @@
 - **Goals:**
 - **Strengths:**
 
-## Upcoming 1:1
-
--
-
 ## 1:1 Notes
 
 ### 2026-01-22

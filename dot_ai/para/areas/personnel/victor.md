@@ -25,34 +25,9 @@
 
 ## 1:1 Notes
 
-### Upcoming
+### 2026-04-20
 
-- Post-Montreal
-  - Discussions not done, next time plan more time and space activities out
-  - Priorities: Init/docs/marketing onboarding (600 claimed per week)
-  - v23 - lots of deprecations, already communicated with DPEs
-  - Billing and pricing changes
-    - Enables many features to generate revenue
-    - Needs Orca
-  - Tracking: Onboarding, Sandboxing
-
-**Promote Sandboxing + Developer Commands (Blog Post Idea)**
-
-- Sandboxing feature is landing — great opportunity for content around it
-- `nx show target` is a killer command for verifying sandbox inputs/outputs
-- Blog post idea: developer workflow around sandboxing — practical walkthrough
-- Could highlight underused commands/skills that complement sandboxing
-- Good marketing moment to show Nx developer experience advantage
-
-**DevRel Content Output**
-
-- Blog and changelog output seems very quiet — are we churning out enough content?
-- What are the current 1-2 things the devrel/content team is focused on?
-- AI should be a force multiplier here — rough drafts, idea generation, review/validation
-  - Shouldn't we see significantly more content output with AI assistance?
-- What's blocking higher throughput? Capacity? Review bottleneck? Prioritization?
-
-**Montreal Meeting Feedback & Polygraph Context** (follow-up from 2026-04-20)
+**Montreal Meeting Feedback & Polygraph Context**
 
 - Only feedback received was about Jeff's CI explanation lacking clarity
   - Participants confused about moonshot context and CI system options
@@ -92,7 +67,18 @@
 - V23 deprecation planned except inference plugins and Angular
   - Module Federation and other used features being removed
   - Will provide ejection path for users to maintain features locally
-- Transcript: https://notes.granola.ai/t/b581b5e1-a705-4f85-8487-e0b53445b51c-00demib2
+
+**Carry-over from prep topics:**
+
+- Post-Montreal: discussions not done; next time plan more time and space activities out
+- Priorities: init/docs/marketing onboarding (600 claimed per week)
+- v23 deprecations (already communicated with DPEs)
+- Billing and pricing changes — enables many features to generate revenue; needs Orca
+- Tracking: onboarding, sandboxing
+- Promote sandboxing + developer commands (blog post): `nx show target` for verifying sandbox inputs/outputs; practical walkthrough; underused commands/skills
+- DevRel content output — blog/changelog feels quiet; what's the team focused on; AI as force multiplier; what's blocking higher throughput?
+
+Transcript: https://notes.granola.ai/t/b581b5e1-a705-4f85-8487-e0b53445b51c-00demib2
 
 ### March 2, 2026
 

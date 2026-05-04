@@ -25,44 +25,7 @@
 - **Goals:** More ownership of product direction and longer-term vision (6+ months)
 - **Strengths:** Technical skills, calm communication, accountability, responsive to customer feedback
 
-## Upcoming 1:1
-
-Strengths:
-
-- Strong technical skills across different areas
-- Good technical leader on Red Panda, and managing tasks
-- Communicates respectfully and calmly, and always makes himself available to the team
-- Accountability for team's work and make sure things are on track, takes responsiblity when things fall behind
-- Responsive to customer feedback and issues
-
-Most valuable contribution:
-
-- Self-healing; onboarding enterprise customers to the feature
-- Keeping Red Panda team on track, staying up-to-date with industry trends
-
-Improvements:
-
-- Take more ownership of product direction and a longer-term vision (e.g. 6 months)
-- More detailed description for tasks and projects so people don't have to ask
-- Letting the wider company know about the iterative improvements to Red Panda's work
-
-### Others
-
-- 1:1s with people on Red Panda? EM
-  - Jack to reschedule 1:1s with Chau and Mark to be less frequent
-
-- Add nx-console to metrics
-
-- Make sure "unplanned" work is defined correctly
-
 ## 1:1 Notes
-
-### Upcoming
-
-- Follow up on Montreal trip experience
-- Check on Polygraph post-launch status (April 7 target)
-- Ocean CLAUDE.md ownership — who picks this up?
-- Hiring to replace Collin — any progress?
 
 ### 2026-03-24
 
@@ -110,6 +73,22 @@ Improvements:
 - Gradle support intentionally deprioritized (Louis + Jason only)
 
 [Transcript](https://notes.granola.ai/t/630b9b40-5199-4156-bc01-3c317d907b82-00demib2)
+
+**Carry-over from prep topics:**
+
+- Follow up on Montreal trip experience
+- Check on Polygraph post-launch status (April 7 target)
+- Ocean CLAUDE.md ownership — who picks this up?
+- Hiring to replace Collin — any progress?
+- 1:1s with people on Red Panda? EM cadence — Jack to reschedule 1:1s with Chau and Mark to be less frequent
+- Add nx-console to metrics
+- Make sure "unplanned" work is defined correctly
+
+**Performance review feedback (delivered):**
+
+- Strengths: technical breadth, technical leadership on Red Panda, calm/respectful communication, accountability for team, responsive to customer feedback
+- Most valuable contribution: self-healing onboarding for enterprise customers; keeping Red Panda team on track and current with industry trends
+- Improvements: take more ownership of product direction and longer-term (6+ month) vision; more detailed task/project descriptions so people don't have to ask; communicate Red Panda's iterative improvements to the wider company
 
 ### 2025-02-10
 

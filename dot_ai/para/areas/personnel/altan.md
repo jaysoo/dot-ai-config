@@ -29,30 +29,86 @@
 
 ## 1:1 Notes
 
-### Upcoming Topics
+### 2026-04-30
+
+**Health Check & Team Dynamics**
+
+- Jack recovering from illness, first clear-thinking day in a while
+- DayQuil made symptoms worse instead of helping
+- Chow moved near Altan's hometown (one exit away)
+
+**Nicole's Concerns About Team Frustration**
+
+- Nicole noticed Altan seemed frustrated during recent sync
+- Worried it might be criticism of her work or Orca team
+- Altan clarified frustration is systemic, not personal:
+  - Team works "too safely" despite tremendous talent
+  - Same conservative ideas after laying off 20% of company
+  - Ambition should be much greater given team capabilities
+  - Not blocked by people/talent, possibly by capacity
+- Altan will reach out to Nicole to clarify and avoid misunderstanding
+
+**Orca Experiments & Measurement**
+
+- Current experiments section empty, waiting for concrete plans
+- Jeff and Altan discussed yesterday, data pull needed in next 1-2 days
+- Need more aggressive approach to failed experiments
+  - Stop sunk cost fallacy of continuing failed initiatives
+  - Abandon quickly when things don't work
+- Sync meetings feel disorganized due to multiple departments
+- Surprising lack of alignment on:
+  - Current product state
+  - How things currently work
+  - Customer pain points
+- Focus should be getting numbers up vs. over-measuring
+  - Little historical tracking means no baseline for what influences metrics
+  - Need to experiment first, learn quickly
+
+**Billing Implementation Timeline**
+
+- Lower landing page: simple button click, Steve provisions within 1 hour
+- June 1st target date for billing changes
+  - Mix of Altan and Louie handling backend work
+  - Altan pushing more to Louie for his development
+- Itemized billing considerations:
+  - Must be part of June 1st design even if fast-follow
+  - Metered storage will be easy to implement
+  - Networking billing more complex, unclear how Steve wants to track
+  - Disk usage straightforward (shows up like resource classes)
+- UI work minimal, all handled by Orca team
+  - Simple banners in app for opt-in
+  - No cross-team coordination needed
+
+**Pricing Strategy & Team Transitions**
+
+- Dedicated computing as enterprise add-on:
+  - Enterprise gets it bundled
+  - Team plan users pay flat fee ($99-199, TBD)
+  - Don't care about margins initially — focus on adoption
+- NPM/cache likely free (low cost to provide)
+- Rares bandwidth discussion with Joe about folding back into engineering
+  - Transition planned after May (Caleb on leave/busy)
+  - Will help with PLG motion and reduce back-and-forth on POVs
+
+**Action Items**
+
+- [ ] Altan: Create Linear tickets for billing work (tomorrow/weekend)
+- [ ] Altan: Pull data for Orca experiments (next 1-2 days)
+- [ ] Altan: Reach out to Nicole to clarify frustration context
+- [ ] Team: More concrete deliverables needed for weekly syncs
+
+**Source**: [Granola notes](https://notes.granola.ai/t/542007a6-a3fd-40ef-80a0-dddd56d35045-00demib2)
+
+**Carry-over from prep topics:**
 
 - Promotion to L6 in June — vsavkin will communicate to Altan first, follow up on how it went
 - Follow up on Prometheus communication with Raresh and Caleb
 - Sandboxing progress check (top priority)
 - Ocean setup improvements - Rares as potential owner
-- March cycle planning for Ocean dev setup
 - **SPACE: Review Quokka planned/unplanned classification rules** — Current Quokka-specific rules inflate planning accuracy (93.2% vs 77.3% under standard rules). Two issues:
-  1. Most misc-project issues lack DPE/Support labels so they count as planned. These should be unplanned:
-     - https://linear.app/nxdev/issue/Q-318 — Gate heartbeat behind real CI detection
-     - https://linear.app/nxdev/issue/Q-253 — Pentest: CI API Error Messages Expose Internal Class Names
-     - https://linear.app/nxdev/issue/Q-282 — WaitingAgents should be backed by valkey
-     - https://linear.app/nxdev/issue/Q-212 — Redisson + Netty Upgrade increased direct memory use
-     - https://linear.app/nxdev/issue/Q-176 — Snapshot aggregator restarting
-     - https://linear.app/nxdev/issue/Q-171 — nx-api memory leak investigation
-     - https://linear.app/nxdev/issue/Q-112 — Concurrent modification bug with dteMap
-     - https://linear.app/nxdev/issue/Q-102 — Heavy CPU workloads cause contention
-     - https://linear.app/nxdev/issue/Q-98 — Empty transformed task graph (P2/High!)
-     - https://linear.app/nxdev/issue/Q-35 — Aggregator hangs when mongo client fails
-  2. No-project issues treated as planned. Some are clearly reactive/unplanned:
-     - https://linear.app/nxdev/issue/Q-192 — Enterprise usage page blocks Clickup re-up (P2/High, DPE)
-     - https://linear.app/nxdev/issue/Q-104 — Investigate agent idleness for Essent (P2/High)
-     - https://linear.app/nxdev/issue/Q-43 — Mongo timeouts causing restarts (P2/High)
-  - **Ask:** Should we simplify to standard rules (no project or misc = unplanned)? Or enforce labeling discipline? Also, many issues have no priority set — should that change?
+  1. Most misc-project issues lack DPE/Support labels so they count as planned. These should be unplanned: Q-318, Q-253, Q-282, Q-212, Q-176, Q-171, Q-112, Q-102, Q-98, Q-35
+  2. No-project issues treated as planned. Some clearly reactive/unplanned: Q-192, Q-104, Q-43
+  - Ask: simplify to standard rules (no project or misc = unplanned), or enforce labeling discipline? Many issues have no priority set — should that change?
 
 ### 2026-02-19
 

@@ -25,25 +25,6 @@
 
 ## 1:1 Notes
 
-### Upcoming
-
-**Promote Sandboxing + Developer Commands (Blog Post Idea)**
-
-- Sandboxing feature is landing — great opportunity for content around it
-- `nx show target` is a killer command for verifying sandbox inputs/outputs (Jason loves it)
-- Blog post idea: developer workflow around sandboxing — how to use `nx show target` to check inputs, verify no violations, debug sandbox issues
-- Could also highlight other underused commands and skills that complement sandboxing
-- Content angle: practical "how I fixed my sandbox violations" walkthrough
-
-**DevRel Content Output**
-
-- Blog and changelog output feels very quiet — what's the current state?
-- What are the 1-2 things the content/devrel team is focused on right now?
-- AI as a force multiplier for content:
-  - Should be helping with idea generation, rough drafts to review and validate
-  - Expectation: noticeably higher content throughput with AI assistance
-- What's needed to increase output? More writers? Better process? AI tooling adoption?
-
 ### 2026-02-10
 
 **Effy Review Process Feedback**

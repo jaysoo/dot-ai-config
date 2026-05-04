@@ -26,11 +26,6 @@
 
 ## 1:1 Notes
 
-### Upcoming
-
-- Lerna -> Nx migration guides
-- **Altan's capacity and priorities** — Is Altan on the hook to deliver the API changes, or just helping with design and some minor work? Need to clarify ownership and scope of commitment.
-
 ### 2026-03-06
 
 **Team Impact from Recent Departures**
@@ -83,6 +78,11 @@
   - Open Claw orchestration possibility for multiple agents
 
 **Source:** [Granola transcript](https://notes.granola.ai/t/7f32e40b-1f0d-4e0b-9b0a-1855b5a3a2fa-00demib2)
+
+**Carry-over from prep topics:**
+
+- Lerna -> Nx migration guides
+- **Altan's capacity and priorities** — Is Altan on the hook to deliver the API changes, or just helping with design and some minor work? Need to clarify ownership and scope of commitment.
 
 ### 2026-02-10
 

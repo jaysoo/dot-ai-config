@@ -26,16 +26,13 @@
 
 ## 1:1 Notes
 
-### Upcoming Topics
+### Reference: Infra Pricing / Chargeable Components (captured 2026-03-27)
 
-**Reference: Infra Pricing / Chargeable Components (captured 2026-03-27)**
-- Not to bring up directly, just context for future discussions
 - Components to charge for (pricing page): CPU, Memory, Disk, Networking, Cache storage
 - Other non-agent hosting costs (harder to align): Cluster charges, IP addresses, Certs, Buckets, Image repositories, Gateway uptime, Load balancers
 - Value-Add Features: Docker Hub Read-Through Mirror, NPM Read-Through, Docker Layer Caching, Static IP Addresses via NAT, Private Network Connections, In-Project Custom Image Repositories (specifically custom agent images)
 - Stability Additions: In-project Application Image Mirroring, Dedicated Infrastructure
 - Note: pretty much every feature/stability addition is single-tenant focused
-
 
 ### 2026-04-23
 

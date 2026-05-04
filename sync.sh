@@ -37,6 +37,11 @@ if [ -d "$GIT_ROOT/dot_gemini/skills" ]; then
     cp -r "$GIT_ROOT/dot_gemini/skills/"* "$GEMINI_TARGET_DIR/skills/" 2>/dev/null || true
 fi
 
+if [ -d "$GIT_ROOT/dot_gemini/policies" ]; then
+    mkdir -p "$GEMINI_TARGET_DIR/policies"
+    cp -r "$GIT_ROOT/dot_gemini/policies/"* "$GEMINI_TARGET_DIR/policies/" 2>/dev/null || true
+fi
+
 # Sync tmux config
 cp "$GIT_ROOT/tmux.conf" "$HOME/.tmux.conf"
 
@@ -69,4 +74,4 @@ cp "$GIT_ROOT/bashrc" "$HOME/.bashrc"
 cp "$GIT_ROOT/gitconfig" "$HOME/.gitconfig"
 cp "$GIT_ROOT/gitignore_global" "$HOME/.gitignore_global"
 
-echo "✅ Claude global config synced from $GIT_ROOT"
+echo "✅ Claude and Gemini global config synced from $GIT_ROOT"

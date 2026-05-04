@@ -1,0 +1,35 @@
+# Whitelist policy for Gemini CLI
+# Allows common read-only and non-destructive tools to run without confirmation.
+
+# Allow all read-only tools (grep, list_directory, etc.)
+[[rule]]
+toolName = "*"
+toolAnnotations = { readOnlyHint = true }
+decision = "allow"
+priority = 50
+
+# Allow common non-destructive shell commands
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = [
+  "cat",          # Safe for reading files
+  "ls",           # Directory listing
+  "file",         # Check file types
+  "du",           # Disk usage
+  "git status",   # Git state
+  "git log",      # Git history
+  "git diff",     # Git changes (read-only)
+  "nx list",      # Nx workspace info
+  "nx show",      # Nx project info
+  "pnpm list"     # Package listing
+]
+decision = "allow"
+priority = 100
+
+# Specific rule for cat/grep/ls to allow piping/redirection
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = ["cat", "grep", "ls", "git log", "git diff"]
+decision = "allow"
+allowRedirection = true
+priority = 110
