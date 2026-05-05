@@ -30,6 +30,7 @@ project health, and customer dependencies.
 ## Latest Reports
 
 ### Weekly
+- [2026-W19](./weekly/2026-W19.md) -- Sandbox 0 working validators (NEW concentration), Pricing SHIPPED, Turbo idle resolved (3 stables 3wk), Moon AI skill found, Mythos pipeline visible (271+40 CVEs), 4th worm wave (SAP), aws-sdk v2 deprecated, status hygiene crisis
 - [2026-W18](./weekly/2026-W18.md) -- Ocean trusted publishing live, Node 20 EOL in 2d, 22.7 GA regressions (#35444), 4 zombies (17th flag), Apr 30 cliff, Mythos hype check
 - [2026-W17](./weekly/2026-W17.md)
 - [2026-W15](./weekly/2026-W15.md) -- CNW 2 HIGH, Angular 22 P0, Node 20 EOL 21d, LGPL blocker, 11 zombies, Gradle 9.5.0-RC2

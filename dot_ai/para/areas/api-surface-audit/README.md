@@ -11,6 +11,7 @@ Monthly audit detecting drift between Nx's public API surface and its documentat
 ## Reports
 | Month | File | Severity | Findings |
 |-------|------|----------|----------|
+| 2026-05 | [2026-05.md](2026-05.md) | LOW-MEDIUM | 1H/4M/3L/2I — no new drift; 4 carried items unchanged; v21-marked devkit deprecations now 2 majors overdue at v23.0.0-beta.4. Several v23 breaking removals (detox executors deprecated, angular `move`/module-federation entry-point removed, stylesheet options removed) shipped without doc drift thanks to auto-doc pipeline |
 | 2026-04 | [2026-04.md](2026-04.md) | LOW-MEDIUM | 1H/4M/3L/2I — JsonInput still undocumented; new vite `compiler` option + `nx.sync.ignoredDependencies` introduced this window without docs |
 | 2026-03 | [2026-03.md](2026-03.md) | HIGH | 13H/50M/18L — 13 undocumented packages, 50 undocumented generators, systemic rename drift |
 

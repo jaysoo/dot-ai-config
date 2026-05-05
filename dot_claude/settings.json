@@ -2,6 +2,7 @@
   "sandbox": {
     "network": {
       "allowedDomains": [
+        "*.nx.app",
         "*.mongodb.net",
         "secretmanager.googleapis.com",
         "ifconfig.me",

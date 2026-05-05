@@ -15,5 +15,6 @@ Monthly supply chain security reviews for Nx published packages.
 
 | Month | File | Status |
 |-------|------|--------|
-| 2026-04 | [2026-04.md](./2026-04.md) | Current — YELLOW. Ocean now uses trusted publishing (no static tokens, confirmed via live registry). Provenance gap downgraded to one-line config fix. New `@xmldom/xmldom` CVEs reach `@nx/maven` users. |
-| 2026-03 | [2026-03.md](./2026-03.md) | Previous — YELLOW |
+| 2026-05 | [2026-05.md](./2026-05.md) | Current — YELLOW. Provenance gap wider than thought: 14 Nrwl-published packages lack SLSA attestations (5 Ocean + 9 Powerpack `@nx/*`). xmldom floor in `@nx/maven` still stale (carried from April). |
+| 2026-04 | [2026-04.md](./2026-04.md) | Previous — YELLOW. Ocean trusted publishing went live 2026-04-08. xmldom CVE batch landed for `@nx/maven`. |
+| 2026-03 | [2026-03.md](./2026-03.md) | Older — YELLOW |
