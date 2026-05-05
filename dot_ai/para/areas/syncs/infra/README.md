@@ -32,6 +32,58 @@ Tracking document for Infrastructure team sync meetings.
 
 ## Meeting Notes
 
+### 2026-05-05
+
+**Attendees:** Patrick, Steve, Altan, Louie
+
+**Resource Class Changes & Memory Concerns**
+- Increased memory allocation from 2:1 to ~3:1 CPU:memory ratio
+  - Can't offer true 4:1 ratio due to Kubernetes overhead and node constraints
+  - Risk of OOM kills for users approaching new limits
+  - Potential rollback required if production issues emerge
+- Steve concerned about timing during critical June deliverables
+  - Team already prone to infrastructure distractions
+  - May not drive significant customer acquisition
+  - Pricing changes don't address core value proposition vs competitors like Blacksmith
+
+**Dedicated Compute Infrastructure Progress**
+- Steve working on multi-namespace controller (in PR, approved)
+  - Routes based on org ID for namespace deployment
+  - Monitors across all namespaces vs single namespace
+- Altan handling cluster infrastructure setup
+  - Target: cluster ready by June 1st
+  - Estimated cost: $300/month base, $1200/month with full features
+
+**Billing Integration Requirements**
+- Org ID in hex format (primary requirement)
+- Webhook integration from frontend to Slack/Linear for provisioning requests
+  - Same pattern will be used for future automation
+  - Manual provisioning initially, automated by end of June
+- Feature considerations:
+  - Docker/Docker available by default (no extra cost)
+  - npm read-through cache adds ~$1200/month cluster cost
+  - IO tracing needs org-level segmentation verification
+
+**Project Milestones & Testing**
+- Milestone 1 (May 22nd): Ocean switched to dedicated compute
+  - One week testing period before June 1st launch
+  - Drop other priorities during testing week
+- Milestone 2: End-to-end workflow testing
+  - Frontend webhook → Slack/Linear → manual provisioning
+  - Verify org ID handling and feature requests
+- Security considerations for IO tracer data isolation between orgs
+
+**Ongoing Issues & Distractions**
+- Pending pods issue on Google Cloud (occasionally Amazon)
+  - Daemon sets not functioning on new nodes
+  - Actively choosing not to investigate due to other priorities
+- CIBC Azure sandboxing implementation nearly complete
+  - Concern about customer becoming QA department for untested features
+  - Private link setup needed for Anaplan (team needs to reference Myria setup)
+- Penetration testing submissions (low-priority security reports)
+
+[Transcript](https://notes.granola.ai/t/62433d31-5b3e-4022-bc34-332ec81c6526-00demib2)
+
 ### 2026-03-24
 
 **Attendees:** Patrick, Steve, Altan, Szymon, Louie

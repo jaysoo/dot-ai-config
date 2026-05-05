@@ -2,6 +2,8 @@
   "sandbox": {
     "network": {
       "allowedDomains": [
+        "*.netlify.com",
+        "*.netlify.app",
         "*.nx.app",
         "*.mongodb.net",
         "secretmanager.googleapis.com",

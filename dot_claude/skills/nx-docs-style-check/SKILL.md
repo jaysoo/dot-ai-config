@@ -15,14 +15,16 @@ Validate modified documentation pages against `astro-docs/STYLE_GUIDE.md`.
 
 ## Process
 
+Run all three checks: style guide, vale, and link validation. Don't skip any.
+
 ### 1. Identify Modified Files
 
 Find changed docs files in the current repo/worktree:
 
 ```bash
-git diff --name-only HEAD -- 'astro-docs/src/content/**/*.md' 'astro-docs/src/content/**/*.mdx'
-git diff --cached --name-only -- 'astro-docs/src/content/**/*.md' 'astro-docs/src/content/**/*.mdx'
-git ls-files --others --exclude-standard -- 'astro-docs/src/content/**/*.md' 'astro-docs/src/content/**/*.mdx'
+git diff --name-only HEAD -- 'astro-docs/src/content/**/*.md' 'astro-docs/src/content/**/*.mdx' 'astro-docs/src/content/**/*.mdoc'
+git diff --cached --name-only -- 'astro-docs/src/content/**/*.md' 'astro-docs/src/content/**/*.mdx' 'astro-docs/src/content/**/*.mdoc'
+git ls-files --others --exclude-standard -- 'astro-docs/src/content/**/*.md' 'astro-docs/src/content/**/*.mdx' 'astro-docs/src/content/**/*.mdoc'
 ```
 
 If user specifies files, use those instead.
@@ -44,7 +46,25 @@ Common checks:
 - **Tone** — direct, second person ("you"), active voice
 - **Leftover Markdoc** — no `{% %}` tags remaining after migration
 
-### 4. Report
+### 4. Run Vale
+
+```bash
+nx run astro-docs:vale
+```
+
+Report any errors/warnings.
+
+### 5. Run Link Validation
+
+Always run link validation as part of the docs workflow — broken links slip past style + vale checks.
+
+```bash
+nx run astro-docs:validate-links
+```
+
+This task depends on `astro-docs:build` and `nx-dev:build`, so it will rebuild as needed. Report any broken links.
+
+### 6. Report
 
 Per file:
 
@@ -54,10 +74,11 @@ Per file:
 - Line N: [rule] — description — suggested fix
 ```
 
-If clean: "Style guide check passed for N files."
+Then summarize vale + validate-links results. If everything is clean: "Style guide, vale, and validate-links passed for N files."
 
 ## Notes
 
 - Only flag rules from the style guide, not personal preferences
 - Focus on actionable issues
 - For ambiguous rules, note but don't flag as error
+- All three checks (style, vale, validate-links) must run — don't skip validate-links because it's slower

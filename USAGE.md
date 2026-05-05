@@ -22,7 +22,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | nx-monthly-digest     | skill   | 2026-04-24   | 2     |
 | plan-week             | skill   | 2026-03-30   | 1     |
 | metrics-review        | skill   | 2026-03-24   | 1     |
-| nx-scorecard          | command | 2026-03-24   | 0     |
+| nx-scorecard          | command | 2026-05-05   | 1     |
 | brainstorm            | skill   | 2026-04-24   | 2     |
 | reflect               | skill   | 2026-04-01   | 2     |
 | cnw-update-templates  | skill   | 2026-04-10   | 2     |
@@ -36,7 +36,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | audit-api-surface     | skill   | 2026-04-09   | 9     |
 | audit-project-health  | skill   | 2026-04-09   | 11    |
 | site-checker          | skill   | 2026-04-01   | 0     |
-| caveman               | skill   | 2026-05-04   | 5     |
+| caveman               | skill   | 2026-05-05   | 6     |
 | skill-creator         | skill   | 2026-04-24   | 1     |
 | terminal-demo-recorder | skill   | 2026-04-24   | 1     |
 | review-pr             | command | 2026-04-22   | 1     |
