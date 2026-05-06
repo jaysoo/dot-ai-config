@@ -85,7 +85,7 @@
 ### 2026-03-26
 
 **Infrastructure Cost Management Challenges**
-- Amir disk space issue escalated to Steve - customer expects free resolution
+- Emeria disk space issue escalated to Steve - customer expects free resolution
 - Steve perceived Steve's response as hostile when asking "did something change?"
 - Pattern: customers claim "nothing changed" then reveal changes after investigation
   - Wastes days of engineering time ($2-3k in labor costs)

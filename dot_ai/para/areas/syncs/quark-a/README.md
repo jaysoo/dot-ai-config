@@ -23,29 +23,90 @@ Tracking document for Quark-A team sync meetings.
 
 ## Topics for Next Meeting
 
-- Where do we track experiments? (Linear vs spreadsheet — pick one)
 - Revisit activation definition (speed/savings metrics vs CIP count)
-- Map engineering efforts to funnel stages
+- Map engineering efforts to funnel stages (continue)
 - Product: surface value of adding multiple projects to a workspace (5+ projects correlation)
 - Cadence for all-hands updates (weekly vs bi-weekly)
+- Realistic launch dates for activation experiments
+- Baseline data before setting hypothesis %s (Altan's concern)
 
 ## Upcoming Sync
 
-- PLG funnel org-level tracking shift complete (was workspace-level) — cleaner customer metrics
-- Highest-leverage opportunity identified: activation-to-conversion (2.7%). Lifting 1-2 points could hit the 550 goal without more top-funnel volume
-- Open question: are incoming users the right type? Marketing/messaging consideration
+- (cleared — points rolled into 2026-05-05 meeting notes)
 
 ## Action Items
 
+### From 2026-05-05 (Quark-A weekly sync)
+
+- [ ] Nicole: update sheet with project status numbers instead of colors
+- [ ] Team: update experiment data in sheet before next meeting
+- [ ] Jack + Nicole: Get Started page optimization (button copy/styling, 5% traffic lift target)
+- [ ] Altan: continue no-login demo dev; establish baseline metrics before setting targets
+- [ ] All: provide realistic launch dates for activation experiments
+
 ### From 2026-04-23 (Jack/Cory sync)
 
-- [ ] Jack + Nicole: map engineering efforts to funnel stages (for Tuesday core team sync)
-- [ ] Jack + Nicole: track experiments (what tried, effects, timing)
-- [ ] Team: standardize experiment tracking location (Linear vs spreadsheet)
+- [x] Jack + Nicole: track experiments (what tried, effects, timing) — Google sheet w/ project links
+- [x] Team: standardize experiment tracking location — Google sheet
+- [ ] Jack + Nicole: map engineering efforts to funnel stages (partial — continue)
 - [ ] Team: revisit activation definition (speed/savings vs CIP count)
 - [ ] Product: surface value of adding multiple projects to a workspace
 
 ## Meeting Notes
+
+### 2026-05-05 — Quark-A Weekly Sync
+
+**Attendees:** Jack, Nicole Oliver, Cory, Altan Stalker, Jeff Cross, Heidi Grutter
+
+[Granola transcript](https://notes.granola.ai/t/7b6deae7-5831-4be0-9a40-caecf57c5606-00demib2)
+
+**Context:** PLG funnel work toward 10M+ ARR self-serve goal.
+
+**Experiment tracking & reporting**
+
+- All experiment data consolidated in Google sheet w/ project links
+- Future format: team updates sheet beforehand, meeting time = review together (not individual readouts)
+- Color coding → switching to actual numbers for clearer tracking
+
+**Acquisition experiments**
+
+- CNW init: peaked ~1200/day completion → deprioritized (gray)
+- Nx init: hitting 300/day target, ~20% yes rate → next target 400
+  - New agent-guided onboarding ready
+  - Can create workspace w/o full local setup
+  - Clearer GitHub app authorization instructions
+- One-page manual onboarding: 2x improvement in workspace claims
+  - Rolling to all CLI traffic today; full launch end of week
+- Homepage: "Get Started" link significantly outperforms "Try Nx Cloud" button
+  - Plan: 5% traffic lift via button copy/styling
+
+**Homepage & onboarding strategy**
+
+- Considering merging create-workspace flow w/ guide view
+- Drop GitHub admin permissions requirement
+- Prioritize existing-workspace integration > new-workspace creation (higher adoption potential)
+- Get Started page critical due to traffic volume
+
+**Activation experiments**
+
+- Feature demos: 2 PRs open, working w/ Ben on framework details
+- Demo data generator ready for quick feature rollout
+- Feature activation guides: foundation PR open, detailed spec done; phased (first value → full feature set)
+- DTE visualization contributes to acquisition/activation
+
+**Bandwidth & prioritization**
+
+- Multiple competing priorities; focus risk
+- Time to Green analytics scheduled (Enterprise requirement)
+- Cory: focus 2-3 biggest impact items vs marginal improvements
+- Maintenance/bug fix load constraining capacity
+
+**Hypothesis & measurement philosophy**
+
+- Debate: specific % targets vs directional goals
+- Altan: lack of historical data makes specific targets arbitrary
+- Agreement: measure directional improvement while building baseline
+- Focus on overall funnel health vs individual metric optimization
 
 ### 2026-04-23 — Jack/Cory PLG Funnel Data Sync
 

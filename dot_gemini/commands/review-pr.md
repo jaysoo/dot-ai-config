@@ -41,6 +41,16 @@ gh pr diff <PR_NUMBER> --repo nrwl/nx
 
 **If the diff touches `project.json`, `package.json` targets, or `nx.json` (targetDefaults/namedInputs)**: invoke the `nx-config-cache-check` skill to validate cache input/output alignment.
 
+**If the diff modifies migration files (`packages/*/src/migrations/`)**:
+- Enumerate the workspace shapes the migration must handle. For most plugin migrations: (a) explicit executor usage in projects, (b) related dep in root `package.json`, (c) plugin-inference-only (config files / inferred markers like a `test:` block in vite.config). Flag any shape that the migration silently skips — silent failures on `nx migrate` are the worst kind.
+- For multi-helper migrations: list each helper's gating condition and verify they're consistent. Two helpers deciding "should we touch X" using different criteria (e.g. one checks `package.json`, the other checks `nx.json`) is a disconnect bug — they can disagree and produce orphan state (registered plugin without installed package, etc).
+- Verify the companion `.md` doc lives at `<implementation-path>.md` (next to the `.ts`), not under `packages/<pkg>/docs/`. astro-docs's `parseMigrations` resolves `migrations.json`'s `implementation` field and looks for the `.md` adjacent — `docs/` location is silently ignored on the rendered site.
+- For migrations that merge config (nx.json plugin entries, project.json targets, etc.): confirm user-set fields aren't silently overwritten when a target name already exists. `existing.foo = candidate.foo` overwrites; `existing.foo ??= candidate.foo` preserves.
+
+**If the PR is a breaking change (`feat!:` / `fix!:` / removes a public API)**:
+- Grep `astro-docs/**/*.mdoc` and the affected package's docs for "deprecated", "will be removed in vN", "still works but" language referencing the removed thing. Once vN actually removes it, those sections must be rewritten as historical fact ("Nx vN removed X..."), not pre-removal warning. Stale "will be removed" copy that ships in the same release as the removal is a recurring miss.
+- Check for migration runs-on-upgrade: a breaking change without an automated `nx migrate` migration leaves users to fix things manually — flag unless intentional.
+
 Analyze the code changes:
 - Does the fix address the root cause or just a symptom?
 - Are there regressions? Edge cases missed?
