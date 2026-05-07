@@ -6,6 +6,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 
 | Name                  | Type    | Last Invoked | Count |
 | --------------------- | ------- | ------------ | ----- |
+| op-request-reason     | skill   | -            | 0     |
 | cnw-stats-analyzer    | skill   | 2026-04-01   | 3     |
 | netlify-deploy-status | skill   | 2026-03-27   | 1     |
 | reflect               | command | 2026-04-01   | 5     |
