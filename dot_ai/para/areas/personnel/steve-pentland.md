@@ -24,7 +24,66 @@
 - **Goals:**
 - **Strengths:**
 
+## Upcoming Sync
+
+### Disk billing — still worth tracking usage?
+
+Revisit disk usage tracking effort. Self-serve + dedicated compute won't move revenue needle on disk COGS (already established small absolute cost). Real cost driver is debugging labor on enterprise escalations, not raw disk spend.
+
+Question for Steve: do we still build out disk usage tracking for enterprise? Or drop the work since revenue impact is marginal and instrumentation cost may exceed return?
+- If enterprise-only: scope down to just observability for escalation debugging, skip billing pipeline
+- If shelving entirely: confirm no committed customer ask blocks this
+
 ## 1:1 Notes
+
+### 2026-05-07
+
+**Customer Incident Management & Fair Use**
+- Fair use + prioritization for stress-test/exploration-driven incidents (e.g. ClickUp)
+- Communication strategy for customer-caused incidents:
+  - Provide postmortem, emphasize customer responsibility
+  - No credit compensation for improper usage
+  - Clear messaging: "you broke it, you pay for it"
+- Recent ClickUp incident claimed as GitHub issue
+  - Steve skeptical of GitHub blame
+  - No compensation provided
+
+**Security Vulnerabilities & Compliance**
+- Graph CVE
+  - Jason to write CVE disclosure
+  - Standard GitHub publication process
+  - Notify reporter on fix
+- Pentest medium findings
+  - Auth0 enterprise upgrade ($600/month) fixes two mediums
+  - Alternative: 3-4 weeks dev work — more expensive than upgrade
+  - Two additional mediums require internal fixes:
+    1. Linear view endpoint
+    2. Session cookie encryption
+  - 30-day timeline for mediums, 90 days for lows
+  - Retest required after fixes
+
+**Billing & Infrastructure Rollout**
+- June 1st launch features confirmed:
+  1. Docker layer caching (automatic)
+  2. Docker read-through (automatic)
+  3. NPM read-through
+  4. Sandboxing/IO tracing (enabled by default)
+- Post-launch: networking tracking, private networking, static IPs
+- Cost structure
+  - Minimum 3-node cluster commitment per customer
+  - Need 3-4 customers minimum for break-even
+  - Full supply-chain costs beyond raw compute (cluster, application, infrastructure)
+- Pricing philosophy: avoid hamburger-ingredient fallacy
+  - Raw compute cost ≠ true delivery cost
+  - Must account for entire business infrastructure
+
+**Action Items**
+- Jack: Discuss CVE writing with Jason
+- Steve: Create Linear issues for pentest medium findings
+- Team: Evaluate Auth0 enterprise upgrade vs. dev fix
+- Monitor customer adoption post-June 1st launch for economic viability
+
+[Transcript](https://notes.granola.ai/t/a61d8cd2-2c3d-4480-8cf5-bd8bd7d39231-00demib2)
 
 ### Reference: Infra Pricing / Chargeable Components (captured 2026-03-27)
 

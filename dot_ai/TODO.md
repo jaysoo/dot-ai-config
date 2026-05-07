@@ -156,7 +156,6 @@
 ## Active Claude Sessions
 
 - /Users/jack/projects/nx-worktrees/intro-conversion (branch: docs/intro-conversion-improvements) — Intro page conversion improvements: install block + Cloud reframe (2026-04-30)
-- /Users/jack/projects/nx-worktrees/DOC-490 (branch: NXC-4401) — E2E agentic Cloud onboarding (2026-04-29)
 - /Users/jack/projects/bench-monorepo-orchestrators (branch: main) — Nx tail overhead investigation (2026-04-24)
 
 <!-- Directories with active or resumable Claude sessions. Use `cd <dir> && claude -r` to resume. -->
