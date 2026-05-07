@@ -416,6 +416,32 @@ Most packages have a `build` target that runs post-compilation steps (chmod, cop
 
 ## Personal Work History
 
+### 2026-05-06 - NXC-4159: Drop Node 20 support and bump @types/node
+- **Branch**: `NXC-4159`
+- **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4159`
+- **Commits**: `89fae8e8e9` (Node 20 drop + @types/node bump + perf-logging fix), `8a49d3611a` (Node 26 add)
+- **Status**: PR opened, CI rerun in progress (initial run had 2 unrelated flaky e2e failures)
+- **Purpose**: Resolve NXC-4159 TODO(v23) — Node 20 EOL April 2026.
+- **Changes**:
+  - **CI matrix**: dropped Node 20 from `.github/workflows/e2e-matrix.yml` and `.github/workflows/nightly/process-matrix.ts`. Added Node 26.0.0 (just released, not LTS) to nightly matrix on both Linux + macOS. Total nightly matrix: 152 / 256 jobs.
+  - **`nodeTLS` → `lowestNodeLTS`** in `process-matrix.ts` (typo fix per Jack — was always meant to be "lowest LTS"). Restored two-mode `processProject(project, nodeVersion?)` signature: non-core plugins still pin to single LTS (Node 22), core projects loop all node_versions. Non-core plugins are less Node-version-sensitive than core, so single-version coverage is enough.
+  - **`@types/node` repo catalog**: `pnpm-workspace.yaml` `^20.19.10` → `^24.11.0` (matches `mise.toml` runtime `node = "24.11.0"`). All 3 package.json refs use `catalog:typescript` so single edit propagates.
+  - **Generator `typesNodeVersion`**: `'20.19.9'` → `'^22.0.0'` across 9 plugin `versions.ts` files (cypress with 3 places — latest + v13/v14 compat maps; react-native, js, web, angular, node, react, jest [latest only — Jest 29 BC entry kept at `'18.16.9'`], angular `backward-compatible-versions.ts` for Angular 19+20). Sets the new supported Node floor for user-generated workspaces.
+  - **Snapshot**: `packages/vue/src/generators/library/__snapshots__/library.spec.ts.snap` updated to `^22.0.0`.
+  - **Type fix from `@types/node@24.x` tightening**: `detail` was moved from base `PerformanceEntry` to `PerformanceMark`/`PerformanceMeasure` subclasses. Added `as PerformanceMeasure[]` cast in `packages/nx/src/utils/perf-logging.ts` since the observer is configured with `entryTypes: ['measure']` only (runtime-guaranteed type).
+  - **Docs**: `astro-docs/src/content/docs/technologies/eslint/Guides/custom-workspace-rules.mdoc` — removed Node 20 mention + TODO(v23) HTML comment.
+- **Files**:
+  - `.github/workflows/e2e-matrix.yml`, `.github/workflows/nightly/process-matrix.ts`
+  - `pnpm-workspace.yaml`, `pnpm-lock.yaml` (regenerated, +636/-826)
+  - `packages/{cypress,react-native,js,web,angular,node,react,jest}/src/utils/versions.ts`
+  - `packages/angular/src/utils/backward-compatible-versions.ts`
+  - `packages/nx/src/utils/perf-logging.ts`
+  - `packages/vue/src/generators/library/__snapshots__/library.spec.ts.snap`
+  - `astro-docs/src/content/docs/technologies/eslint/Guides/custom-workspace-rules.mdoc`
+- **CI failures triaged**: 2 flaky e2e specs in initial PR run, both unrelated:
+  - `e2e/maven/src/maven-simple.test.ts`: npm `ECOMPROMISED / Lock compromised` from verdaccio race when `nx init` installs nx@23.0.0
+  - `e2e/nx/src/cache-no-daemon.test.ts`: 2 of 11 tests timed out at default Jest 35s. Surrounding tests have explicit 120000ms timeouts; these (`should evict cache if larger than max cache size`, `should honor NX_MAX_CACHE_SIZE env var`) don't. Slow CI runner exposed it.
+
 ### 2026-04-30 - NXC-4401: Agentic Cloud Onboarding (draft PR)
 - **Branch**: `NXC-4401` (worktree path still `nx-worktrees/DOC-490`)
 - **PR**: https://github.com/nrwl/nx/pull/35520 (DRAFT)
@@ -452,6 +478,16 @@ Most packages have a `build` target that runs post-compilation steps (chmod, cop
   - `packages/vite/src/migrations/update-23-0-0/ensure-vitest-package-migration.{ts,spec.ts}` — new safety-net migration
   - `packages/vite/{executors,generators}.json`, `executors.ts`, `index.ts` — drop vitest entries
   - `packages/vite/package.json` — drop `vitest` peer dep
+
+#### 2026-05-05/06 follow-ups (post-review iterations on PR #35517)
+- **Migration restructure (Jason's pattern)**: each helper (`migrateExecutorUsages`, `migratePluginConfigurations`, `migrateTargetDefaults`, `ensureVitestPluginRegistration`) returns whether it changed anything. `installVitestPackage` runs only if at least one helper returned true. Eliminates the disconnect between install gate and registration gate that Leo flagged.
+- **Inference-only detection**: `workspaceUsesVitest` globs `**/{vite,vitest}.config.{js,ts,mjs,mts,cjs,cts}` and matches a `test:` regex on vite configs (vitest configs treated as automatic positive). Catches workspaces relying on default-config @nx/vite/plugin inference without a root vitest dep or explicit executor.
+- **Per-scope `coveredScopes` (Jason's #2 gap)**: `ensureVitestPluginRegistration` no longer short-circuits on global `hasVitestPlugin`. It builds a `Set` of existing @nx/vitest scope keys (via `scopeKey({ include, exclude })`) and skips only @nx/vite/plugin entries whose scope is already covered. Closes the mixed-shape bug: `apps/**/*` with `testTargetName` + bare `libs/**/*` no longer drops libs inference.
+- **`@nx/vitest:convert-to-inferred` generator**: ports the test transformer from the deleted @nx/vite version. Lives at `packages/vitest/src/generators/convert-to-inferred/`. Plugin path is `'@nx/vitest'` (the package root, since `index.ts` exports `createNodesV2`), NOT `'@nx/vitest/plugin'`.
+- **Migration doc co-location (Leo's catch)**: `.md` companion lives at `packages/vite/src/migrations/update-23-0-0/ensure-vitest-package-migration.md` (next to `.ts`), NOT `packages/vite/docs/`. astro-docs's `parseMigrations` resolves the `implementation` field of `migrations.json` and looks for `<that path>.md` adjacent — `docs/` location is silently ignored on the rendered site.
+- **Type usage**: `PluginEntry` is now an alias for `ExpandedPluginConfiguration<Record<string, unknown>>` from `@nx/devkit`. `scopeKey` takes a structural `{ include?, exclude? }` shape so plugins read from `nxJson.plugins` (typed `ExpandedPluginConfiguration<unknown>`) flow in without unsafe casts.
+- **Spec coverage**: `migrateTargetDefaults` had zero tests — added 3 (executor-keyed rename, target-name-keyed swap, key-collision merge with documented legacy-wins Object.assign behavior). 17 specs total.
+- **Skill update**: `~/projects/dot-ai-config/dot_claude/commands/review-pr.md` got new sections for migration-specific PRs (workspace-shape coverage matrix, multi-helper gate consistency, doc co-location, user-set field preservation) and breaking-change PRs (doc drift on pre-removal language, automated migration presence). Same edit applied to `dot_gemini/commands/review-pr.md`.
 
 ### 2026-04-01 - Fix Build Cache Input/Output Misalignment (CNW/CNP)
 - **Branch**: `debug-cache`

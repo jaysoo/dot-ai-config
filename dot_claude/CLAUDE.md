@@ -82,6 +82,8 @@ Fixes DOC-125"
 
 **Inline code comment style**: Same caveman discipline. 1-2 lines max, "explain *why*, not *what*". If a comment recaps mechanics already visible in code, delete it. Bullet points OK for migration/transformation logic where each rule is independent. JSDoc on public APIs may go longer when documenting non-obvious contracts; everything else is terse.
 
+**ASCII punctuation in code/commits/committed markdown**: Use `-` and `->`. No em dashes (—), unicode arrows (→), or other unicode punctuation in code comments, commit bodies, PR descriptions, or any markdown that ships in the repo (incl. AI migration instruction docs like `tools/ai-migrations/MIGRATE_*.md`). They read as AI-generated. Doesn't apply to user-facing chat output.
+
 **PR description style**: Minimal. 1–3 sentences for Current Behavior, 1–3 for Expected Behavior, just `NXC-XXXX` (or equivalent) for Related Issue. No test plan, no file list, no Linear details — Linear is the source of truth and the PR just links by ID. Lean even shorter for drafts. If I want a longer description, I'll ask.
 
 ### Pre-Push Validation (Nx Repo)

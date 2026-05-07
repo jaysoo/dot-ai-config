@@ -4,45 +4,45 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-498: Edge function rewrite-framer-urls 500s on bot probes with leading //** (2026-04-30)
+1. **NXC-4159: Drop Node 20 support and bump @types/node** (2026-05-06)
+   - Summary: Removed Node 20 from e2e + nightly matrices and ESLint docs (EOL Apr 2026). Bumped `@types/node` catalog to `^24.11.0` (matches mise.toml) and generator `typesNodeVersion` to `^22.0.0` across 9 plugins. Renamed `nodeTLS` → `lowestNodeLTS` (typo fix). Added Node 26 to nightly matrix. Fixed `PerformanceMeasure` cast in `perf-logging.ts` exposed by `@types/node@24` tightening. Branch pushed; CI rerun in progress after 2 flaky e2e failures.
+   - Files: `.ai/2026-05-06/SUMMARY.md`, commits `89fae8e8e9` + `8a49d3611a`
+
+2. **DOC-498: Edge function rewrite-framer-urls 500s on bot probes with leading //** (2026-04-30)
    - Summary: WP vuln scanners send `GET //wp/wp-includes/wlwmanifest.xml`; `new URL(pathname, framerUrl)` parses `//wp/...` as protocol-relative, promoting `wp` to upstream host → DNS error → 500s. Fix collapses leading `/+` to `/` and short-circuits common probes (`wp-(includes|admin|content)`, `xmlrpc.php`, `wlwmanifest`, `.env`, `.git/`) with 404. Reproduced on prod with `curl --path-as-is`.
    - Files: `.ai/2026-04-30/tasks/doc-498-edge-function-bot-probe-fix.md`, PR #35527, commit `62a48ca6e7`
 
-2. **Intro page conversion improvements (P0/P1 draft)** (2026-04-30)
+3. **Intro page conversion improvements (P0/P1 draft)** (2026-04-30)
    - Summary: Critical analysis of nx.dev/docs/getting-started/intro vs Turbo/Vercel/Bun. Drafted P0/P1 edits in worktree: tabbed install block above the fold (npm/pnpm/yarn/bun, both `nx init` and `create-nx-workspace`), demoted YouTube embed below "What Nx does", reframed Nx Cloud table row to outcome statements, added soft `npx nx connect` seed. Vale clean on edited lines.
    - Files: `.ai/2026-04-30/tasks/intro-page-conversion-improvements.md`, branch `docs/intro-conversion-improvements`
 
-3. **Issue #35455: `@nx/s3-cache 5.0.3` panic — diagnosed + 5.0.4 published** (2026-04-29)
+4. **Issue #35455: `@nx/s3-cache 5.0.3` panic — diagnosed + 5.0.4 published** (2026-04-29)
    - Summary: Root-caused tokio panic to 36-byte UUID-format `NX_POWERPACK_ENCRYPTION_KEY` (vs AES-256's required 32 bytes) baked into 5.0.3 binary at `crypto.rs:37`. Pulled correct key from prod, republished as 5.0.4 (first attempt 5.0.4-beta.1 failed due to Nx Cloud cache hit on `build-rust`; second attempt with `--skip-nx-cache` worked). Surfaced 6 follow-up hygiene issues.
    - Files: `.ai/2026-04-29/SUMMARY.md`, `.ai/2026-04-29/tasks/issue-35455-s3-cache-panic.md`
 
-4. **NXC-4178: Remove deprecated stylesheet options — MERGED** (2026-04-28)
+5. **NXC-4178: Remove deprecated stylesheet options — MERGED** (2026-04-28)
    - Summary: PR #35103 merged. Removed less/styled-components/styled-jsx/@emotion/styled from non-Angular generators; added deprecated-less-loader wrapper. Rebased after #35049 (Tailwind) merged — 27 conflicts resolved, PR shrank 214→93 files.
    - Files: `.ai/2026-04-28/SUMMARY.md`, PR #35103, merge commit `d1e9a4349a`
 
-5. **NXC-3711: Remove Tailwind setup-tailwind generators — MERGED** (2026-04-28)
+6. **NXC-3711: Remove Tailwind setup-tailwind generators — MERGED** (2026-04-28)
    - Summary: PR #35049 merged. Addressed leosvelperez review (institutional comment, BYO-Tailwind detect, deprecation warning specs), consolidated graph tailwind configs to `ui-*/src` globs.
    - Files: `.ai/2026-04-28/SUMMARY.md`, PR #35049, merge commit `933eb69826`
 
-6. **NXC-4355: Nx tail overhead investigation** (2026-04-24)
+7. **NXC-4355: Nx tail overhead investigation** (2026-04-24)
    - Summary: Precise measurement (22ms) contradicts issue's premise (205ms). Baseline Node teardown cost with native binary is ~20ms.
    - Files: `.ai/2026-04-24/tasks/nxc-4355-investigation.md`
 
-7. **Ban `{% callout %}` in astro-docs, migrate to `{% aside %}` + new `{% deep_dive %}`** (2026-04-24)
+8. **Ban `{% callout %}` in astro-docs, migrate to `{% aside %}` + new `{% deep_dive %}`** (2026-04-24)
    - Summary: Removed `callout` tag from `markdoc.config.mjs`, added `{% deep_dive %}` (aliased to `Callout.astro` with `type: 'deepdive'`). Migrated 8 callouts (5 → `deep_dive`, 3 → `aside`). Added `STYLE_GUIDE.md` Markdoc tags section. Added `.vale/styles/Nx/MarkdocCallout.yml` error-level rule. Uncommitted on `fix/issue-33331`.
    - Files: `.ai/2026-04-24/SUMMARY.md`, `.ai/2026-04-24/tasks/callout-to-aside-migration.md`
 
-8. **NXC-4353: Powerpack release dry-run root-cause + Linear filing** (2026-04-23)
+9. **NXC-4353: Powerpack release dry-run root-cause + Linear filing** (2026-04-23)
    - Summary: Diagnosed powerpack dry-run failure as latent bug from pnpm migration (Dec 2025), surfaced by Mar 24 exit-code fix. Disproved initial `supportedArchitectures` theory via local repro on Mac. Real fix: always pass `--dry-run false` to version step in workflow.
    - Files: `.ai/2026-04-23/SUMMARY.md`, [NXC-4353](https://linear.app/nxdev/issue/NXC-4353)
 
-9. **DOC-462: KB article for migrating `nx` imports to `@nx/devkit`** (2026-04-23)
+10. **DOC-462: KB article for migrating `nx` imports to `@nx/devkit`** (2026-04-23)
    - Summary: New recipe under Guides → Tips & Tricks with AI-copy prompt, before/after code, common-symbols table, and `@nx/devkit/testing` + `ngcli-adapter` sections. Also fixed `llm_copy_prompt` Markdoc transform (inline code/links/ordered lists were being stripped) and added a caveman commit-body style rule to CLAUDE.md. Branch `DOC-462` pushed.
    - Files: `.ai/2026-04-23/SUMMARY.md`, commit `6ddad14371`
-
-10. **Night-shift community fixes batch** (2026-04-22)
-    - Summary: 2 new worktrees created from session-2026-04-22 night-shift run (#33488, #33971). 3 approved fixes already applied in prior runs (#32595, #33523, #34095). #32579 skipped — core maintainer PR already addresses it. #34281 applied in ocean repo from pre-existing branch.
-    - Session: `night-shift/sessions/session-2026-04-22.md`
 
 ## TODO
 
@@ -155,6 +155,7 @@
 
 ## Active Claude Sessions
 
+- /Users/jack/projects/nx-worktrees/NXC-4159 (branch: NXC-4159) — Drop Node 20 + bump @types/node, awaiting CI rerun (2026-05-06)
 - /Users/jack/projects/nx-worktrees/intro-conversion (branch: docs/intro-conversion-improvements) — Intro page conversion improvements: install block + Cloud reframe (2026-04-30)
 - /Users/jack/projects/bench-monorepo-orchestrators (branch: main) — Nx tail overhead investigation (2026-04-24)
 

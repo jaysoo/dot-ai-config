@@ -1,5 +1,11 @@
 ## Completed
 
+### May 2026
+
+- [x] NXC-4159: Drop Node 20 support and bump @types/node (2026-05-06) ✓ 2026-05-06
+  - Summary: Removed Node 20 from e2e + nightly matrices (`e2e-matrix.yml`, `nightly/process-matrix.ts`) and ESLint docs (Node 20 EOL Apr 2026). Bumped `@types/node` repo catalog `^20.19.10` → `^24.11.0` (matches `mise.toml` runtime). Generator `typesNodeVersion` `'20.19.9'` → `'^22.0.0'` across 9 plugin `versions.ts` files (cypress, react-native, js, web, angular, node, react, jest, angular BC) + 1 vue lib snapshot. Renamed `nodeTLS` → `lowestNodeLTS` in `process-matrix.ts` (typo fix per Jack — was always meant to be "lowest LTS"); kept single-LTS semantics for non-core plugin projects. Added Node 26.0.0 to nightly matrix on both Linux + macOS for early validation (152/256 jobs). Fixed type narrowing in `packages/nx/src/utils/perf-logging.ts` exposed by `@types/node@24` tightening — `detail` moved from base `PerformanceEntry` to `PerformanceMark`/`PerformanceMeasure` subclasses; cast `getEntries() as PerformanceMeasure[]` since observer is configured with `entryTypes: ['measure']`. Branch pushed (`NXC-4159`), commits `89fae8e8e9` + `8a49d3611a`. PR opened via push URL (gh CLI blocked from sandbox). Initial CI run had 2 flaky e2e failures (maven `ECOMPROMISED` from verdaccio race; cache-no-daemon Jest 35s timeout on slow runner) — Jack reran the pipeline.
+  - Files: `dot_ai/2026-05-06/SUMMARY.md`, commits `89fae8e8e9` + `8a49d3611a`
+
 ### April 2026
 
 - [x] DOC-498: Edge function rewrite-framer-urls 500s on bot probes with leading // (2026-04-30) ✓ 2026-04-30
