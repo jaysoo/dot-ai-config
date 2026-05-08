@@ -289,6 +289,9 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - **Realistic examples > hypothetical edge cases** - Before writing code to handle an edge case, find a concrete test fixture that exercises it in a real workspace. Don't add defensive branching, retries, fallback paths, or generalized loops to handle scenarios that never occur in practice. If unsure whether a case is realistic, ASK before coding for it.
   - **Why:** NXC-4157 — wrote tsquery migration with reverse-walk loop + leading-comma fallback + whitespace nibble. Pushed back twice on hypothetical-only complexity. Final form ended up at ~5 lines after stripping unjustified branches.
   - **How to apply:** When tempted to write a loop, ask "is there a real-world file with multiple matches?" When tempted to add a fallback path, ask "what test would exercise it?" If the answer is "I'm being defensive," delete it and ask Jack.
+- **Verify third-party support claims before encoding them in committed user-facing docs** - Any factual claim about a third-party library's compat/support that ships in a committed file (AI migration markdown, generator output, README, etc.) must be verified against upstream before commit.
+  - **Why:** NXC-4448 — wrote "Cypress CT does not support Vite 8 yet" in committed AI migration markdown. Cypress 15.14.0 had shipped Vite 8 support 3 weeks earlier. Reviewer caught it; fact-check flipped the doc and surfaced a stale guard in nx (filed as separate ticket).
+  - **How to apply:** For committed docs (PR descriptions are exempt — those are ephemeral), if you write "X doesn't support Y" or "X requires Z", grep upstream changelog or run `npm view <pkg> versions` first. The doc ships into user repos and ages — don't bake assumptions.
 
 ### Component Order
 1. Tailwind/CSS (try `align-items`, `justify-content` first)
@@ -432,6 +435,41 @@ git tag | grep "23.0.0-beta" | sort -V | tail -1   # latest, e.g. 23.0.0-beta.8
 ```
 - **Why:** NXC-4156 — initial PR shipped with `23.0.0-beta.0`; Jack flagged on review and asked for `latest + 1`. A migration tagged at an already-released version won't run for users already on that version or later.
 - **How to apply:** Always check the latest tag before writing a new migration entry. The `next` patch/beta hasn't been cut yet, so `latest + 1` is correct.
+- **During multi-day iteration loops, re-bump as new betas ship.** If you target `beta.7` and `beta.8` is published while you're iterating, your migration silently doesn't run for users on `beta.8`. Re-check `git tag` and bump on each push if a new beta has been cut. NXC-4154/NXC-4448 — bumped through beta.7 → beta.9 → beta.10 across one day.
+
+### packageJsonUpdates: One Gate Per Independently-Versioned Package
+When a `packageJsonUpdates` entry bumps multiple packages, the `requires` gate applies to ALL of them together. If a user has only one of those packages out of date, none get bumped.
+
+```jsonc
+// ❌ Combined gate — skips dev-server bump for users who already manually upgraded cypress
+"23.0.0": {
+  "requires": { "cypress": ">=15.0.0 <15.14.0" },
+  "packages": {
+    "cypress": { "version": "^15.14.2" },
+    "@cypress/vite-dev-server": { "version": "^7.3.1" }
+  }
+}
+
+// ✅ Split entries — each runs independently when its own dep is stale
+"23.0.0": {
+  "requires": { "cypress": ">=15.0.0 <15.14.0" },
+  "packages": { "cypress": { "version": "^15.14.2" } }
+},
+"23.0.0-vite-dev-server": {
+  "requires": { "@cypress/vite-dev-server": ">=7.0.0 <7.3.1" },
+  "packages": { "@cypress/vite-dev-server": { "version": "^7.3.1" } }
+}
+```
+- **Why:** NXC-4448 — reviewer caught that gating both bumps under one cypress-version `requires` would skip the dev-server bump for users who'd manually upgraded cypress.
+- **How to apply:** If two packages can drift to independent versions in the wild, give each its own entry with its own `requires`.
+
+### tsquery Codemod Patterns
+When writing migration codemods that match property keys or use `:has()`:
+
+- **Property keys come in two AST forms.** `foo: 1` is `Identifier`, `'foo': 1` is `StringLiteral`. A selector like `PropertyAssignment > Identifier[name=foo]` silently misses quoted-key forms (common after JSON-style configs or some formatters). Use `:matches(...)` or two `:has(...)` selectors and filter by the matched node's `.name.text`.
+- **`:has()` matches any descendant, not just direct children.** `PropertyAssignment:has(Identifier[name=foo])` will match an OUTER PropertyAssignment whose value transitively contains `foo`. Always filter by the matched node's own `name.text === target` to constrain.
+- **For renames, prefer string-slice over reprint.** Reprinting via `ts.createPrinter` reformats the entire surrounding object literal. For pure identifier rewrites, slice `[node.getStart(), node.getEnd()]` and substitute — preserves user formatting; prettier handles cleanup.
+- **Why:** NXC-4448 — first cut of `remove-experimental-prompt-command` only matched bare-key form, missed `'experimentalPromptCommand': true`. Reviewer caught it.
 
 ### Codemod / Bulk Comment Removal
 When stripping comments that are the **only** content of an object literal, also collapse the now-empty multi-line `{\n  }` to no-args form. Prettier collapses these on save, so pre/post-conversion equality assertions in specs (`expect(updated).toBe(initial)`) will break otherwise.
