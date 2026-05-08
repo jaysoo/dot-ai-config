@@ -416,6 +416,101 @@ Most packages have a `build` target that runs post-compilation steps (chmod, cop
 
 ## Personal Work History
 
+### 2026-05-08 - NXC-4154: Vite 7 -> 8 migrations (registered for v23)
+- **Branch**: `NXC-4154`
+- **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4154`
+- **PR**: https://github.com/nrwl/nx/pull/35614 (draft, blocked by NXC-4448)
+- **Commit**: `07d5add639` (subsequently amended through several review rounds; latest before next push)
+- **Migrations registered** (`packages/vite/migrations.json`):
+  - `rename-rollup-options-to-rolldown-options` @ `23.0.0-beta.10` — required when `vite >= 8.0.0`
+  - `create-ai-instructions-for-vite-8` @ `23.0.0-beta.10` — required when `vite >= 8.0.0`
+  - `23.0.0` packageJsonUpdates entry @ `23.0.0-beta.10` — bumps `vite` to `^8.0.0` and `@vitejs/plugin-react` to `^6.0.0`, `incompatibleWith: @remix-run/dev`
+- **Codemod scope** (`packages/vite/src/migrations/update-23-0-0/rename-rollup-options-to-rolldown-options.ts`):
+  - tsquery selector `PropertyAssignment > Identifier[name=rollupOptions]` walks `vite.*config*.{js,ts,mjs,mts,cjs,cts}`, slices the identifier in place (preserves formatting). Catches top-level `build.rollupOptions` AND nested forms inside `environments`.
+  - Required gate (`requires: { vite: ">=8.0.0" }`) is critical — without it, `@remix-run/dev` users skipped via `incompatibleWith` would have their Vite 7 config silently rewritten to `rolldownOptions`.
+- **AI instructions** (`packages/vite/src/migrations/update-23-0-0/files/ai-instructions-for-vite-8.md`):
+  - Lands at `tools/ai-migrations/MIGRATE_VITE_8.md` in user repos.
+  - Covers: rollup->rolldown rename, plugin-react v6 / Oxc transition (no more Babel option), Angular+Vitest needs explicit `@oxc-project/runtime` install, `.d.mts` moduleResolution issue, Cypress CT requires cypress >= 15.14 (asserts the post-NXC-4448 state).
+- **Review iterations today**:
+  - Added missing `requires: { vite: ">=8.0.0" }` gate on rename codemod
+  - Replaced 4 em dashes in committed AI markdown (lands in user repos as committed file -> in-scope for the no-em-dash rule)
+  - Factually corrected Cypress claim — verified upstream (15.14.0 added Vite 8 support, 2026-04-16) -> rewrote AI doc to assume cypress is at latest. This surfaced the stale Vite 8 throw guard in `packages/cypress/src/generators/component-configuration/component-configuration.ts:48-60` -> filed NXC-4448.
+- **Why beta.10**: bumped beta.7 -> beta.9 -> beta.10 across the day as Nx releases shipped. Migration `version` field must be at or below the latest published beta to actually run for upgrading users.
+
+### 2026-05-08 - NXC-4448: Cypress 15.14 bump + remove stale Vite 8 guard (NEW, blocks NXC-4154)
+- **Branch**: `NXC-4448`
+- **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4448`
+- **PR**: https://github.com/nrwl/nx/pull/35613 (draft, in review iteration)
+- **Linear**: https://linear.app/nxdev/issue/NXC-4448 (project "Major Version Deprecations", milestone v23, blocks NXC-4154)
+- **Latest commit**: `db37fa7ed9` (after master-rename conflict resolution)
+- **Why filed**: nx pinned `cypress ^15.8.0` and threw on `vite >= 8` in component-configuration. Cypress 15.14.0 (cypress-io/cypress#33078, 2026-04-16) shipped Vite 8 support, making the pin and guard stale. NXC-4154's AI doc assumes the post-bump state.
+- **Changes**:
+  - `packages/cypress/src/utils/versions.ts`: `cypressVersion ^15.8.0 -> ^15.14.2`, `cypressViteDevServerVersion ^7.0.1 -> ^7.3.1`.
+  - `packages/cypress/src/generators/component-configuration/component-configuration.ts`: removed Vite 8 throw guard at `:48-60` plus unused `coerce`/`major` (semver) and `getDependencyVersionFromPackageJson` imports.
+  - `packages/cypress/migrations.json`: split `packageJsonUpdates` into TWO `23.0.0` entries — one keyed off `cypress >=15.0.0 <15.14.0` (cypress bump), one keyed off `@cypress/vite-dev-server >=7.0.0 <7.3.1` (dev-server bump runs independently). Reviewer flagged that combining both bumps under a single cypress-version `requires` would skip the dev-server bump for users who'd manually upgraded cypress but kept the stale dev server.
+  - New codemod `packages/cypress/src/migrations/update-23-0-0/remove-experimental-prompt-command.ts` (5 inline-snapshot tests). Strips the `experimentalPromptCommand` flag Cypress 15.13.0 removed (cypress-io/cypress#33497 — soft warning, but worth cleaning). `requires: { cypress: ">=15.13.0" }`. tsquery selector handles BOTH bare and quoted-key forms via `PropertyAssignment:has(Identifier),PropertyAssignment:has(StringLiteral)` plus a `propAssign.name.text` filter (to constrain `:has()` from matching outer ancestor PropertyAssignments).
+- **E2e cleanup riding along**:
+  - 5 angular component-test files (`e2e/angular/src/cypress-component-tests-{app,lib,implicit-dep,buildable,zone-projects}.test.ts`) had identical `beforeAll` blocks downgrading vite to `^7.0.0` + reinstall, all gated under unrelated `it.skip` for lodash@4.18.0 TODO. Removed dead downgrade blocks + unused imports; left lodash skips alone.
+  - 2 skipped tests in `e2e/cypress/src/cypress.test.ts` — same deal, removed.
+  - 1 active test in `e2e/cypress/src/cypress-legacy.test.ts` (`react CT + e2e`) was running on Vite 7 with a yarn-classic `resolutions` workaround. Now runs on Vite 8 — the real recovery.
+  - Left `e2e/vite/src/vite.test.ts:332` alone — that's a deliberate Vite 7 backwards-compat suite, not a workaround.
+- **Master rebase round 2 conflict** (`component-configuration.ts`): master renamed `warnCypressExecutorScaffolding -> warnCypressExecutorGenerating` and re-imported `coerce`/`major`. Resolution: keep master's renamed import, drop the semver one (my branch removed the guard that used them).
+
+### 2026-05-08 - NXC-4299: Enable Node.js native TypeScript type stripping by default
+- **Branch**: `NXC-4299`
+- **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4299`
+- **PR**: https://github.com/nrwl/nx/pull/35608 (open, in review iteration)
+- **Status**: 6 fix-up commits today narrowing the fallback ladder for native strip
+- **Fallback ladder** (added across the day): native strip -> `tsconfig-paths` rewrite (on `MODULE_NOT_FOUND`) -> swc/ts-node escalation -> ESM TypeScript loader register on dynamic-import path. Goal: users hit a working code path without flipping `NX_NATIVE_TS_STRIP=false` manually.
+- **Commits today**:
+  - `bda1a9a7bd` — escalate `MODULE_NOT_FOUND` fallback to swc/ts-node when tsconfig-paths can't recover
+  - `1aa7168949` — route `.mts` through `loadTsFile`, surface `NX_NATIVE_TS_STRIP=false` opt-out hint on unrecoverable strip failures
+  - `bcc23cace7` — dashed anchor in env-var docs link, simpler TLA e2e assertion
+  - `094077ba99` — force-register an ESM TypeScript loader on the dynamic-import fallback path
+  - `99ee9e8e2d` — gate `loadTsFile` on TS extensions, handle `ERR_REQUIRE_ASYNC_MODULE`
+  - `d665fa46fd` — `nx format:write` cleanup
+
+### 2026-05-08 - NXC-4374 + NXC-4451: Node 26 partial rollout
+- **PRs (both merged 2026-05-08)**:
+  - **#35623** (NXC-4374, merge `767d30eb28`) — `docs(node): add Node 26 to compat matrix`
+  - **#35626** (NXC-4451, merge `78daae3be1`) — `fix(repo): drop node 26 from nightly matrix until playwright/yauzl fix`
+- **Net effect**: docs claim Node 26 support; CI nightly matrix excludes it pending an upstream playwright/yauzl fix. Re-add Node 26 to the nightly matrix once upstream lands.
+
+### 2026-05-08 - NXC-4156: Remove SVGR support from @nx/rspack (v23 breaking) — MERGED
+- **Branch**: `NXC-4156`
+- **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4156`
+- **PR**: https://github.com/nrwl/nx/pull/35611
+- **Status**: MERGED 2026-05-08 19:36 UTC as `9f18c6ae2f`
+- **Commits** (post-rebase): `524b4fbe28` feat, `773fc3397e` chore
+- **Purpose**: v23 mirror of the v22 webpack SVGR removal (PR #32843, fix #35484). Resolves the four `TODO(v23): Remove SVGR support` markers in rspack source.
+- **Reference work**: `packages/react/src/migrations/update-22-0-0/add-svgr-to-webpack-config.ts` + `b59374a005 fix(react): withSvgr migration preserves other properties` (#35484).
+- **Removed surface**:
+  - `WithReactOptions.svgr` and `SvgrOptions` interface (`packages/rspack/src/utils/with-react.ts`, `packages/rspack/src/plugins/utils/models.ts`)
+  - `NxReactRspackPlugin({ svgr })` option — now `Record<string, any>`, silently ignores
+  - svgr branch + `removeSvgLoaderIfPresent` helper from `apply-react-config.ts`
+  - Standalone `\.svg$` asset rule consolidated into images regex `/\.(avif|bmp|gif|ico|jpe?g|png|svg|webp)$/` in `apply-web-config.ts` (mirrors webpack v22 PR)
+- **Migration** (`update-23-0-0-add-svgr-to-rspack-config`, registered at `23.0.0-beta.9`):
+  - `packages/rspack/src/migrations/update-23-0-0/add-svgr-to-rspack-config.ts` — clones `add-svgr-to-webpack-config.ts` structure, retargets to `@nx/rspack:rspack` executor + `rspackConfig` + `NxReactRspackPlugin`. Includes the b59374a005 "preserve other properties" fix inline.
+  - `withSvgr` helper body uses rspack's two-rule `?url` pattern (separate rules with `resourceQuery: /url/` and `resourceQuery: { not: [/url/] }`) instead of webpack's `oneOf` shape.
+  - Tree walks: detects either `withReact({ svgr })` (composePlugins style) or `new NxReactRspackPlugin({ svgr })` (plugin style); for the former inserts `withSvgr()` after `withReact()` in the chain; for the latter wraps `module.exports`/`export default` with `withSvgr(...)(...)`.
+  - 16 tests / 13 inline snapshots (`add-svgr-to-rspack-config.spec.ts`).
+- **Generator template scrub** (commit 2):
+  - `packages/rspack/src/generators/convert-config-to-rspack-plugin/convert-config-to-rspack-plugin.ts` — dropped 3-line `// svgr: false` hint from the no-`withReact`-found branch (post-removal the comment is misleading; the `withReactConfig` branch preserves user input verbatim via `.getText()`).
+  - 20 stale-comment blocks scrubbed across 4 fixture/snap files (`convert-config-to-rspack-plugin.spec.ts`, `convert-webpack.spec.ts`, `convert-to-inferred.spec.ts`, `convert-to-inferred.spec.ts.snap`).
+  - Collapsed 9 empty `withReact({\n})` / `new NxReactRspackPlugin({\n})` literals to no-args form — empty multi-line literals get prettier-collapsed during conversion, breaking pre/post-conversion equality assertions.
+- **CI failures triaged** (initial run):
+  - `e2e/nx/src/import.test.ts` + `e2e/nx/src/import-ai-agent.test.ts` — `git filter-branch fatal: Unable to read current working directory` (infra: cwd disappears mid-run, unrelated to rspack).
+  - `e2e/react/src/module-federation/misc-rspack-convert-to-rspack.test.ts` — broken on master, pending unmerged fix `128abe52b1` (Jason Jean) plus 5 related commits. Diff vs origin/master is empty → master-broken, not a regression.
+- **Files**:
+  - `packages/rspack/src/utils/with-react.ts`
+  - `packages/rspack/src/plugins/nx-react-rspack-plugin/nx-react-rspack-plugin.ts`
+  - `packages/rspack/src/plugins/utils/{apply-react-config,apply-web-config,models}.ts`
+  - `packages/rspack/src/migrations/update-23-0-0/add-svgr-to-rspack-config.{ts,spec.ts}`
+  - `packages/rspack/migrations.json`
+  - `packages/rspack/src/generators/convert-config-to-rspack-plugin/convert-config-to-rspack-plugin.{ts,spec.ts}`
+  - `packages/rspack/src/generators/convert-webpack/convert-webpack.spec.ts`
+  - `packages/rspack/src/generators/convert-to-inferred/convert-to-inferred.{spec.ts,spec.ts.snap}`
+
 ### 2026-05-06 - NXC-4159: Drop Node 20 support and bump @types/node
 - **Branch**: `NXC-4159`
 - **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4159`

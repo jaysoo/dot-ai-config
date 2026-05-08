@@ -304,6 +304,8 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - Ask for dev server port (don't assume 4200, 3000, etc.)
 - Regex failing? Validate input structure first, check for malformed source
 - Astro cache issues: Clear `.astro` folder
+- Class-string codemods must scope to JSX `className=`/`class=` attrs and known utility-fn calls (`clsx`/`cn`/`twMerge`/`cva`/`classnames`). Bare `\b` word boundaries also match TS prop names (`rounded?:` becomes `rounded-sm?:`) and CSS function calls inside template literals (`blur(${x})` becomes `blur-sm(${x})`). Use lookbehind on `[\s:"'\`!]` boundaries; never run rename across raw string literals indiscriminately. After codemodding source under a pnpm `file:` dep (e.g., `nx-dev/ui-*`, `graph/ui-*`), run `pnpm install --force` so `node_modules/.pnpm/.../node_modules/<pkg>/` refreshes - otherwise the consumer build sees the stale pre-codemod copy.
+- Tailwind v4 `@source` does NOT support extglob (`!(*.stories|*.spec)`); patterns silently match zero files and utilities never make it into the bundle. Use plain dir paths + `@source not '**/*.{spec,test,stories}.*'`. Same trap if porting any v3 `content` array verbatim.
 
 ## 📚 Documentation Sites (Astro/Starlight)
 
@@ -420,6 +422,21 @@ Always verify with `npm view nx@next version` before using tags.
   - ✅ Duplicate the logic into the new migration file
 - **Why:** Old migrations get removed at the next major bump. Cross-major imports break.
 - **How to apply:** When writing a v(N+1) safety-net or follow-up migration, copy the relevant functions inline. DRY across versions does not apply here.
+
+### Migration Version Numbers (CRITICAL)
+When adding a new entry to `migrations.json`, set `version` to one above the **latest published beta tag**, never `X.0.0-beta.0`:
+
+```bash
+git tag | grep "23.0.0-beta" | sort -V | tail -1   # latest, e.g. 23.0.0-beta.8
+# new migration version = 23.0.0-beta.9
+```
+- **Why:** NXC-4156 — initial PR shipped with `23.0.0-beta.0`; Jack flagged on review and asked for `latest + 1`. A migration tagged at an already-released version won't run for users already on that version or later.
+- **How to apply:** Always check the latest tag before writing a new migration entry. The `next` patch/beta hasn't been cut yet, so `latest + 1` is correct.
+
+### Codemod / Bulk Comment Removal
+When stripping comments that are the **only** content of an object literal, also collapse the now-empty multi-line `{\n  }` to no-args form. Prettier collapses these on save, so pre/post-conversion equality assertions in specs (`expect(updated).toBe(initial)`) will break otherwise.
+- **Why:** NXC-4156 — stripped 20 SVGR-hint blocks, left `withReact({\n  })` empties; `convert-to-inferred` spec started failing because prettier reformatted both sides of an unchanged-config equality check to the same single-line form post-strip.
+- **How to apply:** Pair the comment-stripping pass with a regex pass: `withReact\(\{\s*\n[ \t]*\}\)` → `withReact()` (and equivalent for `new NxReactRspackPlugin({})`). Run prettier + affected specs with `-u` to confirm pre/post match.
 
 ### Nx Docker Plugin (@nx/docker)
 - Target: `docker:build` (not `docker-build`)

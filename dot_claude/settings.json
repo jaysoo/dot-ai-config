@@ -55,6 +55,7 @@
       "Bash(file:*)",
       "Bash(mv:*)",
       "Bash(npx prettier:*)",
+      "Bash(npx http-server:*)",
       "Bash(pwd:*)",
       "Bash(which:*)",
       "Bash(rm *.log:*)",

@@ -4,45 +4,45 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **NXC-4159: Drop Node 20 support and bump @types/node** (2026-05-06)
-   - Summary: Removed Node 20 from e2e + nightly matrices and ESLint docs (EOL Apr 2026). Bumped `@types/node` catalog to `^24.11.0` (matches mise.toml) and generator `typesNodeVersion` to `^22.0.0` across 9 plugins. Renamed `nodeTLS` → `lowestNodeLTS` (typo fix). Added Node 26 to nightly matrix. Fixed `PerformanceMeasure` cast in `perf-logging.ts` exposed by `@types/node@24` tightening. Branch pushed; CI rerun in progress after 2 flaky e2e failures.
+1. **NXC-4448: Cypress 15.14 bump + remove stale Vite 8 guard — NEW PR #35613 draft** (2026-05-08)
+   - Summary: Cypress 15.14.0 added Vite 8 support (cypress-io/cypress#33078, 2026-04-16); nx had stale `^15.8.0` pin + a `vite >= 8` throw guard in `component-configuration`. Bumped versions, removed guard, added split `packageJsonUpdates` entries (cypress + dev-server independently gated), wrote `remove-experimental-prompt-command` codemod for the flag Cypress 15.13.0 removed, dropped 8 Vite-7-downgrade workarounds in e2e tests (1 active test now exercises Vite 8). Filed as blocking issue for NXC-4154. Multiple review iterations: requires-gate for codemod, quoted-key fix on selector, split packageJsonUpdates entry. Two master rebases (one with rename conflict resolved).
+   - Files: PR #35613, latest commit `db37fa7ed9`, `dot_ai/2026-05-08/SUMMARY.md`
+
+2. **NXC-4154: Vite 7 -> 8 migrations — review iteration PR #35614 draft** (2026-05-08)
+   - Summary: Three migrations (rollup->rolldown rename codemod with `vite >= 8` requires gate, AI instructions doc, `vite -> ^8 / @vitejs/plugin-react -> ^6` packageJsonUpdates). Iterations today: added missing `requires` gate (would have rewritten `@remix-run/dev` user configs silently), removed em dashes from committed AI markdown, factually corrected Cypress claim (15.14+ supports Vite 8) which surfaced the stale guard and triggered NXC-4448. Migration version bumped beta.7 -> beta.9 -> beta.10. Two master rebases.
+   - Files: PR #35614, latest commit `07d5add639`, `dot_ai/2026-05-08/SUMMARY.md`
+
+3. **NXC-4299: Native TS type stripping — review iteration** (2026-05-08)
+   - Summary: Six fix-up commits on PR #35608 narrowing the fallback ladder (native strip -> tsconfig-paths -> swc/ts-node -> ESM loader register). Routes `.mts` through `loadTsFile`, surfaces `NX_NATIVE_TS_STRIP=false` opt-out hint on unrecoverable failures, force-registers ESM TS loader on dynamic-import path, gates `loadTsFile` on TS extensions to handle `ERR_REQUIRE_ASYNC_MODULE`.
+   - Files: PR #35608, commits `bda1a9a7bd` -> `d665fa46fd`
+
+4. **NXC-4156: Remove SVGR from @nx/rspack (v23) — MERGED #35611** (2026-05-08)
+   - Summary: Mirror of v22 webpack SVGR removal for rspack. Stripped `svgr` from `withReact` / `NxReactRspackPlugin` / `WithReactOptions`, consolidated SVG into images asset rule, added `update-23-0-0-add-svgr-to-rspack-config` migration that inlines a `withSvgr` helper. Merged at 19:36 UTC after analyzing 3 unrelated e2e failures (2 git filter-branch infra, 1 master-broken MF test).
+   - Files: `dot_ai/2026-05-08/SUMMARY.md`, `dot_ai/2026-05-08/tasks/nxc-4156-rspack-svgr-removal.md`, PR #35611, merge commit `9f18c6ae2f`
+
+5. **NXC-4430: Tailwind v3 -> v4 — MERGED #35594** (2026-05-08)
+   - Summary: PR #35594 polished (rewrote description with v4 utility renames + upgrade-guide links) and screenshot triage/colocation done; merged at 19:50 UTC. tailwindcss `3.4.4 -> 4.1.11` via `@tailwindcss/postcss`, 6 JS configs replaced with CSS-based `@import 'tailwindcss'`, codemod renamed v3 utilities across 28 source files.
+   - Files: `.ai/2026-05-05/tasks/nxc-4430-tailwind-v3-to-v4.md`, `.ai/2026-05-06/SUMMARY.md`, PR #35594, merge commit `2445010810`
+
+6. **NXC-4374 + NXC-4451: Node 26 partial rollout — both MERGED** (2026-05-08)
+   - Summary: #35623 added Node 26 to docs compat matrix; #35626 then dropped Node 26 from nightly CI matrix because of unresolved playwright/yauzl incompat. Net: docs say supported, CI defers actual coverage until upstream fix.
+   - Files: PR #35623 (merge `767d30eb28`), PR #35626 (merge `78daae3be1`)
+
+7. **NXC-4159: Drop Node 20 support and bump @types/node** (2026-05-06)
+   - Summary: Removed Node 20 from e2e + nightly matrices and ESLint docs (EOL Apr 2026). Bumped `@types/node` catalog to `^24.11.0` (matches mise.toml) and generator `typesNodeVersion` to `^22.0.0` across 9 plugins. Renamed `nodeTLS` -> `lowestNodeLTS` (typo fix). Added Node 26 to nightly matrix. Fixed `PerformanceMeasure` cast in `perf-logging.ts` exposed by `@types/node@24` tightening. Branch pushed; CI rerun in progress after 2 flaky e2e failures.
    - Files: `.ai/2026-05-06/SUMMARY.md`, commits `89fae8e8e9` + `8a49d3611a`
 
-2. **DOC-498: Edge function rewrite-framer-urls 500s on bot probes with leading //** (2026-04-30)
-   - Summary: WP vuln scanners send `GET //wp/wp-includes/wlwmanifest.xml`; `new URL(pathname, framerUrl)` parses `//wp/...` as protocol-relative, promoting `wp` to upstream host → DNS error → 500s. Fix collapses leading `/+` to `/` and short-circuits common probes (`wp-(includes|admin|content)`, `xmlrpc.php`, `wlwmanifest`, `.env`, `.git/`) with 404. Reproduced on prod with `curl --path-as-is`.
+8. **DOC-498: Edge function rewrite-framer-urls 500s on bot probes with leading //** (2026-04-30)
+   - Summary: WP vuln scanners send `GET //wp/wp-includes/wlwmanifest.xml`; `new URL(pathname, framerUrl)` parses `//wp/...` as protocol-relative, promoting `wp` to upstream host -> DNS error -> 500s. Fix collapses leading `/+` to `/` and short-circuits common probes (`wp-(includes|admin|content)`, `xmlrpc.php`, `wlwmanifest`, `.env`, `.git/`) with 404. Reproduced on prod with `curl --path-as-is`.
    - Files: `.ai/2026-04-30/tasks/doc-498-edge-function-bot-probe-fix.md`, PR #35527, commit `62a48ca6e7`
 
-3. **Intro page conversion improvements (P0/P1 draft)** (2026-04-30)
+9. **Intro page conversion improvements (P0/P1 draft)** (2026-04-30)
    - Summary: Critical analysis of nx.dev/docs/getting-started/intro vs Turbo/Vercel/Bun. Drafted P0/P1 edits in worktree: tabbed install block above the fold (npm/pnpm/yarn/bun, both `nx init` and `create-nx-workspace`), demoted YouTube embed below "What Nx does", reframed Nx Cloud table row to outcome statements, added soft `npx nx connect` seed. Vale clean on edited lines.
    - Files: `.ai/2026-04-30/tasks/intro-page-conversion-improvements.md`, branch `docs/intro-conversion-improvements`
 
-4. **Issue #35455: `@nx/s3-cache 5.0.3` panic — diagnosed + 5.0.4 published** (2026-04-29)
+10. **Issue #35455: `@nx/s3-cache 5.0.3` panic — diagnosed + 5.0.4 published** (2026-04-29)
    - Summary: Root-caused tokio panic to 36-byte UUID-format `NX_POWERPACK_ENCRYPTION_KEY` (vs AES-256's required 32 bytes) baked into 5.0.3 binary at `crypto.rs:37`. Pulled correct key from prod, republished as 5.0.4 (first attempt 5.0.4-beta.1 failed due to Nx Cloud cache hit on `build-rust`; second attempt with `--skip-nx-cache` worked). Surfaced 6 follow-up hygiene issues.
    - Files: `.ai/2026-04-29/SUMMARY.md`, `.ai/2026-04-29/tasks/issue-35455-s3-cache-panic.md`
-
-5. **NXC-4178: Remove deprecated stylesheet options — MERGED** (2026-04-28)
-   - Summary: PR #35103 merged. Removed less/styled-components/styled-jsx/@emotion/styled from non-Angular generators; added deprecated-less-loader wrapper. Rebased after #35049 (Tailwind) merged — 27 conflicts resolved, PR shrank 214→93 files.
-   - Files: `.ai/2026-04-28/SUMMARY.md`, PR #35103, merge commit `d1e9a4349a`
-
-6. **NXC-3711: Remove Tailwind setup-tailwind generators — MERGED** (2026-04-28)
-   - Summary: PR #35049 merged. Addressed leosvelperez review (institutional comment, BYO-Tailwind detect, deprecation warning specs), consolidated graph tailwind configs to `ui-*/src` globs.
-   - Files: `.ai/2026-04-28/SUMMARY.md`, PR #35049, merge commit `933eb69826`
-
-7. **NXC-4355: Nx tail overhead investigation** (2026-04-24)
-   - Summary: Precise measurement (22ms) contradicts issue's premise (205ms). Baseline Node teardown cost with native binary is ~20ms.
-   - Files: `.ai/2026-04-24/tasks/nxc-4355-investigation.md`
-
-8. **Ban `{% callout %}` in astro-docs, migrate to `{% aside %}` + new `{% deep_dive %}`** (2026-04-24)
-   - Summary: Removed `callout` tag from `markdoc.config.mjs`, added `{% deep_dive %}` (aliased to `Callout.astro` with `type: 'deepdive'`). Migrated 8 callouts (5 → `deep_dive`, 3 → `aside`). Added `STYLE_GUIDE.md` Markdoc tags section. Added `.vale/styles/Nx/MarkdocCallout.yml` error-level rule. Uncommitted on `fix/issue-33331`.
-   - Files: `.ai/2026-04-24/SUMMARY.md`, `.ai/2026-04-24/tasks/callout-to-aside-migration.md`
-
-9. **NXC-4353: Powerpack release dry-run root-cause + Linear filing** (2026-04-23)
-   - Summary: Diagnosed powerpack dry-run failure as latent bug from pnpm migration (Dec 2025), surfaced by Mar 24 exit-code fix. Disproved initial `supportedArchitectures` theory via local repro on Mac. Real fix: always pass `--dry-run false` to version step in workflow.
-   - Files: `.ai/2026-04-23/SUMMARY.md`, [NXC-4353](https://linear.app/nxdev/issue/NXC-4353)
-
-10. **DOC-462: KB article for migrating `nx` imports to `@nx/devkit`** (2026-04-23)
-   - Summary: New recipe under Guides → Tips & Tricks with AI-copy prompt, before/after code, common-symbols table, and `@nx/devkit/testing` + `ngcli-adapter` sections. Also fixed `llm_copy_prompt` Markdoc transform (inline code/links/ordered lists were being stripped) and added a caveman commit-body style rule to CLAUDE.md. Branch `DOC-462` pushed.
-   - Files: `.ai/2026-04-23/SUMMARY.md`, commit `6ddad14371`
 
 ## TODO
 
@@ -156,12 +156,13 @@
 ## Active Claude Sessions
 
 - /Users/jack/projects/nx-worktrees/NXC-4159 (branch: NXC-4159) — Drop Node 20 + bump @types/node, awaiting CI rerun (2026-05-06)
-- /Users/jack/projects/nx-worktrees/intro-conversion (branch: docs/intro-conversion-improvements) — Intro page conversion improvements: install block + Cloud reframe (2026-04-30)
-- /Users/jack/projects/bench-monorepo-orchestrators (branch: main) — Nx tail overhead investigation (2026-04-24)
+- /Users/jack/projects/nx-worktrees/NXC-4299 (branch: NXC-4299) — Native TS type stripping, PR #35608: ESM-safe playwright/cypress configs (commit `8fe647c818`) committed locally, push pending 1Password SSH unlock (2026-05-08)
+- /Users/jack/projects/nx-worktrees/NXC-4154 (branch: NXC-4154) — Vite 7 -> 8 migrations, PR #35614 draft, blocked by NXC-4448, beta.10 (2026-05-08)
+- /Users/jack/projects/nx-worktrees/NXC-4448 (branch: NXC-4448) — Cypress 15.14 bump unblocking NXC-4154, PR #35613 draft, in review iteration, beta.10 (2026-05-08)
+- /Users/jack/projects/nx-worktrees/NXC-4374 (branch: NXC-4374) — Node 26 compat: docs matrix updated, considering mise.toml default bump to 26.1.0 (2026-05-08)
+- /Users/jack/projects/nx-worktrees/NXC-4431 (branch: NXC-4431) — Audit publish.yml against npm publisher supply-chain advisory, commit d4b5eb2708 ready, not pushed (2026-05-08)
 
 <!-- Directories with active or resumable Claude sessions. Use `cd <dir> && claude -r` to resume. -->
 <!-- Managed by /end-session and /list-sessions commands. /summarize cleans up stale entries. -->
-
-- `/Users/jack/projects/nx` (branch: master) — init error investigation (Apr/Mar CNW+init stats analysis) (2026-04-20)
 
 ## Later

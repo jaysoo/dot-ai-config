@@ -35,3 +35,35 @@ Both flaky, no relation to my type-level changes. Pipeline rerun in progress.
 - Plan: this summary doubles as the task record (no separate plan file — flowed from `/review-pr` of local branch)
 - Commits: `89fae8e8e9` (Node 20 drop + @types/node bump + perf-logging fix), `8a49d3611a` (Node 26 add)
 - PR: https://github.com/nrwl/nx/pull/new/NXC-4159 (branch pushed via direct git, opened via URL)
+
+## NXC-4430: Migrate Tailwind v3 to v4 (graph + nx-dev)
+
+**Status:** PR #35594 opened. Single commit `91e822c036`, 50 files +337/-648.
+
+**Branch:** `NXC-4430` worktree (started 2026-05-05).
+
+### What shipped
+
+1. **Deps** (root + nx-dev/nx-dev pkg, all pinned exact): `tailwindcss 3.4.4 -> 4.1.11`, added `@tailwindcss/postcss 4.1.11`, dropped `@tailwindcss/aspect-ratio` (built into v4), forms `0.5.10`, typography `0.5.16`.
+2. **Configs**: 6 JS `tailwind.config.js` deleted. Replaced with CSS-based `@import 'tailwindcss'`, `@plugin '@tailwindcss/typography'` (and forms with `strategy: class`), `@source` paths, `@custom-variant dark (&:where(.dark, .dark *))`. 6 `postcss.config.js` swapped `tailwindcss` -> `@tailwindcss/postcss`.
+3. **v4 utility renames** (per https://tailwindcss.com/docs/upgrade-guide#renamed-utilities) applied via codemod across 28 source files: `shadow-sm -> shadow-xs`, `shadow -> shadow-sm`, `rounded-sm -> rounded-xs`, `rounded -> rounded-sm`, `blur-sm -> blur-xs`, `blur -> blur-sm`, plus drop-shadow + backdrop-blur counterparts. 50 renames total. Codemod scoped to JSX `className=`/`class=` attrs and `clsx|cn|twMerge|cva|classnames(...)` args (scoping fixed after attempt 1 corrupted TS prop names + CSS `blur(...)` template literals).
+4. **v3-compat border shim** in main CSS files (`@layer base { *, ::before, ... { border-color: var(--color-gray-200, currentColor); } }`) per https://tailwindcss.com/docs/upgrade-guide#default-border-color, since existing markup often relied on v3's gray-200 default.
+5. **Custom typography overrides** (`prose code::before/after` content stripping) moved out of `theme.extend.typography.DEFAULT.css` (no v4 equivalent) into plain `:where(...)` CSS in main stylesheets.
+
+### Gotchas
+
+- **`@source` extglob is unsupported in tw v4.** First attempt used `'../../feature-ai/src/**/!(*.stories|*.spec).{js,ts,jsx,tsx}'` (carried over from v3 content arrays); pattern matched zero files, so feature-ai utilities (`grid`, `w-12`, `dark:bg-zinc-800`, etc.) never made it into the bundle. /ai-chat shipped unstyled until I switched to plain dir paths + `@source not '**/*.{spec,test,stories}.*'` (the idiom astro-docs already used).
+- **pnpm `file:` deps cache stale source.** nx-dev/ui-* and graph/ui-* are `file:` deps; pnpm copies them into `.pnpm/...`. After codemod modified TS props that broke the build, `pnpm install --force` was needed to refresh the cached copy.
+- **Cytoscape "Cannot read properties of undefined (reading 'split')"** on graph-client release-static fixtures is pre-existing on master (verified by stashing changes, reinstalling v3 deps, repro). Not a migration regression.
+- **Codemod attempt 1 was unsafe.** Used `\b` word boundaries which matched TS prop names (`rounded?:` -> `rounded-sm?:`) and JS `blur(...)` calls inside template strings. Tightened to: `(className|class)=` (no spaces, JSX-only) plus `(clsx|cn|twMerge|cva|classnames)(...)` arg strings, with proper boundary chars `[\s:"'\`!]`.
+
+### Verification
+
+Builds: graph-client, nx-dev, astro-docs, all 4 graph storybooks. Visual diff against prod nx.dev/ai-chat — pixel-match. Screenshots colocated.
+
+### Files
+
+- Plan: `.ai/2026-05-05/tasks/nxc-4430-tailwind-v3-to-v4.md`
+- Screenshots: `.ai/2026-05-05/tasks/nxc-4430-tailwind-v3-to-v4/` (8 keepers: prod baseline, broken-source-glob state, fixed state, astro-docs, 2 storybooks, real graph data, master pre-existing-error)
+- PR: https://github.com/nrwl/nx/pull/35594
+- Commit: `91e822c036`
