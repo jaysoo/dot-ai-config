@@ -20,6 +20,8 @@ For Jack's personal preferences, workflow conventions, and tech-specific guidanc
 | `gh-dash/config.yml` | `~/.config/gh-dash/config.yml` | gh-dash TUI |
 | `tmux.conf` | `~/.tmux.conf` | tmux |
 | `bashrc` | `~/.bashrc` | bash |
+| `zshrc` | `~/.zshrc` | zsh (interactive — PATH, yvm, pnpm) |
+| `zshenv` | `~/.zshenv` | zsh (all shells, incl. non-interactive AI tool shells — `op` agent-auth wrapper, cargo, op plugins) |
 | `gitconfig` | `~/.gitconfig` | git |
 | `gitignore_global` | `~/.gitignore_global` | git global ignore |
 | `hooks/pre-push` | linked into `.git/hooks/pre-push` | Triggers `sync.sh` on push |

@@ -70,6 +70,10 @@ cp "$GIT_ROOT/gh-dash/config.yml" "$HOME/.config/gh-dash/config.yml"
 # Sync bash config
 cp "$GIT_ROOT/bashrc" "$HOME/.bashrc"
 
+# Sync zsh config
+cp "$GIT_ROOT/zshrc" "$HOME/.zshrc"
+cp "$GIT_ROOT/zshenv" "$HOME/.zshenv"
+
 # Sync git config
 cp "$GIT_ROOT/gitconfig" "$HOME/.gitconfig"
 cp "$GIT_ROOT/gitignore_global" "$HOME/.gitignore_global"

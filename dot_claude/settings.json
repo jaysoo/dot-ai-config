@@ -14,7 +14,7 @@
       "allowLocalBinding": true
     },
     "filesystem": {
-      "allowWrite": ["~/.config/gcloud/", "~/.mongodb/", "~/Library/Preferences/netlify/"]
+      "allowWrite": ["~/.config/gcloud/", "~/.mongodb/", "~/Library/Preferences/netlify/", "~/projects"]
     }
   },
   "permissions": {
