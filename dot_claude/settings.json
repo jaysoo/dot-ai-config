@@ -22,6 +22,7 @@
       "Read",
       "List",
       "Edit(.ai/**)",
+      "Bash(OP_REQUEST_REASON=*)",
       "Bash(nx:*)",
       "Bash(npx nx:*)",
       "Bash(git status:*)",
