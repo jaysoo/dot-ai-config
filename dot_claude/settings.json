@@ -14,7 +14,7 @@
       "allowLocalBinding": true
     },
     "filesystem": {
-      "allowWrite": ["~/.config/gcloud/", "~/.mongodb/", "~/Library/Preferences/netlify/", "~/projects", "/tmp", "/private/tmp"]
+      "allowWrite": ["~/.config/", "~/.mongodb/", "~/Library/Preferences/netlify/", "~/projects", "/tmp", "/private/tmp"]
     }
   },
   "permissions": {
@@ -61,6 +61,7 @@
       "Bash(which:*)",
       "Bash(rm *.log:*)",
       "Bash(rm *.tmp:*)",
+      "Bash(OP_REQUEST_REASON=*)",
       "mcp__MyNotes__search_ai_content",
       "mcp__MyNotes__get_task_context",
       "mcp__MyNotes__find_specs",
