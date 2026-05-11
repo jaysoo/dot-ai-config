@@ -32,13 +32,17 @@ op() {
         printf "op: e.g. OP_REQUEST_REASON='reading github token' op read op://...\n" >&2
         return 2
     fi
-    local uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
-    printf '%s\t%s\t%s\t%s\top %s\n' \
+    # Audit log: append PENDING line, then rewrite to APPROVED/DENIED based on
+    # op's exit code. Lines are kept (never deleted) so the file is a rolling
+    # audit trail for the day/week.
+    local uid="$$-$RANDOM" log=/private/tmp/op_requests.txt tab=$'\t'
+    printf 'PENDING\t%s\t%s\t%s\t%s\top %s\n' \
         "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" "$OP_REQUEST_REASON" "$*" >>"$log"
     command op "$@"; local rc=$?
+    local status; [ $rc -eq 0 ] && status=APPROVED || status=DENIED
     if [ -f "$log" ]; then
         local tmp; tmp=$(mktemp)
-        grep -v "^${uid}"$'\t' "$log" >"$tmp" 2>/dev/null || true
+        sed "s|^PENDING${tab}${uid}${tab}|${status}${tab}${uid}${tab}|" "$log" >"$tmp" 2>/dev/null
         mv "$tmp" "$log"
     fi
     return $rc
