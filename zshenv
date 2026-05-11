@@ -7,7 +7,7 @@
 # 1Password CLI plugin aliases (e.g. gh -> op plugin run -- gh).
 [ -f "$HOME/.config/op/plugins.sh" ] && source "$HOME/.config/op/plugins.sh"
 
-# Wrap `op` to log AI-agent auth requests to /tmp/op_requests.txt.
+# Wrap `op` to log AI-agent auth requests to /private/tmp/op_requests.txt.
 # Lives in zshenv (not zshrc) so non-interactive shells spawned by AI tools
 # also enforce the OP_REQUEST_REASON gate.
 op() {
@@ -23,7 +23,7 @@ op() {
         printf "op: e.g. OP_REQUEST_REASON='reading github token' op read op://...\n" >&2
         return 2
     fi
-    local uid="$$-$RANDOM" log=/tmp/op_requests.txt
+    local uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
     printf '%s\t%s\t%s\t%s\top %s\n' \
         "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" "$OP_REQUEST_REASON" "$*" >>"$log"
     command op "$@"; local rc=$?
@@ -34,3 +34,8 @@ op() {
     fi
     return $rc
 }
+
+# Re-point `gh` alias from plugins.sh (which hardcodes /opt/homebrew/bin/op,
+# bypassing the function wrapper above) to the bare `op` name so the wrapper
+# fires and logs the request.
+alias gh='op plugin run -- gh'
