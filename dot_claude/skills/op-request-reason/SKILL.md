@@ -13,18 +13,30 @@ description: >
 
 # op-request-reason
 
-There is **no shell wrapper** for `op`/`gh` anymore — the audit log only gets
-written if **you** write it. Before running any command that will trigger a
-1Password prompt, invoke the helper:
+No helper script. No wrapper. You write the log line inline before the command,
+then patch it after, every time. If you skip it, nothing gets logged and the
+audit trail breaks.
 
-```
-/Users/jack/projects/dot-ai-config/scripts/op-log-run.sh '<reason>' <command> [args...]
+## What to do
+
+Before running any `op`, `gh`, or remote `git` command, run this exact shell
+block in a single Bash call. Substitute `<reason>` and `<command>` only:
+
+```bash
+uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
+printf 'PENDING\t%s\t%s\t%s\t%s\t%s\n' \
+    "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" '<reason>' '<command>' >>"$log"
+<command>; rc=$?
+tab=$(printf '\t'); tmp=$(mktemp)
+[ $rc -eq 0 ] && outcome=APPROVED || outcome=DENIED
+sed "s|^PENDING${tab}${uid}${tab}|${outcome}${tab}${uid}${tab}|" "$log" >"$tmp" && mv "$tmp" "$log"
+exit $rc
 ```
 
-The helper:
-1. Appends a `PENDING` line to `/private/tmp/op_requests.txt` (uid, ISO ts, cwd, reason, command).
-2. Runs the command, preserving stdin/stdout/stderr and exit code.
-3. Rewrites the line to `APPROVED` or `DENIED` based on the command's exit code.
+The block:
+1. Appends `PENDING` line to `/private/tmp/op_requests.txt` (uid, ISO ts, cwd, reason, command).
+2. Runs the command, preserving exit code.
+3. Rewrites the line to `APPROVED` or `DENIED` based on exit code.
 
 Raycast surfaces pending entries so Jack sees what he's approving before
 tapping the 1Password prompt.
@@ -42,16 +54,43 @@ tapping the 1Password prompt.
 
 ## Examples
 
+Reading a vault item:
+
+```bash
+uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
+printf 'PENDING\t%s\t%s\t%s\t%s\t%s\n' \
+    "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" 'reading gh token for PR comment' 'op read op://Personal/Github/token' >>"$log"
+op read op://Personal/Github/token; rc=$?
+tab=$(printf '\t'); tmp=$(mktemp)
+[ $rc -eq 0 ] && outcome=APPROVED || outcome=DENIED
+sed "s|^PENDING${tab}${uid}${tab}|${outcome}${tab}${uid}${tab}|" "$log" >"$tmp" && mv "$tmp" "$log"
+exit $rc
 ```
-/Users/jack/projects/dot-ai-config/scripts/op-log-run.sh 'reading gh token for PR comment' op read op://Personal/Github/token
 
-/Users/jack/projects/dot-ai-config/scripts/op-log-run.sh 'listing open PRs on nrwl/nx' gh pr list --repo nrwl/nx --state open
+Pushing a branch:
 
-/Users/jack/projects/dot-ai-config/scripts/op-log-run.sh 'pushing fix-NXC-3505 for review' git push -u origin fix-NXC-3505
+```bash
+uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
+printf 'PENDING\t%s\t%s\t%s\t%s\t%s\n' \
+    "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" 'pushing fix-NXC-3505 for review' 'git push -u origin fix-NXC-3505' >>"$log"
+git push -u origin fix-NXC-3505; rc=$?
+tab=$(printf '\t'); tmp=$(mktemp)
+[ $rc -eq 0 ] && outcome=APPROVED || outcome=DENIED
+sed "s|^PENDING${tab}${uid}${tab}|${outcome}${tab}${uid}${tab}|" "$log" >"$tmp" && mv "$tmp" "$log"
+exit $rc
+```
 
-/Users/jack/projects/dot-ai-config/scripts/op-log-run.sh 'cloning ocean for local repro' git clone git@github.com:nrwl/ocean.git
+Listing PRs:
 
-/Users/jack/projects/dot-ai-config/scripts/op-log-run.sh 'fetching latest master before rebase' git fetch origin master
+```bash
+uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
+printf 'PENDING\t%s\t%s\t%s\t%s\t%s\n' \
+    "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" 'listing open PRs on nrwl/nx' 'gh pr list --repo nrwl/nx --state open' >>"$log"
+gh pr list --repo nrwl/nx --state open; rc=$?
+tab=$(printf '\t'); tmp=$(mktemp)
+[ $rc -eq 0 ] && outcome=APPROVED || outcome=DENIED
+sed "s|^PENDING${tab}${uid}${tab}|${outcome}${tab}${uid}${tab}|" "$log" >"$tmp" && mv "$tmp" "$log"
+exit $rc
 ```
 
 ## Reason format
@@ -76,19 +115,12 @@ tapping the 1Password prompt.
 'user asked me to'     # not the WHY
 ```
 
-## What if the helper isn't reachable?
+## Quoting gotchas
 
-If the helper path errors (e.g. running from a sandbox that can't see the
-dot-ai-config repo), fall back to inline logging:
-
-```bash
-uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
-printf 'PENDING\t%s\t%s\t%s\t%s\t%s\n' \
-    "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" '<reason>' '<command>' >>"$log"
-<command>; rc=$?
-tab=$(printf '\t'); tmp=$(mktemp)
-[ $rc -eq 0 ] && outcome=APPROVED || outcome=DENIED
-sed "s|^PENDING${tab}${uid}${tab}|${outcome}${tab}${uid}${tab}|" "$log" >"$tmp" && mv "$tmp" "$log"
-```
-
-But prefer the helper — it's the canonical path.
+- The block uses single quotes around the reason and command strings — keep
+  them single-quoted so `$` and backticks in the command don't expand at the
+  `printf` step.
+- If the reason or command contains a single quote, switch that string to
+  double quotes and escape any `"` or `$` inside.
+- The trailing `exit $rc` propagates the real exit code so callers see the
+  command's true outcome, not the `sed`/`mv` exit code.
