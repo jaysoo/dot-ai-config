@@ -8,8 +8,8 @@
         "*.mongodb.net",
         "secretmanager.googleapis.com",
         "ifconfig.me",
-        "oauth2.googleapis.com",
-        "accounts.google.com"
+        "*.googleapis.com",
+        "*.google.com"
       ],
       "allowLocalBinding": true
     },
