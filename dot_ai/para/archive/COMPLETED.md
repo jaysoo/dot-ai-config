@@ -2,6 +2,10 @@
 
 ### May 2026
 
+- [x] Polygraph docs: move under `/docs` + Framer edge rewrite (2026-05-12) ✓ 2026-05-12
+  - Summary: Multi-repo Polygraph session porting nrwl/nx's astro-docs base-path + `rewrite-framer-urls` edge function to nrwl/polygraph-docs. trypolygraph.com now serves Starlight docs under `/docs/*` and proxies everything else to `https://active-startup-540669.framer.app/<path>`, with the framer origin streaming-rewritten to `trypolygraph.com` so navigation stays on-domain. Three commits on `feat/docs-base-path-framer-rewrite`: initial port (`0e6bf54`), tried `build.format: 'file'` for trailing-slash (`d19d521` — reverted because Starlight baked `.html` into sidebar links + canonical URLs), final pattern matching nx exactly: `publish = "dist/docs"` + `/docs/* -> /:splat` rewrite (`d086def`). Workflow used two parallel read-only investigation child agents + one implementation child via Polygraph delegate-subagent. Side fix: polygraph-docs `.husky/pre-push` crashes on ≤20-commit branches with unset `origin/HEAD` (failing `git rev-parse <sha>~20` concatenates literal arg with rev-list fallback into newline-joined `$from`) — worked around locally with `git remote set-head origin main`; flagged real fix in PR body.
+  - Files: `dot_ai/2026-05-12/SUMMARY.md`, `dot_ai/2026-05-12/tasks/polygraph-docs-base-path-and-framer-rewrite.md`, PR https://github.com/nrwl/polygraph-docs/pull/4
+
 - [x] NXC-4156: Remove SVGR from @nx/rspack (v23) (2026-05-08) ✓ 2026-05-08
   - Summary: PR [#35611](https://github.com/nrwl/nx/pull/35611) merged at 19:36 UTC (`9f18c6ae2f`). Mirror of v22 webpack SVGR removal for rspack. Stripped `svgr` option from `withReact` / `NxReactRspackPlugin` / `WithReactOptions`, deleted `SvgrOptions`, consolidated standalone `\.svg$` rule into images rule in `apply-web-config`. Added `update-23-0-0-add-svgr-to-rspack-config` migration (versioned `23.0.0-beta.9`) inlining a `withSvgr` helper into user configs. Three CI e2e failures all confirmed unrelated (2 git filter-branch infra, 1 master-broken MF test).
   - Files: `dot_ai/2026-05-08/SUMMARY.md`, `dot_ai/2026-05-08/tasks/nxc-4156-rspack-svgr-removal.md`, PR #35611, merge commit `9f18c6ae2f`
@@ -9,6 +13,10 @@
 - [x] NXC-4430: Tailwind v3 -> v4 PR polish + screenshots, MERGED (2026-05-06 -> 2026-05-08) ✓ 2026-05-08
   - Summary: PR #35594 merged at 19:50 UTC (`2445010810`). Final day work: rewrote PR description with v4 utility renames (`shadow-sm -> shadow-xs`, `rounded -> rounded-sm`) + Tailwind v4 upgrade-guide links; triaged screenshots into `dot_ai/2026-05-05/tasks/nxc-4430-tailwind-v3-to-v4/` (8 keepers, 11 dropped); backfilled task plan documenting scope, gotchas, verification.
   - Files: `dot_ai/2026-05-05/tasks/nxc-4430-tailwind-v3-to-v4.md`, `dot_ai/2026-05-08/SUMMARY.md`, PR #35594, merge commit `2445010810`
+
+- [x] NXC-4448: Cypress 15.14 bump + remove stale Vite 8 guard — MERGED (2026-05-08 -> 2026-05-13) ✓ 2026-05-13
+  - Summary: PR [#35613](https://github.com/nrwl/nx/pull/35613) merged as `d43c0c0a7e`. Cypress 15.14.0 added Vite 8 support (cypress-io/cypress#33078); nx had stale `^15.8.0` pin + a `vite >= 8` throw guard in `component-configuration`. Bumped versions, removed guard, split `packageJsonUpdates` (cypress + dev-server independently gated), wrote `remove-experimental-prompt-command` codemod, dropped 8 Vite-7-downgrade workarounds in e2e. Unblocked NXC-4154.
+  - Files: PR #35613, merge commit `d43c0c0a7e`, `dot_ai/2026-05-08/SUMMARY.md`
 
 - [x] NXC-4374: Add Node 26 to docs compat matrix (2026-05-08) ✓ 2026-05-08
   - Summary: PR #35623 merged at 15:37 UTC (`767d30eb28`). Adds Node 26 to documented support matrix.

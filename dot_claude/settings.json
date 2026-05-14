@@ -14,7 +14,7 @@
       "allowLocalBinding": true
     },
     "filesystem": {
-      "allowWrite": ["~/.config/", "~/.mongodb/", "~/Library/Preferences/netlify/", "~/projects", "/tmp", "/private/tmp"]
+      "allowWrite": ["~/.config/", "~/.mongodb/", "~/Library/Preferences/netlify/", "~/projects", "/tmp", "/private/tmp", "~/.claude"]
     },
     "excludedCommands": ["gemini", "codex"]
   },
