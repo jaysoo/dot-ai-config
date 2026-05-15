@@ -197,6 +197,23 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 
 ## Personal Work History
 
+### 2026-05-14 → 2026-05-15
+
+- **Q-443: Tie sandbox violations prompt and dashboard together** (ocean branch `Q-443`, PR open; depends on prior PR #11249 already merged)
+  - Goal: make the CIPE sandbox warning, the Sandbox violations dashboard tile, and the downloaded report's `nx-cloud validate ... index.json` "N tasks ok" all agree on the violating-task count for a given branch.
+  - Final approach: CIPE loader (`libs/nx-cloud/data-access-api/src/lib/queries/ci-pipeline-executions/ci-pipeline-execution-run-group-details.server.ts`) calls the existing dashboard query `getWorkspaceSandboxViolations({pageSize: 1, ...})` and reads `.totals.totalViolatingTasks` + `.totals.totalCleanTasks`. Dashboard fn (`libs/nx-cloud/data-access-api/src/lib/queries/sandbox/get-workspace-sandbox-violations.server.ts`) has **0 diff** in this PR.
+  - Warning copy: "X of Y tasks on this branch have sandbox violations." 7-day rolling window matches the dashboard default.
+  - Dashboard panel `SandboxViolationsHowToFixPanel` mirrors the run-page warning's Fix-with-AI / manual-flow layout in enterprise/purple. Files: `libs/nx-cloud/feature-analytics/src/lib/sandbox-violations/sandbox-violations-how-to-fix-panel.tsx`, wired in `sandbox-violations-container.tsx`.
+  - Shared helpers added to `@nx-cloud/ui-ci-pipeline-executions`:
+    - `buildSandboxAiFixPrompt({ branch, isProtectedBranch, dashboardUrl? })` (`libs/nx-cloud/ui-ci-pipeline-executions/src/lib/sandbox-ai-prompt.ts`) - step 5 of the prompt adapts to protected vs feature branch; protected branches instruct the agent to open a PR and switch its working dir to `<pr-branch>`.
+    - `isProtectedSandboxBranch(branch, defaultBranch)` - main/master heuristic + workspace `defaultBranch`. Threaded through CIPE outlet context (`use-ci-pipeline-execution-outlet-context.tsx` → `ci-pipeline-executions-details-layout.tsx`).
+  - Link policy: in-app `<Link>` (same-tab); docs hardcoded to `https://nx.dev/docs/...` with `target="_blank"`.
+  - E2E fix: `apps/nx-cloud-e2e-playwright/e2e/ci-pipeline-executions/cipe-details.spec.ts` fixture passes `branch: cipe.branch` on `createTestSandboxReport` (warning-banner test) so the new branch-scoped query matches.
+- **Q-443 docs** (nx branch `Q-443`, PR open)
+  - New KB article: `astro-docs/src/content/docs/guides/Nx Cloud/fix-sandbox-violations.mdoc` (URL `/docs/guides/nx-cloud/fix-sandbox-violations`).
+  - `llm_copy_prompt` block at top so the page is a one-shot "paste into your agent" handoff.
+  - Sidebar entry in `astro-docs/sidebar.mts` under Knowledge Base → Continuous integration.
+
 ### 2026-04-28
 - **Billing architecture review** (branch: main, no commits — research only)
   - Walked Nx Cloud Kotlin billing system (compute / execution / AI fix streams → `MBillingRecord` → Stripe).

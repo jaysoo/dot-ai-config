@@ -286,6 +286,9 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - **One property > Many hacks** - Check if single CSS property works
 - **Ask before assuming** - Multiple approaches? Ask.
 - **Iterate, don't defend** - Change based on feedback
+- **Prefer additive over in-place when extending shared code.** When adding behavior that needs to share logic with an existing function, prefer one of: (a) call the existing function with the args you need and discard what you don't, (b) extract a private helper, or (c) add a new exported function next to it that duplicates a small amount of pipeline code. **Avoid refactoring the existing function** unless its behavior is changing or the duplication is large enough that drift is a real risk. Reviewer cost of "this PR also touches existing code" is high - it's hard to tell what changed semantically vs. what was just moved.
+  - **Why:** Q-443 - I refactored `getWorkspaceSandboxViolations` (extracted dedup-stage builder, threaded a new helper through) so the CIPE warning could share its totals query. Jack pushed back: dashboard fn's behavior was unchanged but the diff still made the PR harder to review. Final shape: CIPE caller invokes `getWorkspaceSandboxViolations({pageSize: 1, ...})` directly and reads `.totals.totalViolatingTasks`. Dashboard fn = 0 diff.
+  - **How to apply:** Before extracting/refactoring an existing function as part of feature work, ask: can the new caller just *use* the existing function (even slightly wastefully)? If yes, do that. If duplication would be >20 lines or drift risk is real, then extract — and make the extract a separate commit so the diff reads as "no-op move" not bundled with feature work.
 - **Realistic examples > hypothetical edge cases** - Before writing code to handle an edge case, find a concrete test fixture that exercises it in a real workspace. Don't add defensive branching, retries, fallback paths, or generalized loops to handle scenarios that never occur in practice. If unsure whether a case is realistic, ASK before coding for it.
   - **Why:** NXC-4157 — wrote tsquery migration with reverse-walk loop + leading-comma fallback + whitespace nibble. Pushed back twice on hypothetical-only complexity. Final form ended up at ~5 lines after stripping unjustified branches.
   - **How to apply:** When tempted to write a loop, ask "is there a real-world file with multiple matches?" When tempted to add a fallback path, ask "what test would exercise it?" If the answer is "I'm being defensive," delete it and ask Jack.
@@ -613,20 +616,6 @@ Verify with real browser (Playwright). Document working vs failing cases.
 
 ## 🔐 1Password CLI
 
-### Always log auth requests via the `op-request-reason` skill
-
-Before running **any** command that triggers a 1Password prompt — `op` (any
-subcommand that needs auth), `gh` (alias routes through `op plugin run`), or
-remote `git` ops (`push`/`pull`/`fetch`/`clone`/`ls-remote`/`remote update`,
-which pull the SSH key from 1P's agent) — invoke the `op-request-reason`
-skill. The skill is a SKILL.md only (no helper script, no shell wrapper).
-You write the inline log block shown in the skill before the command and
-patch the line after, every time. If you skip it, nothing gets logged and
-Raycast won't show the pending request to Jack.
-
-Local-only git ops (`status`, `log`, `diff`, `add`, `commit`, `branch`,
-`checkout`, `reset`, `stash`) do NOT need logging.
-
 ```bash
 # Vault error: "Engineering" isn't a vault
 op signin  # Select: tuskteam.1password.com
@@ -653,9 +642,9 @@ op run --env-file=env.base -- E2E_TEST_MODE=true npx nx serve
   - ✅ `fix(client-bundle):` for changes in `libs/nx-packages/client-bundle/`
   - ❌ `fix(nx-cloud):` — too broad, `nx-cloud` is the app, not the library
 
-### Version Plans (Required for feat/fix PRs)
+### Version Plans (feat/fix PRs)
 
-Ocean PRs with `feat` or `fix` commits require a version plan at `.nx/version-plans/`:
+Ocean PRs with `feat` or `fix` commits **may** require a version plan at `.nx/version-plans/`:
 ```markdown
 # .nx/version-plans/yyyy-mm-dd-hh-mm-descriptive-name.md
 ---
@@ -664,7 +653,12 @@ nx-cloud: fix
 
 Customer-facing changelog description.
 ```
+
 Options: `fix`, `minor` (feature), `patch`. Not needed for `chore`/`docs` commits.
+
+**Skip the version plan when the feature it relates to already has a plan in the same unreleased cycle.** Before adding one, run `ls .nx/version-plans/ | grep -i <feature>`. If a related plan is already there and the feature hasn't shipped to prod yet, the fix is part of the unreleased feature work — adding a second plan produces two changelog entries (`feature added` + `feature also fixed before you ever saw it`) which is just noise. Only add a `fix:` plan against an already-released prod feature.
+
+- **Why:** Q-443 — I added two `fix:` plans for sandbox-violation polish on top of the original feature plan from PR #11249, even though none of it had shipped. Both got removed.
 
 ### E2E Testing
 
