@@ -11,7 +11,8 @@
         "*.googleapis.com",
         "*.google.com"
       ],
-      "allowLocalBinding": true
+      "allowLocalBinding": true,
+      "allowAllUnixSockets": true
     },
     "filesystem": {
       "allowWrite": [
@@ -22,8 +23,7 @@
         "/tmp",
         "/private/tmp",
         "~/.claude",
-        "~/projects/nx-worktrees/*/.claude/skills",
-        "~/Library/Group Containers/2BUA8C4S2C.com.1password"
+        "~/projects/nx-worktrees/*/.claude/skills"
       ]
     },
     "excludedCommands": ["gemini", "codex"]
