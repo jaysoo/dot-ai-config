@@ -14,7 +14,7 @@
       "allowLocalBinding": true
     },
     "filesystem": {
-      "allowWrite": ["~/.config/", "~/.mongodb/", "~/Library/Preferences/netlify/", "~/projects", "/tmp", "/private/tmp", "~/.claude", "~/projects/nx-worktrees/*/.claude/skills"]
+      "allowWrite": ["~/.config/", "~/.mongodb/", "~/Library/Preferences/netlify/", "~/projects", "/tmp", "/private/tmp", "~/.claude", "~/projects/nx-worktrees/*/.claude/skills", "~/Library/Group Containers/2BUA8C4S2C.com.1password"]
     },
     "excludedCommands": ["gemini", "codex"]
   },

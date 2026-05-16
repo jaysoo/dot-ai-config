@@ -7,7 +7,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | Name                  | Type    | Last Invoked | Count |
 | --------------------- | ------- | ------------ | ----- |
 | cnw-stats-analyzer    | skill   | 2026-04-01   | 3     |
-| dte-analyzer          | skill   | 2026-05-15   | 1     |
+| dte-analyzer          | skill   | 2026-05-15   | 2     |
 | netlify-deploy-status | skill   | 2026-03-27   | 1     |
 | reflect               | command | 2026-04-01   | 5     |
 | summarize             | command | 2026-04-01   | 5     |

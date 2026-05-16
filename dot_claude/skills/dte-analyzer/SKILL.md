@@ -14,6 +14,22 @@ description: >
 
 Analyze Distributed Task Execution (DTE) usage across customers in the `nrwl-api` MongoDB. Reuses connection setup from `cnw-stats-analyzer` skill.
 
+## Saved scripts
+
+All canonical queries live in `scripts/` under this skill directory. Run with `mongosh "$URI" --quiet <script>.js`. Edit the constants at the top (`days`, `targetPlan`, etc.) to retarget. **Use the analytics-tagged URI** below to keep load off the primary.
+
+| Script | Answers |
+|---|---|
+| `scripts/dte-by-plan.js` | TEAM/PRO/ENTERPRISE: count of orgs and workspaces running any DTE, Manual DTE, launch-template (Cloud Agents). |
+| `scripts/agents-adoption.js` | Cloud Agents adoption rate for a plan, with multiple denominators (all/enabled/active/DTE-using). Matches internal KR. |
+| `scripts/agents-various-filters.js` | Sweep filter combinations (window, enabled, min CIPEs) to find which definition matches an external number. |
+| `scripts/agents-activation-time.js` | Time from a new TEAM org's first CIPE to their first Cloud Agents CIPE. Bucketed: ≤7d, 8-30d, 31-90d, 90+, never. |
+| `scripts/docker-by-plan.js` | Workspaces/orgs running tasks with `target` matching `/docker/i`, broken down by plan tier. |
+| `scripts/docker-targets.js` | Top docker-matching target names + sample `params` field (mostly empty — the executor command is not in the run record). |
+| `scripts/docker-team-orgs.js` | TEAM org names running docker tasks, ranked by task volume. |
+| `scripts/docker-on-agents.js` | Split docker tasks into "ran on cloud agent" (distributedExecutionId != null) vs not, with TEAM-only breakdown. |
+| `scripts/docker-agent-targets.js` | For TEAM orgs running docker on agents, the actual target names per org (signal for outreach: real build vs lint vs login). |
+
 ## Key concepts
 
 **Manual DTE** = customer launches agents themselves (their own CI infra, no Nx Cloud launch template). In schema: `MAgentInstance.launchTemplate == null` (also `agentDisplayName == null` per the schema comment, but `launchTemplate` is the reliable signal).
@@ -54,9 +70,14 @@ Same as `cnw-stats-analyzer`:
 
    ```bash
    PASS=$(gcloud secrets versions access latest --project=nxcloudoperations --secret=production-mongodb-readonly-user-pass-na)
-   URI="mongodb://readOnlyUser:${PASS}@nrwl-api-prod-shard-00-00.dhknt.mongodb.net:27017,nrwl-api-prod-shard-00-01.dhknt.mongodb.net:27017,nrwl-api-prod-shard-00-02.dhknt.mongodb.net:27017/nrwl-api?ssl=true&authSource=admin&replicaSet=nrwl-api-prod-shard-0&readPreference=secondaryPreferred"
+   # Use the analytics-tagged URI for any heavy aggregation — keeps load off the primary
+   # and the regular secondaries. Empty fallback tag means "any secondary" if no analytics
+   # node is currently available.
+   URI="mongodb://readOnlyUser:${PASS}@nrwl-api-prod-shard-00-00.dhknt.mongodb.net:27017,nrwl-api-prod-shard-00-01.dhknt.mongodb.net:27017,nrwl-api-prod-shard-00-02.dhknt.mongodb.net:27017/nrwl-api?ssl=true&authSource=admin&replicaSet=nrwl-api-prod-shard-0&readPreference=secondary&readPreferenceTags=nodeType:ANALYTICS&readPreferenceTags="
    echo "$URI" > /tmp/dte-mongo-uri.txt
    ```
+
+   **Always include `maxTimeMS` in aggregations** (e.g. `maxTimeMS: 600000` for 10-minute cap) so a runaway query gets killed server-side instead of camping on a secondary.
 
    **Replica set name is `nrwl-api-prod-shard-0`** (NOT `atlas-yzwbed-shard-0` — that's wrong). If you guess wrong, mongosh hangs on server selection. Verify with `db.hello().setName` from a `directConnection=true` URI to one shard if the cluster is rebuilt.
 
@@ -173,6 +194,250 @@ For very large windows (e.g. all-time), narrow workspace match with `enabled: tr
 - **Plan != billing.** TEAM in `cloudOrganizations.plan` is the assigned tier. A TEAM org may be in trial, may have a Stripe issue, may be disabled. Filter `enabled: true` if you want active paying customers; otherwise note the caveat.
 - **DTE != "Distribution On" YAML.** `MRunGroupConfig.dte.distributeOn` (newer field, `RunGroupConfig.kt`) can be a literal `"manual"` string, but historically agent-level `launchTemplate == null` is the reliable indicator across all CIPE versions.
 
+## Agents adoption rate (KR tracking)
+
+Internal KR "customers running on Nx Agents" uses the same `launchTemplate != null` signal on a **7-day window**, restricted to **enabled** orgs. Verified May 2026: KR shows 91, 7d-trailing TEAM+enabled landed at 93 — within 2 (the small gap is likely trial/billing-status filtering or last-completed-week vs trailing-7d).
+
+Report multiple denominators when asked about adoption rate:
+
+| Denominator | Meaning |
+|---|---|
+| All plan-X orgs | Includes dormant/trial — broad PR number |
+| Enabled plan-X orgs | Strips disabled/Stripe-issue orgs |
+| Active plan-X orgs (≥1 CIPE in window) | "Of customers actually using cloud, %?" — most honest |
+| DTE-using plan-X orgs | "Of customers doing DTE, did they pick Cloud Agents?" — feature-level adoption |
+
+The active denominator is what to default to in any report.
+
+```js
+// /tmp/agents-adoption.js — answers "what's the current Cloud Agents adoption?"
+const days = 7;
+const targetPlan = "TEAM";
+const since = new Date(Date.now() - days * 24 * 3600 * 1000);
+
+const orgs = db.cloudOrganizations.find({ plan: targetPlan }, { _id: 1, enabled: 1 }).toArray();
+const enabledIds = orgs.filter(d => d.enabled !== false).map(d => d._id);
+
+const ws = db.workspaces.find({ orgId: { $in: orgs.map(d => d._id) } }, { _id: 1, orgId: 1 }).toArray();
+const wsToOrg = {};
+ws.forEach(d => { wsToOrg[d._id.toString()] = d.orgId.toString(); });
+const wsIds = ws.map(d => d._id);
+
+const cipes = db.ciPipelineExecutions.aggregate([
+  { $match: { workspaceId: { $in: wsIds }, createdAt: { $gte: since } } },
+  { $project: { workspaceId: 1, runGroups: { $map: { input: "$runGroups", as: "rg", in: { agents: "$$rg.agents", agentInstances: "$$rg.agentInstances" } } } } }
+], { allowDiskUse: true, maxTimeMS: 600000 }).toArray();
+
+const enabledSet = new Set(enabledIds.map(o => o.toString()));
+const active = new Set(), dte = new Set(), agents = new Set(), manual = new Set();
+for (const c of cipes) {
+  const oid = wsToOrg[c.workspaceId.toString()];
+  if (!oid || !enabledSet.has(oid)) continue;
+  active.add(oid);
+  for (const rg of (c.runGroups || [])) {
+    if (!rg.agents || rg.agents.length === 0) continue;
+    dte.add(oid);
+    const insts = rg.agentInstances || {};
+    for (const k of Object.keys(insts)) {
+      const lt = insts[k] && insts[k].launchTemplate;
+      if (lt === null || lt === undefined) manual.add(oid);
+      else agents.add(oid);
+    }
+  }
+}
+
+const fmt = (n, d) => n + " / " + d + "  (" + ((n / d) * 100).toFixed(1) + "%)";
+print(targetPlan + " " + days + "d adoption:");
+print("  enabled orgs:                  " + enabledIds.length);
+print("  active (>= 1 CIPE):            " + active.size);
+print("  using ANY DTE:                 " + dte.size);
+print("  using Cloud Agents:            " + agents.size);
+print("  using Manual DTE:              " + manual.size);
+print("");
+print("Cloud Agents adoption rate:");
+print("  of enabled orgs:               " + fmt(agents.size, enabledIds.length));
+print("  of active orgs:                " + fmt(agents.size, active.size));
+print("  of DTE-using orgs:             " + fmt(agents.size, dte.size));
+```
+
+## Running on desktop (MongoDB Compass)
+
+Compass is the official Mongo desktop client — free, native macOS, runs aggregations interactively with stage-by-stage previews. Best place to iterate on queries that don't need JS-loop post-processing.
+
+### One-time setup
+
+1. **Install Compass**: <https://www.mongodb.com/products/tools/compass>.
+2. **Whitelist your IP** (every time it changes, e.g. coffee shop wifi):
+   ```bash
+   ip=$(curl -4 -sS --max-time 5 https://ifconfig.me)
+   gh workflow run add-ip-to-atlas-access-list.yaml \
+     -F clusterName=PROD -F ipAddress="$ip" \
+     -R nrwl/cloud-infrastructure
+   ```
+   Wait ~30s for Atlas propagation.
+3. **Get the password** from gcloud (after `gcloud auth login`):
+   ```bash
+   gcloud secrets versions access latest --project=nxcloudoperations \
+     --secret=production-mongodb-readonly-user-pass-na
+   ```
+4. **Build the connection URI**. Use the direct (non-SRV) multi-host form because SRV lookups are flaky on macOS:
+   ```
+   mongodb://readOnlyUser:<PASS>@nrwl-api-prod-shard-00-00.dhknt.mongodb.net:27017,nrwl-api-prod-shard-00-01.dhknt.mongodb.net:27017,nrwl-api-prod-shard-00-02.dhknt.mongodb.net:27017/nrwl-api?ssl=true&authSource=admin&replicaSet=nrwl-api-prod-shard-0&readPreference=secondary&readPreferenceTags=nodeType%3AANALYTICS&readPreferenceTags=
+   ```
+   Replace `<PASS>`. The `readPreferenceTags=nodeType:ANALYTICS` plus empty-tag fallback routes heavy reads to dedicated analytics nodes, keeping load off the primary and the regular secondaries. URL-encoded as `%3A` because Compass parses these strictly.
+5. In Compass click **New Connection**, paste the URI, hit Connect. Save it to a favorite so you don't paste the password each time.
+
+### Running a pipeline
+
+1. In the left sidebar pick the **`nrwl-api`** database, then the collection you're querying (usually `ciPipelineExecutions`, sometimes `runs` or `cloudOrganizations`).
+2. Click the **Aggregations** tab.
+3. Click **Create New Pipeline** and either paste the whole pipeline as **Text View** (recommended) or build it stage-by-stage.
+4. Compass shows the result of each stage live as you edit. Set a small `Sample size` initially (~10) so previews are fast — bump it up only when ready to run the whole pipeline.
+5. **Always include `$match` on `createdAt` as the first stage** when touching `ciPipelineExecutions` or `runs`. Without a date filter the pipeline scans the entire collection.
+
+### Cookbook: paste-ready pipelines
+
+Each one below targets a single collection. The `ISODate` literal anchors the window — change it (subtract days from today). Compass also supports `{ $dateSubtract: ... }` if you prefer relative.
+
+**Pipeline 1 — TEAM orgs using Cloud Agents (collection: `ciPipelineExecutions`)**
+
+```js
+[
+  { $match: { createdAt: { $gte: ISODate("2026-05-08T00:00:00.000Z") } } },
+  { $unwind: "$runGroups" },
+  { $match: { "runGroups.agents.0": { $exists: true } } },
+  { $addFields: { instArr: { $objectToArray: { $ifNull: ["$runGroups.agentInstances", {}] } } } },
+  { $match: { "instArr.v.launchTemplate": { $type: "string" } } },
+  { $group: { _id: "$workspaceId" } },
+  { $lookup: { from: "workspaces", localField: "_id", foreignField: "_id", as: "ws" } },
+  { $unwind: "$ws" },
+  { $lookup: { from: "cloudOrganizations", localField: "ws.orgId", foreignField: "_id", as: "org" } },
+  { $unwind: "$org" },
+  { $match: { "org.plan": "TEAM", "org.enabled": { $ne: false } } },
+  { $group: { _id: "$org._id", orgName: { $first: "$org.name" } } },
+  { $count: "teamOrgsUsingCloudAgents" }
+]
+```
+
+To list names instead of count: replace the final `$count` with `{ $project: { _id: 0, orgName: 1 } }, { $sort: { orgName: 1 } }`.
+
+For Manual DTE instead, swap the `instArr.v.launchTemplate` match to:
+
+```js
+{ $match: {
+    "instArr.v": { $not: { $size: 0 } },
+    "instArr.v.launchTemplate": { $not: { $type: "string" } }
+} }
+```
+
+**Pipeline 2 — TEAM orgs running docker tasks (collection: `runs`)**
+
+```js
+[
+  { $match: { createdAt: { $gte: ISODate("2026-05-08T00:00:00.000Z") }, "tasks.target": { $regex: /docker/i } } },
+  { $project: {
+      workspaceId: 1,
+      dockerTaskCount: { $size: { $filter: { input: "$tasks", as: "t", cond: { $regexMatch: { input: "$$t.target", regex: /docker/i } } } } }
+  } },
+  { $group: { _id: "$workspaceId", dockerTasks: { $sum: "$dockerTaskCount" } } },
+  { $lookup: { from: "workspaces", localField: "_id", foreignField: "_id", as: "ws" } },
+  { $unwind: "$ws" },
+  { $lookup: { from: "cloudOrganizations", localField: "ws.orgId", foreignField: "_id", as: "org" } },
+  { $unwind: "$org" },
+  { $match: { "org.plan": "TEAM" } },
+  { $group: {
+      _id: "$org._id",
+      orgName: { $first: "$org.name" },
+      dockerTasks: { $sum: "$dockerTasks" },
+      workspaces: { $push: { name: "$ws.name", tasks: "$dockerTasks" } }
+  } },
+  { $sort: { dockerTasks: -1 } }
+]
+```
+
+**Pipeline 3 — Top docker target names (collection: `runs`)**
+
+```js
+[
+  { $match: { createdAt: { $gte: ISODate("2026-05-08T00:00:00.000Z") }, "tasks.target": { $regex: /docker/i } } },
+  { $project: { tasks: { $filter: { input: "$tasks", as: "t", cond: { $regexMatch: { input: "$$t.target", regex: /docker/i } } } } } },
+  { $unwind: "$tasks" },
+  { $group: { _id: "$tasks.target", taskCount: { $sum: 1 } } },
+  { $sort: { taskCount: -1 } },
+  { $limit: 30 }
+]
+```
+
+**Pipeline 4 — Docker tasks split by "ran on cloud agent" vs not (collection: `runs`)**
+
+```js
+[
+  { $match: { createdAt: { $gte: ISODate("2026-05-08T00:00:00.000Z") }, "tasks.target": { $regex: /docker/i } } },
+  { $project: {
+      onAgent: { $cond: [{ $and: [{ $ne: ["$distributedExecutionId", null] }, { $ne: ["$distributedExecutionId", ""] }] }, "yes", "no"] },
+      dockerCount: { $size: { $filter: { input: "$tasks", as: "t", cond: { $regexMatch: { input: "$$t.target", regex: /docker/i } } } } },
+      workspaceId: 1
+  } },
+  { $group: { _id: "$onAgent", tasks: { $sum: "$dockerCount" }, runs: { $sum: 1 }, workspaces: { $addToSet: "$workspaceId" } } },
+  { $project: { tasks: 1, runs: 1, workspaceCount: { $size: "$workspaces" } } }
+]
+```
+
+**Pipeline 5 — Plan-tier breakdown of DTE adoption (collection: `ciPipelineExecutions`)**
+
+```js
+[
+  { $match: { createdAt: { $gte: ISODate("2026-04-15T00:00:00.000Z") } } },
+  { $unwind: "$runGroups" },
+  { $match: { "runGroups.agents.0": { $exists: true } } },
+  { $addFields: { instArr: { $objectToArray: { $ifNull: ["$runGroups.agentInstances", {}] } } } },
+  { $addFields: {
+      hasTpl: { $anyElementTrue: { $map: { input: "$instArr", as: "kv", in: { $eq: [{ $type: "$$kv.v.launchTemplate" }, "string"] } } } },
+      hasManual: { $anyElementTrue: { $map: { input: "$instArr", as: "kv", in: { $ne: [{ $type: "$$kv.v.launchTemplate" }, "string"] } } } }
+  } },
+  { $group: { _id: "$workspaceId", hasTpl: { $max: { $cond: ["$hasTpl", 1, 0] } }, hasManual: { $max: { $cond: ["$hasManual", 1, 0] } } } },
+  { $lookup: { from: "workspaces", localField: "_id", foreignField: "_id", as: "ws" } },
+  { $unwind: "$ws" },
+  { $lookup: { from: "cloudOrganizations", localField: "ws.orgId", foreignField: "_id", as: "org" } },
+  { $unwind: "$org" },
+  { $group: {
+      _id: { plan: "$org.plan", orgId: "$org._id" },
+      tplOrg: { $max: "$hasTpl" },
+      manualOrg: { $max: "$hasManual" }
+  } },
+  { $group: {
+      _id: "$_id.plan",
+      orgsAnyDte: { $sum: 1 },
+      orgsCloudAgents: { $sum: "$tplOrg" },
+      orgsManualDte: { $sum: "$manualOrg" }
+  } },
+  { $sort: { orgsAnyDte: -1 } }
+]
+```
+
+### Tips for Compass
+
+- **Use the analytics URI** (the `nodeType:ANALYTICS` one) for everything heavy. Compass also has a "Read preferences" section in the connection advanced settings if you skip the tag in the URI.
+- **Set the operation timeout** in the aggregation options panel (gear icon next to Run). Default is no timeout — for safety set to 600000 ms (10 min). Mirrors `maxTimeMS` from mongosh.
+- **Enable "Allow Disk Use"** in the same options panel for any aggregation with `$group` or `$sort` on large data. The default 100MB in-memory limit will trip otherwise.
+- **Export results** with the **Export** button (top right of result panel) — pick JSON or CSV. Useful for handing org lists to CS.
+- **Save aggregations** with the **Save** button. They're stored per-connection in Compass. Easier than re-pasting.
+- If a stage takes too long, click the small loading spinner to cancel. The query is killed server-side via `killCursors`.
+
+### When to use mongosh + scripts instead
+
+The Compass aggregation builder is great for pure pipelines but doesn't support JS-side post-processing. Two cases where the `scripts/*.js` files in this skill folder are better:
+
+- **Cross-collection aggregations that need iteration**, e.g. `agents-activation-time.js` joins per-workspace `min(createdAt)` results across two separate aggregations and computes diffs in JS.
+- **Sweeps over parameter combinations**, e.g. `agents-various-filters.js` runs the same query under 5+ filter combos. Easier in JS than rebuilding pipelines.
+
+Run those with mongosh:
+
+```bash
+URI=$(cat /tmp/dte-mongo-uri.txt)   # or the analytics-tagged URI
+mongosh "$URI" --quiet ~/projects/dot-ai-config/dot_claude/skills/dte-analyzer/scripts/<name>.js
+```
+
 ## Variants the user may ask for
 
 - **"Top N Team customers by Manual DTE volume"** -> aggregate CIPE/agent counts per org, not just presence. Group by orgId, sum agent count or CIPE count.
@@ -180,3 +445,4 @@ For very large windows (e.g. all-time), narrow workspace match with `enabled: tr
 - **"Churn: orgs that stopped using Manual DTE"** -> compare two windows (e.g. days 31-60 vs days 1-30).
 - **"Cross-plan DTE comparison"** -> run the all-plans loop; report % of each plan's orgs that ran DTE.
 - **"Manual DTE agent counts"** -> sum `agents.length` per run group across CIPEs.
+- **"Current Cloud Agents adoption rate"** -> use the 7-day TEAM+enabled query above; matches the internal KR within ~2 orgs.
