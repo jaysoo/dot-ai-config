@@ -9,7 +9,9 @@
         "secretmanager.googleapis.com",
         "ifconfig.me",
         "*.googleapis.com",
-        "*.google.com"
+        "*.google.com",
+        "api.github.com",
+        "*.github.com"
       ],
       "allowLocalBinding": true,
       "allowAllUnixSockets": true
