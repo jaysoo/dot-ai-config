@@ -28,7 +28,7 @@
         "~/projects/nx-worktrees/*/.claude/skills"
       ]
     },
-    "excludedCommands": ["gemini", "codex"]
+    "excludedCommands": ["gemini", "codex", "gh", "op"]
   },
   "permissions": {
     "allow": [
