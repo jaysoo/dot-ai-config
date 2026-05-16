@@ -616,6 +616,20 @@ Verify with real browser (Playwright). Document working vs failing cases.
 
 ## 🔐 1Password CLI
 
+### Always log auth requests via the `op-request-reason` skill
+
+Before running **any** command that triggers a 1Password prompt — `op` (any
+subcommand that needs auth), `gh` (alias routes through `op plugin run`), or
+remote `git` ops (`push`/`pull`/`fetch`/`clone`/`ls-remote`/`remote update`,
+which pull the SSH key from 1P's agent) — invoke the `op-request-reason`
+skill. The skill is a SKILL.md only (no helper script, no shell wrapper).
+You write the inline log block shown in the skill before the command and
+patch the line after, every time. If you skip it, nothing gets logged and
+Raycast won't show the pending request to Jack.
+
+Local-only git ops (`status`, `log`, `diff`, `add`, `commit`, `branch`,
+`checkout`, `reset`, `stash`) do NOT need logging.
+
 ```bash
 # Vault error: "Engineering" isn't a vault
 op signin  # Select: tuskteam.1password.com
