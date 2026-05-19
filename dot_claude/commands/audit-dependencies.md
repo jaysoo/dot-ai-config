@@ -103,14 +103,15 @@ For each unique external dependency:
 npm view <pkg> time.modified dist-tags.latest deprecated repository.url --json 2>/dev/null
 ```
 
-If repo is on GitHub:
+If repo is on GitHub, optionally hit `api.github.com/repos/<owner>/<repo>` directly with `curl` (requires a token in `$GITHUB_TOKEN`):
 ```bash
-gh api repos/<owner>/<repo> --jq '{
-  archived: .archived,
-  pushed_at: .pushed_at,
-  open_issues_count: .open_issues_count
-}' 2>/dev/null
+curl -sS -H "Authorization: Bearer $GITHUB_TOKEN" \
+  "https://api.github.com/repos/<owner>/<repo>" \
+  | jq '{archived, pushed_at, open_issues_count}'
 ```
+Skip the GitHub check entirely if no token is configured — npm `time.modified` + `deprecated` flag already covers most signal.
+
+(The `gh` CLI was previously used here. It has been banned — see top-level CLAUDE.md.)
 
 Rate-limit yourself: add a short sleep between npm calls if there are >50 deps.
 

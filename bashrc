@@ -15,6 +15,12 @@ export PATH="$PNPM_HOME:$PATH"
 # eval "$(starship init bash)"
 . "$HOME/.cargo/env"
 
-source /Users/jack/.config/op/plugins.sh
-
 export NX_E2E_SKIP_CLEANUP=true
+
+# Package manager min-release-age supply chain defense.
+# Defaults in ~/.npmrc, ~/.yarnrc.yml, ~/.bunfig.toml, pnpm global rc.
+# Helpers below bypass the 24h gate for one-off urgent installs.
+alias npm-now='npm_config_min_release_age=0 npm'
+alias yarn-now='YARN_NPM_MINIMAL_AGE_GATE=0 yarn'
+pnpm-now() { command pnpm "$@" --config.minimumReleaseAge=0; }
+bun-now() { command bun "$@" --minimum-release-age=0; }

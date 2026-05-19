@@ -2,13 +2,12 @@
 name: op-request-reason
 description: >
   Log 1Password auth requests to /private/tmp/op_requests.txt before running
-  any command that triggers a 1P prompt: `op` (any subcommand), `gh` (alias
-  expands to `op plugin run -- gh`), and remote `git` ops (push, pull, fetch,
-  clone, ls-remote, remote update — these pull SSH keys from 1Password's
-  agent). The log line shows up in Raycast so Jack sees what's pending before
-  approving the 1P prompt. Triggers automatically before running any of: op,
-  gh, git push, git pull, git fetch, git clone, git ls-remote, git remote
-  update.
+  any command that triggers a 1P prompt: `op` (any subcommand) and remote
+  `git` ops (push, pull, fetch, clone, ls-remote, remote update — these pull
+  SSH keys from 1Password's agent). The log line shows up in Raycast so Jack
+  sees what's pending before approving the 1P prompt. Triggers automatically
+  before running any of: op, git push, git pull, git fetch, git clone, git
+  ls-remote, git remote update.
 ---
 
 # op-request-reason
@@ -19,8 +18,8 @@ audit trail breaks.
 
 ## What to do
 
-Before running any `op`, `gh`, or remote `git` command, run this exact shell
-block in a single Bash call. Substitute `<reason>` and `<command>` only:
+Before running any `op` or remote `git` command, run this exact shell block
+in a single Bash call. Substitute `<reason>` and `<command>` only:
 
 ```bash
 uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
@@ -45,12 +44,14 @@ tapping the 1Password prompt.
 
 - **`op`** — any subcommand except `signin`, `signout`, `whoami`, `--version`,
   `--help`, `completion`. Those pass through without auth.
-- **`gh`** — every subcommand. The `gh` alias expands to `op plugin run -- gh`,
-  so it always routes through `op`.
 - **`git` over the network** — `push`, `pull`, `fetch`, `clone`, `ls-remote`,
   `remote update`. These hit `git@github.com:...` and pull the SSH key from
   1Password's SSH agent. Local-only git ops (`status`, `log`, `diff`, `add`,
   `commit`, `branch`, `checkout`, `reset`, `stash`) do NOT need logging.
+
+(Historical note: `gh` used to be on this list as a `op plugin run -- gh`
+wrapper. The `gh` CLI is now banned outright — see top-level CLAUDE.md.
+Do not log or run `gh`.)
 
 ## Examples
 
@@ -59,8 +60,8 @@ Reading a vault item:
 ```bash
 uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
 printf 'PENDING\t%s\t%s\t%s\t%s\t%s\n' \
-    "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" 'reading gh token for PR comment' 'op read op://Personal/Github/token' >>"$log"
-op read op://Personal/Github/token; rc=$?
+    "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" 'reading mongo readonly password for cnw stats query' 'op read op://Personal/MongoReadonly/password' >>"$log"
+op read op://Personal/MongoReadonly/password; rc=$?
 tab=$(printf '\t'); tmp=$(mktemp)
 [ $rc -eq 0 ] && outcome=APPROVED || outcome=DENIED
 sed "s|^PENDING${tab}${uid}${tab}|${outcome}${tab}${uid}${tab}|" "$log" >"$tmp" && mv "$tmp" "$log"
@@ -80,19 +81,6 @@ sed "s|^PENDING${tab}${uid}${tab}|${outcome}${tab}${uid}${tab}|" "$log" >"$tmp" 
 exit $rc
 ```
 
-Listing PRs:
-
-```bash
-uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
-printf 'PENDING\t%s\t%s\t%s\t%s\t%s\n' \
-    "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" 'listing open PRs on nrwl/nx' 'gh pr list --repo nrwl/nx --state open' >>"$log"
-gh pr list --repo nrwl/nx --state open; rc=$?
-tab=$(printf '\t'); tmp=$(mktemp)
-[ $rc -eq 0 ] && outcome=APPROVED || outcome=DENIED
-sed "s|^PENDING${tab}${uid}${tab}|${outcome}${tab}${uid}${tab}|" "$log" >"$tmp" && mv "$tmp" "$log"
-exit $rc
-```
-
 ## Reason format
 
 - One short clause, lowercase, no trailing period.
@@ -102,15 +90,15 @@ exit $rc
 ### Good
 
 ```
-'reading gh token for PR comment'
-'listing open PRs on nrwl/nx'
+'reading mongo readonly password for cnw stats query'
+'fetching origin/main before rebase'
 'pushing fix-NXC-3505 for review'
 ```
 
 ### Bad
 
 ```
-'running gh'           # too vague
+'running op'           # too vague
 'auth'                 # useless
 'user asked me to'     # not the WHY
 ```

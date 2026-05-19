@@ -293,19 +293,16 @@ const initBase = [
 
 ### 1. Whitelist your IP in MongoDB Atlas
 
-MongoDB Atlas requires your current IP on the access list. Run this before connecting:
+MongoDB Atlas requires your current IP on the access list. Get the IP and trigger the whitelist workflow manually via the GitHub Actions UI:
 
 ```bash
-# Get current IP and add to Atlas access list (use PROD or STAGING)
-ip="$(curl -4 -sS --fail --max-time 5 https://ifconfig.me)" \
-  && printf '%s\n' "$ip" | awk -F. 'NF==4 && $1>=0 && $1<=255 && $2>=0 && $2<=255 && $3>=0 && $3<=255 && $4>=0 && $4<=255 {exit 0} {exit 1}' \
-  && gh workflow run add-ip-to-atlas-access-list.yaml \
-       -F "clusterName=PROD" \
-       -F "ipAddress=${ip}" \
-       -R nrwl/cloud-infrastructure
+# Get current IP (PROD or STAGING)
+curl -4 -sS --fail --max-time 5 https://ifconfig.me
 ```
 
-Replace `PROD` with `STAGING` if connecting to the staging cluster.
+Then open `https://github.com/nrwl/cloud-infrastructure/actions/workflows/add-ip-to-atlas-access-list.yaml`, click "Run workflow", and fill in `clusterName=PROD` (or `STAGING`) plus the IP you just printed.
+
+(The `gh` CLI was previously used to dispatch this workflow. It has been banned — see top-level CLAUDE.md. If you want to script it, use `curl -X POST` against the GitHub Actions dispatch API with an explicit token in env.)
 
 ### 2. Authenticate with gcloud
 

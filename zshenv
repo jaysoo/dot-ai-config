@@ -4,5 +4,5 @@
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-# 1Password CLI plugin aliases (e.g. gh -> op plugin run -- gh).
-[ -f "$HOME/.config/op/plugins.sh" ] && source "$HOME/.config/op/plugins.sh"
+# 1Password CLI plugin aliases removed. `gh` was the only plugin and the
+# binary has been uninstalled for security reasons.

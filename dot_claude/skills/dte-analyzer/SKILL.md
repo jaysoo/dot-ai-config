@@ -56,13 +56,7 @@ Some CIPEs have non-empty `agents` but empty `agentInstances` (legacy or aborted
 
 Same as `cnw-stats-analyzer`:
 
-1. **Whitelist IP** in Atlas:
-   ```bash
-   ip=$(curl -4 -sS --max-time 5 https://ifconfig.me)
-   gh workflow run add-ip-to-atlas-access-list.yaml \
-     -F clusterName=PROD -F ipAddress="$ip" \
-     -R nrwl/cloud-infrastructure
-   ```
+1. **Whitelist IP** in Atlas. Get your IP with `curl -4 -sS --max-time 5 https://ifconfig.me`, then dispatch the `add-ip-to-atlas-access-list.yaml` workflow via the GitHub Actions UI (`nrwl/cloud-infrastructure` repo) with `clusterName=PROD` and the IP. (`gh` CLI banned — see top-level CLAUDE.md.)
 
 2. **Authenticate gcloud** (`gcloud auth list` to verify `@nrwl.io` account credentialed).
 
@@ -267,14 +261,7 @@ Compass is the official Mongo desktop client — free, native macOS, runs aggreg
 ### One-time setup
 
 1. **Install Compass**: <https://www.mongodb.com/products/tools/compass>.
-2. **Whitelist your IP** (every time it changes, e.g. coffee shop wifi):
-   ```bash
-   ip=$(curl -4 -sS --max-time 5 https://ifconfig.me)
-   gh workflow run add-ip-to-atlas-access-list.yaml \
-     -F clusterName=PROD -F ipAddress="$ip" \
-     -R nrwl/cloud-infrastructure
-   ```
-   Wait ~30s for Atlas propagation.
+2. **Whitelist your IP** (every time it changes, e.g. coffee shop wifi). Get your IP with `curl -4 -sS --max-time 5 https://ifconfig.me`, then trigger the `add-ip-to-atlas-access-list.yaml` workflow on `nrwl/cloud-infrastructure` via the GitHub Actions UI (`clusterName=PROD`, paste the IP). Wait ~30s for Atlas propagation. (`gh` CLI banned — see top-level CLAUDE.md.)
 3. **Get the password** from gcloud (after `gcloud auth login`):
    ```bash
    gcloud secrets versions access latest --project=nxcloudoperations \

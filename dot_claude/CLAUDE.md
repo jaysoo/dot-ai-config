@@ -7,6 +7,16 @@ Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse
 
 In any new session, ALWAYS use /caveman skill to go into full (default) cavement mode. Let me know and I can tell you to turn it off if needed or switch to other modes.
 
+## 🔴 NEVER use the `gh` GitHub CLI
+
+The `gh` binary has been removed from this machine for security reasons (`gh auth token` exposed tokens too broadly). It is **no longer installed**.
+
+- **Never invoke `gh` for anything** — not `gh pr`, `gh issue`, `gh api`, `gh release`, `gh workflow`, `gh search`, nothing. Calls will fail with "command not found".
+- **Never suggest `gh` in answers, examples, scripts, skills, or commands.** Treat it as deleted.
+- **Never re-add `gh` to permission allowlists, op-plugin wrappers, or shell aliases.**
+- For GitHub data, prefer: the GitHub MCP (when available), `curl` against `api.github.com` with an explicit token you already have in env, or the web UI. Ask Jack before adding a new auth path.
+- For PR review/comment/merge actions: only the web UI or a `curl` POST with explicit confirmation. Same "never act on PRs without explicit authorization" rule from below still applies.
+
 ## 🔴 Critical Setup & Verification
 
 ### dot-ai-config is the Source of Truth
@@ -95,8 +105,9 @@ Fixes DOC-125"
 - **NEVER post reviews, comments, or approvals on GitHub PRs unless explicitly instructed**
 - Analysis plans with scores/recommendations are NOT authorization to act on PRs
 - "MERGE AS-IS" in a plan means "this is ready" -- NOT "go approve it"
-- Always confirm before: `gh pr review`, `gh pr comment`, `gh pr merge`
+- Always confirm before posting any review/comment/merge action (web UI, curl, MCP — any path).
 - This applies even when the plan was provided by the user
+- The `gh` CLI is banned (see top of file) — do not propose it as the action mechanism either.
 
 ### PR Review Process
 - When asked to investigate/review a PR, **pull the branch and verify locally**
@@ -619,13 +630,16 @@ Verify with real browser (Playwright). Document working vs failing cases.
 ### Always log auth requests via the `op-request-reason` skill
 
 Before running **any** command that triggers a 1Password prompt — `op` (any
-subcommand that needs auth), `gh` (alias routes through `op plugin run`), or
-remote `git` ops (`push`/`pull`/`fetch`/`clone`/`ls-remote`/`remote update`,
-which pull the SSH key from 1P's agent) — invoke the `op-request-reason`
-skill. The skill is a SKILL.md only (no helper script, no shell wrapper).
-You write the inline log block shown in the skill before the command and
-patch the line after, every time. If you skip it, nothing gets logged and
-Raycast won't show the pending request to Jack.
+subcommand that needs auth) or remote `git` ops (`push`/`pull`/`fetch`/
+`clone`/`ls-remote`/`remote update`, which pull the SSH key from 1P's
+agent) — invoke the `op-request-reason` skill. The skill is a SKILL.md
+only (no helper script, no shell wrapper). You write the inline log block
+shown in the skill before the command and patch the line after, every
+time. If you skip it, nothing gets logged and Raycast won't show the
+pending request to Jack.
+
+(Note: `gh` used to belong on this list as an op-plugin wrapper. The
+binary is now banned — see top of file.)
 
 Local-only git ops (`status`, `log`, `diff`, `add`, `commit`, `branch`,
 `checkout`, `reset`, `stash`) do NOT need logging.

@@ -11,3 +11,4 @@ Track incidents end-to-end: discovery, impact assessment, remediation, disclosur
 | Date | File | Summary | Status |
 |------|------|---------|--------|
 | 2026-03-25 | `2026-03-25-org-access-leakage.md` | Org listing exposed via allowedEmailDomains on public email TLDs | Remediated, disclosure pending |
+| 2026-05-18 | `2026-05-18-nx-console-compromise.md` | Nx Console compromise follow-up items | Follow-up tracking |

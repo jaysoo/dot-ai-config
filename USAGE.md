@@ -12,18 +12,12 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | reflect               | command | 2026-04-01   | 5     |
 | summarize             | command | 2026-04-01   | 5     |
 | dot-claude-guard      | skill   | 2026-04-10   | 5     |
-| scan-and-audit        | skill   | 2026-05-04   | 10    |
-| scan-competitors      | command | 2026-04-09   | 8     |
 | customer-deps-audit   | task    | 2026-04-09   | 5     |
-| runtime-tracking-scan | task    | 2026-04-09   | 4     |
 | team-capacity-audit   | task    | 2026-04-09   | 12    |
-| community-sentiment   | task    | 2026-04-09   | 10    |
 | kudos                 | command | 2026-03-24   | 0     |
 | plan-week             | command | 2026-05-04   | 2     |
-| nx-monthly-digest     | skill   | 2026-04-24   | 2     |
 | plan-week             | skill   | 2026-03-30   | 1     |
 | metrics-review        | skill   | 2026-03-24   | 1     |
-| nx-scorecard          | command | 2026-05-05   | 1     |
 | brainstorm            | skill   | 2026-04-24   | 2     |
 | reflect               | skill   | 2026-04-01   | 2     |
 | cnw-update-templates  | skill   | 2026-04-10   | 2     |
@@ -31,16 +25,12 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | audit-supply-chain    | skill   | 2026-04-09   | 5     |
 | audit-dependencies    | skill   | 2026-04-24   | 3     |
 | pylon-support         | skill   | 2026-03-27   | 1     |
-| scan-community        | skill   | 2026-03-30   | 8     |
-| scan-frameworks       | skill   | 2026-04-09   | 3     |
-| scan-ai-landscape     | skill   | 2026-04-09   | 4     |
 | audit-api-surface     | skill   | 2026-04-09   | 9     |
 | audit-project-health  | skill   | 2026-04-09   | 11    |
 | site-checker          | skill   | 2026-04-01   | 0     |
-| caveman               | skill   | 2026-05-07   | 8     |
+| caveman               | skill   | 2026-05-19   | 10    |
 | skill-creator         | skill   | 2026-04-24   | 1     |
 | terminal-demo-recorder | skill   | 2026-04-24   | 1     |
-| review-pr             | command | 2026-04-22   | 1     |
 | cnw-stats-local-server | skill  | 2026-04-23   | 0     |
 | gemini-collab         | skill   | 2026-04-24   | 1     |
 | 2026-04-24 | terminal-demo-recorder | 1 |
