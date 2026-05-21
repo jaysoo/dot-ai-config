@@ -744,3 +744,35 @@ Key difference: Angular Native Federation uses an `import map` model rather than
 6. Write READMEs.
 7. Manual validation checklist pass.
 8. (Later) Angular Native Federation tree.
+
+---
+
+## 15. Nx module federation forward plan (added 2026-05-20)
+
+Recommendation for `@nx/module-federation` and the React/Angular MF generators, informed by what this repo proves:
+
+1. **Deprecate all existing MF generators + executors in Nx v23, remove in v24.** Standard lifecycle. Today's `@nx/react:host` / `@nx/angular:host` and their `module-federation-dev-server` / `module-federation-ssr-dev-server` executors get a deprecation notice in v23 and are gone in v24.
+
+2. **New consumer / producer generators target rsbuild, vite, and Angular Native Federation only.** These are the three setups this repo demonstrates as the realistic stack choices — first-class plugins, working dev/build/preview, behave correctly under dynamic federation.
+
+3. **TypeScript-solution-style workspace setup just works.** Because the new generators target plain Vite / Rsbuild / Angular CLI (not custom Nx-wrapped bundlers), the workspace's TS project references and `paths` mappings flow through unchanged. No `NX_IGNORE_UNSUPPORTED_TS_SETUP` escape hatch needed, which the legacy `@nx/react`/`@nx/angular` MF generators required in this repo.
+
+4. **Dynamic federation removes the need to orchestrate every remote.** Remotes registered at runtime (manifest or per-route lazy) → a missing remote is a 404 the host's error boundary handles. No need to build-and-static-serve every remote up front. `dependsOn` only needs to bring the host alongside a remote being served; siblings can be left off, started via `nx run-many` on demand, or pointed at deployed URLs.
+
+5. **Rspack is NOT supported in the new generators.** No rspack flavor of consumer/producer ships. Existing manual rspack federation setups continue to work via `@module-federation/enhanced/rspack` upstream, but Nx-blessed generators won't include it. Collect demand via GitHub issue or RFC to decide whether to revisit.
+
+6. **Webpack will NOT be supported — full stop.** No deprecation path back. The legacy `@nx/angular:host` (webpack MF) goes away with the v24 removal and isn't replaced. New Angular work targets Native Federation.
+
+### What this means for `@nx/module-federation`
+
+- Thinner package in v23+: no executors (already empty in 22.7), no Nx-shipped bundler plugin (those live in `@module-federation/enhanced` upstream).
+- Remaining role: shared utilities consumed by the new generators (manifest scaffolding, type generation, dynamic-remote helpers).
+- Drop the orchestration story (dev server bringing up static-served siblings). Dynamic federation makes it unnecessary, and the existing rspack/webpack-coupled implementation can't extend to vite/native-fed cleanly.
+
+### Evidence base in this repo
+
+- `apps/react-vite/`, `apps/react-rsbuild/` — dynamic-federation flow with cross-bundler remotes working.
+- `apps/angular-native-fed/` — Native Federation's manifest-at-runtime model and graceful 404 handling.
+- `apps/nx-react-vite/` — the minimum Nx wiring (`dependsOn` + `continuous` + plain `nx:run-commands`) is enough to get "serve a remote, host comes along" UX. No custom executor required.
+- The dynamic e2e suites (`apps/react-{rspack,rsbuild,vite}/e2e-dynamic/`, `apps/angular-native-fed/e2e-dynamic/`) prove the host renders cleanly when only a subset of remotes is alive.
+- `apps/nx-react/`, `apps/nx-angular/` (legacy generators) document the rough edges the new generators should avoid: TS project-references conflict, `tsc --emitDeclarationOnly` polluting the dist dir that the static-remote proxy reads from, hyphen-restricted project names, host-via-rspack-plugin orchestration that breaks when typecheck cache and rspack build collide.
