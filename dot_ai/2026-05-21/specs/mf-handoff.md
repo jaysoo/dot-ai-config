@@ -12,11 +12,12 @@
 In Nx v23:
 
 - **Deprecate everything currently shipping in `@nx/module-federation`** — generators (`host`, `remote`), executors (`module-federation-dev-server`, `module-federation-ssr-dev-server`), and Angular MF support.
-- **Ship new generators in `@nx/module-federation`**: `consumer` and `provider`. React-only. Targets one of Vite, Rsbuild, or Rspack (bundler chosen at generation time).
-- **No built-in routing.** Generated code renders a federated component directly. Inline comments and the docs page point users at TanStack Router / React Router setup paths — recommended to be applied manually or via AI.
+- **Ship new generators in `@nx/module-federation`**: `consumer` and `provider`. React-only. Targets one of Vite (default), Rsbuild, or Rspack (bundler chosen at generation time).
+- **No built-in routing.** Generated code renders a federated component directly. Inline comments in `App.tsx` and the docs page point users at TanStack Router / React Router setup paths — applied manually or via AI.
 - **No static-serve orchestration.** Dynamic federation handles missing remotes via a graceful runtime error; the dev story is "serve the apps you need, ignore the rest."
+- **No automated migration codemod.** Migration is a docs guide + a paste-into-AI prompt. Users on the deprecated generators have setups too varied to codemod safely.
 
-In Nx v24: remove everything marked deprecated above. No replacement for Angular MF in Nx (Manfred's docs cover Angular Native Federation as the standalone path).
+In Nx v24: remove everything marked deprecated above. No replacement for Angular MF in Nx (Manfred's docs cover Angular Native Federation as the standalone path). A v24.x follow-up minor re-adds `host` / `remote` as aliases forwarding to `consumer` / `provider`.
 
 ---
 
@@ -35,11 +36,10 @@ In Nx v24: remove everything marked deprecated above. No replacement for Angular
 ### Backwards-compat / migration
 
 - Deprecation warnings emitted on every invocation of the old generators/executors in v23.
-- Provide a migration generator (`nx g @nx/module-federation:migrate-to-consumer-provider` or similar) that:
-  - Reads the existing host's `module-federation.config.ts`
-  - Rewrites it to the new `consumer` shape
-  - Updates `serve` target to drop the static-remote orchestration in favor of a dynamic-manifest pattern
-  - Adds a `public/mf-remotes.json` populated from the existing `remotes:` config
+- **No automated migration codemod.** Existing setups vary too widely (custom executors, host orchestration, SSR variants) for a generator to land cleanly.
+- Ship two artifacts instead:
+  1. **A migration guide** in the v23 docs walking through the manual changes: dropping `module-federation.config.ts`, rewriting the bundler config, swapping static `remotes:` for `public/mf-remotes.json` + `registerRemotes` + `loadRemote`, and removing the executor-driven serve.
+  2. **An AI prompt** (shipped in the docs) users can paste into Cursor / Claude Code / Copilot to perform the rewrite on their codebase. The prompt is the deliverable.
 - Document the breakage that `nx serve host` no longer auto-builds/serves all remotes (this is the "may upset people" point — call it out explicitly in the migration guide).
 
 ---
@@ -134,11 +134,12 @@ The "AI hint" comments are deliberate scaffolding. They give Cursor / Claude Cod
 
 Must cover:
 - The new `consumer` / `provider` mental model (one sentence each).
-- The three bundler choices and a one-line note on why a team might pick each.
+- The three bundler choices and a one-line note on why a team might pick each. Vite is the default.
 - How dynamic federation works (`mf-remotes.json` + `registerRemotes` + `loadRemote`), with a copy-paste snippet.
 - How to add TanStack Router. How to add React Router. ~10 lines each, including the imports.
-- A "Migrating from `@nx/module-federation:host`/`remote`" section that references the migration generator.
+- A "Migrating from `@nx/module-federation:host`/`remote`" section with the manual steps plus the AI-prompt block users can paste into Cursor / Claude Code / Copilot.
 - A "What changed in v23" callout explaining the deprecations, especially the dropped static-serve orchestration.
+- An "SSR" section that links out to [module-federation.io's SSR guide](https://module-federation.io/) — not first-classed by the generators, but documented as a thing users can wire up themselves.
 - A pointer to `apps/nx-react-vite/` and the dynamic e2e examples in this evidence repo.
 
 For Angular: docs page that points at `@angular-architects/native-federation` with a "this is the supported Angular MF path going forward" callout. Owned by Manfred.
@@ -209,23 +210,23 @@ For Angular: docs page that points at `@angular-architects/native-federation` wi
 
 ---
 
-## Open questions (please confirm)
+## Confirmed decisions
 
-1. **Rspack confirmed as a v23 first-class bundler choice?** Section 15 of the original spec had it as "RFC only, not in scope" — this hand-off includes it. The user's latest message lists it explicitly ("Vite, Rsbuild, Rspack"), so I've kept it in. Confirm before the implementing agent locks in.
-2. **Generator names: `consumer` / `provider` or stick with `host` / `remote` for continuity?** Module-federation.io's own glossary uses both pairs. New names communicate the model shift cleanly; old names ease migration. Recommend: `consumer` / `provider` as the new generator names (signals the deprecation) but emit alias docs that say "formerly `host` / `remote`".
-3. **Migration generator scope.** Full codemod of source imports, or just config + docs pointing the user to do source changes manually? The latter is safer; the former is friendlier.
-4. **Default bundler when `--bundler` is omitted.** Vite recommended for ecosystem reach; Rsbuild for the smallest-config win. Recommend Vite.
-5. **Where do the AI hint comments live in the generator templates?** Inline in `App.tsx`, or in a separate `routing-recipes.md` shipped next to the source? Recommend inline — AI assistants are most helpful when the hints are in the file they're editing.
-6. **SSR placeholder.** The deprecated SSR dev server has no replacement in v23. Is silent removal OK, or do we need a `--ssr` flag stubbed out as `not yet supported`?
+1. **Rspack is a first-class bundler in v23.** Same generator surface as Vite and Rsbuild; the only difference is the bundler config file (which is the more verbose of the three). Use this repo's `apps/react-rspack/host/rspack.config.ts` as the template.
+2. **Generator names are `consumer` and `provider`.** `host` and `remote` are removed in v24, then re-added as **aliases** that forward to `consumer` and `provider`. Aliasing happens AFTER removal — so v24 will briefly have only the new names, and `host` / `remote` aliases land in a follow-up minor.
+3. **No automated migration generator in v23.** Users on the deprecated generators have substantially different setups (executors, host orchestration, etc.) — auto-migration is too brittle. Ship a **migration guide** in the v23 docs that walks through the changes manually, plus an **AI prompt** users can paste into Cursor / Claude Code / Copilot to do the rewrite. The prompt is the deliverable, not a codemod.
+4. **Default bundler is Vite.** `nx g @nx/module-federation:consumer my-app` with no `--bundler` flag generates a Vite project.
+5. **AI-hint comments are inline in `App.tsx`.** The generated file contains the routing-integration snippets as comments next to the federated component. No separate `routing-recipes.md`. Docs page mirrors the same snippets.
+6. **No `--ssr` flag in v23.** SSR isn't first-classed in the new generators. The docs page includes a "doing this yourself" section that links to module-federation.io's SSR guidance for users who need it.
 
 ---
 
 ## Suggested implementation order for the agent
 
 1. Land the deprecation warnings in v23 on the existing generators/executors. No behavior change yet.
-2. Implement `consumer` and `provider` generators for **Vite first** (smallest config surface).
-3. Replicate for **Rsbuild**, then **Rspack**. They share most of the federation plugin code; the bundler config files are the diff.
-4. Write the migration generator. Test against `apps/nx-react/` and `apps/nx-angular/` in this repo as the test fixtures.
-5. Docs page rewrite (the `@nx/module-federation` page on nx.dev).
-6. Cut the v23 release.
-7. v24: remove the deprecated surfaces. No code changes to the new generators expected.
+2. Implement `consumer` and `provider` generators for **Vite first** (the default bundler, smallest config surface).
+3. Replicate for **Rsbuild**, then **Rspack**. They share most of the federation plugin code; the bundler config files are the diff. Rspack config is the most verbose.
+4. Write the docs page (the `@nx/module-federation` page on nx.dev), including the migration guide and the paste-into-AI prompt.
+5. Cut the v23 release.
+6. v24: remove the deprecated surfaces. No code changes to the new generators expected.
+7. v24.x (follow-up minor, not blocking): re-add `host` and `remote` as aliases that forward to `consumer` and `provider` for muscle-memory compat.

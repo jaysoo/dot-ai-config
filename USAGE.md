@@ -15,7 +15,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | customer-deps-audit   | task    | 2026-04-09   | 5     |
 | team-capacity-audit   | task    | 2026-04-09   | 12    |
 | kudos                 | command | 2026-03-24   | 0     |
-| plan-week             | command | 2026-05-04   | 2     |
+| plan-week             | command | 2026-05-21   | 3     |
 | plan-week             | skill   | 2026-03-30   | 1     |
 | metrics-review        | skill   | 2026-03-24   | 1     |
 | brainstorm            | skill   | 2026-04-24   | 2     |

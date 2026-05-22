@@ -1,0 +1,41 @@
+/*
+ * Smoke scaffolder. Writes the generated provider+consumer tree to
+ * /tmp/mf-smoke/workspace so we can `pnpm install && pnpm dev` against
+ * a real Vite stack and screenshot it. Skipped unless MF_SMOKE_DUMP=1.
+ */
+import { Tree } from '@nx/devkit';
+import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
+import { writeFileSync, mkdirSync, rmSync } from 'fs';
+import { dirname, join } from 'path';
+import providerGenerator from './provider';
+import consumerGenerator from '../consumer/consumer';
+
+const shouldRun = process.env.MF_SMOKE_DUMP === '1';
+
+(shouldRun ? describe : describe.skip)('mf v2 smoke scaffolder', () => {
+  it('writes a vite provider+consumer to /tmp/mf-smoke/workspace', async () => {
+    const outRoot = '/tmp/mf-smoke/workspace';
+    rmSync(outRoot, { recursive: true, force: true });
+
+    const tree: Tree = createTreeWithEmptyWorkspace({ layout: 'apps-libs' });
+
+    await providerGenerator(tree, {
+      name: 'my-provider',
+      bundler: 'vite',
+      port: 5101,
+    });
+    await consumerGenerator(tree, {
+      name: 'my-consumer',
+      bundler: 'vite',
+      port: 5100,
+    });
+
+    for (const change of tree.listChanges()) {
+      if (change.type === 'DELETE') continue;
+      const abs = join(outRoot, change.path);
+      mkdirSync(dirname(abs), { recursive: true });
+      writeFileSync(abs, change.content ?? '');
+    }
+    console.log('[smoke] wrote workspace to', outRoot);
+  });
+});

@@ -46,6 +46,15 @@
 
 ## TODO
 
+- [ ] Ask Alexis: bump Wagepoint TOIL policy 6 -> 7 days (Szymon gone) (2026-05-22)
+- [ ] **Weekly plan 2026-05-25 — Must Do block** (`dot_ai/para/areas/weekly-plans/2026-05-25.md`)
+  - `/cnw-stats-analyzer` Mon AM — 9 wk stale, third week at top
+  - `/scan-and-audit` W21 — 3 wk overdue
+  - `/metrics-review npm` — 9+ wk overdue
+  - O&A Thu refresh pulse 2026-05-28 (`/plan-week refresh`)
+  - Land/close 5 review-iterating PRs: #35614, #35613, #35608, #35664, polygraph#4
+  - NXC-3345 decide (48d overdue)
+  - Commit+push NXC-4326, NXC-4325 worktrees
 - [ ] Review CNW init enhancements spec — NXC-4311 + DOC-492 + NXC-4367 (2026-05-13)
   - Plan: `dot_ai/2026-05-12/specs/cnw-init-enhancements.md`
   - Goal: Read patched spec, hand to Codex/Gemini for second-pass review if desired, then green-light implementation
