@@ -59,7 +59,20 @@ Source material:
    pack and copy nx into the repro
    ```
 
-   This builds and packs the library, copies the tarball into the consumer's `node_modules`, and reruns the failing command. The point of this step is the part you've been doing by hand for years: it makes "did my fix work end-to-end" a single agent turn instead of a multi-terminal dance.
+   The point of this step is the part you've been doing by hand for years: it makes "did my fix work end-to-end" a single agent turn instead of a multi-terminal dance.
+
+   > **What `pack-and-copy` actually does**
+   >
+   > You don't run a CLI flag — the agent calls Polygraph's `pack_and_copy` MCP tool with the publisher repo, the consumer repo, and the current session. For each pair, it:
+   >
+   > 1. **Refuses paths outside session repos.** Anything that doesn't resolve into a cloned session repo is rejected before any filesystem write. A `--pair=~/.ssh=...` can't happen.
+   > 2. **Runs `npm pack` in the publisher.** Lifecycle scripts (`prepack`/`prepare`/`postpack`) are **off by default** — lifecycle scripts on a freshly cloned repo are de-facto RCE. Opt in with `--run-scripts` only when you trust the publisher.
+   > 3. **Bumps the publisher's version** to `<orig>-pg.<sessionId>.<timestamp>` so consumers always resolve a strictly-greater version and reruns within a session don't collide.
+   > 4. **Drops the tarball** into `<consumer>/.polygraph-packages/` (not `node_modules`, not a global cache — it lives in-tree).
+   > 5. **Rewrites the consumer's `package.json`** to point the dependency at the local tarball, in whichever of `dependencies` / `devDependencies` / `peerDependencies` / `optionalDependencies` it already lives.
+   > 6. **Reports both sides** (published + consumed packages) to the Polygraph session API, keyed by session repo IDs, so the session UI shows the wiring.
+   >
+   > After that, the agent reruns whatever command was failing in the consumer — `npm test`, `nx e2e`, whatever the repro README says.
 
 5. **Open the PR — and share the session.**
 
@@ -68,6 +81,51 @@ Source material:
    ```
 
    The session's full history (commands, files touched, branches, the repro itself) gets attached to the PR via a share link. Reviewers and the original reporter get the _why_, not just the diff.
+
+### End-to-end: a real session
+
+Concrete walkthrough you can copy-paste. Replace the issue / repo URLs with your own.
+
+```bash
+# 1. Install nothing globally — npx will fetch the thin shell on first run.
+npx polygraph session start
+# Interactive prompts:
+#   - Account?           pick your personal or org account
+#   - Primary repo?      paste github.com/nrwl/nx   (or pick from the list)
+#   - Spawn agent?       yes -> Claude   (or Codex / OpenCode)
+```
+
+Then, inside the spawned agent's chat window:
+
+```text
+> The bug is reported at https://github.com/nrwl/nx/issues/30421.
+> The reporter has a reproduction at https://github.com/some-user/nx-bug-repro.
+> Add that repro repo to this session.
+```
+
+```text
+> Read the issue and the repro's README. Run the failing command in the repro
+> and confirm you can reproduce the bug before changing anything in nx.
+```
+
+```text
+> Now look in nx for the code path responsible. Make the smallest fix you can
+> justify. Don't run tests in nx yet — I want to validate end-to-end first.
+```
+
+```text
+> Pack and copy nx into the repro, then rerun the repro's failing command.
+> If it still fails, iterate on the fix. If it passes, run the relevant nx
+> unit tests for the files you changed.
+```
+
+```text
+> Open a pull request against nrwl/nx with the fix. Title:
+> "fix(core): <one-line summary>". Body should link the issue and the repro.
+> Then share this session and paste the share link so I can post it on the issue.
+```
+
+That's the whole loop: one CLI install, one `session start`, five chat turns.
 
 ### Why this is the doc lead
 
@@ -132,6 +190,12 @@ Every step here works against public repos with no per-contributor onboarding. I
 
    For shared libraries / design systems: `pack-and-copy` the unmerged library into every consumer repo and let each consumer's CI run against it. This is the step that lets you ship a breaking change to a shared lib without a "release candidate → consumer upgrade" merry-go-round.
 
+   > **What CI sees**
+   >
+   > `pack-and-copy` rewrites each consumer's `package.json` to depend on a tarball at `.polygraph-packages/<pkg>-<orig>-pg.<sessionId>.<timestamp>.tgz`, then reports the wiring back to the Polygraph session. The consumer's CI installs from that tarball exactly the way it would install from npm — no registry override, no separate `npm publish`, no `0.0.0-pr-1234` packages clogging up your real registry. The publisher's `npm pack` runs **without** lifecycle scripts by default (security), so if your shared lib relies on a `prepack` build step, either opt in with `--run-scripts` once you trust the publisher, or have the agent run the build before the pack step.
+   >
+   > See Workflow A's "What `pack-and-copy` actually does" callout for the full 6-step mechanics.
+
 6. **Open linked PRs on a shared branch.**
 
    ```
@@ -139,6 +203,72 @@ Every step here works against public repos with no per-contributor onboarding. I
    ```
 
    Each PR carries the session link, the plan, and pointers to the sibling PRs. Merge order is documented; reviewers see the full cross-repo context.
+
+### End-to-end: a real session
+
+Concrete walkthrough for the "add `tags[]` to Cart" example. Two repos: `acme/api` (backend) and `acme/web` (frontend) — adjust to your stack.
+
+**One-time, in the Polygraph web UI** (`/orgs/<your-org-id>/pipeline-secrets`):
+
+| Secret name      | Used by                | Example value         |
+| ---------------- | ---------------------- | --------------------- |
+| `NPM_TOKEN`      | publish step in `api`  | `npm_xxx...`          |
+| `VERCEL_TOKEN`   | deploy step in `web`   | `vrcl_xxx...`         |
+| `GH_APP_TOKEN`   | PR creation, both repos| `ghs_xxx...`          |
+
+These get injected into the right step at the right time — you never paste them into chat.
+
+**Then in your terminal:**
+
+```bash
+npx polygraph session start
+# Interactive prompts:
+#   - Account?            pick the acme org
+#   - Primary repo?       acme/api
+#   - Add another repo?   yes -> acme/web
+#   - Spawn agent?        yes -> Claude
+```
+
+Inside the agent chat:
+
+```text
+> Don't write any code yet. Write a plan for this change:
+> "Add a tags[] field on Cart, returned from GET /carts/:id, and surface
+>  it as a chip row above the cart line items in the web app."
+>
+> The plan must include:
+>   - the exact DTO shape (TS type for the field on Cart)
+>   - the migration order (which repo lands first, what the contract
+>     looks like before/after each step)
+>   - which repo gets which commit
+> When the plan is ready, stop and let me review it.
+```
+
+```text
+> Plan approved. Spawn a child agent in acme/api to implement the backend
+> change per the plan. Tell it to also update the OpenAPI / TS contract
+> package that acme/web consumes.
+```
+
+```text
+> Now spawn a child agent in acme/web to consume the new field.
+> The api subagent updated the contract package — pack and copy
+> @acme/api-client into acme/web, then have the web subagent build
+> against that local tarball.
+```
+
+```text
+> Both subagents look done. In acme/web, run typecheck and the cart e2e
+> against the packed @acme/api-client to confirm the contract matches.
+```
+
+```text
+> Push branches in both repos and open linked pull requests on the shared
+> branch "feat/cart-tags". The api PR description must call out that the
+> web PR depends on it; the web PR must link the api PR.
+```
+
+That's the loop. One plan, two subagents, one shared branch, two PRs that already know about each other.
 
 ### Why this is the enterprise-lead doc
 
