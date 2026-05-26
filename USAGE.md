@@ -26,9 +26,10 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | audit-dependencies    | skill   | 2026-04-24   | 3     |
 | pylon-support         | skill   | 2026-03-27   | 1     |
 | audit-api-surface     | skill   | 2026-04-09   | 9     |
-| audit-project-health  | skill   | 2026-04-09   | 11    |
+| audit-project-health  | skill   | 2026-05-25   | 12    |
 | site-checker          | skill   | 2026-04-01   | 0     |
-| caveman               | skill   | 2026-05-19   | 10    |
+| caveman               | skill   | 2026-05-25   | 11    |
+| scan-and-audit        | skill   | 2026-05-25   | 1     |
 | skill-creator         | skill   | 2026-04-24   | 1     |
 | terminal-demo-recorder | skill   | 2026-04-24   | 1     |
 | cnw-stats-local-server | skill  | 2026-04-23   | 0     |

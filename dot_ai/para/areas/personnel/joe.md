@@ -23,6 +23,12 @@
 - **Goals:**
 - **Strengths:**
 
+## Upcoming Sync
+
+- Move PayFit over to dedicated compute this week / next week
+  - Confirm billing: $149 + usage standalone, or bundled into existing contract?
+  - PayFit is enterprise on single tenant; 2026-04-28 1:1 note said enterprise shouldn't need this add-on — clarify whether their contract already covers dedicated or whether they opt in at the $149 add-on rate
+
 ## 1:1 Notes
 
 ### 2026-04-28

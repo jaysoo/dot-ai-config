@@ -46,6 +46,20 @@
 
 ## TODO
 
+- [ ] Follow up on GitHub support ticket (2026-05-25)
+  - https://support.github.com/ticket/personal/0/4416029
+- [ ] **Nx Cloud client bundle integrity — signed manifest + harden update path** (2026-05-25)
+  - Plan: `.ai/2026-05-25/tasks/nx-cloud-client-bundle-integrity.md`
+  - Triggered by Socket.dev alerts on `nx@22.7.3` (false-positive surface tag, real underlying signal)
+  - Goal: verify-then-`require()` cloud bundle (sha256 + ed25519 sig), allowlist `commandName`, document daemon trust model. Server-side first (Orca), CLI side warn-only -> enforce
+- [ ] **Move PayFit to dedicated compute — this week / next week** (2026-05-25)
+  - From Joe 1:1 upcoming sync
+  - Open question: do they pay $149 + usage as standalone add-on, or is it bundled into their existing enterprise contract? Enterprise on single tenant per 2026-04-28 notes — clarify with Joe before moving
+- [ ] **PR #35682: rspack/rsbuild v2 multi-version compliance — pick up from Jason (PTO), get merged** (2026-05-22)
+  - PR: https://github.com/nrwl/nx/pull/35682 (draft, branch `feature/nxc-4460-rspack-rsbuild-v2-support`, author FrozenPandaz)
+  - Scope: `@nx/rspack` + `@nx/rsbuild` + `@nx/angular-rspack` + `@nx/module-federation`; catalog `@rspack/core@2.0.4` / `@rsbuild/core@2.0.7`; v1 stays in support window; new `packageJsonUpdates` migrations for workspaces on v1
+  - Goal: review, rebase if needed, address remaining CR, flip out of draft, merge
+- [ ] Followup w/ Juri + Victor — oxfmt + oxlint (2026-05-22)
 - [ ] Ask Alexis: bump Wagepoint TOIL policy 6 -> 7 days (Szymon gone) (2026-05-22)
 - [ ] **Weekly plan 2026-05-25 — Must Do block** (`dot_ai/para/areas/weekly-plans/2026-05-25.md`)
   - `/cnw-stats-analyzer` Mon AM — 9 wk stale, third week at top

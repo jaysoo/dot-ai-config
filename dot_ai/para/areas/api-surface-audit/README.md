@@ -11,7 +11,7 @@ Monthly audit detecting drift between Nx's public API surface and its documentat
 ## Reports
 | Month | File | Severity | Findings |
 |-------|------|----------|----------|
-| 2026-05 | [2026-05.md](2026-05.md) | LOW-MEDIUM | 1H/4M/3L/2I — no new drift; 4 carried items unchanged; v21-marked devkit deprecations now 2 majors overdue at v23.0.0-beta.4. Several v23 breaking removals (detox executors deprecated, angular `move`/module-federation entry-point removed, stylesheet options removed) shipped without doc drift thanks to auto-doc pipeline |
+| 2026-05 | [2026-05.md](2026-05.md) | LOW-MEDIUM | **W22 update (2026-05-25):** 1H/5M/4L/2I (+2 vs W19). Repo went 23.0.0-beta.4 → beta.18 (14 betas, 164 commits). 4 prior carried gaps still open (#35248/#35429/#35401/#35170). 4 new gaps: `nx migrate --mode/--multi-major-mode` (#35497), `migrations.json` `prompt` field (#35638), `nx completion` shell tab-completion (#34951), `TargetDefaultEntry/Record` devkit type exports (#35340). devkit-internals consumers worsened 11→18 packages, exports 30→34. Removed: `initTasksRunner`, `stripSourceCode`, legacy `self`/`dependencies` magic strings (warn-only till v24). **2026-05-04 baseline:** 1H/4M/3L/2I — v21-marked devkit deprecations now 2 majors overdue at v23.0.0-beta.4 |
 | 2026-04 | [2026-04.md](2026-04.md) | LOW-MEDIUM | 1H/4M/3L/2I — JsonInput still undocumented; new vite `compiler` option + `nx.sync.ignoredDependencies` introduced this window without docs |
 | 2026-03 | [2026-03.md](2026-03.md) | HIGH | 13H/50M/18L — 13 undocumented packages, 50 undocumented generators, systemic rename drift |
 
