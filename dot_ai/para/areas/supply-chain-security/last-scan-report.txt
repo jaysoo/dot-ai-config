@@ -1,0 +1,30 @@
+
+=== 1. On-disk SSH private keys ===
+  [PASS] No private SSH key files found in ~/.ssh.
+
+=== 2. Plaintext credentials in common files ===
+  [PASS] No plaintext credentials found in npmrc, netrc, git credential files, or shell startup files.
+
+=== 3. Local cloud and registry sessions ===
+  [PASS] Docker is configured to use an external credential helper.
+  [PASS] No concrete local cloud, Docker, or npm credential material found.
+
+=== 4. Secret-like values in the live environment ===
+  [PASS] No secret-like values found in the current process environment.
+
+=== 5. GitHub credential (gh) audit ===
+  [PASS] gh is logged out.
+
+=== 6. Supply-chain attack IOC quick check ===
+  [PASS] Current-tree IOC scan skipped for speed; host IOC checks ran.
+  [PASS] No known IOC markers found in shallow scan.
+
+=== 7. Local security posture ===
+  [PASS] ignore-scripts=true is set in ~/.npmrc.
+  [PASS] No unsafe package-manager script policy overrides found.
+
+=== 8. Dot-env file sweep from /Users/jack (may take ~20 seconds) ===
+  [PASS] Found 29 env file(s), but no secret-like assignments in scanned env files.
+
+=== Result ===
+  [PASS] Overall: PASS
