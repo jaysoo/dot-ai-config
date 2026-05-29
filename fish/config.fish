@@ -5,6 +5,7 @@ set PATH $PATH /Users/jack/.local/bin
 set PNPM_HOME "/Users/jack/Library/pnpm"
 set PATH $PATH "$HOME/.claude/local/"
 set PATH $PATH "$PNPM_HOME:$PATH"
+set PATH $PATH "/Applications/Docker.app/Contents/Resources/bin"
 set NODE_OPTIONS "--max_old_space_size=3072"
 # set DOCKER_HOST 'unix:///Users/jack/.local/share/containers/podman/machine/podman-machine-default/podman.sock'
 # set ANDROID_SDK_ROOT "/Users/jack/Library/Android/sdk"
