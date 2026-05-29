@@ -2,6 +2,10 @@
 
 ### May 2026
 
+- [x] Fix nx:run-script shell escaping (issue #34717) (2026-05-27) ✓ 2026-05-27
+  - Summary: Two-commit PR [#35812](https://github.com/nrwl/nx/pull/35812) on branch `fix/34717-run-script-shell-quoting`. Root cause: `__unparsed__` joined with space and passed to `spawn(..., { shell: true })`, so shell metachars (`{}`, commas, quotes) in JSON values get re-interpreted by brace expansion. Fix reuses the existing `wrapArgIntoQuotesIfNeeded` helper from `run-commands.impl.ts` — moved it to `utils/shell-quoting.ts` in commit 1 (no-op extract), then mapped `__unparsed__` through it before joining in commit 2. Added 4-case spec for run-script. Verified end-to-end against nbarnett/nx-bug-repro: broken baseline reproduced, then patched in-tree installed nx and confirmed JSON survives intact through the spawn path. Polygraph session `triage-b9b40728` tracks repos (nrwl/nx + nbarnett/nx-bug-repro) and the PR.
+  - Files: PR #35812, commits `b0b89c4018` (cleanup) + `92004a1cc4` (fix), Polygraph session https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/triage-b9b40728
+
 - [x] NXC-4299: Native TS type stripping — review iteration (2026-05-08 -> 2026-05-19) ✓ 2026-05-19
   - Summary: Six fix-up commits on PR #35608 narrowing the fallback ladder (native strip -> tsconfig-paths -> swc/ts-node -> ESM loader register). Routed `.mts` through `loadTsFile`, surfaced `NX_NATIVE_TS_STRIP=false` opt-out hint on unrecoverable failures, force-registered ESM TS loader on dynamic-import path, gated `loadTsFile` on TS extensions to handle `ERR_REQUIRE_ASYNC_MODULE`.
   - Files: PR #35608, commits `bda1a9a7bd` -> `d665fa46fd`

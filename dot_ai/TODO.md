@@ -46,6 +46,12 @@
 
 ## TODO
 
+- [ ] **Polygraph docs: use-case coverage plan** (2026-05-27)
+  - Notes: `dot_ai/2026-05-26/tasks/polygraph-workflows-doc-candidates.md` (section "Use-case coverage plan")
+  - Concepts: repos already in graph, synthetic monorepo / break cross-repo boundaries, resumability + memory
+  - Use cases: (1) web-dev one-change-across-repos, (2) published artifact / design system, (3) informational read-only (backend->frontend, copy-from-other-repo, OSS-breakage), (4) platform/security cross-repo package update, (5) hand-off + cycle continuity
+  - OSS gets separate pages: triage-with-repro + ecosystem/compat
+
 - [ ] Follow up on GitHub support ticket (2026-05-25)
   - https://support.github.com/ticket/personal/0/4416029
 - [ ] **Nx Cloud client bundle integrity — signed manifest + harden update path** (2026-05-25)

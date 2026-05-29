@@ -17,6 +17,8 @@ Source material:
 
 ## Workflow A — Fix an OSS bug across repos in one session
 
+For a large JavaScript library, the value proposition is being able to do work across repos seamlessly. This workflow is the cheapest demonstration of that: a maintainer, a public library, a contributor's repro repo, one session.
+
 **Persona**: maintainer of a popular library. Bug report shows up with a link to a reproduction repo. Today you clone two repos, link them by hand, run `npm pack` in a loop, and copy the tarball back and forth until the bug is reproduced and the fix is verified.
 
 **Problem we're solving**:
@@ -27,7 +29,7 @@ Source material:
 
 **What Polygraph gives you here**:
 
-- One session that contains both your library and the contributor's public repro repo, even though only one of them belongs to your account.
+- One session that contains both your library and the contributor's public repro repo, even though only one of them belongs to your account. Polygraph indexes public repos **on demand**, so the repro never has to be pre-registered with your account.
 - A built-in `pack-and-copy` step that builds your library, packs it, and installs the tarball into the repro — automatically, every time the agent makes a change.
 - A shareable session link you can hand back to the contributor as the answer ("here is the investigation, the fix, the PR, and the green repro all in one place").
 
@@ -36,22 +38,27 @@ Source material:
 1. **Start a session against your library.**
 
    ```bash
+   # Default: Polygraph clones your library fresh into the session.
    npx polygraph session start
    # pick or paste the library repo (e.g. github.com/nrwl/nx)
    ```
 
    First run downloads the CLI bundle from your Polygraph host and caches it under `~/.polygraph/`. Subsequent runs are instant.
 
+   **Advanced: start from a clone you already have.** For a big repo like Nx, a fresh clone is slow. If you already have the library checked out, `cd` into it first and run `polygraph session start` from there — the session uses your existing working copy instead of cloning a new one. (Worktrees work too, but for very large repos a plain clone is often faster than worktree setup.)
+
 2. **Add the contributor's repro repo.**
 
    You have two options depending on what the contributor sent you.
 
-   - **They sent a repo URL** — just paste it into the agent: _"Add `github.com/some-user/nx-bug-repro` to this session."_ The agent calls `add_repo` and Polygraph indexes it on demand (no prior account setup required, because it's public).
+   - **They sent a repo URL** — just paste it into the agent: _"Add `github.com/some-user/nx-bug-repro` to this session."_ The agent calls `add_repo`, and because the repo is public Polygraph indexes it on demand — the contributor never has to register it, you never have to add it to your org first.
    - **They sent a Polygraph shared-session link** — paste the link: _"Look at this session and add its repos to mine."_ The agent walks the shared session and pulls the relevant repos into yours.
+
+   The repro shows up in the session UI tagged **External OSS · read-only**. That tag is about PR direction, not file access — Polygraph will never try to push a branch or open a PR against the repro (the repro is throwaway, nobody wants PRs against it). Local writes inside the session's working copy of the repro — including `pack-and-copy` dropping a tarball into `.polygraph-packages/` and rewriting `package.json` — still work normally. The fix gets PR'd against your library, the repro just stays around as the proof.
 
 3. **Investigate and fix inside the session.**
 
-   Hand the agent a GitHub issue URL or the bug description directly. The agent has access to both repos in the same workspace, can read the repro, edit the library, and run scripts in either tree.
+   Drop in the bug description (or a GitHub issue URL — the agent will fetch it like any other URL; there's no special Polygraph-side issue parser yet). The agent has access to both repos in the same workspace: it can read the repro, edit the library, and run scripts in either tree.
 
 4. **Validate the fix with `pack-and-copy`.**
 
@@ -74,13 +81,13 @@ Source material:
    >
    > After that, the agent reruns whatever command was failing in the consumer — `npm test`, `nx e2e`, whatever the repro README says.
 
-5. **Open the PR — and share the session.**
+5. **Open the PR — against your library, not the repro.**
 
    ```
    open a pr against the library
    ```
 
-   The session's full history (commands, files touched, branches, the repro itself) gets attached to the PR via a share link. Reviewers and the original reporter get the _why_, not just the diff.
+   The PR always lands on the upstream library (your repo). The contributor's repro stays read-only on Polygraph's side; it lives in the session as the proof your fix works, not as another PR target. The session's full history (commands, files touched, branches, repro output) gets attached to the PR via a share link, so reviewers and the original reporter get the _why_, not just the diff.
 
 ### End-to-end: a real session
 
@@ -88,17 +95,20 @@ Concrete walkthrough you can copy-paste. Replace the issue / repo URLs with your
 
 ```bash
 # 1. Install nothing globally — npx will fetch the thin shell on first run.
+#    Run from anywhere for a fresh clone, OR cd into an existing checkout
+#    of your library first to skip the clone step.
 npx polygraph session start
 # Interactive prompts:
 #   - Account?           pick your personal or org account
-#   - Primary repo?      paste github.com/nrwl/nx   (or pick from the list)
+#   - Primary repo?      paste github.com/nrwl/nx   (or pick from the list,
+#                        or accept the detected repo if you cd'd in)
 #   - Spawn agent?       yes -> Claude   (or Codex / OpenCode)
 ```
 
 Then, inside the spawned agent's chat window:
 
 ```text
-> The bug is reported at https://github.com/nrwl/nx/issues/30421.
+> Fetch https://github.com/nrwl/nx/issues/30421 and read the report.
 > The reporter has a reproduction at https://github.com/some-user/nx-bug-repro.
 > Add that repro repo to this session.
 ```
@@ -325,3 +335,42 @@ docs/
 ```
 
 Each workflow doc is a recipe, not a reference. Reference (every CLI verb, every MCP tool) lives elsewhere; these two docs exist to get a first session running in under 15 minutes.
+
+---
+
+## Use-case coverage plan (added 2026-05-27)
+
+Fresh pass on what the docs need to cover. Workflows A/B above are starting points; the framing below is how the doc set should be organized.
+
+### Concepts to land first (intro / "how to think about Polygraph")
+
+1. **Your repos are already in the graph.** Anything you have access to is part of a bigger graph. Polygraph isn't "set up a monorepo" — your repos are already nodes.
+2. **Break down cross-repo boundaries (synthetic monorepo).** Frictionless work between repos, just like a monorepo. No vendoring, no submodules, no copy-paste.
+3. **Resumability and memory.** Resume sessions, reference other sessions. Sessions are durable context across days, people, and cycles.
+
+### Use cases (each = a doc or a section)
+
+1. **Web dev: one change across multiple repos** — "prompt once, land everywhere". Microservices, backend + frontend pairs. Just-like-a-monorepo framing.
+2. **Published-artifact author** — design system, client lib, SDK. Change once, open PRs to all downstream repos. `pack-and-copy` is the engine.
+3. **Informational / read-only**
+   - a. Look at backend changes, reflect into frontend
+   - b. Copy what's done in another repo into mine
+   - c. Look at OSS repo for changes and find why my stuff is broken
+4. **Platform / security eng** — update compromised version of a package across all repos I own.
+5. **Hand-off / continuity**
+   - a. Resume a session from another engineer (backend → me doing frontend)
+   - b. Reference a prior session, start a new one from it
+   - c. Cycle/sprint continuity — work doesn't reset on Monday
+
+### OSS gets its own pages (separate from the above)
+
+These are OSS-specific and shouldn't be muddled with the enterprise / multi-repo-team docs:
+
+1. **OSS triage with repro** — single doc, the Workflow A flow above.
+2. **OSS ecosystem and compat** — separate doc, broader "watch what other repos in the ecosystem are doing".
+
+### Open questions
+
+- Do (3a/b/c) collapse into one "read-only / informational" doc, or split?
+- Where does (5) live — its own page or a sidebar on every use-case doc?
+- Concept page vs. landing page: are the three concepts above the intro to the docs site, or a separate "concepts" page linked from every use-case doc?

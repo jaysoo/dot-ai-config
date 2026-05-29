@@ -1,4 +1,5 @@
 # Jack Hsu's Claude Configuration
+
 Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse, not overly friendly
 
 **IMPORTANT**: This file lives in `~/projects/dot-ai-config/dot_claude/CLAUDE.md` and syncs to `~/.claude/CLAUDE.md`. Always edit the `dot-ai-config` version.
@@ -20,6 +21,7 @@ The `gh` binary has been removed from this machine for security reasons (`gh aut
 ## 🔴 Critical Setup & Verification
 
 ### dot-ai-config is the Source of Truth
+
 - **NEVER edit files directly in `~/.claude/`** — those are synced copies
 - **NEVER edit dotfiles directly in `~/.config/` or `~/`** — kitty, fish, nvim, mise, gitconfig, gitignore_global, tmux.conf are all synced copies
 - **Always edit in `~/projects/dot-ai-config/`** then sync
@@ -29,6 +31,7 @@ The `gh` binary has been removed from this machine for security reasons (`gh aut
 - **After invoking any skill or command**, update `~/projects/dot-ai-config/USAGE.md` with the invocation date and count
 
 ### .ai Folder Symlink (MUST CHECK FIRST)
+
 ```bash
 file .ai  # Must show "symbolic link"
 # Fix if needed:
@@ -37,6 +40,7 @@ ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai
 ```
 
 ### Architecture Context Loading (AUTO-LOAD ON START)
+
 When starting work in a repo, **immediately load** the architecture file before any other work:
 
 1. **Get repo name** from `pwd` basename or git remote
@@ -54,7 +58,9 @@ When starting work in a repo, **immediately load** the architecture file before 
 **Always search** for `<repo>-architecture.md` even if not in table - new ones may be added.
 
 ### Session Continuation Verification (After Context Compaction)
+
 When continuing a session from a compaction summary:
+
 1. **Always verify git status first** - summaries may be stale about commit state
 2. **Don't trust commit hashes from summary** - commits may have been amended
 3. **Check actual file state** - files mentioned as "uncommitted" may already be committed
@@ -63,6 +69,7 @@ When continuing a session from a compaction summary:
 **Why**: Compaction summaries capture state at summary time, but the session may have continued and committed changes before the actual compaction point.
 
 ### Git Workflow
+
 - **🔐 NEVER commit tokens, secrets, or API keys**
 - **Never commit to main/master** - use feature branches
 - **Always squash commits** before pushing: `git reset --soft HEAD~n && git commit`
@@ -70,6 +77,7 @@ When continuing a session from a compaction summary:
 - Linear: `DOC-125` format (no #) | GitHub: `Fixes #123` format
 
 **Commit format:**
+
 ```bash
 git commit -m "fix(scope): brief description
 
@@ -82,6 +90,7 @@ Fixes DOC-125"
 ```
 
 **Valid types (Nx)**: `feat`, `fix`, `docs`, `cleanup`, `chore` (NOT `test`, `refactor`, `perf`)
+
 - Use `docs(misc)` or `chore(misc)` for cross-cutting changes
 - Test-only: `chore(testing):` not `test(misc):`
 - If commit rejected, use `--amend` to fix (avoid multiple commits)
@@ -90,18 +99,20 @@ Fixes DOC-125"
 
 **Commit body style**: Keep bodies terse (caveman style applies to commits too, despite the caveman skill's default carve-out). Still use the Nx template sections, but each section should be 1–3 short sentences/fragments. No filler, no restating the same idea twice, no marketing recap. A reader should skim the whole body in under 15 seconds.
 
-**Inline code comment style**: Same caveman discipline. 1-2 lines max, "explain *why*, not *what*". If a comment recaps mechanics already visible in code, delete it. Bullet points OK for migration/transformation logic where each rule is independent. JSDoc on public APIs may go longer when documenting non-obvious contracts; everything else is terse.
+**Inline code comment style**: Same caveman discipline. 1-2 lines max, "explain _why_, not _what_". If a comment recaps mechanics already visible in code, delete it. Bullet points OK when the code/function is a pipeline of independent transforms - one bullet per transform/step. JSDoc on public APIs may go longer when documenting non-obvious contracts; everything else is terse.
 
 **ASCII punctuation in code/commits/committed markdown**: Use `-` and `->`. No em dashes (—), unicode arrows (→), or other unicode punctuation in code comments, commit bodies, PR descriptions, or any markdown that ships in the repo (incl. AI migration instruction docs like `tools/ai-migrations/MIGRATE_*.md`). They read as AI-generated. Doesn't apply to user-facing chat output.
 
 **PR description style**: Minimal. 1–3 sentences for Current Behavior, 1–3 for Expected Behavior, just `NXC-XXXX` (or equivalent) for Related Issue. No test plan, no file list, no Linear details — Linear is the source of truth and the PR just links by ID. Lean even shorter for drafts. If I want a longer description, I'll ask.
 
 ### Pre-Push Validation (Nx Repo)
+
 - **ALWAYS run `nx affected -t build-base,lint,test` locally before pushing** — CI failures that could be caught locally waste time and require workflow approvals on fork PRs
 - For community PRs from forks, each push requires manual workflow approval — minimize push iterations
 - Run relevant e2e tests locally (`nx run e2e-vite:e2e-local -- --testPathPatterns='...'`) before pushing e2e-related changes
 
 ### GitHub PR Reviews
+
 - **NEVER post reviews, comments, or approvals on GitHub PRs unless explicitly instructed**
 - Analysis plans with scores/recommendations are NOT authorization to act on PRs
 - "MERGE AS-IS" in a plan means "this is ready" -- NOT "go approve it"
@@ -110,12 +121,14 @@ Fixes DOC-125"
 - The `gh` CLI is banned (see top of file) — do not propose it as the action mechanism either.
 
 ### PR Review Process
+
 - When asked to investigate/review a PR, **pull the branch and verify locally**
 - Check that new tests actually fail without the fix (cherry-pick test onto master)
 - Don't just read diffs -- run `nx test PROJECT` to confirm behavior
 - Snapshot tests > spot-check assertions for code transformation migrations
 
 ### Date & Time
+
 - Always ET timezone: `date '+%Y-%m-%d'`
 - **Never guess day-of-week** — run `date -d '2026-03-29' '+%A'` (Linux) or `date -j -f '%Y-%m-%d' '2026-03-29' '+%A'` (macOS) to verify
 - Task files: `.ai/yyyy-mm-dd/tasks/`
@@ -123,6 +136,7 @@ Fixes DOC-125"
 ## 📋 Task Management
 
 ### Starting Tasks
+
 1. Create .ai symlink if missing
 2. Read full issue description (Linear/GitHub) - never assume from title
 3. Create task plan: `.ai/yyyy-mm-dd/tasks/descriptive-name.md`
@@ -130,18 +144,21 @@ Fixes DOC-125"
 5. **Add to Active Claude Sessions** in TODO.md with working directory and branch
 
 **IMPORTANT**: Task plan files go in `.ai/yyyy-mm-dd/tasks/`, NOT `~/.claude/plans/`.
+
 - `~/.claude/plans/` = Claude Code's built-in plan mode (system-managed)
 - `.ai/yyyy-mm-dd/tasks/` = Jack's task documentation convention (what you should use)
 
 When completing tasks, always copy/move the plan to `.ai/` folder for long-term reference.
 
 ### Active Session Tracking (IMPORTANT)
+
 - **Every task** must be added to the "Active Claude Sessions" section in TODO.md at start
 - Format: `- /path/to/working/dir (branch: branch-name) — description (date)`
 - **When completing a task**: remove from Active Claude Sessions, add to COMPLETED.md
 - Sessions are considered stale after 7 days — clean up on next visit
 
 ### Key Paths
+
 - Plan tasks: `~/.claude/commands/plan-task.md`
 - Dictation: `~/.claude/commands/dictate.md`
 - Architecture: `.ai/para/resources/architectures/[repo]-architecture.md`
@@ -154,16 +171,20 @@ When completing tasks, always copy/move the plan to `.ai/` folder for long-term 
 `dot_ai/TODO.md` tracks **In Progress** and **Pending** only. Completed tasks → `.ai/para/archive/COMPLETED.md`
 
 **TODO.md:**
+
 ```markdown
 ## In Progress
+
 - [ ] Task name (yyyy-mm-dd hh:mm)
   - Plan: `dot_ai/yyyy-mm-dd/tasks/name.md`
   - Goal: Brief goal
 ```
 
 **COMPLETED.md** (by month):
+
 ```markdown
 ### January 2026
+
 - [x] Task name (yyyy-mm-dd)
   - Plan: `dot_ai/yyyy-mm-dd/tasks/name.md`
   - Summary: What was accomplished
@@ -172,6 +193,7 @@ When completing tasks, always copy/move the plan to `.ai/` folder for long-term 
 ### Completing Tasks (IMPORTANT)
 
 When a task is completed:
+
 1. **Remove** the task from `TODO.md` (In Progress or Pending section)
 2. **Remove** from "Active Claude Sessions" in TODO.md
 3. **Add** to `.ai/para/archive/COMPLETED.md` under the current month header
@@ -186,12 +208,15 @@ When a task is completed:
 ```
 
 ### Recent Tasks List (Last 10)
+
 At top of `TODO.md` for quick context rebuilding:
+
 ```markdown
 1. **Task name** (yyyy-mm-dd)
    - Summary: 1-2 sentences
    - Files: `dot_ai/yyyy-mm-dd/tasks/file.md`
 ```
+
 New tasks go at #1, bump others down, remove 11th item.
 
 ## 📁 PARA Organization
@@ -206,12 +231,12 @@ New tasks go at #1, bump others down, remove 11th item.
 
 **Key Rule:** Every folder has a `README.md`. No orphaned files.
 
-| Category | Has End Date? | Examples |
-|----------|---------------|----------|
-| **Projects** | ✅ Yes | Ship feature, Complete migration, Write RFC |
-| **Areas** | ❌ No | Personnel management, Team syncs |
-| **Resources** | ❌ No | Architecture docs, Scripts |
-| **Archive** | N/A | Completed projects, Outdated docs |
+| Category      | Has End Date? | Examples                                    |
+| ------------- | ------------- | ------------------------------------------- |
+| **Projects**  | ✅ Yes        | Ship feature, Complete migration, Write RFC |
+| **Areas**     | ❌ No         | Personnel management, Team syncs            |
+| **Resources** | ❌ No         | Architecture docs, Scripts                  |
+| **Archive**   | N/A           | Completed projects, Outdated docs           |
 
 **Decision:** Deadline? → projects | Ongoing? → areas | Reference? → resources | Inactive? → archive
 
@@ -222,6 +247,7 @@ New tasks go at #1, bump others down, remove 11th item.
 **When to Update:** During `/dictate`, conversations mentioning colleagues, 1:1 meetings
 
 **Capture:**
+
 - Personal: Location, family, hobbies, food/drink preferences
 - Professional: Team/role, projects, goals, strengths, development areas
 - 1:1 Notes: Dated entries, action items, topics to revisit
@@ -234,6 +260,7 @@ New tasks go at #1, bump others down, remove 11th item.
 Teams: DPE, CLI, Orca, Backend, Infra, Docs, Framer
 
 **Section Order:**
+
 1. Topics for Next Meeting
 2. **Upcoming Sync** (accumulated notes between meetings)
 3. Active Accounts (optional)
@@ -241,6 +268,7 @@ Teams: DPE, CLI, Orca, Backend, Infra, Docs, Framer
 5. Meeting Notes (dated, reverse chronological)
 
 **Ad-hoc additions ("add this to the infra sync", "add to my 1:1 with X"):**
+
 - **Default destination is `## Upcoming Sync`** — for both team syncs AND 1:1 personnel files
 - Do NOT add to `## Topics for Next Meeting` (that's a curated agenda)
 - Do NOT add to `## Action Items` unless the user explicitly frames it as an action item
@@ -248,6 +276,7 @@ Teams: DPE, CLI, Orca, Backend, Infra, Docs, Framer
 - For 1:1 files under `.ai/para/areas/personnel/[name].md`, create an `## Upcoming Sync` section directly above `## 1:1 Notes` if it doesn't exist
 
 **Workflow - When updating "today's" sync (actual meeting happened):**
+
 1. Move "Upcoming Sync" content into today's dated meeting notes
 2. Clear "Upcoming Sync" section (keep header, remove content)
 3. Add new action items, mark completed ones
@@ -256,11 +285,13 @@ Teams: DPE, CLI, Orca, Backend, Infra, Docs, Framer
 **Important:** Never delete "Upcoming Sync" section - just clear it after moving content.
 
 ### Meeting Notes Processing
+
 - **Don't blindly copy meeting notes** - AI transcription tools (Granola, etc.) sometimes misattribute statements to wrong attendees
 - When processing meeting notes, cross-reference with context (who is it logical for?)
 - If user corrects attribution, update ALL instances (topics, action items, meeting notes)
 
 ### Clearing Upcoming Sync Section
+
 - **Don't remove items unless explicitly addressed** in meeting notes
 - Items in "Upcoming Sync" should be preserved or moved to meeting notes - not deleted
 - Ask user about items that appear in Upcoming Sync but not in provided meeting notes
@@ -272,18 +303,19 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 
 **ALWAYS use MyNotes MCP first for:** personal content, tasks, specs, TODOs, work history
 
-| Tool | Purpose |
-|------|---------|
-| `mcp__MyNotes__search_ai_content` | Search all content |
-| `mcp__MyNotes__get_task_context` | Resume specific task |
-| `mcp__MyNotes__find_specs` | Find specifications |
-| `mcp__MyNotes__extract_todos` | Find TODO items |
+| Tool                              | Purpose              |
+| --------------------------------- | -------------------- |
+| `mcp__MyNotes__search_ai_content` | Search all content   |
+| `mcp__MyNotes__get_task_context`  | Resume specific task |
+| `mcp__MyNotes__find_specs`        | Find specifications  |
+| `mcp__MyNotes__extract_todos`     | Find TODO items      |
 
 **Triggers**: "my notes", "my tasks", "previous work", "what did I work on"
 
 **Gemini collaboration**: Use the `gemini-collab` skill (shells out to the `gemini` CLI in headless mode) for fact-checking, code review, and deep research. Do **not** use any `mcp__gemini-*` MCP tools — they've been replaced by the skill.
 
 **Linear MCP:**
+
 - Confirm team: "Nx CLI" (NXC-) vs "Nx Cloud" (CLOUD-)
 - Get team ID first: `mcp__Linear__list_teams`
 - Use pagination (limit: 30-50) to avoid token errors
@@ -292,6 +324,7 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 ## 💻 Development Preferences
 
 ### Philosophy
+
 - **Simple > Complex** - CSS before JavaScript
 - **Debug first, fix second** - Understand the problem first
 - **One property > Many hacks** - Check if single CSS property works
@@ -299,7 +332,7 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - **Iterate, don't defend** - Change based on feedback
 - **Prefer additive over in-place when extending shared code.** When adding behavior that needs to share logic with an existing function, prefer one of: (a) call the existing function with the args you need and discard what you don't, (b) extract a private helper, or (c) add a new exported function next to it that duplicates a small amount of pipeline code. **Avoid refactoring the existing function** unless its behavior is changing or the duplication is large enough that drift is a real risk. Reviewer cost of "this PR also touches existing code" is high - it's hard to tell what changed semantically vs. what was just moved.
   - **Why:** Q-443 - I refactored `getWorkspaceSandboxViolations` (extracted dedup-stage builder, threaded a new helper through) so the CIPE warning could share its totals query. Jack pushed back: dashboard fn's behavior was unchanged but the diff still made the PR harder to review. Final shape: CIPE caller invokes `getWorkspaceSandboxViolations({pageSize: 1, ...})` directly and reads `.totals.totalViolatingTasks`. Dashboard fn = 0 diff.
-  - **How to apply:** Before extracting/refactoring an existing function as part of feature work, ask: can the new caller just *use* the existing function (even slightly wastefully)? If yes, do that. If duplication would be >20 lines or drift risk is real, then extract — and make the extract a separate commit so the diff reads as "no-op move" not bundled with feature work.
+  - **How to apply:** Before extracting/refactoring an existing function as part of feature work, ask: can the new caller just _use_ the existing function (even slightly wastefully)? If yes, do that. If duplication would be >20 lines or drift risk is real, then extract — and make the extract a separate commit so the diff reads as "no-op move" not bundled with feature work.
 - **Realistic examples > hypothetical edge cases** - Before writing code to handle an edge case, find a concrete test fixture that exercises it in a real workspace. Don't add defensive branching, retries, fallback paths, or generalized loops to handle scenarios that never occur in practice. If unsure whether a case is realistic, ASK before coding for it.
   - **Why:** NXC-4157 — wrote tsquery migration with reverse-walk loop + leading-comma fallback + whitespace nibble. Pushed back twice on hypothetical-only complexity. Final form ended up at ~5 lines after stripping unjustified branches.
   - **How to apply:** When tempted to write a loop, ask "is there a real-world file with multiple matches?" When tempted to add a fallback path, ask "what test would exercise it?" If the answer is "I'm being defensive," delete it and ask Jack.
@@ -308,6 +341,7 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
   - **How to apply:** For committed docs (PR descriptions are exempt — those are ephemeral), if you write "X doesn't support Y" or "X requires Z", grep upstream changelog or run `npm view <pkg> versions` first. The doc ships into user repos and ages — don't bake assumptions.
 
 ### Component Order
+
 1. Tailwind/CSS (try `align-items`, `justify-content` first)
 2. Check if global stylesheet CSS solves it
 3. Get feedback before complexity
@@ -315,31 +349,36 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 5. Component overrides as last resort (especially Starlight)
 
 ### Common Pitfalls
+
 - Arbitrary Tailwind selectors (`[&>*:first-child]:`) unreliable
 - Tab alignment: Try `align-items: end` before complex hacks
 - Verify file paths exist before using
 - Ask for dev server port (don't assume 4200, 3000, etc.)
 - Regex failing? Validate input structure first, check for malformed source
 - Astro cache issues: Clear `.astro` folder
-- Class-string codemods must scope to JSX `className=`/`class=` attrs and known utility-fn calls (`clsx`/`cn`/`twMerge`/`cva`/`classnames`). Bare `\b` word boundaries also match TS prop names (`rounded?:` becomes `rounded-sm?:`) and CSS function calls inside template literals (`blur(${x})` becomes `blur-sm(${x})`). Use lookbehind on `[\s:"'\`!]` boundaries; never run rename across raw string literals indiscriminately. After codemodding source under a pnpm `file:` dep (e.g., `nx-dev/ui-*`, `graph/ui-*`), run `pnpm install --force` so `node_modules/.pnpm/.../node_modules/<pkg>/` refreshes - otherwise the consumer build sees the stale pre-codemod copy.
+- Class-string codemods must scope to JSX `className=`/`class=` attrs and known utility-fn calls (`clsx`/`cn`/`twMerge`/`cva`/`classnames`). Bare `\b` word boundaries also match TS prop names (`rounded?:` becomes `rounded-sm?:`) and CSS function calls inside template literals (`blur(${x})` becomes `blur-sm(${x})`). Use lookbehind on `[\s:"'\`!]`boundaries; never run rename across raw string literals indiscriminately. After codemodding source under a pnpm`file:`dep (e.g.,`nx-dev/ui-_`, `graph/ui-_`), run `pnpm install --force`so`node_modules/.pnpm/.../node_modules/<pkg>/` refreshes - otherwise the consumer build sees the stale pre-codemod copy.
 - Tailwind v4 `@source` does NOT support extglob (`!(*.stories|*.spec)`); patterns silently match zero files and utilities never make it into the bundle. Use plain dir paths + `@source not '**/*.{spec,test,stories}.*'`. Same trap if porting any v3 `content` array verbatim.
 
 ## 📚 Documentation Sites (Astro/Starlight)
 
 ### Key Concepts
+
 - Frontmatter title = h1 (never duplicate)
 - Sidebar labels can differ from page title
 - Search only in production builds
 - Code blocks ≠ headings (# in shell scripts isn't markdown h1)
 
 ### Testing
+
 ```bash
 nx run PROJECT:build
 npx serve dist -p 8000  # use -p not --port
 ```
+
 Use Playwright MCP for UI verification.
 
 ### Markdoc
+
 - Use underscores: `side_by_side` not `side-by-side`
 - JSON in graph/project_details: Use code fences (```json), not inline
 - Never escape template blocks: `{% %}` not `\{% %\}`
@@ -353,18 +392,21 @@ Use Playwright MCP for UI verification.
 - Prefer existing Starlight/Markdoc tags over custom components for docs content (e.g. `{% aside %}` with a list over a custom Astro component)
 
 ### Starlight Migration
+
 - `{% tabs %}` → headers (#### Tab Label)
 - `{% callout type="X" %}` → asides (:::note, :::tip, :::caution, :::danger)
 - `{% graph %}` → Remove entirely
 - Run validation before transformation (check for orphaned tags)
 
 ### Header/Responsive
+
 - Main header: `src/components/layout/Header.astro`
 - Mobile menu: `src/components/layout/PageFrame.astro`
 - Theme switcher handled by Starlight - DO NOT duplicate
 - Tailwind breakpoints: `md`: 768px, `lg`: 1024px, `xl`: 1280px
 
 ### Pixel-Matching UI to External Sites
+
 - **Measure first, code second**: Use Playwright `page.evaluate()` to extract computed styles (color, padding, font, dimensions) from the target site BEFORE writing any CSS
 - **Verify with ImageMagick**: `magick site1.png site2.png -compose difference -composite -auto-level diff.png` — do this early and often, not as an afterthought
 - **Don't guess colors**: Extract exact `rgb()` values via computed styles. Tailwind color names (zinc-400 vs zinc-500) are approximations — verify the actual rendered value matches
@@ -373,6 +415,7 @@ Use Playwright MCP for UI verification.
 - **Line-height matters for button heights**: Tailwind's default `text-sm` line-height is 20px. If the target uses 16.8px (1.2), buttons will be 3-6px too tall without `leading-[1.2]`
 
 ### Common Mistakes
+
 - ❌ Duplicate theme switcher in mobile menu
 - ❌ Override entire Starlight components for simple fixes
 - ❌ Use lg:hidden when you mean xl:hidden
@@ -388,6 +431,7 @@ Use Playwright MCP for UI verification.
 Run `pnpm install && pnpm build` in background when starting work.
 
 ### Acronyms
+
 - **CNW**: Create Nx Workspace (`packages/create-nx-workspace/`)
 - **CNP**: Create Nx Plugin (`packages/create-nx-plugin/`)
 - **NXC**: Nx CLI issues | **DOC**: Docs issues | **CLOUD**: Cloud issues
@@ -395,19 +439,23 @@ Run `pnpm install && pnpm build` in background when starting work.
 Always spell out on first use: "NXC-3464: CNW (Create Nx Workspace) Templates"
 
 ### Version Management in Generators
+
 - Version constants go in `versions.ts`, never hardcoded in generator code
 - Follow existing patterns: `getInstalledViteMajorVersion`, `getInstalledAngularVersion` — use `getDependencyVersionFromPackageJson` + `semver.coerce/major`
 - Init generators must detect and preserve existing dependency versions — don't bump users to latest without explicit opt-in
 - When adding version detection, always add unit tests for: not installed (default), existing older version (preserved), existing same version (preserved), explicit flag override
 
 ### nx release: config inheritance
+
 When debugging `nx release version` / `nx release publish` behavior, check BOTH:
+
 - Per-group config under `nx.json` → `release.groups.<group>.version`
 - **Top-level defaults** under `nx.json` → `release.version` (e.g. `preserveLocalDependencyProtocols`, `manifestRootsToUpdate`)
 
 Group config inherits from top-level defaults when not overridden. Easy to grep only in a group and miss the setting entirely.
 
 ### CNW A/B Testing Infrastructure
+
 - `NX_CNW_FLOW_VARIANT` controls BOTH flow behavior AND prompt copy variant — NEVER add a separate env var for prompt selection
 - `PromptMessages.getPrompt(key)` selects from the `messageOptions[key]` array using the flow variant index
 - To add new A/B test variants: add entries to the relevant `messageOptions` array (e.g., `setupNxCloudV2`), each with a unique `code` for tracking
@@ -415,12 +463,14 @@ Group config inherits from top-level defaults when not overridden. Easy to grep 
 - Don't use `parseInt` on values that are already validated single-digit strings — use `Number()` or direct indexing
 
 ### Commands & Testing
+
 - Use `nx run PROJECT:target` not `npm run`
 - Use `.spec.ts` extension for tests (not `.test.ts`)
 - **ALWAYS run `nx sync` after modifying package.json**
 - **ALWAYS run `pnpm install` after modifying any package.json** — lockfile must be regenerated and committed
 
 ### Migration Testing
+
 ```bash
 # ❌ WRONG - @next points to next major version
 npx nx migrate @next
@@ -434,6 +484,7 @@ npx nx migrate 22.0.0-beta.7
 Always verify with `npm view nx@next version` before using tags.
 
 ### Migration Isolation (CRITICAL)
+
 - Nx migrations are **self-contained**. **Never import** from a previous-major-version migration directory.
   - ❌ `import migrate from '../update-22-2-0/...'` in a `update-23-0-0/` migration
   - ✅ Duplicate the logic into the new migration file
@@ -441,17 +492,20 @@ Always verify with `npm view nx@next version` before using tags.
 - **How to apply:** When writing a v(N+1) safety-net or follow-up migration, copy the relevant functions inline. DRY across versions does not apply here.
 
 ### Migration Version Numbers (CRITICAL)
+
 When adding a new entry to `migrations.json`, set `version` to one above the **latest published beta tag**, never `X.0.0-beta.0`:
 
 ```bash
 git tag | grep "23.0.0-beta" | sort -V | tail -1   # latest, e.g. 23.0.0-beta.8
 # new migration version = 23.0.0-beta.9
 ```
+
 - **Why:** NXC-4156 — initial PR shipped with `23.0.0-beta.0`; Jack flagged on review and asked for `latest + 1`. A migration tagged at an already-released version won't run for users already on that version or later.
 - **How to apply:** Always check the latest tag before writing a new migration entry. The `next` patch/beta hasn't been cut yet, so `latest + 1` is correct.
 - **During multi-day iteration loops, re-bump as new betas ship.** If you target `beta.7` and `beta.8` is published while you're iterating, your migration silently doesn't run for users on `beta.8`. Re-check `git tag` and bump on each push if a new beta has been cut. NXC-4154/NXC-4448 — bumped through beta.7 → beta.9 → beta.10 across one day.
 
 ### packageJsonUpdates: One Gate Per Independently-Versioned Package
+
 When a `packageJsonUpdates` entry bumps multiple packages, the `requires` gate applies to ALL of them together. If a user has only one of those packages out of date, none get bumped.
 
 ```jsonc
@@ -474,10 +528,12 @@ When a `packageJsonUpdates` entry bumps multiple packages, the `requires` gate a
   "packages": { "@cypress/vite-dev-server": { "version": "^7.3.1" } }
 }
 ```
+
 - **Why:** NXC-4448 — reviewer caught that gating both bumps under one cypress-version `requires` would skip the dev-server bump for users who'd manually upgraded cypress.
 - **How to apply:** If two packages can drift to independent versions in the wild, give each its own entry with its own `requires`.
 
 ### tsquery Codemod Patterns
+
 When writing migration codemods that match property keys or use `:has()`:
 
 - **Property keys come in two AST forms.** `foo: 1` is `Identifier`, `'foo': 1` is `StringLiteral`. A selector like `PropertyAssignment > Identifier[name=foo]` silently misses quoted-key forms (common after JSON-style configs or some formatters). Use `:matches(...)` or two `:has(...)` selectors and filter by the matched node's `.name.text`.
@@ -486,11 +542,14 @@ When writing migration codemods that match property keys or use `:has()`:
 - **Why:** NXC-4448 — first cut of `remove-experimental-prompt-command` only matched bare-key form, missed `'experimentalPromptCommand': true`. Reviewer caught it.
 
 ### Codemod / Bulk Comment Removal
+
 When stripping comments that are the **only** content of an object literal, also collapse the now-empty multi-line `{\n  }` to no-args form. Prettier collapses these on save, so pre/post-conversion equality assertions in specs (`expect(updated).toBe(initial)`) will break otherwise.
+
 - **Why:** NXC-4156 — stripped 20 SVGR-hint blocks, left `withReact({\n  })` empties; `convert-to-inferred` spec started failing because prettier reformatted both sides of an unchanged-config equality check to the same single-line form post-strip.
 - **How to apply:** Pair the comment-stripping pass with a regex pass: `withReact\(\{\s*\n[ \t]*\}\)` → `withReact()` (and equivalent for `new NxReactRspackPlugin({})`). Run prettier + affected specs with `-u` to confirm pre/post match.
 
 ### Nx Docker Plugin (@nx/docker)
+
 - Target: `docker:build` (not `docker-build`)
 - Dockerfile must be named exactly `Dockerfile` (not `*.dockerfile`)
 - Minimal config:
@@ -501,6 +560,7 @@ When stripping comments that are the **only** content of an object literal, also
 ### Nx Executors: Process Spawning
 
 **`nx:run-commands` code paths:**
+
 - **Single commands**: `runSingleCommandWithPseudoTerminal()` via PTY (Rust native)
 - **Parallel commands**: `ParallelRunningTasks` via Node's `exec()` with piped stdio
 - **Serial commands**: `SeriallyRunningTasks` with PTY if supported
@@ -508,6 +568,7 @@ When stripping comments that are the **only** content of an object literal, also
 Debug by adding logging to `node_modules/nx/src/executors/run-commands/`. Don't assume piped stdio.
 
 ### Common Issues
+
 - TSC errors in isolation normal (use project-level checks)
 - Stuck processes: `lsof -i :PORT` then `kill PID`
 - File reversions = linting/formatting (check `git diff`)
@@ -515,6 +576,7 @@ Debug by adding logging to `node_modules/nx/src/executors/run-commands/`. Don't 
   Use: `git checkout origin/master -- pnpm-lock.yaml && pnpm install --no-frozen-lockfile`
 
 ### GitHub Actions Side Effects
+
 `setup-node` with `registry-url` sets `NODE_AUTH_TOKEN` (even dummy placeholder). When migrating to mise, this side effect is lost. CI detection should use `GITHUB_ACTIONS` env var.
 
 ## ✅ Verification
@@ -530,37 +592,45 @@ Debug by adding logging to `node_modules/nx/src/executors/run-commands/`. Don't 
 ## 🚀 Quick Fixes
 
 ### Git Worktrees
+
 - `.ai` symlink points to main config
 - Architecture files use main repo name: `nx-architecture.md` not `DOC-184-architecture.md`
 
 ### Next.js Issues
+
 - Env vars replaced at BUILD time, not runtime
 - Redirects execute before rewrites
 - Wait 5-10 seconds for rebuild before verification
 
 **Static vs Dynamic env access:**
+
 ```tsx
 // ❌ Static object - undefined at runtime
 const nav = { items: [{ href: process.env.URL }] };
 // ✅ Function - works
-const getNav = () => ({ items: [{ href: process.env.URL || '' }] });
+const getNav = () => ({ items: [{ href: process.env.URL || "" }] });
 ```
 
 **getStaticProps vs getServerSideProps:**
+
 - `getServerSideProps` can't access `public/` files in production (ENOENT errors)
 - Use `getStaticProps` for pages reading from filesystem
 
 **Middleware vs SSR for routing:**
+
 - Middleware: Edge Runtime (cheap/free)
 - SSR: Lambda invocations (~$0.20/million)
 - Static: CDN cache (essentially free)
 
 ### Environment Variable Cleanup
+
 When removing env checks: keep the **truthy** branch (first value in ternary).
+
 - `env ? <New /> : <Old />` → Keep `<New />`
 - `!!env` for boolean → Keep `true`
 
 ### URL Migration (Nx Docs)
+
 ```tsx
 href={process.env.NEXT_PUBLIC_ASTRO_URL ? "/docs/new-path" : "/old-path"}
 ```
@@ -573,14 +643,17 @@ href={process.env.NEXT_PUBLIC_ASTRO_URL ? "/docs/new-path" : "/old-path"}
 4. Use Node.js scripts (.mjs) for cross-platform
 
 ### Debugging Transformations
+
 ```javascript
-const content = fs.readFileSync('file.md', 'utf-8');
-console.log('Open:', (content.match(/\{% tabs %\}/g) || []).length);
-console.log('Close:', (content.match(/\{% \/tabs %\}/g) || []).length);
+const content = fs.readFileSync("file.md", "utf-8");
+console.log("Open:", (content.match(/\{% tabs %\}/g) || []).length);
+console.log("Close:", (content.match(/\{% \/tabs %\}/g) || []).length);
 ```
+
 Fix source files rather than making regex handle edge cases.
 
 ### Investigation Best Practices
+
 - **Verify actual code path FIRST** - add logging to node_modules
 - **Don't document theories as facts** - mark as "HYPOTHESIS: needs verification"
 - **Endorsing another reviewer's code-logic-only claim**: if the claim is purely "the code does X, therefore Y will happen", reproduce Y before acting. Reading the code only validates the "does X" half; the "therefore Y" half needs a repro, a locally-published version, or a unit test. If uncertain, ask me to verify before proceeding rather than propagating an unverified prediction.
@@ -595,24 +668,29 @@ Fix source files rather than making regex handle edge cases.
 **Example (NXC-3505):** Assumed `exec()` with piped stdio, but single commands use PTY.
 
 ### URL Generation from Paths
+
 `CI Features/split-e2e-tasks.mdoc` → `/docs/ci-features/split-e2e-tasks`
 (lowercase, spaces/underscores → dashes, remove extension)
 
 ## 🔧 Debugging
 
 ### URL Redirect Testing
+
 ```bash
 curl -I -L http://localhost:PORT/path
 ```
+
 Verify with real browser (Playwright). Document working vs failing cases.
 
 ### Common Issues
+
 - Search: Must use production build
 - Conflicting rules: Check `redirect-rules.js` + `next.config.js`
 - Stuck processes: `lsof -i :4200 | grep LISTEN` then `kill PID`
 - Client nav: Link components use client routing, not server redirects
 
 ### Content Migration
+
 - Check map.json or routing config first
 - `/recipes/*` → `/docs/technologies/{tech}/Guides/*`
 - Verify file existence before assuming 404s
@@ -653,6 +731,7 @@ op account list  # Check current account
 ### Environment Variable Load Order
 
 The `op run --env-file=FILE` flag loads env files AFTER shell vars, meaning they OVERRIDE:
+
 ```bash
 # ❌ WRONG - env.base's E2E_TEST_MODE=false overrides shell var
 E2E_TEST_MODE=true op run --env-file=env.base -- npx nx serve
@@ -666,6 +745,7 @@ op run --env-file=env.base -- E2E_TEST_MODE=true npx nx serve
 ## 🌊 Ocean (Nx Cloud) Specifics
 
 ### Commit Scopes
+
 - Use the **library/project name** as scope, not the app name
   - ✅ `fix(client-bundle):` for changes in `libs/nx-packages/client-bundle/`
   - ❌ `fix(nx-cloud):` — too broad, `nx-cloud` is the app, not the library
@@ -673,11 +753,13 @@ op run --env-file=env.base -- E2E_TEST_MODE=true npx nx serve
 ### Version Plans (feat/fix PRs)
 
 Ocean PRs with `feat` or `fix` commits **may** require a version plan at `.nx/version-plans/`:
+
 ```markdown
 # .nx/version-plans/yyyy-mm-dd-hh-mm-descriptive-name.md
+
 ---
-nx-cloud: fix
----
+
+## nx-cloud: fix
 
 Customer-facing changelog description.
 ```
