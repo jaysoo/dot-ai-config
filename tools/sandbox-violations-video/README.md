@@ -23,6 +23,32 @@ explainer. Each one tells the same 3-beat story in a different visual style:
 | `V4-Kinetic` | Kinetic Type | Minimal bold typography, 3 full-screen beats |
 | `V5-Pipeline` | Pipeline Flow | Project-graph nodes feeding a shared cache that goes stale |
 
+## Combined-arc variants (run → cache → dashboard → fix)
+
+A second round that merges the V5 pipeline and V2 dashboard concepts into one
+story and adds a **Fix with AI** resolution: 3 tasks run, `api:build` does an
+unexpected read of `../shared/config.json` (test & lint stay clean), the cache
+becomes untrustworthy, the simplified Nx Cloud UI shows **1 of 3** tasks
+violating, then a cursor clicks *Fix with AI* and the missing input is written
+into `project.json` — `api:build` is now protected from cache poisoning.
+
+Built from composable scenes (`src/scenes/`) arranged per-variant in
+`src/combined/variants.ts`. 5 are 10s, 5 are 20s (the longer ones include the
+cache-key explainer and a verifying re-run).
+
+| ID | Length | Style |
+|----|--------|-------|
+| `C1-GraphFlow` | 10s | Graph run → dashboard → fix (closest to V5+V2) |
+| `C2-Terminal` | 10s | Terminal run, slide transitions, cyan |
+| `C3-Kinetic` | 10s | Kinetic title intro, amber |
+| `C4-Security` | 10s | Red security framing on a grid |
+| `C5-Cards` | 10s | Card-based run, purple, slide |
+| `L1-Walkthrough` | 20s | Full arc incl. cache-key explainer |
+| `L2-SecurityDeepDive` | 20s | Poisoning-first, grid + red |
+| `L3-ProductDemo` | 20s | Title + cards + big dashboard/fix focus |
+| `L4-Narrative` | 20s | Caption-led, cyan |
+| `L5-GraphCentric` | 20s | Long graph emphasis |
+
 ## Develop
 
 ```bash
@@ -33,8 +59,10 @@ npm run dev          # Remotion Studio at localhost:3000
 ## Render
 
 ```bash
-# Renders all 5 to out/*.mp4 (1920x1080, 30fps, 10s)
+# Renders the 10 combined variants to out/*.mp4 (1920x1080, 30fps)
 npm run render:all
+node render-all.mjs single   # just the first-round 5
+node render-all.mjs all      # all 15
 
 # If Remotion can't download its own Chrome (e.g. restricted network),
 # point it at an existing Chromium:
