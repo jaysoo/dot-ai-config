@@ -10,6 +10,7 @@ import { Movie, totalFrames } from "./combined/Movie";
 import { VARIANTS } from "./combined/variants";
 import { ProductMovie, ptotal } from "./product/ProductMovie";
 import { PRODUCT_VARIANTS } from "./product/productVariants";
+import { IO_VARIANTS } from "./product/ioVariants";
 
 const common = {
   width: VIDEO.width,
@@ -43,6 +44,21 @@ export const RemotionRoot: React.FC = () => (
 
     {/* Product-demo variants (20s): per-task cache, skull-free, fix-with-AI */}
     {PRODUCT_VARIANTS.map((v) => (
+      <Composition
+        key={v.id}
+        id={v.id}
+        component={ProductMovie as React.FC<Record<string, unknown>>}
+        defaultProps={{ v }}
+        width={VIDEO.width}
+        height={VIDEO.height}
+        fps={VIDEO.fps}
+        durationInFrames={ptotal(v)}
+      />
+    ))}
+
+    {/* Sandbox I/O variants (20s): declared in/out inside the sandbox, one
+        unexpected read from outside, separate arrow to the cache */}
+    {IO_VARIANTS.map((v) => (
       <Composition
         key={v.id}
         id={v.id}

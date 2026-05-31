@@ -270,8 +270,9 @@ export const Caption: React.FC<{
       position: "absolute",
       left: 0,
       right: 0,
-      bottom: 70,
-      textAlign: "center",
+      bottom: 54,
+      display: "flex",
+      justifyContent: "center",
       opacity: show,
       transform: `translateY(${(1 - show) * 12}px)`,
     }}
@@ -279,11 +280,15 @@ export const Caption: React.FC<{
     <span
       style={{
         fontFamily: theme.sans,
-        fontSize: 34,
+        fontSize: 32,
+        lineHeight: 1.3,
         color: theme.text,
-        background: "rgba(0,0,0,0.55)",
-        padding: "12px 26px",
-        borderRadius: 12,
+        background: "rgba(8,8,11,0.92)",
+        border: `1px solid ${theme.stroke}`,
+        padding: "14px 30px",
+        borderRadius: 14,
+        maxWidth: 1500,
+        textAlign: "center",
       }}
     >
       {children}

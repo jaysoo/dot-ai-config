@@ -9,6 +9,7 @@ import { DashStory } from "../story";
 import { PRun } from "./PRun";
 import { PFix } from "./PFix";
 import { SandboxRun } from "./SandboxRun";
+import { SandboxIO } from "./SandboxIO";
 
 export type Trans = "fade" | "slide" | "none";
 export type Mode = "unreliable" | "poison";
@@ -16,7 +17,8 @@ export type Mode = "unreliable" | "poison";
 export interface PScene {
   kind: "title" | "run" | "dashboard" | "fix";
   dur: number;
-  style?: "rows" | "cards" | "sandbox";
+  style?: "rows" | "cards" | "sandbox" | "io";
+  layout?: string; // SandboxIO layout key (A..E)
   title?: string;
   sub?: string;
 }
@@ -66,11 +68,9 @@ const render = (s: PScene, v: PVariant) => {
     case "title":
       return <TitleScene {...p} title={s.title ?? ""} sub={s.sub} />;
     case "run":
-      return s.style === "sandbox" ? (
-        <SandboxRun {...p} mode={v.mode} />
-      ) : (
-        <PRun {...p} mode={v.mode} style={s.style as "rows" | "cards"} />
-      );
+      if (s.style === "io") return <SandboxIO {...p} mode={v.mode} layout={s.layout} />;
+      if (s.style === "sandbox") return <SandboxRun {...p} mode={v.mode} />;
+      return <PRun {...p} mode={v.mode} style={s.style as "rows" | "cards"} />;
     case "dashboard":
       return <DashboardScene {...p} story={v.story} />;
     case "fix":
