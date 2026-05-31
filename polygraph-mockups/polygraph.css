@@ -1,0 +1,83 @@
+/* Polygraph simplified UI — shared theme
+   Decluttered recreation of the Polygraph dark theme for docs & marketing. */
+
+:root {
+  --bg:        #0b0b0c;
+  --panel:     #161618;
+  --panel-2:   #1c1c1f;
+  --border:    #2a2a2e;
+  --border-soft: #232327;
+  --text:      #e8e8ea;
+  --text-mut:  #8b8b92;
+  --text-dim:  #6a6a70;
+  --amber:     #e0a44a;
+  --green:     #3fb950;
+  --green-dim: #2ea043;
+  --blue:      #4493f8;
+  --purple:    #a371f7;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.stage { padding: 40px; }
+
+/* ---- logo / brand ---- */
+.brand { display: flex; align-items: center; gap: 9px; font-weight: 650; letter-spacing: .2px; }
+.brand svg { width: 22px; height: 22px; }
+.brand .name { font-size: 17px; }
+
+/* ---- breadcrumb ---- */
+.crumbs { display: flex; align-items: center; gap: 8px; color: var(--text-mut); font-size: 13.5px; }
+.crumbs .sep { color: var(--text-dim); }
+.crumbs .here { color: var(--amber); }
+
+/* ---- generic card / panel ---- */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.card-h {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px;
+}
+.card-h .title { font-weight: 600; font-size: 14.5px; }
+.card-h .sub { color: var(--text-dim); font-size: 12.5px; font-weight: 400; margin-left: 10px; }
+.divider { height: 1px; background: var(--border-soft); }
+
+/* ---- badges ---- */
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11.5px; font-weight: 600; letter-spacing: .2px;
+  padding: 3px 9px; border-radius: 999px; line-height: 1;
+}
+.badge.done     { color: #7ee2a0; background: rgba(63,185,80,.13); border: 1px solid rgba(63,185,80,.30); }
+.badge.init     { color: #8cc0ff; background: rgba(68,147,248,.13); border: 1px solid rgba(68,147,248,.30); }
+.badge.merged   { color: #c7a4ff; background: rgba(163,113,247,.14); border: 1px solid rgba(163,113,247,.32); }
+.badge.active   { color: #7ee2a0; background: rgba(63,185,80,.10); border: 1px solid rgba(63,185,80,.22); }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dot.green { background: var(--green); box-shadow: 0 0 0 3px rgba(63,185,80,.18); }
+
+/* ---- CI pill ---- */
+.ci { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: #7ee2a0; font-weight: 550; }
+.ci .check {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--green-dim); color: #06210f;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800;
+}
+
+.mono { font-family: var(--mono); }
+.mut  { color: var(--text-mut); }
+.dim  { color: var(--text-dim); }

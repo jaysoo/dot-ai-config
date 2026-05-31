@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Polygraph — Log view (simplified)</title>
+<link rel="stylesheet" href="polygraph.css" />
+<style>
+  .stage { width: 1060px; }
+  .topbar { display:flex; align-items:center; gap:26px; margin-bottom:24px; }
+  .cols { display:grid; grid-template-columns: 232px 1fr 286px; gap:14px; height:520px; }
+
+  .col { background:var(--panel); border:1px solid var(--border); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
+  .col-h { padding:13px 15px; font-size:11.5px; letter-spacing:.6px; text-transform:uppercase; color:var(--text-dim); font-weight:650; }
+
+  /* left tree */
+  .row { padding:11px 14px; display:flex; align-items:center; gap:9px; font-size:13px; border-left:2px solid transparent; }
+  .row .gh { width:14px;height:14px; opacity:.8; flex:none;}
+  .row.sel { background:rgba(224,164,74,.07); border-left-color:var(--amber); }
+  .row .meta { margin-left:auto; color:var(--text-dim); font-size:11px; }
+  .group-label { padding:14px 14px 6px; font-size:10.5px; letter-spacing:.5px; text-transform:uppercase; color:var(--text-dim); }
+
+  /* center terminal */
+  .term { flex:1; background:#0c0c0d; font-family:var(--mono); font-size:12.5px; line-height:1.85; padding:16px 18px; overflow:hidden; color:#cfcfd3; }
+  .term .u { color:#e8e8ea; }
+  .term .u::before { content:"› "; color:var(--amber); }
+  .term .ok { color:#7ee2a0; }
+  .term .info { color:#8b8b92; }
+  .term .warn { color:#ff8d8d; }
+  .term .pad { display:inline-block; width:14px; }
+  .term .repo { color:#8cc0ff; }
+
+  /* right PR panel */
+  .pp-h { padding:13px 15px; display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--border-soft); font-weight:600; font-size:13px;}
+  .pp { padding:14px 15px; }
+  .pp + .pp { border-top:1px solid var(--border-soft); }
+  .pp .t { font-weight:600; font-size:13px; }
+  .pp .br { font-family:var(--mono); font-size:11px; color:var(--text-dim); margin-top:6px; }
+  .pp .st { margin-top:9px; }
+  .ci.fail { color:#ff8d8d; } .ci.fail .check{ background:#d1242f; color:#2a0608; }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 5.6L20 9.2l-4 4.1.9 6L12 16.6 7.1 19.3 8 13.3l-4-4.1 5.6-1.6L12 2z" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      <span class="name">Polygraph</span>
+    </div>
+    <div class="crumbs"><span>nrwl</span><span class="sep">/</span><span>Sessions</span><span class="sep">/</span><span class="here mono">client-v2-rollout</span></div>
+  </div>
+
+  <div class="cols">
+
+    <!-- left: session tree -->
+    <div class="col">
+      <div class="col-h">This session</div>
+      <div class="row sel"><span class="mono" style="color:var(--text-mut)">›_</span> Parent log</div>
+      <div class="group-label">Child agents · 2</div>
+      <div class="row">
+        <svg class="gh" viewBox="0 0 16 16" fill="#e8e8ea"><path d="M8 0C3.6 0 0 3.6 0 8a8 8 0 005.5 7.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 014 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0016 8c0-4.4-3.6-8-8-8z"/></svg>
+        nrwl/ocean <span class="meta">1 PR ✓</span>
+      </div>
+      <div class="row">
+        <svg class="gh" viewBox="0 0 16 16" fill="#e8e8ea"><path d="M8 0C3.6 0 0 3.6 0 8a8 8 0 005.5 7.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 014 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0016 8c0-4.4-3.6-8-8-8z"/></svg>
+        nrwl/nx <span class="meta">1 PR ✗</span>
+      </div>
+    </div>
+
+    <!-- center: terminal log -->
+    <div class="col">
+      <div class="col-h">Parent log · Polygraph CLI</div>
+      <div class="term">
+        <div class="u">also pull PR #482 from nrwl/ocean into this session</div>
+        <div class="ok">✓ Linked <span class="repo">nrwl/ocean#482</span> — chore: bump shared client to v2</div>
+        <div class="info">&nbsp;</div>
+        <div class="u">spin up a child agent on nrwl/nx to adapt the plugin to client v2</div>
+        <div class="info">→ child agent started on <span class="repo">nrwl/nx</span> (✷ claude)</div>
+        <div class="ok">✓ opened PR <span class="repo">nrwl/nx#1180</span> — fix: adapt plugin API to client v2</div>
+        <div class="info">&nbsp;</div>
+        <div class="u">what's the CI status across all repos?</div>
+        <div class="ok"><span class="pad"></span>● <span class="repo">polygraph-docs</span> · DOC-510 &nbsp;✓ passing</div>
+        <div class="ok"><span class="pad"></span>● <span class="repo">ocean</span> · #482 &nbsp;✓ passing</div>
+        <div class="warn"><span class="pad"></span>● <span class="repo">nx</span> · feat/client-v2 &nbsp;✗ failing — 3 tests</div>
+        <div class="info"><span class="pad"></span>&nbsp; downstream break surfaced here, in one session</div>
+      </div>
+    </div>
+
+    <!-- right: PR panel for selected child agent -->
+    <div class="col">
+      <div class="pp-h">
+        <svg class="gh" style="width:14px;height:14px" viewBox="0 0 16 16" fill="#e8e8ea"><path d="M8 0C3.6 0 0 3.6 0 8a8 8 0 005.5 7.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 014 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0016 8c0-4.4-3.6-8-8-8z"/></svg>
+        nrwl/nx <span class="badge active" style="margin-left:auto"><span class="dot green"></span>Running</span>
+      </div>
+      <div class="pp">
+        <div class="t">fix: adapt plugin API to client v2</div>
+        <div class="br">feat/client-v2 → main</div>
+        <div class="st"><span class="ci fail"><span class="check">!</span>CI · Failing</span></div>
+      </div>
+      <div class="pp">
+        <div class="t" style="color:var(--text-mut)">nrwl/ocean#482</div>
+        <div class="br">feat/client-v2 → main · linked</div>
+        <div class="st"><span class="ci"><span class="check">✓</span>CI · Succeeded</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
