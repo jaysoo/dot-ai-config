@@ -5,8 +5,10 @@ import { NxMark } from "../components/util";
 import { Background, Bg } from "../scenes/SceneKit";
 import { DashboardScene } from "../scenes/DashboardScene";
 import { TitleScene } from "../scenes/TitleScene";
+import { DashStory } from "../story";
 import { PRun } from "./PRun";
 import { PFix } from "./PFix";
+import { SandboxRun } from "./SandboxRun";
 
 export type Trans = "fade" | "slide" | "none";
 export type Mode = "unreliable" | "poison";
@@ -14,7 +16,7 @@ export type Mode = "unreliable" | "poison";
 export interface PScene {
   kind: "title" | "run" | "dashboard" | "fix";
   dur: number;
-  style?: "rows" | "cards";
+  style?: "rows" | "cards" | "sandbox";
   title?: string;
   sub?: string;
 }
@@ -25,6 +27,7 @@ export interface PVariant {
   accent: string;
   trans: Trans;
   mode: Mode;
+  story?: DashStory; // overrides dashboard/fix data (P2 uses the build story)
   scenes: PScene[];
 }
 
@@ -63,11 +66,15 @@ const render = (s: PScene, v: PVariant) => {
     case "title":
       return <TitleScene {...p} title={s.title ?? ""} sub={s.sub} />;
     case "run":
-      return <PRun {...p} mode={v.mode} style={s.style} />;
+      return s.style === "sandbox" ? (
+        <SandboxRun {...p} mode={v.mode} />
+      ) : (
+        <PRun {...p} mode={v.mode} style={s.style as "rows" | "cards"} />
+      );
     case "dashboard":
-      return <DashboardScene {...p} />;
+      return <DashboardScene {...p} story={v.story} />;
     case "fix":
-      return <PFix {...p} mode={v.mode} />;
+      return <PFix {...p} mode={v.mode} story={v.story} />;
   }
 };
 

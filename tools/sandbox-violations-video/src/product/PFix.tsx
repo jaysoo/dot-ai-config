@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, useCurrentFrame, interpolate } from "remotion";
 import { theme } from "../theme";
-import { STORY2 } from "../story";
+import { DEFAULT_DASH, DashStory } from "../story";
 import { Check } from "../components/util";
 import { fr, Caption, SceneProps } from "../scenes/SceneKit";
 import { CacheTile } from "./ProductKit";
@@ -13,7 +13,11 @@ type Mode = "unreliable" | "poison";
  * written into project.json, and api:build's cache flips from at-risk back to
  * a *guaranteed reliable* state.
  */
-export const PFix: React.FC<SceneProps & { mode: Mode }> = ({ dur, mode }) => {
+export const PFix: React.FC<SceneProps & { mode: Mode; story?: DashStory }> = ({
+  dur,
+  mode,
+  story = DEFAULT_DASH,
+}) => {
   const f = useCurrentFrame();
   const working = interpolate(f, [0, dur * 0.08, dur * 0.2, dur * 0.28], [0, 1, 1, 0], {
     extrapolateLeft: "clamp",
@@ -53,7 +57,7 @@ export const PFix: React.FC<SceneProps & { mode: Mode }> = ({ dur, mode }) => {
           opacity: fr(f, dur, 0.2, 0.32),
         }}
       >
-        The undeclared input is now part of api:build's config.
+        The undeclared input is now part of {story.badTask}'s config.
       </div>
 
       <div style={{ display: "flex", gap: 56, alignItems: "center" }}>
@@ -71,10 +75,10 @@ export const PFix: React.FC<SceneProps & { mode: Mode }> = ({ dur, mode }) => {
             opacity: fr(f, dur, 0.16, 0.28),
           }}
         >
-          {cl("apps/api/project.json", theme.textFaint)}
+          {cl(story.projectJson, theme.textFaint)}
           {cl('"build": {', theme.textDim)}
           {cl('  "inputs": [', theme.textDim)}
-          {STORY2.inputsBefore.map((inp) => cl(`    "${inp}",`, theme.text))}
+          {story.inputsBefore.map((inp) => cl(`    "${inp}",`, theme.text))}
           <div
             style={{
               color: theme.green,
@@ -85,7 +89,7 @@ export const PFix: React.FC<SceneProps & { mode: Mode }> = ({ dur, mode }) => {
               fontWeight: 700,
             }}
           >
-            {`+   "${STORY2.added}"`}
+            {`+   "${story.added}"`}
           </div>
           {cl("  ]", theme.textDim)}
           {cl("}", theme.textDim)}
@@ -93,7 +97,7 @@ export const PFix: React.FC<SceneProps & { mode: Mode }> = ({ dur, mode }) => {
 
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
           <div style={{ fontFamily: theme.mono, fontSize: 30, fontWeight: 700, color: theme.text, opacity: fr(f, dur, 0.3, 0.42) }}>
-            api:build
+            {story.badTask}
           </div>
           <CacheTile state={heal > 0.4 ? "good" : "bad"} mode={mode} reveal={Math.max(heal, 0.4)} width={360} />
           <div
@@ -126,9 +130,9 @@ export const PFix: React.FC<SceneProps & { mode: Mode }> = ({ dur, mode }) => {
           gap: 14,
         }}
       >
-        <span style={{ color: theme.green }}>$</span> nx run api:build
+        <span style={{ color: theme.green }}>$</span> nx run {story.badTask}
         <span style={{ color: theme.green }}>
-          → config.json tracked · cache hit is verified
+          → input now tracked · cache hit is verified
         </span>
       </div>
 
@@ -140,8 +144,8 @@ export const PFix: React.FC<SceneProps & { mode: Mode }> = ({ dur, mode }) => {
           </>
         ) : (
           <>
-            <b style={{ color: theme.green }}>0 of 3</b> tasks violating — the cache is
-            reliable again.
+            <b style={{ color: theme.green }}>0 of {story.total}</b> {story.unit} violating — the
+            cache is reliable again.
           </>
         )}
       </Caption>

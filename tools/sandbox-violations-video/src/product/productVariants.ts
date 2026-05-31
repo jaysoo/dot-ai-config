@@ -1,5 +1,6 @@
 import { PVariant } from "./ProductMovie";
 import { theme } from "../theme";
+import { BUILD_DASH } from "../story";
 
 /**
  * 5 product-demo variants, all 20s (600f): title → run (slow, per-task cache)
@@ -37,11 +38,19 @@ export const PRODUCT_VARIANTS: PVariant[] = [
     accent: theme.cyan,
     trans: "slide",
     mode: "unreliable",
-    scenes: arc(
-      "rows",
-      "Your cache is only as good as its inputs.",
-      "Nx Cloud guarantees it stays reliable."
-    ),
+    story: BUILD_DASH,
+    scenes: [
+      {
+        kind: "title",
+        dur: 64,
+        title: "Your cache is only as good as its inputs.",
+        sub: "Nx Cloud guarantees it stays reliable.",
+      },
+      // sandbox run gets the most room (per-task sandboxes + read/write arrows)
+      { kind: "run", style: "sandbox", dur: 214 },
+      { kind: "dashboard", dur: 168 },
+      { kind: "fix", dur: 154 },
+    ],
   },
   {
     id: "P3-PerTask",
