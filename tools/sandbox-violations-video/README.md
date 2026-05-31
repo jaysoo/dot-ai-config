@@ -49,6 +49,30 @@ cache-key explainer and a verifying re-run).
 | `L4-Narrative` | 20s | Caption-led, cyan |
 | `L5-GraphCentric` | 20s | Long graph emphasis |
 
+## Product-demo variants (20s, refined) — recommended
+
+A polished third round refining `L3-ProductDemo` from feedback:
+
+- **No skull / no "insecure platform" vibe** — the cache is framed as a
+  reliability *guarantee* (🛡️ reliable / ⚠️ at-risk).
+- **Slower, readable intro** with minimal text.
+- **Cache is per-task** — each task has its own cache entry; only `api:build`'s
+  is affected, the other two stay reliable.
+- Ends with **Fix with AI** writing the missing input into `project.json` and
+  the build cache returning to guaranteed-reliable.
+
+Three use "unreliable" wording; two (`P4`, `P5`) use "poisoning".
+
+| ID | Wording | Layout / look |
+|----|---------|---------------|
+| `P1-Guarantee` | unreliable | rows, green/radial |
+| `P2-Inputs` | unreliable | rows, cyan/flat, slide |
+| `P3-PerTask` | unreliable | cards, purple/radial |
+| `P4-PoisonAware` | poisoning | rows, amber/grid |
+| `P5-TrustHits` | poisoning | cards, purple/radial, slide |
+
+Scenes live in `src/product/`; specs in `src/product/productVariants.ts`.
+
 ## Develop
 
 ```bash

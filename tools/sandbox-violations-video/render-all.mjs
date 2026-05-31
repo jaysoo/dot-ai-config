@@ -22,9 +22,23 @@ const combined = [
   "L4-Narrative",
   "L5-GraphCentric",
 ];
-// `node render-all.mjs single` renders only the first round; default = combined.
+const product = [
+  "P1-Guarantee",
+  "P2-Inputs",
+  "P3-PerTask",
+  "P4-PoisonAware",
+  "P5-TrustHits",
+];
+// `node render-all.mjs single|combined|product|all` (default = product).
 const which = process.argv[2];
-const ids = which === "single" ? single : which === "all" ? [...single, ...combined] : combined;
+const ids =
+  which === "single"
+    ? single
+    : which === "combined"
+    ? combined
+    : which === "all"
+    ? [...single, ...combined, ...product]
+    : product;
 
 // Allow pointing at a pre-installed Chromium (e.g. Playwright's) when Remotion
 // can't download its own Chrome Headless Shell.

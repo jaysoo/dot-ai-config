@@ -8,6 +8,8 @@ import { V4Kinetic } from "./variations/V4Kinetic";
 import { V5Pipeline } from "./variations/V5Pipeline";
 import { Movie, totalFrames } from "./combined/Movie";
 import { VARIANTS } from "./combined/variants";
+import { ProductMovie, ptotal } from "./product/ProductMovie";
+import { PRODUCT_VARIANTS } from "./product/productVariants";
 
 const common = {
   width: VIDEO.width,
@@ -36,6 +38,20 @@ export const RemotionRoot: React.FC = () => (
         height={VIDEO.height}
         fps={VIDEO.fps}
         durationInFrames={totalFrames(v)}
+      />
+    ))}
+
+    {/* Product-demo variants (20s): per-task cache, skull-free, fix-with-AI */}
+    {PRODUCT_VARIANTS.map((v) => (
+      <Composition
+        key={v.id}
+        id={v.id}
+        component={ProductMovie as React.FC<Record<string, unknown>>}
+        defaultProps={{ v }}
+        width={VIDEO.width}
+        height={VIDEO.height}
+        fps={VIDEO.fps}
+        durationInFrames={ptotal(v)}
       />
     ))}
   </>
