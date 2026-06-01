@@ -1,0 +1,40 @@
+name: Weekly Work Report
+
+on:
+  schedule:
+    # Every Monday at 08:00 UTC
+    - cron: '0 8 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Claude Code to generate weekly work report
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Generate the weekly work report for the prior week (Monday–Sunday).
+
+            Today is a Monday. The prior week ran from last Monday through yesterday (Sunday).
+
+            Steps:
+            1. Query nrwl/nx and nrwl/ocean for all PRs created or merged in the prior week using the GitHub MCP tools.
+            2. Group activity by contributor (exclude bots).
+            3. For each contributor: summarise which product area / feature they worked on, whether it was small scattered fixes or one large feature, and any notable patterns.
+            4. Flag anything that looks like it needs attention: unplanned large features, risky infrastructure changes, contributors with unusually high or low volume, stacks of open PRs that may be blocking a release.
+            5. Write the report to `dot_ai/para/areas/weekly-work-report/YYYY-WNN-week-of-mon-dd.md` (use the correct ISO week number and date).
+            6. Update `dot_ai/para/areas/weekly-work-report/README.md` to add a row linking to the new report (newest first).
+            7. Commit the new files with message: `chore: add weekly work report for week of <date range>`.
+            8. Create a PR against `main` titled `Weekly Work Report — <date range>`.
+
+            Repository scope available: nrwl/nx, nrwl/ocean, jaysoo/dot-ai-config.
