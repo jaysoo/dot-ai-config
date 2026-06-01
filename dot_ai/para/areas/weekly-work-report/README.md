@@ -6,6 +6,7 @@ Automated Monday morning reports summarising merged PR activity across `nrwl/nx`
 
 | Week | Report |
 |------|--------|
+| May 25–31, 2026 | [2026-W22-week-of-may-25.md](./2026-W22-week-of-may-25.md) |
 | May 18–24, 2026 | [2026-W21-week-of-may-18.md](./2026-W21-week-of-may-18.md) |
 
 ---
