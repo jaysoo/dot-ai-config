@@ -24,6 +24,14 @@
 - **Goals:** Focus on features that generate enterprise revenue
 - **Strengths:** Strategic thinking, willing to prioritize ruthlessly
 
+## Upcoming Sync
+
+- Catch-up after Jason was off for a week:
+  - **Migrate** is merged and in beta — Leo has PRs to fix/harden the feature
+  - **Module Federation (MF)** is merged
+  - Juri letting champions know about v23 and what's worth checking out
+  - Not done all remaining migrate work yet
+
 ## 1:1 Notes
 
 ### Reference: Effy Reviews
