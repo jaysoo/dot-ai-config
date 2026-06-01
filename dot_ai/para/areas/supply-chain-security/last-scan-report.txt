@@ -24,7 +24,7 @@
   [PASS] No unsafe package-manager script policy overrides found.
 
 === 8. Dot-env file sweep from /Users/jack (may take ~20 seconds) ===
-  [PASS] Found 29 env file(s), but no secret-like assignments in scanned env files.
+  [FAIL] Secret-like assignment found in env file: /Users/jack/projects/ocean/apps/nx-cloud/.env.serveDist
 
 === Result ===
-  [PASS] Overall: PASS
+  [FAIL] Overall: FAIL
