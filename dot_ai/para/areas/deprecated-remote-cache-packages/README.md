@@ -12,58 +12,78 @@ Tracking weekly npm download counts for the old `@nx/*-cache` packages and their
 - [`@nx/powerpack-shared-fs-cache`](https://www.npmjs.com/package/@nx/powerpack-shared-fs-cache)
 - [`@nx/powerpack-azure-cache`](https://www.npmjs.com/package/@nx/powerpack-azure-cache)
 
+**Week cadence:** Wednesday–Tuesday (aligns with reporting day on Tuesday).
+
 ---
 
 ## Weekly Download History
 
-### 2026-06-01 (week of May 26–Jun 1)
+### Week of May 27–Jun 2, 2026
 
 | Package | Downloads | Δ prev week |
 |---------|----------:|------------:|
-| `@nx/s3-cache` | 221,176 | −29,495 |
-| `@nx/gcs-cache` | 66,989 | +13,229 |
-| `@nx/shared-fs-cache` | 32,484 | −3,525 |
-| `@nx/azure-cache` | 23,165 | −1,919 |
-| **`@nx/*` subtotal** | **343,814** | **−21,710** |
-| `@nx/powerpack-s3-cache` | 8,388 | −1,208 |
-| `@nx/powerpack-gcs-cache` | 424 | −795 |
-| `@nx/powerpack-shared-fs-cache` | 380 | −685 |
-| `@nx/powerpack-azure-cache` | 1,335 | −1,527 |
-| **`powerpack-*` subtotal** | **10,527** | **−4,215** |
-| **Grand Total** | **354,341** | **−25,925** |
+| `@nx/s3-cache` | 184,342 | −67,681 |
+| `@nx/gcs-cache` | 73,855 | +21,375 |
+| `@nx/shared-fs-cache` | 26,222 | −7,988 |
+| `@nx/azure-cache` | 21,527 | −2,778 |
+| **`@nx/*` subtotal** | **305,946** | **−57,072** |
+| `@nx/powerpack-s3-cache` | 7,697 | −1,868 |
+| `@nx/powerpack-gcs-cache` | 413 | −630 |
+| `@nx/powerpack-shared-fs-cache` | 405 | −476 |
+| `@nx/powerpack-azure-cache` | 788 | −2,090 |
+| **`powerpack-*` subtotal** | **9,303** | **−5,064** |
+| **Grand Total** | **315,249** | **−62,136** |
 
 ---
 
-### 2026-05-26 (week of May 19–25)
+### Week of May 20–26, 2026
 
 | Package | Downloads | Δ prev week |
 |---------|----------:|------------:|
-| `@nx/s3-cache` | 250,671 | −14,541 |
-| `@nx/gcs-cache` | 53,760 | +13,688 |
-| `@nx/shared-fs-cache` | 36,009 | −4,412 |
-| `@nx/azure-cache` | 25,084 | −3,810 |
-| **`@nx/*` subtotal** | **365,524** | **−9,075** |
-| `@nx/powerpack-s3-cache` | 9,596 | +1,598 |
-| `@nx/powerpack-gcs-cache` | 1,219 | +433 |
-| `@nx/powerpack-shared-fs-cache` | 1,065 | +428 |
-| `@nx/powerpack-azure-cache` | 2,862 | +1,372 |
-| **`powerpack-*` subtotal** | **14,742** | **+3,831** |
-| **Grand Total** | **380,266** | **−5,244** |
+| `@nx/s3-cache` | 252,023 | −10,183 |
+| `@nx/gcs-cache` | 52,480 | +6,714 |
+| `@nx/shared-fs-cache` | 34,210 | −3,714 |
+| `@nx/azure-cache` | 24,305 | −1,022 |
+| **`@nx/*` subtotal** | **363,018** | **−8,205** |
+| `@nx/powerpack-s3-cache` | 9,565 | +1,681 |
+| `@nx/powerpack-gcs-cache` | 1,043 | +161 |
+| `@nx/powerpack-shared-fs-cache` | 881 | +204 |
+| `@nx/powerpack-azure-cache` | 2,878 | +1,370 |
+| **`powerpack-*` subtotal** | **14,367** | **+3,416** |
+| **Grand Total** | **377,385** | **−4,789** |
 
 ---
 
-### 2026-05-19 (week of May 12–18)
+### Week of May 13–19, 2026
+
+| Package | Downloads | Δ prev week |
+|---------|----------:|------------:|
+| `@nx/s3-cache` | 262,206 | −3,226 |
+| `@nx/gcs-cache` | 45,766 | −4,479 |
+| `@nx/shared-fs-cache` | 37,924 | −2,756 |
+| `@nx/azure-cache` | 25,327 | −10,693 |
+| **`@nx/*` subtotal** | **371,223** | **−21,154** |
+| `@nx/powerpack-s3-cache` | 7,884 | −686 |
+| `@nx/powerpack-gcs-cache` | 882 | −75 |
+| `@nx/powerpack-shared-fs-cache` | 677 | −100 |
+| `@nx/powerpack-azure-cache` | 1,508 | +54 |
+| **`powerpack-*` subtotal** | **10,951** | **−807** |
+| **Grand Total** | **382,174** | **−21,961** |
+
+---
+
+### Week of May 6–12, 2026
 
 | Package | Downloads |
 |---------|----------:|
-| `@nx/s3-cache` | 265,212 |
-| `@nx/gcs-cache` | 40,072 |
-| `@nx/shared-fs-cache` | 40,421 |
-| `@nx/azure-cache` | 28,894 |
-| **`@nx/*` subtotal** | **374,599** |
-| `@nx/powerpack-s3-cache` | 7,998 |
-| `@nx/powerpack-gcs-cache` | 786 |
-| `@nx/powerpack-shared-fs-cache` | 637 |
-| `@nx/powerpack-azure-cache` | 1,490 |
-| **`powerpack-*` subtotal** | **10,911** |
-| **Grand Total** | **385,510** |
+| `@nx/s3-cache` | 265,432 |
+| `@nx/gcs-cache` | 50,245 |
+| `@nx/shared-fs-cache` | 40,680 |
+| `@nx/azure-cache` | 36,020 |
+| **`@nx/*` subtotal** | **392,377** |
+| `@nx/powerpack-s3-cache` | 8,570 |
+| `@nx/powerpack-gcs-cache` | 957 |
+| `@nx/powerpack-shared-fs-cache` | 777 |
+| `@nx/powerpack-azure-cache` | 1,454 |
+| **`powerpack-*` subtotal** | **11,758** |
+| **Grand Total** | **404,135** |
