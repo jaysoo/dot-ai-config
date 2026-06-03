@@ -18,7 +18,7 @@ This lockfile audit surfaces findings not caught by the prior package.json-level
 | P1 | CVE-2026-6951 | **9.2** | `simple-git` | ocean (3.32.3), nx (3.33.0) | RCE — git options injection |
 | P2 | CVE-2026-44293, CVE-2026-44291 | 8.8 | `protobufjs` | ocean (7.5.5 + 8.0.1) | Code Injection + Prototype Pollution gadget → RCE |
 | P2 | CVE-2026-27959 | 8.1 | `koa` | ocean (3.0.3) | Host Header Injection |
-| P2 | CVE-2026-25536, CVE-2026-0621, CVE-2025-66414 | 8.0/7.5/7.5 | `@modelcontextprotocol/sdk` | ocean (1.20.2), nx-console (1.25.2) | Cross-client data leak, ReDoS, no DNS-rebinding protection |
+| P2 | CVE-2026-25536, CVE-2026-0621, CVE-2025-66414 | 8.0/7.5/7.5 | `@modelcontextprotocol/sdk` | ocean (1.20.2); nx-console (1.25.2 — not exposed by code patterns, upgrade opportunistic) | Cross-client data leak, ReDoS, no DNS-rebinding protection |
 | P2 | Vite WebSocket file read + fs.deny bypass | 8.2 | `vite` | nx (6.3.5/7.1.3/7.3.1/8.0.0), nx-labs (7.3.1) | Arbitrary file read — dev server |
 | P3 | CVE-2026-44902 | 7.5 | `@opentelemetry/sdk-node`, `@opentelemetry/auto-instrumentations-node` | ocean | Prometheus exporter crash |
 | P3 | CVE-2026-4800 | 7.4 | `lodash`, `lodash-es` | ocean (4.17.21), nx (4.17.21/4.17.23) | Code injection via `_.template` |
@@ -173,20 +173,31 @@ For the `8.x` instance, check whether any dep requires `protobufjs@^8.0.0` speci
 | CVE-2026-0621 | HIGH (CVSS 7.5) | `< 1.25.2` | **1.25.2** | ReDoS in URI/method-name parsing |
 | CVE-2025-66414 | HIGH (CVSS 7.5) | `< 1.24.0` | **1.24.0** | DNS rebinding protection disabled by default |
 
-**What CVE-2026-25536 does:** When a single `McpServer` or transport instance handles multiple concurrent client sessions without proper isolation, data from one client session can leak into another. If ocean's AI agent infrastructure reuses MCP server instances across requests (a common pattern), this exposes one user's conversation context to another user.
+**What CVE-2026-25536 does:** When a single `McpServer` or transport instance handles multiple concurrent client sessions without proper isolation, data from one client session can leak into another.
 
-**Locked vulnerable versions:**
+**Locked versions and exposure analysis:**
 
 | Repo | Locked version | CVE-2026-25536 | CVE-2026-0621 | CVE-2025-66414 |
 |---|---|---|---|---|
 | **nrwl/ocean** | `1.20.2` | VULNERABLE | VULNERABLE | VULNERABLE |
-| **nrwl/nx-console** | `1.25.2` (direct pin) | VULNERABLE | PATCHED | PATCHED |
+| **nrwl/nx-console** | `1.25.2` (direct pin) | NOT AFFECTED (see below) | PATCHED | PATCHED |
+
+**nrwl/nx-console — CVE-2026-25536 code review: NOT AFFECTED**
+
+The advisory's vulnerable pattern is sharing a single `McpServer` or transport instance across concurrent clients. A code audit of nx-console reveals it already implements the safe pattern on all active transports:
+
+- **HTTP StreamableHTTPServerTransport** (`apps/nx-mcp/src/main.ts` ~L348–385): Creates a fresh `McpServer`, `NxMcpServerWrapper`, and transport per unique `mcp-session-id`. Exactly matches the advisory's "stateful mode" workaround.
+- **VSCode integration** (`libs/vscode/mcp/src/lib/mcp-http-server-core.ts` ~L69–125): Same per-session creation, plus tracks all instances in a `Set` for coordinated cleanup.
+- **STDIO transport**: Single shared instance, but STDIO is a single-connection transport by definition — there is no second concurrent client possible.
+- **SSE transport** (legacy): A single global `McpServer` is reused across multiple SSE connections. This is technically in the vulnerable pattern, but: (a) SSE is a deprecated legacy transport, (b) nx-console is a local single-developer tool — the multi-tenant threat model does not apply, (c) the shared McpServer holds only workspace configuration and tool registrations, not session-scoped user data.
+
+Upgrading to 1.26.0 is still recommended to eliminate the theoretical SSE edge case and pick up CVE-2026-25536's other fixes, but **nx-console has no actionable exposure today**.
 
 **Change needed:**
 
-*nrwl/ocean*: Upgrade `@modelcontextprotocol/sdk` from `^1.20.2` to `^1.26.0` in `package.json`. This resolves all three CVEs.
+*nrwl/ocean*: Upgrade `@modelcontextprotocol/sdk` from `^1.20.2` to `^1.26.0` in `package.json`. This resolves all three CVEs. Ocean's usage pattern is unknown without a code audit — assume VULNERABLE until verified.
 
-*nrwl/nx-console*: Upgrade `@modelcontextprotocol/sdk` from `1.25.2` to `>=1.26.0`. This resolves CVE-2026-25536.
+*nrwl/nx-console*: Upgrade `@modelcontextprotocol/sdk` from `1.25.2` to `>=1.26.0` opportunistically (low urgency — not exposed by current code patterns).
 
 ---
 
@@ -477,6 +488,7 @@ Plus direct-dep bumps in package.json:
 ```json
 "@modelcontextprotocol/sdk": ">=1.26.0"
 ```
+Low urgency — code audit confirms nx-console's HTTP and VSCode transports already implement per-session isolation. Upgrade is opportunistic hygiene, not a security emergency.
 
 ### nrwl/nx-labs `package.json`
 ```json
