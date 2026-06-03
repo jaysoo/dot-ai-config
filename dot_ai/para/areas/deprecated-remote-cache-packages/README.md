@@ -16,54 +16,74 @@ Tracking weekly npm download counts for the old `@nx/*-cache` packages and their
 
 ## Weekly Download History
 
-### 2026-06-01 (week of May 26–Jun 1)
+> Weeks run Wed–Tue. Δ is vs the prior week in this table.
+
+### 2026-06-03 (May 28–Jun 3)
 
 | Package | Downloads | Δ prev week |
 |---------|----------:|------------:|
-| `@nx/s3-cache` | 221,176 | −29,495 |
-| `@nx/gcs-cache` | 66,989 | +13,229 |
-| `@nx/shared-fs-cache` | 32,484 | −3,525 |
-| `@nx/azure-cache` | 23,165 | −1,919 |
-| **`@nx/*` subtotal** | **343,814** | **−21,710** |
-| `@nx/powerpack-s3-cache` | 8,388 | −1,208 |
-| `@nx/powerpack-gcs-cache` | 424 | −795 |
-| `@nx/powerpack-shared-fs-cache` | 380 | −685 |
-| `@nx/powerpack-azure-cache` | 1,335 | −1,527 |
-| **`powerpack-*` subtotal** | **10,527** | **−4,215** |
-| **Grand Total** | **354,341** | **−25,925** |
+| `@nx/s3-cache` | 182,808 | −64,113 |
+| `@nx/gcs-cache` | 74,318 | +17,785 |
+| `@nx/shared-fs-cache` | 25,797 | −8,004 |
+| `@nx/azure-cache` | 22,854 | −645 |
+| **`@nx/*` subtotal** | **305,777** | **−54,977** |
+| `@nx/powerpack-s3-cache` | 7,955 | −1,300 |
+| `@nx/powerpack-gcs-cache` | 559 | −400 |
+| `@nx/powerpack-shared-fs-cache` | 421 | −425 |
+| `@nx/powerpack-azure-cache` | 778 | −2,052 |
+| **`powerpack-*` subtotal** | **9,713** | **−4,177** |
+| **Grand Total** | **315,490** | **−59,154** |
 
 ---
 
-### 2026-05-26 (week of May 19–25)
+### 2026-05-27 (May 21–27)
 
 | Package | Downloads | Δ prev week |
 |---------|----------:|------------:|
-| `@nx/s3-cache` | 250,671 | −14,541 |
-| `@nx/gcs-cache` | 53,760 | +13,688 |
-| `@nx/shared-fs-cache` | 36,009 | −4,412 |
-| `@nx/azure-cache` | 25,084 | −3,810 |
-| **`@nx/*` subtotal** | **365,524** | **−9,075** |
-| `@nx/powerpack-s3-cache` | 9,596 | +1,598 |
-| `@nx/powerpack-gcs-cache` | 1,219 | +433 |
-| `@nx/powerpack-shared-fs-cache` | 1,065 | +428 |
-| `@nx/powerpack-azure-cache` | 2,862 | +1,372 |
-| **`powerpack-*` subtotal** | **14,742** | **+3,831** |
-| **Grand Total** | **380,266** | **−5,244** |
+| `@nx/s3-cache` | 246,921 | −16,813 |
+| `@nx/gcs-cache` | 56,533 | +8,844 |
+| `@nx/shared-fs-cache` | 33,801 | −2,418 |
+| `@nx/azure-cache` | 23,499 | −1,957 |
+| **`@nx/*` subtotal** | **360,754** | **−12,344** |
+| `@nx/powerpack-s3-cache` | 9,255 | +1,111 |
+| `@nx/powerpack-gcs-cache` | 959 | +254 |
+| `@nx/powerpack-shared-fs-cache` | 846 | +223 |
+| `@nx/powerpack-azure-cache` | 2,830 | +1,425 |
+| **`powerpack-*` subtotal** | **13,890** | **+3,013** |
+| **Grand Total** | **374,644** | **−9,331** |
 
 ---
 
-### 2026-05-19 (week of May 12–18)
+### 2026-05-20 (May 14–20)
+
+| Package | Downloads | Δ prev week |
+|---------|----------:|------------:|
+| `@nx/s3-cache` | 263,734 | −1,629 |
+| `@nx/gcs-cache` | 47,689 | −4,810 |
+| `@nx/shared-fs-cache` | 36,219 | −5,995 |
+| `@nx/azure-cache` | 25,456 | −10,547 |
+| **`@nx/*` subtotal** | **373,098** | **−22,981** |
+| `@nx/powerpack-s3-cache` | 8,144 | −230 |
+| `@nx/powerpack-gcs-cache` | 705 | −445 |
+| `@nx/powerpack-shared-fs-cache` | 623 | −225 |
+| `@nx/powerpack-azure-cache` | 1,405 | −204 |
+| **`powerpack-*` subtotal** | **10,877** | **−1,104** |
+| **Grand Total** | **383,975** | **−24,085** |
+
+---
+
+### 2026-05-13 (May 7–13)
 
 | Package | Downloads |
 |---------|----------:|
-| `@nx/s3-cache` | 265,212 |
-| `@nx/gcs-cache` | 40,072 |
-| `@nx/shared-fs-cache` | 40,421 |
-| `@nx/azure-cache` | 28,894 |
-| **`@nx/*` subtotal** | **374,599** |
-| `@nx/powerpack-s3-cache` | 7,998 |
-| `@nx/powerpack-gcs-cache` | 786 |
-| `@nx/powerpack-shared-fs-cache` | 637 |
-| `@nx/powerpack-azure-cache` | 1,490 |
-| **`powerpack-*` subtotal** | **10,911** |
-| **Grand Total** | **385,510** |
+| `@nx/s3-cache` | 265,363 |
+| `@nx/gcs-cache` | 52,499 |
+| `@nx/shared-fs-cache` | 42,214 |
+| `@nx/azure-cache` | 36,003 |
+| **`@nx/*` subtotal** | **396,079** |
+| `@nx/powerpack-s3-cache` | 8,374 |
+| `@nx/powerpack-gcs-cache` | 1,150 |
+| `@nx/powerpack-shared-fs-cache` | 848 |
+| `@nx/powerpack-azure-cache` | 1,609 |
+| **`powerpack-*` subtotal** | **11,981** |
+| **Grand Total** | **408,060** |
