@@ -10,13 +10,12 @@ In any new session, ALWAYS use /caveman skill to go into full (default) cavement
 
 ## 🔴 NEVER use the `gh` GitHub CLI
 
-The `gh` binary has been removed from this machine for security reasons (`gh auth token` exposed tokens too broadly). It is **no longer installed**.
+`gh` binary removed for security (`gh auth token` leaked too broadly). No longer installed.
 
-- **Never invoke `gh` for anything** — not `gh pr`, `gh issue`, `gh api`, `gh release`, `gh workflow`, `gh search`, nothing. Calls will fail with "command not found".
-- **Never suggest `gh` in answers, examples, scripts, skills, or commands.** Treat it as deleted.
-- **Never re-add `gh` to permission allowlists, op-plugin wrappers, or shell aliases.**
-- For GitHub data, prefer: the GitHub MCP (when available), `curl` against `api.github.com` with an explicit token you already have in env, or the web UI. Ask Jack before adding a new auth path.
-- For PR review/comment/merge actions: only the web UI or a `curl` POST with explicit confirmation. Same "never act on PRs without explicit authorization" rule from below still applies.
+- **Never invoke or suggest `gh`** anywhere (answers, scripts, skills, commands). Calls fail with "command not found".
+- **Never re-add `gh`** to permission allowlists, op-plugin wrappers, or shell aliases.
+- For GitHub data: GitHub MCP, `curl` against `api.github.com` with an env token, or the web UI. Ask before adding a new auth path.
+- PR review/comment/merge: web UI or `curl` POST, explicit confirmation only. See PR rule below.
 
 ## 🔴 Critical Setup & Verification
 
@@ -33,10 +32,15 @@ The `gh` binary has been removed from this machine for security reasons (`gh aut
 ### .ai Folder Symlink (MUST CHECK FIRST)
 
 ```bash
-file .ai  # Must show "symbolic link"
-# Fix if needed:
-[ -d .ai ] && cp -r .ai /tmp/backup-ai-$(date +%Y-%m-%d) && rm -rf .ai
-ln -s $HOME/projects/dot-ai-config/dot_ai/ .ai
+# Verify .ai is a symlink. Use readlink / `file -h` / `[ -L ]` — plain `file .ai`
+# and `[ -d .ai ]` FOLLOW the link and report "directory" even when it's correct.
+readlink .ai   # should print /Users/jack/projects/dot-ai-config/dot_ai
+# Fix ONLY if it is NOT already a symlink (do not rm a working symlink!):
+if [ ! -L .ai ]; then
+  # rsync (not cp -r) + exclude the self-referential dot_ai symlink to avoid a cycle
+  [ -e .ai ] && rsync -a --exclude dot_ai .ai/ "/tmp/backup-ai-$(date +%Y-%m-%d)/" && rm -rf .ai
+  ln -s "$HOME/projects/dot-ai-config/dot_ai" .ai
+fi
 ```
 
 ### Architecture Context Loading (AUTO-LOAD ON START)
@@ -97,11 +101,11 @@ Fixes DOC-125"
 
 **CRITICAL**: Never co-author the commit, the commit MUST come only from me. Also do not mention yourself (Claude Code) in the commit body.
 
-**Commit body style**: Keep bodies terse (caveman style applies to commits too, despite the caveman skill's default carve-out). Still use the Nx template sections, but each section should be 1–3 short sentences/fragments. No filler, no restating the same idea twice, no marketing recap. A reader should skim the whole body in under 15 seconds.
+**Commit body style**: Terse (caveman applies to commits too). Use the Nx template sections, but each = 1-3 short fragments. No filler, no repeating, no marketing recap. Skimmable in under 15 seconds.
 
-**Inline code comment style**: Same caveman discipline. 1-2 lines max, "explain _why_, not _what_". If a comment recaps mechanics already visible in code, delete it. Bullet points OK when the code/function is a pipeline of independent transforms - one bullet per transform/step. JSDoc on public APIs may go longer when documenting non-obvious contracts; everything else is terse.
+**Inline code comment style**: Same discipline. 1-2 lines max, "explain _why_, not _what_". Delete comments that recap mechanics already in the code. Bullets OK for a pipeline of transforms. JSDoc on public APIs may go longer for non-obvious contracts.
 
-**ASCII punctuation in code/commits/committed markdown**: Use `-` and `->`. No em dashes (—), unicode arrows (→), or other unicode punctuation in code comments, commit bodies, PR descriptions, or any markdown that ships in the repo (incl. AI migration instruction docs like `tools/ai-migrations/MIGRATE_*.md`). They read as AI-generated. Doesn't apply to user-facing chat output.
+**ASCII punctuation in code/commits/committed markdown**: Use `-` and `->`. No em dashes, unicode arrows, or other unicode punctuation in code comments, commit bodies, PR descriptions, or any committed markdown (incl. `tools/ai-migrations/MIGRATE_*.md`). Reads as AI-generated. OK in user-facing chat.
 
 **PR description style**: Minimal. 1–3 sentences for Current Behavior, 1–3 for Expected Behavior, just `NXC-XXXX` (or equivalent) for Related Issue. No test plan, no file list, no Linear details — Linear is the source of truth and the PR just links by ID. Lean even shorter for drafts. If I want a longer description, I'll ask.
 
@@ -113,12 +117,9 @@ Fixes DOC-125"
 
 ### GitHub PR Reviews
 
-- **NEVER post reviews, comments, or approvals on GitHub PRs unless explicitly instructed**
-- Analysis plans with scores/recommendations are NOT authorization to act on PRs
-- "MERGE AS-IS" in a plan means "this is ready" -- NOT "go approve it"
+- **NEVER post reviews, comments, or approvals on GitHub PRs unless explicitly instructed** — even when the plan came from me.
+- Analysis plans with scores/recommendations are NOT authorization to act. "MERGE AS-IS" means "this is ready", NOT "go approve it".
 - Always confirm before posting any review/comment/merge action (web UI, curl, MCP — any path).
-- This applies even when the plan was provided by the user
-- The `gh` CLI is banned (see top of file) — do not propose it as the action mechanism either.
 
 ### PR Review Process
 
@@ -330,15 +331,12 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - **One property > Many hacks** - Check if single CSS property works
 - **Ask before assuming** - Multiple approaches? Ask.
 - **Iterate, don't defend** - Change based on feedback
-- **Prefer additive over in-place when extending shared code.** When adding behavior that needs to share logic with an existing function, prefer one of: (a) call the existing function with the args you need and discard what you don't, (b) extract a private helper, or (c) add a new exported function next to it that duplicates a small amount of pipeline code. **Avoid refactoring the existing function** unless its behavior is changing or the duplication is large enough that drift is a real risk. Reviewer cost of "this PR also touches existing code" is high - it's hard to tell what changed semantically vs. what was just moved.
-  - **Why:** Q-443 - I refactored `getWorkspaceSandboxViolations` (extracted dedup-stage builder, threaded a new helper through) so the CIPE warning could share its totals query. Jack pushed back: dashboard fn's behavior was unchanged but the diff still made the PR harder to review. Final shape: CIPE caller invokes `getWorkspaceSandboxViolations({pageSize: 1, ...})` directly and reads `.totals.totalViolatingTasks`. Dashboard fn = 0 diff.
-  - **How to apply:** Before extracting/refactoring an existing function as part of feature work, ask: can the new caller just _use_ the existing function (even slightly wastefully)? If yes, do that. If duplication would be >20 lines or drift risk is real, then extract — and make the extract a separate commit so the diff reads as "no-op move" not bundled with feature work.
-- **Realistic examples > hypothetical edge cases** - Before writing code to handle an edge case, find a concrete test fixture that exercises it in a real workspace. Don't add defensive branching, retries, fallback paths, or generalized loops to handle scenarios that never occur in practice. If unsure whether a case is realistic, ASK before coding for it.
-  - **Why:** NXC-4157 — wrote tsquery migration with reverse-walk loop + leading-comma fallback + whitespace nibble. Pushed back twice on hypothetical-only complexity. Final form ended up at ~5 lines after stripping unjustified branches.
-  - **How to apply:** When tempted to write a loop, ask "is there a real-world file with multiple matches?" When tempted to add a fallback path, ask "what test would exercise it?" If the answer is "I'm being defensive," delete it and ask Jack.
-- **Verify third-party support claims before encoding them in committed user-facing docs** - Any factual claim about a third-party library's compat/support that ships in a committed file (AI migration markdown, generator output, README, etc.) must be verified against upstream before commit.
-  - **Why:** NXC-4448 — wrote "Cypress CT does not support Vite 8 yet" in committed AI migration markdown. Cypress 15.14.0 had shipped Vite 8 support 3 weeks earlier. Reviewer caught it; fact-check flipped the doc and surfaced a stale guard in nx (filed as separate ticket).
-  - **How to apply:** For committed docs (PR descriptions are exempt — those are ephemeral), if you write "X doesn't support Y" or "X requires Z", grep upstream changelog or run `npm view <pkg> versions` first. The doc ships into user repos and ages — don't bake assumptions.
+- **Prefer additive over in-place when extending shared code.** New caller should just _use_ the existing function (even slightly wastefully): call it with the args you need, extract a private helper, or add a sibling fn. **Avoid refactoring the existing fn** unless its behavior changes or duplication >20 lines (drift risk). Reviewer cost of "this PR also touches existing code" is high. If you must extract, make it a separate commit so it reads as a no-op move.
+  - **Why:** Q-443 — refactored `getWorkspaceSandboxViolations` to share a totals query; Jack pushed back since dashboard behavior was unchanged but the diff got noisier. Fix: CIPE caller invoked it directly with `{pageSize: 1}`; dashboard fn = 0 diff.
+- **Realistic examples > hypothetical edge cases** - Before coding for an edge case, find a concrete test fixture that hits it in a real workspace. No defensive branching, retries, fallback paths, or generalized loops for scenarios that never occur. Tempted to write a loop? Ask "is there a real file with multiple matches?" Tempted by a fallback? Ask "what test exercises it?" If it's just defensiveness, delete it and ask.
+  - **Why:** NXC-4157 — tsquery migration with reverse-walk loop + leading-comma fallback + whitespace nibble. Stripped to ~5 lines after two pushbacks on hypothetical-only complexity.
+- **Verify third-party support claims before committing them in user-facing docs.** Any compat/support claim shipping in a committed file (AI migration md, generator output, README) must be verified against upstream first — grep the changelog or run `npm view <pkg> versions`. The doc ships into user repos and ages. (PR descriptions are exempt — ephemeral.)
+  - **Why:** NXC-4448 — wrote "Cypress CT does not support Vite 8 yet"; Cypress 15.14.0 had shipped it 3 weeks earlier. Reviewer caught it.
 
 ### Component Order
 
@@ -500,9 +498,8 @@ git tag | grep "23.0.0-beta" | sort -V | tail -1   # latest, e.g. 23.0.0-beta.8
 # new migration version = 23.0.0-beta.9
 ```
 
-- **Why:** NXC-4156 — initial PR shipped with `23.0.0-beta.0`; Jack flagged on review and asked for `latest + 1`. A migration tagged at an already-released version won't run for users already on that version or later.
-- **How to apply:** Always check the latest tag before writing a new migration entry. The `next` patch/beta hasn't been cut yet, so `latest + 1` is correct.
-- **During multi-day iteration loops, re-bump as new betas ship.** If you target `beta.7` and `beta.8` is published while you're iterating, your migration silently doesn't run for users on `beta.8`. Re-check `git tag` and bump on each push if a new beta has been cut. NXC-4154/NXC-4448 — bumped through beta.7 → beta.9 → beta.10 across one day.
+- **Why:** NXC-4156 — a migration tagged at an already-released version won't run for users on that version or later. The `next` beta isn't cut yet, so `latest + 1` is correct. Always check the latest tag first.
+- **Re-bump as new betas ship during multi-day loops.** Targeting `beta.7` while `beta.8` ships means it silently won't run for `beta.8` users. Re-check `git tag` and bump on each push. NXC-4154/NXC-4448 — bumped beta.7 -> .9 -> .10 in one day.
 
 ### packageJsonUpdates: One Gate Per Independently-Versioned Package
 
@@ -529,8 +526,7 @@ When a `packageJsonUpdates` entry bumps multiple packages, the `requires` gate a
 }
 ```
 
-- **Why:** NXC-4448 — reviewer caught that gating both bumps under one cypress-version `requires` would skip the dev-server bump for users who'd manually upgraded cypress.
-- **How to apply:** If two packages can drift to independent versions in the wild, give each its own entry with its own `requires`.
+- **Rule:** If two packages can drift to independent versions, give each its own entry + `requires`. NXC-4448 — reviewer caught that a combined cypress gate skipped the dev-server bump for users who'd manually upgraded cypress.
 
 ### tsquery Codemod Patterns
 
@@ -545,8 +541,7 @@ When writing migration codemods that match property keys or use `:has()`:
 
 When stripping comments that are the **only** content of an object literal, also collapse the now-empty multi-line `{\n  }` to no-args form. Prettier collapses these on save, so pre/post-conversion equality assertions in specs (`expect(updated).toBe(initial)`) will break otherwise.
 
-- **Why:** NXC-4156 — stripped 20 SVGR-hint blocks, left `withReact({\n  })` empties; `convert-to-inferred` spec started failing because prettier reformatted both sides of an unchanged-config equality check to the same single-line form post-strip.
-- **How to apply:** Pair the comment-stripping pass with a regex pass: `withReact\(\{\s*\n[ \t]*\}\)` → `withReact()` (and equivalent for `new NxReactRspackPlugin({})`). Run prettier + affected specs with `-u` to confirm pre/post match.
+- **How to apply:** Pair the comment-stripping pass with a regex pass: `withReact\(\{\s*\n[ \t]*\}\)` -> `withReact()` (and same for `new NxReactRspackPlugin({})`). Run prettier + affected specs with `-u`. NXC-4156 — left `withReact({\n })` empties broke a `convert-to-inferred` equality check.
 
 ### Nx Docker Plugin (@nx/docker)
 
@@ -654,16 +649,13 @@ Fix source files rather than making regex handle edge cases.
 
 ### Investigation Best Practices
 
-- **Verify actual code path FIRST** - add logging to node_modules
+- **Verify actual code path FIRST** - add logging to node_modules. Watch for multiple impls (PTY vs spawn vs exec, native vs JS).
 - **Don't document theories as facts** - mark as "HYPOTHESIS: needs verification"
-- **Endorsing another reviewer's code-logic-only claim**: if the claim is purely "the code does X, therefore Y will happen", reproduce Y before acting. Reading the code only validates the "does X" half; the "therefore Y" half needs a repro, a locally-published version, or a unit test. If uncertain, ask me to verify before proceeding rather than propagating an unverified prediction.
-- Watch for multiple implementations (PTY vs spawn vs exec, native vs JS)
-- **Verify the baseline before calling it a regression.** When you hear "this worked before, now it fails":
-  1. First check whether the earlier "success" was actually a silent failure. Diff the script/workflow between the working and failing runs — look for exit-code checks, error swallowing, stdout parsing that might crash silently. A CI run showing green ≠ the thing actually worked.
-  2. Only then look for real regressions.
-  - **Why:** NXC-4353 — spent an hour chasing a "Nx 22.6 → 22.7 release code regression" that didn't exist. The Jan 8 dry-run "success" was a lie; the script returned 0 regardless of pnpm publish result until PR #10489 (Mar 24) added exit-code propagation. Bug had been there since Dec 3, just invisible.
-- **Reproduce locally before recommending a CI fix.** When a CI failure has a deterministic, isolated signature (e.g. `ERR_PNPM_CANNOT_RESOLVE_WORKSPACE_PROTOCOL`), reproduce it on your machine before committing to a fix. Pattern-matching the error message against common causes (or having another model confirm your guess) frequently lands on the wrong root cause.
-  - **Why:** NXC-4353 — recommended `pnpm.supportedArchitectures` based on the error phrasing, Gemini agreed, both wrong. One minute of local repro on Mac (where the "missing" darwin binary was already present) immediately disproved it.
+- **Endorsing another reviewer's code-logic-only claim**: "code does X, therefore Y" — reading the code only proves X. Reproduce Y (repro, local publish, or unit test) before acting; if uncertain, ask me rather than propagate an unverified prediction.
+- **Verify the baseline before calling it a regression.** "Worked before, now fails": first check the earlier "success" wasn't a silent failure — diff the script for exit-code checks / error swallowing / fragile stdout parsing (green CI ≠ it worked). Only then look for real regressions.
+  - **Why:** NXC-4353 — chased a non-existent "22.6 -> 22.7 regression" for an hour; the script returned 0 regardless of pnpm publish until PR #10489 added exit-code propagation. Bug was invisible since Dec 3.
+- **Reproduce locally before recommending a CI fix.** Deterministic, isolated signatures (e.g. `ERR_PNPM_CANNOT_RESOLVE_WORKSPACE_PROTOCOL`) — repro on your machine first. Pattern-matching the error message (or another model agreeing) frequently lands on the wrong root cause.
+  - **Why:** NXC-4353 — recommended `pnpm.supportedArchitectures` from the error phrasing, Gemini agreed, both wrong; one minute of local repro disproved it.
 
 **Example (NXC-3505):** Assumed `exec()` with piped stdio, but single commands use PTY.
 
@@ -686,7 +678,6 @@ Verify with real browser (Playwright). Document working vs failing cases.
 
 - Search: Must use production build
 - Conflicting rules: Check `redirect-rules.js` + `next.config.js`
-- Stuck processes: `lsof -i :4200 | grep LISTEN` then `kill PID`
 - Client nav: Link components use client routing, not server redirects
 
 ### Content Migration
@@ -707,20 +698,9 @@ Verify with real browser (Playwright). Document working vs failing cases.
 
 ### Always log auth requests via the `op-request-reason` skill
 
-Before running **any** command that triggers a 1Password prompt — `op` (any
-subcommand that needs auth) or remote `git` ops (`push`/`pull`/`fetch`/
-`clone`/`ls-remote`/`remote update`, which pull the SSH key from 1P's
-agent) — invoke the `op-request-reason` skill. The skill is a SKILL.md
-only (no helper script, no shell wrapper). You write the inline log block
-shown in the skill before the command and patch the line after, every
-time. If you skip it, nothing gets logged and Raycast won't show the
-pending request to Jack.
+Before **any** command that triggers a 1Password prompt — `op` (any auth subcommand) or remote `git` ops (`push`/`pull`/`fetch`/`clone`/`ls-remote`/`remote update`, which pull the SSH key from 1P's agent) — invoke the `op-request-reason` skill. It's SKILL.md only (no script): write the inline log block before the command, patch the line after, every time. Skip it and nothing logs, so Raycast won't show Jack the pending request.
 
-(Note: `gh` used to belong on this list as an op-plugin wrapper. The
-binary is now banned — see top of file.)
-
-Local-only git ops (`status`, `log`, `diff`, `add`, `commit`, `branch`,
-`checkout`, `reset`, `stash`) do NOT need logging.
+Local-only git ops (`status`, `log`, `diff`, `add`, `commit`, `branch`, `checkout`, `reset`, `stash`) do NOT need logging.
 
 ```bash
 # Vault error: "Engineering" isn't a vault
@@ -766,9 +746,9 @@ Customer-facing changelog description.
 
 Options: `fix`, `minor` (feature), `patch`. Not needed for `chore`/`docs` commits.
 
-**Skip the version plan when the feature it relates to already has a plan in the same unreleased cycle.** Before adding one, run `ls .nx/version-plans/ | grep -i <feature>`. If a related plan is already there and the feature hasn't shipped to prod yet, the fix is part of the unreleased feature work — adding a second plan produces two changelog entries (`feature added` + `feature also fixed before you ever saw it`) which is just noise. Only add a `fix:` plan against an already-released prod feature.
+**Skip the version plan when the related feature already has a plan in the same unreleased cycle.** Run `ls .nx/version-plans/ | grep -i <feature>` first. If the feature hasn't shipped to prod, the fix is part of that unreleased work — a second plan just adds a noise changelog entry. Only add a `fix:` plan against an already-released prod feature.
 
-- **Why:** Q-443 — I added two `fix:` plans for sandbox-violation polish on top of the original feature plan from PR #11249, even though none of it had shipped. Both got removed.
+- **Why:** Q-443 — added two `fix:` plans for sandbox-violation polish on top of the unreleased feature plan (PR #11249). Both got removed.
 
 ### E2E Testing
 
@@ -781,3 +761,20 @@ nx run nx-cloud-e2e-playwright:e2e --grep "pattern"
 ```
 
 The `--configuration=e2e` loads `.env.serve.e2e`. Don't use `op run` with e2e mode.
+
+### Design Conformance (CRITICAL for any Ocean UI work)
+
+- A design mock / Claude Design bundle is **NOT** authoritative over the committed `DESIGN.md` gates. Mocks can request what `DESIGN.md` bans (gradient text/fill, glassmorphism backdrop, modal-as-default).
+- Before marking ANY Ocean UI done, run the `DESIGN.md` §7 Pre-Ship checklist. Common misses: #8 (colors must resolve to declared tokens - no ad-hoc oklch), #9 (no gradient text), #5 (no backdrop blur), "modals are last resort".
+- Surface intentional deviations in chat up front, not in a code comment. Default to the token-based, calm treatment unless I approve the override.
+  - **Why:** Q-484 - built add-on callouts with gradients + blur modal from the mock; had to rework to bordered token cards.
+
+### Local manual testing of flag-gated features
+
+- Many Ocean features gate on an env-fallback flag set ONLY in `apps/nx-cloud/.env.serve.e2e` (e.g. `NX_CLOUD_ADD_ONS_ENABLED`, `NX_CLOUD_SANDBOXING_ANALYTICS_ENABLED`). A normal local serve leaves them unset (PostHog flag off) so the feature stays hidden on any plan.
+- To test locally: add the flag(s) to `env.override` (gitignored) and **restart the serve** (env is read at startup). Also check `NX_CLOUD_MODE` is not `private-enterprise`.
+
+### Typecheck when nx is unavailable
+
+- The `@nx/gradle` plugin needs `gradlew`; if Gradle/Java isn't available the nx project graph fails and ALL `nx` commands break. Fall back to `npx tsc -b libs/.../tsconfig.lib.json` (build mode builds project refs + gives real errors) per touched project.
+- For rendering/screenshotting a single Ocean component in isolation, use the `ocean-component-shot` skill.

@@ -1167,5 +1167,16 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.filetype.add({
 	extension = {
 		astro = "astro",
+		-- Markdoc is markdown + {% %} tags; markdown parser highlights the base content
+		mdoc = "markdown",
 	},
+})
+
+-- Overlay Markdoc {% ... %} tags. matchadd is window-local and draws on top of
+-- treesitter highlighting (a plain :syntax match would be suppressed by it).
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown" },
+	callback = function()
+		vim.fn.matchadd("Special", "{%.\\{-}%}")
+	end,
 })

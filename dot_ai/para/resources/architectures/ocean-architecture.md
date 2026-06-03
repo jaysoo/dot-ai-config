@@ -175,6 +175,30 @@ How DTE run status codes flow from task execution to UI display.
 - Once `de.statusCode != 0`, it's **never overwritten** by subsequent batches (guard: `de.statusCode == 0L`)
 - `RunHandlers.kt` defaults null task status to `2` — ancient code (2021), affects non-DTE runs
 
+### CI Run Group Creation / Distribution Mode Classification
+**Last Updated:** 2026-06-03
+**Related:** PR #11598 (restrict manual DTE to Enterprise), Polygraph session `restrict-manual-dte-419e3eec`
+
+How `nx-cloud start-ci-run` -> `create-run-group` classifies a run, and the key gotcha that the
+server cannot tell manual DTE apart from "no distribution".
+
+#### Key Files
+- `apps/nx-api/src/main/kotlin/handlers/DistributedExecutionHandlers.kt` (`create-run-group`, ~line 322-405) — derives `distributionRequested = cliDistributeOn != null`, `isUnconnected = memberships.isEmpty() && vcsConfiguration == null`, `isNxAgents`. Branches in order: (1) `distributionRequested && isUnconnected` -> 202 claim/"finish setup" flow; (2) `isNxAgents` -> VCS check + `CreateRunGroupAndStartWorkflow`; (3) else -> `CreateRunGroup` (non-distributed / manual).
+- `libs/nx-packages/client-bundle/src/lib/core/commands/start-ci-run.ts` — ALWAYS calls `createRunGroup` (~line 286), even with no `--distribute-on`. `getDistributeOn` (~line 434) STRIPS `"manual"` -> `undefined`. `--no-distribution` only flips `useDteByDefault`; it never reaches the payload.
+- `libs/nx-packages/client-bundle/src/lib/utilities/distributed-task-execution-detection.ts` — `isDistributedExecutionEnabled` + DTE marker file (`NX_CLOUD_DISTRIBUTED_EXECUTION-<cwd>` in tmpdir). Distribution is decided CLIENT-side by whether this marker exists. `start-ci-run` writes it only when `useDteByDefault` is true.
+- `libs/shared/db-schema-kotlin/src/main/kotlin/DistributionConfiguration.kt` — `DistributeOnInput` (`Literal` | `FromFile`), `isManual()`.
+- `libs/shared/db-schema-kotlin/src/main/kotlin/CloudOrganization.kt` — `isManualDteAllowed(workspaceCreatedAt, cutoff)`, `MANUAL_DTE_ENTERPRISE_CUTOFF` (2026-06-05).
+
+#### Three distribution modes (and wire payload)
+- **Nx Agents**: `--distribute-on "3 linux-large"` or `"<file>.yaml"`. Marker written. Tasks run on Cloud-managed agent VMs. Payload `distributeOn` = template/file.
+- **Manual DTE**: bare `start-ci-run` or `--distribute-on manual` (+ user runs own `start-nx-agents`). Marker written. Tasks run on self-managed agents. Payload `distributeOn` = `undefined`.
+- **`--no-distribution`**: NO marker. Tasks run inline on the CI runner (GHA-style). Cloud = cache + CIPE record only. Payload `distributeOn` = `undefined`.
+
+#### Gotchas
+- Manual DTE and `--no-distribution` send the SAME wire payload (`distributeOn: undefined`). The mode is decided purely client-side via the marker file, so the server CANNOT distinguish them without a new explicit signal. Any server-side gate keyed on `distributeOn == null` blocks both.
+- A new workspace's first CI run is UNCONNECTED by design (no memberships/VCS) and is meant to hit the 202 claim/retry flow. A gate placed before that branch, or one that folds `isUnconnected` into "not Nx Agents", misclassifies launch-template onboarding as manual DTE.
+- `create-run-group` error responses use a raw String body, but the CLI reads `e.response.data.message` (object). Plain-string 403s surface to users as a bare `Request failed with status code 403` with no explanation.
+
 ### Nx Cloud Binary Module Resolution (2025-01-09)
 **Branch**: chore/rename-upstream-docs
 **Last Updated**: 2025-01-09
@@ -196,6 +220,15 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 - Pattern already existed in client-bundle but couldn't be reused due to circular dependency concerns
 
 ## Personal Work History
+
+### 2026-06-03
+- **PR #11598 review: restrict manual DTE to Enterprise** (ocean branch `restrict-manual-dte`, author Louie Weng; review only, no code by me)
+  - Thermo-nuclear code-quality review via Polygraph session `restrict-manual-dte-419e3eec`.
+  - Blocker: guard `if (!isNxAgents && !isManualDteAllowed) -> 403` (`DistributedExecutionHandlers.kt`) over-blocks two legit paths.
+    1. `--no-distribution` (inline CIPE run, no DTE) 403s — sends `distributeOn: undefined`, same as manual DTE, so server can't distinguish. Needs CLI to send an explicit no-distribution signal.
+    2. First run on an unconnected new workspace requesting `--distribute-on "<template>"` (incl `.yaml`) 403s — `isUnconnected` forces `isNxAgents=false` -> misclassified as manual DTE, preempts the 202 claim flow. Fix: drop `!isUnconnected` from `isNxAgents` (safe; claim branch intercepts before `isNxAgents` is used downstream).
+  - Confirmed with Jack: blocking bare / `--distribute-on manual` (true manual DTE) IS intended.
+  - See "CI Run Group Creation / Distribution Mode Classification" above for the durable flow notes.
 
 ### 2026-05-14 → 2026-05-15
 
@@ -486,6 +519,34 @@ npx nx-cloud configure --personal-access-token=<PAT> --nx-cloud-url=https://snap
 
 #### Known Issue: Top-Level `--help` Side Effects
 Many command files (e.g., `convert-to-nx-cloud-id.ts`, `configure.ts`, `login.ts`) have `process.argv.includes('--help')` checks **at module scope** (outside exported functions). When another command imports from these files, the `--help` check fires at import time and prints the wrong help. Example: `onboard --help` shows `convert-to-nx-cloud-id` help because `onboarding-utils.ts` imports `updateNxJsonWithNxCloudId` from `convert-to-nx-cloud-id.ts`.
+
+### Resource Usage & Sandboxing Add-on Previews (2026-06-02)
+**Last Updated:** 2026-06-02
+**Branch:** `feat/resource-usage-sandboxing-previews` (local only, not pushed/merged as of this date)
+**Linear:** Q-484
+**Status:** In Progress
+
+Turn two paid features (Resource usage = CPU/memory profiling, Sandboxing = cache-reliability) into preview-first surfaces for non-entitled orgs, with CTAs into Add-ons. Both demoted from "Enterprise-only" framing to plain add-ons.
+
+#### Entitlement model (reuse, do not reinvent)
+- `libs/nx-cloud/model-organizations/src/lib/organization.helpers.ts` — `isResourceUsageAvailableForOrganization` / `isSandboxingAvailableForOrganization` = `plan === 'ENTERPRISE' || hasActivePlanAddOn(...)`. "Not entitled" -> show preview.
+
+#### Surfaces & key files
+- **Shared callout primitive:** `libs/ocean/ui-primitives/src/lib/add-on-callout.tsx` (`AddOnCallout`, `AddOnEmphasis`). NOTE: first built with gradient text/fill (GitHub-Enterprise style from the design mock); reviewer (Jack) flagged it broke DESIGN.md gates #8/#9 — reworked to a calm bordered token card + primary icon tile + bold emphasis. No gradient.
+- **Resource usage (run Analysis page):** `libs/nx-cloud/feature-ci-pipeline-executions/src/lib/analysis/ci-pipeline-execution-analysis-container.tsx` renders top callout + locked blurred table + sample modal. New components under `.../analysis/resource-usage-preview/` (`resource-usage-add-on-callout`, `resource-usage-preview`, `resource-usage-preview-chart`, `resource-usage-preview-modal`). Loader flag `isResourceUsagePreview` in `data-access-ci-pipeline-execution/.../ci-pipeline-execution-analysis-layout-loader.server.ts`.
+- **Sandboxing CIPE box:** `libs/nx-cloud/ui-ci-pipeline-executions/src/lib/sandbox-preview-box.tsx`, rendered in `feature-ci-pipeline-executions/.../ci-pipeline-executions-details-container.tsx` when `isSandboxingPreview` (flag on + not entitled). Signal added in `data-access-ci-pipeline-execution/.../ci-pipeline-executions-details-container-loader.server.ts` and threaded through `use-ci-pipeline-execution-outlet-context.tsx` + `ci-pipeline-executions-details-layout.tsx`.
+- **Sandbox violations dashboard (sample):** `libs/nx-cloud/feature-analytics/src/lib/sandbox-violations/sandbox-violations-sample.tsx` + loader `view: 'sample'` in `sandbox-violations-loader.server.ts`. `analytics-loader.server.ts` split into `isSandboxingAnalyticsFlagEnabled` (kill-switch, visibility) vs `isSandboxingAvailable` (entitlement). Sidebar (`analytics-sidebar.tsx` / `analytics-container.tsx`) now shows the item always under the flag, with a lock icon and `isEnterprise: false`.
+- **Add-ons page:** `feature-organization-add-ons` — deep-link highlight hook `use-add-on-highlight.tsx` (token outline ring, was rainbow gradient), `#resource-usage`/`#sandboxing`/`#dedicated-compute-cluster` anchors. FREE reachability: loader drops FREE from the 404 (`organization-add-ons-container-loader.server.ts`), container shows Upgrade-to-Team notice + disabled `<fieldset>` (`organization-add-ons-container.tsx`); settings nav exposes Add-ons to FREE (`ui-organization-settings/.../organization-settings-navigation.tsx`).
+- **De-enterprise:** sandbox sidebar `isEnterprise: false`; `feature-workspace-settings/.../edit-workspace-sandboxing-enforcement-mode.tsx` badge Enterprise -> Add-on.
+- **GitHub PR comment (Kotlin):** `apps/nx-api/src/main/kotlin/integrations/utils/CommentBuilder.kt` `buildResourceUsageHelpLine` — failure/cancel line, gated on `workspace != null` so existing selfie snapshots stay byte-identical. Azure call site updated to pass `workspace`. Cache-hit "sandbox" line deferred (no cache-hit signal in `RunDetails`). Bitbucket path lacks a workspace object -> line not shown there yet.
+
+#### Gating / local-dev gotcha
+- Both previews depend on env-fallback flags set ONLY in `apps/nx-cloud/.env.serve.e2e`: `NX_CLOUD_ADD_ONS_ENABLED`, `NX_CLOUD_SANDBOXING_ANALYTICS_ENABLED`. A normal local serve leaves them unset (PostHog flag off) so the surfaces stay hidden on any plan. For local manual testing, add them to `env.override` and restart the serve (env read at startup). Also requires `NX_CLOUD_MODE !== 'private-enterprise'` for the Add-ons nav.
+
+#### Tests / verification
+- e2e: `apps/nx-cloud-e2e-playwright/e2e/add-ons/add-ons.spec.ts` (rewrote FREE 404 -> reachable/upgrade + deep-link highlight, with screenshots), new `e2e/analytics/sandbox-violations-preview.spec.ts`.
+- Storybook: `add-on-callout.stories.tsx` (ui-primitives), `sandbox-preview-box.stories.tsx` (ui-ci-pipeline-executions). Feature libs lack Storybook.
+- Could not run nx (Gradle plugin breaks the graph in sandbox) or browser e2e; typechecked with `tsc -b` directly. Screenshots captured via a standalone Vite + chrome-devtools-MCP harness rendering components with real tokens (see `.preview-shots/`, modeled on `.oom-shot/`).
 
 ## Deployed Surfaces
 

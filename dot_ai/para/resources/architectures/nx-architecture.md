@@ -416,6 +416,18 @@ Most packages have a `build` target that runs post-compilation steps (chmod, cop
 
 ## Personal Work History
 
+### 2026-06-02 - NXC-4316: Deprecate @nx/vite config helpers (MERGED)
+- **Branch**: `NXC-4316` | **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4316`
+- **PR**: https://github.com/nrwl/nx/pull/35664 (squash-merged 2026-06-02 21:35 UTC as `4d6eddf884`; approved by FrozenPandaz)
+- **Polygraph session**: `nxc-4316-2-02c01f81` (nrwl/nx only)
+- **What**: warn-only deprecation of `nxViteTsPaths` + `nxCopyAssetsPlugin` (mirrors cypress/detox pattern). Helpers stay functional in v23, removal candidate v24. TS-solution generators stop emitting them; legacy non-ts-solution still emits (gated).
+- **My contribution this session** (commit `95ff94a15e`, fixing CI on the already-pushed branch):
+  - `packages/vite/plugins/nx-copy-assets.plugin.ts`: removed a rebase-dragged duplicate `CopyAssetsHandler` import (TS2300, broke `vite:build-base`).
+  - `packages/vite/src/generators/configuration/configuration.spec.ts`: 2 new inline snapshots `rollupOptions` -> `rolldownOptions` (broke `vite:test`; generator + committed `.snap` already used rolldown).
+  - `packages/vite/src/utils/generator-utils.ts:404`: added `TODO(v24)` marker at the non-ts-solution emit gate.
+- **Warn-once impl**: `packages/vite/src/utils/deprecation.ts` uses module-level booleans (`nxViteTsPathsWarned`/`nxCopyAssetsPluginWarned`) to dedupe per process - intentional divergence from cypress/detox (which warn every call) because vite plugins live across HMR reloads.
+- **Gotchas**: see Design Decisions - (1) `--experimental-vm-modules` needed for local vite generator-snapshot tests, (2) strip gradle plugin to run nx in sandbox, (3) Polygraph ciStatus didn't populate - monitored via GitHub commit-status API.
+
 ### 2026-05-08 - NXC-4154: Vite 7 -> 8 migrations (registered for v23)
 - **Branch**: `NXC-4154`
 - **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4154`
@@ -852,6 +864,17 @@ Most packages have a `build` target that runs post-compilation steps (chmod, cop
 - **Purpose**: Preserve blog search functionality during docs migration to Astro
 
 ## Design Decisions & Gotchas
+
+### @nx/vite generator-snapshot specs need `--experimental-vm-modules` locally
+- **Issue**: Running `nx test vite` locally fails ~every generator snapshot with the output appearing unformatted. Console shows `Could not format <file>. Error: "A dynamic import callback was invoked without --experimental-vm-modules"` from `packages/devkit/src/generators/format-files.ts`.
+- **Root cause**: `formatFiles` loads prettier via dynamic `import()`. Under jest without `--experimental-vm-modules`, that import throws and is swallowed, so generated configs are emitted unformatted. The committed snapshots were produced in CI (where prettier runs), so the local unformatted output diverges from all of them.
+- **Trap**: A blind `nx test vite -u` "fixes" tests by writing the UNFORMATTED output back - churns dozens of snapshots across unrelated suites (saw 38 across 7 suites). Do NOT commit that.
+- **Fix**: `NODE_OPTIONS='--experimental-vm-modules' npx nx test vite ...`. Then formatting runs and only genuinely-wrong snapshots fail. When in doubt, trust CI over a local generator-snapshot run.
+- **Seen**: NXC-4316 / PR #35664 (2026-06-02). Real failure was just 2 hand-written inline snapshots using `rollupOptions` instead of `rolldownOptions`.
+
+### Running any `nx` command in the sandbox: strip JVM/native graph plugins
+- **Issue**: `nx <anything>` fails at "Failed to process project graph" because `@nx/gradle` runs gradlew, which can't write `~/.gradle/.../*.lck` under the sandbox (`Operation not permitted`). `@nx/dotnet` and `@monodon/rust` have analogous needs.
+- **Workaround**: Either typecheck a single project directly with `tsc -b <project>/tsconfig.lib.json`, OR temporarily filter `@nx/gradle`/`@nx/dotnet`/`@monodon/rust` out of `nx.json` `plugins`, run the nx command, then `git checkout HEAD -- nx.json`. (Edit nx.json via a tmp `.mjs` script + node, not inline `node -e` - fish mangles `!`.)
 
 ### Duplicate Utility Functions Across Nx Packages (vite vs vitest)
 - **Issue**: `createOrEditViteConfig` exists in BOTH `packages/vite/src/utils/generator-utils.ts` AND `packages/vitest/src/utils/generator-utils.ts` with different behavior
