@@ -67,6 +67,10 @@
   - Goal: review, rebase if needed, address remaining CR, flip out of draft, merge
 - [ ] Followup w/ Juri + Victor — oxfmt + oxlint (2026-05-22)
 - [ ] Ask Alexis: bump Wagepoint TOIL policy 6 -> 7 days (Szymon gone) (2026-05-22)
+- [ ] Check Chromatic account for Alexis (2026-06-04)
+  - Alexis asked (Slack DM): is the Chromatic subscription yearly, and are there other users on the account?
+  - Told her it should be the org-wide one we use; said I'd confirm tomorrow
+  - Verify in Chromatic billing/members and report back
 - [ ] **Weekly plan 2026-05-25 — Must Do block** (`dot_ai/para/areas/weekly-plans/2026-05-25.md`)
   - `/cnw-stats-analyzer` Mon AM — 9 wk stale, third week at top
   - `/scan-and-audit` W21 — 3 wk overdue
