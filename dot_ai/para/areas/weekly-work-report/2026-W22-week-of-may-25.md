@@ -6,7 +6,7 @@ _Coverage: merged and opened PRs in `nrwl/nx` and `nrwl/ocean` between 2026-05-2
 
 ## TL;DR
 
-A high-output week across both repos. Two large feature areas dominated Ocean: **@bcabanes** drove a complete user-impersonation system and a systematic lazy-loading / boot-performance pass (16 merged PRs); **@lourw** landed a coordinated add-ons/billing overhaul (9 merged PRs). **@StalkAltan** did deep backend reliability work around Valkey/Redis and graceful shutdown. On the Nx side, **@leosvelperez** is mid-sprint on agentic `nx migrate` (6 open PRs), while **@jaysoo** handled a flurry of CVE patches across both repos. Several new AI-tool integrations (Claude, Codex, OpenCode) shipped into Polygraph via **@Cammisuli**.
+A high-output week across both repos. Two large feature areas dominated Ocean: **@bcabanes** drove a complete user-impersonation system and a systematic lazy-loading / boot-performance pass (16 merged PRs); **@lourw** landed a coordinated add-ons/billing overhaul (9 merged PRs). **@StalkAltan** did deep backend reliability work around Valkey/Redis and graceful shutdown. On the Nx side, **@leosvelperez** is mid-sprint on agentic `nx migrate` (6 open PRs), **@jaysoo** handled a flurry of CVE patches across both repos, and **@AgentEnder** (Craigory) swept multi-version compliance for Vue, Nuxt, and Jest. Several new AI-tool integrations (Claude, Codex, OpenCode) shipped into Polygraph via **@Cammisuli**.
 
 ---
 
@@ -76,6 +76,18 @@ All three PRs form a cohesive body of work around dep inference accuracy and per
 | [#35814](https://github.com/nrwl/nx/pull/35814) | feat(angular-rspack): add persistent tsbuild cache for incremental building |
 
 **Work character:** Single, focused performance feature for the Angular rspack plugin.
+
+---
+
+### @AgentEnder (Craigory Coppola) — Multi-version compliance sweep (3 merged)
+
+| PR | Title |
+|----|-------|
+| [#35845](https://github.com/nrwl/nx/pull/35845) | fix(vue): multi-version support compliance for `@nx/vue` and `@nx/nuxt` |
+| [#35758](https://github.com/nrwl/nx/pull/35758) | fix(testing): enforce jest 29-30 multi-version compliance for `@nx/jest` |
+| [#35849](https://github.com/nrwl/nx/pull/35849) | fix(repo): rename publish `VERSION` env var to avoid MSBuild leak |
+
+**Work character:** Same compliance sweep that the bot handled for eslint/angular/storybook — Craigory covered Vue, Nuxt, and Jest by hand. Three focused, self-contained PRs. The repo fix is unrelated housekeeping. _Note: these PRs did not appear in the GitHub search API results used to generate this report; they were confirmed via git log._
 
 ---
 
