@@ -16,6 +16,28 @@ Tracking weekly npm download counts for the old `@nx/*-cache` packages and their
 
 ## Weekly Download History
 
+### 2026-06-05 (week of Jun 4–5, partial — day 2 of 7)
+
+> ⚠ `@nx/s3-cache` and `@nx/gcs-cache` show 0 for Jun 4–5; npm API data appears delayed for those packages. Numbers will update once the registry catches up.
+
+| Package | Downloads (2 days) |
+|---------|-------------------:|
+| `@nx/s3-cache` | 0 *(delayed)* |
+| `@nx/gcs-cache` | 0 *(delayed)* |
+| `@nx/shared-fs-cache` | 5,506 |
+| `@nx/azure-cache` | 5,237 |
+| **`@nx/*` subtotal** | **10,743** |
+| `@nx/powerpack-s3-cache` | 1,580 |
+| `@nx/powerpack-gcs-cache` | 155 |
+| `@nx/powerpack-shared-fs-cache` | 126 |
+| `@nx/powerpack-azure-cache` | 210 |
+| **`powerpack-*` subtotal** | **2,071** |
+| **Grand Total** | **12,814** |
+
+*Delta vs prior week omitted — partial week (2 days) is not comparable to a full 7-day week.*
+
+---
+
 ### 2026-06-04 (week of May 28–Jun 4)
 
 | Package | Downloads | Δ prev week |
