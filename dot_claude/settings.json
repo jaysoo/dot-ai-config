@@ -69,6 +69,7 @@
       "Bash(file:*)",
       "Bash(mv:*)",
       "Bash(npx prettier:*)",
+      "Bash(vale:*)",
       "Bash(npx http-server:*)",
       "Bash(pwd:*)",
       "Bash(which:*)",

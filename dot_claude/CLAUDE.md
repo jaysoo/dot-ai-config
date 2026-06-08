@@ -72,6 +72,11 @@ When continuing a session from a compaction summary:
 
 **Why**: Compaction summaries capture state at summary time, but the session may have continued and committed changes before the actual compaction point.
 
+### Concurrent Sessions Writing .ai Files (/summarize, /reflect)
+
+- **Re-Read each `.ai` file (SUMMARY.md, architecture.md, TODO.md, COMPLETED.md) immediately before editing, and prefer Edit over blind append (`cat >>`/Write)** - a concurrent session in a sibling worktree may have already added a richer/corrected entry, so appending from memory duplicates it.
+- **Verify task status (merged vs ready vs draft) from the authoritative source (Polygraph `show_session` / GitHub), not the chat.** NXC: recorded DOC-509 as a one-page draft; it was actually a merged three-page change.
+
 ### Git Workflow
 
 - **🔐 NEVER commit tokens, secrets, or API keys**
@@ -98,6 +103,11 @@ Fixes DOC-125"
 - Use `docs(misc)` or `chore(misc)` for cross-cutting changes
 - Test-only: `chore(testing):` not `test(misc):`
 - If commit rejected, use `--amend` to fix (avoid multiple commits)
+
+**Nx commitlint gotchas:**
+
+- Subject MUST be all-lowercase — it rejects API symbol names (`composePlugins`, `withNx`) in the subject. Describe instead ("webpack/rspack config compose helpers"). Only `Revert`/`Release` may lead uppercase.
+- For a breaking-change `!` subject or a body with backticks, write the message to a temp file and `git commit -F <file>`. A heredoc via the Bash tool injected a stray backslash before `!` and failed the hook.
 
 **CRITICAL**: Never co-author the commit, the commit MUST come only from me. Also do not mention yourself (Claude Code) in the commit body.
 
@@ -356,6 +366,7 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - Astro cache issues: Clear `.astro` folder
 - Class-string codemods must scope to JSX `className=`/`class=` attrs and known utility-fn calls (`clsx`/`cn`/`twMerge`/`cva`/`classnames`). Bare `\b` word boundaries also match TS prop names (`rounded?:` becomes `rounded-sm?:`) and CSS function calls inside template literals (`blur(${x})` becomes `blur-sm(${x})`). Use lookbehind on `[\s:"'\`!]`boundaries; never run rename across raw string literals indiscriminately. After codemodding source under a pnpm`file:`dep (e.g.,`nx-dev/ui-_`, `graph/ui-_`), run `pnpm install --force`so`node_modules/.pnpm/.../node_modules/<pkg>/` refreshes - otherwise the consumer build sees the stale pre-codemod copy.
 - Tailwind v4 `@source` does NOT support extglob (`!(*.stories|*.spec)`); patterns silently match zero files and utilities never make it into the bundle. Use plain dir paths + `@source not '**/*.{spec,test,stories}.*'`. Same trap if porting any v3 `content` array verbatim.
+- **Shell is fish**: inline `bash -c` / `python3 -c` strings mangle `!` and `!=` (history expansion + line-continuation), silently breaking comparisons (`r['status'] != 'done'` becomes a syntax error or no-op). Use `not in (...)` / `<>` / write the script to a file. A background CI poller using `!=` polled blindly for 90 min and reported nothing - always confirm a long-running poller emits a real signal before trusting it.
 
 ## 📚 Documentation Sites (Astro/Starlight)
 
@@ -388,6 +399,7 @@ Use Playwright MCP for UI verification.
 - `{% graph %}` tag requires inline JSON code fence for custom data
 - `{% aside %}` with block content (lists): blank line before `{% /aside %}` required, or prettier indents it into the list and breaks Markdoc parsing
 - Prefer existing Starlight/Markdoc tags over custom components for docs content (e.g. `{% aside %}` with a list over a custom Astro component)
+- package.json/project.json example pairs: use `{% tabs syncKey="project-config-file" %}` with the **package.json tab first**. The shared `syncKey` (canonical value `project-config-file`, also used by `reference/project-configuration.mdoc`) makes all such tab groups on the page switch together and persist the choice.
 
 ### Starlight Migration
 
@@ -466,6 +478,7 @@ Group config inherits from top-level defaults when not overridden. Easy to grep 
 - Use `.spec.ts` extension for tests (not `.test.ts`)
 - **ALWAYS run `nx sync` after modifying package.json**
 - **ALWAYS run `pnpm install` after modifying any package.json** — lockfile must be regenerated and committed
+  - Peer-dependency additions DO change the lockfile (importer entries) — don't strip them as "churn." `pnpm install --lockfile-only` sometimes reports "Already up to date" falsely; confirm with `CI=true pnpm install --frozen-lockfile` (the real CI check) before pushing.
 
 ### Migration Testing
 
@@ -569,6 +582,7 @@ Debug by adding logging to `node_modules/nx/src/executors/run-commands/`. Don't 
 - File reversions = linting/formatting (check `git diff`)
 - pnpm-lock.yaml rebase conflicts: NEVER use `git checkout --theirs pnpm-lock.yaml`.
   Use: `git checkout origin/master -- pnpm-lock.yaml && pnpm install --no-frozen-lockfile`
+- Sandbox `pnpm install` can corrupt `node_modules` via reflink (`ERR_PNPM_EPERM`), breaking local `nx`/`jest`/`prettier`. Use `pnpm install --lockfile-only` for lock-only work (no node_modules writes); `--package-import-method hardlink` to repair; else rely on CI for tests.
 
 ### GitHub Actions Side Effects
 

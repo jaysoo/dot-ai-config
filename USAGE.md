@@ -39,3 +39,5 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 2026-04-24: invoked caveman skill
 \n2026-04-28: configured whitelist.toml policy for non-destructive tools
 cnw-stats-analyzer (2026-04-29): 1
+2026-06-04: invoked caveman skill (count++)
+2026-06-04: invoked remotion-best-practices skill -> set up promos screenshot->video project
