@@ -46,6 +46,13 @@
 
 ## TODO
 
+- [ ] **Self-healing: Anthropic cost-by-customer breakdown for Joe — first thing AM** (2026-06-08)
+  - From #dpes self-healing thread: before onboarding more customers, check contract value vs Anthropic billing (~34K USD/mo total, ClickUp top at 6.7K/mo) so we cover costs and don't lose money on usage
+  - Action: pull what we paid to Anthropic broken down **by customer** and add to the credits-used sheet Joe shared ("log the credits used (ie paid for) by their customer")
+  - Sheet: https://docs.google.com/spreadsheets/d/1Z_IvNvgPdz2umu1_Zc4H87_VD1IlFXYpY7vYphJgKUI/edit?gid=0#gid=0
+  - Miro wants an example (e.g. Island): input vs output tokens spent to understand the discrepancy
+  - Jack + Joe doing the evaluation; everyone but Mailchimp should be paying for credits
+
 - [ ] **Polygraph docs: use-case coverage plan** (2026-05-27)
   - Notes: `dot_ai/2026-05-26/tasks/polygraph-workflows-doc-candidates.md` (section "Use-case coverage plan")
   - Concepts: repos already in graph, synthetic monorepo / break cross-repo boundaries, resumability + memory
