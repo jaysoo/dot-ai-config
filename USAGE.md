@@ -34,6 +34,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | terminal-demo-recorder | skill   | 2026-04-24   | 1     |
 | cnw-stats-local-server | skill  | 2026-04-23   | 0     |
 | gemini-collab         | skill   | 2026-04-24   | 1     |
+| nx-scorecard          | skill   | 2026-06-09   | 0     |
 | 2026-04-24 | terminal-demo-recorder | 1 |
 ## USAGE UPDATE
 2026-04-24: invoked caveman skill
