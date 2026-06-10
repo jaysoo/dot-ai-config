@@ -4,45 +4,45 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **Disable Add-ons settings page for OSS orgs (Nx Cloud / ocean) — PR #11730 ready** (2026-06-09)
+1. **Capture analytics opt-in answer in `nx init` + CNW telemetry (recordStat) — PR #35922 MERGED** (2026-06-10)
+   - Summary: recordStat already sent the Nx Cloud prompt result; added the analytics opt-in answer as `analyticsPrompt: 'yes' | 'no' | 'unset'` in the `complete` stat for both create-nx-workspace and `nx init`. CNW: `determineAnalytics` boolean -> tri-state threaded into meta. `nx init`: now asks the prompt right after the Cloud prompt (previously deferred to first command), persists to nx.json, records the answer; consolidated into `ensureAnalyticsPreferenceSet(root?, interactive?)` with no new eager startup-path module loads. Triage review F1-guard + F4 (CNW determineAnalytics tests) applied locally; declined F2/F3 (pre-existing/hypothetical). Merged before final fixes were pushed. Single-repo Polygraph session.
+   - Files: `dot_ai/2026-06-10/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/35922, Polygraph session `capture-analytics-opt-in-22331534`
+
+2. **Disable Add-ons settings page for OSS orgs (Nx Cloud / ocean) — PR #11730 ready** (2026-06-09)
    - Summary: OSS orgs got a fully functional Add-ons page (loader only locked `plan === 'FREE'`/Hobby). Extended lock to OSS so they see the visible-but-locked page + upgrade prompt, same as Hobby. One-line loader fix in `feature-organization-add-ons` (`|| organization.plan === 'OSS'`) routing OSS into the existing `planLocked` branch + mirrored OSS spec. 28/28 pass, no nav/component changes. Coordinated via Polygraph (work delegated to ocean child agents).
    - Files: `dot_ai/2026-06-09/SUMMARY.md`, PR https://github.com/nrwl/ocean/pull/11730, Polygraph session `disable-oss-addons-1b747745`
 
-2. **Q-491: Scope CIPE sandbox banner to current CIPE + remove total (Nx Cloud / ocean) — draft PR #11733** (2026-06-08)
+3. **Q-491: Scope CIPE sandbox banner to current CIPE + remove total (Nx Cloud / ocean) — draft PR #11733** (2026-06-08)
    - Summary: CIPE sandbox banner counted violations over a rolling 7-day branch window (same query as the dashboard), so "X of Y tasks" disagreed with what ran in the viewed CIPE (Jason flagged in Slack). Added `getSandboxViolationTaskCountForRunGroup` (distinct violating taskIds scoped to the current run group), swapped the run-group-details loader off the dashboard query, dropped `sandboxTotalTaskCount` end-to-end, reworded to "N task(s) in this run has/have sandbox violations." tsc clean on 3 projects; 6/6 + 18/18 specs. No version plan (unreleased sandbox feat plans cover it). Pushed + draft PR via Polygraph.
    - Files: `dot_ai/2026-06-08/SUMMARY.md`, PR https://github.com/nrwl/ocean/pull/11733, Polygraph session `fix-sandbox-3cce39e3`
 
-3. **DOC-513: Mark Manual DTE as Enterprise-only docs — MERGED PR #35864** (2026-06-04)
+4. **DOC-513: Mark Manual DTE as Enterprise-only docs — MERGED PR #35864** (2026-06-04)
    - Summary: Reframed docs per Joe's model (Nx Agents = task-distribution system on all plans; bring your own compute = Enterprise-gated). Term + route rename "Manual DTE" -> "Bring your own compute" with 301 redirect + repointed nx-dev/_redirects. Kept --distribute-on=manual flag. PR #35864 merged.
    - Files: `dot_ai/2026-06-04/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/35864
 
-4. **NXC-4395: @nx/next multi-version compliance — PR #35870 (CI green, ready to merge)** (2026-06-04)
+5. **NXC-4395: @nx/next multi-version compliance — PR #35870 (CI green, ready to merge)** (2026-06-04)
    - Summary: Redid @nx/next compliance (P15, milestone NXC-4072) in fresh Polygraph session `multi-4395-ae050ce9`; original #35652 closed (branch polluted). Kept Next v14 per user (overrides findings #1/#2): window v14+v15+v16, floor 14.0.0, `assert-supported-next-version.ts` + floor assert in all 8 generators + `all-generators-enforce-floor.spec.ts`. `keepExistingVersions` on all 6 install sites (init/app/library/add-linting + styles.ts + add-swc). Base `20.7.1-beta.0` migration gated `^15.0.0`. CVE audit (GH Advisory DB) bumped fresh-install pins to lowest high/critical-free patch: next14 14.2.35 / next15 15.5.18 / next16 16.1.6 (no CVE-free 14.x exists - documented trade-off). 2 review rounds + self-healing CI: fixed keepExistingVersions plumbing, restored an inferred-plugin test a cherry-pick artifact deleted, caught 2 missed sweep sites. 18 files, single commit, mergeable clean.
    - Files: `dot_ai/2026-06-04/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/35870, Polygraph session `multi-4395-ae050ce9`
 
-5. **DOC-509: targetDefaults spread token across task tutorials - PR #35871 ready** (2026-06-04)
+6. **DOC-509: targetDefaults spread token across task tutorials - PR #35871 ready** (2026-06-04)
    - Summary: Documented the `"..."` spread token (Nx 23.0.0) across three getting-started tutorials. `configuring-tasks` (new "Extending target defaults for a project" section, `dependsOn: ["...", "generate-api-types"]`), `caching` (per-project `inputs: ["...", ...]` example), `reducing-configuration-boilerplate` (inline spread example in cascade section). package.json/project.json tabs synced via `syncKey`. Review feedback: `"..."` reworded to expand any inherited config (targetDefaults OR inferred plugin task), replaced a back-reference link with a real example. Single-repo Polygraph session `docs-spread-6df4621c`; marked ready by Jack, not merged.
    - Files: `dot_ai/2026-06-04/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/35871, Polygraph session `docs-spread-6df4621c`
 
-6. **NXC-4399: @nx/react multi-version support compliance — draft PR #35872, CI green** (2026-06-04)
+7. **NXC-4399: @nx/react multi-version support compliance — draft PR #35872, CI green** (2026-06-04)
    - Summary: Redid @nx/react compliance (P19) in fresh Polygraph session `multi-version-jack-398d33f1` per the @nx/vue precedent (#35845). Three review rounds: fixed react-router-dom version-source divergence, reverted @react-router/dev/serve peers (broke @nx/remix e2e via react-server-dom-webpack@19 ERESOLVE), bumped redux to RTK ^2.5.0/react-redux ^9.2.0 for React 19. CI green on self-healing rerun `dab1a2243d`; draft pending mark-ready.
    - Files: `dot_ai/2026-06-04/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/35872, Polygraph session `multi-version-jack-398d33f1`
 
-7. **NXC-4324: deprecate webpack/rspack compose helpers — draft PR #35867** (2026-06-03)
+8. **NXC-4324: deprecate webpack/rspack compose helpers — draft PR #35867** (2026-06-03)
    - Summary: Warn-only v23 deprecation (removal v24) of `composePlugins`/`withNx`/`withWeb`/`withReact` across `@nx/webpack`, `@nx/rspack`, `@nx/react/webpack`. `@deprecated` JSDoc + warn-once-per-package runtime message -> NxApp*Plugin classes + `convert-to-inferred`. No codemod/generator changes. Key design: synchronous process-level suppression counter wrapping the 3 real internal composers (rspack executor, storybook preset, next CT preset) so non-compose users never see false-positive warnings. 3 deprecation utils + 3 specs (green) + 3 docs asides. Review approved w/ one DRY ask (factory) recommended against. Awaiting affected suite (gradle sandbox blocks `nx` locally) before mark-ready.
    - Files: `dot_ai/2026-06-03/SUMMARY.md`, plan `~/.claude/plans/breezy-wobbling-haven.md`, PR https://github.com/nrwl/nx/pull/35867, Polygraph session `nxc-4324-2bacd010`
 
-8. **Polygraph docs: move under `/docs` + Framer edge rewrite — PR #4 draft** (2026-05-12)
+9. **Polygraph docs: move under `/docs` + Framer edge rewrite — PR #4 draft** (2026-05-12)
    - Summary: Multi-repo Polygraph session porting nrwl/nx's astro-docs `base: '/docs'` + `outDir: 'dist/docs'` setup and `netlify/edge-functions/rewrite-framer-urls.ts` to nrwl/polygraph-docs. trypolygraph.com now serves Starlight docs under `/docs/*` and proxies non-`/docs` HTML to `https://active-startup-540669.framer.app/<path>` (streaming-rewriting the framer origin back to `trypolygraph.com`). Iterated twice on trailing-slash behavior — `build.format: 'file'` baked `.html` into Starlight sidebar/canonical URLs, so reverted and adopted nx's exact pattern (`publish = "dist/docs"` + `/docs/* -> /:splat` rewrite). 3 commits, draft PR. Side: filed polygraph-docs pre-push commitlint hook bug in PR body.
    - Files: `dot_ai/2026-05-12/SUMMARY.md`, `dot_ai/2026-05-12/tasks/polygraph-docs-base-path-and-framer-rewrite.md`, PR https://github.com/nrwl/polygraph-docs/pull/4
 
-9. **NXC-4448: Cypress 15.14 bump + remove stale Vite 8 guard — NEW PR #35613 draft** (2026-05-08)
+10. **NXC-4448: Cypress 15.14 bump + remove stale Vite 8 guard — NEW PR #35613 draft** (2026-05-08)
    - Summary: Cypress 15.14.0 added Vite 8 support (cypress-io/cypress#33078, 2026-04-16); nx had stale `^15.8.0` pin + a `vite >= 8` throw guard in `component-configuration`. Bumped versions, removed guard, added split `packageJsonUpdates` entries (cypress + dev-server independently gated), wrote `remove-experimental-prompt-command` codemod for the flag Cypress 15.13.0 removed, dropped 8 Vite-7-downgrade workarounds in e2e tests (1 active test now exercises Vite 8). Filed as blocking issue for NXC-4154. Multiple review iterations: requires-gate for codemod, quoted-key fix on selector, split packageJsonUpdates entry. Two master rebases (one with rename conflict resolved).
    - Files: PR #35613, latest commit `db37fa7ed9`, `dot_ai/2026-05-08/SUMMARY.md`
-
-10. **NXC-4154: Vite 7 -> 8 migrations — review iteration PR #35614 draft** (2026-05-08)
-   - Summary: Three migrations (rollup->rolldown rename codemod with `vite >= 8` requires gate, AI instructions doc, `vite -> ^8 / @vitejs/plugin-react -> ^6` packageJsonUpdates). Iterations today: added missing `requires` gate (would have rewritten `@remix-run/dev` user configs silently), removed em dashes from committed AI markdown, factually corrected Cypress claim (15.14+ supports Vite 8) which surfaced the stale guard and triggered NXC-4448. Migration version bumped beta.7 -> beta.9 -> beta.10. Two master rebases.
-   - Files: PR #35614, latest commit `07d5add639`, `dot_ai/2026-05-08/SUMMARY.md`
 
 ## TODO
 
@@ -128,6 +128,7 @@
 
 ## Active Claude Sessions
 
+- /Users/jack/projects/nx-worktrees/NXC-4453 (branch: feature/nxc-4453-update-docs-to-account-for-agentic-flow) — NXC-4453 nx migrate agentic docs: draft PR #35917, commit 0f4b8eebc2, awaiting CI (build + validate-links) + review before mark-ready; PR body still says `--mode` in one phrase (2026-06-10)
 - /Users/jack/projects/nx-worktrees/NXC-4431 (branch: NXC-4431) — Audit publish.yml against npm publisher supply-chain advisory, commit d4b5eb2708 ready, not pushed (2026-05-08)
 - /Users/jack/projects/nx-worktrees/NXC-4326 (branch: NXC-4326) — Deprecate `@nx/expo` withNxMetro: Linear comment posted, runtime warn + JSDoc, generator template switched to stock `@expo/metro-config`, migration `update-23-0-0-remove-with-nx-metro` (beta.10) + md doc + 6 passing spec tests; uncommitted (2026-05-13)
 - /Users/jack/projects/nx-worktrees/NXC-4316 (branch: NXC-4316) — Deprecate `nxViteTsPaths` + `nxCopyAssetsPlugin`: runtime warn-once + `@deprecated` JSDoc + configure-vite docs swap, draft PR #35664; TS-solution gate verified, fixture fix (pnpm-workspace.yaml) lands 4 prev-failing tests. Migration codemod intentionally deferred — open Q whether to file follow-up or leave for v24 removal (2026-05-13)
