@@ -18,6 +18,7 @@
     },
     "filesystem": {
       "allowWrite": [
+        "~/.m2",
         "~/.config/",
         "~/.mongodb/",
         "~/Library/Preferences/netlify/",
