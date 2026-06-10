@@ -83,6 +83,7 @@ When continuing a session from a compaction summary:
 - **Never commit to main/master** - use feature branches
 - **Always squash commits** before pushing: `git reset --soft HEAD~n && git commit`
 - **NEVER push main/master branches directly unless instructed** - use branches and PRs
+- **Polygraph `push_branch` cannot take an amended commit.** It runs `git pull --rebase`, so amending an already-pushed commit conflicts and leaves a mid-rebase. For follow-up changes on an open Polygraph PR, add a **new follow-up commit** (push_branch fast-forwards) instead of `git commit --amend`. Force-push via SSH only if you truly need one commit and have a remote to the target repo. Recurring (CLOUD-4612, #35922) - don't relearn it each session.
 - Linear: `DOC-125` format (no #) | GitHub: `Fixes #123` format
 
 **Commit format:**
@@ -341,6 +342,7 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - **One property > Many hacks** - Check if single CSS property works
 - **Ask before assuming** - Multiple approaches? Ask.
 - **Iterate, don't defend** - Change based on feedback
+- **Inline small local type unions; don't name them.** Prefer an inline string-literal union (`'yes' | 'no' | 'unset'`) over a named type alias when it's small and used in one module. Only extract a named alias when it's reused across modules. (#35922 - dropped an `AnalyticsPromptAnswer` alias at Jack's request.)
 - **Prefer additive over in-place when extending shared code.** New caller should just _use_ the existing function (even slightly wastefully): call it with the args you need, extract a private helper, or add a sibling fn. **Avoid refactoring the existing fn** unless its behavior changes or duplication >20 lines (drift risk). Reviewer cost of "this PR also touches existing code" is high. If you must extract, make it a separate commit so it reads as a no-op move.
   - **Why:** Q-443 — refactored `getWorkspaceSandboxViolations` to share a totals query; Jack pushed back since dashboard behavior was unchanged but the diff got noisier. Fix: CIPE caller invoked it directly with `{pageSize: 1}`; dashboard fn = 0 diff.
 - **Realistic examples > hypothetical edge cases** - Before coding for an edge case, find a concrete test fixture that hits it in a real workspace. No defensive branching, retries, fallback paths, or generalized loops for scenarios that never occur. Tempted to write a loop? Ask "is there a real file with multiple matches?" Tempted by a fallback? Ask "what test exercises it?" If it's just defensiveness, delete it and ask.

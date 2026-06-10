@@ -9,6 +9,7 @@
         "secretmanager.googleapis.com",
         "ifconfig.me",
         "*.googleapis.com",
+        "*.google-analytics.com",
         "*.google.com",
         "api.github.com",
         "*.github.com"
