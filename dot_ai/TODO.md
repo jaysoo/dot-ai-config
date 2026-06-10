@@ -128,6 +128,7 @@
 
 ## Active Claude Sessions
 
+- /Users/jack/projects/nx-worktrees/docs-v23-prep (branch: docs-v23-prep) — v23 compat-matrix alignment across astro-docs (11 pages: peer dep range fixes + 23.x rows in TS/Node/Nest/createNodes matrices); commit 9f5e662548, draft PR #35943 (https://github.com/nrwl/nx/pull/35943), vale clean, validate-links deferred to CI (dotnet/gradle block local build). Awaiting CI before mark-ready. Polygraph session docs-update-misc-updates-v23-837b8d30. Plan: `dot_ai/2026-06-10/tasks/docs-v23-compat-matrices.md` (2026-06-10)
 - /Users/jack/projects/nx-worktrees/NXC-4453 (branch: feature/nxc-4453-update-docs-to-account-for-agentic-flow) — NXC-4453 nx migrate agentic docs: draft PR #35917, commit 0f4b8eebc2, awaiting CI (build + validate-links) + review before mark-ready; PR body still says `--mode` in one phrase (2026-06-10)
 - /Users/jack/projects/nx-worktrees/NXC-4431 (branch: NXC-4431) — Audit publish.yml against npm publisher supply-chain advisory, commit d4b5eb2708 ready, not pushed (2026-05-08)
 - /Users/jack/projects/nx-worktrees/NXC-4326 (branch: NXC-4326) — Deprecate `@nx/expo` withNxMetro: Linear comment posted, runtime warn + JSDoc, generator template switched to stock `@expo/metro-config`, migration `update-23-0-0-remove-with-nx-metro` (beta.10) + md doc + 6 passing spec tests; uncommitted (2026-05-13)
