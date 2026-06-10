@@ -19,6 +19,7 @@
     },
     "filesystem": {
       "allowWrite": [
+        "~/.gradle",
         "~/.m2",
         "~/.config/",
         "~/.mongodb/",
