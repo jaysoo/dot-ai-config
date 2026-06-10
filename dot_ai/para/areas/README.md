@@ -21,6 +21,7 @@ Areas represent continuous aspects of work that need maintenance:
 | CNW Stats | `cnw-stats/` | create-nx-workspace telemetry, funnel health, and regression tracking |
 | Incidents | `incidents/` | Security incidents, data exposure events, remediation and disclosure tracking |
 | Onboarding & Activation | `onboarding-activation/` | Self-serve funnel (CLI → Cloud) — 550 new workspaces / $3.3M ARR target, Quark-a team |
+| Stale Docs | `stale-docs/` | Periodic audits of docs for old version references, EOL runtime pins, and code/schema drift |
 
 ## Adding New Areas
 
