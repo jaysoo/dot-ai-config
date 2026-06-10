@@ -221,6 +221,24 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 
 ## Personal Work History
 
+### 2026-06-09
+- **Disable Add-ons settings page for OSS orgs** (ocean branch `disable-oss-addons-1b747745`, commit `0b27ff1`, PR #11730 ready; Polygraph session `disable-oss-addons-1b747745`, all work delegated to ocean child agents)
+  - Goal: OSS orgs should see the Add-ons page visible-but-locked with an upgrade prompt, identical to Hobby (FREE). Hiding it loses the chance to advertise paid features.
+  - Add-ons page lives in `libs/nx-cloud/feature-organization-add-ons`: route `apps/nx-cloud/app/routes/_auth.orgs.$orgId.add-ons.tsx` -> `organization-add-ons-container-loader.server.ts` + `organization-add-ons-container.tsx`. Gated on `NX_CLOUD_ADD_ONS_ENABLED`. Plan enum (`FREE`/`OSS`/`TEAM`/`ENTERPRISE`/...) in `libs/nx-cloud/model-db/src/lib/organizations.ts`.
+  - Locked/upgrade state already existed for `FREE` only: loader returns `planLocked: true` (skips ALL add-on DB reads, every add-on `{isApplied:false,endAt:null,hasPendingRequest:false}`); component renders "Add-ons are available on paid plans / View plans ->" callout + disabled buttons. Nav already correct (only `ENTERPRISE` excluded). Bug: OSS fell through the FREE check into the full paid path -> fully functional page like Team.
+  - Fix: loader plan check `if (organization.plan === 'FREE')` -> `if (organization.plan === 'FREE' || organization.plan === 'OSS')`. One line, routes OSS into the existing `planLocked` branch. No nav/component changes. Added loader spec `returns planLocked:true for OSS with NO pending-request reads` mirroring the FREE test. `nx test feature-organization-add-ons` 28/28 pass.
+  - No version plan: unreleased `2026-05-26-15-03-add-ons-page-revamp.md` (`nx-cloud: feat`) already covers this add-ons cycle.
+
+### 2026-06-08
+- **Q-491: Scope CIPE sandbox banner to current CIPE, remove total** (ocean branch `Q-491`, commit `2ecfc54930`, draft PR #11733; Polygraph session `fix-sandbox-3cce39e3`)
+  - **Reverses the CIPE-banner half of Q-443 (2026-05-14, above).** Q-443 tied the CIPE banner to the dashboard's branch-window query so the two counts agreed; Jason then asked "where is the sandbox violation?" on a CIPE whose violating task wasn't the *latest* on the branch. Decision: the banner must answer "what ran in THIS CIPE", which is a different question than the dashboard's "latest per task across the branch window". The two are now intentionally decoupled.
+  - Data: new `getSandboxViolationTaskCountForRunGroup(workspaceId, runGroup)` in `libs/nx-cloud/data-access-api/src/lib/queries/sandbox/get-sandbox-violations-for-run-group.server.ts` — `distinct('taskId', {workspaceId, runGroup, $or:[unexpectedReads>0, unexpectedWrites>0]}).length`. Sibling to the existing `getSandboxViolationRunIds` (same indexed `runGroup` filter).
+  - `ci-pipeline-execution-run-group-details.server.ts`: swapped the `getWorkspaceSandboxViolations({latestOnly:true, 7-day window})` call for the run-group-scoped count. Removed `sandboxTotalTaskCount` from `RunGroupDetailsResponse` + return, the `SANDBOX_VIOLATION_TASK_COUNT_WINDOW_DAYS` constant + keep-in-sync comment, dead imports (`convertToUTC`/`startOfToday`/`subDays`/`getWorkspaceSandboxViolations`), and the now-unused `branch` param of `getRunGroupDetails`.
+  - UI: `cipe-alerts.tsx` dropped `sandboxTotalTaskCount` prop everywhere; banner copy "X of Y tasks on this branch ..." -> **"N task(s) in this run has/have sandbox violations. Cache may be unreliable."** Prop removed from both containers (`ci-pipeline-executions-details-container.tsx`, `ci-pipeline-executions-execution-timeline-container.tsx`) + the timeline spec.
+  - Removed the now-false "keep CIPE and dashboard counts in sync" comment in `feature-analytics/.../sandbox-violations-loader.server.ts` (it pointed back at the CIPE loader; that coupling is gone).
+  - Verified: tsc clean on data-access-api / ui-ci-pipeline-executions / feature-ci-pipeline-executions; `execution-timeline-container` spec 6/6; `run-group-details` spec 18/18. `nx` unusable in worktree (gradle plugin) so used `tsc -b` + direct `jest`.
+  - No version plan: unreleased `2026-05-13-sandbox-warning.md` + `2026-06-02-13-42-task-sandboxing.md` (`nx-cloud: feat`) cover this banner's cycle.
+
 ### 2026-06-03
 - **PR #11598 review: restrict manual DTE to Enterprise** (ocean branch `restrict-manual-dte`, author Louie Weng; review only, no code by me)
   - Thermo-nuclear code-quality review via Polygraph session `restrict-manual-dte-419e3eec`.
@@ -233,6 +251,7 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 ### 2026-05-14 → 2026-05-15
 
 - **Q-443: Tie sandbox violations prompt and dashboard together** (ocean branch `Q-443`, PR open; depends on prior PR #11249 already merged)
+  - **NOTE (superseded 2026-06-08):** the CIPE-banner coupling described here was reversed by Q-491 (see above). The CIPE banner is now scoped to the current run group, not the branch window. The dashboard tile / report-validate alignment still stands.
   - Goal: make the CIPE sandbox warning, the Sandbox violations dashboard tile, and the downloaded report's `nx-cloud validate ... index.json` "N tasks ok" all agree on the violating-task count for a given branch.
   - Final approach: CIPE loader (`libs/nx-cloud/data-access-api/src/lib/queries/ci-pipeline-executions/ci-pipeline-execution-run-group-details.server.ts`) calls the existing dashboard query `getWorkspaceSandboxViolations({pageSize: 1, ...})` and reads `.totals.totalViolatingTasks` + `.totals.totalCleanTasks`. Dashboard fn (`libs/nx-cloud/data-access-api/src/lib/queries/sandbox/get-workspace-sandbox-violations.server.ts`) has **0 diff** in this PR.
   - Warning copy: "X of Y tasks on this branch have sandbox violations." 7-day rolling window matches the dashboard default.
