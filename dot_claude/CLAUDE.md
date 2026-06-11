@@ -379,6 +379,20 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - Search only in production builds
 - Code blocks ≠ headings (# in shell scripts isn't markdown h1)
 
+### Feature pages = golden path only
+
+- Feature pages show ONE way: the default command, no variants (`nx migrate`, never also `nx migrate latest`), no flag permutations - those live in the advanced/KB guide.
+- Remove deprecated options from docs entirely (no deprecation asides) when a replacement exists. Same for superseded workflows (the `--from` catch-up died when `--include=optional` shipped).
+- When two sections converge on the same flag/topic after a rewrite, MERGE them - don't leave both (NXC-4453: two `--include` sections).
+
+### Sidebar group renames break label-coupled routes (nx astro-docs)
+
+Breadcrumbs and `sidebar_group_cards` slugify/match sidebar group LABELS (exact, case-sensitive). Renaming a group in `sidebar.mts` requires: move/retitle the matching landing page (e.g. `knowledge-base/<slug>/index.mdoc`), update its `group=` attr, and add redirects in BOTH `astro.config.mjs` and `netlify.toml` (before the `/docs/*` catch-all). `validate-links` catches this - run it before pushing sidebar changes. Plain page moves between sidebar groups don't change URLs (no redirect needed); deleted ANCHORS can't be redirected - repoint inbound links instead.
+
+### Docs style pass = vale + structural, BEFORE pushing
+
+vale catches the mechanical tier only. Also run the STYLE_GUIDE structural pass on every paragraph added: claim calibration (no unsupportable absolutes - "less chance of issues", not "will not introduce issues"), terminology table ("workspace" not "monorepo"), bold only for UI labels/term definitions, no semicolons, no duplicate links, and an anchor sweep after restructures (`grep -rhoE "<page>#[a-z0-9-]+" src/content/docs/` vs the page's headings). Use the `nx-docs-iterate` skill for the full loop.
+
 ### Testing
 
 ```bash
