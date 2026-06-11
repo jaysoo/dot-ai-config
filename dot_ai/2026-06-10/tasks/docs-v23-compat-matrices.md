@@ -39,7 +39,16 @@ Verified aligned (no change): vue, angular (catalog >=19 <22 unchanged in v23), 
 - vale: 0 errors on all changed files
 - validate-links: cannot run locally — gradle plugin (removed temporarily from nx.json, restored) then `MsbuildAnalyzer:build:dotnet:release` fail in sandbox. No href changes in diff; deferred to CI.
 
+## Sidebar regroup (follow-up ask)
+
+Commit `90377686e5`: Technologies sidebar recut per Jack's layout. Frameworks & libraries = frontend + meta-frameworks only (TS, Angular(+Rspack/Rsbuild), React/Next/Remix, RN/Expo, Vue/Nuxt, Module Federation, ESLint). New groups: Node (Node.js/Express/Nest), Java (JVM) (Java/Gradle/Maven), .NET. Build tools + Test tools unchanged. Local screenshot blocked (dotnet toolchain missing for plugin docs loader) - verify on Netlify preview.
+
+## validate-links fix (commit 24e5445de7)
+
+CI validate-links broke on /docs/technologies-tools/{node,java-jvm,dotnet}: Breadcrumbs.astro + SidebarGroupCards.astro slugify sidebar group labels into landing-page links (".NET" special-cased to "dotnet"). Each group needs `src/content/docs/technologies-tools/<slug>/index.mdoc` with a `{% sidebar_group_cards %}` tag. Added node/java-jvm/dotnet pages. Bonus bug: all 5 existing sidebar_group_cards attrs were Title Case ("Technologies & Tools") but sidebar labels are sentence case ("Technologies & tools") - exact-match findGroup failed and landing pages rendered "No pages found" in prod. Fixed all attrs to exact labels (incl. how-nx-works).
+
 ## Outcome
 
-- Commit `9f5e662548` on docs-v23-prep, draft PR #35943: https://github.com/nrwl/nx/pull/35943
-- Awaiting CI (incl. validate-links) before mark-ready
+- Commits `9f5e662548` (matrices) + `90377686e5` (sidebar) on docs-v23-prep, draft PR #35943: https://github.com/nrwl/nx/pull/35943
+- Awaiting CI (incl. validate-links) + Netlify preview sidebar check before mark-ready
+- Known issue: polygraph session description updates fail (plugin shells stale `session update-description` subcommand; CLI `session update` returns "Could not build a session description update"). Description only persists via create_pr.
