@@ -20,21 +20,21 @@ Weeks run Wed–Tue. Δ is vs the prior week in this table.
 
 ### Jun 4–10, 2026
 
-> Previously recorded as Jun 3–9 with Grand Total 223,906 (flagged incomplete). Correct Wed–Tue boundary gives 235,402 (+11,496 vs that entry).
+> Refreshed 2026-06-11. Previous recording: Grand Total 235,402 (s3-cache at 136,601 — week had not fully settled at time of recording). Fresh Grand Total: **284,418** (+49,016 vs prior recording).
 
 | Package | Downloads | Δ prev week |
 |---------|----------:|------------:|
-| `@nx/s3-cache` | 136,601 | −91,347 |
+| `@nx/s3-cache` | 177,402 | −50,546 |
 | `@nx/gcs-cache` | 42,036 | −32,282 |
-| `@nx/shared-fs-cache` | 26,391 | +594 |
+| `@nx/shared-fs-cache` | 32,706 | +6,909 |
 | `@nx/azure-cache` | 22,567 | −6,612 |
-| **`@nx/*` subtotal** | **227,595** | **−129,647** |
-| `@nx/powerpack-s3-cache` | 6,233 | −3,398 |
-| `@nx/powerpack-gcs-cache` | 493 | −66 |
-| `@nx/powerpack-shared-fs-cache` | 349 | −72 |
-| `@nx/powerpack-azure-cache` | 732 | −182 |
-| **`powerpack-*` subtotal** | **7,807** | **−3,718** |
-| **Grand Total** | **235,402** | **−133,365** |
+| **`@nx/*` subtotal** | **274,711** | **−82,531** |
+| `@nx/powerpack-s3-cache` | 7,603 | −2,028 |
+| `@nx/powerpack-gcs-cache` | 676 | +117 |
+| `@nx/powerpack-shared-fs-cache` | 444 | +23 |
+| `@nx/powerpack-azure-cache` | 984 | +70 |
+| **`powerpack-*` subtotal** | **9,707** | **−1,818** |
+| **Grand Total** | **284,418** | **−84,349** |
 
 ---
 
