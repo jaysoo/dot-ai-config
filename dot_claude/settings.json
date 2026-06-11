@@ -1,4 +1,7 @@
 {
+  "enabledPlugins": {
+    "polygraph@polygraph-plugins": true
+  },
   "sandbox": {
     "network": {
       "allowedDomains": [

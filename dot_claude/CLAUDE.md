@@ -599,6 +599,9 @@ Debug by adding logging to `node_modules/nx/src/executors/run-commands/`. Don't 
 - pnpm-lock.yaml rebase conflicts: NEVER use `git checkout --theirs pnpm-lock.yaml`.
   Use: `git checkout origin/master -- pnpm-lock.yaml && pnpm install --no-frozen-lockfile`
 - Sandbox `pnpm install` can corrupt `node_modules` via reflink (`ERR_PNPM_EPERM`), breaking local `nx`/`jest`/`prettier`. Use `pnpm install --lockfile-only` for lock-only work (no node_modules writes); `--package-import-method hardlink` to repair; else rely on CI for tests.
+- `astro-docs:validate-links` WORKS in the sandbox once `~/.m2` and `~/.gradle` are write-allowlisted (Maven/Gradle lock files). If the graph errors after `nx reset`, that's the gradle plugin re-downloading the wrapper; `nx-dev:next:build` is flaky under cold full rebuilds - retry it alone, then re-run.
+- husky pre-push runs a pnpm deps check that fails no-TTY in the sandbox (`ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`); docs-only pushes use `git push --no-verify` after prettier + vale.
+- Stale Netlify deploy previews cause false alarms (missing sidebar entries, "wrong casing"). Check master / the current commit before "fixing" a preview-reported issue.
 
 ### GitHub Actions Side Effects
 
