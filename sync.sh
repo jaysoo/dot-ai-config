@@ -4,19 +4,27 @@ set -e
 # Get git repository root
 GIT_ROOT=$HOME/projects/dot-ai-config
 
-TARGET_DIR="$HOME/.claude"
+CLAUDE_TARGET_DIR="$HOME/.claude"
+CODEX_TARGET_DIR="$HOME/.Codex"
 
-mkdir -p "$TARGET_DIR"
+mkdir -p "$CLAUDE_TARGET_DIR" "$CODEX_TARGET_DIR"
 
-cp "$GIT_ROOT/dot_claude/settings.json" "$TARGET_DIR/settings.json"
-cp "$GIT_ROOT/dot_claude/CLAUDE.md" "$TARGET_DIR/CLAUDE.md"
-mkdir -p "$TARGET_DIR/commands"
-cp -r "$GIT_ROOT/dot_claude/commands/"* "$TARGET_DIR/commands/"
+cp "$GIT_ROOT/dot_claude/settings.json" "$CLAUDE_TARGET_DIR/settings.json"
+cp "$GIT_ROOT/dot_claude/CLAUDE.md" "$CLAUDE_TARGET_DIR/CLAUDE.md"
+mkdir -p "$CLAUDE_TARGET_DIR/commands"
+cp -r "$GIT_ROOT/dot_claude/commands/"* "$CLAUDE_TARGET_DIR/commands/"
+
+cp "$GIT_ROOT/dot_claude/settings.json" "$CODEX_TARGET_DIR/settings.json"
+cp "$GIT_ROOT/dot_claude/AGENTS.md" "$CODEX_TARGET_DIR/AGENTS.md"
+cp "$GIT_ROOT/dot_claude/CODEX.md" "$CODEX_TARGET_DIR/CODEX.md"
+mkdir -p "$CODEX_TARGET_DIR/commands"
+cp -r "$GIT_ROOT/dot_claude/commands/"* "$CODEX_TARGET_DIR/commands/"
 
 # Sync skills if the directory exists
 if [ -d "$GIT_ROOT/dot_claude/skills" ]; then
-    mkdir -p "$TARGET_DIR/skills"
-    cp -r "$GIT_ROOT/dot_claude/skills/"* "$TARGET_DIR/skills/"
+    mkdir -p "$CLAUDE_TARGET_DIR/skills" "$CODEX_TARGET_DIR/skills"
+    cp -r "$GIT_ROOT/dot_claude/skills/"* "$CLAUDE_TARGET_DIR/skills/"
+    cp -r "$GIT_ROOT/dot_claude/skills/"* "$CODEX_TARGET_DIR/skills/"
 fi
 
 # Sync Gemini CLI config
@@ -78,4 +86,4 @@ cp "$GIT_ROOT/zshenv" "$HOME/.zshenv"
 cp "$GIT_ROOT/gitconfig" "$HOME/.gitconfig"
 cp "$GIT_ROOT/gitignore_global" "$HOME/.gitignore_global"
 
-echo "✅ Claude and Gemini global config synced from $GIT_ROOT"
+echo "✅ Claude, Codex, and Gemini global config synced from $GIT_ROOT"
