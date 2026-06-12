@@ -128,6 +128,7 @@
 
 ## Active Claude Sessions
 
+- /Users/jack/projects/remotion-projects (branch: main) — Task Sandboxing explainer video (bespoke vector recreation, branch feat-awesome, violations 12->5->0, clean end). Plan: `dot_ai/2026-06-12/tasks/sandboxing-remotion-video.md` (2026-06-12)
 - /Users/jack/projects/ocean (branch: badge-sandbox-4c2e7734) — Public sandbox status badge endpoint `/workspaces/{workspaceId}/sandbox-badge.svg` (red Cache unprotected / green Cache protected by Nx / yellow Cache unreliable, org-name label, links to sandboxing docs). Commit `28e93cc24a` local, tsc clean + 8/8 specs. NOT pushed (Jack paused; remote has stale pre-amend `6e9ccb0327`, needs force-with-lease). Polygraph session `badge-sandbox-4c2e7734`. Plan: `dot_ai/2026-06-10/tasks/sandbox-status-badge.md` (2026-06-10)
 - /Users/jack/projects/nx-worktrees/NXC-4431 (branch: NXC-4431) — Audit publish.yml against npm publisher supply-chain advisory, commit d4b5eb2708 ready, not pushed (2026-05-08)
 - /Users/jack/projects/nx-worktrees/NXC-4326 (branch: NXC-4326) — Deprecate `@nx/expo` withNxMetro: Linear comment posted, runtime warn + JSDoc, generator template switched to stock `@expo/metro-config`, migration `update-23-0-0-remove-with-nx-metro` (beta.10) + md doc + 6 passing spec tests; uncommitted (2026-05-13)

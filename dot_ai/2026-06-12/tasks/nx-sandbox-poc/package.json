@@ -1,0 +1,7 @@
+{
+  "name": "nx-poc",
+  "private": true,
+  "devDependencies": {
+    "nx": "22.7.5"
+  }
+}

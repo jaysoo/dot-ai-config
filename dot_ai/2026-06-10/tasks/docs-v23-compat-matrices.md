@@ -47,6 +47,10 @@ Commit `90377686e5`: Technologies sidebar recut per Jack's layout. Frameworks & 
 
 CI validate-links broke on /docs/technologies-tools/{node,java-jvm,dotnet}: Breadcrumbs.astro + SidebarGroupCards.astro slugify sidebar group labels into landing-page links (".NET" special-cased to "dotnet"). Each group needs `src/content/docs/technologies-tools/<slug>/index.mdoc` with a `{% sidebar_group_cards %}` tag. Added node/java-jvm/dotnet pages. Bonus bug: all 5 existing sidebar_group_cards attrs were Title Case ("Technologies & Tools") but sidebar labels are sentence case ("Technologies & tools") - exact-match findGroup failed and landing pages rendered "No pages found" in prod. Fixed all attrs to exact labels (incl. how-nx-works).
 
+## Version switcher follow-up (draft PR #35963)
+
+Header dropdown (astro-docs/src/components/layout/Header.astro, single hardcoded array): v23 current, v22 -> https://22.nx.dev/docs. Done in dedicated worktree `nx-worktrees/docs-version-switcher` (branch docs-version-switcher, commit ce91da0730 on rc.0 master) since docs-v23-prep PR already merged. Gate: 22.nx.dev (website-22 branch) must be deployed before v23 release. Note: shared-.git FETCH_HEAD gets clobbered by concurrent sessions - pin rebases to explicit SHAs, not FETCH_HEAD.
+
 ## Outcome
 
 - Commits `9f5e662548` (matrices) + `90377686e5` (sidebar) on docs-v23-prep, draft PR #35943: https://github.com/nrwl/nx/pull/35943

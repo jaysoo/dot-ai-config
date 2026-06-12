@@ -1,0 +1,6 @@
+{
+  "name": "innocent-consumer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A downstream project that just runs `npm install poc-widget`."
+}

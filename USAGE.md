@@ -28,7 +28,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | audit-api-surface     | skill   | 2026-04-09   | 9     |
 | audit-project-health  | skill   | 2026-05-25   | 12    |
 | site-checker          | skill   | 2026-04-01   | 0     |
-| caveman               | skill   | 2026-06-10   | 12    |
+| caveman               | skill   | 2026-06-12   | 13    |
 | scan-and-audit        | skill   | 2026-05-25   | 1     |
 | skill-creator         | skill   | 2026-04-24   | 1     |
 | terminal-demo-recorder | skill   | 2026-04-24   | 1     |
@@ -43,3 +43,4 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-06-04: invoked caveman skill (count++)
 2026-06-04: invoked remotion-best-practices skill -> set up promos screenshot->video project
 2026-06-10: invoked caveman, polygraph, op-request-reason skills (ocean sandbox badge session)
+2026-06-12: invoked caveman, remotion skills (task sandboxing explainer video)

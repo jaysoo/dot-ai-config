@@ -1,0 +1,10 @@
+{
+  "name": "@poc/web",
+  "version": "1.0.0",
+  "dependencies": {
+    "@poc/lib": "workspace:*"
+  },
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}

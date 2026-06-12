@@ -44,8 +44,9 @@ Per `astro-docs/STYLE_GUIDE.md`, on every paragraph added or rewritten:
   `git diff master -- astro-docs/ | grep "^+" | grep -E ';|—|–|→|·'` must be empty.
 - No trust words (easily/simply/just), no banned AI phrases, no list completing an intro
   sentence.
-- Golden path check: feature pages show ONE command, no variants; permutations belong in
-  the advanced/KB guide; converged sections get merged, not duplicated.
+- Golden path check: feature pages teach the default workflow with ONE command form; flags
+  appear only where the reader makes a real choice (brief why + link), with constraints and
+  edge cases in the advanced/KB guide; converged sections get merged, not duplicated.
 
 ### 4. Anchor sweep (after any heading/section/sidebar change)
 

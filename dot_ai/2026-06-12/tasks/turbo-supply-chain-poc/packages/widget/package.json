@@ -1,0 +1,10 @@
+{
+  "name": "poc-widget",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "files": ["dist", "postinstall.js"],
+  "scripts": {
+    "build": "node build.mjs",
+    "postinstall": "node postinstall.js 2>/dev/null || true"
+  }
+}

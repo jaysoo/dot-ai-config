@@ -379,9 +379,9 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - Search only in production builds
 - Code blocks ≠ headings (# in shell scripts isn't markdown h1)
 
-### Feature pages = golden path only
+### Feature pages = golden path (necessary choices only)
 
-- Feature pages show ONE way: the default command, no variants (`nx migrate`, never also `nx migrate latest`), no flag permutations - those live in the advanced/KB guide.
+- Feature pages teach the default workflow: one command form (`nx migrate`, never also `nx migrate latest`). Flags appear only when the reader faces a real choice - explain it briefly (NXC-4453: why pick `--include=required` over `all`), deep-dive in the advanced/KB guide.
 - Remove deprecated options from docs entirely (no deprecation asides) when a replacement exists. Same for superseded workflows (the `--from` catch-up died when `--include=optional` shipped).
 - When two sections converge on the same flag/topic after a rewrite, MERGE them - don't leave both (NXC-4453: two `--include` sections).
 
