@@ -11,6 +11,7 @@ Docs can go stale in three ways:
 
 | Date | Repo | File | Notes |
 |------|------|------|-------|
+| 2026-06-12 | nrwl/nx | [nx-astro-docs-staleness-2026-06-12.md](./nx-astro-docs-staleness-2026-06-12.md) | Re-scan of 498 mdoc files; all 2026-06-11 findings still unfixed; 2 net-new findings; Linear issues not created — SSE transport past removal date |
 | 2026-06-11 | nrwl/nx | [nx-astro-docs-staleness-2026-06-11.md](./nx-astro-docs-staleness-2026-06-11.md) | Full scan of 501 mdoc files; Node 20 EOL, Nx 15–19 version refs, @nrwl/ package names |
 
 ## Recurring Checks to Run
