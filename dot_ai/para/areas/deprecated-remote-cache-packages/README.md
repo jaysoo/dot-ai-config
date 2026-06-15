@@ -16,25 +16,45 @@ Tracking weekly npm download counts for the old `@nx/*-cache` packages and their
 
 ## Weekly Download History
 
-Weeks run Wed–Tue. Δ is vs the prior week in this table.
+Weeks run Thu–Wed. Δ is vs the prior week in this table.
 
-### Jun 4–10, 2026
-
-> Previously recorded as Jun 3–9 with Grand Total 223,906 (flagged incomplete). Correct Wed–Tue boundary gives 235,402 (+11,496 vs that entry).
+### Jun 11–15, 2026 *(partial week — data through Mon Jun 15)*
 
 | Package | Downloads | Δ prev week |
 |---------|----------:|------------:|
-| `@nx/s3-cache` | 136,601 | −91,347 |
+| `@nx/s3-cache` | 101,959 | −75,443 |
+| `@nx/gcs-cache` | 23,277 | −18,759 |
+| `@nx/shared-fs-cache` | 13,585 | −19,121 |
+| `@nx/azure-cache` | 11,163 | −11,404 |
+| **`@nx/*` subtotal** | **149,984** | **−124,727** |
+| `@nx/powerpack-s3-cache` | 3,906 | −3,697 |
+| `@nx/powerpack-gcs-cache` | 68 | −608 |
+| `@nx/powerpack-shared-fs-cache` | 76 | −368 |
+| `@nx/powerpack-azure-cache` | 433 | −551 |
+| **`powerpack-*` subtotal** | **4,483** | **−5,224** |
+| **Grand Total** | **154,467** | **−129,951** |
+
+> Partial week (Thu Jun 11–Mon Jun 15, 5 days); Δ vs full prior week is not directly comparable.
+
+---
+
+### Jun 4–10, 2026
+
+> Numbers revised from prior recording (235,402) — npm finalized counts as of Jun 15 fetch.
+
+| Package | Downloads | Δ prev week |
+|---------|----------:|------------:|
+| `@nx/s3-cache` | 177,402 | −50,546 |
 | `@nx/gcs-cache` | 42,036 | −32,282 |
-| `@nx/shared-fs-cache` | 26,391 | +594 |
+| `@nx/shared-fs-cache` | 32,706 | +6,909 |
 | `@nx/azure-cache` | 22,567 | −6,612 |
-| **`@nx/*` subtotal** | **227,595** | **−129,647** |
-| `@nx/powerpack-s3-cache` | 6,233 | −3,398 |
-| `@nx/powerpack-gcs-cache` | 493 | −66 |
-| `@nx/powerpack-shared-fs-cache` | 349 | −72 |
-| `@nx/powerpack-azure-cache` | 732 | −182 |
-| **`powerpack-*` subtotal** | **7,807** | **−3,718** |
-| **Grand Total** | **235,402** | **−133,365** |
+| **`@nx/*` subtotal** | **274,711** | **−82,531** |
+| `@nx/powerpack-s3-cache` | 7,603 | −2,028 |
+| `@nx/powerpack-gcs-cache` | 676 | +117 |
+| `@nx/powerpack-shared-fs-cache` | 444 | +23 |
+| `@nx/powerpack-azure-cache` | 984 | +70 |
+| **`powerpack-*` subtotal** | **9,707** | **−1,818** |
+| **Grand Total** | **284,418** | **−84,349** |
 
 ---
 
