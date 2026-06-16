@@ -11,6 +11,7 @@ Docs can go stale in three ways:
 
 | Date | Repo | File | Notes |
 |------|------|------|-------|
+| 2026-06-16 | nrwl/nx | [nx-astro-docs-staleness-2026-06-16.md](./nx-astro-docs-staleness-2026-06-16.md) | Third scan; Nx 15–20 version anchors in 17 files not previously flagged; createNodes table missing Nx 23+ column; Angular 13 migration note; Linear MCP SSE transport blocked (needs config update) |
 | 2026-06-12 | nrwl/nx | [nx-astro-docs-staleness-2026-06-12.md](./nx-astro-docs-staleness-2026-06-12.md) | Follow-up scan; svgr option documented but removed from source in Nx 22, stale Nx 15.7 linkcard, composePlugins/withReact removal in Nx 24 to monitor |
 | 2026-06-11 | nrwl/nx | [nx-astro-docs-staleness-2026-06-11.md](./nx-astro-docs-staleness-2026-06-11.md) | Full scan of 501 mdoc files; Node 20 EOL, Nx 15–19 version refs, @nrwl/ package names |
 
