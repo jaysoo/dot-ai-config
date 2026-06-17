@@ -44,3 +44,4 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-06-04: invoked remotion-best-practices skill -> set up promos screenshot->video project
 2026-06-10: invoked caveman, polygraph, op-request-reason skills (ocean sandbox badge session)
 2026-06-12: invoked caveman, remotion skills (task sandboxing explainer video)
+2026-06-12: invoked summarize, reflect skills (ocean badge session); created readme-demo-injector skill

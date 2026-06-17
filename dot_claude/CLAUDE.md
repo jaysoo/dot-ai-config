@@ -76,6 +76,7 @@ When continuing a session from a compaction summary:
 
 - **Re-Read each `.ai` file (SUMMARY.md, architecture.md, TODO.md, COMPLETED.md) immediately before editing, and prefer Edit over blind append (`cat >>`/Write)** - a concurrent session in a sibling worktree may have already added a richer/corrected entry, so appending from memory duplicates it.
 - **Verify task status (merged vs ready vs draft) from the authoritative source (Polygraph `show_session` / GitHub), not the chat.** NXC: recorded DOC-509 as a one-page draft; it was actually a merged three-page change.
+- **Re-verify `git branch --show-current` before any write/commit after a turn gap** - a concurrent session may have switched the shared checkout's branch. If it changed, move new files aside (don't contaminate the other branch) and confirm before switching back. Ocean badge session: a Write landed on `fix/sandbox-violations` mid-task.
 
 ### Git Workflow
 
@@ -83,7 +84,7 @@ When continuing a session from a compaction summary:
 - **Never commit to main/master** - use feature branches
 - **Always squash commits** before pushing: `git reset --soft HEAD~n && git commit`
 - **NEVER push main/master branches directly unless instructed** - use branches and PRs
-- **Polygraph `push_branch` cannot take an amended commit.** It runs `git pull --rebase`, so amending an already-pushed commit conflicts and leaves a mid-rebase. For follow-up changes on an open Polygraph PR, add a **new follow-up commit** (push_branch fast-forwards) instead of `git commit --amend`. Force-push via SSH only if you truly need one commit and have a remote to the target repo. Recurring (CLOUD-4612, #35922) - don't relearn it each session.
+- **Polygraph `push_branch` cannot take an amended commit.** It runs `git pull --rebase`, so amending an already-pushed commit conflicts and leaves a mid-rebase. For follow-up changes on an open Polygraph PR, add a **new follow-up commit** (push_branch fast-forwards) instead of `git commit --amend`. Force-push via SSH only if you truly need one commit and have a remote to the target repo: logged `git fetch origin <branch> && git push --force-with-lease`, then `create_pr`/`mark_pr_ready` work normally. Also: a push_branch call the user rejected/interrupted may have ALREADY pushed - check the remote before assuming it didn't. Recurring (CLOUD-4612, #35922, ocean #11878) - don't relearn it each session.
 - Linear: `DOC-125` format (no #) | GitHub: `Fixes #123` format
 
 **Commit format:**
@@ -368,7 +369,7 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - Astro cache issues: Clear `.astro` folder
 - Class-string codemods must scope to JSX `className=`/`class=` attrs and known utility-fn calls (`clsx`/`cn`/`twMerge`/`cva`/`classnames`). Bare `\b` word boundaries also match TS prop names (`rounded?:` becomes `rounded-sm?:`) and CSS function calls inside template literals (`blur(${x})` becomes `blur-sm(${x})`). Use lookbehind on `[\s:"'\`!]`boundaries; never run rename across raw string literals indiscriminately. After codemodding source under a pnpm`file:`dep (e.g.,`nx-dev/ui-_`, `graph/ui-_`), run `pnpm install --force`so`node_modules/.pnpm/.../node_modules/<pkg>/` refreshes - otherwise the consumer build sees the stale pre-codemod copy.
 - Tailwind v4 `@source` does NOT support extglob (`!(*.stories|*.spec)`); patterns silently match zero files and utilities never make it into the bundle. Use plain dir paths + `@source not '**/*.{spec,test,stories}.*'`. Same trap if porting any v3 `content` array verbatim.
-- **Shell is fish**: inline `bash -c` / `python3 -c` strings mangle `!` and `!=` (history expansion + line-continuation), silently breaking comparisons (`r['status'] != 'done'` becomes a syntax error or no-op). Use `not in (...)` / `<>` / write the script to a file. A background CI poller using `!=` polled blindly for 90 min and reported nothing - always confirm a long-running poller emits a real signal before trusting it.
+- **Shell is fish**: inline `bash -c` / `python3 -c` strings mangle `!` and `!=` (history expansion + line-continuation), silently breaking comparisons (`r['status'] != 'done'` becomes a syntax error or no-op). Single-quoted heredocs (`python3 - <<'EOF'`) are NOT safe either - `\!=` still arrives mangled. Always write the script to a file (Write tool) and run the file. Alternatively `not in (...)` / `<>`. A background CI poller using `!=` polled blindly for 90 min and reported nothing - always confirm a long-running poller emits a real signal before trusting it.
 
 ## 📚 Documentation Sites (Astro/Starlight)
 
@@ -810,4 +811,5 @@ The `--configuration=e2e` loads `.env.serve.e2e`. Don't use `op run` with e2e mo
 ### Typecheck when nx is unavailable
 
 - The `@nx/gradle` plugin needs `gradlew`; if Gradle/Java isn't available the nx project graph fails and ALL `nx` commands break. Fall back to `npx tsc -b libs/.../tsconfig.lib.json` (build mode builds project refs + gives real errors) per touched project.
+  - **Run `tsc -b` (and prettier) from the repo root with full `libs/...` paths.** The args are cwd-relative, so chaining after a `cd libs/X` (e.g. `cd libs/X && jest ...; npx tsc -b libs/X/...`) doubles the path -> `error TS5083: Cannot read file '.../libs/X/libs/X/tsconfig.lib.json'`. The Bash-tool cwd also resets between calls, so don't rely on a prior `cd`. Run jest-in-lib and tsc-from-root as separate commands.
 - For rendering/screenshotting a single Ocean component in isolation, use the `ocean-component-shot` skill.

@@ -3,7 +3,16 @@
 **Date:** 2026-06-10
 **Branch:** `badge-sandbox-4c2e7734` (ocean)
 **Polygraph session:** `badge-sandbox-4c2e7734`
-**Status:** Implemented + committed locally (`56e7832c09`). NOT pushed (Jack paused push). Remote has stale pre-amend commit `6e9ccb0327`.
+**Status:** PUSHED, draft PR https://github.com/nrwl/ocean/pull/11878 (commit `5f87e43fb4`, 2026-06-12).
+
+## Final behavior (simplified 2026-06-12)
+
+Entitlement-only, two states, NO violations query:
+- Green "Build integrity by Nx": org has sandboxing (`isSandboxingAvailableForOrganization` = ENTERPRISE plan or active SANDBOXING add-on)
+- Red "Build not protected": otherwise
+- Yellow state, getBranchViolatingTaskCount, enforcement-mode check, 7-day window: all REMOVED per Jack
+- `?style=for-the-badge` renders 28px uppercase shields variant (matches nx README row)
+- server.js: path-scoped CORP cross-origin override after helmet (helmet default same-origin blocks third-party embeds)
 
 ## Local demo (2026-06-10)
 
