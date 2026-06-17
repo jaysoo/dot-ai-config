@@ -13,6 +13,7 @@ Projects are time-bound work with clear completion criteria:
 ## Current Projects
 
 - **[nx-import-vite](nx-import-vite/)** — NXA-1075: Skill reference for importing Vite projects into Nx workspaces
+- **[ai-governance-page](ai-governance-page/)** — Customer-facing AI Notice / AI governance page (prospects requesting public no-training + IP statements)
 
 ## Adding New Projects
 
