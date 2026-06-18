@@ -18,7 +18,6 @@ set NODE_OPTIONS "--max_old_space_size=3072"
 # set -x NEXT_PUBLIC_ASTRO_URL 'https://nx-docs.netlify.app'
 
 
-set -x NX_CLI_SET 'true'
 set -x NPM_CONFIG_LOGLEVEL 'error'
 
 set -x NX_CLOUD_API 'https://staging.nx.app'
