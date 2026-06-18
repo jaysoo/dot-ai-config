@@ -4,44 +4,43 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **Public sandbox status badge endpoint (ocean) — PR #11878 MERGED** (2026-06-12)
+1. **Q-503: Improve CIPE upsell CTAs across key pages (ocean) — PR #11962 MERGED** (2026-06-18)
+   - Summary: Gated sandboxing/resource-usage add-on upsell CTAs across surfaces (hidden once entitled): bigger CIPE rotating banner (per-CTA sample graphic, "Remind me later" 1-day snooze, x dismiss) moved above Managed agents; "Protect cache integrity with sandboxing" sub-label link on the overview Cache hit rate + /runs Cache hits tiles; non-clickable Sandboxing badge on the workspaces list; sandbox preview "FIX WITH AI" SUI; all preview modals wrapped in PosthogCaptureOnViewed. Replaced the Analysis-tab resource-usage banner with a locked sample of the real agent table (5 linux-medium-js agents, first row -> sample charts modal, rest blurred behind a "See per-agent resource charts" prompt) under Agent utilization; sample data matches the modal's OOM story; "Sample" badges; filter:blur (not banned backdrop-filter). Self-healing CI scoped a polluted agent-cell e2e query. Opened against master by mistake (harness hint) -> retargeted main. No version plan (upsell). Authored adversarial pre-PR review Workflows.
+   - Files: `dot_ai/2026-06-18/SUMMARY.md`, `dot_ai/para/resources/architectures/ocean-architecture.md` (2026-06-17), PR https://github.com/nrwl/ocean/pull/11962, Polygraph session `cloud-ctas-update-8c3cbeb1`
+2. **Public sandbox status badge endpoint (ocean) — PR #11878 MERGED** (2026-06-12)
    - Summary: Public no-auth SVG badge at `/workspaces/{workspaceId}/sandbox-badge.svg`. Entitlement-only: green "Build integrity by Nx" when org has sandboxing (ENTERPRISE or SANDBOXING add-on), red "Build not protected" otherwise; org-name label (anti-spoofing), Task Sandboxing docs link, `?style=for-the-badge` shields variant. Found + fixed helmet CORP same-origin blocking third-party embeds (path-scoped server.js override). Demoed via saved github.com/nrwl/nx + npmx.dev pages with badge injected into README rows. Linear CLOUD-4623 linked to Polygraph session.
    - Files: `dot_ai/2026-06-10/tasks/sandbox-status-badge.md`, PR https://github.com/nrwl/ocean/pull/11878, Polygraph session `badge-sandbox-4c2e7734`
-2. **CLOUD-4629: Rotating CIPE CTA (sandboxing + resource usage) — PR #11871 MERGED** (2026-06-12)
+3. **CLOUD-4629: Rotating CIPE CTA (sandboxing + resource usage) — PR #11871 MERGED** (2026-06-12)
    - Summary: Replaced SandboxCipeBanner with RotatingCipeCtaBanner on the CIPE run view: uniform-random pick per page load between sandbox and resource-usage upsells, per-CTA localStorage timestamp dismiss with 7-day expiry. Review iterations dropped the JSON config + weight field as premature (typed CIPE_CTAS array inline in component); pure pickCipeCta keeps the effect one line. Shared isResourceUsagePreviewEligible in model-organizations (both loaders). No version plan (upsell skips public changelog — memory saved). Linear Done, Polygraph session archived.
    - Files: `dot_ai/2026-06-12/tasks/cloud-4629-rotating-cipe-cta.md`, PR https://github.com/nrwl/ocean/pull/11871, Polygraph session `cloud-4629-rotating-banner-4e18c0c2`
 
-3. **NXC-4453: Document nx migrate agentic flow + --include — PR #35917 MERGED** (2026-06-10)
+4. **NXC-4453: Document nx migrate agentic flow + --include — PR #35917 MERGED** (2026-06-10)
    - Summary: Documented the Nx 23 nx migrate revamp across 9 files: hub rebuilt as golden path (bare `nx migrate`, two phases, generator/prompt/hybrid migration shapes, agentic flow), advanced guide carries the `--include` workflow (recommend `required` then `optional`), deprecated `--interactive` and the legacy `--from` catch-up removed entirely, Console UI AI badge + beta.24 gate, KB sidebar section renamed "Installation and updates" with landing-page move + redirects (astro.config.mjs + netlify.toml). Local validate-links (after ~/.m2 + ~/.gradle grants) caught the label-coupled landing break. Linear closed.
    - Files: `dot_ai/2026-06-05/tasks/nxc-4453-agentic-migrate-docs.md`, PR https://github.com/nrwl/nx/pull/35917, Polygraph session `docs-agentic--migrate-de6a34c5`
 
-4. **v23 docs: compat matrix alignment + technologies sidebar regroup — PR #35943 MERGED** (2026-06-10)
+5. **v23 docs: compat matrix alignment + technologies sidebar regroup — PR #35943 MERGED** (2026-06-10)
    - Summary: Audited all 26 astro-docs "Supported Versions" tables against v23 peer deps; fixed 8 stale ones (eslint +^10, vitest page said @nx/vite ^1-^4 -> @nx/vitest ^3||^4, detox/nuxt/remix floors, storybook stale comment). Added 23.x rows to TypeScript/Node (Node 20 dropped)/NestJS/createNodes matrices. Regrouped Technologies sidebar (new Node, Java (JVM), .NET groups) + added their technologies-tools landing pages after CI validate-links caught breadcrumb-slugified group links; also fixed all 5 pre-existing sidebar_group_cards Title-Case attrs that silently rendered "No pages found" in prod.
    - Files: `dot_ai/2026-06-10/tasks/docs-v23-compat-matrices.md`, PR https://github.com/nrwl/nx/pull/35943, Polygraph session `docs-update-misc-updates-v23-837b8d30`
 
-5. **Capture analytics opt-in answer in `nx init` + CNW telemetry (recordStat) — PR #35922 MERGED** (2026-06-10)
+6. **Capture analytics opt-in answer in `nx init` + CNW telemetry (recordStat) — PR #35922 MERGED** (2026-06-10)
    - Summary: recordStat already sent the Nx Cloud prompt result; added the analytics opt-in answer as `analyticsPrompt: 'yes' | 'no' | 'unset'` in the `complete` stat for both create-nx-workspace and `nx init`. CNW: `determineAnalytics` boolean -> tri-state threaded into meta. `nx init`: now asks the prompt right after the Cloud prompt (previously deferred to first command), persists to nx.json, records the answer; consolidated into `ensureAnalyticsPreferenceSet(root?, interactive?)` with no new eager startup-path module loads. Triage review F1-guard + F4 (CNW determineAnalytics tests) applied locally; declined F2/F3 (pre-existing/hypothetical). Merged before final fixes were pushed. Single-repo Polygraph session.
    - Files: `dot_ai/2026-06-10/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/35922, Polygraph session `capture-analytics-opt-in-22331534`
 
-6. **Disable Add-ons settings page for OSS orgs (Nx Cloud / ocean) — PR #11730 ready** (2026-06-09)
+7. **Disable Add-ons settings page for OSS orgs (Nx Cloud / ocean) — PR #11730 ready** (2026-06-09)
    - Summary: OSS orgs got a fully functional Add-ons page (loader only locked `plan === 'FREE'`/Hobby). Extended lock to OSS so they see the visible-but-locked page + upgrade prompt, same as Hobby. One-line loader fix in `feature-organization-add-ons` (`|| organization.plan === 'OSS'`) routing OSS into the existing `planLocked` branch + mirrored OSS spec. 28/28 pass, no nav/component changes. Coordinated via Polygraph (work delegated to ocean child agents).
    - Files: `dot_ai/2026-06-09/SUMMARY.md`, PR https://github.com/nrwl/ocean/pull/11730, Polygraph session `disable-oss-addons-1b747745`
 
-7. **Q-491: Scope CIPE sandbox banner to current CIPE + remove total (Nx Cloud / ocean) — draft PR #11733** (2026-06-08)
+8. **Q-491: Scope CIPE sandbox banner to current CIPE + remove total (Nx Cloud / ocean) — draft PR #11733** (2026-06-08)
    - Summary: CIPE sandbox banner counted violations over a rolling 7-day branch window (same query as the dashboard), so "X of Y tasks" disagreed with what ran in the viewed CIPE (Jason flagged in Slack). Added `getSandboxViolationTaskCountForRunGroup` (distinct violating taskIds scoped to the current run group), swapped the run-group-details loader off the dashboard query, dropped `sandboxTotalTaskCount` end-to-end, reworded to "N task(s) in this run has/have sandbox violations." tsc clean on 3 projects; 6/6 + 18/18 specs. No version plan (unreleased sandbox feat plans cover it). Pushed + draft PR via Polygraph.
    - Files: `dot_ai/2026-06-08/SUMMARY.md`, PR https://github.com/nrwl/ocean/pull/11733, Polygraph session `fix-sandbox-3cce39e3`
 
-8. **DOC-513: Mark Manual DTE as Enterprise-only docs — MERGED PR #35864** (2026-06-04)
+9. **DOC-513: Mark Manual DTE as Enterprise-only docs — MERGED PR #35864** (2026-06-04)
    - Summary: Reframed docs per Joe's model (Nx Agents = task-distribution system on all plans; bring your own compute = Enterprise-gated). Term + route rename "Manual DTE" -> "Bring your own compute" with 301 redirect + repointed nx-dev/_redirects. Kept --distribute-on=manual flag. PR #35864 merged.
    - Files: `dot_ai/2026-06-04/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/35864
 
-9. **NXC-4395: @nx/next multi-version compliance — PR #35870 (CI green, ready to merge)** (2026-06-04)
+10. **NXC-4395: @nx/next multi-version compliance — PR #35870 (CI green, ready to merge)** (2026-06-04)
    - Summary: Redid @nx/next compliance (P15, milestone NXC-4072) in fresh Polygraph session `multi-4395-ae050ce9`; original #35652 closed (branch polluted). Kept Next v14 per user (overrides findings #1/#2): window v14+v15+v16, floor 14.0.0, `assert-supported-next-version.ts` + floor assert in all 8 generators + `all-generators-enforce-floor.spec.ts`. `keepExistingVersions` on all 6 install sites (init/app/library/add-linting + styles.ts + add-swc). Base `20.7.1-beta.0` migration gated `^15.0.0`. CVE audit (GH Advisory DB) bumped fresh-install pins to lowest high/critical-free patch: next14 14.2.35 / next15 15.5.18 / next16 16.1.6 (no CVE-free 14.x exists - documented trade-off). 2 review rounds + self-healing CI: fixed keepExistingVersions plumbing, restored an inferred-plugin test a cherry-pick artifact deleted, caught 2 missed sweep sites. 18 files, single commit, mergeable clean.
    - Files: `dot_ai/2026-06-04/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/35870, Polygraph session `multi-4395-ae050ce9`
-
-10. **DOC-509: targetDefaults spread token across task tutorials - PR #35871 ready** (2026-06-04)
-   - Summary: Documented the `"..."` spread token (Nx 23.0.0) across three getting-started tutorials. `configuring-tasks` (new "Extending target defaults for a project" section, `dependsOn: ["...", "generate-api-types"]`), `caching` (per-project `inputs: ["...", ...]` example), `reducing-configuration-boilerplate` (inline spread example in cascade section). package.json/project.json tabs synced via `syncKey`. Review feedback: `"..."` reworded to expand any inherited config (targetDefaults OR inferred plugin task), replaced a back-reference link with a real example. Single-repo Polygraph session `docs-spread-6df4621c`; marked ready by Jack, not merged.
-   - Files: `dot_ai/2026-06-04/SUMMARY.md`, PR https://github.com/nrwl/nx/pull/35871, Polygraph session `docs-spread-6df4621c`
 
 ## TODO
 

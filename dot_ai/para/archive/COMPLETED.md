@@ -2,6 +2,10 @@
 
 ### June 2026
 
+- [x] Q-503: Improve CIPE upsell CTAs across key pages (ocean) - PR #11962 MERGED (2026-06-18)
+  - Plan: `dot_ai/para/resources/architectures/ocean-architecture.md` (Personal Work History, 2026-06-17)
+  - Summary: Gated sandboxing/resource-usage add-on upsell CTAs across surfaces (all hidden once entitled). Bigger CIPE rotating banner (per-CTA sample graphic, "Remind me later" 1-day snooze, x dismiss) moved above Managed agents; "Protect cache integrity with sandboxing" sub-label link on the overview Cache hit rate + /runs Cache hits tiles; non-clickable Sandboxing badge on the workspaces list; sandbox dashboard preview "FIX WITH AI" SUI; all preview modals wrapped in PosthogCaptureOnViewed. Replaced the Analysis-tab resource-usage banner with a locked sample of the real agent table (5 linux-medium-js agents, first row -> sample charts modal, rest blurred behind a "See per-agent resource charts" prompt) rendered under Agent utilization; sample data matches the modal's OOM story. Locked rows use filter:blur (not banned backdrop-filter); "Sample" badges. Self-healing CI scoped a polluted agent-cell e2e query. Opened against master by mistake (harness gitStatus hint) -> retargeted main. No version plan (upsell, covered by unreleased sandbox plans). Authored adversarial pre-PR review Workflows (caught a spec gap + the banned "Unlock" copy). Polygraph session `cloud-ctas-update-8c3cbeb1`.
+
 - [x] Remote cache deprecation reach-out check (2026-06-17)
   - Plan: `dot_ai/2026-06-17/tasks/remote-cache-deprecation-reachouts.md`
   - Summary: Checked Pylon/email/support and Slack-indexed fallback searches for orgs reacting to deprecated remote cache plugins or showing migration interest in Nx Cloud remote cache. Found no direct deprecation-driven outreach; only adjacent Nx Cloud cache/usage support threads from Strike, Mimecast, Island, CIBC, and PayFit.

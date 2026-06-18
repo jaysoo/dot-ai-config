@@ -85,6 +85,7 @@ When continuing a session from a compaction summary:
 - **Always squash commits** before pushing: `git reset --soft HEAD~n && git commit`
 - **NEVER push main/master branches directly unless instructed** - use branches and PRs
 - **Polygraph `push_branch` cannot take an amended commit.** It runs `git pull --rebase`, so amending an already-pushed commit conflicts and leaves a mid-rebase. For follow-up changes on an open Polygraph PR, add a **new follow-up commit** (push_branch fast-forwards) instead of `git commit --amend`. Force-push via SSH only if you truly need one commit and have a remote to the target repo: logged `git fetch origin <branch> && git push --force-with-lease`, then `create_pr`/`mark_pr_ready` work normally. Also: a push_branch call the user rejected/interrupted may have ALREADY pushed - check the remote before assuming it didn't. Recurring (CLOUD-4612, #35922, ocean #11878) - don't relearn it each session.
+- `git add` of a path already removed by `git rm` errors ("fatal: pathspec did not match") and aborts the WHOLE `git add` - the other paths stay unstaged (Q-503: a commit then captured only the deletions). Don't re-list `git rm`'d files in a later `git add`.
 - Linear: `DOC-125` format (no #) | GitHub: `Fixes #123` format
 
 **Commit format:**
@@ -369,7 +370,7 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - Astro cache issues: Clear `.astro` folder
 - Class-string codemods must scope to JSX `className=`/`class=` attrs and known utility-fn calls (`clsx`/`cn`/`twMerge`/`cva`/`classnames`). Bare `\b` word boundaries also match TS prop names (`rounded?:` becomes `rounded-sm?:`) and CSS function calls inside template literals (`blur(${x})` becomes `blur-sm(${x})`). Use lookbehind on `[\s:"'\`!]`boundaries; never run rename across raw string literals indiscriminately. After codemodding source under a pnpm`file:`dep (e.g.,`nx-dev/ui-_`, `graph/ui-_`), run `pnpm install --force`so`node_modules/.pnpm/.../node_modules/<pkg>/` refreshes - otherwise the consumer build sees the stale pre-codemod copy.
 - Tailwind v4 `@source` does NOT support extglob (`!(*.stories|*.spec)`); patterns silently match zero files and utilities never make it into the bundle. Use plain dir paths + `@source not '**/*.{spec,test,stories}.*'`. Same trap if porting any v3 `content` array verbatim.
-- **Shell is fish**: inline `bash -c` / `python3 -c` strings mangle `!` and `!=` (history expansion + line-continuation), silently breaking comparisons (`r['status'] != 'done'` becomes a syntax error or no-op). Single-quoted heredocs (`python3 - <<'EOF'`) are NOT safe either - `\!=` still arrives mangled. Always write the script to a file (Write tool) and run the file. Alternatively `not in (...)` / `<>`. A background CI poller using `!=` polled blindly for 90 min and reported nothing - always confirm a long-running poller emits a real signal before trusting it. Also: `$status` after a pipeline reflects only the LAST stage - `git push ... | tail` reports `tail`'s exit (0) and masks a failed push; use `$pipestatus[1]` (or run the command unpiped). Once reported a failed force-push as success (NXC-4548).
+- **Shell is fish**: inline `bash -c` / `python3 -c` strings mangle `!` and `!=` (history expansion + line-continuation), silently breaking comparisons (`r['status'] != 'done'` becomes a syntax error or no-op). Single-quoted heredocs (`python3 - <<'EOF'`) are NOT safe either - `\!=` still arrives mangled. Always write the script to a file (Write tool) and run the file. Alternatively `not in (...)` / `<>`. A background CI poller using `!=` polled blindly for 90 min and reported nothing - always confirm a long-running poller emits a real signal before trusting it. Also: `$status` after a pipeline reflects only the LAST stage - `git push ... | tail` reports `tail`'s exit (0) and masks a failed push; use `$pipestatus[1]` (or run the command unpiped). Once reported a failed force-push as success (NXC-4548). Also: fish does NOT word-split variables - `set FILES "a.ts b.ts"; npx prettier $FILES` passes the whole string as ONE argument (fails "no files matching"); pass paths explicitly or use a real fish list (`set FILES a.ts b.ts`). Hit twice in Q-503.
 
 ## 📚 Documentation Sites (Astro/Starlight)
 
@@ -758,6 +759,11 @@ op run --env-file=env.base -- E2E_TEST_MODE=true npx nx serve
 **CRITICAL**: Use Nx MCP's nx_workspace or nx_docs tools for workspace/project info.
 
 ## 🌊 Ocean (Nx Cloud) Specifics
+
+### Branch & PR Base
+
+- **Ocean PRs target `main`, NOT `master`.** The harness session gitStatus hint says "Main branch: master" and `origin/HEAD` -> `master`, but `master` is long-divergent (a PR against it shows ~2900 commits / 3000+ files). `origin/main` is the real integration tip; feature branches are cut from it.
+  - **Why:** Q-503 - opened draft PR #11962 against `master` from the bad hint; Jack caught the 2919-commit diff. Fix: GitHub UI Edit base -> main (no GH token in sandbox, `gh` removed; or `PATCH /repos/nrwl/ocean/pulls/<n>` `{"base":"main"}`). Also saved as memory `feedback-ocean-pr-base-is-main`.
 
 ### Commit Scopes
 

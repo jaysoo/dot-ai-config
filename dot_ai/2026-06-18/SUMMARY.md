@@ -25,7 +25,7 @@ Branch `NXC-4548`, commit `fd55b5acbd` (single squash). Work spanned 2026-06-17.
 
 Plan doc: `.ai/2026-06-17/tasks/nxc-4548-plan-post-v23-next-react-upgrade.md`
 
-## Q-503 - Improve CIPE upsell CTAs across key pages (ocean, draft PR #11962)
+## Q-503 - Improve CIPE upsell CTAs across key pages (ocean, MERGED PR #11962)
 
 Branch `Q-503`, commits `40efd83fa0`/`876777a966`/`1748fc51aa`/`53d8dcacfc` (+ self-healing `d83e3001e7`). Work spanned 2026-06-17..18. Polygraph session `cloud-ctas-update-8c3cbeb1`. Full detail in the architecture doc Personal Work History (2026-06-17).
 
@@ -34,8 +34,8 @@ Branch `Q-503`, commits `40efd83fa0`/`876777a966`/`1748fc51aa`/`53d8dcacfc` (+ s
 - Replaced the thin Analysis-tab resource-usage banner with `AgentResourceUsageSample` - a locked sample of the real agent table (5 linux-medium-js agents, first row -> sample charts modal, rows 2-5 blurred under a "See per-agent resource charts" prompt), rendered under Agent utilization. Data matches the modal (OOM agent over 4 GB cap) for one coherent story.
 - Authored adversarial pre-PR review Workflows (correctness/DESIGN/copy/hygiene + verify) - caught a spec-coverage gap and the banned "Unlock" copy (-> "See per-agent resource charts").
 
-### Open
-- PR #11962 still DRAFT against `main`. CI running after the self-healing fix.
+### Outcome
+- **Merged to `main` via PR #11962 (2026-06-18).** Retargeted from `master` (wrong harness default) to `main` before merge; self-healing CI fix pulled in beforehand.
 
 ### Notes / gotchas
 - **PR base must be `main`, not `master`** - opened against `master` first (wrong harness gitStatus hint) -> 2919 commits / 3000+ files. Fixed via GitHub UI base edit. Memory: `feedback-ocean-pr-base-is-main`.

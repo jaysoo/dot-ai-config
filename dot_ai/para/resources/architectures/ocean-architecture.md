@@ -243,7 +243,7 @@ Public (unauthenticated) SVG badge at `/workspaces/{workspaceId}/sandbox-badge.s
 
 ### 2026-06-17
 
-- **Q-503: Improve CIPE upsell CTAs across key pages** (ocean branch `Q-503`; commits `40efd83fa0` feat, `876777a966` fix, `1748fc51aa` feat, `53d8dcacfc` fix, + self-healing `d83e3001e7`; draft PR #11962 against `main`; Polygraph session `cloud-ctas-update-8c3cbeb1`)
+- **Q-503: Improve CIPE upsell CTAs across key pages** (ocean branch `Q-503`; commits `40efd83fa0` feat, `876777a966` fix, `1748fc51aa` feat, `53d8dcacfc` fix, + self-healing `d83e3001e7`; PR #11962 MERGED to `main` 2026-06-18; Polygraph session `cloud-ctas-update-8c3cbeb1`)
   - Goal: lift add-on (sandboxing + resource usage) upsell conversion. Bigger CIPE rotating banner with a per-CTA sample graphic + soft "Remind me later" 1-day snooze + corner close; gated sandbox CTAs on surfaces that had none; replaced the thin Analysis-tab resource-usage banner with a locked sample of the real agent table.
   - All gated by `isSandboxingPreviewEligible` / `isResourceUsagePreviewEligible` (NOT entitled + flag on + not private-enterprise + not ENTERPRISE), so nothing shows once the add-on is enabled. Work concentrated in the removable-seam `feature-add-on-previews` lib.
   - **Surfaces:**

@@ -77,6 +77,7 @@
       "Bash(npx prettier:*)",
       "Bash(npx tsc:*)",
       "Bash(npx jest:*)",
+      "Bash(npx eslint:*)",
       "Bash(npx serve:*)",
       "Bash(curl -s* http://localhost:*)",
       "Bash(curl -s* http://127.0.0.1:*)",

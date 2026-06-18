@@ -45,3 +45,4 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-06-10: invoked caveman, polygraph, op-request-reason skills (ocean sandbox badge session)
 2026-06-12: invoked caveman, remotion skills (task sandboxing explainer video)
 2026-06-12: invoked summarize, reflect skills (ocean badge session); created readme-demo-injector skill
+2026-06-18: invoked op-request-reason, summarize, reflect skills (ocean Q-503 upsell CTAs); created pre-pr-review skill; CLAUDE.md += Ocean PR-base-is-main + fish var word-splitting + git-add-after-rm; settings.json += npx eslint
