@@ -61,7 +61,9 @@ reach users.
 | Angular | @nx/angular | angular/angular |
 | React | @nx/react | facebook/react |
 | Next.js | @nx/next | vercel/next.js |
-| Remix / React Router | @nx/remix | remix-run/remix |
+| Remix v2 (we use this) | @nx/remix | remix-run/remix |
+| React Router v7 (RRv7 = Remix migration target) | @nx/remix / @nx/react-router | remix-run/react-router |
+| Remix v3 (new ground-up framework) | (watching) | remix-run/remix (v3 branch/preview) |
 | Nuxt | @nx/nuxt | nuxt/nuxt |
 | Vue | @nx/vue | vuejs/core |
 
@@ -107,7 +109,7 @@ cat "$SCAN_DATA_DIR/releases/<owner>-<repo>.json" 2>/dev/null \
 
 Available cache files:
 - `angular-angular.json`, `facebook-react.json`, `vercel-next.js.json`
-- `remix-run-remix.json`, `nuxt-nuxt.json`, `vuejs-core.json`
+- `remix-run-remix.json` (covers Remix v2 + v3 tags), `remix-run-react-router.json`, `nuxt-nuxt.json`, `vuejs-core.json`
 - `vitejs-vite.json`, `webpack-webpack.json`, `web-infra-dev-rspack.json`
 - `rolldown-rolldown.json`, `evanw-esbuild.json`, `swc-project-swc.json`
 
@@ -135,7 +137,8 @@ Also check official blogs:
 | Angular | https://blog.angular.dev |
 | React | https://react.dev/blog |
 | Next.js | https://nextjs.org/blog |
-| Remix | https://remix.run/blog |
+| Remix (v2 + v3 news) | https://remix.run/blog |
+| React Router (RRv7) | https://reactrouter.com/blog (also remix.run/blog) |
 | Nuxt | https://nuxt.com/blog |
 | Vue | https://blog.vuejs.org |
 | Vite | https://vite.dev/blog |
@@ -154,6 +157,9 @@ npm view @angular/core version
 npm view vite version
 npm view @rspack/core version
 npm view react version
+npm view @remix-run/react version    # Remix v2 stable (what we ship)
+npm view @remix-run/react dist-tags  # watch for a v3 pre-release tag
+npm view react-router version        # RRv7 - the Remix v2 migration target
 npm view nuxt version
 npm view vue version
 npm view esbuild version
@@ -229,8 +235,40 @@ If none, say "No immediate risks."}
 ### Next.js
 {Same structure}
 
-### Remix / React Router
-{Same structure}
+### Remix v2 / React Router v7 / Remix v3
+
+Three distinct things now live under the "Remix" name - do NOT collapse them.
+We ship Remix v2 (`@remix-run/*`), so the standing question this section must
+answer every month is: **how healthy is v2, and is it time to start migrating
+off it?**
+
+- **Remix v2 (we use this)**
+  - **Latest version / release activity**: {npm `@remix-run/react`, last release date}
+  - **Maintenance health**: {Active / security-only / effectively frozen. Look
+    at release cadence, open-issue trend, whether the team still merges non-trivial
+    PRs. The Remix team has steered users toward React Router v7 as the path
+    forward - confirm current status, do NOT assume.}
+  - **EOL / sunset signals**: {Any stated end-of-support date, "v2 is done"
+    messaging, or docs pointing to RRv7/v3 instead}
+  - **@nx/remix impact**: {Does our plugin still scaffold/build v2 cleanly?}
+
+- **React Router v7 (the v2 migration target)**
+  - **Releases this month**: {versions}
+  - **Migration story**: {How mechanical is Remix v2 -> RRv7 today? Codemods?
+    Framework mode parity? Known gaps?}
+  - **@nx/remix impact**: {Does our plugin target RRv7 yet? Is a generator path
+    or migration needed? Is there an @nx/react-router story?}
+
+- **Remix v3 (new ground-up framework)**
+  - **Status**: {announced / preview / alpha / beta / stable - it is a fresh
+    framework, NOT a drop-in v2 upgrade. Confirm the current stage.}
+  - **What it is**: {core stack changes vs v2 - note any non-React foundation,
+    new conventions}
+  - **Nx relevance**: {Too early for a plugin? When should we evaluate one?}
+
+- **➡️ Migration recommendation for us**: {Stay on v2 / start planning RRv7 / hold.
+  Tie to v2 health signals above. State the trigger that would flip the call -
+  e.g. "v2 enters security-only" or "RRv7 framework mode hits parity".}
 
 ### Nuxt
 {Same structure}

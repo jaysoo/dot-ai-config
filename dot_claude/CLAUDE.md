@@ -369,7 +369,7 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - Astro cache issues: Clear `.astro` folder
 - Class-string codemods must scope to JSX `className=`/`class=` attrs and known utility-fn calls (`clsx`/`cn`/`twMerge`/`cva`/`classnames`). Bare `\b` word boundaries also match TS prop names (`rounded?:` becomes `rounded-sm?:`) and CSS function calls inside template literals (`blur(${x})` becomes `blur-sm(${x})`). Use lookbehind on `[\s:"'\`!]`boundaries; never run rename across raw string literals indiscriminately. After codemodding source under a pnpm`file:`dep (e.g.,`nx-dev/ui-_`, `graph/ui-_`), run `pnpm install --force`so`node_modules/.pnpm/.../node_modules/<pkg>/` refreshes - otherwise the consumer build sees the stale pre-codemod copy.
 - Tailwind v4 `@source` does NOT support extglob (`!(*.stories|*.spec)`); patterns silently match zero files and utilities never make it into the bundle. Use plain dir paths + `@source not '**/*.{spec,test,stories}.*'`. Same trap if porting any v3 `content` array verbatim.
-- **Shell is fish**: inline `bash -c` / `python3 -c` strings mangle `!` and `!=` (history expansion + line-continuation), silently breaking comparisons (`r['status'] != 'done'` becomes a syntax error or no-op). Single-quoted heredocs (`python3 - <<'EOF'`) are NOT safe either - `\!=` still arrives mangled. Always write the script to a file (Write tool) and run the file. Alternatively `not in (...)` / `<>`. A background CI poller using `!=` polled blindly for 90 min and reported nothing - always confirm a long-running poller emits a real signal before trusting it.
+- **Shell is fish**: inline `bash -c` / `python3 -c` strings mangle `!` and `!=` (history expansion + line-continuation), silently breaking comparisons (`r['status'] != 'done'` becomes a syntax error or no-op). Single-quoted heredocs (`python3 - <<'EOF'`) are NOT safe either - `\!=` still arrives mangled. Always write the script to a file (Write tool) and run the file. Alternatively `not in (...)` / `<>`. A background CI poller using `!=` polled blindly for 90 min and reported nothing - always confirm a long-running poller emits a real signal before trusting it. Also: `$status` after a pipeline reflects only the LAST stage - `git push ... | tail` reports `tail`'s exit (0) and masks a failed push; use `$pipestatus[1]` (or run the command unpiped). Once reported a failed force-push as success (NXC-4548).
 
 ## 📚 Documentation Sites (Astro/Starlight)
 
@@ -557,6 +557,7 @@ When a `packageJsonUpdates` entry bumps multiple packages, the `requires` gate a
 ```
 
 - **Rule:** If two packages can drift to independent versions, give each its own entry + `requires`. NXC-4448 — reviewer caught that a combined cypress gate skipped the dev-server bump for users who'd manually upgraded cypress.
+- **No `x-prompt` on NEW `packageJsonUpdates`** - deprecated, superseded by `nx migrate --include=required|optional|all`. Per-package opt-in is gone: third-party deps (next/react/eslint-config-next/@types/*) are auto-classified `optional` because they are NOT in the target's `@nx/*` `packageGroup`, and the user picks the tier. Keep the `requires` gate (it still controls whether the bump applies). `"cli": "nx"` on a migration entry is inert - omit it. (NXC-4548, Leo.)
 
 ### tsquery Codemod Patterns
 

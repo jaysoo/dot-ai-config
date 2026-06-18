@@ -2,6 +2,10 @@
 
 ### June 2026
 
+- [x] Remote cache deprecation reach-out check (2026-06-17)
+  - Plan: `dot_ai/2026-06-17/tasks/remote-cache-deprecation-reachouts.md`
+  - Summary: Checked Pylon/email/support and Slack-indexed fallback searches for orgs reacting to deprecated remote cache plugins or showing migration interest in Nx Cloud remote cache. Found no direct deprecation-driven outreach; only adjacent Nx Cloud cache/usage support threads from Strike, Mimecast, Island, CIBC, and PayFit.
+
 - [x] Cache safety blog factual/style review (2026-06-15)
   - Plan: `dot_ai/2026-06-15/tasks/cache-safety-blog-review.md`
   - Summary: Reviewed `blog/src/content/blog/2026-06-12-cache-safety-build-integrity.mdoc` for Nx and Turborepo factual correctness and consistency with the blog style guide. Main findings: correct overbroad Nx/Turbo input-hash wording, fix the invalid `tsconfig` example path, soften unsupported "protection by default" language, and make sandboxing enforcement mode precise.

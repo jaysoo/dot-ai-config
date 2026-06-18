@@ -9,7 +9,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | cnw-stats-analyzer    | skill   | 2026-04-01   | 3     |
 | dte-analyzer          | skill   | 2026-05-15   | 2     |
 | netlify-deploy-status | skill   | 2026-03-27   | 1     |
-| reflect               | command | 2026-06-10   | 6     |
+| reflect               | command | 2026-06-18   | 7     |
 | summarize             | command | 2026-06-10   | 6     |
 | dot-claude-guard      | skill   | 2026-06-10   | 6     |
 | customer-deps-audit   | task    | 2026-04-09   | 5     |
