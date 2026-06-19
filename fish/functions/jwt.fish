@@ -23,6 +23,9 @@ function jwt
     cd $worktree_path
     mise trust
     pnpm i
+    if test "$project" = "nx"
+      dotnet restore packages/dotnet/analyzer
+    end
     ln -s $HOME/projects/dot-ai-config/dot_ai .ai
   else
     cd $worktree_path

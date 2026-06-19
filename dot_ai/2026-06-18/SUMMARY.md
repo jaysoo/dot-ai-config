@@ -43,3 +43,25 @@ Branch `Q-503`, commits `40efd83fa0`/`876777a966`/`1748fc51aa`/`53d8dcacfc` (+ s
 - Locked-row blur uses `filter: blur()` (content), not the banned `backdrop-filter`; contrast scrim is a token-based horizontal gradient (opaque center, transparent edges).
 - `git add` listing already-`git rm`'d paths aborts the whole staging (fatal pathspec) - one commit captured only deletions; fixed with `--amend`.
 - fish does not word-split variables: `npx prettier $FILES` passes the whole string as one arg - pass paths explicitly or use a fish list.
+
+## CLOUD-4642 - UTM tracking on clickable Cloud prompt links (DRAFT PR #36028)
+
+Branch `CLOUD-4642`, single squash (commit drifts via self-healing reruns; HEAD `7eab44725d`). Work spanned 2026-06-16..18. Polygraph session `cli-utm-99e98561`.
+
+### Done
+- Made the `https://nx.dev/nx-cloud` marketing link in CLI cloud-setup prompt footers a clickable OSC 8 hyperlink. Visible text stays the clean URL; click target carries `utm_source=nx-cli` + a per-command `utm_medium` (create-nx-workspace, nx-init, nx-migrate, nx-connect). Terminals without OSC 8 fall back to the plain URL.
+- New generic `terminal-link.ts` (`terminalLink` + `supportsHyperlinks` + `parseVersion`), vendored in both `packages/nx` and `packages/create-nx-workspace` (cross-ref comment, no new dep - mirrors the existing output.ts/package-manager.ts split).
+- CNW: baked `NX_CLOUD_HYPERLINK` const embedded directly in footers (single medium). nx core: `nxCloudHyperlink(medium)` helper appended at render since `nx init` and `nx migrate` share one footer with different mediums.
+- Unit tests both packages, `tsc -b` + prettier clean.
+
+### Review iterations
+- First cut used `linkifyNxCloudUrl(footer, medium)` string-replace; reworked to const/helper after a self-review (drift-proof - the bare URL no longer lives in footers, so nothing can silently no-op). Dropped an unused `stream` param; added `parseVersion` table tests + a footer drift-guard. Per Jack, inlined the CNW helper into the const (used once).
+
+### Open
+- PR #36028 still DRAFT, not marked ready.
+
+### Notes / gotchas
+- Write tool strips raw OSC/BEL control bytes -> keep `\u001B]` / `\u0007` as escape text in source; convert via a node script, not inline fish.
+- nx-cloud[bot] `[Self-Healing CI Rerun]` empty commits keep landing on the remote branch -> the commit hash drifts.
+
+Plan doc: `.ai/2026-06-16/tasks/cloud-4642-utm-osc8-cloud-prompt.md`
