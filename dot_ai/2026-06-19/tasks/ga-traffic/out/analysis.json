@@ -1,0 +1,1280 @@
+{
+  "meta": {
+    "generated_by": "process.mjs",
+    "scraped_at": "2026-06-19",
+    "tolerance_pct": 2,
+    "trend_window_months": 12
+  },
+  "mom": [
+    {
+      "month": "2025-01",
+      "partial": false,
+      "all_views": 642659,
+      "home_views": 53912,
+      "docs_views": 0,
+      "all_mom_pct": null,
+      "home_mom_pct": null,
+      "docs_mom_pct": null
+    },
+    {
+      "month": "2025-02",
+      "partial": false,
+      "all_views": 604377,
+      "home_views": 52718,
+      "docs_views": 0,
+      "all_mom_pct": -5.96,
+      "home_mom_pct": -2.21,
+      "docs_mom_pct": null
+    },
+    {
+      "month": "2025-03",
+      "partial": false,
+      "all_views": 682239,
+      "home_views": 57917,
+      "docs_views": 0,
+      "all_mom_pct": 12.88,
+      "home_mom_pct": 9.86,
+      "docs_mom_pct": null
+    },
+    {
+      "month": "2025-04",
+      "partial": false,
+      "all_views": 665851,
+      "home_views": 57401,
+      "docs_views": 0,
+      "all_mom_pct": -2.4,
+      "home_mom_pct": -0.89,
+      "docs_mom_pct": null
+    },
+    {
+      "month": "2025-05",
+      "partial": false,
+      "all_views": 639476,
+      "home_views": 56349,
+      "docs_views": 0,
+      "all_mom_pct": -3.96,
+      "home_mom_pct": -1.83,
+      "docs_mom_pct": null
+    },
+    {
+      "month": "2025-06",
+      "partial": false,
+      "all_views": 622307,
+      "home_views": 54198,
+      "docs_views": 0,
+      "all_mom_pct": -2.68,
+      "home_mom_pct": -3.82,
+      "docs_mom_pct": null
+    },
+    {
+      "month": "2025-07",
+      "partial": false,
+      "all_views": 639134,
+      "home_views": 58459,
+      "docs_views": 0,
+      "all_mom_pct": 2.7,
+      "home_mom_pct": 7.86,
+      "docs_mom_pct": null
+    },
+    {
+      "month": "2025-08",
+      "partial": false,
+      "all_views": 406972,
+      "home_views": 47105,
+      "docs_views": 0,
+      "all_mom_pct": -36.32,
+      "home_mom_pct": -19.42,
+      "docs_mom_pct": null
+    },
+    {
+      "month": "2025-09",
+      "partial": false,
+      "all_views": 530731,
+      "home_views": 59194,
+      "docs_views": 19084,
+      "all_mom_pct": 30.41,
+      "home_mom_pct": 25.66,
+      "docs_mom_pct": null
+    },
+    {
+      "month": "2025-10",
+      "partial": false,
+      "all_views": 521391,
+      "home_views": 57398,
+      "docs_views": 367229,
+      "all_mom_pct": -1.76,
+      "home_mom_pct": -3.03,
+      "docs_mom_pct": 1824.28
+    },
+    {
+      "month": "2025-11",
+      "partial": false,
+      "all_views": 538355,
+      "home_views": 75499,
+      "docs_views": 341762,
+      "all_mom_pct": 3.25,
+      "home_mom_pct": 31.54,
+      "docs_mom_pct": -6.93
+    },
+    {
+      "month": "2025-12",
+      "partial": false,
+      "all_views": 425089,
+      "home_views": 59767,
+      "docs_views": 298518,
+      "all_mom_pct": -21.04,
+      "home_mom_pct": -20.84,
+      "docs_mom_pct": -12.65
+    },
+    {
+      "month": "2026-01",
+      "partial": false,
+      "all_views": 502735,
+      "home_views": 49193,
+      "docs_views": 403073,
+      "all_mom_pct": 18.27,
+      "home_mom_pct": -17.69,
+      "docs_mom_pct": 35.02
+    },
+    {
+      "month": "2026-02",
+      "partial": false,
+      "all_views": 544268,
+      "home_views": 49020,
+      "docs_views": 448565,
+      "all_mom_pct": 8.26,
+      "home_mom_pct": -0.35,
+      "docs_mom_pct": 11.29
+    },
+    {
+      "month": "2026-03",
+      "partial": false,
+      "all_views": 388465,
+      "home_views": 49556,
+      "docs_views": 281899,
+      "all_mom_pct": -28.63,
+      "home_mom_pct": 1.09,
+      "docs_mom_pct": -37.16
+    },
+    {
+      "month": "2026-04",
+      "partial": false,
+      "all_views": 296525,
+      "home_views": 36428,
+      "docs_views": 216101,
+      "all_mom_pct": -23.67,
+      "home_mom_pct": -26.49,
+      "docs_mom_pct": -23.34
+    },
+    {
+      "month": "2026-05",
+      "partial": false,
+      "all_views": 94774,
+      "home_views": 9388,
+      "docs_views": 71525,
+      "all_mom_pct": -68.04,
+      "home_mom_pct": -74.23,
+      "docs_mom_pct": -66.9
+    },
+    {
+      "month": "2026-06",
+      "partial": true,
+      "all_views": 51667,
+      "home_views": 5339,
+      "docs_views": 37757,
+      "all_mom_pct": -45.48,
+      "home_mom_pct": -43.13,
+      "docs_mom_pct": -47.21
+    }
+  ],
+  "trend": {
+    "window_months": 12,
+    "consent_artifact_note": "Window endpoint (2026-05) is consent-suppressed by the 2026-05-01 Cookiebot banner; the drop is a measurement artifact, not lost traffic. See pre_banner trends and cookiebot_2026_05_01 for the organic signal.",
+    "all_views": {
+      "from_month": "2025-06",
+      "to_month": "2026-05",
+      "first_value": 622307,
+      "last_value": 94774,
+      "direction": "down",
+      "ols_slope_per_month": -31879.17,
+      "total_change_pct": -84.77
+    },
+    "home_views": {
+      "from_month": "2025-06",
+      "to_month": "2026-05",
+      "first_value": 54198,
+      "last_value": 9388,
+      "direction": "down",
+      "ols_slope_per_month": -2675.7,
+      "total_change_pct": -82.68
+    },
+    "pre_banner": {
+      "through_month": "2026-04",
+      "window_months": 11,
+      "all_views": {
+        "from_month": "2025-06",
+        "to_month": "2026-04",
+        "first_value": 622307,
+        "last_value": 296525,
+        "direction": "down",
+        "ols_slope_per_month": -21563.56,
+        "total_change_pct": -52.35
+      },
+      "home_views": {
+        "from_month": "2025-06",
+        "to_month": "2026-04",
+        "first_value": 54198,
+        "last_value": 36428,
+        "direction": "down",
+        "ols_slope_per_month": -1239.55,
+        "total_change_pct": -32.79
+      }
+    }
+  },
+  "event_impacts": [
+    {
+      "date": "2025-05-01",
+      "label": "GTM added",
+      "type": "tracking",
+      "before_mean": null,
+      "before_days": 0,
+      "after_mean": 21322.86,
+      "after_days": 14,
+      "after_window": "inclusive of event day (date..date+13)",
+      "change_pct": null,
+      "reason": "before-window empty: event predates daily span start"
+    },
+    {
+      "date": "2025-09-29",
+      "label": "astro-docs /docs live",
+      "type": "migration",
+      "before_mean": 16583.93,
+      "before_days": 14,
+      "after_mean": 16577.5,
+      "after_days": 14,
+      "after_window": "inclusive of event day (date..date+13)",
+      "change_pct": -0.04
+    },
+    {
+      "date": "2026-02-02",
+      "label": "server_page_view starts",
+      "type": "tracking",
+      "before_mean": 22140.71,
+      "before_days": 14,
+      "after_mean": 19302.64,
+      "after_days": 14,
+      "after_window": "inclusive of event day (date..date+13)",
+      "change_pct": -12.82
+    },
+    {
+      "date": "2026-02-04",
+      "label": "Vercel -> Netlify (DNS)",
+      "type": "platform",
+      "before_mean": 22937.29,
+      "before_days": 14,
+      "after_mean": 18933.5,
+      "after_days": 14,
+      "after_window": "inclusive of event day (date..date+13)",
+      "change_pct": -17.46
+    },
+    {
+      "date": "2026-02-10",
+      "label": "GTM-only cutover",
+      "type": "tracking",
+      "before_mean": 25288.29,
+      "before_days": 14,
+      "after_mean": 18636.93,
+      "after_days": 14,
+      "after_window": "inclusive of event day (date..date+13)",
+      "change_pct": -26.3
+    },
+    {
+      "date": "2026-02-27",
+      "label": "Framer migration",
+      "type": "platform",
+      "before_mean": 18693.29,
+      "before_days": 14,
+      "after_mean": 14859.29,
+      "after_days": 14,
+      "after_window": "inclusive of event day (date..date+13)",
+      "change_pct": -20.51
+    },
+    {
+      "date": "2026-04-16",
+      "label": "nx-blog standalone",
+      "type": "platform",
+      "before_mean": 10063.5,
+      "before_days": 14,
+      "after_mean": 9428.5,
+      "after_days": 14,
+      "after_window": "inclusive of event day (date..date+13)",
+      "change_pct": -6.31
+    },
+    {
+      "date": "2026-04-17",
+      "label": "nx-dev pared down",
+      "type": "platform",
+      "before_mean": 10077,
+      "before_days": 14,
+      "after_mean": 9332.5,
+      "after_days": 14,
+      "after_window": "inclusive of event day (date..date+13)",
+      "change_pct": -7.39
+    },
+    {
+      "date": "2026-04-30",
+      "label": "bot-probe 404s",
+      "type": "tracking",
+      "before_mean": 9428.5,
+      "before_days": 14,
+      "after_mean": 3745.64,
+      "after_days": 14,
+      "after_window": "inclusive of event day (date..date+13)",
+      "change_pct": -60.27
+    },
+    {
+      "date": "2026-05-01",
+      "label": "Cookiebot banner",
+      "type": "consent",
+      "before_mean": 9332.5,
+      "before_days": 14,
+      "after_mean": 3239.36,
+      "after_days": 14,
+      "after_window": "inclusive of event day (date..date+13)",
+      "change_pct": -65.29
+    }
+  ],
+  "cookiebot_2026_05_01": {
+    "date": "2026-05-01",
+    "label": "Cookiebot banner",
+    "type": "consent",
+    "before_mean": 9332.5,
+    "before_days": 14,
+    "after_mean": 3239.36,
+    "after_days": 14,
+    "after_window": "inclusive of event day (date..date+13)",
+    "change_pct": -65.29
+  },
+  "server_page_view": {
+    "first_recorded": "2026-02-02",
+    "peak_day": "2026-04-03",
+    "peak_value": 273328,
+    "monthly_totals": {
+      "2026-02": 2613475,
+      "2026-03": 3341956,
+      "2026-04": 5471799,
+      "2026-05": 5119810,
+      "2026-06": 3228509
+    },
+    "note": "Consent-immune server event (Measurement Protocol); mostly AI-crawler traffic. Not counted in Views."
+  },
+  "daily_vs_monthly_check": [
+    {
+      "month": "2025-01",
+      "comparable": false,
+      "reason": "no daily coverage",
+      "monthly_all_views": 642659,
+      "daily_sum_all_views": null,
+      "diff": null,
+      "diff_pct": null,
+      "within_tolerance": null
+    },
+    {
+      "month": "2025-02",
+      "comparable": false,
+      "reason": "no daily coverage",
+      "monthly_all_views": 604377,
+      "daily_sum_all_views": null,
+      "diff": null,
+      "diff_pct": null,
+      "within_tolerance": null
+    },
+    {
+      "month": "2025-03",
+      "comparable": false,
+      "reason": "no daily coverage",
+      "monthly_all_views": 682239,
+      "daily_sum_all_views": null,
+      "diff": null,
+      "diff_pct": null,
+      "within_tolerance": null
+    },
+    {
+      "month": "2025-04",
+      "comparable": false,
+      "reason": "no daily coverage",
+      "monthly_all_views": 665851,
+      "daily_sum_all_views": null,
+      "diff": null,
+      "diff_pct": null,
+      "within_tolerance": null
+    },
+    {
+      "month": "2025-05",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 639476,
+          "daily_sum": 639476,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 56349,
+          "daily_sum": 56349,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "diff": 0,
+          "diff_pct": null,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "comparable": false,
+          "reason": "daily coverage for this series starts after month"
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 639476,
+      "daily_sum_all_views": 639476,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2025-06",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 622307,
+          "daily_sum": 622307,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 54198,
+          "daily_sum": 54198,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "diff": 0,
+          "diff_pct": null,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "comparable": false,
+          "reason": "daily coverage for this series starts after month"
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 622307,
+      "daily_sum_all_views": 622307,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2025-07",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 639134,
+          "daily_sum": 639134,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 58459,
+          "daily_sum": 58459,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "diff": 0,
+          "diff_pct": null,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "comparable": false,
+          "reason": "daily coverage for this series starts after month"
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 639134,
+      "daily_sum_all_views": 639134,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2025-08",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 406972,
+          "daily_sum": 406972,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 47105,
+          "daily_sum": 47105,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "diff": 0,
+          "diff_pct": null,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "comparable": false,
+          "reason": "daily coverage for this series starts after month"
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 406972,
+      "daily_sum_all_views": 406972,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2025-09",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 530731,
+          "daily_sum": 530731,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 59194,
+          "daily_sum": 59194,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 19084,
+          "daily_sum": 19033,
+          "diff": -51,
+          "diff_pct": -0.27,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "comparable": false,
+          "reason": "daily coverage for this series starts after month"
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 530731,
+      "daily_sum_all_views": 530731,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2025-10",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 521391,
+          "daily_sum": 521391,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 57398,
+          "daily_sum": 57398,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 367229,
+          "daily_sum": 367229,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "comparable": false,
+          "reason": "daily coverage for this series starts after month"
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 521391,
+      "daily_sum_all_views": 521391,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2025-11",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 538355,
+          "daily_sum": 538355,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 75499,
+          "daily_sum": 75499,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 341762,
+          "daily_sum": 341762,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "comparable": false,
+          "reason": "daily coverage for this series starts after month"
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 538355,
+      "daily_sum_all_views": 538355,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2025-12",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 425089,
+          "daily_sum": 425089,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 59767,
+          "daily_sum": 59767,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 298518,
+          "daily_sum": 298518,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "comparable": false,
+          "reason": "daily coverage for this series starts after month"
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 425089,
+      "daily_sum_all_views": 425089,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2026-01",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 502735,
+          "daily_sum": 502735,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 49193,
+          "daily_sum": 49193,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 403073,
+          "daily_sum": 403073,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 0,
+          "daily_sum": 0,
+          "comparable": false,
+          "reason": "daily coverage for this series starts after month"
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 502735,
+      "daily_sum_all_views": 502735,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2026-02",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 544268,
+          "daily_sum": 544268,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 49020,
+          "daily_sum": 49020,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 448565,
+          "daily_sum": 448565,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 2613475,
+          "daily_sum": 2613475,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 544268,
+      "daily_sum_all_views": 544268,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2026-03",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 388465,
+          "daily_sum": 388465,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 49556,
+          "daily_sum": 49556,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 281899,
+          "daily_sum": 281899,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 3341956,
+          "daily_sum": 3341956,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 388465,
+      "daily_sum_all_views": 388465,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2026-04",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 296525,
+          "daily_sum": 296525,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 36428,
+          "daily_sum": 36428,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 216101,
+          "daily_sum": 216101,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 5471799,
+          "daily_sum": 5471799,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 296525,
+      "daily_sum_all_views": 296525,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2026-05",
+      "comparable": true,
+      "series": {
+        "all_views": {
+          "monthly": 94774,
+          "daily_sum": 94774,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "home_views": {
+          "monthly": 9388,
+          "daily_sum": 9388,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "docs_views": {
+          "monthly": 71525,
+          "daily_sum": 71525,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        },
+        "server_page_view": {
+          "monthly": 5119810,
+          "daily_sum": 5119810,
+          "diff": 0,
+          "diff_pct": 0,
+          "within_tolerance": true,
+          "comparable": true
+        }
+      },
+      "within_tolerance": true,
+      "monthly_all_views": 94774,
+      "daily_sum_all_views": 94774,
+      "diff": 0,
+      "diff_pct": 0
+    },
+    {
+      "month": "2026-06",
+      "comparable": false,
+      "reason": "partial month",
+      "monthly_all_views": 51667,
+      "daily_sum_all_views": 51667,
+      "diff": null,
+      "diff_pct": null,
+      "within_tolerance": null
+    }
+  ],
+  "source_crosscheck": {
+    "purpose": "Validate that GA4 standard Reports (Pages and screens) and GA4 Explore agree, so the Jan-Apr 2025 (Reports) + May 2025-Jun 2026 (Explore) stitch is sound.",
+    "checks": [
+      {
+        "month": "2025-05",
+        "sources_agree": true,
+        "segments_match": true,
+        "pass": true,
+        "reports_vs_explore": [
+          {
+            "field": "all_views",
+            "reports": 639476,
+            "explore": 639476,
+            "match": true
+          },
+          {
+            "field": "home_views",
+            "reports": 56349,
+            "explore": 56349,
+            "match": true
+          }
+        ],
+        "vs_segments": [
+          {
+            "field": "all_views",
+            "reports": 639476,
+            "segments": 639476,
+            "match": true
+          },
+          {
+            "field": "home_views",
+            "reports": 56349,
+            "segments": 56349,
+            "match": true
+          }
+        ]
+      },
+      {
+        "month": "2025-08",
+        "sources_agree": true,
+        "segments_match": true,
+        "pass": true,
+        "reports_vs_explore": [
+          {
+            "field": "all_views",
+            "reports": 406972,
+            "explore": 406972,
+            "match": true
+          },
+          {
+            "field": "home_views",
+            "reports": 47105,
+            "explore": 47105,
+            "match": true
+          }
+        ],
+        "vs_segments": [
+          {
+            "field": "all_views",
+            "reports": 406972,
+            "segments": 406972,
+            "match": true
+          },
+          {
+            "field": "home_views",
+            "reports": 47105,
+            "segments": 47105,
+            "match": true
+          }
+        ]
+      }
+    ],
+    "all_pass": true,
+    "key_finding": "Source crosscheck: 2/2 overlap months pass (Reports == Explore == monthly-segments at 2025-05, 2025-08), confirming the two-source stitch."
+  },
+  "segment_check": {
+    "segments": [
+      "home",
+      "docs",
+      "blog",
+      "marketing",
+      "others"
+    ],
+    "blog_marketing_measured_from": "2025-05",
+    "others_clamp_days": 0,
+    "daily_days": 414,
+    "monthly": [
+      {
+        "month": "2025-01",
+        "all_views": 642659,
+        "home": 53912,
+        "docs": 0,
+        "blog": null,
+        "marketing": null,
+        "others": 588747,
+        "segment_sum": 642659,
+        "diff": 0,
+        "blog_marketing_measured": false
+      },
+      {
+        "month": "2025-02",
+        "all_views": 604377,
+        "home": 52718,
+        "docs": 0,
+        "blog": null,
+        "marketing": null,
+        "others": 551659,
+        "segment_sum": 604377,
+        "diff": 0,
+        "blog_marketing_measured": false
+      },
+      {
+        "month": "2025-03",
+        "all_views": 682239,
+        "home": 57917,
+        "docs": 0,
+        "blog": null,
+        "marketing": null,
+        "others": 624322,
+        "segment_sum": 682239,
+        "diff": 0,
+        "blog_marketing_measured": false
+      },
+      {
+        "month": "2025-04",
+        "all_views": 665851,
+        "home": 57401,
+        "docs": 0,
+        "blog": null,
+        "marketing": null,
+        "others": 608450,
+        "segment_sum": 665851,
+        "diff": 0,
+        "blog_marketing_measured": false
+      },
+      {
+        "month": "2025-05",
+        "all_views": 639476,
+        "home": 56349,
+        "docs": 0,
+        "blog": 32878,
+        "marketing": 18264,
+        "others": 531985,
+        "segment_sum": 639476,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2025-06",
+        "all_views": 622307,
+        "home": 54198,
+        "docs": 0,
+        "blog": 28116,
+        "marketing": 36226,
+        "others": 503767,
+        "segment_sum": 622307,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2025-07",
+        "all_views": 639134,
+        "home": 58459,
+        "docs": 0,
+        "blog": 29408,
+        "marketing": 17650,
+        "others": 533617,
+        "segment_sum": 639134,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2025-08",
+        "all_views": 406972,
+        "home": 47105,
+        "docs": 0,
+        "blog": 18570,
+        "marketing": 9093,
+        "others": 332204,
+        "segment_sum": 406972,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2025-09",
+        "all_views": 530731,
+        "home": 59194,
+        "docs": 19084,
+        "blog": 35553,
+        "marketing": 11094,
+        "others": 405806,
+        "segment_sum": 530731,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2025-10",
+        "all_views": 521391,
+        "home": 57398,
+        "docs": 367229,
+        "blog": 27326,
+        "marketing": 12162,
+        "others": 57276,
+        "segment_sum": 521391,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2025-11",
+        "all_views": 538355,
+        "home": 75499,
+        "docs": 341762,
+        "blog": 25381,
+        "marketing": 11728,
+        "others": 83985,
+        "segment_sum": 538355,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2025-12",
+        "all_views": 425089,
+        "home": 59767,
+        "docs": 298518,
+        "blog": 22212,
+        "marketing": 10437,
+        "others": 34155,
+        "segment_sum": 425089,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2026-01",
+        "all_views": 502735,
+        "home": 49193,
+        "docs": 403073,
+        "blog": 21152,
+        "marketing": 11200,
+        "others": 18117,
+        "segment_sum": 502735,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2026-02",
+        "all_views": 544268,
+        "home": 49020,
+        "docs": 448565,
+        "blog": 20307,
+        "marketing": 11037,
+        "others": 15339,
+        "segment_sum": 544268,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2026-03",
+        "all_views": 388465,
+        "home": 49556,
+        "docs": 281899,
+        "blog": 22045,
+        "marketing": 14841,
+        "others": 20124,
+        "segment_sum": 388465,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2026-04",
+        "all_views": 296525,
+        "home": 36428,
+        "docs": 216101,
+        "blog": 17090,
+        "marketing": 16949,
+        "others": 9957,
+        "segment_sum": 296525,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2026-05",
+        "all_views": 94774,
+        "home": 9388,
+        "docs": 71525,
+        "blog": 5921,
+        "marketing": 3894,
+        "others": 4046,
+        "segment_sum": 94774,
+        "diff": 0,
+        "blog_marketing_measured": true
+      },
+      {
+        "month": "2026-06",
+        "all_views": 51667,
+        "home": 5339,
+        "docs": 37757,
+        "blog": 3928,
+        "marketing": 2228,
+        "others": 2415,
+        "segment_sum": 51667,
+        "diff": 0,
+        "blog_marketing_measured": true
+      }
+    ],
+    "note": "Disjoint segments; others = all - (home+docs+blog+marketing) so segment_sum == all_views (diff 0). blog/marketing measured from 2025-05 (daily coverage); before that they are folded into Others. docs is ~0 before ~Oct 2025 (pre-astro-migration docs lived at root paths -> Others)."
+  },
+  "key_findings": [
+    "Last 12 full months all_views trend: down (-84.77% total, slope -31879.17/mo). CAVEAT: the 2026-05 endpoint is consent-suppressed by the Cookiebot banner (see below), so this is NOT all organic traffic loss. Pre-banner (through 2026-04) all_views trend: down (-52.35% total).",
+    "Home views (no docs-migration confound) trend: down (-82.68% total) - but this is mostly a single 2026-05 measurement cliff: home was roughly flat (~54K/mo) through 2026-04 (pre-banner trend -32.79%), then dropped to 9388 in May 2026 from the same Cookiebot banner. Read it as flat-then-cliff, not a gradual 12-month decline.",
+    "2026-05-01 Cookiebot consent banner: daily all_views 9332.5 -> 3239.36 (-65.29% over a 14d-before/14d-after window).",
+    "server_page_view first recorded 2026-02-02; peak 273328 on 2026-04-03 (Measurement Protocol, mostly AI crawlers, not in Views).",
+    "Daily-vs-monthly integrity (all four series: all/home/docs/server): 13/13 comparable months within 2% tolerance.",
+    "Source crosscheck: 2/2 overlap months pass (Reports == Explore == monthly-segments at 2025-05, 2025-08), confirming the two-source stitch.",
+    "No /2 normalization applied: pre-GTM (Jan-Apr 2025) ~650K/mo matches post-GTM (May-Jul 2025) ~635K, disproving double-counting.",
+    "Page-type mix Apr 2026 (of 296525 views): docs 216101 (73%), others 9957 (3%), home 36428 (12%), blog 17090 (6%), marketing 16949 (6%). Docs dominates; the decline is broad-based across types."
+  ]
+}

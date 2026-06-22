@@ -1,0 +1,21 @@
+{
+  "purpose": "Attempt to isolate a HUMAN server-side signal from server_page_view using GA4's Bot and AI Tool dimensions, to test whether the Mar-Apr 2026 client decline was measurement (humans stable) or real (humans down). Conclusion: GA's Bot/AI-Tool flags do NOT reliably separate humans from AI agents - even the cleanest proxy (Bot=false AND AI-Tool=false) grows implausibly (2-4x in 2 months), so it is still dominated by undetected AI/agent traffic. Server-side GA cannot settle the question.",
+  "scraped_at": "2026-06-19",
+  "dimension_values": {
+    "Bot": { "note": "boolean-ish: (not set)/false/true", "full_period_share": { "false": "62.8%", "true": "29.4%", "not_set": "7.8%" } },
+    "AI Tool": { "note": "ALSO boolean-ish: (not set)/false/true, NOT tool names", "full_period_share": { "false": "89.9%", "true": "7.4%", "not_set": "2.7%" } }
+  },
+  "monthly": {
+    "_comment": "server_page_view Event count by month. Compare client_docs (page_view) against the server cuts.",
+    "client_docs_page_view": { "2026-02": 448565, "2026-03": 281899, "2026-04": 216101, "2026-05": 71525 },
+    "server_all_pages": {
+      "bot_false":            { "2026-02": 926202, "2026-03": 2609484, "2026-04": 3741886, "2026-05": 3210264 },
+      "bot_false_ai_false":   { "2026-02": 835436, "2026-03": 2306804, "2026-04": 3395684, "2026-05": 2890336 }
+    },
+    "server_docs": {
+      "bot_false":            { "2026-02": 927278, "2026-03": 2111149, "2026-04": 1798042, "2026-05": 1495259 },
+      "bot_false_ai_false":   { "2026-02": 836715, "2026-03": 1852416, "2026-04": 1557344, "2026-05": 1273648 }
+    }
+  },
+  "verdict": "Inconclusive from server side. Client docs page_view halved Feb->Apr (448k->216k) while EVERY server cut (incl. Bot=false AND AI-Tool=false) roughly DOUBLED. Real human traffic does not 2x in two months, so the server 'human proxy' is contaminated by undetected agents - GA4 cannot isolate humans here. The May Cookiebot cliff is unambiguously measurement; the Mar-Apr decline coincides with the Feb infra/tracking cluster (Netlify cutover, GTM-only) and is most likely substantially measurement, but the exact real-vs-measurement split needs a consent-independent, properly bot-filtered source (Netlify Analytics / server logs), not GA4."
+}

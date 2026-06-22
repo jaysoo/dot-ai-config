@@ -1,0 +1,19 @@
+{
+  "purpose": "MECE page-type segmentation of client page_view Views. Segments are mutually exclusive and sum to All (Others = All - the rest).",
+  "metric": "Views = GA4 screenPageViews (client page_view).",
+  "segments": {
+    "home": { "rule": "pagePath exactly matches /", "raw": "daily-home.json / monthly-segments.home_views" },
+    "docs": { "rule": "pagePath begins with /docs", "raw": "daily-docs.json / monthly-segments.docs_views", "note": "astro-docs; ~0 before ~Sep 2025 (docs lived at root paths before the migration -> those land in Others for that period)" },
+    "blog": { "rule": "pagePath begins with /blog", "raw": "daily-blog.json" },
+    "marketing": {
+      "rule": "pagePath matches regex ^/(brands|careers|community|company|contact|customer-stories|customers|enterprise|java|nx-cloud|partners|pricing|react|remote-cache|resources|solutions|webinars)(/.*)?$",
+      "raw": "daily-marketing.json",
+      "note": "The Framer-hosted marketing pages (from the nx.dev Framer sitemap). These existed as next.js pages before the 2026-02-27 Framer migration and as Framer after; the path set is stable so the regex captures both eras. Homepage '/' is Framer too but is counted separately as Home."
+    },
+    "others": { "rule": "All - (home + docs + blog + marketing)", "note": "Everything else: /getting-started, /reference, /nx-api, /concepts, /recipes, /troubleshooting, etc. Pre-Oct-2025 this is large because docs lived at root paths." }
+  },
+  "coverage": {
+    "daily": "blog + marketing daily are 2025-05-01..2026-06-18 (Explore is capped at ~14mo retention).",
+    "pre_2025_05": "For Jan-Apr 2025 (before daily coverage) blog and marketing are NOT separately scraped; they fall into Others on the monthly chart. Flagged in the data as blog/marketing = null for those months."
+  }
+}

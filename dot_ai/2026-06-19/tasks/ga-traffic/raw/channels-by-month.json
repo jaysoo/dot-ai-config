@@ -1,0 +1,680 @@
+{
+  "purpose": "Monthly client page_view (Views) by Session default channel group, for Home (pagePath=/), Docs (begins /docs), and Others (pagePath does NOT match home/docs/blog/marketing - validated to within 1% of the page-type others_views). *Nxdev = Hostname=nx.dev exactly. Top 4 channels explicit; \"other\" = the rest. Docs = Organic-led decline (AI/SEO); Home = Direct-led (technical/Framer); Others pre-Sep-2025 = the root-path docs (/getting-started/* etc.) before they moved to /docs - also Organic-led, so it continues the docs story backward across the migration.",
+  "metric": "Views (client page_view)",
+  "scraped_at": "2026-06-22",
+  "channels": [
+    "organic_search",
+    "direct",
+    "referral",
+    "unassigned",
+    "other"
+  ],
+  "home": [
+    {
+      "month": "2025-05",
+      "organic_search": 35418,
+      "direct": 11564,
+      "referral": 6601,
+      "unassigned": 1669,
+      "other": 1097
+    },
+    {
+      "month": "2025-06",
+      "organic_search": 32635,
+      "direct": 11781,
+      "referral": 6721,
+      "unassigned": 1157,
+      "other": 1904
+    },
+    {
+      "month": "2025-07",
+      "organic_search": 34203,
+      "direct": 14957,
+      "referral": 6848,
+      "unassigned": 1305,
+      "other": 1146
+    },
+    {
+      "month": "2025-08",
+      "organic_search": 25429,
+      "direct": 14463,
+      "referral": 5533,
+      "unassigned": 824,
+      "other": 856
+    },
+    {
+      "month": "2025-09",
+      "organic_search": 36074,
+      "direct": 14689,
+      "referral": 6378,
+      "unassigned": 1044,
+      "other": 1009
+    },
+    {
+      "month": "2025-10",
+      "organic_search": 31722,
+      "direct": 18153,
+      "referral": 4935,
+      "unassigned": 1743,
+      "other": 845
+    },
+    {
+      "month": "2025-11",
+      "organic_search": 27612,
+      "direct": 41139,
+      "referral": 4238,
+      "unassigned": 1611,
+      "other": 899
+    },
+    {
+      "month": "2025-12",
+      "organic_search": 25715,
+      "direct": 28168,
+      "referral": 3847,
+      "unassigned": 1455,
+      "other": 582
+    },
+    {
+      "month": "2026-01",
+      "organic_search": 30113,
+      "direct": 12938,
+      "referral": 4020,
+      "unassigned": 1661,
+      "other": 461
+    },
+    {
+      "month": "2026-02",
+      "organic_search": 25643,
+      "direct": 17547,
+      "referral": 3621,
+      "unassigned": 1726,
+      "other": 483
+    },
+    {
+      "month": "2026-03",
+      "organic_search": 26848,
+      "direct": 15881,
+      "referral": 4201,
+      "unassigned": 2127,
+      "other": 499
+    },
+    {
+      "month": "2026-04",
+      "organic_search": 22531,
+      "direct": 8436,
+      "referral": 3348,
+      "unassigned": 1690,
+      "other": 423
+    },
+    {
+      "month": "2026-05",
+      "organic_search": 5449,
+      "direct": 2156,
+      "referral": 1014,
+      "unassigned": 600,
+      "other": 169
+    },
+    {
+      "month": "2026-06",
+      "organic_search": 3328,
+      "direct": 1171,
+      "referral": 481,
+      "unassigned": 215,
+      "other": 144
+    }
+  ],
+  "docs": [
+    {
+      "month": "2025-05",
+      "organic_search": 1,
+      "direct": 0,
+      "referral": 1,
+      "unassigned": 0,
+      "other": 0
+    },
+    {
+      "month": "2025-06",
+      "organic_search": 2,
+      "direct": 0,
+      "referral": 1,
+      "unassigned": 0,
+      "other": 1
+    },
+    {
+      "month": "2025-07",
+      "organic_search": 3,
+      "direct": 0,
+      "referral": 1,
+      "unassigned": 0,
+      "other": 0
+    },
+    {
+      "month": "2025-09",
+      "organic_search": 14300,
+      "direct": 2360,
+      "referral": 1203,
+      "unassigned": 1053,
+      "other": 168
+    },
+    {
+      "month": "2025-10",
+      "organic_search": 277865,
+      "direct": 37474,
+      "referral": 24604,
+      "unassigned": 23168,
+      "other": 4118
+    },
+    {
+      "month": "2025-11",
+      "organic_search": 255281,
+      "direct": 39712,
+      "referral": 21353,
+      "unassigned": 22690,
+      "other": 2726
+    },
+    {
+      "month": "2025-12",
+      "organic_search": 220673,
+      "direct": 36612,
+      "referral": 18772,
+      "unassigned": 19798,
+      "other": 2663
+    },
+    {
+      "month": "2026-01",
+      "organic_search": 228726,
+      "direct": 37713,
+      "referral": 20460,
+      "unassigned": 114373,
+      "other": 1801
+    },
+    {
+      "month": "2026-02",
+      "organic_search": 194596,
+      "direct": 186648,
+      "referral": 17016,
+      "unassigned": 48564,
+      "other": 1741
+    },
+    {
+      "month": "2026-03",
+      "organic_search": 183289,
+      "direct": 66175,
+      "referral": 16098,
+      "unassigned": 13736,
+      "other": 2601
+    },
+    {
+      "month": "2026-04",
+      "organic_search": 149127,
+      "direct": 37439,
+      "referral": 13646,
+      "unassigned": 12800,
+      "other": 3089
+    },
+    {
+      "month": "2026-05",
+      "organic_search": 46684,
+      "direct": 12463,
+      "referral": 4538,
+      "unassigned": 6817,
+      "other": 1023
+    },
+    {
+      "month": "2026-06",
+      "organic_search": 26020,
+      "direct": 6985,
+      "referral": 2527,
+      "unassigned": 1587,
+      "other": 638
+    }
+  ],
+  "others": [
+    {
+      "month": "2025-05",
+      "organic_search": 393403,
+      "direct": 73214,
+      "referral": 35439,
+      "unassigned": 23738,
+      "other": 6085
+    },
+    {
+      "month": "2025-06",
+      "organic_search": 379114,
+      "direct": 66525,
+      "referral": 33036,
+      "unassigned": 19011,
+      "other": 5970
+    },
+    {
+      "month": "2025-07",
+      "organic_search": 398554,
+      "direct": 71640,
+      "referral": 36714,
+      "unassigned": 20865,
+      "other": 5554
+    },
+    {
+      "month": "2025-08",
+      "organic_search": 247180,
+      "direct": 43242,
+      "referral": 25229,
+      "unassigned": 13182,
+      "other": 3237
+    },
+    {
+      "month": "2025-09",
+      "organic_search": 304235,
+      "direct": 52615,
+      "referral": 28303,
+      "unassigned": 16249,
+      "other": 4191
+    },
+    {
+      "month": "2025-10",
+      "organic_search": 14162,
+      "direct": 33726,
+      "referral": 1893,
+      "unassigned": 6560,
+      "other": 430
+    },
+    {
+      "month": "2025-11",
+      "organic_search": 10748,
+      "direct": 48375,
+      "referral": 1470,
+      "unassigned": 19493,
+      "other": 3250
+    },
+    {
+      "month": "2025-12",
+      "organic_search": 9193,
+      "direct": 15569,
+      "referral": 1128,
+      "unassigned": 7160,
+      "other": 748
+    },
+    {
+      "month": "2026-01",
+      "organic_search": 8705,
+      "direct": 5994,
+      "referral": 1204,
+      "unassigned": 1676,
+      "other": 119
+    },
+    {
+      "month": "2026-02",
+      "organic_search": 6658,
+      "direct": 5429,
+      "referral": 850,
+      "unassigned": 1536,
+      "other": 295
+    },
+    {
+      "month": "2026-03",
+      "organic_search": 7860,
+      "direct": 7380,
+      "referral": 1767,
+      "unassigned": 2039,
+      "other": 446
+    },
+    {
+      "month": "2026-04",
+      "organic_search": 4510,
+      "direct": 3471,
+      "referral": 842,
+      "unassigned": 568,
+      "other": 203
+    },
+    {
+      "month": "2026-05",
+      "organic_search": 1435,
+      "direct": 1488,
+      "referral": 232,
+      "unassigned": 509,
+      "other": 339
+    },
+    {
+      "month": "2026-06",
+      "organic_search": 911,
+      "direct": 1188,
+      "referral": 95,
+      "unassigned": 174,
+      "other": 15
+    }
+  ],
+  "homeNxdev": [
+    {
+      "month": "2025-05",
+      "organic_search": 35285,
+      "direct": 10775,
+      "referral": 6461,
+      "unassigned": 1641,
+      "other": 1039
+    },
+    {
+      "month": "2025-06",
+      "organic_search": 32498,
+      "direct": 10979,
+      "referral": 6621,
+      "unassigned": 1150,
+      "other": 1871
+    },
+    {
+      "month": "2025-07",
+      "organic_search": 34047,
+      "direct": 11767,
+      "referral": 6737,
+      "unassigned": 1303,
+      "other": 1092
+    },
+    {
+      "month": "2025-08",
+      "organic_search": 25208,
+      "direct": 8543,
+      "referral": 5406,
+      "unassigned": 794,
+      "other": 668
+    },
+    {
+      "month": "2025-09",
+      "organic_search": 35574,
+      "direct": 11056,
+      "referral": 6300,
+      "unassigned": 1026,
+      "other": 631
+    },
+    {
+      "month": "2025-10",
+      "organic_search": 31436,
+      "direct": 14438,
+      "referral": 4849,
+      "unassigned": 1724,
+      "other": 722
+    },
+    {
+      "month": "2025-11",
+      "organic_search": 27388,
+      "direct": 38247,
+      "referral": 4171,
+      "unassigned": 1603,
+      "other": 613
+    },
+    {
+      "month": "2025-12",
+      "organic_search": 25432,
+      "direct": 25903,
+      "referral": 3796,
+      "unassigned": 1454,
+      "other": 522
+    },
+    {
+      "month": "2026-01",
+      "organic_search": 29895,
+      "direct": 11169,
+      "referral": 3978,
+      "unassigned": 1655,
+      "other": 458
+    },
+    {
+      "month": "2026-02",
+      "organic_search": 25426,
+      "direct": 15744,
+      "referral": 3545,
+      "unassigned": 1711,
+      "other": 482
+    },
+    {
+      "month": "2026-03",
+      "organic_search": 26703,
+      "direct": 14844,
+      "referral": 4173,
+      "unassigned": 2120,
+      "other": 499
+    },
+    {
+      "month": "2026-04",
+      "organic_search": 22429,
+      "direct": 7999,
+      "referral": 3306,
+      "unassigned": 1688,
+      "other": 423
+    },
+    {
+      "month": "2026-05",
+      "organic_search": 5445,
+      "direct": 2057,
+      "referral": 1009,
+      "unassigned": 600,
+      "other": 169
+    },
+    {
+      "month": "2026-06",
+      "organic_search": 3317,
+      "direct": 1095,
+      "referral": 480,
+      "unassigned": 215,
+      "other": 143
+    }
+  ],
+  "docsNxdev": [
+    {
+      "month": "2025-05",
+      "organic_search": 1,
+      "direct": 0,
+      "referral": 1,
+      "unassigned": 0,
+      "other": 0
+    },
+    {
+      "month": "2025-06",
+      "organic_search": 2,
+      "direct": 0,
+      "referral": 1,
+      "unassigned": 0,
+      "other": 1
+    },
+    {
+      "month": "2025-07",
+      "organic_search": 3,
+      "direct": 0,
+      "referral": 1,
+      "unassigned": 0,
+      "other": 0
+    },
+    {
+      "month": "2025-09",
+      "organic_search": 13995,
+      "direct": 2047,
+      "referral": 1189,
+      "unassigned": 1011,
+      "other": 165
+    },
+    {
+      "month": "2025-10",
+      "organic_search": 274551,
+      "direct": 36649,
+      "referral": 24195,
+      "unassigned": 22842,
+      "other": 4085
+    },
+    {
+      "month": "2025-11",
+      "organic_search": 250810,
+      "direct": 37179,
+      "referral": 20828,
+      "unassigned": 22361,
+      "other": 2688
+    },
+    {
+      "month": "2025-12",
+      "organic_search": 216874,
+      "direct": 34622,
+      "referral": 18399,
+      "unassigned": 19356,
+      "other": 2642
+    },
+    {
+      "month": "2026-01",
+      "organic_search": 226247,
+      "direct": 34913,
+      "referral": 20219,
+      "unassigned": 20339,
+      "other": 1792
+    },
+    {
+      "month": "2026-02",
+      "organic_search": 192361,
+      "direct": 180899,
+      "referral": 16697,
+      "unassigned": 16218,
+      "other": 1738
+    },
+    {
+      "month": "2026-03",
+      "organic_search": 181469,
+      "direct": 52202,
+      "referral": 15757,
+      "unassigned": 13551,
+      "other": 2509
+    },
+    {
+      "month": "2026-04",
+      "organic_search": 148146,
+      "direct": 30542,
+      "referral": 13564,
+      "unassigned": 12714,
+      "other": 3063
+    },
+    {
+      "month": "2026-05",
+      "organic_search": 46649,
+      "direct": 12266,
+      "referral": 4497,
+      "unassigned": 6813,
+      "other": 1022
+    },
+    {
+      "month": "2026-06",
+      "organic_search": 26001,
+      "direct": 6943,
+      "referral": 2524,
+      "unassigned": 1587,
+      "other": 636
+    }
+  ],
+  "othersNxdev": [
+    {
+      "month": "2025-05",
+      "organic_search": 384656,
+      "direct": 69354,
+      "referral": 34187,
+      "unassigned": 23085,
+      "other": 6001
+    },
+    {
+      "month": "2025-06",
+      "organic_search": 371064,
+      "direct": 64888,
+      "referral": 31756,
+      "unassigned": 16917,
+      "other": 5085
+    },
+    {
+      "month": "2025-07",
+      "organic_search": 389489,
+      "direct": 51727,
+      "referral": 35519,
+      "unassigned": 18363,
+      "other": 5365
+    },
+    {
+      "month": "2025-08",
+      "organic_search": 241780,
+      "direct": 34419,
+      "referral": 24344,
+      "unassigned": 12302,
+      "other": 2761
+    },
+    {
+      "month": "2025-09",
+      "organic_search": 298504,
+      "direct": 47716,
+      "referral": 27647,
+      "unassigned": 15497,
+      "other": 3884
+    },
+    {
+      "month": "2025-10",
+      "organic_search": 8344,
+      "direct": 3028,
+      "referral": 1303,
+      "unassigned": 665,
+      "other": 110
+    },
+    {
+      "month": "2025-11",
+      "organic_search": 5865,
+      "direct": 5917,
+      "referral": 918,
+      "unassigned": 554,
+      "other": 1437
+    },
+    {
+      "month": "2025-12",
+      "organic_search": 5104,
+      "direct": 3276,
+      "referral": 690,
+      "unassigned": 342,
+      "other": 74
+    },
+    {
+      "month": "2026-01",
+      "organic_search": 5096,
+      "direct": 3753,
+      "referral": 761,
+      "unassigned": 399,
+      "other": 86
+    },
+    {
+      "month": "2026-02",
+      "organic_search": 3457,
+      "direct": 3653,
+      "referral": 571,
+      "unassigned": 271,
+      "other": 60
+    },
+    {
+      "month": "2026-03",
+      "organic_search": 5323,
+      "direct": 5958,
+      "referral": 1568,
+      "unassigned": 1017,
+      "other": 257
+    },
+    {
+      "month": "2026-04",
+      "organic_search": 2724,
+      "direct": 2538,
+      "referral": 640,
+      "unassigned": 187,
+      "other": 67
+    },
+    {
+      "month": "2026-05",
+      "organic_search": 570,
+      "direct": 122,
+      "referral": 85,
+      "unassigned": 31,
+      "other": 6
+    },
+    {
+      "month": "2026-06",
+      "organic_search": 423,
+      "direct": 83,
+      "referral": 57,
+      "unassigned": 11,
+      "other": 10
+    }
+  ]
+}

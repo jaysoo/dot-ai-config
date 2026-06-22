@@ -1,0 +1,692 @@
+{
+  "purpose": "Top pages per page-type category, BEFORE vs AFTER the 2025-09-29 astro-docs /docs switch. Shows the root-path docs (/getting-started/*, /reference/*, etc.) leaving Others and reappearing as /docs/* (Docs) after the switch.",
+  "metric": "Views (client page_view)",
+  "scraped_at": "2026-06-19",
+  "before": {
+    "date_range": "Custom May 1 - Sep 28, 2025",
+    "total_views": 2439421,
+    "categories": {
+      "home": {
+        "total_views": 269790,
+        "pages": 1,
+        "top25": [
+          {
+            "path": "/",
+            "views": 269790
+          }
+        ]
+      },
+      "docs": {
+        "total_views": 0,
+        "pages": 0,
+        "top25": []
+      },
+      "blog": {
+        "total_views": 107942,
+        "pages": 36,
+        "top25": [
+          {
+            "path": "/blog",
+            "views": 16180
+          },
+          {
+            "path": "/blog/s1ngularity-postmortem",
+            "views": 10226
+          },
+          {
+            "path": "/blog/nx-21-release",
+            "views": 7781
+          },
+          {
+            "path": "/blog/managing-ts-packages-in-monorepos",
+            "views": 5402
+          },
+          {
+            "path": "/blog/architecting-angular-applications",
+            "views": 5104
+          },
+          {
+            "path": "/blog/nx-mcp-vscode-copilot",
+            "views": 4568
+          },
+          {
+            "path": "/blog/setup-a-monorepo-with-pnpm-workspaces-and-speed-it-up-with-nx",
+            "views": 4432
+          },
+          {
+            "path": "/blog/nx-made-cursor-smarter",
+            "views": 4060
+          },
+          {
+            "path": "/blog/new-nx-experience-for-typescript-monorepos",
+            "views": 3854
+          },
+          {
+            "path": "/blog/nx-21-2-release",
+            "views": 3281
+          },
+          {
+            "path": "/blog/typescript-project-references",
+            "views": 3042
+          },
+          {
+            "path": "/blog/versioning-and-releasing-packages-in-a-monorepo",
+            "views": 2798
+          },
+          {
+            "path": "/blog/building-mcp-server-with-nx",
+            "views": 2767
+          },
+          {
+            "path": "/blog/angular-state-management-2025",
+            "views": 2227
+          },
+          {
+            "path": "/blog/announcing-nx-20",
+            "views": 2218
+          },
+          {
+            "path": "/blog/setup-tailwind-4-npm-workspace",
+            "views": 2173
+          },
+          {
+            "path": "/blog/modern-angular-testing-with-nx",
+            "views": 2141
+          },
+          {
+            "path": "/blog/nx-21-terminal-ui",
+            "views": 2058
+          },
+          {
+            "path": "/blog/using-rspack-with-angular",
+            "views": 1995
+          },
+          {
+            "path": "/blog/practical-guide-effective-ai-coding",
+            "views": 1957
+          },
+          {
+            "path": "/blog/nx-21-continuous-tasks",
+            "views": 1716
+          },
+          {
+            "path": "/blog/creep-vulnerability-build-cache-security",
+            "views": 1681
+          },
+          {
+            "path": "/blog/improved-module-federation",
+            "views": 1581
+          },
+          {
+            "path": "/blog/set-up-tailwind-css-with-angular-in-an-nx-workspace",
+            "views": 1338
+          },
+          {
+            "path": "/blog/cve-2025-36852-critical-cache-poisoning-vulnerability-creep",
+            "views": 1336
+          }
+        ]
+      },
+      "marketing": {
+        "total_views": 87645,
+        "pages": 16,
+        "top25": [
+          {
+            "path": "/nx-cloud",
+            "views": 28445
+          },
+          {
+            "path": "/pricing",
+            "views": 11563
+          },
+          {
+            "path": "/solutions/engineering",
+            "views": 8106
+          },
+          {
+            "path": "/company",
+            "views": 7627
+          },
+          {
+            "path": "/solutions/management",
+            "views": 5546
+          },
+          {
+            "path": "/enterprise",
+            "views": 4581
+          },
+          {
+            "path": "/solutions/leadership",
+            "views": 3674
+          },
+          {
+            "path": "/solutions/platform",
+            "views": 3089
+          },
+          {
+            "path": "/remote-cache",
+            "views": 3068
+          },
+          {
+            "path": "/community",
+            "views": 2339
+          },
+          {
+            "path": "/react",
+            "views": 2038
+          },
+          {
+            "path": "/contact",
+            "views": 1899
+          },
+          {
+            "path": "/careers",
+            "views": 1707
+          },
+          {
+            "path": "/brands",
+            "views": 1462
+          },
+          {
+            "path": "/customers",
+            "views": 1391
+          },
+          {
+            "path": "/java",
+            "views": 1110
+          }
+        ]
+      },
+      "others": {
+        "total_views": 1974044,
+        "pages": 447,
+        "top25": [
+          {
+            "path": "/getting-started/intro",
+            "views": 223989
+          },
+          {
+            "path": "/getting-started/installation",
+            "views": 89510
+          },
+          {
+            "path": "/getting-started/start-new-project",
+            "views": 35794
+          },
+          {
+            "path": "/reference/project-configuration",
+            "views": 35731
+          },
+          {
+            "path": "/plugin-registry",
+            "views": 31124
+          },
+          {
+            "path": "/getting-started/tutorials/angular-monorepo-tutorial",
+            "views": 30920
+          },
+          {
+            "path": "/getting-started/tutorials/react-monorepo-tutorial",
+            "views": 28667
+          },
+          {
+            "path": "/getting-started/tutorials/typescript-packages-tutorial",
+            "views": 23585
+          },
+          {
+            "path": "/features/run-tasks",
+            "views": 23390
+          },
+          {
+            "path": "/getting-started/editor-setup",
+            "views": 21255
+          },
+          {
+            "path": "/getting-started/adding-to-existing",
+            "views": 21177
+          },
+          {
+            "path": "/features/automate-updating-dependencies",
+            "views": 20325
+          },
+          {
+            "path": "/getting-started",
+            "views": 18164
+          },
+          {
+            "path": "/reference/nx-json",
+            "views": 17244
+          },
+          {
+            "path": "/features/generate-code",
+            "views": 17020
+          },
+          {
+            "path": "/features/enhance-AI",
+            "views": 16828
+          },
+          {
+            "path": "/changelog",
+            "views": 16414
+          },
+          {
+            "path": "/ci/intro/ci-with-nx",
+            "views": 14460
+          },
+          {
+            "path": "/features/manage-releases",
+            "views": 13216
+          },
+          {
+            "path": "/features/explore-graph",
+            "views": 12489
+          },
+          {
+            "path": "/recipes/adopting-nx/adding-to-monorepo",
+            "views": 11922
+          },
+          {
+            "path": "/technologies/angular/recipes/angular-nx-version-matrix",
+            "views": 11718
+          },
+          {
+            "path": "/technologies/angular/introduction",
+            "views": 11524
+          },
+          {
+            "path": "/technologies/angular/api",
+            "views": 11512
+          },
+          {
+            "path": "/extending-nx/intro/getting-started",
+            "views": 11468
+          }
+        ]
+      }
+    }
+  },
+  "after": {
+    "date_range": "Custom Sep 29, 2025 - Jun 18, 2026",
+    "total_views": 2966121,
+    "categories": {
+      "home": {
+        "total_views": 397103,
+        "pages": 1,
+        "top25": [
+          {
+            "path": "/",
+            "views": 397103
+          }
+        ]
+      },
+      "docs": {
+        "total_views": 2252293,
+        "pages": 419,
+        "top25": [
+          {
+            "path": "/docs/getting-started/intro",
+            "views": 224563
+          },
+          {
+            "path": "/docs/getting-started/installation",
+            "views": 85602
+          },
+          {
+            "path": "/docs/getting-started/start-new-project",
+            "views": 62462
+          },
+          {
+            "path": "/docs/reference/nx-commands",
+            "views": 57857
+          },
+          {
+            "path": "/docs/getting-started/start-with-existing-project",
+            "views": 33758
+          },
+          {
+            "path": "/docs/getting-started/ai-setup",
+            "views": 30858
+          },
+          {
+            "path": "/docs/technologies/angular/guides/angular-nx-version-matrix",
+            "views": 29522
+          },
+          {
+            "path": "/docs/getting-started/tutorials/angular-monorepo-tutorial",
+            "views": 29365
+          },
+          {
+            "path": "/docs/reference/project-configuration",
+            "views": 27038
+          },
+          {
+            "path": "/docs/technologies/angular/generators",
+            "views": 26497
+          },
+          {
+            "path": "/docs/features/automate-updating-dependencies",
+            "views": 23929
+          },
+          {
+            "path": "/docs/features/enhance-ai",
+            "views": 23058
+          },
+          {
+            "path": "/docs/getting-started/tutorials/react-monorepo-tutorial",
+            "views": 21955
+          },
+          {
+            "path": "/docs/technologies/angular/introduction",
+            "views": 21631
+          },
+          {
+            "path": "/docs/technologies/node/nest/introduction",
+            "views": 21095
+          },
+          {
+            "path": "/docs/getting-started/editor-setup",
+            "views": 20777
+          },
+          {
+            "path": "/docs/features/run-tasks",
+            "views": 20635
+          },
+          {
+            "path": "/docs/plugin-registry",
+            "views": 19121
+          },
+          {
+            "path": "/docs/quickstart",
+            "views": 17032
+          },
+          {
+            "path": "/docs/features/generate-code",
+            "views": 16464
+          },
+          {
+            "path": "/docs/features/ci-features/affected",
+            "views": 16294
+          },
+          {
+            "path": "/docs/reference/nx-json",
+            "views": 16252
+          },
+          {
+            "path": "/docs/getting-started/tutorials/typescript-packages-tutorial",
+            "views": 15292
+          },
+          {
+            "path": "/docs/technologies/typescript/introduction",
+            "views": 13954
+          },
+          {
+            "path": "/docs/features/explore-graph",
+            "views": 13858
+          }
+        ]
+      },
+      "blog": {
+        "total_views": 129108,
+        "pages": 44,
+        "top25": [
+          {
+            "path": "/blog",
+            "views": 18089
+          },
+          {
+            "path": "/blog/architecting-angular-applications",
+            "views": 9481
+          },
+          {
+            "path": "/blog/nx-22-release",
+            "views": 7197
+          },
+          {
+            "path": "/blog/s1ngularity-postmortem",
+            "views": 7072
+          },
+          {
+            "path": "/blog/managing-ts-packages-in-monorepos",
+            "views": 5466
+          },
+          {
+            "path": "/blog/git-worktrees-ai-agents",
+            "views": 5038
+          },
+          {
+            "path": "/blog/setup-a-monorepo-with-pnpm-workspaces-and-speed-it-up-with-nx",
+            "views": 3904
+          },
+          {
+            "path": "/blog/nx-22-3-release",
+            "views": 3451
+          },
+          {
+            "path": "/blog/practical-guide-effective-ai-coding",
+            "views": 3328
+          },
+          {
+            "path": "/blog/modern-angular-testing-with-nx",
+            "views": 3286
+          },
+          {
+            "path": "/blog/nx-ai-agent-skills",
+            "views": 3137
+          },
+          {
+            "path": "/blog/nx-mcp-vscode-copilot",
+            "views": 3082
+          },
+          {
+            "path": "/blog/typescript-project-references",
+            "views": 2960
+          },
+          {
+            "path": "/blog/new-nx-experience-for-typescript-monorepos",
+            "views": 2959
+          },
+          {
+            "path": "/blog/angular-state-management-2025",
+            "views": 2795
+          },
+          {
+            "path": "/blog/monorepo-is-not-monolith",
+            "views": 2746
+          },
+          {
+            "path": "/blog/nx-made-cursor-smarter",
+            "views": 2722
+          },
+          {
+            "path": "/blog/setup-tailwind-4-npm-workspace",
+            "views": 2701
+          },
+          {
+            "path": "/blog/why-we-deleted-most-of-our-mcp-tools",
+            "views": 2490
+          },
+          {
+            "path": "/blog/building-mcp-server-with-nx",
+            "views": 2483
+          },
+          {
+            "path": "/blog/versioning-and-releasing-packages-in-a-monorepo",
+            "views": 2471
+          },
+          {
+            "path": "/blog/nx-21-2-release",
+            "views": 2369
+          },
+          {
+            "path": "/blog/setup-tailwind-4-angular-nx-workspace",
+            "views": 2279
+          },
+          {
+            "path": "/blog/integrate-biome-in-20-minutes",
+            "views": 2235
+          },
+          {
+            "path": "/blog/nx-21-release",
+            "views": 2188
+          }
+        ]
+      },
+      "marketing": {
+        "total_views": 87597,
+        "pages": 18,
+        "top25": [
+          {
+            "path": "/nx-cloud",
+            "views": 39247
+          },
+          {
+            "path": "/company",
+            "views": 9145
+          },
+          {
+            "path": "/enterprise",
+            "views": 6320
+          },
+          {
+            "path": "/solutions/engineering",
+            "views": 5762
+          },
+          {
+            "path": "/react",
+            "views": 4145
+          },
+          {
+            "path": "/community",
+            "views": 3157
+          },
+          {
+            "path": "/contact",
+            "views": 3003
+          },
+          {
+            "path": "/customers",
+            "views": 2755
+          },
+          {
+            "path": "/careers",
+            "views": 2464
+          },
+          {
+            "path": "/pricing",
+            "views": 2184
+          },
+          {
+            "path": "/brands",
+            "views": 1722
+          },
+          {
+            "path": "/contact/sales",
+            "views": 1672
+          },
+          {
+            "path": "/java",
+            "views": 1304
+          },
+          {
+            "path": "/solutions/platform",
+            "views": 1096
+          },
+          {
+            "path": "/solutions/management",
+            "views": 940
+          },
+          {
+            "path": "/enterprise/trial",
+            "views": 920
+          },
+          {
+            "path": "/enterprise/security",
+            "views": 886
+          },
+          {
+            "path": "/remote-cache",
+            "views": 875
+          }
+        ]
+      },
+      "others": {
+        "total_views": 100020,
+        "pages": 18,
+        "top25": [
+          {
+            "path": "/nx-newsletter",
+            "views": 36084
+          },
+          {
+            "path": "/changelog",
+            "views": 17592
+          },
+          {
+            "path": "/getting-started/intro",
+            "views": 13818
+          },
+          {
+            "path": "/courses",
+            "views": 5833
+          },
+          {
+            "path": "/ai",
+            "views": 5810
+          },
+          {
+            "path": "/resources-library",
+            "views": 2309
+          },
+          {
+            "path": "/courses/explore-nx",
+            "views": 2260
+          },
+          {
+            "path": "/courses/explore-nx/lessons-01-why-nx",
+            "views": 2004
+          },
+          {
+            "path": "/reference/project-configuration",
+            "views": 1995
+          },
+          {
+            "path": "/deprecated/legacy-cache",
+            "views": 1805
+          },
+          {
+            "path": "/getting-started/installation",
+            "views": 1792
+          },
+          {
+            "path": "/plugin-registry",
+            "views": 1644
+          },
+          {
+            "path": "/nov25-linkedin-lp1",
+            "views": 1580
+          },
+          {
+            "path": "/getting-started/tutorials/angular-monorepo-tutorial",
+            "views": 1342
+          },
+          {
+            "path": "/robots.txt",
+            "views": 1155
+          },
+          {
+            "path": "/angular-patterns-ebook",
+            "views": 1073
+          },
+          {
+            "path": "/more-concepts/global-nx",
+            "views": 1017
+          },
+          {
+            "path": "/reference/nx-json",
+            "views": 907
+          }
+        ]
+      }
+    }
+  }
+}

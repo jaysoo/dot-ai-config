@@ -1,0 +1,20 @@
+{
+  "purpose": "Validate that GA4 standard Reports (Pages and screens) and GA4 Explore agree, so the Jan-Apr 2025 (Reports) + May 2025-Jun 2026 (Explore) stitch is sound.",
+  "scraped_at": "2026-06-19",
+  "checks": [
+    {
+      "month": "2025-05",
+      "standard_reports": { "all_views": 639476, "home_views": 56349 },
+      "explore":          { "all_views": 639476, "home_views": 56349 },
+      "match": true
+    },
+    {
+      "month": "2025-08",
+      "note": "the anomalous -36% dip; confirmed real (both sources agree, not a single-source glitch)",
+      "standard_reports": { "all_views": 406972, "home_views": 47105 },
+      "explore":          { "all_views": 406972, "home_views": 47105 },
+      "match": true
+    }
+  ],
+  "conclusion": "Exact match at both overlap points. Sources are consistent."
+}
