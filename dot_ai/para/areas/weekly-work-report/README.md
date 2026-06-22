@@ -6,6 +6,7 @@ Automated Monday morning reports summarising merged PR activity across `nrwl/nx`
 
 | Week | Report |
 |------|--------|
+| Jun 15–21, 2026 | [2026-W25-week-of-jun-15.md](./2026-W25-week-of-jun-15.md) |
 | Jun 8–14, 2026 | [2026-W24-week-of-jun-08.md](./2026-W24-week-of-jun-08.md) |
 | Jun 1–7, 2026 | [2026-W23-week-of-jun-01.md](./2026-W23-week-of-jun-01.md) |
 | May 25–31, 2026 | [2026-W22-week-of-may-25.md](./2026-W22-week-of-may-25.md) |
