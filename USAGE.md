@@ -46,3 +46,4 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-06-12: invoked caveman, remotion skills (task sandboxing explainer video)
 2026-06-12: invoked summarize, reflect skills (ocean badge session); created readme-demo-injector skill
 2026-06-18: invoked op-request-reason, summarize, reflect skills (ocean Q-503 upsell CTAs); created pre-pr-review skill; CLAUDE.md += Ocean PR-base-is-main + fish var word-splitting + git-add-after-rm; settings.json += npx eslint
+2026-06-23: invoked reflect, op-request-reason skills (CNW templates hardening: CI Node 24, TS 5.9/6.0 split, project.json->package.json conversion, doc-link 404 audit, PR #36085, reviewed audit fixes); created cnw-templates-dep-audit skill (daily dep audit + PRs); deprecated cnw-update-templates; CLAUDE.md += node -e fish gotcha + installed-vs-declared deps + WebFetch small-batch; settings.json nx.dev domain BLOCKED by classifier

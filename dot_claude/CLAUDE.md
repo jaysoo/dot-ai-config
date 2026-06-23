@@ -370,7 +370,7 @@ The `/dictate` command auto-detects sync meetings and updates the right file.
 - Astro cache issues: Clear `.astro` folder
 - Class-string codemods must scope to JSX `className=`/`class=` attrs and known utility-fn calls (`clsx`/`cn`/`twMerge`/`cva`/`classnames`). Bare `\b` word boundaries also match TS prop names (`rounded?:` becomes `rounded-sm?:`) and CSS function calls inside template literals (`blur(${x})` becomes `blur-sm(${x})`). Use lookbehind on `[\s:"'\`!]`boundaries; never run rename across raw string literals indiscriminately. After codemodding source under a pnpm`file:`dep (e.g.,`nx-dev/ui-_`, `graph/ui-_`), run `pnpm install --force`so`node_modules/.pnpm/.../node_modules/<pkg>/` refreshes - otherwise the consumer build sees the stale pre-codemod copy.
 - Tailwind v4 `@source` does NOT support extglob (`!(*.stories|*.spec)`); patterns silently match zero files and utilities never make it into the bundle. Use plain dir paths + `@source not '**/*.{spec,test,stories}.*'`. Same trap if porting any v3 `content` array verbatim.
-- **Shell is fish**: inline `bash -c` / `python3 -c` strings mangle `!` and `!=` (history expansion + line-continuation), silently breaking comparisons (`r['status'] != 'done'` becomes a syntax error or no-op). Single-quoted heredocs (`python3 - <<'EOF'`) are NOT safe either - `\!=` still arrives mangled. Always write the script to a file (Write tool) and run the file. Alternatively `not in (...)` / `<>`. A background CI poller using `!=` polled blindly for 90 min and reported nothing - always confirm a long-running poller emits a real signal before trusting it. Also: `$status` after a pipeline reflects only the LAST stage - `git push ... | tail` reports `tail`'s exit (0) and masks a failed push; use `$pipestatus[1]` (or run the command unpiped). Once reported a failed force-push as success (NXC-4548). Also: fish does NOT word-split variables - `set FILES "a.ts b.ts"; npx prettier $FILES` passes the whole string as ONE argument (fails "no files matching"); pass paths explicitly or use a real fish list (`set FILES a.ts b.ts`). Hit twice in Q-503.
+- **Shell is fish**: inline `bash -c` / `python3 -c` / `node -e` strings mangle `!` and `!=` (history expansion + line-continuation), silently breaking comparisons (`r['status'] != 'done'` becomes a syntax error or no-op). Single-quoted heredocs (`python3 - <<'EOF'`) are NOT safe either - `\!=` still arrives mangled. Always write the script to a file (Write tool) and run the file. Alternatively `not in (...)` / `<>`. A background CI poller using `!=` polled blindly for 90 min and reported nothing - always confirm a long-running poller emits a real signal before trusting it. Also: `$status` after a pipeline reflects only the LAST stage - `git push ... | tail` reports `tail`'s exit (0) and masks a failed push; use `$pipestatus[1]` (or run the command unpiped). Once reported a failed force-push as success (NXC-4548). Also: fish does NOT word-split variables - `set FILES "a.ts b.ts"; npx prettier $FILES` passes the whole string as ONE argument (fails "no files matching"); pass paths explicitly or use a real fish list (`set FILES a.ts b.ts`). Hit twice in Q-503.
 
 ## 📚 Documentation Sites (Astro/Starlight)
 
@@ -687,6 +687,8 @@ Fix source files rather than making regex handle edge cases.
 
 - **Verify actual code path FIRST** - add logging to node_modules. Watch for multiple impls (PTY vs spawn vs exec, native vs JS).
 - **Don't document theories as facts** - mark as "HYPOTHESIS: needs verification"
+- **When reviewing/verifying dependency changes, check the INSTALLED version (`node_modules/<pkg>/package.json`), not the declared range.** A peer dep can silently anchor a lower version while `npm ci` passes without error — so package.json saying `^0.34` while `0.32` is actually installed looks "green" but is wrong.
+  - **Why:** NXC-3464 — an agent's `@tanstack/ai` 0.34 bump resolved to 0.32 (anchored by `ai-react-ui@0.8.9`) and dropped `@tanstack/ai-anthropic`, breaking the chat; build/typecheck/`npm ci` all passed.
 - **Endorsing another reviewer's code-logic-only claim**: "code does X, therefore Y" — reading the code only proves X. Reproduce Y (repro, local publish, or unit test) before acting; if uncertain, ask me rather than propagate an unverified prediction.
 - **Verify the baseline before calling it a regression.** "Worked before, now fails": first check the earlier "success" wasn't a silent failure — diff the script for exit-code checks / error swallowing / fragile stdout parsing (green CI ≠ it worked). Only then look for real regressions.
   - **Why:** NXC-4353 — chased a non-existent "22.6 -> 22.7 regression" for an hour; the script returned 0 regardless of pnpm publish until PR #10489 added exit-code propagation. Bug was invisible since Dec 3.
@@ -709,6 +711,8 @@ curl -I -L http://localhost:PORT/path
 ```
 
 Verify with real browser (Playwright). Document working vs failing cases.
+
+- **Verifying many URLs via WebFetch: batch in small groups (≤8).** Firing ~20+ parallel WebFetch calls triggers rate-limiting that returns **false 404s**. Re-verify any suspected 404 in a small batch before "fixing" it. (NXC-3464 — a 22-call batch falsely flagged `import-project`/`affected` as 404; both exist.)
 
 ### Common Issues
 

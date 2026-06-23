@@ -2,6 +2,14 @@
 
 ### June 2026
 
+- [x] Fix CNW template audit findings (2026-06-23)
+  - Plan: `dot_ai/2026-06-23/tasks/fix-cnw-template-audit-findings.md`
+  - Summary: Fixed the requested cnw-template follow-ups: TanStack AI dependency conflict by moving the TanStack AI packages to the compatible 0.34 generation and refreshing the lockfile; TanStack AI and TanStack Start README TypeScript rows now match `~6.0.3`; Angular production build no longer prerenders dynamic storefront routes and calls the API during build. Verified build/lint/typecheck, Angular `vite:test --run`, README link checks, and diff hygiene.
+
+- [x] Nx template audit (2026-06-23)
+  - Plan: `dot_ai/2026-06-23/tasks/nx-template-audit.md`
+  - Summary: Audited all 12 nx.dev starter templates with subagents plus direct follow-up on the stalled Batch C check. Confirmed config layout is correct (only Angular and NestJS use project.json), all repos/generate outputs pin Nx 23.0.0, and no README 404s were found. Main issues: TanStack AI CNW install fails from TanStack AI peer mismatch; Angular production build fails without a compiler diagnostic; several repos still use TypeScript 5.9 without a clear blocker; Angular is the only confirmed TS 5 exception; several templates have absent or placeholder quality targets.
+
 - [x] Nx docs organic search downtrend research (2026-06-23)
   - Plan: `dot_ai/2026-06-23/tasks/nx-docs-organic-search-downtrend.md`
   - Summary: Researched whether nx.dev docs' organic search decline matches broader market patterns. Found strong evidence of broad CTR pressure on informational/docs-like content from AI Overviews and zero-click behavior, plus comparable examples from Tailwind, monday.com, HubSpot, Stack Overflow-adjacent developer content, and publishers. Recommended diagnostics that distinguish ranking loss from CTR loss, plus a tooling stack spanning GSC generative AI reports, Ahrefs/Semrush, crawler audits, SERP tracking, log analysis, Core Web Vitals, and AI visibility monitoring.

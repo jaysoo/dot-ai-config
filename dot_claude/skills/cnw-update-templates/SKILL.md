@@ -10,6 +10,13 @@ description: >
 
 # CNW Template Updater
 
+> **⚠️ Partially superseded (2026-06-23).** The paths below are the OLD flat
+> `~/projects/<template>` — the repos now live at **`~/projects/cnw-templates/<template>`**
+> and there are **15**, not 4. For the broad daily dependency audit (nx + @nx/* +
+> third-party, with per-repo PRs and the known upgrade holds) use the
+> **`cnw-templates-dep-audit`** skill. Use this one only for a quick nx-migrate of the
+> base templates — and fix the paths first.
+
 Update all 4 CNW template repos to a target Nx version.
 
 ## Templates
