@@ -11,6 +11,7 @@ Docs can go stale in three ways:
 
 | Date | Repo | File | Notes |
 |------|------|------|-------|
+| 2026-06-23 | nrwl/nx | [nx-astro-docs-staleness-2026-06-23.md](./nx-astro-docs-staleness-2026-06-23.md) | Fourth scan; resolved 9 items from prior audits (cacheableOperations tabs, Nx 19.8 intros, TS 4.7, svgr). New: config.mdoc has three dead version tabs (Nx ≤19.6 / Nx <17) showing deprecated `tasksRunnerOptions`, yarn-pnp.mdoc uses Yarn 3.6.1 (Yarn 4 is current). Clarified --frontendProject still in source. Linear MCP still broken — 11 issues queued for manual creation. |
 | 2026-06-17 | nrwl/nx | [nx-astro-docs-staleness-2026-06-17.md](./nx-astro-docs-staleness-2026-06-17.md) | Third scan; deprecated cacheableOperations/tasksRunnerOptions in active feature pages, dead Nx ≤ 19.6 conditionals in cloud docs, stale TS 4.7 ref, "prior to Nx 18" blocks. Linear MCP broken (SSE transport removed) — 8 issues queued for manual creation. |
 | 2026-06-12 | nrwl/nx | [nx-astro-docs-staleness-2026-06-12.md](./nx-astro-docs-staleness-2026-06-12.md) | Follow-up scan; svgr option documented but removed from source in Nx 22, stale Nx 15.7 linkcard, composePlugins/withReact removal in Nx 24 to monitor |
 | 2026-06-11 | nrwl/nx | [nx-astro-docs-staleness-2026-06-11.md](./nx-astro-docs-staleness-2026-06-11.md) | Full scan of 501 mdoc files; Node 20 EOL, Nx 15–19 version refs, @nrwl/ package names |
