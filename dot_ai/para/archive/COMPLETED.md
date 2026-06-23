@@ -2,6 +2,10 @@
 
 ### June 2026
 
+- [x] Nx docs organic search downtrend research (2026-06-23)
+  - Plan: `dot_ai/2026-06-23/tasks/nx-docs-organic-search-downtrend.md`
+  - Summary: Researched whether nx.dev docs' organic search decline matches broader market patterns. Found strong evidence of broad CTR pressure on informational/docs-like content from AI Overviews and zero-click behavior, plus comparable examples from Tailwind, monday.com, HubSpot, Stack Overflow-adjacent developer content, and publishers. Recommended diagnostics that distinguish ranking loss from CTR loss, plus a tooling stack spanning GSC generative AI reports, Ahrefs/Semrush, crawler audits, SERP tracking, log analysis, Core Web Vitals, and AI visibility monitoring.
+
 - [x] Q-503: Improve CIPE upsell CTAs across key pages (ocean) - PR #11962 MERGED (2026-06-18)
   - Plan: `dot_ai/para/resources/architectures/ocean-architecture.md` (Personal Work History, 2026-06-17)
   - Summary: Gated sandboxing/resource-usage add-on upsell CTAs across surfaces (all hidden once entitled). Bigger CIPE rotating banner (per-CTA sample graphic, "Remind me later" 1-day snooze, x dismiss) moved above Managed agents; "Protect cache integrity with sandboxing" sub-label link on the overview Cache hit rate + /runs Cache hits tiles; non-clickable Sandboxing badge on the workspaces list; sandbox dashboard preview "FIX WITH AI" SUI; all preview modals wrapped in PosthogCaptureOnViewed. Replaced the Analysis-tab resource-usage banner with a locked sample of the real agent table (5 linux-medium-js agents, first row -> sample charts modal, rest blurred behind a "See per-agent resource charts" prompt) rendered under Agent utilization; sample data matches the modal's OOM story. Locked rows use filter:blur (not banned backdrop-filter); "Sample" badges. Self-healing CI scoped a polluted agent-cell e2e query. Opened against master by mistake (harness gitStatus hint) -> retargeted main. No version plan (upsell, covered by unreleased sandbox plans). Authored adversarial pre-PR review Workflows (caught a spec gap + the banned "Unlock" copy). Polygraph session `cloud-ctas-update-8c3cbeb1`.

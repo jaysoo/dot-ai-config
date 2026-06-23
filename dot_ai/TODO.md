@@ -47,6 +47,10 @@
 
 ## TODO
 
+- [ ] **Nx template audit** (2026-06-23 11:28)
+  - Plan: `dot_ai/2026-06-23/tasks/nx-template-audit.md`
+  - Goal: Audit nx.dev template repos for create-nx-workspace command health, config layout, README links, Nx/TypeScript versions, and test/build/lint/typecheck status.
+
 - [ ] **Self-healing: Anthropic cost-by-customer breakdown for Joe — first thing AM** (2026-06-08)
   - From #dpes self-healing thread: before onboarding more customers, check contract value vs Anthropic billing (~34K USD/mo total, ClickUp top at 6.7K/mo) so we cover costs and don't lose money on usage
   - Action: pull what we paid to Anthropic broken down **by customer** and add to the credits-used sheet Joe shared ("log the credits used (ie paid for) by their customer")
