@@ -16,25 +16,41 @@ Tracking weekly npm download counts for the old `@nx/*-cache` packages and their
 
 ## Weekly Download History
 
-Weeks run Thu–Wed. Δ is vs the prior week in this table.
+Weeks run Wed–Tue. Δ is vs the prior week in this table.
 
-### Jun 11–15, 2026 *(partial week — data through Mon Jun 15)*
+### Jun 18–24, 2026
 
 | Package | Downloads | Δ prev week |
 |---------|----------:|------------:|
-| `@nx/s3-cache` | 101,959 | −75,443 |
-| `@nx/gcs-cache` | 23,277 | −18,759 |
-| `@nx/shared-fs-cache` | 13,585 | −19,121 |
-| `@nx/azure-cache` | 11,163 | −11,404 |
-| **`@nx/*` subtotal** | **149,984** | **−124,727** |
-| `@nx/powerpack-s3-cache` | 3,906 | −3,697 |
-| `@nx/powerpack-gcs-cache` | 68 | −608 |
-| `@nx/powerpack-shared-fs-cache` | 76 | −368 |
-| `@nx/powerpack-azure-cache` | 433 | −551 |
-| **`powerpack-*` subtotal** | **4,483** | **−5,224** |
-| **Grand Total** | **154,467** | **−129,951** |
+| `@nx/s3-cache` | 185,361 | −40,264 |
+| `@nx/gcs-cache` | 39,281 | −12,197 |
+| `@nx/shared-fs-cache` | 36,616 | +2,076 |
+| `@nx/azure-cache` | 22,106 | −4,263 |
+| **`@nx/*` subtotal** | **283,364** | **−54,648** |
+| `@nx/powerpack-s3-cache` | 6,595 | −2,284 |
+| `@nx/powerpack-gcs-cache` | 715 | +298 |
+| `@nx/powerpack-shared-fs-cache` | 310 | +142 |
+| `@nx/powerpack-azure-cache` | 1,867 | +725 |
+| **`powerpack-*` subtotal** | **9,487** | **−1,119** |
+| **Grand Total** | **292,851** | **−55,767** |
 
-> Partial week (Thu Jun 11–Mon Jun 15, 5 days); Δ vs full prior week is not directly comparable.
+---
+
+### Jun 11–17, 2026
+
+| Package | Downloads | Δ prev week |
+|---------|----------:|------------:|
+| `@nx/s3-cache` | 225,625 | +48,223 |
+| `@nx/gcs-cache` | 51,478 | +9,442 |
+| `@nx/shared-fs-cache` | 34,540 | +1,834 |
+| `@nx/azure-cache` | 26,369 | +3,802 |
+| **`@nx/*` subtotal** | **338,012** | **+63,301** |
+| `@nx/powerpack-s3-cache` | 8,879 | +1,276 |
+| `@nx/powerpack-gcs-cache` | 417 | −259 |
+| `@nx/powerpack-shared-fs-cache` | 168 | −276 |
+| `@nx/powerpack-azure-cache` | 1,142 | +158 |
+| **`powerpack-*` subtotal** | **10,606** | **+899** |
+| **Grand Total** | **348,618** | **+64,200** |
 
 ---
 
