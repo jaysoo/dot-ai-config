@@ -18,3 +18,12 @@ Worktree: `~/projects/nx-worktrees/cnw-templates` (nx, branch `cnw-templates`). 
 
 ### Deliverable created
 - New skill `dot_claude/skills/cnw-templates-dep-audit/SKILL.md` — daily dependency-staleness audit + per-repo PRs for the template repos (encodes the upgrade constraints above).
+
+## NXC-4590 — nx migrate crash with `--include=optional` (PR #36087 MERGED)
+
+Surfaced while migrating the ocean repo to latest Nx. `nx migrate` with `--include=optional` crashed: `Cannot read properties of undefined (reading 'version')` in `generateMigrationsJsonAndUpdatePackageJson` (`packages/nx/src/command-line/migrate/migrate.ts`).
+
+- **Root cause:** the 4th arg to `writePromptMigrationFiles` read `packageUpdates[walkedTargetPackage].version` unguarded. Under optional, `Migrator.applyIncludeFilter()` deletes every required-closure member from `packageUpdates`, and `resolveRequiredPackages()` always seeds the set with the target package itself, so that entry is deterministically `undefined`. Not ocean-specific - any workspace hitting that line with `--include=optional`. Existing tests missed it because they drive the `Migrator` class directly and never reach the orchestration seam.
+- **Fix:** hoisted the already-safe `packageUpdates[walkedTargetPackage]?.version ?? opts.targetVersion` (previously used only by completion analytics, 18 lines below) above the call and reused it. Net +8/-4.
+- **Verification:** exported the fn + added a regression test on the orchestration seam (fails against pre-fix code with the exact reported `TypeError`). `build-base`, `lint`, `migrate.spec.ts` (210/210) green. Adversarial scan of the full optional flow found no sibling unguarded accesses.
+- Polygraph session `migrate-error-c1c6a147` (nrwl/nx + nrwl/ocean); Linear NXC-4590 linked. Plan: `dot_ai/2026-06-23/tasks/nxc-4590-migrate-optional-crash.md`.

@@ -1,7 +1,7 @@
 ---
 description: >
   Analyze competitor releases and changelog entries for the current month.
-  Covers Turborepo, Moon, Bazel, Gradle, and Pants. Run monthly.
+  Covers Turborepo, Vite+, Moon, Bazel, Buck2, Gradle, and Pants. Run monthly.
 allowed-tools:
   - Read
   - Bash
@@ -55,8 +55,10 @@ Used for roadmap planning and strategic positioning.
 ## Tracked Competitors
 
 - **Turborepo** (Vercel) — direct competitor, JS/TS monorepo
+- **Vite+** (VoidZero / Evan You) — unified JS/TS toolchain with built-in monorepo task runner, caching, and generators. Most direct new threat: overlaps both Nx and Turborepo. CLI is `vp`. Public preview targeted early 2026.
 - **Moon** (moonrepo) — Rust-based monorepo, polyglot
 - **Bazel** (Google) — enterprise build system
+- **Buck2** (Meta) — Rust-based Bazel-class build system, polyglot, ultra-large repos. Emerging / pre-stable — track lightly.
 - **Gradle** — JVM build ecosystem, overlaps with Nx polyglot story
 - **Pants** (Toolchain) — Python/JVM monorepo tool
 
@@ -107,12 +109,17 @@ Your training data about competitor versions and features is stale.
 ```bash
 # Current versions — run ALL of these before writing
 npm view turbo version
+npm view vite-plus version
 cat "$SCAN_DATA_DIR/releases/vercel-turborepo.json" 2>/dev/null \
   || gh_release_list vercel/turborepo 5
+cat "$SCAN_DATA_DIR/releases/voidzero-dev-vite-plus.json" 2>/dev/null \
+  || gh_release_list voidzero-dev/vite-plus 5
 cat "$SCAN_DATA_DIR/releases/moonrepo-moon.json" 2>/dev/null \
   || gh_release_list moonrepo/moon 5
 cat "$SCAN_DATA_DIR/releases/bazelbuild-bazel.json" 2>/dev/null \
   || gh_release_list bazelbuild/bazel 5
+cat "$SCAN_DATA_DIR/releases/facebook-buck2.json" 2>/dev/null \
+  || gh_release_list facebook/buck2 5
 cat "$SCAN_DATA_DIR/releases/pantsbuild-pants.json" 2>/dev/null \
   || gh_release_list pantsbuild/pants 5
 ```
@@ -130,6 +137,17 @@ cat "$SCAN_DATA_DIR/releases/vercel-turborepo.json" 2>/dev/null \
 ```
 Also check: `https://turbo.build/blog`
 
+### Vite+
+```bash
+npm view vite-plus version
+cat "$SCAN_DATA_DIR/releases/voidzero-dev-vite-plus.json" 2>/dev/null \
+  || gh_release_list voidzero-dev/vite-plus 10
+```
+Also check: `https://voidzero.dev/posts` (announcements) and `https://viteplus.dev/`.
+Releases ship fast (alpha, frequent tags) — focus on monorepo/task-runner/cache/generator
+changes, not every bundler-internals bump. Note it bundles Vite/Vitest/Oxlint/Oxfmt/
+Rolldown/tsdown, so some entries belong to the underlying tools, not the orchestration layer.
+
 ### Moon
 ```bash
 cat "$SCAN_DATA_DIR/releases/moonrepo-moon.json" 2>/dev/null \
@@ -143,6 +161,14 @@ cat "$SCAN_DATA_DIR/releases/bazelbuild-bazel.json" 2>/dev/null \
   || gh_release_list bazelbuild/bazel 10
 ```
 Also check: `https://blog.bazel.build/`
+
+### Buck2
+```bash
+cat "$SCAN_DATA_DIR/releases/facebook-buck2.json" 2>/dev/null \
+  || gh_release_list facebook/buck2 10
+```
+Pre-stable (no stable release tag yet) — track lightly. Only flag if it ships a stable
+release, JS/TS support, or hosted-cache/remote-execution moves that touch Nx's space.
 
 ### Gradle
 WebFetch `https://gradle.org/releases/` for version info.
@@ -218,11 +244,20 @@ _Last updated: {datetime}_
 ### Nx implications
 {Specific: what this means for us. "Nothing actionable" is a valid answer.}
 
+## Vite+
+{Same structure. Highest-priority new entry — call out monorepo task runner,
+caching model, and generator/scaffolding moves specifically, since those hit
+Nx and Turborepo head-on. Separate orchestration-layer changes from bundled-tool
+(Vite/Vitest/Oxlint/Rolldown) changes.}
+
 ## Moon
 {Same structure}
 
 ## Bazel
 {Same structure}
+
+## Buck2
+{Same structure. Brief unless something material shipped — note pre-stable status.}
 
 ## Gradle
 {Same structure}

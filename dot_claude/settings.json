@@ -90,6 +90,7 @@
       "Bash(rm *.log:*)",
       "Bash(rm *.tmp:*)",
       "Bash(OP_REQUEST_REASON=*)",
+      "Bash(bash dot_ai/para/areas/supply-chain-security/run-daily-scan.sh:*)",
       "mcp__MyNotes__search_ai_content",
       "mcp__MyNotes__get_task_context",
       "mcp__MyNotes__find_specs",
