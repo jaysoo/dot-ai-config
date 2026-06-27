@@ -46,6 +46,12 @@
 
 ## TODO
 
+- [ ] **CNW: support `npx create-nx-workspace .` into the current directory** (2026-06-27)
+  - Goal: make CNW work with a `.` (or current-dir) target so a repo that's empty — or functionally empty (only a `README`, all dirs effectively empty) — can be scaffolded in place instead of into a new subfolder
+  - Why: github.com/new + Copilot operate inside the existing empty repo; CNW today insists on creating a new directory, so that flow is unsupported
+  - Acceptance: `npx create-nx-workspace .` in an empty/README-only repo scaffolds into the cwd; non-empty dirs still error with a clear message
+  - Open Qs: what counts as "functionally empty" (allow `.git`, `README*`, `LICENSE`, dotfiles?); merge vs refuse semantics on conflicts
+
 - [ ] **Self-healing: Anthropic cost-by-customer breakdown for Joe — first thing AM** (2026-06-08)
   - From #dpes self-healing thread: before onboarding more customers, check contract value vs Anthropic billing (~34K USD/mo total, ClickUp top at 6.7K/mo) so we cover costs and don't lose money on usage
   - Action: pull what we paid to Anthropic broken down **by customer** and add to the credits-used sheet Joe shared ("log the credits used (ie paid for) by their customer")
