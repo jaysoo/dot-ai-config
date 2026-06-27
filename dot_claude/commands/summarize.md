@@ -38,6 +38,21 @@ After summarizing, review the **Active Claude Sessions** section in `dot_ai/TODO
 
 Do NOT remove sessions that are still in progress — only ones clearly finished.
 
+## Capture Polygraph Session (if any)
+
+If a task was worked on inside a Polygraph session, record it so it can be resumed/traced later.
+
+1. Detect the session via the Polygraph MCP: `mcp__plugin_polygraph_polygraph-mcp__list_sessions` (find the one matching the task/branch), then `mcp__plugin_polygraph_polygraph-mcp__show_session` for its details.
+2. For each task that maps to a session, capture: session **name/slug**, session **ID**, **URL**, and the **repos** involved.
+3. Put a line under that task's heading in `SUMMARY.md` (and in its `COMPLETED.md` entry):
+
+   ```markdown
+   Polygraph session `name-slug-<id>` — <repos> — <url>
+   ```
+
+   Match the existing convention, e.g. ``Polygraph session `capture-analytics-opt-in-22331534`, single repo nrwl/nx``.
+4. If a task was NOT done in a Polygraph session, skip this — do not invent or attach a session. Only record sessions you can confirm via the MCP.
+
 ## IMPORTANT
 
 This file should be concise, but offer a good high-level view of accomplishments for today. It will be used by:

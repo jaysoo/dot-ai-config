@@ -1,1 +1,870 @@
-{"series":"server_page_view_daily","metric":"Event count where event_name = server_page_view (Measurement Protocol, server-side)","filter":"event_name exactly matches server_page_view","date_range":"2025-05-01..2026-06-18","scraped_at":"2026-06-19","count":137,"first_recorded":"2026-02-02","rows":[{"date":"2026-02-02","server_page_view":58683,"active_users":1324,"views_should_be_0":0},{"date":"2026-02-03","server_page_view":137190,"active_users":2878,"views_should_be_0":0},{"date":"2026-02-04","server_page_view":121708,"active_users":2793,"views_should_be_0":0},{"date":"2026-02-05","server_page_view":99072,"active_users":2742,"views_should_be_0":0},{"date":"2026-02-06","server_page_view":91101,"active_users":2142,"views_should_be_0":0},{"date":"2026-02-07","server_page_view":62303,"active_users":641,"views_should_be_0":0},{"date":"2026-02-08","server_page_view":60268,"active_users":1046,"views_should_be_0":0},{"date":"2026-02-09","server_page_view":100119,"active_users":2576,"views_should_be_0":0},{"date":"2026-02-10","server_page_view":93909,"active_users":2641,"views_should_be_0":0},{"date":"2026-02-11","server_page_view":108217,"active_users":2606,"views_should_be_0":0},{"date":"2026-02-12","server_page_view":89926,"active_users":2431,"views_should_be_0":0},{"date":"2026-02-13","server_page_view":97024,"active_users":2055,"views_should_be_0":0},{"date":"2026-02-14","server_page_view":110829,"active_users":653,"views_should_be_0":0},{"date":"2026-02-15","server_page_view":84309,"active_users":928,"views_should_be_0":0},{"date":"2026-02-16","server_page_view":96030,"active_users":2186,"views_should_be_0":0},{"date":"2026-02-17","server_page_view":93302,"active_users":2427,"views_should_be_0":0},{"date":"2026-02-18","server_page_view":103503,"active_users":2550,"views_should_be_0":0},{"date":"2026-02-19","server_page_view":95394,"active_users":2474,"views_should_be_0":0},{"date":"2026-02-20","server_page_view":89263,"active_users":1921,"views_should_be_0":0},{"date":"2026-02-21","server_page_view":73237,"active_users":659,"views_should_be_0":0},{"date":"2026-02-22","server_page_view":72826,"active_users":955,"views_should_be_0":0},{"date":"2026-02-23","server_page_view":106706,"active_users":2594,"views_should_be_0":0},{"date":"2026-02-24","server_page_view":103178,"active_users":2640,"views_should_be_0":0},{"date":"2026-02-25","server_page_view":159870,"active_users":2579,"views_should_be_0":0},{"date":"2026-02-26","server_page_view":109417,"active_users":2520,"views_should_be_0":0},{"date":"2026-02-27","server_page_view":111764,"active_users":1939,"views_should_be_0":0},{"date":"2026-02-28","server_page_view":84327,"active_users":604,"views_should_be_0":0},{"date":"2026-03-01","server_page_view":88806,"active_users":893,"views_should_be_0":0},{"date":"2026-03-02","server_page_view":112614,"active_users":2449,"views_should_be_0":0},{"date":"2026-03-03","server_page_view":109781,"active_users":2439,"views_should_be_0":0},{"date":"2026-03-04","server_page_view":101296,"active_users":2315,"views_should_be_0":0},{"date":"2026-03-05","server_page_view":105163,"active_users":2204,"views_should_be_0":0},{"date":"2026-03-06","server_page_view":100047,"active_users":1794,"views_should_be_0":0},{"date":"2026-03-07","server_page_view":80070,"active_users":548,"views_should_be_0":0},{"date":"2026-03-08","server_page_view":79464,"active_users":716,"views_should_be_0":0},{"date":"2026-03-09","server_page_view":91308,"active_users":2210,"views_should_be_0":0},{"date":"2026-03-10","server_page_view":93274,"active_users":2287,"views_should_be_0":0},{"date":"2026-03-11","server_page_view":91404,"active_users":2245,"views_should_be_0":0},{"date":"2026-03-12","server_page_view":87471,"active_users":2182,"views_should_be_0":0},{"date":"2026-03-13","server_page_view":77774,"active_users":1950,"views_should_be_0":0},{"date":"2026-03-14","server_page_view":55669,"active_users":575,"views_should_be_0":0},{"date":"2026-03-15","server_page_view":63309,"active_users":812,"views_should_be_0":0},{"date":"2026-03-16","server_page_view":138519,"active_users":2340,"views_should_be_0":0},{"date":"2026-03-17","server_page_view":94263,"active_users":2284,"views_should_be_0":0},{"date":"2026-03-18","server_page_view":91239,"active_users":1921,"views_should_be_0":0},{"date":"2026-03-19","server_page_view":133796,"active_users":2590,"views_should_be_0":0},{"date":"2026-03-20","server_page_view":132062,"active_users":2119,"views_should_be_0":0},{"date":"2026-03-21","server_page_view":100098,"active_users":722,"views_should_be_0":0},{"date":"2026-03-22","server_page_view":120949,"active_users":990,"views_should_be_0":0},{"date":"2026-03-23","server_page_view":130702,"active_users":2691,"views_should_be_0":0},{"date":"2026-03-24","server_page_view":149283,"active_users":2788,"views_should_be_0":0},{"date":"2026-03-25","server_page_view":144820,"active_users":2767,"views_should_be_0":0},{"date":"2026-03-26","server_page_view":134401,"active_users":2494,"views_should_be_0":0},{"date":"2026-03-27","server_page_view":140867,"active_users":2078,"views_should_be_0":0},{"date":"2026-03-28","server_page_view":98259,"active_users":786,"views_should_be_0":0},{"date":"2026-03-29","server_page_view":104095,"active_users":1084,"views_should_be_0":0},{"date":"2026-03-30","server_page_view":136469,"active_users":2572,"views_should_be_0":0},{"date":"2026-03-31","server_page_view":154684,"active_users":2562,"views_should_be_0":0},{"date":"2026-04-01","server_page_view":183255,"active_users":2538,"views_should_be_0":0},{"date":"2026-04-02","server_page_view":155134,"active_users":2318,"views_should_be_0":0},{"date":"2026-04-03","server_page_view":273328,"active_users":4122,"views_should_be_0":0},{"date":"2026-04-04","server_page_view":115431,"active_users":657,"views_should_be_0":0},{"date":"2026-04-05","server_page_view":120467,"active_users":794,"views_should_be_0":0},{"date":"2026-04-06","server_page_view":201268,"active_users":1826,"views_should_be_0":0},{"date":"2026-04-07","server_page_view":141835,"active_users":2493,"views_should_be_0":0},{"date":"2026-04-08","server_page_view":136463,"active_users":2512,"views_should_be_0":0},{"date":"2026-04-09","server_page_view":163985,"active_users":2484,"views_should_be_0":0},{"date":"2026-04-10","server_page_view":259925,"active_users":1958,"views_should_be_0":0},{"date":"2026-04-11","server_page_view":156309,"active_users":685,"views_should_be_0":0},{"date":"2026-04-12","server_page_view":100226,"active_users":960,"views_should_be_0":0},{"date":"2026-04-13","server_page_view":197904,"active_users":2488,"views_should_be_0":0},{"date":"2026-04-14","server_page_view":252809,"active_users":2594,"views_should_be_0":0},{"date":"2026-04-15","server_page_view":235607,"active_users":2564,"views_should_be_0":0},{"date":"2026-04-16","server_page_view":197169,"active_users":2362,"views_should_be_0":0},{"date":"2026-04-17","server_page_view":161018,"active_users":1928,"views_should_be_0":0},{"date":"2026-04-18","server_page_view":134966,"active_users":625,"views_should_be_0":0},{"date":"2026-04-19","server_page_view":191961,"active_users":937,"views_should_be_0":0},{"date":"2026-04-20","server_page_view":254824,"active_users":2307,"views_should_be_0":0},{"date":"2026-04-21","server_page_view":229490,"active_users":2323,"views_should_be_0":0},{"date":"2026-04-22","server_page_view":208171,"active_users":2290,"views_should_be_0":0},{"date":"2026-04-23","server_page_view":188558,"active_users":2296,"views_should_be_0":0},{"date":"2026-04-24","server_page_view":195987,"active_users":1824,"views_should_be_0":0},{"date":"2026-04-25","server_page_view":163401,"active_users":665,"views_should_be_0":0},{"date":"2026-04-26","server_page_view":144456,"active_users":883,"views_should_be_0":0},{"date":"2026-04-27","server_page_view":171887,"active_users":2338,"views_should_be_0":0},{"date":"2026-04-28","server_page_view":174960,"active_users":2467,"views_should_be_0":0},{"date":"2026-04-29","server_page_view":189608,"active_users":2390,"views_should_be_0":0},{"date":"2026-04-30","server_page_view":171397,"active_users":1983,"views_should_be_0":0},{"date":"2026-05-01","server_page_view":146762,"active_users":951,"views_should_be_0":0},{"date":"2026-05-02","server_page_view":111226,"active_users":216,"views_should_be_0":0},{"date":"2026-05-03","server_page_view":117558,"active_users":305,"views_should_be_0":0},{"date":"2026-05-04","server_page_view":141732,"active_users":679,"views_should_be_0":0},{"date":"2026-05-05","server_page_view":154900,"active_users":763,"views_should_be_0":0},{"date":"2026-05-06","server_page_view":152048,"active_users":712,"views_should_be_0":0},{"date":"2026-05-07","server_page_view":162127,"active_users":704,"views_should_be_0":0},{"date":"2026-05-08","server_page_view":149284,"active_users":522,"views_should_be_0":0},{"date":"2026-05-09","server_page_view":125455,"active_users":243,"views_should_be_0":0},{"date":"2026-05-10","server_page_view":122050,"active_users":272,"views_should_be_0":0},{"date":"2026-05-11","server_page_view":152628,"active_users":732,"views_should_be_0":0},{"date":"2026-05-12","server_page_view":189757,"active_users":739,"views_should_be_0":0},{"date":"2026-05-13","server_page_view":170135,"active_users":688,"views_should_be_0":0},{"date":"2026-05-14","server_page_view":159270,"active_users":654,"views_should_be_0":0},{"date":"2026-05-15","server_page_view":161688,"active_users":574,"views_should_be_0":0},{"date":"2026-05-16","server_page_view":164793,"active_users":219,"views_should_be_0":0},{"date":"2026-05-17","server_page_view":125776,"active_users":350,"views_should_be_0":0},{"date":"2026-05-18","server_page_view":161442,"active_users":764,"views_should_be_0":0},{"date":"2026-05-19","server_page_view":193827,"active_users":796,"views_should_be_0":0},{"date":"2026-05-20","server_page_view":212205,"active_users":861,"views_should_be_0":0},{"date":"2026-05-21","server_page_view":239631,"active_users":889,"views_should_be_0":0},{"date":"2026-05-22","server_page_view":225955,"active_users":779,"views_should_be_0":0},{"date":"2026-05-23","server_page_view":153829,"active_users":285,"views_should_be_0":0},{"date":"2026-05-24","server_page_view":160903,"active_users":328,"views_should_be_0":0},{"date":"2026-05-25","server_page_view":189237,"active_users":638,"views_should_be_0":0},{"date":"2026-05-26","server_page_view":195283,"active_users":800,"views_should_be_0":0},{"date":"2026-05-27","server_page_view":199036,"active_users":720,"views_should_be_0":0},{"date":"2026-05-28","server_page_view":212870,"active_users":744,"views_should_be_0":0},{"date":"2026-05-29","server_page_view":173302,"active_users":581,"views_should_be_0":0},{"date":"2026-05-30","server_page_view":134704,"active_users":218,"views_should_be_0":0},{"date":"2026-05-31","server_page_view":160397,"active_users":278,"views_should_be_0":0},{"date":"2026-06-01","server_page_view":181295,"active_users":716,"views_should_be_0":0},{"date":"2026-06-02","server_page_view":181297,"active_users":754,"views_should_be_0":0},{"date":"2026-06-03","server_page_view":209131,"active_users":714,"views_should_be_0":0},{"date":"2026-06-04","server_page_view":184595,"active_users":673,"views_should_be_0":0},{"date":"2026-06-05","server_page_view":183567,"active_users":529,"views_should_be_0":0},{"date":"2026-06-06","server_page_view":137646,"active_users":209,"views_should_be_0":0},{"date":"2026-06-07","server_page_view":137657,"active_users":299,"views_should_be_0":0},{"date":"2026-06-08","server_page_view":167251,"active_users":721,"views_should_be_0":0},{"date":"2026-06-09","server_page_view":207400,"active_users":776,"views_should_be_0":0},{"date":"2026-06-10","server_page_view":171898,"active_users":659,"views_should_be_0":0},{"date":"2026-06-11","server_page_view":179521,"active_users":595,"views_should_be_0":0},{"date":"2026-06-12","server_page_view":187236,"active_users":491,"views_should_be_0":0},{"date":"2026-06-13","server_page_view":142503,"active_users":208,"views_should_be_0":0},{"date":"2026-06-14","server_page_view":163484,"active_users":273,"views_should_be_0":0},{"date":"2026-06-15","server_page_view":179208,"active_users":689,"views_should_be_0":0},{"date":"2026-06-16","server_page_view":210345,"active_users":709,"views_should_be_0":0},{"date":"2026-06-17","server_page_view":197710,"active_users":782,"views_should_be_0":0},{"date":"2026-06-18","server_page_view":206765,"active_users":744,"views_should_be_0":0}]}
+{
+  "series": "server_page_view_daily",
+  "metric": "Event count where event_name = server_page_view (Measurement Protocol, server-side)",
+  "filter": "event_name exactly matches server_page_view",
+  "date_range": "2025-05-01..2026-06-24",
+  "scraped_at": "2026-06-19",
+  "count": 143,
+  "first_recorded": "2026-02-02",
+  "rows": [
+    {
+      "date": "2026-02-02",
+      "server_page_view": 58683,
+      "active_users": 1324,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-03",
+      "server_page_view": 137190,
+      "active_users": 2878,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-04",
+      "server_page_view": 121708,
+      "active_users": 2793,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-05",
+      "server_page_view": 99072,
+      "active_users": 2742,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-06",
+      "server_page_view": 91101,
+      "active_users": 2142,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-07",
+      "server_page_view": 62303,
+      "active_users": 641,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-08",
+      "server_page_view": 60268,
+      "active_users": 1046,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-09",
+      "server_page_view": 100119,
+      "active_users": 2576,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-10",
+      "server_page_view": 93909,
+      "active_users": 2641,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-11",
+      "server_page_view": 108217,
+      "active_users": 2606,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-12",
+      "server_page_view": 89926,
+      "active_users": 2431,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-13",
+      "server_page_view": 97024,
+      "active_users": 2055,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-14",
+      "server_page_view": 110829,
+      "active_users": 653,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-15",
+      "server_page_view": 84309,
+      "active_users": 928,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-16",
+      "server_page_view": 96030,
+      "active_users": 2186,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-17",
+      "server_page_view": 93302,
+      "active_users": 2427,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-18",
+      "server_page_view": 103503,
+      "active_users": 2550,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-19",
+      "server_page_view": 95394,
+      "active_users": 2474,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-20",
+      "server_page_view": 89263,
+      "active_users": 1921,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-21",
+      "server_page_view": 73237,
+      "active_users": 659,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-22",
+      "server_page_view": 72826,
+      "active_users": 955,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-23",
+      "server_page_view": 106706,
+      "active_users": 2594,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-24",
+      "server_page_view": 103178,
+      "active_users": 2640,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-25",
+      "server_page_view": 159870,
+      "active_users": 2579,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-26",
+      "server_page_view": 109417,
+      "active_users": 2520,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-27",
+      "server_page_view": 111764,
+      "active_users": 1939,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-02-28",
+      "server_page_view": 84327,
+      "active_users": 604,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-01",
+      "server_page_view": 88806,
+      "active_users": 893,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-02",
+      "server_page_view": 112614,
+      "active_users": 2449,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-03",
+      "server_page_view": 109781,
+      "active_users": 2439,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-04",
+      "server_page_view": 101296,
+      "active_users": 2315,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-05",
+      "server_page_view": 105163,
+      "active_users": 2204,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-06",
+      "server_page_view": 100047,
+      "active_users": 1794,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-07",
+      "server_page_view": 80070,
+      "active_users": 548,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-08",
+      "server_page_view": 79464,
+      "active_users": 716,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-09",
+      "server_page_view": 91308,
+      "active_users": 2210,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-10",
+      "server_page_view": 93274,
+      "active_users": 2287,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-11",
+      "server_page_view": 91404,
+      "active_users": 2245,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-12",
+      "server_page_view": 87471,
+      "active_users": 2182,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-13",
+      "server_page_view": 77774,
+      "active_users": 1950,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-14",
+      "server_page_view": 55669,
+      "active_users": 575,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-15",
+      "server_page_view": 63309,
+      "active_users": 812,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-16",
+      "server_page_view": 138519,
+      "active_users": 2340,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-17",
+      "server_page_view": 94263,
+      "active_users": 2284,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-18",
+      "server_page_view": 91239,
+      "active_users": 1921,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-19",
+      "server_page_view": 133796,
+      "active_users": 2590,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-20",
+      "server_page_view": 132062,
+      "active_users": 2119,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-21",
+      "server_page_view": 100098,
+      "active_users": 722,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-22",
+      "server_page_view": 120949,
+      "active_users": 990,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-23",
+      "server_page_view": 130702,
+      "active_users": 2691,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-24",
+      "server_page_view": 149283,
+      "active_users": 2788,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-25",
+      "server_page_view": 144820,
+      "active_users": 2767,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-26",
+      "server_page_view": 134401,
+      "active_users": 2494,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-27",
+      "server_page_view": 140867,
+      "active_users": 2078,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-28",
+      "server_page_view": 98259,
+      "active_users": 786,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-29",
+      "server_page_view": 104095,
+      "active_users": 1084,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-30",
+      "server_page_view": 136469,
+      "active_users": 2572,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-03-31",
+      "server_page_view": 154684,
+      "active_users": 2562,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-01",
+      "server_page_view": 183255,
+      "active_users": 2538,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-02",
+      "server_page_view": 155134,
+      "active_users": 2318,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-03",
+      "server_page_view": 273328,
+      "active_users": 4122,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-04",
+      "server_page_view": 115431,
+      "active_users": 657,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-05",
+      "server_page_view": 120467,
+      "active_users": 794,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-06",
+      "server_page_view": 201268,
+      "active_users": 1826,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-07",
+      "server_page_view": 141835,
+      "active_users": 2493,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-08",
+      "server_page_view": 136463,
+      "active_users": 2512,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-09",
+      "server_page_view": 163985,
+      "active_users": 2484,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-10",
+      "server_page_view": 259925,
+      "active_users": 1958,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-11",
+      "server_page_view": 156309,
+      "active_users": 685,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-12",
+      "server_page_view": 100226,
+      "active_users": 960,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-13",
+      "server_page_view": 197904,
+      "active_users": 2488,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-14",
+      "server_page_view": 252809,
+      "active_users": 2594,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-15",
+      "server_page_view": 235607,
+      "active_users": 2564,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-16",
+      "server_page_view": 197169,
+      "active_users": 2362,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-17",
+      "server_page_view": 161018,
+      "active_users": 1928,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-18",
+      "server_page_view": 134966,
+      "active_users": 625,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-19",
+      "server_page_view": 191961,
+      "active_users": 937,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-20",
+      "server_page_view": 254824,
+      "active_users": 2307,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-21",
+      "server_page_view": 229490,
+      "active_users": 2323,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-22",
+      "server_page_view": 208171,
+      "active_users": 2290,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-23",
+      "server_page_view": 188558,
+      "active_users": 2296,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-24",
+      "server_page_view": 195987,
+      "active_users": 1824,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-25",
+      "server_page_view": 163401,
+      "active_users": 665,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-26",
+      "server_page_view": 144456,
+      "active_users": 883,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-27",
+      "server_page_view": 171887,
+      "active_users": 2338,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-28",
+      "server_page_view": 174960,
+      "active_users": 2467,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-29",
+      "server_page_view": 189608,
+      "active_users": 2390,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-04-30",
+      "server_page_view": 171397,
+      "active_users": 1983,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-01",
+      "server_page_view": 146762,
+      "active_users": 951,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-02",
+      "server_page_view": 111226,
+      "active_users": 216,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-03",
+      "server_page_view": 117558,
+      "active_users": 305,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-04",
+      "server_page_view": 141732,
+      "active_users": 679,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-05",
+      "server_page_view": 154900,
+      "active_users": 763,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-06",
+      "server_page_view": 152048,
+      "active_users": 712,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-07",
+      "server_page_view": 162127,
+      "active_users": 704,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-08",
+      "server_page_view": 149284,
+      "active_users": 522,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-09",
+      "server_page_view": 125455,
+      "active_users": 243,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-10",
+      "server_page_view": 122050,
+      "active_users": 272,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-11",
+      "server_page_view": 152628,
+      "active_users": 732,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-12",
+      "server_page_view": 189757,
+      "active_users": 739,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-13",
+      "server_page_view": 170135,
+      "active_users": 688,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-14",
+      "server_page_view": 159270,
+      "active_users": 654,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-15",
+      "server_page_view": 161688,
+      "active_users": 574,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-16",
+      "server_page_view": 164793,
+      "active_users": 219,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-17",
+      "server_page_view": 125776,
+      "active_users": 350,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-18",
+      "server_page_view": 161442,
+      "active_users": 764,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-19",
+      "server_page_view": 193827,
+      "active_users": 796,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-20",
+      "server_page_view": 212205,
+      "active_users": 861,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-21",
+      "server_page_view": 239631,
+      "active_users": 889,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-22",
+      "server_page_view": 225955,
+      "active_users": 779,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-23",
+      "server_page_view": 153829,
+      "active_users": 285,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-24",
+      "server_page_view": 160903,
+      "active_users": 328,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-25",
+      "server_page_view": 189237,
+      "active_users": 638,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-26",
+      "server_page_view": 195283,
+      "active_users": 800,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-27",
+      "server_page_view": 199036,
+      "active_users": 720,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-28",
+      "server_page_view": 212870,
+      "active_users": 744,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-29",
+      "server_page_view": 173302,
+      "active_users": 581,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-30",
+      "server_page_view": 134704,
+      "active_users": 218,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-05-31",
+      "server_page_view": 160397,
+      "active_users": 278,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-01",
+      "server_page_view": 181295,
+      "active_users": 716,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-02",
+      "server_page_view": 181297,
+      "active_users": 754,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-03",
+      "server_page_view": 209131,
+      "active_users": 714,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-04",
+      "server_page_view": 184595,
+      "active_users": 673,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-05",
+      "server_page_view": 183567,
+      "active_users": 529,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-06",
+      "server_page_view": 137646,
+      "active_users": 209,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-07",
+      "server_page_view": 137657,
+      "active_users": 299,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-08",
+      "server_page_view": 167251,
+      "active_users": 721,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-09",
+      "server_page_view": 207400,
+      "active_users": 776,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-10",
+      "server_page_view": 171898,
+      "active_users": 659,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-11",
+      "server_page_view": 179521,
+      "active_users": 595,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-12",
+      "server_page_view": 187236,
+      "active_users": 491,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-13",
+      "server_page_view": 142503,
+      "active_users": 208,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-14",
+      "server_page_view": 163484,
+      "active_users": 273,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-15",
+      "server_page_view": 179208,
+      "active_users": 689,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-16",
+      "server_page_view": 210345,
+      "active_users": 709,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-17",
+      "server_page_view": 197710,
+      "active_users": 782,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-18",
+      "server_page_view": 206765,
+      "active_users": 744,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-19",
+      "server_page_view": 141143,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-20",
+      "server_page_view": 138026,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-21",
+      "server_page_view": 163323,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-22",
+      "server_page_view": 193164,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-23",
+      "server_page_view": 203559,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-24",
+      "server_page_view": 186943,
+      "active_users": null,
+      "views_should_be_0": 0
+    }
+  ],
+  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal."
+}

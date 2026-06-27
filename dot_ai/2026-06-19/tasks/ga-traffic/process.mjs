@@ -75,6 +75,8 @@ const topPagesBeforeAfter = readJson('top-pages-before-after.json');
 const dailyServerCat = readJson('daily-server-by-category.json');
 const dailyNxdev = readJson('daily-nxdev-by-category.json');
 const channelsByMonth = readJson('channels-by-month.json');
+const gscDaily = readJson('gsc-daily.json');
+const gscDocsOthers = readJson('gsc-docs-others-daily.json');
 
 // Daily blog/marketing coverage starts with the daily span (2025-05-01). Earlier
 // months (Jan-Apr 2025) have no separate blog/marketing scrape, so on the monthly
@@ -611,6 +613,190 @@ const segment_check = {
     'docs is ~0 before ~Oct 2025 (pre-astro-migration docs lived at root paths -> Others).',
 };
 
+// --- organic: GA4 organic-search Views vs GSC clicks (consent-independent) ---
+// The forward-tracking signal for SEO/AI-search correction efforts. GA4 client
+// page_view is consent-suppressed from the 2026-05-01 Cookiebot banner, so GA4
+// organic Views CANNOT be tracked across May. GSC clicks are Google-side and
+// consent-immune, so they are the canonical forward metric; GA4 organic is kept
+// only for the pre-banner cross-check.
+const ORGANIC_BASE_FROM = '2025-10'; // first full month after astro-docs /docs move
+const ORGANIC_BASE_TO = '2026-04'; // last full pre-banner month
+
+// GSC daily -> monthly clicks/impressions, with a partial flag.
+const daysInMonth = (ym) => {
+  const [y, m] = ym.split('-').map(Number);
+  return new Date(Date.UTC(y, m, 0)).getUTCDate();
+};
+const gscMonthlyMap = new Map();
+for (const d of gscDaily.days) {
+  const k = monthOf(d.date);
+  const acc = gscMonthlyMap.get(k) ?? { month: k, clicks: 0, impressions: 0, days: 0 };
+  acc.clicks += num(d.clicks);
+  acc.impressions += num(d.impressions);
+  acc.days += 1;
+  gscMonthlyMap.set(k, acc);
+};
+const gscMonthly = [...gscMonthlyMap.values()]
+  .sort((a, b) => a.month.localeCompare(b.month))
+  .map((m) => ({ ...m, expected_days: daysInMonth(m.month), partial: m.days < daysInMonth(m.month) }));
+const gscByMonth = new Map(gscMonthly.map((m) => [m.month, m]));
+
+// GA4 organic_search Views by month, summed across the page-type buckets that
+// carry the docs/content audience (home + docs + others). others pre-Oct-2025 IS
+// the root-path docs, so the sum is continuous across the migration.
+const chKey = (cat) => new Map(channelsByMonth[cat].map((r) => [r.month, num(r.organic_search)]));
+const orgHome = chKey('home');
+const orgDocs = chKey('docs');
+const orgOthers = chKey('others');
+const ga4OrganicMonths = [
+  ...new Set([...orgHome.keys(), ...orgDocs.keys(), ...orgOthers.keys()]),
+].sort();
+const ga4Organic = ga4OrganicMonths.map((month) => {
+  const home = orgHome.get(month) ?? 0;
+  const docs = orgDocs.get(month) ?? 0;
+  const others = orgOthers.get(month) ?? 0;
+  return { month, home, docs, others, total: home + docs + others };
+});
+const ga4OrgByMonth = new Map(ga4Organic.map((m) => [m.month, m]));
+
+const winChange = (getter, from, to) => {
+  const a = getter(from);
+  const b = getter(to);
+  return {
+    from_month: from,
+    to_month: to,
+    from_value: a ?? null,
+    to_value: b ?? null,
+    change_pct: a == null || b == null ? null : round(pct(a, b)),
+  };
+};
+
+// Forward-tracking baseline: last FULL GSC month is the line in the sand for
+// correction efforts. Each future refresh appends months and reads MoM vs here.
+const gscFullMonths = gscMonthly.filter((m) => !m.partial);
+const gscBaseline = gscFullMonths[gscFullMonths.length - 1] ?? null;
+const gscLatest = gscMonthly[gscMonthly.length - 1] ?? null;
+
+const organic = {
+  note:
+    'Organic-search trend. GSC clicks are consent-independent (Google-side) and are ' +
+    'the canonical forward metric; GA4 organic Views are consent-suppressed from the ' +
+    '2026-05-01 Cookiebot banner and are shown only for the pre-banner cross-check.',
+  baseline_window: { from: ORGANIC_BASE_FROM, to: ORGANIC_BASE_TO },
+  gsc_clicks: {
+    source: 'Google Search Console, web search clicks (organic), sc-domain:nx.dev',
+    consent_independent: true,
+    first_month: gscMonthly[0]?.month ?? null,
+    latest_month: gscLatest?.month ?? null,
+    baseline_window_change: winChange((m) => gscByMonth.get(m)?.clicks, ORGANIC_BASE_FROM, ORGANIC_BASE_TO),
+    monthly: gscMonthly,
+  },
+  ga4_organic_views: {
+    source: 'GA4 client page_view, Session default channel group = Organic Search (home+docs+others)',
+    consent_independent: false,
+    baseline_window_change_total: winChange((m) => ga4OrgByMonth.get(m)?.total, ORGANIC_BASE_FROM, ORGANIC_BASE_TO),
+    baseline_window_change_docs: winChange((m) => ga4OrgByMonth.get(m)?.docs, ORGANIC_BASE_FROM, ORGANIC_BASE_TO),
+    baseline_window_change_home: winChange((m) => ga4OrgByMonth.get(m)?.home, ORGANIC_BASE_FROM, ORGANIC_BASE_TO),
+    monthly: ga4Organic,
+  },
+  // The decisive cross-check: do the two independent signals agree on the
+  // Oct->Apr decline (real), and do they DIVERGE across May (banner == measurement)?
+  cross_check: {
+    baseline_window: {
+      gsc_clicks_pct: winChange((m) => gscByMonth.get(m)?.clicks, ORGANIC_BASE_FROM, ORGANIC_BASE_TO).change_pct,
+      ga4_organic_total_pct: winChange((m) => ga4OrgByMonth.get(m)?.total, ORGANIC_BASE_FROM, ORGANIC_BASE_TO).change_pct,
+      ga4_organic_docs_pct: winChange((m) => ga4OrgByMonth.get(m)?.docs, ORGANIC_BASE_FROM, ORGANIC_BASE_TO).change_pct,
+      verdict:
+        'Both independent signals fall ~40-46% Oct 2025 -> Apr 2026 -> the organic decline is REAL, not a measurement artifact.',
+    },
+    may_banner: {
+      gsc_clicks_apr_to_may_pct: winChange((m) => gscByMonth.get(m)?.clicks, '2026-04', '2026-05').change_pct,
+      ga4_organic_total_apr_to_may_pct: winChange((m) => ga4OrgByMonth.get(m)?.total, '2026-04', '2026-05').change_pct,
+      verdict:
+        'GSC barely dips Apr->May while GA4 organic Views crater -> the May cliff is the Cookiebot consent banner (measurement), not lost audience.',
+    },
+  },
+  forward_tracking: {
+    metric: 'gsc_clicks',
+    why: 'Consent-immune; measures real organic/AI-search audience as correction efforts land.',
+    baseline_month: gscBaseline?.month ?? null,
+    baseline_clicks: gscBaseline?.clicks ?? null,
+    latest_month: gscLatest?.month ?? null,
+    latest_clicks: gscLatest?.clicks ?? null,
+    latest_partial: gscLatest?.partial ?? null,
+    latest_run_rate_full_month:
+      gscLatest && gscLatest.partial && gscLatest.days
+        ? Math.round((gscLatest.clicks / gscLatest.days) * gscLatest.expected_days)
+        : null,
+  },
+};
+
+// --- docs-organic forward tracker: GSC clicks (weekly) + GA4 organic Views (monthly) ---
+// docs + others = the documentation audience (others pre-2025-09-29 IS the root-path
+// docs). GSC clicks are consent-independent (the forward signal); GA4 organic Views
+// are consent-suppressed from May 2026 (historical context only). Weekly GSC + monthly
+// GA4 overlaid, indexed to the baseline month so progress is read on one scale.
+const gscDOWeekMap = new Map();
+for (const d of gscDocsOthers.days) {
+  const wk = mondayOf(d.date);
+  const acc = gscDOWeekMap.get(wk) ?? { week_start: wk, clicks: 0, days: 0 };
+  acc.clicks += num(d.clicks);
+  acc.days += 1;
+  gscDOWeekMap.set(wk, acc);
+}
+const gscDocsOthersWeekly = [...gscDOWeekMap.values()]
+  .sort((a, b) => (a.week_start < b.week_start ? -1 : 1))
+  .filter((w) => w.days === 7); // full ISO weeks only (same rule as the client weekly)
+
+// GA4 organic_search Views for docs + others, by month (from channels-by-month).
+const ga4DocsOthersOrganic = ga4OrganicMonths.map((month) => ({
+  month,
+  organic_search: (orgDocs.get(month) ?? 0) + (orgOthers.get(month) ?? 0),
+}));
+const ga4DOByMonth = new Map(ga4DocsOthersOrganic.map((m) => [m.month, m.organic_search]));
+
+// GSC docs+others monthly (for the baseline-window % and forward baseline).
+const gscDOMonthMap = new Map();
+for (const d of gscDocsOthers.days) {
+  const k = monthOf(d.date);
+  const acc = gscDOMonthMap.get(k) ?? { month: k, clicks: 0, days: 0 };
+  acc.clicks += num(d.clicks);
+  acc.days += 1;
+  gscDOMonthMap.set(k, acc);
+}
+const gscDOMonthly = [...gscDOMonthMap.values()]
+  .sort((a, b) => a.month.localeCompare(b.month))
+  .map((m) => ({ ...m, expected_days: daysInMonth(m.month), partial: m.days < daysInMonth(m.month) }));
+const gscDOByMonth = new Map(gscDOMonthly.map((m) => [m.month, m]));
+const gscDOFull = gscDOMonthly.filter((m) => !m.partial);
+const gscDOBaseline = gscDOFull[gscDOFull.length - 1] ?? null;
+const gscDOLatest = gscDOMonthly[gscDOMonthly.length - 1] ?? null;
+
+organic.docs_forward = {
+  what:
+    'Documentation organic-search trend (docs + others, where others pre-2025-09-29 is the ' +
+    'root-path docs). GSC clicks = consent-independent forward signal (weekly); GA4 organic ' +
+    'Views = consent-suppressed historical context (monthly). Watch the GSC line to gauge ' +
+    'whether SEO/AI-search correction efforts are recovering doc organic.',
+  baseline_window: { from: ORGANIC_BASE_FROM, to: ORGANIC_BASE_TO },
+  gsc_clicks_baseline_window: winChange((m) => gscDOByMonth.get(m)?.clicks, ORGANIC_BASE_FROM, ORGANIC_BASE_TO),
+  ga4_organic_baseline_window: winChange((m) => ga4DOByMonth.get(m), ORGANIC_BASE_FROM, ORGANIC_BASE_TO),
+  may_banner_divergence: {
+    gsc_apr_to_may_pct: winChange((m) => gscDOByMonth.get(m)?.clicks, '2026-04', '2026-05').change_pct,
+    ga4_apr_to_may_pct: winChange((m) => ga4DOByMonth.get(m), '2026-04', '2026-05').change_pct,
+  },
+  forward_baseline_month: gscDOBaseline?.month ?? null,
+  forward_baseline_clicks: gscDOBaseline?.clicks ?? null,
+  latest_month: gscDOLatest?.month ?? null,
+  latest_clicks: gscDOLatest?.clicks ?? null,
+  latest_partial: gscDOLatest?.partial ?? null,
+  latest_run_rate_full_month:
+    gscDOLatest && gscDOLatest.partial && gscDOLatest.days
+      ? Math.round((gscDOLatest.clicks / gscDOLatest.days) * gscDOLatest.expected_days)
+      : null,
+  weekly_count: gscDocsOthersWeekly.length,
+};
+
 // --- key_findings ---
 const key_findings = [];
 key_findings.push(
@@ -645,6 +831,30 @@ key_findings.push(
       ? ` (outliers: ${integrityOutliers.map((o) => `${o.month} ${o.diff_pct}%`).join(', ')}).`
       : '.')
 );
+key_findings.push(
+  `ORGANIC (consent-independent): GSC clicks ${organic.cross_check.baseline_window.gsc_clicks_pct}% and GA4 organic Views ` +
+    `${organic.cross_check.baseline_window.ga4_organic_total_pct}% (docs ${organic.cross_check.baseline_window.ga4_organic_docs_pct}%) ` +
+    `over ${ORGANIC_BASE_FROM} -> ${ORGANIC_BASE_TO}: two independent signals agree the organic decline is REAL. ` +
+    `Apr->May GSC ${organic.cross_check.may_banner.gsc_clicks_apr_to_may_pct}% vs GA4 organic ` +
+    `${organic.cross_check.may_banner.ga4_organic_total_apr_to_may_pct}% confirms the May cliff is the Cookiebot banner, not lost traffic.`
+);
+key_findings.push(
+  `DOCS ORGANIC (docs + others, the documentation audience): GSC clicks ${organic.docs_forward.gsc_clicks_baseline_window.change_pct}% ` +
+    `and GA4 organic Views ${organic.docs_forward.ga4_organic_baseline_window.change_pct}% over ${ORGANIC_BASE_FROM} -> ${ORGANIC_BASE_TO}. ` +
+    `Forward baseline (GSC, last full month ${organic.docs_forward.forward_baseline_month}): ${organic.docs_forward.forward_baseline_clicks} clicks/mo; ` +
+    `latest ${organic.docs_forward.latest_month}${organic.docs_forward.latest_partial ? ' (partial)' : ''} ${organic.docs_forward.latest_clicks}` +
+    (organic.docs_forward.latest_run_rate_full_month ? ` (~${organic.docs_forward.latest_run_rate_full_month} run-rate)` : '') +
+    `. Weekly GSC chart = the forward progress tracker.`
+);
+key_findings.push(
+  `FORWARD TRACKING: GSC clicks is the consent-immune metric to watch for correction efforts. ` +
+    `Baseline (last full month ${organic.forward_tracking.baseline_month}): ${organic.forward_tracking.baseline_clicks} clicks/mo. ` +
+    `Latest ${organic.forward_tracking.latest_month}${organic.forward_tracking.latest_partial ? ' (partial)' : ''}: ` +
+    `${organic.forward_tracking.latest_clicks}` +
+    (organic.forward_tracking.latest_run_rate_full_month
+      ? ` (~${organic.forward_tracking.latest_run_rate_full_month} full-month run-rate).`
+      : '.')
+);
 key_findings.push(source_crosscheck.key_finding);
 key_findings.push(
   'No /2 normalization applied: pre-GTM (Jan-Apr 2025) ~650K/mo matches post-GTM (May-Jul 2025) ~635K, disproving double-counting.'
@@ -677,6 +887,7 @@ const analysis = {
   },
   mom,
   trend,
+  organic,
   event_impacts,
   cookiebot_2026_05_01: cookiebot,
   server_page_view,
@@ -719,6 +930,10 @@ const chartData = {
   channelsHomeNxdev: channelsByMonth.homeNxdev,
   channelsDocsNxdev: channelsByMonth.docsNxdev,
   channelsOthersNxdev: channelsByMonth.othersNxdev,
+  gscMonthly,
+  ga4Organic,
+  gscDocsOthersWeekly,
+  ga4DocsOthersOrganic,
   topPages,
   topPagesBeforeAfter,
 };
@@ -831,6 +1046,46 @@ function buildHtml(data, analysis) {
       <input type="checkbox" id="hostNxOnly" style="width:16px;height:16px;cursor:pointer;" /> nx.dev hostname only
     </label>
     <span style="font-size:12px;color:#9aa3ad;flex:1;min-width:280px;">Filters the two client charts to <code>Hostname = nx.dev</code> exactly - excludes <code>*.nx.dev</code> versioned subdomains (20/21.nx.dev), <code>go.*</code>, <code>canary.nx.dev</code>, <code>localhost</code>, and Vercel/Netlify preview deploys. The non-nx.dev share varied <b>2.5%-22% by month</b> (peak Jan 2026), so the all-hosts view overstates some of the late-2025/early-2026 numbers. Server chart is unaffected (server_page_view is first-party).</span>
+  </div>
+
+  <div class="card" style="border-color:#34c98a;">
+    <h2>Organic search: the real signal (GSC clicks vs GA4 organic Views, indexed to ${escapeHtml(
+      analysis.organic.baseline_window.from
+    )} = 100)</h2>
+    <div class="chart-wrap"><canvas id="organicCross"></canvas></div>
+    <p class="toggle-note">The decisive cross-check. <b>Green = Google Search Console clicks</b> (Google-side, <b>consent-independent</b>) - the canonical organic signal. <b>Purple = GA4 Organic-Search Views</b> (client page_view, home+docs+others) - <b>consent-suppressed from the 2026-05-01 Cookiebot banner</b>. Both rebased to 100 at ${escapeHtml(
+      analysis.organic.baseline_window.from
+    )}; hover for raw values. Two reads: (1) <b>${escapeHtml(
+      analysis.organic.baseline_window.from
+    )} -> ${escapeHtml(
+      analysis.organic.baseline_window.to
+    )} both fall together (GSC <b>${analysis.organic.cross_check.baseline_window.gsc_clicks_pct}%</b>, GA4 organic <b>${analysis.organic.cross_check.baseline_window.ga4_organic_total_pct}%</b>) -> the organic decline is <b>REAL</b>, not measurement. (2) At <b>May 2026</b> they <b>diverge</b> (GSC ${analysis.organic.cross_check.may_banner.gsc_clicks_apr_to_may_pct}% vs GA4 organic ${analysis.organic.cross_check.may_banner.ga4_organic_total_apr_to_may_pct}%) -> the May cliff is the <b>Cookiebot banner</b> (measurement), not lost audience. <b>Forward tracking:</b> watch GSC clicks - baseline ${escapeHtml(
+      String(analysis.organic.forward_tracking.baseline_month)
+    )} = <b>${analysis.organic.forward_tracking.baseline_clicks}</b> clicks/mo; latest ${escapeHtml(
+      String(analysis.organic.forward_tracking.latest_month)
+    )}${analysis.organic.forward_tracking.latest_partial ? ' (partial)' : ''} ${analysis.organic.forward_tracking.latest_clicks}${
+    analysis.organic.forward_tracking.latest_run_rate_full_month
+      ? ` (~${analysis.organic.forward_tracking.latest_run_rate_full_month} full-month pace)`
+      : ''
+  }. GSC is consent-immune, so it stays comparable as correction efforts land.</p>
+  </div>
+
+  <div class="card" style="border-color:#34c98a;">
+    <h2>Docs organic search - weekly forward tracker (docs + others)</h2>
+    <div class="chart-wrap"><canvas id="docsForward"></canvas></div>
+    <p class="toggle-note"><b>Watch this line to track recovery.</b> <b>Green = GSC organic clicks to the documentation</b> (docs + others, weekly, left axis) - Google-side, <b>consent-independent</b>, so it keeps measuring real organic past the May Cookiebot banner. <b>Purple = GA4 Organic-Search Views</b> for the same pages (monthly, right axis) - consent-suppressed from May (it craters; that is measurement, not lost traffic). <code>others</code> before 2025-09-29 IS the docs (root-path docs pre astro-docs move), so this carries the doc-organic story continuously. Baseline-window decline (${escapeHtml(
+      analysis.organic.docs_forward.baseline_window.from
+    )} -> ${escapeHtml(
+      analysis.organic.docs_forward.baseline_window.to
+    )}): GSC <b>${analysis.organic.docs_forward.gsc_clicks_baseline_window.change_pct}%</b>, GA4 organic <b>${analysis.organic.docs_forward.ga4_organic_baseline_window.change_pct}%</b>. <b>Forward baseline</b> (GSC, last full month ${escapeHtml(
+      String(analysis.organic.docs_forward.forward_baseline_month)
+    )}): <b>${analysis.organic.docs_forward.forward_baseline_clicks}</b> clicks/mo; latest ${escapeHtml(
+      String(analysis.organic.docs_forward.latest_month)
+    )}${analysis.organic.docs_forward.latest_partial ? ' (partial)' : ''} ${analysis.organic.docs_forward.latest_clicks}${
+    analysis.organic.docs_forward.latest_run_rate_full_month
+      ? ` (~${analysis.organic.docs_forward.latest_run_rate_full_month} run-rate)`
+      : ''
+  }. Progress = the green weekly line turning up and holding above the recent trend.</p>
   </div>
 
   <div class="card">
@@ -1136,6 +1391,84 @@ function setChannelRows(chart, rows) {
 const channelHomeChart = buildChannelChart('channelHome', chartData.channelsHome);
 const channelDocsChart = buildChannelChart('channelDocs', chartData.channelsDocs);
 const channelOthersChart = buildChannelChart('channelOthers', chartData.channelsOthers);
+
+// Docs organic forward tracker: GSC clicks to docs+others (weekly, consent-free,
+// left axis) overlaid with GA4 organic Views for docs+others (monthly, consent-
+// suppressed, right axis). Green weekly line is the forward progress signal.
+function buildDocsForwardChart() {
+  const gsc = chartData.gscDocsOthersWeekly.map((w) => ({ x: tms(w.week_start), y: w.clicks }));
+  const ga4 = chartData.ga4DocsOthersOrganic.map((m) => ({ x: tms(m.month + '-01'), y: m.organic_search }));
+  new Chart(document.getElementById('docsForward'), {
+    type: 'line',
+    data: {
+      datasets: [
+        { label: 'GSC organic clicks - docs+others (weekly, consent-free)', data: gsc, borderColor: '#34c98a', backgroundColor: 'rgba(52,201,138,0.12)', borderWidth: 2.5, pointRadius: 0, tension: 0.2, yAxisID: 'y', fill: true },
+        { label: 'GA4 organic Views - docs+others (monthly, consent-suppressed)', data: ga4, borderColor: '#a06bff', backgroundColor: '#a06bff', borderWidth: 2, pointRadius: 2, tension: 0.15, yAxisID: 'y1' },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, layout: { padding: { top: 10 } },
+      scales: {
+        x: { type: 'time', time: { unit: 'month' }, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9aa3ad' } },
+        y: { position: 'left', beginAtZero: true, title: { display: true, text: 'GSC organic clicks / week', color: '#34c98a' }, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#34c98a' } },
+        y1: { position: 'right', beginAtZero: true, title: { display: true, text: 'GA4 organic Views / month', color: '#a06bff' }, grid: { drawOnChartArea: false }, ticks: { color: '#a06bff' } },
+      },
+      plugins: {
+        legend: { labels: { color: '#cdd3da' } },
+        tooltip: { callbacks: { title: (it) => (it.length ? isoMonth(it[0].parsed.x) : '') } },
+        annotation: { annotations: {
+          banner: { type: 'line', xMin: tms('2026-05-01'), xMax: tms('2026-05-01'), borderColor: '#ff5c5c', borderWidth: 1.5, borderDash: [4, 4], label: { display: true, content: 'Cookiebot banner', color: '#ff8a8a', backgroundColor: 'rgba(0,0,0,0.6)', position: 'start', font: { size: 10 } } },
+          docsmove: { type: 'line', xMin: tms('2025-09-29'), xMax: tms('2025-09-29'), borderColor: '#7e8aa2', borderWidth: 1, borderDash: [3, 3], label: { display: true, content: 'astro-docs /docs', color: '#aeb6c2', backgroundColor: 'rgba(0,0,0,0.6)', position: 'end', font: { size: 9 } } },
+        } },
+      },
+    },
+  });
+}
+
+// Organic cross-check: GSC clicks (consent-independent) vs GA4 organic Views
+// (consent-suppressed), both indexed to baseline month = 100. The shape match
+// Oct->Apr proves the decline is real; the May divergence proves the banner.
+(function buildOrganicCrossChart() {
+  const base = analysis.organic.baseline_window.from;
+  const gsc = new Map(chartData.gscMonthly.map((m) => [m.month, m]));
+  const ga4 = new Map(chartData.ga4Organic.map((m) => [m.month, m.total]));
+  // Plot months present in BOTH series, from the first common month.
+  const months = chartData.gscMonthly.map((m) => m.month).filter((m) => ga4.has(m));
+  const gscBase = gsc.get(base)?.clicks;
+  const ga4Base = ga4.get(base);
+  const idx = (v, b) => (v == null || !b ? null : (v / b) * 100);
+  const mkPoint = (m, v, b, partial) => ({ x: tms(m + '-01'), y: idx(v, b), raw: v, partial });
+  const gscData = months.map((m) => mkPoint(m, gsc.get(m)?.clicks, gscBase, gsc.get(m)?.partial));
+  const ga4Data = months.map((m) => mkPoint(m, ga4.get(m), ga4Base, gsc.get(m)?.partial));
+  const dashPartial = { borderDash: (ctx) => (ctx.p1.raw?.partial ? [5, 4] : undefined) };
+  buildDocsForwardChart();
+  new Chart(document.getElementById('organicCross'), {
+    type: 'line',
+    data: {
+      datasets: [
+        { label: 'GSC clicks (consent-independent)', data: gscData, borderColor: '#34c98a', backgroundColor: '#34c98a', borderWidth: 2.5, pointRadius: 2, tension: 0.15, yAxisID: 'y', segment: dashPartial },
+        { label: 'GA4 organic Views (consent-suppressed)', data: ga4Data, borderColor: '#a06bff', backgroundColor: '#a06bff', borderWidth: 2.5, pointRadius: 2, tension: 0.15, yAxisID: 'y', segment: dashPartial },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, layout: { padding: { top: 10 } },
+      scales: {
+        x: { type: 'time', time: { unit: 'month' }, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9aa3ad' } },
+        y: { beginAtZero: true, title: { display: true, text: 'Indexed to ' + base + ' = 100', color: '#9aa3ad' }, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9aa3ad' } },
+      },
+      plugins: {
+        legend: { labels: { color: '#cdd3da' } },
+        tooltip: { callbacks: {
+          title: (it) => (it.length ? isoMonth(it[0].parsed.x) : ''),
+          label: (it) => it.dataset.label + ': ' + (it.parsed.y == null ? 'n/a' : it.parsed.y.toFixed(1)) + ' (raw ' + (it.raw.raw?.toLocaleString() ?? 'n/a') + (it.raw.partial ? ', partial' : '') + ')',
+        } },
+        annotation: { annotations: {
+          banner: { type: 'line', xMin: tms('2026-05-01'), xMax: tms('2026-05-01'), borderColor: '#ff5c5c', borderWidth: 1.5, borderDash: [4, 4], label: { display: true, content: 'Cookiebot banner', color: '#ff8a8a', backgroundColor: 'rgba(0,0,0,0.6)', position: 'start', font: { size: 10 } } },
+        } },
+      },
+    },
+  });
+})();
 </script>
 </body>
 </html>

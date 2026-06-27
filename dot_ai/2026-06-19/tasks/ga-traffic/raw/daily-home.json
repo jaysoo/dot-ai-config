@@ -1,1 +1,2111 @@
-{"series":"home_daily","metric":"Views = client page_view for pagePath = \"/\"","filter":"Page path and screen class exactly matches /","date_range":"2025-05-01..2026-06-18","scraped_at":"2026-06-19","count":414,"rows":[{"date":"2025-05-01","views":1549,"active_users":1178},{"date":"2025-05-02","views":1473,"active_users":1128},{"date":"2025-05-03","views":898,"active_users":660},{"date":"2025-05-04","views":1162,"active_users":887},{"date":"2025-05-05","views":2233,"active_users":1677},{"date":"2025-05-06","views":2492,"active_users":1845},{"date":"2025-05-07","views":2429,"active_users":1797},{"date":"2025-05-08","views":2133,"active_users":1656},{"date":"2025-05-09","views":1791,"active_users":1357},{"date":"2025-05-10","views":952,"active_users":698},{"date":"2025-05-11","views":1208,"active_users":913},{"date":"2025-05-12","views":2601,"active_users":1909},{"date":"2025-05-13","views":2527,"active_users":1910},{"date":"2025-05-14","views":2422,"active_users":1804},{"date":"2025-05-15","views":2212,"active_users":1648},{"date":"2025-05-16","views":1849,"active_users":1359},{"date":"2025-05-17","views":829,"active_users":646},{"date":"2025-05-18","views":1148,"active_users":866},{"date":"2025-05-19","views":2334,"active_users":1791},{"date":"2025-05-20","views":2443,"active_users":1864},{"date":"2025-05-21","views":2402,"active_users":1818},{"date":"2025-05-22","views":2240,"active_users":1661},{"date":"2025-05-23","views":1706,"active_users":1302},{"date":"2025-05-24","views":925,"active_users":710},{"date":"2025-05-25","views":1052,"active_users":780},{"date":"2025-05-26","views":1942,"active_users":1479},{"date":"2025-05-27","views":2351,"active_users":1791},{"date":"2025-05-28","views":2245,"active_users":1707},{"date":"2025-05-29","views":1994,"active_users":1535},{"date":"2025-05-30","views":1757,"active_users":1316},{"date":"2025-05-31","views":1050,"active_users":778},{"date":"2025-06-01","views":1108,"active_users":853},{"date":"2025-06-02","views":2296,"active_users":1702},{"date":"2025-06-03","views":2459,"active_users":1836},{"date":"2025-06-04","views":2559,"active_users":1926},{"date":"2025-06-05","views":2228,"active_users":1692},{"date":"2025-06-06","views":1673,"active_users":1291},{"date":"2025-06-07","views":886,"active_users":660},{"date":"2025-06-08","views":1102,"active_users":866},{"date":"2025-06-09","views":2772,"active_users":2301},{"date":"2025-06-10","views":2257,"active_users":1727},{"date":"2025-06-11","views":2254,"active_users":1676},{"date":"2025-06-12","views":2102,"active_users":1581},{"date":"2025-06-13","views":1702,"active_users":1269},{"date":"2025-06-14","views":769,"active_users":593},{"date":"2025-06-15","views":1019,"active_users":784},{"date":"2025-06-16","views":2285,"active_users":1729},{"date":"2025-06-17","views":2282,"active_users":1788},{"date":"2025-06-18","views":2215,"active_users":1696},{"date":"2025-06-19","views":1870,"active_users":1452},{"date":"2025-06-20","views":1664,"active_users":1262},{"date":"2025-06-21","views":791,"active_users":593},{"date":"2025-06-22","views":938,"active_users":726},{"date":"2025-06-23","views":2123,"active_users":1634},{"date":"2025-06-24","views":2345,"active_users":1830},{"date":"2025-06-25","views":2170,"active_users":1685},{"date":"2025-06-26","views":2264,"active_users":1685},{"date":"2025-06-27","views":1738,"active_users":1321},{"date":"2025-06-28","views":955,"active_users":727},{"date":"2025-06-29","views":1117,"active_users":867},{"date":"2025-06-30","views":2255,"active_users":1721},{"date":"2025-07-01","views":2173,"active_users":1661},{"date":"2025-07-02","views":2131,"active_users":1603},{"date":"2025-07-03","views":2127,"active_users":1628},{"date":"2025-07-04","views":1535,"active_users":1138},{"date":"2025-07-05","views":818,"active_users":604},{"date":"2025-07-06","views":1040,"active_users":810},{"date":"2025-07-07","views":2200,"active_users":1668},{"date":"2025-07-08","views":2255,"active_users":1730},{"date":"2025-07-09","views":2188,"active_users":1696},{"date":"2025-07-10","views":2107,"active_users":1551},{"date":"2025-07-11","views":1681,"active_users":1298},{"date":"2025-07-12","views":960,"active_users":692},{"date":"2025-07-13","views":1152,"active_users":841},{"date":"2025-07-14","views":2113,"active_users":1572},{"date":"2025-07-15","views":2281,"active_users":1706},{"date":"2025-07-16","views":2163,"active_users":1626},{"date":"2025-07-17","views":2171,"active_users":1674},{"date":"2025-07-18","views":1646,"active_users":1214},{"date":"2025-07-19","views":915,"active_users":684},{"date":"2025-07-20","views":1067,"active_users":807},{"date":"2025-07-21","views":2187,"active_users":1606},{"date":"2025-07-22","views":2312,"active_users":1725},{"date":"2025-07-23","views":2626,"active_users":1947},{"date":"2025-07-24","views":2096,"active_users":1598},{"date":"2025-07-25","views":1808,"active_users":1365},{"date":"2025-07-26","views":808,"active_users":629},{"date":"2025-07-27","views":1616,"active_users":1360},{"date":"2025-07-28","views":2568,"active_users":2023},{"date":"2025-07-29","views":2745,"active_users":2136},{"date":"2025-07-30","views":2685,"active_users":2125},{"date":"2025-07-31","views":2285,"active_users":1793},{"date":"2025-08-01","views":2126,"active_users":1684},{"date":"2025-08-02","views":1016,"active_users":814},{"date":"2025-08-03","views":1028,"active_users":782},{"date":"2025-08-04","views":2237,"active_users":1701},{"date":"2025-08-05","views":2528,"active_users":1913},{"date":"2025-08-06","views":1802,"active_users":1416},{"date":"2025-08-07","views":861,"active_users":698},{"date":"2025-08-08","views":777,"active_users":671},{"date":"2025-08-09","views":567,"active_users":489},{"date":"2025-08-10","views":682,"active_users":597},{"date":"2025-08-11","views":889,"active_users":720},{"date":"2025-08-12","views":835,"active_users":698},{"date":"2025-08-13","views":721,"active_users":569},{"date":"2025-08-14","views":619,"active_users":486},{"date":"2025-08-15","views":352,"active_users":240},{"date":"2025-08-16","views":238,"active_users":161},{"date":"2025-08-17","views":297,"active_users":216},{"date":"2025-08-18","views":655,"active_users":452},{"date":"2025-08-19","views":1022,"active_users":771},{"date":"2025-08-20","views":1937,"active_users":1486},{"date":"2025-08-21","views":1832,"active_users":1402},{"date":"2025-08-22","views":1660,"active_users":1226},{"date":"2025-08-23","views":860,"active_users":620},{"date":"2025-08-24","views":974,"active_users":741},{"date":"2025-08-25","views":2006,"active_users":1514},{"date":"2025-08-26","views":2087,"active_users":1558},{"date":"2025-08-27","views":4529,"active_users":3623},{"date":"2025-08-28","views":4464,"active_users":3609},{"date":"2025-08-29","views":3125,"active_users":2521},{"date":"2025-08-30","views":1341,"active_users":1025},{"date":"2025-08-31","views":3038,"active_users":2325},{"date":"2025-09-01","views":3536,"active_users":2751},{"date":"2025-09-02","views":3103,"active_users":2416},{"date":"2025-09-03","views":2824,"active_users":2200},{"date":"2025-09-04","views":2413,"active_users":1849},{"date":"2025-09-05","views":1739,"active_users":1312},{"date":"2025-09-06","views":981,"active_users":721},{"date":"2025-09-07","views":1274,"active_users":914},{"date":"2025-09-08","views":2574,"active_users":2009},{"date":"2025-09-09","views":2697,"active_users":2072},{"date":"2025-09-10","views":2339,"active_users":1788},{"date":"2025-09-11","views":2057,"active_users":1595},{"date":"2025-09-12","views":1569,"active_users":1197},{"date":"2025-09-13","views":889,"active_users":663},{"date":"2025-09-14","views":1102,"active_users":815},{"date":"2025-09-15","views":2143,"active_users":1595},{"date":"2025-09-16","views":2413,"active_users":1845},{"date":"2025-09-17","views":2185,"active_users":1707},{"date":"2025-09-18","views":1991,"active_users":1550},{"date":"2025-09-19","views":1548,"active_users":1174},{"date":"2025-09-20","views":940,"active_users":669},{"date":"2025-09-21","views":1051,"active_users":756},{"date":"2025-09-22","views":2013,"active_users":1515},{"date":"2025-09-23","views":2032,"active_users":1519},{"date":"2025-09-24","views":2033,"active_users":1554},{"date":"2025-09-25","views":1890,"active_users":1454},{"date":"2025-09-26","views":1507,"active_users":1166},{"date":"2025-09-27","views":1185,"active_users":854},{"date":"2025-09-28","views":1651,"active_users":1259},{"date":"2025-09-29","views":2284,"active_users":1808},{"date":"2025-09-30","views":3231,"active_users":2422},{"date":"2025-10-01","views":2970,"active_users":2212},{"date":"2025-10-02","views":2122,"active_users":1687},{"date":"2025-10-03","views":1811,"active_users":1384},{"date":"2025-10-04","views":952,"active_users":771},{"date":"2025-10-05","views":1001,"active_users":777},{"date":"2025-10-06","views":2099,"active_users":1641},{"date":"2025-10-07","views":2412,"active_users":1830},{"date":"2025-10-08","views":2152,"active_users":1657},{"date":"2025-10-09","views":1896,"active_users":1447},{"date":"2025-10-10","views":1588,"active_users":1223},{"date":"2025-10-11","views":893,"active_users":669},{"date":"2025-10-12","views":1022,"active_users":758},{"date":"2025-10-13","views":2071,"active_users":1595},{"date":"2025-10-14","views":2019,"active_users":1578},{"date":"2025-10-15","views":2045,"active_users":1568},{"date":"2025-10-16","views":2011,"active_users":1551},{"date":"2025-10-17","views":1727,"active_users":1372},{"date":"2025-10-18","views":893,"active_users":689},{"date":"2025-10-19","views":1019,"active_users":769},{"date":"2025-10-20","views":1886,"active_users":1467},{"date":"2025-10-21","views":2129,"active_users":1644},{"date":"2025-10-22","views":2058,"active_users":1610},{"date":"2025-10-23","views":2114,"active_users":1680},{"date":"2025-10-24","views":1865,"active_users":1519},{"date":"2025-10-25","views":1370,"active_users":999},{"date":"2025-10-26","views":1394,"active_users":1137},{"date":"2025-10-27","views":2344,"active_users":1906},{"date":"2025-10-28","views":2418,"active_users":1966},{"date":"2025-10-29","views":2288,"active_users":1853},{"date":"2025-10-30","views":2393,"active_users":1941},{"date":"2025-10-31","views":2436,"active_users":2114},{"date":"2025-11-01","views":1610,"active_users":1399},{"date":"2025-11-02","views":1989,"active_users":1719},{"date":"2025-11-03","views":2965,"active_users":2504},{"date":"2025-11-04","views":3163,"active_users":2671},{"date":"2025-11-05","views":2675,"active_users":2216},{"date":"2025-11-06","views":2621,"active_users":2153},{"date":"2025-11-07","views":2028,"active_users":1674},{"date":"2025-11-08","views":1552,"active_users":1341},{"date":"2025-11-09","views":1452,"active_users":1206},{"date":"2025-11-10","views":2324,"active_users":1897},{"date":"2025-11-11","views":2319,"active_users":1849},{"date":"2025-11-12","views":3369,"active_users":2897},{"date":"2025-11-13","views":2726,"active_users":2310},{"date":"2025-11-14","views":2804,"active_users":2455},{"date":"2025-11-15","views":2026,"active_users":1811},{"date":"2025-11-16","views":2414,"active_users":2132},{"date":"2025-11-17","views":3493,"active_users":3031},{"date":"2025-11-18","views":3931,"active_users":3481},{"date":"2025-11-19","views":3588,"active_users":3136},{"date":"2025-11-20","views":3336,"active_users":2918},{"date":"2025-11-21","views":2840,"active_users":2482},{"date":"2025-11-22","views":2411,"active_users":2213},{"date":"2025-11-23","views":2295,"active_users":2045},{"date":"2025-11-24","views":3182,"active_users":2719},{"date":"2025-11-25","views":2302,"active_users":1859},{"date":"2025-11-26","views":1977,"active_users":1586},{"date":"2025-11-27","views":2568,"active_users":2235},{"date":"2025-11-28","views":2826,"active_users":2513},{"date":"2025-11-29","views":1717,"active_users":1541},{"date":"2025-11-30","views":996,"active_users":800},{"date":"2025-12-01","views":3462,"active_users":3011},{"date":"2025-12-02","views":2345,"active_users":1898},{"date":"2025-12-03","views":3960,"active_users":3505},{"date":"2025-12-04","views":4059,"active_users":3620},{"date":"2025-12-05","views":3856,"active_users":3463},{"date":"2025-12-06","views":3011,"active_users":2808},{"date":"2025-12-07","views":3294,"active_users":3021},{"date":"2025-12-08","views":3979,"active_users":3547},{"date":"2025-12-09","views":2580,"active_users":2080},{"date":"2025-12-10","views":2367,"active_users":1956},{"date":"2025-12-11","views":1892,"active_users":1529},{"date":"2025-12-12","views":1514,"active_users":1182},{"date":"2025-12-13","views":859,"active_users":663},{"date":"2025-12-14","views":1384,"active_users":1038},{"date":"2025-12-15","views":1980,"active_users":1497},{"date":"2025-12-16","views":1908,"active_users":1498},{"date":"2025-12-17","views":1862,"active_users":1465},{"date":"2025-12-18","views":1940,"active_users":1406},{"date":"2025-12-19","views":1491,"active_users":1122},{"date":"2025-12-20","views":1047,"active_users":883},{"date":"2025-12-21","views":1148,"active_users":936},{"date":"2025-12-22","views":1657,"active_users":1318},{"date":"2025-12-23","views":1310,"active_users":1009},{"date":"2025-12-24","views":924,"active_users":705},{"date":"2025-12-25","views":673,"active_users":524},{"date":"2025-12-26","views":758,"active_users":588},{"date":"2025-12-27","views":609,"active_users":456},{"date":"2025-12-28","views":808,"active_users":611},{"date":"2025-12-29","views":1287,"active_users":1002},{"date":"2025-12-30","views":1005,"active_users":774},{"date":"2025-12-31","views":798,"active_users":612},{"date":"2026-01-01","views":557,"active_users":440},{"date":"2026-01-02","views":883,"active_users":663},{"date":"2026-01-03","views":672,"active_users":529},{"date":"2026-01-04","views":1110,"active_users":899},{"date":"2026-01-05","views":1927,"active_users":1507},{"date":"2026-01-06","views":1839,"active_users":1475},{"date":"2026-01-07","views":2042,"active_users":1616},{"date":"2026-01-08","views":1826,"active_users":1464},{"date":"2026-01-09","views":1451,"active_users":1120},{"date":"2026-01-10","views":810,"active_users":646},{"date":"2026-01-11","views":1339,"active_users":1062},{"date":"2026-01-12","views":2078,"active_users":1690},{"date":"2026-01-13","views":2085,"active_users":1644},{"date":"2026-01-14","views":2066,"active_users":1658},{"date":"2026-01-15","views":2058,"active_users":1701},{"date":"2026-01-16","views":1769,"active_users":1440},{"date":"2026-01-17","views":952,"active_users":764},{"date":"2026-01-18","views":1174,"active_users":957},{"date":"2026-01-19","views":1895,"active_users":1501},{"date":"2026-01-20","views":2110,"active_users":1725},{"date":"2026-01-21","views":2153,"active_users":1735},{"date":"2026-01-22","views":2096,"active_users":1696},{"date":"2026-01-23","views":1741,"active_users":1416},{"date":"2026-01-24","views":996,"active_users":806},{"date":"2026-01-25","views":1052,"active_users":838},{"date":"2026-01-26","views":1878,"active_users":1504},{"date":"2026-01-27","views":2364,"active_users":1953},{"date":"2026-01-28","views":1945,"active_users":1605},{"date":"2026-01-29","views":1844,"active_users":1533},{"date":"2026-01-30","views":1533,"active_users":1269},{"date":"2026-01-31","views":948,"active_users":796},{"date":"2026-02-01","views":1317,"active_users":1101},{"date":"2026-02-02","views":2068,"active_users":1727},{"date":"2026-02-03","views":2190,"active_users":1765},{"date":"2026-02-04","views":2134,"active_users":1738},{"date":"2026-02-05","views":2302,"active_users":1933},{"date":"2026-02-06","views":1558,"active_users":1279},{"date":"2026-02-07","views":882,"active_users":723},{"date":"2026-02-08","views":1163,"active_users":974},{"date":"2026-02-09","views":1926,"active_users":1596},{"date":"2026-02-10","views":1911,"active_users":1565},{"date":"2026-02-11","views":1775,"active_users":1428},{"date":"2026-02-12","views":1714,"active_users":1373},{"date":"2026-02-13","views":2626,"active_users":2309},{"date":"2026-02-14","views":1031,"active_users":864},{"date":"2026-02-15","views":1175,"active_users":993},{"date":"2026-02-16","views":1901,"active_users":1548},{"date":"2026-02-17","views":1975,"active_users":1642},{"date":"2026-02-18","views":1972,"active_users":1610},{"date":"2026-02-19","views":1886,"active_users":1552},{"date":"2026-02-20","views":1829,"active_users":1572},{"date":"2026-02-21","views":973,"active_users":826},{"date":"2026-02-22","views":1098,"active_users":954},{"date":"2026-02-23","views":2065,"active_users":1717},{"date":"2026-02-24","views":2110,"active_users":1755},{"date":"2026-02-25","views":2208,"active_users":1834},{"date":"2026-02-26","views":2122,"active_users":1785},{"date":"2026-02-27","views":1922,"active_users":1565},{"date":"2026-02-28","views":1187,"active_users":1038},{"date":"2026-03-01","views":1313,"active_users":1118},{"date":"2026-03-02","views":2241,"active_users":1880},{"date":"2026-03-03","views":2280,"active_users":1930},{"date":"2026-03-04","views":2238,"active_users":1947},{"date":"2026-03-05","views":2250,"active_users":1879},{"date":"2026-03-06","views":1738,"active_users":1514},{"date":"2026-03-07","views":1084,"active_users":969},{"date":"2026-03-08","views":1244,"active_users":1079},{"date":"2026-03-09","views":2154,"active_users":1826},{"date":"2026-03-10","views":2109,"active_users":1750},{"date":"2026-03-11","views":2050,"active_users":1718},{"date":"2026-03-12","views":1860,"active_users":1570},{"date":"2026-03-13","views":1651,"active_users":1366},{"date":"2026-03-14","views":911,"active_users":804},{"date":"2026-03-15","views":1050,"active_users":881},{"date":"2026-03-16","views":1887,"active_users":1533},{"date":"2026-03-17","views":1907,"active_users":1549},{"date":"2026-03-18","views":1766,"active_users":1439},{"date":"2026-03-19","views":1759,"active_users":1490},{"date":"2026-03-20","views":1411,"active_users":1238},{"date":"2026-03-21","views":795,"active_users":669},{"date":"2026-03-22","views":939,"active_users":775},{"date":"2026-03-23","views":1717,"active_users":1470},{"date":"2026-03-24","views":1768,"active_users":1518},{"date":"2026-03-25","views":1671,"active_users":1454},{"date":"2026-03-26","views":1496,"active_users":1303},{"date":"2026-03-27","views":1295,"active_users":1109},{"date":"2026-03-28","views":873,"active_users":721},{"date":"2026-03-29","views":918,"active_users":730},{"date":"2026-03-30","views":1560,"active_users":1351},{"date":"2026-03-31","views":1621,"active_users":1405},{"date":"2026-04-01","views":1506,"active_users":1271},{"date":"2026-04-02","views":1392,"active_users":1190},{"date":"2026-04-03","views":1213,"active_users":1096},{"date":"2026-04-04","views":658,"active_users":554},{"date":"2026-04-05","views":694,"active_users":602},{"date":"2026-04-06","views":1224,"active_users":1020},{"date":"2026-04-07","views":1557,"active_users":1334},{"date":"2026-04-08","views":1525,"active_users":1295},{"date":"2026-04-09","views":1486,"active_users":1285},{"date":"2026-04-10","views":1293,"active_users":1118},{"date":"2026-04-11","views":564,"active_users":460},{"date":"2026-04-12","views":800,"active_users":644},{"date":"2026-04-13","views":1630,"active_users":1363},{"date":"2026-04-14","views":1574,"active_users":1380},{"date":"2026-04-15","views":1494,"active_users":1272},{"date":"2026-04-16","views":1421,"active_users":1218},{"date":"2026-04-17","views":1166,"active_users":1010},{"date":"2026-04-18","views":563,"active_users":461},{"date":"2026-04-19","views":666,"active_users":577},{"date":"2026-04-20","views":1481,"active_users":1234},{"date":"2026-04-21","views":1446,"active_users":1238},{"date":"2026-04-22","views":1445,"active_users":1214},{"date":"2026-04-23","views":1396,"active_users":1221},{"date":"2026-04-24","views":1165,"active_users":1008},{"date":"2026-04-25","views":664,"active_users":528},{"date":"2026-04-26","views":803,"active_users":648},{"date":"2026-04-27","views":1410,"active_users":1225},{"date":"2026-04-28","views":1464,"active_users":1267},{"date":"2026-04-29","views":1477,"active_users":1249},{"date":"2026-04-30","views":1251,"active_users":1064},{"date":"2026-05-01","views":713,"active_users":579},{"date":"2026-05-02","views":140,"active_users":112},{"date":"2026-05-03","views":174,"active_users":156},{"date":"2026-05-04","views":324,"active_users":303},{"date":"2026-05-05","views":358,"active_users":323},{"date":"2026-05-06","views":344,"active_users":304},{"date":"2026-05-07","views":346,"active_users":323},{"date":"2026-05-08","views":265,"active_users":236},{"date":"2026-05-09","views":144,"active_users":140},{"date":"2026-05-10","views":173,"active_users":138},{"date":"2026-05-11","views":363,"active_users":327},{"date":"2026-05-12","views":327,"active_users":335},{"date":"2026-05-13","views":319,"active_users":280},{"date":"2026-05-14","views":335,"active_users":281},{"date":"2026-05-15","views":392,"active_users":339},{"date":"2026-05-16","views":161,"active_users":124},{"date":"2026-05-17","views":220,"active_users":174},{"date":"2026-05-18","views":392,"active_users":351},{"date":"2026-05-19","views":389,"active_users":340},{"date":"2026-05-20","views":477,"active_users":431},{"date":"2026-05-21","views":432,"active_users":405},{"date":"2026-05-22","views":338,"active_users":320},{"date":"2026-05-23","views":187,"active_users":156},{"date":"2026-05-24","views":211,"active_users":177},{"date":"2026-05-25","views":282,"active_users":254},{"date":"2026-05-26","views":329,"active_users":296},{"date":"2026-05-27","views":343,"active_users":304},{"date":"2026-05-28","views":322,"active_users":290},{"date":"2026-05-29","views":250,"active_users":231},{"date":"2026-05-30","views":170,"active_users":131},{"date":"2026-05-31","views":168,"active_users":137},{"date":"2026-06-01","views":327,"active_users":292},{"date":"2026-06-02","views":393,"active_users":330},{"date":"2026-06-03","views":309,"active_users":269},{"date":"2026-06-04","views":342,"active_users":311},{"date":"2026-06-05","views":265,"active_users":231},{"date":"2026-06-06","views":110,"active_users":97},{"date":"2026-06-07","views":158,"active_users":133},{"date":"2026-06-08","views":350,"active_users":301},{"date":"2026-06-09","views":338,"active_users":308},{"date":"2026-06-10","views":347,"active_users":295},{"date":"2026-06-11","views":350,"active_users":270},{"date":"2026-06-12","views":289,"active_users":224},{"date":"2026-06-13","views":126,"active_users":109},{"date":"2026-06-14","views":169,"active_users":127},{"date":"2026-06-15","views":335,"active_users":273},{"date":"2026-06-16","views":385,"active_users":321},{"date":"2026-06-17","views":411,"active_users":345},{"date":"2026-06-18","views":335,"active_users":296}]}
+{
+  "series": "home_daily",
+  "metric": "Views = client page_view for pagePath = \"/\"",
+  "filter": "Page path and screen class exactly matches /",
+  "date_range": "2025-05-01..2026-06-24",
+  "scraped_at": "2026-06-19",
+  "count": 420,
+  "rows": [
+    {
+      "date": "2025-05-01",
+      "views": 1549,
+      "active_users": 1178
+    },
+    {
+      "date": "2025-05-02",
+      "views": 1473,
+      "active_users": 1128
+    },
+    {
+      "date": "2025-05-03",
+      "views": 898,
+      "active_users": 660
+    },
+    {
+      "date": "2025-05-04",
+      "views": 1162,
+      "active_users": 887
+    },
+    {
+      "date": "2025-05-05",
+      "views": 2233,
+      "active_users": 1677
+    },
+    {
+      "date": "2025-05-06",
+      "views": 2492,
+      "active_users": 1845
+    },
+    {
+      "date": "2025-05-07",
+      "views": 2429,
+      "active_users": 1797
+    },
+    {
+      "date": "2025-05-08",
+      "views": 2133,
+      "active_users": 1656
+    },
+    {
+      "date": "2025-05-09",
+      "views": 1791,
+      "active_users": 1357
+    },
+    {
+      "date": "2025-05-10",
+      "views": 952,
+      "active_users": 698
+    },
+    {
+      "date": "2025-05-11",
+      "views": 1208,
+      "active_users": 913
+    },
+    {
+      "date": "2025-05-12",
+      "views": 2601,
+      "active_users": 1909
+    },
+    {
+      "date": "2025-05-13",
+      "views": 2527,
+      "active_users": 1910
+    },
+    {
+      "date": "2025-05-14",
+      "views": 2422,
+      "active_users": 1804
+    },
+    {
+      "date": "2025-05-15",
+      "views": 2212,
+      "active_users": 1648
+    },
+    {
+      "date": "2025-05-16",
+      "views": 1849,
+      "active_users": 1359
+    },
+    {
+      "date": "2025-05-17",
+      "views": 829,
+      "active_users": 646
+    },
+    {
+      "date": "2025-05-18",
+      "views": 1148,
+      "active_users": 866
+    },
+    {
+      "date": "2025-05-19",
+      "views": 2334,
+      "active_users": 1791
+    },
+    {
+      "date": "2025-05-20",
+      "views": 2443,
+      "active_users": 1864
+    },
+    {
+      "date": "2025-05-21",
+      "views": 2402,
+      "active_users": 1818
+    },
+    {
+      "date": "2025-05-22",
+      "views": 2240,
+      "active_users": 1661
+    },
+    {
+      "date": "2025-05-23",
+      "views": 1706,
+      "active_users": 1302
+    },
+    {
+      "date": "2025-05-24",
+      "views": 925,
+      "active_users": 710
+    },
+    {
+      "date": "2025-05-25",
+      "views": 1052,
+      "active_users": 780
+    },
+    {
+      "date": "2025-05-26",
+      "views": 1942,
+      "active_users": 1479
+    },
+    {
+      "date": "2025-05-27",
+      "views": 2351,
+      "active_users": 1791
+    },
+    {
+      "date": "2025-05-28",
+      "views": 2245,
+      "active_users": 1707
+    },
+    {
+      "date": "2025-05-29",
+      "views": 1994,
+      "active_users": 1535
+    },
+    {
+      "date": "2025-05-30",
+      "views": 1757,
+      "active_users": 1316
+    },
+    {
+      "date": "2025-05-31",
+      "views": 1050,
+      "active_users": 778
+    },
+    {
+      "date": "2025-06-01",
+      "views": 1108,
+      "active_users": 853
+    },
+    {
+      "date": "2025-06-02",
+      "views": 2296,
+      "active_users": 1702
+    },
+    {
+      "date": "2025-06-03",
+      "views": 2459,
+      "active_users": 1836
+    },
+    {
+      "date": "2025-06-04",
+      "views": 2559,
+      "active_users": 1926
+    },
+    {
+      "date": "2025-06-05",
+      "views": 2228,
+      "active_users": 1692
+    },
+    {
+      "date": "2025-06-06",
+      "views": 1673,
+      "active_users": 1291
+    },
+    {
+      "date": "2025-06-07",
+      "views": 886,
+      "active_users": 660
+    },
+    {
+      "date": "2025-06-08",
+      "views": 1102,
+      "active_users": 866
+    },
+    {
+      "date": "2025-06-09",
+      "views": 2772,
+      "active_users": 2301
+    },
+    {
+      "date": "2025-06-10",
+      "views": 2257,
+      "active_users": 1727
+    },
+    {
+      "date": "2025-06-11",
+      "views": 2254,
+      "active_users": 1676
+    },
+    {
+      "date": "2025-06-12",
+      "views": 2102,
+      "active_users": 1581
+    },
+    {
+      "date": "2025-06-13",
+      "views": 1702,
+      "active_users": 1269
+    },
+    {
+      "date": "2025-06-14",
+      "views": 769,
+      "active_users": 593
+    },
+    {
+      "date": "2025-06-15",
+      "views": 1019,
+      "active_users": 784
+    },
+    {
+      "date": "2025-06-16",
+      "views": 2285,
+      "active_users": 1729
+    },
+    {
+      "date": "2025-06-17",
+      "views": 2282,
+      "active_users": 1788
+    },
+    {
+      "date": "2025-06-18",
+      "views": 2215,
+      "active_users": 1696
+    },
+    {
+      "date": "2025-06-19",
+      "views": 1870,
+      "active_users": 1452
+    },
+    {
+      "date": "2025-06-20",
+      "views": 1664,
+      "active_users": 1262
+    },
+    {
+      "date": "2025-06-21",
+      "views": 791,
+      "active_users": 593
+    },
+    {
+      "date": "2025-06-22",
+      "views": 938,
+      "active_users": 726
+    },
+    {
+      "date": "2025-06-23",
+      "views": 2123,
+      "active_users": 1634
+    },
+    {
+      "date": "2025-06-24",
+      "views": 2345,
+      "active_users": 1830
+    },
+    {
+      "date": "2025-06-25",
+      "views": 2170,
+      "active_users": 1685
+    },
+    {
+      "date": "2025-06-26",
+      "views": 2264,
+      "active_users": 1685
+    },
+    {
+      "date": "2025-06-27",
+      "views": 1738,
+      "active_users": 1321
+    },
+    {
+      "date": "2025-06-28",
+      "views": 955,
+      "active_users": 727
+    },
+    {
+      "date": "2025-06-29",
+      "views": 1117,
+      "active_users": 867
+    },
+    {
+      "date": "2025-06-30",
+      "views": 2255,
+      "active_users": 1721
+    },
+    {
+      "date": "2025-07-01",
+      "views": 2173,
+      "active_users": 1661
+    },
+    {
+      "date": "2025-07-02",
+      "views": 2131,
+      "active_users": 1603
+    },
+    {
+      "date": "2025-07-03",
+      "views": 2127,
+      "active_users": 1628
+    },
+    {
+      "date": "2025-07-04",
+      "views": 1535,
+      "active_users": 1138
+    },
+    {
+      "date": "2025-07-05",
+      "views": 818,
+      "active_users": 604
+    },
+    {
+      "date": "2025-07-06",
+      "views": 1040,
+      "active_users": 810
+    },
+    {
+      "date": "2025-07-07",
+      "views": 2200,
+      "active_users": 1668
+    },
+    {
+      "date": "2025-07-08",
+      "views": 2255,
+      "active_users": 1730
+    },
+    {
+      "date": "2025-07-09",
+      "views": 2188,
+      "active_users": 1696
+    },
+    {
+      "date": "2025-07-10",
+      "views": 2107,
+      "active_users": 1551
+    },
+    {
+      "date": "2025-07-11",
+      "views": 1681,
+      "active_users": 1298
+    },
+    {
+      "date": "2025-07-12",
+      "views": 960,
+      "active_users": 692
+    },
+    {
+      "date": "2025-07-13",
+      "views": 1152,
+      "active_users": 841
+    },
+    {
+      "date": "2025-07-14",
+      "views": 2113,
+      "active_users": 1572
+    },
+    {
+      "date": "2025-07-15",
+      "views": 2281,
+      "active_users": 1706
+    },
+    {
+      "date": "2025-07-16",
+      "views": 2163,
+      "active_users": 1626
+    },
+    {
+      "date": "2025-07-17",
+      "views": 2171,
+      "active_users": 1674
+    },
+    {
+      "date": "2025-07-18",
+      "views": 1646,
+      "active_users": 1214
+    },
+    {
+      "date": "2025-07-19",
+      "views": 915,
+      "active_users": 684
+    },
+    {
+      "date": "2025-07-20",
+      "views": 1067,
+      "active_users": 807
+    },
+    {
+      "date": "2025-07-21",
+      "views": 2187,
+      "active_users": 1606
+    },
+    {
+      "date": "2025-07-22",
+      "views": 2312,
+      "active_users": 1725
+    },
+    {
+      "date": "2025-07-23",
+      "views": 2626,
+      "active_users": 1947
+    },
+    {
+      "date": "2025-07-24",
+      "views": 2096,
+      "active_users": 1598
+    },
+    {
+      "date": "2025-07-25",
+      "views": 1808,
+      "active_users": 1365
+    },
+    {
+      "date": "2025-07-26",
+      "views": 808,
+      "active_users": 629
+    },
+    {
+      "date": "2025-07-27",
+      "views": 1616,
+      "active_users": 1360
+    },
+    {
+      "date": "2025-07-28",
+      "views": 2568,
+      "active_users": 2023
+    },
+    {
+      "date": "2025-07-29",
+      "views": 2745,
+      "active_users": 2136
+    },
+    {
+      "date": "2025-07-30",
+      "views": 2685,
+      "active_users": 2125
+    },
+    {
+      "date": "2025-07-31",
+      "views": 2285,
+      "active_users": 1793
+    },
+    {
+      "date": "2025-08-01",
+      "views": 2126,
+      "active_users": 1684
+    },
+    {
+      "date": "2025-08-02",
+      "views": 1016,
+      "active_users": 814
+    },
+    {
+      "date": "2025-08-03",
+      "views": 1028,
+      "active_users": 782
+    },
+    {
+      "date": "2025-08-04",
+      "views": 2237,
+      "active_users": 1701
+    },
+    {
+      "date": "2025-08-05",
+      "views": 2528,
+      "active_users": 1913
+    },
+    {
+      "date": "2025-08-06",
+      "views": 1802,
+      "active_users": 1416
+    },
+    {
+      "date": "2025-08-07",
+      "views": 861,
+      "active_users": 698
+    },
+    {
+      "date": "2025-08-08",
+      "views": 777,
+      "active_users": 671
+    },
+    {
+      "date": "2025-08-09",
+      "views": 567,
+      "active_users": 489
+    },
+    {
+      "date": "2025-08-10",
+      "views": 682,
+      "active_users": 597
+    },
+    {
+      "date": "2025-08-11",
+      "views": 889,
+      "active_users": 720
+    },
+    {
+      "date": "2025-08-12",
+      "views": 835,
+      "active_users": 698
+    },
+    {
+      "date": "2025-08-13",
+      "views": 721,
+      "active_users": 569
+    },
+    {
+      "date": "2025-08-14",
+      "views": 619,
+      "active_users": 486
+    },
+    {
+      "date": "2025-08-15",
+      "views": 352,
+      "active_users": 240
+    },
+    {
+      "date": "2025-08-16",
+      "views": 238,
+      "active_users": 161
+    },
+    {
+      "date": "2025-08-17",
+      "views": 297,
+      "active_users": 216
+    },
+    {
+      "date": "2025-08-18",
+      "views": 655,
+      "active_users": 452
+    },
+    {
+      "date": "2025-08-19",
+      "views": 1022,
+      "active_users": 771
+    },
+    {
+      "date": "2025-08-20",
+      "views": 1937,
+      "active_users": 1486
+    },
+    {
+      "date": "2025-08-21",
+      "views": 1832,
+      "active_users": 1402
+    },
+    {
+      "date": "2025-08-22",
+      "views": 1660,
+      "active_users": 1226
+    },
+    {
+      "date": "2025-08-23",
+      "views": 860,
+      "active_users": 620
+    },
+    {
+      "date": "2025-08-24",
+      "views": 974,
+      "active_users": 741
+    },
+    {
+      "date": "2025-08-25",
+      "views": 2006,
+      "active_users": 1514
+    },
+    {
+      "date": "2025-08-26",
+      "views": 2087,
+      "active_users": 1558
+    },
+    {
+      "date": "2025-08-27",
+      "views": 4529,
+      "active_users": 3623
+    },
+    {
+      "date": "2025-08-28",
+      "views": 4464,
+      "active_users": 3609
+    },
+    {
+      "date": "2025-08-29",
+      "views": 3125,
+      "active_users": 2521
+    },
+    {
+      "date": "2025-08-30",
+      "views": 1341,
+      "active_users": 1025
+    },
+    {
+      "date": "2025-08-31",
+      "views": 3038,
+      "active_users": 2325
+    },
+    {
+      "date": "2025-09-01",
+      "views": 3536,
+      "active_users": 2751
+    },
+    {
+      "date": "2025-09-02",
+      "views": 3103,
+      "active_users": 2416
+    },
+    {
+      "date": "2025-09-03",
+      "views": 2824,
+      "active_users": 2200
+    },
+    {
+      "date": "2025-09-04",
+      "views": 2413,
+      "active_users": 1849
+    },
+    {
+      "date": "2025-09-05",
+      "views": 1739,
+      "active_users": 1312
+    },
+    {
+      "date": "2025-09-06",
+      "views": 981,
+      "active_users": 721
+    },
+    {
+      "date": "2025-09-07",
+      "views": 1274,
+      "active_users": 914
+    },
+    {
+      "date": "2025-09-08",
+      "views": 2574,
+      "active_users": 2009
+    },
+    {
+      "date": "2025-09-09",
+      "views": 2697,
+      "active_users": 2072
+    },
+    {
+      "date": "2025-09-10",
+      "views": 2339,
+      "active_users": 1788
+    },
+    {
+      "date": "2025-09-11",
+      "views": 2057,
+      "active_users": 1595
+    },
+    {
+      "date": "2025-09-12",
+      "views": 1569,
+      "active_users": 1197
+    },
+    {
+      "date": "2025-09-13",
+      "views": 889,
+      "active_users": 663
+    },
+    {
+      "date": "2025-09-14",
+      "views": 1102,
+      "active_users": 815
+    },
+    {
+      "date": "2025-09-15",
+      "views": 2143,
+      "active_users": 1595
+    },
+    {
+      "date": "2025-09-16",
+      "views": 2413,
+      "active_users": 1845
+    },
+    {
+      "date": "2025-09-17",
+      "views": 2185,
+      "active_users": 1707
+    },
+    {
+      "date": "2025-09-18",
+      "views": 1991,
+      "active_users": 1550
+    },
+    {
+      "date": "2025-09-19",
+      "views": 1548,
+      "active_users": 1174
+    },
+    {
+      "date": "2025-09-20",
+      "views": 940,
+      "active_users": 669
+    },
+    {
+      "date": "2025-09-21",
+      "views": 1051,
+      "active_users": 756
+    },
+    {
+      "date": "2025-09-22",
+      "views": 2013,
+      "active_users": 1515
+    },
+    {
+      "date": "2025-09-23",
+      "views": 2032,
+      "active_users": 1519
+    },
+    {
+      "date": "2025-09-24",
+      "views": 2033,
+      "active_users": 1554
+    },
+    {
+      "date": "2025-09-25",
+      "views": 1890,
+      "active_users": 1454
+    },
+    {
+      "date": "2025-09-26",
+      "views": 1507,
+      "active_users": 1166
+    },
+    {
+      "date": "2025-09-27",
+      "views": 1185,
+      "active_users": 854
+    },
+    {
+      "date": "2025-09-28",
+      "views": 1651,
+      "active_users": 1259
+    },
+    {
+      "date": "2025-09-29",
+      "views": 2284,
+      "active_users": 1808
+    },
+    {
+      "date": "2025-09-30",
+      "views": 3231,
+      "active_users": 2422
+    },
+    {
+      "date": "2025-10-01",
+      "views": 2970,
+      "active_users": 2212
+    },
+    {
+      "date": "2025-10-02",
+      "views": 2122,
+      "active_users": 1687
+    },
+    {
+      "date": "2025-10-03",
+      "views": 1811,
+      "active_users": 1384
+    },
+    {
+      "date": "2025-10-04",
+      "views": 952,
+      "active_users": 771
+    },
+    {
+      "date": "2025-10-05",
+      "views": 1001,
+      "active_users": 777
+    },
+    {
+      "date": "2025-10-06",
+      "views": 2099,
+      "active_users": 1641
+    },
+    {
+      "date": "2025-10-07",
+      "views": 2412,
+      "active_users": 1830
+    },
+    {
+      "date": "2025-10-08",
+      "views": 2152,
+      "active_users": 1657
+    },
+    {
+      "date": "2025-10-09",
+      "views": 1896,
+      "active_users": 1447
+    },
+    {
+      "date": "2025-10-10",
+      "views": 1588,
+      "active_users": 1223
+    },
+    {
+      "date": "2025-10-11",
+      "views": 893,
+      "active_users": 669
+    },
+    {
+      "date": "2025-10-12",
+      "views": 1022,
+      "active_users": 758
+    },
+    {
+      "date": "2025-10-13",
+      "views": 2071,
+      "active_users": 1595
+    },
+    {
+      "date": "2025-10-14",
+      "views": 2019,
+      "active_users": 1578
+    },
+    {
+      "date": "2025-10-15",
+      "views": 2045,
+      "active_users": 1568
+    },
+    {
+      "date": "2025-10-16",
+      "views": 2011,
+      "active_users": 1551
+    },
+    {
+      "date": "2025-10-17",
+      "views": 1727,
+      "active_users": 1372
+    },
+    {
+      "date": "2025-10-18",
+      "views": 893,
+      "active_users": 689
+    },
+    {
+      "date": "2025-10-19",
+      "views": 1019,
+      "active_users": 769
+    },
+    {
+      "date": "2025-10-20",
+      "views": 1886,
+      "active_users": 1467
+    },
+    {
+      "date": "2025-10-21",
+      "views": 2129,
+      "active_users": 1644
+    },
+    {
+      "date": "2025-10-22",
+      "views": 2058,
+      "active_users": 1610
+    },
+    {
+      "date": "2025-10-23",
+      "views": 2114,
+      "active_users": 1680
+    },
+    {
+      "date": "2025-10-24",
+      "views": 1865,
+      "active_users": 1519
+    },
+    {
+      "date": "2025-10-25",
+      "views": 1370,
+      "active_users": 999
+    },
+    {
+      "date": "2025-10-26",
+      "views": 1394,
+      "active_users": 1137
+    },
+    {
+      "date": "2025-10-27",
+      "views": 2344,
+      "active_users": 1906
+    },
+    {
+      "date": "2025-10-28",
+      "views": 2418,
+      "active_users": 1966
+    },
+    {
+      "date": "2025-10-29",
+      "views": 2288,
+      "active_users": 1853
+    },
+    {
+      "date": "2025-10-30",
+      "views": 2393,
+      "active_users": 1941
+    },
+    {
+      "date": "2025-10-31",
+      "views": 2436,
+      "active_users": 2114
+    },
+    {
+      "date": "2025-11-01",
+      "views": 1610,
+      "active_users": 1399
+    },
+    {
+      "date": "2025-11-02",
+      "views": 1989,
+      "active_users": 1719
+    },
+    {
+      "date": "2025-11-03",
+      "views": 2965,
+      "active_users": 2504
+    },
+    {
+      "date": "2025-11-04",
+      "views": 3163,
+      "active_users": 2671
+    },
+    {
+      "date": "2025-11-05",
+      "views": 2675,
+      "active_users": 2216
+    },
+    {
+      "date": "2025-11-06",
+      "views": 2621,
+      "active_users": 2153
+    },
+    {
+      "date": "2025-11-07",
+      "views": 2028,
+      "active_users": 1674
+    },
+    {
+      "date": "2025-11-08",
+      "views": 1552,
+      "active_users": 1341
+    },
+    {
+      "date": "2025-11-09",
+      "views": 1452,
+      "active_users": 1206
+    },
+    {
+      "date": "2025-11-10",
+      "views": 2324,
+      "active_users": 1897
+    },
+    {
+      "date": "2025-11-11",
+      "views": 2319,
+      "active_users": 1849
+    },
+    {
+      "date": "2025-11-12",
+      "views": 3369,
+      "active_users": 2897
+    },
+    {
+      "date": "2025-11-13",
+      "views": 2726,
+      "active_users": 2310
+    },
+    {
+      "date": "2025-11-14",
+      "views": 2804,
+      "active_users": 2455
+    },
+    {
+      "date": "2025-11-15",
+      "views": 2026,
+      "active_users": 1811
+    },
+    {
+      "date": "2025-11-16",
+      "views": 2414,
+      "active_users": 2132
+    },
+    {
+      "date": "2025-11-17",
+      "views": 3493,
+      "active_users": 3031
+    },
+    {
+      "date": "2025-11-18",
+      "views": 3931,
+      "active_users": 3481
+    },
+    {
+      "date": "2025-11-19",
+      "views": 3588,
+      "active_users": 3136
+    },
+    {
+      "date": "2025-11-20",
+      "views": 3336,
+      "active_users": 2918
+    },
+    {
+      "date": "2025-11-21",
+      "views": 2840,
+      "active_users": 2482
+    },
+    {
+      "date": "2025-11-22",
+      "views": 2411,
+      "active_users": 2213
+    },
+    {
+      "date": "2025-11-23",
+      "views": 2295,
+      "active_users": 2045
+    },
+    {
+      "date": "2025-11-24",
+      "views": 3182,
+      "active_users": 2719
+    },
+    {
+      "date": "2025-11-25",
+      "views": 2302,
+      "active_users": 1859
+    },
+    {
+      "date": "2025-11-26",
+      "views": 1977,
+      "active_users": 1586
+    },
+    {
+      "date": "2025-11-27",
+      "views": 2568,
+      "active_users": 2235
+    },
+    {
+      "date": "2025-11-28",
+      "views": 2826,
+      "active_users": 2513
+    },
+    {
+      "date": "2025-11-29",
+      "views": 1717,
+      "active_users": 1541
+    },
+    {
+      "date": "2025-11-30",
+      "views": 996,
+      "active_users": 800
+    },
+    {
+      "date": "2025-12-01",
+      "views": 3462,
+      "active_users": 3011
+    },
+    {
+      "date": "2025-12-02",
+      "views": 2345,
+      "active_users": 1898
+    },
+    {
+      "date": "2025-12-03",
+      "views": 3960,
+      "active_users": 3505
+    },
+    {
+      "date": "2025-12-04",
+      "views": 4059,
+      "active_users": 3620
+    },
+    {
+      "date": "2025-12-05",
+      "views": 3856,
+      "active_users": 3463
+    },
+    {
+      "date": "2025-12-06",
+      "views": 3011,
+      "active_users": 2808
+    },
+    {
+      "date": "2025-12-07",
+      "views": 3294,
+      "active_users": 3021
+    },
+    {
+      "date": "2025-12-08",
+      "views": 3979,
+      "active_users": 3547
+    },
+    {
+      "date": "2025-12-09",
+      "views": 2580,
+      "active_users": 2080
+    },
+    {
+      "date": "2025-12-10",
+      "views": 2367,
+      "active_users": 1956
+    },
+    {
+      "date": "2025-12-11",
+      "views": 1892,
+      "active_users": 1529
+    },
+    {
+      "date": "2025-12-12",
+      "views": 1514,
+      "active_users": 1182
+    },
+    {
+      "date": "2025-12-13",
+      "views": 859,
+      "active_users": 663
+    },
+    {
+      "date": "2025-12-14",
+      "views": 1384,
+      "active_users": 1038
+    },
+    {
+      "date": "2025-12-15",
+      "views": 1980,
+      "active_users": 1497
+    },
+    {
+      "date": "2025-12-16",
+      "views": 1908,
+      "active_users": 1498
+    },
+    {
+      "date": "2025-12-17",
+      "views": 1862,
+      "active_users": 1465
+    },
+    {
+      "date": "2025-12-18",
+      "views": 1940,
+      "active_users": 1406
+    },
+    {
+      "date": "2025-12-19",
+      "views": 1491,
+      "active_users": 1122
+    },
+    {
+      "date": "2025-12-20",
+      "views": 1047,
+      "active_users": 883
+    },
+    {
+      "date": "2025-12-21",
+      "views": 1148,
+      "active_users": 936
+    },
+    {
+      "date": "2025-12-22",
+      "views": 1657,
+      "active_users": 1318
+    },
+    {
+      "date": "2025-12-23",
+      "views": 1310,
+      "active_users": 1009
+    },
+    {
+      "date": "2025-12-24",
+      "views": 924,
+      "active_users": 705
+    },
+    {
+      "date": "2025-12-25",
+      "views": 673,
+      "active_users": 524
+    },
+    {
+      "date": "2025-12-26",
+      "views": 758,
+      "active_users": 588
+    },
+    {
+      "date": "2025-12-27",
+      "views": 609,
+      "active_users": 456
+    },
+    {
+      "date": "2025-12-28",
+      "views": 808,
+      "active_users": 611
+    },
+    {
+      "date": "2025-12-29",
+      "views": 1287,
+      "active_users": 1002
+    },
+    {
+      "date": "2025-12-30",
+      "views": 1005,
+      "active_users": 774
+    },
+    {
+      "date": "2025-12-31",
+      "views": 798,
+      "active_users": 612
+    },
+    {
+      "date": "2026-01-01",
+      "views": 557,
+      "active_users": 440
+    },
+    {
+      "date": "2026-01-02",
+      "views": 883,
+      "active_users": 663
+    },
+    {
+      "date": "2026-01-03",
+      "views": 672,
+      "active_users": 529
+    },
+    {
+      "date": "2026-01-04",
+      "views": 1110,
+      "active_users": 899
+    },
+    {
+      "date": "2026-01-05",
+      "views": 1927,
+      "active_users": 1507
+    },
+    {
+      "date": "2026-01-06",
+      "views": 1839,
+      "active_users": 1475
+    },
+    {
+      "date": "2026-01-07",
+      "views": 2042,
+      "active_users": 1616
+    },
+    {
+      "date": "2026-01-08",
+      "views": 1826,
+      "active_users": 1464
+    },
+    {
+      "date": "2026-01-09",
+      "views": 1451,
+      "active_users": 1120
+    },
+    {
+      "date": "2026-01-10",
+      "views": 810,
+      "active_users": 646
+    },
+    {
+      "date": "2026-01-11",
+      "views": 1339,
+      "active_users": 1062
+    },
+    {
+      "date": "2026-01-12",
+      "views": 2078,
+      "active_users": 1690
+    },
+    {
+      "date": "2026-01-13",
+      "views": 2085,
+      "active_users": 1644
+    },
+    {
+      "date": "2026-01-14",
+      "views": 2066,
+      "active_users": 1658
+    },
+    {
+      "date": "2026-01-15",
+      "views": 2058,
+      "active_users": 1701
+    },
+    {
+      "date": "2026-01-16",
+      "views": 1769,
+      "active_users": 1440
+    },
+    {
+      "date": "2026-01-17",
+      "views": 952,
+      "active_users": 764
+    },
+    {
+      "date": "2026-01-18",
+      "views": 1174,
+      "active_users": 957
+    },
+    {
+      "date": "2026-01-19",
+      "views": 1895,
+      "active_users": 1501
+    },
+    {
+      "date": "2026-01-20",
+      "views": 2110,
+      "active_users": 1725
+    },
+    {
+      "date": "2026-01-21",
+      "views": 2153,
+      "active_users": 1735
+    },
+    {
+      "date": "2026-01-22",
+      "views": 2096,
+      "active_users": 1696
+    },
+    {
+      "date": "2026-01-23",
+      "views": 1741,
+      "active_users": 1416
+    },
+    {
+      "date": "2026-01-24",
+      "views": 996,
+      "active_users": 806
+    },
+    {
+      "date": "2026-01-25",
+      "views": 1052,
+      "active_users": 838
+    },
+    {
+      "date": "2026-01-26",
+      "views": 1878,
+      "active_users": 1504
+    },
+    {
+      "date": "2026-01-27",
+      "views": 2364,
+      "active_users": 1953
+    },
+    {
+      "date": "2026-01-28",
+      "views": 1945,
+      "active_users": 1605
+    },
+    {
+      "date": "2026-01-29",
+      "views": 1844,
+      "active_users": 1533
+    },
+    {
+      "date": "2026-01-30",
+      "views": 1533,
+      "active_users": 1269
+    },
+    {
+      "date": "2026-01-31",
+      "views": 948,
+      "active_users": 796
+    },
+    {
+      "date": "2026-02-01",
+      "views": 1317,
+      "active_users": 1101
+    },
+    {
+      "date": "2026-02-02",
+      "views": 2068,
+      "active_users": 1727
+    },
+    {
+      "date": "2026-02-03",
+      "views": 2190,
+      "active_users": 1765
+    },
+    {
+      "date": "2026-02-04",
+      "views": 2134,
+      "active_users": 1738
+    },
+    {
+      "date": "2026-02-05",
+      "views": 2302,
+      "active_users": 1933
+    },
+    {
+      "date": "2026-02-06",
+      "views": 1558,
+      "active_users": 1279
+    },
+    {
+      "date": "2026-02-07",
+      "views": 882,
+      "active_users": 723
+    },
+    {
+      "date": "2026-02-08",
+      "views": 1163,
+      "active_users": 974
+    },
+    {
+      "date": "2026-02-09",
+      "views": 1926,
+      "active_users": 1596
+    },
+    {
+      "date": "2026-02-10",
+      "views": 1911,
+      "active_users": 1565
+    },
+    {
+      "date": "2026-02-11",
+      "views": 1775,
+      "active_users": 1428
+    },
+    {
+      "date": "2026-02-12",
+      "views": 1714,
+      "active_users": 1373
+    },
+    {
+      "date": "2026-02-13",
+      "views": 2626,
+      "active_users": 2309
+    },
+    {
+      "date": "2026-02-14",
+      "views": 1031,
+      "active_users": 864
+    },
+    {
+      "date": "2026-02-15",
+      "views": 1175,
+      "active_users": 993
+    },
+    {
+      "date": "2026-02-16",
+      "views": 1901,
+      "active_users": 1548
+    },
+    {
+      "date": "2026-02-17",
+      "views": 1975,
+      "active_users": 1642
+    },
+    {
+      "date": "2026-02-18",
+      "views": 1972,
+      "active_users": 1610
+    },
+    {
+      "date": "2026-02-19",
+      "views": 1886,
+      "active_users": 1552
+    },
+    {
+      "date": "2026-02-20",
+      "views": 1829,
+      "active_users": 1572
+    },
+    {
+      "date": "2026-02-21",
+      "views": 973,
+      "active_users": 826
+    },
+    {
+      "date": "2026-02-22",
+      "views": 1098,
+      "active_users": 954
+    },
+    {
+      "date": "2026-02-23",
+      "views": 2065,
+      "active_users": 1717
+    },
+    {
+      "date": "2026-02-24",
+      "views": 2110,
+      "active_users": 1755
+    },
+    {
+      "date": "2026-02-25",
+      "views": 2208,
+      "active_users": 1834
+    },
+    {
+      "date": "2026-02-26",
+      "views": 2122,
+      "active_users": 1785
+    },
+    {
+      "date": "2026-02-27",
+      "views": 1922,
+      "active_users": 1565
+    },
+    {
+      "date": "2026-02-28",
+      "views": 1187,
+      "active_users": 1038
+    },
+    {
+      "date": "2026-03-01",
+      "views": 1313,
+      "active_users": 1118
+    },
+    {
+      "date": "2026-03-02",
+      "views": 2241,
+      "active_users": 1880
+    },
+    {
+      "date": "2026-03-03",
+      "views": 2280,
+      "active_users": 1930
+    },
+    {
+      "date": "2026-03-04",
+      "views": 2238,
+      "active_users": 1947
+    },
+    {
+      "date": "2026-03-05",
+      "views": 2250,
+      "active_users": 1879
+    },
+    {
+      "date": "2026-03-06",
+      "views": 1738,
+      "active_users": 1514
+    },
+    {
+      "date": "2026-03-07",
+      "views": 1084,
+      "active_users": 969
+    },
+    {
+      "date": "2026-03-08",
+      "views": 1244,
+      "active_users": 1079
+    },
+    {
+      "date": "2026-03-09",
+      "views": 2154,
+      "active_users": 1826
+    },
+    {
+      "date": "2026-03-10",
+      "views": 2109,
+      "active_users": 1750
+    },
+    {
+      "date": "2026-03-11",
+      "views": 2050,
+      "active_users": 1718
+    },
+    {
+      "date": "2026-03-12",
+      "views": 1860,
+      "active_users": 1570
+    },
+    {
+      "date": "2026-03-13",
+      "views": 1651,
+      "active_users": 1366
+    },
+    {
+      "date": "2026-03-14",
+      "views": 911,
+      "active_users": 804
+    },
+    {
+      "date": "2026-03-15",
+      "views": 1050,
+      "active_users": 881
+    },
+    {
+      "date": "2026-03-16",
+      "views": 1887,
+      "active_users": 1533
+    },
+    {
+      "date": "2026-03-17",
+      "views": 1907,
+      "active_users": 1549
+    },
+    {
+      "date": "2026-03-18",
+      "views": 1766,
+      "active_users": 1439
+    },
+    {
+      "date": "2026-03-19",
+      "views": 1759,
+      "active_users": 1490
+    },
+    {
+      "date": "2026-03-20",
+      "views": 1411,
+      "active_users": 1238
+    },
+    {
+      "date": "2026-03-21",
+      "views": 795,
+      "active_users": 669
+    },
+    {
+      "date": "2026-03-22",
+      "views": 939,
+      "active_users": 775
+    },
+    {
+      "date": "2026-03-23",
+      "views": 1717,
+      "active_users": 1470
+    },
+    {
+      "date": "2026-03-24",
+      "views": 1768,
+      "active_users": 1518
+    },
+    {
+      "date": "2026-03-25",
+      "views": 1671,
+      "active_users": 1454
+    },
+    {
+      "date": "2026-03-26",
+      "views": 1496,
+      "active_users": 1303
+    },
+    {
+      "date": "2026-03-27",
+      "views": 1295,
+      "active_users": 1109
+    },
+    {
+      "date": "2026-03-28",
+      "views": 873,
+      "active_users": 721
+    },
+    {
+      "date": "2026-03-29",
+      "views": 918,
+      "active_users": 730
+    },
+    {
+      "date": "2026-03-30",
+      "views": 1560,
+      "active_users": 1351
+    },
+    {
+      "date": "2026-03-31",
+      "views": 1621,
+      "active_users": 1405
+    },
+    {
+      "date": "2026-04-01",
+      "views": 1506,
+      "active_users": 1271
+    },
+    {
+      "date": "2026-04-02",
+      "views": 1392,
+      "active_users": 1190
+    },
+    {
+      "date": "2026-04-03",
+      "views": 1213,
+      "active_users": 1096
+    },
+    {
+      "date": "2026-04-04",
+      "views": 658,
+      "active_users": 554
+    },
+    {
+      "date": "2026-04-05",
+      "views": 694,
+      "active_users": 602
+    },
+    {
+      "date": "2026-04-06",
+      "views": 1224,
+      "active_users": 1020
+    },
+    {
+      "date": "2026-04-07",
+      "views": 1557,
+      "active_users": 1334
+    },
+    {
+      "date": "2026-04-08",
+      "views": 1525,
+      "active_users": 1295
+    },
+    {
+      "date": "2026-04-09",
+      "views": 1486,
+      "active_users": 1285
+    },
+    {
+      "date": "2026-04-10",
+      "views": 1293,
+      "active_users": 1118
+    },
+    {
+      "date": "2026-04-11",
+      "views": 564,
+      "active_users": 460
+    },
+    {
+      "date": "2026-04-12",
+      "views": 800,
+      "active_users": 644
+    },
+    {
+      "date": "2026-04-13",
+      "views": 1630,
+      "active_users": 1363
+    },
+    {
+      "date": "2026-04-14",
+      "views": 1574,
+      "active_users": 1380
+    },
+    {
+      "date": "2026-04-15",
+      "views": 1494,
+      "active_users": 1272
+    },
+    {
+      "date": "2026-04-16",
+      "views": 1421,
+      "active_users": 1218
+    },
+    {
+      "date": "2026-04-17",
+      "views": 1166,
+      "active_users": 1010
+    },
+    {
+      "date": "2026-04-18",
+      "views": 563,
+      "active_users": 461
+    },
+    {
+      "date": "2026-04-19",
+      "views": 666,
+      "active_users": 577
+    },
+    {
+      "date": "2026-04-20",
+      "views": 1481,
+      "active_users": 1234
+    },
+    {
+      "date": "2026-04-21",
+      "views": 1446,
+      "active_users": 1238
+    },
+    {
+      "date": "2026-04-22",
+      "views": 1445,
+      "active_users": 1214
+    },
+    {
+      "date": "2026-04-23",
+      "views": 1396,
+      "active_users": 1221
+    },
+    {
+      "date": "2026-04-24",
+      "views": 1165,
+      "active_users": 1008
+    },
+    {
+      "date": "2026-04-25",
+      "views": 664,
+      "active_users": 528
+    },
+    {
+      "date": "2026-04-26",
+      "views": 803,
+      "active_users": 648
+    },
+    {
+      "date": "2026-04-27",
+      "views": 1410,
+      "active_users": 1225
+    },
+    {
+      "date": "2026-04-28",
+      "views": 1464,
+      "active_users": 1267
+    },
+    {
+      "date": "2026-04-29",
+      "views": 1477,
+      "active_users": 1249
+    },
+    {
+      "date": "2026-04-30",
+      "views": 1251,
+      "active_users": 1064
+    },
+    {
+      "date": "2026-05-01",
+      "views": 713,
+      "active_users": 579
+    },
+    {
+      "date": "2026-05-02",
+      "views": 140,
+      "active_users": 112
+    },
+    {
+      "date": "2026-05-03",
+      "views": 174,
+      "active_users": 156
+    },
+    {
+      "date": "2026-05-04",
+      "views": 324,
+      "active_users": 303
+    },
+    {
+      "date": "2026-05-05",
+      "views": 358,
+      "active_users": 323
+    },
+    {
+      "date": "2026-05-06",
+      "views": 344,
+      "active_users": 304
+    },
+    {
+      "date": "2026-05-07",
+      "views": 346,
+      "active_users": 323
+    },
+    {
+      "date": "2026-05-08",
+      "views": 265,
+      "active_users": 236
+    },
+    {
+      "date": "2026-05-09",
+      "views": 144,
+      "active_users": 140
+    },
+    {
+      "date": "2026-05-10",
+      "views": 173,
+      "active_users": 138
+    },
+    {
+      "date": "2026-05-11",
+      "views": 363,
+      "active_users": 327
+    },
+    {
+      "date": "2026-05-12",
+      "views": 327,
+      "active_users": 335
+    },
+    {
+      "date": "2026-05-13",
+      "views": 319,
+      "active_users": 280
+    },
+    {
+      "date": "2026-05-14",
+      "views": 335,
+      "active_users": 281
+    },
+    {
+      "date": "2026-05-15",
+      "views": 392,
+      "active_users": 339
+    },
+    {
+      "date": "2026-05-16",
+      "views": 161,
+      "active_users": 124
+    },
+    {
+      "date": "2026-05-17",
+      "views": 220,
+      "active_users": 174
+    },
+    {
+      "date": "2026-05-18",
+      "views": 392,
+      "active_users": 351
+    },
+    {
+      "date": "2026-05-19",
+      "views": 389,
+      "active_users": 340
+    },
+    {
+      "date": "2026-05-20",
+      "views": 477,
+      "active_users": 431
+    },
+    {
+      "date": "2026-05-21",
+      "views": 432,
+      "active_users": 405
+    },
+    {
+      "date": "2026-05-22",
+      "views": 338,
+      "active_users": 320
+    },
+    {
+      "date": "2026-05-23",
+      "views": 187,
+      "active_users": 156
+    },
+    {
+      "date": "2026-05-24",
+      "views": 211,
+      "active_users": 177
+    },
+    {
+      "date": "2026-05-25",
+      "views": 282,
+      "active_users": 254
+    },
+    {
+      "date": "2026-05-26",
+      "views": 329,
+      "active_users": 296
+    },
+    {
+      "date": "2026-05-27",
+      "views": 343,
+      "active_users": 304
+    },
+    {
+      "date": "2026-05-28",
+      "views": 322,
+      "active_users": 290
+    },
+    {
+      "date": "2026-05-29",
+      "views": 250,
+      "active_users": 231
+    },
+    {
+      "date": "2026-05-30",
+      "views": 170,
+      "active_users": 131
+    },
+    {
+      "date": "2026-05-31",
+      "views": 168,
+      "active_users": 137
+    },
+    {
+      "date": "2026-06-01",
+      "views": 327,
+      "active_users": 292
+    },
+    {
+      "date": "2026-06-02",
+      "views": 393,
+      "active_users": 330
+    },
+    {
+      "date": "2026-06-03",
+      "views": 309,
+      "active_users": 269
+    },
+    {
+      "date": "2026-06-04",
+      "views": 342,
+      "active_users": 311
+    },
+    {
+      "date": "2026-06-05",
+      "views": 265,
+      "active_users": 231
+    },
+    {
+      "date": "2026-06-06",
+      "views": 110,
+      "active_users": 97
+    },
+    {
+      "date": "2026-06-07",
+      "views": 158,
+      "active_users": 133
+    },
+    {
+      "date": "2026-06-08",
+      "views": 350,
+      "active_users": 301
+    },
+    {
+      "date": "2026-06-09",
+      "views": 338,
+      "active_users": 308
+    },
+    {
+      "date": "2026-06-10",
+      "views": 347,
+      "active_users": 295
+    },
+    {
+      "date": "2026-06-11",
+      "views": 350,
+      "active_users": 270
+    },
+    {
+      "date": "2026-06-12",
+      "views": 289,
+      "active_users": 224
+    },
+    {
+      "date": "2026-06-13",
+      "views": 126,
+      "active_users": 109
+    },
+    {
+      "date": "2026-06-14",
+      "views": 169,
+      "active_users": 127
+    },
+    {
+      "date": "2026-06-15",
+      "views": 335,
+      "active_users": 273
+    },
+    {
+      "date": "2026-06-16",
+      "views": 385,
+      "active_users": 321
+    },
+    {
+      "date": "2026-06-17",
+      "views": 411,
+      "active_users": 345
+    },
+    {
+      "date": "2026-06-18",
+      "views": 335,
+      "active_users": 296
+    },
+    {
+      "date": "2026-06-19",
+      "views": 283,
+      "active_users": null
+    },
+    {
+      "date": "2026-06-20",
+      "views": 140,
+      "active_users": null
+    },
+    {
+      "date": "2026-06-21",
+      "views": 176,
+      "active_users": null
+    },
+    {
+      "date": "2026-06-22",
+      "views": 348,
+      "active_users": null
+    },
+    {
+      "date": "2026-06-23",
+      "views": 411,
+      "active_users": null
+    },
+    {
+      "date": "2026-06-24",
+      "views": 348,
+      "active_users": null
+    }
+  ],
+  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal."
+}

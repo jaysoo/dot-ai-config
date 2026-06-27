@@ -34,6 +34,16 @@ Question for Steve: do we still build out disk usage tracking for enterprise? Or
 - If enterprise-only: scope down to just observability for escalation debugging, skip billing pipeline
 - If shelving entirely: confirm no committed customer ask blocks this
 
+### "Loop" - recurring agent automation on Nx infra
+
+From Slack thread: build a shared loop for recurring tasks instead of each of us running our own on personal machines/Claude accounts.
+
+- Today: Jack has staleness/audit/triage scans with a daily Slack report (DM-only); Steve has a 2am Claude Code security routine on a separate machine that emits docx/md/html to Google Drive. Both rudimentary, both personal-realm.
+- Goal: report doesn't just notify - it triggers agents to do prelim research + submit draft PRs. More than dependabot/renovate (version bumps alone aren't enough; needs research). Also useful for triage - pick up easy bug fixes.
+- Split: first part (scans, low-effort research, triage) team-owned so it survives PTO; latter part (act on new reports, spin up fix agents) per-individual.
+- Infra angle: leverage existing Nx infra (argo workflows / webhook triggering in cluster). Possibly encapsulate in org via GCP agent garden - IAM-controlled, in-project, trusted (control what each machine can do / network access), easier to share org-wide.
+- Plan: dig in come July. Jack happy to help with research. Big value unlock + cuts maintenance burden.
+
 ## 1:1 Notes
 
 ### 2026-05-07

@@ -23,6 +23,13 @@
 - **Goals:**
 - **Strengths:**
 
+## Upcoming Sync
+
+- Self-Healing: cost vs. benefit. What value is it actually providing? Is it attracting new users at all?
+- Acquisition plans - go over the strategy.
+- Effy reviews for July.
+- "Loop" - team-owned recurring automation. Staleness/audit/triage scans run on Nx infra (not one person's machine/Claude account), report out, and trigger agents to do prelim research + draft PRs (more than dependabot/renovate). Steve already has a 2am Claude Code security routine; both have rudimentary flows worth consolidating. First part (scans, low-effort research, triage) team-owned so PTO doesn't break it; latter part per-individual. Possible: argo workflows/webhook triggers, GCP agent garden for IAM-controlled org sharing. Steve + Jack to dig in July - big value unlock, cuts maintenance burden.
+
 ## 1:1 Notes
 
 ### 2026-04-20

@@ -231,6 +231,344 @@
       }
     }
   },
+  "organic": {
+    "note": "Organic-search trend. GSC clicks are consent-independent (Google-side) and are the canonical forward metric; GA4 organic Views are consent-suppressed from the 2026-05-01 Cookiebot banner and are shown only for the pre-banner cross-check.",
+    "baseline_window": {
+      "from": "2025-10",
+      "to": "2026-04"
+    },
+    "gsc_clicks": {
+      "source": "Google Search Console, web search clicks (organic), sc-domain:nx.dev",
+      "consent_independent": true,
+      "first_month": "2025-02",
+      "latest_month": "2026-06",
+      "baseline_window_change": {
+        "from_month": "2025-10",
+        "to_month": "2026-04",
+        "from_value": 122120,
+        "to_value": 72581,
+        "change_pct": -40.57
+      },
+      "monthly": [
+        {
+          "month": "2025-02",
+          "clicks": 27451,
+          "impressions": 266838,
+          "days": 4,
+          "expected_days": 28,
+          "partial": true
+        },
+        {
+          "month": "2025-03",
+          "clicks": 176693,
+          "impressions": 1923660,
+          "days": 31,
+          "expected_days": 31,
+          "partial": false
+        },
+        {
+          "month": "2025-04",
+          "clicks": 170150,
+          "impressions": 1927241,
+          "days": 30,
+          "expected_days": 30,
+          "partial": false
+        },
+        {
+          "month": "2025-05",
+          "clicks": 159424,
+          "impressions": 2094739,
+          "days": 31,
+          "expected_days": 31,
+          "partial": false
+        },
+        {
+          "month": "2025-06",
+          "clicks": 141775,
+          "impressions": 2231039,
+          "days": 30,
+          "expected_days": 30,
+          "partial": false
+        },
+        {
+          "month": "2025-07",
+          "clicks": 147911,
+          "impressions": 2456908,
+          "days": 31,
+          "expected_days": 31,
+          "partial": false
+        },
+        {
+          "month": "2025-08",
+          "clicks": 130130,
+          "impressions": 2370542,
+          "days": 31,
+          "expected_days": 31,
+          "partial": false
+        },
+        {
+          "month": "2025-09",
+          "clicks": 133523,
+          "impressions": 1849435,
+          "days": 30,
+          "expected_days": 30,
+          "partial": false
+        },
+        {
+          "month": "2025-10",
+          "clicks": 122120,
+          "impressions": 1692920,
+          "days": 31,
+          "expected_days": 31,
+          "partial": false
+        },
+        {
+          "month": "2025-11",
+          "clicks": 110164,
+          "impressions": 1785357,
+          "days": 30,
+          "expected_days": 30,
+          "partial": false
+        },
+        {
+          "month": "2025-12",
+          "clicks": 96948,
+          "impressions": 1669452,
+          "days": 31,
+          "expected_days": 31,
+          "partial": false
+        },
+        {
+          "month": "2026-01",
+          "clicks": 109595,
+          "impressions": 3244835,
+          "days": 31,
+          "expected_days": 31,
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "clicks": 92886,
+          "impressions": 5527660,
+          "days": 28,
+          "expected_days": 28,
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "clicks": 90027,
+          "impressions": 6086879,
+          "days": 31,
+          "expected_days": 31,
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "clicks": 72581,
+          "impressions": 5506869,
+          "days": 30,
+          "expected_days": 30,
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "clicks": 66383,
+          "impressions": 4626826,
+          "days": 31,
+          "expected_days": 31,
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "clicks": 48505,
+          "impressions": 3403640,
+          "days": 24,
+          "expected_days": 30,
+          "partial": true
+        }
+      ]
+    },
+    "ga4_organic_views": {
+      "source": "GA4 client page_view, Session default channel group = Organic Search (home+docs+others)",
+      "consent_independent": false,
+      "baseline_window_change_total": {
+        "from_month": "2025-10",
+        "to_month": "2026-04",
+        "from_value": 323749,
+        "to_value": 176168,
+        "change_pct": -45.59
+      },
+      "baseline_window_change_docs": {
+        "from_month": "2025-10",
+        "to_month": "2026-04",
+        "from_value": 277865,
+        "to_value": 149127,
+        "change_pct": -46.33
+      },
+      "baseline_window_change_home": {
+        "from_month": "2025-10",
+        "to_month": "2026-04",
+        "from_value": 31722,
+        "to_value": 22531,
+        "change_pct": -28.97
+      },
+      "monthly": [
+        {
+          "month": "2025-05",
+          "home": 35418,
+          "docs": 1,
+          "others": 393403,
+          "total": 428822
+        },
+        {
+          "month": "2025-06",
+          "home": 32635,
+          "docs": 2,
+          "others": 379114,
+          "total": 411751
+        },
+        {
+          "month": "2025-07",
+          "home": 34203,
+          "docs": 3,
+          "others": 398554,
+          "total": 432760
+        },
+        {
+          "month": "2025-08",
+          "home": 25429,
+          "docs": 0,
+          "others": 247180,
+          "total": 272609
+        },
+        {
+          "month": "2025-09",
+          "home": 36074,
+          "docs": 14300,
+          "others": 304235,
+          "total": 354609
+        },
+        {
+          "month": "2025-10",
+          "home": 31722,
+          "docs": 277865,
+          "others": 14162,
+          "total": 323749
+        },
+        {
+          "month": "2025-11",
+          "home": 27612,
+          "docs": 255281,
+          "others": 10748,
+          "total": 293641
+        },
+        {
+          "month": "2025-12",
+          "home": 25715,
+          "docs": 220673,
+          "others": 9193,
+          "total": 255581
+        },
+        {
+          "month": "2026-01",
+          "home": 30113,
+          "docs": 228726,
+          "others": 8705,
+          "total": 267544
+        },
+        {
+          "month": "2026-02",
+          "home": 25643,
+          "docs": 194596,
+          "others": 6658,
+          "total": 226897
+        },
+        {
+          "month": "2026-03",
+          "home": 26848,
+          "docs": 183289,
+          "others": 7860,
+          "total": 217997
+        },
+        {
+          "month": "2026-04",
+          "home": 22531,
+          "docs": 149127,
+          "others": 4510,
+          "total": 176168
+        },
+        {
+          "month": "2026-05",
+          "home": 5449,
+          "docs": 46684,
+          "others": 1435,
+          "total": 53568
+        },
+        {
+          "month": "2026-06",
+          "home": 3328,
+          "docs": 26020,
+          "others": 911,
+          "total": 30259
+        }
+      ]
+    },
+    "cross_check": {
+      "baseline_window": {
+        "gsc_clicks_pct": -40.57,
+        "ga4_organic_total_pct": -45.59,
+        "ga4_organic_docs_pct": -46.33,
+        "verdict": "Both independent signals fall ~40-46% Oct 2025 -> Apr 2026 -> the organic decline is REAL, not a measurement artifact."
+      },
+      "may_banner": {
+        "gsc_clicks_apr_to_may_pct": -8.54,
+        "ga4_organic_total_apr_to_may_pct": -69.59,
+        "verdict": "GSC barely dips Apr->May while GA4 organic Views crater -> the May cliff is the Cookiebot consent banner (measurement), not lost audience."
+      }
+    },
+    "forward_tracking": {
+      "metric": "gsc_clicks",
+      "why": "Consent-immune; measures real organic/AI-search audience as correction efforts land.",
+      "baseline_month": "2026-05",
+      "baseline_clicks": 66383,
+      "latest_month": "2026-06",
+      "latest_clicks": 48505,
+      "latest_partial": true,
+      "latest_run_rate_full_month": 60631
+    },
+    "docs_forward": {
+      "what": "Documentation organic-search trend (docs + others, where others pre-2025-09-29 is the root-path docs). GSC clicks = consent-independent forward signal (weekly); GA4 organic Views = consent-suppressed historical context (monthly). Watch the GSC line to gauge whether SEO/AI-search correction efforts are recovering doc organic.",
+      "baseline_window": {
+        "from": "2025-10",
+        "to": "2026-04"
+      },
+      "gsc_clicks_baseline_window": {
+        "from_month": "2025-10",
+        "to_month": "2026-04",
+        "from_value": 96418,
+        "to_value": 52189,
+        "change_pct": -45.87
+      },
+      "ga4_organic_baseline_window": {
+        "from_month": "2025-10",
+        "to_month": "2026-04",
+        "from_value": 292027,
+        "to_value": 153637,
+        "change_pct": -47.39
+      },
+      "may_banner_divergence": {
+        "gsc_apr_to_may_pct": -10.23,
+        "ga4_apr_to_may_pct": -68.68
+      },
+      "forward_baseline_month": "2026-05",
+      "forward_baseline_clicks": 46852,
+      "latest_month": "2026-06",
+      "latest_clicks": 34072,
+      "latest_partial": true,
+      "latest_run_rate_full_month": 42590,
+      "weekly_count": 68
+    }
+  },
   "event_impacts": [
     {
       "date": "2025-05-01",
@@ -364,7 +702,7 @@
       "2026-03": 3341956,
       "2026-04": 5471799,
       "2026-05": 5119810,
-      "2026-06": 3228509
+      "2026-06": 4254667
     },
     "note": "Consent-immune server event (Measurement Protocol); mostly AI-crawler traffic. Not counted in Views."
   },
@@ -955,7 +1293,7 @@
       "comparable": false,
       "reason": "partial month",
       "monthly_all_views": 51667,
-      "daily_sum_all_views": 51667,
+      "daily_sum_all_views": 68151,
       "diff": null,
       "diff_pct": null,
       "within_tolerance": null
@@ -1046,7 +1384,7 @@
     ],
     "blog_marketing_measured_from": "2025-05",
     "others_clamp_days": 0,
-    "daily_days": 414,
+    "daily_days": 420,
     "monthly": [
       {
         "month": "2025-01",
@@ -1273,6 +1611,9 @@
     "2026-05-01 Cookiebot consent banner: daily all_views 9332.5 -> 3239.36 (-65.29% over a 14d-before/14d-after window).",
     "server_page_view first recorded 2026-02-02; peak 273328 on 2026-04-03 (Measurement Protocol, mostly AI crawlers, not in Views).",
     "Daily-vs-monthly integrity (all four series: all/home/docs/server): 13/13 comparable months within 2% tolerance.",
+    "ORGANIC (consent-independent): GSC clicks -40.57% and GA4 organic Views -45.59% (docs -46.33%) over 2025-10 -> 2026-04: two independent signals agree the organic decline is REAL. Apr->May GSC -8.54% vs GA4 organic -69.59% confirms the May cliff is the Cookiebot banner, not lost traffic.",
+    "DOCS ORGANIC (docs + others, the documentation audience): GSC clicks -45.87% and GA4 organic Views -47.39% over 2025-10 -> 2026-04. Forward baseline (GSC, last full month 2026-05): 46852 clicks/mo; latest 2026-06 (partial) 34072 (~42590 run-rate). Weekly GSC chart = the forward progress tracker.",
+    "FORWARD TRACKING: GSC clicks is the consent-immune metric to watch for correction efforts. Baseline (last full month 2026-05): 66383 clicks/mo. Latest 2026-06 (partial): 48505 (~60631 full-month run-rate).",
     "Source crosscheck: 2/2 overlap months pass (Reports == Explore == monthly-segments at 2025-05, 2025-08), confirming the two-source stitch.",
     "No /2 normalization applied: pre-GTM (Jan-Apr 2025) ~650K/mo matches post-GTM (May-Jul 2025) ~635K, disproving double-counting.",
     "Page-type mix Apr 2026 (of 296525 views): docs 216101 (73%), others 9957 (3%), home 36428 (12%), blog 17090 (6%), marketing 16949 (6%). Docs dominates; the decline is broad-based across types."

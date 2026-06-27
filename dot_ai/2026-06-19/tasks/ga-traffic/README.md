@@ -29,13 +29,13 @@ open out/chart.html
 
 | File | Contents |
 | --- | --- |
-| `monthly-segments.json` | 18 months Jan 2025..Jun 2026 (Jun partial). Per month: all/home/docs/non-docs views, active users, server_page_view. |
-| `daily-all.json` | 414 days. All-pages daily `views` (client page_view), active_users, event_count_all. |
-| `daily-home.json` | 414 days. Daily views/active_users for pagePath `/`. |
-| `daily-docs.json` | Daily views/active_users for pagePath begins-with `/docs`. ~0 before Sep 2025; `first_recorded` 2025-05-13. |
+| `monthly-segments.json` | 18 months Jan 2025..Jun 2026 (Jun partial, through ~Jun 18). Per month: all/home/docs/non-docs views, active users, server_page_view. |
+| `daily-all.json` | 420 days through 2026-06-24. All-pages daily `views` (client page_view), active_users, event_count_all. (Jun 19-24 appended 2026-06-26: views only; active_users/event_count null - not analyzed.) |
+| `daily-home.json` | 420 days through 2026-06-24. Daily views/active_users for pagePath `/`. (Jun 19-24: views only.) |
+| `daily-docs.json` | Daily views/active_users for pagePath begins-with `/docs` (through 2026-06-24). ~0 before Sep 2025; `first_recorded` 2025-05-13. |
 | `daily-blog.json` | 414 days. Daily views/active_users for pagePath begins-with `/blog`. |
 | `daily-marketing.json` | 414 days. Daily views/active_users for the Framer marketing pages (pagePath matches the regex in `segment-definitions.json`). |
-| `daily-server.json` | Days where `server_page_view` event > 0. `first_recorded` 2026-02-02. |
+| `daily-server.json` | Days where `server_page_view` event > 0 (through 2026-06-24; consent-immune, so the Jun 19-24 refresh is meaningful here). `first_recorded` 2026-02-02. |
 | `daily-server-by-category.json` | 137 days. Per (date, category) server_page_view: home/docs/blog/marketing/total, each with a `*_bf` companion = the `Bot` dimension = false (excludes flagged bots; bot classification only exists from 2026-02-18). Feeds the weekly server-by-category chart and its include/exclude-bots toggle. |
 | `daily-nxdev-by-category.json` | 414 days. Same MECE categories as the client dailies but filtered to `Hostname = nx.dev` EXACTLY (excludes `*.nx.dev` versioned subdomains, `go.*`, `canary`, `localhost`, and Vercel/Netlify preview deploys). Backs the top-of-page "nx.dev hostname only" toggle. |
 | `server-human-signal.json` | Documents the (failed) attempt to isolate a HUMAN server signal via the `Bot`+`AI Tool` dimensions: even `Bot=false AND AI-Tool=false` grows ~2-4x Feb->Apr, so GA cannot cleanly separate humans from undetected AI crawlers. Reference only (not charted). |
@@ -44,6 +44,9 @@ open out/chart.html
 | `segment-definitions.json` | The MECE page-type rules: home (`/`), docs (`/docs*`), blog (`/blog*`), marketing (Framer-page regex), others (= all - the rest). Documents coverage (blog/marketing daily from May 2025). |
 | `events.json` | 10 config/platform/tracking events with dates and expected impact: GTM added, astro-docs /docs live (2025-09-29), server_page_view start (2026-02-02), Vercel->Netlify DNS cutover (2026-02-04), GTM-only cutover (#34384, 2026-02-10), Framer migration (2026-02-27), nx-blog standalone (2026-04-16), nx-dev pared down (2026-04-17), bot-probe 404s (2026-04-30), Cookiebot banner (2026-05-01). |
 | `source-crosschecks.json` | Reports-vs-Explore agreement checks (May and Aug 2025 match exactly). Loaded by `process.mjs`, which recomputes them deterministically (Reports == Explore == monthly-segments) and emits `analysis.source_crosscheck`. |
+| `gsc-daily.json` | **Google Search Console** daily web-search CLICKS + impressions for `sc-domain:nx.dev` (485 days, 2025-02-25..2026-06-24; GSC's 16-month retention). CONSENT-INDEPENDENT organic signal - GSC counts Google-side clicks, immune to the Cookiebot banner that suppressed GA4 client page_view from 2026-05-01. The decisive cross-check the predecessor flagged: confirms the organic decline is real and stays measurable across the May banner. Backs the organic cross-check chart and `analysis.organic`. Scraped from GSC > Performance > Search results > DAYS, Last 16 months. |
+| `gsc-docs-others-daily.json` | **GSC daily CLICKS for the DOCUMENTATION** (docs + others = all pages EXCEPT home/blog/marketing; `others` pre-2025-09-29 IS the root-path docs, so it carries the doc-organic story across the astro-docs move). 485 days, consent-independent. Page filter = "does NOT match regex" for home(`/`)/blog/marketing (the Framer page list from `segment-definitions.json`). Total 1,532,155 matches the GSC filtered header. Backs the **weekly docs-organic forward tracker** chart and `analysis.organic.docs_forward`. THE metric to watch for SEO/AI-search correction progress. |
+| `channels-by-month.json` | Monthly client Views by Session default channel group (organic_search/direct/referral/unassigned/other) for home/docs/others + `*Nxdev` variants, 2025-05..2026-06. Backs the per-category "traffic by source" charts and the GA4-organic side of `analysis.organic`. |
 
 `monthly-segments.json` is generated by `raw/_gen-monthly.mjs` from the verified
 scrape array in `../ga-monthly-traffic.mjs` (run `node raw/_gen-monthly.mjs` to
@@ -61,7 +64,7 @@ completeness only.
 | File | Contents |
 | --- | --- |
 | `chart-data.json` | `{ meta, events, daily[], weekly[], weeklyNxdev[], weeklyServerCat[], monthly[], monthlyNxdev[], topPages, topPagesBeforeAfter }`. Each client row carries the MECE page-type segments (home/docs/blog/marketing/others views; others = all - the rest) + server_page_view. `*Nxdev` = the `Hostname=nx.dev` variant; `weeklyServerCat` = server_page_view by category with `*_bf` (bot=false) companions. |
-| `analysis.json` | Deterministic computations: `mom` (month-over-month % for all/home/docs), `trend` (last 12 full months, OLS slope + total %, plus a `pre_banner` parallel trend through 2026-04 since the 12-month endpoint is consent-suppressed), `event_impacts` (14d-before/14d-after window on daily all_views per event; the after-window is inclusive of the event day, surfaced in `after_window`, and a `reason` is added when the before-window is truncated by the daily span start), `cookiebot_2026_05_01`, `server_page_view` (first/peak/monthly totals), `daily_vs_monthly_check` (per-series integrity for all/home/docs/server: monthly vs sum-of-daily, tolerance flag), `source_crosscheck` (recomputed Reports == Explore == monthly-segments agreement), `key_findings`. |
+| `analysis.json` | Deterministic computations: `mom` (month-over-month % for all/home/docs), `trend` (last 12 full months, OLS slope + total %, plus a `pre_banner` parallel trend through 2026-04 since the 12-month endpoint is consent-suppressed), `organic` (the consent-independent organic story: GSC clicks vs GA4 organic Views, baseline-window Oct2025->Apr2026 change for both, a `cross_check` that proves the decline is real AND that May is the banner, `forward_tracking` = the site-wide GSC-clicks baseline/latest, and `docs_forward` = the DOCS-specific forward tracker (docs+others; GSC clicks weekly + GA4 organic Views monthly, baseline-window change, May divergence, GSC forward baseline) backing the weekly docs-organic chart), `event_impacts` (14d-before/14d-after window on daily all_views per event; the after-window is inclusive of the event day, surfaced in `after_window`, and a `reason` is added when the before-window is truncated by the daily span start), `cookiebot_2026_05_01`, `server_page_view` (first/peak/monthly totals), `daily_vs_monthly_check` (per-series integrity for all/home/docs/server: monthly vs sum-of-daily, tolerance flag), `source_crosscheck` (recomputed Reports == Explore == monthly-segments agreement), `key_findings`. |
 | `chart.html` | Self-contained chart app. Data is injected inline by `process.mjs` (not fetched), so it opens via `file://`. Top-of-page **"nx.dev hostname only" toggle** switches the client charts to the canonical-host series. THREE time-axis STACKED-AREA charts: (1) WEEKLY client Views by page type (full ISO weeks), (2) MONTHLY client Views back to Jan 2025 - both with all 10 milestones as annotated vertical lines + `server_page_view` as an orange right-axis line; (3) WEEKLY `server_page_view` by page type with an **include/exclude-bots toggle**. The white "Total (all types)" line recomputes to the sum of VISIBLE categories when you toggle legend items off. Below the charts: key findings, top-25 pages per category, and a **before/after the 2025-09-29 /docs switch** comparison. `CATEGORY-TRENDS-REPORT.md` (sibling file) is the written per-category MoM + steepest-decline + internal/external correlation analysis. |
 
 ## Key caveats
@@ -100,5 +103,11 @@ completeness only.
   Three unrelated page types declining by the same % is the signature of a shared client-capture
   regression (the GTM-only cutover #34384 making page_view depend on the GTM container config),
   not content-specific loss. Likely measurement-led with a smaller real AI/organic residual.
-  NOTE: not an ad-blocking effect - gtm.js and gtag/js are blocked equally. The decisive
-  unresolved test is GA4 page_views vs Google Search Console CLICKS (consent-independent).
+  NOTE: not an ad-blocking effect - gtm.js and gtag/js are blocked equally.
+- **Organic decline is REAL (resolved 2026-06-26).** The decisive test - GA4 page_views vs Google
+  Search Console CLICKS (consent-independent) - is now run (`raw/gsc-daily.json`). GSC organic clicks
+  fell -40.6% Oct 2025 -> Apr 2026, independently corroborating GA4 organic Views -45.6% (docs -46.3%)
+  over the same window: the organic decline is real, not a measurement artifact. AND the two signals
+  DIVERGE across May 2026 (GSC -8.5% vs GA4 organic -69.6%), proving the May cliff is the Cookiebot
+  banner (measurement), not lost audience. GSC clicks is consent-immune, so it is the canonical
+  FORWARD-TRACKING metric for SEO/AI-search correction efforts (baseline May 2026 = 66,383 clicks/mo).

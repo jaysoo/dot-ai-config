@@ -1,1 +1,2531 @@
-{"series":"all_pages_daily","metric":"Views = client page_view (screenPageViews); event_count_all = all events incl. server_page_view","filter":"none (all pages)","date_range":"2025-05-01..2026-06-18","scraped_at":"2026-06-19","count":414,"rows":[{"date":"2025-05-01","views":17572,"active_users":4232,"event_count_all":65103},{"date":"2025-05-02","views":17745,"active_users":4242,"event_count_all":65387},{"date":"2025-05-03","views":8999,"active_users":1939,"event_count_all":30996},{"date":"2025-05-04","views":12499,"active_users":3178,"event_count_all":43852},{"date":"2025-05-05","views":25953,"active_users":6122,"event_count_all":95933},{"date":"2025-05-06","views":29400,"active_users":6712,"event_count_all":107808},{"date":"2025-05-07","views":28482,"active_users":6795,"event_count_all":106511},{"date":"2025-05-08","views":26746,"active_users":6240,"event_count_all":100332},{"date":"2025-05-09","views":20308,"active_users":5143,"event_count_all":75079},{"date":"2025-05-10","views":9774,"active_users":1948,"event_count_all":33519},{"date":"2025-05-11","views":12181,"active_users":3185,"event_count_all":43057},{"date":"2025-05-12","views":30725,"active_users":9004,"event_count_all":112974},{"date":"2025-05-13","views":28118,"active_users":6965,"event_count_all":106159},{"date":"2025-05-14","views":30018,"active_users":7450,"event_count_all":109419},{"date":"2025-05-15","views":25925,"active_users":6323,"event_count_all":97234},{"date":"2025-05-16","views":20696,"active_users":5087,"event_count_all":77435},{"date":"2025-05-17","views":8604,"active_users":1883,"event_count_all":29814},{"date":"2025-05-18","views":12604,"active_users":3267,"event_count_all":44244},{"date":"2025-05-19","views":26379,"active_users":6610,"event_count_all":98532},{"date":"2025-05-20","views":27268,"active_users":6845,"event_count_all":102364},{"date":"2025-05-21","views":27551,"active_users":6857,"event_count_all":103375},{"date":"2025-05-22","views":24772,"active_users":6292,"event_count_all":94465},{"date":"2025-05-23","views":19853,"active_users":4975,"event_count_all":75032},{"date":"2025-05-24","views":9346,"active_users":2028,"event_count_all":32422},{"date":"2025-05-25","views":11494,"active_users":2659,"event_count_all":40825},{"date":"2025-05-26","views":22188,"active_users":5469,"event_count_all":81961},{"date":"2025-05-27","views":26353,"active_users":6477,"event_count_all":97311},{"date":"2025-05-28","views":26439,"active_users":6338,"event_count_all":96716},{"date":"2025-05-29","views":22458,"active_users":5554,"event_count_all":82568},{"date":"2025-05-30","views":19729,"active_users":4740,"event_count_all":72530},{"date":"2025-05-31","views":9297,"active_users":1963,"event_count_all":31306},{"date":"2025-06-01","views":11415,"active_users":2941,"event_count_all":39554},{"date":"2025-06-02","views":25572,"active_users":6952,"event_count_all":94478},{"date":"2025-06-03","views":27013,"active_users":7362,"event_count_all":99514},{"date":"2025-06-04","views":27834,"active_users":7618,"event_count_all":102229},{"date":"2025-06-05","views":27170,"active_users":7136,"event_count_all":100311},{"date":"2025-06-06","views":23009,"active_users":5544,"event_count_all":81678},{"date":"2025-06-07","views":11357,"active_users":2489,"event_count_all":36973},{"date":"2025-06-08","views":13949,"active_users":3675,"event_count_all":46927},{"date":"2025-06-09","views":28306,"active_users":7972,"event_count_all":100964},{"date":"2025-06-10","views":29311,"active_users":7036,"event_count_all":107860},{"date":"2025-06-11","views":28086,"active_users":6883,"event_count_all":102561},{"date":"2025-06-12","views":26008,"active_users":6447,"event_count_all":94493},{"date":"2025-06-13","views":20456,"active_users":5379,"event_count_all":74821},{"date":"2025-06-14","views":8602,"active_users":2203,"event_count_all":29223},{"date":"2025-06-15","views":10904,"active_users":3082,"event_count_all":38609},{"date":"2025-06-16","views":26760,"active_users":8107,"event_count_all":101477},{"date":"2025-06-17","views":25214,"active_users":6614,"event_count_all":95791},{"date":"2025-06-18","views":25098,"active_users":6037,"event_count_all":94318},{"date":"2025-06-19","views":21269,"active_users":5047,"event_count_all":80004},{"date":"2025-06-20","views":18151,"active_users":4412,"event_count_all":68291},{"date":"2025-06-21","views":8882,"active_users":1954,"event_count_all":31504},{"date":"2025-06-22","views":11077,"active_users":2920,"event_count_all":40289},{"date":"2025-06-23","views":24183,"active_users":6222,"event_count_all":91553},{"date":"2025-06-24","views":25432,"active_users":6944,"event_count_all":95748},{"date":"2025-06-25","views":26253,"active_users":7022,"event_count_all":97334},{"date":"2025-06-26","views":25893,"active_users":7439,"event_count_all":96751},{"date":"2025-06-27","views":19570,"active_users":4911,"event_count_all":72658},{"date":"2025-06-28","views":9015,"active_users":1943,"event_count_all":31479},{"date":"2025-06-29","views":11148,"active_users":3016,"event_count_all":40349},{"date":"2025-06-30","views":25370,"active_users":6092,"event_count_all":93107},{"date":"2025-07-01","views":24939,"active_users":6001,"event_count_all":93264},{"date":"2025-07-02","views":24225,"active_users":6193,"event_count_all":92706},{"date":"2025-07-03","views":23120,"active_users":5853,"event_count_all":88500},{"date":"2025-07-04","views":17003,"active_users":4186,"event_count_all":63862},{"date":"2025-07-05","views":7955,"active_users":1900,"event_count_all":28104},{"date":"2025-07-06","views":12145,"active_users":3033,"event_count_all":42618},{"date":"2025-07-07","views":25488,"active_users":6551,"event_count_all":95922},{"date":"2025-07-08","views":27858,"active_users":7489,"event_count_all":104323},{"date":"2025-07-09","views":25821,"active_users":7104,"event_count_all":96515},{"date":"2025-07-10","views":24524,"active_users":5915,"event_count_all":92557},{"date":"2025-07-11","views":18126,"active_users":4794,"event_count_all":68799},{"date":"2025-07-12","views":8329,"active_users":1897,"event_count_all":29289},{"date":"2025-07-13","views":10971,"active_users":2618,"event_count_all":39352},{"date":"2025-07-14","views":24040,"active_users":5905,"event_count_all":91193},{"date":"2025-07-15","views":25168,"active_users":6282,"event_count_all":95470},{"date":"2025-07-16","views":23223,"active_users":6015,"event_count_all":88502},{"date":"2025-07-17","views":22263,"active_users":5791,"event_count_all":85825},{"date":"2025-07-18","views":17894,"active_users":4636,"event_count_all":68245},{"date":"2025-07-19","views":11196,"active_users":1998,"event_count_all":35747},{"date":"2025-07-20","views":10404,"active_users":2701,"event_count_all":38177},{"date":"2025-07-21","views":24110,"active_users":5848,"event_count_all":90507},{"date":"2025-07-22","views":27386,"active_users":9052,"event_count_all":104740},{"date":"2025-07-23","views":28856,"active_users":9199,"event_count_all":110352},{"date":"2025-07-24","views":22972,"active_users":6074,"event_count_all":88696},{"date":"2025-07-25","views":21242,"active_users":7920,"event_count_all":80726},{"date":"2025-07-26","views":10692,"active_users":4544,"event_count_all":38634},{"date":"2025-07-27","views":11340,"active_users":3539,"event_count_all":41128},{"date":"2025-07-28","views":26621,"active_users":9347,"event_count_all":101731},{"date":"2025-07-29","views":30324,"active_users":9568,"event_count_all":111055},{"date":"2025-07-30","views":26866,"active_users":8784,"event_count_all":101053},{"date":"2025-07-31","views":24033,"active_users":7195,"event_count_all":90443},{"date":"2025-08-01","views":19260,"active_users":5162,"event_count_all":70036},{"date":"2025-08-02","views":7781,"active_users":2401,"event_count_all":27739},{"date":"2025-08-03","views":10579,"active_users":2792,"event_count_all":37705},{"date":"2025-08-04","views":23459,"active_users":7252,"event_count_all":88739},{"date":"2025-08-05","views":24809,"active_users":7027,"event_count_all":93527},{"date":"2025-08-06","views":17346,"active_users":4952,"event_count_all":67438},{"date":"2025-08-07","views":9537,"active_users":3299,"event_count_all":35582},{"date":"2025-08-08","views":6797,"active_users":2381,"event_count_all":25140},{"date":"2025-08-09","views":3520,"active_users":983,"event_count_all":12416},{"date":"2025-08-10","views":4391,"active_users":1410,"event_count_all":15950},{"date":"2025-08-11","views":9293,"active_users":2380,"event_count_all":34237},{"date":"2025-08-12","views":9915,"active_users":2412,"event_count_all":36085},{"date":"2025-08-13","views":9370,"active_users":2263,"event_count_all":34149},{"date":"2025-08-14","views":7979,"active_users":1989,"event_count_all":29686},{"date":"2025-08-15","views":5172,"active_users":1120,"event_count_all":18603},{"date":"2025-08-16","views":3493,"active_users":640,"event_count_all":12509},{"date":"2025-08-17","views":3873,"active_users":899,"event_count_all":13763},{"date":"2025-08-18","views":9695,"active_users":1844,"event_count_all":35530},{"date":"2025-08-19","views":12722,"active_users":3007,"event_count_all":47169},{"date":"2025-08-20","views":21659,"active_users":5528,"event_count_all":82380},{"date":"2025-08-21","views":20143,"active_users":5240,"event_count_all":76014},{"date":"2025-08-22","views":16147,"active_users":4307,"event_count_all":61907},{"date":"2025-08-23","views":6880,"active_users":1735,"event_count_all":24576},{"date":"2025-08-24","views":8920,"active_users":2422,"event_count_all":32753},{"date":"2025-08-25","views":20516,"active_users":5307,"event_count_all":77359},{"date":"2025-08-26","views":22079,"active_users":5702,"event_count_all":83558},{"date":"2025-08-27","views":26003,"active_users":8328,"event_count_all":98715},{"date":"2025-08-28","views":26012,"active_users":8277,"event_count_all":99419},{"date":"2025-08-29","views":18698,"active_users":5971,"event_count_all":71384},{"date":"2025-08-30","views":8631,"active_users":2314,"event_count_all":31260},{"date":"2025-08-31","views":12293,"active_users":4381,"event_count_all":44205},{"date":"2025-09-01","views":21217,"active_users":6569,"event_count_all":80313},{"date":"2025-09-02","views":25744,"active_users":7850,"event_count_all":98202},{"date":"2025-09-03","views":23984,"active_users":6710,"event_count_all":90961},{"date":"2025-09-04","views":23239,"active_users":7019,"event_count_all":90108},{"date":"2025-09-05","views":17438,"active_users":4887,"event_count_all":66385},{"date":"2025-09-06","views":8470,"active_users":2099,"event_count_all":29962},{"date":"2025-09-07","views":9957,"active_users":2631,"event_count_all":35743},{"date":"2025-09-08","views":22491,"active_users":6799,"event_count_all":86662},{"date":"2025-09-09","views":23667,"active_users":7099,"event_count_all":90764},{"date":"2025-09-10","views":21961,"active_users":6367,"event_count_all":84609},{"date":"2025-09-11","views":20584,"active_users":5723,"event_count_all":77943},{"date":"2025-09-12","views":19153,"active_users":4384,"event_count_all":70757},{"date":"2025-09-13","views":7470,"active_users":1898,"event_count_all":26462},{"date":"2025-09-14","views":8779,"active_users":2387,"event_count_all":32001},{"date":"2025-09-15","views":20114,"active_users":5541,"event_count_all":77200},{"date":"2025-09-16","views":24390,"active_users":9516,"event_count_all":95162},{"date":"2025-09-17","views":21107,"active_users":6300,"event_count_all":81553},{"date":"2025-09-18","views":20710,"active_users":5686,"event_count_all":77545},{"date":"2025-09-19","views":15558,"active_users":4430,"event_count_all":59833},{"date":"2025-09-20","views":7352,"active_users":1767,"event_count_all":26051},{"date":"2025-09-21","views":9341,"active_users":2372,"event_count_all":34275},{"date":"2025-09-22","views":20373,"active_users":5379,"event_count_all":78005},{"date":"2025-09-23","views":21137,"active_users":5633,"event_count_all":79954},{"date":"2025-09-24","views":20440,"active_users":6019,"event_count_all":79228},{"date":"2025-09-25","views":18932,"active_users":5532,"event_count_all":73998},{"date":"2025-09-26","views":14823,"active_users":4200,"event_count_all":57296},{"date":"2025-09-27","views":7952,"active_users":2139,"event_count_all":28122},{"date":"2025-09-28","views":9946,"active_users":3316,"event_count_all":37051},{"date":"2025-09-29","views":22333,"active_users":7308,"event_count_all":82551},{"date":"2025-09-30","views":22069,"active_users":7175,"event_count_all":63467},{"date":"2025-10-01","views":19863,"active_users":6149,"event_count_all":56023},{"date":"2025-10-02","views":19532,"active_users":5570,"event_count_all":54611},{"date":"2025-10-03","views":17644,"active_users":6338,"event_count_all":53095},{"date":"2025-10-04","views":8373,"active_users":3481,"event_count_all":26393},{"date":"2025-10-05","views":8330,"active_users":2700,"event_count_all":23788},{"date":"2025-10-06","views":19625,"active_users":5386,"event_count_all":55593},{"date":"2025-10-07","views":21120,"active_users":7153,"event_count_all":63611},{"date":"2025-10-08","views":23401,"active_users":9169,"event_count_all":74633},{"date":"2025-10-09","views":19993,"active_users":5962,"event_count_all":57946},{"date":"2025-10-10","views":14556,"active_users":4477,"event_count_all":42048},{"date":"2025-10-11","views":6976,"active_users":1879,"event_count_all":19534},{"date":"2025-10-12","views":8270,"active_users":2630,"event_count_all":23585},{"date":"2025-10-13","views":19365,"active_users":6388,"event_count_all":57024},{"date":"2025-10-14","views":20917,"active_users":7043,"event_count_all":62113},{"date":"2025-10-15","views":21389,"active_users":6200,"event_count_all":61085},{"date":"2025-10-16","views":19413,"active_users":5294,"event_count_all":54550},{"date":"2025-10-17","views":15720,"active_users":4651,"event_count_all":45054},{"date":"2025-10-18","views":8088,"active_users":4105,"event_count_all":26837},{"date":"2025-10-19","views":9010,"active_users":3124,"event_count_all":26532},{"date":"2025-10-20","views":18807,"active_users":6237,"event_count_all":55380},{"date":"2025-10-21","views":21588,"active_users":6878,"event_count_all":62242},{"date":"2025-10-22","views":21089,"active_users":6554,"event_count_all":61523},{"date":"2025-10-23","views":20539,"active_users":6320,"event_count_all":59670},{"date":"2025-10-24","views":17306,"active_users":5762,"event_count_all":50606},{"date":"2025-10-25","views":8196,"active_users":3431,"event_count_all":25404},{"date":"2025-10-26","views":9748,"active_users":3897,"event_count_all":29890},{"date":"2025-10-27","views":20788,"active_users":6798,"event_count_all":61251},{"date":"2025-10-28","views":21827,"active_users":7158,"event_count_all":64598},{"date":"2025-10-29","views":20938,"active_users":6682,"event_count_all":61390},{"date":"2025-10-30","views":21067,"active_users":7054,"event_count_all":62455},{"date":"2025-10-31","views":17913,"active_users":6625,"event_count_all":54975},{"date":"2025-11-01","views":9212,"active_users":4275,"event_count_all":30207},{"date":"2025-11-02","views":11489,"active_users":5072,"event_count_all":36634},{"date":"2025-11-03","views":21484,"active_users":7686,"event_count_all":64622},{"date":"2025-11-04","views":24084,"active_users":8470,"event_count_all":71834},{"date":"2025-11-05","views":21874,"active_users":7287,"event_count_all":64649},{"date":"2025-11-06","views":21745,"active_users":7533,"event_count_all":65043},{"date":"2025-11-07","views":17597,"active_users":6092,"event_count_all":53581},{"date":"2025-11-08","views":9564,"active_users":4164,"event_count_all":30765},{"date":"2025-11-09","views":11175,"active_users":4659,"event_count_all":35500},{"date":"2025-11-10","views":20909,"active_users":7725,"event_count_all":64632},{"date":"2025-11-11","views":22206,"active_users":9169,"event_count_all":70410},{"date":"2025-11-12","views":25417,"active_users":11069,"event_count_all":82121},{"date":"2025-11-13","views":23715,"active_users":9925,"event_count_all":74457},{"date":"2025-11-14","views":19906,"active_users":9176,"event_count_all":66294},{"date":"2025-11-15","views":11212,"active_users":6390,"event_count_all":40146},{"date":"2025-11-16","views":14093,"active_users":6724,"event_count_all":46118},{"date":"2025-11-17","views":25151,"active_users":10331,"event_count_all":79397},{"date":"2025-11-18","views":25160,"active_users":11183,"event_count_all":81584},{"date":"2025-11-19","views":24367,"active_users":10475,"event_count_all":79248},{"date":"2025-11-20","views":21676,"active_users":8868,"event_count_all":68042},{"date":"2025-11-21","views":18799,"active_users":7630,"event_count_all":59256},{"date":"2025-11-22","views":9789,"active_users":5237,"event_count_all":33351},{"date":"2025-11-23","views":13450,"active_users":5846,"event_count_all":42127},{"date":"2025-11-24","views":22596,"active_users":8876,"event_count_all":69725},{"date":"2025-11-25","views":21232,"active_users":7168,"event_count_all":62978},{"date":"2025-11-26","views":19248,"active_users":6565,"event_count_all":57369},{"date":"2025-11-27","views":18618,"active_users":7527,"event_count_all":57834},{"date":"2025-11-28","views":15538,"active_users":6787,"event_count_all":50185},{"date":"2025-11-29","views":8641,"active_users":4488,"event_count_all":29094},{"date":"2025-11-30","views":8408,"active_users":3002,"event_count_all":24374},{"date":"2025-12-01","views":22539,"active_users":8873,"event_count_all":69423},{"date":"2025-12-02","views":19442,"active_users":6325,"event_count_all":57302},{"date":"2025-12-03","views":22248,"active_users":8809,"event_count_all":69289},{"date":"2025-12-04","views":22431,"active_users":9203,"event_count_all":70297},{"date":"2025-12-05","views":18093,"active_users":7840,"event_count_all":58290},{"date":"2025-12-06","views":9922,"active_users":5555,"event_count_all":34480},{"date":"2025-12-07","views":12733,"active_users":6828,"event_count_all":43229},{"date":"2025-12-08","views":22897,"active_users":8878,"event_count_all":71478},{"date":"2025-12-09","views":21537,"active_users":7079,"event_count_all":63543},{"date":"2025-12-10","views":22195,"active_users":6709,"event_count_all":62663},{"date":"2025-12-11","views":17593,"active_users":5130,"event_count_all":51072},{"date":"2025-12-12","views":13074,"active_users":4032,"event_count_all":38204},{"date":"2025-12-13","views":7180,"active_users":2700,"event_count_all":20968},{"date":"2025-12-14","views":8885,"active_users":3044,"event_count_all":25369},{"date":"2025-12-15","views":17839,"active_users":5168,"event_count_all":50393},{"date":"2025-12-16","views":18226,"active_users":5021,"event_count_all":51433},{"date":"2025-12-17","views":16993,"active_users":4755,"event_count_all":48099},{"date":"2025-12-18","views":17273,"active_users":4651,"event_count_all":48359},{"date":"2025-12-19","views":12594,"active_users":3664,"event_count_all":35753},{"date":"2025-12-20","views":6032,"active_users":2185,"event_count_all":16866},{"date":"2025-12-21","views":7874,"active_users":2502,"event_count_all":21800},{"date":"2025-12-22","views":14510,"active_users":4383,"event_count_all":41130},{"date":"2025-12-23","views":12335,"active_users":3562,"event_count_all":34737},{"date":"2025-12-24","views":7727,"active_users":2485,"event_count_all":21881},{"date":"2025-12-25","views":5954,"active_users":1994,"event_count_all":17151},{"date":"2025-12-26","views":6790,"active_users":1951,"event_count_all":18954},{"date":"2025-12-27","views":5213,"active_users":1706,"event_count_all":14814},{"date":"2025-12-28","views":7140,"active_users":2156,"event_count_all":19522},{"date":"2025-12-29","views":11553,"active_users":3701,"event_count_all":32684},{"date":"2025-12-30","views":9564,"active_users":2944,"event_count_all":27345},{"date":"2025-12-31","views":6703,"active_users":2035,"event_count_all":18894},{"date":"2026-01-01","views":5353,"active_users":1760,"event_count_all":15147},{"date":"2026-01-02","views":9352,"active_users":2441,"event_count_all":24949},{"date":"2026-01-03","views":5364,"active_users":1810,"event_count_all":15099},{"date":"2026-01-04","views":8101,"active_users":2586,"event_count_all":22589},{"date":"2026-01-05","views":15927,"active_users":4656,"event_count_all":45115},{"date":"2026-01-06","views":15878,"active_users":4896,"event_count_all":45281},{"date":"2026-01-07","views":17200,"active_users":5138,"event_count_all":49317},{"date":"2026-01-08","views":16413,"active_users":4776,"event_count_all":46534},{"date":"2026-01-09","views":13157,"active_users":3824,"event_count_all":37671},{"date":"2026-01-10","views":5460,"active_users":1816,"event_count_all":15597},{"date":"2026-01-11","views":8268,"active_users":2745,"event_count_all":23495},{"date":"2026-01-12","views":17726,"active_users":5405,"event_count_all":50362},{"date":"2026-01-13","views":18409,"active_users":5478,"event_count_all":52544},{"date":"2026-01-14","views":18733,"active_users":5467,"event_count_all":54796},{"date":"2026-01-15","views":17987,"active_users":5836,"event_count_all":54987},{"date":"2026-01-16","views":13484,"active_users":4310,"event_count_all":41685},{"date":"2026-01-17","views":6652,"active_users":2251,"event_count_all":20116},{"date":"2026-01-18","views":8250,"active_users":2666,"event_count_all":24632},{"date":"2026-01-19","views":17253,"active_users":5119,"event_count_all":51810},{"date":"2026-01-20","views":18014,"active_users":5453,"event_count_all":54368},{"date":"2026-01-21","views":19107,"active_users":5680,"event_count_all":57768},{"date":"2026-01-22","views":17390,"active_users":5218,"event_count_all":52926},{"date":"2026-01-23","views":13402,"active_users":4200,"event_count_all":40942},{"date":"2026-01-24","views":6247,"active_users":2355,"event_count_all":19067},{"date":"2026-01-25","views":7844,"active_users":2420,"event_count_all":23354},{"date":"2026-01-26","views":16892,"active_users":5206,"event_count_all":50838},{"date":"2026-01-27","views":18036,"active_users":5707,"event_count_all":55166},{"date":"2026-01-28","views":29339,"active_users":5199,"event_count_all":73581},{"date":"2026-01-29","views":47450,"active_users":5391,"event_count_all":121239},{"date":"2026-01-30","views":37301,"active_users":4459,"event_count_all":96321},{"date":"2026-01-31","views":32746,"active_users":3113,"event_count_all":59526},{"date":"2026-02-01","views":28949,"active_users":3323,"event_count_all":65693},{"date":"2026-02-02","views":29119,"active_users":5757,"event_count_all":164207},{"date":"2026-02-03","views":17300,"active_users":5681,"event_count_all":232953},{"date":"2026-02-04","views":21531,"active_users":10617,"event_count_all":244542},{"date":"2026-02-05","views":23617,"active_users":13559,"event_count_all":235189},{"date":"2026-02-06","views":18759,"active_users":11497,"event_count_all":201109},{"date":"2026-02-07","views":12460,"active_users":9750,"event_count_all":136239},{"date":"2026-02-08","views":14193,"active_users":10161,"event_count_all":144077},{"date":"2026-02-09","views":23236,"active_users":13136,"event_count_all":234486},{"date":"2026-02-10","views":22099,"active_users":10763,"event_count_all":219776},{"date":"2026-02-11","views":20706,"active_users":10841,"event_count_all":227161},{"date":"2026-02-12","views":20780,"active_users":11299,"event_count_all":209146},{"date":"2026-02-13","views":20279,"active_users":12420,"event_count_all":212700},{"date":"2026-02-14","views":12204,"active_users":9414,"event_count_all":181530},{"date":"2026-02-15","views":13954,"active_users":9841,"event_count_all":165294},{"date":"2026-02-16","views":20169,"active_users":11518,"event_count_all":211725},{"date":"2026-02-17","views":21082,"active_users":11787,"event_count_all":214322},{"date":"2026-02-18","views":21724,"active_users":11986,"event_count_all":228037},{"date":"2026-02-19","views":20696,"active_users":11423,"event_count_all":213205},{"date":"2026-02-20","views":19031,"active_users":11865,"event_count_all":198515},{"date":"2026-02-21","views":12970,"active_users":9672,"event_count_all":147809},{"date":"2026-02-22","views":13091,"active_users":8857,"event_count_all":148810},{"date":"2026-02-23","views":22132,"active_users":12049,"event_count_all":233087},{"date":"2026-02-24","views":22870,"active_users":12196,"event_count_all":233519},{"date":"2026-02-25","views":21110,"active_users":10652,"event_count_all":278818},{"date":"2026-02-26","views":20394,"active_users":11317,"event_count_all":225066},{"date":"2026-02-27","views":18316,"active_users":10979,"event_count_all":215006},{"date":"2026-02-28","views":11497,"active_users":8726,"event_count_all":150047},{"date":"2026-03-01","views":13053,"active_users":9636,"event_count_all":163477},{"date":"2026-03-02","views":20892,"active_users":11409,"event_count_all":229473},{"date":"2026-03-03","views":21704,"active_users":11940,"event_count_all":231450},{"date":"2026-03-04","views":17389,"active_users":10870,"event_count_all":198708},{"date":"2026-03-05","views":16163,"active_users":9065,"event_count_all":194094},{"date":"2026-03-06","views":12727,"active_users":8150,"event_count_all":170157},{"date":"2026-03-07","views":5865,"active_users":5051,"event_count_all":112275},{"date":"2026-03-08","views":7099,"active_users":5566,"event_count_all":119326},{"date":"2026-03-09","views":16581,"active_users":9786,"event_count_all":184380},{"date":"2026-03-10","views":16135,"active_users":9213,"event_count_all":183749},{"date":"2026-03-11","views":15849,"active_users":8221,"event_count_all":178479},{"date":"2026-03-12","views":14760,"active_users":7811,"event_count_all":168942},{"date":"2026-03-13","views":12589,"active_users":7781,"event_count_all":147106},{"date":"2026-03-14","views":6063,"active_users":5619,"event_count_all":89123},{"date":"2026-03-15","views":7254,"active_users":5350,"event_count_all":102361},{"date":"2026-03-16","views":15078,"active_users":8575,"event_count_all":221864},{"date":"2026-03-17","views":14756,"active_users":7726,"event_count_all":174973},{"date":"2026-03-18","views":13936,"active_users":5696,"event_count_all":165991},{"date":"2026-03-19","views":14304,"active_users":7263,"event_count_all":211794},{"date":"2026-03-20","views":11290,"active_users":4522,"event_count_all":191616},{"date":"2026-03-21","views":5197,"active_users":2188,"event_count_all":125656},{"date":"2026-03-22","views":5826,"active_users":2462,"event_count_all":151271},{"date":"2026-03-23","views":13426,"active_users":5121,"event_count_all":202781},{"date":"2026-03-24","views":15148,"active_users":5585,"event_count_all":230713},{"date":"2026-03-25","views":14530,"active_users":5358,"event_count_all":220635},{"date":"2026-03-26","views":12197,"active_users":4629,"event_count_all":199867},{"date":"2026-03-27","views":10818,"active_users":3978,"event_count_all":199182},{"date":"2026-03-28","views":5349,"active_users":2098,"event_count_all":125634},{"date":"2026-03-29","views":6045,"active_users":2297,"event_count_all":135903},{"date":"2026-03-30","views":12764,"active_users":4677,"event_count_all":205711},{"date":"2026-03-31","views":13678,"active_users":5164,"event_count_all":227565},{"date":"2026-04-01","views":13074,"active_users":4736,"event_count_all":252820},{"date":"2026-04-02","views":11718,"active_users":4678,"event_count_all":217436},{"date":"2026-04-03","views":15488,"active_users":9370,"event_count_all":340740},{"date":"2026-04-04","views":3911,"active_users":1627,"event_count_all":135349},{"date":"2026-04-05","views":4770,"active_users":1787,"event_count_all":145609},{"date":"2026-04-06","views":9463,"active_users":3303,"event_count_all":251427},{"date":"2026-04-07","views":12843,"active_users":4936,"event_count_all":208955},{"date":"2026-04-08","views":12713,"active_users":4600,"event_count_all":204689},{"date":"2026-04-09","views":12121,"active_users":4591,"event_count_all":229260},{"date":"2026-04-10","views":9999,"active_users":4036,"event_count_all":361476},{"date":"2026-04-11","views":4524,"active_users":1808,"event_count_all":179152},{"date":"2026-04-12","views":5422,"active_users":2029,"event_count_all":128750},{"date":"2026-04-13","views":12815,"active_users":4585,"event_count_all":267534},{"date":"2026-04-14","views":12501,"active_users":4602,"event_count_all":333711},{"date":"2026-04-15","views":12601,"active_users":4511,"event_count_all":303751},{"date":"2026-04-16","views":11907,"active_users":4527,"event_count_all":260536},{"date":"2026-04-17","views":10480,"active_users":3588,"event_count_all":215342},{"date":"2026-04-18","views":3848,"active_users":1595,"event_count_all":154931},{"date":"2026-04-19","views":5192,"active_users":1867,"event_count_all":219186},{"date":"2026-04-20","views":11585,"active_users":4175,"event_count_all":330476},{"date":"2026-04-21","views":11425,"active_users":4254,"event_count_all":290696},{"date":"2026-04-22","views":11410,"active_users":4330,"event_count_all":269246},{"date":"2026-04-23","views":11228,"active_users":4166,"event_count_all":248196},{"date":"2026-04-24","views":9117,"active_users":3549,"event_count_all":244686},{"date":"2026-04-25","views":4276,"active_users":1865,"event_count_all":185497},{"date":"2026-04-26","views":6074,"active_users":2035,"event_count_all":174794},{"date":"2026-04-27","views":11795,"active_users":4415,"event_count_all":234372},{"date":"2026-04-28","views":11989,"active_users":4676,"event_count_all":238586},{"date":"2026-04-29","views":11673,"active_users":4617,"event_count_all":251197},{"date":"2026-04-30","views":10563,"active_users":4099,"event_count_all":226562},{"date":"2026-05-01","views":5572,"active_users":2096,"event_count_all":175514},{"date":"2026-05-02","views":1504,"active_users":512,"event_count_all":119650},{"date":"2026-05-03","views":1866,"active_users":588,"event_count_all":127582},{"date":"2026-05-04","views":3722,"active_users":1051,"event_count_all":162417},{"date":"2026-05-05","views":4076,"active_users":1180,"event_count_all":177436},{"date":"2026-05-06","views":3938,"active_users":1063,"event_count_all":174109},{"date":"2026-05-07","views":3858,"active_users":1022,"event_count_all":183759},{"date":"2026-05-08","views":2483,"active_users":754,"event_count_all":163302},{"date":"2026-05-09","views":1698,"active_users":376,"event_count_all":134592},{"date":"2026-05-10","views":1454,"active_users":437,"event_count_all":129993},{"date":"2026-05-11","views":3892,"active_users":1052,"event_count_all":174446},{"date":"2026-05-12","views":4153,"active_users":1155,"event_count_all":213115},{"date":"2026-05-13","views":3660,"active_users":999,"event_count_all":190528},{"date":"2026-05-14","views":3475,"active_users":929,"event_count_all":178496},{"date":"2026-05-15","views":3133,"active_users":876,"event_count_all":178753},{"date":"2026-05-16","views":1344,"active_users":347,"event_count_all":172122},{"date":"2026-05-17","views":2089,"active_users":529,"event_count_all":137153},{"date":"2026-05-18","views":4010,"active_users":1093,"event_count_all":184234},{"date":"2026-05-19","views":3959,"active_users":1116,"event_count_all":216652},{"date":"2026-05-20","views":4177,"active_users":1361,"event_count_all":236016},{"date":"2026-05-21","views":3864,"active_users":1463,"event_count_all":261098},{"date":"2026-05-22","views":3490,"active_users":1276,"event_count_all":245073},{"date":"2026-05-23","views":1462,"active_users":463,"event_count_all":161562},{"date":"2026-05-24","views":1779,"active_users":545,"event_count_all":170438},{"date":"2026-05-25","views":3187,"active_users":947,"event_count_all":206677},{"date":"2026-05-26","views":4131,"active_users":1185,"event_count_all":217798},{"date":"2026-05-27","views":3702,"active_users":1107,"event_count_all":219305},{"date":"2026-05-28","views":3576,"active_users":1090,"event_count_all":232819},{"date":"2026-05-29","views":2684,"active_users":850,"event_count_all":188717},{"date":"2026-05-30","views":1317,"active_users":352,"event_count_all":141737},{"date":"2026-05-31","views":1519,"active_users":455,"event_count_all":168512},{"date":"2026-06-01","views":3368,"active_users":1027,"event_count_all":199923},{"date":"2026-06-02","views":3782,"active_users":1105,"event_count_all":202032},{"date":"2026-06-03","views":3367,"active_users":995,"event_count_all":228061},{"date":"2026-06-04","views":3444,"active_users":973,"event_count_all":203549},{"date":"2026-06-05","views":2596,"active_users":774,"event_count_all":197588},{"date":"2026-06-06","views":1136,"active_users":321,"event_count_all":143808},{"date":"2026-06-07","views":1548,"active_users":451,"event_count_all":146226},{"date":"2026-06-08","views":3286,"active_users":1058,"event_count_all":185202},{"date":"2026-06-09","views":3665,"active_users":1129,"event_count_all":227377},{"date":"2026-06-10","views":3196,"active_users":980,"event_count_all":188954},{"date":"2026-06-11","views":2897,"active_users":890,"event_count_all":195482},{"date":"2026-06-12","views":2532,"active_users":724,"event_count_all":200394},{"date":"2026-06-13","views":1104,"active_users":316,"event_count_all":148424},{"date":"2026-06-14","views":1378,"active_users":446,"event_count_all":170756},{"date":"2026-06-15","views":3393,"active_users":1043,"event_count_all":196903},{"date":"2026-06-16","views":3768,"active_users":1010,"event_count_all":230621},{"date":"2026-06-17","views":3725,"active_users":1129,"event_count_all":217404},{"date":"2026-06-18","views":3482,"active_users":1064,"event_count_all":225398}]}
+{
+  "series": "all_pages_daily",
+  "metric": "Views = client page_view (screenPageViews); event_count_all = all events incl. server_page_view",
+  "filter": "none (all pages)",
+  "date_range": "2025-05-01..2026-06-24",
+  "scraped_at": "2026-06-19",
+  "count": 420,
+  "rows": [
+    {
+      "date": "2025-05-01",
+      "views": 17572,
+      "active_users": 4232,
+      "event_count_all": 65103
+    },
+    {
+      "date": "2025-05-02",
+      "views": 17745,
+      "active_users": 4242,
+      "event_count_all": 65387
+    },
+    {
+      "date": "2025-05-03",
+      "views": 8999,
+      "active_users": 1939,
+      "event_count_all": 30996
+    },
+    {
+      "date": "2025-05-04",
+      "views": 12499,
+      "active_users": 3178,
+      "event_count_all": 43852
+    },
+    {
+      "date": "2025-05-05",
+      "views": 25953,
+      "active_users": 6122,
+      "event_count_all": 95933
+    },
+    {
+      "date": "2025-05-06",
+      "views": 29400,
+      "active_users": 6712,
+      "event_count_all": 107808
+    },
+    {
+      "date": "2025-05-07",
+      "views": 28482,
+      "active_users": 6795,
+      "event_count_all": 106511
+    },
+    {
+      "date": "2025-05-08",
+      "views": 26746,
+      "active_users": 6240,
+      "event_count_all": 100332
+    },
+    {
+      "date": "2025-05-09",
+      "views": 20308,
+      "active_users": 5143,
+      "event_count_all": 75079
+    },
+    {
+      "date": "2025-05-10",
+      "views": 9774,
+      "active_users": 1948,
+      "event_count_all": 33519
+    },
+    {
+      "date": "2025-05-11",
+      "views": 12181,
+      "active_users": 3185,
+      "event_count_all": 43057
+    },
+    {
+      "date": "2025-05-12",
+      "views": 30725,
+      "active_users": 9004,
+      "event_count_all": 112974
+    },
+    {
+      "date": "2025-05-13",
+      "views": 28118,
+      "active_users": 6965,
+      "event_count_all": 106159
+    },
+    {
+      "date": "2025-05-14",
+      "views": 30018,
+      "active_users": 7450,
+      "event_count_all": 109419
+    },
+    {
+      "date": "2025-05-15",
+      "views": 25925,
+      "active_users": 6323,
+      "event_count_all": 97234
+    },
+    {
+      "date": "2025-05-16",
+      "views": 20696,
+      "active_users": 5087,
+      "event_count_all": 77435
+    },
+    {
+      "date": "2025-05-17",
+      "views": 8604,
+      "active_users": 1883,
+      "event_count_all": 29814
+    },
+    {
+      "date": "2025-05-18",
+      "views": 12604,
+      "active_users": 3267,
+      "event_count_all": 44244
+    },
+    {
+      "date": "2025-05-19",
+      "views": 26379,
+      "active_users": 6610,
+      "event_count_all": 98532
+    },
+    {
+      "date": "2025-05-20",
+      "views": 27268,
+      "active_users": 6845,
+      "event_count_all": 102364
+    },
+    {
+      "date": "2025-05-21",
+      "views": 27551,
+      "active_users": 6857,
+      "event_count_all": 103375
+    },
+    {
+      "date": "2025-05-22",
+      "views": 24772,
+      "active_users": 6292,
+      "event_count_all": 94465
+    },
+    {
+      "date": "2025-05-23",
+      "views": 19853,
+      "active_users": 4975,
+      "event_count_all": 75032
+    },
+    {
+      "date": "2025-05-24",
+      "views": 9346,
+      "active_users": 2028,
+      "event_count_all": 32422
+    },
+    {
+      "date": "2025-05-25",
+      "views": 11494,
+      "active_users": 2659,
+      "event_count_all": 40825
+    },
+    {
+      "date": "2025-05-26",
+      "views": 22188,
+      "active_users": 5469,
+      "event_count_all": 81961
+    },
+    {
+      "date": "2025-05-27",
+      "views": 26353,
+      "active_users": 6477,
+      "event_count_all": 97311
+    },
+    {
+      "date": "2025-05-28",
+      "views": 26439,
+      "active_users": 6338,
+      "event_count_all": 96716
+    },
+    {
+      "date": "2025-05-29",
+      "views": 22458,
+      "active_users": 5554,
+      "event_count_all": 82568
+    },
+    {
+      "date": "2025-05-30",
+      "views": 19729,
+      "active_users": 4740,
+      "event_count_all": 72530
+    },
+    {
+      "date": "2025-05-31",
+      "views": 9297,
+      "active_users": 1963,
+      "event_count_all": 31306
+    },
+    {
+      "date": "2025-06-01",
+      "views": 11415,
+      "active_users": 2941,
+      "event_count_all": 39554
+    },
+    {
+      "date": "2025-06-02",
+      "views": 25572,
+      "active_users": 6952,
+      "event_count_all": 94478
+    },
+    {
+      "date": "2025-06-03",
+      "views": 27013,
+      "active_users": 7362,
+      "event_count_all": 99514
+    },
+    {
+      "date": "2025-06-04",
+      "views": 27834,
+      "active_users": 7618,
+      "event_count_all": 102229
+    },
+    {
+      "date": "2025-06-05",
+      "views": 27170,
+      "active_users": 7136,
+      "event_count_all": 100311
+    },
+    {
+      "date": "2025-06-06",
+      "views": 23009,
+      "active_users": 5544,
+      "event_count_all": 81678
+    },
+    {
+      "date": "2025-06-07",
+      "views": 11357,
+      "active_users": 2489,
+      "event_count_all": 36973
+    },
+    {
+      "date": "2025-06-08",
+      "views": 13949,
+      "active_users": 3675,
+      "event_count_all": 46927
+    },
+    {
+      "date": "2025-06-09",
+      "views": 28306,
+      "active_users": 7972,
+      "event_count_all": 100964
+    },
+    {
+      "date": "2025-06-10",
+      "views": 29311,
+      "active_users": 7036,
+      "event_count_all": 107860
+    },
+    {
+      "date": "2025-06-11",
+      "views": 28086,
+      "active_users": 6883,
+      "event_count_all": 102561
+    },
+    {
+      "date": "2025-06-12",
+      "views": 26008,
+      "active_users": 6447,
+      "event_count_all": 94493
+    },
+    {
+      "date": "2025-06-13",
+      "views": 20456,
+      "active_users": 5379,
+      "event_count_all": 74821
+    },
+    {
+      "date": "2025-06-14",
+      "views": 8602,
+      "active_users": 2203,
+      "event_count_all": 29223
+    },
+    {
+      "date": "2025-06-15",
+      "views": 10904,
+      "active_users": 3082,
+      "event_count_all": 38609
+    },
+    {
+      "date": "2025-06-16",
+      "views": 26760,
+      "active_users": 8107,
+      "event_count_all": 101477
+    },
+    {
+      "date": "2025-06-17",
+      "views": 25214,
+      "active_users": 6614,
+      "event_count_all": 95791
+    },
+    {
+      "date": "2025-06-18",
+      "views": 25098,
+      "active_users": 6037,
+      "event_count_all": 94318
+    },
+    {
+      "date": "2025-06-19",
+      "views": 21269,
+      "active_users": 5047,
+      "event_count_all": 80004
+    },
+    {
+      "date": "2025-06-20",
+      "views": 18151,
+      "active_users": 4412,
+      "event_count_all": 68291
+    },
+    {
+      "date": "2025-06-21",
+      "views": 8882,
+      "active_users": 1954,
+      "event_count_all": 31504
+    },
+    {
+      "date": "2025-06-22",
+      "views": 11077,
+      "active_users": 2920,
+      "event_count_all": 40289
+    },
+    {
+      "date": "2025-06-23",
+      "views": 24183,
+      "active_users": 6222,
+      "event_count_all": 91553
+    },
+    {
+      "date": "2025-06-24",
+      "views": 25432,
+      "active_users": 6944,
+      "event_count_all": 95748
+    },
+    {
+      "date": "2025-06-25",
+      "views": 26253,
+      "active_users": 7022,
+      "event_count_all": 97334
+    },
+    {
+      "date": "2025-06-26",
+      "views": 25893,
+      "active_users": 7439,
+      "event_count_all": 96751
+    },
+    {
+      "date": "2025-06-27",
+      "views": 19570,
+      "active_users": 4911,
+      "event_count_all": 72658
+    },
+    {
+      "date": "2025-06-28",
+      "views": 9015,
+      "active_users": 1943,
+      "event_count_all": 31479
+    },
+    {
+      "date": "2025-06-29",
+      "views": 11148,
+      "active_users": 3016,
+      "event_count_all": 40349
+    },
+    {
+      "date": "2025-06-30",
+      "views": 25370,
+      "active_users": 6092,
+      "event_count_all": 93107
+    },
+    {
+      "date": "2025-07-01",
+      "views": 24939,
+      "active_users": 6001,
+      "event_count_all": 93264
+    },
+    {
+      "date": "2025-07-02",
+      "views": 24225,
+      "active_users": 6193,
+      "event_count_all": 92706
+    },
+    {
+      "date": "2025-07-03",
+      "views": 23120,
+      "active_users": 5853,
+      "event_count_all": 88500
+    },
+    {
+      "date": "2025-07-04",
+      "views": 17003,
+      "active_users": 4186,
+      "event_count_all": 63862
+    },
+    {
+      "date": "2025-07-05",
+      "views": 7955,
+      "active_users": 1900,
+      "event_count_all": 28104
+    },
+    {
+      "date": "2025-07-06",
+      "views": 12145,
+      "active_users": 3033,
+      "event_count_all": 42618
+    },
+    {
+      "date": "2025-07-07",
+      "views": 25488,
+      "active_users": 6551,
+      "event_count_all": 95922
+    },
+    {
+      "date": "2025-07-08",
+      "views": 27858,
+      "active_users": 7489,
+      "event_count_all": 104323
+    },
+    {
+      "date": "2025-07-09",
+      "views": 25821,
+      "active_users": 7104,
+      "event_count_all": 96515
+    },
+    {
+      "date": "2025-07-10",
+      "views": 24524,
+      "active_users": 5915,
+      "event_count_all": 92557
+    },
+    {
+      "date": "2025-07-11",
+      "views": 18126,
+      "active_users": 4794,
+      "event_count_all": 68799
+    },
+    {
+      "date": "2025-07-12",
+      "views": 8329,
+      "active_users": 1897,
+      "event_count_all": 29289
+    },
+    {
+      "date": "2025-07-13",
+      "views": 10971,
+      "active_users": 2618,
+      "event_count_all": 39352
+    },
+    {
+      "date": "2025-07-14",
+      "views": 24040,
+      "active_users": 5905,
+      "event_count_all": 91193
+    },
+    {
+      "date": "2025-07-15",
+      "views": 25168,
+      "active_users": 6282,
+      "event_count_all": 95470
+    },
+    {
+      "date": "2025-07-16",
+      "views": 23223,
+      "active_users": 6015,
+      "event_count_all": 88502
+    },
+    {
+      "date": "2025-07-17",
+      "views": 22263,
+      "active_users": 5791,
+      "event_count_all": 85825
+    },
+    {
+      "date": "2025-07-18",
+      "views": 17894,
+      "active_users": 4636,
+      "event_count_all": 68245
+    },
+    {
+      "date": "2025-07-19",
+      "views": 11196,
+      "active_users": 1998,
+      "event_count_all": 35747
+    },
+    {
+      "date": "2025-07-20",
+      "views": 10404,
+      "active_users": 2701,
+      "event_count_all": 38177
+    },
+    {
+      "date": "2025-07-21",
+      "views": 24110,
+      "active_users": 5848,
+      "event_count_all": 90507
+    },
+    {
+      "date": "2025-07-22",
+      "views": 27386,
+      "active_users": 9052,
+      "event_count_all": 104740
+    },
+    {
+      "date": "2025-07-23",
+      "views": 28856,
+      "active_users": 9199,
+      "event_count_all": 110352
+    },
+    {
+      "date": "2025-07-24",
+      "views": 22972,
+      "active_users": 6074,
+      "event_count_all": 88696
+    },
+    {
+      "date": "2025-07-25",
+      "views": 21242,
+      "active_users": 7920,
+      "event_count_all": 80726
+    },
+    {
+      "date": "2025-07-26",
+      "views": 10692,
+      "active_users": 4544,
+      "event_count_all": 38634
+    },
+    {
+      "date": "2025-07-27",
+      "views": 11340,
+      "active_users": 3539,
+      "event_count_all": 41128
+    },
+    {
+      "date": "2025-07-28",
+      "views": 26621,
+      "active_users": 9347,
+      "event_count_all": 101731
+    },
+    {
+      "date": "2025-07-29",
+      "views": 30324,
+      "active_users": 9568,
+      "event_count_all": 111055
+    },
+    {
+      "date": "2025-07-30",
+      "views": 26866,
+      "active_users": 8784,
+      "event_count_all": 101053
+    },
+    {
+      "date": "2025-07-31",
+      "views": 24033,
+      "active_users": 7195,
+      "event_count_all": 90443
+    },
+    {
+      "date": "2025-08-01",
+      "views": 19260,
+      "active_users": 5162,
+      "event_count_all": 70036
+    },
+    {
+      "date": "2025-08-02",
+      "views": 7781,
+      "active_users": 2401,
+      "event_count_all": 27739
+    },
+    {
+      "date": "2025-08-03",
+      "views": 10579,
+      "active_users": 2792,
+      "event_count_all": 37705
+    },
+    {
+      "date": "2025-08-04",
+      "views": 23459,
+      "active_users": 7252,
+      "event_count_all": 88739
+    },
+    {
+      "date": "2025-08-05",
+      "views": 24809,
+      "active_users": 7027,
+      "event_count_all": 93527
+    },
+    {
+      "date": "2025-08-06",
+      "views": 17346,
+      "active_users": 4952,
+      "event_count_all": 67438
+    },
+    {
+      "date": "2025-08-07",
+      "views": 9537,
+      "active_users": 3299,
+      "event_count_all": 35582
+    },
+    {
+      "date": "2025-08-08",
+      "views": 6797,
+      "active_users": 2381,
+      "event_count_all": 25140
+    },
+    {
+      "date": "2025-08-09",
+      "views": 3520,
+      "active_users": 983,
+      "event_count_all": 12416
+    },
+    {
+      "date": "2025-08-10",
+      "views": 4391,
+      "active_users": 1410,
+      "event_count_all": 15950
+    },
+    {
+      "date": "2025-08-11",
+      "views": 9293,
+      "active_users": 2380,
+      "event_count_all": 34237
+    },
+    {
+      "date": "2025-08-12",
+      "views": 9915,
+      "active_users": 2412,
+      "event_count_all": 36085
+    },
+    {
+      "date": "2025-08-13",
+      "views": 9370,
+      "active_users": 2263,
+      "event_count_all": 34149
+    },
+    {
+      "date": "2025-08-14",
+      "views": 7979,
+      "active_users": 1989,
+      "event_count_all": 29686
+    },
+    {
+      "date": "2025-08-15",
+      "views": 5172,
+      "active_users": 1120,
+      "event_count_all": 18603
+    },
+    {
+      "date": "2025-08-16",
+      "views": 3493,
+      "active_users": 640,
+      "event_count_all": 12509
+    },
+    {
+      "date": "2025-08-17",
+      "views": 3873,
+      "active_users": 899,
+      "event_count_all": 13763
+    },
+    {
+      "date": "2025-08-18",
+      "views": 9695,
+      "active_users": 1844,
+      "event_count_all": 35530
+    },
+    {
+      "date": "2025-08-19",
+      "views": 12722,
+      "active_users": 3007,
+      "event_count_all": 47169
+    },
+    {
+      "date": "2025-08-20",
+      "views": 21659,
+      "active_users": 5528,
+      "event_count_all": 82380
+    },
+    {
+      "date": "2025-08-21",
+      "views": 20143,
+      "active_users": 5240,
+      "event_count_all": 76014
+    },
+    {
+      "date": "2025-08-22",
+      "views": 16147,
+      "active_users": 4307,
+      "event_count_all": 61907
+    },
+    {
+      "date": "2025-08-23",
+      "views": 6880,
+      "active_users": 1735,
+      "event_count_all": 24576
+    },
+    {
+      "date": "2025-08-24",
+      "views": 8920,
+      "active_users": 2422,
+      "event_count_all": 32753
+    },
+    {
+      "date": "2025-08-25",
+      "views": 20516,
+      "active_users": 5307,
+      "event_count_all": 77359
+    },
+    {
+      "date": "2025-08-26",
+      "views": 22079,
+      "active_users": 5702,
+      "event_count_all": 83558
+    },
+    {
+      "date": "2025-08-27",
+      "views": 26003,
+      "active_users": 8328,
+      "event_count_all": 98715
+    },
+    {
+      "date": "2025-08-28",
+      "views": 26012,
+      "active_users": 8277,
+      "event_count_all": 99419
+    },
+    {
+      "date": "2025-08-29",
+      "views": 18698,
+      "active_users": 5971,
+      "event_count_all": 71384
+    },
+    {
+      "date": "2025-08-30",
+      "views": 8631,
+      "active_users": 2314,
+      "event_count_all": 31260
+    },
+    {
+      "date": "2025-08-31",
+      "views": 12293,
+      "active_users": 4381,
+      "event_count_all": 44205
+    },
+    {
+      "date": "2025-09-01",
+      "views": 21217,
+      "active_users": 6569,
+      "event_count_all": 80313
+    },
+    {
+      "date": "2025-09-02",
+      "views": 25744,
+      "active_users": 7850,
+      "event_count_all": 98202
+    },
+    {
+      "date": "2025-09-03",
+      "views": 23984,
+      "active_users": 6710,
+      "event_count_all": 90961
+    },
+    {
+      "date": "2025-09-04",
+      "views": 23239,
+      "active_users": 7019,
+      "event_count_all": 90108
+    },
+    {
+      "date": "2025-09-05",
+      "views": 17438,
+      "active_users": 4887,
+      "event_count_all": 66385
+    },
+    {
+      "date": "2025-09-06",
+      "views": 8470,
+      "active_users": 2099,
+      "event_count_all": 29962
+    },
+    {
+      "date": "2025-09-07",
+      "views": 9957,
+      "active_users": 2631,
+      "event_count_all": 35743
+    },
+    {
+      "date": "2025-09-08",
+      "views": 22491,
+      "active_users": 6799,
+      "event_count_all": 86662
+    },
+    {
+      "date": "2025-09-09",
+      "views": 23667,
+      "active_users": 7099,
+      "event_count_all": 90764
+    },
+    {
+      "date": "2025-09-10",
+      "views": 21961,
+      "active_users": 6367,
+      "event_count_all": 84609
+    },
+    {
+      "date": "2025-09-11",
+      "views": 20584,
+      "active_users": 5723,
+      "event_count_all": 77943
+    },
+    {
+      "date": "2025-09-12",
+      "views": 19153,
+      "active_users": 4384,
+      "event_count_all": 70757
+    },
+    {
+      "date": "2025-09-13",
+      "views": 7470,
+      "active_users": 1898,
+      "event_count_all": 26462
+    },
+    {
+      "date": "2025-09-14",
+      "views": 8779,
+      "active_users": 2387,
+      "event_count_all": 32001
+    },
+    {
+      "date": "2025-09-15",
+      "views": 20114,
+      "active_users": 5541,
+      "event_count_all": 77200
+    },
+    {
+      "date": "2025-09-16",
+      "views": 24390,
+      "active_users": 9516,
+      "event_count_all": 95162
+    },
+    {
+      "date": "2025-09-17",
+      "views": 21107,
+      "active_users": 6300,
+      "event_count_all": 81553
+    },
+    {
+      "date": "2025-09-18",
+      "views": 20710,
+      "active_users": 5686,
+      "event_count_all": 77545
+    },
+    {
+      "date": "2025-09-19",
+      "views": 15558,
+      "active_users": 4430,
+      "event_count_all": 59833
+    },
+    {
+      "date": "2025-09-20",
+      "views": 7352,
+      "active_users": 1767,
+      "event_count_all": 26051
+    },
+    {
+      "date": "2025-09-21",
+      "views": 9341,
+      "active_users": 2372,
+      "event_count_all": 34275
+    },
+    {
+      "date": "2025-09-22",
+      "views": 20373,
+      "active_users": 5379,
+      "event_count_all": 78005
+    },
+    {
+      "date": "2025-09-23",
+      "views": 21137,
+      "active_users": 5633,
+      "event_count_all": 79954
+    },
+    {
+      "date": "2025-09-24",
+      "views": 20440,
+      "active_users": 6019,
+      "event_count_all": 79228
+    },
+    {
+      "date": "2025-09-25",
+      "views": 18932,
+      "active_users": 5532,
+      "event_count_all": 73998
+    },
+    {
+      "date": "2025-09-26",
+      "views": 14823,
+      "active_users": 4200,
+      "event_count_all": 57296
+    },
+    {
+      "date": "2025-09-27",
+      "views": 7952,
+      "active_users": 2139,
+      "event_count_all": 28122
+    },
+    {
+      "date": "2025-09-28",
+      "views": 9946,
+      "active_users": 3316,
+      "event_count_all": 37051
+    },
+    {
+      "date": "2025-09-29",
+      "views": 22333,
+      "active_users": 7308,
+      "event_count_all": 82551
+    },
+    {
+      "date": "2025-09-30",
+      "views": 22069,
+      "active_users": 7175,
+      "event_count_all": 63467
+    },
+    {
+      "date": "2025-10-01",
+      "views": 19863,
+      "active_users": 6149,
+      "event_count_all": 56023
+    },
+    {
+      "date": "2025-10-02",
+      "views": 19532,
+      "active_users": 5570,
+      "event_count_all": 54611
+    },
+    {
+      "date": "2025-10-03",
+      "views": 17644,
+      "active_users": 6338,
+      "event_count_all": 53095
+    },
+    {
+      "date": "2025-10-04",
+      "views": 8373,
+      "active_users": 3481,
+      "event_count_all": 26393
+    },
+    {
+      "date": "2025-10-05",
+      "views": 8330,
+      "active_users": 2700,
+      "event_count_all": 23788
+    },
+    {
+      "date": "2025-10-06",
+      "views": 19625,
+      "active_users": 5386,
+      "event_count_all": 55593
+    },
+    {
+      "date": "2025-10-07",
+      "views": 21120,
+      "active_users": 7153,
+      "event_count_all": 63611
+    },
+    {
+      "date": "2025-10-08",
+      "views": 23401,
+      "active_users": 9169,
+      "event_count_all": 74633
+    },
+    {
+      "date": "2025-10-09",
+      "views": 19993,
+      "active_users": 5962,
+      "event_count_all": 57946
+    },
+    {
+      "date": "2025-10-10",
+      "views": 14556,
+      "active_users": 4477,
+      "event_count_all": 42048
+    },
+    {
+      "date": "2025-10-11",
+      "views": 6976,
+      "active_users": 1879,
+      "event_count_all": 19534
+    },
+    {
+      "date": "2025-10-12",
+      "views": 8270,
+      "active_users": 2630,
+      "event_count_all": 23585
+    },
+    {
+      "date": "2025-10-13",
+      "views": 19365,
+      "active_users": 6388,
+      "event_count_all": 57024
+    },
+    {
+      "date": "2025-10-14",
+      "views": 20917,
+      "active_users": 7043,
+      "event_count_all": 62113
+    },
+    {
+      "date": "2025-10-15",
+      "views": 21389,
+      "active_users": 6200,
+      "event_count_all": 61085
+    },
+    {
+      "date": "2025-10-16",
+      "views": 19413,
+      "active_users": 5294,
+      "event_count_all": 54550
+    },
+    {
+      "date": "2025-10-17",
+      "views": 15720,
+      "active_users": 4651,
+      "event_count_all": 45054
+    },
+    {
+      "date": "2025-10-18",
+      "views": 8088,
+      "active_users": 4105,
+      "event_count_all": 26837
+    },
+    {
+      "date": "2025-10-19",
+      "views": 9010,
+      "active_users": 3124,
+      "event_count_all": 26532
+    },
+    {
+      "date": "2025-10-20",
+      "views": 18807,
+      "active_users": 6237,
+      "event_count_all": 55380
+    },
+    {
+      "date": "2025-10-21",
+      "views": 21588,
+      "active_users": 6878,
+      "event_count_all": 62242
+    },
+    {
+      "date": "2025-10-22",
+      "views": 21089,
+      "active_users": 6554,
+      "event_count_all": 61523
+    },
+    {
+      "date": "2025-10-23",
+      "views": 20539,
+      "active_users": 6320,
+      "event_count_all": 59670
+    },
+    {
+      "date": "2025-10-24",
+      "views": 17306,
+      "active_users": 5762,
+      "event_count_all": 50606
+    },
+    {
+      "date": "2025-10-25",
+      "views": 8196,
+      "active_users": 3431,
+      "event_count_all": 25404
+    },
+    {
+      "date": "2025-10-26",
+      "views": 9748,
+      "active_users": 3897,
+      "event_count_all": 29890
+    },
+    {
+      "date": "2025-10-27",
+      "views": 20788,
+      "active_users": 6798,
+      "event_count_all": 61251
+    },
+    {
+      "date": "2025-10-28",
+      "views": 21827,
+      "active_users": 7158,
+      "event_count_all": 64598
+    },
+    {
+      "date": "2025-10-29",
+      "views": 20938,
+      "active_users": 6682,
+      "event_count_all": 61390
+    },
+    {
+      "date": "2025-10-30",
+      "views": 21067,
+      "active_users": 7054,
+      "event_count_all": 62455
+    },
+    {
+      "date": "2025-10-31",
+      "views": 17913,
+      "active_users": 6625,
+      "event_count_all": 54975
+    },
+    {
+      "date": "2025-11-01",
+      "views": 9212,
+      "active_users": 4275,
+      "event_count_all": 30207
+    },
+    {
+      "date": "2025-11-02",
+      "views": 11489,
+      "active_users": 5072,
+      "event_count_all": 36634
+    },
+    {
+      "date": "2025-11-03",
+      "views": 21484,
+      "active_users": 7686,
+      "event_count_all": 64622
+    },
+    {
+      "date": "2025-11-04",
+      "views": 24084,
+      "active_users": 8470,
+      "event_count_all": 71834
+    },
+    {
+      "date": "2025-11-05",
+      "views": 21874,
+      "active_users": 7287,
+      "event_count_all": 64649
+    },
+    {
+      "date": "2025-11-06",
+      "views": 21745,
+      "active_users": 7533,
+      "event_count_all": 65043
+    },
+    {
+      "date": "2025-11-07",
+      "views": 17597,
+      "active_users": 6092,
+      "event_count_all": 53581
+    },
+    {
+      "date": "2025-11-08",
+      "views": 9564,
+      "active_users": 4164,
+      "event_count_all": 30765
+    },
+    {
+      "date": "2025-11-09",
+      "views": 11175,
+      "active_users": 4659,
+      "event_count_all": 35500
+    },
+    {
+      "date": "2025-11-10",
+      "views": 20909,
+      "active_users": 7725,
+      "event_count_all": 64632
+    },
+    {
+      "date": "2025-11-11",
+      "views": 22206,
+      "active_users": 9169,
+      "event_count_all": 70410
+    },
+    {
+      "date": "2025-11-12",
+      "views": 25417,
+      "active_users": 11069,
+      "event_count_all": 82121
+    },
+    {
+      "date": "2025-11-13",
+      "views": 23715,
+      "active_users": 9925,
+      "event_count_all": 74457
+    },
+    {
+      "date": "2025-11-14",
+      "views": 19906,
+      "active_users": 9176,
+      "event_count_all": 66294
+    },
+    {
+      "date": "2025-11-15",
+      "views": 11212,
+      "active_users": 6390,
+      "event_count_all": 40146
+    },
+    {
+      "date": "2025-11-16",
+      "views": 14093,
+      "active_users": 6724,
+      "event_count_all": 46118
+    },
+    {
+      "date": "2025-11-17",
+      "views": 25151,
+      "active_users": 10331,
+      "event_count_all": 79397
+    },
+    {
+      "date": "2025-11-18",
+      "views": 25160,
+      "active_users": 11183,
+      "event_count_all": 81584
+    },
+    {
+      "date": "2025-11-19",
+      "views": 24367,
+      "active_users": 10475,
+      "event_count_all": 79248
+    },
+    {
+      "date": "2025-11-20",
+      "views": 21676,
+      "active_users": 8868,
+      "event_count_all": 68042
+    },
+    {
+      "date": "2025-11-21",
+      "views": 18799,
+      "active_users": 7630,
+      "event_count_all": 59256
+    },
+    {
+      "date": "2025-11-22",
+      "views": 9789,
+      "active_users": 5237,
+      "event_count_all": 33351
+    },
+    {
+      "date": "2025-11-23",
+      "views": 13450,
+      "active_users": 5846,
+      "event_count_all": 42127
+    },
+    {
+      "date": "2025-11-24",
+      "views": 22596,
+      "active_users": 8876,
+      "event_count_all": 69725
+    },
+    {
+      "date": "2025-11-25",
+      "views": 21232,
+      "active_users": 7168,
+      "event_count_all": 62978
+    },
+    {
+      "date": "2025-11-26",
+      "views": 19248,
+      "active_users": 6565,
+      "event_count_all": 57369
+    },
+    {
+      "date": "2025-11-27",
+      "views": 18618,
+      "active_users": 7527,
+      "event_count_all": 57834
+    },
+    {
+      "date": "2025-11-28",
+      "views": 15538,
+      "active_users": 6787,
+      "event_count_all": 50185
+    },
+    {
+      "date": "2025-11-29",
+      "views": 8641,
+      "active_users": 4488,
+      "event_count_all": 29094
+    },
+    {
+      "date": "2025-11-30",
+      "views": 8408,
+      "active_users": 3002,
+      "event_count_all": 24374
+    },
+    {
+      "date": "2025-12-01",
+      "views": 22539,
+      "active_users": 8873,
+      "event_count_all": 69423
+    },
+    {
+      "date": "2025-12-02",
+      "views": 19442,
+      "active_users": 6325,
+      "event_count_all": 57302
+    },
+    {
+      "date": "2025-12-03",
+      "views": 22248,
+      "active_users": 8809,
+      "event_count_all": 69289
+    },
+    {
+      "date": "2025-12-04",
+      "views": 22431,
+      "active_users": 9203,
+      "event_count_all": 70297
+    },
+    {
+      "date": "2025-12-05",
+      "views": 18093,
+      "active_users": 7840,
+      "event_count_all": 58290
+    },
+    {
+      "date": "2025-12-06",
+      "views": 9922,
+      "active_users": 5555,
+      "event_count_all": 34480
+    },
+    {
+      "date": "2025-12-07",
+      "views": 12733,
+      "active_users": 6828,
+      "event_count_all": 43229
+    },
+    {
+      "date": "2025-12-08",
+      "views": 22897,
+      "active_users": 8878,
+      "event_count_all": 71478
+    },
+    {
+      "date": "2025-12-09",
+      "views": 21537,
+      "active_users": 7079,
+      "event_count_all": 63543
+    },
+    {
+      "date": "2025-12-10",
+      "views": 22195,
+      "active_users": 6709,
+      "event_count_all": 62663
+    },
+    {
+      "date": "2025-12-11",
+      "views": 17593,
+      "active_users": 5130,
+      "event_count_all": 51072
+    },
+    {
+      "date": "2025-12-12",
+      "views": 13074,
+      "active_users": 4032,
+      "event_count_all": 38204
+    },
+    {
+      "date": "2025-12-13",
+      "views": 7180,
+      "active_users": 2700,
+      "event_count_all": 20968
+    },
+    {
+      "date": "2025-12-14",
+      "views": 8885,
+      "active_users": 3044,
+      "event_count_all": 25369
+    },
+    {
+      "date": "2025-12-15",
+      "views": 17839,
+      "active_users": 5168,
+      "event_count_all": 50393
+    },
+    {
+      "date": "2025-12-16",
+      "views": 18226,
+      "active_users": 5021,
+      "event_count_all": 51433
+    },
+    {
+      "date": "2025-12-17",
+      "views": 16993,
+      "active_users": 4755,
+      "event_count_all": 48099
+    },
+    {
+      "date": "2025-12-18",
+      "views": 17273,
+      "active_users": 4651,
+      "event_count_all": 48359
+    },
+    {
+      "date": "2025-12-19",
+      "views": 12594,
+      "active_users": 3664,
+      "event_count_all": 35753
+    },
+    {
+      "date": "2025-12-20",
+      "views": 6032,
+      "active_users": 2185,
+      "event_count_all": 16866
+    },
+    {
+      "date": "2025-12-21",
+      "views": 7874,
+      "active_users": 2502,
+      "event_count_all": 21800
+    },
+    {
+      "date": "2025-12-22",
+      "views": 14510,
+      "active_users": 4383,
+      "event_count_all": 41130
+    },
+    {
+      "date": "2025-12-23",
+      "views": 12335,
+      "active_users": 3562,
+      "event_count_all": 34737
+    },
+    {
+      "date": "2025-12-24",
+      "views": 7727,
+      "active_users": 2485,
+      "event_count_all": 21881
+    },
+    {
+      "date": "2025-12-25",
+      "views": 5954,
+      "active_users": 1994,
+      "event_count_all": 17151
+    },
+    {
+      "date": "2025-12-26",
+      "views": 6790,
+      "active_users": 1951,
+      "event_count_all": 18954
+    },
+    {
+      "date": "2025-12-27",
+      "views": 5213,
+      "active_users": 1706,
+      "event_count_all": 14814
+    },
+    {
+      "date": "2025-12-28",
+      "views": 7140,
+      "active_users": 2156,
+      "event_count_all": 19522
+    },
+    {
+      "date": "2025-12-29",
+      "views": 11553,
+      "active_users": 3701,
+      "event_count_all": 32684
+    },
+    {
+      "date": "2025-12-30",
+      "views": 9564,
+      "active_users": 2944,
+      "event_count_all": 27345
+    },
+    {
+      "date": "2025-12-31",
+      "views": 6703,
+      "active_users": 2035,
+      "event_count_all": 18894
+    },
+    {
+      "date": "2026-01-01",
+      "views": 5353,
+      "active_users": 1760,
+      "event_count_all": 15147
+    },
+    {
+      "date": "2026-01-02",
+      "views": 9352,
+      "active_users": 2441,
+      "event_count_all": 24949
+    },
+    {
+      "date": "2026-01-03",
+      "views": 5364,
+      "active_users": 1810,
+      "event_count_all": 15099
+    },
+    {
+      "date": "2026-01-04",
+      "views": 8101,
+      "active_users": 2586,
+      "event_count_all": 22589
+    },
+    {
+      "date": "2026-01-05",
+      "views": 15927,
+      "active_users": 4656,
+      "event_count_all": 45115
+    },
+    {
+      "date": "2026-01-06",
+      "views": 15878,
+      "active_users": 4896,
+      "event_count_all": 45281
+    },
+    {
+      "date": "2026-01-07",
+      "views": 17200,
+      "active_users": 5138,
+      "event_count_all": 49317
+    },
+    {
+      "date": "2026-01-08",
+      "views": 16413,
+      "active_users": 4776,
+      "event_count_all": 46534
+    },
+    {
+      "date": "2026-01-09",
+      "views": 13157,
+      "active_users": 3824,
+      "event_count_all": 37671
+    },
+    {
+      "date": "2026-01-10",
+      "views": 5460,
+      "active_users": 1816,
+      "event_count_all": 15597
+    },
+    {
+      "date": "2026-01-11",
+      "views": 8268,
+      "active_users": 2745,
+      "event_count_all": 23495
+    },
+    {
+      "date": "2026-01-12",
+      "views": 17726,
+      "active_users": 5405,
+      "event_count_all": 50362
+    },
+    {
+      "date": "2026-01-13",
+      "views": 18409,
+      "active_users": 5478,
+      "event_count_all": 52544
+    },
+    {
+      "date": "2026-01-14",
+      "views": 18733,
+      "active_users": 5467,
+      "event_count_all": 54796
+    },
+    {
+      "date": "2026-01-15",
+      "views": 17987,
+      "active_users": 5836,
+      "event_count_all": 54987
+    },
+    {
+      "date": "2026-01-16",
+      "views": 13484,
+      "active_users": 4310,
+      "event_count_all": 41685
+    },
+    {
+      "date": "2026-01-17",
+      "views": 6652,
+      "active_users": 2251,
+      "event_count_all": 20116
+    },
+    {
+      "date": "2026-01-18",
+      "views": 8250,
+      "active_users": 2666,
+      "event_count_all": 24632
+    },
+    {
+      "date": "2026-01-19",
+      "views": 17253,
+      "active_users": 5119,
+      "event_count_all": 51810
+    },
+    {
+      "date": "2026-01-20",
+      "views": 18014,
+      "active_users": 5453,
+      "event_count_all": 54368
+    },
+    {
+      "date": "2026-01-21",
+      "views": 19107,
+      "active_users": 5680,
+      "event_count_all": 57768
+    },
+    {
+      "date": "2026-01-22",
+      "views": 17390,
+      "active_users": 5218,
+      "event_count_all": 52926
+    },
+    {
+      "date": "2026-01-23",
+      "views": 13402,
+      "active_users": 4200,
+      "event_count_all": 40942
+    },
+    {
+      "date": "2026-01-24",
+      "views": 6247,
+      "active_users": 2355,
+      "event_count_all": 19067
+    },
+    {
+      "date": "2026-01-25",
+      "views": 7844,
+      "active_users": 2420,
+      "event_count_all": 23354
+    },
+    {
+      "date": "2026-01-26",
+      "views": 16892,
+      "active_users": 5206,
+      "event_count_all": 50838
+    },
+    {
+      "date": "2026-01-27",
+      "views": 18036,
+      "active_users": 5707,
+      "event_count_all": 55166
+    },
+    {
+      "date": "2026-01-28",
+      "views": 29339,
+      "active_users": 5199,
+      "event_count_all": 73581
+    },
+    {
+      "date": "2026-01-29",
+      "views": 47450,
+      "active_users": 5391,
+      "event_count_all": 121239
+    },
+    {
+      "date": "2026-01-30",
+      "views": 37301,
+      "active_users": 4459,
+      "event_count_all": 96321
+    },
+    {
+      "date": "2026-01-31",
+      "views": 32746,
+      "active_users": 3113,
+      "event_count_all": 59526
+    },
+    {
+      "date": "2026-02-01",
+      "views": 28949,
+      "active_users": 3323,
+      "event_count_all": 65693
+    },
+    {
+      "date": "2026-02-02",
+      "views": 29119,
+      "active_users": 5757,
+      "event_count_all": 164207
+    },
+    {
+      "date": "2026-02-03",
+      "views": 17300,
+      "active_users": 5681,
+      "event_count_all": 232953
+    },
+    {
+      "date": "2026-02-04",
+      "views": 21531,
+      "active_users": 10617,
+      "event_count_all": 244542
+    },
+    {
+      "date": "2026-02-05",
+      "views": 23617,
+      "active_users": 13559,
+      "event_count_all": 235189
+    },
+    {
+      "date": "2026-02-06",
+      "views": 18759,
+      "active_users": 11497,
+      "event_count_all": 201109
+    },
+    {
+      "date": "2026-02-07",
+      "views": 12460,
+      "active_users": 9750,
+      "event_count_all": 136239
+    },
+    {
+      "date": "2026-02-08",
+      "views": 14193,
+      "active_users": 10161,
+      "event_count_all": 144077
+    },
+    {
+      "date": "2026-02-09",
+      "views": 23236,
+      "active_users": 13136,
+      "event_count_all": 234486
+    },
+    {
+      "date": "2026-02-10",
+      "views": 22099,
+      "active_users": 10763,
+      "event_count_all": 219776
+    },
+    {
+      "date": "2026-02-11",
+      "views": 20706,
+      "active_users": 10841,
+      "event_count_all": 227161
+    },
+    {
+      "date": "2026-02-12",
+      "views": 20780,
+      "active_users": 11299,
+      "event_count_all": 209146
+    },
+    {
+      "date": "2026-02-13",
+      "views": 20279,
+      "active_users": 12420,
+      "event_count_all": 212700
+    },
+    {
+      "date": "2026-02-14",
+      "views": 12204,
+      "active_users": 9414,
+      "event_count_all": 181530
+    },
+    {
+      "date": "2026-02-15",
+      "views": 13954,
+      "active_users": 9841,
+      "event_count_all": 165294
+    },
+    {
+      "date": "2026-02-16",
+      "views": 20169,
+      "active_users": 11518,
+      "event_count_all": 211725
+    },
+    {
+      "date": "2026-02-17",
+      "views": 21082,
+      "active_users": 11787,
+      "event_count_all": 214322
+    },
+    {
+      "date": "2026-02-18",
+      "views": 21724,
+      "active_users": 11986,
+      "event_count_all": 228037
+    },
+    {
+      "date": "2026-02-19",
+      "views": 20696,
+      "active_users": 11423,
+      "event_count_all": 213205
+    },
+    {
+      "date": "2026-02-20",
+      "views": 19031,
+      "active_users": 11865,
+      "event_count_all": 198515
+    },
+    {
+      "date": "2026-02-21",
+      "views": 12970,
+      "active_users": 9672,
+      "event_count_all": 147809
+    },
+    {
+      "date": "2026-02-22",
+      "views": 13091,
+      "active_users": 8857,
+      "event_count_all": 148810
+    },
+    {
+      "date": "2026-02-23",
+      "views": 22132,
+      "active_users": 12049,
+      "event_count_all": 233087
+    },
+    {
+      "date": "2026-02-24",
+      "views": 22870,
+      "active_users": 12196,
+      "event_count_all": 233519
+    },
+    {
+      "date": "2026-02-25",
+      "views": 21110,
+      "active_users": 10652,
+      "event_count_all": 278818
+    },
+    {
+      "date": "2026-02-26",
+      "views": 20394,
+      "active_users": 11317,
+      "event_count_all": 225066
+    },
+    {
+      "date": "2026-02-27",
+      "views": 18316,
+      "active_users": 10979,
+      "event_count_all": 215006
+    },
+    {
+      "date": "2026-02-28",
+      "views": 11497,
+      "active_users": 8726,
+      "event_count_all": 150047
+    },
+    {
+      "date": "2026-03-01",
+      "views": 13053,
+      "active_users": 9636,
+      "event_count_all": 163477
+    },
+    {
+      "date": "2026-03-02",
+      "views": 20892,
+      "active_users": 11409,
+      "event_count_all": 229473
+    },
+    {
+      "date": "2026-03-03",
+      "views": 21704,
+      "active_users": 11940,
+      "event_count_all": 231450
+    },
+    {
+      "date": "2026-03-04",
+      "views": 17389,
+      "active_users": 10870,
+      "event_count_all": 198708
+    },
+    {
+      "date": "2026-03-05",
+      "views": 16163,
+      "active_users": 9065,
+      "event_count_all": 194094
+    },
+    {
+      "date": "2026-03-06",
+      "views": 12727,
+      "active_users": 8150,
+      "event_count_all": 170157
+    },
+    {
+      "date": "2026-03-07",
+      "views": 5865,
+      "active_users": 5051,
+      "event_count_all": 112275
+    },
+    {
+      "date": "2026-03-08",
+      "views": 7099,
+      "active_users": 5566,
+      "event_count_all": 119326
+    },
+    {
+      "date": "2026-03-09",
+      "views": 16581,
+      "active_users": 9786,
+      "event_count_all": 184380
+    },
+    {
+      "date": "2026-03-10",
+      "views": 16135,
+      "active_users": 9213,
+      "event_count_all": 183749
+    },
+    {
+      "date": "2026-03-11",
+      "views": 15849,
+      "active_users": 8221,
+      "event_count_all": 178479
+    },
+    {
+      "date": "2026-03-12",
+      "views": 14760,
+      "active_users": 7811,
+      "event_count_all": 168942
+    },
+    {
+      "date": "2026-03-13",
+      "views": 12589,
+      "active_users": 7781,
+      "event_count_all": 147106
+    },
+    {
+      "date": "2026-03-14",
+      "views": 6063,
+      "active_users": 5619,
+      "event_count_all": 89123
+    },
+    {
+      "date": "2026-03-15",
+      "views": 7254,
+      "active_users": 5350,
+      "event_count_all": 102361
+    },
+    {
+      "date": "2026-03-16",
+      "views": 15078,
+      "active_users": 8575,
+      "event_count_all": 221864
+    },
+    {
+      "date": "2026-03-17",
+      "views": 14756,
+      "active_users": 7726,
+      "event_count_all": 174973
+    },
+    {
+      "date": "2026-03-18",
+      "views": 13936,
+      "active_users": 5696,
+      "event_count_all": 165991
+    },
+    {
+      "date": "2026-03-19",
+      "views": 14304,
+      "active_users": 7263,
+      "event_count_all": 211794
+    },
+    {
+      "date": "2026-03-20",
+      "views": 11290,
+      "active_users": 4522,
+      "event_count_all": 191616
+    },
+    {
+      "date": "2026-03-21",
+      "views": 5197,
+      "active_users": 2188,
+      "event_count_all": 125656
+    },
+    {
+      "date": "2026-03-22",
+      "views": 5826,
+      "active_users": 2462,
+      "event_count_all": 151271
+    },
+    {
+      "date": "2026-03-23",
+      "views": 13426,
+      "active_users": 5121,
+      "event_count_all": 202781
+    },
+    {
+      "date": "2026-03-24",
+      "views": 15148,
+      "active_users": 5585,
+      "event_count_all": 230713
+    },
+    {
+      "date": "2026-03-25",
+      "views": 14530,
+      "active_users": 5358,
+      "event_count_all": 220635
+    },
+    {
+      "date": "2026-03-26",
+      "views": 12197,
+      "active_users": 4629,
+      "event_count_all": 199867
+    },
+    {
+      "date": "2026-03-27",
+      "views": 10818,
+      "active_users": 3978,
+      "event_count_all": 199182
+    },
+    {
+      "date": "2026-03-28",
+      "views": 5349,
+      "active_users": 2098,
+      "event_count_all": 125634
+    },
+    {
+      "date": "2026-03-29",
+      "views": 6045,
+      "active_users": 2297,
+      "event_count_all": 135903
+    },
+    {
+      "date": "2026-03-30",
+      "views": 12764,
+      "active_users": 4677,
+      "event_count_all": 205711
+    },
+    {
+      "date": "2026-03-31",
+      "views": 13678,
+      "active_users": 5164,
+      "event_count_all": 227565
+    },
+    {
+      "date": "2026-04-01",
+      "views": 13074,
+      "active_users": 4736,
+      "event_count_all": 252820
+    },
+    {
+      "date": "2026-04-02",
+      "views": 11718,
+      "active_users": 4678,
+      "event_count_all": 217436
+    },
+    {
+      "date": "2026-04-03",
+      "views": 15488,
+      "active_users": 9370,
+      "event_count_all": 340740
+    },
+    {
+      "date": "2026-04-04",
+      "views": 3911,
+      "active_users": 1627,
+      "event_count_all": 135349
+    },
+    {
+      "date": "2026-04-05",
+      "views": 4770,
+      "active_users": 1787,
+      "event_count_all": 145609
+    },
+    {
+      "date": "2026-04-06",
+      "views": 9463,
+      "active_users": 3303,
+      "event_count_all": 251427
+    },
+    {
+      "date": "2026-04-07",
+      "views": 12843,
+      "active_users": 4936,
+      "event_count_all": 208955
+    },
+    {
+      "date": "2026-04-08",
+      "views": 12713,
+      "active_users": 4600,
+      "event_count_all": 204689
+    },
+    {
+      "date": "2026-04-09",
+      "views": 12121,
+      "active_users": 4591,
+      "event_count_all": 229260
+    },
+    {
+      "date": "2026-04-10",
+      "views": 9999,
+      "active_users": 4036,
+      "event_count_all": 361476
+    },
+    {
+      "date": "2026-04-11",
+      "views": 4524,
+      "active_users": 1808,
+      "event_count_all": 179152
+    },
+    {
+      "date": "2026-04-12",
+      "views": 5422,
+      "active_users": 2029,
+      "event_count_all": 128750
+    },
+    {
+      "date": "2026-04-13",
+      "views": 12815,
+      "active_users": 4585,
+      "event_count_all": 267534
+    },
+    {
+      "date": "2026-04-14",
+      "views": 12501,
+      "active_users": 4602,
+      "event_count_all": 333711
+    },
+    {
+      "date": "2026-04-15",
+      "views": 12601,
+      "active_users": 4511,
+      "event_count_all": 303751
+    },
+    {
+      "date": "2026-04-16",
+      "views": 11907,
+      "active_users": 4527,
+      "event_count_all": 260536
+    },
+    {
+      "date": "2026-04-17",
+      "views": 10480,
+      "active_users": 3588,
+      "event_count_all": 215342
+    },
+    {
+      "date": "2026-04-18",
+      "views": 3848,
+      "active_users": 1595,
+      "event_count_all": 154931
+    },
+    {
+      "date": "2026-04-19",
+      "views": 5192,
+      "active_users": 1867,
+      "event_count_all": 219186
+    },
+    {
+      "date": "2026-04-20",
+      "views": 11585,
+      "active_users": 4175,
+      "event_count_all": 330476
+    },
+    {
+      "date": "2026-04-21",
+      "views": 11425,
+      "active_users": 4254,
+      "event_count_all": 290696
+    },
+    {
+      "date": "2026-04-22",
+      "views": 11410,
+      "active_users": 4330,
+      "event_count_all": 269246
+    },
+    {
+      "date": "2026-04-23",
+      "views": 11228,
+      "active_users": 4166,
+      "event_count_all": 248196
+    },
+    {
+      "date": "2026-04-24",
+      "views": 9117,
+      "active_users": 3549,
+      "event_count_all": 244686
+    },
+    {
+      "date": "2026-04-25",
+      "views": 4276,
+      "active_users": 1865,
+      "event_count_all": 185497
+    },
+    {
+      "date": "2026-04-26",
+      "views": 6074,
+      "active_users": 2035,
+      "event_count_all": 174794
+    },
+    {
+      "date": "2026-04-27",
+      "views": 11795,
+      "active_users": 4415,
+      "event_count_all": 234372
+    },
+    {
+      "date": "2026-04-28",
+      "views": 11989,
+      "active_users": 4676,
+      "event_count_all": 238586
+    },
+    {
+      "date": "2026-04-29",
+      "views": 11673,
+      "active_users": 4617,
+      "event_count_all": 251197
+    },
+    {
+      "date": "2026-04-30",
+      "views": 10563,
+      "active_users": 4099,
+      "event_count_all": 226562
+    },
+    {
+      "date": "2026-05-01",
+      "views": 5572,
+      "active_users": 2096,
+      "event_count_all": 175514
+    },
+    {
+      "date": "2026-05-02",
+      "views": 1504,
+      "active_users": 512,
+      "event_count_all": 119650
+    },
+    {
+      "date": "2026-05-03",
+      "views": 1866,
+      "active_users": 588,
+      "event_count_all": 127582
+    },
+    {
+      "date": "2026-05-04",
+      "views": 3722,
+      "active_users": 1051,
+      "event_count_all": 162417
+    },
+    {
+      "date": "2026-05-05",
+      "views": 4076,
+      "active_users": 1180,
+      "event_count_all": 177436
+    },
+    {
+      "date": "2026-05-06",
+      "views": 3938,
+      "active_users": 1063,
+      "event_count_all": 174109
+    },
+    {
+      "date": "2026-05-07",
+      "views": 3858,
+      "active_users": 1022,
+      "event_count_all": 183759
+    },
+    {
+      "date": "2026-05-08",
+      "views": 2483,
+      "active_users": 754,
+      "event_count_all": 163302
+    },
+    {
+      "date": "2026-05-09",
+      "views": 1698,
+      "active_users": 376,
+      "event_count_all": 134592
+    },
+    {
+      "date": "2026-05-10",
+      "views": 1454,
+      "active_users": 437,
+      "event_count_all": 129993
+    },
+    {
+      "date": "2026-05-11",
+      "views": 3892,
+      "active_users": 1052,
+      "event_count_all": 174446
+    },
+    {
+      "date": "2026-05-12",
+      "views": 4153,
+      "active_users": 1155,
+      "event_count_all": 213115
+    },
+    {
+      "date": "2026-05-13",
+      "views": 3660,
+      "active_users": 999,
+      "event_count_all": 190528
+    },
+    {
+      "date": "2026-05-14",
+      "views": 3475,
+      "active_users": 929,
+      "event_count_all": 178496
+    },
+    {
+      "date": "2026-05-15",
+      "views": 3133,
+      "active_users": 876,
+      "event_count_all": 178753
+    },
+    {
+      "date": "2026-05-16",
+      "views": 1344,
+      "active_users": 347,
+      "event_count_all": 172122
+    },
+    {
+      "date": "2026-05-17",
+      "views": 2089,
+      "active_users": 529,
+      "event_count_all": 137153
+    },
+    {
+      "date": "2026-05-18",
+      "views": 4010,
+      "active_users": 1093,
+      "event_count_all": 184234
+    },
+    {
+      "date": "2026-05-19",
+      "views": 3959,
+      "active_users": 1116,
+      "event_count_all": 216652
+    },
+    {
+      "date": "2026-05-20",
+      "views": 4177,
+      "active_users": 1361,
+      "event_count_all": 236016
+    },
+    {
+      "date": "2026-05-21",
+      "views": 3864,
+      "active_users": 1463,
+      "event_count_all": 261098
+    },
+    {
+      "date": "2026-05-22",
+      "views": 3490,
+      "active_users": 1276,
+      "event_count_all": 245073
+    },
+    {
+      "date": "2026-05-23",
+      "views": 1462,
+      "active_users": 463,
+      "event_count_all": 161562
+    },
+    {
+      "date": "2026-05-24",
+      "views": 1779,
+      "active_users": 545,
+      "event_count_all": 170438
+    },
+    {
+      "date": "2026-05-25",
+      "views": 3187,
+      "active_users": 947,
+      "event_count_all": 206677
+    },
+    {
+      "date": "2026-05-26",
+      "views": 4131,
+      "active_users": 1185,
+      "event_count_all": 217798
+    },
+    {
+      "date": "2026-05-27",
+      "views": 3702,
+      "active_users": 1107,
+      "event_count_all": 219305
+    },
+    {
+      "date": "2026-05-28",
+      "views": 3576,
+      "active_users": 1090,
+      "event_count_all": 232819
+    },
+    {
+      "date": "2026-05-29",
+      "views": 2684,
+      "active_users": 850,
+      "event_count_all": 188717
+    },
+    {
+      "date": "2026-05-30",
+      "views": 1317,
+      "active_users": 352,
+      "event_count_all": 141737
+    },
+    {
+      "date": "2026-05-31",
+      "views": 1519,
+      "active_users": 455,
+      "event_count_all": 168512
+    },
+    {
+      "date": "2026-06-01",
+      "views": 3368,
+      "active_users": 1027,
+      "event_count_all": 199923
+    },
+    {
+      "date": "2026-06-02",
+      "views": 3782,
+      "active_users": 1105,
+      "event_count_all": 202032
+    },
+    {
+      "date": "2026-06-03",
+      "views": 3367,
+      "active_users": 995,
+      "event_count_all": 228061
+    },
+    {
+      "date": "2026-06-04",
+      "views": 3444,
+      "active_users": 973,
+      "event_count_all": 203549
+    },
+    {
+      "date": "2026-06-05",
+      "views": 2596,
+      "active_users": 774,
+      "event_count_all": 197588
+    },
+    {
+      "date": "2026-06-06",
+      "views": 1136,
+      "active_users": 321,
+      "event_count_all": 143808
+    },
+    {
+      "date": "2026-06-07",
+      "views": 1548,
+      "active_users": 451,
+      "event_count_all": 146226
+    },
+    {
+      "date": "2026-06-08",
+      "views": 3286,
+      "active_users": 1058,
+      "event_count_all": 185202
+    },
+    {
+      "date": "2026-06-09",
+      "views": 3665,
+      "active_users": 1129,
+      "event_count_all": 227377
+    },
+    {
+      "date": "2026-06-10",
+      "views": 3196,
+      "active_users": 980,
+      "event_count_all": 188954
+    },
+    {
+      "date": "2026-06-11",
+      "views": 2897,
+      "active_users": 890,
+      "event_count_all": 195482
+    },
+    {
+      "date": "2026-06-12",
+      "views": 2532,
+      "active_users": 724,
+      "event_count_all": 200394
+    },
+    {
+      "date": "2026-06-13",
+      "views": 1104,
+      "active_users": 316,
+      "event_count_all": 148424
+    },
+    {
+      "date": "2026-06-14",
+      "views": 1378,
+      "active_users": 446,
+      "event_count_all": 170756
+    },
+    {
+      "date": "2026-06-15",
+      "views": 3393,
+      "active_users": 1043,
+      "event_count_all": 196903
+    },
+    {
+      "date": "2026-06-16",
+      "views": 3768,
+      "active_users": 1010,
+      "event_count_all": 230621
+    },
+    {
+      "date": "2026-06-17",
+      "views": 3725,
+      "active_users": 1129,
+      "event_count_all": 217404
+    },
+    {
+      "date": "2026-06-18",
+      "views": 3482,
+      "active_users": 1064,
+      "event_count_all": 225398
+    },
+    {
+      "date": "2026-06-19",
+      "views": 2624,
+      "active_users": null,
+      "event_count_all": null
+    },
+    {
+      "date": "2026-06-20",
+      "views": 1236,
+      "active_users": null,
+      "event_count_all": null
+    },
+    {
+      "date": "2026-06-21",
+      "views": 1639,
+      "active_users": null,
+      "event_count_all": null
+    },
+    {
+      "date": "2026-06-22",
+      "views": 3591,
+      "active_users": null,
+      "event_count_all": null
+    },
+    {
+      "date": "2026-06-23",
+      "views": 3810,
+      "active_users": null,
+      "event_count_all": null
+    },
+    {
+      "date": "2026-06-24",
+      "views": 3584,
+      "active_users": null,
+      "event_count_all": null
+    }
+  ],
+  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal."
+}

@@ -2,6 +2,14 @@
 
 ### June 2026
 
+- [x] PR #36123: ESLint removed rules migration fixes (2026-06-26)
+  - Plan: `dot_ai/2026-06-26/tasks/pr-36123-eslint-removed-rules-fixes.md`
+  - Summary: Fixed the typescript-eslint v8 removed-rules migration follow-ups on `feat/migrate-removed-ts-eslint-extension-rules`: added the non-format v7 rules missing from v8 (`ban-types`, `no-throw-literal`, `no-useless-template-literals`), guarded `formatFiles` so no-op runs do not rewrite configs, and extended the migration spec. Verified focused migration spec plus eslint build/lint.
+
+- [x] Review PR #12084: Nx Cloud Rewind (2026-06-25)
+  - Plan: `dot_ai/2026-06-25/tasks/review-pr-12084.md`
+  - Summary: Reviewed https://github.com/nrwl/ocean/pull/12084 via GitHub connector and a temp worktree after Plannotator failed on unauthenticated `gh`. Found three correctness issues: exclusive Rewind period end passed to inclusive time-to-green API, contributor-count-only activity bypassing the no-cache empty state, and cumulative workspaceCreditUsage rows summed as daily deltas for task distribution detection. Targeted `testjs` suites passed locally.
+
 - [x] DOC-537: SEO docs overhaul - nx workspace + pnpm workspace foundation MERGED (PR #36088), technology + Module Federation overview rework DRAFT (PR #36105) (2026-06-25)
   - Plan: `dot_ai/2026-06-23/tasks/seo-gsc-query-analysis.md`, Summary: `dot_ai/2026-06-25/SUMMARY.md`
   - Summary: GSC-driven SEO pass on nx.dev. #36088 (merged by jaysoo): retitled crafting-your-workspace for `nx workspace`, enriched the generated `@nx/workspace` reference page, added npm/pnpm/yarn/bun workspace recipes + per-tab tutorial links. #36105 (draft, one squashed commit on `doc-537-seo-followup`): all 33 technology intros `<Tech> Plugin for Nx` -> `Nx with <Tech>` + "Nx scales your `<Tech>` monorepo" descriptions + listing-page links; `<Tech> monorepo` in openings; standardized "Set up CI" -> `/docs/getting-started/setup-ci` on every overview; Angular overview as the `angular monorepo` landing; Module Federation overview rewritten (research + 3-judge panel) leading with the react-mfe template and the current consumer/provider generators; Next.js/Express/NestJS intros use their CNW templates. Heavy multi-agent Workflow use (research, judge panels, 32-page parallel edits) + deterministic scripts for the 87-file sweeps. Polygraph session `seo-research-80058b7a`. Follow-ups open: Next.js 14->15 deprecation (code+doc, scoped not started), Angular overview deprecated host/remote generators, plus storybook/what-is-a-monorepo/project.json metas.
