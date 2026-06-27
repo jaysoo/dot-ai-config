@@ -73,16 +73,9 @@ const HEADERS = {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const log = (...m) => console.error(...m); // progress to stderr, data to files/stdout
 
-// File-size buckets (bytes) to partition code search under the 1,000 cap.
-// nx.json files are small; these buckets comfortably split the population.
-const SIZE_BUCKETS = [
-  '0..511',
-  '512..1023',
-  '1024..2047',
-  '2048..4095',
-  '4096..8191',
-  '>8191',
-];
+const CODE_SEARCH_CAP = 1000; // GitHub returns at most 1,000 results per query
+const MAX_NX_JSON_SIZE = 400000; // code search doesn't index files > 384 KB
+const SEARCH_DELAY_MS = 6500; // ~10 code-search req/min limit
 
 // ── Stage 1: discover candidate repos via code search ────────────────────────
 async function searchCodePage(q, page) {
@@ -109,34 +102,65 @@ async function searchCodePage(q, page) {
   }
 }
 
+function ingest(data, repos) {
+  for (const item of data.items ?? []) {
+    const full = item.repository?.full_name;
+    if (full && !repos.has(full)) {
+      const [owner, name] = full.split('/');
+      repos.set(full, { owner, name });
+    }
+  }
+}
+
+// Recursively partition a [lo, hi] byte-size range so no query exceeds the
+// 1,000-result cap. We peek total_count on page 1; if a range is over the cap
+// and still splittable, bisect it; otherwise drain its pages. A single byte
+// size still over the cap is irreducible (size is code search's only numeric
+// axis) — we take the 1,000 we can and warn. The page-1 fetch is reused, so the
+// only overhead vs. fixed buckets is one peek request per internal split node.
+async function discoverRange(lo, hi, repos, irreducible) {
+  const q = `filename:nx.json size:${lo}..${hi}`;
+  const first = await searchCodePage(q, 1);
+  const total = first.total_count ?? 0;
+  log(`[discover] size:${lo}..${hi} -> ${total}`);
+  if (total === 0) return;
+
+  if (total >= CODE_SEARCH_CAP && lo < hi) {
+    const mid = Math.floor((lo + hi) / 2);
+    await sleep(SEARCH_DELAY_MS);
+    await discoverRange(lo, mid, repos, irreducible);
+    await sleep(SEARCH_DELAY_MS);
+    await discoverRange(mid + 1, hi, repos, irreducible);
+    return;
+  }
+
+  // Drain this range (page 1 already fetched).
+  ingest(first, repos);
+  const pages = Math.ceil(Math.min(total, CODE_SEARCH_CAP) / 100);
+  for (let page = 2; page <= pages; page++) {
+    await sleep(SEARCH_DELAY_MS);
+    ingest(await searchCodePage(q, page), repos);
+  }
+  if (total >= CODE_SEARCH_CAP) {
+    irreducible.push({ range: `${lo}..${hi}`, total });
+    log(
+      `  ⚠ irreducible bucket size:${lo}..${hi} still has ${total} (>= ` +
+        `${CODE_SEARCH_CAP}); some repos in it are unreachable via code search.`,
+    );
+  }
+}
+
 async function discoverRepos() {
   const repos = new Map(); // full_name -> {owner, name}
-  for (const bucket of SIZE_BUCKETS) {
-    const q = `filename:nx.json size:${bucket}`;
-    let page = 1;
-    let total = Infinity;
-    log(`[discover] ${q}`);
-    while ((page - 1) * 100 < Math.min(total, 1000)) {
-      const data = await searchCodePage(q, page);
-      total = data.total_count ?? 0;
-      for (const item of data.items ?? []) {
-        const full = item.repository?.full_name;
-        if (full && !repos.has(full)) {
-          const [owner, name] = full.split('/');
-          repos.set(full, { owner, name });
-        }
-      }
-      log(`  page ${page}: ${data.items?.length ?? 0} hits (bucket total ${total})`);
-      if (!data.items?.length) break;
-      page++;
-      await sleep(6500); // ~10 req/min code-search limit
-    }
-    if (total >= 1000) {
-      log(
-        `  ⚠ bucket "${bucket}" hit the 1,000-result cap — some repos may be ` +
-          `missed. Split this bucket into narrower size ranges for full coverage.`,
-      );
-    }
+  const irreducible = [];
+  await discoverRange(0, MAX_NX_JSON_SIZE, repos, irreducible);
+  if (irreducible.length) {
+    log(
+      `\n⚠ ${irreducible.length} size range(s) remained over the cap — coverage ` +
+        `is a lower bound (size is code search's only numeric partition axis).`,
+    );
+  } else {
+    log(`\n[discover] full coverage — every size range fit under the cap.`);
   }
   return [...repos.values()];
 }
