@@ -11,6 +11,7 @@ Docs can go stale in three ways:
 
 | Date | Repo | File | Notes |
 |------|------|------|-------|
+| 2026-06-28 | nrwl/nx | [nx-astro-docs-staleness-2026-06-28.md](./nx-astro-docs-staleness-2026-06-28.md) | Fifth scan (503 files); 5 new issue groups: stale GitHub Actions versions (setup-node@v3→v4, checkout@v3→v4, docker/login-action@v2→v3) in 6 files; Vite `target: 'node18'`; `.eslintrc.json` in MF/graph examples (flat config is default); wrong pnpm-workspaces.yml filename in 2 files; stale "Nx 15.0.11" callout. H3+H4 node-version issues confirmed fixed. Linear MCP still unavailable. |
 | 2026-06-24 | nrwl/nx | [nx-astro-docs-staleness-2026-06-24.md](./nx-astro-docs-staleness-2026-06-24.md) | Fourth scan; 2 new issues (dead Nx < 17.2 cache troubleshooting step, stale "Nx 20+" label in explore-graph); all prior open issues re-aggregated into one table. Linear MCP still unavailable — 18 total issues queued for manual creation. |
 | 2026-06-17 | nrwl/nx | [nx-astro-docs-staleness-2026-06-17.md](./nx-astro-docs-staleness-2026-06-17.md) | Third scan; deprecated cacheableOperations/tasksRunnerOptions in active feature pages, dead Nx ≤ 19.6 conditionals in cloud docs, stale TS 4.7 ref, "prior to Nx 18" blocks. Linear MCP broken (SSE transport removed) — 8 issues queued for manual creation. |
 | 2026-06-12 | nrwl/nx | [nx-astro-docs-staleness-2026-06-12.md](./nx-astro-docs-staleness-2026-06-12.md) | Follow-up scan; svgr option documented but removed from source in Nx 22, stale Nx 15.7 linkcard, composePlugins/withReact removal in Nx 24 to monitor |
