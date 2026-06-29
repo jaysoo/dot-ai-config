@@ -5,8 +5,8 @@
   "property": "sc-domain:nx.dev",
   "scraped_at": "2026-06-26",
   "first_recorded": "2025-02-25",
-  "last_recorded": "2026-06-24",
-  "note": "GSC retention is 16 months; series starts 2025-02-25 (4 partial days in Feb 2025). Latest day 2026-06-24 (GSC ~2-day processing lag). June 2026 is partial (24 days).",
+  "last_recorded": "2026-06-27",
+  "note": "GSC retention is 16 months; series starts 2025-02-25 (4 partial days in Feb 2025). Latest day 2026-06-24 (GSC ~2-day processing lag). June 2026 is partial (24 days). Jun 25-27 2026 appended 2026-06-29 (site-wide GSC unchanged/consistent; verified Jun16-24 overlap exact).",
   "days": [
     {
       "date": "2025-02-25",
@@ -2432,6 +2432,21 @@
       "date": "2026-06-24",
       "clicks": 2398,
       "impressions": 126429
+    },
+    {
+      "date": "2026-06-25",
+      "clicks": 2254,
+      "impressions": 125332
+    },
+    {
+      "date": "2026-06-26",
+      "clicks": 1732,
+      "impressions": 117984
+    },
+    {
+      "date": "2026-06-27",
+      "clicks": 719,
+      "impressions": 113082
     }
   ]
 }

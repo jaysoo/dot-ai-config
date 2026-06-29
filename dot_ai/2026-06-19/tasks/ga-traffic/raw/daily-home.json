@@ -2,9 +2,9 @@
   "series": "home_daily",
   "metric": "Views = client page_view for pagePath = \"/\"",
   "filter": "Page path and screen class exactly matches /",
-  "date_range": "2025-05-01..2026-06-24",
+  "date_range": "2025-05-01..2026-06-27",
   "scraped_at": "2026-06-19",
-  "count": 420,
+  "count": 423,
   "rows": [
     {
       "date": "2025-05-01",
@@ -2105,7 +2105,22 @@
       "date": "2026-06-24",
       "views": 348,
       "active_users": null
+    },
+    {
+      "date": "2026-06-25",
+      "views": 358,
+      "active_users": null
+    },
+    {
+      "date": "2026-06-26",
+      "views": 245,
+      "active_users": null
+    },
+    {
+      "date": "2026-06-27",
+      "views": 101,
+      "active_users": null
     }
   ],
-  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal."
+  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal. Jun 25-27 appended 2026-06-29 (overlap Jun24 verified; views/server only, AU/event null)."
 }

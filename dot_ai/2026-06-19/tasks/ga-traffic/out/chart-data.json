@@ -2,7 +2,7 @@
   "meta": {
     "generated_by": "process.mjs",
     "scraped_at": "2026-06-19",
-    "daily_range": "2025-05-01..2026-06-24",
+    "daily_range": "2025-05-01..2026-06-27",
     "weekly_range": "2025-05-05..2026-06-15",
     "monthly_range": "2025-01..2026-06",
     "segments": "Page types: home (/), docs (/docs*), blog (/blog*), marketing (Framer pages, see raw/segment-definitions.json), others (= all - the rest). Disjoint; stack to total.",
@@ -4315,6 +4315,36 @@
       "marketing_views": 0,
       "others_views": 679,
       "server_page_view": 186943
+    },
+    {
+      "date": "2026-06-25",
+      "all_views": 3518,
+      "home_views": 358,
+      "docs_views": 2422,
+      "blog_views": 0,
+      "marketing_views": 0,
+      "others_views": 738,
+      "server_page_view": 192724
+    },
+    {
+      "date": "2026-06-26",
+      "all_views": 2425,
+      "home_views": 245,
+      "docs_views": 1679,
+      "blog_views": 0,
+      "marketing_views": 0,
+      "others_views": 501,
+      "server_page_view": 259489
+    },
+    {
+      "date": "2026-06-27",
+      "all_views": 1033,
+      "home_views": 101,
+      "docs_views": 752,
+      "blog_views": 0,
+      "marketing_views": 0,
+      "others_views": 180,
+      "server_page_view": 154420
     }
   ],
   "weekly": [
@@ -6800,12 +6830,12 @@
     },
     {
       "month": "2026-06",
-      "all_views": 65554,
-      "home_views": 6956,
-      "docs_views": 49330,
+      "all_views": 72530,
+      "home_views": 7660,
+      "docs_views": 54183,
       "blog_views": 3348,
       "marketing_views": 2184,
-      "others_views": 3736,
+      "others_views": 5155,
       "server_page_view": 3228509,
       "partial": true
     }
@@ -7609,9 +7639,9 @@
     },
     {
       "month": "2026-06",
-      "clicks": 48505,
-      "impressions": 3403640,
-      "days": 24,
+      "clicks": 53210,
+      "impressions": 3760038,
+      "days": 27,
       "expected_days": 30,
       "partial": true
     }

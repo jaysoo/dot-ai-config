@@ -104,6 +104,17 @@ completeness only.
   regression (the GTM-only cutover #34384 making page_view depend on the GTM container config),
   not content-specific loss. Likely measurement-led with a smaller real AI/organic residual.
   NOTE: not an ad-blocking effect - gtm.js and gtag/js are blocked equally.
+- **GSC page-regex filter is contaminated by AI data (caught 2026-06-29).** As of ~late June 2026, GSC's
+  Search-Console "Web" data now surfaces AI Overview / AI Mode clicks+impressions, but ONLY in the
+  page-FILTERED view, not the unfiltered property total. Effect: the docs+others regex filter returned
+  MORE clicks (2.02M) than the entire unfiltered site (1.88M) - a subset exceeding the whole, which is
+  impossible. Impressions ~tripled in the filtered view (CTR 3.8% unfiltered -> 1.6% filtered). So the
+  `gsc-docs-others-daily.json` regex breakdown is UNRELIABLE until Google's rollout stabilizes; it is held
+  at 2026-06-24. The UNFILTERED site-wide `gsc-daily.json` is UNCHANGED and reliable (verified Jun16-24
+  overlap exact) - use it as the doc-organic proxy (nx.dev is ~80% docs). LESSON: a subset filter reading
+  higher than the unfiltered total is the tell; always check subset vs whole before calling it a reprocess.
+- **Data currency (2026-06-29 update):** site-wide GSC (`gsc-daily.json`) + GA4 daily (all/home/docs/server)
+  refreshed through 2026-06-27. docs+others GSC held at 2026-06-24 (see above). GA4 June stays consent-suppressed.
 - **Organic decline is REAL (resolved 2026-06-26).** The decisive test - GA4 page_views vs Google
   Search Console CLICKS (consent-independent) - is now run (`raw/gsc-daily.json`). GSC organic clicks
   fell -40.6% Oct 2025 -> Apr 2026, independently corroborating GA4 organic Views -45.6% (docs -46.3%)

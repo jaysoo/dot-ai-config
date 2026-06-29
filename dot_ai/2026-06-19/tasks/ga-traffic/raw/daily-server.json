@@ -2,9 +2,9 @@
   "series": "server_page_view_daily",
   "metric": "Event count where event_name = server_page_view (Measurement Protocol, server-side)",
   "filter": "event_name exactly matches server_page_view",
-  "date_range": "2025-05-01..2026-06-24",
+  "date_range": "2025-05-01..2026-06-27",
   "scraped_at": "2026-06-19",
-  "count": 143,
+  "count": 146,
   "first_recorded": "2026-02-02",
   "rows": [
     {
@@ -864,7 +864,25 @@
       "server_page_view": 186943,
       "active_users": null,
       "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-25",
+      "server_page_view": 192724,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-26",
+      "server_page_view": 259489,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-27",
+      "server_page_view": 154420,
+      "active_users": null,
+      "views_should_be_0": 0
     }
   ],
-  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal."
+  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal. Jun 25-27 appended 2026-06-29 (overlap Jun24 verified; views/server only, AU/event null)."
 }

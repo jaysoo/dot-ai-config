@@ -24,6 +24,12 @@
 - **Strengths:**
 
 
+## Upcoming Sync
+
+- Self-healing
+- Making the dashboard available through Lighthouse
+- Effy (review process)
+
 ## 1:1 Notes
 
 ### 2026-03-06

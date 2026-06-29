@@ -1949,5 +1949,6 @@
       "date": "2026-06-24",
       "clicks": 1735
     }
-  ]
+  ],
+  "caveat_2026_06_29": "HELD at 2026-06-24. On ~2026-06-29 GSC began surfacing AI Overview/AI Mode data ONLY in the page-FILTERED view: this regex filter then returned MORE clicks than the unfiltered site total (impossible), so it is unreliable for updates until Google stabilizes. Use the unfiltered gsc-daily.json (site-wide, ~80% docs) as the reliable doc-organic proxy meanwhile. See README key caveats."
 }

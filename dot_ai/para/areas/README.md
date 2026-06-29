@@ -22,6 +22,7 @@ Areas represent continuous aspects of work that need maintenance:
 | Incidents | `incidents/` | Security incidents, data exposure events, remediation and disclosure tracking |
 | Onboarding & Activation | `onboarding-activation/` | Self-serve funnel (CLI → Cloud) — 550 new workspaces / $3.3M ARR target, Quark-a team |
 | Stale Docs | `stale-docs/` | Periodic audits of documentation staleness (old versions, EOL Node, missing features) |
+| Nx OSS Repos | `nx-oss/` | Census of popular public repos using Nx (> 500 stars) and their Nx Cloud connection status |
 
 ## Adding New Areas
 

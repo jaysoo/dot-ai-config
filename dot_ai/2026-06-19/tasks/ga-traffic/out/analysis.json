@@ -380,9 +380,9 @@
         },
         {
           "month": "2026-06",
-          "clicks": 48505,
-          "impressions": 3403640,
-          "days": 24,
+          "clicks": 53210,
+          "impressions": 3760038,
+          "days": 27,
           "expected_days": 30,
           "partial": true
         }
@@ -532,9 +532,9 @@
       "baseline_month": "2026-05",
       "baseline_clicks": 66383,
       "latest_month": "2026-06",
-      "latest_clicks": 48505,
+      "latest_clicks": 53210,
       "latest_partial": true,
-      "latest_run_rate_full_month": 60631
+      "latest_run_rate_full_month": 59122
     },
     "docs_forward": {
       "what": "Documentation organic-search trend (docs + others, where others pre-2025-09-29 is the root-path docs). GSC clicks = consent-independent forward signal (weekly); GA4 organic Views = consent-suppressed historical context (monthly). Watch the GSC line to gauge whether SEO/AI-search correction efforts are recovering doc organic.",
@@ -702,7 +702,7 @@
       "2026-03": 3341956,
       "2026-04": 5471799,
       "2026-05": 5119810,
-      "2026-06": 4254667
+      "2026-06": 4861300
     },
     "note": "Consent-immune server event (Measurement Protocol); mostly AI-crawler traffic. Not counted in Views."
   },
@@ -1293,7 +1293,7 @@
       "comparable": false,
       "reason": "partial month",
       "monthly_all_views": 51667,
-      "daily_sum_all_views": 68151,
+      "daily_sum_all_views": 75127,
       "diff": null,
       "diff_pct": null,
       "within_tolerance": null
@@ -1384,7 +1384,7 @@
     ],
     "blog_marketing_measured_from": "2025-05",
     "others_clamp_days": 0,
-    "daily_days": 420,
+    "daily_days": 423,
     "monthly": [
       {
         "month": "2025-01",
@@ -1613,7 +1613,7 @@
     "Daily-vs-monthly integrity (all four series: all/home/docs/server): 13/13 comparable months within 2% tolerance.",
     "ORGANIC (consent-independent): GSC clicks -40.57% and GA4 organic Views -45.59% (docs -46.33%) over 2025-10 -> 2026-04: two independent signals agree the organic decline is REAL. Apr->May GSC -8.54% vs GA4 organic -69.59% confirms the May cliff is the Cookiebot banner, not lost traffic.",
     "DOCS ORGANIC (docs + others, the documentation audience): GSC clicks -45.87% and GA4 organic Views -47.39% over 2025-10 -> 2026-04. Forward baseline (GSC, last full month 2026-05): 46852 clicks/mo; latest 2026-06 (partial) 34072 (~42590 run-rate). Weekly GSC chart = the forward progress tracker.",
-    "FORWARD TRACKING: GSC clicks is the consent-immune metric to watch for correction efforts. Baseline (last full month 2026-05): 66383 clicks/mo. Latest 2026-06 (partial): 48505 (~60631 full-month run-rate).",
+    "FORWARD TRACKING: GSC clicks is the consent-immune metric to watch for correction efforts. Baseline (last full month 2026-05): 66383 clicks/mo. Latest 2026-06 (partial): 53210 (~59122 full-month run-rate).",
     "Source crosscheck: 2/2 overlap months pass (Reports == Explore == monthly-segments at 2025-05, 2025-08), confirming the two-source stitch.",
     "No /2 normalization applied: pre-GTM (Jan-Apr 2025) ~650K/mo matches post-GTM (May-Jul 2025) ~635K, disproving double-counting.",
     "Page-type mix Apr 2026 (of 296525 views): docs 216101 (73%), others 9957 (3%), home 36428 (12%), blog 17090 (6%), marketing 16949 (6%). Docs dominates; the decline is broad-based across types."
