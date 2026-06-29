@@ -3,7 +3,7 @@
 # the pin survives `cd` (see conf.d/kitty-tab-title.fish) until you unpin.
 function polygraph --description 'polygraph CLI; pins kitty tab title to the active session'
     set -l want_pin false
-    if test "$argv[1]" = session
+    if set -q KITTY_WINDOW_ID; and not set -q TMUX; and test "$argv[1]" = session
         switch "$argv[2]"
             case resume start
                 set want_pin true
@@ -38,8 +38,11 @@ function __polygraph_slug_from_args
                 set i (math $i + 1)
                 test $i -le (count $argv); and echo $argv[$i]
                 return
+            case -m --multiplexer --url --account --acct
+                # value-taking flags - skip the flag and its value
+                set i (math $i + 1)
             case '-*'
-                # other flag - skip
+                # boolean flag (--json, -h, --flag=value) - skip just the flag
             case '*'
                 echo $argv[$i]
                 return
