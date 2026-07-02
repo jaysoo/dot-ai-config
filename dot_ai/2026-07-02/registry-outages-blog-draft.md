@@ -127,6 +127,49 @@ Put a cache in front of it.**
 
 ---
 
+## What about the CI platforms? Most only solve half the problem
+
+Some CI vendors have bolted on a partial fix. It is worth knowing exactly what
+they cover, because the gaps are the whole argument.
+
+| Platform | What they do for Docker Hub | Covers | Survives a real outage? | Caches npm? |
+|---|---|---|---|---|
+| **Blacksmith** | Real pull-through cache mirror, on by default | Public images only | Partially - cached images keep serving | No |
+| **GitHub Actions** (hosted runners) | Rate-limit *exemption* via a Docker partnership - not a cache | Public images, hosted runners only | No - still pulls live from Hub | No |
+| **CircleCI** | Docker partnership exemption; optional manual registry mirror | Public images | Only if you configure a mirror yourself | No |
+| **Depot / Namespace** | Build-layer cache + their own registry | Build layers | Different problem | No |
+| **DIY** (`mirror.gcr.io`) | Point your daemon at Google's public pull-through cache | Public images | Depends | No |
+
+Three things fall out of that table:
+
+**A rate-limit exemption is not outage protection.** GitHub's and CircleCI's
+Docker partnerships kill the 429 throttle, but those runners still pull *live*
+from Docker Hub. On October 20, 2025, a GitHub-hosted job pulling a base image
+still failed, because Docker Hub itself was down. Only an actual cache keeps
+building through an outage.
+
+**Everything is public-only and platform-locked.** Private Docker Hub pulls stay
+rate-limited almost everywhere, and each fix only works on that vendor's runners
+- Blacksmith's cache helps you only on Blacksmith, GitHub's exemption only on
+GitHub-hosted runners. A cache that works wherever your builds run does not lock
+you in.
+
+**None of them cache npm.** Every option above is Docker-only. Not one puts a
+read-through cache in front of the npm registry - so the `left-pad` failure mode
+and the June 2024 npm outage are still live risks even on the platforms that
+"solved" Docker.
+
+[Our Cache] covers **both npm and Docker**, survives real outages (not just rate
+limits), and works wherever your builds run.
+
+> A note on the fine print: the exact terms of the GitHub-Docker and
+> CircleCI-Docker partnerships are not published in a single official document.
+> They are well attested across vendor discussions, but state them softly -
+> "GitHub-hosted runners are generally exempt from Docker Hub rate limits for
+> public images" rather than quoting specific numbers.
+
+---
+
 ## What a read-through cache actually buys you
 
 A read-through (pull-through) cache sits between your builds and the upstream
@@ -183,3 +226,9 @@ a public registry, your team is the one that keeps working.
 - GitLab: https://about.gitlab.com/blog/prepare-now-docker-hub-rate-limits-will-impact-gitlab-ci-cd/
 - Red Hat: https://www.redhat.com/en/blog/mitigate-impact-of-docker-hub-pull-request-limits
 - AWS: https://aws.amazon.com/blogs/containers/advice-for-customers-dealing-with-docker-hub-rate-limits-and-a-coming-soon-announcement/
+
+**CI platform comparison**
+- Blacksmith pull-through cache: https://www.blacksmith.sh/blog/you-have-5-days-before-the-new-dockerhub-limits-f-ck-you-over
+- GitHub Actions limits (Docker exemption context): https://docs.github.com/en/actions/reference/limits
+- CircleCI + Docker Hub rate limits: https://discuss.circleci.com/t/docker-hub-rate-limiting-customer-impact-and-solutions/53017
+- Google public mirror (mirror.gcr.io) via CircleCI mirror guidance: https://support.circleci.com/hc/en-us/articles/360049758552
