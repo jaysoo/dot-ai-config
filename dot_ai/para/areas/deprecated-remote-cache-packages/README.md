@@ -16,7 +16,85 @@ Tracking weekly npm download counts for the old `@nx/*-cache` packages and their
 
 ## Weekly Download History
 
-Weeks run Thu–Wed. Δ is vs the prior week in this table.
+Weeks run Wed–Tue (current partial week runs from last Wednesday through today). Δ is vs the prior week in this table.
+
+> Convention note: entries from Jul 1–2, 2026 onward use a Wed–Tue week boundary. Entries from Jun 11–15, 2026 and earlier used a Thu–Wed boundary. The date ranges overlap slightly (Jun 10–16 vs Jun 11–15) and are not directly delta-comparable across the boundary change — deltas below only chain within same-convention entries.
+
+### Jul 1–2, 2026 *(partial week — data through Thu Jul 2)*
+
+| Package | Downloads | Δ prev week |
+|---------|----------:|------------:|
+| `@nx/s3-cache` | 39,474 | −185,971 |
+| `@nx/gcs-cache` | 7,599 | −31,437 |
+| `@nx/shared-fs-cache` | 6,063 | −34,228 |
+| `@nx/azure-cache` | 6,455 | −16,120 |
+| **`@nx/*` subtotal** | **59,591** | **−267,756** |
+| `@nx/powerpack-s3-cache` | 1,927 | −4,653 |
+| `@nx/powerpack-gcs-cache` | 102 | −526 |
+| `@nx/powerpack-shared-fs-cache` | 65 | −471 |
+| `@nx/powerpack-azure-cache` | 0 | −1,452 |
+| **`powerpack-*` subtotal** | **2,094** | **−7,102** |
+| **Grand Total** | **61,685** | **−274,858** |
+
+> Partial week (Wed Jul 1–Thu Jul 2, 2 days); Δ vs full prior week is not directly comparable.
+
+---
+
+### Jun 24–30, 2026
+
+| Package | Downloads | Δ prev week |
+|---------|----------:|------------:|
+| `@nx/s3-cache` | 225,445 | −303 |
+| `@nx/gcs-cache` | 39,036 | −10,852 |
+| `@nx/shared-fs-cache` | 40,291 | −3,740 |
+| `@nx/azure-cache` | 22,575 | −4,573 |
+| **`@nx/*` subtotal** | **327,347** | **−19,468** |
+| `@nx/powerpack-s3-cache` | 6,580 | −1,598 |
+| `@nx/powerpack-gcs-cache` | 628 | −202 |
+| `@nx/powerpack-shared-fs-cache` | 536 | +172 |
+| `@nx/powerpack-azure-cache` | 1,452 | −724 |
+| **`powerpack-*` subtotal** | **9,196** | **−2,352** |
+| **Grand Total** | **336,543** | **−21,820** |
+
+---
+
+### Jun 17–23, 2026
+
+| Package | Downloads | Δ prev week |
+|---------|----------:|------------:|
+| `@nx/s3-cache` | 225,748 | −291 |
+| `@nx/gcs-cache` | 49,888 | +9,017 |
+| `@nx/shared-fs-cache` | 44,031 | +10,591 |
+| `@nx/azure-cache` | 27,148 | +5,821 |
+| **`@nx/*` subtotal** | **346,815** | **+25,138** |
+| `@nx/powerpack-s3-cache` | 8,178 | −488 |
+| `@nx/powerpack-gcs-cache` | 830 | +345 |
+| `@nx/powerpack-shared-fs-cache` | 364 | +155 |
+| `@nx/powerpack-azure-cache` | 2,176 | +1,091 |
+| **`powerpack-*` subtotal** | **11,548** | **+1,103** |
+| **Grand Total** | **358,363** | **+26,241** |
+
+---
+
+### Jun 10–16, 2026
+
+| Package | Downloads |
+|---------|----------:|
+| `@nx/s3-cache` | 226,039 |
+| `@nx/gcs-cache` | 40,871 |
+| `@nx/shared-fs-cache` | 33,440 |
+| `@nx/azure-cache` | 21,327 |
+| **`@nx/*` subtotal** | **321,677** |
+| `@nx/powerpack-s3-cache` | 8,666 |
+| `@nx/powerpack-gcs-cache` | 485 |
+| `@nx/powerpack-shared-fs-cache` | 209 |
+| `@nx/powerpack-azure-cache` | 1,085 |
+| **`powerpack-*` subtotal** | **10,445** |
+| **Grand Total** | **332,122** |
+
+---
+
+### Older entries (Thu–Wed convention)
 
 ### Jun 11–15, 2026 *(partial week — data through Mon Jun 15)*
 
