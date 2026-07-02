@@ -219,6 +219,30 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 - Maintained backward compatibility by trying standard require first
 - Pattern already existed in client-bundle but couldn't be reused due to circular dependency concerns
 
+### Sandbox Dashboard Add-on Toggle + Member Requests (2026-07-02)
+**Last Updated:** 2026-07-02
+**Branch:** `Q-520` (local worktree `~/projects/ocean-worktrees/Q-520`, 5 commits on main @ 4b866ef098, NOT pushed as of 2026-07-02)
+**Linear:** Q-520 | **Polygraph:** `q-520-add-on-toggle-ee2a2bed`
+
+Toggle at the top of the Sandbox violations dashboard: admins enable/cancel/resume the SANDBOXING add-on inline (existing provision flow); non-admin members request it (org-wide 48h request, email to all org admins via new Mandrill template `nx-cloud-plan-add-on-requested` - created in Mandrill UI by Jack, draft in dot_ai/2026-07-02/tasks/).
+
+#### Files Involved
+- `libs/nx-cloud/feature-analytics/src/lib/sandbox-violations/sandbox-add-on-toggle.tsx` - the Switch + ConfirmationDialog component; reads route loader data itself (useLoaderData), rendered by both the entitled container AND SandboxViolationsPreview (feature-add-on-previews imports feature-analytics, not vice versa)
+- `.../sandbox-violations-loader.server.ts` - `SandboxAddOnToggleData` payload (canManage/canRequest/baselineFeatures/pendingTermination/isProvisioning/activeRequest) on all 3 views; response switches `max-age=3600` -> `no-store` whenever the per-user toggle state is present
+- `libs/nx-cloud/feature-organization-add-ons/src/lib/request-plan-add-on-action.server.ts` + route `_auth.orgs.$orgId.add-ons.request-feature.tsx` - member request action (requireOrganizationMember + add-ons-page plan/flag gates)
+- `apps/nx-api/.../persistence/PlanAddOnFeatureRequestRepository.kt` - ATOMIC claim: one doc per org+feature, conditional upsert (renew only when `createdAt <= now-48h`); active doc makes the upsert insert trip the unique `{organizationId, feature}` index -> DUPLICATE_KEY -> claimed=false, no email. Test: `PlanAddOnFeatureRequestRepositoryTest` (real Mongo)
+- `apps/nx-api/.../services/planaddonrequests/PlanAddOnFeatureRequestService.kt` + `PlanAddOnNotificationService.notifyMemberRequested` + handler route `POST /nx-cloud/private/plan-add-on/v1/request-feature` (mounted independent of provisionService - needs no ops client)
+- `apps/aggregator/.../ReconcileCollectionsAndIndices.kt` - unique index registration (THE place for prod Mongo indexes)
+- `libs/shared/db-schema-kotlin/.../PlanAddOns.kt` `MPlanAddOnFeatureRequest` (ACTIVE_WINDOW_HOURS=48) <-> TS mirror `libs/nx-cloud/model-db/src/lib/plan-add-ons.ts`
+- e2e: `apps/nx-cloud-e2e-playwright/e2e/analytics/sandbox-violations-toggle.spec.ts`; MSW mock in `util-e2e-mocks/.../internal-mock-handlers.ts` (`recordFeatureRequest`)
+
+#### Design Decisions & Gotchas
+- **Provision action treats absent feature keys as cancellations** (diffs complete desired state vs endAt==null baseline). ANY new caller must echo all active features - the toggle sends the full map like AddOnsV2Form.
+- **TS entitlement needs BOTH cluster + SANDBOXING** (`isSandboxingAvailableForOrganization`); Kotlin's rule is SANDBOXING-only. Dashboard enable therefore always submits DEDICATED_COMPUTE_CLUSTER=true and the modal discloses the $99/mo committed spend when the cluster is new (webhook path -> minutes-long pending, 10s revalidator polling).
+- **Pending cancellation renders the switch UNCHECKED** with "Ends <date>" (add-ons form baseline semantics: active && !ending); re-toggling on = restore.
+- **No plan gating exists server-side in the provision chain** - FREE/OSS/ENTERPRISE/private-enterprise/automated_add_ons gates live only in loaders; every new surface must replicate them (toggle hides).
+- Request state is org-wide by design (any member's request blocks all for 48h -> at most 1 admin email per window; pen-test spam concern from Altan's Slack thread).
+
 ### Public Sandbox Status Badge (2026-06-12)
 **Last Updated:** 2026-06-12
 **Branch:** `badge-sandbox-4c2e7734`
@@ -240,6 +264,15 @@ Public (unauthenticated) SVG badge at `/workspaces/{workspaceId}/sandbox-badge.s
 - Badge copy is product-decided wording (Jack): green "Build integrity by Nx", red "Build not protected". Cross-check CLOUD-4620 "Define badge set" for the official badge-copy set.
 
 ## Personal Work History
+
+### 2026-07-02
+
+- **Q-520: Sandbox dashboard toggle for add-on requests** (branch `Q-520`, 5 local commits `8c32c5fe0b`..`5d531dac77`, NOT pushed yet - see feature section above for files/design)
+  - Planned via 7-agent recon workflow (6 parallel readers + gap critic); critic caught the cluster-coupling, absent-keys-cancellation, loader-caching, and missing-plan-gate hazards before any code. 4 product decisions confirmed with Jack up front (enable both + disclose $99; hide for FREE/OSS; org-wide 48h cooldown; email-only).
+  - External review (another agent) P2 non-atomic cooldown + P3 missing index -> redesigned to one-doc-per-org+feature + unique index + conditional upsert; `PlanAddOnFeatureRequestRepositoryTest` 4/4 vs real Mongo.
+  - Applied ocean repo skills `.claude/skills/altan-review` + `arrow-kt-patterns` (restructured: no raise inside try, ensureNotNull; layering conforms). REMEMBER these repo-local skills exist for any nx-api Kotlin work, incl. `nx-api-handlers` / `nx-api-services` / `nx-api-repositories`.
+  - Verified for real: gradle compile (correct task paths `:nx-api:compileKotlin`, `:aggregator:compileKotlin` - flat names from settings.gradle.kts, NOT `:apps:nx-api:...`; an earlier `| tail` pipe masked the failure and I falsely reported compile-clean), unit suites 38/41/43, committed Playwright e2e green twice locally, 9 UI-state screenshots via a throwaway playwright spec reusing e2e fixtures (auth.login/newPageAs, db.createTest*) -> `dot_ai/2026-07-02/tasks/q520-shots/`.
+  - Playwright e2e locally: `playwright.config.ts` has `reuseExistingServer: isCI` -> do NOT pre-start the e2e serve; `nx run nx-cloud-e2e-playwright:e2e` boots its own (10 min webServer timeout). First navigation pays vite route compile - screenshot/throwaway specs need `test.setTimeout(180_000)`; dialog screenshots need ~600ms settle for the fade-in. playwright-core 1.50.1 wants chromium build 1155 (`npx playwright install`).
 
 ### 2026-06-17
 

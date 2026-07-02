@@ -59,6 +59,31 @@ Others:
 
 - Andrew: " Working with Rares has been one of the highlights of 2025."
 
+### 2026-07-02
+
+**New DP Engagements**
+- Wix: setting up on-prem instance; product champion testing Nx on their main repo. Unusual setup but issue resolved quickly.
+- Nedap (N-E-D-A-P), picking up this week. Already on Nx, custom billing strategy, single-tenant OK, bad CI times. Good candidate to migrate to Nx Agent using Altan's new prompt.
+
+**ClickUp Performance**
+- Restarts down ~90% since recent changes (peak was 22 restarts on June 26). Only 1 restart in 2.5 hours post this morning's deployment.
+- CPU throttling still causing event drops. Daemon competes for resources with ClickUp's pods and is first to be throttled. ~2 billion eBPF events reach Go code per 30-min snapshot; these drive the spikes.
+- Close events (~1/3 of all eBPF events) may be cuttable - used only to mark file descriptors closed. Rares will ask Fable to investigate.
+- Broader question: diminishing returns on optimization. ClickUp may be over-resourced relative to what they're paying. Options: give daemon more CPU (costly, may still throttle), or accept degraded service. Worth tracking event volume on a normal workspace for comparison.
+
+**Sandbox Enablement and On-Prem**
+- Blog post on fixing sandbox violations on snapshot in progress (PR ready). Rares to ping people today; complements current pricing/enablement push.
+- Funnel metrics look decent but conversion uptake below expectations. Friction-reduction ideas: in-app toggle to enable add-ons, go-links direct to org settings. PostHog session recordings useful for spotting user confusion.
+- On-prem knowledge concentrated with Rares and JVA (helping Capital One with VM image). No smoke-test process exists for on-prem Nx Cloud binary before customer release. Worth adding a basic sanity check; no action taken for now.
+- Rares off August 2-18 (wedding).
+
+**Next Steps**
+- Investigate dropping close eBPF events (Rares) - ask Fable if close events can be cut; could meaningfully reduce CPU load for ClickUp.
+- Publish sandbox violations blog post (Rares) - ping reviewers today; PR is ready and supports the current enablement push.
+- Track eBPF event volume on a normal workspace (Rares) - baseline comparison to understand how extreme ClickUp's load actually is.
+
+Transcript: https://notes.granola.ai/t/352a2dc0-efdf-4c06-9a62-ad58775af219-00demib2
+
 ### 2026-04-24
 
 **PLG Metrics & Team Structure**
