@@ -16,7 +16,83 @@ Tracking weekly npm download counts for the old `@nx/*-cache` packages and their
 
 ## Weekly Download History
 
-Weeks run Thu–Wed. Δ is vs the prior week in this table.
+Weeks run Wed–Tue (starting this entry; prior entries below used a Thu–Wed cadence — see convention-change note). Δ is vs the prior week in this table.
+
+### Jul 1–3, 2026 *(partial week — data through Fri Jul 3, 3 days)*
+
+| Package | Downloads | Δ prev week |
+|---------|----------:|------------:|
+| `@nx/s3-cache` | 77,741 | −147,704 |
+| `@nx/gcs-cache` | 14,622 | −24,414 |
+| `@nx/shared-fs-cache` | 13,280 | −27,011 |
+| `@nx/azure-cache` | 12,997 | −9,578 |
+| **`@nx/*` subtotal** | **118,640** | **−208,707** |
+| `@nx/powerpack-s3-cache` | 3,192 | −3,388 |
+| `@nx/powerpack-gcs-cache` | 207 | −421 |
+| `@nx/powerpack-shared-fs-cache` | 82 | −454 |
+| `@nx/powerpack-azure-cache` | 167 | −1,285 |
+| **`powerpack-*` subtotal** | **3,648** | **−5,548** |
+| **Grand Total** | **122,288** | **−214,255** |
+
+> Partial week (Wed Jul 1–Fri Jul 3, 3 days); Δ vs full prior week is not directly comparable.
+
+---
+
+### Jun 24–30, 2026
+
+| Package | Downloads | Δ prev week |
+|---------|----------:|------------:|
+| `@nx/s3-cache` | 225,445 | −303 |
+| `@nx/gcs-cache` | 39,036 | −10,852 |
+| `@nx/shared-fs-cache` | 40,291 | −3,740 |
+| `@nx/azure-cache` | 22,575 | −4,573 |
+| **`@nx/*` subtotal** | **327,347** | **−19,468** |
+| `@nx/powerpack-s3-cache` | 6,580 | −1,598 |
+| `@nx/powerpack-gcs-cache` | 628 | −202 |
+| `@nx/powerpack-shared-fs-cache` | 536 | +172 |
+| `@nx/powerpack-azure-cache` | 1,452 | −724 |
+| **`powerpack-*` subtotal** | **9,196** | **−2,352** |
+| **Grand Total** | **336,543** | **−21,820** |
+
+---
+
+### Jun 17–23, 2026
+
+| Package | Downloads | Δ prev week |
+|---------|----------:|------------:|
+| `@nx/s3-cache` | 225,748 | −291 |
+| `@nx/gcs-cache` | 49,888 | +9,017 |
+| `@nx/shared-fs-cache` | 44,031 | +10,591 |
+| `@nx/azure-cache` | 27,148 | +5,821 |
+| **`@nx/*` subtotal** | **346,815** | **+25,138** |
+| `@nx/powerpack-s3-cache` | 8,178 | −488 |
+| `@nx/powerpack-gcs-cache` | 830 | +345 |
+| `@nx/powerpack-shared-fs-cache` | 364 | +155 |
+| `@nx/powerpack-azure-cache` | 2,176 | +1,091 |
+| **`powerpack-*` subtotal** | **11,548** | **+1,103** |
+| **Grand Total** | **358,363** | **+26,241** |
+
+---
+
+### Jun 10–16, 2026
+
+| Package | Downloads |
+|---------|----------:|
+| `@nx/s3-cache` | 226,039 |
+| `@nx/gcs-cache` | 40,871 |
+| `@nx/shared-fs-cache` | 33,440 |
+| `@nx/azure-cache` | 21,327 |
+| **`@nx/*` subtotal** | **321,677** |
+| `@nx/powerpack-s3-cache` | 8,666 |
+| `@nx/powerpack-gcs-cache` | 485 |
+| `@nx/powerpack-shared-fs-cache` | 209 |
+| `@nx/powerpack-azure-cache` | 1,085 |
+| **`powerpack-*` subtotal** | **10,445** |
+| **Grand Total** | **332,122** |
+
+> **Convention change:** starting with this recording, weeks are tracked Wed–Tue (per updated tracking instructions) rather than the Thu–Wed cadence used below. This week's range (Wed Jun 10–Tue Jun 16) overlaps heavily with the previously-recorded "Jun 11–15" partial week below, so no Δ is shown here — the two are not an apples-to-apples comparison.
+
+---
 
 ### Jun 11–15, 2026 *(partial week — data through Mon Jun 15)*
 
