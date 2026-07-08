@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/banner-monitor.yml b/.github/workflows/banner-monitor.yml
+index 7821f89b99..476e9f6634 100644
+--- a/.github/workflows/banner-monitor.yml
++++ b/.github/workflows/banner-monitor.yml
+@@ -80,9 +80,6 @@ jobs:
+           echo "Triggering nx-docs deploy..."
+           netlify deploy --trigger --prod -s nx-docs
+ 
+-          echo "Triggering nx-dev deploy..."
+-          netlify deploy --trigger --prod -s nx-dev
+-
+           echo "Triggering nrwl-blog deploy..."
+           netlify deploy --trigger --prod -s nrwl-blog
+ 

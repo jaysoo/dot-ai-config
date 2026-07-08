@@ -18,6 +18,15 @@ Tracking document for CLI team sync meetings.
 
 ## Action Items
 
+### From 2026-07-07
+- [ ] Jack: Open new PR for cloud connect in the recommendation popup (NX 23.1); keep existing status-bar PR open until it lands, then close
+- [ ] Jack: Reproduce log file race condition; close the issue if not reproducible in practice
+- [ ] Leosvel: Review pidExists logic (no-executor kill fix) + three hashing regression PRs
+- [ ] Team: Build full-width bottom status bar component (NX 23.2) - blocks cloud connect indicator and Leosvel's footer PR
+- [ ] Steve/Jack: Write security advisory for remote HTTP cache fix; review newly reported unix socket file vulnerability
+- [ ] Jason: Review new unix socket vulnerability Linear issue (Jack created/flagged)
+
+### Older
 - [ ] Jack: Ping team for PR reviews on minor onboarding tweaks
 - [ ] Leo: Complete final migration spike, record Loom findings
 - [ ] Craigory: Address sandbox violations before Friday strict mode deadline
@@ -33,6 +42,39 @@ Tracking document for CLI team sync meetings.
 ---
 
 ## Meeting Notes
+
+### 2026-07-07 (Nx OSS Sync)
+
+**Attendees:** Craigory, Max, Juri, Leosvel, Austin, Miro, Colum, James, Jason, Steven, Joshua, Philip, Caleb, Louie
+
+**LLM Sandboxing (Craigory)**
+- Larger issue than initially understood; actively investigating
+- Claude socket path config allows connecting to existing sockets only, not creating new ones - problem if an agent spawns the daemon rather than connecting to a live one
+- Allowed domains need expanding: add nx.dev alongside ga1; nx.app redirect is a low-effort workaround
+- Targeting wrap-up today or tomorrow
+
+**PRs Up for Review**
+- No-executor port kill fix: swaps legacy kill tree for Rust impl, adds kernel check that procs are dead before resolving. Peer dep range references NX 21-24 (for external plugins) but new functionality is NX 23-only - resolved, internal packages stay in sync. Leo to review pidExists; may move Windows-specific code into the Windows section
+- Log file atomic write fix (Claude-generated): writes temp file then atomic rename to avoid concurrent-process races. Reproducibility questioned; one participant thinks already fixed. Bet: Jack to attempt repro, close issue if not reproducible
+- Hashing regressions (Leo, three PRs): workspace file set hashing aligned with project file set hashing; new visited data storage; JSON enum size reduction for lighter instruction payloads
+- Examples repo plugin PR: example plugin finds all nx.json files and runs pnpm install + validate in CI; sets stage for more examples without separate repos
+
+**TUI: Cloud Connect Status Bar**
+- Current PR adds connected/not-connected knob; goal is a clear CTA for the majority of CLI users not on cloud
+- Agreed for NX 23.1: put the connect prompt inside the existing recommendation popup (not status bar), offer a connect option (e.g. Shift+C) that triggers the short-URL onboarding inline; show nothing if already connected
+- Full VS Code-style bottom status bar planned for NX 23.2 - footer too cramped, needs extraction into its own full-width component (cloud indicator, task count, etc.). Leosvel to hold his footer PR until the bar refactor lands, then rebase
+
+**Continuous Task Assignment & Ocean**
+- Continuous task assignment enabled in NX behind a flag (~95% of work); stable, no major issues
+- Ocean migrated over a month ago, no regressions; prior-issue users confirmed resolution
+
+**UTM Tracking & Analytics**
+- UTM tags sent from CLI links, confirmed 200 on collect calls
+- Convention slightly off (medium used for campaign-like values); Jason made fixes, cleaner from NX 23.1. Short-term mixed data while conventions coexist
+- Recommended: source=nxcli, medium=CLI, campaign=performance-report
+- Security report email now separate for OSS vs cloud (Jack, Jason, Steve have access); new unix socket file vulnerability reported via private repo - likely hard to exploit but worth reviewing
+
+[Transcript](https://notes.granola.ai/t/6a8b6ccc-9212-47be-abc6-b35aa48074e1-00demib2)
 
 ### 2026-03-24
 

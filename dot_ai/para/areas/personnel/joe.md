@@ -31,6 +31,54 @@
 
 ## 1:1 Notes
 
+### 2026-07-07
+
+**Topics:** PLG Acquisition, SEO/Docs, LLM Optimization, Competitor Comparisons, Awareness
+
+**PLG Acquisition - Current State:**
+- Acquisition is the main problem; rest of PLG numbers okay
+- Impressions steady but clicks declining - people see Nx in search, don't click
+  - Hypothesis: users getting answers from LLMs/chatbots instead of visiting docs
+- Form submissions flat/down despite tool adoption growing -> marketing/awareness gap, not product gap
+- Nx perceived as more complex than Turborepo, esp. by LLMs
+  - LLMs say "start with Turborepo, add remote cache later" instead of recommending Nx Cloud from the start
+
+**SEO and Docs Optimization:**
+- Top low-click queries: pnpm workspace, JS monorepo, Turborepo comparison
+  - Nx doesn't rank until page 3 for "JS monorepo" vs Turborepo on page 1
+  - Angular + Module Federation pages get high traffic but poorly maintained
+- Removing tutorials (e.g. Angular monorepo tutorial) cost ranking -> restore targeted content alongside simplified structure
+- New templates section added to docs (low maintenance, AI-assisted) - target framework queries like "Vite + Nx"
+- Docker layer caching post published Mon; mentioned Nx Agents + Docker add-on
+
+**LLM Optimization and Competitor Comparisons:**
+- Gauge platform (trial lapsed) showed how LLMs answer Nx queries + cited source material
+  - Key insight: comparison articles are the primary source LLMs scrape
+  - Add TL;DR at top of Turborepo comparison: "just as easy to adopt, scales with you"
+  - Regular content refresh signals quality to LLMs, like SEO
+- Blacksmith comparison article is a priority
+  - Agora (well-funded, fast-growing) picked Nx Agents over Blacksmith: not cheapest but easier/better
+  - Internal write-up (posted by Stephen) usable as source - can write "a customer did this bake-off" w/o attribution
+- Other compute competitors: Depot (flagged by husband), others to crowdsource from DPEs
+- Docker comparison article already done as recent example
+
+**Awareness and Next Steps:**
+- Ideas: remote conference talks (zero cost), paid ads (better story now w/ Nx Agents landing page), heavy social posting/boosting, re-education campaign on how much Nx changed in 1-2 years
+- Joe to organize broader marketing ideation session (Yuris, Heidi, others)
+- Jack to draft comparison articles this week; use Claude to verify factual accuracy
+
+**Action Items:**
+- [ ] **Jack:** Draft Blacksmith vs Nx Agents comparison article (use Agora bake-off / Stephen's post; target this week)
+- [ ] **Jack:** Start internal thread on competitor comparison priorities (refresh Turborepo, add Blacksmith; ask DPEs which competitors come up most)
+- [ ] **Jack:** Update Turborepo comparison page with TL;DR headline ("just as easy to adopt as Turborepo, scales with you")
+- [ ] **Joe:** Renew Gauge trial, review LLM answer quality + cited pages
+- [ ] **Joe:** Pursue Agora case study (sending updated quote; ask re: case study once deal closes)
+- [ ] **Joe:** Organize marketing ideation session (Yuris, Heidi, others)
+
+**Transcript:** https://notes.granola.ai/t/c6ecc1eb-fe79-4eaa-9a27-9dc370fda5bb-00demib2
+
+---
+
 ### 2026-04-28
 
 **Topics:** Cookie Banner Compliance, Dedicated Compute Pricing, Feature Bundling, Usage-Based Pricing

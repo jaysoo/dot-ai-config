@@ -6,12 +6,13 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 
 | Name                   | Type    | Last Invoked | Count |
 | ---------------------- | ------- | ------------ | ----- |
+| caveman                | skill   | 2026-07-06   | 15    |
+| polygraph:polygraph    | skill   | 2026-07-06   | 2     |
+| freeze-capture         | skill   | 2026-07-06   | 1     |
 | blog-writing           | skill   | 2026-07-03   | 1     |
-| caveman                | skill   | 2026-06-25   | 14    |
 | dot-claude-guard       | skill   | 2026-06-25   | 7     |
 | nx-docs-style-check    | skill   | 2026-06-25   | 1     |
 | op-request-reason      | skill   | 2026-06-25   | 1     |
-| polygraph:polygraph    | skill   | 2026-06-25   | 1     |
 | reflect                | command | 2026-06-25   | 8     |
 | summarize              | command | 2026-06-25   | 7     |
 | update-config          | skill   | 2026-06-24   | 1     |

@@ -86,4 +86,14 @@ cp "$GIT_ROOT/zshenv" "$HOME/.zshenv"
 cp "$GIT_ROOT/gitconfig" "$HOME/.gitconfig"
 cp "$GIT_ROOT/gitignore_global" "$HOME/.gitignore_global"
 
+# Build gh-proxy and install to ~/.local/bin (on PATH). Wraps the real
+# Homebrew gh but blocks `gh auth token`.
+if command -v go >/dev/null 2>&1; then
+    mkdir -p "$HOME/.local/bin"
+    (cd "$GIT_ROOT/gh-proxy" && go build -o "$HOME/.local/bin/gh" .)
+    echo "🔒 gh-proxy built -> $HOME/.local/bin/gh"
+else
+    echo "⚠️  go not found; skipped gh-proxy build"
+fi
+
 echo "✅ Claude, Codex, and Gemini global config synced from $GIT_ROOT"

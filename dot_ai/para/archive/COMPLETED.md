@@ -1,5 +1,23 @@
 ## Completed
 
+### July 2026
+
+- [x] Review PR #36255: TUI performance report enable-remote-cache flow (2026-07-07)
+  - Plan: `dot_ai/2026-07-07/tasks/review-pr-36255.md`
+  - Summary: Reviewed https://github.com/nrwl/nx/pull/36255 locally after Plannotator was blocked by unauthenticated `gh`. No blocking findings found in the linked `packages/nx/src/native/tui/app.rs` diff or the related TUI connect state/rendering path. Full native suite compiled but failed on unrelated `native::utils::file_lock::test::test_drop`; focused TUI app and countdown popup native tests passed.
+
+- [x] Review PR #36250: TUI Cloud status/connect popup (2026-07-06)
+  - Plan: `dot_ai/2026-07-06/tasks/review-pr-36250.md`
+  - Summary: Reviewed https://github.com/nrwl/nx/pull/36250 locally after Plannotator was blocked by unauthenticated `gh`. No blocking findings found in the TUI Nx Cloud status/connect popup diff. Native Rust suite and `nx:build-base` passed; residual gap is lack of focused Jest coverage for the new TypeScript `connectToNxCloudFromTui` path.
+
+- [x] Review PR #36230: node executor process-tree shutdown (2026-07-06)
+  - Plan: `dot_ai/2026-07-06/tasks/review-pr-36230.md`
+  - Summary: Reviewed https://github.com/nrwl/nx/pull/36230 locally after Plannotator was blocked by unauthenticated `gh` and Gemini CLI was unavailable on PATH. No blocking findings found in the node executor/native process-killer diff. Targeted native Jest spec and no-cache `js:build-base` passed.
+
+- [x] Review PR #36229: lockfile cache resilience (2026-07-06)
+  - Plan: `dot_ai/2026-07-06/tasks/review-pr-36229.md`
+  - Summary: Reviewed https://github.com/nrwl/nx/pull/36229 locally after Plannotator was blocked by unauthenticated `gh`. No clear PR-specific code defect found in the changed lockfile cache logic. JS/cache focused specs passed; daemon recomputation spec failed in the existing watcher race test at line 74.
+
 ### June 2026
 
 - [x] PR #36123: ESLint removed rules migration fixes (2026-06-26)
