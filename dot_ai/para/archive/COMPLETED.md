@@ -2,6 +2,10 @@
 
 ### July 2026
 
+- [x] Verify zsh repository sync (2026-07-10)
+  - Plan: `dot_ai/2026-07-10/tasks/verify-zsh-sync.md`
+  - Summary: Confirmed `zshrc` and `zshenv` are version-controlled and explicitly synchronized by `sync.sh`; ran the sync and verified both active zsh files match their repository sources.
+
 - [x] Repair Neovim rainbow delimiters Oil-buffer crash (2026-07-10)
   - Plan: `dot_ai/2026-07-10/tasks/repair-neovim-rainbow-delimiters.md`
   - Summary: Excluded Oil’s virtual directory buffers from rainbow-delimiters, which otherwise attempted to attach without a Tree-sitter parser. Headless Oil verification is clean.

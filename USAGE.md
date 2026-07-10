@@ -11,7 +11,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | polygraph:polygraph    | skill   | 2026-07-06   | 2     |
 | freeze-capture         | skill   | 2026-07-06   | 1     |
 | blog-writing           | skill   | 2026-07-03   | 1     |
-| dot-claude-guard       | skill   | 2026-07-10   | 9     |
+| dot-claude-guard       | skill   | 2026-07-10   | 10    |
 | nx-workspace-expert    | skill   | 2026-07-09   | 1     |
 | nx-docs-writer         | skill   | 2026-07-08   | 1     |
 | nx-docs-style-check    | skill   | 2026-06-25   | 1     |
