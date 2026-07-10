@@ -90,6 +90,84 @@ Live verification (repro workspace, built files patched into node_modules/nx/dis
 
 Known env quirk: pre-existing daemon spec test "in-flight project add" fails locally on macOS (bare jest, watcher latency) - fails on clean master too, not related.
 
+## Empirical proof it happens in real workflows (2026-07-09)
+
+Colleague claim: "already fixed, cannot happen in real workflows." Disproved two ways on stock nx 23.0.1. Workspaces: `tmp/claude/natural-repro2` (clean; main vs feature branch differing by autoprefixer).
+
+### Fix-history sweep (subagent, verified against origin/master blobs)
+
+- Every fix 2025-09..2026-07 tuned daemon scheduling/reconnection or serialization error handling. None changed the structure.
+- `98e510b47e` (#33256, 2025-10-27, shipped 22.1.0) is what SPLIT the cache into 4 independent files. That commit created the current design; the bug class predates it too, so there are two eras (likely why "we fixed that" keeps feeling true).
+- Mitigations that hid it: 20ms LOCK_FILES_CHANGED restart poll (#32489), client reconnect (#33432), don't-cache-graph-errors (#35088). These made the DAEMON variant transient. The DISK variant was never addressed and is persistent.
+- All 5 paths still open on master: 4 files + 2nd writeFileSync for hash; non-atomic writes; unguarded JSON.parse reads; no nodes<->deps consistency check; daemon knownExternalNodes only refreshed on config-hash change and never cleared in resetInternalState.
+
+### Demo 1 - deterministic, no kill / no race / no cache editing
+
+`demo1-write-failure.mjs`. Stock `writeDependenciesCache` does `safeWriteFileCache(json)` -> `existsSync(json)` -> `safeWriteFileCache(hash)`. When the json write fails AND its removal also fails, existsSync is still true, so the hash advances while the data stays old.
+That errno pair is the DEFAULT on Windows when a second nx process holds the file open (#30416 has Windows reports). Reproduced on macOS with `chflags uchg` (backup/AV/MDM set this).
+
+- Stock: the run under the lock SUCCEEDS (poison planted silently); every subsequent command then fails with `Source project does not exist: npm:autoprefixer`; survives `npm install`; only `nx reset` clears it.
+- Patched: cache carries its own embedded hash, is ignored as stale, reparsed, self-heals. All runs pass.
+
+### Demo 3b - purely ordinary operations (`demo3b-classify.mjs`)
+
+10 parallel `nx show projects` + a loop doing `git checkout <branch> -- package.json package-lock.json`. No kills, no locks, no file surgery.
+
+| build | nx runs | `Source project does not exist` |
+|---|---|---|
+| stock 23.0.1 | 734 | 2 runs (6 error lines) |
+| patched (PR #36229) | 702 | 0 |
+
+Mechanism: cross-process interleave of the two writes leaves deps json (feature, superset) paired with deps hash (main) -> cached edges validated against main nodes.
+
+### Demo 2 - SIGKILL variant, quantified (`demo2-kill-window.mjs`)
+
+Measured gap between the two writes = ~49us of a ~730ms run -> P(uniform-random kill lands in it) = 6.8e-5, i.e. ~1 poisoning per ~15k killed nx commands. Rare per developer; a certainty at CI/agent-fleet scale. Aimed SIGKILL loses the race to signal-delivery latency, so this variant is real but not force-reproducible.
+
+### Realistic-workflow tests: COULD NOT REPRODUCE (2026-07-10)
+
+Jack pushed back that a lockfile rewrite every ~100ms is not realistic (installs are seconds apart). Correct. Re-tested with real `npm install`/`npm uninstall` as the mutator:
+
+| demo | setup | result |
+|---|---|---|
+| demo6-episode | install, THEN 3 nx commands, 120 episodes | 0/120 broken, 0/360 commands failed |
+| demo7-overlap | install lands mid-run, staggered starts, 3 nx, daemon off, 80 episodes | 0/80, 0/240 |
+| demo8-daemon | DEFAULT config (daemon on), install mid-run, 2 nx, 60 episodes | 0/60, 0/120 |
+| demo5-realistic | 3 nx + real installs, 12 min | 19 transient poisoned-cache episodes on disk (5.6% per install) but 0 command failures |
+
+Key insight: the poisoned pairing needs two nx processes writing caches for DIFFERENT lockfile generations concurrently, i.e. the lockfile must change WHILE nx is mid-run, and a reader must hit the bad pair before a later writer fixes it. At rest the last writer always leaves a consistent pair, so it self-heals. Reproduction required 10 concurrent nx processes + a lockfile change every ~100ms (demo3b: ~0.3% of runs, ~0.3% per lockfile change).
+
+Also retracted: my claim that a concurrent reader on Windows makes writeFileSync fail with EPERM. Never verified libuv's share flags. Real EPERM-on-write on Windows comes from AV/indexer/backup handles - real but environmental. Demo 1 therefore proves the code has NO DEFENSE against a failed write (hash advances past its data), not that the condition is common.
+
+### FORENSIC ROOT CAUSE (2026-07-10, demo11-forensics.mjs)
+
+Caught 5 failures live under churn (10 parallel nx + git-checkout lockfile toggle) and snapshotted disk state within ms of each. ALL 5 IDENTICAL:
+- deps json: HAS autoprefixer, parses fine, hash 8615.. (feature generation)
+- nodes json: NO autoprefixer, parses fine, hash 4911.. (main generation)
+- deps hash != nodes hash
+
+So the real mechanism is NOT torn read and NOT hash-vs-body mismatch (my earlier diagrams). It is the #33256 SPLIT-CACHE generation skew: nodes cache and deps cache have independent hash gates. When the lockfile flips between createNodes' read and createDependencies' read, createNodes regenerates nodes->main while createDependencies finds the deps hash already == feature (written by an overlapping process's createDependencies) and reuses those feature edges -> autoprefixer edge validated against main nodes -> "Source project does not exist: npm:autoprefixer".
+
+Necessary conditions: (1) lockfile changes while nx is mid-graph-build, AND (2) a concurrent process has populated the deps cache for the other generation. Single process alone cannot do it (keyMap pins sources to one generation - confirmed demo10, 0/15). Requires concurrency, which is why it's a parallel/CI/agent-fleet bug.
+
+Patched build, same forensic harness, same duration: 806 runs, 0 hits. The single LockfileParseState (hash+nodes+keyMap together) + "deps cache only trusted when its hash == in-memory nodes hash" closes exactly this skew. Stock 5 hits / ~668 runs, patched 0 / 806.
+
+Corrected artifact claim: the load-bearing mechanism is cross-CACHE generation skew, not the write-then-hash pairing race. Fig 1 in the artifact should be updated (or noted as one of several routes to the same skew).
+
+### Where this leaves the frequency claim
+
+- Single developer, one nx command at a time, daemon on: not reproducible. Jason is substantially right about that shape.
+- Parallel nx processes sharing one workspace while the lockfile changes: reproducible (#27213's own repro is exactly `nx affected -t lint & nx affected -t test &` on a fresh CI checkout). Agents running several nx commands in one worktree are the same shape.
+- Persistent (needs nx reset) variants require a write failure (demo1) or a SIGKILL inside a ~49us window (~1 per 15k killed commands).
+- Juri's 2025-06 reports predate the 22.x cache split entirely, so those specific failures likely had different, since-fixed causes. Do NOT cite them as evidence for this PR.
+
+PR value is therefore: removes a real but low-frequency hard-failure class in parallel/CI/agent workflows, removes the persistent variants, converts residual bad state to self-heal, at no measurable cost. It is NOT justified by "developers hit this constantly."
+
+### Honest negatives (do not overclaim)
+
+- Single-process TOCTOU (lockfile changes between createNodes and createDependencies) does NOT produce this error: npm-parser derives edge sources from the cached keyMap, so a mid-run change yields FEWER edges, not invalid ones.
+- Both stock AND patched still fail on a torn `package-lock.json` read (`parsePackageLockFile`, "Unexpected end of JSON input") when git/npm rewrites the lockfile non-atomically while nx reads it. Stock 15, patched 21 occurrences. Separate pre-existing defect; this PR does not address it. Possible follow-up.
+
 ## Status
 
 - [x] Linear issue + comments reviewed

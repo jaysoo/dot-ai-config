@@ -4,45 +4,45 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-544: Refresh Angular blog posts and docs pages (nx + nx-blog) — committed, NOT pushed** (2026-07-07)
-   - Summary: Pageview-driven Angular content audit (inventory posted as Linear comment). nx `DOC-544` commit 8529748d7b: /angular/plugins/* 404 redirect (65k reqs/30d), API pages link to plugin intros, Nx Cloud-forward intro + CLI comparison table, nx-and-angular/migration/MF guide refreshes, fixed dead URL in init-local.ts. nx-blog `doc-544-angular-refresh` commit 3664e2c: 4 posts refreshed (architecting, testing/vitest-angular, state mgmt retitled 2026, 2022 tailwind banner). Deferred: new signals/NgRx content.
+1. **nx-typescript-7: TS7 vs TS6 benchmark repo (100 packages)** (2026-07-09)
+   - Summary: New repo ~/projects/nx-typescript-7 modeled on jaysoo/nx-ts7 but with 100 generated packages (10 layers x 10, layered deps) and dual targets on EVERY project via double @nx/js/typescript plugin registration: build/typecheck = TS7 native tsc, build-tsc6/typecheck-tsc6 = TS6 tsc6. Iterated to 9.95x on nx run-many -t build: 25-pkg chain, checker-heavy pkgs (120 files x 48-kind unions). Wide graphs compress ratio to ~3-4x (nx parallelism = free multi-core for tsc6).
+   - Files: `dot_ai/2026-07-09/tasks/nx-typescript-7-benchmark-repo.md`, `~/projects/nx-typescript-7`
+
+2. **Q-520: Sandbox dashboard add-on request control (ocean) — PR #12211 MERGED** (2026-07-08)
+   - Summary: Sandbox violations dashboard add-on CTA. Admins enable inline (confirm -> provision flow, pulls DEDICATED_COMPUTE_CLUSTER, $99/mo disclosed); non-admin members request -> per-member doc (unique index `{organizationId,feature,requestedByUserId}`, 48h window, atomic duplicate-key claim) + Mandrill email to all org admins. Pure fns (`buildSandboxAddOnCta`, `buildEnableAddOnSelection`) for mock-free tests + Playwright e2e. Merged after jaysoo (per-user + drop over-mocked specs), Plannotator (restore unique index + duplicate-key re-read), Graphite (`MongoId`/`convertToObjectId`) review rounds. Jack still to publish Mandrill template `nx-cloud-plan-add-on-requested`.
+   - Files: `dot_ai/2026-07-08/SUMMARY.md`, `dot_ai/2026-07-02/tasks/q-520-sandbox-dashboard-add-on-toggle.md`, Polygraph `q-520-add-on-toggle-ee2a2bed`
+
+3. **DOC-544: Refresh Angular blog posts and docs pages (nx + nx-blog) — MERGED (#36276 + #53)** (2026-07-07)
+   - Summary: Pageview-driven Angular content audit (inventory posted as Linear comment). nx draft PR #36276 (`bca199ffdb`): /angular/plugins/* 404 redirect (65k reqs/30d), API pages link to plugin intros, Nx Cloud-forward intro + CLI comparison table, nx-and-angular/migration/MF guide refreshes, fixed dead URL in init-local.ts. nx-blog draft PR #53 (`4187e46`): 4 posts refreshed (architecting, testing/vitest-angular, state mgmt retitled 2026, 2022 tailwind banner). Deferred: new signals/NgRx content.
    - Files: `dot_ai/2026-07-07/tasks/doc-544-angular-content-refresh.md`, Polygraph `doc-554-angular-content-6732d8a8`
 
-2. **NXC-4606: Enable remote cache from TUI perf report (nx) — draft PRs #36255 (new) + #36250 (kept for later)** (2026-07-07)
+4. **NXC-4606: Enable remote cache from TUI perf report (nx) — draft PRs #36255 (new) + #36250 (kept for later)** (2026-07-07)
    - Summary: Revised approach in #36255: perf-report popup gets inline "[ Enable remote cache ]" button + "Enable remote cache: <shift>+c" footer hint when unconnected; shift+c/click runs headless nx connect and prints the short URL centered at the popup bottom; hidden when connected. Original footer-status + ConnectPopup approach stays draft on #36250. Both live-verified against staging; nx-tui onboarding source accepted by staging.
    - Files: `dot_ai/2026-07-06/tasks/nxc-4606-tui-not-connected-status.md`, PRs https://github.com/nrwl/nx/pull/36255 + https://github.com/nrwl/nx/pull/36250, Polygraph `nxc-4606-e6f49ee0`
 
-3. **NXC-2793: Lockfile throws errors intermittently (nx)** (2026-07-05)
+5. **NXC-2793: Lockfile throws errors intermittently (nx)** (2026-07-05)
    - Summary: Intermittent "Source project does not exist: npm:x" from nx/js/dependencies-and-lockfile plugin; daemon-state related, nx reset clears. Landscape scan + code trace + repro hunt.
    - Files: `dot_ai/2026-07-05/tasks/nxc-2793-lockfile-intermittent-errors.md`
 
-4. **NXC-3510: Node executor may not release ports on shutdown (nx)** (2026-07-05)
+6. **NXC-3510: Node executor may not release ports on shutdown (nx)** (2026-07-05)
    - Summary: Verified 21.x orphan bug (fixed by #33655 in 23) + still-live watch-restart EADDRINUSE (killTree resolves on dispatch not exit). Fix: native killProcessTreeGraceful, vendored kill-tree deleted, e2e validated both directions. Draft PR #36230.
    - Files: `dot_ai/2026-07-05/tasks/nxc-3510-node-executor-port-release.md`
 
-5. **PR #34890: rebase + green (nx, vite ts paths custom targets)** (2026-07-03)
+7. **PR #34890: rebase + green (nx, vite ts paths custom targets)** (2026-07-03)
    - Summary: Community PR (shairez) stale since March. Rebased clean onto master; root-caused CI failure (test-ci collides with @nx/vitest atomizer ciTargetName); fixing coordination-plugin unhandled rejection (BatchFunctionRunner no catch, kill(2) -> code null spurious reject) + e2e test target defs.
    - Files: `dot_ai/2026-07-03/tasks/pr-34890-rebase-vite-ts-paths.md`
 
-6. **Q-520: Sandbox dashboard toggle for add-on requests (ocean) — implemented, NOT pushed** (2026-07-02)
-   - Summary: Toggle on sandbox violations dashboard, 5 local commits on branch `Q-520` (`8c32c5fe0b`..`5d531dac77`). Admin: confirm dialog -> existing provision flow (always enables cluster too, $99/mo disclosed; cancel/resume mirror add-ons form). Member: request -> nx-api `request-feature` -> atomic one-doc-per-org+feature claim (unique index, 48h window) + Mandrill email to all org admins. Verified: gradle compile + Kotlin repo test 4/4 (real Mongo), unit 38/41/43, Playwright e2e green locally x2, 9 UI screenshots. Pending: Jack uploads Mandrill template `nx-cloud-plan-add-on-requested`, then push + draft PR (base main).
-   - Files: `dot_ai/2026-07-02/SUMMARY.md`, `dot_ai/2026-07-02/tasks/q-520-sandbox-dashboard-add-on-toggle.md`, `tasks/q-520-mandrill-template-draft.md`, `tasks/q520-shots/`, Polygraph session `q-520-add-on-toggle-ee2a2bed`
-
-7. **DOC-537: SEO docs overhaul (nx.dev)** (2026-06-25)
+8. **DOC-537: SEO docs overhaul (nx.dev)** (2026-06-25)
    - Summary: GSC-driven SEO pass. #36088 MERGED (nx/pnpm workspace foundation). #36105 DRAFT: 33 tech intros -> "Nx with <Tech>" + "Nx scales your <Tech> monorepo" descriptions + listing-page links, standardized "Set up CI" -> /docs/getting-started/setup-ci on every overview, Angular = angular monorepo landing, Module Federation overview rewrite (research + judge panel, consumer/provider generators), Next.js/Express/NestJS use CNW templates.
    - Files: `dot_ai/2026-06-25/SUMMARY.md`, `dot_ai/2026-06-23/tasks/seo-gsc-query-analysis.md`, PRs #36088 (merged) / #36105 (draft), Polygraph `seo-research-80058b7a`
 
-8. **NXC-4590: nx migrate crash with --include=optional (nx) — PR #36087 MERGED** (2026-06-23)
+9. **NXC-4590: nx migrate crash with --include=optional (nx) — PR #36087 MERGED** (2026-06-23)
    - Summary: `nx migrate --include=optional` crashed with "Cannot read properties of undefined (reading 'version')" in `generateMigrationsJsonAndUpdatePackageJson` (surfaced migrating ocean to latest Nx). The 4th arg to `writePromptMigrationFiles` read `packageUpdates[walkedTargetPackage].version` unguarded; under optional the Migrator's `applyIncludeFilter()` deletes every required-closure member (the target is always in its own required set) from `packageUpdates`, so that entry is deterministically undefined. Not ocean-specific. Fix hoisted the already-safe `?.version ?? opts.targetVersion` (used by analytics 18 lines below) above the call (+8/-4). Exported the fn + regression test on the orchestration seam (existing Migrator-level tests stop before the crash); fails pre-fix with the exact TypeError. build-base/lint/migrate.spec.ts (210/210) green.
    - Files: `dot_ai/2026-06-23/tasks/nxc-4590-migrate-optional-crash.md`, PR https://github.com/nrwl/nx/pull/36087, Polygraph session `migrate-error-c1c6a147`
 
-9. **CLOUD-4642: UTM tracking on clickable Cloud prompt links (nx) — draft PR #36028** (2026-06-18)
+10. **CLOUD-4642: UTM tracking on clickable Cloud prompt links (nx) — draft PR #36028** (2026-06-18)
    - Summary: Made the https://nx.dev/nx-cloud link in CLI cloud-setup prompt footers a clickable OSC 8 hyperlink; visible text stays the clean URL, click target carries utm_source=nx-cli + per-command utm_medium (create-nx-workspace, nx-init, nx-migrate, nx-connect). New generic terminal-link.ts (terminalLink + supportsHyperlinks + parseVersion) vendored in both packages/nx and create-nx-workspace (no new dep). CNW embeds a baked NX_CLOUD_HYPERLINK const in footers; nx core appends nxCloudHyperlink(medium) at render (init/migrate share a footer, different mediums). Reworked from a string-replace approach to const/helper after self-review (drift-proof). Still DRAFT.
    - Files: `dot_ai/2026-06-16/tasks/cloud-4642-utm-osc8-cloud-prompt.md`, PR https://github.com/nrwl/nx/pull/36028, Polygraph session `cli-utm-99e98561`
-
-10. **Q-503: Improve CIPE upsell CTAs across key pages (ocean) — PR #11962 MERGED** (2026-06-18)
-   - Summary: Gated sandboxing/resource-usage add-on upsell CTAs across surfaces (hidden once entitled): bigger CIPE rotating banner (per-CTA sample graphic, "Remind me later" 1-day snooze, x dismiss) moved above Managed agents; "Protect cache integrity with sandboxing" sub-label link on the overview Cache hit rate + /runs Cache hits tiles; non-clickable Sandboxing badge on the workspaces list; sandbox preview "FIX WITH AI" SUI; all preview modals wrapped in PosthogCaptureOnViewed. Replaced the Analysis-tab resource-usage banner with a locked sample of the real agent table (5 linux-medium-js agents, first row -> sample charts modal, rest blurred behind a "See per-agent resource charts" prompt) under Agent utilization; sample data matches the modal's OOM story; "Sample" badges; filter:blur (not banned backdrop-filter). Self-healing CI scoped a polluted agent-cell e2e query. Opened against master by mistake (harness hint) -> retargeted main. No version plan (upsell). Authored adversarial pre-PR review Workflows.
-   - Files: `dot_ai/2026-06-18/SUMMARY.md`, `dot_ai/para/resources/architectures/ocean-architecture.md` (2026-06-17), PR https://github.com/nrwl/ocean/pull/11962, Polygraph session `cloud-ctas-update-8c3cbeb1`
 
 ## TODO
 
@@ -137,13 +137,11 @@
 
 ## Active Claude Sessions
 
-- /Users/jack/projects/nx-worktrees/DOC-544 (branch: DOC-544) + /Users/jack/projects/nx-blog (branch: doc-544-angular-refresh) — DOC-544 Angular content refresh: nx commit 8529748d7b + nx-blog commit 3664e2c, both committed NOT pushed. Inventory + plan on Linear DOC-544 comment. Plan: `dot_ai/2026-07-07/tasks/doc-544-angular-content-refresh.md`, Polygraph `doc-554-angular-content-6732d8a8` (2026-07-07)
 - /Users/jack/projects/nx-worktrees/NXC-4606 (branch: NXC-4606-report-connect) — NXC-4606 revised: perf-report "Enable remote cache" button/hint + centered short URL, draft PR #36255 (old approach kept on #36250 / branch NXC-4606). Review + CI pending. Plan: `dot_ai/2026-07-06/tasks/nxc-4606-tui-not-connected-status.md`, Polygraph `nxc-4606-e6f49ee0` (2026-07-07)
 - /Users/jack/projects/nx-worktrees/NXC-2793 (branch: NXC-2793) — NXC-2793 intermittent lockfile "Source project does not exist: npm:x" graph errors: landscape scan, code trace, repro, fix. Plan: `dot_ai/2026-07-05/tasks/nxc-2793-lockfile-intermittent-errors.md`, Polygraph `nxc-2793-bc2a19f2` (2026-07-05)
 - /Users/jack/projects/nx (branch: feature/nxc-3510-node-executor-port-release) — NXC-3510 fixed, draft PR #36230 awaiting CI. Plan: `dot_ai/2026-07-05/tasks/nxc-3510-node-executor-port-release.md`, Polygraph `nxc-3510-16626f3c` (2026-07-05)
 - /Users/jack/projects/nx-worktrees/DOC-482 (branch: DOC-482) — DOC-482 remove Next.js from nx-dev DONE: draft PRs nx #36231 + nx-blog #52. JACK: push banner-monitor.yml patch (app token lacks workflows perm, change sits uncommitted in worktree), verify deploy preview, merge nx-blog first. Plan: `dot_ai/2026-07-05/tasks/doc-482-remove-nextjs.md`, Polygraph `doc-482-remove-nextjs-76fe0b0d` (2026-07-05)
 - /Users/jack/projects/nx-worktrees/NXC-4360 (branch: pr-fix-vite-plugin) — PR #34890 rebase + CI green (vite ts paths custom targets, shairez fork). Plan: `dot_ai/2026-07-03/tasks/pr-34890-rebase-vite-ts-paths.md`, Polygraph `rebase-pr-34890-and-get-ci-passing-ccb7065a` (2026-07-03)
-- /Users/jack/projects/nx-worktrees/Q-520 + /Users/jack/projects/ocean-worktrees/Q-520 (branch: Q-520) — Q-520 sandbox add-on toggle IMPLEMENTED: 5 local commits, all verification green; awaiting Mandrill template upload by Jack, then push + draft PR to main (2026-07-02)
 - /Users/jack/projects/remotion-projects (branch: main) — Task Sandboxing explainer video (bespoke vector recreation, branch feat-awesome, violations 12->5->0, clean end). Plan: `dot_ai/2026-06-12/tasks/sandboxing-remotion-video.md` (2026-06-12)
 - /Users/jack/projects/nx-worktrees/NXC-4431 (branch: NXC-4431) — Audit publish.yml against npm publisher supply-chain advisory, commit d4b5eb2708 ready, not pushed (2026-05-08)
 - /Users/jack/projects/nx-worktrees/NXC-4326 (branch: NXC-4326) — Deprecate `@nx/expo` withNxMetro: Linear comment posted, runtime warn + JSDoc, generator template switched to stock `@expo/metro-config`, migration `update-23-0-0-remove-with-nx-metro` (beta.10) + md doc + 6 passing spec tests; uncommitted (2026-05-13)

@@ -219,29 +219,32 @@ The nx-cloud binary now properly handles alternative node_modules locations (`.n
 - Maintained backward compatibility by trying standard require first
 - Pattern already existed in client-bundle but couldn't be reused due to circular dependency concerns
 
-### Sandbox Dashboard Add-on Toggle + Member Requests (2026-07-02)
-**Last Updated:** 2026-07-02
-**Branch:** `Q-520` (local worktree `~/projects/ocean-worktrees/Q-520`, 5 commits on main @ 4b866ef098, NOT pushed as of 2026-07-02)
+### Sandbox Dashboard Add-on CTA + Member Requests (2026-07-08)
+**Last Updated:** 2026-07-08
+**Branch:** `Q-520` | **PR:** #12211 MERGED to `main` 2026-07-08
 **Linear:** Q-520 | **Polygraph:** `q-520-add-on-toggle-ee2a2bed`
 
-Toggle at the top of the Sandbox violations dashboard: admins enable/cancel/resume the SANDBOXING add-on inline (existing provision flow); non-admin members request it (org-wide 48h request, email to all org admins via new Mandrill template `nx-cloud-plan-add-on-requested` - created in Mandrill UI by Jack, draft in dot_ai/2026-07-02/tasks/).
+Add-on CTA in the Sandbox violations dashboard banner footer (started as a Switch toggle, reworked to a banner CTA per Jack): admins enable the SANDBOXING add-on inline via a confirm dialog (existing provision flow) + a "Go to add-ons page" text link; non-admin members request it (per-member 48h request, email to all org admins via new Mandrill template `nx-cloud-plan-add-on-requested` - created in Mandrill UI by Jack, draft in dot_ai/2026-07-02/tasks/).
 
 #### Files Involved
-- `libs/nx-cloud/feature-analytics/src/lib/sandbox-violations/sandbox-add-on-toggle.tsx` - the Switch + ConfirmationDialog component; reads route loader data itself (useLoaderData), rendered by both the entitled container AND SandboxViolationsPreview (feature-add-on-previews imports feature-analytics, not vice versa)
-- `.../sandbox-violations-loader.server.ts` - `SandboxAddOnToggleData` payload (canManage/canRequest/baselineFeatures/pendingTermination/isProvisioning/activeRequest) on all 3 views; response switches `max-age=3600` -> `no-store` whenever the per-user toggle state is present
+- `libs/nx-cloud/feature-analytics/src/lib/sandbox-violations/sandbox-add-on-cta.tsx` - the CTA + ConfirmationDialog component (no useEffect; dialog closes on confirm, fetcher.submit to enable-feature/request-feature); rendered by both the entitled container AND SandboxViolationsPreview (feature-add-on-previews imports feature-analytics, not vice versa)
+- `.../build-sandbox-add-on-cta.ts` - PURE `buildSandboxAddOnCta(params)` -> `SandboxAddOnCtaData` (canManage/canRequest/clusterActive/provisioning/alreadyRequested); mock-free `.spec.ts`. Impure inputs resolved in `sandbox-violations-loader.server.ts` `resolveSandboxAddOnCta` then delegated to the pure fn; response switches `max-age=3600` -> `no-store` whenever per-user CTA state is present
 - `libs/nx-cloud/feature-organization-add-ons/src/lib/request-plan-add-on-action.server.ts` + route `_auth.orgs.$orgId.add-ons.request-feature.tsx` - member request action (requireOrganizationMember + add-ons-page plan/flag gates)
-- `apps/nx-api/.../persistence/PlanAddOnFeatureRequestRepository.kt` - ATOMIC claim: one doc per org+feature, conditional upsert (renew only when `createdAt <= now-48h`); active doc makes the upsert insert trip the unique `{organizationId, feature}` index -> DUPLICATE_KEY -> claimed=false, no email. Test: `PlanAddOnFeatureRequestRepositoryTest` (real Mongo)
+- `.../enable-plan-add-on-action.server.ts` + PURE `build-enable-add-on-selection.ts` (`buildEnableAddOnSelection` builds full desired feature map incl. cluster cascade) + shared `plan-add-on-provision-action.server.ts` `submitPlanAddOnSelection` (enforces `canSelfServeAddOns` gate + full-map diff)
+- `libs/nx-cloud/data-access-api/.../queries/plan-add-ons/get-active-add-on-feature-request.server.ts` - `getActiveAddOnFeatureRequest(organizationId, feature, requestedByUserId: MongoId)`; uses `convertToObjectId()` (Entity Reuse pattern, Graphite-enforced). Loader passes a plain string so mongodb stays out of the loader import graph (avoids jsdom `TextEncoder` error)
+- `apps/nx-api/.../persistence/PlanAddOnFeatureRequestRepository.kt` - ATOMIC per-member claim: one doc per org+feature+**member**, conditional upsert (renew only when `createdAt <= now-48h`); an active slot makes the upsert insert trip the unique `{organizationId, feature, requestedByUserId}` index -> DUPLICATE_KEY -> re-read existing -> claimed=false, no second email. Test: `PlanAddOnFeatureRequestRepositoryTest` (real Mongo, 5 tests)
 - `apps/nx-api/.../services/planaddonrequests/PlanAddOnFeatureRequestService.kt` + `PlanAddOnNotificationService.notifyMemberRequested` + handler route `POST /nx-cloud/private/plan-add-on/v1/request-feature` (mounted independent of provisionService - needs no ops client)
 - `apps/aggregator/.../ReconcileCollectionsAndIndices.kt` - unique index registration (THE place for prod Mongo indexes)
 - `libs/shared/db-schema-kotlin/.../PlanAddOns.kt` `MPlanAddOnFeatureRequest` (ACTIVE_WINDOW_HOURS=48) <-> TS mirror `libs/nx-cloud/model-db/src/lib/plan-add-ons.ts`
-- e2e: `apps/nx-cloud-e2e-playwright/e2e/analytics/sandbox-violations-toggle.spec.ts`; MSW mock in `util-e2e-mocks/.../internal-mock-handlers.ts` (`recordFeatureRequest`)
+- e2e: `apps/nx-cloud-e2e-playwright/e2e/analytics/sandbox-violations-add-on-cta.spec.ts` (admin enable + per-member: two members each get their own row, count===2); MSW mock in `util-e2e-mocks/.../internal-mock-handlers.ts` (`recordFeatureRequest`, find-then-upsert per-member)
 
 #### Design Decisions & Gotchas
 - **Provision action treats absent feature keys as cancellations** (diffs complete desired state vs endAt==null baseline). ANY new caller must echo all active features - the toggle sends the full map like AddOnsV2Form.
 - **TS entitlement needs BOTH cluster + SANDBOXING** (`isSandboxingAvailableForOrganization`); Kotlin's rule is SANDBOXING-only. Dashboard enable therefore always submits DEDICATED_COMPUTE_CLUSTER=true and the modal discloses the $99/mo committed spend when the cluster is new (webhook path -> minutes-long pending, 10s revalidator polling).
 - **Pending cancellation renders the switch UNCHECKED** with "Ends <date>" (add-ons form baseline semantics: active && !ending); re-toggling on = restore.
 - **No plan gating exists server-side in the provision chain** - FREE/OSS/ENTERPRISE/private-enterprise/automated_add_ons gates live only in loaders; every new surface must replicate them (toggle hides).
-- Request state is org-wide by design (any member's request blocks all for 48h -> at most 1 admin email per window; pen-test spam concern from Altan's Slack thread).
+- Request state is **per-member** (final model, after jaysoo review): one doc per org+feature+member, so each member reaches admins at most once per 48h window, but a feature can have several active requests across an org. Earlier iterations tried org-wide (one request blocks all) - reverted to per-member so a single member can't silence everyone. The unique compound index is what makes the same-member double-click race safe (Plannotator caught a non-unique regression that reintroduced duplicate emails).
+- **Test pure functions, not mocked server loaders** (jaysoo): extracted `buildSandboxAddOnCta` + `buildEnableAddOnSelection` for mock-free unit specs; deleted over-mocked `*.server.spec.ts`; integration covered by Playwright e2e.
 
 ### Public Sandbox Status Badge (2026-06-12)
 **Last Updated:** 2026-06-12
@@ -265,9 +268,15 @@ Public (unauthenticated) SVG badge at `/workspaces/{workspaceId}/sandbox-badge.s
 
 ## Personal Work History
 
+### 2026-07-08
+
+- **Q-520: Sandbox dashboard add-on request control - MERGED** (branch `Q-520`, PR #12211 merged to `main`; tip `5440e34eec`)
+  - Closed 3 review rounds after the 2026-07-02 implementation: jaysoo (make requests per-USER not org-wide; drop over-mocked `*.server.spec.ts`, extract+test pure fns), Plannotator (restore the unique compound index + duplicate-key re-read - the non-unique version reintroduced a same-user duplicate-email race), Graphite (`getActiveAddOnFeatureRequest` param -> `MongoId` + `convertToObjectId`, Entity Reuse pattern).
+  - Graphite's Entity Reuse rule is legit ocean convention (sibling query files all use `MongoId`/`convertToObjectId` from `@nx-cloud/util-db.server`); `MongoId = ObjectId | string` so the loader keeps passing a string - the jsdom `TextEncoder` avoidance still holds.
+
 ### 2026-07-02
 
-- **Q-520: Sandbox dashboard toggle for add-on requests** (branch `Q-520`, 5 local commits `8c32c5fe0b`..`5d531dac77`, NOT pushed yet - see feature section above for files/design)
+- **Q-520: Sandbox dashboard toggle for add-on requests** (branch `Q-520`, later merged as PR #12211 on 2026-07-08 - see 2026-07-08 entry + feature section above for final files/design)
   - Planned via 7-agent recon workflow (6 parallel readers + gap critic); critic caught the cluster-coupling, absent-keys-cancellation, loader-caching, and missing-plan-gate hazards before any code. 4 product decisions confirmed with Jack up front (enable both + disclose $99; hide for FREE/OSS; org-wide 48h cooldown; email-only).
   - External review (another agent) P2 non-atomic cooldown + P3 missing index -> redesigned to one-doc-per-org+feature + unique index + conditional upsert; `PlanAddOnFeatureRequestRepositoryTest` 4/4 vs real Mongo.
   - Applied ocean repo skills `.claude/skills/altan-review` + `arrow-kt-patterns` (restructured: no raise inside try, ensureNotNull; layering conforms). REMEMBER these repo-local skills exist for any nx-api Kotlin work, incl. `nx-api-handlers` / `nx-api-services` / `nx-api-repositories`.

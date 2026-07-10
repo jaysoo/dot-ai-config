@@ -2,6 +2,23 @@
 
 ### July 2026
 
+- [x] nx-typescript-7: TS7 vs TS6 benchmark repo, 100 packages (2026-07-09)
+  - Plan: `dot_ai/2026-07-09/tasks/nx-typescript-7-benchmark-repo.md`
+  - Summary: New ~/projects/nx-typescript-7 (commit cc1d8bd, local main). Dual @nx/js/typescript registration gives every package build/typecheck (TS7 tsc) + build-tsc6/typecheck-tsc6 (TS6 tsc6). hyperfine: 9.95x build speedup (33.3s vs 331.9s) after reshaping to 25-pkg chain of checker-heavy pkgs; wide/tiny graphs only showed 3x.
+- [x] TypeScript 7 dual setup investigation (2026-07-09)
+  - Plan: `dot_ai/2026-07-09/tasks/typescript-7-dual-setup.md`
+  - Summary: Proved a mixed TS 7/TS 6 setup in the sample Nx workspace by aliasing TS 7 as `@typescript/native`, aliasing root `typescript` to `@typescript/typescript6`, splitting both `@nx/js/typescript` and `@nx/vite/plugin` with `include`/`exclude`, routing the selected project to `tsc`, and routing the rest to `tsc6`. Verified focused targets and `npx nx run-many -t build,typecheck` green.
+
+- [x] DOC-544: Refresh Angular blog posts and docs pages (nx + nx-blog) — MERGED (2026-07-08)
+  - Plan: `dot_ai/2026-07-07/tasks/doc-544-angular-content-refresh.md`
+  - Summary: Pageview + GSC-driven Angular content refresh (inventory posted as Linear comment). nx PR #36276: redirect for dead `/angular/plugins/*` (65k+ reqs/30d), API pages link back to plugin intros, Angular intro reworked for dominant "angular monorepo" search intent (CLI comparison, Create/Structure-an-Angular-monorepo sections + filetree, Nx Cloud-forward CI, general Nx tutorial), nx-and-angular/migration/dynamic-MF guides refreshed, fixed dead docs URL printed by CLI on `ng update`. nx-blog PR #53: refreshed architecting-angular-applications (@angular/build executors, Nx Cloud + self-healing), modern-angular-testing (first-party Angular Vitest, @nx/vitest, Karma deprecation), state-management (kept 2025 title + dated "Update 2026-07-08" callout after Jack flagged retitling as dishonest; typo + broken-link fixes), 2022 Tailwind outdated banner. Deferred: dedicated "Create an Angular monorepo" guide + new signals/NgRx content.
+  - Polygraph session `doc-554-angular-content-6732d8a8` — nrwl/nx + nrwl/nx-blog
+
+- [x] Q-520: Sandbox dashboard add-on request control (ocean) — PR #12211 MERGED (2026-07-08)
+  - Plan: `dot_ai/2026-07-02/tasks/q-520-sandbox-dashboard-add-on-toggle.md`
+  - Summary: Sandbox violations dashboard add-on CTA. Admins enable inline (confirm -> provision flow, pulls DEDICATED_COMPUTE_CLUSTER, $99/mo disclosed); non-admin members request -> per-member doc (unique index `{organizationId,feature,requestedByUserId}`, 48h window, atomic duplicate-key claim) + Mandrill email to all org admins. Pure fns (`buildSandboxAddOnCta`, `buildEnableAddOnSelection`) for mock-free tests + Playwright e2e. Merged after jaysoo (per-user + drop over-mocked specs), Plannotator (restore unique index + duplicate-key re-read), and Graphite (`MongoId`/`convertToObjectId` Entity Reuse) review rounds. Jack still to publish Mandrill template `nx-cloud-plan-add-on-requested` before prod.
+  - Polygraph session `q-520-add-on-toggle-ee2a2bed` — nrwl/nx + nrwl/ocean
+
 - [x] Review PR #36255: TUI performance report enable-remote-cache flow (2026-07-07)
   - Plan: `dot_ai/2026-07-07/tasks/review-pr-36255.md`
   - Summary: Reviewed https://github.com/nrwl/nx/pull/36255 locally after Plannotator was blocked by unauthenticated `gh`. No blocking findings found in the linked `packages/nx/src/native/tui/app.rs` diff or the related TUI connect state/rendering path. Full native suite compiled but failed on unrelated `native::utils::file_lock::test::test_drop`; focused TUI app and countdown popup native tests passed.
