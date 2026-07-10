@@ -175,7 +175,6 @@ require("lazy").setup({
 	{
 		"saghen/blink.cmp",
 		version = "1.*",
-		build = "cargo build --release",
 		opts = {
 			keymap = {
 				preset = "default",
@@ -390,6 +389,7 @@ require("lazy").setup({
 		config = function()
 			local rainbow_delimiters = require("rainbow-delimiters")
 			vim.g.rainbow_delimiters = {
+				blacklist = { "oil" },
 				strategy = {
 					[""] = rainbow_delimiters.strategy["global"],
 					vim = rainbow_delimiters.strategy["local"],

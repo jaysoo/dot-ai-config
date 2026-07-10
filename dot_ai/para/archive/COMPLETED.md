@@ -2,6 +2,14 @@
 
 ### July 2026
 
+- [x] Repair Neovim rainbow delimiters Oil-buffer crash (2026-07-10)
+  - Plan: `dot_ai/2026-07-10/tasks/repair-neovim-rainbow-delimiters.md`
+  - Summary: Excluded Oil’s virtual directory buffers from rainbow-delimiters, which otherwise attempted to attach without a Tree-sitter parser. Headless Oil verification is clean.
+
+- [x] Repair Neovim Blink fuzzy matcher build (2026-07-10)
+  - Plan: `dot_ai/2026-07-10/tasks/repair-neovim-blink-fuzzy-build.md`
+  - Summary: Removed Blink’s stale local source-build hook and incomplete build marker. Blink then downloaded its signed v1.7.0 macOS fuzzy matcher; the Rust loader passes headless verification.
+
 - [x] nx-typescript-7: TS7 vs TS6 benchmark repo, 100 packages (2026-07-09)
   - Plan: `dot_ai/2026-07-09/tasks/nx-typescript-7-benchmark-repo.md`
   - Summary: New ~/projects/nx-typescript-7 (commit cc1d8bd, local main). Dual @nx/js/typescript registration gives every package build/typecheck (TS7 tsc) + build-tsc6/typecheck-tsc6 (TS6 tsc6). hyperfine: 9.95x build speedup (33.3s vs 331.9s) after reshaping to 25-pkg chain of checker-heavy pkgs; wide/tiny graphs only showed 3x.
