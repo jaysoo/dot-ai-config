@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-07-12 | [cve-audit-2026-07-12.md](./cve-audit-2026-07-12.md) | 2-day re-verification of 07-10 against actual lockfiles; all carry-overs still open (rollup/vite/storybook now 32+ days stale); ocean's `@xmldom/xmldom` self-resolved; new low-priority nx-console `vite` devDependency finding; one unconfirmed zip-slip claim flagged for human check |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
 | 2026-06-09 | [cve-audit-2026-06-09.md](./cve-audit-2026-06-09.md) | vitest (CRITICAL), next.js, undici, storybook |
