@@ -378,3 +378,5 @@ polygraph() {
   return $ret
 }
 px() { polygraph session start "$@"; }
+
+eval "$(/Users/jack/.local/bin/mise activate zsh)"
