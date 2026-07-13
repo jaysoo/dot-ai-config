@@ -82,7 +82,7 @@ The largest body of work this week, clustering around a deliberate memory-bisect
 
 ---
 
-### @jaysoo (Jay) — One core fix, three docs pieces (4 merged)
+### @jaysoo (Jack) — One core fix, three docs pieces (4 merged)
 
 | PR | Title |
 |----|-------|
@@ -238,7 +238,7 @@ The largest body of work this week, clustering around a deliberate memory-bisect
 
 ---
 
-### @lourw (Lauren) — CI pipeline config + run-level metrics/DTE fixes (5 merged)
+### @lourw (Louie) — CI pipeline config + run-level metrics/DTE fixes (5 merged)
 
 | PR | Title |
 |----|-------|
@@ -292,7 +292,7 @@ The largest body of work this week, clustering around a deliberate memory-bisect
 
 ---
 
-### @nixallover (Nick) — Docs + tasks-table fix (2 merged)
+### @nixallover (Nicole) — Docs + tasks-table fix (2 merged)
 
 | PR | Title |
 |----|-------|
@@ -316,8 +316,8 @@ The largest body of work this week, clustering around a deliberate memory-bisect
 
 | Contributor | PR | Title |
 |---|----|-------|
-| @mrl-jr (Michael) | [#12185](https://github.com/nrwl/ocean/pull/12185) | feat(polygraph): add cmd+k command palette for sessions, repos, and accounts |
-| @jaysoo (Jay) | [#12211](https://github.com/nrwl/ocean/pull/12211) | feat(nx-cloud): enable or request the sandboxing add-on from the sandbox dashboard |
+| @mrl-jr (Mark) | [#12185](https://github.com/nrwl/ocean/pull/12185) | feat(polygraph): add cmd+k command palette for sessions, repos, and accounts |
+| @jaysoo (Jack) | [#12211](https://github.com/nrwl/ocean/pull/12211) | feat(nx-cloud): enable or request the sandboxing add-on from the sandbox dashboard |
 | @FrozenPandaz | [#12220](https://github.com/nrwl/ocean/pull/12220) | chore(repo): migrate to nx 23.1.0-beta.7 |
 | @StalkAltan (Altan) | [#12228](https://github.com/nrwl/ocean/pull/12228) | fix(client-bundle): keep DTE restore temp names under NAME_MAX |
 | @stevepentland | [#12262](https://github.com/nrwl/ocean/pull/12262) | chore(nx-cloud-workflow-controller): make private compute routable in dedicated |
