@@ -2,6 +2,10 @@
 
 ### July 2026
 
+- [x] Port Fish functions to Zsh (2026-07-10)
+  - Plan: `dot_ai/2026-07-10/tasks/port-fish-functions-to-zsh.md`
+  - Summary: Ported the Fish command workflow into synchronized Zsh configuration: Git, navigation, worktree, Nx/CNW, Kitty/Polygraph, package-cache, and utility helpers, plus the AI-agent 1Password guard. Oh My Zsh now loads first with the `robbyrussell` theme and `git` plugin; only the three aliases deliberately replaced by custom functions are removed. Active Zsh files were synchronized and syntax-checked.
+
 - [x] Verify zsh repository sync (2026-07-10)
   - Plan: `dot_ai/2026-07-10/tasks/verify-zsh-sync.md`
   - Summary: Confirmed `zshrc` and `zshenv` are version-controlled and explicitly synchronized by `sync.sh`; ran the sync and verified both active zsh files match their repository sources.
