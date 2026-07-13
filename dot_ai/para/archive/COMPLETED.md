@@ -2,6 +2,10 @@
 
 ### July 2026
 
+- [x] Review Nx PR batch (2026-07-13)
+  - Plan: `dot_ai/2026-07-13/tasks/review-nx-pr-batch.md`
+  - Summary: Triaged PRs #36234, #36238, #36218, #36216, #36237, #36223, and #36241. All recorded CI is green and no correctness blocker was found. Review #36223 before #36216 because both modify npm lockfile parsing and the broader PR likely supersedes the smaller optimization.
+
 - [x] Port Fish functions to Zsh (2026-07-10)
   - Plan: `dot_ai/2026-07-10/tasks/port-fish-functions-to-zsh.md`
   - Summary: Ported the Fish command workflow into synchronized Zsh configuration: Git, navigation, worktree, Nx/CNW, Kitty/Polygraph, package-cache, and utility helpers, plus the AI-agent 1Password guard. Oh My Zsh now loads first with the `robbyrussell` theme and `git` plugin; only the three aliases deliberately replaced by custom functions are removed. Active Zsh files were synchronized and syntax-checked.
