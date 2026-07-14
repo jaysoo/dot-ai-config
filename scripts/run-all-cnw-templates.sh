@@ -8,16 +8,16 @@
 # the script is idempotent.
 #
 # Usage:
-#   ./run-all-templates.sh [OUTPUT_DIR]
+#   ./run-all-cnw-templates.sh [OUTPUT_DIR]
 #
 # Env:
 #   CNW_VERSION   create-nx-workspace version/tag (default: latest)
 #   ONLY          space-separated subset of template repos to run
 #
 # Examples:
-#   ./run-all-templates.sh
-#   CNW_VERSION=22.7.0 ./run-all-templates.sh /tmp/cnw-out
-#   ONLY="nextjs-template react-template" ./run-all-templates.sh
+#   ./run-all-cnw-templates.sh
+#   CNW_VERSION=22.7.0 ./run-all-cnw-templates.sh /tmp/cnw-out
+#   ONLY="nextjs-template react-template" ./run-all-cnw-templates.sh
 
 set -uo pipefail
 
@@ -34,7 +34,6 @@ TEMPLATES=(
   angular-template
   react-mfe-template
   nextjs-template
-  nuxt-template
   nestjs-template
   express-api-template
   astro-starlight-template
