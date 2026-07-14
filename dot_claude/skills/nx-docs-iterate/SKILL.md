@@ -63,7 +63,33 @@ grep -E "^#{2,4} " "src/content/docs/<changed page>"
   `group=` attr, add redirects in BOTH `astro.config.mjs` and `netlify.toml` (before the
   `/docs/*` catch-all).
 
-### 5. validate-links (when structure changed)
+### 5. Redirect sweep (after any page move/rename/delete)
+
+Every moved, renamed, or deleted page under `astro-docs/src/content/docs/` MUST ship a
+redirect in `astro-docs/netlify.toml` in the SAME commit. Missed one on the
+nx-vs-turborepo move (#36275, fixed in #36320) - do not repeat.
+
+```bash
+# list renames/deletes in this change
+git diff master --name-status -- 'astro-docs/src/content/docs/' | grep -E '^[RD]'
+```
+
+For each `R` (rename/move): add old URL -> new URL. For each `D` (delete): redirect to the
+closest surviving page. URL from path: lowercase, spaces/underscores -> dashes, drop
+extension, prefix `/docs/` (`guides/Adopting Nx/nx-vs-turborepo.mdoc` ->
+`/docs/guides/adopting-nx/nx-vs-turborepo`).
+
+Rules:
+
+- Place the rule BEFORE the `/docs/*` catch-all at the bottom of netlify.toml.
+- One-line comment above the block naming the ticket/PR.
+- netlify.toml is the canonical location; `astro.config.mjs` redirects are legacy - do not
+  add there for plain page moves.
+- Deleted ANCHORS can't be redirected - repoint inbound links instead (step 4).
+- Verify: `grep -n "<old-slug>" astro-docs/netlify.toml` hits, and the line number is above
+  the `/docs/*` rule.
+
+### 6. validate-links (when structure changed)
 
 Works in the sandbox if `~/.m2` and `~/.gradle` are write-allowlisted (ask Jack to grant
 if not):
@@ -76,7 +102,7 @@ Gotchas: `nx reset` forces a cold graph (gradle wrapper re-download); `nx-dev:ne
 is flaky on cold full rebuilds - run it alone once, then re-run validate-links. Pipe to a
 file, not `| tail` (tail eats the exit code).
 
-### 6. Amend + push (logged)
+### 7. Amend + push (logged)
 
 ```bash
 git add astro-docs/...
@@ -93,4 +119,4 @@ git push --no-verify --force-with-lease origin <branch>
 ## Report
 
 One line per gate: prettier / vale (errors-warnings-suggestions) / structural / anchors /
-validate-links (run or skipped+why) / pushed SHA.
+redirects (n/a or added) / validate-links (run or skipped+why) / pushed SHA.

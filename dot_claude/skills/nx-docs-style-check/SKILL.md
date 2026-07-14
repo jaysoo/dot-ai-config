@@ -46,6 +46,23 @@ Common checks:
 - **Tone** — direct, second person ("you"), active voice
 - **Leftover Markdoc** — no `{% %}` tags remaining after migration
 
+### 3b. Redirect Check for Moved/Deleted Pages (MANDATORY)
+
+Any page moved, renamed, or deleted under `astro-docs/src/content/docs/` needs a redirect
+in `astro-docs/netlify.toml` in the same change. Missed on the nx-vs-turborepo move
+(#36275, fixed later in #36320).
+
+```bash
+git diff master --name-status -- 'astro-docs/src/content/docs/' | grep -E '^[RD]'
+```
+
+- `R` (moved/renamed): old URL -> new URL. `D` (deleted): -> closest surviving page.
+- URL from path: lowercase, spaces/underscores -> dashes, drop extension, prefix `/docs/`.
+- Rule must sit BEFORE the `/docs/*` catch-all at the bottom of netlify.toml, with a short
+  comment naming the ticket/PR.
+- netlify.toml only - do not add to `astro.config.mjs` for plain page moves.
+- Flag as an error if a rename/delete has no matching netlify.toml redirect.
+
 ### 4. Run Vale
 
 ```bash

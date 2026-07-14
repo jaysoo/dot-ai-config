@@ -10,14 +10,16 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | github:github          | skill   | 2026-07-13   | 1     |
 | use-plannotator-for-review | skill | 2026-07-13 | 1     |
 | caveman                | skill   | 2026-07-09   | 16    |
+| remotion-best-practices | skill   | 2026-07-13   | 3     |
+| caveman                | skill   | 2026-07-13   | 18    |
 | 1-on-1-prep            | skill   | 2026-07-09   | 1     |
-| polygraph:polygraph    | skill   | 2026-07-06   | 2     |
+| polygraph:polygraph    | skill   | 2026-07-13   | 4     |
 | freeze-capture         | skill   | 2026-07-06   | 1     |
 | blog-writing           | skill   | 2026-07-03   | 1     |
 | dot-claude-guard       | skill   | 2026-07-13   | 13    |
 | nx-workspace-expert    | skill   | 2026-07-09   | 1     |
 | nx-docs-writer         | skill   | 2026-07-08   | 1     |
-| nx-docs-style-check    | skill   | 2026-06-25   | 1     |
+| nx-docs-style-check    | skill   | 2026-07-11   | 2     |
 | op-request-reason      | skill   | 2026-06-25   | 1     |
 | reflect                | command | 2026-06-25   | 8     |
 | summarize              | command | 2026-06-25   | 7     |
@@ -60,3 +62,4 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-06-18: invoked op-request-reason, summarize, reflect skills (ocean Q-503 upsell CTAs); created pre-pr-review skill; CLAUDE.md += Ocean PR-base-is-main + fish var word-splitting + git-add-after-rm; settings.json += npx eslint
 2026-06-23: invoked reflect, op-request-reason skills (CNW templates hardening: CI Node 24, TS 5.9/6.0 split, project.json->package.json conversion, doc-link 404 audit, PR #36085, reviewed audit fixes); created cnw-templates-dep-audit skill (daily dep audit + PRs); deprecated cnw-update-templates; CLAUDE.md += node -e fish gotcha + installed-vs-declared deps + WebFetch small-batch; settings.json nx.dev domain BLOCKED by classifier
 2026-07-09: invoked nx-workspace-expert skill (GitHub Actions CI parallelization guidance)
+2026-07-11: invoked caveman, polygraph, nx-docs-style-check skills (DOC-549 high-impact pages session)
