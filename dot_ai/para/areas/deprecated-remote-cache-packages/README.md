@@ -20,21 +20,21 @@ Weeks run Thu–Wed. Δ is vs the prior week in this table.
 
 ### Jul 9–15, 2026
 
-> Partial week — npm download stats only cover through Jul 11 as of this fetch (Jul 12–13 show 0 across all packages, consistent with npm's usual reporting lag). Figures and Δ below will be revised once the full week's data is available, per the pattern used for Jun 11–17.
+> Partial week — npm download stats cover through Jul 13 as of this fetch (Jul 9, 12, and 14 show 0 across all packages, consistent with npm's usual reporting lag/gaps). Figures and Δ below will be revised once the full week's data is available, per the pattern used for Jun 11–17.
 
 | Package | Downloads (partial) | Δ prev week |
 |---------|----------:|------------:|
-| `@nx/s3-cache` | 44,012 | −148,873 |
-| `@nx/gcs-cache` | 5,038 | −31,274 |
-| `@nx/shared-fs-cache` | 7,642 | −29,640 |
-| `@nx/azure-cache` | 10,624 | −16,999 |
-| **`@nx/*` subtotal** | **67,316** | **−226,786** |
-| `@nx/powerpack-s3-cache` | 2,398 | −4,283 |
-| `@nx/powerpack-gcs-cache` | 201 | −178 |
-| `@nx/powerpack-shared-fs-cache` | 143 | −42 |
-| `@nx/powerpack-azure-cache` | 594 | −429 |
-| **`powerpack-*` subtotal** | **3,336** | **−4,932** |
-| **Grand Total** | **70,652** | **−231,718** |
+| `@nx/s3-cache` | 84,066 | −108,819 |
+| `@nx/gcs-cache` | 9,613 | −26,699 |
+| `@nx/shared-fs-cache` | 14,226 | −23,056 |
+| `@nx/azure-cache` | 17,084 | −10,539 |
+| **`@nx/*` subtotal** | **124,989** | **−169,113** |
+| `@nx/powerpack-s3-cache` | 3,549 | −3,132 |
+| `@nx/powerpack-gcs-cache` | 232 | −147 |
+| `@nx/powerpack-shared-fs-cache` | 162 | −23 |
+| `@nx/powerpack-azure-cache` | 845 | −178 |
+| **`powerpack-*` subtotal** | **4,788** | **−3,480** |
+| **Grand Total** | **129,777** | **−172,593** |
 
 ---
 
