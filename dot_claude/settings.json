@@ -36,7 +36,11 @@
         "~/projects/nx-worktrees/*/.claude/skills"
       ]
     },
-    "excludedCommands": ["gemini", "codex", "op"]
+    "excludedCommands": [
+      "gemini",
+      "codex",
+      "op"
+    ]
   },
   "permissions": {
     "allow": [
@@ -129,7 +133,10 @@
       "mcp__Linear__get_team",
       "mcp__Linear__list_users",
       "mcp__Linear__get_user",
-      "mcp__Linear__search_documentation"
+      "mcp__Linear__search_documentation",
+      "Bash(npm view:*)",
+      "Bash(curl -s https://api.github.com/*)",
+      "Bash(magick:*)"
     ],
     "deny": []
   },

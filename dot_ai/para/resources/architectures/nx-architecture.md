@@ -161,6 +161,9 @@ The Nx documentation site (nx.dev/docs) - Astro/Starlight application
 - `astro-docs/src/content/docs/` - Documentation content in .mdoc format
 - `astro-docs/sidebar.mts` - Sidebar structure configuration
 - `astro-docs/netlify.toml` - Page-level 301 redirects (`[[redirects]]` from/to, 301 default). Renaming a docs page slug (Starlight derives the route from the file path) requires adding a redirect here from the old path; also repoint any `nx-dev/nx-dev/_redirects` rules that targeted the old slug so old inbound links don't chain through a dead path. (DOC-513, PR #35864, 2026-06-04: renamed `guides/Nx Cloud/manual-dte.mdoc` -> `bring-your-own-compute.mdoc`.)
+  - Redirects go in BOTH `netlify.toml` (keys have `/docs` prefix) and `astro-docs/astro.config.mjs` `redirects` map (keys WITHOUT the `/docs` prefix). DOC-549 (2026-07) added: decisions/why-monorepos -> what-is-a-monorepo, decisions/overview -> monorepo-vs-polyrepo, guides/nx-cloud/source-control-integration/github -> features/ci-features/github-integration (page deleted), features/maintain-typescript-monorepos -> technologies/typescript/introduction (merged in).
+- `astro-docs/src/content/docs/guides/comparisons/` - `nx-vs-*.mdoc` comparison pages (turborepo, vite-plus, bazel, depot, blacksmith, develocity, buildkite) + sidebar Comparisons group + card list in `knowledge-base/comparisons/index.mdoc`. An nx-vs-lerna draft exists but is SHELVED (`dot_ai/2026-07-11/tasks/nx-vs-lerna-draft-shelved.mdoc`) pending positioning.
+- Sidebar item labels in `sidebar.mts` are explicit strings decoupled from page titles - retitling a page does not change its sidebar label (only group-label renames are route-coupled).
 - `astro-docs/src/content/docs/getting-started/Tutorials/` - Topic-based tutorials (DOC-452, merged 2026-03-26)
   - 8 focused tutorials: crafting-your-workspace, managing-dependencies, configuring-tasks, running-tasks, caching, understanding-your-workspace, reducing-configuration-boilerplate, self-healing-ci-tutorial
   - Each has `llm_copy_prompt` for AI agent tutoring, prev/next navigation cards, and a "Tutorial Series" ToC aside (DOC-466, PR #35120, 2026-04-01)
@@ -416,6 +419,10 @@ Most packages have a `build` target that runs post-compilation steps (chmod, cop
 - Fix applied 2026-04-01: added `dependentTasksOutputFiles` for the bin `.js` files
 
 ## Personal Work History
+
+### 2026-07-11..15 - DOC-549: Refresh high-impact SEO pages (MERGED #36307)
+
+Branch `DOC-549`, ~30 commits squash-merged 2026-07-15. GSC-driven refresh: decisions pages renamed (`what-is-a-monorepo`, `monorepo-vs-polyrepo`) with redirects; 4 workspace pages as standalone guides with an Nx arc at the end (before/after tasks, targetDefaults incl. `continuous: true`, Nx Cloud CI); GitHub Actions integration rewrite (dup "GitHub Integration" source-control guide DELETED + redirected; workflow yaml on Node 24 / checkout@v7 / setup-node@v6 while the ci-workflow generator template still emits node 20/@v4 - follow-up NXC to file); eslint flat-config rewrite (agent `llm_copy_prompt` at top, ts-eslint v8 removed-rules encoded on-page, live-tested via a fixture workspace + page-only agent migration; found 2 convert-to-flat-config generator bugs to file: drops override `parser` into compat.config, pins @eslint/eslintrc@^2 on ESLint 9); MFE architecture on v23 consumer/provider + @module-federation/vite; TS intro absorbed `features/maintain-typescript-monorepos`; 12 tech intros re-opened monorepo-first (plugin in para 2). Polygraph terms: meta-harness (metaharness.tools) + synthetic monorepo on monorepo-vs-polyrepo. Multi-agent pipeline (SEO panel -> drafters -> 2 review rounds) then ~2 days of live review with Jack; his content-review corrections captured in memory `feedback_nx_docs_content_review_patterns`.
 
 ### 2026-06-23 - NXC-4590: nx migrate crash with `--include=optional` (MERGED #36087)
 - **Branch**: `NXC-4590` | **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4590` | **Commit**: `e2767737b2` | **PR**: https://github.com/nrwl/nx/pull/36087 (MERGED) | **Polygraph**: `migrate-error-c1c6a147` (nrwl/nx + nrwl/ocean) | Linear NXC-4590 (Dolphin/Nx CLI)

@@ -24,7 +24,7 @@
   [PASS] No unsafe package-manager script policy overrides found.
 
 === 8. Dot-env file sweep from /Users/jack (may take ~20 seconds) ===
-  [PASS] Found 87 env file(s), but no secret-like assignments in scanned env files.
+  [PASS] Found 75 env file(s), but no secret-like assignments in scanned env files.
 
 === Result ===
   [PASS] Overall: PASS

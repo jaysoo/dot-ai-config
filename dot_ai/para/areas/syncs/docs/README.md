@@ -13,8 +13,9 @@ Tracking document for Documentation team sync meetings.
 
 - Go over PR #36307 (DOC-549, https://github.com/nrwl/nx/pull/36307) - refresh of high-impact SEO pages. Purpose: GSC shows huge impressions with near-zero CTR on key queries ("pnpm workspace" 450k impr, "what is a monorepo", microfrontend, eslint flat config, GitHub Actions); pages rewritten to match search intent - definition-first openings, standalone value on capture pages (Nx confined to final section), current features (v23 consumer/provider MF, ESLint v9/10, Node 24 GHA), renamed slugs (what-is-a-monorepo, monorepo-vs-polyrepo) with redirects, stale GitHub source-control guide deleted. Nx vs Lerna page drafted but shelved pending positioning (compel existing Lerna users toward Nx; steer new users away from Lerna).
 - KB (Knowledge Base) should not reuse the main docs sidebar - no sidebar at all, just ToC on the right. Landing page: cards for featured articles + searchable/filterable list of all articles. (Current KB sidebar is a huge flat category list - see screenshot from 2026-07-11.)
+- SEO
 
-## Action Items
+### Old
 
 - [ ] Caleb: Create basic sidebar structure by end of week (content lift first)
 - [ ] Caleb: Create follow-up tasks for hub page templates and content editing

@@ -4,9 +4,9 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-549: Refresh/create high-impact pages (nx astro-docs)** (2026-07-11)
-   - Summary: GSC-driven refresh of 11 pages + new nx-vs-lerna comparison. Targets: what-is-a-monorepo, monorepo-vs-polyrepo (+Polygraph), pnpm/npm/yarn/bun workspaces (450K impr on "pnpm workspace"), MFE architecture (v23 consumer/provider + @module-federation/vite), GitHub integration (GHA yaml + new onboarding), rspack intro snippet, eslint flat-config migration intent. SEO panel -> drafts -> 2-3 review rounds.
-   - Files: `dot_ai/2026-07-11/tasks/doc-549-refresh-high-impact-pages.md`
+1. **DOC-549: Refresh/create high-impact SEO pages (nx) — MERGED #36307** (2026-07-15)
+   - Summary: GSC-driven refresh of ~14 pages: what-is-a-monorepo + monorepo-vs-polyrepo (renamed w/ redirects, Polygraph/meta-harness), pnpm/npm/yarn/bun workspaces, GitHub Actions integration (dup guide deleted), eslint flat-config (live-tested via fixture agent migration; 2 generator bugs found to file), MFE (v23 consumer/provider + @module-federation/vite), rspack, self-hosted cache, TS intro (absorbed maintain-typescript-monorepos), 12 intros re-opened monorepo-first. nx-vs-lerna drafted but SHELVED (positioning rethink); draft in dot_ai/2026-07-11/tasks/.
+   - Files: `dot_ai/2026-07-11/tasks/doc-549-refresh-high-impact-pages.md`, `dot_ai/2026-07-15/SUMMARY.md`, Polygraph `doc-549-0ca12dc9`
 
 2. **nx-typescript-7: TS7 vs TS6 benchmark repo (100 packages)** (2026-07-09)
    - Summary: New repo ~/projects/nx-typescript-7 modeled on jaysoo/nx-ts7 but with 100 generated packages (10 layers x 10, layered deps) and dual targets on EVERY project via double @nx/js/typescript plugin registration: build/typecheck = TS7 native tsc, build-tsc6/typecheck-tsc6 = TS6 tsc6. Iterated to 9.95x on nx run-many -t build: 25-pkg chain, checker-heavy pkgs (120 files x 48-kind unions). Wide graphs compress ratio to ~3-4x (nx parallelism = free multi-core for tsc6).
@@ -45,6 +45,22 @@
    - Files: `dot_ai/2026-06-23/tasks/nxc-4590-migrate-optional-crash.md`, PR https://github.com/nrwl/nx/pull/36087, Polygraph session `migrate-error-c1c6a147`
 
 ## TODO
+
+- [ ] **Google organic traffic decline assessment** (2026-07-15 10:41)
+  - Plan: `dot_ai/2026-07-15/tasks/google-search-traffic-decline-assessment.md`
+  - Goal: explain the December 2025 organic-search break and prioritize recovery actions for nx.dev docs, marketing, and blog pages
+
+- [ ] **Jeff 1:1 follow-ups** (2026-07-14)
+  - Notes: `dot_ai/para/areas/personnel/jeff.md` (2026-07-14 entry)
+  - [ ] Send Jeff Cloud local setup instructions (snapshot vs staging + Mongo IP whitelisting)
+  - [ ] Create Notion page summarizing Jeff's three engineering efforts (Oxlint/Biome formatting, Remix migration, sandbox violations)
+  - [ ] Check with Ben on Remix -> React Router 7 migration status - still available for Jeff to pick up?
+  - [ ] Send Jeff Neovim config + plugin list
+
+- [ ] **NXC-4649: Investigate CNW acquisition decrease + error trends** (2026-07-14)
+  - Linear: https://linear.app/nxdev/issue/NXC-4649 (In Progress)
+  - Goal: dig into why create-nx-workspace acquisition dropped; find error trends driving drop-off
+  - Approach: `/cnw-stats-analyzer` (prod telemetry) - funnel over time, errors by type/version/command, correlate spikes with nx releases/template changes
 
 - [ ] **nx daemon shared-socket PoC** (2026-07-07)
   - Repo: https://github.com/nrwl/nx-daemon-shared-socket-poc-20260704
@@ -137,7 +153,6 @@
 
 ## Active Claude Sessions
 
-- /Users/jack/projects/nx-worktrees/DOC-549 (branch: DOC-549) — DOC-549 refresh/create high-impact pages: 11-page SEO refresh + nx-vs-lerna, SEO panel -> drafts -> review rounds -> draft PR. Plan: `dot_ai/2026-07-11/tasks/doc-549-refresh-high-impact-pages.md`, Polygraph `doc-549-0ca12dc9` (2026-07-11)
 - /Users/jack/projects/nx-worktrees/NXC-4606 (branch: NXC-4606-report-connect) — NXC-4606 revised: perf-report "Enable remote cache" button/hint + centered short URL, draft PR #36255 (old approach kept on #36250 / branch NXC-4606). Review + CI pending. Plan: `dot_ai/2026-07-06/tasks/nxc-4606-tui-not-connected-status.md`, Polygraph `nxc-4606-e6f49ee0` (2026-07-07)
 - /Users/jack/projects/nx-worktrees/NXC-2793 (branch: NXC-2793) — NXC-2793 intermittent lockfile "Source project does not exist: npm:x" graph errors: landscape scan, code trace, repro, fix. Plan: `dot_ai/2026-07-05/tasks/nxc-2793-lockfile-intermittent-errors.md`, Polygraph `nxc-2793-bc2a19f2` (2026-07-05)
 - /Users/jack/projects/nx (branch: feature/nxc-3510-node-executor-port-release) — NXC-3510 fixed, draft PR #36230 awaiting CI. Plan: `dot_ai/2026-07-05/tasks/nxc-3510-node-executor-port-release.md`, Polygraph `nxc-3510-16626f3c` (2026-07-05)

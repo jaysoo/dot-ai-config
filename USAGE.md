@@ -6,6 +6,9 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 
 | Name                   | Type    | Last Invoked | Count |
 | ---------------------- | ------- | ------------ | ----- |
+| cnw-update-templates   | skill   | 2026-07-15   | 3     |
+| dot-claude-guard       | skill   | 2026-07-15   | 14    |
+| op-request-reason      | skill   | 2026-07-15   | 2     |
 | github:yeet            | skill   | 2026-07-13   | 1     |
 | github:github          | skill   | 2026-07-13   | 1     |
 | use-plannotator-for-review | skill | 2026-07-13 | 1     |
@@ -16,13 +19,11 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | polygraph:polygraph    | skill   | 2026-07-13   | 4     |
 | freeze-capture         | skill   | 2026-07-06   | 1     |
 | blog-writing           | skill   | 2026-07-03   | 1     |
-| dot-claude-guard       | skill   | 2026-07-13   | 13    |
 | nx-workspace-expert    | skill   | 2026-07-09   | 1     |
 | nx-docs-writer         | skill   | 2026-07-08   | 1     |
 | nx-docs-style-check    | skill   | 2026-07-11   | 2     |
-| op-request-reason      | skill   | 2026-06-25   | 1     |
-| reflect                | command | 2026-06-25   | 8     |
-| summarize              | command | 2026-06-25   | 7     |
+| reflect                | command | 2026-07-15   | 9     |
+| summarize              | command | 2026-07-15   | 8     |
 | update-config          | skill   | 2026-06-24   | 1     |
 | nx-scorecard           | skill   | 2026-06-09   | 0     |
 | audit-project-health   | skill   | 2026-05-25   | 12    |
@@ -35,13 +36,13 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | skill-creator          | skill   | 2026-04-24   | 1     |
 | terminal-demo-recorder | skill   | 2026-04-24   | 1     |
 | cnw-stats-local-server | skill   | 2026-04-23   | 0     |
-| cnw-update-templates   | skill   | 2026-04-10   | 2     |
 | audit-api-surface      | skill   | 2026-04-09   | 9     |
 | audit-supply-chain     | skill   | 2026-04-09   | 5     |
 | customer-deps-audit    | task    | 2026-04-09   | 5     |
 | team-capacity-audit    | task    | 2026-04-09   | 12    |
 | cnw-stats-analyzer     | skill   | 2026-04-01   | 3     |
 | reflect                | skill   | 2026-04-01   | 2     |
+| linear-issue-style     | skill   | 2026-07-15   | 1     |
 | site-checker           | skill   | 2026-04-01   | 0     |
 | summarize              | command | 2026-04-01   | 2     |
 | plan-week              | skill   | 2026-03-30   | 1     |
@@ -63,3 +64,5 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-06-23: invoked reflect, op-request-reason skills (CNW templates hardening: CI Node 24, TS 5.9/6.0 split, project.json->package.json conversion, doc-link 404 audit, PR #36085, reviewed audit fixes); created cnw-templates-dep-audit skill (daily dep audit + PRs); deprecated cnw-update-templates; CLAUDE.md += node -e fish gotcha + installed-vs-declared deps + WebFetch small-batch; settings.json nx.dev domain BLOCKED by classifier
 2026-07-09: invoked nx-workspace-expert skill (GitHub Actions CI parallelization guidance)
 2026-07-11: invoked caveman, polygraph, nx-docs-style-check skills (DOC-549 high-impact pages session)
+2026-07-15: invoked cnw-update-templates, op-request-reason, dot-claude-guard skills (nx 23.1.0 migrate of 12 templates + TS-6 tsconfig fixes: baseUrl->relative paths, moduleResolution node->bundler, drop esModuleInterop:false/ignoreDeprecations, e2e types:[node], @types/node 20->24, angular narrowing bug; force-pushed 8 repos); patched cnw-update-templates skill (typecheck target fix + coverage assertion + 3c clean-install/fresh-scaffold verify + 3d deprecation scan)
+2026-07-15: invoked summarize, reflect, linear-issue-style skills (DOC-549 wrap-up); created docs-live-test skill

@@ -2,6 +2,11 @@
 
 ### July 2026
 
+- [x] DOC-549: Refresh/create high-impact SEO pages (2026-07-15)
+  - Plan: `dot_ai/2026-07-11/tasks/doc-549-refresh-high-impact-pages.md`
+  - Summary: GSC-driven refresh merged as nx PR #36307. ~14 pages: what-is-a-monorepo + monorepo-vs-polyrepo (renamed, redirects, monorepo.tools-aligned benefits, Polygraph/meta-harness mentions), pnpm/npm/yarn/bun workspaces, GitHub Actions integration (dup guide deleted), eslint flat-config (live-tested with a fixture-workspace agent migration; 2 page gaps patched, 2 generator bugs found), MFE architecture (v23 consumer/provider + @module-federation/vite), rspack intro, self-hosted remote cache, folder structure, TS intro (merged maintain-typescript-monorepos in), 12 tech intros re-opened monorepo-first. Pipeline: 4-lens SEO panel -> 8 drafters -> 2 review rounds (117 findings) -> live iteration with Jack. nx-vs-lerna drafted but shelved (positioning rethink).
+  - Polygraph session `doc-549-0ca12dc9` - nrwl/nx - https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/doc-549-0ca12dc9
+
 - [x] Review Nx PR batch (2026-07-13)
   - Plan: `dot_ai/2026-07-13/tasks/review-nx-pr-batch.md`
   - Summary: Triaged PRs #36234, #36238, #36218, #36216, #36237, #36223, and #36241. All recorded CI is green and no correctness blocker was found. Review #36223 before #36216 because both modify npm lockfile parsing and the broader PR likely supersedes the smaller optimization.

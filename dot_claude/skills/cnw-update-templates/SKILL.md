@@ -12,7 +12,7 @@ description: >
 
 > **⚠️ Partially superseded (2026-06-23).** The paths below are the OLD flat
 > `~/projects/<template>` — the repos now live at **`~/projects/cnw-templates/<template>`**
-> and there are **15**, not 4. For the broad daily dependency audit (nx + @nx/* +
+> and there are **15**, not 4. For the broad daily dependency audit (nx + @nx/\* +
 > third-party, with per-repo PRs and the known upgrade holds) use the
 > **`cnw-templates-dep-audit`** skill. Use this one only for a quick nx-migrate of the
 > base templates — and fix the paths first.
@@ -80,12 +80,16 @@ After migration, for each template:
   grep -i 'localhost\|127\.0\.0\|0\.0\.0\.0' package-lock.json | head -5
   ```
   If found, **stop and report** — do not commit. User must fix `~/.npmrc` and re-run `npm install`.
-- Run `CI=true npx nx run-many -t test build lint typescript` to verify migrations didn't break anything
+- Run `CI=true npx nx run-many -t build test lint typecheck` to verify migrations didn't break anything
+  - **The target is `typecheck`, NOT `typescript`.** There is no `typescript` target — passing it makes `run-many` silently skip typechecking and still exit 0. Typecheck is where TS-version tsconfig failures live (baseUrl `TS5090`, node10 `TS5107`, `esModuleInterop` `TS5107`, narrowing `TS18048`, e2e missing node types `TS2591/2304`) — skipping it hides the entire class.
+  - Some templates use non-standard target names: **angular's unit target is `vite:test`, not `test`.** Add `vite:test` to the target list (repos without it just skip it).
+  - **Assert coverage — exit 0 is not proof anything ran.** `run-many` returning 0 when a target exists on zero projects prints `No tasks were run` (e.g. `empty-template`) or `Successfully ran targets X for N projects` omitting the ones that didn't match. Parse the summary line and confirm each intended target actually ran on ≥1 project. A silently-skipped `typecheck` reads identical to a passing one.
 - If any target fails, **stop and report the error** for that template — do not commit broken code
 
 ### 3a. Security Audit
 
 Run `CI=true npm audit --audit-level=critical` for each template. Check the exit code:
+
 - Exit 0 = no critical vulnerabilities, proceed.
 - Exit 1 = critical vulnerabilities found.
 
@@ -103,6 +107,7 @@ These are [pre-existing / newly introduced by this update]. Shall I proceed with
 ```
 
 Key points:
+
 - List the actual vulnerable package names and which transitive dependency pulls them in
 - Note whether the vulns are **pre-existing** (already in origin/main) or **newly introduced** by this migration — run `git stash && npm audit --audit-level=critical; git stash pop` against the pre-migration state if needed, or compare with `origin/main`
 - **Do NOT silently commit past critical audit failures** — always get explicit user confirmation first
@@ -129,6 +134,37 @@ grep '"vite"' package.json
 ```
 
 If any framework package is behind by a **minor or major** version, **report it** in the summary with the current and latest versions. Do not auto-update — these may require their own migration steps (e.g., `ng update`, peer dep changes). Let the user decide.
+
+Also check two things `nx migrate` never touches:
+
+- **TypeScript major** — `npm view typescript version` vs the template's declared version. A TS major bump (e.g. 5.x -> 6.x) deprecates/removes compiler options; report it so the migration's tsconfig changes get scrutinized (see 3d).
+- **`@types/node` EOL** — flag any template whose `@types/node` major is EOL (Node 20 went EOL; templates should track a supported LTS, e.g. `^24`). `nx migrate` will happily leave an EOL pin in place.
+
+### 3c. Clean-install / declared-version verification (CRITICAL — catches the failures 3 misses)
+
+**Step 3 verifies the repo in place against its EXISTING `node_modules`.** The migrate step runs `npm install` on a pre-existing tree, so a stale lockfile is never reconciled — `package.json` can declare TS 6 / Angular 22 while the committed lockfile still resolves TS 5.9 / Angular 21. On the old resolution none of the new-major deprecations fire, so **in-place verification passes while a freshly-scaffolded workspace fails.** (2026-07-15: `angular`/`react` verified green in place but `create-nx-workspace`d workspaces failed typecheck on baseUrl, node10, and missing e2e node types.)
+
+For each template, after committing the migrate, run at least one of:
+
+- **Lockfile-sync gate (fast):** `CI=true npm ci` (or `npm install --frozen-lockfile`). This **fails loudly** when `package.json` and the lockfile disagree — exactly the drift that hides failures. If `npm ci` errors with `EUSAGE ... not in sync` or peer `ERESOLVE`, the template's lockfile is stale/broken; report it (do NOT paper over with `--legacy-peer-deps` and commit the regenerated lockfile without the user deciding the target versions).
+- **Fresh-scaffold smoke test (thorough, recommended):** scaffold a throwaway workspace from the template and run the full verify against it, so declared versions resolve clean:
+  ```bash
+  # from a tmp dir, using the template's own preset
+  CI=true npx create-nx-workspace@<target> tmp-verify --preset=<template-preset> --no-nxCloud
+  cd tmp-verify && CI=true npx nx run-many -t build test lint typecheck vite:test
+  ```
+  This is how a user actually consumes the template, and it is the ONLY check that reliably surfaces new-major tsconfig failures. If it fails but in-place passed, the lockfile is the culprit.
+
+### 3d. Post-migrate deprecation scan
+
+`nx migrate`'s tsconfig migration often "fixes" a new-major deprecation by **suppressing** it (adding `"ignoreDeprecations": "6.0"`) rather than resolving the underlying option. Grep the post-migrate tree (exclude `node_modules`) for options the migration introduced or left deprecated:
+
+```bash
+grep -rlE '"ignoreDeprecations"|"baseUrl"|"moduleResolution": *"node"|"esModuleInterop": *false' \
+  . --include='tsconfig*.json' --exclude-dir=node_modules
+```
+
+Report any hits — each is a latent new-major failure that `ignoreDeprecations` is masking. The proper fixes (not `ignoreDeprecations`): drop `baseUrl` and relativize `paths` to `./…`; `moduleResolution: "node"` -> `"bundler"`/`"nodenext"`; drop `esModuleInterop: false` (accept the new default); add `"types": ["node"]` to e2e/playwright tsconfigs that use `process`/`__filename`. `ignoreDeprecations` is a last resort only when the option genuinely can't be changed.
 
 ### 4. Commit Changes
 
@@ -177,3 +213,9 @@ After committing, remind the user:
 - The `react-template` previously had a pre-existing unrelated change — always check for clean working tree first
 - **localhost registry leak (2026-03-27):** `~/.npmrc` with a local registry causes localhost URLs in `package-lock.json`. Always check before and after install.
 - **Framework packages lag behind (2026-03-27):** `nx migrate` only handles `nx`/`@nx/*` packages. Angular, React, Vite, etc. versions may fall behind if their update migrations were in a version range the template already passed through. Always check and report.
+- **Verification blind spots (2026-07-15, nx 23.1.0):** three gaps let every TS-6 failure through and only surfaced when Jack scaffolded fresh workspaces by hand:
+  1. Step 3 ran a non-existent `typescript` target instead of `typecheck` -> typecheck never ran, exit 0. Fixed in Step 3 (also assert non-zero task coverage; `vite:test` for angular).
+  2. In-place verify used the repos' stale `node_modules` (TS 5.9 pinned) so TS-6 deprecations never fired, even though `package.json` declared TS 6. Added 3c (clean-install / fresh-scaffold).
+  3. The migration masked deprecations with `ignoreDeprecations: "6.0"` instead of fixing them. Added 3d (deprecation scan + proper fixes).
+  - The proper fixes applied this round: drop `baseUrl` + relativize `paths`; `moduleResolution: node` -> `bundler`; drop `esModuleInterop: false`; add `types: ["node"]` to e2e tsconfigs; bump EOL `@types/node` 20 -> `^24`; and a real code fix (closure narrowing, `TS18048`) in `angular-template` `products.service.ts`.
+  - Also: `angular`/`react` committed lockfiles were un-`ci`-able (package.json declared newer than lockfile resolved). Getting them onto TS 6 / Angular 22 required `npm install --legacy-peer-deps` (regenerates the lockfile) — a version-target decision the user must make, not a silent step.
