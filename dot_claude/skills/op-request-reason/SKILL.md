@@ -49,9 +49,9 @@ tapping the 1Password prompt.
   1Password's SSH agent. Local-only git ops (`status`, `log`, `diff`, `add`,
   `commit`, `branch`, `checkout`, `reset`, `stash`) do NOT need logging.
 
-(Historical note: `gh` used to be on this list as a `op plugin run -- gh`
-wrapper. The `gh` CLI is now banned outright — see top-level CLAUDE.md.
-Do not log or run `gh`.)
+- **`gh`** — when run through the `op plugin run -- gh` wrapper it pulls a
+  token from 1Password, so log it like any other `op` auth request. (`gh` is
+  allowed again — see top-level CLAUDE.md. Never echo `gh auth token`.)
 
 ## Examples
 

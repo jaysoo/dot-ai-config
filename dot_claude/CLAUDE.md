@@ -8,14 +8,13 @@ Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse
 
 In any new session, ALWAYS use /caveman skill to go into full (default) cavement mode. Let me know and I can tell you to turn it off if needed or switch to other modes.
 
-## 🔴 NEVER use the `gh` GitHub CLI
+## GitHub CLI (`gh`)
 
-`gh` binary removed for security (`gh auth token` leaked too broadly). No longer installed.
+`gh` is allowed again for GitHub data and operations (was previously banned over `gh auth token` leaking too broadly).
 
-- **Never invoke or suggest `gh`** anywhere (answers, scripts, skills, commands). Calls fail with "command not found".
-- **Never re-add `gh`** to permission allowlists, op-plugin wrappers, or shell aliases.
-- For GitHub data: GitHub MCP, `curl` against `api.github.com` with an env token, or the web UI. Ask before adding a new auth path.
-- PR review/comment/merge: web UI or `curl` POST, explicit confirmation only. See PR rule below.
+- **Never print or echo `gh auth token`** (or otherwise surface the token). That leak was the original reason for the ban.
+- GitHub MCP and `curl` against `api.github.com` remain fine alternatives.
+- PR review/comment/merge still needs explicit confirmation before posting — via `gh`, web UI, or `curl`. See PR rule below.
 
 ## 🔴 Critical Setup & Verification
 
