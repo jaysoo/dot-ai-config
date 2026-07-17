@@ -2,6 +2,54 @@
 
 ### July 2026
 
+- [x] DOC-552: Refine contextual search and KB article lists (2026-07-17)
+  - Plan: `dot_ai/2026-07-17/tasks/doc-552-refine-contextual-search.md`
+  - Summary: Badged Knowledge Base and Documentation search-result categories, removed the prioritization notice, and hid the KB header search trigger while preserving KB-weighted `Cmd/Ctrl+K` and in-page search. All articles now includes all 187 entries including featured articles, topic indexes sort newest first, and KB article topics appear above the divided Copy page action. KB validation, the production build, dark/light interaction checks, and responsive browser checks pass.
+  - Polygraph session `doc-552-kb-38e8167b` — nrwl/nx — https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/doc-552-kb-38e8167b
+
+- [x] DOC-552: Simplify featured-card hover (2026-07-17)
+  - Plan: `dot_ai/2026-07-17/tasks/doc-552-featured-card-hover.md`
+  - Summary: Removed the featured article title color change on card hover while preserving card lift, border and shadow feedback, keyboard focus styling, topic links, and full-card navigation. KB validation, the production build, dark/light theme checks, and responsive browser checks pass.
+  - Polygraph session `doc-552-kb-38e8167b` — nrwl/nx — https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/doc-552-kb-38e8167b
+
+- [x] DOC-552: Refine Knowledge Base controls (2026-07-17)
+  - Plan: `dot_ai/2026-07-17/tasks/doc-552-refine-kb-controls.md`
+  - Summary: Normalized the selected topic chip to the same dimensions as inactive chips, moved contextual search above Featured articles, and added linked topics below Copy page in the right sidebar for KB articles only. KB validation, the production build, dark/light theme checks, topic-filter interaction, route scoping, and responsive browser checks pass.
+  - Polygraph session `doc-552-kb-38e8167b` — nrwl/nx — https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/doc-552-kb-38e8167b
+
+- [x] DOC-552: Featured-card links and topic filtering (2026-07-17)
+  - Plan: `dot_ai/2026-07-17/tasks/doc-552-link-featured-article-cards.md`
+  - Summary: Made each featured article card fully clickable while preserving its direct topic links; replaced Nx vs Turborepo and Switch to Workspaces with Monorepo vs Polyrepo and the TypeScript 7.0 guide; restored accessible, URL-backed topic filters with live article counts. KB validation, the production build, interaction checks, keyboard focus, and responsive browser checks pass.
+  - Polygraph session `doc-552-kb-38e8167b` — nrwl/nx — https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/doc-552-kb-38e8167b
+
+- [x] DOC-552: Consistent Knowledge Base shell (2026-07-16)
+  - Plan: `dot_ai/2026-07-16/tasks/doc-552-consistent-kb-shell.md`
+  - Summary: Made every Knowledge Base route sidebar-free, retained article tables of contents, and constrained the article-plus-TOC frame to the same 1080px maximum width as the KB and topic indexes. Removed featured-topic cards, cover-image metadata/assets/validation, and custom topic social images while retaining topic index pages and featured article cards. KB validation, production build, Pagefind indexing, and production-browser width checks pass.
+  - Polygraph session `doc-552-kb-38e8167b` — nrwl/nx — https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/doc-552-kb-38e8167b
+
+- [x] DOC-552: Knowledge Base topic metadata (2026-07-16)
+  - Plan: `dot_ai/2026-07-16/tasks/doc-552-topic-metadata-and-cards.md`
+  - Summary: Renamed the KB taxonomy and article frontmatter from tags to topics; added descriptions for all 26 topics, topic pages, featured article cards, and Git-backed sorting. The temporary featured-topic cards and covers from this iteration were later removed.
+  - Polygraph session `doc-552-kb-38e8167b` — nrwl/nx — https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/doc-552-kb-38e8167b
+
+- [x] Visual knowledge base examples (2026-07-16)
+  - Plan: `dot_ai/2026-07-16/tasks/visual-knowledge-base-examples.md`
+  - Summary: Shifted the KB benchmark from support structure to visual quality. Recommended Replit Guides, Airtable Guides, Webflow University, Sanity Learn, Notion Help, and DigitalOcean Tutorials for cover systems, topic descriptions, featured content, and filters; proposed combining Vercel's hierarchy with the strongest parts of those references.
+
+- [x] DOC-552: Knowledge Base discovery enhancements (2026-07-16)
+  - Plan: `dot_ai/2026-07-16/tasks/doc-552-kb-discovery-enhancements.md`
+  - Summary: Added six GA-selected featured article cards, 26 topic index pages, a Next.js topic, responsive article tables sorted by Git-backed last-modified date, and one-index contextual Pagefind ranking that prioritizes KB or docs based on the current section. Renamed the Angular and ESLint collision articles, updated redirects and retained links, and extended validation/cache inputs. Build, lint, link validation, formatting, KB validation, and responsive production-browser checks pass; Vale remains at the pre-existing moved-content baseline.
+  - Polygraph session `doc-552-kb-38e8167b` — nrwl/nx — https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/doc-552-kb-38e8167b
+
+- [x] Nx knowledge base examples (2026-07-16)
+  - Plan: `dot_ai/2026-07-16/tasks/nx-knowledge-base-examples.md`
+  - Summary: Benchmarked current developer-product knowledge bases. Recommended LaunchDarkly, Supabase, and Cloudflare as the primary models for Nx, with CircleCI, GitLab, GitHub's troubleshooting content model, and Sentry Answers as secondary references.
+
+- [x] DOC-552: Rework Knowledge Base section (2026-07-15)
+  - Plan: `dot_ai/2026-07-15/tasks/doc-552-rework-kb-section.md`
+  - Summary: GA-audited all 187 sidebar-defined KB articles and retained every article because none had three or fewer requests and apparent low-volume pages were new. Moved the articles to flat `/docs/kb/<slug>` routes with 25 preserved category tags, removed 26 navigation-only indexes, added a searchable/tag-filterable gallery, replaced the KB sidebar tree with a direct link, rewrote retained static-doc links, and added 213 permanent redirects plus a migration validator. Build, lint, formatting, link validation, responsive browser checks, and KB validation pass; Vale exposes pre-existing prose errors in moved legacy bodies.
+  - Polygraph session `doc-552-kb-38e8167b` — nrwl/nx — https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/doc-552-kb-38e8167b
+
 - [x] DOC-549: Refresh/create high-impact SEO pages (2026-07-15)
   - Plan: `dot_ai/2026-07-11/tasks/doc-549-refresh-high-impact-pages.md`
   - Summary: GSC-driven refresh merged as nx PR #36307. ~14 pages: what-is-a-monorepo + monorepo-vs-polyrepo (renamed, redirects, monorepo.tools-aligned benefits, Polygraph/meta-harness mentions), pnpm/npm/yarn/bun workspaces, GitHub Actions integration (dup guide deleted), eslint flat-config (live-tested with a fixture-workspace agent migration; 2 page gaps patched, 2 generator bugs found), MFE architecture (v23 consumer/provider + @module-federation/vite), rspack intro, self-hosted remote cache, folder structure, TS intro (merged maintain-typescript-monorepos in), 12 tech intros re-opened monorepo-first. Pipeline: 4-lens SEO panel -> 8 drafters -> 2 review rounds (117 findings) -> live iteration with Jack. nx-vs-lerna drafted but shelved (positioning rethink).

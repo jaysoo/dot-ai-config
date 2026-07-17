@@ -1,0 +1,2741 @@
+{
+  "articleCount": 187,
+  "categoryCount": 25,
+  "categoryOrder": [
+    "Troubleshooting",
+    "Recipes",
+    "Creating releases",
+    "Nx Console",
+    "Installation and updates",
+    "Organizational decisions",
+    "Extending Nx",
+    "Continuous integration",
+    "Tasks & caching",
+    "Benchmarks",
+    "TypeScript",
+    "Angular",
+    "React",
+    "Vue",
+    "Node",
+    ".NET",
+    "Module Federation",
+    "ESLint",
+    "Vite",
+    "Webpack",
+    "Cypress",
+    "Playwright",
+    "Storybook",
+    "Vitest",
+    "Comparisons"
+  ],
+  "collisionCount": 2,
+  "relativeReferenceArticleCount": 19,
+  "articles": [
+    {
+      "title": "CI execution failed",
+      "category": "Troubleshooting",
+      "oldUrl": "/docs/troubleshooting/ci-execution-failed",
+      "sourceFile": "astro-docs/src/content/docs/troubleshooting/ci-execution-failed.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/ci-execution-failed.mdoc",
+      "slug": "ci-execution-failed",
+      "newUrl": "/docs/kb/ci-execution-failed",
+      "tags": [
+        "Troubleshooting"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Unknown local cache error",
+      "category": "Troubleshooting",
+      "oldUrl": "/docs/troubleshooting/unknown-local-cache",
+      "sourceFile": "astro-docs/src/content/docs/troubleshooting/unknown-local-cache.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/unknown-local-cache.mdoc",
+      "slug": "unknown-local-cache",
+      "newUrl": "/docs/kb/unknown-local-cache",
+      "tags": [
+        "Troubleshooting"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Troubleshoot convert to inferred",
+      "category": "Troubleshooting",
+      "oldUrl": "/docs/troubleshooting/troubleshoot-convert-to-inferred",
+      "sourceFile": "astro-docs/src/content/docs/troubleshooting/troubleshoot-convert-to-inferred.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/troubleshoot-convert-to-inferred.mdoc",
+      "slug": "troubleshoot-convert-to-inferred",
+      "newUrl": "/docs/kb/troubleshoot-convert-to-inferred",
+      "tags": [
+        "Troubleshooting"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Profiling performance",
+      "category": "Troubleshooting",
+      "oldUrl": "/docs/troubleshooting/performance-profiling",
+      "sourceFile": "astro-docs/src/content/docs/troubleshooting/performance-profiling.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/performance-profiling.mdoc",
+      "slug": "performance-profiling",
+      "newUrl": "/docs/kb/performance-profiling",
+      "tags": [
+        "Troubleshooting"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 25,
+          "text": "![Performance Profiling with Chrome Devtools](../../../assets/troubleshooting/performance-profiling-devtools.png)"
+        }
+      ]
+    },
+    {
+      "title": "Troubleshoot Nx Console issues",
+      "category": "Troubleshooting",
+      "oldUrl": "/docs/troubleshooting/console-troubleshooting",
+      "sourceFile": "astro-docs/src/content/docs/troubleshooting/console-troubleshooting.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/troubleshooting-console-troubleshooting.mdoc",
+      "slug": "troubleshooting-console-troubleshooting",
+      "newUrl": "/docs/kb/troubleshooting-console-troubleshooting",
+      "tags": [
+        "Troubleshooting"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Troubleshoot cache misses",
+      "category": "Troubleshooting",
+      "oldUrl": "/docs/troubleshooting/troubleshoot-cache-misses",
+      "sourceFile": "astro-docs/src/content/docs/troubleshooting/troubleshoot-cache-misses.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/troubleshoot-cache-misses.mdoc",
+      "slug": "troubleshoot-cache-misses",
+      "newUrl": "/docs/kb/troubleshoot-cache-misses",
+      "tags": [
+        "Troubleshooting"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 27,
+          "text": "![Run details page showing task list filtered by cache miss status](../../../assets/guides/nx-cloud/run-details.jpg)"
+        },
+        {
+          "line": 31,
+          "text": "![Task details panel showing the Compare to similar tasks button](../../../assets/guides/nx-cloud/run-details-task-details.jpg)"
+        },
+        {
+          "line": 35,
+          "text": "![Compare tasks view showing the run selection panel](../../../assets/guides/nx-cloud/compare-tasks-select-run.jpg)"
+        },
+        {
+          "line": 39,
+          "text": "![Compare tasks diff view showing hash input differences between two task runs](../../../assets/guides/nx-cloud/compare-tasks-diff.jpg)"
+        }
+      ]
+    },
+    {
+      "title": "Troubleshoot Nx installations",
+      "category": "Troubleshooting",
+      "oldUrl": "/docs/troubleshooting/troubleshoot-nx-install-issues",
+      "sourceFile": "astro-docs/src/content/docs/troubleshooting/troubleshoot-nx-install-issues.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/troubleshoot-nx-install-issues.mdoc",
+      "slug": "troubleshoot-nx-install-issues",
+      "newUrl": "/docs/kb/troubleshoot-nx-install-issues",
+      "tags": [
+        "Troubleshooting"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Fix Nx in Claude Code sandbox",
+      "category": "Troubleshooting",
+      "oldUrl": "/docs/troubleshooting/nx-sandbox-unix-sockets",
+      "sourceFile": "astro-docs/src/content/docs/troubleshooting/nx-sandbox-unix-sockets.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-sandbox-unix-sockets.mdoc",
+      "slug": "nx-sandbox-unix-sockets",
+      "newUrl": "/docs/kb/nx-sandbox-unix-sockets",
+      "tags": [
+        "Troubleshooting"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Resolve circular dependencies",
+      "category": "Troubleshooting",
+      "oldUrl": "/docs/troubleshooting/resolve-circular-dependencies",
+      "sourceFile": "astro-docs/src/content/docs/troubleshooting/resolve-circular-dependencies.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/resolve-circular-dependencies.mdoc",
+      "slug": "resolve-circular-dependencies",
+      "newUrl": "/docs/kb/resolve-circular-dependencies",
+      "tags": [
+        "Troubleshooting"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Include all package.json files",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/include-all-packagejson",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/include-all-packagejson.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/include-all-packagejson.mdoc",
+      "slug": "include-all-packagejson",
+      "newUrl": "/docs/kb/include-all-packagejson",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Disable graph links from source analysis",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/analyze-source-files",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/analyze-source-files.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/analyze-source-files.mdoc",
+      "slug": "analyze-source-files",
+      "newUrl": "/docs/kb/analyze-source-files",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Using Yarn PnP with Nx",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/yarn-pnp",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/yarn-pnp.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/yarn-pnp.mdoc",
+      "slug": "yarn-pnp",
+      "newUrl": "/docs/kb/yarn-pnp",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "npm workspaces",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/npm-workspaces",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/npm-workspaces.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/npm-workspaces.mdoc",
+      "slug": "npm-workspaces",
+      "newUrl": "/docs/kb/npm-workspaces",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "pnpm workspaces",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/pnpm-workspaces",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/pnpm-workspaces.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/pnpm-workspaces.mdoc",
+      "slug": "pnpm-workspaces",
+      "newUrl": "/docs/kb/pnpm-workspaces",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Yarn workspaces",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/yarn-workspaces",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/yarn-workspaces.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/yarn-workspaces.mdoc",
+      "slug": "yarn-workspaces",
+      "newUrl": "/docs/kb/yarn-workspaces",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Bun workspaces",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/bun-workspaces",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/bun-workspaces.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/bun-workspaces.mdoc",
+      "slug": "bun-workspaces",
+      "newUrl": "/docs/kb/bun-workspaces",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Identify dependencies between folders",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/identify-dependencies-between-folders",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/identify-dependencies-between-folders.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/identify-dependencies-between-folders.mdoc",
+      "slug": "identify-dependencies-between-folders",
+      "newUrl": "/docs/kb/identify-dependencies-between-folders",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Feature-based testing",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/feature-based-testing",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/feature-based-testing.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/feature-based-testing.mdoc",
+      "slug": "feature-based-testing",
+      "newUrl": "/docs/kb/feature-based-testing",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Configuring browser support",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/browser-support",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/browser-support.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/browser-support.mdoc",
+      "slug": "browser-support",
+      "newUrl": "/docs/kb/browser-support",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Define environment variables",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/define-environment-variables",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/define-environment-variables.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/define-environment-variables.mdoc",
+      "slug": "define-environment-variables",
+      "newUrl": "/docs/kb/define-environment-variables",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Including assets in your build",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/include-assets-in-build",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/include-assets-in-build.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/include-assets-in-build.mdoc",
+      "slug": "include-assets-in-build",
+      "newUrl": "/docs/kb/include-assets-in-build",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Keep Nx versions in sync",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/keep-nx-versions-in-sync",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/keep-nx-versions-in-sync.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/keep-nx-versions-in-sync.mdoc",
+      "slug": "keep-nx-versions-in-sync",
+      "newUrl": "/docs/kb/keep-nx-versions-in-sync",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Standalone to monorepo",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/standalone-to-monorepo",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/standalone-to-monorepo.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/standalone-to-monorepo.mdoc",
+      "slug": "standalone-to-monorepo",
+      "newUrl": "/docs/kb/standalone-to-monorepo",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Migrate `nx` imports to `@nx/devkit`",
+      "category": "Recipes",
+      "oldUrl": "/docs/guides/tips-n-tricks/migrate-nx-imports-to-devkit",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tips-n-Tricks/migrate-nx-imports-to-devkit.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/migrate-nx-imports-to-devkit.mdoc",
+      "slug": "migrate-nx-imports-to-devkit",
+      "newUrl": "/docs/kb/migrate-nx-imports-to-devkit",
+      "tags": [
+        "Recipes"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Release NPM packages",
+      "category": "Creating releases",
+      "oldUrl": "/docs/guides/nx-release/release-npm-packages",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Release/release-npm-packages.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/release-npm-packages.mdoc",
+      "slug": "release-npm-packages",
+      "newUrl": "/docs/kb/release-npm-packages",
+      "tags": [
+        "Creating releases"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Release Rust crates",
+      "category": "Creating releases",
+      "oldUrl": "/docs/guides/nx-release/publish-rust-crates",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Release/publish-rust-crates.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/publish-rust-crates.mdoc",
+      "slug": "publish-rust-crates",
+      "newUrl": "/docs/kb/publish-rust-crates",
+      "tags": [
+        "Creating releases"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Release Docker images",
+      "category": "Creating releases",
+      "oldUrl": "/docs/guides/nx-release/release-docker-images",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Release/release-docker-images.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/release-docker-images.mdoc",
+      "slug": "release-docker-images",
+      "newUrl": "/docs/kb/release-docker-images",
+      "tags": [
+        "Creating releases"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Automate GitHub releases",
+      "category": "Creating releases",
+      "oldUrl": "/docs/guides/nx-release/automate-github-releases",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Release/automate-github-releases.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/automate-github-releases.mdoc",
+      "slug": "automate-github-releases",
+      "newUrl": "/docs/kb/automate-github-releases",
+      "tags": [
+        "Creating releases"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Automate GitLab releases",
+      "category": "Creating releases",
+      "oldUrl": "/docs/guides/nx-release/automate-gitlab-releases",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Release/automate-gitlab-releases.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/automate-gitlab-releases.mdoc",
+      "slug": "automate-gitlab-releases",
+      "newUrl": "/docs/kb/automate-gitlab-releases",
+      "tags": [
+        "Creating releases"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Telemetry",
+      "category": "Nx Console",
+      "oldUrl": "/docs/guides/nx-console/console-telemetry",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Console/console-telemetry.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/console-telemetry.mdoc",
+      "slug": "console-telemetry",
+      "newUrl": "/docs/kb/console-telemetry",
+      "tags": [
+        "Nx Console"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Run command",
+      "category": "Nx Console",
+      "oldUrl": "/docs/guides/nx-console/console-run-command",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Console/console-run-command.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/console-run-command.mdoc",
+      "slug": "console-run-command",
+      "newUrl": "/docs/kb/console-run-command",
+      "tags": [
+        "Nx Console"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Nx Cloud integration",
+      "category": "Nx Console",
+      "oldUrl": "/docs/guides/nx-console/console-nx-cloud",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Console/console-nx-cloud.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/console-nx-cloud.mdoc",
+      "slug": "console-nx-cloud",
+      "newUrl": "/docs/kb/console-nx-cloud",
+      "tags": [
+        "Nx Console"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 13,
+          "text": "![Nx Console Nx Cloud View](../../../../assets/guides/nx-console/cloud-view.png)"
+        },
+        {
+          "line": 23,
+          "text": "![Nx Console Nx Cloud Notifications](../../../../assets/guides/nx-console/cloud-notification.png)"
+        }
+      ]
+    },
+    {
+      "title": "Generate command",
+      "category": "Nx Console",
+      "oldUrl": "/docs/guides/nx-console/console-generate-command",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Console/console-generate-command.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/console-generate-command.mdoc",
+      "slug": "console-generate-command",
+      "newUrl": "/docs/kb/console-generate-command",
+      "tags": [
+        "Nx Console"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Project details view",
+      "category": "Nx Console",
+      "oldUrl": "/docs/guides/nx-console/console-project-details",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Console/console-project-details.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/console-project-details.mdoc",
+      "slug": "console-project-details",
+      "newUrl": "/docs/kb/console-project-details",
+      "tags": [
+        "Nx Console"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 12,
+          "text": "![console-pdv-example.png](../../../../assets/guides/nx-console/console-pdv-example.png)"
+        }
+      ]
+    },
+    {
+      "title": "Troubleshooting",
+      "category": "Nx Console",
+      "oldUrl": "/docs/guides/nx-console/console-troubleshooting",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Console/console-troubleshooting.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-console-troubleshooting.mdoc",
+      "slug": "nx-console-troubleshooting",
+      "newUrl": "/docs/kb/nx-console-troubleshooting",
+      "tags": [
+        "Nx Console"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Install Nx in non-JavaScript repo",
+      "category": "Installation and updates",
+      "oldUrl": "/docs/guides/installation/install-non-javascript",
+      "sourceFile": "astro-docs/src/content/docs/guides/Installation/install-non-javascript.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/install-non-javascript.mdoc",
+      "slug": "install-non-javascript",
+      "newUrl": "/docs/kb/install-non-javascript",
+      "tags": [
+        "Installation and updates"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Update global installation",
+      "category": "Installation and updates",
+      "oldUrl": "/docs/guides/installation/update-global-installation",
+      "sourceFile": "astro-docs/src/content/docs/guides/Installation/update-global-installation.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/update-global-installation.mdoc",
+      "slug": "update-global-installation",
+      "newUrl": "/docs/kb/update-global-installation",
+      "tags": [
+        "Installation and updates"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Nx Console migration assistance",
+      "category": "Installation and updates",
+      "oldUrl": "/docs/guides/nx-console/console-migrate-ui",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Console/console-migrate-ui.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/console-migrate-ui.mdoc",
+      "slug": "console-migrate-ui",
+      "newUrl": "/docs/kb/console-migrate-ui",
+      "tags": [
+        "Installation and updates"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 17,
+          "text": "![](../../../../assets/guides/nx-console/console-migrate-1-start.avif)"
+        },
+        {
+          "line": 21,
+          "text": "![](../../../../assets/guides/nx-console/console-migrate-2-customize-version.avif)"
+        },
+        {
+          "line": 29,
+          "text": "![](../../../../assets/guides/nx-console/console-migrate-3-confirm.avif)"
+        },
+        {
+          "line": 35,
+          "text": "![](../../../../assets/guides/nx-console/console-migrate-4-approve.avif)"
+        },
+        {
+          "line": 39,
+          "text": "![](../../../../assets/guides/nx-console/console-migrate-5-error.avif)"
+        },
+        {
+          "line": 64,
+          "text": "![](../../../../assets/guides/nx-console/console-migrate-6-finish.avif)"
+        }
+      ]
+    },
+    {
+      "title": "What is a monorepo",
+      "category": "Organizational decisions",
+      "oldUrl": "/docs/concepts/decisions/what-is-a-monorepo",
+      "sourceFile": "astro-docs/src/content/docs/concepts/Decisions/what-is-a-monorepo.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/what-is-a-monorepo.mdoc",
+      "slug": "what-is-a-monorepo",
+      "newUrl": "/docs/kb/what-is-a-monorepo",
+      "tags": [
+        "Organizational decisions"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Monorepo or polyrepo",
+      "category": "Organizational decisions",
+      "oldUrl": "/docs/concepts/decisions/monorepo-vs-polyrepo",
+      "sourceFile": "astro-docs/src/content/docs/concepts/Decisions/monorepo-vs-polyrepo.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/monorepo-vs-polyrepo.mdoc",
+      "slug": "monorepo-vs-polyrepo",
+      "newUrl": "/docs/kb/monorepo-vs-polyrepo",
+      "tags": [
+        "Organizational decisions"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Dependency management",
+      "category": "Organizational decisions",
+      "oldUrl": "/docs/concepts/decisions/dependency-management",
+      "sourceFile": "astro-docs/src/content/docs/concepts/Decisions/dependency-management.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/dependency-management.mdoc",
+      "slug": "dependency-management",
+      "newUrl": "/docs/kb/dependency-management",
+      "tags": [
+        "Organizational decisions"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Folder structure",
+      "category": "Organizational decisions",
+      "oldUrl": "/docs/concepts/decisions/folder-structure",
+      "sourceFile": "astro-docs/src/content/docs/concepts/Decisions/folder-structure.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/folder-structure.mdoc",
+      "slug": "folder-structure",
+      "newUrl": "/docs/kb/folder-structure",
+      "tags": [
+        "Organizational decisions"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Project size",
+      "category": "Organizational decisions",
+      "oldUrl": "/docs/concepts/decisions/project-size",
+      "sourceFile": "astro-docs/src/content/docs/concepts/Decisions/project-size.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/project-size.mdoc",
+      "slug": "project-size",
+      "newUrl": "/docs/kb/project-size",
+      "tags": [
+        "Organizational decisions"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Code ownership",
+      "category": "Organizational decisions",
+      "oldUrl": "/docs/concepts/decisions/code-ownership",
+      "sourceFile": "astro-docs/src/content/docs/concepts/Decisions/code-ownership.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/code-ownership.mdoc",
+      "slug": "code-ownership",
+      "newUrl": "/docs/kb/code-ownership",
+      "tags": [
+        "Organizational decisions"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Project dependency rules",
+      "category": "Organizational decisions",
+      "oldUrl": "/docs/concepts/decisions/project-dependency-rules",
+      "sourceFile": "astro-docs/src/content/docs/concepts/Decisions/project-dependency-rules.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/project-dependency-rules.mdoc",
+      "slug": "project-dependency-rules",
+      "newUrl": "/docs/kb/project-dependency-rules",
+      "tags": [
+        "Organizational decisions"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Intro",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/intro",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/intro.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/intro.mdoc",
+      "slug": "intro",
+      "newUrl": "/docs/kb/intro",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Local generators",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/local-generators",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/local-generators.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/local-generators.mdoc",
+      "slug": "local-generators",
+      "newUrl": "/docs/kb/local-generators",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 129,
+          "text": "![vscode-schematics-debug](../../../assets/nx-console/vscode-schematics-debug.png)"
+        }
+      ]
+    },
+    {
+      "title": "Composing generators",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/composing-generators",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/composing-generators.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/composing-generators.mdoc",
+      "slug": "composing-generators",
+      "newUrl": "/docs/kb/composing-generators",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Creating files",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/creating-files",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/creating-files.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/creating-files.mdoc",
+      "slug": "creating-files",
+      "newUrl": "/docs/kb/creating-files",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Modifying files",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/modifying-files",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/modifying-files.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/modifying-files.mdoc",
+      "slug": "modifying-files",
+      "newUrl": "/docs/kb/modifying-files",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Migration generators",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/migration-generators",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/migration-generators.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/migration-generators.mdoc",
+      "slug": "migration-generators",
+      "newUrl": "/docs/kb/migration-generators",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Create sync generator",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/create-sync-generator",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/create-sync-generator.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/create-sync-generator.mdoc",
+      "slug": "create-sync-generator",
+      "newUrl": "/docs/kb/create-sync-generator",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Local executors",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/local-executors",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/local-executors.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/local-executors.mdoc",
+      "slug": "local-executors",
+      "newUrl": "/docs/kb/local-executors",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Compose executors",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/compose-executors",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/compose-executors.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/compose-executors.mdoc",
+      "slug": "compose-executors",
+      "newUrl": "/docs/kb/compose-executors",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Task running lifecycle",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/task-running-lifecycle",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/task-running-lifecycle.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/task-running-lifecycle.mdoc",
+      "slug": "task-running-lifecycle",
+      "newUrl": "/docs/kb/task-running-lifecycle",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Project graph plugins",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/project-graph-plugins",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/project-graph-plugins.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/project-graph-plugins.mdoc",
+      "slug": "project-graph-plugins",
+      "newUrl": "/docs/kb/project-graph-plugins",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "CreateNodes compatibility",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/createnodes-compatibility",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/createnodes-compatibility.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/createnodes-compatibility.mdoc",
+      "slug": "createnodes-compatibility",
+      "newUrl": "/docs/kb/createnodes-compatibility",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Performant project graph plugins",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/performant-project-graph-plugins",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/performant-project-graph-plugins.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/performant-project-graph-plugins.mdoc",
+      "slug": "performant-project-graph-plugins",
+      "newUrl": "/docs/kb/performant-project-graph-plugins",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Organization-specific plugin",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/organization-specific-plugin",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/organization-specific-plugin.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/organization-specific-plugin.mdoc",
+      "slug": "organization-specific-plugin",
+      "newUrl": "/docs/kb/organization-specific-plugin",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 138,
+          "text": "![Nx Console UI for the library generator](../../../assets/nx-console/generator-options-ui.png)"
+        }
+      ]
+    },
+    {
+      "title": "Tooling plugin",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/tooling-plugin",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/tooling-plugin.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/tooling-plugin.mdoc",
+      "slug": "tooling-plugin",
+      "newUrl": "/docs/kb/tooling-plugin",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Custom plugin preset",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/create-preset",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/create-preset.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/create-preset.mdoc",
+      "slug": "create-preset",
+      "newUrl": "/docs/kb/create-preset",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Creating an install package",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/create-install-package",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/create-install-package.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/create-install-package.mdoc",
+      "slug": "create-install-package",
+      "newUrl": "/docs/kb/create-install-package",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Publish your plugin",
+      "category": "Extending Nx",
+      "oldUrl": "/docs/extending-nx/publish-plugin",
+      "sourceFile": "astro-docs/src/content/docs/extending-nx/publish-plugin.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/publish-plugin.mdoc",
+      "slug": "publish-plugin",
+      "newUrl": "/docs/kb/publish-plugin",
+      "tags": [
+        "Extending Nx"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Setup CI",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/guides/nx-cloud/setup-ci",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Cloud/setup-ci.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/setup-ci.mdoc",
+      "slug": "setup-ci",
+      "newUrl": "/docs/kb/setup-ci",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Access tokens",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/guides/nx-cloud/access-tokens",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Cloud/access-tokens.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/access-tokens.mdoc",
+      "slug": "access-tokens",
+      "newUrl": "/docs/kb/access-tokens",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 17,
+          "text": "![](../../../../assets/nx-cloud/access-control-settings.avif)"
+        },
+        {
+          "line": 53,
+          "text": "![Variable group settings page](../../../../assets/nx-cloud/ado-library-start.avif)"
+        },
+        {
+          "line": 57,
+          "text": "![create protected variable group](../../../../assets/nx-cloud/ado-protected-var-group.avif)"
+        },
+        {
+          "line": 59,
+          "text": "![variable group pipeline permission settings](../../../../assets/nx-cloud/ado-pipeline-permission.avif)"
+        },
+        {
+          "line": 61,
+          "text": "![variable group branch control settings](../../../../assets/nx-cloud/ado-add-branch-control.avif)"
+        },
+        {
+          "line": 63,
+          "text": "![variable group branch control settings](../../../../assets/nx-cloud/ado-protected-branch.avif)"
+        },
+        {
+          "line": 68,
+          "text": "![unprotected variable group settings](../../../../assets/nx-cloud/ado-unprotected-branch.avif)"
+        },
+        {
+          "line": 70,
+          "text": "![completed variable group setup](../../../../assets/nx-cloud/ado-library-end.avif)"
+        },
+        {
+          "line": 96,
+          "text": "![Use deployments variables to provide protected environment variable access](../../../../assets/nx-cloud/bitbucket-deployment-env.avif)"
+        },
+        {
+          "line": 99,
+          "text": "![add read-only Nx Cloud access token to bitbucket](../../../../assets/nx-cloud/bitbucket-repo-vars.avif)"
+        },
+        {
+          "line": 121,
+          "text": "![create a new context for protected environments](../../../../assets/nx-cloud/circle-new-context.avif)"
+        },
+        {
+          "line": 123,
+          "text": "![restrict context to protected branches](../../../../assets/nx-cloud/circle-expression-restriction.avif)"
+        },
+        {
+          "line": 127,
+          "text": "![add read-only Nx Cloud access token to circleci](../../../../assets/nx-cloud/circle-new-env-var-token.avif)"
+        },
+        {
+          "line": 165,
+          "text": "![Select protected branches for the environment restriction configuration](../../../../assets/nx-cloud/github-select-protected-branches.avif)"
+        },
+        {
+          "line": 170,
+          "text": "![overview of GitHub Action secret configuration settings with environments set](../../../../assets/nx-cloud/github-secrets-settings.avif)"
+        },
+        {
+          "line": 193,
+          "text": "![define gitlab environment for protected branches](../../../../assets/nx-cloud/gitlab-new-environment.avif)"
+        },
+        {
+          "line": 204,
+          "text": "![add read-only Nx Cloud access token to gitlab](../../../../assets/nx-cloud/gitlab-variable-settings-readonly.avif)"
+        },
+        {
+          "line": 214,
+          "text": "![add read-write Nx Cloud access token to gitlab](../../../../assets/nx-cloud/gitlab-variable-settings-readwrite.avif)"
+        },
+        {
+          "line": 216,
+          "text": "![GitLab project variable configuration screen](../../../../assets/nx-cloud/gitlab-variable-setting.avif)"
+        }
+      ]
+    },
+    {
+      "title": "Personal access tokens",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/guides/nx-cloud/personal-access-tokens",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Cloud/personal-access-tokens.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/personal-access-tokens.mdoc",
+      "slug": "personal-access-tokens",
+      "newUrl": "/docs/kb/personal-access-tokens",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 32,
+          "text": "![Profile Settings](../../../../assets/nx-cloud/profile-page.avif)"
+        },
+        {
+          "line": 36,
+          "text": "![Personal Access Tokens](../../../../assets/nx-cloud/personal-access-tokens-profile.avif)"
+        }
+      ]
+    },
+    {
+      "title": "Bring Your Own Compute",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/guides/nx-cloud/bring-your-own-compute",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Cloud/bring-your-own-compute.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/bring-your-own-compute.mdoc",
+      "slug": "bring-your-own-compute",
+      "newUrl": "/docs/kb/bring-your-own-compute",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Source control integration",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/guides/nx-cloud/source-control-integration",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Cloud/Source Control Integration/index.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/source-control-integration.mdoc",
+      "slug": "source-control-integration",
+      "newUrl": "/docs/kb/source-control-integration",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Set up CI with Bun",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/guides/nx-cloud/use-bun",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Cloud/use-bun.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/use-bun.mdoc",
+      "slug": "use-bun",
+      "newUrl": "/docs/kb/use-bun",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "GitHub app permissions",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/guides/nx-cloud/source-control-integration/github-app-permissions",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Cloud/Source Control Integration/github-app-permissions.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/github-app-permissions.mdoc",
+      "slug": "github-app-permissions",
+      "newUrl": "/docs/kb/github-app-permissions",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Configuring the cloud runner",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/reference/nx-cloud/config",
+      "sourceFile": "astro-docs/src/content/docs/reference/Nx Cloud/config.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/config.mdoc",
+      "slug": "config",
+      "newUrl": "/docs/kb/config",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Custom images",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/reference/nx-cloud/custom-images",
+      "sourceFile": "astro-docs/src/content/docs/reference/Nx Cloud/custom-images.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/custom-images.mdoc",
+      "slug": "custom-images",
+      "newUrl": "/docs/kb/custom-images",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Assignment rules",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/reference/nx-cloud/assignment-rules",
+      "sourceFile": "astro-docs/src/content/docs/reference/Nx Cloud/assignment-rules.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/assignment-rules.mdoc",
+      "slug": "assignment-rules",
+      "newUrl": "/docs/kb/assignment-rules",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Custom steps",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/reference/nx-cloud/custom-steps",
+      "sourceFile": "astro-docs/src/content/docs/reference/Nx Cloud/custom-steps.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/custom-steps.mdoc",
+      "slug": "custom-steps",
+      "newUrl": "/docs/kb/custom-steps",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Launch templates",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/reference/nx-cloud/launch-templates",
+      "sourceFile": "astro-docs/src/content/docs/reference/Nx Cloud/launch-templates.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/launch-templates.mdoc",
+      "slug": "launch-templates",
+      "newUrl": "/docs/kb/launch-templates",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Launch template examples",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/reference/nx-cloud/launch-template-examples",
+      "sourceFile": "astro-docs/src/content/docs/reference/Nx Cloud/launch-template-examples.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/launch-template-examples.mdoc",
+      "slug": "launch-template-examples",
+      "newUrl": "/docs/kb/launch-template-examples",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Reduce waste in CI",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/concepts/ci-concepts/reduce-waste",
+      "sourceFile": "astro-docs/src/content/docs/concepts/CI Concepts/reduce-waste.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/reduce-waste.mdoc",
+      "slug": "reduce-waste",
+      "newUrl": "/docs/kb/reduce-waste",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Cache security",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/concepts/ci-concepts/cache-security",
+      "sourceFile": "astro-docs/src/content/docs/concepts/CI Concepts/cache-security.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/cache-security.mdoc",
+      "slug": "cache-security",
+      "newUrl": "/docs/kb/cache-security",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Heartbeat and manual shutdown handling",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/concepts/ci-concepts/heartbeat-and-manual-shutdown-handling",
+      "sourceFile": "astro-docs/src/content/docs/concepts/CI Concepts/heartbeat-and-manual-shutdown-handling.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/heartbeat-and-manual-shutdown-handling.mdoc",
+      "slug": "heartbeat-and-manual-shutdown-handling",
+      "newUrl": "/docs/kb/heartbeat-and-manual-shutdown-handling",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Fix sandbox violations",
+      "category": "Continuous integration",
+      "oldUrl": "/docs/guides/nx-cloud/fix-sandbox-violations",
+      "sourceFile": "astro-docs/src/content/docs/guides/Nx Cloud/fix-sandbox-violations.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/fix-sandbox-violations.mdoc",
+      "slug": "fix-sandbox-violations",
+      "newUrl": "/docs/kb/fix-sandbox-violations",
+      "tags": [
+        "Continuous integration"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Configure inputs",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/configure-inputs",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/configure-inputs.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/configure-inputs.mdoc",
+      "slug": "configure-inputs",
+      "newUrl": "/docs/kb/configure-inputs",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Configure outputs",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/configure-outputs",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/configure-outputs.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/configure-outputs.mdoc",
+      "slug": "configure-outputs",
+      "newUrl": "/docs/kb/configure-outputs",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Defining task pipeline",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/defining-task-pipeline",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/defining-task-pipeline.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/defining-task-pipeline.mdoc",
+      "slug": "defining-task-pipeline",
+      "newUrl": "/docs/kb/defining-task-pipeline",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 121,
+          "text": "![Task graph of the Playwright Nx plugin in the nx repo being rendered in the browser](../../../../assets/guides/running-tasks/task-graph-playwright-nx.webp)"
+        },
+        {
+          "line": 125,
+          "text": "![Selecting \"Focus task in Nx Graph\" from the context menu in VS Code](../../../../assets/guides/running-tasks/task-graph-context-menu.webp)"
+        },
+        {
+          "line": 129,
+          "text": "![Task graph of the Playwright Nx plugin in the nx repo being rendered in VS Code](../../../../assets/guides/running-tasks/task-graph-vscode.webp)"
+        }
+      ]
+    },
+    {
+      "title": "Run tasks in parallel",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/run-tasks-in-parallel",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/run-tasks-in-parallel.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/run-tasks-in-parallel.mdoc",
+      "slug": "run-tasks-in-parallel",
+      "newUrl": "/docs/kb/run-tasks-in-parallel",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Pass args to commands",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/pass-args-to-commands",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/pass-args-to-commands.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/pass-args-to-commands.mdoc",
+      "slug": "pass-args-to-commands",
+      "newUrl": "/docs/kb/pass-args-to-commands",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Run commands executor",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/run-commands-executor",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/run-commands-executor.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/run-commands-executor.mdoc",
+      "slug": "run-commands-executor",
+      "newUrl": "/docs/kb/run-commands-executor",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Reduce repetitive configuration",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/reduce-repetitive-configuration",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/reduce-repetitive-configuration.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/reduce-repetitive-configuration.mdoc",
+      "slug": "reduce-repetitive-configuration",
+      "newUrl": "/docs/kb/reduce-repetitive-configuration",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Root level scripts",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/root-level-scripts",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/root-level-scripts.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/root-level-scripts.mdoc",
+      "slug": "root-level-scripts",
+      "newUrl": "/docs/kb/root-level-scripts",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Convert to inferred",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/convert-to-inferred",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/convert-to-inferred.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/convert-to-inferred.mdoc",
+      "slug": "convert-to-inferred",
+      "newUrl": "/docs/kb/convert-to-inferred",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Change cache location",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/change-cache-location",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/change-cache-location.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/change-cache-location.mdoc",
+      "slug": "change-cache-location",
+      "newUrl": "/docs/kb/change-cache-location",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Self-hosted remote cache",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/self-hosted-caching",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/self-hosted-caching.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/self-hosted-caching.mdoc",
+      "slug": "self-hosted-caching",
+      "newUrl": "/docs/kb/self-hosted-caching",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Skipping cache",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/skipping-cache",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/skipping-cache.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/skipping-cache.mdoc",
+      "slug": "skipping-cache",
+      "newUrl": "/docs/kb/skipping-cache",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Workspace watching",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/workspace-watching",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/workspace-watching.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/workspace-watching.mdoc",
+      "slug": "workspace-watching",
+      "newUrl": "/docs/kb/workspace-watching",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Terminal UI",
+      "category": "Tasks & caching",
+      "oldUrl": "/docs/guides/tasks--caching/terminal-ui",
+      "sourceFile": "astro-docs/src/content/docs/guides/Tasks & Caching/terminal-ui.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/terminal-ui.mdoc",
+      "slug": "terminal-ui",
+      "newUrl": "/docs/kb/terminal-ui",
+      "tags": [
+        "Tasks & caching"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 62,
+          "text": "![Terminal UI Help](../../../../assets/guides/running-tasks/tui-help.png)"
+        }
+      ]
+    },
+    {
+      "title": "Nx Agents at scale",
+      "category": "Benchmarks",
+      "oldUrl": "/docs/reference/benchmarks/nx-agents",
+      "sourceFile": "astro-docs/src/content/docs/reference/Benchmarks/nx-agents.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-agents.mdoc",
+      "slug": "nx-agents",
+      "newUrl": "/docs/kb/nx-agents",
+      "tags": [
+        "Benchmarks"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Large Next.js apps with caching",
+      "category": "Benchmarks",
+      "oldUrl": "/docs/reference/benchmarks/caching",
+      "sourceFile": "astro-docs/src/content/docs/reference/Benchmarks/caching.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/caching.mdoc",
+      "slug": "caching",
+      "newUrl": "/docs/kb/caching",
+      "tags": [
+        "Benchmarks"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "TSC batch mode",
+      "category": "Benchmarks",
+      "oldUrl": "/docs/reference/benchmarks/tsc-batch-mode",
+      "sourceFile": "astro-docs/src/content/docs/reference/Benchmarks/tsc-batch-mode.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/tsc-batch-mode.mdoc",
+      "slug": "tsc-batch-mode",
+      "newUrl": "/docs/kb/tsc-batch-mode",
+      "tags": [
+        "Benchmarks"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Compile Typescript Packages to Multiple Formats",
+      "category": "TypeScript",
+      "oldUrl": "/docs/technologies/typescript/guides/compile-multiple-formats",
+      "sourceFile": "astro-docs/src/content/docs/technologies/typescript/Guides/compile-multiple-formats.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/compile-multiple-formats.mdoc",
+      "slug": "compile-multiple-formats",
+      "newUrl": "/docs/kb/compile-multiple-formats",
+      "tags": [
+        "TypeScript"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Define Secondary Entrypoints for Typescript Packages",
+      "category": "TypeScript",
+      "oldUrl": "/docs/technologies/typescript/guides/define-secondary-entrypoints",
+      "sourceFile": "astro-docs/src/content/docs/technologies/typescript/Guides/define-secondary-entrypoints.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/define-secondary-entrypoints.mdoc",
+      "slug": "define-secondary-entrypoints",
+      "newUrl": "/docs/kb/define-secondary-entrypoints",
+      "tags": [
+        "TypeScript"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Enable Typescript Batch Mode",
+      "category": "TypeScript",
+      "oldUrl": "/docs/technologies/typescript/guides/enable-tsc-batch-mode",
+      "sourceFile": "astro-docs/src/content/docs/technologies/typescript/Guides/enable-tsc-batch-mode.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/enable-tsc-batch-mode.mdoc",
+      "slug": "enable-tsc-batch-mode",
+      "newUrl": "/docs/kb/enable-tsc-batch-mode",
+      "tags": [
+        "TypeScript"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Use JavaScript instead TypeScript",
+      "category": "TypeScript",
+      "oldUrl": "/docs/technologies/typescript/guides/js-and-ts",
+      "sourceFile": "astro-docs/src/content/docs/technologies/typescript/Guides/js-and-ts.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/js-and-ts.mdoc",
+      "slug": "js-and-ts",
+      "newUrl": "/docs/kb/js-and-ts",
+      "tags": [
+        "TypeScript"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Switch to Workspaces and TS Project References",
+      "category": "TypeScript",
+      "oldUrl": "/docs/technologies/typescript/guides/switch-to-workspaces-project-references",
+      "sourceFile": "astro-docs/src/content/docs/technologies/typescript/Guides/switch-to-workspaces-project-references.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/switch-to-workspaces-project-references.mdoc",
+      "slug": "switch-to-workspaces-project-references",
+      "newUrl": "/docs/kb/switch-to-workspaces-project-references",
+      "tags": [
+        "TypeScript"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Use TypeScript 7.0",
+      "category": "TypeScript",
+      "oldUrl": "/docs/technologies/typescript/guides/typescript-7",
+      "sourceFile": "astro-docs/src/content/docs/technologies/typescript/Guides/typescript-7.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/typescript-7.mdoc",
+      "slug": "typescript-7",
+      "newUrl": "/docs/kb/typescript-7",
+      "tags": [
+        "TypeScript"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Buildable and publishable libraries",
+      "category": "TypeScript",
+      "oldUrl": "/docs/concepts/buildable-and-publishable-libraries",
+      "sourceFile": "astro-docs/src/content/docs/concepts/buildable-and-publishable-libraries.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/buildable-and-publishable-libraries.mdoc",
+      "slug": "buildable-and-publishable-libraries",
+      "newUrl": "/docs/kb/buildable-and-publishable-libraries",
+      "tags": [
+        "TypeScript"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "TypeScript project linking",
+      "category": "TypeScript",
+      "oldUrl": "/docs/concepts/typescript-project-linking",
+      "sourceFile": "astro-docs/src/content/docs/concepts/typescript-project-linking.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/typescript-project-linking.mdoc",
+      "slug": "typescript-project-linking",
+      "newUrl": "/docs/kb/typescript-project-linking",
+      "tags": [
+        "TypeScript"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Angular and Nx Version Matrix",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/guides/angular-nx-version-matrix",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/Guides/angular-nx-version-matrix.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/angular-nx-version-matrix.mdoc",
+      "slug": "angular-nx-version-matrix",
+      "newUrl": "/docs/kb/angular-nx-version-matrix",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Advanced Micro Frontends with Angular using Dynamic Federation",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/guides/dynamic-module-federation-with-angular",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/Guides/dynamic-module-federation-with-angular.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/dynamic-module-federation-with-angular.mdoc",
+      "slug": "dynamic-module-federation-with-angular",
+      "newUrl": "/docs/kb/dynamic-module-federation-with-angular",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Setup Module Federation with SSR for Angular",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/guides/module-federation-with-ssr",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/Guides/module-federation-with-ssr.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/angular-module-federation-with-ssr.mdoc",
+      "slug": "angular-module-federation-with-ssr",
+      "newUrl": "/docs/kb/angular-module-federation-with-ssr",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Nx and the Angular CLI",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/guides/nx-and-angular",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/Guides/nx-and-angular.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-and-angular.mdoc",
+      "slug": "nx-and-angular",
+      "newUrl": "/docs/kb/nx-and-angular",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 236,
+          "text": "![Nx Console screenshot](../../../../../assets/nx-console/nx-console-screenshot.webp)"
+        }
+      ]
+    },
+    {
+      "title": "Nx Devkit and Angular Devkit",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/guides/nx-devkit-angular-devkit",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/Guides/nx-devkit-angular-devkit.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-devkit-angular-devkit.mdoc",
+      "slug": "nx-devkit-angular-devkit",
+      "newUrl": "/docs/kb/nx-devkit-angular-devkit",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Setup incremental builds for Angular applications",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/guides/setup-incremental-builds-angular",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/Guides/setup-incremental-builds-angular.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/setup-incremental-builds-angular.mdoc",
+      "slug": "setup-incremental-builds-angular",
+      "newUrl": "/docs/kb/setup-incremental-builds-angular",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Use Environment Variables in Angular",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/guides/use-environment-variables-in-angular",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/Guides/use-environment-variables-in-angular.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/use-environment-variables-in-angular.mdoc",
+      "slug": "use-environment-variables-in-angular",
+      "newUrl": "/docs/kb/use-environment-variables-in-angular",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Using Tailwind CSS with Angular",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/guides/using-tailwind-css-with-angular-projects",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/Guides/using-tailwind-css-with-angular-projects.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/using-tailwind-css-with-angular-projects.mdoc",
+      "slug": "using-tailwind-css-with-angular-projects",
+      "newUrl": "/docs/kb/using-tailwind-css-with-angular-projects",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Migrating from Angular CLI",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/migration/angular",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/Migration/angular.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/angular.mdoc",
+      "slug": "angular",
+      "newUrl": "/docs/kb/angular",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Getting Started",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/angular-rspack/guides/getting-started",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/angular-rspack/Guides/getting-started.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/getting-started.mdoc",
+      "slug": "getting-started",
+      "newUrl": "/docs/kb/getting-started",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Handling Configurations",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/angular-rspack/guides/handling-configurations",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/angular-rspack/Guides/handling-configurations.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/handling-configurations.mdoc",
+      "slug": "handling-configurations",
+      "newUrl": "/docs/kb/handling-configurations",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Internationalization",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/angular-rspack/guides/internationalization",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/angular-rspack/Guides/internationalization.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/internationalization.mdoc",
+      "slug": "internationalization",
+      "newUrl": "/docs/kb/internationalization",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Migrate from Webpack",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/angular-rspack/guides/migrate-from-webpack",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/angular-rspack/Guides/migrate-from-webpack.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/migrate-from-webpack.mdoc",
+      "slug": "migrate-from-webpack",
+      "newUrl": "/docs/kb/migrate-from-webpack",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Create Config",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/angular-rspack/create-config",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/angular-rspack/create-config.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/create-config.mdoc",
+      "slug": "create-config",
+      "newUrl": "/docs/kb/create-config",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Create Server",
+      "category": "Angular",
+      "oldUrl": "/docs/technologies/angular/angular-rspack/create-server",
+      "sourceFile": "astro-docs/src/content/docs/technologies/angular/angular-rspack/create-server.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/create-server.mdoc",
+      "slug": "create-server",
+      "newUrl": "/docs/kb/create-server",
+      "tags": [
+        "Angular"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Adding Images, Fonts, and Files",
+      "category": "React",
+      "oldUrl": "/docs/technologies/react/guides/adding-assets-react",
+      "sourceFile": "astro-docs/src/content/docs/technologies/react/Guides/adding-assets-react.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/adding-assets-react.mdoc",
+      "slug": "adding-assets-react",
+      "newUrl": "/docs/kb/adding-assets-react",
+      "tags": [
+        "React"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Deploying Next.js applications to Vercel",
+      "category": "React",
+      "oldUrl": "/docs/technologies/react/guides/deploy-nextjs-to-vercel",
+      "sourceFile": "astro-docs/src/content/docs/technologies/react/Guides/deploy-nextjs-to-vercel.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/deploy-nextjs-to-vercel.mdoc",
+      "slug": "deploy-nextjs-to-vercel",
+      "newUrl": "/docs/kb/deploy-nextjs-to-vercel",
+      "tags": [
+        "React"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 31,
+          "text": "![New Vercel Project](../../../../../assets/guides/next/next-deploy-vercel-1.png)"
+        },
+        {
+          "line": 39,
+          "text": "![Existing Vercel Project](../../../../../assets/guides/next/next-deploy-vercel-2.png)"
+        },
+        {
+          "line": 86,
+          "text": "![Ignore build step](../../../../../assets/guides/next/next-deploy-vercel-3-2.png)"
+        }
+      ]
+    },
+    {
+      "title": "Setup Module Federation with SSR",
+      "category": "React",
+      "oldUrl": "/docs/technologies/react/guides/module-federation-with-ssr",
+      "sourceFile": "astro-docs/src/content/docs/technologies/react/Guides/module-federation-with-ssr.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/react-module-federation-with-ssr.mdoc",
+      "slug": "react-module-federation-with-ssr",
+      "newUrl": "/docs/kb/react-module-federation-with-ssr",
+      "tags": [
+        "React"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "React Compiler with Nx",
+      "category": "React",
+      "oldUrl": "/docs/technologies/react/guides/react-compiler",
+      "sourceFile": "astro-docs/src/content/docs/technologies/react/Guides/react-compiler.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/react-compiler.mdoc",
+      "slug": "react-compiler",
+      "newUrl": "/docs/kb/react-compiler",
+      "tags": [
+        "React"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "React Router with Nx",
+      "category": "React",
+      "oldUrl": "/docs/technologies/react/guides/react-router",
+      "sourceFile": "astro-docs/src/content/docs/technologies/react/Guides/react-router.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/react-router.mdoc",
+      "slug": "react-router",
+      "newUrl": "/docs/kb/react-router",
+      "tags": [
+        "React"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Use Environment Variables in React",
+      "category": "React",
+      "oldUrl": "/docs/technologies/react/guides/use-environment-variables-in-react",
+      "sourceFile": "astro-docs/src/content/docs/technologies/react/Guides/use-environment-variables-in-react.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/use-environment-variables-in-react.mdoc",
+      "slug": "use-environment-variables-in-react",
+      "newUrl": "/docs/kb/use-environment-variables-in-react",
+      "tags": [
+        "React"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Using Tailwind CSS with React",
+      "category": "React",
+      "oldUrl": "/docs/technologies/react/guides/using-tailwind-css-in-react",
+      "sourceFile": "astro-docs/src/content/docs/technologies/react/Guides/using-tailwind-css-in-react.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/using-tailwind-css-in-react.mdoc",
+      "slug": "using-tailwind-css-in-react",
+      "newUrl": "/docs/kb/using-tailwind-css-in-react",
+      "tags": [
+        "React"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "How to configure Next.js plugins",
+      "category": "React",
+      "oldUrl": "/docs/technologies/react/next/guides/next-config-setup",
+      "sourceFile": "astro-docs/src/content/docs/technologies/react/next/Guides/next-config-setup.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/next-config-setup.mdoc",
+      "slug": "next-config-setup",
+      "newUrl": "/docs/kb/next-config-setup",
+      "tags": [
+        "React"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Deploying Nuxt applications to Vercel",
+      "category": "Vue",
+      "oldUrl": "/docs/technologies/vue/nuxt/guides/deploy-nuxt-to-vercel",
+      "sourceFile": "astro-docs/src/content/docs/technologies/vue/nuxt/Guides/deploy-nuxt-to-vercel.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/deploy-nuxt-to-vercel.mdoc",
+      "slug": "deploy-nuxt-to-vercel",
+      "newUrl": "/docs/kb/deploy-nuxt-to-vercel",
+      "tags": [
+        "Vue"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 92,
+          "text": "![New Vercel Project](../../../../../../assets/guides/nuxt/nuxt-deploy-vercel-1.png)"
+        },
+        {
+          "line": 100,
+          "text": "![Existing Vercel Project](../../../../../../assets/guides/nuxt/nuxt-deploy-vercel-2.png)"
+        },
+        {
+          "line": 108,
+          "text": "![Ignore build step](../../../../../../assets/guides/nuxt/nuxt-deploy-vercel-3.png)"
+        }
+      ]
+    },
+    {
+      "title": "Set Up Application Proxies",
+      "category": "Node",
+      "oldUrl": "/docs/technologies/node/guides/application-proxies",
+      "sourceFile": "astro-docs/src/content/docs/technologies/node/Guides/application-proxies.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/application-proxies.mdoc",
+      "slug": "application-proxies",
+      "newUrl": "/docs/kb/application-proxies",
+      "tags": [
+        "Node"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Bundling for Deployment",
+      "category": "Node",
+      "oldUrl": "/docs/technologies/node/guides/bundling-node-projects",
+      "sourceFile": "astro-docs/src/content/docs/technologies/node/Guides/bundling-node-projects.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/bundling-node-projects.mdoc",
+      "slug": "bundling-node-projects",
+      "newUrl": "/docs/kb/bundling-node-projects",
+      "tags": [
+        "Node"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Pruning for Deployment",
+      "category": "Node",
+      "oldUrl": "/docs/technologies/node/guides/deploying-node-projects",
+      "sourceFile": "astro-docs/src/content/docs/technologies/node/Guides/deploying-node-projects.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/deploying-node-projects.mdoc",
+      "slug": "deploying-node-projects",
+      "newUrl": "/docs/kb/deploying-node-projects",
+      "tags": [
+        "Node"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Deploying AWS lambda in Node.js (deprecated)",
+      "category": "Node",
+      "oldUrl": "/docs/technologies/node/guides/node-aws-lambda",
+      "sourceFile": "astro-docs/src/content/docs/technologies/node/Guides/node-aws-lambda.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/node-aws-lambda.mdoc",
+      "slug": "node-aws-lambda",
+      "newUrl": "/docs/kb/node-aws-lambda",
+      "tags": [
+        "Node"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Deploying a Node App to Fly.io",
+      "category": "Node",
+      "oldUrl": "/docs/technologies/node/guides/node-server-fly-io",
+      "sourceFile": "astro-docs/src/content/docs/technologies/node/Guides/node-server-fly-io.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/node-server-fly-io.mdoc",
+      "slug": "node-server-fly-io",
+      "newUrl": "/docs/kb/node-server-fly-io",
+      "tags": [
+        "Node"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Add and Deploy Netlify Edge Functions with Node",
+      "category": "Node",
+      "oldUrl": "/docs/technologies/node/guides/node-serverless-functions-netlify",
+      "sourceFile": "astro-docs/src/content/docs/technologies/node/Guides/node-serverless-functions-netlify.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/node-serverless-functions-netlify.mdoc",
+      "slug": "node-serverless-functions-netlify",
+      "newUrl": "/docs/kb/node-serverless-functions-netlify",
+      "tags": [
+        "Node"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Wait for Tasks to Finish",
+      "category": "Node",
+      "oldUrl": "/docs/technologies/node/guides/wait-for-tasks",
+      "sourceFile": "astro-docs/src/content/docs/technologies/node/Guides/wait-for-tasks.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/wait-for-tasks.mdoc",
+      "slug": "wait-for-tasks",
+      "newUrl": "/docs/kb/wait-for-tasks",
+      "tags": [
+        "Node"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Incremental builds",
+      "category": ".NET",
+      "oldUrl": "/docs/technologies/dotnet/guides/incremental-builds",
+      "sourceFile": "astro-docs/src/content/docs/technologies/dotnet/Guides/incremental-builds.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/incremental-builds.mdoc",
+      "slug": "incremental-builds",
+      "newUrl": "/docs/kb/incremental-builds",
+      "tags": [
+        ".NET"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Migrate from @nx-dotnet/core",
+      "category": ".NET",
+      "oldUrl": "/docs/technologies/dotnet/guides/migrate-from-nx-dotnet-core",
+      "sourceFile": "astro-docs/src/content/docs/technologies/dotnet/Guides/migrate-from-nx-dotnet-core.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/migrate-from-nx-dotnet-core.mdoc",
+      "slug": "migrate-from-nx-dotnet-core",
+      "newUrl": "/docs/kb/migrate-from-nx-dotnet-core",
+      "tags": [
+        ".NET"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Faster Builds with Module Federation",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/concepts/faster-builds-with-module-federation",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/concepts/faster-builds-with-module-federation.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/faster-builds-with-module-federation.mdoc",
+      "slug": "faster-builds-with-module-federation",
+      "newUrl": "/docs/kb/faster-builds-with-module-federation",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 54,
+          "text": "![Host with implicit dependencies to remotes](../../../../../assets/concepts/module-federation/dep-graph-2.png)"
+        },
+        {
+          "line": 77,
+          "text": "![Nx Cloud integration for GitHub](../../../../../assets/concepts/module-federation/pull-request.png)"
+        },
+        {
+          "line": 411,
+          "text": "![Nx Cloud run details](../../../../../assets/concepts/module-federation/nx-cloud.png)"
+        }
+      ]
+    },
+    {
+      "title": "Manage Library Versions with Module Federation",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/concepts/manage-library-versions-with-module-federation",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/concepts/manage-library-versions-with-module-federation.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/manage-library-versions-with-module-federation.mdoc",
+      "slug": "manage-library-versions-with-module-federation",
+      "newUrl": "/docs/kb/manage-library-versions-with-module-federation",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 20,
+          "text": "![How Shared API works](../../../../../assets/concepts/module-federation/shared-api.png)"
+        },
+        {
+          "line": 67,
+          "text": "![How Nx determines library versions](../../../../../assets/concepts/module-federation/nx-library-version.png)"
+        }
+      ]
+    },
+    {
+      "title": "Micro Frontend Architecture",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/concepts/micro-frontend-architecture",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/concepts/micro-frontend-architecture.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/micro-frontend-architecture.mdoc",
+      "slug": "micro-frontend-architecture",
+      "newUrl": "/docs/kb/micro-frontend-architecture",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 71,
+          "text": "![Micro frontend setup with independent applications](../../../../../assets/concepts/module-federation/mfe-dep-graph.png)"
+        }
+      ]
+    },
+    {
+      "title": "Module Federation and Nx",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/concepts/module-federation-and-nx",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/concepts/module-federation-and-nx.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/module-federation-and-nx.mdoc",
+      "slug": "module-federation-and-nx",
+      "newUrl": "/docs/kb/module-federation-and-nx",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Nx Module Federation Technical Overview",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/concepts/nx-module-federation-technical-overview",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/concepts/nx-module-federation-technical-overview.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-module-federation-technical-overview.mdoc",
+      "slug": "nx-module-federation-technical-overview",
+      "newUrl": "/docs/kb/nx-module-federation-technical-overview",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 33,
+          "text": "![Nx Module Federation Host Serve Flow](../../../../../assets/concepts/module-federation/module-federation-host-serve-light.png)"
+        }
+      ]
+    },
+    {
+      "title": "Creating a Module Federation Host",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/guides/create-a-host",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/Guides/create-a-host.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/create-a-host.mdoc",
+      "slug": "create-a-host",
+      "newUrl": "/docs/kb/create-a-host",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Creating a Module Federation Remote",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/guides/create-a-remote",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/Guides/create-a-remote.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/create-a-remote.mdoc",
+      "slug": "create-a-remote",
+      "newUrl": "/docs/kb/create-a-remote",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Federate a Module",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/guides/federate-a-module",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/Guides/federate-a-module.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/federate-a-module.mdoc",
+      "slug": "federate-a-module",
+      "newUrl": "/docs/kb/federate-a-module",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "NxModuleFederationDevServerPlugin",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/guides/nx-module-federation-dev-server-plugin",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/Guides/nx-module-federation-dev-server-plugin.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-module-federation-dev-server-plugin.mdoc",
+      "slug": "nx-module-federation-dev-server-plugin",
+      "newUrl": "/docs/kb/nx-module-federation-dev-server-plugin",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "NxModuleFederationPlugin",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/guides/nx-module-federation-plugin",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/Guides/nx-module-federation-plugin.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-module-federation-plugin.mdoc",
+      "slug": "nx-module-federation-plugin",
+      "newUrl": "/docs/kb/nx-module-federation-plugin",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Using Tailwind CSS with Module Federation",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/guides/using-tailwind-css-with-module-federation",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/Guides/using-tailwind-css-with-module-federation.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/using-tailwind-css-with-module-federation.mdoc",
+      "slug": "using-tailwind-css-with-module-federation",
+      "newUrl": "/docs/kb/using-tailwind-css-with-module-federation",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Consumer and Provider",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/consumer-and-provider",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/consumer-and-provider.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/consumer-and-provider.mdoc",
+      "slug": "consumer-and-provider",
+      "newUrl": "/docs/kb/consumer-and-provider",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Vite Module Federation",
+      "category": "Module Federation",
+      "oldUrl": "/docs/technologies/module-federation/vite-module-federation",
+      "sourceFile": "astro-docs/src/content/docs/technologies/module-federation/vite-module-federation.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/vite-module-federation.mdoc",
+      "slug": "vite-module-federation",
+      "newUrl": "/docs/kb/vite-module-federation",
+      "tags": [
+        "Module Federation"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Custom Workspace ESLint Rules",
+      "category": "ESLint",
+      "oldUrl": "/docs/technologies/eslint/guides/custom-workspace-rules",
+      "sourceFile": "astro-docs/src/content/docs/technologies/eslint/Guides/custom-workspace-rules.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/custom-workspace-rules.mdoc",
+      "slug": "custom-workspace-rules",
+      "newUrl": "/docs/kb/custom-workspace-rules",
+      "tags": [
+        "ESLint"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Configuring ESLint with Typescript",
+      "category": "ESLint",
+      "oldUrl": "/docs/technologies/eslint/guides/eslint",
+      "sourceFile": "astro-docs/src/content/docs/technologies/eslint/Guides/eslint.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/eslint.mdoc",
+      "slug": "eslint",
+      "newUrl": "/docs/kb/eslint",
+      "tags": [
+        "ESLint"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Migrate to flat config",
+      "category": "ESLint",
+      "oldUrl": "/docs/technologies/eslint/guides/flat-config",
+      "sourceFile": "astro-docs/src/content/docs/technologies/eslint/Guides/flat-config.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/flat-config.mdoc",
+      "slug": "flat-config",
+      "newUrl": "/docs/kb/flat-config",
+      "tags": [
+        "ESLint"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "The dependency-checks rule",
+      "category": "ESLint",
+      "oldUrl": "/docs/technologies/eslint/eslint-plugin/guides/dependency-checks",
+      "sourceFile": "astro-docs/src/content/docs/technologies/eslint/eslint-plugin/Guides/dependency-checks.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/dependency-checks.mdoc",
+      "slug": "dependency-checks",
+      "newUrl": "/docs/kb/dependency-checks",
+      "tags": [
+        "ESLint"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "The enforce-module-boundaries rule",
+      "category": "ESLint",
+      "oldUrl": "/docs/technologies/eslint/eslint-plugin/guides/enforce-module-boundaries",
+      "sourceFile": "astro-docs/src/content/docs/technologies/eslint/eslint-plugin/Guides/enforce-module-boundaries.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/enforce-module-boundaries.mdoc",
+      "slug": "enforce-module-boundaries",
+      "newUrl": "/docs/kb/enforce-module-boundaries",
+      "tags": [
+        "ESLint"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "ESLint Plugin",
+      "category": "ESLint",
+      "oldUrl": "/docs/technologies/eslint/eslint-plugin/introduction",
+      "sourceFile": "astro-docs/src/content/docs/technologies/eslint/eslint-plugin/introduction.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/introduction.mdoc",
+      "slug": "introduction",
+      "newUrl": "/docs/kb/introduction",
+      "tags": [
+        "ESLint"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Configure Vite",
+      "category": "Vite",
+      "oldUrl": "/docs/technologies/build-tools/vite/guides/configure-vite",
+      "sourceFile": "astro-docs/src/content/docs/technologies/build-tools/vite/Guides/configure-vite.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/configure-vite.mdoc",
+      "slug": "configure-vite",
+      "newUrl": "/docs/kb/configure-vite",
+      "tags": [
+        "Vite"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "How to configure Webpack in your Nx workspace",
+      "category": "Webpack",
+      "oldUrl": "/docs/technologies/build-tools/webpack/guides/webpack-config-setup",
+      "sourceFile": "astro-docs/src/content/docs/technologies/build-tools/webpack/Guides/webpack-config-setup.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/webpack-config-setup.mdoc",
+      "slug": "webpack-config-setup",
+      "newUrl": "/docs/kb/webpack-config-setup",
+      "tags": [
+        "Webpack"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Webpack plugins",
+      "category": "Webpack",
+      "oldUrl": "/docs/technologies/build-tools/webpack/guides/webpack-plugins",
+      "sourceFile": "astro-docs/src/content/docs/technologies/build-tools/webpack/Guides/webpack-plugins.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/webpack-plugins.mdoc",
+      "slug": "webpack-plugins",
+      "newUrl": "/docs/kb/webpack-plugins",
+      "tags": [
+        "Webpack"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Component Testing",
+      "category": "Cypress",
+      "oldUrl": "/docs/technologies/test-tools/cypress/guides/cypress-component-testing",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/cypress/Guides/cypress-component-testing.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/cypress-component-testing.mdoc",
+      "slug": "cypress-component-testing",
+      "newUrl": "/docs/kb/cypress-component-testing",
+      "tags": [
+        "Cypress"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Using setupNodeEvents with Cypress preset",
+      "category": "Cypress",
+      "oldUrl": "/docs/technologies/test-tools/cypress/guides/cypress-setup-node-events",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/cypress/Guides/cypress-setup-node-events.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/cypress-setup-node-events.mdoc",
+      "slug": "cypress-setup-node-events",
+      "newUrl": "/docs/kb/cypress-setup-node-events",
+      "tags": [
+        "Cypress"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Cypress v11 Migration Guide",
+      "category": "Cypress",
+      "oldUrl": "/docs/technologies/test-tools/cypress/guides/cypress-v11-migration",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/cypress/Guides/cypress-v11-migration.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/cypress-v11-migration.mdoc",
+      "slug": "cypress-v11-migration",
+      "newUrl": "/docs/kb/cypress-v11-migration",
+      "tags": [
+        "Cypress"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Merge Atomized Outputs",
+      "category": "Playwright",
+      "oldUrl": "/docs/technologies/test-tools/playwright/guides/merge-atomized-outputs",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/playwright/Guides/merge-atomized-outputs.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/merge-atomized-outputs.mdoc",
+      "slug": "merge-atomized-outputs",
+      "newUrl": "/docs/kb/merge-atomized-outputs",
+      "tags": [
+        "Playwright"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Angular - Configuring styles and preprocessor options",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/angular-configuring-styles",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/angular-configuring-styles.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/angular-configuring-styles.mdoc",
+      "slug": "angular-configuring-styles",
+      "newUrl": "/docs/kb/angular-configuring-styles",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Angular - Set up Compodoc for Storybook on Nx",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/angular-storybook-compodoc",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/angular-storybook-compodoc.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/angular-storybook-compodoc.mdoc",
+      "slug": "angular-storybook-compodoc",
+      "newUrl": "/docs/kb/angular-storybook-compodoc",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Storybook best practices for making the most out of Nx",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/best-practices",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/best-practices.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/best-practices.mdoc",
+      "slug": "best-practices",
+      "newUrl": "/docs/kb/best-practices",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Configuring Storybook on Nx",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/configuring-storybook",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/configuring-storybook.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/configuring-storybook.mdoc",
+      "slug": "configuring-storybook",
+      "newUrl": "/docs/kb/configuring-storybook",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "How to configure Webpack and Vite for Storybook",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/custom-builder-configs",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/custom-builder-configs.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/custom-builder-configs.mdoc",
+      "slug": "custom-builder-configs",
+      "newUrl": "/docs/kb/custom-builder-configs",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "One main Storybook instance for all projects",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/one-storybook-for-all",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/one-storybook-for-all.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/one-storybook-for-all.mdoc",
+      "slug": "one-storybook-for-all",
+      "newUrl": "/docs/kb/one-storybook-for-all",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "One Storybook instance per scope",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/one-storybook-per-scope",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/one-storybook-per-scope.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/one-storybook-per-scope.mdoc",
+      "slug": "one-storybook-per-scope",
+      "newUrl": "/docs/kb/one-storybook-per-scope",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "One main Storybook instance using Storybook Composition",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/one-storybook-with-composition",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/one-storybook-with-composition.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/one-storybook-with-composition.mdoc",
+      "slug": "one-storybook-with-composition",
+      "newUrl": "/docs/kb/one-storybook-with-composition",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Set up Storybook for Angular Projects",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/overview-angular",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/overview-angular.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/overview-angular.mdoc",
+      "slug": "overview-angular",
+      "newUrl": "/docs/kb/overview-angular",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Set up Storybook for React Projects",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/overview-react",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/overview-react.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/overview-react.mdoc",
+      "slug": "overview-react",
+      "newUrl": "/docs/kb/overview-react",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Set up Storybook for Vue Projects",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/overview-vue",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/overview-vue.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/overview-vue.mdoc",
+      "slug": "overview-vue",
+      "newUrl": "/docs/kb/overview-vue",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Setting up Storybook Composition with Nx",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/storybook-composition-setup",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/storybook-composition-setup.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/storybook-composition-setup.mdoc",
+      "slug": "storybook-composition-setup",
+      "newUrl": "/docs/kb/storybook-composition-setup",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Setting up Storybook Interaction Tests with Nx",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/storybook-interaction-tests",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/storybook-interaction-tests.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/storybook-interaction-tests.mdoc",
+      "slug": "storybook-interaction-tests",
+      "newUrl": "/docs/kb/storybook-interaction-tests",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Upgrading Storybook",
+      "category": "Storybook",
+      "oldUrl": "/docs/technologies/test-tools/storybook/guides/upgrading-storybook",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/storybook/Guides/upgrading-storybook.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/upgrading-storybook.mdoc",
+      "slug": "upgrading-storybook",
+      "newUrl": "/docs/kb/upgrading-storybook",
+      "tags": [
+        "Storybook"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Migrate from @nx/vite",
+      "category": "Vitest",
+      "oldUrl": "/docs/technologies/test-tools/vitest/guides/migrating-from-nx-vite",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/vitest/Guides/migrating-from-nx-vite.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/migrating-from-nx-vite.mdoc",
+      "slug": "migrating-from-nx-vite",
+      "newUrl": "/docs/kb/migrating-from-nx-vite",
+      "tags": [
+        "Vitest"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Skip Building Dependencies",
+      "category": "Vitest",
+      "oldUrl": "/docs/technologies/test-tools/vitest/guides/testing-without-building-dependencies",
+      "sourceFile": "astro-docs/src/content/docs/technologies/test-tools/vitest/Guides/testing-without-building-dependencies.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/testing-without-building-dependencies.mdoc",
+      "slug": "testing-without-building-dependencies",
+      "newUrl": "/docs/kb/testing-without-building-dependencies",
+      "tags": [
+        "Vitest"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Nx vs Turborepo",
+      "category": "Comparisons",
+      "oldUrl": "/docs/guides/comparisons/nx-vs-turborepo",
+      "sourceFile": "astro-docs/src/content/docs/guides/comparisons/nx-vs-turborepo.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-vs-turborepo.mdoc",
+      "slug": "nx-vs-turborepo",
+      "newUrl": "/docs/kb/nx-vs-turborepo",
+      "tags": [
+        "Comparisons"
+      ],
+      "relativeReferenceLines": [
+        {
+          "line": 301,
+          "text": "![Nx Cloud CI report integrated into a GitHub PR](../../../../assets/guides/adopting-nx/ci-report.avif)"
+        },
+        {
+          "line": 308,
+          "text": "![Nx 21m 56s vs Turborepo 25m 32s on a single CI runner](../../../../assets/guides/adopting-nx/single-machine.avif)"
+        },
+        {
+          "line": 333,
+          "text": "![Nx Agents distributing work evenly across 4 machines](../../../../assets/guides/adopting-nx/nx-dte.avif)"
+        },
+        {
+          "line": 340,
+          "text": "![Turborepo binning with severely unbalanced agent utilization](../../../../assets/guides/adopting-nx/turbo-binning.avif)"
+        },
+        {
+          "line": 366,
+          "text": "![Time to green data: ~1h reduction per PR, 1h 24m developer time saved, 22.6% fewer context switches](../../../../assets/guides/adopting-nx/time-to-green.avif)"
+        },
+        {
+          "line": 378,
+          "text": "![Nx DTE across 12 Nx Agents - all agents have minimum 97% utilization](../../../../assets/guides/adopting-nx/dte-chart.avif)"
+        },
+        {
+          "line": 403,
+          "text": "![Nx project graph with projects grouped by directory](../../../../assets/guides/adopting-nx/nx-graph-grouping.avif)"
+        },
+        {
+          "line": 408,
+          "text": "![Nx project graph with clean nodes and clear connections](../../../../assets/guides/adopting-nx/nx-graph.avif)"
+        },
+        {
+          "line": 413,
+          "text": "![Turborepo graph rendering all nodes at once](../../../../assets/guides/adopting-nx/turbo-repo-graph.avif)"
+        }
+      ]
+    },
+    {
+      "title": "Nx vs Vite+",
+      "category": "Comparisons",
+      "oldUrl": "/docs/guides/comparisons/nx-vs-vite-plus",
+      "sourceFile": "astro-docs/src/content/docs/guides/comparisons/nx-vs-vite-plus.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-vs-vite-plus.mdoc",
+      "slug": "nx-vs-vite-plus",
+      "newUrl": "/docs/kb/nx-vs-vite-plus",
+      "tags": [
+        "Comparisons"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Nx vs Bazel",
+      "category": "Comparisons",
+      "oldUrl": "/docs/guides/comparisons/nx-vs-bazel",
+      "sourceFile": "astro-docs/src/content/docs/guides/comparisons/nx-vs-bazel.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-vs-bazel.mdoc",
+      "slug": "nx-vs-bazel",
+      "newUrl": "/docs/kb/nx-vs-bazel",
+      "tags": [
+        "Comparisons"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Nx vs Depot",
+      "category": "Comparisons",
+      "oldUrl": "/docs/guides/comparisons/nx-vs-depot",
+      "sourceFile": "astro-docs/src/content/docs/guides/comparisons/nx-vs-depot.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-vs-depot.mdoc",
+      "slug": "nx-vs-depot",
+      "newUrl": "/docs/kb/nx-vs-depot",
+      "tags": [
+        "Comparisons"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Nx vs Blacksmith",
+      "category": "Comparisons",
+      "oldUrl": "/docs/guides/comparisons/nx-vs-blacksmith",
+      "sourceFile": "astro-docs/src/content/docs/guides/comparisons/nx-vs-blacksmith.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-vs-blacksmith.mdoc",
+      "slug": "nx-vs-blacksmith",
+      "newUrl": "/docs/kb/nx-vs-blacksmith",
+      "tags": [
+        "Comparisons"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Nx vs Develocity",
+      "category": "Comparisons",
+      "oldUrl": "/docs/guides/comparisons/nx-vs-develocity",
+      "sourceFile": "astro-docs/src/content/docs/guides/comparisons/nx-vs-develocity.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-vs-develocity.mdoc",
+      "slug": "nx-vs-develocity",
+      "newUrl": "/docs/kb/nx-vs-develocity",
+      "tags": [
+        "Comparisons"
+      ],
+      "relativeReferenceLines": []
+    },
+    {
+      "title": "Nx vs Buildkite",
+      "category": "Comparisons",
+      "oldUrl": "/docs/guides/comparisons/nx-vs-buildkite",
+      "sourceFile": "astro-docs/src/content/docs/guides/comparisons/nx-vs-buildkite.mdoc",
+      "newSourceFile": "astro-docs/src/content/docs/kb/nx-vs-buildkite.mdoc",
+      "slug": "nx-vs-buildkite",
+      "newUrl": "/docs/kb/nx-vs-buildkite",
+      "tags": [
+        "Comparisons"
+      ],
+      "relativeReferenceLines": []
+    }
+  ]
+}
