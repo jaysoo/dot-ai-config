@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-07-19 | [cve-audit-2026-07-19.md](./cve-audit-2026-07-19.md) | Full re-derivation (nx/ocean had 70/69 commits since 07-13, too much churn for a pure delta). 5 findings resolved (`websocket-driver` + `decompress` in nx, `@modelcontextprotocol/sdk` in ocean, `storybook` in nx-labs (incidental), `@modelcontextprotocol/sdk`+`minimatch` in nx-console (deliberate)). 6 new findings, incl. **two live production websites** (nx-dev on vulnerable Next.js 14.2.35, astro-docs on vulnerable Astro 5.12.3). nx `rollup`/`vite` P0 now **39 days stale**, Vite fix target moved twice. Confirmed `@nx/angular-rspack@23.1.0` on npm still ships vulnerable `piscina@5.0.0` |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
