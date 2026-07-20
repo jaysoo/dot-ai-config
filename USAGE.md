@@ -8,13 +8,12 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | ---------------------- | ------- | ------------ | ----- |
 | cnw-update-templates   | skill   | 2026-07-15   | 3     |
 | dot-claude-guard       | skill   | 2026-07-15   | 14    |
-| op-request-reason      | skill   | 2026-07-15   | 2     |
+| op-request-reason      | skill   | 2026-07-20   | 3     |
 | github:yeet            | skill   | 2026-07-13   | 1     |
 | github:github          | skill   | 2026-07-13   | 1     |
 | use-plannotator-for-review | skill | 2026-07-13 | 1     |
-| caveman                | skill   | 2026-07-09   | 16    |
 | remotion-best-practices | skill   | 2026-07-13   | 3     |
-| caveman                | skill   | 2026-07-13   | 18    |
+| caveman                | skill   | 2026-07-18   | 20    |
 | 1-on-1-prep            | skill   | 2026-07-09   | 1     |
 | polygraph:polygraph    | skill   | 2026-07-13   | 4     |
 | freeze-capture         | skill   | 2026-07-06   | 1     |
@@ -42,7 +41,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | team-capacity-audit    | task    | 2026-04-09   | 12    |
 | cnw-stats-analyzer     | skill   | 2026-04-01   | 3     |
 | reflect                | skill   | 2026-04-01   | 2     |
-| linear-issue-style     | skill   | 2026-07-15   | 1     |
+| linear-issue-style     | skill   | 2026-07-18   | 3     |
 | site-checker           | skill   | 2026-04-01   | 0     |
 | summarize              | command | 2026-04-01   | 2     |
 | plan-week              | skill   | 2026-03-30   | 1     |
@@ -66,3 +65,5 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-07-11: invoked caveman, polygraph, nx-docs-style-check skills (DOC-549 high-impact pages session)
 2026-07-15: invoked cnw-update-templates, op-request-reason, dot-claude-guard skills (nx 23.1.0 migrate of 12 templates + TS-6 tsconfig fixes: baseUrl->relative paths, moduleResolution node->bundler, drop esModuleInterop:false/ignoreDeprecations, e2e types:[node], @types/node 20->24, angular narrowing bug; force-pushed 8 repos); patched cnw-update-templates skill (typecheck target fix + coverage assertion + 3c clean-install/fresh-scaffold verify + 3d deprecation scan)
 2026-07-15: invoked summarize, reflect, linear-issue-style skills (DOC-549 wrap-up); created docs-live-test skill
+2026-07-18: invoked caveman, linear-issue-style skills (Ahrefs keyword analysis, DOC-555); deduped caveman rows
+2026-07-18: invoked caveman, linear-issue-style skills (Ahrefs SEO audit -> DOC-556)

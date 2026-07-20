@@ -1,6 +1,13 @@
 ## Completed
 
 ### July 2026
+- [x] DOC-556: Ahrefs SEO error audit + fix plan (2026-07-18)
+  - Plan: `dot_ai/2026-07-18/tasks/nx-dev-ahrefs-seo-errors.md`
+  - Summary: Analyzed 14 Ahrefs error classes + 503 broken-backlink 404 targets; mapped fixes to astro-docs/nx-dev/nx-blog/Framer; created DOC-556 for Docs triage.
+
+- [x] DOC-555: Ahrefs keyword opportunity analysis + Linear plan (2026-07-18)
+  - Plan: `dot_ai/2026-07-18/tasks/ahrefs-keyword-opportunities.md`
+  - Summary: Analyzed 251-keyword Ahrefs US export for low-hanging opportunities relevant to Nx CLI/Cloud. Tiered plan (striking-distance pages, MFE cluster split, content gaps, Nx Cloud CI cluster) filed as DOC-555. Flagged DOC-549 overlap: export position data predates #36307 merge; re-pull mid-August before acting on those pages.
 
 - [x] DOC-552: Refine contextual search and KB article lists (2026-07-17)
   - Plan: `dot_ai/2026-07-17/tasks/doc-552-refine-contextual-search.md`

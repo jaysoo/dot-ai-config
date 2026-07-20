@@ -4,45 +4,45 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-549: Refresh/create high-impact SEO pages (nx) — MERGED #36307** (2026-07-15)
+1. **DOC-555: Ahrefs keyword opportunity analysis (nx.dev)** (2026-07-18)
+   - Summary: Analyzed 251-keyword Ahrefs US export for missed opportunities. Tiers: striking-distance (monorepo 6400v pos 15, esbuild, lerna, angular cli, pnpm workspaces), MFE cluster split (~30 variants, ~1700v, one page), gaps (monorepo tools, turborepo alternative, Nx Cloud CI cluster). Filed DOC-555 with plan; flagged that DOC-549 (#36307) already shipped several items and position data predates it - re-pull mid-August.
+   - Files: `dot_ai/2026-07-18/tasks/ahrefs-keyword-opportunities.md`
+
+2. **DOC-549: Refresh/create high-impact SEO pages (nx) — MERGED #36307** (2026-07-15)
    - Summary: GSC-driven refresh of ~14 pages: what-is-a-monorepo + monorepo-vs-polyrepo (renamed w/ redirects, Polygraph/meta-harness), pnpm/npm/yarn/bun workspaces, GitHub Actions integration (dup guide deleted), eslint flat-config (live-tested via fixture agent migration; 2 generator bugs found to file), MFE (v23 consumer/provider + @module-federation/vite), rspack, self-hosted cache, TS intro (absorbed maintain-typescript-monorepos), 12 intros re-opened monorepo-first. nx-vs-lerna drafted but SHELVED (positioning rethink); draft in dot_ai/2026-07-11/tasks/.
    - Files: `dot_ai/2026-07-11/tasks/doc-549-refresh-high-impact-pages.md`, `dot_ai/2026-07-15/SUMMARY.md`, Polygraph `doc-549-0ca12dc9`
 
-2. **nx-typescript-7: TS7 vs TS6 benchmark repo (100 packages)** (2026-07-09)
+3. **nx-typescript-7: TS7 vs TS6 benchmark repo (100 packages)** (2026-07-09)
    - Summary: New repo ~/projects/nx-typescript-7 modeled on jaysoo/nx-ts7 but with 100 generated packages (10 layers x 10, layered deps) and dual targets on EVERY project via double @nx/js/typescript plugin registration: build/typecheck = TS7 native tsc, build-tsc6/typecheck-tsc6 = TS6 tsc6. Iterated to 9.95x on nx run-many -t build: 25-pkg chain, checker-heavy pkgs (120 files x 48-kind unions). Wide graphs compress ratio to ~3-4x (nx parallelism = free multi-core for tsc6).
    - Files: `dot_ai/2026-07-09/tasks/nx-typescript-7-benchmark-repo.md`, `~/projects/nx-typescript-7`
 
-3. **Q-520: Sandbox dashboard add-on request control (ocean) — PR #12211 MERGED** (2026-07-08)
+4. **Q-520: Sandbox dashboard add-on request control (ocean) — PR #12211 MERGED** (2026-07-08)
    - Summary: Sandbox violations dashboard add-on CTA. Admins enable inline (confirm -> provision flow, pulls DEDICATED_COMPUTE_CLUSTER, $99/mo disclosed); non-admin members request -> per-member doc (unique index `{organizationId,feature,requestedByUserId}`, 48h window, atomic duplicate-key claim) + Mandrill email to all org admins. Pure fns (`buildSandboxAddOnCta`, `buildEnableAddOnSelection`) for mock-free tests + Playwright e2e. Merged after jaysoo (per-user + drop over-mocked specs), Plannotator (restore unique index + duplicate-key re-read), Graphite (`MongoId`/`convertToObjectId`) review rounds. Jack still to publish Mandrill template `nx-cloud-plan-add-on-requested`.
    - Files: `dot_ai/2026-07-08/SUMMARY.md`, `dot_ai/2026-07-02/tasks/q-520-sandbox-dashboard-add-on-toggle.md`, Polygraph `q-520-add-on-toggle-ee2a2bed`
 
-4. **DOC-544: Refresh Angular blog posts and docs pages (nx + nx-blog) — MERGED (#36276 + #53)** (2026-07-07)
+5. **DOC-544: Refresh Angular blog posts and docs pages (nx + nx-blog) — MERGED (#36276 + #53)** (2026-07-07)
    - Summary: Pageview-driven Angular content audit (inventory posted as Linear comment). nx draft PR #36276 (`bca199ffdb`): /angular/plugins/* 404 redirect (65k reqs/30d), API pages link to plugin intros, Nx Cloud-forward intro + CLI comparison table, nx-and-angular/migration/MF guide refreshes, fixed dead URL in init-local.ts. nx-blog draft PR #53 (`4187e46`): 4 posts refreshed (architecting, testing/vitest-angular, state mgmt retitled 2026, 2022 tailwind banner). Deferred: new signals/NgRx content.
    - Files: `dot_ai/2026-07-07/tasks/doc-544-angular-content-refresh.md`, Polygraph `doc-554-angular-content-6732d8a8`
 
-5. **NXC-4606: Enable remote cache from TUI perf report (nx) — draft PRs #36255 (new) + #36250 (kept for later)** (2026-07-07)
+6. **NXC-4606: Enable remote cache from TUI perf report (nx) — draft PRs #36255 (new) + #36250 (kept for later)** (2026-07-07)
    - Summary: Revised approach in #36255: perf-report popup gets inline "[ Enable remote cache ]" button + "Enable remote cache: <shift>+c" footer hint when unconnected; shift+c/click runs headless nx connect and prints the short URL centered at the popup bottom; hidden when connected. Original footer-status + ConnectPopup approach stays draft on #36250. Both live-verified against staging; nx-tui onboarding source accepted by staging.
    - Files: `dot_ai/2026-07-06/tasks/nxc-4606-tui-not-connected-status.md`, PRs https://github.com/nrwl/nx/pull/36255 + https://github.com/nrwl/nx/pull/36250, Polygraph `nxc-4606-e6f49ee0`
 
-6. **NXC-2793: Lockfile throws errors intermittently (nx)** (2026-07-05)
+7. **NXC-2793: Lockfile throws errors intermittently (nx)** (2026-07-05)
    - Summary: Intermittent "Source project does not exist: npm:x" from nx/js/dependencies-and-lockfile plugin; daemon-state related, nx reset clears. Landscape scan + code trace + repro hunt.
    - Files: `dot_ai/2026-07-05/tasks/nxc-2793-lockfile-intermittent-errors.md`
 
-7. **NXC-3510: Node executor may not release ports on shutdown (nx)** (2026-07-05)
+8. **NXC-3510: Node executor may not release ports on shutdown (nx)** (2026-07-05)
    - Summary: Verified 21.x orphan bug (fixed by #33655 in 23) + still-live watch-restart EADDRINUSE (killTree resolves on dispatch not exit). Fix: native killProcessTreeGraceful, vendored kill-tree deleted, e2e validated both directions. Draft PR #36230.
    - Files: `dot_ai/2026-07-05/tasks/nxc-3510-node-executor-port-release.md`
 
-8. **PR #34890: rebase + green (nx, vite ts paths custom targets)** (2026-07-03)
+9. **PR #34890: rebase + green (nx, vite ts paths custom targets)** (2026-07-03)
    - Summary: Community PR (shairez) stale since March. Rebased clean onto master; root-caused CI failure (test-ci collides with @nx/vitest atomizer ciTargetName); fixing coordination-plugin unhandled rejection (BatchFunctionRunner no catch, kill(2) -> code null spurious reject) + e2e test target defs.
    - Files: `dot_ai/2026-07-03/tasks/pr-34890-rebase-vite-ts-paths.md`
 
-9. **DOC-537: SEO docs overhaul (nx.dev)** (2026-06-25)
+10. **DOC-537: SEO docs overhaul (nx.dev)** (2026-06-25)
    - Summary: GSC-driven SEO pass. #36088 MERGED (nx/pnpm workspace foundation). #36105 DRAFT: 33 tech intros -> "Nx with <Tech>" + "Nx scales your <Tech> monorepo" descriptions + listing-page links, standardized "Set up CI" -> /docs/getting-started/setup-ci on every overview, Angular = angular monorepo landing, Module Federation overview rewrite (research + judge panel, consumer/provider generators), Next.js/Express/NestJS use CNW templates.
    - Files: `dot_ai/2026-06-25/SUMMARY.md`, `dot_ai/2026-06-23/tasks/seo-gsc-query-analysis.md`, PRs #36088 (merged) / #36105 (draft), Polygraph `seo-research-80058b7a`
-
-10. **NXC-4590: nx migrate crash with --include=optional (nx) — PR #36087 MERGED** (2026-06-23)
-   - Summary: `nx migrate --include=optional` crashed with "Cannot read properties of undefined (reading 'version')" in `generateMigrationsJsonAndUpdatePackageJson` (surfaced migrating ocean to latest Nx). The 4th arg to `writePromptMigrationFiles` read `packageUpdates[walkedTargetPackage].version` unguarded; under optional the Migrator's `applyIncludeFilter()` deletes every required-closure member (the target is always in its own required set) from `packageUpdates`, so that entry is deterministically undefined. Not ocean-specific. Fix hoisted the already-safe `?.version ?? opts.targetVersion` (used by analytics 18 lines below) above the call (+8/-4). Exported the fn + regression test on the orchestration seam (existing Migrator-level tests stop before the crash); fails pre-fix with the exact TypeError. build-base/lint/migrate.spec.ts (210/210) green.
-   - Files: `dot_ai/2026-06-23/tasks/nxc-4590-migrate-optional-crash.md`, PR https://github.com/nrwl/nx/pull/36087, Polygraph session `migrate-error-c1c6a147`
 
 ## TODO
 
@@ -153,6 +153,7 @@
 
 ## Active Claude Sessions
 
+- /Users/jack/projects/nx-worktrees/NXC-4179 (branch: NXC-4179) — NXC-4179 re-enable e2e tests skipped for lodash@4.18.0 assignWith bug (revert #35104, lodash 4.18.1 verified). Draft PR #36408; storybook-angular serve stays skipped (NXC-4690: @storybook/angular peers vs Angular 22 + TS 6). Watch e2e CI, then mark ready. Polygraph `nimble-cheetah-04f2c982` (2026-07-20)
 - /Users/jack/projects/nx-worktrees/NXC-4606 (branch: NXC-4606-report-connect) — NXC-4606 revised: perf-report "Enable remote cache" button/hint + centered short URL, draft PR #36255 (old approach kept on #36250 / branch NXC-4606). Review + CI pending. Plan: `dot_ai/2026-07-06/tasks/nxc-4606-tui-not-connected-status.md`, Polygraph `nxc-4606-e6f49ee0` (2026-07-07)
 - /Users/jack/projects/nx-worktrees/NXC-2793 (branch: NXC-2793) — NXC-2793 intermittent lockfile "Source project does not exist: npm:x" graph errors: landscape scan, code trace, repro, fix. Plan: `dot_ai/2026-07-05/tasks/nxc-2793-lockfile-intermittent-errors.md`, Polygraph `nxc-2793-bc2a19f2` (2026-07-05)
 - /Users/jack/projects/nx (branch: feature/nxc-3510-node-executor-port-release) — NXC-3510 fixed, draft PR #36230 awaiting CI. Plan: `dot_ai/2026-07-05/tasks/nxc-3510-node-executor-port-release.md`, Polygraph `nxc-3510-16626f3c` (2026-07-05)
