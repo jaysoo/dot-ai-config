@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-07-20 | [cve-audit-2026-07-20.md](./cve-audit-2026-07-20.md) | **New CRITICAL**: GHSA-vp3h-ghgh-jr7g Zip-Slip RCE, unpatched in deprecated `@nx/*-cache` packages (latest `5.0.7`) — `nx` core itself already fixed at 23.1.0. **New CRITICAL, no fix available**: `vm2` sandbox-escape/RCE chain in nx-labs (`release-it`→`proxy-agent`→`pac-resolver`→`degenerator`→vm2), needs `release-it` major upgrade. 3 resolved (`@modelcontextprotocol/sdk` in ocean, `storybook` in nx-labs, `minimatch` in nx-console). nx `rollup`/`vite` now **40 days stale** |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
