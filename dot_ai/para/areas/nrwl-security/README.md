@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-07-21 | [cve-audit-2026-07-21.md](./cve-audit-2026-07-21.md) | Full fresh scan (not a delta) — first re-verification of nx-labs/nx-console since 07-10. 3 items resolved/partially resolved (nx-labs `storybook`, ocean `@modelcontextprotocol/sdk`, ocean `tar` root pin — but not the client-bundle copy customers actually download). nx `rollup`/`vite` now **41 days stale**. **New:** published `nx`/`@nx/*`/`nx-cloud` ship outdated `axios` pins (nx-cloud: ~9 open CVEs) affecting every fresh install; 12 CRITICAL vm2 sandbox-escape advisories in nx-labs (traced to release tooling, not shipped); several other new CRITICAL findings in nx-labs/nx-console not yet path-traced |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
