@@ -2,7 +2,7 @@
 name: dot-claude-guard
 description: >
   Intercepts edits to ~/.claude/, ~/.codex/, and ~/.config/ synced files and redirects to
-  ~/projects/dot-ai-config/. Triggers when modifying CLAUDE.md, AGENTS.md, skills,
+  ~/projects/dot-ai-config/. Triggers when modifying CLAUDE.md, AGENTS.md, CODEX.md, skills,
   Claude Code commands/settings, or dotfiles (kitty, fish, nvim, mise, git).
   Also logs skill/command invocations to the usage tracker.
 ---
@@ -15,7 +15,7 @@ description: >
 
 Activate whenever you are about to:
 - Edit, write, or create files under `~/.claude/` (CLAUDE.md, skills/*, commands/*, settings.json, settings.local.json)
-- Edit, write, or create files under `~/.codex/` (AGENTS.md, skills/*)
+- Edit, write, or create files under `~/.codex/` (AGENTS.md, CODEX.md, skills/*)
 - Edit, write, or create files under `~/.config/kitty/`, `~/.config/fish/`, `~/.config/nvim/`, `~/.config/mise/`
 - Edit `~/.gitconfig`, `~/.gitignore_global`, or `~/.tmux.conf`
 - Modify any skill or command content
@@ -32,6 +32,7 @@ Activate whenever you are about to:
    | `~/.claude/settings.json` | `~/projects/dot-ai-config/dot_claude/settings.json` |
    | `~/.claude/settings.local.json` | `~/projects/dot-ai-config/dot_claude/settings.local.json` |
    | `~/.codex/AGENTS.md` | `~/projects/dot-ai-config/dot_claude/AGENTS.md` |
+   | `~/.codex/CODEX.md` | `~/projects/dot-ai-config/dot_claude/CODEX.md` |
    | `~/.codex/skills/<name>/SKILL.md` | `~/projects/dot-ai-config/dot_claude/skills/<name>/SKILL.md` |
    | `~/.config/kitty/*` | `~/projects/dot-ai-config/kitty/*` |
    | `~/.config/fish/config.fish` | `~/projects/dot-ai-config/fish/config.fish` |

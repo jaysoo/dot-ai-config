@@ -34,6 +34,10 @@
   - Plan: `dot_ai/2026-07-22/tasks/doc-552-fix-ci.md`
   - Summary: Moved 15 existing Vale heading exemptions to their new Knowledge Base paths and fixed two canonical links. Rebased the single squashed commit onto current master at `2cbf400fe6` and amended locally to `6b9ff9feb5`. Vale, link validation, formatting, lint, the docs test/build chain, and pre-push passed; not pushed.
 
+- [x] Codex CLI config compatibility audit (2026-07-21)
+  - Plan: `dot_ai/2026-07-21/tasks/codex-cli-config-compatibility-audit.md`
+  - Summary: Documented Codex alongside Claude, extended the synced-destination guard to `~/.codex`, and removed the scan workflows' runtime dependency on `~/.claude`; recorded product-specific settings, MCP setup, and command-variant questions for follow-up.
+
 - [x] DOC-552: Resolve master conflicts (2026-07-21)
   - Plan: `dot_ai/2026-07-21/tasks/doc-552-resolve-master-conflicts.md`
   - Summary: Rebased the Knowledge Base restructuring onto `origin/master` at `1839d32913`, preserving master's consolidated environment-variable content and retaining a single local commit at `4d48ee1f7f`. Formatting, lint, production build, redirect audit, and pre-push pass; Vale remains at the known baseline, and link validation reports two unchanged stale links from the new master environment-variable page.

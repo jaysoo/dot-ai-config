@@ -66,7 +66,7 @@ If in doubt about whether a file is synced, check `sync.sh`.
 Skills live in `dot_claude/skills/<name>/` and sync to `~/.codex/skills/`. Claude Code slash commands live in `dot_claude/commands/*.md`; reusable Codex workflows should be skills.
 
 - **Commands** — user-triggered via `/command-name`. Examples: `dictate`, `plan-task`, `summarize`, `reflect`, `brainstorm`, `review-pr`, `end-session`, `list-sessions`.
-- **Skills** — auto-invoked when their description matches. Examples: `dot-Codex-guard` (blocks direct edits to synced destinations), `scan-and-audit`, `nx-workspace-expert`, `visual-ui-tester`.
+- **Skills** — auto-invoked when their description matches. Examples: `dot-claude-guard` (blocks direct edits to synced destinations), `scan-and-audit`, `nx-workspace-expert`, `visual-ui-tester`.
 
 **After invoking any skill or command, bump `USAGE.md`** — find the row, update `Last Invoked` to today's date, increment `Count`. Add a new row if it's the first use.
 
@@ -117,7 +117,7 @@ Use the `/dictate` command — it handles the full workflow (creates the dictati
 
 ## Guardrails
 
-- `dot-Codex-guard` skill blocks direct edits to `~/.codex/` and other synced destinations — if it trips, re-route the edit to the source in this repo.
+- `dot-claude-guard` skill blocks direct edits to `~/.claude/`, `~/.codex/`, and other synced destinations — if it trips, re-route the edit to the source in this repo.
 - `NEVER` commit secrets (`.env`, tokens, API keys). `fish/fish_variables` and `fish/nxcloud.fish` are intentionally excluded from the sync for this reason.
 - Always use feature branches. Never push directly to `main`/`master`.
 - Every commit must come from Jack — no co-author trailers, no "Codex" attribution in the commit body.

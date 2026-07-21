@@ -1,6 +1,6 @@
 # dot-ai-config
 
-Source of truth for Jack's Claude Code and Codex CLI config, MCP servers, slash commands, skills, shell/editor dotfiles, and the `.ai/` knowledge base used across work repos. A git `pre-push` hook runs `sync.sh` on every push, copying files out to their destinations under `$HOME` and `~/.config/`.
+Source of truth for Jack's Claude Code, Codex CLI, and Gemini CLI config, MCP servers, slash commands, skills, shell/editor dotfiles, and the `.ai/` knowledge base used across work repos. A git `pre-push` hook runs `sync.sh` on every push, copying files out to their destinations under `$HOME` and `~/.config/`.
 
 **Working in this repo?** Read [`AGENTS.md`](./AGENTS.md) when using Codex CLI or [`CLAUDE.md`](./CLAUDE.md) when using Claude Code. Both cover the architecture, the `.ai/` ↔ `dot_ai/` mapping, and conventions for adding notes to syncs and 1:1s.
 
@@ -65,7 +65,7 @@ Stored in `dot_claude/skills/<name>/`. Auto-invoked when a description matches t
 
 | Skill | Triggers on |
 |-------|-------------|
-| `dot-claude-guard` | Edits to `~/.claude/` or other synced destinations — redirects to this repo |
+| `dot-claude-guard` | Edits to `~/.claude/`, `~/.codex/`, or other synced destinations — redirects to this repo |
 | `nx-workspace-expert` | Nx workspace questions |
 | `nx-docs-writer`, `nx-docs-style-check`, `nx-docs-qa` | Nx docs authoring/QA |
 | `nx-config-cache-check` | Nx config cache diagnostics |
@@ -102,7 +102,7 @@ Synced into `~/.claude/mcp-gemini/`. Provides `ask_gemini` and `gemini_code_revi
 
 ## Daily Workflow (quick reference)
 
-1. Inside a work repo with `.ai` → `dot_ai/` symlinked, Claude Code loads `dot_claude/CLAUDE.md` from `~/.claude/`; Codex loads `dot_claude/AGENTS.md` from `~/.codex/AGENTS.md`.
+1. Inside a work repo with `.ai` → `dot_ai/` symlinked, Claude Code loads `dot_claude/CLAUDE.md` from `~/.claude/`; Codex loads `dot_claude/AGENTS.md` from `~/.codex/AGENTS.md`. Agents can also use `.ai/para/resources/architectures/<repo>-architecture.md`.
 2. Task plans go in `.ai/yyyy-mm-dd/tasks/`. Dictations go in `.ai/yyyy-mm-dd/dictations/`. Summaries go in `.ai/yyyy-mm-dd/SUMMARY.md`.
 3. Ad-hoc notes for team syncs → `.ai/para/areas/syncs/<team>/README.md` under `## Upcoming Sync`. For 1:1s → `.ai/para/areas/personnel/<name>.md` under `## Upcoming Sync`. (See `AGENTS.md` or `CLAUDE.md` for the full rules.)
 4. On completion, archive tasks into `.ai/para/archive/COMPLETED.md` and remove from `.ai/TODO.md`.
