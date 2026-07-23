@@ -134,6 +134,16 @@ AI billable filter: only `apiKeySource=NX_CLOUD` (customer-key fixes excluded).
 - Skip invoice when: `isPrepaid`, in-trial-under-limit, no `stripeCustomerId`.
 - Feature flags: `NX_CLOUD_AGGREGATOR_FORCE_CREATE_BILLING_RECORDS`, `..._DISABLE_...`, `..._FORCE_PROCESS_BILLING`, `..._DISABLE_PROCESS_BILLING`.
 
+#### Churn Analytics (2026-07-23)
+Full workflow in `churn-analyzer` skill; worked example `.ai/2026-07-22/tasks/team-churn-{mongo-queries,report-2026-07}.md`.
+
+- Churn events: `billing.billingRecords` final period carries `organizationStatusChange.actionToTake` (TEAM_TO_FREE etc.); `cloudOrganizations.planTransitions` is the append-only audit trail. Aggregator already computes `analytics.monthlyOrganizationChurn` (est. lost revenue, usesDTE/usesVCS) - check before hand-rolling.
+- GOTCHA: `transitionOrgToFreePlan` (`HandleUnprocessedBillingRecords.kt:1012`) nulls `stripeCustomerId` on the org doc - read it from the billing record.
+- GOTCHA: `dailyProductUsage.agentsEnabled` = `featureFlags.enableManagedAgents` flag, NOT usage; agents usage = `computeCredits > 0`. Manual DTE consumes no compute credits.
+- `cacheHitRate30Days` (dailyProductUsage) = hits/all-tasks; caching is on for every plan, low = workload never matched (unstable inputs / everything-affected), not a config toggle.
+- Counterfactual "no Cloud" estimates: `analytics.dailyTaskStatistics` has per project+target `averageDuration.{cacheMissMs,remoteCacheHitMs,localCacheHitMs}` + `cacheStatusRatio` - remote hits re-run at own miss duration, keep local hits.
+- No invoice $ in Mongo; Stripe dashboard CSV export (1P Engineering/Stripe key is sk_test only). Team churn baseline 2026-07: ~1.4-1.5%/mo of ~1,044 Team orgs.
+
 #### Gaps for Itemized Network/Disk Billing
 - **Zero capture today** — no `bytes`/`networkBytes`/`storageBytes`/`dataTransferred`/`diskUsage` fields on any usage model.
 - No time-series/metered usage table; all aggregation monthly.
@@ -267,6 +277,12 @@ Public (unauthenticated) SVG badge at `/workspaces/{workspaceId}/sandbox-badge.s
 - Badge copy is product-decided wording (Jack): green "Build integrity by Nx", red "Build not protected". Cross-check CLOUD-4620 "Define badge set" for the official badge-copy set.
 
 ## Personal Work History
+
+### 2026-07-22/23
+
+- **Team churn analysis May-Jul 2026** (branch: main, no commits - data analysis for Joe)
+  - 47 Team->Free churns, ~$18k/mo MRR (~1.4-1.5%/mo of 1,044 Team orgs), segmented by value received; qawolf no-Cloud counterfactual from own miss durations (4.2 -> ~15-18 min CIPE wall). Bill-shock finding: invoice spikes alone weakly predict churn (1.1-1.3x lift); shock + thin value converts (archax-org 5.3x jump after enabling agents+AI same month).
+  - Artifacts: `.ai/2026-07-22/tasks/team-churn-mongo-queries.md` + `team-churn-report-2026-07.md` (definitions appendix); new `churn-analyzer` skill in dot-ai-config. See "Churn Analytics" section above for the schema gotchas found.
 
 ### 2026-07-08
 

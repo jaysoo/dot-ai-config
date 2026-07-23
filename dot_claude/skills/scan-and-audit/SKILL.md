@@ -168,7 +168,7 @@ EOF
 export GITHUB_TOKEN
 
 # Source helpers in this shell. Subagents do the same.
-source "$HOME/.claude/skills/scan-and-audit/gh-helpers.sh"
+source "$HOME/projects/dot-ai-config/dot_claude/skills/scan-and-audit/gh-helpers.sh"
 ```
 
 If the `op read` fails, abort early — every downstream scan needs the token.
@@ -321,7 +321,7 @@ Every subagent prepends the following bootstrap to its shell work so the
 helpers and token are available:
 
 ```bash
-source "$HOME/.claude/skills/scan-and-audit/gh-helpers.sh"
+source "$HOME/projects/dot-ai-config/dot_claude/skills/scan-and-audit/gh-helpers.sh"
 source "$SCAN_DATA_DIR/gh-env.sh"
 ```
 
