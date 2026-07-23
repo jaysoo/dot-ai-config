@@ -2,7 +2,7 @@
 
 ## Status
 
-Implementation complete and validated locally. Changes remain uncommitted and unpushed for review.
+Implementation complete and validated locally. The squashed branch commit was amended locally to remove the migration-only validator; the draft PR still points to the previous commit until a force-push is explicitly approved.
 
 Keep implementation progress in this document. Update the TODOs as each step is completed.
 
@@ -96,7 +96,7 @@ TODO:
 
 ### Step 2: Add a first-class KB metadata contract
 
-Extend `astro-docs/src/content.config.ts` with `tags: z.array(z.string()).optional()` for docs. Add a KB-specific validator that requires non-empty normalized tags for files under `src/content/docs/kb`, rejects duplicate route slugs, and verifies every migrated page exists in the redirect inventory.
+Extend `astro-docs/src/content.config.ts` with `tags: z.array(z.string()).optional()` for docs. Use a session-local migration audit to require non-empty normalized tags for files under `src/content/docs/kb`, reject duplicate route slugs, and verify every migrated page exists in the redirect inventory.
 
 Use the same `tags` field name as the blog model. Keep values stable and presentation-independent. Allow multiple tags per article. Preserve the 25 current user-facing category labels as the initial vocabulary so the migration remains mechanical and every old category index can redirect to its equivalent tag filter.
 
@@ -104,7 +104,7 @@ TODO:
 
 - [x] Add tags to the docs schema.
 - [x] Add KB metadata/slug/redirect validation.
-- [x] Add the validator as an Nx target and dependency of the existing `astro-docs:test` workflow.
+- [x] Run the migration audit locally without adding it to the permanent `astro-docs:test` workflow.
 - [x] Validate Nx cache inputs after changing project target configuration.
 
 ### Step 3: Move and annotate the content
@@ -185,7 +185,7 @@ TODO:
 - [x] Test representative redirects from every old category plus both collision cases through the redirect validator.
 - [x] Test the production-built gallery search and filters.
 - [ ] Run affected targets and affected e2e if requested before commit.
-- [ ] Run `pnpm nx prepush` before committing.
+- [x] Run `pnpm nx prepush` before committing.
 
 ## Implementation result
 
@@ -193,13 +193,13 @@ TODO:
 - Removed the 26 navigation-only legacy KB indexes and added 213 permanent redirects: 187 articles plus 26 indexes.
 - Replaced the KB sidebar tree with a direct navigation link and added a Templates-style landing page with tag chips, text search, combined filters, URL query state, result counts, cards, and an empty state.
 - Rewrote retained static-doc links to canonical KB URLs. Generated docs, package schemas, and CLI-emitted URLs remain intentionally unchanged and rely on redirects.
-- Added `astro-docs:validate-kb` to enforce flat sources, allowed tags, collision-free slugs, and redirect coverage.
+- Kept the migration audit as a session-local script rather than adding fixed DOC-552 inventory checks to the permanent test workflow.
 
 ## Validation result
 
 Passed:
 
-- `pnpm nx run astro-docs:validate-kb` — 187 articles, 25 tags, 213 redirects.
+- Session-local KB audit — 187 articles, 25 tags, 213 redirects.
 - `pnpm nx run astro-docs:format`.
 - explicit Prettier checks for changed Astro, TypeScript, JSON, and configuration files.
 - `pnpm nx run astro-docs:build` — 754 pages.

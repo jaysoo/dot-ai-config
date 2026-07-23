@@ -31,6 +31,62 @@
 
 ## 1:1 Notes
 
+### 2026-07-21
+
+**Topics:** Enterprise Billing Automation, Enterprise Pricing Model, Self-Serve Churn, SEO/AI Visibility
+
+**Enterprise Billing and Overage Automation:**
+- Goal: automate usage-based billing so Jack isn't manually chasing overages
+  - Current flow: customer exceeds credits/seats -> Jack renegotiates contract; hours per customer (3 hrs on a $60K expansion that should've been automatic)
+- New model: overages auto-invoiced via Elijah, no manual intervention
+  - Seat overages within reasonable limit not charged mid-contract; reassessed at renewal
+  - Elijah handles credit overage notifications + invoicing directly
+- Lighthouse: add enterprise line-item usage report so Elijah can view/update credit rates
+  - Enterprise credit rates stored internally (not hardcoded like team plan)
+  - Some AI credits may be included per contract terms
+- Security Scorecard = near-term example customer to model usage against
+
+**Enterprise Pricing Model:**
+- Joe revising pricing structure to reduce confusion vs team plan
+  - Enterprise looks ~5x more expensive because CIP credits bundled; target ~2x ($39/committer) to match SaaS norms
+- Base enterprise package proposal: $27,500
+  - 30 committers (25 paid + 5 free carried forward), 15M credits, single-tenant included
+  - Single-tenant enables upsell of Nx Agents + other enterprise features
+- Overage tiers: customer commits to a credit tier; that tier becomes their overage rate
+  - Incentivizes buying higher tiers upfront; removes surprise charges
+- Terminology: "contributor seats" -> "committers"
+- Elijah helping finalize credit tier numbers
+
+**Self-Serve Churn Analysis:**
+- Gross retention well below industry standard (~80% self-serve vs ~90% contracted)
+- Leading hypothesis: remote-cache-only adopters (no Agents) find it too expensive, churn
+  - December price hike likely triggered initial drop; now sustained monthly trend
+- Secondary: AI makes tool-switching easier (turborepo migration now days, not weeks)
+- Validate: correlate remote-cache-only usage with churn + invoice cost; check Stripe for cost-driven churn signals
+  - If confirmed: consider lowering remote cache pricing to reduce friction, funnel users toward Agents
+- Agents adoption = key stickiness signal; Montreal goal (more users on Agents) not yet achieved
+
+**SEO, Content, and AI Visibility:**
+- Unbranded content strategy: monorepo-topic articles that mention Nx naturally, not as lead (e.g. "how to consolidate poly repos")
+  - PMP/workspace targeting working: nx.dev page 1 for those terms
+- Comparison content ("5 reasons Nx over Turborepo") performs well; publish once, update periodically
+  - Joe drafted early versions with Claude from docs pages; needs review + Victor/Jeff buy-in before publishing
+- AI search narrative: surface Turborepo remote-cache API security concerns early in AI responses; currently buried
+- Jack's automated AI routines scan competitors + flag stale docs -> Slack DM report; can extend to Nx Cloud messaging refresh with Heidi
+- Gauge (AI search analytics): Joe shared 1-week trial access; Jack evaluates by Fri 2026-07-24
+  - Key question: actionable insights beyond Ahrefs?
+
+**Action Items:**
+- [ ] **Jack:** Sync with Elijah on enterprise billing mechanics — invoice flow, Lighthouse report format, backfill Security Scorecard usage to sense-check overage numbers (update by Thu 2026-07-23)
+- [ ] **Jack:** Pull self-serve usage + Stripe data to validate churn hypothesis; ping Joe with findings this week
+- [ ] **Jack:** Evaluate Gauge trial, share notes (by Fri 2026-07-24)
+- [ ] **Jack:** Write unbranded monorepo consolidation article (poly-repo -> monorepo via nx import; Nx + meta harnesses mentioned naturally)
+- [ ] **Jack:** Review Joe's Claude-drafted comparison articles; get Victor/Jeff sign-off on competitive framing before publishing
+
+**Transcript:** https://notes.granola.ai/t/56fad655-efbc-4e32-b772-b5890ce42570-00demib2
+
+---
+
 ### 2026-07-07
 
 **Topics:** PLG Acquisition, SEO/Docs, LLM Optimization, Competitor Comparisons, Awareness

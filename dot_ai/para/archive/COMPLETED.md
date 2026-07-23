@@ -1,6 +1,75 @@
 ## Completed
 
 ### July 2026
+
+- [x] Team plan churn analysis May-Jul 2026 (2026-07-23)
+  - Plan: `dot_ai/2026-07-22/tasks/team-churn-mongo-queries.md`
+  - Summary: 47 Team churns, ~$18k/mo MRR quantified via Mongo + Stripe CSV; segmented (high-value leavers / wind-downs / bill shock+low ROI / forced upgrades / zombies); qawolf no-Cloud counterfactual; Joe follow-up Q&A (spike buckets weakly predict churn, cache-only 55% of MRR, genuine low-ROI 28%); report `team-churn-report-2026-07.md` + HTML for Drive; created `churn-analyzer` skill.
+
+- [x] Review ocean PR #12477 (2026-07-22)
+  - Plan: `dot_ai/2026-07-22/tasks/review-ocean-pr-12477.md`
+  - Summary: Reviewed the 65-file app-shell/sidebar refactor and surfaced a legacy nested-breadcrumb separator regression, the failing Enterprise-vs-upsell e2e mismatch and resulting coverage risk, unconditional admin workspace flag checks, and a dead `RailSubRow.label` branch. Opened the exact PR head in Plannotator; no GitHub comments were posted.
+
+- [x] DOC-552: Investigate pre-move KB last-modified dates (2026-07-22)
+  - Plan: `dot_ai/2026-07-22/tasks/doc-552-preserve-kb-last-modified.md`
+  - Summary: Confirmed filesystem mtimes do not survive Git/Netlify and proved rename-following works only in a full clone. A depth-one deploy clone sees every KB file as newly added, so the prototype was removed and the reviewed PR was pushed without it. Preserving pre-move dates needs durable metadata or deeper build history.
+
+- [x] DOC-552: Clean up KB review leftovers (2026-07-22)
+  - Plan: `dot_ai/2026-07-22/tasks/doc-552-review-cleanup.md`
+  - Summary: Moved featured selection into article frontmatter, replaced generated timestamp snapshots with Starlight's Git metadata, and removed the custom timestamp middleware and breadcrumb override. Build, Vale, link validation, and pre-push checks passed.
+
+- [x] DOC-552: Sort Knowledge Base tables and unify back navigation (2026-07-22)
+  - Plan: `dot_ai/2026-07-22/tasks/doc-552-sort-kb-article-tables.md`
+  - Summary: Added accessible Title and Last modified sorting with newest-first defaults, kept Topics static and filtering intact, shared Back to Knowledge Base across topic/article pages, and removed KB breadcrumbs. Formatting, lint, build, test, internal-link validation, pre-push, and production visual/interaction checks passed. Amended locally to `a9d01937c8`; not pushed.
+
+- [x] DOC-552: Fix CI failures (2026-07-22)
+  - Plan: `dot_ai/2026-07-22/tasks/doc-552-fix-ci.md`
+  - Summary: Moved 15 existing Vale heading exemptions to their new Knowledge Base paths and fixed two canonical links. Rebased the single squashed commit onto current master at `2cbf400fe6` and amended locally to `6b9ff9feb5`. Vale, link validation, formatting, lint, the docs test/build chain, and pre-push passed; not pushed.
+
+- [x] DOC-552: Resolve master conflicts (2026-07-21)
+  - Plan: `dot_ai/2026-07-21/tasks/doc-552-resolve-master-conflicts.md`
+  - Summary: Rebased the Knowledge Base restructuring onto `origin/master` at `1839d32913`, preserving master's consolidated environment-variable content and retaining a single local commit at `4d48ee1f7f`. Formatting, lint, production build, redirect audit, and pre-push pass; Vale remains at the known baseline, and link validation reports two unchanged stale links from the new master environment-variable page.
+
+- [x] DOC-552: Remove Knowledge Base search customization (2026-07-21)
+  - Plan: `dot_ai/2026-07-21/tasks/remove-doc-552-search-customization.md`
+  - Summary: Removed the Starlight Search override, KB Pagefind adapter, KB/docs section filter, contextual boost, and duplicate KB search triggers. All 187 KB articles now use the existing `type:Guides` classification. Formatting, lint, production build, link validation, and pre-push passed; Vale remains at the pre-existing moved-content baseline. Amended locally to `4b03eac735`; not pushed.
+
+- [x] CLOUD-4877: GHA job summary for Nx Cloud DTE runs - research + ticket filed (2026-07-21)
+  - Plan: `dot_ai/2026-07-21/tasks/cloud-4877-gha-job-summary.md`
+  - Summary: Researched writing the DTE summary tables + Nx Cloud link to the GitHub Actions job summary (`$GITHUB_STEP_SUMMARY`). nx OSS already has exactly one writer (`performance-life-cycle.ts:198`, shipped #36077) and it fires for non-DTE cloud runs, but DTE main jobs emit nothing because `distributed-execution/runner.ts` calls `process.exit` before nx's `finally` flush. Everything in the terminal output is ocean `print-distributed-execution-summary.ts` (single call site, main job only, agents never reach it). Key insight: `start-ci-run` and `run-many` are separate STEPS of the same GHA job and GitHub concatenates step summaries per job, so the CIPE link and the tables are two independent one-file `appendFileSync` writes - no plumbing, no Kotlin change, and `process.exit` is a non-issue. Kotlin `CommentBuilder.kt:302` `createSummaryTable` is the port reference for markdown shape. Filed CLOUD-4877 (Medium, assigned Jack).
+
+- [x] DOC-552: Fix Knowledge Base topic badge alignment (2026-07-21)
+  - Plan: `dot_ai/2026-07-21/tasks/fix-kb-topic-badge-alignment.md`
+  - Summary: Reset inherited Starlight list-item spacing inside article-table topic lists so adjacent badges share the same vertical position. Lint, production build, pre-push, and dark/light responsive checks passed. Pushed `dcc367b009` to draft PR #36414.
+
+- [x] NXC-4179: Re-enable e2e tests after lodash fix (nx) - PR #36408 MERGED (2026-07-21)
+  - Plan: `dot_ai/2026-07-20/tasks/nxc-4179-re-enable-e2e-lodash.md`
+  - Summary: Reverted skip commit #35104 (17 tests re-enabled) after verifying lodash@4.18.1 fixes the `assignWith` bug. Two unmasked bugs fixed in the same PR: cypress CT generator duplicated the preset import on re-run (esbuild config loading rejects it since Cypress 15.14), and webpack-dev-server `port: 'auto'` base-8080 race between parallel e2e-ci tasks (per-process `WEBPACK_DEV_SERVER_BASE_PORT`). storybook-angular serve test stays skipped - @storybook/angular peers unresolvable on Angular 22 + TS 6, follow-up NXC-4690. Merged `b0238f4920`.
+  - Polygraph session `nimble-cheetah-04f2c982`, single repo nrwl/nx - https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/nimble-cheetah-04f2c982
+
+- [x] Polygraph session-review promo video + docs stills (2026-07-21)
+  - Summary: New Remotion composition `src/review/` in remotion-projects - 14s terminal explainer for the "interrogate the session behind a PR" docs page (open review mode -> trace the drift -> skills/personas -> write a repo rule). Rendered 1920x1080 (docs) + 1600x900 (X), plus four transparent per-step PNGs at 2x for readers who skip the animation. Outputs in `out/review/`.
+
+- [x] DOC-552: Restore expanded search Type filter (2026-07-20)
+  - Plan: `dot_ai/2026-07-20/tasks/restore-search-filter-default.md`
+  - Summary: Explicitly opened Pagefind's Type filter after the hidden section filter changed Pagefind's auto-open behavior. Lint, production build, pre-push, and browser checks passed; KB search remains prioritized. Pushed `159a22cc9b` to draft PR #36414.
+
+- [x] DOC-552: Fix Netlify last-modified build failure (2026-07-20)
+  - Plan: `dot_ai/2026-07-20/tasks/doc-552-netlify-last-modified-build.md`
+  - Summary: Fixed depth-1 deploy-preview builds by checking in the Git-derived baseline timestamps for all 187 KB articles, then layering available legacy and post-migration Git dates over that baseline. A shallow checkout resolves every article date; the forced Astro build, Pagefind, lint, formatting, and pre-push checks pass. Amended locally to `8c08e2d685`; the draft PR still needs the amended commit pushed.
+
+- [x] DOC-552: Restore production search with KB-only prioritization (2026-07-20)
+  - Plan: `dot_ai/2026-07-20/tasks/doc-552-restore-search-facets.md`
+  - Summary: Restored Starlight's production Pagefind UI and Type filters, added a KB-route-only ranking adapter, preserved normal documentation ordering, and retained hidden-header, `Cmd/Ctrl+K`, and in-page KB behavior. Build, lint, pre-push, and browser checks passed. Amended locally to `c57f978123`; draft PR #36414 remains at `040191bf88` pending explicit push approval.
+
+- [x] DOC-552: Keep the Knowledge Base validator session-local (2026-07-20)
+  - Plan: `dot_ai/2026-07-20/tasks/doc-552-localize-kb-validator.md`
+  - Summary: Removed the migration-specific validator and Nx target from the branch while retaining a runnable session-local audit. The audit, normal astro-docs test/build/lint suite, cache check, and pre-push gate pass. Amended locally to `5d1f182b40`; the draft PR remains at `040191bf88` pending explicit force-push approval.
+
+- [x] DOC-552: Apply updated docs style guide (2026-07-20)
+  - Plan: `dot_ai/2026-07-20/tasks/doc-552-style-guide-pass.md`
+  - Summary: Applied the current style guide to 26 topic descriptions and five featured-card descriptions while preserving mechanically moved article prose. Centered the contextual search close control and verified it across light/dark themes, mobile, and 1000-1536px desktop widths. Confirmed the old type facets disappeared because DOC-552 replaced Starlight's default Pagefind renderer for contextual KB/docs weighting; restoring them remains a product follow-up. Amended and pushed draft PR #36414 at `040191bf88`; targeted Vale, KB validation, build/lint/test, and pre-push checks passed.
+
 - [x] DOC-556: Ahrefs SEO error audit + fix plan (2026-07-18)
   - Plan: `dot_ai/2026-07-18/tasks/nx-dev-ahrefs-seo-errors.md`
   - Summary: Analyzed 14 Ahrefs error classes + 503 broken-backlink 404 targets; mapped fixes to astro-docs/nx-dev/nx-blog/Framer; created DOC-556 for Docs triage.

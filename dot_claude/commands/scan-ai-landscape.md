@@ -70,7 +70,7 @@ This scan tracks the ecosystem we're building into.
 ## GitHub Auth & Helpers
 
 ```bash
-source "$HOME/.claude/skills/scan-and-audit/gh-helpers.sh"
+source "$HOME/projects/dot-ai-config/dot_claude/skills/scan-and-audit/gh-helpers.sh"
 if [ -n "$SCAN_DATA_DIR" ] && [ -f "$SCAN_DATA_DIR/gh-env.sh" ]; then
   source "$SCAN_DATA_DIR/gh-env.sh"
 elif [ -z "$GITHUB_TOKEN" ]; then

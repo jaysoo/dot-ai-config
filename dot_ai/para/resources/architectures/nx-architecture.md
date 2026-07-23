@@ -420,6 +420,14 @@ Most packages have a `build` target that runs post-compilation steps (chmod, cop
 
 ## Personal Work History
 
+### 2026-07-20..21 - NXC-4179: Re-enable e2e tests after lodash fix (MERGED #36408)
+- **Branch**: `NXC-4179` | **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4179` | **Merge**: `b0238f4920` (2026-07-21) | **PR**: https://github.com/nrwl/nx/pull/36408 | **Polygraph**: `nimble-cheetah-04f2c982` (nrwl/nx) | Linear NXC-4179; follow-up NXC-4690
+- **What**: Reverted skip commit #35104 (18 tests skipped 2026-03-31 for lodash@4.18.0 `assignWith is not defined` in `lodash/template` via html-webpack-plugin). lodash@4.18.1 (published next day) fixes it - verified by repro both directions with `require('lodash/template')`.
+- **Revert conflicts resolved deliberately**: kept `reservePort` refactor (#35325); kept root-level-tailwind CT test deleted (#35049 removed Tailwind generators).
+- **Kept skipped**: storybook-angular serve test - `@storybook/angular@10.5.2` (latest) peers `typescript ^4.9||^5` and pulls `@angular-devkit/build-angular`; unresolvable on Angular 22 + TS ~6.0.3 workspaces (deterministic npm ERESOLVE in the generator install). NXC-4690.
+- **Two bugs unmasked by re-enabling** (both fixed in the PR; see Gotchas below): cypress CT generator import duplication, webpack-dev-server 8080 port race.
+- **Process notes**: local validation via `nx run e2e-<x>:e2e-local --testPathPatterns=<file>` for react CT, react storybook, angular CT app suites; the `e2e-plugin nx-plugin-ts-solution` CI failure ("Cannot find project" right after generate) was an unrelated daemon/graph flake that passed on retry.
+
 ### 2026-07-11..15 - DOC-549: Refresh high-impact SEO pages (MERGED #36307)
 
 Branch `DOC-549`, ~30 commits squash-merged 2026-07-15. GSC-driven refresh: decisions pages renamed (`what-is-a-monorepo`, `monorepo-vs-polyrepo`) with redirects; 4 workspace pages as standalone guides with an Nx arc at the end (before/after tasks, targetDefaults incl. `continuous: true`, Nx Cloud CI); GitHub Actions integration rewrite (dup "GitHub Integration" source-control guide DELETED + redirected; workflow yaml on Node 24 / checkout@v7 / setup-node@v6 while the ci-workflow generator template still emits node 20/@v4 - follow-up NXC to file); eslint flat-config rewrite (agent `llm_copy_prompt` at top, ts-eslint v8 removed-rules encoded on-page, live-tested via a fixture workspace + page-only agent migration; found 2 convert-to-flat-config generator bugs to file: drops override `parser` into compat.config, pins @eslint/eslintrc@^2 on ESLint 9); MFE architecture on v23 consumer/provider + @module-federation/vite; TS intro absorbed `features/maintain-typescript-monorepos`; 12 tech intros re-opened monorepo-first (plugin in para 2). Polygraph terms: meta-harness (metaharness.tools) + synthetic monorepo on monorepo-vs-polyrepo. Multi-agent pipeline (SEO panel -> drafters -> 2 review rounds) then ~2 days of live review with Jack; his content-review corrections captured in memory `feedback_nx_docs_content_review_patterns`.
@@ -988,6 +996,16 @@ Branch `DOC-549`, ~30 commits squash-merged 2026-07-15. GSC-driven refresh: deci
 - **Purpose**: Preserve blog search functionality during docs migration to Astro
 
 ## Design Decisions & Gotchas
+
+### Cypress 15.14+ loads TS configs via esbuild - duplicate imports are fatal
+- **Issue**: Re-running `cypress-component-configuration` on an already-configured project crashed CT with `The symbol "nxComponentTestingPreset" has already been declared` (esbuild, at config load).
+- **Root cause**: `addDefaultCTConfig` (`packages/cypress/src/utils/config.ts`) guarded the `component:` property but prepended the preset import UNCONDITIONALLY - and so did its callers before it. Masked for years: ts-node/CJS transpile renames duplicate named imports to distinct vars; Cypress 15.14+ bundles the config with esbuild, which enforces ESM redeclaration rules.
+- **Fix** (#36408): tsquery guard `:matches(ImportSpecifier, BindingElement) Identifier[name="nxComponentTestingPreset"]` before prepending; re-run is now a no-op. Pattern applies to any "prepend an import to generated config" util.
+
+### webpack-dev-server `port: 'auto'` races on base 8080 across processes
+- **Issue**: Parallel e2e-ci tasks on one agent (post-#35325) intermittently kill Cypress CT with `EADDRINUSE 127.0.0.1:8080` (both buildable-lib CT tests, attempt 2 of #36408).
+- **Root cause**: `@cypress/webpack-dev-server` passes `port: 'auto'`; webpack-dev-server 5 probes upward from a FIXED base (8080, `Server.js:529`) - two simultaneous startups both see 8080 free, one loses. Honors `WEBPACK_DEV_SERVER_BASE_PORT`.
+- **Fix** (#36408): `e2e/utils/get-env-info.ts` sets a per-jest-process `WEBPACK_DEV_SERVER_BASE_PORT` (pid-derived) so probes start in disjoint ranges. The underlying race still exists for real users running parallel webpack CT tasks - candidate product fix if reported.
 
 ### @nx/vite generator-snapshot specs need `--experimental-vm-modules` locally
 - **Issue**: Running `nx test vite` locally fails ~every generator snapshot with the output appearing unformatted. Console shows `Could not format <file>. Error: "A dynamic import callback was invoked without --experimental-vm-modules"` from `packages/devkit/src/generators/format-files.ts`.
