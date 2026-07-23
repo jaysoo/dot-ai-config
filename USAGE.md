@@ -14,7 +14,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | use-plannotator-for-review | skill | 2026-07-13 | 1     |
 | remotion-best-practices | skill   | 2026-07-13   | 3     |
 | caveman                | skill   | 2026-07-23   | 26    |
-| 1-on-1-prep            | skill   | 2026-07-09   | 1     |
+| 1-on-1-prep            | skill   | 2026-07-23   | 2     |
 | polygraph:polygraph    | skill   | 2026-07-21   | 5     |
 | freeze-capture         | skill   | 2026-07-06   | 1     |
 | blog-writing           | skill   | 2026-07-03   | 1     |

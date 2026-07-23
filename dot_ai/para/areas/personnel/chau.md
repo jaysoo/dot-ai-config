@@ -97,6 +97,28 @@ Keeps Remix/React Router/TypeScript resources up to date and educates team throu
 
 ## 1:1 Notes
 
+### 2026-07-23
+
+Transcript: https://notes.granola.ai/t/07db82f5-9844-4d42-b75f-ceeeb7e82c54-00demib2
+
+- **AI-assisted work: productivity and boundaries:**
+  - AI output volume high and growing; reviews becoming a bottleneck. Leo's PR merge volume cited as an example of the pace. Jack considering AI to pre-review PRs before human review.
+  - Work/life boundary blurring with Claude Code remote control: easy to check in from phone, sessions run late into evenings.
+  - Saturday credit reset creating a "FOMO" loop - running prompts to game the session rather than produce real value. Shared recognition this isn't sustainable, especially over summer. School schedules starting soon may act as a natural forcing function.
+  - Skepticism in DMs: some teammates don't want to review 2-3k line PRs, miss writing code directly. Jack's view: AI is here to stay, team will lean harder into it. Still valuable for human-written design/pseudocode on genuinely novel areas; boilerplate/UI patterns (divs, existing components) are a clear waste to type by hand.
+- **AI code quality and verification:**
+  - Core tension: AI output volume outpaces the team's ability to verify it. Bottleneck is human review capacity, not generation speed. 2,000-line PRs used to be rare.
+  - Consensus: need a robust verification system to trust AI output. Read the plan/flow rather than every line, but the test harness must be trustworthy. Playwright and lint tests need to be reliably runnable by the agent (currently flaky with Gradle/Playwright in some setups).
+  - AI works well for tightly scoped, well-defined features; breaks down on larger tasks where assumptions shift mid-implementation. "Waterfall spec" mode doesn't work - need agile, iterative human-in-the-loop guidance. Still need to spin up the dev server to catch subtle UI issues (hover states, mobile, double borders).
+  - DTE system highly distributed - only Wei and Autumn know it well. No automated verification; issues often only surface on Snapshot or staging. Load balancers and request timeouts on deployed environments can't be reproduced locally.
+- **Dev setup: preview environments:**
+  - Local setup is a bottleneck for end-to-end verification. Checking out branches locally to review PRs is a time sink. Netlify deploys work for static sites but no equivalent for server previews.
+  - Chau flagged Autumn's sandbox/preview URL work as worth replicating - would unblock parallel workstreams currently limited by local port conflicts.
+  - Jack agrees dev setup needs revisiting, but timing is the constraint against other product priorities. Partial graph execution (disable toolchains like .NET via NX vars) discussed as related improvement, likely Q4 at earliest.
+- **Action Items:**
+  - Explore preview environment setup for server-side PRs (eliminate need to check out branches locally; Autumn's sandbox work is a reference point).
+  - Set clearer team norms around AI usage hours (address burnout risk and "just one more prompt" habit; no formal proposal yet, keep the conversation going).
+
 ### 2026-04-30
 
 - **Personal / Relocation:**

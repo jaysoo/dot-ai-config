@@ -65,6 +65,37 @@ Jason's questioning during Madeline's sales update caused concern/confusion amon
 
 **Takeaway:** The questioning came across as skepticism about whether Sales is prioritizing correctly. This reinforces the earlier topic about perception - his analytical approach can land as challenging the team's competence.
 
+### 2026-07-23
+
+**AI Usage and Knowledge Sharing:**
+- Team aligned on AI's value; some adoption differences across teams. Goal: casual check-ins in 1:1s to surface concerns and share what's working.
+- Volume increase is real - Leo and Ben landing a lot more; review process needs to adapt. Can't review AI-generated code the same way as 2-3 years ago. Leo pre-reviews much of his own work before it hits the team.
+- Skills in the Nx repo have been effective (PR review, performance, security, alternatives). Low barrier to add new skills: ship it, iterate, refine. Sandbox prompt iterated heavily by Jack and Nicole; same approach should apply internally.
+- Review judgment still matters: Rust and Nx API changes need scrutiny; React divs and performance reports can be vibe-checked.
+- Blind spot: team lacks enough real "non-Nx user" experience to catch AI gaps. Ocean is the closest real-world test case. Worth keeping a side repo that doesn't use Nx to stay grounded.
+
+**Cooldown Weeks:**
+- Current model isn't strictly enforced anyway; team already blends feature and cooldown work.
+- Proposed flip: cooldown weeks = 80% cooldown / 20% feature; feature weeks = 80% feature / 20% cooldown. Same total time, just overlapped rather than siloed.
+- Check with Leo and Gregory on preference - small team means one person skipping cooldown effectively kills it for everyone.
+- AI adoption partly forced by team shrinking to ~a third of original size; net positive overall.
+
+**SEO / AI Citation Tool and Scorecard:**
+- Joe found an AI sentiment/citation tool (one-week trial); Jack evaluating. Data sourced from anonymized user prompts via browser extensions plus tool-run queries. Useful for seeing where Turborepo is cited, what prompts people run, where docs are thin. Comparison pages Jack published ~1.5 weeks ago are already surfacing in prompt answers.
+- Gaps: no strong ROI story for Nx (cost savings, speed); Bazel and Rush also appearing frequently. Worth writing content for Rush and Lerna to control the narrative.
+- Jason's take: AI citation optimization is like the YouTube algorithm - it shifts, so focus on good content.
+- Jack to write up a summary and maybe a Loom, then sync with Joe on whether to continue the trial.
+- Scorecard: add a docs/CLI referral metric - filter by Nx CLI source to track doc views driven by CLI, set a rough baseline, watch for regression. Jason: scorecard is a self-check tool, not a performance rating; add goals as they arise, drop ones that no longer matter (e.g. console error rate).
+- Churn and revenue flagged as a serious concern. Hypothesis: pricing change caused short-term churn (Dec-Jan) but is also accelerating new-user churn. Jack to sync with Jeff, Jo, and the broader team to dig in.
+
+**Action Items:**
+- [ ] Jack: Add docs/CLI referral metric to the scorecard - create a page, filter by Nx CLI source, set a baseline, ping Jason and the team.
+- [ ] Jack: Write up AI citation tool summary and record a Loom; sync with Joe on whether to continue the trial.
+- [ ] Jason: Check in with Leo and Gregory on cooldown structure (appetite for blending cooldown/feature work across normal weeks).
+- [ ] Jack: Sync with Jeff and Jo on churn and revenue analysis - pricing change may be driving accelerated new-user churn.
+
+[Granola notes](https://notes.granola.ai/t/1a0c0f3f-968e-4857-a8c9-f942ac11db3b-00demib2)
+
 ### 2026-03-19
 
 **AI Automation for GitHub Issues:**

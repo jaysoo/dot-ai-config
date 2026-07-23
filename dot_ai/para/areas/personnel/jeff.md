@@ -34,6 +34,56 @@
 
 ## 1:1 Notes
 
+### 2026-07-23 - Weekly catch up
+
+Transcript: https://notes.granola.ai/t/d9df1624-40dd-4aa5-8fa5-f277695c568e-00demib2
+
+**Churn analysis and retention**
+
+- Churn pattern: most churners are 1-3 billing cycles old, not long-term users. Activation failure = primary driver.
+  - Priority: build churn-risk signals + automated email alerts by early next week.
+  - Secondary: speed up onboarding for slow-to-activate users.
+- QA Wolf case study: $2,700 last invoice, remote cache only, 2-4 min pipelines. Likely moved to Turbo or similar, not straight to GitHub Actions. Signals remote-cache-only pricing too expensive for value delivered.
+- Pricing lever on the table but needs strong conviction first.
+  - Execution credits = single largest cloud revenue driver.
+  - No VC cushion this time -> any pricing drop needs clear recovery data.
+  - Hypothesis: cheaper caching keeps users in system longer, unlocks agents + higher-value plans.
+  - Goal: build cost-per-minute comparison showing platform value vs alternatives.
+- Jeff: same dynamic in enterprise - seat pricing blocks in-account expansion.
+  - Capital One: many Nx users, only one team can afford enterprise.
+  - ADP + Fidelity at risk as IT consolidation reviews underway.
+  - Jeff wants to shift toward site licenses, away from traditional upsell pressure.
+
+**CLI performance report + product tracking**
+
+- Nx 23.1 CLI perf report launched: shows estimated time saved at end of task runs, links to docs. Outperformed newsletter engagement.
+  - Adding CLI-to-site referral tracking as scorecard item.
+  - Attribution to cloud onboarding harder, esp. with EU data restrictions.
+- Data visibility push: Jeff wants PostHog funnels for all products. Particularly blind on Polygon drop-offs.
+  - Jeff missed the funnel review call with [[james]] + [[mark]] this morning.
+  - Feedback: requests too vague; wants to align on funnel-first approach.
+- Nx Agent migration onboarding prompt underperforming. "Migrate to Nx Agent" framing too tedious - lead with value ("Save on Cost"). Some tracking broken, not caught early.
+- Recommendation: automated daily dashboards (e.g. via Codex) for key metrics - alerts on threshold drops, security scans, CD downloads. Jeff asked for link to current dashboard.
+
+**Security checks + Zach PIP**
+
+- Monthly security attestation running; people aware + compliant.
+  - [[jason]] caught a sandbox violation in a skill he built, fixed it.
+  - Process ~1-20 min; Jack runs on daily schedule.
+  - Jeff bookmarked the security check page; Jack to send checklist + form on Slack.
+- Jeff asked [[joe]] to put Zach on a PIP.
+  - MailChimp canceled renewal; never fully adopted platform.
+  - ADP: expansion opportunities not pursued.
+  - Capital One: Zach ran unprepared call with key IT decision-maker, no invite to Jeff or [[victor]], despite two weeks notice.
+- Sandbox violations review: [[rares]] leaving for vacation around Aug 4. Jeff plans to be hands-on tomorrow to review. Value in having someone unfamiliar test the feature to surface confusion.
+
+**Action items**
+
+- Jack: finalize churn-risk signals + email alert setup with [[joe]] (eng work to track signals + trigger emails; target early next week).
+- Jack: send Jeff security checklist + form link on Slack (Jeff wants to run monthly).
+- Jack: send Jeff the metrics dashboard link (for CLI referrals + product health).
+- Jeff: catch up on PostHog funnels meeting with [[james]] + [[mark]] (missed this morning; align company on funnel-based tracking).
+
 ### 2026-07-14 - Weekly catch up
 
 Transcript: https://notes.granola.ai/t/ad07f6ee-ee0d-4798-aa64-88932cb158da-00demib2

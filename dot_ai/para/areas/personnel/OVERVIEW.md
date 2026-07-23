@@ -44,3 +44,8 @@ Jack Hsu (Director of Engineering) reports to Victor Savkin.
 |---|---|
 | Chau Tran | L4 Engineer |
 | Mark Lindsey | L4 Engineer |
+
+## Cross-Functional Partners
+| Name | Team | Title |
+|---|---|---|
+| Elijah | Finance | VP of Finance |

@@ -31,6 +31,37 @@
 
 ## 1:1 Notes
 
+### 2026-07-23
+
+**Topics:** Churn Strategy, Churn Analysis Findings, Value-vs-Cost Metric
+
+**Churn Analysis - Key Findings:**
+- Higher churn likely = price increase + low perceived value; paying more without proportional ROI, most visible in remote-cache-only users
+- Compute usage NOT a reliable stickiness predictor - churn stays high among compute users too, possibly because their costs also spiked
+- Churn clusters in first three billing cycles; long-tenured churners show gradually declining usage before leaving
+- CI run time as pain threshold: under ~10 min may not justify cost
+
+**Value-vs-Cost Metric:**
+- "Cost per hour saved" surfaced as health signal - one org paying ~$13/hr saved (~23 cents/min) vs GitHub Actions at a fraction; higher number = worse ROI = churn risk
+- Goal: holistic dollar-per-minute metric across remote cache + compute, benchmarked vs GitHub Actions and Blacksmith; orgs spending more with Nrwl than competitors = early churn candidates
+- Joe's framing: if value (compute/time savings) doesn't outweigh cost, it's a pricing + packaging problem
+- Hypothesis (Jeff, Victor, Joe): moving customers onto compute/agents makes them stickier - needs data validation
+
+**Next Steps:**
+- Nail down root cause first: value issue, feature-adoption issue, or both
+- Joe's target: GRR back to 75% (currently 65-70%, eventual goal 80%)
+- Sync with Altan on analysis before looping in broader team; align next week
+
+**Action Items:**
+- [ ] **Jack:** Analyze stickiness of compute + agents users with Altan - validate whether they churn less (drives packaging decisions)
+- [ ] **Jack:** Build value-vs-cost metric for remote-cache + compute cohorts - Nrwl cost/min saved vs GitHub Actions + Blacksmith; flag orgs where cost exceeds competitor benchmarks
+- [ ] **Jack:** Share analysis update with Joe by EOD ahead of broader team alignment next week; continue async on Slack
+- [ ] **Jack:** Sync with Elijah on enterprise billing - has a working solution, needs to align with Elijah before it's ready
+
+**Transcript:** https://notes.granola.ai/t/bc7e92df-74ea-4664-a9e3-b653a048b8dd-00demib2
+
+---
+
 ### 2026-07-21
 
 **Topics:** Enterprise Billing Automation, Enterprise Pricing Model, Self-Serve Churn, SEO/AI Visibility

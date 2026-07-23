@@ -2,6 +2,10 @@
 
 ### July 2026
 
+- [x] DOC-552: Review PR redirects and merge blockers (2026-07-23)
+  - Plan: `dot_ai/2026-07-23/tasks/doc-552-pr-redirect-review.md`
+  - Summary: Exhaustively compared the production sitemap, Git move inventory, Netlify redirects, deploy preview, and local build. Verified all 184 moved articles, 26 legacy Knowledge Base routes, and all 213 removed production URLs are covered. Fixed eight redirect chains plus a breadcrumb class regression; removed stale search/topic metadata; full build, link validation, lint, Vale, and redirect audits pass.
+
 - [x] Team plan churn analysis May-Jul 2026 (2026-07-23)
   - Plan: `dot_ai/2026-07-22/tasks/team-churn-mongo-queries.md`
   - Summary: 47 Team churns, ~$18k/mo MRR quantified via Mongo + Stripe CSV; segmented (high-value leavers / wind-downs / bill shock+low ROI / forced upgrades / zombies); qawolf no-Cloud counterfactual; Joe follow-up Q&A (spike buckets weakly predict churn, cache-only 55% of MRR, genuine low-ROI 28%); report `team-churn-report-2026-07.md` + HTML for Drive; created `churn-analyzer` skill.

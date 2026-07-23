@@ -31,8 +31,63 @@
 
 - Delivery of criticism around our onboarding focus — the recent framing was a bit harsh; worth softening the tone without losing the urgency
 - Progress on DTE onboarding improvements
+- L6 promotion follow-up — did vsavkin's communication land? (slated June)
 
 ## 1:1 Notes
+
+### 2026-07-23
+
+**Enterprise Billing (Lighthouse)**
+
+- Lighthouse view: line-item billing with editable credit rates (compute, CI credits, additional features)
+  - Rates save to DB; zero-rate for unused items like sandboxing
+  - Elijah needs monthly credit usage reports: credits used per month + cumulative since contract start
+  - Existing credit usage report in Mongo may already cover this; needs alignment
+- Altan: Lighthouse looks fine for the month-to-month overage billing use case
+
+**AI Usage and Team Sentiment**
+
+- General sentiment: clear value recognized, especially for work that would never get prioritized otherwise
+- Concern: blurring of work/off-work boundaries as tools become always-accessible (SSH sessions, phone access)
+- Altan's framing: effort-to-output ratio has shifted, which can make a productive day feel unearned
+  - Large AI-generated PRs are hard to review; creates false confidence and nitpick-heavy back-and-forths (Nicole and Ben flagged)
+  - Cloud team of 4 shipping more than the 8-9 person team in 2023
+- Opportunity: reframe AI as an empowering tool for bolder ambitions, not just faster ticket throughput
+  - POC-quality throwaway code is now cheap to produce; encourages exploration
+  - Jason working with CRA team on AI-assisted code review at scale (Polygraph)
+- Altan's idea: use Claude/Codex computer use on company Macs to seed test scenarios and record agent walkthroughs
+  - Target: paper-cut issues that don't need full human code review
+  - Screenshots and recordings attached to PRs; preview deployments for faster visual QA
+  - Iterative, not a big project; create tasks to track
+
+**Churn Analysis**
+
+- Reviewed 47 churned orgs over the last ~2 months: usage patterns, features used, invoice trends
+- Key churn signals identified:
+  - Remote cache-only users or very fast pipelines (under 2 min, ~65% of runs) with high billing
+  - Declining platform usage over time (likely already migrating off)
+  - Very short tenure (only a few months on platform)
+- Accrual case study: moved from Pro to Team, bill spiked, two support tickets (one unresolved hang with no logs), then churned
+  - Altan found out only via proactive outreach; customer had asked an LLM to migrate them to Turborepo and Depot
+  - Takeaway: compute is less of a lock-in than assumed; need earlier visibility into these issues
+- Proposed interventions:
+  - Triggered emails: low usage during onboarding, anomalous credit acceleration before invoice hits
+  - Proactive support outreach when usage spikes detected, potentially offering free credits to investigate
+- Altan: map every customer to a dollar-saved-per-hour ratio to expose where current pricing fails
+  - CIPE unit cost flagged as the biggest PLG blocker: too easy to get a $300 bill for little value
+  - Execution credits ~25% of ARR; cutting rates would hurt short-term but could reduce churn and drive uptake
+  - Need to build the case (data + projections) before acting, to avoid paralysis but also avoid a blind cut
+- Exit survey: Nicole already working on this (onboarding + exit survey questions, likely via Pylon)
+
+**Action Items**
+
+- [ ] Jack: Share churn analysis doc with Altan and Joe; flag signals that need counter-examples before deciding actions
+- [ ] Develop dollar-saved-per-hour mapping across customer base to build the case for CIPE pricing changes
+- [ ] Define churn-signal triggers for automated emails (low usage, billing spikes), then engineering implements cron-based outreach
+- [ ] Altan: align Lighthouse billing report with Elijah's monthly + cumulative credit usage need (check existing Mongo report)
+- [ ] Altan: create tasks for AI computer-use test-seeding / visual-QA experiment (iterative)
+
+**Source**: [Granola notes](https://notes.granola.ai/t/21b122e6-d7bc-49cf-9c5b-40cf285e3763-00demib2)
 
 ### 2026-04-30
 
