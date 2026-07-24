@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-07-24 | [cve-audit-2026-07-24.md](./cve-audit-2026-07-24.md) | Verified against real lockfiles (all 4 repos cloned locally), not just declared ranges — caught 2 false positives (`form-data` in nx, `tar-fs` in nx-labs) from range-only checking. 5 items resolved since 07-13 (MCP SDK in ocean+nx-console, `minimatch` in nx-console, `storybook` in nx-labs, `tar` in ocean client-bundle). 4 new findings (`next`/`sharp` in nx, `axios` in ocean, `playwright` in nx-console). nx `rollup`/`vite` now **44 days stale, zero remediation across 4 audits** — rollup's severity corrected to **9.8 CRITICAL** (was tracked as HIGH) |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
