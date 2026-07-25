@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-07-25 | [cve-audit-2026-07-25.md](./cve-audit-2026-07-25.md) | 5 findings resolved (ocean `tar` + `@modelcontextprotocol/sdk`; nx-console `@modelcontextprotocol/sdk` + `minimatch`; nx-labs `storybook`, clearing its escalation). **New P0**: published `nx@23.1.0` itself directly pins vulnerable `axios@1.16.1` and nests vulnerable `brace-expansion@5.0.6` — ships to every `npm install nx`. Also new: same axios GHSA in nx/ocean root pins; nx `next`/`sharp`/`postcss`/`octokit` (previously unscanned, traced to real nx-dev/Tailwind/tooling usage); nx-console `vite`/`playwright`. nx `rollup`/`vite` now **45 days stale**, still unfixed |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
