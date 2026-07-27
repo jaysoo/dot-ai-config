@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Polygraph — How it works (concept)</title>
+<link rel="stylesheet" href="polygraph.css" />
+<style>
+  .stage { width: 1080px; }
+  .hero-h { display:flex; align-items:center; gap:14px; margin-bottom:6px; }
+  .hero-h .name { font-size:19px; }
+  .tag { color:var(--text-mut); font-size:14px; margin-bottom:30px; }
+  .tag b { color:var(--text); font-weight:600; }
+
+  .flow { display:grid; grid-template-columns: 300px 64px 1fr; align-items:center; gap:0; }
+
+  /* terminal */
+  .term-card { background:#0c0c0d; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  .term-bar { display:flex; align-items:center; gap:7px; padding:10px 13px; border-bottom:1px solid var(--border-soft); }
+  .term-bar .d { width:11px;height:11px;border-radius:50%; }
+  .term-bar .d:nth-child(1){background:#ff5f57}.term-bar .d:nth-child(2){background:#febc2e}.term-bar .d:nth-child(3){background:#28c840}
+  .term-bar .lbl { margin-left:8px; color:var(--text-dim); font-size:11.5px; font-family:var(--mono); }
+  .term-body { padding:15px 15px; font-family:var(--mono); font-size:12px; line-height:1.95; color:#cfcfd3; }
+  .term-body .u { color:#e8e8ea; }
+  .term-body .u::before { content:"› "; color:var(--amber); }
+  .term-body .ok { color:#7ee2a0; }
+  .term-body .info { color:#8b8b92; }
+
+  .connect { display:flex; align-items:center; justify-content:center; }
+  .connect svg { overflow:visible; }
+
+  /* parent + children */
+  .right { display:flex; align-items:center; gap:0; }
+  .parent { flex:none; }
+  .pnode { background:var(--panel); border:1px solid rgba(224,164,74,.45); box-shadow:0 0 0 1px rgba(224,164,74,.12), 0 0 40px rgba(224,164,74,.06);
+           border-radius:12px; padding:15px 16px; width:178px; }
+  .pnode .k { font-size:11px; letter-spacing:.5px; text-transform:uppercase; color:var(--amber); font-weight:650; }
+  .pnode .v { font-weight:600; font-size:15px; margin-top:5px; }
+  .pnode .s { color:var(--text-dim); font-size:11.5px; margin-top:6px; }
+
+  .repos { display:flex; flex-direction:column; gap:12px; flex:1; }
+  .repo-card { background:var(--panel); border:1px solid var(--border); border-radius:11px; padding:12px 14px; display:flex; align-items:center; gap:13px; }
+  .repo-card .gh { width:16px;height:16px; opacity:.85; flex:none; }
+  .repo-card .info { flex:1; min-width:0; }
+  .repo-card .rn { font-weight:600; font-size:13.5px; }
+  .repo-card .pr { font-size:12px; color:var(--text-mut); margin-top:3px; }
+  .repo-card .pr .num { color:var(--blue); font-family:var(--mono); }
+  .ci.fail { color:#ff8d8d; } .ci.fail .check{ background:#d1242f; color:#2a0608; }
+
+  /* callouts */
+  .callouts { display:grid; grid-template-columns: repeat(3,1fr); gap:16px; margin-top:34px; }
+  .co { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:16px 17px; }
+  .co .n { width:26px;height:26px;border-radius:8px; background:rgba(224,164,74,.14); border:1px solid rgba(224,164,74,.35);
+           color:var(--amber); font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center; }
+  .co .ct { font-weight:650; font-size:13.5px; margin:11px 0 6px; }
+  .co .cd { color:var(--text-mut); font-size:12.5px; line-height:1.5; }
+  .co .cd code { font-family:var(--mono); font-size:11.5px; color:#cfcfd3; background:#0d0d0e; border:1px solid var(--border); border-radius:5px; padding:1px 5px; }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="hero-h">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 5.6L20 9.2l-4 4.1.9 6L12 16.6 7.1 19.3 8 13.3l-4-4.1 5.6-1.6L12 2z" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      <span class="name">Polygraph</span>
+    </div>
+  </div>
+  <div class="tag">One session. <b>Act across every connected repo</b> with AI child agents — and track every PR &amp; CI run from a single place.</div>
+
+  <div class="flow">
+
+    <!-- terminal : you drive it -->
+    <div class="term-card">
+      <div class="term-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="lbl">polygraph session</span></div>
+      <div class="term-body">
+        <div class="u">roll client v2 across our repos</div>
+        <div class="info">→ child agents: ocean, nx</div>
+        <div class="u">link PR #482 from ocean</div>
+        <div class="ok">✓ associated</div>
+        <div class="u">CI status across all repos?</div>
+        <div class="ok">✓ docs ✓ ocean</div>
+        <div class="info" style="color:#ff8d8d">✗ nx — 3 tests</div>
+      </div>
+    </div>
+
+    <!-- connector -->
+    <div class="connect">
+      <svg width="64" height="20"><path d="M0 10 H52" stroke="#3a3a40" stroke-width="1.6" fill="none"/><path d="M50 5 L60 10 L50 15" stroke="#3a3a40" stroke-width="1.6" fill="none"/></svg>
+    </div>
+
+    <!-- parent → children -->
+    <div class="right">
+      <div class="parent">
+        <div class="pnode">
+          <div class="k">Polygraph session</div>
+          <div class="v">Parent agent</div>
+          <div class="s">Orchestrates child agents across the connected graph</div>
+        </div>
+      </div>
+
+      <div class="connect">
+        <svg width="64" height="170"><path d="M0 85 H26 M26 85 V30 H58 M26 85 V150 H58 M26 85 H58"
+          stroke="#3a3a40" stroke-width="1.5" fill="none"/>
+          <path d="M52 25 L60 30 L52 35 M52 80 L60 85 L52 90 M52 145 L60 150 L52 155" stroke="#3a3a40" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+
+      <div class="repos">
+        <div class="repo-card">
+          <svg class="gh" viewBox="0 0 16 16" fill="#e8e8ea"><path d="M8 0C3.6 0 0 3.6 0 8a8 8 0 005.5 7.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 014 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0016 8c0-4.4-3.6-8-8-8z"/></svg>
+          <div class="info"><div class="rn">nrwl/polygraph-docs</div><div class="pr"><span class="num">#511</span> · DOC-510 → main</div></div>
+          <span class="ci"><span class="check">✓</span>CI</span>
+        </div>
+        <div class="repo-card">
+          <svg class="gh" viewBox="0 0 16 16" fill="#e8e8ea"><path d="M8 0C3.6 0 0 3.6 0 8a8 8 0 005.5 7.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 014 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0016 8c0-4.4-3.6-8-8-8z"/></svg>
+          <div class="info"><div class="rn">nrwl/ocean</div><div class="pr"><span class="num">#482</span> · linked existing PR</div></div>
+          <span class="ci"><span class="check">✓</span>CI</span>
+        </div>
+        <div class="repo-card">
+          <svg class="gh" viewBox="0 0 16 16" fill="#e8e8ea"><path d="M8 0C3.6 0 0 3.6 0 8a8 8 0 005.5 7.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 014 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0016 8c0-4.4-3.6-8-8-8z"/></svg>
+          <div class="info"><div class="rn">nrwl/nx</div><div class="pr"><span class="num">#1180</span> · feat/client-v2 → main</div></div>
+          <span class="ci fail"><span class="check">!</span>CI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 capability callouts -->
+  <div class="callouts">
+    <div class="co">
+      <div class="n">1</div>
+      <div class="ct">Act across many repos at once</div>
+      <div class="cd">Child agents fan out across every repo in your connected graph — public or private — running Claude Code in parallel.</div>
+    </div>
+    <div class="co">
+      <div class="n">2</div>
+      <div class="ct">Pull in existing PRs by asking</div>
+      <div class="cd">From the terminal, just say <code>link PR #482 from ocean</code> and Polygraph associates it with the session — no UI clicks needed.</div>
+    </div>
+    <div class="co">
+      <div class="n">3</div>
+      <div class="ct">Track CI across the graph</div>
+      <div class="cd">Every PR's CI is tracked in one place. Ask <code>CI status across all repos?</code> and downstream breakage surfaces instantly.</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

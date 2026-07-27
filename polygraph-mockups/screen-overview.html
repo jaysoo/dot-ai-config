@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Polygraph — Session overview (simplified)</title>
+<link rel="stylesheet" href="polygraph.css" />
+<style>
+  .stage { width: 980px; }
+  .topbar { display:flex; align-items:center; gap:26px; margin-bottom:30px; }
+  .session-head { margin-bottom: 24px; }
+  .session-head h1 { font-family: var(--mono); font-size: 22px; font-weight: 600; letter-spacing:.3px; }
+  .meta { display:flex; align-items:center; gap:18px; margin-top:12px; color:var(--text-mut); font-size:13px; }
+  .meta .who { display:flex; align-items:center; gap:7px; }
+  .avatar { width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#e0a44a,#a371f7); }
+  .stack { display:flex; flex-direction:column; gap:18px; }
+
+  /* resume-from-CLI */
+  .cli { display:flex; align-items:center; gap:14px; padding:16px 18px; }
+  .cli .ico { width:34px;height:34px;border-radius:9px;background:var(--panel-2);border:1px solid var(--border);
+              display:flex;align-items:center;justify-content:center;color:var(--text-mut); flex:none; }
+  .cli .txt .t { font-weight:600; font-size:14px; }
+  .cli .txt .d { color:var(--text-dim); font-size:12.5px; }
+  .cmd { margin:0 18px 16px; background:#0d0d0e; border:1px solid var(--border); border-radius:9px;
+         padding:11px 14px; font-family:var(--mono); font-size:13px; color:#cfcfd3; display:flex; gap:9px; }
+  .cmd .p { color:var(--green); }
+
+  /* repo graph */
+  .graph { padding: 26px 18px 30px; display:flex; flex-direction:column; align-items:center; }
+  .node { background:var(--panel-2); border:1px solid var(--border); border-radius:10px; padding:11px 15px; min-width:200px; }
+  .node .r { display:flex; align-items:center; gap:8px; font-weight:600; font-size:13.5px; }
+  .node .role { color:var(--text-dim); font-size:11.5px; margin-top:4px; }
+  .node .badges { display:flex; gap:6px; margin-top:9px; }
+  .node.root { border-color: rgba(224,164,74,.4); box-shadow:0 0 0 1px rgba(224,164,74,.12); }
+  .children { display:flex; gap:34px; }
+  .gh { width:15px;height:15px; flex:none; opacity:.85; }
+
+  /* PR list */
+  .pr { display:flex; align-items:center; gap:14px; padding:14px 18px; }
+  .pr + .pr { border-top:1px solid var(--border-soft); }
+  .pr .pri { width:22px; color:var(--text-dim); display:flex; }
+  .pr .body { flex:1; min-width:0; }
+  .pr .repo { color:var(--text-mut); font-size:12px; display:flex; align-items:center; gap:6px; }
+  .pr .t { font-weight:600; font-size:14px; margin-top:3px; }
+  .pr .br { font-family:var(--mono); font-size:11.5px; color:var(--text-dim); margin-top:5px; }
+  .pr .br .arrow { color:var(--text-mut); }
+  .ci.fail { color:#ff8d8d; }
+  .ci.fail .check { background:#d1242f; color:#2a0608; }
+  .pr-right { display:flex; align-items:center; gap:14px; }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 5.6L20 9.2l-4 4.1.9 6L12 16.6 7.1 19.3 8 13.3l-4-4.1 5.6-1.6L12 2z" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      <span class="name">Polygraph</span>
+    </div>
+    <div class="crumbs"><span>nrwl</span><span class="sep">/</span><span>Sessions</span><span class="sep">/</span><span class="here mono">client-v2-rollout</span></div>
+  </div>
+
+  <div class="session-head">
+    <h1>client-v2-rollout</h1>
+    <div class="meta">
+      <span><span class="badge active"><span class="dot green"></span>Active</span></span>
+      <span class="who"><span class="avatar"></span>Jack Hsu</span>
+      <span class="who">✷ claude</span>
+      <span>3 repos · 2 child agents</span>
+      <span>2 / 3 PRs</span>
+    </div>
+  </div>
+
+  <div class="stack">
+
+    <!-- Resume from CLI : capability #2 + #3 hook -->
+    <div class="card">
+      <div class="cli">
+        <div class="ico mono">›_</div>
+        <div class="txt">
+          <div class="t">Drive this session from your terminal</div>
+          <div class="d">Resume in the Polygraph CLI to add PRs, ask for CI status, or steer the agents.</div>
+        </div>
+      </div>
+      <div class="cmd"><span class="p">$</span><span>polygraph session resume client-v2-rollout</span></div>
+    </div>
+
+    <!-- Repositories graph : capability #1 -->
+    <div class="card">
+      <div class="card-h"><div><span class="title">Repositories</span><span class="sub">3 repos · 2 child agents in the connected graph</span></div></div>
+      <div class="divider"></div>
+      <div class="graph">
+        <div class="node root">
+          <div class="r"><svg class="gh" viewBox="0 0 16 16" fill="#e8e8ea"><path d="M8 0C3.6 0 0 3.6 0 8a8 8 0 005.5 7.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 014 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0016 8c0-4.4-3.6-8-8-8z"/></svg>polygraph-docs</div>
+          <div class="role">Session root · coordinating child agents</div>
+          <div class="badges"><span class="badge init">Initiator</span><span class="badge done">Done</span></div>
+        </div>
+
+        <svg width="430" height="42" style="display:block">
+          <path d="M215 0 V14 M215 14 H70 V42 M215 14 H360 V42" stroke="#2a2a2e" stroke-width="1.5" fill="none"/>
+        </svg>
+
+        <div class="children">
+          <div class="node">
+            <div class="r"><svg class="gh" viewBox="0 0 16 16" fill="#e8e8ea"><path d="M8 0C3.6 0 0 3.6 0 8a8 8 0 005.5 7.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 014 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0016 8c0-4.4-3.6-8-8-8z"/></svg>nrwl/ocean</div>
+            <div class="role">Child agent · ✷ claude</div>
+            <div class="badges"><span class="badge done">Done</span></div>
+          </div>
+          <div class="node">
+            <div class="r"><svg class="gh" viewBox="0 0 16 16" fill="#e8e8ea"><path d="M8 0C3.6 0 0 3.6 0 8a8 8 0 005.5 7.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 014 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0016 8c0-4.4-3.6-8-8-8z"/></svg>nrwl/nx</div>
+            <div class="role">Child agent · ✷ claude</div>
+            <div class="badges"><span class="badge active"><span class="dot green"></span>Running</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pull requests + CI : capability #3 -->
+    <div class="card">
+      <div class="card-h"><div><span class="title">Pull requests</span><span class="sub">3 across 3 repos · CI tracked from this session</span></div></div>
+      <div class="divider"></div>
+
+      <div class="pr">
+        <div class="pri">↳</div>
+        <div class="body">
+          <div class="repo">⌥ nrwl/polygraph-docs</div>
+          <div class="t">docs: cross-repo PR &amp; CI coordination</div>
+          <div class="br">DOC-510 <span class="arrow">→</span> main</div>
+        </div>
+        <div class="pr-right"><span class="ci"><span class="check">✓</span>CI · Succeeded</span></div>
+      </div>
+
+      <div class="pr">
+        <div class="pri">↳</div>
+        <div class="body">
+          <div class="repo">⌥ nrwl/ocean</div>
+          <div class="t">chore: bump shared client to v2</div>
+          <div class="br">feat/client-v2 <span class="arrow">→</span> main</div>
+        </div>
+        <div class="pr-right"><span class="ci"><span class="check">✓</span>CI · Succeeded</span></div>
+      </div>
+
+      <div class="pr">
+        <div class="pri">↳</div>
+        <div class="body">
+          <div class="repo">⌥ nrwl/nx</div>
+          <div class="t">fix: adapt plugin API to client v2</div>
+          <div class="br">feat/client-v2 <span class="arrow">→</span> main</div>
+        </div>
+        <div class="pr-right"><span class="ci fail"><span class="check">!</span>CI · Failing</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
