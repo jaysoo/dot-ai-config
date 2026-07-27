@@ -60,6 +60,11 @@
 
 ## TODO
 
+- [ ] **Q-520 follow-up: get Mandrill template `nx-cloud-plan-add-on-requested` into the ocean repo** (2026-07-27)
+  - Context: PR #12211 merged; the add-on request flow sends this email to org admins, but the template only exists in Mandrill (published by hand). Nothing in-repo defines or version-controls it.
+  - Goal: commit the template alongside the other ocean email templates so it is reviewable and reproducible, not Mandrill-only state.
+  - Ref: `dot_ai/2026-07-02/tasks/q-520-sandbox-dashboard-add-on-toggle.md`
+
 - [ ] **Joe 1:1 follow-ups** (2026-07-21)
   - Notes: `dot_ai/para/areas/personnel/joe.md` (2026-07-21 entry)
   - [ ] Sync with Elijah on enterprise billing mechanics — invoice flow, Lighthouse report format, backfill Security Scorecard usage to sense-check overage numbers (update by Thu 2026-07-23)
@@ -176,7 +181,7 @@
 ## Active Claude Sessions
 
 - /Users/jack/projects/ocean (branch: main) — Churn signals validation + cost model: backtest queries drafted, awaiting Query A/B exports. Plan: `dot_ai/2026-07-24/tasks/churn-signals-and-cost-model.md` (2026-07-24)
-- /Users/jack/projects/nx-worktrees/NXC-4701 (branch: NXC-4701) — NXC-4701 TUI connect flow: draft PR https://github.com/nrwl/nx/pull/36460 awaiting CI + Jack review. Superseded prototypes: #36250 (open draft) + #36255 (closed) - decide whether to close #36250. Plan: `dot_ai/2026-07-24/tasks/nxc-4701-tui-connect-flow.md`, Polygraph `ready-jackal-5efe8ef1` (2026-07-24)
+- /Users/jack/projects/nx-worktrees/NXC-4701 (branch: NXC-4701) — NXC-4701 TUI connect flow: draft PR https://github.com/nrwl/nx/pull/36460 awaiting CI + Jack review. Superseded prototypes #36250 + #36255 both closed. Plan: `dot_ai/2026-07-24/tasks/nxc-4701-tui-connect-flow.md`, Polygraph `ready-jackal-5efe8ef1` (2026-07-24)
 - /Users/jack/projects/nx-worktrees/DOC-555 (branch: DOC-555) — DOC-555 SEO batch: draft PR https://github.com/nrwl/nx/pull/36459 awaiting Jack review + CI. Plan: `dot_ai/2026-07-24/tasks/doc-555-seo-page-plan.md`, Polygraph `vivid-iguana-930ae870` (2026-07-24)
 - /Users/jack/projects/dot-ai-config (branch: main) — Gauge AI sentiment/misinformation action items for nx.dev/docs: collecting raw notes, then prioritized list w/ tracking. Plan: `dot_ai/2026-07-22/tasks/gauge-ai-sentiment-nx-docs-action-items.md` (2026-07-22)
 - /Users/jack/projects/lighthouse (branch: feature/cloud-4878-usage-charges) — CLOUD-4878 per-tenant usage charges report: phase 1 sync fixes underway. Plan: `dot_ai/2026-07-21/tasks/tenant-usage-charges-invoice-report.md`, Polygraph `free-moose-07d251e0` (2026-07-21)

@@ -31,8 +31,7 @@ Re-derive the live set at runtime (don't trust this table): a repo is live if
 ## Prerequisites
 
 - A GitHub PAT with `repo` scope for the `nrwl` org. Read it from the environment
-  (`$GH_TOKEN`) or 1Password (`op read ...`) — never hardcode, never commit. Log any
-  `op`/remote-git call via the `op-request-reason` skill.
+  (`$GH_TOKEN`) or 1Password (`op read ...`) — never hardcode, never commit.
 - Clean working tree per repo before starting (`git -C <repo> status --porcelain`
   empty). If dirty, skip that repo and report — do not stash/discard.
 - Each repo currently builds green on `main` (this routine only proposes upgrades).
@@ -112,9 +111,8 @@ Only if there are updates AND verification passed:
 cd ~/projects/cnw-templates/<repo>
 git checkout -b deps/update-<YYYY-MM-DD>
 git add -A && git commit -m "chore(deps): update dependencies (<YYYY-MM-DD>)"
-# log via op-request-reason, then:
 git push -u origin deps/update-<YYYY-MM-DD>
-# create PR via GitHub API (gh is BANNED):
+# create PR via GitHub API (or `gh pr create`):
 curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
   "https://api.github.com/repos/nrwl/<repo>/pulls" \
   -d '{"title":"chore(deps): update dependencies","head":"deps/update-<YYYY-MM-DD>","base":"main","body":"<the per-repo outdated table + what was upgraded vs held>"}'

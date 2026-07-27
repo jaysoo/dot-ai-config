@@ -1,6 +1,6 @@
 ---
 name: nx-docs-iterate
-description: Validate-and-ship loop for nx astro-docs changes. Runs prettier, vale, the STYLE_GUIDE structural pass, an anchor sweep, then amends the squashed commit and force-pushes with 1Password op-request logging. Use after every docs edit round in the nx repo. Triggers on "docs iterate", "amend and push the docs", "ship the docs change", "docs validate and push".
+description: Validate-and-ship loop for nx astro-docs changes. Runs prettier, vale, the STYLE_GUIDE structural pass, an anchor sweep, then amends the squashed commit and force-pushes. Use after every docs edit round in the nx repo. Triggers on "docs iterate", "amend and push the docs", "ship the docs change", "docs validate and push".
 ---
 
 # nx-docs-iterate
@@ -109,8 +109,7 @@ git add astro-docs/...
 git commit --amend --no-edit --no-verify   # husky pre-push pnpm check fails no-TTY; docs-only is safe
 ```
 
-Then force-push with the op-request-reason inline log block (see that skill - REQUIRED for
-any remote git op):
+Then force-push:
 
 ```bash
 git push --no-verify --force-with-lease origin <branch>

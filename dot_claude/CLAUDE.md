@@ -10,10 +10,8 @@ In any new session, ALWAYS use /caveman skill to go into full (default) cavement
 
 ## GitHub CLI (`gh`)
 
-`gh` is allowed again for GitHub data and operations (was previously banned over `gh auth token` leaking too broadly).
+`gh` is fine for GitHub data and operations. GitHub MCP and `curl` against `api.github.com` are equally fine.
 
-- **Never print or echo `gh auth token`** (or otherwise surface the token). That leak was the original reason for the ban.
-- GitHub MCP and `curl` against `api.github.com` remain fine alternatives.
 - PR review/comment/merge still needs explicit confirmation before posting — via `gh`, web UI, or `curl`. See PR rule below.
 
 ## 🔴 Critical Setup & Verification
@@ -738,11 +736,9 @@ Verify with real browser (Playwright). Document working vs failing cases.
 
 ## 🔐 1Password CLI
 
-### Always log auth requests via the `op-request-reason` skill
+Just run `op` and `gh` normally — no preamble, no logging block, no reason variable.
 
-Before **any** command that triggers a 1Password prompt — `op` (any auth subcommand) or remote `git` ops (`push`/`pull`/`fetch`/`clone`/`ls-remote`/`remote update`, which pull the SSH key from 1P's agent) — invoke the `op-request-reason` skill. It's SKILL.md only (no script): write the inline log block before the command, patch the line after, every time. Skip it and nothing logs, so Raycast won't show Jack the pending request.
-
-Local-only git ops (`status`, `log`, `diff`, `add`, `commit`, `branch`, `checkout`, `reset`, `stash`) do NOT need logging.
+`~/.local/bin/{gh,op}` are the `auth-proxy` wrapper (source in `auth-proxy/`, built by `sync.sh`). It records every credential-touching call to `/private/tmp/op_requests.txt` for Raycast and refuses `gh auth token` outright, then hands off to the real binary. It cannot be forgotten, so nothing here asks you to remember it.
 
 ```bash
 # Vault error: "Engineering" isn't a vault

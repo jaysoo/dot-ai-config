@@ -25,6 +25,7 @@ For Jack's personal preferences, workflow conventions, and tech-specific guidanc
 | `gitconfig` | `~/.gitconfig` | git |
 | `gitignore_global` | `~/.gitignore_global` | git global ignore |
 | `hooks/pre-push` | linked into `.git/hooks/pre-push` | Triggers `sync.sh` on push |
+| `auth-proxy/` | built to `~/.local/bin/{gh,op}` | Wraps both CLIs: logs credential use to `/private/tmp/op_requests.txt`, blocks `gh auth token` |
 | `mcp-server/` | (not synced) | MyNotes MCP server source |
 | `scripts/`, `tools/` | (not synced) | Standalone utilities |
 | `USAGE.md` | (not synced) | Manual tracker of skill/command invocations |

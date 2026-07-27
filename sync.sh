@@ -59,6 +59,11 @@ cp "$GIT_ROOT/fish/config.fish" "$HOME/.config/fish/config.fish"
 cp "$GIT_ROOT/fish/conf.d/"* "$HOME/.config/fish/conf.d/"
 cp "$GIT_ROOT/fish/functions/"* "$HOME/.config/fish/functions/"
 
+# Retire files this repo used to sync. sync.sh only ever copies, so a deleted
+# source leaves its installed copy behind forever. A stale op.fish is not
+# harmless: a fish function shadows the auth-proxy binary on PATH.
+rm -f "$HOME/.config/fish/functions/op.fish"
+
 # Sync nvim config
 mkdir -p "$HOME/.config/nvim"
 cp "$GIT_ROOT/nvim/"* "$HOME/.config/nvim/"
@@ -82,14 +87,17 @@ cp "$GIT_ROOT/zshenv" "$HOME/.zshenv"
 cp "$GIT_ROOT/gitconfig" "$HOME/.gitconfig"
 cp "$GIT_ROOT/gitignore_global" "$HOME/.gitignore_global"
 
-# Build gh-proxy and install to ~/.local/bin (on PATH). Wraps the real
-# Homebrew gh but blocks `gh auth token`.
+# Install auth-proxy to ~/.local/bin (ahead of Homebrew on PATH) as both `gh`
+# and `op`. It logs credential use to /private/tmp/op_requests.txt for Raycast
+# and refuses `gh auth token`, then execs the real binary. One source, two
+# names -- it picks its behavior from argv[0].
 if command -v go >/dev/null 2>&1; then
     mkdir -p "$HOME/.local/bin"
-    (cd "$GIT_ROOT/gh-proxy" && go build -o "$HOME/.local/bin/gh" .)
-    echo "🔒 gh-proxy built -> $HOME/.local/bin/gh"
+    (cd "$GIT_ROOT/auth-proxy" && go build -o "$HOME/.local/bin/gh" .)
+    cp "$HOME/.local/bin/gh" "$HOME/.local/bin/op"
+    echo "🔒 auth-proxy built -> $HOME/.local/bin/{gh,op}"
 else
-    echo "⚠️  go not found; skipped gh-proxy build"
+    echo "⚠️  go not found; skipped auth-proxy build"
 fi
 
 echo "✅ Claude, Codex, and Gemini global config synced from $GIT_ROOT"

@@ -141,24 +141,15 @@ source. This is the one place all GitHub auth happens — every helper call
 across orchestrator and subagents reads `$GITHUB_TOKEN` from this file, so
 the user only sees one 1Password prompt for the whole run.
 
-Use the `op-request-reason` skill convention (writes a PENDING row to
-`/private/tmp/op_requests.txt` so Raycast surfaces it, then flips to
-APPROVED/DENIED based on exit code):
+The `op` wrapper logs the request to Raycast on its own — just read the token:
 
 ```bash
 SCAN_DATA_DIR="/tmp/scan-data-$(date +%s)"
 mkdir -p "$SCAN_DATA_DIR"/{releases,issues,api}
 
-uid="$$-$RANDOM" log=/private/tmp/op_requests.txt
-printf 'PENDING\t%s\t%s\t%s\t%s\t%s\n' \
-    "$uid" "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$PWD" \
-    'scan-and-audit: reading GitHub PAT for weekly intelligence scans' \
-    'op read op://Employee/API Keys/github_token' >>"$log"
-GITHUB_TOKEN=$(op read 'op://Employee/API Keys/github_token'); rc=$?
-tab=$(printf '\t'); tmp=$(mktemp)
-[ $rc -eq 0 ] && outcome=APPROVED || outcome=DENIED
-sed "s|^PENDING${tab}${uid}${tab}|${outcome}${tab}${uid}${tab}|" "$log" >"$tmp" && mv "$tmp" "$log"
-[ $rc -ne 0 ] && { echo "Failed to read GitHub token from 1Password"; exit 1; }
+GITHUB_TOKEN=$(op read 'op://Employee/API Keys/github_token') || {
+    echo "Failed to read GitHub token from 1Password"; exit 1
+}
 
 # Stash for subagents. Mode 600 so only this user can read it.
 umask 077

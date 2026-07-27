@@ -4,7 +4,7 @@
 
 - [x] NXC-4606: Enable remote cache from TUI perf report (nx) - CANCELLED (2026-07-24)
   - Plan: `dot_ai/2026-07-06/tasks/nxc-4606-tui-not-connected-status.md`
-  - Summary: Two prototypes (footer status + ConnectPopup on PR #36250, inline perf-report CTA on PR #36255). Both cancelled; master moved the footer to a props-driven StatusBar + focus stack, making them unmergeable. Superseded by NXC-4701 (PR #36460), which revives both shapes on current master via a shared `connect_flow.rs`. #36255 closed; #36250 still open on GitHub and needs closing. Polygraph session `nxc-4606-e6f49ee0`.
+  - Summary: Two prototypes (footer status + ConnectPopup on PR #36250, inline perf-report CTA on PR #36255). Both cancelled; master moved the footer to a props-driven StatusBar + focus stack, making them unmergeable. Superseded by NXC-4701 (PR #36460), which revives both shapes on current master via a shared `connect_flow.rs`. Both PRs closed. Polygraph session `nxc-4606-e6f49ee0` archived.
 
 - [x] Review AI and the Background Mind blog draft (2026-07-24)
   - Plan: `dot_ai/2026-07-24/tasks/review-ai-background-mind-blog-draft.md`
