@@ -124,7 +124,7 @@ Focus on:
 - Changes to module resolution (ESM/CJS), `--experimental-*` flags graduating
 - V8 engine version bumps and what they bring
 - `process`, `fs`, `child_process`, `worker_threads` API changes (Nx uses all of these heavily)
-- Memory management changes (relevant to Node 24 OOM issues)
+- Memory management changes
 - Changes to `--strip-types` or TypeScript support
 
 ### TC39 Proposals
@@ -178,7 +178,6 @@ Check `https://deno.com/blog`. Focus on:
 
 ### Impact on Nx users
 - What version ranges should we support?
-- Do our `engines` fields need updating?
 - Are there migration steps users need?
 
 ## Compare with last month
@@ -222,10 +221,6 @@ _Last updated: {datetime}_
 ## Deno
 ### Releases: {versions}
 ### Nx compat status: {what works, what doesn't}
-
-## Nx `engines` Field Review
-Current: {what package.json says}
-Recommended: {any changes needed based on this month's findings}
 ```
 
 Save to `.ai/para/areas/runtime-tracking/YYYY-MM.md` and update README.md.
