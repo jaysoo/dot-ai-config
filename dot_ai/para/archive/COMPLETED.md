@@ -2,6 +2,10 @@
 
 ### July 2026
 
+- [x] NXC-4606: Enable remote cache from TUI perf report (nx) - CANCELLED (2026-07-24)
+  - Plan: `dot_ai/2026-07-06/tasks/nxc-4606-tui-not-connected-status.md`
+  - Summary: Two prototypes (footer status + ConnectPopup on PR #36250, inline perf-report CTA on PR #36255). Both cancelled; master moved the footer to a props-driven StatusBar + focus stack, making them unmergeable. Superseded by NXC-4701 (PR #36460), which revives both shapes on current master via a shared `connect_flow.rs`. #36255 closed; #36250 still open on GitHub and needs closing. Polygraph session `nxc-4606-e6f49ee0`.
+
 - [x] Review AI and the Background Mind blog draft (2026-07-24)
   - Plan: `dot_ai/2026-07-24/tasks/review-ai-background-mind-blog-draft.md`
   - Summary: Reviewed the draft for framing, consistency, flow, house style, and psychological accuracy, then audited the research behind its central premise. Recommended treating the background mind as shorthand for incubation, separating established incubation effects from contested unconscious mechanisms and the untested AI/programming extrapolation, grounding the argument with one programming example, and tightening the seven-step workflow.
@@ -193,6 +197,9 @@
   - Summary: Reviewed https://github.com/nrwl/nx/pull/36229 locally after Plannotator was blocked by unauthenticated `gh`. No clear PR-specific code defect found in the changed lockfile cache logic. JS/cache focused specs passed; daemon recomputation spec failed in the existing watcher race test at line 74.
 
 ### June 2026
+
+- [x] NXC-4324: Deprecate webpack/rspack config compose helpers (nx) - PR #35867 MERGED (2026-06-04)
+  - Summary: Warn-once-per-package + `@deprecated` JSDoc on composePlugins/withNx/withWeb/withReact, plus a suppression counter wrapping the 3 internal composers (rspack executor, storybook, next CT), 3 docs asides, 3 specs. Removal targeted for v24. Declined the review's DRY-factory ask. Polygraph session `nxc-4324-2bacd010`. Follow-up left open: rspack React generator emits compose configs unconditionally even with the inferred plugin.
 
 - [x] PR #36123: ESLint removed rules migration fixes (2026-06-26)
   - Plan: `dot_ai/2026-06-26/tasks/pr-36123-eslint-removed-rules-fixes.md`

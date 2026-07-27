@@ -9,7 +9,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | openai-docs            | skill   | 2026-07-27   | 2     |
 | dot-claude-guard       | skill   | 2026-07-27   | 17    |
 | cnw-update-templates   | skill   | 2026-07-15   | 3     |
-| op-request-reason      | skill   | 2026-07-23   | 5     |
+| op-request-reason      | skill   | 2026-07-27   | 6     |
 | code-comment-style     | skill   | 2026-07-23   | 0     |
 | github:yeet            | skill   | 2026-07-13   | 1     |
 | github:github          | skill   | 2026-07-13   | 1     |
