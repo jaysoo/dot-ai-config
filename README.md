@@ -32,6 +32,7 @@ Run `./sync.sh` manually if you want to push config out without a git push.
 | `mcp-gemini/` | Gemini MCP integration |
 | `fish/ nvim/ kitty/ gh-dash/ tmux.conf bashrc gitconfig mise.toml` | Dotfiles synced to their standard locations |
 | `hooks/pre-push` | Runs `sync.sh` on push |
+| `auth-proxy/` | Go wrapper built to `~/.local/bin/{gh,op}` — logs credential use for Raycast, blocks `gh auth token` |
 | `sync.sh` | Copies sources → destinations |
 | `scripts/` | Standalone usage/analytics scripts |
 | `tools/` | PARA utilities, docs analytics |

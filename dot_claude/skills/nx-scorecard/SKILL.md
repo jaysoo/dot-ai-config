@@ -26,9 +26,8 @@ Compute all scorecard metrics for the **Nx CLI** team for the current month (or 
 
 ## GitHub Auth (no `gh` CLI)
 
-The `gh` CLI is banned on this machine. Use `curl` against `https://api.github.com` with a bearer token.
-
-Get the token from 1Password (invoke the `op-request-reason` skill first, since `op` triggers a 1P prompt):
+Either `gh` or `curl` against `https://api.github.com` with a bearer token works. For the
+curl path, get the token from 1Password:
 
 ```bash
 export GITHUB_TOKEN="$(op read 'op://Employee/API Keys/github_token')"
