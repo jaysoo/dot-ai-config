@@ -4,7 +4,7 @@
 
 ---
 
-I manage multiple engineering teams at Nx. On any given week, I'm in syncs with DPE, CLI, Orca, Backend, Infra, Docs, and Framer. Each meeting generates action items, personnel context, project updates, and decisions that need to land somewhere useful. For years, the pattern was the same: sit in meeting, take rough notes, spend 30 minutes afterward trying to organize them into the right places. Half the time I'd skip the organization step because the next meeting was already starting.
+I manage multiple engineering teams at Nx. On any given week, I'm in syncs with DPE, CLI, Nx Cloud, Infra, Docs, and Framer. Each meeting generates action items, personnel context, project updates, and decisions that need to land somewhere useful. For years, the pattern was the same: sit in meeting, take rough notes, spend 30 minutes afterward trying to organize them into the right places. Half the time I'd skip the organization step because the next meeting was already starting.
 
 Meeting context is perishable. The nuance of why someone raised a concern, the specific phrasing of a commitment, the offhand mention that a team member is dealing with something personal — if you don't capture it within minutes, it degrades into a vague memory that you can't act on.
 
@@ -16,7 +16,7 @@ The core of the system is a `/dictate` command built on top of Claude Code. Afte
 
 Here's what happens under the hood:
 
-**Auto-detection of meeting type.** The command analyzes the transcription and identifies whether this is a team sync (and which team), a 1:1, a planning session, or general notes. It matches against my known team list — DPE, CLI, Orca, Backend, Infra, Docs, Framer — and routes accordingly.
+**Auto-detection of meeting type.** The command analyzes the transcription and identifies whether this is a team sync (and which team), a 1:1, a planning session, or general notes. It matches against my known team list — DPE, CLI, Nx Cloud, Infra, Docs, Framer — and routes accordingly.
 
 **Sync file routing.** Each team has a sync file at `.ai/para/areas/syncs/[team]/README.md` with a specific structure:
 

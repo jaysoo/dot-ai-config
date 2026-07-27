@@ -90,7 +90,7 @@ Daily work lives at `dot_ai/yyyy-mm-dd/` with `SUMMARY.md`, `tasks/`, `dictation
 
 ## Adding Notes to Syncs and 1:1s
 
-**Team syncs** — `dot_ai/para/areas/syncs/<team>/README.md`. Teams: `dpe`, `cli`, `orca`, `backend`, `infra`, `docs`, `marketing`, `planning`, `all-hands`.
+**Team syncs** — `dot_ai/para/areas/syncs/<team>/README.md`. Teams: `dpe`, `cli`, `nx-cloud`, `infra`, `docs`, `marketing`, `planning`, `all-hands`.
 
 **1:1s** — `dot_ai/para/areas/personnel/<name>.md` (lowercase, hyphenated).
 

@@ -7,7 +7,7 @@
 ## Professional
 
 - **Expertise**: VCS integrations, GitHub app/OAuth flows
-- **Collaborates with**: Orca team (Nicole, Ben, Dylan), Chow (auth)
+- **Collaborates with**: Nx Cloud team (Altan, Nicole, Ben), Chow (auth)
 
 ## 1:1 Notes
 

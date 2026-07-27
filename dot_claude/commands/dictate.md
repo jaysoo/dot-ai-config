@@ -38,8 +38,7 @@ If the dictation mentions a **sync meeting** for one of these teams, update the 
 |---------------|---------------|
 | "DPE sync", "DPE meeting" | `.ai/para/areas/syncs/dpe/README.md` |
 | "CLI sync", "CLI meeting" | `.ai/para/areas/syncs/cli/README.md` |
-| "Orca sync", "Orca meeting" | `.ai/para/areas/syncs/orca/README.md` |
-| "Backend sync", "Backend meeting" | `.ai/para/areas/syncs/backend/README.md` |
+| "Nx Cloud sync", "Cloud sync", "Cloud meeting" | `.ai/para/areas/syncs/nx-cloud/README.md` |
 | "Infra sync", "Infrastructure sync" | `.ai/para/areas/syncs/infra/README.md` |
 | "Docs sync", "Documentation sync" | `.ai/para/areas/syncs/docs/README.md` |
 | "Framer sync", "Framer meeting" | `.ai/para/areas/syncs/framer/README.md` |

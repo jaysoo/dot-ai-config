@@ -54,8 +54,8 @@ When commit message is rejected:
 5. Track in `.ai/TODO.md` with timestamps
 
 ### Task Files & Workflow
-- Plan tasks: Follow `~/.codex/commands/plan-task.md`
-- Dictation: Follow `~/.codex/commands/dictate.md`
+- Plan tasks: Follow `~/projects/dot-ai-config/dot_claude/commands/plan-task.md`
+- Dictation: Follow `~/projects/dot-ai-config/dot_claude/commands/dictate.md`
 - Architecture docs: `.ai/architectures/[repo]-architecture.md`
 - Daily summaries: `.ai/yyyy-mm-dd/SUMMARY.md`
 

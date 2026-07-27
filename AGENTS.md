@@ -2,16 +2,14 @@
 
 This repo is the **source of truth** for Jack Hsu's AI/dev configuration. A `pre-push` hook runs `sync.sh`, which copies files out to `$HOME` and `~/.config/`. Pushing = syncing. Never edit the destination copies — always edit here.
 
-For Jack's personal preferences, workflow conventions, and tech-specific guidance (Nx, Astro, Ocean, etc.), see `dot_claude/AGENTS.md` — that file is synced to `~/.Codex/AGENTS.md` and loaded at user scope by Codex.
+For Jack's personal preferences, workflow conventions, and tech-specific guidance (Nx, Astro, Ocean, etc.), see `dot_claude/AGENTS.md` — that file is synced to `~/.codex/AGENTS.md` and loaded at user scope by Codex.
 
 ## Repo Layout
 
 | Path | Syncs to | Purpose |
 |------|----------|---------|
-| `dot_claude/AGENTS.md` | `~/.Codex/AGENTS.md` | User-scope Codex instructions (preferences, workflow) |
-| `dot_claude/settings.json` | `~/.Codex/settings.json` | Codex settings |
-| `dot_claude/commands/` | `~/.Codex/commands/` | Slash commands |
-| `dot_claude/skills/` | `~/.Codex/skills/` | Skills |
+| `dot_claude/AGENTS.md` | `~/.codex/AGENTS.md` | User-scope Codex instructions (preferences, workflow) |
+| `dot_claude/skills/` | `~/.codex/skills/` | Skills |
 | `dot_ai/` | symlinked as `.ai/` in every work repo | Dictations, daily notes, tasks, PARA knowledge base |
 | `fish/` | `~/.config/fish/` | Fish shell config (excludes `fish_variables`, `nxcloud.fish`) |
 | `nvim/` | `~/.config/nvim/` | Neovim config |
@@ -57,7 +55,7 @@ ln -s $HOME/projects/dot-ai-config/dot_ai .ai
 Run `./sync.sh` manually if you want to sync without pushing.
 
 **Never edit these destinations directly** — they'll be overwritten on the next push:
-- `~/.Codex/` (AGENTS.md, commands/, skills/, settings.json)
+- `~/.codex/` (AGENTS.md, skills/)
 - `~/.config/fish|nvim|kitty|mise|gh-dash/`
 - `~/.tmux.conf`, `~/.bashrc`, `~/.gitconfig`, `~/.gitignore_global`
 
@@ -65,14 +63,14 @@ If in doubt about whether a file is synced, check `sync.sh`.
 
 ## Commands & Skills
 
-Slash commands live in `dot_claude/commands/*.md`; skills live in `dot_claude/skills/<name>/`. Both sync to `~/.Codex/`.
+Skills live in `dot_claude/skills/<name>/` and sync to `~/.codex/skills/`. Claude Code slash commands live in `dot_claude/commands/*.md`; reusable Codex workflows should be skills.
 
 - **Commands** — user-triggered via `/command-name`. Examples: `dictate`, `plan-task`, `summarize`, `reflect`, `brainstorm`, `review-pr`, `end-session`, `list-sessions`.
 - **Skills** — auto-invoked when their description matches. Examples: `dot-Codex-guard` (blocks direct edits to synced destinations), `scan-and-audit`, `nx-workspace-expert`, `visual-ui-tester`.
 
 **After invoking any skill or command, bump `USAGE.md`** — find the row, update `Last Invoked` to today's date, increment `Count`. Add a new row if it's the first use.
 
-Authoring a new command: `/create-command` scaffolds one. Put it in `dot_claude/commands/`, not `~/.Codex/commands/`.
+Authoring a new Claude Code command: `/create-command` scaffolds one. Put it in `dot_claude/commands/`, not `~/.claude/commands/`.
 
 ## PARA Knowledge Base (`dot_ai/para/`)
 
@@ -90,7 +88,7 @@ Daily work lives at `dot_ai/yyyy-mm-dd/` with `SUMMARY.md`, `tasks/`, `dictation
 
 ## Adding Notes to Syncs and 1:1s
 
-**Team syncs** — `dot_ai/para/areas/syncs/<team>/README.md`. Teams: `dpe`, `cli`, `orca`, `backend`, `infra`, `docs`, `marketing`, `planning`, `all-hands`.
+**Team syncs** — `dot_ai/para/areas/syncs/<team>/README.md`. Teams: `dpe`, `cli`, `nx-cloud`, `infra`, `docs`, `marketing`, `planning`, `all-hands`.
 
 **1:1s** — `dot_ai/para/areas/personnel/<name>.md` (lowercase, hyphenated).
 
@@ -119,7 +117,7 @@ Use the `/dictate` command — it handles the full workflow (creates the dictati
 
 ## Guardrails
 
-- `dot-Codex-guard` skill blocks direct edits to `~/.Codex/` and other synced destinations — if it trips, re-route the edit to the source in this repo.
+- `dot-Codex-guard` skill blocks direct edits to `~/.codex/` and other synced destinations — if it trips, re-route the edit to the source in this repo.
 - `NEVER` commit secrets (`.env`, tokens, API keys). `fish/fish_variables` and `fish/nxcloud.fish` are intentionally excluded from the sync for this reason.
 - Always use feature branches. Never push directly to `main`/`master`.
 - Every commit must come from Jack — no co-author trailers, no "Codex" attribution in the commit body.

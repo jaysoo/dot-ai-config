@@ -7,17 +7,20 @@ Jack Hsu (Director of Engineering) reports to Victor Savkin.
 ### Direct Reports to Jack
 | Name | Team | Title |
 |---|---|---|
-| Altan Stalker | Quokka | L5 Engineer |
+| Altan Stalker | Nx Cloud | L5 Engineer |
 | Jason Jean | Dolphin | L6 Engineer |
 | Steve Pentland | Kraken | L6 Engineer |
-| Nicole Oliver | Orca | L5 Engineer |
 | Jonathan Cammisuli | Red Panda | L6 Engineer |
 
-### Quokka (Manager: Altan Stalker)
+### Nx Cloud (Manager: Altan Stalker)
 | Name | Title |
 |---|---|
+| Benjamin Cabanes | L6 Engineer |
+| Nicole Oliver | L5 Engineer |
 | Louie Weng | L4 Engineer |
 | Rares Matei | L5 Engineer |
+
+Formed 2026-07 by merging Orca (Nicole) and Quokka (Altan).
 
 ### Dolphin (Manager: Jason Jean)
 | Name | Title |
@@ -32,12 +35,6 @@ Jack Hsu (Director of Engineering) reports to Victor Savkin.
 |---|---|
 | Patrick Mariglia | L5 Engineer |
 | Szymon Wojciechowski | L4 Engineer |
-
-### Orca (Manager: Nicole Oliver)
-| Name | Title |
-|---|---|
-| Benjamin Cabanes | L6 Engineer |
-| Dillon Chanis | L4 Engineer |
 
 ### Red Panda (Manager: Jonathan Cammisuli)
 | Name | Title |

@@ -195,8 +195,10 @@ for understanding what actually happened — don't skim it.
    - Cloud team (CLOUD-)
    - Infrastructure team (INF-)
    - Red Panda team (NXA-)
-   - Quokka team (Q-)
    - Docs team (DOC-) — **Team members: Jack, Caleb only** (not Ben)
+
+   For months before 2026-07, also pull Quokka (Q-) - that team merged into
+   Nx Cloud.
 
    For each team: pull ALL completed issues (filter by `completedAt` within
    the month). Read titles AND descriptions — titles alone miss context.

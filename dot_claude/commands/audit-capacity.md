@@ -23,7 +23,7 @@ upcoming 4-6 week window.
 $ARGUMENTS
 
 If no arguments: analyze all active teams (Nx CLI, Infrastructure, Nx Cloud,
-RedPanda, Quokka) for the next 4-6 weeks. If arguments provided (e.g.,
+RedPanda) for the next 4-6 weeks. If arguments provided (e.g.,
 "CLI only", "next 2 weeks"): scope accordingly.
 
 ## File Management

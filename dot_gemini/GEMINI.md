@@ -214,7 +214,7 @@ New tasks go at #1, bump others down, remove 11th item.
 ## 📊 Team Sync Tracking
 
 **Location:** `.ai/para/areas/syncs/[team]/README.md`
-Teams: DPE, CLI, Orca, Backend, Infra, Docs, Framer
+Teams: DPE, CLI, Nx Cloud, Infra, Docs, Framer
 
 **Section Order:**
 1. Topics for Next Meeting

@@ -16,8 +16,7 @@ Notes from recurring team sync meetings.
 |------|--------|-------------|
 | CLI | `cli/` | Nx CLI team sync |
 | DPE | `dpe/` | Developer Productivity Engineering |
-| Orca | `orca/` | Orca team sync |
-| Backend | `backend/` | Backend team sync |
+| Nx Cloud | `nx-cloud/` | Nx Cloud team sync (formerly Orca + Quokka/Backend) |
 | Infra | `infra/` | Infrastructure team sync |
 | Docs | `docs/` | Documentation team sync |
 | Marketing | `marketing/` | Marketing team sync (includes Framer website) |

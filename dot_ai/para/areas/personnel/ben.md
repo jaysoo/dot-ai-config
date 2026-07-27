@@ -1,8 +1,8 @@
 # Ben (Benjamin Cabanes)
 
-**Team:** Orca
+**Team:** Nx Cloud
 **Role:** L6 Engineer
-**Manager:** Nicole
+**Manager:** Altan
 **Location:** Montreal, QC, Canada
 
 ## Personal

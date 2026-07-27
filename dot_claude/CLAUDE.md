@@ -115,7 +115,7 @@ Fixes DOC-125"
 
 **Commit body style**: Terse (caveman applies to commits too). Use the Nx template sections, but each = 1-3 short fragments. No filler, no repeating, no marketing recap. Skimmable in under 15 seconds.
 
-**Inline code comment style**: Same discipline. 1-2 lines max, "explain _why_, not _what_". Delete comments that recap mechanics already in the code. Bullets OK for a pipeline of transforms. JSDoc on public APIs may go longer for non-obvious contracts.
+**Inline code comment style**: Terse. 1-2 lines max, explain _why_ not _what_. Delete comments that recap mechanics already visible in the code. Just solved something subtle? The investigation narrative goes in the commit body/PR, NOT an inline block - the comment keeps only the 1-2 line why. Bullets OK for a pipeline of transforms. JSDoc on public APIs may go longer for non-obvious contracts. Deliberate audit: `code-comment-style` skill.
 
 **ASCII punctuation in code/commits/committed markdown**: Use `-` and `->`. No em dashes, unicode arrows, or other unicode punctuation in code comments, commit bodies, PR descriptions, or any committed markdown (incl. `tools/ai-migrations/MIGRATE_*.md`). Reads as AI-generated. OK in user-facing chat.
 
@@ -270,7 +270,7 @@ New tasks go at #1, bump others down, remove 11th item.
 ## 📊 Team Sync Tracking
 
 **Location:** `.ai/para/areas/syncs/[team]/README.md`
-Teams: DPE, CLI, Orca, Backend, Infra, Docs, Framer
+Teams: DPE, CLI, Nx Cloud, Infra, Docs, Framer
 
 **Section Order:**
 

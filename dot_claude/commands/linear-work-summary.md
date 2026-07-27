@@ -60,11 +60,10 @@ mcp__Linear__list_issues({
 
 1. **Docs** - Usually has most issues during platform migrations
 2. **Nx CLI** - Core product development
-3. **Nx Cloud** - Cloud platform features
+3. **Nx Cloud** - Cloud platform features, API and services
 4. **RedPanda** - Advanced features team
 5. **Capybara** - Content and messaging
 6. **Infrastructure** - System improvements
-7. **Backend** - API and services
 8. **Nx Dev Rel** - Developer relations
 9. **Nx Enterprise** - Enterprise features
 10. **Customer Success** - Customer-facing improvements

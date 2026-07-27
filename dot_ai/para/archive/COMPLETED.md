@@ -2,6 +2,10 @@
 
 ### July 2026
 
+- [x] Review AI and the Background Mind blog draft (2026-07-24)
+  - Plan: `dot_ai/2026-07-24/tasks/review-ai-background-mind-blog-draft.md`
+  - Summary: Reviewed the draft for framing, consistency, flow, house style, and psychological accuracy, then audited the research behind its central premise. Recommended treating the background mind as shorthand for incubation, separating established incubation effects from contested unconscious mechanisms and the untested AI/programming extrapolation, grounding the argument with one programming example, and tightening the seven-step workflow.
+
 - [x] DOC-552: Review PR redirects and merge blockers (2026-07-23)
   - Plan: `dot_ai/2026-07-23/tasks/doc-552-pr-redirect-review.md`
   - Summary: Exhaustively compared the production sitemap, Git move inventory, Netlify redirects, deploy preview, and local build. Verified all 184 moved articles, 26 legacy Knowledge Base routes, and all 213 removed production URLs are covered. Fixed eight redirect chains plus a breadcrumb class regression; removed stale search/topic metadata; full build, link validation, lint, Vale, and redirect audits pass.

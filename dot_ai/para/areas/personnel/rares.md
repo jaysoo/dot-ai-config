@@ -1,6 +1,6 @@
 # Rares
 
-**Team:** Quokka
+**Team:** Nx Cloud
 **Role:** L5 Engineer
 **Manager:** Altan
 **Location:** Scotland, UK
@@ -21,7 +21,7 @@
 ## Professional
 
 - **Level:** L5 (promoted Jan 2026)
-- **Current Focus:** 50/50 split between engineering and sales work; Quokka team (tracing project)
+- **Current Focus:** 50/50 split between engineering and sales work; Nx Cloud team (tracing project)
 - **Goals:** Maintain fast NX repo pipelines, 70% planned / 30% unplanned work balance
 - **Strengths:** Broad knowledge across app, backend, and infra; EU timezone coverage; PoV delivery; debugging enterprise issues
 

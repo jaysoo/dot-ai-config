@@ -419,7 +419,29 @@ Maps to two weakest topics: Build System Optimization (59% visibility, Sourcegra
 
 **Gauge's pick:** comparison matrix = fastest win (format gap, zero existing competition); listicle = highest ceiling (Sourcegraph at 45.6%).
 
-## Prioritized Action Items (PROPOSED — pending Jack's review)
+### Entry 15 — Gauge methodology assessment (2026-07-24, second-agent research) + Jack's verdict
+
+**Jack's verdict:** useful, but AI space changes quickly — go month-to-month, pay no more than $100/mo. Data limited to what it can scrape (very small subset) + prompts it runs itself.
+
+**Methodology research (second agent, condensed):**
+
+Gauge = GEO (Generative Engine Optimization) platform. Two data pipelines:
+
+1. **Core visibility tracking is synthetic.** Gauge runs hundreds of customized prompts per customer daily against ChatGPT, Perplexity, Gemini, Claude, Copilot, Google AI Overviews and records mentions + cited sources. Differentiator claim: queries the real web chat experience (retrieval/browsing/ranking included), not bare APIs. Share of voice, sentiment, citation analysis = Gauge asking its own questions, not real users.
+2. **"Real user" prompt/conversation data is licensed panel data.** Nobody outside OpenAI/Google/Anthropic has real query logs; vendors (Gauge, Profound, Semrush) buy from clickstream/panel brokers (Datos/Semrush, BiScience). Collection mechanics: free browser extensions/VPNs/rewards apps intercept chatbot traffic under buried ToS. Recent ugly press: Koi Security found Urban VPN harvesting AI conversations from ~8M users, hardcoded on, feeding BiScience.
+
+**Weight rubric:**
+
+- Reasonably useful (directional): relative share of voice vs competitors on fixed prompt set over time; citation analysis (directly observed, most actionable GEO signal); big swings after shipped changes (prompt set held constant).
+- Heavy skepticism: prompt volume numbers (panel skews desktop/Chrome/extension-installers, misses mobile entirely, geographic skew — order-of-magnitude extrapolations); absolute mention rates (LLM responses stochastic + personalized; logged-out no-memory sampling != real logged-in user); the prompt set itself (selection bias in, insights out).
+
+**TLDR:** trust relative trends + citation intelligence; treat "what real users ask and how often" as modeled estimates on ethically wobbly extension-harvested panel data — fine for prioritization, not reportable as fact.
+
+Sources: withgauge.com, withgauge.com/geo/, jingrey.com Gauge review, Gauge vs Profound, Lafferty prompt-volume explainer, jaeckert-odaniel prompt-volume analysis, Conductor "Debunking AI prompt volume", Profound prompt volumes, Semrush ChatGPT clickstream study, Koi Security Urban VPN report, Dark Reading 8M-user extension harvest, Hacker News extensions stealing chats.
+
+**Protocol implications (fold into tracking):** never use prompt-volume numbers in criteria; use relative deltas on fixed prompt set, not absolute rates; require sustained moves (2+ consecutive weekly reads) before acting — single reads are stochastic; corroborate big swings with a second source (Ahrefs referrals, manual spot-prompts in a logged-in session).
+
+> **2026-07-24 pivot:** Gauge = $599/mo, over cap — not subscribing (see Gauge Subscription Eval below). Gauge/Action Center references in the tracking protocol apply ONLY while the trial lasts; after that, substitute the DIY monthly prompt battery (same prompts, same pass criteria, results logged in this doc). H5 shrinks to: capture prompt set + baselines from the trial before it ends; Blacksmith/Depot brand coverage and the security prompt move into the DIY battery.
 
 **Global tracking protocol (applies to every item):**
 
@@ -443,6 +465,18 @@ Maps to two weakest topics: Build System Optimization (59% visibility, Sourcegra
   - Tracking: per-prompt visibility on Lerna/Rush rows (Entry 10 baselines; Rush CI/CD prompts 72-91% visibility but citations go to third parties) + the two "Google build system" prompts (14.8%). Positive = new/updated pages enter those prompts' citations; Bazel-framing prompts +10pts.
 - **H4. Cost/ROI angle: update EXISTING comparison + Nx Cloud pages with cost-of-ownership framing** (no new page from Entry 6 brief) — fold "stop paying CI platform prices for a task-distribution problem" + task-level vs job-level framing into existing pages; addresses cost-framed query weakness (33-48% visibility, Entry 12) + ROI prompts at 41.7% (Entry 4).
   - Tracking: visibility on cost-framed prompts ("Cheapest monorepo CI/CD platforms" 33.3%, ROI/cost prompts 41.7% baseline). Positive = +10pts on those prompts in 4-6 wks. Watch: Buildkite branded share (19.9%, rising).
+  - **Cost-framed prompt archetypes** (observed from Gauge marked; rest are extrapolations of the same archetype for the DIY battery / new tracked prompts):
+    1. Budget/startup: "Cheapest monorepo CI/CD platforms for startups" (OBSERVED, 33.3%); extrapolated: "free CI setup for a small monorepo", "monorepo build tooling on a budget".
+    2. Compute cost / TCO: "cost per build" phrasing (OBSERVED in Gauge's pattern note); extrapolated: "reduce CI compute costs for a monorepo", "why is our GitHub Actions bill so high (monorepo)", "cut CI minutes on a large repo".
+    3. ROI justification: ROI-justification prompts at 41.7% visibility (OBSERVED, Entry 4); extrapolated: "justify build-system investment to leadership", "is a paid remote cache worth it", "business case for monorepo build platform".
+    4. Pricing comparison: extrapolated: "Nx Cloud pricing vs Turborepo remote cache", "Buildkite vs CircleCI cost for monorepos", "self-hosted runners vs managed CI cost".
+  - **Why we lose these today:** models answer cost questions from competitor pricing pages + community forums (Entry 12 domain analysis) — Nx has no citable cost content, and the answers inherit the "Nx Cloud pricing/licensing changes" negative theme (Entry 13) from forum memory.
+  - **How to fit in (per archetype, on EXISTING pages):**
+    1. Budget/startup -> make the free tier extractable: state plainly on comparison pages that Nx OSS is free and Nx Cloud has a free tier with remote caching, with the paid boundary explicit. "Cheapest" answers can only include Nx if a page says what costs $0.
+    2. Compute cost -> reframe the cost driver: monorepo CI cost = wasted compute (rebuild/retest everything), not seat price. Affected detection + remote cache + DTE cut the compute bill; task-level vs job-level distinction from Entry 6. Add to nx-vs-turborepo + CI feature docs + H2 guide (cost section).
+    3. ROI justification -> quotable numbers: models extract numbers, not adjectives (Entry 1 rec #4 logic). Add a simple worked cost-savings example/formula (Entry 4 draft has one: eng time + CI compute, 200 packages / 50 engineers) to an existing Nx Cloud/comparison page. One honest worked example beats prose.
+    4. Pricing comparison -> transparency guard: keep claims about competitor pricing OUT (ages badly, verification burden per third-party-claims rule); instead state our own pricing model clearly and link the pricing page. Honesty also counters the pricing/licensing negative theme — spin would feed it.
+  - Placement candidates: nx-vs-turborepo (cost/pricing section in survivor page from H1), nx-vs-bazel (maintenance-cost angle — AI answers already rank Bazel 5-star maintenance cost, Entry 9), remote-cache + CI docs intros, H2 CI/CD guide cost section.
 - **H5. Gauge measurement setup (enabler, ~30 min in Gauge UI, no content)** — three config tasks inside Gauge so H1-H4 are measurable: (a) add Blacksmith + Depot as tracked competitor brands (Entry 5 — currently only Buildkite/CircleCI tracked, so runner-speed competitor losses are invisible); (b) create an Action Center action for each H1-H4 item BEFORE it ships, with expected metric + pass criteria + 2-3wk eval window (Entry 3 shows what happens otherwise: auto-eval at 3 days scored noise); (c) add a tracked security/trust prompt as early-warning (Entry 13).
   - Tracking: n/a (this is what makes tracking of everything else work).
 
@@ -475,3 +509,74 @@ Maps to two weakest topics: Build System Optimization (59% visibility, Sourcegra
 - New nx.dev comparison-matrix page by default — we own monorepo.tools/compare already (M2 decides).
 - Publishing Gauge's generated drafts as-is (Entry 8 needs full rework: bare nx.dev links, unverified table claims, style pass).
 - Any homepage/marketing page work (out of scope).
+
+## Per-Item Eval Criteria (paste-ready for Action Center actions)
+
+Best guesses. Confidence flagged per item. Rules baked in from Entry 15: relative deltas on fixed prompt set only; "sustained" = 2+ consecutive weekly reads; eval window 3-6 wks (never Gauge's ~3-day default); no prompt-volume metrics anywhere.
+
+**H1 — Deduplicate nx-vs-turborepo:**
+
+- C1: exactly one live nx-vs-turborepo URL; the other 301s (verifiable by crawl). Binary.
+- C2: canonical URL citation rate >= 12.4% (today's max of the split pair), sustained, by wk 4.
+- Stretch: >= 18% (approaching the ~22% combined split).
+- Confidence: C1 high, C2 medium — unknown whether consolidation sums or just keeps the max. If it lands 10-12%, call it neutral, not negative.
+
+**H2 — CI/CD best practices guide:**
+
+- C1: guide live on nx.dev, URL linked in action. Binary.
+- C2: URL appears in cicd-pipeline-design topic citation rankings by wk 3.
+- C3: >= 1 sampled "best monorepo CI/CD tools"-type answer cites it (instead of nx-vs-turborepo) by wk 6.
+- Stretch: topic citation rate +3pts from ~19% baseline. (Gauge's own +5% projection = over-optimistic; models refresh slowly.)
+- Confidence: high on C1-C3 as criteria; medium on the +3pts number.
+
+**H3 — Comparison cluster (lerna, rush-stack, bazel refresh):**
+
+- C1: pages live.
+- C2: each new page enters citations for its prompt cluster by wk 6. Precedent: comparisons cluster went 0 -> 8-12% in one period (Entry 11), so this is calibrated, not hoped.
+- C3: "Google build system alternatives" prompts (14.8% baseline): sustained upward move by wk 6; >= 25% = positive.
+- Confidence: C2 high (precedent), C3 low — the 25% number is a gut call; treat direction as the signal.
+
+**H4 — Cost/ROI framing in existing pages:**
+
+- C1: updated pages shipped (list URLs in action).
+- C2: cost-framed prompts ("Cheapest monorepo CI/CD platforms" 33.3%, ROI prompts 41.7%): +10pts sustained by wk 6 = positive; +5pts = neutral-positive.
+- C3: >= 1 sampled cost-prompt answer cites an nx.dev page (baseline: community forums + competitor pricing pages dominate).
+- C4 (guard): Buildkite branded share (19.9%, rising) stops climbing on these prompts.
+- Confidence: medium. Cost narrative is competitive (CircleCI/Buildkite actively own it) — expect slower movement than H2/H3.
+
+**M1 — Zero-config core guide:**
+
+- C1: guide live.
+- C2 (primary, negative-guard): sentiment diff at wk 3 shows NO new negative complexity language vs baseline themes (steeper learning curve / overkill for small teams / plugin setup burden).
+- C3: guide cited in >= 1 complexity/learning-curve-adjacent answer by wk 6.
+- Confidence: LOW on timeline — sentiment/theme shifts are the slowest-moving metric here and Gauge exposes themes qualitatively, not as counts. Realistic check: 6-8 wks, and expect "no worse + occasionally cited" rather than measurable theme decline. This one is directional only.
+
+**M2 — monorepo.tools/compare refresh:** C1: Nx rows verified accurate/current. C2: citation rate holds >= ~21% (guard against regression). C3: sampled answers extracting from it contain no wrong Nx claims. Confidence: high (it's a guard, not a lift target).
+
+**M3 — Listicle outreach:** process metrics only — N articles audited, N misinformation findings, N orgs contacted, N corrections shipped. No Gauge metric criteria (their articles' citation rates aren't ours to move directly). Confidence: high on process framing.
+
+**Not writing criteria for (bail):** M4 monitors (they ARE the criteria), M5 plugins article (scope undecided — criteria after scope), L1-L3 (too small to warrant Action Center actions; fold into parent items' spot-checks).
+
+## Gauge Subscription Eval (month-to-month, cap $100/mo)
+
+**UPDATE 2026-07-24: Gauge pricing is $599/mo — 6x over Jack's $100 cap. Verdict: do NOT subscribe at this price.** Rubric below kept only in case of negotiation/cheaper tier. Plan: extract remaining trial value before it ends (export/record the tracked prompt set, all baselines — already captured in this doc — and the generated drafts), then run the fallback stack: Ahrefs (+ Brand Radar if included) + DIY monthly prompt battery + AI referral/crawler monitoring. Optionally trial Otterly.ai (~$30/mo) as a citation tracker within cap. Tracking for H1-H4 shifts to the DIY battery: same prompts, monthly cadence, before/after logged in this doc instead of Action Center.
+
+Jack's stance: useful; go month-to-month; never >$100/mo; data = small scraped subset + self-run prompts (Entry 15).
+
+**What we pay for (the only durable value):** fixed-prompt-set relative trends, per-URL citation attribution, Action Center before/after evals. NOT: prompt volumes, absolute rates, generated articles.
+
+**Renew for another month if (any two):**
+
+1. >= 1 Action Center eval this month produced a decision-grade before/after readout on a shipped item that Ahrefs couldn't give us.
+2. Citation data surfaced >= 1 new actionable finding we acted on (new negative source, duplicate URL, competitor page climbing, misinformation in an answer).
+3. An in-flight H-item still has its eval window open (don't cancel mid-measurement).
+
+**Cancel/pause if (any one):**
+
+- Two consecutive months where no readout influenced a decision.
+- All tracked metrics moved only within noise (+/-2pts, unsustained) AND nothing shipped that month — paying for idle dashboards.
+- Price >$100/mo, or trust breaks (criteria drift, eval windows we can't control, panel-data scandal blowback that makes citing their numbers a liability).
+
+**Cadence:** decide at each renewal against the month's task-doc log. Revisit the whole tool category quarterly — GEO market is young; Profound/Semrush may leapfrog.
+
+**Shareable write-up (usefulness + alternatives):** `dot_ai/2026-07-24/tasks/gauge-usefulness-writeup.md`

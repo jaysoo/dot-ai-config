@@ -1,6 +1,6 @@
 # Louie
 
-**Team:** Quokka
+**Team:** Nx Cloud
 **Role:** L4 Engineer
 **Manager:** Altan
 **Location:** Vancouver or Toronto, Canada (?)

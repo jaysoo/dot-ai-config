@@ -5,7 +5,7 @@ set -e
 GIT_ROOT=$HOME/projects/dot-ai-config
 
 CLAUDE_TARGET_DIR="$HOME/.claude"
-CODEX_TARGET_DIR="$HOME/.Codex"
+CODEX_TARGET_DIR="${CODEX_HOME:-$HOME/.codex}"
 
 mkdir -p "$CLAUDE_TARGET_DIR" "$CODEX_TARGET_DIR"
 
@@ -14,11 +14,7 @@ cp "$GIT_ROOT/dot_claude/CLAUDE.md" "$CLAUDE_TARGET_DIR/CLAUDE.md"
 mkdir -p "$CLAUDE_TARGET_DIR/commands"
 cp -r "$GIT_ROOT/dot_claude/commands/"* "$CLAUDE_TARGET_DIR/commands/"
 
-cp "$GIT_ROOT/dot_claude/settings.json" "$CODEX_TARGET_DIR/settings.json"
 cp "$GIT_ROOT/dot_claude/AGENTS.md" "$CODEX_TARGET_DIR/AGENTS.md"
-cp "$GIT_ROOT/dot_claude/CODEX.md" "$CODEX_TARGET_DIR/CODEX.md"
-mkdir -p "$CODEX_TARGET_DIR/commands"
-cp -r "$GIT_ROOT/dot_claude/commands/"* "$CODEX_TARGET_DIR/commands/"
 
 # Sync skills if the directory exists
 if [ -d "$GIT_ROOT/dot_claude/skills" ]; then

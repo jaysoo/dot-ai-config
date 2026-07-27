@@ -6,22 +6,24 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 
 | Name                   | Type    | Last Invoked | Count |
 | ---------------------- | ------- | ------------ | ----- |
+| openai-docs            | skill   | 2026-07-27   | 2     |
+| dot-claude-guard       | skill   | 2026-07-27   | 17    |
 | cnw-update-templates   | skill   | 2026-07-15   | 3     |
-| dot-claude-guard       | skill   | 2026-07-23   | 15    |
-| op-request-reason      | skill   | 2026-07-23   | 4     |
+| op-request-reason      | skill   | 2026-07-23   | 5     |
+| code-comment-style     | skill   | 2026-07-23   | 0     |
 | github:yeet            | skill   | 2026-07-13   | 1     |
 | github:github          | skill   | 2026-07-13   | 1     |
 | use-plannotator-for-review | skill | 2026-07-13 | 1     |
 | remotion-best-practices | skill   | 2026-07-13   | 3     |
-| caveman                | skill   | 2026-07-23   | 26    |
+| caveman                | skill   | 2026-07-24   | 27    |
 | 1-on-1-prep            | skill   | 2026-07-23   | 2     |
 | polygraph:polygraph    | skill   | 2026-07-21   | 5     |
 | freeze-capture         | skill   | 2026-07-06   | 1     |
-| blog-writing           | skill   | 2026-07-03   | 1     |
+| blog-writing           | skill   | 2026-07-24   | 6     |
 | nx-workspace-expert    | skill   | 2026-07-09   | 1     |
 | nx-docs-writer         | skill   | 2026-07-08   | 1     |
-| nx-docs-style-check    | skill   | 2026-07-11   | 2     |
-| reflect                | command | 2026-07-23   | 11     |
+| nx-docs-style-check    | skill   | 2026-07-23   | 3     |
+| reflect                | command | 2026-07-23   | 12     |
 | polygraph:await-polygraph-ci | skill | 2026-07-21 | 1 |
 | summarize              | command | 2026-07-21   | 9     |
 | update-config          | skill   | 2026-06-24   | 1     |

@@ -1,8 +1,8 @@
 # Nicole
 
-**Team:** Orca
+**Team:** Nx Cloud
 **Role:** L5 Engineer
-**Manager:** Jack
+**Manager:** Altan
 **Location:** San Diego, CA, USA
 
 ## Personal

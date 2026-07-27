@@ -1,11 +1,11 @@
 # Altan Stalker
 
-**Team:** Quokka
+**Team:** Nx Cloud
 **Role:** Team Lead, AI Czar
 **Level:** L5
 **Manager:** Jack
 **Location:** Atlanta, USA
-**Reports:** Louie, Rares
+**Reports:** Ben, Nicole, Louie, Rares
 **Expertise:** Tracing, sandboxing, metrics, resource allocation
 
 ## Personal

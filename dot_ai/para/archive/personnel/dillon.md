@@ -1,6 +1,7 @@
 # Dillon Chanis
 
-**Team:** Orca
+**Status:** Departed (left the company; archived 2026-07-24)
+**Team:** Orca (dissolved into Nx Cloud)
 **Role:** L4 Engineer
 **Manager:** Nicole
 **Location:**

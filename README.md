@@ -1,8 +1,8 @@
 # dot-ai-config
 
-Source of truth for Jack's Claude Code config, MCP servers, slash commands, skills, shell/editor dotfiles, and the `.ai/` knowledge base used across work repos. A git `pre-push` hook runs `sync.sh` on every push, copying files out to their destinations under `$HOME` and `~/.config/`.
+Source of truth for Jack's Claude Code and Codex CLI config, MCP servers, slash commands, skills, shell/editor dotfiles, and the `.ai/` knowledge base used across work repos. A git `pre-push` hook runs `sync.sh` on every push, copying files out to their destinations under `$HOME` and `~/.config/`.
 
-**Working in this repo?** Read [`CLAUDE.md`](./CLAUDE.md) for the architecture, the `.ai/` ↔ `dot_ai/` mapping, and conventions for adding notes to syncs and 1:1s.
+**Working in this repo?** Read [`AGENTS.md`](./AGENTS.md) when using Codex CLI or [`CLAUDE.md`](./CLAUDE.md) when using Claude Code. Both cover the architecture, the `.ai/` ↔ `dot_ai/` mapping, and conventions for adding notes to syncs and 1:1s.
 
 ## Setup
 
@@ -20,11 +20,13 @@ Run `./sync.sh` manually if you want to push config out without a git push.
 
 | Directory / File | Purpose |
 |------------------|---------|
-| [`CLAUDE.md`](./CLAUDE.md) | Repo guide for agents — architecture, sync model, workflows |
+| [`AGENTS.md`](./AGENTS.md) | Codex CLI repo guide — architecture, sync model, workflows |
+| [`CLAUDE.md`](./CLAUDE.md) | Claude Code repo guide — architecture, sync model, workflows |
+| `dot_claude/AGENTS.md` | User-scope Codex instructions (synced to `~/.codex/AGENTS.md`) |
 | `dot_claude/CLAUDE.md` | User-scope Claude instructions (synced to `~/.claude/CLAUDE.md`) |
-| `dot_claude/commands/` | Slash commands (synced to `~/.claude/commands/`) |
-| `dot_claude/skills/` | Skills (synced to `~/.claude/skills/`) |
-| `dot_claude/settings.json` | Claude Code settings |
+| `dot_claude/commands/` | Claude Code slash commands (synced to `~/.claude/commands/`) |
+| `dot_claude/skills/` | Skills (synced to `~/.claude/skills/` and `~/.codex/skills/`) |
+| `dot_claude/settings.json` | Claude Code settings (synced to `~/.claude/settings.json`) |
 | `dot_ai/` | Knowledge base — dictations, daily work, PARA (projects/areas/resources/archive). Symlinked as `.ai/` in work repos |
 | `mcp-server/` | MyNotes MCP server — indexes `dot_ai/` for search/resume |
 | `mcp-gemini/` | Gemini MCP integration |
@@ -100,15 +102,16 @@ Synced into `~/.claude/mcp-gemini/`. Provides `ask_gemini` and `gemini_code_revi
 
 ## Daily Workflow (quick reference)
 
-1. Inside a work repo with `.ai` → `dot_ai/` symlinked, agents auto-load `dot_claude/CLAUDE.md` (synced to `~/.claude/`) and any `.ai/para/resources/architectures/<repo>-architecture.md`.
+1. Inside a work repo with `.ai` → `dot_ai/` symlinked, Claude Code loads `dot_claude/CLAUDE.md` from `~/.claude/`; Codex loads `dot_claude/AGENTS.md` from `~/.codex/AGENTS.md`.
 2. Task plans go in `.ai/yyyy-mm-dd/tasks/`. Dictations go in `.ai/yyyy-mm-dd/dictations/`. Summaries go in `.ai/yyyy-mm-dd/SUMMARY.md`.
-3. Ad-hoc notes for team syncs → `.ai/para/areas/syncs/<team>/README.md` under `## Upcoming Sync`. For 1:1s → `.ai/para/areas/personnel/<name>.md` under `## Upcoming Sync`. (See `CLAUDE.md` for the full rules.)
+3. Ad-hoc notes for team syncs → `.ai/para/areas/syncs/<team>/README.md` under `## Upcoming Sync`. For 1:1s → `.ai/para/areas/personnel/<name>.md` under `## Upcoming Sync`. (See `AGENTS.md` or `CLAUDE.md` for the full rules.)
 4. On completion, archive tasks into `.ai/para/archive/COMPLETED.md` and remove from `.ai/TODO.md`.
 
 ## Never-Edit List
 
 These destinations are overwritten on every push — always edit the sources in this repo:
 - `~/.claude/CLAUDE.md`, `~/.claude/commands/`, `~/.claude/skills/`, `~/.claude/settings.json`, `~/.claude/mcp-gemini/`
+- `~/.codex/AGENTS.md`, `~/.codex/skills/`
 - `~/.config/fish/`, `~/.config/nvim/`, `~/.config/kitty/`, `~/.config/mise/`, `~/.config/gh-dash/`
 - `~/.tmux.conf`, `~/.bashrc`, `~/.gitconfig`, `~/.gitignore_global`
 
