@@ -817,6 +817,12 @@ The `--configuration=e2e` loads `.env.serve.e2e`. Don't use `op run` with e2e mo
 - Stripe: 1P `Engineering/Stripe` = sk_test only. Live invoice data via dashboard CSV export or a new restricted key. No invoice $ in Mongo.
 - For churn/usage/revenue questions, invoke the `churn-analyzer` skill first — it has the collections, segment definitions, and schema gotchas (`agentsEnabled` flag ≠ usage, `stripeCustomerId` nulled on churn, cacheHitRate semantics).
 
+### Lockfile: single-dep bumps need surgical edits
+
+- Ocean's pnpm-lock.yaml has pre-existing peer-resolution drift: ANY full resolve (`pnpm install --lockfile-only`, even scoped `pnpm update <pkg>`) rewrites unrelated peer entries (@testing-library/dom downgrades, typescript peer-variant swaps) - same pnpm version, ~200 lines of noise.
+- For a version bump of one package: edit pnpm-lock.yaml directly with replaceAll on the version strings + swap the resolution integrity (`npm view <pkg>@<ver> dist.integrity`), guard that the old version string only appears in that package's context, then validate with `CI=true pnpm install --frozen-lockfile` (the real CI check).
+- Why: CLOUD-4926 - tar 7.5.20 -> 7.5.22 as a 12-line diff instead of 346.
+
 ### Local manual testing of flag-gated features
 
 - Many Ocean features gate on an env-fallback flag set ONLY in `apps/nx-cloud/.env.serve.e2e` (e.g. `NX_CLOUD_ADD_ONS_ENABLED`, `NX_CLOUD_SANDBOXING_ANALYTICS_ENABLED`). A normal local serve leaves them unset (PostHog flag off) so the feature stays hidden on any plan.

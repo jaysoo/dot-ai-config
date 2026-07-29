@@ -1,9 +1,30 @@
 # NXC-4688: Make webpack/module-federation deps optional for @nx/react and @nx/next
 
 - Linear: https://linear.app/nxdev/issue/NXC-4688/check-react-plugin-deps-for-webpackmodule-federation
+- Draft PR: https://github.com/nrwl/nx/pull/36492 (commit `390ab88c28`)
 - Polygraph session: https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/react-mf-cleanup-04580e9b
 - Branch: NXC-4688
 - Worktree: /Users/jack/projects/nx-worktrees/NXC-4688
+
+## Outcome (2026-07-28)
+
+Shipped as a draft PR. Deviations from the plan below:
+
+- `webpack-merge` kept as a direct `@nx/next` dependency. Only `plugins/with-less.ts`
+  uses it and its dependency tail is three tiny packages, so making a public plugin
+  entry point lazy was not worth the churn.
+- `@svgr/webpack` became an optional peer rather than a plain removal, because the Nx 22
+  `add-svgr-to-webpack-config` / `add-svgr-to-next-config` migrations write
+  `require.resolve('@svgr/webpack')` into user configs that resolve it transitively today.
+  Both new migrations backfill it.
+- `assertPackageIsInstalled` was initially copied into both `@nx/react` and `@nx/next`.
+  Jack asked what was newly invented vs already on master, which surfaced the third copy.
+  Now exported from `@nx/react/internal` and imported by `@nx/next`.
+- Local `e2e-react` module federation e2e could not validate the change:
+  `ensureTypescript()` returns undefined inside the e2e temp workspace, so generation
+  fails before reaching changed code. Reproduced on stashed-master baselines for both
+  `core-webpack-basic-host-remote-generation` and `independent-deployability.webpack`.
+  CI has to cover the e2e path.
 
 ## Goal
 

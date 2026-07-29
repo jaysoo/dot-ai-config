@@ -278,6 +278,13 @@ Public (unauthenticated) SVG badge at `/workspaces/{workspaceId}/sandbox-badge.s
 
 ## Personal Work History
 
+### 2026-07-29
+
+- **CLOUD-4926: node-tar CVE-2026-59873 in frontend/polygraph images** (branch `CLOUD-4926`, commit `725c661fc5`, PR #12614 draft; infra suppression PR cloud-infrastructure#5391 closed unmerged)
+  - Root cause: npm 10.x bundled in node:22-alpine ships tar 7.5.11; no base image has a fixed npm. Fix: pin `npm@11.18.0` in both runtime Dockerfiles + workspace tar 7.5.20 -> 7.5.22 (surgical lockfile edit; full pnpm resolve rewrites unrelated peers) + client-bundle stale `tar: 6.1.11` declaration aligned + 3x `onentry` -> `onReadEntry` (tar v7 names, shim-carried since #12438).
+  - Verified: local image build + trivy 0.63.0 scan = 0 criticals; remaining known MEDIUM on npm's bundled tar 7.5.19 until npm bundles >= 7.5.21.
+  - tar usage map: nx-cloud server extracts terminal-output/AI-fix-log tarballs (data-access-api, inlined by esbuild + external in metrics-stream-worker); polygraph images ship zero node-tar. Workflow captured in `ocean-trivy-verify` skill.
+
 ### 2026-07-22/23
 
 - **Team churn analysis May-Jul 2026** (branch: main, no commits - data analysis for Joe)

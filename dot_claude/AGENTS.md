@@ -1,6 +1,12 @@
 # Jack Hsu's Codex CLI Configuration
 Jack Hsu (jack.hsu@gmail.com) | Nx CLI Contributor | Eastern Timezone | Be terse, not overly friendly
 
+## GitHub CLI (`gh`)
+
+`gh` is fine for GitHub data and operations. GitHub MCP and `curl` against `api.github.com` are equally fine.
+
+- PR review/comment/merge still needs explicit confirmation before posting — via `gh`, web UI, or `curl`.
+
 ## 🔴 Critical Setup & Verification
 
 ### .ai Folder Symlink (MUST CHECK FIRST)
@@ -218,3 +224,9 @@ When converting Markdoc syntax to Starlight:
 
 ### Common Astro/Starlight Mistakes
 - ❌ Don't duplicate theme switcher in mobile menu
+
+## 🔐 1Password CLI
+
+Run `op` and `gh` normally — no preamble, logging block, or reason variable is needed.
+
+`~/.local/bin/{gh,op}` are the `auth-proxy` wrapper (source in `auth-proxy/`, built by `sync.sh`). It records every credential-touching call to `/private/tmp/op_requests.txt` for Raycast and refuses `gh auth token` outright, then hands off to the real binary.
