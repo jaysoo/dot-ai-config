@@ -2,6 +2,18 @@
 
 ### July 2026
 
+- [x] CLOUD-4926: Fix critical node-tar image finding (2026-07-29)
+  - Plan: `dot_ai/2026-07-29/tasks/cloud-4926-node-tar.md`
+  - Summary: Trivy Critical came from npm 10.x's bundled `tar@7.5.11` in the node:22 base image. Earlier npm-removal commit rejected; suppression PR (cloud-infrastructure#5391, scoped rego ignorePolicy) built, verified, then closed unmerged in favor of fixing at source: ocean PR #12614 pins `npm@11.18.0` in both runtime Dockerfiles, bumps workspace tar to 7.5.22 (covers follow-on MEDIUM GHSA-r292-9mhp-454m), aligns client-bundle's stale 6.1.11 declaration, renames `onentry` to `onReadEntry`. Verified by local image build + trivy 0.63.0 scan (0 criticals). New `ocean-trivy-verify` skill captures the workflow. Details: `dot_ai/2026-07-29/SUMMARY.md`.
+
+- [x] Review NXC-4701 branch (2026-07-28)
+  - Plan: `dot_ai/2026-07-28/tasks/review-nxc-4701-branch.md`
+  - Summary: Reviewed the two-commit branch against `origin/master`, NXC-4701, and draft PR #36460. Found one merge-blocking scope regression: `<shift>+c` is available only in the completed performance report, while the issue and PR require the global shortcut, popup, status-bar indicator, and help entry. Focused TUI tests (346), connect Jest tests (8), native lint, and native build pass; the full native suite had one unrelated 10 ms timing-threshold flake.
+
+- [x] Acquisition tracker: SEO keywords + AI prompts for GEO (2026-07-27)
+  - Plan: `dot_ai/2026-07-27/tasks/geo-seo-keyword-prompt-tracker.md`
+  - Summary: Mined Ahrefs export, GSC query analysis, and Gauge trial baselines into 7 SEO keyword clusters (~55 keywords) and 5 AI prompt groups with visibility baselines. Published as Notion child page "Acquisition: Tracked Keywords & AI Prompts" under Nx Cloud Acquisition & Activation Initiatives, linked from the Acquisition section. Flagged Gauge at $599/mo (6x over cap) and CI observability as the only named cluster with no baseline or in-flight owner.
+
 - [x] NXC-4606: Enable remote cache from TUI perf report (nx) - CANCELLED (2026-07-24)
   - Plan: `dot_ai/2026-07-06/tasks/nxc-4606-tui-not-connected-status.md`
   - Summary: Two prototypes (footer status + ConnectPopup on PR #36250, inline perf-report CTA on PR #36255). Both cancelled; master moved the footer to a props-driven StatusBar + focus stack, making them unmergeable. Superseded by NXC-4701 (PR #36460), which revives both shapes on current master via a shared `connect_flow.rs`. Both PRs closed. Polygraph session `nxc-4606-e6f49ee0` archived.

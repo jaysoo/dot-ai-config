@@ -2,6 +2,15 @@
 
 ## In Progress
 
+- [ ] CLOUD-4891: Cookie-based env overrides for cloud e2e tests (2026-07-27)
+  - Plan: `dot_ai/2026-07-27/tasks/cloud-4891-cookie-env-overrides.md`
+  - Goal: per-request `e2e-env-override` cookie merged into `context.serverEnvironment` in `createDataArgs`, gated on `E2E_TEST_MODE`, so a Playwright test permutes env flags with no server restart. Implemented + green locally, holding on push per Jack. e2e spec not yet executed (sandbox blocks ports).
+
+- [ ] NXC-4688: Make webpack/module-federation deps optional for @nx/react and @nx/next (2026-07-27)
+  - Plan: `dot_ai/2026-07-27/tasks/nxc-4688-react-next-webpack-mf-optional-deps.md`
+  - Goal: follow Leo's @nx/angular #36310 pattern - optional peers + lazy imports + backfill migrations so react/next/react-native stop pulling the webpack + MF toolchain
+  - Status: draft PR https://github.com/nrwl/nx/pull/36492 (commit `390ab88c28`) awaiting CI. Unit tests + lint green; local e2e-react MF suite broken on master too (ensureTypescript undefined in e2e temp workspace) so CI must cover e2e. Polygraph `react-mf-cleanup-04580e9b`
+
 - [ ] Churn signals validation + competitor cost model (2026-07-24)
   - Plan: `dot_ai/2026-07-24/tasks/churn-signals-and-cost-model.md`
   - Goal: prospectively backtest S1-S4 churn signals (Apr 1 snapshot -> May-Jul churn) for in-product alerts; build GHA/Blacksmith/Depot-comparable cost model ($/vCPU-min + GHA-equivalent-spend ratio). Spike signals falsified. Awaiting Query A/B exports from Jack.
@@ -13,6 +22,13 @@
 - [ ] CLOUD-4878: Lighthouse per-tenant usage charges report for invoicing (2026-07-21 15:10)
   - Plan: `dot_ai/2026-07-21/tasks/tenant-usage-charges-invoice-report.md`
   - Goal: PIVOTED after Elijah sync - existing /dpe-tools/credit-usage-report almost works for finance. New branch `cloud-4878-credit-usage-report-fixes` (1 commit `d241bff`, not pushed): additionalCredits map fix + ISO week range display + Org ID/workspace_id columns + tenant->org sort. Full usage-charges card PARKED on `feature/cloud-4878-usage-charges` (7 commits) in case it's revived
+
+- [ ] NXC-4612: Investigate nightly E2E matrix ("golden") failures (2026-07-28)
+  - Plan: `dot_ai/2026-07-28/tasks/nxc-4612-golden-e2e-matrix-failures.md`
+  - Goal: root-cause why E2E matrix has been red on master every day for 15+ runs. Triage done: 45/139 jobs, 302 distinct failures -> 5 root causes.
+  - Fixed (unpushed, branch NXC-4612): `0c7462479f` e2e harness no longer appends `--verbose` under `NX_E2E_VERBOSE_LOGGING` (clears 114 snapshot failures); `461e15b3e5` built-in presets pin typescript + `ensureTypescript` guards a compiler-API-less TS.
+  - LIVE FIELD BUG found: typescript@7.0.2 went npm `latest` 2026-07-08; its entry exports no compiler API, npm hoists it via loose peers, so `create-nx-workspace --preset=react-monorepo --package-manager=npm` is broken on released nx (reproduced on 23.1.0). Needs a decision: own ticket + patch release vs ship under NXC-4612.
+  - Open: @rspack/core npm ERESOLVE; e2e-nx misc (missing "It's time to update Nx" warning, http remote cache, move/remove project); infra (nx native SIGSEGV, maven-batch-runner).
 
 ## Recent Tasks (Last 10)
 
@@ -180,6 +196,9 @@
 
 ## Active Claude Sessions
 
+- /Users/jack/projects/nx-worktrees/NXC-4612 (branch: NXC-4612) — NXC-4612 nightly E2E matrix triage: 2 commits (`0c7462479f`, `461e15b3e5`) green locally, NOT pushed; awaiting Jack's call on splitting the TypeScript 7 fix into its own ticket. Plan: `dot_ai/2026-07-28/tasks/nxc-4612-golden-e2e-matrix-failures.md`, Polygraph `tidy-condor-02183c70` (2026-07-28)
+- /Users/jack/projects/ocean-worktrees/CLOUD-4891 (branch: CLOUD-4891) — CLOUD-4891 cookie-based env overrides for cloud e2e: commit `19b0e2dae4` green locally, NOT pushed (Jack holding). Plan: `dot_ai/2026-07-27/tasks/cloud-4891-cookie-env-overrides.md`, Polygraph `fresh-wombat-25345f30` (2026-07-27)
+- /Users/jack/projects/nx-worktrees/NXC-4688 (branch: NXC-4688) — NXC-4688 optional webpack/MF deps for @nx/react + @nx/next (+ @nx/rollup, @nx/react-native cleanup): draft PR https://github.com/nrwl/nx/pull/36492 awaiting CI. Plan: `dot_ai/2026-07-27/tasks/nxc-4688-react-next-webpack-mf-optional-deps.md`, Polygraph `react-mf-cleanup-04580e9b` (2026-07-27)
 - /Users/jack/projects/ocean (branch: main) — Churn signals validation + cost model: backtest queries drafted, awaiting Query A/B exports. Plan: `dot_ai/2026-07-24/tasks/churn-signals-and-cost-model.md` (2026-07-24)
 - /Users/jack/projects/nx-worktrees/NXC-4701 (branch: NXC-4701) — NXC-4701 TUI connect flow: draft PR https://github.com/nrwl/nx/pull/36460 awaiting CI + Jack review. Superseded prototypes #36250 + #36255 both closed. Plan: `dot_ai/2026-07-24/tasks/nxc-4701-tui-connect-flow.md`, Polygraph `ready-jackal-5efe8ef1` (2026-07-24)
 - /Users/jack/projects/nx-worktrees/DOC-555 (branch: DOC-555) — DOC-555 SEO batch: draft PR https://github.com/nrwl/nx/pull/36459 awaiting Jack review + CI. Plan: `dot_ai/2026-07-24/tasks/doc-555-seo-page-plan.md`, Polygraph `vivid-iguana-930ae870` (2026-07-24)

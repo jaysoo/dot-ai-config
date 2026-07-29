@@ -135,6 +135,45 @@ TypeScript:
   Proof: `.ai/2026-07-24/proof/*.png`
 - Staging accepted the `nx-tui` onboarding source.
 
+## Round 2 (Jack feedback)
+
+- **Don't block on missing VCS.** `generateConnectUrlForTui` no longer throws
+  when there's no remote; it returns `{ url, needsVcsPush }`. The popup shows the
+  URL plus a nudge to create a repo (https://github.com/new). Goal is to get the
+  user to the browser fast; Cloud covers VCS on its side. `NX_SKIP_CHECK_REMOTE`
+  gate dropped from the TUI path (still used by the CLI `nx connect`).
+- **No auto-open; `o` to open.** The browser is never opened automatically. `o`
+  (or a link click) opens the URL, in both the standalone popup and the report's
+  inline line. Popup footers advertise `open: o`.
+- **Confirmed not using OSC 8.** The URL is a `Link`/`LinkRegistry`
+  mouse-hit-test widget (Craigory's #35868, Jason's #36263) — zero escape
+  sequences. OSC 8 breaks ratatui layout (issue #1028); it survives only on the
+  static non-TUI perf report (`terminal-link.ts`).
+- napi `setConnectUrl(url)` -> `setConnectUrl(url, needsVcsPush)`. `Ready(String)`
+  -> `Ready { url, needs_vcs_push }`.
+- Amended into the feature commit (kept the clean 2-commit series);
+  force-pushed with lease over ANOTHER empty Nx Cloud self-healing retrigger
+  (verified empty first). 350 TUI tests, live e2e re-run for the no-VCS popup +
+  `o` + report `open: o`.
+
+## Round 3 (Jason + Jack: park the status bar, keep the perf report)
+
+Slack decision (Jason found `not connected: <shift>+c` "a little loud"; both agreed to ship the perf-report part and revisit the status bar after resource-usage lands): the connect experience lives ONLY in the perf report now.
+
+- **Removed:** status-bar indicator (reverted `status_bar.rs`/`help_popup.rs` to master), the standalone `ConnectPopup` (deleted), the global `<shift>+c` shortcut + `Focus::ConnectPopup` + help entry. `app.rs` -290 lines.
+- **Kept + enriched:** the perf report inline connect. It now shows the full flow inline - URL + VCS nudge + `open: o` - so the user never leaves the TUI (the whole point: no click-to-docs-then-figure-out-onboarding).
+- **Made reusable (Jack's ask - "encapsulate local state, don't bleed into the perf report").** New `ConnectFlow` component owns its lifecycle state + connection gate, exposes `body_lines()` / `footer_hint()` / `on_key() -> ConnectFlowIntent`. The report embeds one `ConnectFlow` and delegates; side effects (spawn connect, open browser) stay in the app via the returned intent. `CountdownPopup` no longer carries loose `connect_state`/`cloud_connection` fields. Any future popup embeds `ConnectFlow` without touching the report.
+- The bar's pre-existing ☁ connected-icon stays (fed from `CloudConnection::Connected`); only the NEW not-connected text went.
+- Folded in 2 surviving review notes: `connectToNxCloudFromTui` JSDoc accuracy (already-connected branch resolves offline), and a doc line marking `TuiState::connect_flow_state` authoritative.
+- 347 Rust TUI tests green; live e2e re-run (status bar clean, report CTA -> inline URL+VCS nudge -> `open: o`). Proof: `.ai/2026-07-24/proof/report-inline-connect.png`.
+
+## Round 4 (Jack: drop VCS, relabel)
+
+- "No git remote yet..." line was too long. Dropped VCS detection ENTIRELY: no `getVcsRemoteInfo` in the TUI path, no `needsVcsPush`, no nudge line. The report shows only `Finish your setup: <url>`. Cloud covers VCS in the browser.
+- `open: o` -> `open link: o`.
+- `ConnectFlowState::Ready { url, needs_vcs_push }` -> `Ready(String)`; napi `setConnectUrl(url, needsVcsPush)` -> `setConnectUrl(url)`; `connectToNxCloudFromTui` returns `Promise<string>` again (dropped `TuiConnectResult`).
+- 346 Rust TUI tests green; live e2e confirms single URL line + `open link: o`.
+
 ## Follow-ups
 
 - The `☁️` icon on the counts renders one cell wider than ratatui reserves,
