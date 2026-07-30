@@ -1,7 +1,7 @@
 {
   "purpose": "Monthly client page_view (Views) by Session default channel group, for Home (pagePath=/), Docs (begins /docs), and Others (pagePath does NOT match home/docs/blog/marketing - validated to within 1% of the page-type others_views). *Nxdev = Hostname=nx.dev exactly. Top 4 channels explicit; \"other\" = the rest. Docs = Organic-led decline (AI/SEO); Home = Direct-led (technical/Framer); Others pre-Sep-2025 = the root-path docs (/getting-started/* etc.) before they moved to /docs - also Organic-led, so it continues the docs story backward across the migration.",
   "metric": "Views (client page_view)",
-  "scraped_at": "2026-06-22",
+  "scraped_at": "2026-07-30",
   "channels": [
     "organic_search",
     "direct",
@@ -116,11 +116,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 3328,
-      "direct": 1171,
-      "referral": 481,
-      "unassigned": 215,
-      "other": 144
+      "organic_search": 5346,
+      "direct": 1864,
+      "referral": 715,
+      "unassigned": 331,
+      "other": 310
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 4794,
+      "direct": 1936,
+      "referral": 694,
+      "unassigned": 315,
+      "other": 220
     }
   ],
   "docs": [
@@ -222,11 +230,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 26020,
-      "direct": 6985,
-      "referral": 2527,
-      "unassigned": 1587,
-      "other": 638
+      "organic_search": 41615,
+      "direct": 11273,
+      "referral": 3463,
+      "unassigned": 2653,
+      "other": 1024
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 39096,
+      "direct": 11368,
+      "referral": 2883,
+      "unassigned": 2874,
+      "other": 950
     }
   ],
   "others": [
@@ -336,11 +352,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 911,
-      "direct": 1188,
-      "referral": 95,
-      "unassigned": 174,
-      "other": 15
+      "organic_search": 1385,
+      "direct": 2000,
+      "referral": 184,
+      "unassigned": 220,
+      "other": 24
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 1389,
+      "direct": 1731,
+      "referral": 140,
+      "unassigned": 68,
+      "other": 211
     }
   ],
   "homeNxdev": [
@@ -450,11 +474,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 3317,
-      "direct": 1095,
-      "referral": 480,
-      "unassigned": 215,
-      "other": 143
+      "organic_search": 5337,
+      "direct": 1730,
+      "referral": 714,
+      "unassigned": 331,
+      "other": 305
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 4789,
+      "direct": 1648,
+      "referral": 618,
+      "unassigned": 312,
+      "other": 220
     }
   ],
   "docsNxdev": [
@@ -556,11 +588,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 26001,
-      "direct": 6943,
-      "referral": 2524,
-      "unassigned": 1587,
-      "other": 636
+      "organic_search": 41587,
+      "direct": 11221,
+      "referral": 3456,
+      "unassigned": 2653,
+      "other": 1021
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 39024,
+      "direct": 11307,
+      "referral": 2883,
+      "unassigned": 2872,
+      "other": 942
     }
   ],
   "othersNxdev": [
@@ -670,11 +710,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 423,
-      "direct": 83,
-      "referral": 57,
-      "unassigned": 11,
-      "other": 10
+      "organic_search": 878,
+      "direct": 201,
+      "referral": 94,
+      "unassigned": 35,
+      "other": 14
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 733,
+      "direct": 152,
+      "referral": 94,
+      "unassigned": 40,
+      "other": 29
     }
   ]
 }

@@ -6,6 +6,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 
 | Name                   | Type    | Last Invoked | Count |
 | ---------------------- | ------- | ------------ | ----- |
+| ga-traffic             | skill   | 2026-07-30   | 0     |
 | nx-workspace           | skill   | 2026-07-29   | 1     |
 | ocean-trivy-verify     | skill   | 2026-07-29   | 0     |
 | dot-claude-guard       | skill   | 2026-07-29   | 19    |
@@ -16,9 +17,9 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | github:github          | skill   | 2026-07-13   | 1     |
 | use-plannotator-for-review | skill | 2026-07-13 | 1     |
 | remotion-best-practices | skill   | 2026-07-13   | 3     |
-| caveman                | skill   | 2026-07-29   | 31    |
+| caveman                | skill   | 2026-07-30   | 32    |
 | 1-on-1-prep            | skill   | 2026-07-23   | 2     |
-| polygraph:polygraph    | skill   | 2026-07-28   | 6     |
+| polygraph:polygraph    | skill   | 2026-07-29   | 7     |
 | op-request-reason      | skill   | 2026-07-28   | 1     |
 | freeze-capture         | skill   | 2026-07-06   | 1     |
 | blog-writing           | skill   | 2026-07-24   | 6     |
@@ -27,7 +28,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | nx-docs-style-check    | skill   | 2026-07-23   | 3     |
 | reflect                | command | 2026-07-29   | 13     |
 | polygraph:await-polygraph-ci | skill | 2026-07-21 | 1 |
-| summarize              | command | 2026-07-21   | 9     |
+| summarize              | command | 2026-07-30   | 10    |
 | update-config          | skill   | 2026-06-24   | 1     |
 | nx-scorecard           | skill   | 2026-06-09   | 0     |
 | audit-project-health   | skill   | 2026-05-25   | 12    |
@@ -46,7 +47,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | team-capacity-audit    | task    | 2026-04-09   | 12    |
 | cnw-stats-analyzer     | skill   | 2026-04-01   | 3     |
 | reflect                | skill   | 2026-04-01   | 2     |
-| linear-issue-style     | skill   | 2026-07-28   | 6     |
+| linear-issue-style     | skill   | 2026-07-30   | 8     |
 | site-checker           | skill   | 2026-04-01   | 0     |
 | summarize              | command | 2026-04-01   | 2     |
 | plan-week              | skill   | 2026-03-30   | 1     |
@@ -83,3 +84,7 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-07-28: invoked linear-issue-style skill (churn-risk alerting -> CLOUD-5049)
 2026-07-28: invoked caveman, polygraph, op-request-reason skills (NXC-4688 optional webpack/MF peers for @nx/react + @nx/next, draft PR #36492)
 2026-07-28: invoked polygraph:polygraph, polygraph:session-debrief, caveman skills (NXC-4612 nightly E2E matrix failure triage)
+2026-07-29: invoked polygraph:polygraph, linear-issue-style skills (NXC-4739 axios/brace-expansion bumps PR #36507; removal research -> NXC-4743)
+2026-07-29: invoked polygraph:polygraph, polygraph:session-debrief, caveman skills (NXC-4687 CNW template egress fallback, draft PR #36508)
+2026-07-30: invoked summarize, reflect commands (NXC-4688 merged #36492 wrap-up)
+2026-07-30: invoked caveman, linear-issue-style skills (Ahrefs CI keyword research -> 5 content ideas in DOC-563)

@@ -1,10 +1,10 @@
 {
   "meta": {
     "generated_by": "process.mjs",
-    "scraped_at": "2026-06-19",
-    "daily_range": "2025-05-01..2026-06-27",
-    "weekly_range": "2025-05-05..2026-06-15",
-    "monthly_range": "2025-01..2026-06",
+    "scraped_at": "2026-07-30",
+    "daily_range": "2025-05-01..2026-07-29",
+    "weekly_range": "2025-05-05..2026-07-20",
+    "monthly_range": "2025-01..2026-07",
     "segments": "Page types: home (/), docs (/docs*), blog (/blog*), marketing (Framer pages, see raw/segment-definitions.json), others (= all - the rest). Disjoint; stack to total.",
     "caveats": [
       "Views = GA4 screenPageViews (client page_view).",
@@ -4261,9 +4261,9 @@
       "all_views": 2624,
       "home_views": 283,
       "docs_views": 1738,
-      "blog_views": 0,
-      "marketing_views": 0,
-      "others_views": 603,
+      "blog_views": 288,
+      "marketing_views": 173,
+      "others_views": 142,
       "server_page_view": 141143
     },
     {
@@ -4271,29 +4271,29 @@
       "all_views": 1236,
       "home_views": 140,
       "docs_views": 847,
-      "blog_views": 0,
-      "marketing_views": 0,
-      "others_views": 249,
+      "blog_views": 82,
+      "marketing_views": 67,
+      "others_views": 100,
       "server_page_view": 138026
     },
     {
       "date": "2026-06-21",
       "all_views": 1639,
-      "home_views": 176,
+      "home_views": 175,
       "docs_views": 1188,
-      "blog_views": 0,
-      "marketing_views": 0,
-      "others_views": 275,
+      "blog_views": 134,
+      "marketing_views": 71,
+      "others_views": 71,
       "server_page_view": 163323
     },
     {
       "date": "2026-06-22",
       "all_views": 3591,
-      "home_views": 348,
+      "home_views": 345,
       "docs_views": 2694,
-      "blog_views": 0,
-      "marketing_views": 0,
-      "others_views": 549,
+      "blog_views": 244,
+      "marketing_views": 128,
+      "others_views": 180,
       "server_page_view": 193164
     },
     {
@@ -4301,9 +4301,9 @@
       "all_views": 3810,
       "home_views": 411,
       "docs_views": 2615,
-      "blog_views": 0,
-      "marketing_views": 0,
-      "others_views": 784,
+      "blog_views": 433,
+      "marketing_views": 155,
+      "others_views": 196,
       "server_page_view": 203559
     },
     {
@@ -4311,9 +4311,9 @@
       "all_views": 3584,
       "home_views": 348,
       "docs_views": 2557,
-      "blog_views": 0,
-      "marketing_views": 0,
-      "others_views": 679,
+      "blog_views": 326,
+      "marketing_views": 159,
+      "others_views": 194,
       "server_page_view": 186943
     },
     {
@@ -4321,9 +4321,9 @@
       "all_views": 3518,
       "home_views": 358,
       "docs_views": 2422,
-      "blog_views": 0,
-      "marketing_views": 0,
-      "others_views": 738,
+      "blog_views": 292,
+      "marketing_views": 116,
+      "others_views": 330,
       "server_page_view": 192724
     },
     {
@@ -4331,9 +4331,9 @@
       "all_views": 2425,
       "home_views": 245,
       "docs_views": 1679,
-      "blog_views": 0,
-      "marketing_views": 0,
-      "others_views": 501,
+      "blog_views": 266,
+      "marketing_views": 120,
+      "others_views": 115,
       "server_page_view": 259489
     },
     {
@@ -4341,10 +4341,330 @@
       "all_views": 1033,
       "home_views": 101,
       "docs_views": 752,
-      "blog_views": 0,
-      "marketing_views": 0,
-      "others_views": 180,
+      "blog_views": 74,
+      "marketing_views": 47,
+      "others_views": 59,
       "server_page_view": 154420
+    },
+    {
+      "date": "2026-06-28",
+      "all_views": 1594,
+      "home_views": 153,
+      "docs_views": 1119,
+      "blog_views": 80,
+      "marketing_views": 50,
+      "others_views": 192,
+      "server_page_view": 151469
+    },
+    {
+      "date": "2026-06-29",
+      "all_views": 3180,
+      "home_views": 325,
+      "docs_views": 2366,
+      "blog_views": 212,
+      "marketing_views": 129,
+      "others_views": 148,
+      "server_page_view": 197599
+    },
+    {
+      "date": "2026-06-30",
+      "all_views": 3513,
+      "home_views": 337,
+      "docs_views": 2558,
+      "blog_views": 264,
+      "marketing_views": 174,
+      "others_views": 180,
+      "server_page_view": 182286
+    },
+    {
+      "date": "2026-07-01",
+      "all_views": 3015,
+      "home_views": 304,
+      "docs_views": 2284,
+      "blog_views": 174,
+      "marketing_views": 123,
+      "others_views": 130,
+      "server_page_view": 173021
+    },
+    {
+      "date": "2026-07-02",
+      "all_views": 3442,
+      "home_views": 397,
+      "docs_views": 2553,
+      "blog_views": 190,
+      "marketing_views": 192,
+      "others_views": 110,
+      "server_page_view": 171352
+    },
+    {
+      "date": "2026-07-03",
+      "all_views": 2518,
+      "home_views": 236,
+      "docs_views": 1814,
+      "blog_views": 269,
+      "marketing_views": 95,
+      "others_views": 104,
+      "server_page_view": 159113
+    },
+    {
+      "date": "2026-07-04",
+      "all_views": 980,
+      "home_views": 131,
+      "docs_views": 716,
+      "blog_views": 45,
+      "marketing_views": 55,
+      "others_views": 33,
+      "server_page_view": 123495
+    },
+    {
+      "date": "2026-07-05",
+      "all_views": 1566,
+      "home_views": 175,
+      "docs_views": 1170,
+      "blog_views": 91,
+      "marketing_views": 79,
+      "others_views": 51,
+      "server_page_view": 144813
+    },
+    {
+      "date": "2026-07-06",
+      "all_views": 3285,
+      "home_views": 325,
+      "docs_views": 2580,
+      "blog_views": 148,
+      "marketing_views": 106,
+      "others_views": 126,
+      "server_page_view": 159544
+    },
+    {
+      "date": "2026-07-07",
+      "all_views": 3020,
+      "home_views": 337,
+      "docs_views": 2189,
+      "blog_views": 183,
+      "marketing_views": 142,
+      "others_views": 169,
+      "server_page_view": 169618
+    },
+    {
+      "date": "2026-07-08",
+      "all_views": 3155,
+      "home_views": 312,
+      "docs_views": 2378,
+      "blog_views": 159,
+      "marketing_views": 148,
+      "others_views": 158,
+      "server_page_view": 160446
+    },
+    {
+      "date": "2026-07-09",
+      "all_views": 3519,
+      "home_views": 401,
+      "docs_views": 2658,
+      "blog_views": 194,
+      "marketing_views": 138,
+      "others_views": 128,
+      "server_page_view": 178724
+    },
+    {
+      "date": "2026-07-10",
+      "all_views": 2708,
+      "home_views": 288,
+      "docs_views": 2018,
+      "blog_views": 137,
+      "marketing_views": 123,
+      "others_views": 142,
+      "server_page_view": 169536
+    },
+    {
+      "date": "2026-07-11",
+      "all_views": 1165,
+      "home_views": 158,
+      "docs_views": 844,
+      "blog_views": 67,
+      "marketing_views": 48,
+      "others_views": 48,
+      "server_page_view": 146440
+    },
+    {
+      "date": "2026-07-12",
+      "all_views": 1494,
+      "home_views": 190,
+      "docs_views": 1110,
+      "blog_views": 67,
+      "marketing_views": 68,
+      "others_views": 59,
+      "server_page_view": 157690
+    },
+    {
+      "date": "2026-07-13",
+      "all_views": 3503,
+      "home_views": 343,
+      "docs_views": 2678,
+      "blog_views": 212,
+      "marketing_views": 136,
+      "others_views": 134,
+      "server_page_view": 200910
+    },
+    {
+      "date": "2026-07-14",
+      "all_views": 3450,
+      "home_views": 417,
+      "docs_views": 2578,
+      "blog_views": 185,
+      "marketing_views": 149,
+      "others_views": 121,
+      "server_page_view": 199504
+    },
+    {
+      "date": "2026-07-15",
+      "all_views": 3532,
+      "home_views": 362,
+      "docs_views": 2545,
+      "blog_views": 333,
+      "marketing_views": 150,
+      "others_views": 142,
+      "server_page_view": 196642
+    },
+    {
+      "date": "2026-07-16",
+      "all_views": 3296,
+      "home_views": 363,
+      "docs_views": 2375,
+      "blog_views": 281,
+      "marketing_views": 124,
+      "others_views": 153,
+      "server_page_view": 213570
+    },
+    {
+      "date": "2026-07-17",
+      "all_views": 2530,
+      "home_views": 265,
+      "docs_views": 1867,
+      "blog_views": 189,
+      "marketing_views": 104,
+      "others_views": 105,
+      "server_page_view": 178435
+    },
+    {
+      "date": "2026-07-18",
+      "all_views": 1300,
+      "home_views": 149,
+      "docs_views": 971,
+      "blog_views": 68,
+      "marketing_views": 45,
+      "others_views": 67,
+      "server_page_view": 145834
+    },
+    {
+      "date": "2026-07-19",
+      "all_views": 1179,
+      "home_views": 119,
+      "docs_views": 788,
+      "blog_views": 97,
+      "marketing_views": 44,
+      "others_views": 131,
+      "server_page_view": 154768
+    },
+    {
+      "date": "2026-07-20",
+      "all_views": 3575,
+      "home_views": 335,
+      "docs_views": 2593,
+      "blog_views": 303,
+      "marketing_views": 166,
+      "others_views": 178,
+      "server_page_view": 183790
+    },
+    {
+      "date": "2026-07-21",
+      "all_views": 3434,
+      "home_views": 319,
+      "docs_views": 2411,
+      "blog_views": 247,
+      "marketing_views": 163,
+      "others_views": 294,
+      "server_page_view": 191737
+    },
+    {
+      "date": "2026-07-22",
+      "all_views": 3329,
+      "home_views": 274,
+      "docs_views": 2464,
+      "blog_views": 247,
+      "marketing_views": 149,
+      "others_views": 195,
+      "server_page_view": 173575
+    },
+    {
+      "date": "2026-07-23",
+      "all_views": 3106,
+      "home_views": 280,
+      "docs_views": 2348,
+      "blog_views": 157,
+      "marketing_views": 130,
+      "others_views": 191,
+      "server_page_view": 183926
+    },
+    {
+      "date": "2026-07-24",
+      "all_views": 2663,
+      "home_views": 224,
+      "docs_views": 2040,
+      "blog_views": 148,
+      "marketing_views": 111,
+      "others_views": 140,
+      "server_page_view": 193384
+    },
+    {
+      "date": "2026-07-25",
+      "all_views": 1176,
+      "home_views": 118,
+      "docs_views": 832,
+      "blog_views": 104,
+      "marketing_views": 34,
+      "others_views": 88,
+      "server_page_view": 172080
+    },
+    {
+      "date": "2026-07-26",
+      "all_views": 1474,
+      "home_views": 129,
+      "docs_views": 1090,
+      "blog_views": 110,
+      "marketing_views": 59,
+      "others_views": 86,
+      "server_page_view": 181381
+    },
+    {
+      "date": "2026-07-27",
+      "all_views": 3113,
+      "home_views": 313,
+      "docs_views": 2327,
+      "blog_views": 172,
+      "marketing_views": 135,
+      "others_views": 166,
+      "server_page_view": 190279
+    },
+    {
+      "date": "2026-07-28",
+      "all_views": 3039,
+      "home_views": 329,
+      "docs_views": 2201,
+      "blog_views": 160,
+      "marketing_views": 132,
+      "others_views": 217,
+      "server_page_view": 216104
+    },
+    {
+      "date": "2026-07-29",
+      "all_views": 2892,
+      "home_views": 292,
+      "docs_views": 2098,
+      "blog_views": 163,
+      "marketing_views": 131,
+      "others_views": 208,
+      "server_page_view": 165981
     }
   ],
   "weekly": [
@@ -4989,12 +5309,67 @@
     {
       "week_start": "2026-06-15",
       "all_views": 19867,
-      "home_views": 2065,
+      "home_views": 2064,
       "docs_views": 13994,
-      "blog_views": 1390,
-      "marketing_views": 592,
-      "others_views": 1826,
+      "blog_views": 1894,
+      "marketing_views": 903,
+      "others_views": 1012,
       "server_page_view": 1236520,
+      "days": 7
+    },
+    {
+      "week_start": "2026-06-22",
+      "all_views": 19555,
+      "home_views": 1961,
+      "docs_views": 13838,
+      "blog_views": 1715,
+      "marketing_views": 775,
+      "others_views": 1266,
+      "server_page_view": 1341768,
+      "days": 7
+    },
+    {
+      "week_start": "2026-06-29",
+      "all_views": 18214,
+      "home_views": 1905,
+      "docs_views": 13461,
+      "blog_views": 1245,
+      "marketing_views": 847,
+      "others_views": 756,
+      "server_page_view": 1151679,
+      "days": 7
+    },
+    {
+      "week_start": "2026-07-06",
+      "all_views": 18346,
+      "home_views": 2011,
+      "docs_views": 13777,
+      "blog_views": 955,
+      "marketing_views": 773,
+      "others_views": 830,
+      "server_page_view": 1141998,
+      "days": 7
+    },
+    {
+      "week_start": "2026-07-13",
+      "all_views": 18790,
+      "home_views": 2018,
+      "docs_views": 13802,
+      "blog_views": 1365,
+      "marketing_views": 752,
+      "others_views": 853,
+      "server_page_view": 1289663,
+      "days": 7
+    },
+    {
+      "week_start": "2026-07-20",
+      "all_views": 18757,
+      "home_views": 1679,
+      "docs_views": 13778,
+      "blog_views": 1316,
+      "marketing_views": 812,
+      "others_views": 1172,
+      "server_page_view": 1279873,
       "days": 7
     }
   ],
@@ -5640,13 +6015,68 @@
     {
       "week_start": "2026-06-15",
       "days": 7,
-      "all_views": 19038,
-      "home_views": 2042,
-      "docs_views": 13979,
-      "blog_views": 1096,
-      "marketing_views": 585,
-      "others_views": 1336,
+      "all_views": 18711,
+      "home_views": 2029,
+      "docs_views": 13971,
+      "blog_views": 1528,
+      "marketing_views": 878,
+      "others_views": 305,
       "server_page_view": 1236520
+    },
+    {
+      "week_start": "2026-06-22",
+      "days": 7,
+      "all_views": 18399,
+      "home_views": 1922,
+      "docs_views": 13829,
+      "blog_views": 1578,
+      "marketing_views": 733,
+      "others_views": 337,
+      "server_page_view": 1341768
+    },
+    {
+      "week_start": "2026-06-29",
+      "days": 7,
+      "all_views": 17566,
+      "home_views": 1873,
+      "docs_views": 13445,
+      "blog_views": 1111,
+      "marketing_views": 824,
+      "others_views": 313,
+      "server_page_view": 1151679
+    },
+    {
+      "week_start": "2026-07-06",
+      "days": 7,
+      "all_views": 17507,
+      "home_views": 1886,
+      "docs_views": 13706,
+      "blog_views": 917,
+      "marketing_views": 750,
+      "others_views": 248,
+      "server_page_view": 1141998
+    },
+    {
+      "week_start": "2026-07-13",
+      "days": 7,
+      "all_views": 17929,
+      "home_views": 1885,
+      "docs_views": 13731,
+      "blog_views": 1293,
+      "marketing_views": 732,
+      "others_views": 288,
+      "server_page_view": 1289663
+    },
+    {
+      "week_start": "2026-07-20",
+      "days": 7,
+      "all_views": 17586,
+      "home_views": 1632,
+      "docs_views": 13734,
+      "blog_views": 1173,
+      "marketing_views": 766,
+      "others_views": 281,
+      "server_page_view": 1279873
     }
   ],
   "weeklyServerCat": [
@@ -6406,16 +6836,81 @@
     },
     {
       "week_start": "2026-06-15",
-      "home_views": 48988,
-      "docs_views": 348351,
-      "blog_views": 268050,
-      "marketing_views": 32190,
-      "others_views": 96449,
-      "home_bf": 47525,
-      "docs_bf": 215067,
-      "blog_bf": 166266,
-      "marketing_bf": 25997,
-      "others_bf": 59347
+      "home_views": 80117,
+      "docs_views": 544596,
+      "blog_views": 411537,
+      "marketing_views": 51322,
+      "others_views": 148948,
+      "home_bf": 77676,
+      "docs_bf": 335667,
+      "blog_bf": 239378,
+      "marketing_bf": 41427,
+      "others_bf": 88790
+    },
+    {
+      "week_start": "2026-06-22",
+      "home_views": 79098,
+      "docs_views": 598847,
+      "blog_views": 434767,
+      "marketing_views": 69982,
+      "others_views": 159074,
+      "home_bf": 76707,
+      "docs_bf": 380091,
+      "blog_bf": 245842,
+      "marketing_bf": 60445,
+      "others_bf": 113892
+    },
+    {
+      "week_start": "2026-06-29",
+      "home_views": 82429,
+      "docs_views": 535785,
+      "blog_views": 345626,
+      "marketing_views": 41939,
+      "others_views": 145900,
+      "home_bf": 80296,
+      "docs_bf": 336621,
+      "blog_bf": 176528,
+      "marketing_bf": 33175,
+      "others_bf": 103238
+    },
+    {
+      "week_start": "2026-07-06",
+      "home_views": 79818,
+      "docs_views": 554018,
+      "blog_views": 328443,
+      "marketing_views": 49859,
+      "others_views": 129860,
+      "home_bf": 77565,
+      "docs_bf": 334548,
+      "blog_bf": 164039,
+      "marketing_bf": 40678,
+      "others_bf": 91217
+    },
+    {
+      "week_start": "2026-07-13",
+      "home_views": 81077,
+      "docs_views": 591031,
+      "blog_views": 381329,
+      "marketing_views": 91083,
+      "others_views": 145143,
+      "home_bf": 78895,
+      "docs_bf": 359210,
+      "blog_bf": 188775,
+      "marketing_bf": 81879,
+      "others_bf": 110388
+    },
+    {
+      "week_start": "2026-07-20",
+      "home_views": 80367,
+      "docs_views": 608379,
+      "blog_views": 381180,
+      "marketing_views": 54638,
+      "others_views": 155309,
+      "home_bf": 77694,
+      "docs_bf": 357891,
+      "blog_bf": 154748,
+      "marketing_bf": 44807,
+      "others_bf": 116809
     }
   ],
   "monthly": [
@@ -6625,14 +7120,26 @@
     },
     {
       "month": "2026-06",
-      "all_views": 51667,
-      "home_views": 5339,
-      "docs_views": 37757,
-      "blog_views": 3928,
-      "marketing_views": 2228,
-      "others_views": 2415,
-      "non_docs_views": 13910,
-      "server_page_view": 3228509,
+      "all_views": 83414,
+      "home_views": 8547,
+      "docs_views": 60292,
+      "blog_views": 6623,
+      "marketing_views": 3617,
+      "others_views": 4335,
+      "non_docs_views": 23122,
+      "server_page_view": 5392654,
+      "partial": false
+    },
+    {
+      "month": "2026-07",
+      "all_views": 76458,
+      "home_views": 7885,
+      "docs_views": 56520,
+      "blog_views": 4900,
+      "marketing_views": 3279,
+      "others_views": 3874,
+      "non_docs_views": 19938,
+      "server_page_view": 5055692,
       "partial": true
     }
   ],
@@ -6830,13 +7337,24 @@
     },
     {
       "month": "2026-06",
-      "all_views": 72530,
-      "home_views": 7660,
-      "docs_views": 54183,
-      "blog_views": 3348,
-      "marketing_views": 2184,
-      "others_views": 5155,
-      "server_page_view": 3228509,
+      "all_views": 79123,
+      "home_views": 8409,
+      "docs_views": 60201,
+      "blog_views": 5830,
+      "marketing_views": 3496,
+      "others_views": 1187,
+      "server_page_view": 5392654,
+      "partial": false
+    },
+    {
+      "month": "2026-07",
+      "all_views": 72609,
+      "home_views": 7530,
+      "docs_views": 56314,
+      "blog_views": 4502,
+      "marketing_views": 3158,
+      "others_views": 1105,
+      "server_page_view": 5055692,
       "partial": true
     }
   ],
@@ -6947,11 +7465,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 3328,
-      "direct": 1171,
-      "referral": 481,
-      "unassigned": 215,
-      "other": 144
+      "organic_search": 5346,
+      "direct": 1864,
+      "referral": 715,
+      "unassigned": 331,
+      "other": 310
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 4794,
+      "direct": 1936,
+      "referral": 694,
+      "unassigned": 315,
+      "other": 220
     }
   ],
   "channelsDocs": [
@@ -7053,11 +7579,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 26020,
-      "direct": 6985,
-      "referral": 2527,
-      "unassigned": 1587,
-      "other": 638
+      "organic_search": 41615,
+      "direct": 11273,
+      "referral": 3463,
+      "unassigned": 2653,
+      "other": 1024
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 39096,
+      "direct": 11368,
+      "referral": 2883,
+      "unassigned": 2874,
+      "other": 950
     }
   ],
   "channelsOthers": [
@@ -7167,11 +7701,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 911,
-      "direct": 1188,
-      "referral": 95,
-      "unassigned": 174,
-      "other": 15
+      "organic_search": 1385,
+      "direct": 2000,
+      "referral": 184,
+      "unassigned": 220,
+      "other": 24
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 1389,
+      "direct": 1731,
+      "referral": 140,
+      "unassigned": 68,
+      "other": 211
     }
   ],
   "channelsHomeNxdev": [
@@ -7281,11 +7823,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 3317,
-      "direct": 1095,
-      "referral": 480,
-      "unassigned": 215,
-      "other": 143
+      "organic_search": 5337,
+      "direct": 1730,
+      "referral": 714,
+      "unassigned": 331,
+      "other": 305
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 4789,
+      "direct": 1648,
+      "referral": 618,
+      "unassigned": 312,
+      "other": 220
     }
   ],
   "channelsDocsNxdev": [
@@ -7387,11 +7937,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 26001,
-      "direct": 6943,
-      "referral": 2524,
-      "unassigned": 1587,
-      "other": 636
+      "organic_search": 41587,
+      "direct": 11221,
+      "referral": 3456,
+      "unassigned": 2653,
+      "other": 1021
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 39024,
+      "direct": 11307,
+      "referral": 2883,
+      "unassigned": 2872,
+      "other": 942
     }
   ],
   "channelsOthersNxdev": [
@@ -7501,11 +8059,19 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 423,
-      "direct": 83,
-      "referral": 57,
-      "unassigned": 11,
-      "other": 10
+      "organic_search": 878,
+      "direct": 201,
+      "referral": 94,
+      "unassigned": 35,
+      "other": 14
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 733,
+      "direct": 152,
+      "referral": 94,
+      "unassigned": 40,
+      "other": 29
     }
   ],
   "gscMonthly": [
@@ -7639,10 +8205,18 @@
     },
     {
       "month": "2026-06",
-      "clicks": 53210,
-      "impressions": 3760038,
-      "days": 27,
+      "clicks": 59022,
+      "impressions": 4120031,
+      "days": 30,
       "expected_days": 30,
+      "partial": false
+    },
+    {
+      "month": "2026-07",
+      "clicks": 49259,
+      "impressions": 4689943,
+      "days": 29,
+      "expected_days": 31,
       "partial": true
     }
   ],
@@ -7740,10 +8314,17 @@
     },
     {
       "month": "2026-06",
-      "home": 3328,
-      "docs": 26020,
-      "others": 911,
-      "total": 30259
+      "home": 5346,
+      "docs": 41615,
+      "others": 1385,
+      "total": 48346
+    },
+    {
+      "month": "2026-07",
+      "home": 4794,
+      "docs": 39096,
+      "others": 1389,
+      "total": 45279
     }
   ],
   "gscDocsOthersWeekly": [
@@ -8143,7 +8724,11 @@
     },
     {
       "month": "2026-06",
-      "organic_search": 26931
+      "organic_search": 43000
+    },
+    {
+      "month": "2026-07",
+      "organic_search": 40485
     }
   ],
   "topPages": {

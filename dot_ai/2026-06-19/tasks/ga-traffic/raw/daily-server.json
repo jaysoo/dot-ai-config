@@ -2,9 +2,9 @@
   "series": "server_page_view_daily",
   "metric": "Event count where event_name = server_page_view (Measurement Protocol, server-side)",
   "filter": "event_name exactly matches server_page_view",
-  "date_range": "2025-05-01..2026-06-27",
+  "date_range": "2025-05-01..2026-07-29",
   "scraped_at": "2026-06-19",
-  "count": 146,
+  "count": 178,
   "first_recorded": "2026-02-02",
   "rows": [
     {
@@ -882,7 +882,199 @@
       "server_page_view": 154420,
       "active_users": null,
       "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-28",
+      "server_page_view": 151469,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-29",
+      "server_page_view": 197599,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-06-30",
+      "server_page_view": 182286,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-01",
+      "server_page_view": 173021,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-02",
+      "server_page_view": 171352,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-03",
+      "server_page_view": 159113,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-04",
+      "server_page_view": 123495,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-05",
+      "server_page_view": 144813,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-06",
+      "server_page_view": 159544,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-07",
+      "server_page_view": 169618,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-08",
+      "server_page_view": 160446,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-09",
+      "server_page_view": 178724,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-10",
+      "server_page_view": 169536,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-11",
+      "server_page_view": 146440,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-12",
+      "server_page_view": 157690,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-13",
+      "server_page_view": 200910,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-14",
+      "server_page_view": 199504,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-15",
+      "server_page_view": 196642,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-16",
+      "server_page_view": 213570,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-17",
+      "server_page_view": 178435,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-18",
+      "server_page_view": 145834,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-19",
+      "server_page_view": 154768,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-20",
+      "server_page_view": 183790,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-21",
+      "server_page_view": 191737,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-22",
+      "server_page_view": 173575,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-23",
+      "server_page_view": 183926,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-24",
+      "server_page_view": 193384,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-25",
+      "server_page_view": 172080,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-26",
+      "server_page_view": 181381,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-27",
+      "server_page_view": 190279,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-28",
+      "server_page_view": 216104,
+      "active_users": null,
+      "views_should_be_0": 0
+    },
+    {
+      "date": "2026-07-29",
+      "server_page_view": 165981,
+      "active_users": null,
+      "views_should_be_0": 0
     }
   ],
-  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal. Jun 25-27 appended 2026-06-29 (overlap Jun24 verified; views/server only, AU/event null)."
+  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal. Jun 25-27 appended 2026-06-29 (overlap Jun24 verified; views/server only, AU/event null). Jun 28 - Jul 29 appended 2026-07-30 (overlap Jun 19-27 re-verified)."
 }

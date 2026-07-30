@@ -190,11 +190,33 @@ breakage that PR CI structurally cannot see.
 - Cause #1 - FIXED, commit `0c7462479f`. `runCLI`/`runCLIAsync` gate `--verbose` on `isVerbose()`
   instead of `isVerboseE2ERun()`. Verified: `e2e-release` `independent-projects.test.ts` 10/10 green
   locally with `NX_E2E_VERBOSE_LOGGING=true`.
-- Cause #2 - FIXED, commit `461e15b3e5`. Built-in presets pin `typescript`; `ensureTypescript`
-  throws an actionable error when the resolved TS has no compiler API. Verified:
-  `e2e-workspace-create` react suite 7/7 with `SELECTED_PM=npm`, `new` generator unit tests 100/100.
-  NOT yet pushed - needs a decision on whether this ships as its own ticket + patch release, since
-  it breaks released nx for npm/yarn users, not just the nightly.
+- Cause #2 - root-caused and reproduced; candidate fix PARKED on local branch
+  `nxc-4612-typescript-7-preset-pin` (commit `461e15b3e5`), off NXC-4612 per Jack. Built-in presets
+  pin `typescript` + `ensureTypescript` throws when the resolved TS has no compiler API. Verified
+  `e2e-workspace-create` react 7/7 with `SELECTED_PM=npm` and `new` generator units 100/100, but the
+  scoping is not settled - see below. Follow-up ticket needed.
+
+  Open questions on that fix:
+  - `@nx/js:init` does add `typescript` to the workspace, but only into the generator tree during
+    preset generation. The crash happens inside that same generation: `ensureTypescript()` resolves
+    from the `node_modules` produced by the install that runs *before* the preset generator, where
+    TS 7 is already hoisted. So js:init cannot prevent it, and pinning has to happen in the
+    pre-generation dependency set - which is why the change landed in `generate-preset.ts`.
+  - The commit pins for *all* built-in presets. Only react was verified broken; ts and
+    angular-monorepo were verified fine. next/vue/nuxt/node/expo/react-native were not tested, so
+    part of that diff is unproven. Correct scoping should be evidence-based.
+  - Exposure is effectively CNW-only. Real workspaces get `typescript` into package.json via
+    `@nx/js:init`, so the package manager dedupes the loose peers to that pin. A workspace with no
+    typescript anywhere is also fine: `require('typescript')` throws MODULE_NOT_FOUND and
+    `ensurePackage` tmp-installs the pinned `~6.0.3`. Breaking needs typescript absent from
+    package.json *and* present in node_modules via a loose transitive peer - which is the CNW
+    mid-creation state and little else. No migration or runtime guard needed for existing
+    workspaces.
+  - Scoping therefore reduces to: which preset dep sets can pull `@phenomnomnominal/tsquery`
+    (declared by angular, cypress, eslint-plugin, jest, next, react, remix, rsbuild, rollup,
+    storybook, rspack, vite, vitest, webpack). react/next/vue are exposed; nuxt and node only for
+    some `--e2eTestRunner`/`--bundler` combos; apps/ts are not (verified); angular/nest/
+    web-components already pin.
 - `nx run-many -t test,lint -p workspace,js` green on the branch.
 - Causes #3, #4, #5 - open.
 

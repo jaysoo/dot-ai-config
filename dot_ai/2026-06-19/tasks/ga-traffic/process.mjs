@@ -1097,7 +1097,7 @@ function buildHtml(data, analysis) {
   <div class="card">
     <h2>Monthly Views by page type (full ~18-month trend incl. pre-GTM baseline)</h2>
     <div class="chart-wrap small"><canvas id="monthly"></canvas></div>
-    <p class="toggle-note">Same stacked page-type Views (left) + server_page_view (right) back to Jan 2025, same milestones. The white "Total (all types)" line traces the top of the stack; hover any point to read the total. Marketing = the Framer pages (pricing, enterprise, company, nx-cloud, ...). Blog and Marketing are measured from May 2025 (daily coverage); before that they sit in Others. Docs is ~0 before 2025-09-29 (astro-docs /docs go-live; pre-migration docs lived at root paths -> Others). The Jan-Apr 2025 pre-GTM baseline (~650K/mo) matches May-Jul 2025. June 2026 is a partial month.</p>
+    <p class="toggle-note">Same stacked page-type Views (left) + server_page_view (right) back to Jan 2025, same milestones. The white "Total (all types)" line traces the top of the stack; hover any point to read the total. Marketing = the Framer pages (pricing, enterprise, company, nx-cloud, ...). Blog and Marketing are measured from May 2025 (daily coverage); before that they sit in Others. Docs is ~0 before 2025-09-29 (astro-docs /docs go-live; pre-migration docs lived at root paths -> Others). The Jan-Apr 2025 pre-GTM baseline (~650K/mo) matches May-Jul 2025. July 2026 is a partial month (through the 29th).</p>
   </div>
 
   <div class="card">

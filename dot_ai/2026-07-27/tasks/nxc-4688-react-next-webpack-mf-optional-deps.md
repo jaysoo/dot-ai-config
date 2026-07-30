@@ -1,7 +1,7 @@
 # NXC-4688: Make webpack/module-federation deps optional for @nx/react and @nx/next
 
 - Linear: https://linear.app/nxdev/issue/NXC-4688/check-react-plugin-deps-for-webpackmodule-federation
-- Draft PR: https://github.com/nrwl/nx/pull/36492 (commit `390ab88c28`)
+- Draft PR: https://github.com/nrwl/nx/pull/36492 (commit `143bc7c469`)
 - Polygraph session: https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/react-mf-cleanup-04580e9b
 - Branch: NXC-4688
 - Worktree: /Users/jack/projects/nx-worktrees/NXC-4688
@@ -25,6 +25,24 @@ Shipped as a draft PR. Deviations from the plan below:
   fails before reaching changed code. Reproduced on stashed-master baselines for both
   `core-webpack-basic-host-remote-generation` and `independent-deployability.webpack`.
   CI has to cover the e2e path.
+
+## Direct review (2026-07-29)
+
+- Reviewed PR `04705153a8` without Plannotator. Full Linux/macOS CI is green.
+- Focused React migration and assertion tests pass (8/8).
+- **Merge blocker (RESOLVED in `143bc7c469`):** removing `@svgr/webpack` from both
+  `@nx/react` and `@nx/next` breaks workspaces migrated by the Nx 22
+  `add-svgr-to-webpack-config` / `add-svgr-to-next-config` migrations, which write
+  `require.resolve('@svgr/webpack')` into user configs without declaring the package.
+  Fix per Jack: package.json stays clean (no dep, no peer); new standalone
+  `update-23-2-0-add-svgr-webpack-if-used` migrations in react and next backfill
+  `@svgr/webpack` only when a webpack config (target-referenced or conventional
+  root filename) or next config file references it. Version `23.2.0-beta.4`
+  (nx@next is beta.3).
+- Re-reviewed `143bc7c469` without Plannotator. Focused React and Next migration
+  tests pass (9/9); no remaining code-review findings. Linux, macOS, affected,
+  CodeQL, formatting, sync, conformance, and security checks pass; only the
+  workspace-plugin build remains pending.
 
 ## Goal
 

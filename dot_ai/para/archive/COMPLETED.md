@@ -2,6 +2,19 @@
 
 ### July 2026
 
+- [x] NXC-4688: Optional webpack/MF deps for @nx/react + @nx/next - MERGED #36492 (2026-07-30)
+  - Plan: `dot_ai/2026-07-27/tasks/nxc-4688-react-next-webpack-mf-optional-deps.md`
+  - Summary: @nx/react's MF packages (@nx/module-federation, express, http-proxy-middleware) -> optional peers with assert + lazy import, following Leo's @nx/angular #36310 pattern; @svgr/webpack + @nx/rollup dropped from react, @nx/webpack -> optional peer on next / devDep on react-native; @babel/preset-react newly declared (undeclared use surfaced when its transitive supplier left). Found + fixed a live field bug: @nx/module-federation pinned webpack exactly (5.105.2) while @nx/webpack installs ^5.101.3, so webpack 5.109 (shipped 07-23/07-28) split into two copies and broke every webpack MF build on released nx - reproduced from published packages, fixed as optional peer ^5.0.0. 23.2.0-beta.4 migrations backfill MF/express deps and @svgr/webpack (v22 migrations had inlined require.resolve('@svgr/webpack') into user configs without declaring it). Squash `820a3a6aaa`.
+  - Polygraph session `react-mf-cleanup-04580e9b`, single repo nrwl/nx - https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/react-mf-cleanup-04580e9b
+
+- [x] ga-traffic refresh: nx.dev GA4+GSC data through 2026-07-29 (2026-07-30)
+  - Plan: `dot_ai/2026-07-30/tasks/ga-traffic-refresh/README.md`
+  - Summary: Refreshed every raw series in the `dot_ai/2026-06-19/tasks/ga-traffic/` pipeline (8 GA4 dailies incl. blog/marketing/nxdev/server-by-category that were stuck at Jun 18, gsc-daily, monthly-segments with June finalized + July partial, channels-by-month) and reran process.mjs (455 days, 14/14 integrity checks). New scrape method: replay GA4 Explore's internal report RPC in-page (X-GAFE4-XSRF-TOKEN header + filtered-dimension-must-be-secondary-dimension gotcha; Bot dim = custom_dimensions_group2_slot_05) - documented in the task README for next time. July read: GSC organic clicks still declining ~-11%/mo (no recovery yet); server_page_view flat ~5.1-5.4M/mo; AI crawlers shifted into /blog (~30% of server events).
+
+- [x] Analyze CNW WORKSPACE_CREATION_FAILED errors (2026-07-30)
+  - Plan: `dot_ai/2026-07-30/tasks/analyze-cnw-workspace-creation-failures.md`
+  - Summary: Classified the 507-error aggregate and 100-row detailed sample. Found 69% of sampled messages opaque due generic pnpm wrappers or 300-character truncation, confirmed the TypeScript 7 cluster is fixed by merged PR #36497, and ranked the existing pnpm no-TTY fix plus better stdout/tail telemetry as the easiest high-impact follow-ups.
+
 - [x] CLOUD-4926: Fix critical node-tar image finding (2026-07-29)
   - Plan: `dot_ai/2026-07-29/tasks/cloud-4926-node-tar.md`
   - Summary: Trivy Critical came from npm 10.x's bundled `tar@7.5.11` in the node:22 base image. Earlier npm-removal commit rejected; suppression PR (cloud-infrastructure#5391, scoped rego ignorePolicy) built, verified, then closed unmerged in favor of fixing at source: ocean PR #12614 pins `npm@11.18.0` in both runtime Dockerfiles, bumps workspace tar to 7.5.22 (covers follow-on MEDIUM GHSA-r292-9mhp-454m), aligns client-bundle's stale 6.1.11 declaration, renames `onentry` to `onReadEntry`. Verified by local image build + trivy 0.63.0 scan (0 criticals). New `ocean-trivy-verify` skill captures the workflow. Details: `dot_ai/2026-07-29/SUMMARY.md`.

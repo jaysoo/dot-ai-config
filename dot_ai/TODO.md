@@ -2,14 +2,18 @@
 
 ## In Progress
 
+- [ ] CLOUD-4927: Frontend/Polygraph vulnerabilities - HIGH (2026-07-30)
+  - Plan: `dot_ai/2026-07-30/tasks/cloud-4927-frontend-polygraph-high-vulns.md`
+  - Goal: clear the 20 high-severity trivy CVEs on nx-cloud-frontend / polygraph-frontend via pnpm overrides.
+  - Status: draft PR https://github.com/nrwl/ocean/pull/12656, commit `ce67755bdc`, rebased onto `532113a400` (Nicole's OTel #12631, merged) and force-pushed. brace-expansion/js-yaml/undici/lodash-es/path-to-regexp/@grpc/grpc-js bumped + polygraph tar drift fixed. Typecheck + frozen-lockfile + override-sync all green post-rebase; conformance gate unverifiable locally (no Nx Cloud PAT).
+  - Linear triaged (20 sub-issues): 8 In Review on this PR, 2 Duplicate of CLOUD-4985 (Nicole's OTel work under CLOUD-4936), 9 Canceled as already-patched, CLOUD-4935 left Todo (Remix-blocked; team has no Blocked status/label), parent In Review.
+  - Post-rebase finding: main still resolves `@grpc/grpc-js` 1.14.3 even after the OTel bump, so the `^1.14.4` override is load-bearing for CLOUD-4945/4946.
+  - Follow-ups: turbo-stream 2.4.1 is Remix-pinned (needs RR7 migration); npm vendors brace-expansion 5.0.7 with no fixed npm release; OTel CVEs belong to Nicole's #12631; `validate-pnpm-overrides.mjs` does not cover `apps/polygraph`.
+
 - [ ] CLOUD-4891: Cookie-based env overrides for cloud e2e tests (2026-07-27)
   - Plan: `dot_ai/2026-07-27/tasks/cloud-4891-cookie-env-overrides.md`
-  - Goal: per-request `e2e-env-override` cookie merged into `context.serverEnvironment` in `createDataArgs`, gated on `E2E_TEST_MODE`, so a Playwright test permutes env flags with no server restart. Implemented + green locally, holding on push per Jack. e2e spec not yet executed (sandbox blocks ports).
-
-- [ ] NXC-4688: Make webpack/module-federation deps optional for @nx/react and @nx/next (2026-07-27)
-  - Plan: `dot_ai/2026-07-27/tasks/nxc-4688-react-next-webpack-mf-optional-deps.md`
-  - Goal: follow Leo's @nx/angular #36310 pattern - optional peers + lazy imports + backfill migrations so react/next/react-native stop pulling the webpack + MF toolchain
-  - Status: draft PR https://github.com/nrwl/nx/pull/36492 (commit `390ab88c28`) awaiting CI. Unit tests + lint green; local e2e-react MF suite broken on master too (ensureTypescript undefined in e2e temp workspace) so CI must cover e2e. Polygraph `react-mf-cleanup-04580e9b`
+  - Goal: per-request `e2e-env-override` cookie merged into `context.serverEnvironment` in `createDataArgs`, gated on `E2E_TEST_MODE`, so a Playwright test permutes env flags with no server restart.
+  - Status: draft PR https://github.com/nrwl/ocean/pull/12652 awaiting CI. Spec verified locally vs dev server (passes; first-attempt vite-blank flake is dev-server-only, artifacts in worktree `dist/cloud-4891-e2e-demo/`). Follow-up to file: retire `serveDistTaskAnalyticsRolloutDisabled` via `envOverride.set()`.
 
 - [ ] Churn signals validation + competitor cost model (2026-07-24)
   - Plan: `dot_ai/2026-07-24/tasks/churn-signals-and-cost-model.md`
@@ -26,53 +30,62 @@
 - [ ] NXC-4612: Investigate nightly E2E matrix ("golden") failures (2026-07-28)
   - Plan: `dot_ai/2026-07-28/tasks/nxc-4612-golden-e2e-matrix-failures.md`
   - Goal: root-cause why E2E matrix has been red on master every day for 15+ runs. Triage done: 45/139 jobs, 302 distinct failures -> 5 root causes.
-  - Fixed (unpushed, branch NXC-4612): `0c7462479f` e2e harness no longer appends `--verbose` under `NX_E2E_VERBOSE_LOGGING` (clears 114 snapshot failures); `461e15b3e5` built-in presets pin typescript + `ensureTypescript` guards a compiler-API-less TS.
-  - LIVE FIELD BUG found: typescript@7.0.2 went npm `latest` 2026-07-08; its entry exports no compiler API, npm hoists it via loose peers, so `create-nx-workspace --preset=react-monorepo --package-manager=npm` is broken on released nx (reproduced on 23.1.0). Needs a decision: own ticket + patch release vs ship under NXC-4612.
+  - Fixed (unpushed, branch NXC-4612): `0c7462479f` e2e harness no longer appends `--verbose` under `NX_E2E_VERBOSE_LOGGING` (clears 114 snapshot failures). Scope kept to the test-only fix per Jack.
+  - LIVE FIELD BUG found, FOLLOW-UP: typescript@7.0.2 went npm `latest` 2026-07-08; its entry exports no compiler API, npm hoists it via loose peers, so `create-nx-workspace --preset=react-monorepo --package-manager=npm` is broken on released nx (reproduced on 23.1.0). Candidate fix parked on local branch `nxc-4612-typescript-7-preset-pin` (`461e15b3e5`); scoping unsettled (only react proven broken, and existing workspaces may hit it too).
   - Open: @rspack/core npm ERESOLVE; e2e-nx misc (missing "It's time to update Nx" warning, http remote cache, move/remove project); infra (nx native SIGSEGV, maven-batch-runner).
 
 ## Recent Tasks (Last 10)
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **NXC-4701: Add connect flow to the TUI (nx)** (2026-07-24)
+1. **NXC-4688: Optional webpack/MF deps for @nx/react + @nx/next (nx) - MERGED #36492** (2026-07-30)
+   - Summary: MF packages -> optional peers with lazy loading + backfill migrations (Leo's #36310 pattern); @svgr/webpack + @nx/rollup dropped; found + fixed field bug where @nx/module-federation's exact webpack pin duplicated against @nx/webpack's ^5.101.3 range, breaking all webpack MF builds once webpack 5.109 shipped. Squash `820a3a6aaa`.
+   - Files: `dot_ai/2026-07-27/tasks/nxc-4688-react-next-webpack-mf-optional-deps.md`, Polygraph `react-mf-cleanup-04580e9b`
+
+2. **ga-traffic refresh: nx.dev GA4+GSC data through 2026-07-29 (dot-ai-config)** (2026-07-30)
+   - Summary: Refreshed ALL raw series in the ga-traffic pipeline (8 GA4 dailies, gsc-daily, monthly-segments Jun-final+Jul-partial, channels-by-month) via a new in-page GA4 internal-RPC replay method (XSRF header + secondary-dimension gotcha documented). Reran process.mjs (455 days, 14/14 integrity). Jul: GSC organic still falling ~-11%/mo (49.3K clicks thru Jul 29 vs Jun 59K); server_page_view flat ~5.1-5.4M/mo; AI crawlers shifted into /blog (now ~30% of server events).
+   - Files: `dot_ai/2026-07-30/tasks/ga-traffic-refresh/` (scrapes + merge.mjs + README), pipeline at `dot_ai/2026-06-19/tasks/ga-traffic/`
+
+
+3. **NXC-4687: CNW `--preset empty` escape hatch + template download errors, 23.1.0 regression (nx) — draft PR #36508** (2026-07-29)
+   - Summary: Jack rejected v1 auto-fallback (presets != templates). v2: fixed `invalidPresetToTemplateMap` coercing `--preset empty` into the github template download (now normalizes to `ts` preset, npm-only; must sit AFTER the AI legacy-preset coercion); NETWORK_ERROR message + AI hints say github.com unreachable, check network/sandbox config, or use `--preset=empty`. Researched create-* CLIs: sandbox-safe ones ship templates via npm (vite/next bundle; expo/CRA publish packages); github-at-runtime ones (turbo/astro/remix) all hard-fail. Verified with fetch-shim negative controls.
+   - Files: `dot_ai/2026-07-29/tasks/nxc-4687-cnw-template-egress-fallback.md`, draft PR https://github.com/nrwl/nx/pull/36508, Polygraph `zesty-eagle-2a40a186`
+
+
+4. **NXC-4701: Add connect flow to the TUI (nx)** (2026-07-24)
    - Summary: Revived the two canceled NXC-4606 prototypes onto current master (which had moved the footer into a props-driven StatusBar + focus stack, making both branches unmergeable). Shared `connect_flow.rs` powers a standalone ConnectPopup (`<shift>+c`) AND an inline "enable remote cache" CTA + URL under the perf report. Footer shows `○ not connected: <shift>+c`; help menu lists it. 349 Rust TUI tests green; live tmux e2e vs staging.
    - Files: `dot_ai/2026-07-24/tasks/nxc-4701-tui-connect-flow.md`, draft PR #36460, Polygraph `ready-jackal-5efe8ef1`
 
-2. **DOC-555: SEO pages from Ahrefs export (nx) — draft PR #36459** (2026-07-24)
+
+5. **DOC-555: SEO pages from Ahrefs export (nx) — draft PR #36459** (2026-07-24)
    - Summary: Shipped in draft PR #36459 (6 commits): nx-vs-lerna (revived+repositioned) + nx-vs-rush-stack (research-verified) + from-lerna migration guide, React/Angular MFE landings, MF prune (9 pages deleted w/ redirects, merges, legacy banners), ci-caching page, monorepo-tools section, folder-structure full rewrite + org-page refreshes. vale + validate-links green. Deferred: faster-builds v23 rewrite (live-test), bun catalogs (23.2), nx-blog cross-link.
    - Files: `dot_ai/2026-07-24/tasks/doc-555-seo-page-plan.md`, Polygraph `vivid-iguana-930ae870`
 
-3. **CLOUD-4877: GHA job summary for Nx Cloud DTE runs — research + ticket filed** (2026-07-21)
+
+6. **CLOUD-4877: GHA job summary for Nx Cloud DTE runs — research + ticket filed** (2026-07-21)
    - Summary: Researched surfacing the DTE summary tables + Nx Cloud link in the GitHub Actions job summary (markdown to `$GITHUB_STEP_SUMMARY`). nx OSS already writes one (`performance-life-cycle.ts:198`) but DTE main jobs emit nothing — `distributed-execution/runner.ts` `process.exit`s before nx's flush. All screenshot output is ocean `print-distributed-execution-summary.ts`. Key insight: `start-ci-run` and `run-many` are separate STEPS of the same GHA job and GitHub concatenates per job, so CIPE link + tables = two independent one-file writes, no plumbing, no server change.
    - Files: `dot_ai/2026-07-21/tasks/cloud-4877-gha-job-summary.md`, Linear CLOUD-4877
 
-4. **NXC-4179: Re-enable e2e tests after lodash fix (nx) — PR #36408 MERGED** (2026-07-21)
+
+7. **NXC-4179: Re-enable e2e tests after lodash fix (nx) — PR #36408 MERGED** (2026-07-21)
    - Summary: Reverted skip #35104 (17 tests) after verifying lodash@4.18.1 fixes `assignWith`. Fixed two unmasked bugs: cypress CT generator import duplication on re-run (esbuild rejects since Cypress 15.14) + webpack-dev-server base-8080 race across parallel e2e-ci tasks. storybook-angular serve stays skipped (NXC-4690: @storybook/angular peers vs Angular 22 + TS 6).
    - Files: `dot_ai/2026-07-20/tasks/nxc-4179-re-enable-e2e-lodash.md`, Polygraph `nimble-cheetah-04f2c982`
 
-5. **DOC-555: Ahrefs keyword opportunity analysis (nx.dev)** (2026-07-18)
+
+8. **DOC-555: Ahrefs keyword opportunity analysis (nx.dev)** (2026-07-18)
    - Summary: Analyzed 251-keyword Ahrefs US export for missed opportunities. Tiers: striking-distance (monorepo 6400v pos 15, esbuild, lerna, angular cli, pnpm workspaces), MFE cluster split (~30 variants, ~1700v, one page), gaps (monorepo tools, turborepo alternative, Nx Cloud CI cluster). Filed DOC-555 with plan; flagged that DOC-549 (#36307) already shipped several items and position data predates it - re-pull mid-August.
    - Files: `dot_ai/2026-07-18/tasks/ahrefs-keyword-opportunities.md`
 
-6. **DOC-549: Refresh/create high-impact SEO pages (nx) — MERGED #36307** (2026-07-15)
+
+9. **DOC-549: Refresh/create high-impact SEO pages (nx) — MERGED #36307** (2026-07-15)
    - Summary: GSC-driven refresh of ~14 pages: what-is-a-monorepo + monorepo-vs-polyrepo (renamed w/ redirects, Polygraph/meta-harness), pnpm/npm/yarn/bun workspaces, GitHub Actions integration (dup guide deleted), eslint flat-config (live-tested via fixture agent migration; 2 generator bugs found to file), MFE (v23 consumer/provider + @module-federation/vite), rspack, self-hosted cache, TS intro (absorbed maintain-typescript-monorepos), 12 intros re-opened monorepo-first. nx-vs-lerna drafted but SHELVED (positioning rethink); draft in dot_ai/2026-07-11/tasks/.
    - Files: `dot_ai/2026-07-11/tasks/doc-549-refresh-high-impact-pages.md`, `dot_ai/2026-07-15/SUMMARY.md`, Polygraph `doc-549-0ca12dc9`
 
-7. **nx-typescript-7: TS7 vs TS6 benchmark repo (100 packages)** (2026-07-09)
+
+10. **nx-typescript-7: TS7 vs TS6 benchmark repo (100 packages)** (2026-07-09)
    - Summary: New repo ~/projects/nx-typescript-7 modeled on jaysoo/nx-ts7 but with 100 generated packages (10 layers x 10, layered deps) and dual targets on EVERY project via double @nx/js/typescript plugin registration: build/typecheck = TS7 native tsc, build-tsc6/typecheck-tsc6 = TS6 tsc6. Iterated to 9.95x on nx run-many -t build: 25-pkg chain, checker-heavy pkgs (120 files x 48-kind unions). Wide graphs compress ratio to ~3-4x (nx parallelism = free multi-core for tsc6).
    - Files: `dot_ai/2026-07-09/tasks/nx-typescript-7-benchmark-repo.md`, `~/projects/nx-typescript-7`
 
-8. **Q-520: Sandbox dashboard add-on request control (ocean) — PR #12211 MERGED** (2026-07-08)
-   - Summary: Sandbox violations dashboard add-on CTA. Admins enable inline (confirm -> provision flow, pulls DEDICATED_COMPUTE_CLUSTER, $99/mo disclosed); non-admin members request -> per-member doc (unique index `{organizationId,feature,requestedByUserId}`, 48h window, atomic duplicate-key claim) + Mandrill email to all org admins. Pure fns (`buildSandboxAddOnCta`, `buildEnableAddOnSelection`) for mock-free tests + Playwright e2e. Merged after jaysoo (per-user + drop over-mocked specs), Plannotator (restore unique index + duplicate-key re-read), Graphite (`MongoId`/`convertToObjectId`) review rounds. Jack still to publish Mandrill template `nx-cloud-plan-add-on-requested`.
-   - Files: `dot_ai/2026-07-08/SUMMARY.md`, `dot_ai/2026-07-02/tasks/q-520-sandbox-dashboard-add-on-toggle.md`, Polygraph `q-520-add-on-toggle-ee2a2bed`
-
-9. **DOC-544: Refresh Angular blog posts and docs pages (nx + nx-blog) — MERGED (#36276 + #53)** (2026-07-07)
-   - Summary: Pageview-driven Angular content audit (inventory posted as Linear comment). nx draft PR #36276 (`bca199ffdb`): /angular/plugins/* 404 redirect (65k reqs/30d), API pages link to plugin intros, Nx Cloud-forward intro + CLI comparison table, nx-and-angular/migration/MF guide refreshes, fixed dead URL in init-local.ts. nx-blog draft PR #53 (`4187e46`): 4 posts refreshed (architecting, testing/vitest-angular, state mgmt retitled 2026, 2022 tailwind banner). Deferred: new signals/NgRx content.
-   - Files: `dot_ai/2026-07-07/tasks/doc-544-angular-content-refresh.md`, Polygraph `doc-554-angular-content-6732d8a8`
-
-10. **NXC-4606: Enable remote cache from TUI perf report (nx) — draft PRs #36255 (new) + #36250 (kept for later)** (2026-07-07)
-   - Summary: Revised approach in #36255: perf-report popup gets inline "[ Enable remote cache ]" button + "Enable remote cache: <shift>+c" footer hint when unconnected; shift+c/click runs headless nx connect and prints the short URL centered at the popup bottom; hidden when connected. Original footer-status + ConnectPopup approach stays draft on #36250. Both live-verified against staging; nx-tui onboarding source accepted by staging.
-   - Files: `dot_ai/2026-07-06/tasks/nxc-4606-tui-not-connected-status.md`, PRs https://github.com/nrwl/nx/pull/36255 + https://github.com/nrwl/nx/pull/36250, Polygraph `nxc-4606-e6f49ee0`
 
 ## TODO
 
@@ -196,9 +209,10 @@
 
 ## Active Claude Sessions
 
-- /Users/jack/projects/nx-worktrees/NXC-4612 (branch: NXC-4612) — NXC-4612 nightly E2E matrix triage: 2 commits (`0c7462479f`, `461e15b3e5`) green locally, NOT pushed; awaiting Jack's call on splitting the TypeScript 7 fix into its own ticket. Plan: `dot_ai/2026-07-28/tasks/nxc-4612-golden-e2e-matrix-failures.md`, Polygraph `tidy-condor-02183c70` (2026-07-28)
-- /Users/jack/projects/ocean-worktrees/CLOUD-4891 (branch: CLOUD-4891) — CLOUD-4891 cookie-based env overrides for cloud e2e: commit `19b0e2dae4` green locally, NOT pushed (Jack holding). Plan: `dot_ai/2026-07-27/tasks/cloud-4891-cookie-env-overrides.md`, Polygraph `fresh-wombat-25345f30` (2026-07-27)
-- /Users/jack/projects/nx-worktrees/NXC-4688 (branch: NXC-4688) — NXC-4688 optional webpack/MF deps for @nx/react + @nx/next (+ @nx/rollup, @nx/react-native cleanup): draft PR https://github.com/nrwl/nx/pull/36492 awaiting CI. Plan: `dot_ai/2026-07-27/tasks/nxc-4688-react-next-webpack-mf-optional-deps.md`, Polygraph `react-mf-cleanup-04580e9b` (2026-07-27)
+- /Users/jack/projects/ocean-worktrees/CLOUD-4927 (branch: CLOUD-4927) — CLOUD-4927 frontend/polygraph HIGH vulns: draft PR https://github.com/nrwl/ocean/pull/12656 awaiting CI, rebased onto Nicole's merged #12631. #12630 (uuid) still open and will conflict on the overrides block. Plan: `dot_ai/2026-07-30/tasks/cloud-4927-frontend-polygraph-high-vulns.md`, Polygraph `sharp-puma-7f09fb0e` (2026-07-30)
+- /Users/jack/projects/nx-worktrees/NXC-4687 (branch: NXC-4687) — NXC-4687 CNW template egress fallback: draft PR https://github.com/nrwl/nx/pull/36508 awaiting CI + Jack review. Plan: `dot_ai/2026-07-29/tasks/nxc-4687-cnw-template-egress-fallback.md`, Polygraph `zesty-eagle-2a40a186` (2026-07-29)
+- /Users/jack/projects/nx-worktrees/NXC-4612 (branch: NXC-4612) — NXC-4612 nightly E2E matrix triage: draft PR https://github.com/nrwl/nx/pull/36506 (test-only harness fix). TypeScript 7 fix parked on `nxc-4612-typescript-7-preset-pin` for a follow-up ticket. Plan: `dot_ai/2026-07-28/tasks/nxc-4612-golden-e2e-matrix-failures.md`, Polygraph `tidy-condor-02183c70` (2026-07-28)
+- /Users/jack/projects/ocean-worktrees/CLOUD-4891 (branch: CLOUD-4891) — CLOUD-4891 cookie-based env overrides for cloud e2e: draft PR https://github.com/nrwl/ocean/pull/12652 awaiting CI. Plan: `dot_ai/2026-07-27/tasks/cloud-4891-cookie-env-overrides.md`, Polygraph `fresh-wombat-25345f30` (2026-07-30)
 - /Users/jack/projects/ocean (branch: main) — Churn signals validation + cost model: backtest queries drafted, awaiting Query A/B exports. Plan: `dot_ai/2026-07-24/tasks/churn-signals-and-cost-model.md` (2026-07-24)
 - /Users/jack/projects/nx-worktrees/NXC-4701 (branch: NXC-4701) — NXC-4701 TUI connect flow: draft PR https://github.com/nrwl/nx/pull/36460 awaiting CI + Jack review. Superseded prototypes #36250 + #36255 both closed. Plan: `dot_ai/2026-07-24/tasks/nxc-4701-tui-connect-flow.md`, Polygraph `ready-jackal-5efe8ef1` (2026-07-24)
 - /Users/jack/projects/nx-worktrees/DOC-555 (branch: DOC-555) — DOC-555 SEO batch: draft PR https://github.com/nrwl/nx/pull/36459 awaiting Jack review + CI. Plan: `dot_ai/2026-07-24/tasks/doc-555-seo-page-plan.md`, Polygraph `vivid-iguana-930ae870` (2026-07-24)

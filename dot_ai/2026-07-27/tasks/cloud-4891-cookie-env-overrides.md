@@ -3,7 +3,11 @@
 - Linear: https://linear.app/nxdev/issue/CLOUD-4891
 - Repo: `~/projects/ocean-worktrees/CLOUD-4891`, branch `CLOUD-4891` (off `origin/main`)
 - Polygraph: `fresh-wombat-25345f30`
-- Status: implemented, green locally, **not pushed, no PR** (Jack: hold)
+- Status: draft PR https://github.com/nrwl/ocean/pull/12652 (2026-07-30), awaiting CI
+- Local e2e proof (2026-07-30): spec ran against dev server + shared mongo on 27017
+  (skipped `start-deps`, port owned by cloud-4246 stack; e2e DB isolates data). Passes;
+  consistent first-attempt flake = vite dev-server blank-page reload, retry green,
+  CI serveDist prod build unaffected. Video/frames/trace: worktree `dist/cloud-4891-e2e-demo/`.
 
 ## Problem
 

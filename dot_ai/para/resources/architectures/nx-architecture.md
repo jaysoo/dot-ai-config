@@ -420,6 +420,13 @@ Most packages have a `build` target that runs post-compilation steps (chmod, cop
 
 ## Personal Work History
 
+### 2026-07-27..30 - NXC-4688: Optional webpack/MF deps for @nx/react + @nx/next (MERGED #36492)
+- **Branch**: `NXC-4688` | **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4688` | **Merge**: `820a3a6aaa` (2026-07-30) | **PR**: https://github.com/nrwl/nx/pull/36492 | **Polygraph**: `react-mf-cleanup-04580e9b` (nrwl/nx) | Linear NXC-4688; reference PR #36310 (Leo, angular, NXC-4613)
+- **What**: `@nx/react`'s `@nx/module-federation`/`express`/`http-proxy-middleware` -> optional peers (assert + `await import` in the 3 MF executors via `packages/react/src/utils/assert-package.ts`, exported from `@nx/react/internal` and shared by next); `@svgr/webpack` + `@nx/rollup` dropped from react; `@nx/webpack` -> optional peer on next (lazy in Cypress preset) / devDep on react-native; `@babel/preset-react` newly declared on react.
+- **Field bug found + fixed en route**: `@nx/module-federation` pinned `webpack` exactly (catalog `5.105.2`) while `@nx/webpack` installs `^5.101.3` into workspaces; webpack `5.109.x` (2026-07-23/28) split that into two copies and broke every webpack MF build on released nx (`Cannot use 'in' operator to search for 'start' in undefined`). Reproduced from published packages (`npm i @nx/module-federation@latest webpack@^5.101.3`). Fixed as optional peer `^5.0.0` matching `@nx/webpack`'s own convention; all MF webpack usage was already lazy `require`/type-only.
+- **Migrations** (`23.2.0-beta.4`): react `add-optional-module-federation-packages` (targets + targetDefaults object/array forms + `module-federation.config.{ts,js}`); react + next `add-svgr-webpack-if-used` (string-scan webpack/next config files) - needed because the v22 `add-svgr-to-*-config` migrations inlined `require.resolve('@svgr/webpack')` into user configs without declaring the package.
+- **Process notes**: CI run 1 failed on undeclared `@babel/preset-react` (masked by eslint `ignoredDependencies` - memory `reference_nx_ignored_dependencies_hides_undeclared_requires`); local react MF e2e unrunnable the whole time (typescript@7 field bug, NXC-4612), so CI was the only e2e signal.
+
 ### 2026-07-20..21 - NXC-4179: Re-enable e2e tests after lodash fix (MERGED #36408)
 - **Branch**: `NXC-4179` | **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4179` | **Merge**: `b0238f4920` (2026-07-21) | **PR**: https://github.com/nrwl/nx/pull/36408 | **Polygraph**: `nimble-cheetah-04f2c982` (nrwl/nx) | Linear NXC-4179; follow-up NXC-4690
 - **What**: Reverted skip commit #35104 (18 tests skipped 2026-03-31 for lodash@4.18.0 `assignWith is not defined` in `lodash/template` via html-webpack-plugin). lodash@4.18.1 (published next day) fixes it - verified by repro both directions with `require('lodash/template')`.
@@ -996,6 +1003,13 @@ Branch `DOC-549`, ~30 commits squash-merged 2026-07-15. GSC-driven refresh: deci
 - **Purpose**: Preserve blog search functionality during docs migration to Astro
 
 ## Design Decisions & Gotchas
+
+### Optional-peer demotion pattern for first-party plugin deps (angular #36310, react/next #36492)
+- **Shape**: dep -> `peerDependencies` (`workspace:*`) + `peerDependenciesMeta.optional` + keep in `devDependencies` for in-repo builds; executors call `assertPackageIsInstalled(pkg, requiredBy)` then `await import(...)`; generators `ensurePackage` or add to user package.json; a backfill migration (version = latest published tag + 1) scans targets, targetDefaults (object AND array forms, name + executor keys), and marker files like `module-federation.config.{ts,js}`.
+- **Two traps, both hit on #36492**:
+  1. eslint `ignoredDependencies` hides undeclared `require.resolve` usage - `@nx/react/babel` resolved `@babel/preset-react` only via `@svgr/webpack`'s transitive tree; demotion broke every React jest transform. Scan real require specifiers vs the manifest first; when fixing, also delete the `ignoredDependencies` entry so the check enforces it.
+  2. Shipped migrations that INLINE `require.resolve('<pkg>')` into user configs (v22 `add-svgr-to-webpack-config` / `add-svgr-to-next-config`) create hidden userland deps no manifest records. Removing the plugin dep that supplied `<pkg>` transitively silently breaks those workspaces - any such removal needs a reference-scanning backfill migration (`add-svgr-webpack-if-used`).
+- **Bundler singleton rule**: a first-party package must never hard-depend on webpack (or another bundler) at an exact pin while a sibling installs a floating range into workspaces - dedupe fails on the next upstream minor and plugin instances from copy A hit compiler internals of copy B. `@nx/webpack` declares `webpack` as optional peer `^5.0.0`; `@nx/module-federation` now matches (was exact `5.105.2`, broke on webpack 5.109). `@nx/rspack` still has `webpack: catalog:` as a direct dep - same latent risk.
 
 ### Cypress 15.14+ loads TS configs via esbuild - duplicate imports are fatal
 - **Issue**: Re-running `cypress-component-configuration` on an already-configured project crashed CT with `The symbol "nxComponentTestingPreset" has already been declared` (esbuild, at config load).

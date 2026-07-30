@@ -10,9 +10,9 @@ const out = {
   metric_note: 'Views = GA4 screenPageViews (client page_view). server_page_view = custom event count via Measurement Protocol. au = Active users.',
   source: {
     '2025-01..2025-04': 'GA4 standard Reports > Engagement > Pages and screens (Page path dim); Explore capped at ~14mo retention.',
-    '2025-05..2026-06': 'GA4 Explore free-form, Nth month dim.',
+    '2025-05..2026-07': 'GA4 Explore free-form, Nth month dim (2026-06 finalized + 2026-07 partial scraped 2026-07-30 via GA4 internal report API).',
   },
-  scraped_at: '2026-06-19',
+  scraped_at: '2026-07-30',
   rows: raw.map((r) => ({
     month: r.month,
     all_views: r.views,

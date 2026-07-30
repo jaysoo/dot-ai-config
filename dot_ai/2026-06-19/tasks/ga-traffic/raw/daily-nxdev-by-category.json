@@ -1,9 +1,9 @@
 {
   "series": "nxdev_hostname_only_views_by_category_daily",
   "metric": "Views (client page_view) filtered to Hostname EXACTLY = nx.dev (excludes *.nx.dev versioned subdomains, go.*, canary, localhost, netlify/vercel preview deploys). others = all - (home+docs+blog+marketing).",
-  "date_range": "2025-05-01..2026-06-18",
-  "scraped_at": "2026-06-20",
-  "count": 414,
+  "date_range": "2025-05-01..2026-07-29",
+  "scraped_at": "2026-07-30",
+  "count": 455,
   "rows": [
     {
       "date": "2025-05-01",
@@ -3730,6 +3730,375 @@
       "blog": 323,
       "marketing": 119,
       "others": 60
+    },
+    {
+      "date": "2026-06-19",
+      "all": 2460,
+      "home": 279,
+      "docs": 1736,
+      "blog": 222,
+      "marketing": 160,
+      "others": 63
+    },
+    {
+      "date": "2026-06-20",
+      "all": 1128,
+      "home": 135,
+      "docs": 841,
+      "blog": 79,
+      "marketing": 62,
+      "others": 11
+    },
+    {
+      "date": "2026-06-21",
+      "all": 1584,
+      "home": 172,
+      "docs": 1188,
+      "blog": 131,
+      "marketing": 71,
+      "others": 22
+    },
+    {
+      "date": "2026-06-22",
+      "all": 3465,
+      "home": 328,
+      "docs": 2693,
+      "blog": 243,
+      "marketing": 126,
+      "others": 75
+    },
+    {
+      "date": "2026-06-23",
+      "all": 3632,
+      "home": 404,
+      "docs": 2614,
+      "blog": 421,
+      "marketing": 141,
+      "others": 52
+    },
+    {
+      "date": "2026-06-24",
+      "all": 3450,
+      "home": 344,
+      "docs": 2557,
+      "blog": 317,
+      "marketing": 155,
+      "others": 77
+    },
+    {
+      "date": "2026-06-25",
+      "all": 3172,
+      "home": 351,
+      "docs": 2418,
+      "blog": 235,
+      "marketing": 106,
+      "others": 62
+    },
+    {
+      "date": "2026-06-26",
+      "all": 2300,
+      "home": 244,
+      "docs": 1676,
+      "blog": 219,
+      "marketing": 118,
+      "others": 43
+    },
+    {
+      "date": "2026-06-27",
+      "all": 970,
+      "home": 100,
+      "docs": 752,
+      "blog": 69,
+      "marketing": 40,
+      "others": 9
+    },
+    {
+      "date": "2026-06-28",
+      "all": 1410,
+      "home": 151,
+      "docs": 1119,
+      "blog": 74,
+      "marketing": 47,
+      "others": 19
+    },
+    {
+      "date": "2026-06-29",
+      "all": 3078,
+      "home": 317,
+      "docs": 2362,
+      "blog": 208,
+      "marketing": 123,
+      "others": 68
+    },
+    {
+      "date": "2026-06-30",
+      "all": 3404,
+      "home": 334,
+      "docs": 2554,
+      "blog": 264,
+      "marketing": 163,
+      "others": 89
+    },
+    {
+      "date": "2026-07-01",
+      "all": 2930,
+      "home": 299,
+      "docs": 2283,
+      "blog": 174,
+      "marketing": 122,
+      "others": 52
+    },
+    {
+      "date": "2026-07-02",
+      "all": 3364,
+      "home": 393,
+      "docs": 2548,
+      "blog": 183,
+      "marketing": 191,
+      "others": 49
+    },
+    {
+      "date": "2026-07-03",
+      "all": 2318,
+      "home": 231,
+      "docs": 1813,
+      "blog": 148,
+      "marketing": 94,
+      "others": 32
+    },
+    {
+      "date": "2026-07-04",
+      "all": 948,
+      "home": 126,
+      "docs": 715,
+      "blog": 44,
+      "marketing": 55,
+      "others": 8
+    },
+    {
+      "date": "2026-07-05",
+      "all": 1524,
+      "home": 173,
+      "docs": 1170,
+      "blog": 90,
+      "marketing": 76,
+      "others": 15
+    },
+    {
+      "date": "2026-07-06",
+      "all": 3189,
+      "home": 318,
+      "docs": 2576,
+      "blog": 145,
+      "marketing": 104,
+      "others": 46
+    },
+    {
+      "date": "2026-07-07",
+      "all": 2872,
+      "home": 327,
+      "docs": 2188,
+      "blog": 172,
+      "marketing": 138,
+      "others": 47
+    },
+    {
+      "date": "2026-07-08",
+      "all": 3013,
+      "home": 303,
+      "docs": 2369,
+      "blog": 153,
+      "marketing": 145,
+      "others": 43
+    },
+    {
+      "date": "2026-07-09",
+      "all": 3360,
+      "home": 369,
+      "docs": 2619,
+      "blog": 188,
+      "marketing": 132,
+      "others": 52
+    },
+    {
+      "date": "2026-07-10",
+      "all": 2560,
+      "home": 266,
+      "docs": 2014,
+      "blog": 129,
+      "marketing": 117,
+      "others": 34
+    },
+    {
+      "date": "2026-07-11",
+      "all": 1093,
+      "home": 140,
+      "docs": 836,
+      "blog": 65,
+      "marketing": 46,
+      "others": 6
+    },
+    {
+      "date": "2026-07-12",
+      "all": 1420,
+      "home": 163,
+      "docs": 1104,
+      "blog": 65,
+      "marketing": 68,
+      "others": 20
+    },
+    {
+      "date": "2026-07-13",
+      "all": 3398,
+      "home": 321,
+      "docs": 2672,
+      "blog": 208,
+      "marketing": 135,
+      "others": 62
+    },
+    {
+      "date": "2026-07-14",
+      "all": 3296,
+      "home": 356,
+      "docs": 2570,
+      "blog": 182,
+      "marketing": 142,
+      "others": 46
+    },
+    {
+      "date": "2026-07-15",
+      "all": 3388,
+      "home": 343,
+      "docs": 2541,
+      "blog": 292,
+      "marketing": 145,
+      "others": 67
+    },
+    {
+      "date": "2026-07-16",
+      "all": 3182,
+      "home": 354,
+      "docs": 2370,
+      "blog": 279,
+      "marketing": 120,
+      "others": 59
+    },
+    {
+      "date": "2026-07-17",
+      "all": 2399,
+      "home": 260,
+      "docs": 1819,
+      "blog": 186,
+      "marketing": 103,
+      "others": 31
+    },
+    {
+      "date": "2026-07-18",
+      "all": 1233,
+      "home": 138,
+      "docs": 971,
+      "blog": 67,
+      "marketing": 45,
+      "others": 12
+    },
+    {
+      "date": "2026-07-19",
+      "all": 1033,
+      "home": 113,
+      "docs": 788,
+      "blog": 79,
+      "marketing": 42,
+      "others": 11
+    },
+    {
+      "date": "2026-07-20",
+      "all": 3387,
+      "home": 319,
+      "docs": 2563,
+      "blog": 283,
+      "marketing": 159,
+      "others": 63
+    },
+    {
+      "date": "2026-07-21",
+      "all": 3155,
+      "home": 311,
+      "docs": 2408,
+      "blog": 227,
+      "marketing": 146,
+      "others": 63
+    },
+    {
+      "date": "2026-07-22",
+      "all": 3075,
+      "home": 266,
+      "docs": 2463,
+      "blog": 168,
+      "marketing": 136,
+      "others": 42
+    },
+    {
+      "date": "2026-07-23",
+      "all": 2960,
+      "home": 275,
+      "docs": 2346,
+      "blog": 152,
+      "marketing": 128,
+      "others": 59
+    },
+    {
+      "date": "2026-07-24",
+      "all": 2535,
+      "home": 220,
+      "docs": 2035,
+      "blog": 141,
+      "marketing": 106,
+      "others": 33
+    },
+    {
+      "date": "2026-07-25",
+      "all": 1083,
+      "home": 115,
+      "docs": 832,
+      "blog": 95,
+      "marketing": 32,
+      "others": 9
+    },
+    {
+      "date": "2026-07-26",
+      "all": 1391,
+      "home": 126,
+      "docs": 1087,
+      "blog": 107,
+      "marketing": 59,
+      "others": 12
+    },
+    {
+      "date": "2026-07-27",
+      "all": 2964,
+      "home": 308,
+      "docs": 2325,
+      "blog": 171,
+      "marketing": 126,
+      "others": 34
+    },
+    {
+      "date": "2026-07-28",
+      "all": 2833,
+      "home": 316,
+      "docs": 2197,
+      "blog": 156,
+      "marketing": 128,
+      "others": 36
+    },
+    {
+      "date": "2026-07-29",
+      "all": 2706,
+      "home": 281,
+      "docs": 2092,
+      "blog": 153,
+      "marketing": 118,
+      "others": 62
     }
   ]
 }

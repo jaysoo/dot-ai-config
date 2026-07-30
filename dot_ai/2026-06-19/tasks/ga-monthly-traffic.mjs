@@ -48,7 +48,8 @@ const raw = [
   { month: '2026-03', label: 'Mar 2026', views: 388465, au: 169813, docsViews: 281899, docsAu: 122135, homeViews: 49556, homeAu: 37282, serverPv: 3341956, partial: false },
   { month: '2026-04', label: 'Apr 2026', views: 296525, au: 90842,  docsViews: 216101, docsAu: 59346,  homeViews: 36428, homeAu: 27148, serverPv: 5471799, partial: false },
   { month: '2026-05', label: 'May 2026', views: 94774,  au: 19641,  docsViews: 71525,  docsAu: 13005,  homeViews: 9388,  homeAu: 6921,  serverPv: 5119810, partial: false },
-  { month: '2026-06', label: 'Jun 2026', views: 51667,  au: 10773,  docsViews: 37757,  docsAu: 7323,   homeViews: 5339,  homeAu: 3812,  serverPv: 3228509, partial: true  }, // through Jun 18 (18 of 30 days)
+  { month: '2026-06', label: 'Jun 2026', views: 83414,  au: 16830,  docsViews: 60292,  docsAu: 10644,  homeViews: 8547,  homeAu: 5697,  serverPv: 5392654, partial: false }, // finalized 2026-07-30 (was partial-through-Jun-18)
+  { month: '2026-07', label: 'Jul 2026', views: 76458,  au: 15197,  docsViews: 56520,  docsAu: 9872,   homeViews: 7885,  homeAu: 5320,  serverPv: 5055692, partial: true  }, // through Jul 29 (29 of 31 days), scraped 2026-07-30
 ];
 
 // Per-month "what changed" annotations. Keep these in sync with git history / PRs.
@@ -111,7 +112,7 @@ const csv = [
 
 console.log('# nx.dev GA4 monthly page views (raw - no /2 applied; baseline shows no doubling)\n');
 console.log(md);
-console.log('\n* Jun 2026 is partial (through the 18th, ~18/30 days).\n');
+console.log('\n* Jul 2026 is partial (through the 29th, 29/31 days).\n');
 console.log('--- CSV ---\n');
 console.log(csv);
 

@@ -117,6 +117,10 @@ curl -s "https://api.npmjs.org/downloads/point/{LAST_YEAR_FIRST}:{LAST_YEAR_LAST
 **Goal:** Understand docs traffic trajectory and which content drives visits.
 
 **Data sources:**
+- **PRIMARY: the ga-traffic pipeline** — `.ai/2026-06-19/tasks/ga-traffic/out/analysis.json`
+  has precomputed MoM/trend/organic (GSC clicks = canonical consent-immune metric) and
+  `out/chart.html` the charts. Use the `ga-traffic` skill to read or refresh it —
+  do NOT re-derive GA4 numbers from scratch.
 - Netlify Analytics API or user-provided analytics export
 - Google Search Console data (if user provides)
 

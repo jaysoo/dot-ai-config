@@ -2,9 +2,9 @@
   "series": "docs_daily",
   "metric": "Views = client page_view for pagePath begins-with /docs (astro-docs; ~0 before Sep 2025)",
   "filter": "Page path and screen class begins with /docs",
-  "date_range": "2025-05-01..2026-06-27",
-  "scraped_at": "2026-06-19",
-  "count": 291,
+  "date_range": "2025-05-01..2026-07-29",
+  "scraped_at": "2026-07-30",
+  "count": 323,
   "first_recorded": "2025-05-13",
   "rows": [
     {
@@ -1461,7 +1461,167 @@
       "date": "2026-06-27",
       "views": 752,
       "active_users": null
+    },
+    {
+      "date": "2026-06-28",
+      "views": 1119,
+      "active_users": null
+    },
+    {
+      "date": "2026-06-29",
+      "views": 2366,
+      "active_users": null
+    },
+    {
+      "date": "2026-06-30",
+      "views": 2558,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-01",
+      "views": 2284,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-02",
+      "views": 2553,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-03",
+      "views": 1814,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-04",
+      "views": 716,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-05",
+      "views": 1170,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-06",
+      "views": 2580,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-07",
+      "views": 2189,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-08",
+      "views": 2378,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-09",
+      "views": 2658,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-10",
+      "views": 2018,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-11",
+      "views": 844,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-12",
+      "views": 1110,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-13",
+      "views": 2678,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-14",
+      "views": 2578,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-15",
+      "views": 2545,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-16",
+      "views": 2375,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-17",
+      "views": 1867,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-18",
+      "views": 971,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-19",
+      "views": 788,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-20",
+      "views": 2593,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-21",
+      "views": 2411,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-22",
+      "views": 2464,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-23",
+      "views": 2348,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-24",
+      "views": 2040,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-25",
+      "views": 832,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-26",
+      "views": 1090,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-27",
+      "views": 2327,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-28",
+      "views": 2201,
+      "active_users": null
+    },
+    {
+      "date": "2026-07-29",
+      "views": 2098,
+      "active_users": null
     }
   ],
-  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal. Jun 25-27 appended 2026-06-29 (overlap Jun24 verified; views/server only, AU/event null)."
+  "refresh_note": "Jun 19-24 2026 appended 2026-06-26 (views/server_page_view only; active_users + event_count_all NOT re-scraped for these days - set null - they are not analyzed and AU is consent/MP-contaminated). June is consent-suppressed (Cookiebot); see gsc-daily.json for the consent-independent signal. Jun 25-27 appended 2026-06-29 (overlap Jun24 verified; views/server only, AU/event null). Jun 28 - Jul 29 appended 2026-07-30 (Jun 19-27 overlap re-verified; views only, AU/event_count null). July stays consent-suppressed (Cookiebot)."
 }

@@ -2,9 +2,9 @@
   "metric_note": "Views = GA4 screenPageViews (client page_view). server_page_view = custom event count via Measurement Protocol. au = Active users.",
   "source": {
     "2025-01..2025-04": "GA4 standard Reports > Engagement > Pages and screens (Page path dim); Explore capped at ~14mo retention.",
-    "2025-05..2026-06": "GA4 Explore free-form, Nth month dim."
+    "2025-05..2026-07": "GA4 Explore free-form, Nth month dim (2026-06 finalized + 2026-07 partial scraped 2026-07-30 via GA4 internal report API)."
   },
-  "scraped_at": "2026-06-19",
+  "scraped_at": "2026-07-30",
   "rows": [
     {
       "month": "2025-01",
@@ -212,14 +212,26 @@
     },
     {
       "month": "2026-06",
-      "all_views": 51667,
-      "all_active_users": 10773,
-      "home_views": 5339,
-      "home_active_users": 3812,
-      "docs_views": 37757,
-      "docs_active_users": 7323,
-      "non_docs_views": 13910,
-      "server_page_view": 3228509,
+      "all_views": 83414,
+      "all_active_users": 16830,
+      "home_views": 8547,
+      "home_active_users": 5697,
+      "docs_views": 60292,
+      "docs_active_users": 10644,
+      "non_docs_views": 23122,
+      "server_page_view": 5392654,
+      "partial": false
+    },
+    {
+      "month": "2026-07",
+      "all_views": 76458,
+      "all_active_users": 15197,
+      "home_views": 7885,
+      "home_active_users": 5320,
+      "docs_views": 56520,
+      "docs_active_users": 9872,
+      "non_docs_views": 19938,
+      "server_page_view": 5055692,
       "partial": true
     }
   ]
