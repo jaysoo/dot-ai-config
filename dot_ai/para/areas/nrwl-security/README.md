@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-07-31 | [cve-audit-2026-07-31.md](./cve-audit-2026-07-31.md) | Full re-audit (18 days since 07-13). nx `rollup`/`vite` now **48+ days stale**, no fix. New: 3 HIGH CVEs in `astro@5.12.3` on the **live nx.dev docs site**; a second unpatched advisory (zip-slip, GHSA-vp3h-ghgh-jr7g) now stacks on CREEP in the published `@nx/*-cache` packages. ocean/nx-labs/nx-console each resolved several 07-13 findings via proactive overrides/migrations |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
