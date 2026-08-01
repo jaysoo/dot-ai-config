@@ -111,8 +111,6 @@ curl -sS -H "Authorization: Bearer $GITHUB_TOKEN" \
 ```
 Skip the GitHub check entirely if no token is configured — npm `time.modified` + `deprecated` flag already covers most signal.
 
-(The `gh` CLI was previously used here. It has been banned — see top-level CLAUDE.md.)
-
 Rate-limit yourself: add a short sleep between npm calls if there are >50 deps.
 
 ## Step 3: Classify risk

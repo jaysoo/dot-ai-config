@@ -66,7 +66,13 @@ Notes:
 
 ## Follow-ups
 
-1. **turbo-stream 2.4.1 (CVE-2026-34077, CLOUD-4935) - Remix-blocked.** The ticket names
+1. **turbo-stream 2.4.1 (CVE-2026-34077, CLOUD-4935) - Remix-blocked. Moved to CLOUD-5066.**
+   Filed CLOUD-5066 "Clear CVEs blocked on the React Router v7 migration" in the Remix V2 Migration
+   project and reparented all four RR-blocked CVEs under it: CLOUD-4935 from here, plus CLOUD-4981,
+   CLOUD-4982 and CLOUD-4983 from the MEDIUM container CLOUD-4936. React Router **7.18.0** is the
+   binding floor. Notably CVE-2026-53668 has `first_patched_version: null` for `react-router-dom`,
+   so the 6.x line gets no backport at all. CLOUD-5066 also carries a post-migration step to
+   re-check every CVE across both containers, since the router bump moves transitive resolution. The ticket names
    `react-router 7.7.0-7.13.1`, but we are on react-router 6.30.4 and unaffected there. The advisory
    *also* covers `turbo-stream < 3.0.0`, and we resolve 2.4.1. `@remix-run/react@2.17.5` and
    `@remix-run/server-runtime@2.17.5` pin `turbo-stream` to **exactly 2.4.1**, and 3.0.0 is a

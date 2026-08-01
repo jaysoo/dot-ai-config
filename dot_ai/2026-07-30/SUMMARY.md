@@ -43,3 +43,39 @@ Plan/notes: `dot_ai/2026-07-27/tasks/nxc-4688-react-next-webpack-mf-optional-dep
 
 Also completed earlier today (separate session): CNW WORKSPACE_CREATION_FAILED error analysis
 (`tasks/analyze-cnw-workspace-creation-failures.md`).
+
+## CLOUD-4927: Frontend/Polygraph HIGH vulnerabilities - draft PR #12656
+
+Triaged all 20 CVE sub-issues of the HIGH container and shipped the fixable set as pnpm overrides.
+Polygraph session `sharp-puma-7f09fb0e`, single repo nrwl/ocean -
+https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/sharp-puma-7f09fb0e
+
+- Draft PR https://github.com/nrwl/ocean/pull/12656 (commit `ce67755bdc`, CI in progress). Overrides
+  mirrored across root + `apps/nx-cloud` + `apps/polygraph`: brace-expansion 1.1.13/2.0.3/5.0.6 ->
+  1.1.18/2.1.4/5.0.9, js-yaml@4 4.2.0 -> 4.3.0, undici ^6.23.0 -> ^6.27.0, plus three new
+  transitive-only overrides (lodash-es 4.18.0, `path-to-regexp@<0.1.13` 0.1.13, `@grpc/grpc-js`
+  ^1.14.4) and the `apps/polygraph` tar 7.5.20 -> 7.5.22 drift.
+- **Method that paid off: re-verify every range against the GitHub advisory API, not the ticket.**
+  CLOUD-4930 says undici is fixed in 6.26.0; the advisory and the v6.27.0 release notes both say
+  6.27.0 ("v6.26.0 contains only the chunked-EOF fix"). We were on 6.26.0 and would have shipped
+  still-vulnerable.
+- Two scan surfaces per image, needing different fixes: app `node_modules` (pruned prod install from
+  our lockfile -> overrides) and the globally installed npm, which vendors its own sigstore/tar/
+  minimatch/brace-expansion/undici (-> Dockerfile npm pin, what #12614 did).
+- Rebased onto `532113a400` after Nicole's OTel #12631 merged mid-session. Lockfile was the only
+  conflict; resolved via `git checkout origin/main -- pnpm-lock.yaml && pnpm install --lockfile-only`.
+  Force-pushed with lease since the rebase rewrote the SHA and `push_branch` pull-rebases.
+- Post-rebase finding: main still resolves `@grpc/grpc-js` 1.14.3 even after the OTel bump, so the
+  `^1.14.4` override is load-bearing, not redundant.
+- Linear triage: 8 In Review on #12656, 2 closed Duplicate of CLOUD-4985 (Nicole's OTel work),
+  9 Canceled as already patched by #12575/#12614/CLOUD-4926, parent In Review.
+- Filed **CLOUD-5066** in the Remix V2 Migration project for the 4 RR7-blocked CVEs and reparented
+  them under it: CLOUD-4935 (turbo-stream, from 4927) + CLOUD-4981/4982/4983 (react-router, from the
+  MEDIUM container 4936). React Router **7.18.0** is the binding floor. CVE-2026-53668 reports
+  `first_patched_version: null` for react-router-dom, so the 6.x line gets no backport at all.
+  CLOUD-5066 carries a post-migration step to re-check every CVE across both containers.
+- Known residual that will still report on rescan: npm vendors brace-expansion 5.0.7 in 11.18.0,
+  11.19.0 and even 12.0.2, still inside CVE-2026-14257 (CLOUD-4932). Needs a later npm pin or a
+  scoped rego ignorePolicy. Not Remix-related.
+
+Plan/notes: `dot_ai/2026-07-30/tasks/cloud-4927-frontend-polygraph-high-vulns.md`

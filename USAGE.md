@@ -6,10 +6,10 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 
 | Name                   | Type    | Last Invoked | Count |
 | ---------------------- | ------- | ------------ | ----- |
+| dot-claude-guard       | skill   | 2026-07-31   | 20    |
 | ga-traffic             | skill   | 2026-07-30   | 0     |
 | nx-workspace           | skill   | 2026-07-29   | 1     |
 | ocean-trivy-verify     | skill   | 2026-07-29   | 0     |
-| dot-claude-guard       | skill   | 2026-07-29   | 19    |
 | openai-docs            | skill   | 2026-07-27   | 2     |
 | cnw-update-templates   | skill   | 2026-07-15   | 3     |
 | code-comment-style     | skill   | 2026-07-23   | 0     |

@@ -131,8 +131,9 @@ Starlight still peers ^6").
 ## Scheduling it daily
 
 This file IS the routine; trigger it once a day. Either:
-- **Claude Code cron** (preferred): `/cron` a daily job whose prompt is "run the
-  cnw-templates-dep-audit skill". Provide `$GH_TOKEN` in the cron environment.
+- **Codex automation or Claude Code cron** (preferred): schedule a daily job whose
+  prompt is "run the cnw-templates-dep-audit skill". Provide `$GH_TOKEN` in the
+  automation environment.
 - **OS scheduler**: a launchd/cron entry that runs `claude -p "run the
   cnw-templates-dep-audit skill"` headless with `GH_TOKEN` exported.
 
