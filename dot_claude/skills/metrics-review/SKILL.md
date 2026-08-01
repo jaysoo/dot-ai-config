@@ -208,7 +208,7 @@ SPACE dimensions to assess:
 
 **Implementation:**
 1. Pull Linear cycle data for active teams (Nx CLI, DPE, Nx Cloud, etc.)
-2. Pull GitHub PR stats via REST API (`curl` against `api.github.com` with `$GITHUB_TOKEN`) for merge times, review counts. (`gh` CLI banned — see top-level CLAUDE.md.)
+2. Pull GitHub PR stats via REST API (`curl` against `api.github.com` with `$GITHUB_TOKEN`) for merge times, review counts.
 3. Check `.ai/para/areas/personnel/` for recent sentiment signals
 4. Check `.ai/para/areas/syncs/` for recurring blockers mentioned in syncs
 5. Produce a per-team summary with trend arrows

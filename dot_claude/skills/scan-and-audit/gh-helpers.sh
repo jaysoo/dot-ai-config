@@ -9,8 +9,8 @@
 #     `op read op://Employee/API Keys/github_token`).
 #   - `jq` and `curl` on PATH.
 #
-# Why curl: the `gh` CLI is banned on this machine
-# (see ~/.claude/CLAUDE.md "NEVER use the gh GitHub CLI").
+# Uses curl so the helpers work anywhere a GitHub token is available, without a
+# dependency on the `gh` CLI.
 
 GH_API="${GH_API:-https://api.github.com}"
 

@@ -302,7 +302,7 @@ curl -4 -sS --fail --max-time 5 https://ifconfig.me
 
 Then open `https://github.com/nrwl/cloud-infrastructure/actions/workflows/add-ip-to-atlas-access-list.yaml`, click "Run workflow", and fill in `clusterName=PROD` (or `STAGING`) plus the IP you just printed.
 
-(The `gh` CLI was previously used to dispatch this workflow. It has been banned — see top-level CLAUDE.md. If you want to script it, use `curl -X POST` against the GitHub Actions dispatch API with an explicit token in env.)
+If you want to script it, use `gh workflow run` or `curl -X POST` against the GitHub Actions dispatch API with an explicit token in the environment.
 
 ### 2. Authenticate with gcloud
 
