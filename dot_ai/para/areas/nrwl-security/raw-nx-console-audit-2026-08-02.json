@@ -1,0 +1,706 @@
+[
+  {
+    "module_name": "@babel/plugin-transform-modules-systemjs",
+    "severity": "high",
+    "vulnerable_versions": ">=7.12.0 <=7.29.3",
+    "cvss": 8.2,
+    "title": "@babel/plugin-transform-modules-systemjs generates arbitrary code when compiling malicious input",
+    "url": "https://github.com/advisories/GHSA-fv7c-fp4j-7gwp"
+  },
+  {
+    "module_name": "@modelcontextprotocol/sdk",
+    "severity": "high",
+    "vulnerable_versions": ">=1.10.0 <=1.25.3",
+    "cvss": 7.1,
+    "title": "@modelcontextprotocol/sdk has cross-client data leak via shared server/transport instance reuse",
+    "url": "https://github.com/advisories/GHSA-345p-7cg4-v4c7"
+  },
+  {
+    "module_name": "@modelcontextprotocol/sdk",
+    "severity": "high",
+    "vulnerable_versions": "<1.24.0",
+    "cvss": 0,
+    "title": "Model Context Protocol (MCP) TypeScript SDK does not enable DNS rebinding protection by default",
+    "url": "https://github.com/advisories/GHSA-w48q-cv73-mx4w"
+  },
+  {
+    "module_name": "@modelcontextprotocol/sdk",
+    "severity": "high",
+    "vulnerable_versions": ">=1.3.0 <1.25.2",
+    "cvss": 0,
+    "title": "Anthropic's MCP TypeScript SDK has a ReDoS vulnerability",
+    "url": "https://github.com/advisories/GHSA-8r9q-7v3j-jr4g"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.15.2",
+    "cvss": 7.4,
+    "title": "Axios has prototype pollution read-side gadgets in HTTP adapter that allow credential injection and request hijacking",
+    "url": "https://github.com/advisories/GHSA-q8qp-cvcw-x6jj"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.12.0",
+    "cvss": 7.5,
+    "title": "Axios is vulnerable to DoS attack through lack of data size check",
+    "url": "https://github.com/advisories/GHSA-4hjh-wcwx-xvwj"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.16.0",
+    "cvss": 7.5,
+    "title": "Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection",
+    "url": "https://github.com/advisories/GHSA-hfxv-24rg-xrqf"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.7.0 <1.16.0",
+    "cvss": 7.5,
+    "title": "Allocation of Resources Without Limits or Throttling in Axios",
+    "url": "https://github.com/advisories/GHSA-777c-7fjr-54vf"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.16.0",
+    "cvss": 0,
+    "title": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter",
+    "url": "https://github.com/advisories/GHSA-p92q-9vqr-4j8v"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.16.0",
+    "cvss": 7.5,
+    "title": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection",
+    "url": "https://github.com/advisories/GHSA-j5f8-grm9-p9fc"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.15.2",
+    "cvss": 7,
+    "title": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge",
+    "url": "https://github.com/advisories/GHSA-3g43-6gmg-66jw"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.16.0",
+    "cvss": 8.7,
+    "title": "axios Vulnerable to Full Man-in-the-Middle via Prototype Pollution Gadget in `config.proxy`",
+    "url": "https://github.com/advisories/GHSA-35jp-ww65-95wh"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.15.1",
+    "cvss": 7.2,
+    "title": "Axios: Incomplete Fix for CVE-2025-62718 — NO_PROXY Protection Bypassed via RFC 1122 Loopback Subnet (127.0.0.0/8) in Axios 1.15.0",
+    "url": "https://github.com/advisories/GHSA-pmwg-cvhr-8vh7"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.15.1",
+    "cvss": 7.4,
+    "title": "Axios: Prototype Pollution Gadgets - Response Tampering, Data Exfiltration, and Request Hijacking",
+    "url": "https://github.com/advisories/GHSA-pf86-5x62-jrwf"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.15.1",
+    "cvss": 7.4,
+    "title": "Axios: Header Injection via Prototype Pollution",
+    "url": "https://github.com/advisories/GHSA-6chq-wfr3-2hj9"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <=1.13.4",
+    "cvss": 7.5,
+    "title": "Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig",
+    "url": "https://github.com/advisories/GHSA-43fc-jf86-j433"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": "<1.1.17",
+    "cvss": 7.5,
+    "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+    "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": ">=2.0.0 <2.1.3",
+    "cvss": 7.5,
+    "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+    "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <5.0.8",
+    "cvss": 7.5,
+    "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+    "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": ">=2.0.0 <2.1.2",
+    "cvss": 5.3,
+    "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+    "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": "<1.1.16",
+    "cvss": 5.3,
+    "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+    "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": ">=3.0.0 <5.0.7",
+    "cvss": 5.3,
+    "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+    "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp"
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "vulnerable_versions": ">=3.0.0 <3.1.3",
+    "cvss": 7.5,
+    "title": "fast-uri vulnerable to host confusion via failed IDN canonicalization",
+    "url": "https://github.com/advisories/GHSA-4c8g-83qw-93j6"
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "vulnerable_versions": "<=3.1.1",
+    "cvss": 7.5,
+    "title": "fast-uri vulnerable to host confusion via percent-encoded authority delimiters",
+    "url": "https://github.com/advisories/GHSA-v39h-62p7-jpjc"
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "vulnerable_versions": "<=3.1.0",
+    "cvss": 7.5,
+    "title": "fast-uri vulnerable to path traversal via percent-encoded dot segments",
+    "url": "https://github.com/advisories/GHSA-q3j6-qgpj-74h6"
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "vulnerable_versions": ">=3.0.0 <=3.1.3",
+    "cvss": 7.5,
+    "title": "fast-uri vulnerable to host confusion via literal backslash authority delimiter",
+    "url": "https://github.com/advisories/GHSA-v2hh-gcrm-f6hx"
+  },
+  {
+    "module_name": "flatted",
+    "severity": "high",
+    "vulnerable_versions": "<3.4.0",
+    "cvss": 7.5,
+    "title": "flatted vulnerable to unbounded recursion DoS in parse() revive phase",
+    "url": "https://github.com/advisories/GHSA-25h7-pfq9-p65f"
+  },
+  {
+    "module_name": "flatted",
+    "severity": "high",
+    "vulnerable_versions": "<=3.4.1",
+    "cvss": 0,
+    "title": "Prototype Pollution via parse() in NodeJS flatted",
+    "url": "https://github.com/advisories/GHSA-rf6f-7fwh-wjgh"
+  },
+  {
+    "module_name": "form-data",
+    "severity": "critical",
+    "vulnerable_versions": ">=4.0.0 <4.0.4",
+    "cvss": 0,
+    "title": "form-data uses unsafe random function in form-data for choosing boundary",
+    "url": "https://github.com/advisories/GHSA-fjxv-7rqg-78g4"
+  },
+  {
+    "module_name": "form-data",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <4.0.6",
+    "cvss": 7.5,
+    "title": "form-data: CRLF injection in form-data via unescaped multipart field names and filenames",
+    "url": "https://github.com/advisories/GHSA-hmw2-7cc7-3qxx"
+  },
+  {
+    "module_name": "glob",
+    "severity": "high",
+    "vulnerable_versions": ">=10.2.0 <10.5.0",
+    "cvss": 7.5,
+    "title": "glob CLI: Command injection via -c/--cmd executes matches with shell:true",
+    "url": "https://github.com/advisories/GHSA-5j98-mcp5-4vw2"
+  },
+  {
+    "module_name": "glob",
+    "severity": "high",
+    "vulnerable_versions": ">=11.0.0 <11.1.0",
+    "cvss": 7.5,
+    "title": "glob CLI: Command injection via -c/--cmd executes matches with shell:true",
+    "url": "https://github.com/advisories/GHSA-5j98-mcp5-4vw2"
+  },
+  {
+    "module_name": "handlebars",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.7.8",
+    "cvss": 8.1,
+    "title": "Handlebars.js has JavaScript Injection via AST Type Confusion by tampering @partial-block",
+    "url": "https://github.com/advisories/GHSA-3mfm-83xf-c92r"
+  },
+  {
+    "module_name": "handlebars",
+    "severity": "critical",
+    "vulnerable_versions": ">=4.0.0 <=4.7.8",
+    "cvss": 9.8,
+    "title": "Handlebars.js has JavaScript Injection via AST Type Confusion",
+    "url": "https://github.com/advisories/GHSA-2w6w-674q-4c4q"
+  },
+  {
+    "module_name": "handlebars",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.7.8",
+    "cvss": 8.1,
+    "title": "Handlebars.js has JavaScript Injection via AST Type Confusion when passing an object as dynamic partial",
+    "url": "https://github.com/advisories/GHSA-xhpv-hc6g-r9c6"
+  },
+  {
+    "module_name": "handlebars",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.7.8",
+    "cvss": 7.5,
+    "title": "Handlebars.js has Denial of Service via Malformed Decorator Syntax in Template Compilation",
+    "url": "https://github.com/advisories/GHSA-9cx6-37pm-9jff"
+  },
+  {
+    "module_name": "handlebars",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.7.8",
+    "cvss": 8.2,
+    "title": "Handlebars.js has JavaScript Injection in CLI Precompiler via Unescaped Names and Options",
+    "url": "https://github.com/advisories/GHSA-xjpj-3mr7-gcpf"
+  },
+  {
+    "module_name": "immutable",
+    "severity": "high",
+    "vulnerable_versions": ">=5.0.0-beta.1 <5.1.8",
+    "cvss": 7.5,
+    "title": "Immutable.js `List` 32-bit trie overflow → unrecoverable DoS",
+    "url": "https://github.com/advisories/GHSA-v56q-mh7h-f735"
+  },
+  {
+    "module_name": "immutable",
+    "severity": "high",
+    "vulnerable_versions": ">=5.0.0-beta.1 <5.1.8",
+    "cvss": 0,
+    "title": "Immutabl: Hash-collision algorithmic complexity denial of service in Immutable.Map/Set",
+    "url": "https://github.com/advisories/GHSA-xvcm-6775-5m9r"
+  },
+  {
+    "module_name": "js-yaml",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <4.3.0",
+    "cvss": 7.5,
+    "title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+    "url": "https://github.com/advisories/GHSA-52cp-r559-cp3m"
+  },
+  {
+    "module_name": "js-yaml",
+    "severity": "high",
+    "vulnerable_versions": ">=3.0.0 <3.15.0",
+    "cvss": 7.5,
+    "title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+    "url": "https://github.com/advisories/GHSA-52cp-r559-cp3m"
+  },
+  {
+    "module_name": "jws",
+    "severity": "high",
+    "vulnerable_versions": "<3.2.3",
+    "cvss": 7.5,
+    "title": "auth0/node-jws Improperly Verifies HMAC Signature",
+    "url": "https://github.com/advisories/GHSA-869p-cjfg-cm3x"
+  },
+  {
+    "module_name": "linkify-it",
+    "severity": "high",
+    "vulnerable_versions": "<=5.0.0",
+    "cvss": 0,
+    "title": "LinkifyIt#match scan loop has quadratic algorithmic complexity",
+    "url": "https://github.com/advisories/GHSA-22p9-wv53-3rq4"
+  },
+  {
+    "module_name": "linkify-it",
+    "severity": "high",
+    "vulnerable_versions": "<=5.0.1",
+    "cvss": 7.5,
+    "title": "linkify-it: Quadratic-complexity DoS via the `mailto:` validator scan-loop on attacker text",
+    "url": "https://github.com/advisories/GHSA-v245-v573-v5vm"
+  },
+  {
+    "module_name": "lodash-es",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.17.23",
+    "cvss": 8.1,
+    "title": "lodash vulnerable to Code Injection via `_.template` imports key names",
+    "url": "https://github.com/advisories/GHSA-r5fr-rjxr-66jc"
+  },
+  {
+    "module_name": "lodash",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.17.23",
+    "cvss": 8.1,
+    "title": "lodash vulnerable to Code Injection via `_.template` imports key names",
+    "url": "https://github.com/advisories/GHSA-r5fr-rjxr-66jc"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": "<3.1.3",
+    "cvss": 0,
+    "title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+    "url": "https://github.com/advisories/GHSA-3ppc-4f35-3m26"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=5.0.0 <5.1.7",
+    "cvss": 0,
+    "title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+    "url": "https://github.com/advisories/GHSA-3ppc-4f35-3m26"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=9.0.0 <9.0.6",
+    "cvss": 0,
+    "title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+    "url": "https://github.com/advisories/GHSA-3ppc-4f35-3m26"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=10.0.0 <10.2.1",
+    "cvss": 0,
+    "title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+    "url": "https://github.com/advisories/GHSA-3ppc-4f35-3m26"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": "<3.1.3",
+    "cvss": 7.5,
+    "title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+    "url": "https://github.com/advisories/GHSA-7r86-cg39-jmmj"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=5.0.0 <5.1.8",
+    "cvss": 7.5,
+    "title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+    "url": "https://github.com/advisories/GHSA-7r86-cg39-jmmj"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=9.0.0 <9.0.7",
+    "cvss": 7.5,
+    "title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+    "url": "https://github.com/advisories/GHSA-7r86-cg39-jmmj"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=10.0.0 <10.2.3",
+    "cvss": 7.5,
+    "title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+    "url": "https://github.com/advisories/GHSA-7r86-cg39-jmmj"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": "<3.1.4",
+    "cvss": 7.5,
+    "title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+    "url": "https://github.com/advisories/GHSA-23c5-xmqv-rm74"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=5.0.0 <5.1.8",
+    "cvss": 7.5,
+    "title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+    "url": "https://github.com/advisories/GHSA-23c5-xmqv-rm74"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=9.0.0 <9.0.7",
+    "cvss": 7.5,
+    "title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+    "url": "https://github.com/advisories/GHSA-23c5-xmqv-rm74"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=10.0.0 <10.2.3",
+    "cvss": 7.5,
+    "title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+    "url": "https://github.com/advisories/GHSA-23c5-xmqv-rm74"
+  },
+  {
+    "module_name": "path-to-regexp",
+    "severity": "high",
+    "vulnerable_versions": ">=8.0.0 <8.4.0",
+    "cvss": 7.5,
+    "title": "path-to-regexp vulnerable to Denial of Service via sequential optional groups",
+    "url": "https://github.com/advisories/GHSA-j3q9-mxjg-w52f"
+  },
+  {
+    "module_name": "path-to-regexp",
+    "severity": "high",
+    "vulnerable_versions": "<0.1.13",
+    "cvss": 7.5,
+    "title": "path-to-regexp vulnerable to Regular Expression Denial of Service via multiple route parameters",
+    "url": "https://github.com/advisories/GHSA-37ch-88jc-xwx2"
+  },
+  {
+    "module_name": "picomatch",
+    "severity": "high",
+    "vulnerable_versions": "<2.3.2",
+    "cvss": 7.5,
+    "title": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+    "url": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj"
+  },
+  {
+    "module_name": "picomatch",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <4.0.4",
+    "cvss": 7.5,
+    "title": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+    "url": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj"
+  },
+  {
+    "module_name": "playwright",
+    "severity": "high",
+    "vulnerable_versions": "<1.55.1",
+    "cvss": 0,
+    "title": "Playwright downloads and installs browsers without verifying the authenticity of the SSL certificate",
+    "url": "https://github.com/advisories/GHSA-7mvr-c777-76hp"
+  },
+  {
+    "module_name": "postcss",
+    "severity": "high",
+    "vulnerable_versions": "<=8.5.11",
+    "cvss": 7.5,
+    "title": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+    "url": "https://github.com/advisories/GHSA-6g55-p6wh-862q"
+  },
+  {
+    "module_name": "postcss",
+    "severity": "high",
+    "vulnerable_versions": "<=8.5.17",
+    "cvss": 7.5,
+    "title": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+    "url": "https://github.com/advisories/GHSA-r28c-9q8g-f849"
+  },
+  {
+    "module_name": "serialize-javascript",
+    "severity": "high",
+    "vulnerable_versions": "<=7.0.2",
+    "cvss": 8.1,
+    "title": "Serialize JavaScript is Vulnerable to RCE via RegExp.flags and Date.prototype.toISOString()",
+    "url": "https://github.com/advisories/GHSA-5c6j-r48x-rmvq"
+  },
+  {
+    "module_name": "shell-quote",
+    "severity": "critical",
+    "vulnerable_versions": ">=1.1.0 <=1.8.3",
+    "cvss": 8.1,
+    "title": "shell-quote quote() does not escape newlines in object .op values",
+    "url": "https://github.com/advisories/GHSA-w7jw-789q-3m8p"
+  },
+  {
+    "module_name": "shell-quote",
+    "severity": "high",
+    "vulnerable_versions": "<=1.8.4",
+    "cvss": 7.5,
+    "title": "shell-quote: Quadratic-complexity Denial of Service in `parse()` (CWE-407)",
+    "url": "https://github.com/advisories/GHSA-395f-4hp3-45gv"
+  },
+  {
+    "module_name": "svgo",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <4.0.2",
+    "cvss": 8.2,
+    "title": "SVGO removeScripts plugin leaves some executable scripts intact",
+    "url": "https://github.com/advisories/GHSA-2p49-hgcm-8545"
+  },
+  {
+    "module_name": "tar-fs",
+    "severity": "high",
+    "vulnerable_versions": ">=2.0.0 <2.1.4",
+    "cvss": 0,
+    "title": "tar-fs has a symlink validation bypass if destination directory is predictable with a specific tarball",
+    "url": "https://github.com/advisories/GHSA-vj76-c3g6-qr5v"
+  },
+  {
+    "module_name": "tar-fs",
+    "severity": "high",
+    "vulnerable_versions": ">=2.0.0 <2.1.3",
+    "cvss": 0,
+    "title": "tar-fs can extract outside the specified dir with a specific tarball",
+    "url": "https://github.com/advisories/GHSA-8cj5-5rvv-wf4v"
+  },
+  {
+    "module_name": "tar",
+    "severity": "high",
+    "vulnerable_versions": "<7.5.7",
+    "cvss": 8.2,
+    "title": "node-tar Vulnerable to Arbitrary File Creation/Overwrite via Hardlink Path Traversal",
+    "url": "https://github.com/advisories/GHSA-34x7-hfp2-rc4v"
+  },
+  {
+    "module_name": "tar",
+    "severity": "high",
+    "vulnerable_versions": "<=7.5.2",
+    "cvss": 0,
+    "title": "node-tar is Vulnerable to Arbitrary File Overwrite and Symlink Poisoning via Insufficient Path Sanitization",
+    "url": "https://github.com/advisories/GHSA-8qq5-rm4j-mr97"
+  },
+  {
+    "module_name": "tar",
+    "severity": "high",
+    "vulnerable_versions": "<7.5.8",
+    "cvss": 7.1,
+    "title": "Arbitrary File Read/Write via Hardlink Target Escape Through Symlink Chain in node-tar Extraction",
+    "url": "https://github.com/advisories/GHSA-83g3-92jg-28cx"
+  },
+  {
+    "module_name": "tar",
+    "severity": "high",
+    "vulnerable_versions": "<=7.5.9",
+    "cvss": 0,
+    "title": "tar has Hardlink Path Traversal via Drive-Relative Linkpath",
+    "url": "https://github.com/advisories/GHSA-qffp-2rhf-9h96"
+  },
+  {
+    "module_name": "tar",
+    "severity": "high",
+    "vulnerable_versions": "<=7.5.10",
+    "cvss": 0,
+    "title": "node-tar Symlink Path Traversal via Drive-Relative Linkpath",
+    "url": "https://github.com/advisories/GHSA-9ppj-qmqm-q256"
+  },
+  {
+    "module_name": "tar",
+    "severity": "high",
+    "vulnerable_versions": "<=7.5.3",
+    "cvss": 8.8,
+    "title": "Race Condition in node-tar Path Reservations via Unicode Ligature Collisions on macOS APFS",
+    "url": "https://github.com/advisories/GHSA-r6q2-hw4h-h46w"
+  },
+  {
+    "module_name": "tar",
+    "severity": "critical",
+    "vulnerable_versions": "<=7.5.18",
+    "cvss": 7.5,
+    "title": "node-tar: Decompression/parse DoS via unlimited input",
+    "url": "https://github.com/advisories/GHSA-23hp-3jrh-7fpw"
+  },
+  {
+    "module_name": "tar",
+    "severity": "high",
+    "vulnerable_versions": "<=7.5.17",
+    "cvss": 7.5,
+    "title": "node-tar: Negative tar entry size causes infinite loop in archive replace",
+    "url": "https://github.com/advisories/GHSA-8x88-c5mf-7j5w"
+  },
+  {
+    "module_name": "tmp",
+    "severity": "high",
+    "vulnerable_versions": "<0.2.6",
+    "cvss": 0,
+    "title": "tmp has Path Traversal via unsanitized prefix/postfix that enables directory escape",
+    "url": "https://github.com/advisories/GHSA-ph9p-34f9-6g65"
+  },
+  {
+    "module_name": "underscore",
+    "severity": "high",
+    "vulnerable_versions": "<=1.13.7",
+    "cvss": 5.9,
+    "title": "Underscore has unlimited recursion in _.flatten and _.isEqual, potential for DoS attack",
+    "url": "https://github.com/advisories/GHSA-qpx9-hpmf-5gmw"
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "vulnerable_versions": ">=6.0.0 <6.24.0",
+    "cvss": 7.5,
+    "title": "Undici: Malicious WebSocket 64-bit length overflows parser and crashes the client",
+    "url": "https://github.com/advisories/GHSA-f269-vfmq-vjvj"
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "vulnerable_versions": "<6.24.0",
+    "cvss": 7.5,
+    "title": "Undici has Unbounded Memory Consumption in WebSocket permessage-deflate Decompression",
+    "url": "https://github.com/advisories/GHSA-vrm6-8vpv-qv8q"
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "vulnerable_versions": "<6.24.0",
+    "cvss": 7.5,
+    "title": "Undici has Unhandled Exception in WebSocket Client Due to Invalid server_max_window_bits Validation",
+    "url": "https://github.com/advisories/GHSA-v9p9-hfj2-hcw8"
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "vulnerable_versions": "<6.27.0",
+    "cvss": 7.5,
+    "title": "undici WebSocket client vulnerable to denial of service via fragment count bypass",
+    "url": "https://github.com/advisories/GHSA-vxpw-j846-p89q"
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "vulnerable_versions": ">=8.0.0 <=8.0.15",
+    "cvss": 7.5,
+    "title": "vite: `server.fs.deny` bypass on Windows alternate paths",
+    "url": "https://github.com/advisories/GHSA-fx2h-pf6j-xcff"
+  },
+  {
+    "module_name": "websocket-driver",
+    "severity": "critical",
+    "vulnerable_versions": "<0.7.5",
+    "cvss": 0,
+    "title": "websocket-driver: Message corruption via abuse of protocol length headers",
+    "url": "https://github.com/advisories/GHSA-xv26-6w52-cph6"
+  },
+  {
+    "module_name": "ws",
+    "severity": "high",
+    "vulnerable_versions": ">=8.0.0 <8.21.0",
+    "cvss": 7.5,
+    "title": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+    "url": "https://github.com/advisories/GHSA-96hv-2xvq-fx4p"
+  }
+]

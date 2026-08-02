@@ -1,0 +1,749 @@
+[
+  {
+    "module_name": "@babel/plugin-transform-modules-systemjs",
+    "severity": "high",
+    "vulnerable_versions": ">=7.12.0 <=7.29.3",
+    "patched_versions": "see url",
+    "cvss": 8.2,
+    "title": "@babel/plugin-transform-modules-systemjs generates arbitrary code when compiling malicious input",
+    "url": "https://github.com/advisories/GHSA-fv7c-fp4j-7gwp"
+  },
+  {
+    "module_name": "@xhmikosr/decompress",
+    "severity": "critical",
+    "vulnerable_versions": ">=11.0.0 <11.1.3",
+    "patched_versions": "see url",
+    "cvss": 9.1,
+    "title": "Decompress: Archive extraction can create files and links outside of the target directory",
+    "url": "https://github.com/advisories/GHSA-mp2f-45pm-3cg9"
+  },
+  {
+    "module_name": "adm-zip",
+    "severity": "high",
+    "vulnerable_versions": "<0.6.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "adm-zip: Crafted ZIP file triggers 4GB memory allocation",
+    "url": "https://github.com/advisories/GHSA-xcpc-8h2w-3j85"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.15.2",
+    "patched_versions": "see url",
+    "cvss": 7.4,
+    "title": "Axios has prototype pollution read-side gadgets in HTTP adapter that allow credential injection and request hijacking",
+    "url": "https://github.com/advisories/GHSA-q8qp-cvcw-x6jj"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.16.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection",
+    "url": "https://github.com/advisories/GHSA-hfxv-24rg-xrqf"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.7.0 <1.16.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "Allocation of Resources Without Limits or Throttling in Axios",
+    "url": "https://github.com/advisories/GHSA-777c-7fjr-54vf"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.16.0",
+    "patched_versions": "see url",
+    "cvss": 0,
+    "title": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter",
+    "url": "https://github.com/advisories/GHSA-p92q-9vqr-4j8v"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.16.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection",
+    "url": "https://github.com/advisories/GHSA-j5f8-grm9-p9fc"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.15.2",
+    "patched_versions": "see url",
+    "cvss": 7,
+    "title": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge",
+    "url": "https://github.com/advisories/GHSA-3g43-6gmg-66jw"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.16.0",
+    "patched_versions": "see url",
+    "cvss": 8.7,
+    "title": "axios Vulnerable to Full Man-in-the-Middle via Prototype Pollution Gadget in `config.proxy`",
+    "url": "https://github.com/advisories/GHSA-35jp-ww65-95wh"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.15.1",
+    "patched_versions": "see url",
+    "cvss": 7.2,
+    "title": "Axios: Incomplete Fix for CVE-2025-62718 — NO_PROXY Protection Bypassed via RFC 1122 Loopback Subnet (127.0.0.0/8) in Axios 1.15.0",
+    "url": "https://github.com/advisories/GHSA-pmwg-cvhr-8vh7"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.15.1",
+    "patched_versions": "see url",
+    "cvss": 7.4,
+    "title": "Axios: Prototype Pollution Gadgets - Response Tampering, Data Exfiltration, and Request Hijacking",
+    "url": "https://github.com/advisories/GHSA-pf86-5x62-jrwf"
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "vulnerable_versions": ">=1.0.0 <1.15.1",
+    "patched_versions": "see url",
+    "cvss": 7.4,
+    "title": "Axios: Header Injection via Prototype Pollution",
+    "url": "https://github.com/advisories/GHSA-6chq-wfr3-2hj9"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": "<1.1.17",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+    "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": ">=2.0.0 <2.1.3",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+    "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <5.0.8",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+    "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": ">=2.0.0 <2.1.2",
+    "patched_versions": "see url",
+    "cvss": 5.3,
+    "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+    "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": "<1.1.16",
+    "patched_versions": "see url",
+    "cvss": 5.3,
+    "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+    "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp"
+  },
+  {
+    "module_name": "brace-expansion",
+    "severity": "high",
+    "vulnerable_versions": ">=3.0.0 <5.0.7",
+    "patched_versions": "see url",
+    "cvss": 5.3,
+    "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+    "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp"
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "vulnerable_versions": ">=3.0.0 <3.1.3",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "fast-uri vulnerable to host confusion via failed IDN canonicalization",
+    "url": "https://github.com/advisories/GHSA-4c8g-83qw-93j6"
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "vulnerable_versions": "<=3.1.1",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "fast-uri vulnerable to host confusion via percent-encoded authority delimiters",
+    "url": "https://github.com/advisories/GHSA-v39h-62p7-jpjc"
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "vulnerable_versions": "<=3.1.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "fast-uri vulnerable to path traversal via percent-encoded dot segments",
+    "url": "https://github.com/advisories/GHSA-q3j6-qgpj-74h6"
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "vulnerable_versions": ">=3.0.0 <=3.1.3",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "fast-uri vulnerable to host confusion via literal backslash authority delimiter",
+    "url": "https://github.com/advisories/GHSA-v2hh-gcrm-f6hx"
+  },
+  {
+    "module_name": "form-data",
+    "severity": "critical",
+    "vulnerable_versions": ">=4.0.0 <4.0.4",
+    "patched_versions": "see url",
+    "cvss": 0,
+    "title": "form-data uses unsafe random function in form-data for choosing boundary",
+    "url": "https://github.com/advisories/GHSA-fjxv-7rqg-78g4"
+  },
+  {
+    "module_name": "form-data",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <4.0.6",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "form-data: CRLF injection in form-data via unescaped multipart field names and filenames",
+    "url": "https://github.com/advisories/GHSA-hmw2-7cc7-3qxx"
+  },
+  {
+    "module_name": "handlebars",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.7.8",
+    "patched_versions": "see url",
+    "cvss": 8.1,
+    "title": "Handlebars.js has JavaScript Injection via AST Type Confusion by tampering @partial-block",
+    "url": "https://github.com/advisories/GHSA-3mfm-83xf-c92r"
+  },
+  {
+    "module_name": "handlebars",
+    "severity": "critical",
+    "vulnerable_versions": ">=4.0.0 <=4.7.8",
+    "patched_versions": "see url",
+    "cvss": 9.8,
+    "title": "Handlebars.js has JavaScript Injection via AST Type Confusion",
+    "url": "https://github.com/advisories/GHSA-2w6w-674q-4c4q"
+  },
+  {
+    "module_name": "handlebars",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.7.8",
+    "patched_versions": "see url",
+    "cvss": 8.1,
+    "title": "Handlebars.js has JavaScript Injection via AST Type Confusion when passing an object as dynamic partial",
+    "url": "https://github.com/advisories/GHSA-xhpv-hc6g-r9c6"
+  },
+  {
+    "module_name": "handlebars",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.7.8",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "Handlebars.js has Denial of Service via Malformed Decorator Syntax in Template Compilation",
+    "url": "https://github.com/advisories/GHSA-9cx6-37pm-9jff"
+  },
+  {
+    "module_name": "handlebars",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.7.8",
+    "patched_versions": "see url",
+    "cvss": 8.2,
+    "title": "Handlebars.js has JavaScript Injection in CLI Precompiler via Unescaped Names and Options",
+    "url": "https://github.com/advisories/GHSA-xjpj-3mr7-gcpf"
+  },
+  {
+    "module_name": "http-proxy-middleware",
+    "severity": "high",
+    "vulnerable_versions": ">=3.0.4 <3.0.7",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "http-proxy-middleware: multipart/form-data field injection via unescaped CRLF in `fixRequestBody`",
+    "url": "https://github.com/advisories/GHSA-gcq2-9pq2-cxqm"
+  },
+  {
+    "module_name": "ip",
+    "severity": "high",
+    "vulnerable_versions": "<=2.0.1",
+    "patched_versions": "see url",
+    "cvss": 8.1,
+    "title": "ip SSRF improper categorization in isPublic",
+    "url": "https://github.com/advisories/GHSA-2p57-rm9w-gvfp"
+  },
+  {
+    "module_name": "js-yaml",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <4.3.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+    "url": "https://github.com/advisories/GHSA-52cp-r559-cp3m"
+  },
+  {
+    "module_name": "js-yaml",
+    "severity": "high",
+    "vulnerable_versions": ">=3.0.0 <3.15.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+    "url": "https://github.com/advisories/GHSA-52cp-r559-cp3m"
+  },
+  {
+    "module_name": "lodash",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <=4.17.23",
+    "patched_versions": "see url",
+    "cvss": 8.1,
+    "title": "lodash vulnerable to Code Injection via `_.template` imports key names",
+    "url": "https://github.com/advisories/GHSA-r5fr-rjxr-66jc"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=7.0.0 <7.4.7",
+    "patched_versions": "see url",
+    "cvss": 0,
+    "title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+    "url": "https://github.com/advisories/GHSA-3ppc-4f35-3m26"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=9.0.0 <9.0.6",
+    "patched_versions": "see url",
+    "cvss": 0,
+    "title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+    "url": "https://github.com/advisories/GHSA-3ppc-4f35-3m26"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=7.0.0 <7.4.8",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+    "url": "https://github.com/advisories/GHSA-7r86-cg39-jmmj"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=9.0.0 <9.0.7",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+    "url": "https://github.com/advisories/GHSA-7r86-cg39-jmmj"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=7.0.0 <7.4.8",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+    "url": "https://github.com/advisories/GHSA-23c5-xmqv-rm74"
+  },
+  {
+    "module_name": "minimatch",
+    "severity": "high",
+    "vulnerable_versions": ">=9.0.0 <9.0.7",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+    "url": "https://github.com/advisories/GHSA-23c5-xmqv-rm74"
+  },
+  {
+    "module_name": "node-forge",
+    "severity": "high",
+    "vulnerable_versions": "<=1.3.3",
+    "patched_versions": "see url",
+    "cvss": 7.4,
+    "title": "Forge has a basicConstraints bypass in its certificate chain verification (RFC 5280 violation)",
+    "url": "https://github.com/advisories/GHSA-2328-f5f3-gj25"
+  },
+  {
+    "module_name": "node-forge",
+    "severity": "high",
+    "vulnerable_versions": "<1.4.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "Forge has signature forgery in Ed25519 due to missing S > L check",
+    "url": "https://github.com/advisories/GHSA-q67f-28xg-22rw"
+  },
+  {
+    "module_name": "node-forge",
+    "severity": "high",
+    "vulnerable_versions": "<1.4.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "Forge has Denial of Service via Infinite Loop in BigInteger.modInverse() with Zero Input",
+    "url": "https://github.com/advisories/GHSA-5m6q-g25r-mvwx"
+  },
+  {
+    "module_name": "node-forge",
+    "severity": "high",
+    "vulnerable_versions": "<1.4.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "Forge has signature forgery in RSA-PKCS due to ASN.1 extra field  ",
+    "url": "https://github.com/advisories/GHSA-ppp5-5v6c-4jwp"
+  },
+  {
+    "module_name": "parse-url",
+    "severity": "critical",
+    "vulnerable_versions": "<8.1.0",
+    "patched_versions": "see url",
+    "cvss": 9.1,
+    "title": "Server-Side Request Forgery (SSRF) in GitHub repository ionicabizau/parse-url",
+    "url": "https://github.com/advisories/GHSA-j9fq-vwqv-2fm2"
+  },
+  {
+    "module_name": "path-to-regexp",
+    "severity": "high",
+    "vulnerable_versions": "<0.1.13",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "path-to-regexp vulnerable to Regular Expression Denial of Service via multiple route parameters",
+    "url": "https://github.com/advisories/GHSA-37ch-88jc-xwx2"
+  },
+  {
+    "module_name": "picomatch",
+    "severity": "high",
+    "vulnerable_versions": "<2.3.2",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+    "url": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj"
+  },
+  {
+    "module_name": "picomatch",
+    "severity": "high",
+    "vulnerable_versions": ">=4.0.0 <4.0.4",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+    "url": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj"
+  },
+  {
+    "module_name": "piscina",
+    "severity": "high",
+    "vulnerable_versions": "<=4.9.2",
+    "patched_versions": "see url",
+    "cvss": 8.1,
+    "title": "piscina: Prototype Pollution Gadget → RCE via inherited options.filename",
+    "url": "https://github.com/advisories/GHSA-x9g3-xrwr-cwfg"
+  },
+  {
+    "module_name": "postcss",
+    "severity": "high",
+    "vulnerable_versions": "<=8.5.11",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+    "url": "https://github.com/advisories/GHSA-6g55-p6wh-862q"
+  },
+  {
+    "module_name": "postcss",
+    "severity": "high",
+    "vulnerable_versions": "<=8.5.17",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+    "url": "https://github.com/advisories/GHSA-r28c-9q8g-f849"
+  },
+  {
+    "module_name": "semver",
+    "severity": "high",
+    "vulnerable_versions": ">=7.0.0 <7.5.2",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "semver vulnerable to Regular Expression Denial of Service",
+    "url": "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw"
+  },
+  {
+    "module_name": "serialize-javascript",
+    "severity": "high",
+    "vulnerable_versions": "<=7.0.2",
+    "patched_versions": "see url",
+    "cvss": 8.1,
+    "title": "Serialize JavaScript is Vulnerable to RCE via RegExp.flags and Date.prototype.toISOString()",
+    "url": "https://github.com/advisories/GHSA-5c6j-r48x-rmvq"
+  },
+  {
+    "module_name": "shell-quote",
+    "severity": "critical",
+    "vulnerable_versions": ">=1.1.0 <=1.8.3",
+    "patched_versions": "see url",
+    "cvss": 8.1,
+    "title": "shell-quote quote() does not escape newlines in object .op values",
+    "url": "https://github.com/advisories/GHSA-w7jw-789q-3m8p"
+  },
+  {
+    "module_name": "shell-quote",
+    "severity": "high",
+    "vulnerable_versions": "<=1.8.4",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "shell-quote: Quadratic-complexity Denial of Service in `parse()` (CWE-407)",
+    "url": "https://github.com/advisories/GHSA-395f-4hp3-45gv"
+  },
+  {
+    "module_name": "svgo",
+    "severity": "high",
+    "vulnerable_versions": ">=3.0.0 <3.3.4",
+    "patched_versions": "see url",
+    "cvss": 8.2,
+    "title": "SVGO removeScripts plugin leaves some executable scripts intact",
+    "url": "https://github.com/advisories/GHSA-2p49-hgcm-8545"
+  },
+  {
+    "module_name": "tmp",
+    "severity": "high",
+    "vulnerable_versions": "<0.2.6",
+    "patched_versions": "see url",
+    "cvss": 0,
+    "title": "tmp has Path Traversal via unsanitized prefix/postfix that enables directory escape",
+    "url": "https://github.com/advisories/GHSA-ph9p-34f9-6g65"
+  },
+  {
+    "module_name": "validator",
+    "severity": "high",
+    "vulnerable_versions": "<13.15.22",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "Validator is Vulnerable to Incomplete Filtering of One or More Instances of Special Elements",
+    "url": "https://github.com/advisories/GHSA-vghf-hv5q-vc2g"
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "vulnerable_versions": ">=7.1.0 <=7.3.1",
+    "patched_versions": "see url",
+    "cvss": 0,
+    "title": "Vite: `server.fs.deny` bypassed with queries",
+    "url": "https://github.com/advisories/GHSA-v2wj-q39q-566r"
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "vulnerable_versions": ">=7.0.0 <=7.3.1",
+    "patched_versions": "see url",
+    "cvss": 0,
+    "title": "Vite Vulnerable to Arbitrary File Read via Vite Dev Server WebSocket",
+    "url": "https://github.com/advisories/GHSA-p9ff-h696-f583"
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "vulnerable_versions": ">=7.0.0 <=7.3.4",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "vite: `server.fs.deny` bypass on Windows alternate paths",
+    "url": "https://github.com/advisories/GHSA-fx2h-pf6j-xcff"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<3.11.2",
+    "patched_versions": "see url",
+    "cvss": 9.8,
+    "title": "vm2 has Sandbox Breakout Through Null Proto Exception",
+    "url": "https://github.com/advisories/GHSA-9vg3-4rfj-wgcm"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<=3.11.1",
+    "patched_versions": "see url",
+    "cvss": 9.8,
+    "title": "vm2 has sandbox breakout via `neutralizeArraySpeciesBatch`",
+    "url": "https://github.com/advisories/GHSA-9qj6-qjgg-37qq"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<=3.11.0",
+    "patched_versions": "see url",
+    "cvss": 9.1,
+    "title": "vm2 NodeVM `nesting: true` bypasses `require: false` allowing sandbox escape and arbitrary OS command execution",
+    "url": "https://github.com/advisories/GHSA-8hg8-63c5-gwmx"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "high",
+    "vulnerable_versions": "=3.10.5",
+    "patched_versions": "see url",
+    "cvss": 8.5,
+    "title": "vm2 has a NodeVM require.root bypass via symlink traversal that allows sandbox escape",
+    "url": "https://github.com/advisories/GHSA-cp6g-6699-wx9c"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "high",
+    "vulnerable_versions": "<=3.10.5",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "vm2 Sandbox Access to Host Buffer.alloc Allows timeout Bypass Resulting in Memory Exhaustion",
+    "url": "https://github.com/advisories/GHSA-6785-pvv7-mvg7"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "high",
+    "vulnerable_versions": "<=3.10.5",
+    "patched_versions": "see url",
+    "cvss": 8.6,
+    "title": "vm2 has a Sandbox Escape via Promise Constructor Unhandled Rejection (Process Crash DoS)",
+    "url": "https://github.com/advisories/GHSA-hw58-p9xv-2mjh"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "=3.10.5",
+    "patched_versions": "see url",
+    "cvss": 9.9,
+    "title": "vm2 has a NodeVM builtin allowlist bypass via `module` builtin's `Module._load` that allows sandbox escape",
+    "url": "https://github.com/advisories/GHSA-947f-4v7f-x2v8"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": ">=3.9.6 <=3.10.5",
+    "patched_versions": "see url",
+    "cvss": 10,
+    "title": "vm2: Mutable Proxies for Host Intrinsic Prototypes Allows Sandbox Escape",
+    "url": "https://github.com/advisories/GHSA-vwrp-x96c-mhwq"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<=3.10.5",
+    "patched_versions": "see url",
+    "cvss": 10,
+    "title": "vm2 Access to Host Object Enables Sandbox Escape",
+    "url": "https://github.com/advisories/GHSA-47x8-96vw-5wg6"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<=3.10.5",
+    "patched_versions": "see url",
+    "cvss": 10,
+    "title": "vm2 has a Sandbox Escape Vulnerability",
+    "url": "https://github.com/advisories/GHSA-qcp4-v2jj-fjx8"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<=3.11.2",
+    "patched_versions": "see url",
+    "cvss": 9.8,
+    "title": "vm2 Has a Sandbox Breakout Using Async Generator",
+    "url": "https://github.com/advisories/GHSA-248r-7h7q-cr24"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<=3.11.3",
+    "patched_versions": "see url",
+    "cvss": 10,
+    "title": "NodeVM builtin denylist bypass via process and inspector/promises allows host code execution",
+    "url": "https://github.com/advisories/GHSA-rp36-8xq3-r6c4"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "high",
+    "vulnerable_versions": "<=3.11.3",
+    "patched_versions": "see url",
+    "cvss": 8.6,
+    "title": "NodeVM network builtin exclusions bypass via internal _http_client and _http_server",
+    "url": "https://github.com/advisories/GHSA-r9pm-gxmw-wv6p"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "high",
+    "vulnerable_versions": "<=3.11.3",
+    "patched_versions": "see url",
+    "cvss": 8.6,
+    "title": "vm2's Bridge Proxy set trap ignores receiver parameter, enabling host object property injection via prototype chain",
+    "url": "https://github.com/advisories/GHSA-c4cf-2hgv-2qv6"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "high",
+    "vulnerable_versions": "<=3.11.3",
+    "patched_versions": "see url",
+    "cvss": 8.7,
+    "title": "vm2 has a sandbox escape via unblocked cross-realm Symbol.for keys + missing bridge write-trap symbol checks",
+    "url": "https://github.com/advisories/GHSA-m5q2-4fm3-vfqp"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<=3.11.3",
+    "patched_versions": "see url",
+    "cvss": 9.8,
+    "title": "vm2 sandbox escape via JSPI-backed Promise `.finally()` species bypass",
+    "url": "https://github.com/advisories/GHSA-6j2x-vhqr-qr7q"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<=3.11.3",
+    "patched_versions": "see url",
+    "cvss": 10,
+    "title": "vm2 has a CVE-2023-37903 patch bypass: nesting:true without explicit require still allows full RCE",
+    "url": "https://github.com/advisories/GHSA-m4wx-m65x-ghrr"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<=3.11.3",
+    "patched_versions": "see url",
+    "cvss": 10,
+    "title": "vm2 is Vulnerable to Sandbox Breakout Through Promise Species",
+    "url": "https://github.com/advisories/GHSA-76w7-j9cq-rx2j"
+  },
+  {
+    "module_name": "vm2",
+    "severity": "critical",
+    "vulnerable_versions": "<=3.11.3",
+    "patched_versions": "see url",
+    "cvss": 10,
+    "title": "vm2 has a Sandbox Escape issue",
+    "url": "https://github.com/advisories/GHSA-v6mx-mf47-r5wg"
+  },
+  {
+    "module_name": "websocket-driver",
+    "severity": "critical",
+    "vulnerable_versions": "<0.7.5",
+    "patched_versions": "see url",
+    "cvss": 0,
+    "title": "websocket-driver: Message corruption via abuse of protocol length headers",
+    "url": "https://github.com/advisories/GHSA-xv26-6w52-cph6"
+  },
+  {
+    "module_name": "ws",
+    "severity": "high",
+    "vulnerable_versions": ">=8.0.0 <8.21.0",
+    "patched_versions": "see url",
+    "cvss": 7.5,
+    "title": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+    "url": "https://github.com/advisories/GHSA-96hv-2xvq-fx4p"
+  }
+]

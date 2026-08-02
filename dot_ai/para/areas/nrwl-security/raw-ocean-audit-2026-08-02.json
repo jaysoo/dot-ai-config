@@ -1,0 +1,671 @@
+[
+  {
+    "module_name": "@babel/plugin-transform-modules-systemjs",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "7.25.9"
+    ],
+    "vulnerable_versions": ">=7.12.0 <=7.29.3",
+    "patched_versions": ">=7.29.4",
+    "title": "@babel/plugin-transform-modules-systemjs generates arbitrary code when compiling malicious input",
+    "github_advisory_id": "GHSA-fv7c-fp4j-7gwp",
+    "url": "https://github.com/advisories/GHSA-fv7c-fp4j-7gwp",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/js>@babel/preset-env>@babel/plugin-transform-modules-systemjs"
+    ]
+  },
+  {
+    "module_name": "adm-zip",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.5.10",
+      "0.5.16"
+    ],
+    "vulnerable_versions": "<0.6.0",
+    "patched_versions": ">=0.6.0",
+    "title": "adm-zip: Crafted ZIP file triggers 4GB memory allocation",
+    "github_advisory_id": "GHSA-xcpc-8h2w-3j85",
+    "url": "https://github.com/advisories/GHSA-xcpc-8h2w-3j85",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/react>@nx/module-federation>@module-federation/enhanced>@module-federation/dts-plugin>adm-zip",
+      ".>@nx/react>@nx/module-federation>@module-federation/node>@module-federation/enhanced>@module-federation/dts-plugin>adm-zip"
+    ]
+  },
+  {
+    "module_name": "axios",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.16.0"
+    ],
+    "vulnerable_versions": ">=1.15.2 <1.18.0",
+    "patched_versions": ">=1.18.0",
+    "title": "Axios Node HTTP adapter can use an inherited proxy after interceptor config cloning",
+    "github_advisory_id": "GHSA-gcfj-64vw-6mp9",
+    "url": "https://github.com/advisories/GHSA-gcfj-64vw-6mp9",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>axios"
+    ]
+  },
+  {
+    "module_name": "cross-spawn",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.1.0"
+    ],
+    "vulnerable_versions": "<6.0.6",
+    "patched_versions": ">=6.0.6",
+    "title": "Regular Expression Denial of Service (ReDoS) in cross-spawn",
+    "github_advisory_id": "GHSA-3xgq-45jj-v275",
+    "url": "https://github.com/advisories/GHSA-3xgq-45jj-v275",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>nps>yargs>os-locale>execa>cross-spawn"
+    ]
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.6"
+    ],
+    "vulnerable_versions": "<=3.1.0",
+    "patched_versions": ">=3.1.1",
+    "title": "fast-uri vulnerable to path traversal via percent-encoded dot segments",
+    "github_advisory_id": "GHSA-q3j6-qgpj-74h6",
+    "url": "https://github.com/advisories/GHSA-q3j6-qgpj-74h6",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>ajv>fast-uri"
+    ]
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.6"
+    ],
+    "vulnerable_versions": "<=3.1.1",
+    "patched_versions": ">=3.1.2",
+    "title": "fast-uri vulnerable to host confusion via percent-encoded authority delimiters",
+    "github_advisory_id": "GHSA-v39h-62p7-jpjc",
+    "url": "https://github.com/advisories/GHSA-v39h-62p7-jpjc",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>ajv>fast-uri"
+    ]
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.6"
+    ],
+    "vulnerable_versions": ">=3.0.0 <=3.1.3",
+    "patched_versions": ">=3.1.4",
+    "title": "fast-uri vulnerable to host confusion via literal backslash authority delimiter",
+    "github_advisory_id": "GHSA-v2hh-gcrm-f6hx",
+    "url": "https://github.com/advisories/GHSA-v2hh-gcrm-f6hx",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>ajv>fast-uri"
+    ]
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.6"
+    ],
+    "vulnerable_versions": ">=3.0.0 <3.1.3",
+    "patched_versions": ">=3.1.3",
+    "title": "fast-uri vulnerable to host confusion via failed IDN canonicalization",
+    "github_advisory_id": "GHSA-4c8g-83qw-93j6",
+    "url": "https://github.com/advisories/GHSA-4c8g-83qw-93j6",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>ajv>fast-uri"
+    ]
+  },
+  {
+    "module_name": "flatted",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.4.0"
+    ],
+    "vulnerable_versions": "<=3.4.1",
+    "patched_versions": ">=3.4.2",
+    "title": "Prototype Pollution via parse() in NodeJS flatted",
+    "github_advisory_id": "GHSA-rf6f-7fwh-wjgh",
+    "url": "https://github.com/advisories/GHSA-rf6f-7fwh-wjgh",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@vitest/ui>flatted"
+    ]
+  },
+  {
+    "module_name": "form-data",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.0.5",
+      "4.0.4"
+    ],
+    "vulnerable_versions": ">=4.0.0 <4.0.6",
+    "patched_versions": ">=4.0.6",
+    "title": "form-data: CRLF injection in form-data via unescaped multipart field names and filenames",
+    "github_advisory_id": "GHSA-hmw2-7cc7-3qxx",
+    "url": "https://github.com/advisories/GHSA-hmw2-7cc7-3qxx",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@codspeed/vitest-plugin>@codspeed/core>form-data",
+      ".>@types/node-fetch>form-data"
+    ]
+  },
+  {
+    "module_name": "form-data",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.5.5"
+    ],
+    "vulnerable_versions": "<2.5.6",
+    "patched_versions": ">=2.5.6",
+    "title": "form-data: CRLF injection in form-data via unescaped multipart field names and filenames",
+    "github_advisory_id": "GHSA-hmw2-7cc7-3qxx",
+    "url": "https://github.com/advisories/GHSA-hmw2-7cc7-3qxx",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@google-cloud/storage>retry-request>@types/request>form-data"
+    ]
+  },
+  {
+    "module_name": "hono",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.12.14"
+    ],
+    "vulnerable_versions": "<4.12.25",
+    "patched_versions": ">=4.12.25",
+    "title": "hono: CORS Middleware reflects any Origin with credentials when `origin` defaults to the wildcard",
+    "github_advisory_id": "GHSA-88fw-hqm2-52qc",
+    "url": "https://github.com/advisories/GHSA-88fw-hqm2-52qc",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@modelcontextprotocol/inspector>@modelcontextprotocol/sdk>hono"
+    ]
+  },
+  {
+    "module_name": "http-proxy-middleware",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.5"
+    ],
+    "vulnerable_versions": ">=3.0.4 <3.0.7",
+    "patched_versions": ">=3.0.7",
+    "title": "http-proxy-middleware: multipart/form-data field injection via unescaped CRLF in `fixRequestBody`",
+    "github_advisory_id": "GHSA-gcq2-9pq2-cxqm",
+    "url": "https://github.com/advisories/GHSA-gcq2-9pq2-cxqm",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/react>http-proxy-middleware"
+    ]
+  },
+  {
+    "module_name": "immutable",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.1.5"
+    ],
+    "vulnerable_versions": ">=5.0.0-beta.1 <5.1.8",
+    "patched_versions": ">=5.1.8",
+    "title": "Immutable.js `List` 32-bit trie overflow → unrecoverable DoS",
+    "github_advisory_id": "GHSA-v56q-mh7h-f735",
+    "url": "https://github.com/advisories/GHSA-v56q-mh7h-f735",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/webpack>sass>immutable"
+    ]
+  },
+  {
+    "module_name": "immutable",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.1.5"
+    ],
+    "vulnerable_versions": ">=5.0.0-beta.1 <5.1.8",
+    "patched_versions": ">=5.1.8",
+    "title": "Immutabl: Hash-collision algorithmic complexity denial of service in Immutable.Map/Set",
+    "github_advisory_id": "GHSA-xvcm-6775-5m9r",
+    "url": "https://github.com/advisories/GHSA-xvcm-6775-5m9r",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/webpack>sass>immutable"
+    ]
+  },
+  {
+    "module_name": "koa",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.3"
+    ],
+    "vulnerable_versions": ">=3.0.0 <3.1.2",
+    "patched_versions": ">=3.1.2",
+    "title": "Koa has Host Header Injection via ctx.hostname",
+    "github_advisory_id": "GHSA-7gcc-r8m5-44qm",
+    "url": "https://github.com/advisories/GHSA-7gcc-r8m5-44qm",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/node>koa"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "16.2.6"
+    ],
+    "vulnerable_versions": ">=16.0.0 <16.2.11",
+    "patched_versions": ">=16.2.11",
+    "title": "Next.js: Middleware / Proxy bypass in App Router applications using Turbopack and single locale",
+    "github_advisory_id": "GHSA-6gpp-xcg3-4w24",
+    "url": "https://github.com/advisories/GHSA-6gpp-xcg3-4w24",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@react-email/ui>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "16.2.6"
+    ],
+    "vulnerable_versions": ">=16.0.0 <16.2.11",
+    "patched_versions": ">=16.2.11",
+    "title": "Next.js: Denial of Service in App Router using Server Actions",
+    "github_advisory_id": "GHSA-m99w-x7hq-7vfj",
+    "url": "https://github.com/advisories/GHSA-m99w-x7hq-7vfj",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@react-email/ui>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "16.2.6"
+    ],
+    "vulnerable_versions": ">=16.0.0 <16.2.11",
+    "patched_versions": ">=16.2.11",
+    "title": "Next.js: Server-Side Request Forgery in Server Actions on custom servers",
+    "github_advisory_id": "GHSA-89xv-2m56-2m9x",
+    "url": "https://github.com/advisories/GHSA-89xv-2m56-2m9x",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@react-email/ui>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "16.2.6"
+    ],
+    "vulnerable_versions": ">=16.0.0 <16.2.11",
+    "patched_versions": ">=16.2.11",
+    "title": "Next.js: Server-Side Request Forgery in rewrites via attacker-controlled destination hostname",
+    "github_advisory_id": "GHSA-p9j2-gv94-2wf4",
+    "url": "https://github.com/advisories/GHSA-p9j2-gv94-2wf4",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@react-email/ui>next"
+    ]
+  },
+  {
+    "module_name": "path-to-regexp",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.3.0"
+    ],
+    "vulnerable_versions": ">=8.0.0 <8.4.0",
+    "patched_versions": ">=8.4.0",
+    "title": "path-to-regexp vulnerable to Denial of Service via sequential optional groups",
+    "github_advisory_id": "GHSA-j3q9-mxjg-w52f",
+    "url": "https://github.com/advisories/GHSA-j3q9-mxjg-w52f",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@modelcontextprotocol/inspector>@modelcontextprotocol/inspector-server>express>router>path-to-regexp"
+    ]
+  },
+  {
+    "module_name": "piscina",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.8.0"
+    ],
+    "vulnerable_versions": "<=4.9.2",
+    "patched_versions": ">=4.9.3",
+    "title": "piscina: Prototype Pollution Gadget → RCE via inherited options.filename",
+    "github_advisory_id": "GHSA-x9g3-xrwr-cwfg",
+    "url": "https://github.com/advisories/GHSA-x9g3-xrwr-cwfg",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@swc/cli>piscina"
+    ]
+  },
+  {
+    "module_name": "playwright",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.50.1"
+    ],
+    "vulnerable_versions": "<1.55.1",
+    "patched_versions": ">=1.55.1",
+    "title": "Playwright downloads and installs browsers without verifying the authenticity of the SSL certificate",
+    "github_advisory_id": "GHSA-7mvr-c777-76hp",
+    "url": "https://github.com/advisories/GHSA-7mvr-c777-76hp",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@playwright/test>playwright"
+    ]
+  },
+  {
+    "module_name": "postcss",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.4.31",
+      "8.5.6"
+    ],
+    "vulnerable_versions": "<=8.5.11",
+    "patched_versions": ">=8.5.12",
+    "title": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+    "github_advisory_id": "GHSA-6g55-p6wh-862q",
+    "url": "https://github.com/advisories/GHSA-6g55-p6wh-862q",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@react-email/ui>next>postcss",
+      ".>postcss"
+    ]
+  },
+  {
+    "module_name": "postcss",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.4.31",
+      "8.5.6"
+    ],
+    "vulnerable_versions": "<=8.5.17",
+    "patched_versions": ">=8.5.18",
+    "title": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+    "github_advisory_id": "GHSA-r28c-9q8g-f849",
+    "url": "https://github.com/advisories/GHSA-r28c-9q8g-f849",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@react-email/ui>next>postcss",
+      ".>postcss"
+    ]
+  },
+  {
+    "module_name": "rollup",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.47.1"
+    ],
+    "vulnerable_versions": ">=4.0.0 <4.59.0",
+    "patched_versions": ">=4.59.0",
+    "title": "Rollup 4 has Arbitrary File Write via Path Traversal",
+    "github_advisory_id": "GHSA-mw96-cpmx-2vgc",
+    "url": "https://github.com/advisories/GHSA-mw96-cpmx-2vgc",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/react>@nx/rollup>rollup"
+    ]
+  },
+  {
+    "module_name": "sharp",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.34.5"
+    ],
+    "vulnerable_versions": "<0.35.0",
+    "patched_versions": ">=0.35.0",
+    "title": "sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",
+    "github_advisory_id": "GHSA-f88m-g3jw-g9cj",
+    "url": "https://github.com/advisories/GHSA-f88m-g3jw-g9cj",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@react-email/ui>next>sharp"
+    ]
+  },
+  {
+    "module_name": "shell-quote",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.8.4"
+    ],
+    "vulnerable_versions": "<=1.8.4",
+    "patched_versions": ">=1.9.0",
+    "title": "shell-quote: Quadratic-complexity Denial of Service in `parse()` (CWE-407)",
+    "github_advisory_id": "GHSA-395f-4hp3-45gv",
+    "url": "https://github.com/advisories/GHSA-395f-4hp3-45gv",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@modelcontextprotocol/inspector>shell-quote"
+    ]
+  },
+  {
+    "module_name": "simple-git",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.32.3"
+    ],
+    "vulnerable_versions": "<3.36.0",
+    "patched_versions": ">=3.36.0",
+    "title": "simple-git is vulnerable to Remote Code Execution",
+    "github_advisory_id": "GHSA-hffm-xvc3-vprc",
+    "url": "https://github.com/advisories/GHSA-hffm-xvc3-vprc",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>simple-git"
+    ]
+  },
+  {
+    "module_name": "svgo",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.3.2"
+    ],
+    "vulnerable_versions": ">=3.0.0 <3.3.3",
+    "patched_versions": ">=3.3.3",
+    "title": "SVGO DoS through entity expansion in DOCTYPE (Billion Laughs)",
+    "github_advisory_id": "GHSA-xpqw-6gx7-v673",
+    "url": "https://github.com/advisories/GHSA-xpqw-6gx7-v673",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/react>@svgr/webpack>@svgr/plugin-svgo>svgo"
+    ]
+  },
+  {
+    "module_name": "svgo",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.0.1"
+    ],
+    "vulnerable_versions": ">=4.0.0 <4.0.2",
+    "patched_versions": ">=4.0.2",
+    "title": "SVGO removeScripts plugin leaves some executable scripts intact",
+    "github_advisory_id": "GHSA-2p49-hgcm-8545",
+    "url": "https://github.com/advisories/GHSA-2p49-hgcm-8545",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/webpack>css-minimizer-webpack-plugin>cssnano>cssnano-preset-default>postcss-svgo>svgo"
+    ]
+  },
+  {
+    "module_name": "svgo",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.3.2"
+    ],
+    "vulnerable_versions": ">=3.0.0 <3.3.4",
+    "patched_versions": ">=3.3.4",
+    "title": "SVGO removeScripts plugin leaves some executable scripts intact",
+    "github_advisory_id": "GHSA-2p49-hgcm-8545",
+    "url": "https://github.com/advisories/GHSA-2p49-hgcm-8545",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/react>@svgr/webpack>@svgr/plugin-svgo>svgo"
+    ]
+  },
+  {
+    "module_name": "tar-fs",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.1.3"
+    ],
+    "vulnerable_versions": ">=2.0.0 <2.1.4",
+    "patched_versions": ">=2.1.4",
+    "title": "tar-fs has a symlink validation bypass if destination directory is predictable with a specific tarball",
+    "github_advisory_id": "GHSA-vj76-c3g6-qr5v",
+    "url": "https://github.com/advisories/GHSA-vj76-c3g6-qr5v",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>tar-fs"
+    ]
+  },
+  {
+    "module_name": "tmp",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.2.3",
+      "0.0.33"
+    ],
+    "vulnerable_versions": "<0.2.6",
+    "patched_versions": ">=0.2.6",
+    "title": "tmp has Path Traversal via unsanitized prefix/postfix that enables directory escape",
+    "github_advisory_id": "GHSA-ph9p-34f9-6g65",
+    "url": "https://github.com/advisories/GHSA-ph9p-34f9-6g65",
+    "all_dev_only": false,
+    "sample_paths": [
+      "apps__nx-cloud>@nx/conformance>@nx/devkit>tmp",
+      ".>@napi-rs/cli>inquirer>external-editor>tmp"
+    ]
+  },
+  {
+    "module_name": "tmp",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.2.6"
+    ],
+    "vulnerable_versions": ">=0.2.6 <0.2.7",
+    "patched_versions": ">=0.2.7",
+    "title": "tmp: Type-confusion bypass of _assertPath allows path traversal via non-string prefix/postfix/template",
+    "github_advisory_id": "GHSA-7c78-jf6q-g5cm",
+    "url": "https://github.com/advisories/GHSA-7c78-jf6q-g5cm",
+    "all_dev_only": false,
+    "sample_paths": [
+      "libs__nx-packages__conformance>nx>tmp"
+    ]
+  },
+  {
+    "module_name": "trim-newlines",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.0.0"
+    ],
+    "vulnerable_versions": "<3.0.1",
+    "patched_versions": ">=3.0.1",
+    "title": "Uncontrolled Resource Consumption in trim-newlines",
+    "github_advisory_id": "GHSA-7p7h-4mm5-852v",
+    "url": "https://github.com/advisories/GHSA-7p7h-4mm5-852v",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>nps-utils>cpy-cli>meow>trim-newlines"
+    ]
+  },
+  {
+    "module_name": "turbo-stream",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.4.1"
+    ],
+    "vulnerable_versions": "<3.0.0",
+    "patched_versions": ">=3.0.0",
+    "title": "React Router vulnerable to Denial of Service via reflected user input in single-fetch",
+    "github_advisory_id": "GHSA-rxv8-25v2-qmq8",
+    "url": "https://github.com/advisories/GHSA-rxv8-25v2-qmq8",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/server-runtime>turbo-stream"
+    ]
+  },
+  {
+    "module_name": "validator",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "13.12.0"
+    ],
+    "vulnerable_versions": "<13.15.22",
+    "patched_versions": ">=13.15.22",
+    "title": "Validator is Vulnerable to Incomplete Filtering of One or More Instances of Special Elements",
+    "github_advisory_id": "GHSA-vghf-hv5q-vc2g",
+    "url": "https://github.com/advisories/GHSA-vghf-hv5q-vc2g",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>javascript-obfuscator>class-validator>validator"
+    ]
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.4.19",
+      "6.4.2"
+    ],
+    "vulnerable_versions": "<=6.4.2",
+    "patched_versions": ">=6.4.3",
+    "title": "vite: `server.fs.deny` bypass on Windows alternate paths",
+    "github_advisory_id": "GHSA-fx2h-pf6j-xcff",
+    "url": "https://github.com/advisories/GHSA-fx2h-pf6j-xcff",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>@vanilla-extract/integration>vite",
+      ".>vite",
+      "libs__nx-packages__diagnostics>@vitejs/plugin-react>vite"
+    ]
+  },
+  {
+    "module_name": "ws",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.18.0"
+    ],
+    "vulnerable_versions": ">=8.0.0 <8.21.0",
+    "patched_versions": ">=8.21.0",
+    "title": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+    "github_advisory_id": "GHSA-96hv-2xvq-fx4p",
+    "url": "https://github.com/advisories/GHSA-96hv-2xvq-fx4p",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@modelcontextprotocol/inspector>@modelcontextprotocol/inspector-server>ws"
+    ]
+  },
+  {
+    "module_name": "ws",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "7.5.10"
+    ],
+    "vulnerable_versions": ">=7.0.0 <7.5.11",
+    "patched_versions": ">=7.5.11",
+    "title": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+    "github_advisory_id": "GHSA-96hv-2xvq-fx4p",
+    "url": "https://github.com/advisories/GHSA-96hv-2xvq-fx4p",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>ws"
+    ]
+  }
+]

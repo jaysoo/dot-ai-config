@@ -1,0 +1,1866 @@
+[
+  {
+    "module_name": "@babel/plugin-transform-modules-systemjs",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "7.29.0",
+      "7.27.1"
+    ],
+    "vulnerable_versions": ">=7.12.0 <=7.29.3",
+    "patched_versions": ">=7.29.4",
+    "title": "@babel/plugin-transform-modules-systemjs generates arbitrary code when compiling malicious input",
+    "github_advisory_id": "GHSA-fv7c-fp4j-7gwp",
+    "url": "https://github.com/advisories/GHSA-fv7c-fp4j-7gwp",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-devkit/build-angular>@babel/preset-env>@babel/plugin-transform-modules-systemjs",
+      ".>@nx/angular>@nx/eslint>@nx/js>@babel/preset-env>@babel/plugin-transform-modules-systemjs",
+      ".>@nx/angular>@nx/eslint>@nx/jest>@nx/js>@babel/preset-env>@babel/plugin-transform-modules-systemjs"
+    ]
+  },
+  {
+    "module_name": "@hono/node-server",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.19.9"
+    ],
+    "vulnerable_versions": "<1.19.10",
+    "patched_versions": ">=1.19.10",
+    "title": "@hono/node-server has authorization bypass for protected static paths via encoded slashes in Serve Static Middleware",
+    "github_advisory_id": "GHSA-wc8c-qw6v-h7f6",
+    "url": "https://github.com/advisories/GHSA-wc8c-qw6v-h7f6",
+    "all_dev_only": true,
+    "sample_paths": [
+      ".>@angular/cli>@modelcontextprotocol/sdk>@hono/node-server",
+      ".>angular-eslint>@angular-eslint/builder>@angular/cli>@modelcontextprotocol/sdk>@hono/node-server",
+      ".>angular-eslint>@angular-eslint/schematics>@angular/cli>@modelcontextprotocol/sdk>@hono/node-server"
+    ]
+  },
+  {
+    "module_name": "@remix-run/react",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.16.8"
+    ],
+    "vulnerable_versions": "<2.17.3",
+    "patched_versions": ">=2.17.3",
+    "title": "React Router SSR XSS in ScrollRestoration",
+    "github_advisory_id": "GHSA-8v8x-cx79-35w7",
+    "url": "https://github.com/advisories/GHSA-8v8x-cx79-35w7",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>@remix-run/react",
+      "packages__remix>@remix-run/dev>@remix-run/react"
+    ]
+  },
+  {
+    "module_name": "@remix-run/react",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.16.8"
+    ],
+    "vulnerable_versions": ">=1.15.0 <=2.17.0",
+    "patched_versions": ">=2.17.1",
+    "title": "React Router has XSS Vulnerability",
+    "github_advisory_id": "GHSA-3cgp-3xvw-98x8",
+    "url": "https://github.com/advisories/GHSA-3cgp-3xvw-98x8",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>@remix-run/react",
+      "packages__remix>@remix-run/dev>@remix-run/react"
+    ]
+  },
+  {
+    "module_name": "@remix-run/router",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.23.0"
+    ],
+    "vulnerable_versions": "<=1.23.1",
+    "patched_versions": ">=1.23.2",
+    "title": "React Router vulnerable to XSS via Open Redirects",
+    "github_advisory_id": "GHSA-2w69-qvjg-hvjx",
+    "url": "https://github.com/advisories/GHSA-2w69-qvjg-hvjx",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>@remix-run/node>@remix-run/server-runtime>@remix-run/router",
+      ".>@remix-run/dev>@remix-run/react>@remix-run/router",
+      ".>@remix-run/dev>@remix-run/react>@remix-run/server-runtime>@remix-run/router"
+    ]
+  },
+  {
+    "module_name": "@remix-run/server-runtime",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.17.3",
+      "2.16.8"
+    ],
+    "vulnerable_versions": ">=2.10.0 <2.17.5",
+    "patched_versions": ">=2.17.5",
+    "title": "React Router vulnerable to DoS via unbounded path expansion in __manifest endpoint",
+    "github_advisory_id": "GHSA-8x6r-g9mw-2r78",
+    "url": "https://github.com/advisories/GHSA-8x6r-g9mw-2r78",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>@remix-run/node>@remix-run/server-runtime",
+      ".>@remix-run/dev>@remix-run/server-runtime",
+      ".>@remix-run/node>@remix-run/server-runtime"
+    ]
+  },
+  {
+    "module_name": "@xmldom/xmldom",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.8.11"
+    ],
+    "vulnerable_versions": "<0.8.12",
+    "patched_versions": ">=0.8.12",
+    "title": "xmldom: XML injection via unsafe CDATA serialization allows attacker-controlled markup insertion",
+    "github_advisory_id": "GHSA-wh4c-j3r5-mjhp",
+    "url": "https://github.com/advisories/GHSA-wh4c-j3r5-mjhp",
+    "all_dev_only": false,
+    "sample_paths": [
+      "packages__expo>expo>@expo/cli>@expo/config>@expo/config-plugins>@expo/plist>@xmldom/xmldom",
+      "packages__expo>expo>@expo/cli>@expo/config-plugins>@expo/plist>@xmldom/xmldom",
+      "packages__expo>expo>@expo/cli>@expo/inline-modules>@expo/config-plugins>@expo/plist>@xmldom/xmldom"
+    ]
+  },
+  {
+    "module_name": "@xmldom/xmldom",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.8.11"
+    ],
+    "vulnerable_versions": "<0.8.13",
+    "patched_versions": ">=0.8.13",
+    "title": "xmldom: Uncontrolled recursion in XML serialization leads to DoS",
+    "github_advisory_id": "GHSA-2v35-w6hq-6mfw",
+    "url": "https://github.com/advisories/GHSA-2v35-w6hq-6mfw",
+    "all_dev_only": false,
+    "sample_paths": [
+      "packages__expo>expo>@expo/cli>@expo/config>@expo/config-plugins>@expo/plist>@xmldom/xmldom",
+      "packages__expo>expo>@expo/cli>@expo/config-plugins>@expo/plist>@xmldom/xmldom",
+      "packages__expo>expo>@expo/cli>@expo/inline-modules>@expo/config-plugins>@expo/plist>@xmldom/xmldom"
+    ]
+  },
+  {
+    "module_name": "@xmldom/xmldom",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.8.11"
+    ],
+    "vulnerable_versions": "<0.8.13",
+    "patched_versions": ">=0.8.13",
+    "title": "xmldom has XML injection through unvalidated DocumentType serialization",
+    "github_advisory_id": "GHSA-f6ww-3ggp-fr8h",
+    "url": "https://github.com/advisories/GHSA-f6ww-3ggp-fr8h",
+    "all_dev_only": false,
+    "sample_paths": [
+      "packages__expo>expo>@expo/cli>@expo/config>@expo/config-plugins>@expo/plist>@xmldom/xmldom",
+      "packages__expo>expo>@expo/cli>@expo/config-plugins>@expo/plist>@xmldom/xmldom",
+      "packages__expo>expo>@expo/cli>@expo/inline-modules>@expo/config-plugins>@expo/plist>@xmldom/xmldom"
+    ]
+  },
+  {
+    "module_name": "@xmldom/xmldom",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.8.11"
+    ],
+    "vulnerable_versions": "<0.8.13",
+    "patched_versions": ">=0.8.13",
+    "title": "xmldom has XML node injection through unvalidated processing instruction serialization",
+    "github_advisory_id": "GHSA-x6wf-f3px-wcqx",
+    "url": "https://github.com/advisories/GHSA-x6wf-f3px-wcqx",
+    "all_dev_only": false,
+    "sample_paths": [
+      "packages__expo>expo>@expo/cli>@expo/config>@expo/config-plugins>@expo/plist>@xmldom/xmldom",
+      "packages__expo>expo>@expo/cli>@expo/config-plugins>@expo/plist>@xmldom/xmldom",
+      "packages__expo>expo>@expo/cli>@expo/inline-modules>@expo/config-plugins>@expo/plist>@xmldom/xmldom"
+    ]
+  },
+  {
+    "module_name": "@xmldom/xmldom",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.8.11"
+    ],
+    "vulnerable_versions": "<0.8.13",
+    "patched_versions": ">=0.8.13",
+    "title": "xmldom has XML node injection through unvalidated comment serialization",
+    "github_advisory_id": "GHSA-j759-j44w-7fr8",
+    "url": "https://github.com/advisories/GHSA-j759-j44w-7fr8",
+    "all_dev_only": false,
+    "sample_paths": [
+      "packages__expo>expo>@expo/cli>@expo/config>@expo/config-plugins>@expo/plist>@xmldom/xmldom",
+      "packages__expo>expo>@expo/cli>@expo/config-plugins>@expo/plist>@xmldom/xmldom",
+      "packages__expo>expo>@expo/cli>@expo/inline-modules>@expo/config-plugins>@expo/plist>@xmldom/xmldom"
+    ]
+  },
+  {
+    "module_name": "adm-zip",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.5.10",
+      "0.5.16"
+    ],
+    "vulnerable_versions": "<0.6.0",
+    "patched_versions": ">=0.6.0",
+    "title": "adm-zip: Crafted ZIP file triggers 4GB memory allocation",
+    "github_advisory_id": "GHSA-xcpc-8h2w-3j85",
+    "url": "https://github.com/advisories/GHSA-xcpc-8h2w-3j85",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@module-federation/enhanced>@module-federation/cli>@module-federation/dts-plugin>adm-zip",
+      ".>@module-federation/enhanced>@module-federation/dts-plugin>adm-zip",
+      ".>@module-federation/enhanced>@module-federation/manifest>@module-federation/dts-plugin>adm-zip"
+    ]
+  },
+  {
+    "module_name": "astro",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.12.3"
+    ],
+    "vulnerable_versions": "<=5.15.6",
+    "patched_versions": ">=5.15.7",
+    "title": "Astro vulnerable to reflected XSS via the server islands feature",
+    "github_advisory_id": "GHSA-wrwg-2hg8-v723",
+    "url": "https://github.com/advisories/GHSA-wrwg-2hg8-v723",
+    "all_dev_only": false,
+    "sample_paths": [
+      "astro-docs>@astrojs/markdoc>astro",
+      "astro-docs>@astrojs/netlify>astro",
+      "astro-docs>@astrojs/starlight>@astrojs/mdx>astro"
+    ]
+  },
+  {
+    "module_name": "astro",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.12.3"
+    ],
+    "vulnerable_versions": "<6.3.3",
+    "patched_versions": ">=6.3.3",
+    "title": "Astro: Reflected XSS via unescaped slot name",
+    "github_advisory_id": "GHSA-8hv8-536x-4wqp",
+    "url": "https://github.com/advisories/GHSA-8hv8-536x-4wqp",
+    "all_dev_only": false,
+    "sample_paths": [
+      "astro-docs>@astrojs/markdoc>astro",
+      "astro-docs>@astrojs/netlify>astro",
+      "astro-docs>@astrojs/starlight>@astrojs/mdx>astro"
+    ]
+  },
+  {
+    "module_name": "astro",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.12.3"
+    ],
+    "vulnerable_versions": "<6.4.6",
+    "patched_versions": ">=6.4.6",
+    "title": "Astro: Host header SSRF in prerendered error page fetch",
+    "github_advisory_id": "GHSA-2pvr-wf23-7pc7",
+    "url": "https://github.com/advisories/GHSA-2pvr-wf23-7pc7",
+    "all_dev_only": false,
+    "sample_paths": [
+      "astro-docs>@astrojs/markdoc>astro",
+      "astro-docs>@astrojs/netlify>astro",
+      "astro-docs>@astrojs/starlight>@astrojs/mdx>astro"
+    ]
+  },
+  {
+    "module_name": "body-parser",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.20.2",
+      "1.20.1"
+    ],
+    "vulnerable_versions": "<1.20.3",
+    "patched_versions": ">=1.20.3",
+    "title": "body-parser vulnerable to denial of service when url encoding is enabled",
+    "github_advisory_id": "GHSA-qwcr-r2fm-qrc7",
+    "url": "https://github.com/advisories/GHSA-qwcr-r2fm-qrc7",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nestjs/core>@nestjs/platform-express>body-parser",
+      ".>@nestjs/platform-express>body-parser",
+      ".>@nestjs/swagger>@nestjs/core>@nestjs/platform-express>body-parser"
+    ]
+  },
+  {
+    "module_name": "defu",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "6.1.4"
+    ],
+    "vulnerable_versions": "<=6.1.4",
+    "patched_versions": ">=6.1.5",
+    "title": "defu: Prototype pollution via `__proto__` key in defaults argument",
+    "github_advisory_id": "GHSA-737v-mqg7-c878",
+    "url": "https://github.com/advisories/GHSA-737v-mqg7-c878",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nuxt/kit>c12>defu",
+      ".>@nuxt/kit>c12>giget>defu",
+      ".>@nuxt/kit>c12>rc9>defu"
+    ]
+  },
+  {
+    "module_name": "devalue",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.1.1"
+    ],
+    "vulnerable_versions": "<5.3.2",
+    "patched_versions": ">=5.3.2",
+    "title": "devalue prototype pollution vulnerability",
+    "github_advisory_id": "GHSA-vj54-72f3-p5jv",
+    "url": "https://github.com/advisories/GHSA-vj54-72f3-p5jv",
+    "all_dev_only": false,
+    "sample_paths": [
+      "astro-docs>@astrojs/markdoc>astro>devalue",
+      "astro-docs>@astrojs/netlify>astro>devalue",
+      "astro-docs>@astrojs/starlight>@astrojs/mdx>astro>devalue"
+    ]
+  },
+  {
+    "module_name": "devalue",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.1.1"
+    ],
+    "vulnerable_versions": ">=5.1.0 <5.6.2",
+    "patched_versions": ">=5.6.2",
+    "title": "devalue vulnerable to denial of service due to memory/CPU exhaustion in devalue.parse",
+    "github_advisory_id": "GHSA-g2pg-6438-jwpf",
+    "url": "https://github.com/advisories/GHSA-g2pg-6438-jwpf",
+    "all_dev_only": false,
+    "sample_paths": [
+      "astro-docs>@astrojs/markdoc>astro>devalue",
+      "astro-docs>@astrojs/netlify>astro>devalue",
+      "astro-docs>@astrojs/starlight>@astrojs/mdx>astro>devalue"
+    ]
+  },
+  {
+    "module_name": "express-rate-limit",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.2.1"
+    ],
+    "vulnerable_versions": ">=8.2.0 <8.2.2",
+    "patched_versions": ">=8.2.2",
+    "title": "express-rate-limit: IPv4-mapped IPv6 addresses bypass per-client rate limiting on servers with dual-stack network",
+    "github_advisory_id": "GHSA-46wh-pxpv-q5gq",
+    "url": "https://github.com/advisories/GHSA-46wh-pxpv-q5gq",
+    "all_dev_only": true,
+    "sample_paths": [
+      ".>@angular/cli>@modelcontextprotocol/sdk>express-rate-limit",
+      ".>angular-eslint>@angular-eslint/builder>@angular/cli>@modelcontextprotocol/sdk>express-rate-limit",
+      ".>angular-eslint>@angular-eslint/schematics>@angular/cli>@modelcontextprotocol/sdk>express-rate-limit"
+    ]
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.6"
+    ],
+    "vulnerable_versions": "<=3.1.0",
+    "patched_versions": ">=3.1.1",
+    "title": "fast-uri vulnerable to path traversal via percent-encoded dot segments",
+    "github_advisory_id": "GHSA-q3j6-qgpj-74h6",
+    "url": "https://github.com/advisories/GHSA-q3j6-qgpj-74h6",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>webpack-cli>webpack>schema-utils>ajv>fast-uri",
+      ".>webpack-cli>webpack>schema-utils>ajv-formats>ajv>fast-uri",
+      ".>webpack-cli>webpack>schema-utils>ajv-keywords>ajv>fast-uri"
+    ]
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.6"
+    ],
+    "vulnerable_versions": "<=3.1.1",
+    "patched_versions": ">=3.1.2",
+    "title": "fast-uri vulnerable to host confusion via percent-encoded authority delimiters",
+    "github_advisory_id": "GHSA-v39h-62p7-jpjc",
+    "url": "https://github.com/advisories/GHSA-v39h-62p7-jpjc",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>webpack-cli>webpack>schema-utils>ajv>fast-uri",
+      ".>webpack-cli>webpack>schema-utils>ajv-formats>ajv>fast-uri",
+      ".>webpack-cli>webpack>schema-utils>ajv-keywords>ajv>fast-uri"
+    ]
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.6"
+    ],
+    "vulnerable_versions": ">=3.0.0 <=3.1.3",
+    "patched_versions": ">=3.1.4",
+    "title": "fast-uri vulnerable to host confusion via literal backslash authority delimiter",
+    "github_advisory_id": "GHSA-v2hh-gcrm-f6hx",
+    "url": "https://github.com/advisories/GHSA-v2hh-gcrm-f6hx",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>webpack-cli>webpack>schema-utils>ajv>fast-uri",
+      ".>webpack-cli>webpack>schema-utils>ajv-formats>ajv>fast-uri",
+      ".>webpack-cli>webpack>schema-utils>ajv-keywords>ajv>fast-uri"
+    ]
+  },
+  {
+    "module_name": "fast-uri",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.6"
+    ],
+    "vulnerable_versions": ">=3.0.0 <3.1.3",
+    "patched_versions": ">=3.1.3",
+    "title": "fast-uri vulnerable to host confusion via failed IDN canonicalization",
+    "github_advisory_id": "GHSA-4c8g-83qw-93j6",
+    "url": "https://github.com/advisories/GHSA-4c8g-83qw-93j6",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>webpack-cli>webpack>schema-utils>ajv>fast-uri",
+      ".>webpack-cli>webpack>schema-utils>ajv-formats>ajv>fast-uri",
+      ".>webpack-cli>webpack>schema-utils>ajv-keywords>ajv>fast-uri"
+    ]
+  },
+  {
+    "module_name": "fast-xml-parser",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.3.7"
+    ],
+    "vulnerable_versions": ">=5.0.0 <5.5.6",
+    "patched_versions": ">=5.5.6",
+    "title": "fast-xml-parser affected by numeric entity expansion bypassing all entity expansion limits (incomplete fix for CVE-2026-26278)",
+    "github_advisory_id": "GHSA-8gc5-j5rx-235r",
+    "url": "https://github.com/advisories/GHSA-8gc5-j5rx-235r",
+    "all_dev_only": true,
+    "sample_paths": [
+      ".>fast-xml-parser"
+    ]
+  },
+  {
+    "module_name": "find-my-way",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "9.6.0"
+    ],
+    "vulnerable_versions": "<=9.6.0",
+    "patched_versions": ">=9.6.1",
+    "title": "find-my-way: DDoS with HTTP2",
+    "github_advisory_id": "GHSA-c96f-x56v-gq3h",
+    "url": "https://github.com/advisories/GHSA-c96f-x56v-gq3h",
+    "all_dev_only": false,
+    "sample_paths": [
+      "packages__node>fastify>find-my-way"
+    ]
+  },
+  {
+    "module_name": "flatted",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.3.4"
+    ],
+    "vulnerable_versions": "<3.4.0",
+    "patched_versions": ">=3.4.0",
+    "title": "flatted vulnerable to unbounded recursion DoS in parse() revive phase",
+    "github_advisory_id": "GHSA-25h7-pfq9-p65f",
+    "url": "https://github.com/advisories/GHSA-25h7-pfq9-p65f",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-eslint/eslint-plugin>@angular-eslint/utils>@typescript-eslint/utils>@eslint-community/eslint-utils>eslint>file-entry-cache>flat-cache>flatted",
+      ".>@angular-eslint/eslint-plugin>@angular-eslint/utils>@typescript-eslint/utils>eslint>file-entry-cache>flat-cache>flatted",
+      ".>@angular-eslint/eslint-plugin>@angular-eslint/utils>eslint>file-entry-cache>flat-cache>flatted"
+    ]
+  },
+  {
+    "module_name": "flatted",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.3.4"
+    ],
+    "vulnerable_versions": "<=3.4.1",
+    "patched_versions": ">=3.4.2",
+    "title": "Prototype Pollution via parse() in NodeJS flatted",
+    "github_advisory_id": "GHSA-rf6f-7fwh-wjgh",
+    "url": "https://github.com/advisories/GHSA-rf6f-7fwh-wjgh",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-eslint/eslint-plugin>@angular-eslint/utils>@typescript-eslint/utils>@eslint-community/eslint-utils>eslint>file-entry-cache>flat-cache>flatted",
+      ".>@angular-eslint/eslint-plugin>@angular-eslint/utils>@typescript-eslint/utils>eslint>file-entry-cache>flat-cache>flatted",
+      ".>@angular-eslint/eslint-plugin>@angular-eslint/utils>eslint>file-entry-cache>flat-cache>flatted"
+    ]
+  },
+  {
+    "module_name": "glob",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "10.4.5"
+    ],
+    "vulnerable_versions": ">=10.2.0 <10.5.0",
+    "patched_versions": ">=10.5.0",
+    "title": "glob CLI: Command injection via -c/--cmd executes matches with shell:true",
+    "github_advisory_id": "GHSA-5j98-mcp5-4vw2",
+    "url": "https://github.com/advisories/GHSA-5j98-mcp5-4vw2",
+    "all_dev_only": true,
+    "sample_paths": [
+      ".>@nestjs/cli>glob"
+    ]
+  },
+  {
+    "module_name": "hono",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.11.4"
+    ],
+    "vulnerable_versions": "<4.12.4",
+    "patched_versions": ">=4.12.4",
+    "title": "Hono vulnerable to arbitrary file access via serveStatic vulnerability ",
+    "github_advisory_id": "GHSA-q5qw-h33p-qvwr",
+    "url": "https://github.com/advisories/GHSA-q5qw-h33p-qvwr",
+    "all_dev_only": true,
+    "sample_paths": [
+      ".>@angular/cli>@modelcontextprotocol/sdk>@hono/node-server>hono",
+      ".>@angular/cli>@modelcontextprotocol/sdk>hono",
+      ".>angular-eslint>@angular-eslint/builder>@angular/cli>@modelcontextprotocol/sdk>@hono/node-server>hono"
+    ]
+  },
+  {
+    "module_name": "hono",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.11.4"
+    ],
+    "vulnerable_versions": "<4.12.25",
+    "patched_versions": ">=4.12.25",
+    "title": "hono: CORS Middleware reflects any Origin with credentials when `origin` defaults to the wildcard",
+    "github_advisory_id": "GHSA-88fw-hqm2-52qc",
+    "url": "https://github.com/advisories/GHSA-88fw-hqm2-52qc",
+    "all_dev_only": true,
+    "sample_paths": [
+      ".>@angular/cli>@modelcontextprotocol/sdk>@hono/node-server>hono",
+      ".>@angular/cli>@modelcontextprotocol/sdk>hono",
+      ".>angular-eslint>@angular-eslint/builder>@angular/cli>@modelcontextprotocol/sdk>@hono/node-server>hono"
+    ]
+  },
+  {
+    "module_name": "http-proxy-middleware",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.5"
+    ],
+    "vulnerable_versions": ">=3.0.4 <3.0.7",
+    "patched_versions": ">=3.0.7",
+    "title": "http-proxy-middleware: multipart/form-data field injection via unescaped CRLF in `fixRequestBody`",
+    "github_advisory_id": "GHSA-gcq2-9pq2-cxqm",
+    "url": "https://github.com/advisories/GHSA-gcq2-9pq2-cxqm",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-devkit/build-angular>http-proxy-middleware",
+      ".>@nx/angular>@angular-devkit/build-angular>http-proxy-middleware",
+      ".>@nx/angular>@nx/module-federation>http-proxy-middleware"
+    ]
+  },
+  {
+    "module_name": "immutable",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.1.3"
+    ],
+    "vulnerable_versions": ">=5.0.0 <5.1.5",
+    "patched_versions": ">=5.1.5",
+    "title": "Immutable is vulnerable to Prototype Pollution",
+    "github_advisory_id": "GHSA-wf6x-7x77-mvgw",
+    "url": "https://github.com/advisories/GHSA-wf6x-7x77-mvgw",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>next>sass>immutable",
+      ".>next-seo>next>sass>immutable",
+      ".>@angular-devkit/build-angular>@angular/build>@vitejs/plugin-basic-ssl>vite>sass-embedded>immutable"
+    ]
+  },
+  {
+    "module_name": "immutable",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.1.3",
+      "5.1.6"
+    ],
+    "vulnerable_versions": ">=5.0.0-beta.1 <5.1.8",
+    "patched_versions": ">=5.1.8",
+    "title": "Immutable.js `List` 32-bit trie overflow → unrecoverable DoS",
+    "github_advisory_id": "GHSA-v56q-mh7h-f735",
+    "url": "https://github.com/advisories/GHSA-v56q-mh7h-f735",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>next>sass>immutable",
+      ".>next-seo>next>sass>immutable",
+      ".>@angular-devkit/build-angular>@angular/build>@vitejs/plugin-basic-ssl>vite>sass-embedded>immutable"
+    ]
+  },
+  {
+    "module_name": "immutable",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.1.3",
+      "5.1.6"
+    ],
+    "vulnerable_versions": ">=5.0.0-beta.1 <5.1.8",
+    "patched_versions": ">=5.1.8",
+    "title": "Immutabl: Hash-collision algorithmic complexity denial of service in Immutable.Map/Set",
+    "github_advisory_id": "GHSA-xvcm-6775-5m9r",
+    "url": "https://github.com/advisories/GHSA-xvcm-6775-5m9r",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>next>sass>immutable",
+      ".>next-seo>next>sass>immutable",
+      ".>@angular-devkit/build-angular>@angular/build>@vitejs/plugin-basic-ssl>vite>sass-embedded>immutable"
+    ]
+  },
+  {
+    "module_name": "js-yaml",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.1.1",
+      "4.1.0"
+    ],
+    "vulnerable_versions": ">=4.0.0 <4.3.0",
+    "patched_versions": ">=4.3.0",
+    "title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+    "github_advisory_id": "GHSA-52cp-r559-cp3m",
+    "url": "https://github.com/advisories/GHSA-52cp-r559-cp3m",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>json-schema-to-typescript>json-schema-ref-parser>@apidevtools/json-schema-ref-parser>js-yaml",
+      ".>@angular-devkit/build-angular>postcss-loader>cosmiconfig>js-yaml",
+      ".>@angular-eslint/eslint-plugin>@angular-eslint/utils>@typescript-eslint/utils>@eslint-community/eslint-utils>eslint>@eslint/eslintrc>js-yaml"
+    ]
+  },
+  {
+    "module_name": "js-yaml",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.14.1"
+    ],
+    "vulnerable_versions": ">=3.0.0 <3.15.0",
+    "patched_versions": ">=3.15.0",
+    "title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+    "github_advisory_id": "GHSA-52cp-r559-cp3m",
+    "url": "https://github.com/advisories/GHSA-52cp-r559-cp3m",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@yarnpkg/parsers>js-yaml",
+      ".>front-matter>js-yaml",
+      ".>@jest/globals>@jest/expect>jest-snapshot>@jest/transform>babel-plugin-istanbul>@istanbuljs/load-nyc-config>js-yaml"
+    ]
+  },
+  {
+    "module_name": "jws",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.2.2"
+    ],
+    "vulnerable_versions": "<3.2.3",
+    "patched_versions": ">=3.2.3",
+    "title": "auth0/node-jws Improperly Verifies HMAC Signature",
+    "github_advisory_id": "GHSA-869p-cjfg-cm3x",
+    "url": "https://github.com/advisories/GHSA-869p-cjfg-cm3x",
+    "all_dev_only": false,
+    "sample_paths": [
+      "astro-docs>@astrojs/netlify>@netlify/vite-plugin>@netlify/dev>@netlify/redirects>jsonwebtoken>jws",
+      "packages__js>verdaccio>@verdaccio/auth>@verdaccio/signature>jsonwebtoken>jws",
+      "packages__js>verdaccio>@verdaccio/signature>jsonwebtoken>jws"
+    ]
+  },
+  {
+    "module_name": "koa",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.0.3"
+    ],
+    "vulnerable_versions": ">=3.0.0 <3.1.2",
+    "patched_versions": ">=3.1.2",
+    "title": "Koa has Host Header Injection via ctx.hostname",
+    "github_advisory_id": "GHSA-7gcc-r8m5-44qm",
+    "url": "https://github.com/advisories/GHSA-7gcc-r8m5-44qm",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@module-federation/node>@module-federation/enhanced>@module-federation/cli>@module-federation/dts-plugin>koa",
+      ".>@module-federation/node>@module-federation/enhanced>@module-federation/dts-plugin>koa",
+      ".>@module-federation/node>@module-federation/enhanced>@module-federation/manifest>@module-federation/dts-plugin>koa"
+    ]
+  },
+  {
+    "module_name": "loader-utils",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.0.3"
+    ],
+    "vulnerable_versions": ">=2.0.0 <2.0.4",
+    "patched_versions": ">=2.0.4",
+    "title": "loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable",
+    "github_advisory_id": "GHSA-3rfm-jhwj-7488",
+    "url": "https://github.com/advisories/GHSA-3rfm-jhwj-7488",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-devkit/build-angular>resolve-url-loader>adjust-sourcemap-loader>loader-utils",
+      ".>@angular-devkit/build-angular>resolve-url-loader>loader-utils",
+      ".>@nx/angular>@nx/web>@nx/webpack>loader-utils"
+    ]
+  },
+  {
+    "module_name": "loader-utils",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.0.3"
+    ],
+    "vulnerable_versions": ">=2.0.0 <2.0.4",
+    "patched_versions": ">=2.0.4",
+    "title": "loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS)",
+    "github_advisory_id": "GHSA-hhq3-ff78-jv3g",
+    "url": "https://github.com/advisories/GHSA-hhq3-ff78-jv3g",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-devkit/build-angular>resolve-url-loader>adjust-sourcemap-loader>loader-utils",
+      ".>@angular-devkit/build-angular>resolve-url-loader>loader-utils",
+      ".>@nx/angular>@nx/web>@nx/webpack>loader-utils"
+    ]
+  },
+  {
+    "module_name": "lodash",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.17.23",
+      "4.17.21"
+    ],
+    "vulnerable_versions": ">=4.0.0 <=4.17.23",
+    "patched_versions": ">=4.17.24",
+    "title": "lodash vulnerable to Code Injection via `_.template` imports key names",
+    "github_advisory_id": "GHSA-r5fr-rjxr-66jc",
+    "url": "https://github.com/advisories/GHSA-r5fr-rjxr-66jc",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/graph>cytoscape-dagre>dagre>graphlib>lodash",
+      ".>@nx/graph>cytoscape-dagre>dagre>lodash",
+      ".>@angular-devkit/build-angular>webpack-subresource-integrity>html-webpack-plugin>pretty-error>lodash"
+    ]
+  },
+  {
+    "module_name": "lodash-es",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.17.21"
+    ],
+    "vulnerable_versions": ">=4.0.0 <=4.17.23",
+    "patched_versions": ">=4.17.24",
+    "title": "lodash vulnerable to Code Injection via `_.template` imports key names",
+    "github_advisory_id": "GHSA-r5fr-rjxr-66jc",
+    "url": "https://github.com/advisories/GHSA-r5fr-rjxr-66jc",
+    "all_dev_only": false,
+    "sample_paths": [
+      "astro-docs>@astrojs/netlify>@netlify/vite-plugin>@netlify/dev>@netlify/config>@netlify/api>lodash-es"
+    ]
+  },
+  {
+    "module_name": "multer",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.4.4-lts.1"
+    ],
+    "vulnerable_versions": ">=1.4.4-lts.1 <2.0.0",
+    "patched_versions": ">=2.0.0",
+    "title": "Multer vulnerable to Denial of Service from maliciously crafted requests",
+    "github_advisory_id": "GHSA-4pg4-qvpc-4q3h",
+    "url": "https://github.com/advisories/GHSA-4pg4-qvpc-4q3h",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nestjs/core>@nestjs/platform-express>multer",
+      ".>@nestjs/platform-express>multer",
+      ".>@nestjs/swagger>@nestjs/core>@nestjs/platform-express>multer"
+    ]
+  },
+  {
+    "module_name": "multer",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.4.4-lts.1"
+    ],
+    "vulnerable_versions": ">=1.4.4-lts.1 <2.0.1",
+    "patched_versions": ">=2.0.1",
+    "title": "Multer vulnerable to Denial of Service via unhandled exception",
+    "github_advisory_id": "GHSA-g5hg-p3ph-g8qg",
+    "url": "https://github.com/advisories/GHSA-g5hg-p3ph-g8qg",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nestjs/core>@nestjs/platform-express>multer",
+      ".>@nestjs/platform-express>multer",
+      ".>@nestjs/swagger>@nestjs/core>@nestjs/platform-express>multer"
+    ]
+  },
+  {
+    "module_name": "multer",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.4.4-lts.1"
+    ],
+    "vulnerable_versions": ">=1.4.4-lts.1 <2.0.2",
+    "patched_versions": ">=2.0.2",
+    "title": "Multer vulnerable to Denial of Service via unhandled exception from malformed request",
+    "github_advisory_id": "GHSA-fjgf-rc76-4x9p",
+    "url": "https://github.com/advisories/GHSA-fjgf-rc76-4x9p",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nestjs/core>@nestjs/platform-express>multer",
+      ".>@nestjs/platform-express>multer",
+      ".>@nestjs/swagger>@nestjs/core>@nestjs/platform-express>multer"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "14.2.28"
+    ],
+    "vulnerable_versions": ">=13.3.0 <14.2.34",
+    "patched_versions": ">=14.2.34",
+    "title": "Next Vulnerable to Denial of Service with Server Components",
+    "github_advisory_id": "GHSA-mwv6-3258-q52c",
+    "url": "https://github.com/advisories/GHSA-mwv6-3258-q52c",
+    "all_dev_only": false,
+    "sample_paths": [
+      "packages__next>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "14.2.28"
+    ],
+    "vulnerable_versions": ">=13.3.1-canary.0 <14.2.35",
+    "patched_versions": ">=14.2.35",
+    "title": "Next has a Denial of Service with Server Components - Incomplete Fix Follow-Up",
+    "github_advisory_id": "GHSA-5j59-xgg2-r9c4",
+    "url": "https://github.com/advisories/GHSA-5j59-xgg2-r9c4",
+    "all_dev_only": false,
+    "sample_paths": [
+      "packages__next>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "14.2.35",
+      "14.2.28"
+    ],
+    "vulnerable_versions": ">=13.0.0 <15.0.8",
+    "patched_versions": ">=15.0.8",
+    "title": "Next.js HTTP request deserialization can lead to DoS when using insecure React Server Components",
+    "github_advisory_id": "GHSA-h25m-26qc-wcjf",
+    "url": "https://github.com/advisories/GHSA-h25m-26qc-wcjf",
+    "all_dev_only": false,
+    "sample_paths": [
+      "nx-dev__nx-dev>next",
+      "nx-dev__nx-dev>next-seo>next",
+      "packages__next>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "14.2.35",
+      "14.2.28"
+    ],
+    "vulnerable_versions": ">=13.0.0 <15.5.15",
+    "patched_versions": ">=15.5.15",
+    "title": "Next.js has a Denial of Service with Server Components",
+    "github_advisory_id": "GHSA-q4gf-8mx6-v5v3",
+    "url": "https://github.com/advisories/GHSA-q4gf-8mx6-v5v3",
+    "all_dev_only": false,
+    "sample_paths": [
+      "nx-dev__nx-dev>next",
+      "nx-dev__nx-dev>next-seo>next",
+      "packages__next>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "14.2.35",
+      "14.2.28"
+    ],
+    "vulnerable_versions": ">=13.0.0 <15.5.16",
+    "patched_versions": ">=15.5.16",
+    "title": "Next.js Vulnerable to Denial of Service with Server Components",
+    "github_advisory_id": "GHSA-8h8q-6873-q5fj",
+    "url": "https://github.com/advisories/GHSA-8h8q-6873-q5fj",
+    "all_dev_only": false,
+    "sample_paths": [
+      "nx-dev__nx-dev>next",
+      "nx-dev__nx-dev>next-seo>next",
+      "packages__next>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "14.2.35",
+      "14.2.28"
+    ],
+    "vulnerable_versions": ">=13.4.13 <15.5.16",
+    "patched_versions": ">=15.5.16",
+    "title": "Next.js vulnerable to server-side request forgery in applications using WebSocket upgrades",
+    "github_advisory_id": "GHSA-c4j6-fc7j-m34r",
+    "url": "https://github.com/advisories/GHSA-c4j6-fc7j-m34r",
+    "all_dev_only": false,
+    "sample_paths": [
+      "nx-dev__nx-dev>next",
+      "nx-dev__nx-dev>next-seo>next",
+      "packages__next>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "14.2.35",
+      "14.2.28"
+    ],
+    "vulnerable_versions": ">=12.2.0 <15.5.16",
+    "patched_versions": ">=15.5.16",
+    "title": "Next.js has a Middleware / Proxy bypass in Pages Router applications using i18n",
+    "github_advisory_id": "GHSA-36qx-fr4f-26g5",
+    "url": "https://github.com/advisories/GHSA-36qx-fr4f-26g5",
+    "all_dev_only": false,
+    "sample_paths": [
+      "nx-dev__nx-dev>next",
+      "nx-dev__nx-dev>next-seo>next",
+      "packages__next>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "16.2.7"
+    ],
+    "vulnerable_versions": ">=16.0.0 <16.2.11",
+    "patched_versions": ">=16.2.11",
+    "title": "Next.js: Middleware / Proxy bypass in App Router applications using Turbopack and single locale",
+    "github_advisory_id": "GHSA-6gpp-xcg3-4w24",
+    "url": "https://github.com/advisories/GHSA-6gpp-xcg3-4w24",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>next",
+      ".>next-seo>next",
+      ".>@module-federation/node>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "16.2.7"
+    ],
+    "vulnerable_versions": ">=16.0.0 <16.2.11",
+    "patched_versions": ">=16.2.11",
+    "title": "Next.js: Denial of Service in App Router using Server Actions",
+    "github_advisory_id": "GHSA-m99w-x7hq-7vfj",
+    "url": "https://github.com/advisories/GHSA-m99w-x7hq-7vfj",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>next",
+      ".>next-seo>next",
+      ".>@module-federation/node>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "14.2.35",
+      "14.2.28"
+    ],
+    "vulnerable_versions": ">=13.0.0 <15.5.21",
+    "patched_versions": ">=15.5.21",
+    "title": "Next.js: Denial of Service in App Router using Server Actions",
+    "github_advisory_id": "GHSA-m99w-x7hq-7vfj",
+    "url": "https://github.com/advisories/GHSA-m99w-x7hq-7vfj",
+    "all_dev_only": false,
+    "sample_paths": [
+      "nx-dev__nx-dev>next",
+      "nx-dev__nx-dev>next-seo>next",
+      "packages__next>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "16.2.7"
+    ],
+    "vulnerable_versions": ">=16.0.0 <16.2.11",
+    "patched_versions": ">=16.2.11",
+    "title": "Next.js: Server-Side Request Forgery in Server Actions on custom servers",
+    "github_advisory_id": "GHSA-89xv-2m56-2m9x",
+    "url": "https://github.com/advisories/GHSA-89xv-2m56-2m9x",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>next",
+      ".>next-seo>next",
+      ".>@module-federation/node>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "14.2.35",
+      "14.2.28"
+    ],
+    "vulnerable_versions": ">=14.1.1 <15.5.21",
+    "patched_versions": ">=15.5.21",
+    "title": "Next.js: Server-Side Request Forgery in Server Actions on custom servers",
+    "github_advisory_id": "GHSA-89xv-2m56-2m9x",
+    "url": "https://github.com/advisories/GHSA-89xv-2m56-2m9x",
+    "all_dev_only": false,
+    "sample_paths": [
+      "nx-dev__nx-dev>next",
+      "nx-dev__nx-dev>next-seo>next",
+      "packages__next>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "16.2.7"
+    ],
+    "vulnerable_versions": ">=16.0.0 <16.2.11",
+    "patched_versions": ">=16.2.11",
+    "title": "Next.js: Server-Side Request Forgery in rewrites via attacker-controlled destination hostname",
+    "github_advisory_id": "GHSA-p9j2-gv94-2wf4",
+    "url": "https://github.com/advisories/GHSA-p9j2-gv94-2wf4",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>next",
+      ".>next-seo>next",
+      ".>@module-federation/node>next"
+    ]
+  },
+  {
+    "module_name": "next",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "14.2.35",
+      "14.2.28"
+    ],
+    "vulnerable_versions": ">=12.0.0 <15.5.21",
+    "patched_versions": ">=15.5.21",
+    "title": "Next.js: Server-Side Request Forgery in rewrites via attacker-controlled destination hostname",
+    "github_advisory_id": "GHSA-p9j2-gv94-2wf4",
+    "url": "https://github.com/advisories/GHSA-p9j2-gv94-2wf4",
+    "all_dev_only": false,
+    "sample_paths": [
+      "nx-dev__nx-dev>next",
+      "nx-dev__nx-dev>next-seo>next",
+      "packages__next>next"
+    ]
+  },
+  {
+    "module_name": "octokit",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.1.0"
+    ],
+    "vulnerable_versions": "<3.1.2",
+    "patched_versions": ">=3.1.2",
+    "title": "Unauthenticated Denial of Service in the octokit/webhooks library",
+    "github_advisory_id": "GHSA-pwfr-8pq7-x9qv",
+    "url": "https://github.com/advisories/GHSA-pwfr-8pq7-x9qv",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>octokit",
+      "astro-docs>octokit"
+    ]
+  },
+  {
+    "module_name": "path-to-regexp",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.2.0"
+    ],
+    "vulnerable_versions": ">=2.0.0 <3.3.0",
+    "patched_versions": ">=3.3.0",
+    "title": "path-to-regexp outputs backtracking regular expressions",
+    "github_advisory_id": "GHSA-9wv6-86v2-598j",
+    "url": "https://github.com/advisories/GHSA-9wv6-86v2-598j",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nestjs/core>path-to-regexp",
+      ".>@nestjs/platform-express>@nestjs/core>path-to-regexp",
+      ".>@nestjs/swagger>@nestjs/core>path-to-regexp"
+    ]
+  },
+  {
+    "module_name": "path-to-regexp",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.1.7"
+    ],
+    "vulnerable_versions": "<0.1.10",
+    "patched_versions": ">=0.1.10",
+    "title": "path-to-regexp outputs backtracking regular expressions",
+    "github_advisory_id": "GHSA-9wv6-86v2-598j",
+    "url": "https://github.com/advisories/GHSA-9wv6-86v2-598j",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nestjs/core>@nestjs/platform-express>express>path-to-regexp",
+      ".>@nestjs/platform-express>express>path-to-regexp",
+      ".>@nestjs/swagger>@nestjs/core>@nestjs/platform-express>express>path-to-regexp"
+    ]
+  },
+  {
+    "module_name": "path-to-regexp",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.1.7"
+    ],
+    "vulnerable_versions": "<0.1.12",
+    "patched_versions": ">=0.1.12",
+    "title": "path-to-regexp contains a ReDoS",
+    "github_advisory_id": "GHSA-rhx6-c78j-4q9w",
+    "url": "https://github.com/advisories/GHSA-rhx6-c78j-4q9w",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nestjs/core>@nestjs/platform-express>express>path-to-regexp",
+      ".>@nestjs/platform-express>express>path-to-regexp",
+      ".>@nestjs/swagger>@nestjs/core>@nestjs/platform-express>express>path-to-regexp"
+    ]
+  },
+  {
+    "module_name": "path-to-regexp",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.1.12",
+      "0.1.7"
+    ],
+    "vulnerable_versions": "<0.1.13",
+    "patched_versions": ">=0.1.13",
+    "title": "path-to-regexp vulnerable to Regular Expression Denial of Service via multiple route parameters",
+    "github_advisory_id": "GHSA-37ch-88jc-xwx2",
+    "url": "https://github.com/advisories/GHSA-37ch-88jc-xwx2",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>webpack-cli>webpack-dev-server>express>path-to-regexp",
+      ".>@angular-devkit/build-angular>@angular-devkit/build-webpack>webpack>webpack-cli>webpack-dev-server>express>path-to-regexp",
+      ".>@angular-devkit/build-angular>@angular-devkit/build-webpack>webpack-dev-server>express>path-to-regexp"
+    ]
+  },
+  {
+    "module_name": "picomatch",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.3.1"
+    ],
+    "vulnerable_versions": "<2.3.2",
+    "patched_versions": ">=2.3.2",
+    "title": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+    "github_advisory_id": "GHSA-c2c7-rcm5-vvqj",
+    "url": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>next>sass>@parcel/watcher>micromatch>picomatch",
+      ".>next-seo>next>sass>@parcel/watcher>micromatch>picomatch",
+      ".>webpack-cli>webpack-dev-server>chokidar>anymatch>picomatch"
+    ]
+  },
+  {
+    "module_name": "picomatch",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.0.1",
+      "4.0.2"
+    ],
+    "vulnerable_versions": ">=4.0.0 <4.0.4",
+    "patched_versions": ">=4.0.4",
+    "title": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+    "github_advisory_id": "GHSA-c2c7-rcm5-vvqj",
+    "url": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nestjs/cli>@angular-devkit/core>picomatch",
+      ".>@nestjs/cli>@angular-devkit/schematics>@angular-devkit/core>picomatch",
+      ".>@nestjs/cli>@angular-devkit/schematics-cli>@angular-devkit/core>picomatch"
+    ]
+  },
+  {
+    "module_name": "piscina",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.9.2"
+    ],
+    "vulnerable_versions": "<=4.9.2",
+    "patched_versions": ">=4.9.3",
+    "title": "piscina: Prototype Pollution Gadget → RCE via inherited options.filename",
+    "github_advisory_id": "GHSA-x9g3-xrwr-cwfg",
+    "url": "https://github.com/advisories/GHSA-x9g3-xrwr-cwfg",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nestjs/cli>@swc/cli>piscina",
+      ".>@nx/angular>@nx/eslint>@nx/js>@swc/cli>piscina",
+      ".>@nx/angular>@nx/eslint>@nx/jest>@nx/js>@swc/cli>piscina"
+    ]
+  },
+  {
+    "module_name": "piscina",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.1.4",
+      "5.0.0"
+    ],
+    "vulnerable_versions": ">=5.0.0-alpha.0 <=5.1.4",
+    "patched_versions": ">=5.1.5",
+    "title": "piscina: Prototype Pollution Gadget → RCE via inherited options.filename",
+    "github_advisory_id": "GHSA-x9g3-xrwr-cwfg",
+    "url": "https://github.com/advisories/GHSA-x9g3-xrwr-cwfg",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-devkit/build-angular>@angular/build>piscina",
+      ".>@angular-devkit/build-angular>piscina",
+      ".>@angular/build>piscina"
+    ]
+  },
+  {
+    "module_name": "postcss",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.4.31"
+    ],
+    "vulnerable_versions": "<=8.5.11",
+    "patched_versions": ">=8.5.12",
+    "title": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+    "github_advisory_id": "GHSA-6g55-p6wh-862q",
+    "url": "https://github.com/advisories/GHSA-6g55-p6wh-862q",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>next>postcss",
+      ".>next-seo>next>postcss",
+      ".>@module-federation/node>next>postcss"
+    ]
+  },
+  {
+    "module_name": "postcss",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.5.15",
+      "8.4.31",
+      "8.5.13"
+    ],
+    "vulnerable_versions": "<=8.5.17",
+    "patched_versions": ">=8.5.18",
+    "title": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+    "github_advisory_id": "GHSA-r28c-9q8g-f849",
+    "url": "https://github.com/advisories/GHSA-r28c-9q8g-f849",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@tailwindcss/postcss>postcss",
+      ".>webpack-cli>webpack>terser-webpack-plugin>postcss",
+      ".>webpack-cli>webpack-dev-server>webpack-dev-middleware>webpack>terser-webpack-plugin>postcss"
+    ]
+  },
+  {
+    "module_name": "remarkable",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.7.1"
+    ],
+    "vulnerable_versions": "<1.7.2",
+    "patched_versions": ">=1.7.2",
+    "title": "Regular Expression Denial of Service in remarkable",
+    "github_advisory_id": "GHSA-q22g-8fr4-qpj4",
+    "url": "https://github.com/advisories/GHSA-q22g-8fr4-qpj4",
+    "all_dev_only": true,
+    "sample_paths": [
+      ".>parse-markdown-links>remarkable"
+    ]
+  },
+  {
+    "module_name": "rollup",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.44.2"
+    ],
+    "vulnerable_versions": ">=4.0.0 <4.59.0",
+    "patched_versions": ">=4.59.0",
+    "title": "Rollup 4 has Arbitrary File Write via Path Traversal",
+    "github_advisory_id": "GHSA-mw96-cpmx-2vgc",
+    "url": "https://github.com/advisories/GHSA-mw96-cpmx-2vgc",
+    "all_dev_only": true,
+    "sample_paths": [
+      ".>@nx/next>@nx/react>@nx/rollup>@rollup/plugin-babel>@rollup/pluginutils>rollup",
+      ".>@nx/next>@nx/react>@nx/rollup>@rollup/plugin-babel>rollup",
+      ".>@nx/next>@nx/react>@nx/rollup>@rollup/plugin-commonjs>@rollup/pluginutils>rollup"
+    ]
+  },
+  {
+    "module_name": "serialize-javascript",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "6.0.2"
+    ],
+    "vulnerable_versions": "<=7.0.2",
+    "patched_versions": ">=7.0.3",
+    "title": "Serialize JavaScript is Vulnerable to RCE via RegExp.flags and Date.prototype.toISOString()",
+    "github_advisory_id": "GHSA-5c6j-r48x-rmvq",
+    "url": "https://github.com/advisories/GHSA-5c6j-r48x-rmvq",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>terser-webpack-plugin>serialize-javascript",
+      "packages__webpack>terser-webpack-plugin>serialize-javascript"
+    ]
+  },
+  {
+    "module_name": "sharp",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "0.34.5",
+      "0.33.5",
+      "0.34.3"
+    ],
+    "vulnerable_versions": "<0.35.0",
+    "patched_versions": ">=0.35.0",
+    "title": "sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",
+    "github_advisory_id": "GHSA-f88m-g3jw-g9cj",
+    "url": "https://github.com/advisories/GHSA-f88m-g3jw-g9cj",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>next>sharp",
+      ".>next-seo>next>sharp",
+      ".>@module-federation/node>next>sharp"
+    ]
+  },
+  {
+    "module_name": "shell-quote",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "1.8.4"
+    ],
+    "vulnerable_versions": "<=1.8.4",
+    "patched_versions": ">=1.8.5",
+    "title": "shell-quote: Quadratic-complexity Denial of Service in `parse()` (CWE-407)",
+    "github_advisory_id": "GHSA-395f-4hp3-45gv",
+    "url": "https://github.com/advisories/GHSA-395f-4hp3-45gv",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>webpack-cli>webpack-dev-server>launch-editor>shell-quote",
+      ".>@angular-devkit/build-angular>@angular-devkit/build-webpack>webpack>webpack-cli>webpack-dev-server>launch-editor>shell-quote",
+      ".>@angular-devkit/build-angular>@angular-devkit/build-webpack>webpack-dev-server>launch-editor>shell-quote"
+    ]
+  },
+  {
+    "module_name": "sigstore",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.0.0"
+    ],
+    "vulnerable_versions": "<=4.1.0",
+    "patched_versions": ">=4.1.1",
+    "title": "sigstore's `certificateOIDs` verification constraints are silently dropped and never enforced",
+    "github_advisory_id": "GHSA-52v5-jr5w-gjxr",
+    "url": "https://github.com/advisories/GHSA-52v5-jr5w-gjxr",
+    "all_dev_only": true,
+    "sample_paths": [
+      ".>@angular/cli>pacote>sigstore",
+      ".>angular-eslint>@angular-eslint/builder>@angular/cli>pacote>sigstore",
+      ".>angular-eslint>@angular-eslint/schematics>@angular/cli>pacote>sigstore"
+    ]
+  },
+  {
+    "module_name": "storybook",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "9.0.6"
+    ],
+    "vulnerable_versions": ">=9.0.0 <9.1.17",
+    "patched_versions": ">=9.1.17",
+    "title": "Storybook manager bundle may expose environment variables during build",
+    "github_advisory_id": "GHSA-8452-54wp-rmv6",
+    "url": "https://github.com/advisories/GHSA-8452-54wp-rmv6",
+    "all_dev_only": true,
+    "sample_paths": [
+      "packages__storybook>storybook"
+    ]
+  },
+  {
+    "module_name": "storybook",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "9.0.6"
+    ],
+    "vulnerable_versions": ">=8.7.0-alpha.0 <9.1.19",
+    "patched_versions": ">=9.1.19",
+    "title": "Storybook Dev Server is Vulnerable to WebSocket Hijacking",
+    "github_advisory_id": "GHSA-mjf5-7g4m-gx5w",
+    "url": "https://github.com/advisories/GHSA-mjf5-7g4m-gx5w",
+    "all_dev_only": true,
+    "sample_paths": [
+      "packages__storybook>storybook"
+    ]
+  },
+  {
+    "module_name": "svgo",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.3.2"
+    ],
+    "vulnerable_versions": ">=3.0.0 <3.3.3",
+    "patched_versions": ">=3.3.3",
+    "title": "SVGO DoS through entity expansion in DOCTYPE (Billion Laughs)",
+    "github_advisory_id": "GHSA-xpqw-6gx7-v673",
+    "url": "https://github.com/advisories/GHSA-xpqw-6gx7-v673",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/angular>@nx/web>@nx/webpack>css-minimizer-webpack-plugin>cssnano>cssnano-preset-default>postcss-svgo>svgo",
+      ".>@nx/angular>@nx/module-federation>@nx/web>@nx/webpack>css-minimizer-webpack-plugin>cssnano>cssnano-preset-default>postcss-svgo>svgo",
+      ".>@nx/angular>@nx/rspack>@nx/module-federation>@nx/web>@nx/webpack>css-minimizer-webpack-plugin>cssnano>cssnano-preset-default>postcss-svgo>svgo"
+    ]
+  },
+  {
+    "module_name": "svgo",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "4.0.1"
+    ],
+    "vulnerable_versions": ">=4.0.0 <4.0.2",
+    "patched_versions": ">=4.0.2",
+    "title": "SVGO removeScripts plugin leaves some executable scripts intact",
+    "github_advisory_id": "GHSA-2p49-hgcm-8545",
+    "url": "https://github.com/advisories/GHSA-2p49-hgcm-8545",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>nuxt>@nuxt/vite-builder>cssnano>cssnano-preset-default>postcss-svgo>svgo",
+      "astro-docs>@astrojs/netlify>@netlify/vite-plugin>@netlify/dev>@netlify/images>ipx>svgo",
+      "packages__nuxt>nuxt>@nuxt/vite-builder>cssnano>cssnano-preset-default>postcss-svgo>svgo"
+    ]
+  },
+  {
+    "module_name": "svgo",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "3.3.2"
+    ],
+    "vulnerable_versions": ">=3.0.0 <3.3.4",
+    "patched_versions": ">=3.3.4",
+    "title": "SVGO removeScripts plugin leaves some executable scripts intact",
+    "github_advisory_id": "GHSA-2p49-hgcm-8545",
+    "url": "https://github.com/advisories/GHSA-2p49-hgcm-8545",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@nx/angular>@nx/web>@nx/webpack>css-minimizer-webpack-plugin>cssnano>cssnano-preset-default>postcss-svgo>svgo",
+      ".>@nx/angular>@nx/module-federation>@nx/web>@nx/webpack>css-minimizer-webpack-plugin>cssnano>cssnano-preset-default>postcss-svgo>svgo",
+      ".>@nx/angular>@nx/rspack>@nx/module-federation>@nx/web>@nx/webpack>css-minimizer-webpack-plugin>cssnano>cssnano-preset-default>postcss-svgo>svgo"
+    ]
+  },
+  {
+    "module_name": "systeminformation",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.31.6"
+    ],
+    "vulnerable_versions": "<=5.31.6",
+    "patched_versions": ">=5.31.7",
+    "title": "systeminformation: OS command injection in networkInterfaces() via interfaces(5) source-directive path on Linux",
+    "github_advisory_id": "GHSA-5xpp-75jx-m839",
+    "url": "https://github.com/advisories/GHSA-5xpp-75jx-m839",
+    "all_dev_only": true,
+    "sample_paths": [
+      ".>@nx/angular>@nx/web>@nx/cypress>cypress>systeminformation",
+      ".>@nx/angular>@nx/cypress>cypress>systeminformation",
+      ".>@nx/angular>@nx/module-federation>@nx/web>@nx/cypress>cypress>systeminformation"
+    ]
+  },
+  {
+    "module_name": "tar-fs",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.1.3"
+    ],
+    "vulnerable_versions": ">=2.0.0 <2.1.4",
+    "patched_versions": ">=2.1.4",
+    "title": "tar-fs has a symlink validation bypass if destination directory is predictable with a specific tarball",
+    "github_advisory_id": "GHSA-vj76-c3g6-qr5v",
+    "url": "https://github.com/advisories/GHSA-vj76-c3g6-qr5v",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>tar-fs",
+      "packages__remix>@remix-run/dev>tar-fs"
+    ]
+  },
+  {
+    "module_name": "turbo-stream",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "2.4.1"
+    ],
+    "vulnerable_versions": "<3.0.0",
+    "patched_versions": ">=3.0.0",
+    "title": "React Router vulnerable to Denial of Service via reflected user input in single-fetch",
+    "github_advisory_id": "GHSA-rxv8-25v2-qmq8",
+    "url": "https://github.com/advisories/GHSA-rxv8-25v2-qmq8",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>@remix-run/node>@remix-run/server-runtime>turbo-stream",
+      ".>@remix-run/dev>@remix-run/react>@remix-run/server-runtime>turbo-stream",
+      ".>@remix-run/dev>@remix-run/react>turbo-stream"
+    ]
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "6.21.3"
+    ],
+    "vulnerable_versions": ">=6.0.0 <6.24.0",
+    "patched_versions": ">=6.24.0",
+    "title": "Undici: Malicious WebSocket 64-bit length overflows parser and crashes the client",
+    "github_advisory_id": "GHSA-f269-vfmq-vjvj",
+    "url": "https://github.com/advisories/GHSA-f269-vfmq-vjvj",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>@remix-run/node>undici",
+      ".>@remix-run/node>undici",
+      "packages__remix>@remix-run/dev>@remix-run/node>undici"
+    ]
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.29.0",
+      "6.21.3"
+    ],
+    "vulnerable_versions": "<6.24.0",
+    "patched_versions": ">=6.24.0",
+    "title": "Undici has Unbounded Memory Consumption in WebSocket permessage-deflate Decompression",
+    "github_advisory_id": "GHSA-vrm6-8vpv-qv8q",
+    "url": "https://github.com/advisories/GHSA-vrm6-8vpv-qv8q",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@actions/core>@actions/http-client>undici",
+      ".>@remix-run/dev>@remix-run/node>undici",
+      ".>@remix-run/node>undici"
+    ]
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.29.0",
+      "6.21.3"
+    ],
+    "vulnerable_versions": "<6.24.0",
+    "patched_versions": ">=6.24.0",
+    "title": "Undici has Unhandled Exception in WebSocket Client Due to Invalid server_max_window_bits Validation",
+    "github_advisory_id": "GHSA-v9p9-hfj2-hcw8",
+    "url": "https://github.com/advisories/GHSA-v9p9-hfj2-hcw8",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@actions/core>@actions/http-client>undici",
+      ".>@remix-run/dev>@remix-run/node>undici",
+      ".>@remix-run/node>undici"
+    ]
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "7.24.7"
+    ],
+    "vulnerable_versions": ">=7.23.0 <7.28.0",
+    "patched_versions": ">=7.28.0",
+    "title": "undici vulnerable to TLS certificate validation bypass via dropped requestTls in SOCKS5 ProxyAgent",
+    "github_advisory_id": "GHSA-vmh5-mc38-953g",
+    "url": "https://github.com/advisories/GHSA-vmh5-mc38-953g",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@module-federation/enhanced>@module-federation/cli>@module-federation/dts-plugin>undici",
+      ".>@module-federation/enhanced>@module-federation/dts-plugin>undici",
+      ".>@module-federation/enhanced>@module-federation/manifest>@module-federation/dts-plugin>undici"
+    ]
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "7.24.7"
+    ],
+    "vulnerable_versions": ">=7.0.0 <7.28.0",
+    "patched_versions": ">=7.28.0",
+    "title": "undici WebSocket client vulnerable to denial of service via fragment count bypass",
+    "github_advisory_id": "GHSA-vxpw-j846-p89q",
+    "url": "https://github.com/advisories/GHSA-vxpw-j846-p89q",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@module-federation/enhanced>@module-federation/cli>@module-federation/dts-plugin>undici",
+      ".>@module-federation/enhanced>@module-federation/dts-plugin>undici",
+      ".>@module-federation/enhanced>@module-federation/manifest>@module-federation/dts-plugin>undici"
+    ]
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.29.0",
+      "6.21.3"
+    ],
+    "vulnerable_versions": "<6.27.0",
+    "patched_versions": ">=6.27.0",
+    "title": "undici WebSocket client vulnerable to denial of service via fragment count bypass",
+    "github_advisory_id": "GHSA-vxpw-j846-p89q",
+    "url": "https://github.com/advisories/GHSA-vxpw-j846-p89q",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@actions/core>@actions/http-client>undici",
+      ".>@remix-run/dev>@remix-run/node>undici",
+      ".>@remix-run/node>undici"
+    ]
+  },
+  {
+    "module_name": "undici",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "7.24.7"
+    ],
+    "vulnerable_versions": ">=7.23.0 <7.28.0",
+    "patched_versions": ">=7.28.0",
+    "title": "undici vulnerable to cross-origin request routing via SOCKS5 proxy pool reuse",
+    "github_advisory_id": "GHSA-hm92-r4w5-c3mj",
+    "url": "https://github.com/advisories/GHSA-hm92-r4w5-c3mj",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@module-federation/enhanced>@module-federation/cli>@module-federation/dts-plugin>undici",
+      ".>@module-federation/enhanced>@module-federation/dts-plugin>undici",
+      ".>@module-federation/enhanced>@module-federation/manifest>@module-federation/dts-plugin>undici"
+    ]
+  },
+  {
+    "module_name": "validator",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "13.12.0"
+    ],
+    "vulnerable_versions": "<13.15.22",
+    "patched_versions": ">=13.15.22",
+    "title": "Validator is Vulnerable to Incomplete Filtering of One or More Instances of Special Elements",
+    "github_advisory_id": "GHSA-vghf-hv5q-vc2g",
+    "url": "https://github.com/advisories/GHSA-vghf-hv5q-vc2g",
+    "all_dev_only": false,
+    "sample_paths": [
+      "packages__js>verdaccio>@verdaccio/middleware>@verdaccio/url>validator",
+      "packages__js>verdaccio>@verdaccio/tarball>@verdaccio/url>validator",
+      "packages__js>verdaccio>@verdaccio/url>validator"
+    ]
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "7.3.1",
+      "7.1.3"
+    ],
+    "vulnerable_versions": ">=7.1.0 <=7.3.1",
+    "patched_versions": ">=7.3.2",
+    "title": "Vite: `server.fs.deny` bypassed with queries",
+    "github_advisory_id": "GHSA-v2wj-q39q-566r",
+    "url": "https://github.com/advisories/GHSA-v2wj-q39q-566r",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>vite-node>vite",
+      "packages__remix>@remix-run/dev>vite-node>vite",
+      "packages__vite>vite"
+    ]
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.0.0"
+    ],
+    "vulnerable_versions": ">=8.0.0 <=8.0.4",
+    "patched_versions": ">=8.0.5",
+    "title": "Vite: `server.fs.deny` bypassed with queries",
+    "github_advisory_id": "GHSA-v2wj-q39q-566r",
+    "url": "https://github.com/advisories/GHSA-v2wj-q39q-566r",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-devkit/build-angular>@angular/build>vitest>@vitest/mocker>vite",
+      ".>@angular-devkit/build-angular>@angular/build>vitest>vite",
+      ".>@angular/build>vitest>@vitest/mocker>vite"
+    ]
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "6.3.5"
+    ],
+    "vulnerable_versions": ">=6.0.0 <=6.4.1",
+    "patched_versions": ">=6.4.2",
+    "title": "Vite Vulnerable to Arbitrary File Read via Vite Dev Server WebSocket",
+    "github_advisory_id": "GHSA-p9ff-h696-f583",
+    "url": "https://github.com/advisories/GHSA-p9ff-h696-f583",
+    "all_dev_only": false,
+    "sample_paths": [
+      "astro-docs>@astrojs/markdoc>astro>vite",
+      "astro-docs>@astrojs/markdoc>astro>vitefu>vite",
+      "astro-docs>@astrojs/netlify>@netlify/vite-plugin>vite"
+    ]
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "7.3.1",
+      "7.1.3"
+    ],
+    "vulnerable_versions": ">=7.0.0 <=7.3.1",
+    "patched_versions": ">=7.3.2",
+    "title": "Vite Vulnerable to Arbitrary File Read via Vite Dev Server WebSocket",
+    "github_advisory_id": "GHSA-p9ff-h696-f583",
+    "url": "https://github.com/advisories/GHSA-p9ff-h696-f583",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>vite-node>vite",
+      "packages__remix>@remix-run/dev>vite-node>vite",
+      "packages__vite>vite"
+    ]
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.0.0"
+    ],
+    "vulnerable_versions": ">=8.0.0 <=8.0.4",
+    "patched_versions": ">=8.0.5",
+    "title": "Vite Vulnerable to Arbitrary File Read via Vite Dev Server WebSocket",
+    "github_advisory_id": "GHSA-p9ff-h696-f583",
+    "url": "https://github.com/advisories/GHSA-p9ff-h696-f583",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-devkit/build-angular>@angular/build>vitest>@vitest/mocker>vite",
+      ".>@angular-devkit/build-angular>@angular/build>vitest>vite",
+      ".>@angular/build>vitest>@vitest/mocker>vite"
+    ]
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "5.4.19",
+      "6.3.5"
+    ],
+    "vulnerable_versions": "<=6.4.2",
+    "patched_versions": ">=6.4.3",
+    "title": "vite: `server.fs.deny` bypass on Windows alternate paths",
+    "github_advisory_id": "GHSA-fx2h-pf6j-xcff",
+    "url": "https://github.com/advisories/GHSA-fx2h-pf6j-xcff",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@remix-run/dev>@vanilla-extract/integration>vite",
+      ".>@remix-run/dev>@vanilla-extract/integration>vite-node>vite",
+      "packages__remix>@remix-run/dev>@vanilla-extract/integration>vite"
+    ]
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "7.3.2",
+      "7.3.1",
+      "7.1.3"
+    ],
+    "vulnerable_versions": ">=7.0.0 <=7.3.4",
+    "patched_versions": ">=7.3.5",
+    "title": "vite: `server.fs.deny` bypass on Windows alternate paths",
+    "github_advisory_id": "GHSA-fx2h-pf6j-xcff",
+    "url": "https://github.com/advisories/GHSA-fx2h-pf6j-xcff",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-devkit/build-angular>@angular/build>@vitejs/plugin-basic-ssl>vite",
+      ".>@angular-devkit/build-angular>@angular/build>vite",
+      ".>@angular/build>@vitejs/plugin-basic-ssl>vite"
+    ]
+  },
+  {
+    "module_name": "vite",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.0.0"
+    ],
+    "vulnerable_versions": ">=8.0.0 <=8.0.15",
+    "patched_versions": ">=8.0.16",
+    "title": "vite: `server.fs.deny` bypass on Windows alternate paths",
+    "github_advisory_id": "GHSA-fx2h-pf6j-xcff",
+    "url": "https://github.com/advisories/GHSA-fx2h-pf6j-xcff",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>@angular-devkit/build-angular>@angular/build>vitest>@vitest/mocker>vite",
+      ".>@angular-devkit/build-angular>@angular/build>vitest>vite",
+      ".>@angular/build>vitest>@vitest/mocker>vite"
+    ]
+  },
+  {
+    "module_name": "ws",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "8.19.0",
+      "8.18.0",
+      "8.18.3"
+    ],
+    "vulnerable_versions": ">=8.0.0 <8.21.0",
+    "patched_versions": ">=8.21.0",
+    "title": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+    "github_advisory_id": "GHSA-96hv-2xvq-fx4p",
+    "url": "https://github.com/advisories/GHSA-96hv-2xvq-fx4p",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>webpack-cli>webpack-dev-server>ws",
+      ".>@angular-devkit/build-angular>@angular-devkit/build-webpack>webpack>webpack-cli>webpack-dev-server>ws",
+      ".>@angular-devkit/build-angular>@angular-devkit/build-webpack>webpack-dev-server>webpack-dev-middleware>webpack>webpack-cli>webpack-dev-server>ws"
+    ]
+  },
+  {
+    "module_name": "ws",
+    "severity": "high",
+    "versions_in_lockfile": [
+      "7.5.10"
+    ],
+    "vulnerable_versions": ">=7.0.0 <7.5.11",
+    "patched_versions": ">=7.5.11",
+    "title": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+    "github_advisory_id": "GHSA-96hv-2xvq-fx4p",
+    "url": "https://github.com/advisories/GHSA-96hv-2xvq-fx4p",
+    "all_dev_only": false,
+    "sample_paths": [
+      ".>webpack-cli>webpack-bundle-analyzer>ws",
+      ".>@angular-devkit/build-angular>@angular-devkit/build-webpack>webpack>webpack-cli>webpack-bundle-analyzer>ws",
+      ".>@angular-devkit/build-angular>@angular-devkit/build-webpack>webpack-dev-server>webpack-dev-middleware>webpack>webpack-cli>webpack-bundle-analyzer>ws"
+    ]
+  }
+]
