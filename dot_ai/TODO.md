@@ -2,6 +2,10 @@
 
 ## In Progress
 
+- [ ] NXC-4762: Replace minimatch with picomatch in core package (2026-08-04)
+  - Plan: `dot_ai/2026-08-04/tasks/nxc-4762-minimatch-to-picomatch.md`
+  - Goal: swap minimatch -> picomatch across nx/devkit/jest/playwright/react/rsbuild (brace-expansion CVE GHSA-rgw5-rvv9-x895); bump brace-expansion override to patched 5.0.9 for the dev tree. Key divergence handled: `{**/a,**/b}` combined globs miss root files in picomatch -> splitGlobPatterns.
+
 - [ ] CLOUD-4927: Frontend/Polygraph vulnerabilities - HIGH (2026-07-30)
   - Plan: `dot_ai/2026-07-30/tasks/cloud-4927-frontend-polygraph-high-vulns.md`
   - Goal: clear the 20 high-severity trivy CVEs on nx-cloud-frontend / polygraph-frontend via pnpm overrides.
@@ -210,6 +214,7 @@
 
 ## Active Claude Sessions
 
+- /Users/jack/projects/nx-worktrees/NXC-4762 (branch: NXC-4762) — NXC-4762 minimatch -> picomatch swap: code done, tests green, awaiting nx:test full suite + commit/push. Plan: `dot_ai/2026-08-04/tasks/nxc-4762-minimatch-to-picomatch.md`, Polygraph `lucid-ocelot-5a65ca7d` (2026-08-04)
 - /Users/jack/projects/ocean-worktrees/CLOUD-4927 (branch: CLOUD-4927) — CLOUD-4927 frontend/polygraph HIGH vulns: draft PR https://github.com/nrwl/ocean/pull/12656 awaiting CI, rebased onto Nicole's merged #12631. #12630 (uuid) still open and will conflict on the overrides block. Plan: `dot_ai/2026-07-30/tasks/cloud-4927-frontend-polygraph-high-vulns.md`, Polygraph `sharp-puma-7f09fb0e` (2026-07-30)
 - /Users/jack/projects/nx-worktrees/NXC-4687 (branch: NXC-4687) — NXC-4687 CNW template egress fallback: draft PR https://github.com/nrwl/nx/pull/36508 awaiting CI + Jack review. Plan: `dot_ai/2026-07-29/tasks/nxc-4687-cnw-template-egress-fallback.md`, Polygraph `zesty-eagle-2a40a186` (2026-07-29)
 - /Users/jack/projects/nx-worktrees/NXC-4612 (branch: NXC-4612) — NXC-4612 nightly E2E matrix triage: draft PR https://github.com/nrwl/nx/pull/36506 (test-only harness fix). TypeScript 7 fix parked on `nxc-4612-typescript-7-preset-pin` for a follow-up ticket. Plan: `dot_ai/2026-07-28/tasks/nxc-4612-golden-e2e-matrix-failures.md`, Polygraph `tidy-condor-02183c70` (2026-07-28)

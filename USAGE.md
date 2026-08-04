@@ -17,9 +17,9 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | github:github          | skill   | 2026-07-13   | 1     |
 | use-plannotator-for-review | skill | 2026-07-13 | 1     |
 | remotion-best-practices | skill   | 2026-07-13   | 3     |
-| caveman                | skill   | 2026-07-30   | 32    |
+| caveman                | skill   | 2026-08-04   | 34    |
 | 1-on-1-prep            | skill   | 2026-07-23   | 2     |
-| polygraph:polygraph    | skill   | 2026-07-29   | 7     |
+| polygraph:polygraph    | skill   | 2026-08-04   | 9     |
 | op-request-reason      | skill   | 2026-07-28   | 1     |
 | freeze-capture         | skill   | 2026-07-06   | 1     |
 | blog-writing           | skill   | 2026-07-24   | 6     |

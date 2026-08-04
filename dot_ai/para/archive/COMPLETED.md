@@ -1,5 +1,12 @@
 ## Completed
 
+### August 2026
+
+- [x] NXC-4728: Docs reviewer checks in review-pr skill - draft PR #36562 (2026-08-04)
+  - Plan: `dot_ai/2026-08-04/tasks/nxc-4728-docs-reviewer-review-pr.md`
+  - Summary: New read-only `.claude/agents/docs-reviewer.md` (STYLE_GUIDE.md + CLAUDE.md compliance, redirects for moved pages, sidebar-label-coupled routes, Markdoc validity; DOCS_SOUND/CONCERN/BROKEN verdicts) + review-pr SKILL.md Step 5a.4 dispatch gated on astro-docs/src/content/ or sidebar.mts; PIPELINE_VERSION 5 -> 6. Agent reads rules from PR checkout so they track the repo. All referenced paths/mechanisms verified against repo first.
+  - Polygraph session `humble-beaver-3540ffdd`, single repo nrwl/nx - https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/humble-beaver-3540ffdd
+
 ### July 2026
 
 - [x] NXC-4688: Optional webpack/MF deps for @nx/react + @nx/next - MERGED #36492 (2026-07-30)
