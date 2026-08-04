@@ -1,0 +1,43 @@
+{"category": "memory-context", "funnel_stage": "problem-aware", "prompt": "Why does Claude Code forget everything about my project between sessions?", "source": "synthetic"}
+{"category": "memory-context", "funnel_stage": "problem-aware", "prompt": "My AI coding agent loses context after auto-compact and starts making mistakes — how do I prevent this?", "source": "synthetic"}
+{"category": "memory-context", "funnel_stage": "problem-aware", "prompt": "I have to re-explain my codebase architecture to Claude Code every single session. Is there a better way?", "source": "synthetic"}
+{"category": "memory-context", "funnel_stage": "solution-aware", "prompt": "What's the best way to give AI coding agents persistent long-term memory across sessions?", "source": "synthetic"}
+{"category": "memory-context", "funnel_stage": "solution-aware", "prompt": "Best tools or MCP servers for managing CLAUDE.md and shared context across a team's repos?", "source": "synthetic"}
+{"category": "memory-context", "funnel_stage": "product-aware", "prompt": "Mem0 vs Zep vs Letta for coding agent memory — which should I use?", "source": "synthetic"}
+{"category": "observability", "funnel_stage": "problem-aware", "prompt": "How can I see exactly what my AI coding agent did — every file it touched and every command it ran?", "source": "synthetic"}
+{"category": "observability", "funnel_stage": "problem-aware", "prompt": "An AI agent made a change I don't understand. How do I debug why it did that?", "source": "synthetic"}
+{"category": "observability", "funnel_stage": "solution-aware", "prompt": "What are the best observability and tracing tools for AI coding agents like Claude Code?", "source": "synthetic"}
+{"category": "observability", "funnel_stage": "solution-aware", "prompt": "Is there a session replay tool for coding agents so I can review a full agent run afterwards?", "source": "synthetic"}
+{"category": "observability", "funnel_stage": "product-aware", "prompt": "Langfuse vs LangSmith vs Helicone for tracing agent tool calls — which is best for coding agents?", "source": "synthetic"}
+{"category": "session-sharing", "funnel_stage": "problem-aware", "prompt": "How do I show a teammate what my Claude Code session did without screensharing?", "source": "synthetic"}
+{"category": "session-sharing", "funnel_stage": "problem-aware", "prompt": "My team can't review AI-generated changes because there's no record of the agent conversation. What should we do?", "source": "synthetic"}
+{"category": "session-sharing", "funnel_stage": "solution-aware", "prompt": "Tools for sharing AI agent sessions and transcripts with my team?", "source": "synthetic"}
+{"category": "session-sharing", "funnel_stage": "solution-aware", "prompt": "Best way to hand off an in-progress Claude Code session to another developer?", "source": "synthetic"}
+{"category": "session-sharing", "funnel_stage": "product-aware", "prompt": "Is there a tool that gives every agent run a shareable link with the full log, like a CI run page?", "source": "synthetic"}
+{"category": "multi-agent", "funnel_stage": "problem-aware", "prompt": "How do I run multiple Claude Code agents in parallel on the same repo without them conflicting?", "source": "synthetic"}
+{"category": "multi-agent", "funnel_stage": "problem-aware", "prompt": "Managing five terminal tabs of coding agents is chaos — how do people keep track of parallel agent work?", "source": "synthetic"}
+{"category": "multi-agent", "funnel_stage": "solution-aware", "prompt": "What's the best tool for orchestrating multiple AI coding agents on one task?", "source": "synthetic"}
+{"category": "multi-agent", "funnel_stage": "solution-aware", "prompt": "Best setup for background agents that work while I do something else — Claude Code, Cursor, or Codex?", "source": "synthetic"}
+{"category": "multi-agent", "funnel_stage": "product-aware", "prompt": "Claude Code subagents vs a fleet of separate sessions with git worktrees — what scales better?", "source": "synthetic"}
+{"category": "evals", "funnel_stage": "problem-aware", "prompt": "My coding agent's output quality dropped after a model update. How do I verify it actually got worse?", "source": "synthetic"}
+{"category": "evals", "funnel_stage": "problem-aware", "prompt": "The same prompt gives my agent different results every run — how do teams handle this?", "source": "synthetic"}
+{"category": "evals", "funnel_stage": "solution-aware", "prompt": "How do I set up regression testing / evals for an AI coding agent workflow?", "source": "synthetic"}
+{"category": "evals", "funnel_stage": "product-aware", "prompt": "Braintrust vs LangSmith vs promptfoo for evals — which fits a small dev team?", "source": "synthetic"}
+{"category": "cost", "funnel_stage": "problem-aware", "prompt": "Claude Code is burning through my usage limits — how do I see where the tokens are going?", "source": "synthetic"}
+{"category": "cost", "funnel_stage": "problem-aware", "prompt": "How much are AI coding agents costing my team per repo and per developer?", "source": "synthetic"}
+{"category": "cost", "funnel_stage": "solution-aware", "prompt": "Best tool for tracking LLM token spend across a team of developers using coding agents?", "source": "synthetic"}
+{"category": "cost", "funnel_stage": "product-aware", "prompt": "ccusage vs Helicone vs a LiteLLM gateway for tracking Claude Code usage — what do teams use?", "source": "synthetic"}
+{"category": "governance", "funnel_stage": "problem-aware", "prompt": "An AI agent ran a destructive command in our repo. How do enterprises audit and restrict what agents can do?", "source": "synthetic"}
+{"category": "governance", "funnel_stage": "problem-aware", "prompt": "Our security team wants an audit trail of every change AI agents make. What's the standard approach?", "source": "synthetic"}
+{"category": "governance", "funnel_stage": "solution-aware", "prompt": "Tools for agent permission management and audit logs when rolling out Claude Code to a large org?", "source": "synthetic"}
+{"category": "governance", "funnel_stage": "product-aware", "prompt": "Is Claude Code safe to run with --dangerously-skip-permissions in CI, and what guardrail tools exist?", "source": "synthetic"}
+{"category": "portability", "funnel_stage": "problem-aware", "prompt": "My team uses Cursor, Claude Code, and Copilot — we maintain three different rules files. Is there a standard?", "source": "synthetic"}
+{"category": "portability", "funnel_stage": "solution-aware", "prompt": "How do I share one AGENTS.md / rules setup across Claude Code, Cursor, Codex, and Windsurf?", "source": "synthetic"}
+{"category": "portability", "funnel_stage": "product-aware", "prompt": "AGENTS.md vs CLAUDE.md vs .cursorrules — which format wins and what converts between them?", "source": "synthetic"}
+{"category": "cross-repo", "funnel_stage": "problem-aware", "prompt": "I need to make a coordinated change across five repos — the agent only sees the one it's running in. How do people handle this?", "source": "synthetic"}
+{"category": "cross-repo", "funnel_stage": "problem-aware", "prompt": "A change in our shared library breaks downstream repos and we only find out in CI days later. How do teams catch this?", "source": "synthetic"}
+{"category": "cross-repo", "funnel_stage": "problem-aware", "prompt": "How do I keep pull requests in sync across multiple repositories for one feature?", "source": "synthetic"}
+{"category": "cross-repo", "funnel_stage": "solution-aware", "prompt": "Is there a tool that lets an AI agent work across multiple repos in one session and track all the resulting PRs?", "source": "synthetic"}
+{"category": "cross-repo", "funnel_stage": "solution-aware", "prompt": "Best way to run Claude Code across several repositories at once for a cross-repo refactor?", "source": "synthetic"}
+{"category": "cross-repo", "funnel_stage": "solution-aware", "prompt": "Tools to manage many repositories like a monorepo without actually merging them?", "source": "synthetic"}
+{"category": "cross-repo", "funnel_stage": "product-aware", "prompt": "Sourcegraph Batch Changes vs Nx Polygraph vs meta-repo scripts for cross-repo automation — what's current best practice?", "source": "synthetic"}
