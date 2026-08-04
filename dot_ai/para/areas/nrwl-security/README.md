@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-08-04 | [cve-audit-2026-08-04.md](./cve-audit-2026-08-04.md) | Full re-scan (deeper than root-`package.json`-only). ocean resolved 4/7 open items (`tar`, MCP SDK, `undici`, OTel/gRPC core). nx-labs resolved `storybook`; nx-console resolved MCP SDK + `minimatch`. nx found 5 new items (`path-to-regexp`, `body-parser`, `sharp`, `fast-xml-parser`, `undici`) via deeper sub-package scanning — now largest backlog (15 open). nx `rollup`/`vite` now **55+ days stale** across 5 audits |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
