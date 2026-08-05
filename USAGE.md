@@ -17,7 +17,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | github:github          | skill   | 2026-07-13   | 1     |
 | use-plannotator-for-review | skill | 2026-07-13 | 1     |
 | remotion-best-practices | skill   | 2026-07-13   | 3     |
-| caveman                | skill   | 2026-08-04   | 34    |
+| caveman                | skill   | 2026-08-04   | 35    |
 | 1-on-1-prep            | skill   | 2026-07-23   | 2     |
 | polygraph:polygraph    | skill   | 2026-08-04   | 9     |
 | op-request-reason      | skill   | 2026-07-28   | 1     |
@@ -88,3 +88,6 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-07-29: invoked polygraph:polygraph, polygraph:session-debrief, caveman skills (NXC-4687 CNW template egress fallback, draft PR #36508)
 2026-07-30: invoked summarize, reflect commands (NXC-4688 merged #36492 wrap-up)
 2026-07-30: invoked caveman, linear-issue-style skills (Ahrefs CI keyword research -> 5 content ideas in DOC-563)
+2026-08-04: invoked caveman skill (DOC-542 Pylon KB sync investigation, plan + Linear comment)
+2026-08-05: invoked polygraph:polygraph, caveman skills (DOC-542 Pylon KB sync session)
+2026-08-05: invoked summarize, reflect skills (NXC-4687 merged #36508 wrap-up; CLAUDE.md updates + cnw-dist-smoke skill created)

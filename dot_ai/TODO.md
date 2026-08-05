@@ -2,6 +2,15 @@
 
 ## In Progress
 
+- [ ] DOC-571: Update migration from Turborepo (2026-08-05)
+  - Plan: `dot_ai/2026-08-05/tasks/doc-571-update-migration-from-turbo.md`
+  - Goal: rewrite `from-turborepo.mdoc` as 8 step-by-step steps + AI prompt card; cover the four things `nx init` does not convert (`<package>#<task>` fragments, per-package turbo.json, `persistent`, task-level `env`) with the `targetDefaults` array + `filter.projects` form; demote mapping tables to a closing note. Also moved to `/docs/kb/from-turborepo` + featured (Angular version matrix unfeatured), redirect added, sidebar entry dropped. Committed `641b43e7d0` on branch DOC-571, not pushed, no PR.
+
+- [ ] DOC-542: Sync /docs/kb into the Pylon KB (2026-08-04)
+  - Plan: `dot_ai/2026-08-04/tasks/doc-542-pylon-kb-sync.md`
+  - Goal: mirror `/docs/kb` into the Pylon KB so "suggest KB answer" can link support-widget askers to articles. Crawl + training-data upload do NOT feed that feature (Caleb) - only real KB articles, and the API takes `body_html` only, so Caleb's Markdoc->HTML converter is required.
+  - BLOCKED on: does `is_unlisted: true` exclude articles from suggested answers? All 173 existing articles are unlisted. Steven/Caleb to test (~5 min).
+
 - [ ] NXC-4762: Replace minimatch with picomatch in core package (2026-08-04)
   - Plan: `dot_ai/2026-08-04/tasks/nxc-4762-minimatch-to-picomatch.md`
   - Goal: swap minimatch -> picomatch across nx/devkit/jest/playwright/react/rsbuild (brace-expansion CVE GHSA-rgw5-rvv9-x895); bump brace-expansion override to patched 5.0.9 for the dev tree. Key divergence handled: `{**/a,**/b}` combined globs miss root files in picomatch -> splitGlobPatterns.
@@ -43,53 +52,50 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **CLOUD-4927: Frontend/Polygraph HIGH vulnerabilities (ocean) — draft PR #12656** (2026-07-30)
+1. **NXC-4687: CNW --preset empty escape hatch + template download errors (nx) — MERGED #36508** (2026-08-05)
+   - Summary: Merged as `4a63dc82af`. Fixed `invalidPresetToTemplateMap` coercing `--preset empty` into the github template download (now aliases to the `ts` preset, npm-only, wins over --template so agents appending the flag escape); download errors classify 404 = missing repo, everything else = blocked egress with --preset=empty hints across message/AI hints/pre-flight; strict slug regex closed the `nrwl/../evil` cross-org tarball hole. Survived two deep review rounds (all required findings fixed). Jack rejected v1 auto-fallback (presets != templates).
+   - Files: `dot_ai/2026-07-29/tasks/nxc-4687-cnw-template-egress-fallback.md`, PR https://github.com/nrwl/nx/pull/36508, Polygraph `zesty-eagle-2a40a186`
+
+2. **DOC-542: Pylon KB sync investigation (nx)** (2026-08-04)
+   - Summary: Found Caleb's closed PR #36277 was a *move* (delete 143 docs pages, 301 to help.nx.app) plus a reverse Pylon->Pagefind search federation — superseded by DOC-552. But its API writes were never reverted: 182 articles are live in Pylon (173 unlisted, stale pre-DOC-552 copies). Also found Pylon has crawled nx.dev since Feb 2026, and `POST /training-data/upload-content` takes raw markdown — but per Caleb neither feeds "suggest KB answer", which only uses real KB articles. So the HTML converter is required after all. Drift measured: 157 slug matches / 27 to create / 16 orphans to delete.
+   - Files: `dot_ai/2026-08-04/tasks/doc-542-pylon-kb-sync.md`
+
+3. **CLOUD-4927: Frontend/Polygraph HIGH vulnerabilities (ocean) — draft PR #12656** (2026-07-30)
    - Summary: Triaged all 20 CVE sub-issues; shipped the fixable set as pnpm overrides mirrored across root + both apps (brace-expansion, js-yaml@4, undici, + new lodash-es / path-to-regexp / @grpc/grpc-js). Caught that the ticket's undici "fixed in 6.26.0" is wrong — the advisory says 6.27.0, so we'd have shipped still-vulnerable. Rebased onto Nicole's merged OTel #12631. Filed CLOUD-5066 in the Remix V2 Migration project for the 4 RR7-blocked CVEs.
    - Files: `dot_ai/2026-07-30/tasks/cloud-4927-frontend-polygraph-high-vulns.md`, Polygraph `sharp-puma-7f09fb0e`
 
-2. **NXC-4688: Optional webpack/MF deps for @nx/react + @nx/next (nx) - MERGED #36492** (2026-07-30)
+4. **NXC-4688: Optional webpack/MF deps for @nx/react + @nx/next (nx) - MERGED #36492** (2026-07-30)
    - Summary: MF packages -> optional peers with lazy loading + backfill migrations (Leo's #36310 pattern); @svgr/webpack + @nx/rollup dropped; found + fixed field bug where @nx/module-federation's exact webpack pin duplicated against @nx/webpack's ^5.101.3 range, breaking all webpack MF builds once webpack 5.109 shipped. Squash `820a3a6aaa`.
    - Files: `dot_ai/2026-07-27/tasks/nxc-4688-react-next-webpack-mf-optional-deps.md`, Polygraph `react-mf-cleanup-04580e9b`
 
-3. **ga-traffic refresh: nx.dev GA4+GSC data through 2026-07-29 (dot-ai-config)** (2026-07-30)
+5. **ga-traffic refresh: nx.dev GA4+GSC data through 2026-07-29 (dot-ai-config)** (2026-07-30)
    - Summary: Refreshed ALL raw series in the ga-traffic pipeline (8 GA4 dailies, gsc-daily, monthly-segments Jun-final+Jul-partial, channels-by-month) via a new in-page GA4 internal-RPC replay method (XSRF header + secondary-dimension gotcha documented). Reran process.mjs (455 days, 14/14 integrity). Jul: GSC organic still falling ~-11%/mo (49.3K clicks thru Jul 29 vs Jun 59K); server_page_view flat ~5.1-5.4M/mo; AI crawlers shifted into /blog (now ~30% of server events).
    - Files: `dot_ai/2026-07-30/tasks/ga-traffic-refresh/` (scrapes + merge.mjs + README), pipeline at `dot_ai/2026-06-19/tasks/ga-traffic/`
 
 
-4. **NXC-4687: CNW `--preset empty` escape hatch + template download errors, 23.1.0 regression (nx) — draft PR #36508** (2026-07-29)
-   - Summary: Jack rejected v1 auto-fallback (presets != templates). v2: fixed `invalidPresetToTemplateMap` coercing `--preset empty` into the github template download (now normalizes to `ts` preset, npm-only; must sit AFTER the AI legacy-preset coercion); NETWORK_ERROR message + AI hints say github.com unreachable, check network/sandbox config, or use `--preset=empty`. Researched create-* CLIs: sandbox-safe ones ship templates via npm (vite/next bundle; expo/CRA publish packages); github-at-runtime ones (turbo/astro/remix) all hard-fail. Verified with fetch-shim negative controls.
-   - Files: `dot_ai/2026-07-29/tasks/nxc-4687-cnw-template-egress-fallback.md`, draft PR https://github.com/nrwl/nx/pull/36508, Polygraph `zesty-eagle-2a40a186`
-
-
-5. **NXC-4701: Add connect flow to the TUI (nx)** (2026-07-24)
+6. **NXC-4701: Add connect flow to the TUI (nx)** (2026-07-24)
    - Summary: Revived the two canceled NXC-4606 prototypes onto current master (which had moved the footer into a props-driven StatusBar + focus stack, making both branches unmergeable). Shared `connect_flow.rs` powers a standalone ConnectPopup (`<shift>+c`) AND an inline "enable remote cache" CTA + URL under the perf report. Footer shows `○ not connected: <shift>+c`; help menu lists it. 349 Rust TUI tests green; live tmux e2e vs staging.
    - Files: `dot_ai/2026-07-24/tasks/nxc-4701-tui-connect-flow.md`, draft PR #36460, Polygraph `ready-jackal-5efe8ef1`
 
 
-6. **DOC-555: SEO pages from Ahrefs export (nx) — draft PR #36459** (2026-07-24)
+7. **DOC-555: SEO pages from Ahrefs export (nx) — draft PR #36459** (2026-07-24)
    - Summary: Shipped in draft PR #36459 (6 commits): nx-vs-lerna (revived+repositioned) + nx-vs-rush-stack (research-verified) + from-lerna migration guide, React/Angular MFE landings, MF prune (9 pages deleted w/ redirects, merges, legacy banners), ci-caching page, monorepo-tools section, folder-structure full rewrite + org-page refreshes. vale + validate-links green. Deferred: faster-builds v23 rewrite (live-test), bun catalogs (23.2), nx-blog cross-link.
    - Files: `dot_ai/2026-07-24/tasks/doc-555-seo-page-plan.md`, Polygraph `vivid-iguana-930ae870`
 
 
-7. **CLOUD-4877: GHA job summary for Nx Cloud DTE runs — research + ticket filed** (2026-07-21)
+8. **CLOUD-4877: GHA job summary for Nx Cloud DTE runs — research + ticket filed** (2026-07-21)
    - Summary: Researched surfacing the DTE summary tables + Nx Cloud link in the GitHub Actions job summary (markdown to `$GITHUB_STEP_SUMMARY`). nx OSS already writes one (`performance-life-cycle.ts:198`) but DTE main jobs emit nothing — `distributed-execution/runner.ts` `process.exit`s before nx's flush. All screenshot output is ocean `print-distributed-execution-summary.ts`. Key insight: `start-ci-run` and `run-many` are separate STEPS of the same GHA job and GitHub concatenates per job, so CIPE link + tables = two independent one-file writes, no plumbing, no server change.
    - Files: `dot_ai/2026-07-21/tasks/cloud-4877-gha-job-summary.md`, Linear CLOUD-4877
 
 
-8. **NXC-4179: Re-enable e2e tests after lodash fix (nx) — PR #36408 MERGED** (2026-07-21)
+9. **NXC-4179: Re-enable e2e tests after lodash fix (nx) — PR #36408 MERGED** (2026-07-21)
    - Summary: Reverted skip #35104 (17 tests) after verifying lodash@4.18.1 fixes `assignWith`. Fixed two unmasked bugs: cypress CT generator import duplication on re-run (esbuild rejects since Cypress 15.14) + webpack-dev-server base-8080 race across parallel e2e-ci tasks. storybook-angular serve stays skipped (NXC-4690: @storybook/angular peers vs Angular 22 + TS 6).
    - Files: `dot_ai/2026-07-20/tasks/nxc-4179-re-enable-e2e-lodash.md`, Polygraph `nimble-cheetah-04f2c982`
 
 
-9. **DOC-555: Ahrefs keyword opportunity analysis (nx.dev)** (2026-07-18)
+10. **DOC-555: Ahrefs keyword opportunity analysis (nx.dev)** (2026-07-18)
    - Summary: Analyzed 251-keyword Ahrefs US export for missed opportunities. Tiers: striking-distance (monorepo 6400v pos 15, esbuild, lerna, angular cli, pnpm workspaces), MFE cluster split (~30 variants, ~1700v, one page), gaps (monorepo tools, turborepo alternative, Nx Cloud CI cluster). Filed DOC-555 with plan; flagged that DOC-549 (#36307) already shipped several items and position data predates it - re-pull mid-August.
    - Files: `dot_ai/2026-07-18/tasks/ahrefs-keyword-opportunities.md`
-
-
-10. **DOC-549: Refresh/create high-impact SEO pages (nx) — MERGED #36307** (2026-07-15)
-   - Summary: GSC-driven refresh of ~14 pages: what-is-a-monorepo + monorepo-vs-polyrepo (renamed w/ redirects, Polygraph/meta-harness), pnpm/npm/yarn/bun workspaces, GitHub Actions integration (dup guide deleted), eslint flat-config (live-tested via fixture agent migration; 2 generator bugs found to file), MFE (v23 consumer/provider + @module-federation/vite), rspack, self-hosted cache, TS intro (absorbed maintain-typescript-monorepos), 12 intros re-opened monorepo-first. nx-vs-lerna drafted but SHELVED (positioning rethink); draft in dot_ai/2026-07-11/tasks/.
-   - Files: `dot_ai/2026-07-11/tasks/doc-549-refresh-high-impact-pages.md`, `dot_ai/2026-07-15/SUMMARY.md`, Polygraph `doc-549-0ca12dc9`
-
 
 
 ## TODO
@@ -214,9 +220,10 @@
 
 ## Active Claude Sessions
 
+- /Users/jack/projects/nx-worktrees/DOC-571 (branch: DOC-571) — DOC-571 Turborepo migration guide rewrite + move to `/docs/kb/from-turborepo`: committed `641b43e7d0`, prettier/vale/validate-links green, live-tested against a real create-turbo + nx init workspace. Awaiting go-ahead to push + open a draft PR. Plan: `dot_ai/2026-08-05/tasks/doc-571-update-migration-from-turbo.md`, Polygraph `shiny-finch-d0837b3c` (2026-08-05)
+- /Users/jack/projects/nx-worktrees/DOC-542 (branch: DOC-542) — DOC-542 Pylon KB sync: investigation done, plan written, no code yet. Blocked on the `is_unlisted` vs suggested-answers question (Steven/Caleb). Caleb's tooling to port from `origin/docs/pylon-kb-migration` (PR #36277, closed). Plan: `dot_ai/2026-08-04/tasks/doc-542-pylon-kb-sync.md` (2026-08-04)
 - /Users/jack/projects/nx-worktrees/NXC-4762 (branch: NXC-4762) — NXC-4762 minimatch -> picomatch swap: code done, tests green, awaiting nx:test full suite + commit/push. Plan: `dot_ai/2026-08-04/tasks/nxc-4762-minimatch-to-picomatch.md`, Polygraph `lucid-ocelot-5a65ca7d` (2026-08-04)
 - /Users/jack/projects/ocean-worktrees/CLOUD-4927 (branch: CLOUD-4927) — CLOUD-4927 frontend/polygraph HIGH vulns: draft PR https://github.com/nrwl/ocean/pull/12656 awaiting CI, rebased onto Nicole's merged #12631. #12630 (uuid) still open and will conflict on the overrides block. Plan: `dot_ai/2026-07-30/tasks/cloud-4927-frontend-polygraph-high-vulns.md`, Polygraph `sharp-puma-7f09fb0e` (2026-07-30)
-- /Users/jack/projects/nx-worktrees/NXC-4687 (branch: NXC-4687) — NXC-4687 CNW template egress fallback: draft PR https://github.com/nrwl/nx/pull/36508 awaiting CI + Jack review. Plan: `dot_ai/2026-07-29/tasks/nxc-4687-cnw-template-egress-fallback.md`, Polygraph `zesty-eagle-2a40a186` (2026-07-29)
 - /Users/jack/projects/nx-worktrees/NXC-4612 (branch: NXC-4612) — NXC-4612 nightly E2E matrix triage: draft PR https://github.com/nrwl/nx/pull/36506 (test-only harness fix). TypeScript 7 fix parked on `nxc-4612-typescript-7-preset-pin` for a follow-up ticket. Plan: `dot_ai/2026-07-28/tasks/nxc-4612-golden-e2e-matrix-failures.md`, Polygraph `tidy-condor-02183c70` (2026-07-28)
 - /Users/jack/projects/ocean-worktrees/CLOUD-4891 (branch: CLOUD-4891) — CLOUD-4891 cookie-based env overrides for cloud e2e: draft PR https://github.com/nrwl/ocean/pull/12652 awaiting CI. Plan: `dot_ai/2026-07-27/tasks/cloud-4891-cookie-env-overrides.md`, Polygraph `fresh-wombat-25345f30` (2026-07-30)
 - /Users/jack/projects/ocean (branch: main) — Churn signals validation + cost model: backtest queries drafted, awaiting Query A/B exports. Plan: `dot_ai/2026-07-24/tasks/churn-signals-and-cost-model.md` (2026-07-24)

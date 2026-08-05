@@ -2,6 +2,19 @@
 
 ### August 2026
 
+- [x] NXC-4687: CNW `--preset empty` escape hatch + template download errors, 23.1.0 regression (2026-08-05)
+  - Plan: `dot_ai/2026-07-29/tasks/nxc-4687-cnw-template-egress-fallback.md`
+  - Summary: MERGED PR #36508 (`4a63dc82af`). Fixed `invalidPresetToTemplateMap` coercing `--preset empty` into the github template download - now aliases to the `ts` preset (npm-only) and wins over `--template` so agents appending the flag escape a failed download. Download errors classify 404 = missing repo, everything else (thrown fetch/403/407/429/5xx) = blocked egress, with `--preset=empty` guidance across the error message, AI hints, and pre-flight template-required output. Strict slug regex closed a pre-existing `nrwl/../evil` cross-org tarball hole (arbitrary repo install scripts). Backed by create-* CLI survey (sandbox-safe tools ship templates via npm; github-at-runtime tools all hard-fail) and 7-day error data (55 download errors/week; TEMPLATE_CLONE_FAILED 403s were sandbox proxies). Survived two deep review rounds; v1 auto-fallback rejected by Jack (presets != templates). Root cause traced: pre-23.1.0 git clone honored HTTPS_PROXY, Node fetch does not - proxy-allowlist sandboxes broke at the 23.1.0 client swap (0 -> 87 NETWORK_ERROR/day).
+  - Polygraph session `zesty-eagle-2a40a186`, single repo nrwl/nx - https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/zesty-eagle-2a40a186
+
+- [x] Review nrwl/nx PR #36567 (2026-08-05)
+  - Plan: `dot_ai/2026-08-05/tasks/review-pr-36567.md`
+  - Summary: Reviewed the minimatch-to-picomatch migration at `9f799c8fd6`. Found two merge-blocking negative-glob regressions: tree-aware `glob`/`globAsync` can include created files outside every positive pattern, and the Jest plugin can infer projects outside package-manager workspaces whenever the workspace config contains an exclusion. Full CI is green; both findings were reproduced directly from picomatch's array semantics.
+
+- [x] Review nrwl/nx PR #36562 (2026-08-05)
+  - Plan: `dot_ai/2026-08-05/tasks/review-pr-36562.md`
+  - Summary: Inline review found four actionable issues: the docs-only gate misses code changes that require docs, the renamed style-check skill retains an invalid old frontmatter name, the shallow-sandbox base comparison command cannot resolve or find a merge base, and harmful guidance has conflicting severity mappings. No GitHub review or comment was posted.
+
 - [x] NXC-4728: Docs reviewer checks in review-pr skill - draft PR #36562 (2026-08-04)
   - Plan: `dot_ai/2026-08-04/tasks/nxc-4728-docs-reviewer-review-pr.md`
   - Summary: New read-only `.claude/agents/docs-reviewer.md` (STYLE_GUIDE.md + CLAUDE.md compliance, redirects for moved pages, sidebar-label-coupled routes, Markdoc validity; DOCS_SOUND/CONCERN/BROKEN verdicts) + review-pr SKILL.md Step 5a.4 dispatch gated on astro-docs/src/content/ or sidebar.mts; PIPELINE_VERSION 5 -> 6. Agent reads rules from PR checkout so they track the repo. All referenced paths/mechanisms verified against repo first.

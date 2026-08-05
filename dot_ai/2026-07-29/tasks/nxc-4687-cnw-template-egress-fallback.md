@@ -40,6 +40,10 @@ v2 (SHIPPED in PR): hint-driven, per Jack:
 - `nx affected -t build-base,lint,test` green.
 - Replaced pushed commit via `git fetch origin NXC-4687` + `git push --force-with-lease` (push_branch pull-rebase would conflict with amended history).
 
+## Review round (2026-07-30, commit dc5c3b2f23)
+
+Deep review accepted + fixed: (1) hint dead-ended when --template present - alias now wins over --template (appending --preset=empty escapes the download); (2) "github.com is not reachable" overclaim - hedged to "may be blocked or unreachable"; (3) inverted HTTP classification - 404 = TEMPLATE_CLONE_FAILED (own hints case added), everything else (403/407/429/5xx) = NETWORK_ERROR with escape hatch; (4) comment fixed ("ts preset"); (5) alias extracted to exported `applyEmptyPresetAlias` + 3 specs; deletion mutation would send `empty` to third-party npm install of the unrelated empty@0.10.1 package (silently proceeds for AI/CI via confirmThirdPartyPreset early-return). Ordering hazard dissolved: alias mutates only argv, AI legacy map reads rawArgs - cannot re-coerce. Also: nrwl/../evil traversal guard (strict slug regex) + buildTemplateRequiredResult now mentions --preset=empty. PR body states option-3 scope (default no-flag path still requires github.com).
+
 ## Open follow-ups
 
 - AI `legacyPresetToTemplateMap` still coerces explicit `ts`/`apps`/`react`/... presets to github templates; sandboxed agents need the error round-trip once. Remove?
