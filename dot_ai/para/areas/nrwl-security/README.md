@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-08-05 | [cve-audit-2026-08-05.md](./cve-audit-2026-08-05.md) | Shallow clones prevented a commit-diff delta; re-verified 07-13 items pin-by-pin instead + fresh full-tree sweep. Ocean cleared most of its backlog (`tar`, MCP SDK, OTel bundle all resolved). 2 new **CRITICAL** findings (Handlebars RCE in nx-labs via `verdaccio`; `tar` gzip-bomb in nx-console build tooling). nx `rollup`/`vite` now **56 days stale**, escalated as ignored not blocked. New: Next.js ×4 + sharp in nx, `cross-spawn` in ocean |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
