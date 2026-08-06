@@ -1,0 +1,100 @@
+keyword,tags,volume_us,global_volume,difficulty,traffic_potential,nx_position,verdict,rationale,nx_url
+angular micro frontends,module-federation,50,150,1,150,5,keep,"50 vol, pos 5",https://nx.dev/docs/technologies/angular/guides/dynamic-module-federation-with-angular
+angular module federation,module-federation,100,600,8,30,7,keep,"100 vol, pos 7",https://nx.dev/docs/technologies/angular/guides/dynamic-module-federation-with-angular
+circular dependency,monorepo-organization,300,1200,1,100,not_ranking,keep,"300 vol, not ranking, KD 1 - open SERP, real gap",
+eslint flat config,cli-misc,150,700,2,60,10,keep,"150 vol, pos 10",https://nx.dev/docs/technologies/eslint/guides/flat-config
+gradle monorepo,monorepo,50,90,0,30,not_ranking,keep,"50 vol, not ranking - JVM signal, pairs with the Develocity threat",
+micro frontend,module-federation,800,5800,27,1200,4,keep,"800 vol, pos 4",https://nx.dev/docs/technologies/module-federation/concepts/micro-frontend-architecture
+module federation,module-federation,700,4900,17,450,9,keep,"700 vol, pos 9",https://nx.dev/docs/technologies/module-federation/introduction
+monorepo,monorepo,5600,20000,62,2800,8,keep,"5.6k vol, nx.dev pos 8, the category head term",https://nx.dev/
+nx,cli-misc|branded,19000,175000,78,15000,1,keep,"19k vol, pos 1, brand head term",https://nx.dev/
+nx github,ci-misc|branded,250,1500,41,450,4,keep,"250 vol, pos 4, TP 450",https://nx.dev/docs/features/ci-features/github-integration
+pnpm workspaces,monorepo,300,2100,30,150,10,keep,"300 vol, pos 10, distinct SERP+URL from singular",https://nx.dev/blog/setup-a-monorepo-with-pnpm-workspaces-and-speed-it-up-with-nx
+poly repo,monorepo,150,200,5,150,2,keep,"150 vol, pos 2",https://nx.dev/docs/concepts/decisions/overview
+turbo monorepo,monorepo,70,250,3,4600,4,keep,"70 vol, pos 4, TP 4600 - navigational leak from Turborepo",https://nx.dev/docs/guides/adopting-nx/nx-vs-turborepo
+turborepo vs nx,cli-competitors|branded,150,1000,4,150,2,keep,"150 vol, pos 2 - separate SERP from the reversed form, both rank",https://nx.dev/docs/guides/adopting-nx/nx-vs-turborepo
+typescript monorepo,monorepo,70,250,3,10,3,keep,"70 vol, pos 3",https://nx.dev/blog/managing-ts-packages-in-monorepos
+what is a monorepo,monorepo,4100,52000,40,1500,1,keep,"4.1k vol, pos 1, top informational entry point",https://nx.dev/docs/kb/what-is-a-monorepo
+yarn workspaces,monorepo,600,29000,4,250,7,keep,"600 vol, pos 7",https://nx.dev/docs/guides/tips-n-tricks/yarn-workspaces
+build cache,ci-caching,80,100,21,200,not_ranking,keep,"80 vol, TP 200, not ranking",
+ci caching,ci-caching,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,no Ahrefs record; DOC-555 kb/ci-caching maps to it,
+ci compute cost,ci-cost,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,"no Ahrefs record; cost framing, revenue-adjacent",
+flaky tests ci,ci-flaky,0,0,no_data,no_data,not_ranking,keep-pending-evidence,0 vol; retained as the Nx-Cloud-shaped variant of flaky tests,
+monorepo ci,ci-cd,10,10,no_data,no_data,not_ranking,keep-pending-evidence,10 vol; overlaps monorepo ci/cd but distinct SERP,
+monorepo ci/cd,ci-cd,60,60,no_data,no_data,not_ranking,keep,"60 vol, not ranking, core Nx Cloud surface",
+reduce ci costs,ci-cost,20,20,no_data,no_data,not_ranking,keep-pending-evidence,20 vol; cost framing,
+remote cache,ci-caching,20,50,25,70,9,keep,"20 vol, pos 9, revenue surface",https://nx.dev/remote-cache
+speed up ci,ci-caching,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,"no Ahrefs record; symptom framing, DOC-555 kb/ci-caching",
+build observability platform,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,"no Ahrefs record; category-language bet, weakest of the cluster",
+ci analytics,ci-observability,50,100,0,10,not_ranking,keep-pending-evidence,"50 vol, KD 0 - strongest term in the cluster; Phase 3 confirms",
+ci build time trends,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,no Ahrefs record; solution framing,
+ci metrics dashboard,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,no Ahrefs record; solution framing,
+ci observability,ci-observability,30,40,no_data,no_data,not_ranking,keep-pending-evidence,"cluster anchor, 30 vol; needs >=3 qualitative evidence items in Phase 3",
+circleci build insights alternative,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,"no Ahrefs record; competitor-anchored, weaker than Develocity",
+develocity build scan alternative,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,no Ahrefs record; only ci-competitors-generation term tracked - keep as the beachhead,
+flaky test detection,ci-flaky,40,150,12,10,not_ranking,keep,"40 vol, product-shaped, not ranking",
+github actions build time analytics,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,no Ahrefs record; tool-anchored solution framing,
+github actions job duration metrics,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,"no Ahrefs record; overlaps build time analytics, weaker",
+github actions runner out of memory,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,no Ahrefs record; OOM is a real GitHub-issue vocabulary item,
+github actions slow workflow,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,no Ahrefs record; strongest symptom phrasing in the cluster,
+monorepo ci metrics,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,no Ahrefs record; the Nx-specific observability wedge,
+why is my ci slow,ci-caching,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,"no Ahrefs record; question framing, feeds prompt set",
+ci cpu profile,ci-observability,no_data,no_data,no_data,no_data,not_ranking,prune,no Ahrefs record + morphological dupe of ci cpu profiling; neither is real CI vocabulary,
+ci cpu profiling,ci-observability,no_data,no_data,no_data,no_data,not_ranking,prune,no Ahrefs record + morphological dupe of ci cpu profile,
+ci memory profile,ci-observability,no_data,no_data,no_data,no_data,not_ranking,prune,no Ahrefs record + morphological dupe of ci memory profiling,
+ci memory profiling,ci-observability,no_data,no_data,no_data,no_data,not_ranking,prune,no Ahrefs record + morphological dupe of ci memory profile,
+.net monorepo,monorepo,10,20,no_data,no_data,not_ranking,keep,"10 vol, canonical form of the .NET pair",
+best monorepo tools,monorepo,30,90,3,10,not_ranking,keep,"30 vol, commercial intent, listicle gap (not ranking)",
+bun workspace,monorepo,0,40,no_data,no_data,not_ranking,prune,"0 US vol, no ranking, no content",
+dotnet monorepo,monorepo,0,20,no_data,no_data,not_ranking,merge-into:.net monorepo,"0 vol vs 10, same intent",
+gradle monoreop,monorepo,no_data,no_data,no_data,no_data,not_ranking,prune,"typo, no Ahrefs record, no misspelling tag to justify the slot",
+java monorepo,monorepo,20,40,no_data,no_data,not_ranking,keep,"20 vol, not ranking - JVM signal",
+javascript monorepo,monorepo,10,10,12,10,6,keep,"10 vol, pos 6",https://nx.dev/
+js monorepo,monorepo,0,10,22,10,not_ranking,prune,"0 US vol, abbreviation dupe of javascript monorepo",
+maven monorepo,monorepo,0,10,no_data,no_data,not_ranking,prune,"0 US / 10 global vol, no ranking, no content; gradle monorepo covers JVM",
+monorepo structure,monorepo,150,500,3,2400,9,keep,"150 vol, pos 9, TP 2400 - biggest upside/position gap in the set",https://nx.dev/docs/concepts/decisions/folder-structure
+monorepo tutorial,monorepo,0,20,no_data,no_data,not_ranking,keep,"0 US / 20 global vol, but tutorial intent is a stated content gap",
+monorepo vs,monorepo,150,200,0,40,8,keep,"150 vol, pos 8",https://nx.dev/docs/concepts/decisions/monorepo-vs-polyrepo
+monorepo vs polyrepo,monorepo,400,1400,2,200,1,keep,"400 vol, pos 1, defend",https://nx.dev/docs/kb/monorepo-vs-polyrepo
+npm workspace,monorepo,100,600,12,0,not_ranking,keep,"100 vol, not ranking; only npm-workspaces slot. Add plural variant in expansion",
+pnpm workspace,monorepo,80,54000,31,150,5,keep,"80 vol, pos 5 on a different URL (kb) than the plural (blog) - genuinely divergent",https://nx.dev/docs/kb/pnpm-workspaces
+python monorepo,monorepo,30,100,2,10,not_ranking,keep,"30 vol, not ranking - non-JS expansion signal",
+ts monorepo,monorepo,0,20,no_data,no_data,not_ranking,prune,"0 US vol, abbreviation dupe of typescript monorepo (70 vol, pos 3)",
+turborepo alternatives,monorepo,30,100,no_data,no_data,not_ranking,keep,"30 vol, not ranking, commercial",
+yarn workspace,monorepo,10,70,4,300,not_ranking,merge-into:yarn workspaces,"10 vol vs 600, same parent topic, singular does not rank",
+nestjs monorepo,monorepo,30,300,1,10,not_ranking,keep,"30 vol, not ranking",
+react monorepo,monorepo,30,150,1,30,2,keep,"30 vol, pos 2, framework acquisition path",https://nx.dev/react
+vite monorepo,monorepo,50,100,3,30,not_ranking,keep,"50 vol, not ranking, parent topic of react monorepo",
+angular cli vs nx,cli-competitors|branded,0,0,no_data,no_data,not_ranking,prune,0 US AND 0 global vol. Angular migration matters; replace with a real-volume term (angular monorepo) in expansion,
+bazel alternative,cli-competitors,0,10,no_data,no_data,not_ranking,prune,"0 US / 10 global vol, no ranking",
+bazel vs nx,cli-competitors|branded,50,90,1,10,not_ranking,merge-into:nx vs bazel,"same 50 vol, same page; reversed form does not rank",
+bun workspace vs nx,cli-competitors|branded,no_data,no_data,no_data,no_data,not_ranking,prune,no Ahrefs record - synthetic comparison,
+google build system alternative,cli-competitors,no_data,no_data,no_data,no_data,not_ranking,prune,"no Ahrefs record. The framing is real but is a PROMPT problem (it hands the answer to Bazel), not a keyword - moves to the prompt set",
+lerna,cli-competitors,1800,6400,26,150,not_ranking,keep,"1.8k vol, not ranking despite the lerna-is-dead blog - real gap",
+lerna alternative,cli-competitors,0,10,no_data,no_data,not_ranking,prune,0 US / 10 global vol; lerna (1.8k) carries the cluster,
+lerna vs nx,cli-competitors|branded,20,100,1,20,4,merge-into:nx vs lerna,"same 20 vol, same blog page",https://nx.dev/blog/lerna-is-dead-long-live-lerna
+migrate nx to turborepo,cli-competitors|branded,0,0,no_data,no_data,not_ranking,keep-sentiment,"plan exemption 3: churn-direction pair, keep with its mirror",
+migrate turborepo to nx,cli-competitors|branded,no_data,no_data,no_data,no_data,not_ranking,keep-sentiment,"plan exemption 3: churn-direction pair, keep with its mirror",
+npm workspace vs nx,cli-competitors|branded,0,0,no_data,no_data,not_ranking,prune,0 US AND 0 global vol - synthetic comparison,
+nx vs bazel,cli-competitors|branded,50,90,1,20,10,keep,"50 vol, pos 10 - comparison page exists",https://nx.dev/docs/guides/comparisons/nx-vs-bazel
+nx vs lerna,cli-competitors|branded,20,50,1,10,3,keep,"20 vol, pos 3",https://nx.dev/blog/lerna-is-dead-long-live-lerna
+nx vs turbo,cli-competitors|branded,10,50,no_data,no_data,not_ranking,merge-into:nx vs turborepo,"10 vol abbreviation variant, same page",
+nx vs turborepo,cli-competitors|branded,200,900,3,150,1,keep,"200 vol, pos 1, commercial intent",https://nx.dev/docs/guides/adopting-nx/nx-vs-turborepo
+pnpm workspace vs nx,cli-competitors|branded,0,0,no_data,no_data,not_ranking,prune,"0 US AND 0 global vol - synthetic comparison, nobody searches it",
+rush stack,cli-competitors,10,10,no_data,no_data,not_ranking,keep,"10 vol, branded competitor head; kb/nx-vs-rush-stack in flight (DOC-555 A2)",
+rush stack vs nx,cli-competitors|branded,no_data,no_data,no_data,no_data,not_ranking,keep-sentiment,plan exemption 4: defends the in-flight kb/nx-vs-rush-stack page,
+turbo vs nx,cli-competitors|branded,20,80,no_data,no_data,not_ranking,merge-into:turborepo vs nx,"20 vol abbreviation variant, same page",
+turborepo,cli-competitors,14000,71000,1,14000,not_ranking,keep,"14k vol, KD 1, not ranking - the single biggest competitor gap",
+turborepo alternative,cli-competitors,10,20,no_data,no_data,not_ranking,merge-into:turborepo alternatives,"10 vol vs 30, same SERP intent",
+yarn workspace vs nx,cli-competitors|branded,0,0,no_data,no_data,not_ranking,prune,0 US AND 0 global vol - synthetic comparison,
+bazel vs,cli-competitors,10,100,no_data,no_data,not_ranking,prune,"10 vol truncated fragment, ambiguous intent, no ranking",
+rush stack alternative,cli-competitors,no_data,no_data,no_data,no_data,not_ranking,prune,no Ahrefs record; rush stack + rush stack vs nx already cover it,
+rush stack vs,cli-competitors,no_data,no_data,no_data,no_data,not_ranking,prune,"no Ahrefs record, truncated fragment",
+turborepo vs,cli-competitors,10,40,no_data,no_data,not_ranking,prune,"10 vol truncated fragment, ambiguous intent, no ranking",
+ci pipeline bottleneck,ci-observability,no_data,no_data,no_data,no_data,not_ranking,keep-pending-evidence,no Ahrefs record; symptom framing,
+flaky tests,ci-flaky,400,2100,6,350,not_ranking,keep,"400 vol, CPC $14 - highest commercial signal in the CI clusters",
+github actions cost,ci-cost,450,1000,42,1200,not_ranking,keep,"450 vol, TP 1200, KD 42 - the cost cluster anchor",
+ci cd best practices,ci-cd,400,1000,14,1300,not_ranking,keep,"400 vol, TP 1300, not ranking",
+ci cd pipeline,ci-cd,4800,24000,0,3200,not_ranking,keep,"4.8k vol, KD 0, not ranking - largest open SERP in the set",
+ci cd pipeline best practices,ci-cd,150,150,14,1300,not_ranking,keep,"150 vol, TP 1300, not ranking",
+monorepo best practices,monorepo,70,150,4,6000,not_ranking,keep,"70 vol, TP 6000, not ranking - highest traffic-potential gap tracked",

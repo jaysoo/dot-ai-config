@@ -1,0 +1,218 @@
+category,keyword,volume,global_volume,difficulty,parent_topic,intents,source_report,seed_used
+observability,llm observability platform market landscape,1500,1500,no_data,no_data,no_data,matching-terms,llm observability
+observability,llm observability,1100,3400,13,llm observability,informational;commercial,matching-terms,llm observability
+observability,datadog llm observability,1000,2000,13,llm observability,informational;commercial;branded,matching-terms,llm observability
+observability,llm observability news,800,800,no_data,no_data,no_data,matching-terms,llm observability
+observability,llm agent telemetry signals best practices,800,900,no_data,no_data,no_data,matching-terms,agent telemetry
+observability,llm observability tools,800,1200,16,open source observability tools,informational;commercial,matching-terms,llm observability
+observability,arize phoenix llm observability open source,700,800,no_data,no_data,no_data,matching-terms,llm observability
+observability,anthropic agent sdk documentation observability,700,700,no_data,no_data,no_data,matching-terms,agent observability
+observability,opentelemetry genai sig ai agent observability,700,700,no_data,no_data,no_data,matching-terms,agent observability
+observability,ai agent observability best practices,700,700,12,advanced observability,no_data,matching-terms,agent observability
+observability,agent observability,500,900,23,agent observability,informational;commercial,matching-terms,agent observability
+observability,langfuse open source llm observability,500,700,no_data,no_data,no_data,matching-terms,llm observability
+observability,arize phoenix llm observability,500,600,no_data,no_data,no_data,matching-terms,llm observability
+observability,langfuse open-source llm observability,500,600,no_data,no_data,no_data,matching-terms,llm observability
+observability,langfuse open-source llm observability docs,400,400,no_data,no_data,no_data,matching-terms,llm observability
+observability,langfuse open-source llm observability 2025,400,450,no_data,no_data,no_data,matching-terms,llm observability
+observability,ai agent observability,400,800,14,agent observability,informational,matching-terms,agent observability
+observability,arize phoenix open source llm observability,350,450,no_data,no_data,no_data,matching-terms,llm observability
+observability,langfuse llm observability open source,350,400,no_data,no_data,no_data,matching-terms,llm observability
+observability,arize phoenix llm observability docs,300,300,no_data,no_data,no_data,matching-terms,llm observability
+observability,langfuse open source llm observability github,300,450,no_data,no_data,no_data,matching-terms,llm observability
+observability,what is llm observability,300,350,7,datadog llm observability,no_data,matching-terms,llm observability
+observability,langfuse llm observability,250,400,no_data,no_data,no_data,matching-terms,llm observability
+observability,langfuse agent observability,250,300,no_data,no_data,no_data,matching-terms,agent observability
+observability,langfuse open source llm observability tracing,250,350,no_data,no_data,no_data,matching-terms,llm observability
+observability,ai agent observability tools,250,450,22,no_data,no_data,matching-terms,agent observability
+observability,arize phoenix llm observability documentation,250,250,no_data,no_data,no_data,matching-terms,llm observability
+observability,llm observability datadog,200,450,no_data,no_data,no_data,matching-terms,llm observability
+observability,llm observability platform,200,250,33,arize,no_data,matching-terms,llm observability
+observability,arize phoenix llm observability 2025,200,250,no_data,no_data,no_data,matching-terms,llm observability
+observability,datadog llm observability pricing,200,350,no_data,no_data,no_data,matching-terms,llm observability
+observability,datadog llm observability product,200,250,no_data,no_data,no_data,matching-terms,llm observability
+observability,agent observability tools,200,300,no_data,no_data,no_data,matching-terms,agent observability
+observability,langfuse observability llm,200,200,no_data,no_data,no_data,matching-terms,llm observability
+observability,agent tracing,150,200,24,trace agent,no_data,matching-terms,agent tracing
+observability,helicone llm observability proxy,150,200,no_data,no_data,no_data,matching-terms,llm observability
+observability,llm monitoring and observability,150,200,6,datadog llm observability,no_data,matching-terms,llm observability
+observability,best llm observability tools,150,250,12,llm monitoring,no_data,matching-terms,llm observability
+observability,agentops agent observability platform,150,150,no_data,no_data,no_data,matching-terms,agent observability
+observability,arize phoenix llm evaluation observability,150,150,no_data,no_data,no_data,matching-terms,llm observability
+observability,langfuse open source llm observability 2025,150,150,no_data,no_data,no_data,matching-terms,llm observability
+observability,agent observability platform,150,200,no_data,no_data,no_data,matching-terms,agent observability
+observability,helicone open source llm observability proxy,150,200,no_data,no_data,no_data,matching-terms,llm observability
+observability,phoenix llm observability,150,250,no_data,no_data,no_data,matching-terms,llm observability
+observability,ai agent observability dashboard,150,200,no_data,no_data,no_data,matching-terms,agent observability
+observability,langfuse open-source llm observability github,100,100,no_data,no_data,no_data,matching-terms,llm observability
+observability,langfuse open source llm observability docs,100,100,no_data,no_data,no_data,matching-terms,llm observability
+observability,helicone llm observability open source,100,150,no_data,no_data,no_data,matching-terms,llm observability
+observability,llm observability dashboard,100,100,no_data,no_data,no_data,matching-terms,llm observability
+observability,datadog llm observability features,100,100,no_data,no_data,no_data,matching-terms,llm observability
+observability,claude code logs,100,350,no_data,no_data,no_data,matching-terms,claude code logs
+observability,claude code observability,80,200,no_data,no_data,no_data,matching-terms,claude code observability
+observability,agent trace,40,100,no_data,no_data,no_data,matching-terms,agent trace
+observability,claude code logs location,20,20,no_data,no_data,no_data,matching-terms,claude code logs
+observability,ai agent trace visualization,20,20,no_data,no_data,no_data,matching-terms,agent trace
+observability,cursor agent trace,20,40,no_data,no_data,no_data,matching-terms,agent trace
+observability,langchain agent trace visualization,10,10,no_data,no_data,no_data,matching-terms,agent trace
+observability,agent trace analysis with step-by-step scoring,10,10,no_data,no_data,no_data,matching-terms,agent trace
+observability,langsmith agent trace ui,10,10,no_data,no_data,no_data,matching-terms,agent trace
+observability,openai agent trace,10,10,no_data,no_data,no_data,matching-terms,agent trace
+observability,claude code logs location macos,10,10,no_data,no_data,no_data,matching-terms,claude code logs
+observability,llm agent trace visualization,10,10,no_data,no_data,no_data,matching-terms,agent trace
+observability,bedrock agent trace,10,10,no_data,no_data,no_data,matching-terms,agent trace
+observability,agent trace cursor,10,20,no_data,no_data,no_data,matching-terms,agent trace
+observability,langsmith agent trace dashboard,10,10,no_data,no_data,no_data,matching-terms,agent trace
+observability,claude code logs location windows,10,10,no_data,no_data,no_data,matching-terms,claude code logs
+observability,langsmith agent trace visualization,10,10,no_data,no_data,no_data,matching-terms,agent trace
+observability,where are claude code logs stored,0,0,no_data,no_data,no_data,matching-terms,claude code logs
+observability,langfuse agent trace visualization,0,0,no_data,no_data,no_data,matching-terms,agent trace
+observability,claude code logs location ~/.claude,0,0,no_data,no_data,no_data,matching-terms,claude code logs
+observability,agent tool call logging,0,20,no_data,no_data,no_data,matching-terms,tool call logging
+observability,claude code observability dashboard,0,0,no_data,no_data,no_data,matching-terms,claude code observability
+observability,claude code observability github,0,0,no_data,no_data,no_data,matching-terms,claude code observability
+observability,langsmith agent trace view,0,0,no_data,no_data,no_data,matching-terms,agent trace
+observability,ai agent trace visualization langsmith,0,0,no_data,no_data,no_data,matching-terms,agent trace
+observability,agent trace clustering by behavior,0,0,no_data,no_data,no_data,matching-terms,agent trace
+observability,ai agent trace evaluation observability 2026,0,0,no_data,no_data,no_data,matching-terms,agent trace
+observability,tie user feedback thumbs up down to agent trace,0,0,no_data,no_data,no_data,matching-terms,agent trace
+observability,saas ai agent trace evaluation prompt improvement,0,0,no_data,no_data,no_data,matching-terms,agent trace
+observability,observability,13000,31000,46,what is observability,informational,related-terms,llm observability
+observability,monitoring,12000,88000,13,monitoring,informational,related-terms,llm observability
+observability,ai observability,1800,4200,38,ai observability,informational;commercial,related-terms,llm observability
+observability,observability tools,1400,3800,55,best observability tools,informational;commercial,related-terms,llm observability
+observability,ai observability tools,1100,1500,24,llm observability,informational;commercial,related-terms,llm observability
+observability,anomaly detection,3600,14000,52,anomaly detection,informational,related-terms,llm observability
+observability,root cause,4400,27000,55,root cause,informational,related-terms,llm observability
+observability,prompt injection,3700,21000,67,what is prompt injection,informational,related-terms,llm observability
+observability,infrastructure monitoring,2000,4900,41,infrastructure monitoring,informational;commercial,related-terms,llm observability
+observability,monitoring tools,1900,6400,25,cloud monitoring tools,informational;commercial,related-terms,llm observability
+observability,infrastructure monitoring tools,1000,1500,19,it infrastructure monitoring,informational;commercial,related-terms,llm observability
+observability,application performance,900,1500,45,application performance monitoring apm,informational,related-terms,llm observability
+observability,telemetry data,1900,5200,14,telemetry data,informational,related-terms,agent observability
+observability,agentic ai,101000,304000,76,what is agentic ai,informational,related-terms,agent observability
+observability,ai agents,47000,136000,0,no_data,informational,related-terms,agent observability
+observability,autonomous ai agents,1900,3200,43,autonomous ai agents,informational;commercial,related-terms,agent observability
+observability,multi agent systems,700,3700,40,multi-agent,informational,related-terms,agent observability
+observability,azure sre agent,700,2500,8,azure sre agent,informational;commercial;branded,related-terms,agent observability
+observability,application insights,800,3900,20,application insights,informational;branded,related-terms,agent observability
+observability,log analytics,600,2500,4,azure log analytics,informational;commercial;branded,related-terms,agent observability
+observability,azure monitor,4200,12000,57,azure monitor,informational;branded,related-terms,agent observability
+observability,incident management,4100,17000,17,incident management,informational,related-terms,agent observability
+observability,what is observability,1700,3000,36,what is observability,informational,search-suggestions,agent observability
+observability,agentcore observability,250,700,3,no_data,no_data,search-suggestions,agent observability
+observability,ai tracing,150,300,0,ai tracing,informational,search-suggestions,ai agent tracing
+observability,ai agent tracing,100,150,11,ai agent observability,no_data,search-suggestions,ai agent tracing
+observability,ai agent observability platform,80,100,29,no_data,no_data,search-suggestions,agent observability
+observability,observability example,70,90,22,what is observability,informational,search-suggestions,agent observability
+observability,agent observability and evaluation,70,70,no_data,no_data,no_data,search-suggestions,agent observability
+observability,claude code usage,2900,9400,43,claude status,no_data,matching-terms,claude code usage
+observability,claude code usage limits,500,2500,55,claude status,informational;branded,matching-terms,claude code usage
+observability,anthropic claude code usage limits,300,350,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code usage monitor,300,1700,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code otel,250,600,no_data,no_data,no_data,matching-terms,claude code otel
+observability,how to check claude code usage,200,700,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code usage dashboard,150,250,no_data,no_data,no_data,matching-terms,claude code usage
+observability,check claude code usage,150,500,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code session limit,150,500,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code usage guide,100,150,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code usage limit,100,400,no_data,no_data,no_data,matching-terms,claude code usage
+observability,how to see claude code usage,100,300,no_data,no_data,no_data,matching-terms,claude code usage
+observability,how to resume claude code session,100,250,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code session management,100,150,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code usage tracker,90,200,no_data,no_data,no_data,matching-terms,claude code usage
+observability,resume claude code session,80,200,no_data,no_data,no_data,matching-terms,claude code session
+observability,see claude code usage,70,150,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code usage limits pro plan,70,150,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code session manager,70,150,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code usage limits 2026,60,100,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code session,60,300,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code session history,60,200,no_data,no_data,no_data,matching-terms,claude code session
+observability,how to save claude code session,50,150,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code session id,50,150,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code session limit reached,50,150,no_data,no_data,no_data,matching-terms,claude code session
+observability,codex vs claude code usage limits,50,200,no_data,no_data,no_data,matching-terms,claude code usage
+observability,save claude code session,50,150,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code usage stats,50,150,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code session limits,50,100,no_data,no_data,no_data,matching-terms,claude code session
+observability,view claude code usage,40,90,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code usage tips,40,60,no_data,no_data,no_data,matching-terms,claude code usage
+observability,how to resume a claude code session,40,80,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code usage statistics,40,100,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code usage check,40,150,no_data,no_data,no_data,matching-terms,claude code usage
+observability,claude code usage cost,30,70,no_data,no_data,no_data,matching-terms,claude code usage
+observability,share claude code session,30,70,no_data,no_data,no_data,matching-terms,claude code session
+observability,how to view claude code usage,30,50,no_data,no_data,no_data,matching-terms,claude code usage
+observability,anthropic claude code usage,30,40,no_data,no_data,no_data,matching-terms,claude code usage
+observability,how to restart claude code session,30,40,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code usage command,30,100,no_data,no_data,no_data,matching-terms,claude code usage
+observability,how to save a claude code session,30,60,no_data,no_data,no_data,matching-terms,claude code session
+observability,claude code usage api,30,80,no_data,no_data,no_data,matching-terms,claude code usage
+observability,how to check my claude code usage,30,70,no_data,no_data,no_data,matching-terms,claude code usage
+observability,langfuse vs langsmith,450,1600,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langsmith vs langfuse,300,1100,1,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langfuse alternative,150,300,no_data,no_data,no_data,matching-terms,langfuse alternative
+observability,langfuse vs langsmith comparison,100,150,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langsmith vs langfuse comparison,70,100,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langsmith alternative,70,200,no_data,no_data,no_data,matching-terms,langsmith alternative
+observability,langsmith open source alternative,30,100,no_data,no_data,no_data,matching-terms,langsmith alternative
+observability,what's the best alternative to langfuse?,20,20,no_data,no_data,no_data,matching-terms,langfuse alternative
+observability,langsmith vs langfuse for agent tracing,20,20,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langfuse vs langsmith comparison 2026,20,20,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langfuse vs langsmith comparison 2025,20,20,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langfuse vs langsmith reddit,10,20,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,best free langfuse alternative,10,10,no_data,no_data,no_data,matching-terms,langfuse alternative
+observability,open source alternative to langsmith,10,20,no_data,no_data,no_data,matching-terms,langsmith alternative
+observability,best helicone alternative,10,10,no_data,no_data,no_data,matching-terms,helicone alternative
+observability,langsmith alternative open source,10,30,no_data,no_data,no_data,matching-terms,langsmith alternative
+observability,helicone alternative,10,20,no_data,no_data,no_data,matching-terms,helicone alternative
+observability,langsmith free alternative,10,40,no_data,no_data,no_data,matching-terms,langsmith alternative
+observability,open source langsmith alternative,10,20,no_data,no_data,no_data,matching-terms,langsmith alternative
+observability,posthog vs langfuse vs langsmith,10,10,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langfuse open-source alternative to langsmith,10,10,no_data,no_data,no_data,matching-terms,langfuse alternative
+observability,langfuse vs langsmith differences,10,10,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langsmith vs langfuse 2026,10,10,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langfuse vs langsmith 2026,10,10,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,langsmith vs langfuse comparison 2025,10,10,no_data,no_data,no_data,matching-terms,langfuse vs langsmith
+observability,ai agent monitoring,350,600,21,agent observability,no_data,matching-terms,ai agent monitoring
+observability,llm tracing,200,600,7,no_data,no_data,matching-terms,llm tracing
+observability,ai agent monitoring tools,150,250,19,agent monitoring software,no_data,matching-terms,ai agent monitoring
+observability,weights & biases weave llm tracing evaluation,90,150,no_data,no_data,no_data,matching-terms,llm tracing
+observability,arize phoenix llm tracing evaluation open source,60,90,no_data,no_data,no_data,matching-terms,llm tracing
+observability,ai agent monitoring dashboard,60,80,no_data,no_data,no_data,matching-terms,ai agent monitoring
+observability,phoenix llm tracing,50,100,no_data,no_data,no_data,matching-terms,llm tracing
+observability,llm tracing open source,50,80,no_data,no_data,no_data,matching-terms,llm tracing
+observability,ai agent monitoring and orchestration,50,50,no_data,no_data,no_data,matching-terms,ai agent monitoring
+observability,llm tracing tools,50,80,no_data,no_data,no_data,matching-terms,llm tracing
+observability,what's the best tool for ai agent monitoring?,40,40,no_data,no_data,no_data,matching-terms,ai agent monitoring
+observability,weights & biases weave llm tracing,40,50,no_data,no_data,no_data,matching-terms,llm tracing
+observability,opentelemetry llm tracing,40,60,no_data,no_data,no_data,matching-terms,llm tracing
+observability,openllmetry opentelemetry llm tracing,30,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,langtrace llm tracing,30,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,langfuse llm tracing open source,30,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,llm tracing tools for enterprise ai applications,30,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,langfuse observability llm tracing,30,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,arize phoenix open source llm tracing evaluation,30,50,no_data,no_data,no_data,matching-terms,llm tracing
+observability,ai agent monitoring observability,30,40,no_data,no_data,no_data,matching-terms,ai agent monitoring
+observability,llm tracing tools for multi-turn conversations,30,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,langfuse llm tracing,30,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,datadog ai agent monitoring,20,40,no_data,no_data,no_data,matching-terms,ai agent monitoring
+observability,datadog llm tracing,20,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,opentelemetry for llm tracing,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,llm tracing with opentelemetry,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,self-hosted llm tracing platform opentelemetry,20,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,open source llm tracing dashboard,20,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,opentelemetry semantic conventions ai llm tracing,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,arize phoenix llm tracing,20,30,no_data,no_data,no_data,matching-terms,llm tracing
+observability,llm tracing platforms,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,best llm tracing tools for production systems,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,llm tracing platforms for multi-step ai workflows,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,python sdk for llm tracing,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,best tools for llm tracing and logging,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,best datadog alternatives for llm tracing,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,langsmith llm tracing,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,top platforms for llm tracing and alerts,20,20,no_data,no_data,no_data,matching-terms,llm tracing
+observability,ai agent monitoring software,20,30,no_data,no_data,no_data,matching-terms,ai agent monitoring
+observability,ai agent monitoring leaders,20,20,no_data,no_data,no_data,matching-terms,ai agent monitoring
+observability,what are the best llm tracing tools,20,20,no_data,no_data,no_data,matching-terms,llm tracing

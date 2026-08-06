@@ -1,0 +1,42 @@
+prompt,intent_group,tags,branded,models,winnability,named_tools_baseline,source,tier
+What are the GitHub Actions runner alternatives?,ci-cost,ci-competitors|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,gap,Depot/Blacksmith/WarpBuild,paa:ci-competitors,1
+How to fix flaky tests?,flaky,ci-flaky|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,gap,Trunk/BuildPulse/Datadog,paa:ci-performance,1
+"Is this test actually broken, or just flaky? How do I tell in CI?",flaky,ci-flaky|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,gap,Trunk/BuildPulse/Datadog,verbatim:hn,1
+How do I detect and quarantine flaky tests in CI?,flaky,ci-flaky|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,gap,Trunk/BuildPulse/Datadog,synthetic,1
+How do I merge one repository into another without losing history?,migration,migration|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,gap,git-filter-repo,paa:migration,1
+Why can't my AI agent find files in my monorepo?,ai,ai-tooling|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,gap,editor/agent config,paa:ai-tooling,1
+How do I set up an MCP server for my monorepo?,ai,ai-tooling|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,gap,MCP SDK,synthetic,1
+Best monorepo tool for large teams,tool-selection,monorepo|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,defend,Nx,phase0-keep,1
+Top tools for monorepo continuous integration.,tool-selection,ci-cd|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,defend,Nx,phase0-keep,1
+What is the best CI/CD setup for a monorepo?,ci-performance,ci-cd|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,defend,Nx,paa:monorepo,1
+Our CI takes 40 minutes for a one-line fix and the team wants to add more runners. Is that the right call?,ci-performance,ci-cost|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,defend,Nx,verbatim:hn,1
+Best way to structure an Angular monorepo?,framework,monorepo|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,defend,Nx,synthetic,1
+"We need a monorepo build platform with SOC 2, on-prem or self-hosted caching, and a support SLA. What are the options?",enterprise,nx-cloud-features|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,defend,Nx Cloud,synthetic,1
+Top monorepo tools for 2026.,tool-selection,monorepo|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,contested,Turborepo,phase0-keep,1
+Best monorepo tool for small teams,tool-selection,monorepo|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,contested,pnpm,phase0-keep,1
+"Our GitHub Actions bill went up about $3,500 a month. What are our options?",ci-cost,ci-cost|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,contested,runner vendors,verbatim:hn,1
+How does test impact analysis speed up CI?,nx-cloud-features,nx-cloud-features|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,contested,Bazel,paa:ci-performance,1
+What tools split and distribute tests across CI machines?,nx-cloud-features,nx-cloud-features|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,contested,CI-platform sharding,synthetic,1
+How do I set up a shared remote build cache across CI and developer machines?,nx-cloud-features,ci-caching|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,contested,Turborepo,synthetic,1
+We are outgrowing pnpm workspaces. What is the next step up?,migration,migration|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,contested,Turborepo,synthetic,1
+How do I set up a Next.js monorepo with shared packages?,framework,monorepo|unbranded,no,chatgpt|claude|perplexity|google_ai_overviews,contested,Turborepo,synthetic,1
+"Which has better remote caching and CI task distribution out of the box, Turborepo or Nx?",capability-comparison,cli-competitors|branded,yes,chatgpt|claude|perplexity|google_ai_overviews,unscreened,names Nx in the question - screen not meaningful,phase0-keep,1
+I want the monorepo tool with the least configuration and lowest learning curve. Turborepo or Nx?,config-learning-curve,cli-competitors|branded,yes,chatgpt|claude|perplexity|google_ai_overviews,unscreened,names Nx in the question - screen not meaningful,phase0-keep,1
+"Do I have to rewrite my build setup to adopt Nx, or can I add it incrementally like Turborepo?",incremental-adoption,cli-competitors|branded,yes,chatgpt|claude|perplexity|google_ai_overviews,unscreened,names Nx in the question - screen not meaningful,phase0-keep,1
+"Does Nx lock you into its plugins and generators, or can you run it on plain package.json scripts?",sentiment,sentiment|branded,yes,chatgpt|claude|perplexity|google_ai_overviews,unscreened,names Nx in the question - screen not meaningful,phase0-keep-sentiment,1
+Should I start with Turborepo now and switch to Nx later if we outgrow it?,sentiment,sentiment|branded,yes,chatgpt|claude|perplexity|google_ai_overviews,unscreened,names Nx in the question - screen not meaningful,phase0-keep-sentiment,1
+"Is Nx overkill for a small project, making Turborepo the lighter choice?",sentiment,sentiment|branded,yes,chatgpt|claude|perplexity|google_ai_overviews,unscreened,names Nx in the question - screen not meaningful,phase0-keep-sentiment,1
+"Is Nx worth the setup effort, or will I spend hours configuring it?",sentiment,sentiment|branded,yes,chatgpt|claude|perplexity|google_ai_overviews,unscreened,names Nx in the question - screen not meaningful,verbatim:hn,1
+Did Nx change its licensing or pull features behind a paywall?,sentiment,sentiment|branded,yes,chatgpt|claude|perplexity|google_ai_overviews,unscreened,names Nx in the question - screen not meaningful,verbatim:salvozappa-rug-pull,1
+"Is Nx Cloud worth it, and is it free?",sentiment,sentiment|branded,yes,chatgpt|claude|perplexity|google_ai_overviews,unscreened,names Nx in the question - screen not meaningful,paa:branded,1
+How do I run CI/CD pipelines in a monorepo?,ci-performance,ci-cd|unbranded,no,chatgpt,contested,GitHub Actions,paa:monorepo,2
+Why is my CI/CD pipeline so slow?,ci-performance,ci-caching|unbranded,no,chatgpt,contested,GitHub Actions,paa:ci-performance,2
+How do I reduce my CI build time?,ci-performance,ci-caching|unbranded,no,chatgpt,contested,actions/cache,paa:ci-performance,2
+How do I parallelize CI builds to speed them up?,nx-cloud-features,nx-cloud-features|unbranded,no,chatgpt,contested,GitHub Actions,paa:ci-performance,2
+How do I reduce the cost of my GitHub Actions?,ci-cost,ci-cost|unbranded,no,chatgpt,contested,actions/cache,paa:ci-performance,2
+We have eight repos and want to consolidate them into a monorepo. How should we do it?,migration,migration|unbranded,no,chatgpt,contested,git-filter-repo,synthetic,2
+"Is Lerna still maintained, and what should I move to?",migration,migration|cli-competitors,no,chatgpt,contested,Lerna,paa:cli-competitors,2
+How should I structure a NestJS backend monorepo?,framework,monorepo|unbranded,no,chatgpt,contested,NestJS CLI,synthetic,2
+How do I give an AI agent context about my monorepo?,ai,ai-tooling|unbranded,no,chatgpt,contested,CLAUDE.md/agents.md,paa:ai-tooling,2
+How should I structure a monorepo so coding agents work well in it?,ai,ai-tooling|unbranded,no,chatgpt,contested,agents.md,paa:ai-tooling,2
+I need a monorepo CI/CD solution that integrates with GitHub and provides build caching for our Node.js and Go services. What are the top options available?,problem-first,ci-cd|unbranded,no,chatgpt,contested,GitHub Actions,phase0-keep,2

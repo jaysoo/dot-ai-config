@@ -1,0 +1,250 @@
+[
+  {
+    "n": 1,
+    "question": "What is the best CI/CD setup for a monorepo?",
+    "named_tools": ["Nx", "Turborepo", "Bazel", "Moon", "pnpm workspaces", "GitHub Actions", "GitLab CI", "CircleCI", "Buildkite", "Changesets"],
+    "names_build_tooling": true,
+    "first_named": "Nx",
+    "notes": "Structure answer as: task runner with affected+cache first, then CI platform. Nx/Turborepo named as a pair."
+  },
+  {
+    "n": 2,
+    "question": "How do I run CI/CD pipelines in a monorepo?",
+    "named_tools": ["GitHub Actions", "dorny/paths-filter", "Nx", "Turborepo", "Bazel", "GitLab CI", "CircleCI"],
+    "names_build_tooling": true,
+    "first_named": "GitHub Actions",
+    "notes": "Mechanics question, so CI platform + path filters lead; `nx affected` / `turbo --filter` follow."
+  },
+  {
+    "n": 3,
+    "question": "Why is my CI/CD pipeline so slow?",
+    "named_tools": ["actions/cache", "GitHub Actions", "Docker BuildKit", "Turborepo", "Nx", "pnpm"],
+    "names_build_tooling": true,
+    "first_named": "actions/cache",
+    "notes": "Mostly a diagnostic checklist; tools appear only inside the fixes."
+  },
+  {
+    "n": 4,
+    "question": "How do I reduce my CI build time?",
+    "named_tools": ["actions/cache", "Turborepo", "Nx", "Bazel", "Docker buildx", "sccache", "ccache", "Depot"],
+    "names_build_tooling": true,
+    "first_named": "actions/cache",
+    "notes": "Dep caching first, then build cache/affected, then faster runners."
+  },
+  {
+    "n": 5,
+    "question": "Our CI takes 40 minutes for a one-line fix and the team wants to add more runners. Is that the right call?",
+    "named_tools": ["Nx", "Turborepo", "Bazel", "Depot", "Blacksmith"],
+    "names_build_tooling": true,
+    "first_named": "Nx",
+    "notes": "Answer is 'no, cut the work first' - affected/cache named before runner vendors."
+  },
+  {
+    "n": 6,
+    "question": "How do I parallelize CI builds to speed them up?",
+    "named_tools": ["GitHub Actions matrix", "Jest", "Playwright", "pytest-xdist", "CircleCI", "Nx Agents", "Nx Cloud", "Bazel", "Buildkite", "Knapsack Pro"],
+    "names_build_tooling": true,
+    "first_named": "GitHub Actions matrix",
+    "notes": "Native sharding/matrix first; distributed execution products second."
+  },
+  {
+    "n": 7,
+    "question": "How do I reduce the cost of my GitHub Actions?",
+    "named_tools": ["GitHub Actions", "actions/cache", "Turborepo", "Nx", "actions-runner-controller", "Depot", "Blacksmith", "RunsOn", "BuildJet", "Namespace", "Ubicloud"],
+    "names_build_tooling": true,
+    "first_named": "GitHub Actions",
+    "notes": "concurrency/cancel + path filters, then cheaper runners. Build tools mentioned only as 'run less'."
+  },
+  {
+    "n": 8,
+    "question": "Our GitHub Actions bill went up about $3,500 a month. What are our options?",
+    "named_tools": ["GitHub Actions", "actions-runner-controller", "Depot", "Blacksmith", "RunsOn", "Namespace", "Ubicloud", "BuildJet", "Turborepo", "Nx"],
+    "names_build_tooling": true,
+    "first_named": "GitHub Actions",
+    "notes": "Lead with usage attribution report, then runner substitution, then work reduction."
+  },
+  {
+    "n": 9,
+    "question": "What are the GitHub Actions runner alternatives?",
+    "named_tools": ["GitHub larger runners", "actions-runner-controller", "Depot", "Blacksmith", "Namespace", "RunsOn", "WarpBuild", "BuildJet", "Ubicloud", "Cirrus Runners", "Actuated", "AWS CodeBuild", "Buildkite", "CircleCI"],
+    "names_build_tooling": false,
+    "first_named": "GitHub larger runners",
+    "notes": "Pure vendor list. No monorepo build system surfaces at all."
+  },
+  {
+    "n": 10,
+    "question": "How to fix flaky tests?",
+    "named_tools": ["Playwright", "Jest", "pytest-rerunfailures", "Trunk Flaky Tests", "BuildPulse", "Datadog Test Optimization", "CircleCI"],
+    "names_build_tooling": false,
+    "first_named": "Playwright",
+    "notes": "Root-cause advice + retry/quarantine tooling. No monorepo build system."
+  },
+  {
+    "n": 11,
+    "question": "Is this test actually broken, or just flaky? How do I tell in CI?",
+    "named_tools": ["GitHub Actions", "Trunk Flaky Tests", "BuildPulse", "Datadog Test Optimization", "git bisect"],
+    "names_build_tooling": false,
+    "first_named": "GitHub Actions",
+    "notes": "Mostly procedure (re-run same SHA, loop N times, bisect); dashboards named second."
+  },
+  {
+    "n": 12,
+    "question": "How do I detect and quarantine flaky tests in CI?",
+    "named_tools": ["Trunk Flaky Tests", "BuildPulse", "Datadog Test Optimization", "Develocity", "CircleCI", "JUnit XML", "Jest", "pytest"],
+    "names_build_tooling": false,
+    "first_named": "Trunk Flaky Tests",
+    "notes": "Purpose-built flake products dominate; no monorepo build system named."
+  },
+  {
+    "n": 13,
+    "question": "How does test impact analysis speed up CI?",
+    "named_tools": ["Bazel", "Nx", "Pants", "Launchable", "Develocity Predictive Test Selection", "Datadog Intelligent Test Runner", "Jest", "Vitest"],
+    "names_build_tooling": true,
+    "first_named": "Bazel",
+    "notes": "Split into graph-based (Bazel/Nx/Pants) vs coverage-ML-based (Launchable/PTS)."
+  },
+  {
+    "n": 14,
+    "question": "What tools split and distribute tests across CI machines?",
+    "named_tools": ["Jest", "Playwright", "pytest-split", "CircleCI", "Knapsack Pro", "Buildkite Test Engine", "Nx Agents", "Bazel", "Develocity Test Distribution", "GitHub Actions matrix"],
+    "names_build_tooling": true,
+    "first_named": "Jest",
+    "notes": "Native --shard flags first, then SaaS splitters, then distributed execution."
+  },
+  {
+    "n": 15,
+    "question": "How do I set up a shared remote build cache across CI and developer machines?",
+    "named_tools": ["Turborepo Remote Cache", "turborepo-remote-cache", "Nx Cloud", "Bazel", "bazel-remote", "BuildBuddy", "EngFlow", "NativeLink", "Develocity", "sccache", "ccache"],
+    "names_build_tooling": true,
+    "first_named": "Turborepo Remote Cache",
+    "notes": "Answer branches by stack; JS branch leads so Turborepo lands first."
+  },
+  {
+    "n": 16,
+    "question": "How do I merge one repository into another without losing history?",
+    "named_tools": ["git", "git-filter-repo", "git subtree"],
+    "names_build_tooling": false,
+    "first_named": "git",
+    "notes": "Pure git plumbing answer (remote add + merge --allow-unrelated-histories). Would not surface nx import cold at this framing."
+  },
+  {
+    "n": 17,
+    "question": "We have eight repos and want to consolidate them into a monorepo. How should we do it?",
+    "named_tools": ["git-filter-repo", "git subtree", "pnpm workspaces", "Nx", "Turborepo", "Bazel", "Moon", "Changesets", "CODEOWNERS", "GitHub Actions"],
+    "names_build_tooling": true,
+    "first_named": "git-filter-repo",
+    "notes": "Phased plan: preserve history, then workspaces, then a build tool, then CI."
+  },
+  {
+    "n": 18,
+    "question": "Is Lerna still maintained, and what should I move to?",
+    "named_tools": ["Lerna", "Nx", "pnpm workspaces", "Changesets", "Turborepo", "Rush", "npm workspaces", "semantic-release", "release-please"],
+    "names_build_tooling": true,
+    "first_named": "Lerna",
+    "notes": "Lerna named in the question; answer notes Nx took over maintenance, then splits tasks vs publishing."
+  },
+  {
+    "n": 19,
+    "question": "We are outgrowing pnpm workspaces. What is the next step up?",
+    "named_tools": ["pnpm workspaces", "Turborepo", "Nx", "Moon", "Bazel", "Buck2", "Rush", "Wireit"],
+    "names_build_tooling": true,
+    "first_named": "pnpm workspaces",
+    "notes": "pnpm named in question; Turborepo is the first recommendation, Nx second."
+  },
+  {
+    "n": 20,
+    "question": "Best way to structure an Angular monorepo?",
+    "named_tools": ["Nx", "Angular CLI", "ESLint", "TypeScript path aliases"],
+    "names_build_tooling": true,
+    "first_named": "Nx",
+    "notes": "Nx is the default answer for Angular; module-boundary lint rules named alongside."
+  },
+  {
+    "n": 21,
+    "question": "How do I set up a Next.js monorepo with shared packages?",
+    "named_tools": ["Turborepo", "create-turbo", "pnpm workspaces", "Next.js transpilePackages", "Nx", "Changesets", "Vercel"],
+    "names_build_tooling": true,
+    "first_named": "Turborepo",
+    "notes": "Canonical answer is `npx create-turbo@latest`; Nx mentioned as the fuller alternative."
+  },
+  {
+    "n": 22,
+    "question": "How should I structure a NestJS backend monorepo?",
+    "named_tools": ["NestJS CLI", "Nx", "pnpm workspaces", "Turborepo", "Docker"],
+    "names_build_tooling": true,
+    "first_named": "NestJS CLI",
+    "notes": "Nest's built-in monorepo mode first; Nx recommended once frontend/other apps join."
+  },
+  {
+    "n": 23,
+    "question": "How do I give an AI agent context about my monorepo?",
+    "named_tools": ["CLAUDE.md", "AGENTS.md", "Cursor rules", "MCP", "Claude Code", "Cursor", "Nx MCP server"],
+    "names_build_tooling": true,
+    "first_named": "CLAUDE.md",
+    "notes": "Instruction files lead. Nx MCP named late as a project-graph exposure option; Turborepo has no equivalent to name."
+  },
+  {
+    "n": 24,
+    "question": "Why can't my AI agent find files in my monorepo?",
+    "named_tools": ["ripgrep", ".gitignore", ".cursorignore", "Cursor", "Claude Code", "VS Code", "tsconfig paths"],
+    "names_build_tooling": false,
+    "first_named": "ripgrep",
+    "notes": "Debug answer: ignore files, index limits, symlinks, context window. No build tool."
+  },
+  {
+    "n": 25,
+    "question": "How do I set up an MCP server for my monorepo?",
+    "named_tools": ["Model Context Protocol SDK", "FastMCP", "Claude Code", "Cursor", "filesystem MCP server", "GitHub MCP server", "Nx MCP server"],
+    "names_build_tooling": false,
+    "first_named": "Model Context Protocol SDK",
+    "notes": "Build-your-own instructions; Nx MCP would appear only as an 'already exists' aside, and Nx is not surfaced as a build system here."
+  },
+  {
+    "n": 26,
+    "question": "How should I structure a monorepo so coding agents work well in it?",
+    "named_tools": ["AGENTS.md", "CLAUDE.md", "pnpm workspaces", "Nx", "Turborepo", "ESLint boundaries", "TypeScript project references"],
+    "names_build_tooling": true,
+    "first_named": "AGENTS.md",
+    "notes": "Per-package docs + narrow scoped commands; build tools named for fast targeted task running."
+  },
+  {
+    "n": 27,
+    "question": "We need a monorepo build platform with SOC 2, on-prem or self-hosted caching, and a support SLA. What are the options?",
+    "named_tools": ["Nx Cloud / Nx Enterprise", "Gradle Develocity", "BuildBuddy", "EngFlow", "Aspect Build", "Bazel", "Vercel Remote Cache", "NativeLink", "Buildkite"],
+    "names_build_tooling": true,
+    "first_named": "Nx Cloud / Nx Enterprise",
+    "notes": "Explicit enterprise-procurement framing; the shortlist is genuinely short and Nx Enterprise is one of the few that meets all three."
+  },
+  {
+    "n": 28,
+    "question": "Top monorepo tools for 2026.",
+    "named_tools": ["Turborepo", "Nx", "Bazel", "Buck2", "Pants", "Moon", "Rush", "Lage", "Lerna", "pnpm workspaces", "Gradle", "Wireit"],
+    "names_build_tooling": true,
+    "first_named": "Turborepo",
+    "notes": "Organized by ecosystem (JS/TS first, then polyglot, then JVM), which puts Turborepo ahead of Nx."
+  },
+  {
+    "n": 29,
+    "question": "Best monorepo tool for large teams",
+    "named_tools": ["Nx", "Bazel", "Buck2", "Pants", "Turborepo", "Moon"],
+    "names_build_tooling": true,
+    "first_named": "Nx",
+    "notes": "Large-team criteria (boundaries, ownership, distribution) favor Nx for JS/TS and Bazel for polyglot."
+  },
+  {
+    "n": 30,
+    "question": "Best monorepo tool for small teams",
+    "named_tools": ["pnpm workspaces", "Turborepo", "Nx", "Wireit"],
+    "names_build_tooling": true,
+    "first_named": "pnpm workspaces",
+    "notes": "Advice is 'start with nothing but workspaces'; Turborepo second, Nx third."
+  },
+  {
+    "n": 31,
+    "question": "Top tools for monorepo continuous integration.",
+    "named_tools": ["Nx", "Turborepo", "Bazel", "GitHub Actions", "Buildkite", "CircleCI", "BuildBuddy", "Develocity", "Knapsack Pro", "Depot"],
+    "names_build_tooling": true,
+    "first_named": "Nx",
+    "notes": "Affected-detection tools lead because they are the monorepo-specific layer; CI platforms follow."
+  }
+]

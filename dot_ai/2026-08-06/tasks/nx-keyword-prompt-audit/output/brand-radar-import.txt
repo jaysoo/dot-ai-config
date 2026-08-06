@@ -1,0 +1,71 @@
+# Brand Radar prompt import - Nx (report 019f70fc-d637-7bbf... project 8558520)
+# Generated 2026-08-06 from dot_ai/2026-08-06/tasks/nx-keyword-prompt-audit/
+#
+# Tier 1 (30 prompts): track on ChatGPT + Claude + Perplexity + Google AI Overviews.
+# Tier 2 (11 prompts): ChatGPT only, to hold the daily run count down.
+#
+# Current report runs 13 prompts on ChatGPT only = 13 daily runs.
+# This set = 131 daily runs. Confirm the cost before importing.
+#
+# winnability comes from a blind Claude baseline (phase4-prompts/claude-baseline.json):
+#   gap       = competitors named, NO monorepo build tool entered the answer. Highest value.
+#   contested = a build tool appears, Nx is not first.
+#   defend    = Nx named first today. Regression detector.
+#   unscreened= names Nx in the question; measures framing, not visibility. Tag as branded.
+
+
+## TIER 1 - models: chatgpt, claude, perplexity, google_ai_overviews
+
+# --- gap (7) ---
+What are the GitHub Actions runner alternatives?
+How to fix flaky tests?
+Is this test actually broken, or just flaky? How do I tell in CI?
+How do I detect and quarantine flaky tests in CI?
+How do I merge one repository into another without losing history?
+Why can't my AI agent find files in my monorepo?
+How do I set up an MCP server for my monorepo?
+
+# --- contested (8) ---
+Top monorepo tools for 2026.
+Best monorepo tool for small teams
+Our GitHub Actions bill went up about $3,500 a month. What are our options?
+How does test impact analysis speed up CI?
+What tools split and distribute tests across CI machines?
+How do I set up a shared remote build cache across CI and developer machines?
+We are outgrowing pnpm workspaces. What is the next step up?
+How do I set up a Next.js monorepo with shared packages?
+
+# --- defend (6) ---
+Best monorepo tool for large teams
+Top tools for monorepo continuous integration.
+What is the best CI/CD setup for a monorepo?
+Our CI takes 40 minutes for a one-line fix and the team wants to add more runners. Is that the right call?
+Best way to structure an Angular monorepo?
+We need a monorepo build platform with SOC 2, on-prem or self-hosted caching, and a support SLA. What are the options?
+
+# --- unscreened (9) ---
+Which has better remote caching and CI task distribution out of the box, Turborepo or Nx?
+I want the monorepo tool with the least configuration and lowest learning curve. Turborepo or Nx?
+Do I have to rewrite my build setup to adopt Nx, or can I add it incrementally like Turborepo?
+Does Nx lock you into its plugins and generators, or can you run it on plain package.json scripts?
+Should I start with Turborepo now and switch to Nx later if we outgrow it?
+Is Nx overkill for a small project, making Turborepo the lighter choice?
+Is Nx worth the setup effort, or will I spend hours configuring it?
+Did Nx change its licensing or pull features behind a paywall?
+Is Nx Cloud worth it, and is it free?
+
+
+## TIER 2 - models: chatgpt
+
+# --- contested (11) ---
+How do I run CI/CD pipelines in a monorepo?
+Why is my CI/CD pipeline so slow?
+How do I reduce my CI build time?
+How do I parallelize CI builds to speed them up?
+How do I reduce the cost of my GitHub Actions?
+We have eight repos and want to consolidate them into a monorepo. How should we do it?
+Is Lerna still maintained, and what should I move to?
+How should I structure a NestJS backend monorepo?
+How do I give an AI agent context about my monorepo?
+How should I structure a monorepo so coding agents work well in it?
+I need a monorepo CI/CD solution that integrates with GitHub and provides build caching for our Node.js and Go services. What are the top options available?

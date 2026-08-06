@@ -1,0 +1,125 @@
+keyword,volume,global_volume,difficulty,traffic_potential,parent_topic,intents,serp_top3_domains,nx_ranks,proposed_tags,source,notes
+mono repo,500,no_data,41,no_data,no_data,informational,no_data,1,monorepo|unbranded,site-explorer-organic-keywords,spaced variant of head term; monorepo.tools pos 1
+monorepos,250,no_data,40,no_data,no_data,informational,no_data,1,monorepo|unbranded,site-explorer-organic-keywords,plural head variant
+what is monorepo,250,1300,24,1700,what is a monorepo,informational,no_data,1,monorepo|unbranded,keywords-explorer-matching-terms,article-less variant of the 64k head term
+monorepo architecture,150,1100,2,600,what is a monorepo,informational,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,"KD 2, nx.dev absent, monorepo.tools pos 5"
+monorepo meaning,150,800,29,9600,what is a monorepo,informational,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,TP 9600 on the what-is parent topic
+what is monorepo architecture,100,250,4,9600,what is a monorepo,informational,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,"TP 9600, KD 4 - open"
+monorepo definition,70,100,25,9400,what is a monorepo,informational,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,TP 9400 definition intent
+mono repository,70,no_data,31,no_data,no_data,informational,no_data,no,monorepo|unbranded,site-explorer-organic-keywords,"monorepo.tools pos 1, nx.dev absent"
+monorepo pros and cons,70,100,3,150,monorepos,informational,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,"decision-stage framing, KD 3"
+monorepo vs multi repo,70,450,4,20,mono repo vs multi repo,informational,reddit.com|thoughtworks.com|medium.com,no,monorepo|unbranded,keywords-explorer-matching-terms,multi-repo phrasing; audit only tracks polyrepo
+monorepo vs microservices,40,150,0,20,monorepo vs microservices,informational,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,"KD 0, common architecture confusion"
+polyrepo vs monorepo,40,150,3,150,monorepo vs polyrepo,informational,no_data,1,monorepo|unbranded,keywords-explorer-matching-terms,reversed order of tracked term; nx pos 1
+mono repo vs poly repo,20,no_data,3,no_data,no_data,informational,no_data,5,monorepo|unbranded,site-explorer-organic-keywords,"spaced variant, nx.dev pos 5"
+polyrepo,20,no_data,3,no_data,no_data,informational,no_data,6,monorepo|unbranded,site-explorer-organic-keywords,"bare term, nx.dev pos 6"
+define monorepo,30,no_data,30,no_data,no_data,informational,no_data,no,monorepo|unbranded,site-explorer-organic-keywords,"monorepo.tools pos 1, nx.dev absent"
+mono repos,30,no_data,38,no_data,no_data,informational,no_data,no,monorepo|unbranded,site-explorer-organic-keywords,plural spaced variant
+mono-repo,30,no_data,38,no_data,no_data,informational,no_data,no,monorepo|unbranded,site-explorer-organic-keywords,hyphen variant
+monorepository,20,no_data,30,no_data,no_data,informational,no_data,no,monorepo|unbranded,site-explorer-organic-keywords,compound variant
+monolithic repo,20,no_data,2,no_data,no_data,informational,no_data,7,monorepo|unbranded,site-explorer-organic-keywords,"KD 2, monorepo.tools pos 9"
+monolith repo,10,no_data,8,no_data,no_data,informational,no_data,no,monorepo|unbranded,site-explorer-organic-keywords,misconception framing worth owning
+benefits of monorepo,20,no_data,9,no_data,no_data,informational,no_data,1,monorepo|unbranded,site-explorer-organic-keywords,"nx.dev pos 1 already, add to tracking"
+monorepo benefits,20,no_data,7,no_data,no_data,informational,no_data,no,monorepo|unbranded,site-explorer-organic-keywords,"reversed variant, nx.dev absent"
+why monorepo,20,no_data,6,no_data,no_data,informational,no_data,no,monorepo|unbranded,site-explorer-organic-keywords,monorepo.tools pos 4
+monorepo disadvantages,10,20,no_data,no_data,no_data,no_data,no_data,no,monorepo|unbranded,keywords-explorer-overview,objection-handling framing
+monorepo best practices 2026,30,30,no_data,no_data,no_data,no_data,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,year-stamped variant of a tracked term
+monorepo tools,100,500,18,6000,what is a monorepo,informational,monorepo.tools|reddit.com|nx.dev,3,monorepo|unbranded,keywords-explorer-matching-terms,TP 6000; nx.dev pos 3 behind monorepo.tools
+monorepo build tool,50,50,no_data,no_data,no_data,no_data,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,singular of a term nx.dev ranks pos 4 on
+monorepo build tools,20,no_data,16,no_data,no_data,informational,no_data,4,monorepo|unbranded,site-explorer-organic-keywords,"nx.dev pos 4, monorepo.tools pos 2"
+monorepo tooling,50,100,no_data,no_data,no_data,no_data,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,gerund variant of monorepo tools
+developer tools for large monorepo,40,40,no_data,no_data,no_data,no_data,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,scale-qualified tool-selection query
+bazel monorepo,80,300,5,3200,bazel,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"TP 3200, KD 5 - competitor-anchored gap"
+lerna monorepo,40,40000,35,1300,lerna,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,global 40k; lerna is an Nx-maintained package
+turborepo monorepo,70,150,5,40,turborepo monorepo,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"competitor-anchored, KD 5"
+pants monorepo,30,100,0,40,python pants,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"KD 0, python build-system competitor"
+rush monorepo,30,150,no_data,no_data,no_data,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,complements tracked rush stack terms
+pnpm monorepo,150,1000,3,200,pnpm workspaces,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,KD 3; audit tracks pnpm workspace not this
+bun monorepo,150,1000,5,60,bun monorepo,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"KD 5, growing runtime, nx.dev absent"
+npm monorepo,60,150,1,200,npm workspaces,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"KD 1, nx.dev absent"
+npm workspaces monorepo,40,150,1,60,npm workspaces,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,KD 1 combined phrasing
+nx monorepo,600,5600,29,16000,nx,informational|branded,no_data,1,monorepo|branded,keywords-explorer-matching-terms,"TP 16000, highest-value branded monorepo term; nx pos 1"
+monorepo nx,80,500,45,16000,nx,informational|branded,no_data,1,monorepo|branded,keywords-explorer-matching-terms,"reversed branded variant, nx pos 1"
+what is nx monorepo,60,200,no_data,no_data,no_data,no_data,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"branded what-is, feeds AI prompt set"
+nx monorepo tool,50,70,no_data,no_data,no_data,no_data,no_data,no,monorepo|branded,keywords-explorer-matching-terms,branded tool-category query
+nx workspace,90,no_data,39,no_data,no_data,informational,no_data,1,monorepo|branded,site-explorer-organic-keywords,"nx.dev pos 1, untracked branded term"
+monorepo folder structure,30,90,no_data,no_data,no_data,no_data,no_data,no,monorepo-organization|unbranded,keywords-explorer-overview,literal phrasing of the tracked structure term
+monorepo setup,20,70,no_data,no_data,no_data,no_data,no_data,no,monorepo-organization|unbranded,keywords-explorer-overview,getting-started intent
+monorepo example,10,80,no_data,no_data,no_data,informational,no_data,no,monorepo-organization|unbranded,keywords-explorer-overview,example-seeking intent
+typescript monorepo setup,10,30,no_data,no_data,no_data,no_data,no_data,no,monorepo-organization|unbranded,keywords-explorer-overview,setup framing of tracked ts monorepo
+typescript project references,70,200,no_data,no_data,no_data,informational,no_data,no,monorepo-organization|branded,keywords-explorer-overview,moonrepo ranks pos 8; nx.dev absent
+tsconfig composite,30,no_data,9,no_data,no_data,informational,no_data,5,monorepo-organization|branded,site-explorer-organic-keywords,moonrepo pos 6 on ts project-refs page
+monorepo dependency management,10,10,no_data,no_data,no_data,no_data,no_data,no,monorepo-organization|unbranded,keywords-explorer-overview,"core concept, thin volume but on-message"
+monorepo versioning,10,40,no_data,no_data,no_data,informational,no_data,no,monorepo-organization|unbranded,keywords-explorer-overview,nx release positioning
+semantic-release-monorepo,40,150,3,50,semantic-release-monorepo,informational,no_data,no,monorepo-organization|branded,keywords-explorer-matching-terms,release-automation competitor package
+changesets versioning monorepo documentation,40,40,no_data,no_data,no_data,no_data,no_data,no,monorepo-organization|branded,keywords-explorer-matching-terms,changesets is the default alt to nx release
+monorepo eslint,0,20,no_data,no_data,no_data,no_data,no_data,no,monorepo-organization|branded,keywords-explorer-overview,linting-in-monorepo seed; US vol 0
+git monorepo,100,200,9,20,monorepo git,informational,no_data,no,monorepo-organization|branded,keywords-explorer-matching-terms,"VCS-anchored, nx.dev absent"
+monorepo git,50,70,15,20,monorepo git,informational,no_data,no,monorepo-organization|branded,keywords-explorer-matching-terms,reversed variant
+github monorepo,70,100,9,10,what is a monorepo,informational,no_data,no,monorepo-organization|branded,keywords-explorer-matching-terms,platform-anchored
+google monorepo,100,500,22,60,google monorepo,informational,no_data,no,monorepo-organization|branded,keywords-explorer-matching-terms,the canonical monorepo-at-scale story
+ui monorepo,80,80,no_data,no_data,no_data,no_data,no_data,no,monorepo-organization|unbranded,keywords-explorer-matching-terms,component-library-in-monorepo intent
+next.js 16 app router design system monorepo,450,450,no_data,no_data,no_data,no_data,no_data,no,monorepo-organization|branded,keywords-explorer-matching-terms,450 vol long-tail design-system-in-monorepo query
+how to read root env in monorepo,1500,1500,no_data,no_data,no_data,no_data,no_data,no,monorepo-organization|unbranded,keywords-explorer-matching-terms,1500 vol; highest-volume untracked monorepo how-to
+storybook monorepo,20,no_data,1,no_data,no_data,informational,no_data,8,monorepo-organization|branded,site-explorer-organic-keywords,"nx.dev pos 8, KD 1"
+nextjs monorepo,150,350,4,150,turbo repo,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,parent topic is turbo repo - direct competitor overlap
+monorepo nextjs,100,150,3,100,nextjs monorepo,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,reversed variant
+angular monorepo,40,250,0,150,angular project structure,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"KD 0, Nx core audience, untracked"
+angular workspace,10,150,18,150,angular project structure,informational,no_data,no,monorepo|branded,keywords-explorer-overview,Angular-native term Nx owns conceptually
+expo monorepo,80,450,1,60,expo monorepo,informational,no_data,7,monorepo|branded,keywords-explorer-matching-terms,"KD 1, nx.dev already pos 7"
+vercel monorepo,50,150,1,250,monorepo,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"deploy-target framing, KD 1"
+terraform monorepo,60,90,0,20,terraform monorepo,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"infra monorepo, KD 0"
+uv monorepo,60,150,no_data,no_data,no_data,no_data,no_data,no,monorepo|branded,keywords-explorer-matching-terms,uv is the new python packaging default
+rust monorepo,10,60,14,10,rust monorepo,informational,no_data,no,monorepo|branded,keywords-explorer-overview,moonrepo ranks pos 7; nx.dev absent
+golang monorepo,10,20,1,0,golang monorepo,informational,no_data,no,monorepo|branded,keywords-explorer-overview,"KD 1, no incumbent"
+go monorepo,10,10,1,0,golang monorepo,informational,no_data,no,monorepo|branded,keywords-explorer-overview,short-form variant
+node monorepo,10,20,12,0,node monorepo,informational,no_data,no,monorepo|branded,keywords-explorer-overview,monorepo.tools pos 5; nx.dev absent
+php monorepo,0,20,no_data,no_data,no_data,no_data,no_data,no,monorepo|branded,keywords-explorer-overview,US vol 0 - language coverage completeness only
+vue monorepo,0,30,no_data,no_data,no_data,no_data,no_data,no,monorepo|branded,keywords-explorer-overview,US vol 0 - framework coverage completeness
+svelte monorepo,0,20,no_data,no_data,no_data,no_data,no_data,no,monorepo|branded,keywords-explorer-overview,US vol 0 - framework coverage completeness
+monorepo continuous integration,90,90,no_data,no_data,no_data,no_data,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,spelled-out variant of tracked monorepo ci
+monorepo ci pipeline,60,60,no_data,no_data,no_data,no_data,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,pipeline framing
+monorepo ci/cd pipeline templates,60,70,no_data,no_data,no_data,no_data,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,"template-seeking, high commercial adjacency"
+gitlab ci monorepo,40,70,0,20,gitlab ci monorepo,informational,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"KD 0, tool-anchored gap"
+teamcity monorepo,70,70,no_data,no_data,no_data,no_data,no_data,no,monorepo|branded,keywords-explorer-matching-terms,"tool-anchored, no incumbent"
+monorepo preview environments per service,70,70,no_data,no_data,no_data,no_data,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,deployment workflow long-tail
+best monorepo deployment platforms,60,60,no_data,no_data,no_data,no_data,no_data,no,monorepo|unbranded,keywords-explorer-matching-terms,commercial-intent comparison query
+top ai code reviewers for monorepo projects?,50,50,no_data,no_data,no_data,no_data,no_data,no,ai-tooling|unbranded,keywords-explorer-matching-terms,"AI x monorepo, matches Nx AI roadmap"
+best ai for refactoring typescript monorepo,40,40,no_data,no_data,no_data,no_data,no_data,no,ai-tooling|unbranded,keywords-explorer-matching-terms,AI x monorepo refactor intent
+micro frontend architecture,500,2800,19,500,micro frontend,informational,docs.aws.amazon.com|micro-frontends.org|medium.com,1,module-federation|unbranded,keywords-explorer-matching-terms,500 vol head term; nx.dev pos 1 already
+micro frontends,350,no_data,27,no_data,no_data,informational,no_data,1,module-federation|unbranded,site-explorer-organic-keywords,"plural head variant, nx.dev pos 1"
+microfrontend,300,no_data,16,no_data,no_data,informational,no_data,1,module-federation|unbranded,site-explorer-organic-keywords,"closed-compound variant, nx.dev pos 1"
+micro front end,250,no_data,12,no_data,no_data,informational,no_data,1,module-federation|unbranded,site-explorer-organic-keywords,"fully-spaced variant, nx.dev pos 1"
+micro frontend react,200,800,4,400,micro frontend,informational,no_data,1,module-federation|branded,keywords-explorer-matching-terms,"KD 4, largest framework-anchored MFE term"
+next js micro frontend,150,250,3,60,nextjs micro frontend,informational,no_data,10,module-federation|branded,keywords-explorer-matching-terms,nx.dev pos 10 - improvable
+nextjs micro frontend,150,300,5,100,nextjs micro frontend,informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,closed variant of the same
+what is module federation,150,300,15,450,module federation,informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,definitional; nx.dev absent
+react micro frontend,100,400,3,400,react micro frontend,informational,no_data,3,module-federation|branded,keywords-explorer-matching-terms,nx.dev pos 3
+micro frontend architecture react,100,300,2,400,react micro frontend,informational,no_data,1,module-federation|branded,keywords-explorer-matching-terms,"KD 2, nx.dev pos 1"
+micro frontend angular,100,500,1,150,micro frontend angular,informational,no_data,6,module-federation|branded,keywords-explorer-matching-terms,"KD 1, nx.dev pos 6"
+angular micro frontend,100,600,0,100,angular micro frontends,informational,no_data,4,module-federation|branded,keywords-explorer-matching-terms,singular of tracked plural; KD 0
+micro frontend framework,100,250,11,250,micro frontend framework,commercial|informational,no_data,no,module-federation|unbranded,keywords-explorer-matching-terms,only commercial-intent MFE term found
+webpack module federation,100,450,27,250,module federation,informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,"bundler-anchored, nx.dev absent"
+what is a micro frontend,100,200,6,150,what is a micro frontend,informational,no_data,no,module-federation|unbranded,keywords-explorer-matching-terms,nx.dev pos 1 on plural form only
+what are micro frontends,100,no_data,17,no_data,no_data,informational,no_data,1,module-federation|unbranded,site-explorer-organic-keywords,"nx.dev pos 1, untracked"
+vite module federation,90,350,4,100,vite module federation,informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,"KD 4, Vite is the growth bundler"
+what is micro frontend architecture,90,300,9,450,micro frontend,informational,no_data,1,module-federation|unbranded,keywords-explorer-matching-terms,nx.dev pos 1
+micro-frontend,90,350,24,1300,micro frontend,informational,no_data,5,module-federation|unbranded,keywords-explorer-matching-terms,"TP 1300 hyphen variant, nx.dev pos 5"
+microfrontend architecture,90,no_data,15,no_data,no_data,informational,no_data,6,module-federation|unbranded,site-explorer-organic-keywords,nx.dev pos 6 - improvable
+module federation webpack,80,100,17,200,module federation,informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,reversed variant
+module federation angular,80,700,14,80,angular module federation,informational,no_data,8,module-federation|branded,keywords-explorer-matching-terms,"reversed of tracked term, global 700"
+reactjs micro frontend,80,90,8,300,micro frontend,informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,reactjs spelling variant
+micro-frontend architecture,70,200,12,1400,micro frontend,informational,no_data,1,module-federation|unbranded,keywords-explorer-matching-terms,TP 1400 - highest TP in MFE set
+react micro frontend architecture,70,150,5,350,micro frontend,informational,no_data,3,module-federation|branded,keywords-explorer-matching-terms,nx.dev pos 3
+micro frontends architecture,70,no_data,22,no_data,no_data,informational,no_data,1,module-federation|unbranded,site-explorer-organic-keywords,nx.dev pos 1
+module federation react,50,350,22,450,module federation,informational,no_data,9,module-federation|branded,keywords-explorer-matching-terms,nx.dev pos 9 - improvable
+nx module federation,50,250,1,30,nx module federation,informational,no_data,1,module-federation|branded,keywords-explorer-matching-terms,branded; nx.dev pos 1
+nextjs module federation,40,90,0,10,nextjs module federation,informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,KD 0
+micro frontend architecture angular,30,150,2,150,micro frontend angular,informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,KD 2
+micro frontend tutorial,30,150,8,0,micro frontend,informational,no_data,2,module-federation|unbranded,keywords-explorer-matching-terms,"nx.dev pos 2, tutorial intent"
+micro frontend react tutorial,30,100,4,400,react micro frontend,informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,TP 400 tutorial framing
+micro frontend example,20,150,1,10,micro frontend example,informational,no_data,no,module-federation|unbranded,keywords-explorer-matching-terms,KD 1
+micro frontend module federation,20,100,1,450,module federation,informational,no_data,no,module-federation|unbranded,keywords-explorer-matching-terms,"KD 1, TP 450"
+module federation micro frontend,20,150,6,450,module federation,informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,"reversed variant, TP 450"
+native federation vs module federation,20,100,no_data,no_data,no_data,no_data,no_data,no,module-federation|branded,keywords-explorer-matching-terms,Angular native-federation comparison
+webpack 5 module federation,20,40,no_data,no_data,no_data,branded|informational,no_data,no,module-federation|branded,keywords-explorer-matching-terms,version-anchored variant

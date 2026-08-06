@@ -1,0 +1,1355 @@
+{
+  "source": "autocomplete",
+  "phrases": [
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code infinite memory",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory%20i",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "aspirational framing of unlimited recall (autocomplete seed: \"claude code memory i\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code unlimited memory",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory%20u",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same aspiration, different word (autocomplete seed: \"claude code memory u\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code memory problem",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory%20p",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "treating memory as a known defect (autocomplete seed: \"claude code memory p\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code compact vs new session",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20vs",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "deciding between compacting and starting fresh (autocomplete seed: \"claude code session vs\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code memory system",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "looking for a whole memory architecture (autocomplete seed: \"claude code memory\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code memory bank",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory%20b",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "\"memory bank\" is the community pattern name (autocomplete seed: \"claude code memory b\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "cursor memory bank",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=cursor%20memory",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same pattern, Cursor side (autocomplete seed: \"cursor memory\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "cursor memory bank mcp",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=cursor%20memory%20b",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "memory bank delivered as an MCP server (autocomplete seed: \"cursor memory b\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code memory mcp",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory%20m",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "memory as an MCP server (autocomplete seed: \"claude code memory m\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent memory mcp",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20memory",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "generic agent memory over MCP (autocomplete seed: \"agent memory\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code memory plugin",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants it as an installable plugin (autocomplete seed: \"claude code memory\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code memory skill",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants it as a Claude Code skill (autocomplete seed: \"claude code memory\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent memory skill",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20memory%20s",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same, generic (autocomplete seed: \"agent memory s\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code memory tool",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "tool framing (autocomplete seed: \"claude code memory\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent long term memory",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=ai%20agent%20memory%20l",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "long-term vs working memory distinction (autocomplete seed: \"ai agent memory l\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent memory management",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20memory",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "managing what the agent retains (autocomplete seed: \"agent memory\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent memory management",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=ai%20agent%20memory",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same, \"ai agent\" stem (autocomplete seed: \"ai agent memory\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent memory os",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20memory%20o",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "memory-as-an-OS framing (MemOS-style) (autocomplete seed: \"agent memory o\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent memory open source",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=ai%20agent%20memory%20o",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "looking for OSS options (autocomplete seed: \"ai agent memory o\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent memory library",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=ai%20agent%20memory%20l",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants a library not a product (autocomplete seed: \"ai agent memory l\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent memory graph",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=ai%20agent%20memory%20g",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "graph-backed memory (autocomplete seed: \"ai agent memory g\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent memory mem0",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20memory%20m",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "naming a specific vendor (autocomplete seed: \"agent memory m\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent memory types",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=ai%20agent%20memory",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "learning the taxonomy of memory (autocomplete seed: \"ai agent memory\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent memory patterns",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20memory%20p",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "looking for design patterns (autocomplete seed: \"agent memory p\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent memory service",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20memory%20s",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants a hosted service (autocomplete seed: \"agent memory s\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code user memory",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory%20u",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "user-scope memory file (autocomplete seed: \"claude code memory u\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code memory vs rules",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory%20v",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "disambiguating memory from rules files (autocomplete seed: \"claude code memory v\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude.md vs memory.md",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=CLAUDE.md%20v",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "which file is the memory file (autocomplete seed: \"CLAUDE.md v\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude.md best practices",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=CLAUDE.md",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "how to write the rules/memory file well (autocomplete seed: \"CLAUDE.md\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "best claude.md",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=best%20CLAUDE.md",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "shopping for good CLAUDE.md examples (autocomplete seed: \"best CLAUDE.md\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent context engineering",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20context",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "the current umbrella term for this work (autocomplete seed: \"agent context\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent context management",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20context",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "managing what goes into context (autocomplete seed: \"agent context\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code context management",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20context",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "Claude Code specific (autocomplete seed: \"claude code context\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "memory",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code context engineering",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20context%20e",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same, \"engineering\" framing (autocomplete seed: \"claude code context e\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents.md vs claude.md",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "picking between the two rules-file standards (autocomplete seed: \"AGENTS.md\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude.md vs agents.md",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=CLAUDE.md",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "reverse phrasing, same decision (autocomplete seed: \"CLAUDE.md\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents.md vs copilot-instructions.md",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "three-way standard confusion incl. Copilot (autocomplete seed: \"AGENTS.md\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents.md vs skills.md",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "standards proliferation (autocomplete seed: \"AGENTS.md\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude.md vs skills.md",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=CLAUDE.md%20v",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"CLAUDE.md v\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude.md vs skills",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=CLAUDE.md%20v",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"CLAUDE.md v\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents.md claude code",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md%20c",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "using AGENTS.md with Claude Code (autocomplete seed: \"AGENTS.md c\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents.md codex",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "AGENTS.md with Codex (autocomplete seed: \"AGENTS.md\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents.md copilot",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md%20c",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "AGENTS.md with Copilot (autocomplete seed: \"AGENTS.md c\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents.md vscode",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md%20v",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "AGENTS.md in VS Code (autocomplete seed: \"AGENTS.md v\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents.md windsurf",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md%20w",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "AGENTS.md with Windsurf (autocomplete seed: \"AGENTS.md w\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents.md opencode",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md%20o",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "AGENTS.md with opencode (autocomplete seed: \"AGENTS.md o\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "best agents.md for opencode",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=best%20AGENTS.md",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "tool-specific rules file for a fourth harness (autocomplete seed: \"best AGENTS.md\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude.md equivalent for opencode",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=CLAUDE.md%20e",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "porting the rules file to another harness (autocomplete seed: \"CLAUDE.md e\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude.md to codex",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=CLAUDE.md%20t",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "moving Claude Code config to Codex (autocomplete seed: \"CLAUDE.md t\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "codex session sync",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=codex%20session%20s",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "keeping sessions in sync (autocomplete seed: \"codex session s\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "coding agent harness",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=coding%20agent",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "\"harness\" as the user-side word for this layer (autocomplete seed: \"coding agent\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "portability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "coding agent comparison",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=coding%20agent%20c",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "comparing harnesses before committing (autocomplete seed: \"coding agent c\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session sharing",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20s",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants to share a session (autocomplete seed: \"claude code session s\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "how to share claude code session",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=how%20to%20claude%20code%20session",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same, how-to form (autocomplete seed: \"how to claude code session\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "codex session share",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=codex%20session%20s",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "Codex equivalent (autocomplete seed: \"codex session s\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session handoff",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20h",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "handing a session to someone/something else (autocomplete seed: \"claude code session h\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session handoff skill",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20h",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants a skill that does the handoff (autocomplete seed: \"claude code session h\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "codex session handoff",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=codex%20session%20h",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "Codex equivalent (autocomplete seed: \"codex session h\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code context handoff",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20context%20h",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "handing off the context specifically (autocomplete seed: \"claude code context h\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagent handoff",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20h",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "handing off between subagents (autocomplete seed: \"claude code subagents h\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "multi agent handoff",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=multi%20agent%20h",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "generic agent-to-agent handoff (autocomplete seed: \"multi agent h\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent context sharing",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20context%20s",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "sharing context between agents/people (autocomplete seed: \"agent context s\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session transcript",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20t",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants the transcript artifact (autocomplete seed: \"claude code session t\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code export session to markdown",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20e",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "exporting a session to a readable format (autocomplete seed: \"claude code session e\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session export",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20e",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"claude code session e\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "how to export claude code session",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=how%20to%20claude%20code%20session",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "how-to form (autocomplete seed: \"how to claude code session\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "sharing",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "codex /export session transcript",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=codex%20session%20e",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "pasted the literal Codex slash command (autocomplete seed: \"codex session e\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagents observability",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20o",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "explicitly asking for subagent observability (autocomplete seed: \"claude code subagents o\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session dashboard",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20d",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants a dashboard over sessions (autocomplete seed: \"claude code session d\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session viewer",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20v",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants to view sessions (autocomplete seed: \"claude code session v\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session visualizer",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20v",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "visualizing a session (autocomplete seed: \"claude code session v\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session monitor",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20m",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "monitoring a running session (autocomplete seed: \"claude code session m\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session tracker",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20t",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "tracking sessions (autocomplete seed: \"claude code session t\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session logs",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20l",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "looking for session logs (autocomplete seed: \"claude code session l\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagent logs",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20l",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "looking for subagent logs (autocomplete seed: \"claude code subagents l\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "codex session logs",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=codex%20session%20l",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "Codex logs (autocomplete seed: \"codex session l\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "copilot agent session logs",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20session%20l",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "Copilot logs (autocomplete seed: \"agent session l\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code context monitor",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20context%20m",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "watching context fill in real time (autocomplete seed: \"claude code context m\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code context tracker",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20context%20t",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"claude code context t\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code context visualization",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20context%20v",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "visualizing context contents (autocomplete seed: \"claude code context v\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code context dashboard",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20context%20d",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "dashboard for context (autocomplete seed: \"claude code context d\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code hook context timeline",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20context%20h",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "building a timeline from hooks (autocomplete seed: \"claude code context h\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "youtube-autocomplete",
+      "verbatim_phrase": "agent session view",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=agent%20session",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "viewing an agent session (autocomplete seed: \"agent session\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "observability",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent sessions vscode",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20session",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "the VS Code agent sessions surface (autocomplete seed: \"agent session\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session token usage",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20t",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "token usage for a session (autocomplete seed: \"claude code session t\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session total cost",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20t",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "dollar cost of a session (autocomplete seed: \"claude code session t\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code usage session total cost",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20u",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"claude code session u\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session cost",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20c",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same, short (autocomplete seed: \"claude code session c\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session usage limit",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20u",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "hitting usage limits (autocomplete seed: \"claude code session u\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "youtube-autocomplete",
+      "verbatim_phrase": "claude code session limit",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=claude%20code%20session",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"claude code session\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session token limit",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20t",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "token ceiling (autocomplete seed: \"claude code session t\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "codex session token usage",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=codex%20session%20t",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "Codex token usage (autocomplete seed: \"codex session t\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "codex session cost",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=codex%20session%20c",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "Codex cost (autocomplete seed: \"codex session c\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "codex session rate limit",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=codex%20session%20r",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "rate limits (autocomplete seed: \"codex session r\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "codex session limits",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=codex%20session",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "limits generally (autocomplete seed: \"codex session\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagents token usage",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20t",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "cost attributed to subagents (autocomplete seed: \"claude code subagents t\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagents pricing",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20p",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "what subagents cost (autocomplete seed: \"claude code subagents p\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "cost",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent teams token usage",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20token%20usage%20t",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "token usage across a team of agents (autocomplete seed: \"agent token usage t\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent audit trail",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20audit%20a",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "audit trail over agent actions (autocomplete seed: \"agent audit a\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent audit trail",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20audit",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same, short (autocomplete seed: \"agent audit\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent audit logs",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20audit%20a",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "audit logs (autocomplete seed: \"agent audit a\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent audit logs",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20audit",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"agent audit\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "bing-autocomplete",
+      "verbatim_phrase": "agent audit log",
+      "url": "https://api.bing.com/osjson.aspx?query=agent%20audit",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "singular (autocomplete seed: \"agent audit\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "copilot agent audit logs",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20audit%20c",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "Copilot audit logs (autocomplete seed: \"agent audit c\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "copilot studio agent audit logs",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20audit%20l",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "Copilot Studio audit logs (autocomplete seed: \"agent audit l\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent security audit",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20audit%20s",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "security review of agents (autocomplete seed: \"agent audit s\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent security audit",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20audit%20s",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"agent audit s\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent code audit",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20audit%20c",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "auditing agent-written code (autocomplete seed: \"agent audit c\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "bing-autocomplete",
+      "verbatim_phrase": "agent memory security",
+      "url": "https://api.bing.com/osjson.aspx?query=agent%20memory%20vs",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "memory as an attack surface (autocomplete seed: \"agent memory vs\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "governance",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent memory security",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=ai%20agent%20memory%20s",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"ai agent memory s\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagents parallel",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20p",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "running subagents in parallel (autocomplete seed: \"claude code subagents p\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagents workflow",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20w",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wiring subagents into a workflow (autocomplete seed: \"claude code subagents w\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagents vs skills",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "disambiguating the two primitives (autocomplete seed: \"claude code subagents\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagents and skills",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20a",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "using both (autocomplete seed: \"claude code subagents a\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagents best practices",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20b",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "how to use them well (autocomplete seed: \"claude code subagents b\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "best claude code subagents",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20b",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "shopping for subagent definitions (autocomplete seed: \"claude code subagents b\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagents collection",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants a pack of them (autocomplete seed: \"claude code subagents\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent orchestration layer",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20orchestration%20l",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "a distinct orchestration layer (autocomplete seed: \"agent orchestration l\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent orchestration tools",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20orchestration",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "shopping for orchestration tools (autocomplete seed: \"agent orchestration\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "youtube-autocomplete",
+      "verbatim_phrase": "agent orchestration framework",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=agent%20orchestration",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "framework framing (autocomplete seed: \"agent orchestration\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent orchestration claude code",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20orchestration",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "orchestration specifically over Claude Code (autocomplete seed: \"agent orchestration\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent orchestration cursor",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20orchestration%20c",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "over Cursor (autocomplete seed: \"agent orchestration c\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent orchestration patterns",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20orchestration",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "patterns (autocomplete seed: \"agent orchestration\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent orchestration best practices",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20orchestration%20b",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "best practices (autocomplete seed: \"agent orchestration b\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "best agent orchestration framework",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=best%20agent%20orchestration",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "shopping (autocomplete seed: \"best agent orchestration\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "best multi agent orchestration framework",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=best%20agent%20orchestration",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same, multi-agent framing (autocomplete seed: \"best agent orchestration\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "multi agent claude code",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=multi%20agent%20c",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "multi-agent on Claude Code (autocomplete seed: \"multi agent c\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "multi agent vs single agent",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=multi%20agent%20v",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "deciding whether to go multi-agent (autocomplete seed: \"multi agent v\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent session management",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20session",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "managing many sessions (autocomplete seed: \"agent session\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code session manager",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "wants a session manager (autocomplete seed: \"claude code session\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "codex session manager",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=codex%20session",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "Codex session manager (autocomplete seed: \"codex session\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "orchestration",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code sessions list",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "enumerating sessions (autocomplete seed: \"claude code session\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "crossrepo",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagents worktree",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20w",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "subagents on git worktrees (autocomplete seed: \"claude code subagents w\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "crossrepo",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code subagent git worktree",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20subagents%20g",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"claude code subagents g\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "crossrepo",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code worktree session",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20session%20w",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "session per worktree (autocomplete seed: \"claude code session w\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "crossrepo",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code repo context",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20context%20r",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "giving the agent repo-level context (autocomplete seed: \"claude code context r\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "crossrepo",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude code memory repo",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=claude%20code%20memory%20r",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "repo-scoped memory (autocomplete seed: \"claude code memory r\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "crossrepo",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents.md repository",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md%20r",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "AGENTS.md at repo level (autocomplete seed: \"AGENTS.md r\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "crossrepo",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "claude.md repository",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=CLAUDE.md%20r",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "CLAUDE.md at repo level (autocomplete seed: \"CLAUDE.md r\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "coding agent evaluation framework",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=coding%20agent%20e",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "evaluating coding agents (autocomplete seed: \"coding agent e\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "coding agents evals",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=coding%20agent%20e",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "evals as the term (autocomplete seed: \"coding agent e\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "how to benchmark coding agents",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=how%20to%20coding%20agent",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "benchmarking (autocomplete seed: \"how to coding agent\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "coding agent harness benchmark",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=coding%20agent%20h",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "benchmarking the harness, not the model (autocomplete seed: \"coding agent h\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "coding agent benchmark leaderboard",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=coding%20agent%20b",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "leaderboard (autocomplete seed: \"coding agent b\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent memory benchmark",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20memory",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "benchmarking memory systems (autocomplete seed: \"agent memory\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "ai agent memory benchmark",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=ai%20agent%20memory%20b",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"ai agent memory b\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "benchmarking ai agent memory is a filesystem all you need",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=ai%20agent%20memory%20b",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "paper-title-shaped query (autocomplete seed: \"ai agent memory b\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent memory eval",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20memory%20e",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "evaluating memory (autocomplete seed: \"agent memory e\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agent memory evaluation",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=agent%20memory%20e",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "same (autocomplete seed: \"agent memory e\"; harvested 2026-08-06)"
+    },
+    {
+      "category": "evaluation",
+      "source": "google-autocomplete",
+      "verbatim_phrase": "agents md evaluation",
+      "url": "https://suggestqueries.google.com/complete/search?client=firefox&q=AGENTS.md%20e",
+      "engagement_metric": "",
+      "date": "2026-08-06",
+      "context": "does the rules file actually help (autocomplete seed: \"AGENTS.md e\"; harvested 2026-08-06)"
+    }
+  ]
+}

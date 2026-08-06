@@ -1,0 +1,565 @@
+{
+  "category": "memory",
+  "seeds": [
+    {
+      "framing": "symptom",
+      "seed_phrase": "claude code forgets everything between sessions",
+      "word_count": 6,
+      "rationale": "canonical pain phrasing, high prompt frequency",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "claude code loses context",
+      "word_count": 4,
+      "rationale": "short head form of the same pain",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "agent forgets previous conversation",
+      "word_count": 4,
+      "rationale": "tool-agnostic symptom",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "context window full",
+      "word_count": 3,
+      "rationale": "head term, the literal error state",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "compacting conversation loses details",
+      "word_count": 4,
+      "rationale": "auto-compaction is the top 2026 complaint",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "agent repeats mistakes i already corrected",
+      "word_count": 6,
+      "rationale": "the why-is-lost pain, matches metaharness copy",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "have to re-explain my codebase every session",
+      "word_count": 7,
+      "rationale": "onboarding-tax phrasing",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "coding agent starts from scratch every time",
+      "word_count": 7,
+      "rationale": "long conversational symptom",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "context rot",
+      "word_count": 2,
+      "rationale": "2026 term of art for long-session degradation",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "agent quality degrades in long sessions",
+      "word_count": 6,
+      "rationale": "degradation framing distinct from hard loss",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "claude.md keeps getting ignored",
+      "word_count": 4,
+      "rationale": "rules-file adherence complaint",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "agents.md too long",
+      "word_count": 3,
+      "rationale": "rules-file bloat symptom",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "duplicate rules across claude.md and cursorrules",
+      "word_count": 6,
+      "rationale": "rules drift across tools",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "lost work after context compaction",
+      "word_count": 5,
+      "rationale": "concrete loss event",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "resume session lost history",
+      "word_count": 4,
+      "rationale": "resumability failure",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "agent forgets architecture decisions",
+      "word_count": 4,
+      "rationale": "the 'why' loss specifically",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "burning tokens re-reading the same files",
+      "word_count": 6,
+      "rationale": "cost-flavored memory symptom",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "new chat forgets what we decided",
+      "word_count": 6,
+      "rationale": "decision continuity loss",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "persistent memory for ai agents",
+      "word_count": 5,
+      "rationale": "canonical solution guess",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "agent memory layer",
+      "word_count": 3,
+      "rationale": "short head term used by vendors",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "long term memory for coding agents",
+      "word_count": 6,
+      "rationale": "explicit LTM framing",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "memory mcp server",
+      "word_count": 3,
+      "rationale": "MCP is the default plumbing guess in 2026",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "shared memory across coding agents",
+      "word_count": 5,
+      "rationale": "team/multi-agent memory",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "session persistence for ai coding tools",
+      "word_count": 6,
+      "rationale": "durability framing",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "context management tools",
+      "word_count": 3,
+      "rationale": "broad head term",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "claude.md generator",
+      "word_count": 2,
+      "rationale": "rules-file tooling demand",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "agents.md best practices",
+      "word_count": 3,
+      "rationale": "standardized rules file, high volume",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "repo knowledge base for agents",
+      "word_count": 5,
+      "rationale": "maps to Polygraph repo-knowledge capability",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "distilled memory from agent sessions",
+      "word_count": 5,
+      "rationale": "product language for compaction-done-right",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "vector memory vs file memory agents",
+      "word_count": 6,
+      "rationale": "implementation-choice query",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "context engineering",
+      "word_count": 2,
+      "rationale": "2026 replacement for 'prompt engineering'",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "checkpoint and restore agent session",
+      "word_count": 5,
+      "rationale": "durability mechanism",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "knowledge graph memory for coding agents",
+      "word_count": 6,
+      "rationale": "graph-memory approach",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "auto compaction alternative",
+      "word_count": 3,
+      "rationale": "explicit rejection of built-in behavior",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "team wide agent memory",
+      "word_count": 4,
+      "rationale": "org-level memory, differentiator",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "project memory file",
+      "word_count": 3,
+      "rationale": "simplest solution guess",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code memory",
+      "word_count": 3,
+      "rationale": "highest-volume tool head term in this category",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code persistent context",
+      "word_count": 4,
+      "rationale": "tool + solution",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code compaction settings",
+      "word_count": 4,
+      "rationale": "config-level intent",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code resume session",
+      "word_count": 4,
+      "rationale": "feature-level intent, real command",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "cursor memory across sessions",
+      "word_count": 4,
+      "rationale": "Cursor has native memories, drives comparison",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "cursor rules vs claude md",
+      "word_count": 5,
+      "rationale": "cross-tool rules-file confusion",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "codex agents md memory",
+      "word_count": 4,
+      "rationale": "Codex uses AGENTS.md",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "codex cli context limit",
+      "word_count": 4,
+      "rationale": "tool-specific context pain",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "aider repo map context",
+      "word_count": 4,
+      "rationale": "Aider's repo map is its memory mechanism",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "windsurf memories",
+      "word_count": 2,
+      "rationale": "Windsurf ships a named Memories feature",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "opencode session memory",
+      "word_count": 3,
+      "rationale": "OSS harness, growing 2026 audience",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "mcp memory server setup",
+      "word_count": 4,
+      "rationale": "installation intent",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "ai agents long term memory",
+      "word_count": 5,
+      "rationale": "generic-tool head term",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "coding agents context persistence",
+      "word_count": 4,
+      "rationale": "2026 category vocabulary",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "subagent context sharing",
+      "word_count": 3,
+      "rationale": "subagents inherit nothing by default",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "background agent loses context",
+      "word_count": 4,
+      "rationale": "background agents are the 2026 growth surface",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code hooks save context",
+      "word_count": 5,
+      "rationale": "DIY memory via hooks",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "cursor forgets project rules",
+      "word_count": 4,
+      "rationale": "tool + symptom hybrid",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code context window management",
+      "word_count": 5,
+      "rationale": "management intent, mid-tail",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "mem0 alternative",
+      "word_count": 2,
+      "rationale": "mem0 is the best-known agent-memory product",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "mem0 vs zep",
+      "word_count": 3,
+      "rationale": "the standard head-to-head in this category",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "letta vs mem0",
+      "word_count": 3,
+      "rationale": "Letta (MemGPT) is the agent-memory framework rival",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "zep alternative for coding agents",
+      "word_count": 5,
+      "rationale": "narrows Zep from chatbot memory to coding",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "basic memory mcp alternative",
+      "word_count": 4,
+      "rationale": "popular OSS memory MCP server",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "cognee vs mem0",
+      "word_count": 3,
+      "rationale": "cognee is a graph-memory competitor",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "supermemory alternative",
+      "word_count": 2,
+      "rationale": "newer memory-API entrant",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "omnigent vs mem0",
+      "word_count": 3,
+      "rationale": "positions the meta-harness layer against a memory point tool",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "byterover vs mem0",
+      "word_count": 3,
+      "rationale": "byterover targets coding-agent memory specifically",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "claude code memory vs cursor memories",
+      "word_count": 6,
+      "rationale": "native-feature comparison, no third-party needed",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how do i give claude code long term memory",
+      "word_count": 9,
+      "rationale": "top prompt form for this category",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how to stop claude code from forgetting context",
+      "word_count": 8,
+      "rationale": "negative-goal question form",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "best way to give agents persistent memory",
+      "word_count": 7,
+      "rationale": "recommendation-seeking, AI-prompt shaped",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "what should go in claude.md",
+      "word_count": 5,
+      "rationale": "extremely common practical question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "should i use claude.md or agents.md",
+      "word_count": 6,
+      "rationale": "standards-choice question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how do i share agent memory with my team",
+      "word_count": 9,
+      "rationale": "org-level memory, direct product fit",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how to preserve context across agent sessions",
+      "word_count": 7,
+      "rationale": "neutral phrasing, tool-agnostic",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "why does my agent forget what it did",
+      "word_count": 8,
+      "rationale": "diagnostic question, pre-solution",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how does context compaction work",
+      "word_count": 5,
+      "rationale": "mechanism-understanding question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "do i need a memory mcp server",
+      "word_count": 7,
+      "rationale": "should-i-adopt question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how to keep the same context in cursor and claude code",
+      "word_count": 11,
+      "rationale": "memory-portability overlap, still memory-intent",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how do agents remember architecture decisions",
+      "word_count": 6,
+      "rationale": "the 'why is lost' problem as a question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "what is context engineering",
+      "word_count": 4,
+      "rationale": "definitional, top-of-funnel",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how to handoff an agent session to a teammate",
+      "word_count": 9,
+      "rationale": "memory as handoff substrate",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how to reduce token usage from repeated context",
+      "word_count": 8,
+      "rationale": "cost-motivated memory question",
+      "source": "synthetic"
+    }
+  ]
+}

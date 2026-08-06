@@ -1,0 +1,565 @@
+{
+  "category": "governance",
+  "seeds": [
+    {
+      "framing": "symptom",
+      "seed_phrase": "ai agent deleted my files",
+      "word_count": 5,
+      "rationale": "classic destructive-action panic post",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "claude code ran rm -rf",
+      "word_count": 5,
+      "rationale": "highest-frequency agent destructive incident",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "agent pushed to main",
+      "word_count": 4,
+      "rationale": "unwanted git action, common complaint",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "coding agent made changes i didn't approve",
+      "word_count": 7,
+      "rationale": "consent/permission pain",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "don't know what my agent touched",
+      "word_count": 6,
+      "rationale": "no audit trail symptom",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "agent leaked api key",
+      "word_count": 4,
+      "rationale": "secrets exposure fear",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "ai agent read my env file",
+      "word_count": 6,
+      "rationale": "secrets access complaint",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "agent ran command without asking",
+      "word_count": 5,
+      "rationale": "auto-approve gone wrong",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "too many permission prompts",
+      "word_count": 4,
+      "rationale": "opposite failure mode, drives yolo mode",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "no audit log for ai agents",
+      "word_count": 6,
+      "rationale": "enterprise blocker phrasing",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "security team blocked claude code",
+      "word_count": 5,
+      "rationale": "org adoption blocker, high intent",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "agent exfiltrated repo code",
+      "word_count": 4,
+      "rationale": "data-leaving-boundary fear",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "prompt injection from a github issue",
+      "word_count": 6,
+      "rationale": "real 2026 attack vector",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "agent committed secrets to git",
+      "word_count": 5,
+      "rationale": "concrete incident phrasing",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "cant tell which agent changed this file",
+      "word_count": 7,
+      "rationale": "attribution gap with many agents",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "background agent went rogue",
+      "word_count": 4,
+      "rationale": "2026 background-agent vocabulary",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "mcp server security risk",
+      "word_count": 4,
+      "rationale": "MCP trust surface anxiety",
+      "source": "synthetic"
+    },
+    {
+      "framing": "symptom",
+      "seed_phrase": "cant prove compliance for ai generated code",
+      "word_count": 7,
+      "rationale": "SOC2/audit framing",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "ai agent sandbox",
+      "word_count": 3,
+      "rationale": "core head term for this category",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "agent audit trail",
+      "word_count": 3,
+      "rationale": "short head term",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "agent permissions management",
+      "word_count": 3,
+      "rationale": "direct solution noun",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "ai agent guardrails",
+      "word_count": 4,
+      "rationale": "widely used vendor term",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "agent policy enforcement",
+      "word_count": 3,
+      "rationale": "org policy language",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "sandboxed coding agent",
+      "word_count": 3,
+      "rationale": "isolation-first phrasing",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "agent allowlist commands",
+      "word_count": 3,
+      "rationale": "practical config search",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "human in the loop approval for agents",
+      "word_count": 7,
+      "rationale": "approval-gate solution",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "secrets management for ai agents",
+      "word_count": 5,
+      "rationale": "credential scoping need",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "rbac for coding agents",
+      "word_count": 4,
+      "rationale": "enterprise access-control framing",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "agent activity monitoring for teams",
+      "word_count": 5,
+      "rationale": "org visibility over agent actions",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "enterprise controls for coding agents",
+      "word_count": 5,
+      "rationale": "buyer-side phrasing",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "soc2 compliant ai coding tools",
+      "word_count": 5,
+      "rationale": "compliance-gated procurement",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "prompt injection protection",
+      "word_count": 3,
+      "rationale": "security head term",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "read only mode for ai agents",
+      "word_count": 6,
+      "rationale": "least-privilege ask",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "agent action approval workflow",
+      "word_count": 4,
+      "rationale": "workflow-shaped solution",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "ai code provenance tracking",
+      "word_count": 4,
+      "rationale": "who/what generated this code",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "centralized agent policy for engineering org",
+      "word_count": 6,
+      "rationale": "matches metaharness org-policy capability",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "agent blast radius control",
+      "word_count": 4,
+      "rationale": "SRE-inflected phrasing",
+      "source": "synthetic"
+    },
+    {
+      "framing": "solution",
+      "seed_phrase": "mcp server allowlist",
+      "word_count": 3,
+      "rationale": "MCP governance surface",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code permissions settings",
+      "word_count": 4,
+      "rationale": "direct config lookup, high volume",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code sandbox mode",
+      "word_count": 4,
+      "rationale": "named feature search",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code allowed tools config",
+      "word_count": 5,
+      "rationale": "settings.json permission tuning",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code audit log enterprise",
+      "word_count": 5,
+      "rationale": "admin-side need",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code dangerously skip permissions risk",
+      "word_count": 6,
+      "rationale": "yolo-flag safety searches",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "cursor agent permissions",
+      "word_count": 3,
+      "rationale": "cursor-side equivalent",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "cursor enterprise security controls",
+      "word_count": 4,
+      "rationale": "cursor admin buyer",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "codex sandbox permissions",
+      "word_count": 3,
+      "rationale": "codex approval-mode config",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "codex approval mode explained",
+      "word_count": 4,
+      "rationale": "codex-specific gating concept",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "github copilot agent audit logs",
+      "word_count": 5,
+      "rationale": "copilot enterprise admin",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "copilot enterprise policy management",
+      "word_count": 4,
+      "rationale": "org policy admin surface",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "aider auto commit safety",
+      "word_count": 4,
+      "rationale": "aider writes commits by default",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "opencode permissions config",
+      "word_count": 3,
+      "rationale": "opencode governance config",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "mcp server permissions and scopes",
+      "word_count": 5,
+      "rationale": "MCP auth scoping",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "mcp oauth security best practices",
+      "word_count": 5,
+      "rationale": "MCP auth hardening",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "coding agents in docker container isolation",
+      "word_count": 6,
+      "rationale": "most common DIY sandbox",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "ai agents least privilege github token",
+      "word_count": 6,
+      "rationale": "scoped-credential practice",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "claude code hooks block dangerous commands",
+      "word_count": 6,
+      "rationale": "hooks as enforcement mechanism",
+      "source": "synthetic"
+    },
+    {
+      "framing": "tool_anchored",
+      "seed_phrase": "devcontainer for coding agent isolation",
+      "word_count": 5,
+      "rationale": "devcontainer sandbox pattern",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "omnigent alternative",
+      "word_count": 2,
+      "rationale": "named product in the space",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "omnigent vs claude code enterprise",
+      "word_count": 5,
+      "rationale": "policy/sandboxing comparison",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "e2b vs daytona agent sandbox",
+      "word_count": 5,
+      "rationale": "real sandbox-runtime competitors",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "e2b sandbox alternative",
+      "word_count": 3,
+      "rationale": "sandbox infra alternative query",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "invariant labs guardrails alternative",
+      "word_count": 4,
+      "rationale": "agent security vendor",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "lasso vs prompt armor mcp security",
+      "word_count": 6,
+      "rationale": "MCP security vendors compared",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "nvidia nemo guardrails for coding agents",
+      "word_count": 6,
+      "rationale": "known guardrails framework, adjacent fit",
+      "source": "synthetic"
+    },
+    {
+      "framing": "competitor_adjacent",
+      "seed_phrase": "opa policy for ai agents",
+      "word_count": 5,
+      "rationale": "existing policy engine repurposed",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how do i sandbox a coding agent",
+      "word_count": 7,
+      "rationale": "top how-to prompt",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "is it safe to run claude code with skip permissions",
+      "word_count": 10,
+      "rationale": "very common safety question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how do i stop my agent from pushing to main",
+      "word_count": 10,
+      "rationale": "specific guardrail request",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how to audit what an ai agent did",
+      "word_count": 8,
+      "rationale": "audit-trail question form",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how do enterprises govern ai coding agents",
+      "word_count": 7,
+      "rationale": "buyer-level question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "best way to keep secrets away from coding agents",
+      "word_count": 9,
+      "rationale": "secrets scoping question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how to enforce coding standards across all agents",
+      "word_count": 8,
+      "rationale": "policy enforcement across a fleet",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "what permissions should i give a coding agent",
+      "word_count": 8,
+      "rationale": "least-privilege design question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how do i prevent prompt injection in my agent",
+      "word_count": 9,
+      "rationale": "attack mitigation question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "do we need soc2 controls for ai coding tools",
+      "word_count": 9,
+      "rationale": "compliance scoping question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how to review ai generated code for security",
+      "word_count": 8,
+      "rationale": "review-gate question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how do i give agents access without giving them prod",
+      "word_count": 11,
+      "rationale": "environment segregation question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "can i restrict which mcp servers my team uses",
+      "word_count": 9,
+      "rationale": "MCP governance question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how to track which agent made which commit",
+      "word_count": 8,
+      "rationale": "attribution question",
+      "source": "synthetic"
+    },
+    {
+      "framing": "question",
+      "seed_phrase": "how do i safely run agents unattended overnight",
+      "word_count": 8,
+      "rationale": "autonomy + containment question",
+      "source": "synthetic"
+    }
+  ]
+}

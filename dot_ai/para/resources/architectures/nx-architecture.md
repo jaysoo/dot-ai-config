@@ -176,6 +176,14 @@ The Nx documentation site (nx.dev/docs) - Astro/Starlight application
   - `graph` tag: requires inline JSON code fence (not `jsonFile` attribute for custom data)
   - Code block filenames: use `// filename` comment inside block, NOT `title=` attribute (Starlight ignores `title=`)
 
+**Anti-AI prose: vale is not the gate.** `astro-docs/STYLE_GUIDE.md` splits into mechanical rules (vale enforces) and structural rules (nobody enforces). Prose can be 0 errors / 0 warnings / 0 suggestions and still get bounced as "too AI-sounding". Recurring tells, in the order Jack has flagged them:
+- `claim because abstraction: list, list` - a reason clause that explains nothing on its own, then a colon dumping the real content as an afterthought. Put the concrete reason IN the clause and drop the colon.
+- Two adjacent sentences carrying the same information, the second re-framing the first. Merge them.
+- Leading with the enumerated subject ("Two are scoped to the organization...") instead of the actor. Lead with who does the thing ("GitHub scopes your role...").
+- The re-grant/benefit claim stated in both an intro and a detail section (one canonical home).
+- `When it's used:` restating `Used for:` instead of adding a fact.
+(2026-08-05, `kb/github-app-permissions.mdoc`, #36581 - three drafts rejected after a clean vale run.)
+
 **Important**: Netlify Edge Function responses from `context.next()` are **immutable**. Must create new Response objects with cloned headers - cannot use `response.headers.set()`.
 
 ### nx-dev/
@@ -419,6 +427,15 @@ Most packages have a `build` target that runs post-compilation steps (chmod, cop
 - Fix applied 2026-04-01: added `dependentTasksOutputFiles` for the bin `.js` files
 
 ## Personal Work History
+
+### 2026-08-05 - GitHub App organization permissions: docs accuracy + stale CLI hint (MERGED #36581)
+- **Branch**: `docs/explain-github-app-org-permissions` | **Merge**: `378526cd7f` (2026-08-05) | **PR**: https://github.com/nrwl/nx/pull/36581 | no Polygraph session | Follow-up branch `docs/github-app-permissions-intro-wording` (`61c35a9305`, unpushed) | Paired ocean branch `fix/onboarding-permission-hint` (`b4faebb334`, unpushed)
+- **What**: `astro-docs/src/content/docs/kb/github-app-permissions.mdoc` documents each permission the Nx Cloud GitHub App requests. The two organization-scoped ones (`Administration: read`, `Members: read`) had no explanation, and the `Administration` entry claimed it covered listing org repositories during setup.
+- **Permission -> endpoint map** (verified in nrwl/ocean `libs/ocean/util-vcs/src/lib/github/`): org `Administration: read` is needed by `GET /orgs/{org}/installations` only (`fetch-organization-installation.server.ts`, called from `create-nx-cloud-organization-from-vcs-organization.server.ts` at setup and `refresh-vcs-organization-members.server.ts` at member sync). Repo listing (`GET /orgs/{org}/repos`, `GET /user/installations/{id}/repositories`) needs `Metadata: read`, not Administration. Org `Members: read` backs `GET /user/memberships/orgs/{org}` (`fetch-organization-membership.server.ts`), called from `organization-dashboard-loader.server.ts` only for a user whose GitHub membership isn't recorded yet.
+- **Live app state** (Jack confirmed on the settings page, 2026-08): org permissions = read on actions, members, metadata, organization administration. `Administration (read & write)` was dropped 2026-05-27; the update prompt shows it as "no longer required".
+- **Stale CLI hint** (nrwl/ocean `libs/nx-packages/client-bundle/src/lib/core/commands/onboarding/onboarding-remediation.ts:77`): told users to grant `"Administration: Read & Write"`, which no longer appears in app settings - guaranteed dead end, then a support ticket. Fires on any 403 whose message contains "permission", plus the 502 create-repository branch. No spec covers the module. Version plan required (remediation shipped 2026-04-01 #10587, so it's a fix against released prod code).
+- **Gotchas hit**: PR was already open AND got squash-merged mid-session while local `--amend` rounds continued - four amends went into a dead branch, and only the first two reached master. Always check PR state (not just `git ls-remote`) before amending a pushed commit. Also: the original branch commit was authored by `Claude <noreply@anthropic.com>`; needed `git commit --amend --reset-author`.
+- **Docs lesson**: vale was 0/0/0 on prose Jack called "too AI-sounding", across three drafts. The structural STYLE_GUIDE rules are the ones that bite - tells catalogued under `astro-docs/` in Directory Overview ("Anti-AI prose: vale is not the gate").
 
 ### 2026-07-29..08-05 - NXC-4687: CNW --preset empty escape hatch + template download errors (MERGED #36508)
 - **Branch**: `NXC-4687` | **Worktree**: `/Users/jack/projects/nx-worktrees/NXC-4687` | **Merge**: `4a63dc82af` (2026-08-05) | **PR**: https://github.com/nrwl/nx/pull/36508 | **Polygraph**: `zesty-eagle-2a40a186` (nrwl/nx) | Linear NXC-4687 (data in NXC-4649)

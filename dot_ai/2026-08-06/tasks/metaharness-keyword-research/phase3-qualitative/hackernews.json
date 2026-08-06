@@ -1,0 +1,1373 @@
+{
+  "source": "hackernews",
+  "phrases": [
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "It is pretty great at following instructions - for about 10 minutes, after which it seems to ignore things I told it before.",
+      "url": "https://news.ycombinator.com/item?id=49097308",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-29",
+      "context": "commenting on why long rules files stop governing agents"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I have quite explicit and strong instructions (e.g. don't write massive comments, use existing functionality, etc.) in CLAUDE.md files which seem to get bypassed surprisingly quickly when doing real tasks.",
+      "url": "https://news.ycombinator.com/item?id=49097308",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-29",
+      "context": "same thread on CLAUDE.md not sticking"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "As a hobbyist, I find it difficult to figure out how to make Claude stick with some repeating things I want it to do after every major action, like re-evaluate the completeness of tests, update the documentation, etc. And CLAUDE.md/AGENTS.md definitely did NOT help there, sadly.",
+      "url": "https://news.ycombinator.com/item?id=49097464",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-29",
+      "context": "hobbyist describing rules-file failure"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I was very angry that AI kept breaking the rules I wrote, so I asked Claude to crawl its own history logs. And then I found: every time after it breaks a rule, the chance of breaking rules goes up.",
+      "url": "https://news.ycombinator.com/item?id=49099731",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-29",
+      "context": "user auditing their own agent's rule violations"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "the CLAUDE.md is included in the first prompt which is given priority in the context. On prompt 20, it will remember message 1 better than message 12.",
+      "url": "https://news.ycombinator.com/item?id=49123874",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-31",
+      "context": "explaining why instructions decay mid-session"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "It's clear at this point that agents don't actually follow agents.md They try to but they don't.",
+      "url": "https://news.ycombinator.com/item?id=49124086",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-31",
+      "context": "game dev whose agent keeps ignoring the perforce rule"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I've had a lot of success using the root Claude.md for a handful of high level application wide rules and directions (I keep it pretty small), module specific claude.md in subfolders alongside the code with more specific rules and direction",
+      "url": "https://news.ycombinator.com/item?id=49097950",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-29",
+      "context": "describing a layered rules-file setup"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Making your own agent to have a sticky memory context that is prepended to every execution is necessary to ensure each task is bounded by those precepts.",
+      "url": "https://news.ycombinator.com/item?id=49097756",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-29",
+      "context": "arguing for prepended sticky memory"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Another day another \"memory\" system for a tool that cannot ever have memory. LLMs have context, and the more you fill that context with unrelated junk, the worse they perform.",
+      "url": "https://news.ycombinator.com/item?id=48624861",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "top skeptical reply on a Show HN memory tool"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Love to see people creating such projects, i'm truly passionate about Coding Agent Memory myself. Have you thought on making it collaborative memory across your teammates working on the repo? how does your framework handle stale memory, when someone changes the code that breaks the memory store?",
+      "url": "https://news.ycombinator.com/item?id=48626427",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "asking a memory Show HN about team memory and staleness"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "if you need to do a major architectural project that spans 3 codebases and 2 clouds you're gonna have a hard time without substantial context/memory management",
+      "url": "https://news.ycombinator.com/item?id=48623996",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "arguing memory tools matter at real scale"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "This means its changes will either be out of alignment with the overall project and its \"style\" and goals, or it waste tokens re-getting to know the basics about the project each time. No third case.",
+      "url": "https://news.ycombinator.com/item?id=48628316",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "rebutting 'I never have to explain my project'"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I keep a plan file that records what I'm doing, how I'm doing it, and what I've done so far - every time I sit down to have another session, I feed Claude the plan file first",
+      "url": "https://news.ycombinator.com/item?id=48623908",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "manual session-to-session handoff"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "It's been amazing how I just don't need to explain the project anymore. An empty context and a few sentences on what I'd like to spec next and the LLM finds what it needs in the vault.",
+      "url": "https://news.ycombinator.com/item?id=48623825",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-21",
+      "context": "documentation vault as agent memory"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "it's useful to split these documents into three broad distinguished classes: goals, design, and idioms",
+      "url": "https://news.ycombinator.com/item?id=48624320",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "taxonomy for durable project memory"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I did lose the project memory with Claude. Even when everything was in GitHub and was working in OneDrive it still took some time to get Claude up to speed on a second PC.",
+      "url": "https://news.ycombinator.com/item?id=48636722",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "losing agent memory when moving machines"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "But while it would make a great recording of project history, I wonder if a lot of it doesn't end up detailing blind alleys the project went down and had to back out of",
+      "url": "https://news.ycombinator.com/item?id=48649024",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-23",
+      "context": "worrying that recorded memory captures dead ends"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Currently there is no way to handle stale memory and I didnt think about the teammates angle",
+      "url": "https://news.ycombinator.com/item?id=48627465",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "Show HN author admitting the stale-memory gap"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "When LLM fine-tuning was the hot topic, it felt like we were making models smarter. But the real challenge now? Making them remember, Giving proper Contexts. AI forgets too quickly.",
+      "url": "https://news.ycombinator.com/item?id=45324806",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2025-09-21",
+      "context": "arguing memory is the bottleneck; older but still canonical phrasing"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Without solid memory, agents feel more like stateless bots than useful asset.",
+      "url": "https://news.ycombinator.com/item?id=45324806",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2025-09-21",
+      "context": "same comment; 'stateless bots' framing"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "OpenClaw's native memory (SOUL.md, session history) works for short sessions but forgets across restarts or long threads, leading to repetitive prompting and higher costs.",
+      "url": "https://news.ycombinator.com/item?id=46971984",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-11",
+      "context": "personal agent forgetting across restarts"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "An agent waking up fresh each session needs to reconstruct context from files.",
+      "url": "https://news.ycombinator.com/item?id=47462323",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-20",
+      "context": "on the agent 'cold start' problem across frameworks"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Instead of relying on users to manually maintain context, Invincat uses an independent Memory Agent to review each completed task, extract valuable information, summarize user preferences, project conventions, coding habits, and historical decisions",
+      "url": "https://news.ycombinator.com/item?id=47922099",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-04-27",
+      "context": "describing distilled memory extraction"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "The agents act like interns with amnesia—they write good isolated code but constantly violate established architectural decisions",
+      "url": "https://news.ycombinator.com/item?id=47390397",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-15",
+      "context": "blog author describing 'AI sprawl'"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "turn off all agent memory, this has only ever caused problems for me.",
+      "url": "https://news.ycombinator.com/item?id=48416366",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-05",
+      "context": "listing an AI dev stack; anti-memory stance"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I'm just dropping it on the project after a full memory wipe.",
+      "url": "https://news.ycombinator.com/item?id=48632570",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-22",
+      "context": "describing every fresh session as a memory wipe"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I actually just ask codex/claude code to look up the session id when I want to resume sessions cross harness, it's just jsonl files locally so it can access the full conversation history when needed.",
+      "url": "https://news.ycombinator.com/item?id=47852548",
+      "engagement_metric": "parent story 72 points / 28 comments",
+      "date": "2026-04-21",
+      "context": "manual cross-harness session recovery"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "No matter what workarounds you use, claude.md/memory/skills what-ever you throw, after 2 exchanges it goes back eating tokens.",
+      "url": "https://news.ycombinator.com/item?id=49164038",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-08-04",
+      "context": "frustration that memory files don't change behaviour"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I agree after compaction it's like dealing with something that's developed a bad case of dementia, but you've run out what is the alternative?",
+      "url": "https://news.ycombinator.com/item?id=47110366",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-22",
+      "context": "discussing Claude Code's compaction discarding data"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "And then the context window gets exhausted. Compaction loses most of the details and degrades quality. You start a new session, but the new session has to re-learn the entire world from scratch",
+      "url": "https://news.ycombinator.com/item?id=46584827",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-01-12",
+      "context": "describing the compaction death spiral"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Compaction always loses information, so I use an alternative approach",
+      "url": "https://news.ycombinator.com/item?id=46631348",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-01-15",
+      "context": "Ask HN: best way to provide continuous context to models"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Compactions during implementation remove a lot of important info. There should really be a Claude monitoring top level context and passing work to agents.",
+      "url": "https://news.ycombinator.com/item?id=46736376",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-01-23",
+      "context": "on Gas Town agent patterns"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "it's really easy to fill up the context window with irrelevant noise and compaction generally causes it to lose the plot entirely and have to start almost from scratch",
+      "url": "https://news.ycombinator.com/item?id=47265823",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-05",
+      "context": "reverse-engineering workload hitting compaction"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "The root cause was context window compaction dropping her safety instruction. The agent kept working. It just lost the part where it was supposed to ask first.",
+      "url": "https://news.ycombinator.com/item?id=47269231",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-06",
+      "context": "Show HN for a permissions layer; compaction dropped the guardrail"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Each task runs in a single agent context (one responsibility, clear scope), and when the window fills up, the system automatically rotates: writes a structured handover, clears, and resumes in a fresh window.",
+      "url": "https://news.ycombinator.com/item?id=47133379",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-24",
+      "context": "describing 'context rotation' instead of compaction"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "With the million-context-window models we never hit compaction, observed over hundreds of sessions. What are you doing that has you hitting compaction regularly?",
+      "url": "https://news.ycombinator.com/item?id=48778238",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-03",
+      "context": "on 'Memorizing session transcripts isn't useful'"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "you can often fill up an entire context window and force a compaction just by trying to put together a transcript or summary",
+      "url": "https://news.ycombinator.com/item?id=48776242",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-03",
+      "context": "Show HN: ctx, searching agent history already on disk"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I've basically never edited a skill or memory myself. I make the LLM do it as part of the /handoff skill before I clear a session.",
+      "url": "https://news.ycombinator.com/item?id=48623324",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-21",
+      "context": "automated handoff before clearing context"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "It's funny because with so many different implementations of /handoff, I wonder if anyone has benchmarked handoff-and-resume to figure out what the best performance implementation looks like.",
+      "url": "https://news.ycombinator.com/item?id=48623608",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-21",
+      "context": "noting the proliferation of /handoff hacks"
+    },
+    {
+      "category": "memory",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "It should be a first class feature of the harness, tbh. It kind of is with the /compact [focus] parameter but this is coarse and leaves no record.",
+      "url": "https://news.ycombinator.com/item?id=48630851",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "asking for handoff to be built into the harness"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "once you move from \"assistant\" to \"agent\", observability becomes a hard requirement, not a nice-to-have. When an agent can read, modify, and orchestrate multiple parts of a codebase, you need the equivalent of logs, traces, and diffs — not just summaries. Otherwise debugging becomes guesswork.",
+      "url": "https://news.ycombinator.com/item?id=47037681",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-16",
+      "context": "on Anthropic hiding Claude's actions"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Agent workflows will need the same evolution: clear execution traces, deterministic diffs, and full transparency into what happened and why.",
+      "url": "https://news.ycombinator.com/item?id=47037681",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-16",
+      "context": "same comment, prescriptive framing"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "the actual pain point isn't \"how do I chain prompts\"—it's \"what did the agent do, why, and how do I audit/reproduce it?\"",
+      "url": "https://news.ycombinator.com/item?id=46969371",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-11",
+      "context": "on ex-GitHub CEO's agent platform launch"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Once you have multiple agents across multiple sessions generating code in production, you hit the same observability problems every other distributed system hits: tracing, attribution, debugging failures across runs.",
+      "url": "https://news.ycombinator.com/item?id=46969371",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-11",
+      "context": "same comment; distributed-systems analogy"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Nobody should be deploying computer-use agents without observability around what they're actually doing.",
+      "url": "https://news.ycombinator.com/item?id=47055434",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-18",
+      "context": "on Claude Sonnet 4.6 safety numbers"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "when agent goes offrail can at least see what it believed it was doing, not just which calls it made",
+      "url": "https://news.ycombinator.com/item?id=47004149",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-13",
+      "context": "Ask HN: how do you shut down misbehaving AI in production"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "A single agent request can fan out across sub-agents, tools, model calls, retries, and external APIs. When something goes wrong, logs aren't enough and raw traces aren't very helpful unless you can actually understand them.",
+      "url": "https://news.ycombinator.com/item?id=46280196",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2025-12-15",
+      "context": "on OTEL observability inside an agent framework"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "The hard part isn't emitting OpenTelemetry spans. That's easy. The hard part is turning high-cardinality agent traces into something a human can reason about.",
+      "url": "https://news.ycombinator.com/item?id=46280196",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2025-12-15",
+      "context": "same comment"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "When you work with agents, it's often a black box. You write some code, run it, and just hope it behaves. If something goes wrong, debugging feels painful.",
+      "url": "https://news.ycombinator.com/item?id=45346655",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2025-09-23",
+      "context": "Show HN framing for agent observability"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "subagent reports \"task completed\" with zero corresponding tool invocations",
+      "url": "https://news.ycombinator.com/item?id=48265161",
+      "engagement_metric": "parent story: Show HN Fleet",
+      "date": "2026-05-25",
+      "context": "cataloguing subagent dispatch failures at 50-session scale"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "observability and control primitives absent at four lifecycle events",
+      "url": "https://news.ycombinator.com/item?id=48265161",
+      "engagement_metric": "parent story: Show HN Fleet",
+      "date": "2026-05-25",
+      "context": "same comment"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I think there are quite a few bugs lingering in those agent-cli's and observability, would help a lot with reporting.",
+      "url": "https://news.ycombinator.com/item?id=47045270",
+      "engagement_metric": "parent story 69 points / 44 comments",
+      "date": "2026-02-17",
+      "context": "on a local log viewer for Claude Code output"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "The terminal \"Read file: xyz\" mentions are not really followable. It would be nice to easily see where the LLM is taking info from.",
+      "url": "https://news.ycombinator.com/item?id=48879663",
+      "engagement_metric": "parent story 162 points / 63 comments",
+      "date": "2026-07-12",
+      "context": "reacting to Mindwalk session replay"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Use case is to monitor agents activity.",
+      "url": "https://news.ycombinator.com/item?id=48880083",
+      "engagement_metric": "parent story 162 points / 63 comments",
+      "date": "2026-07-12",
+      "context": "defending the point of session replay"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I can immediately or very quickly see what was changed - and also decide if the agent (or human) did work in the right spots or gone off track.",
+      "url": "https://news.ycombinator.com/item?id=48879887",
+      "engagement_metric": "parent story 162 points / 63 comments",
+      "date": "2026-07-12",
+      "context": "why visual session replay beats reading diffs"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I dont feel like i need to know what the agent did, never opened the session json. But there could be gold in there perhaps.",
+      "url": "https://news.ycombinator.com/item?id=48879685",
+      "engagement_metric": "parent story 162 points / 63 comments",
+      "date": "2026-07-12",
+      "context": "skeptic on agent session data"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "My original motivation is to compare the task-solving ability of LLMs by visualizing the agent's trajectory.",
+      "url": "https://news.ycombinator.com/item?id=48880396",
+      "engagement_metric": "parent story 162 points / 63 comments",
+      "date": "2026-07-12",
+      "context": "Show HN author on why replay agent trajectories"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "history feature is per agent session, a cumulative history of all my agents would be nice.",
+      "url": "https://news.ycombinator.com/item?id=48879774",
+      "engagement_metric": "parent story 162 points / 63 comments",
+      "date": "2026-07-12",
+      "context": "asking for a fleet-wide view across sessions"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "As coding agents move from demos to production, the bottleneck usually isn't the model but the harness around it: observability, rollback, and intent validation.",
+      "url": "https://news.ycombinator.com/item?id=49033797",
+      "engagement_metric": "parent story 394 points / 272 comments",
+      "date": "2026-07-24",
+      "context": "on 'Why Software Factories Fail'"
+    },
+    {
+      "category": "observability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I built this after noticing a $65 charge for what felt like a $10 session. Turns out, context compaction was hiding 80% of my token usage. Real cost, no visibility.",
+      "url": "https://news.ycombinator.com/item?id=47380204",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-14",
+      "context": "launching an htop-style status line for Claude Code"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "When I began reviewing my teammate's PRs with AI generated code in it, something started to feel weird. It took a bit, but I realized the problem: I am not reviewing the work my teammate did.",
+      "url": "https://news.ycombinator.com/item?id=47217963",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-02",
+      "context": "on whether the agent session should be part of the commit"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "the conversation isn't the \"real work\": the decisions made in the conversation are the real work. That is what needs capture and review.",
+      "url": "https://news.ycombinator.com/item?id=47217963",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-02",
+      "context": "same comment"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Can we further share those context across multiple remote users?",
+      "url": "https://news.ycombinator.com/item?id=47875249",
+      "engagement_metric": "parent story 72 points / 28 comments",
+      "date": "2026-04-23",
+      "context": "asking a cross-harness resume tool about multi-user sharing"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Have you considered making it possible to share a stream/context? As an export/import function.",
+      "url": "https://news.ycombinator.com/item?id=47851434",
+      "engagement_metric": "parent story 72 points / 28 comments",
+      "date": "2026-04-21",
+      "context": "requesting session export/import"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "when a pod goes sideways, you can spin up a new pod that inherits the same git worktree and agent conversation context (Claude Code --session-id), so the agent picks up from where it left off rather than starting cold",
+      "url": "https://news.ycombinator.com/item?id=47255612",
+      "engagement_metric": "parent story: Show HN AgentsMesh",
+      "date": "2026-03-04",
+      "context": "answering questions on session persistence and replay"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "On cross-agent handoff visibility",
+      "url": "https://news.ycombinator.com/item?id=47255612",
+      "engagement_metric": "parent story: Show HN AgentsMesh",
+      "date": "2026-03-04",
+      "context": "author naming a gap in multi-agent handoff"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "there's a shared context layer so they can ask each other questions about what's happening elsewhere",
+      "url": "https://news.ycombinator.com/item?id=46753539",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-01-25",
+      "context": "describing multi-agent shared context on Claude Code Swarms thread"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "any agent can query a summary of what other agents have done/learned without needing to parse their full context",
+      "url": "https://news.ycombinator.com/item?id=46753539",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-01-25",
+      "context": "same comment"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "you can attach directly to the agents in the terminal or the web ui, even seeing real-time typing appear across them",
+      "url": "https://news.ycombinator.com/item?id=48681724",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-26",
+      "context": "Ask HN on personal multi-agent orchestration setups"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I built an agent observability & orchestration toolkit over the holidays",
+      "url": "https://news.ycombinator.com/item?id=46501629",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-01-05",
+      "context": "Vibes: remote session control, observability, persistent context"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "with remote control I've had some sessions open for remote diagnostics and it just works better than starting from scratch - even having lessons learned to create memories and update Claude.md",
+      "url": "https://news.ycombinator.com/item?id=47863093",
+      "engagement_metric": "parent story 72 points / 28 comments",
+      "date": "2026-04-22",
+      "context": "why they resume rather than restart sessions"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "the whole idea of being able to hop between devices while claude code is thinking through problems is neat",
+      "url": "https://news.ycombinator.com/item?id=44879050",
+      "engagement_metric": "parent story 310 points / 168 comments",
+      "date": "2025-08-12",
+      "context": "top comment on Show HN: Omnara (run Claude Code from anywhere)"
+    },
+    {
+      "category": "sharing",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Reading (or even skimming) 2 text files at once demands a lot of concentration.",
+      "url": "https://news.ycombinator.com/item?id=48883125",
+      "engagement_metric": "parent story 162 points / 63 comments",
+      "date": "2026-07-12",
+      "context": "on reviewing agent output via diffs"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "See the agent as a coworker ssh-ing on your machine, how would you work efficiently ? By working on the same directory ? No You give each agent a git worktree and if you want to check, you checkout their branch.",
+      "url": "https://news.ycombinator.com/item?id=46524130",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-01-07",
+      "context": "on the Claude Code creator's setup"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I was running Claude Code and Cursor on the same repo and they kept overwriting each other's files.",
+      "url": "https://news.ycombinator.com/item?id=47285637",
+      "engagement_metric": "parent story: Show HN git-lanes",
+      "date": "2026-03-07",
+      "context": "Show HN author on why worktree isolation"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "You missed the most important one. Automatic git worktree management. So that different agents don't clash with each other.",
+      "url": "https://news.ycombinator.com/item?id=48828042",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-08",
+      "context": "on Herdr, one terminal for many agents"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "With the long waits for agents to do stuff I really don't see how one can get anything done without multitasking with multiple worktrees in parallel.",
+      "url": "https://news.ycombinator.com/item?id=48823265",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-07",
+      "context": "asking for worktree support in an agent terminal"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Unfortunately both of them want to manage the state of each worktree group themselves; I'm looking for something that just would just call git worktree directly",
+      "url": "https://news.ycombinator.com/item?id=48823265",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-07",
+      "context": "same comment; complaint about opinionated worktree managers"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "git worktree (or any COW snapshot like this) still leaves you reinstalling node_modules per tree and fighting over a dev server port. That's the actual cost, and none of these tools touch it.",
+      "url": "https://news.ycombinator.com/item?id=48355104",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-01",
+      "context": "on Rift, a worktree alternative"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "An agent in a worktree can reach your hooks, your config, another worktree's stash.",
+      "url": "https://news.ycombinator.com/item?id=49111023",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-30",
+      "context": "on 'Git worktrees are not an isolation boundary for coding agents'"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I think the git worktree per task idea makes more sense. The hard part with parallel agents seems to be reviewing and merging the mess",
+      "url": "https://news.ycombinator.com/item?id=48175117",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-05-18",
+      "context": "on an open-source harness orchestrator"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Agents run as parallel workers (Claude Code, Codex CLI, Gemini CLI), each in its own git worktree. Agent-to-agent data flows through SQLite-structured JSON output per task, central coordinator reads and routes. Letting agents talk to each other directly was a mess.",
+      "url": "https://news.ycombinator.com/item?id=47687389",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-04-08",
+      "context": "Ask HN: how are you orchestrating multi-agent workflows in production"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Biggest takeaway: don't let agents pick their own subtasks. Define the task graph yourself: agents only handle the leaf nodes.",
+      "url": "https://news.ycombinator.com/item?id=47687389",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-04-08",
+      "context": "same comment"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I like to think in parallel Claude instances the same as software threads. Sometimes adding more threads will make the program faster, but sometimes the overhead of managing them will not be worth it.",
+      "url": "https://news.ycombinator.com/item?id=47903824",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-04-25",
+      "context": "Ask HN: how to think in terms of parallel Claude agents"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Heavy Claude Code user here (Max20, running 10-15 subagents in parallel most days).",
+      "url": "https://news.ycombinator.com/item?id=47752072",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-04-13",
+      "context": "reporting parallel subagent volume"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "can anyone recommend good coding agent orchestration tools or platform? Something to launch, manage and monitor codex or claude agents in multiple machines Ideally self-hostable/open source I know claude code has a lot of that internally built in already, but it's claude-only",
+      "url": "https://news.ycombinator.com/item?id=48479574",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-10",
+      "context": "explicit buying-intent request for an orchestration layer"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "An inhouse orchestration tool to run coding agents. It's so useful. I used to use tmux to run my coding agents and have little scripts to help me manage the workflow",
+      "url": "https://news.ycombinator.com/item?id=48456980",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-09",
+      "context": "Ask HN: tools you made for yourself since AI"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I have told Claude that it's my chief of staff and that it must delegate all tasks to subagents.",
+      "url": "https://news.ycombinator.com/item?id=48635863",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "describing a manager-agent pattern across 12 concurrent workstreams"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I have a chief of staff agent, which is one Claude code instance that orchestrates work across all my projects simultaneously with sub agents.",
+      "url": "https://news.ycombinator.com/item?id=48624111",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "same user, cross-project orchestration"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "The real usefulness of parallel or sub-agents is not that they run at the same time, its that they isolate noisy or self-contained context away from the main window.",
+      "url": "https://news.ycombinator.com/item?id=48718620",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-29",
+      "context": "on tokenmaxxing"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "It helps to have a file for handing off the prompt, tracking progress, and reporting back. I also recommend constraining agents to their own worktrees.",
+      "url": "https://news.ycombinator.com/item?id=46744976",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-01-24",
+      "context": "on Claude Code Swarms"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Same instinct locally with git worktrees: one agent per worktree so they do not thrash the same checkout.",
+      "url": "https://news.ycombinator.com/item?id=49162201",
+      "engagement_metric": "parent story: Launch HN Hoplite",
+      "date": "2026-08-03",
+      "context": "comparing cloud sandboxes vs local worktrees"
+    },
+    {
+      "category": "orchestration",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I use a tiling window manager to manage each task (/workflow/issue/ticket) on a separate (visual) workspace with its own isolated container/git worktree that is bound to it.",
+      "url": "https://news.ycombinator.com/item?id=49159193",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-08-03",
+      "context": "Ask HN: Claude multisession"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "manual PR reviews can catch things that llms currently miss. Examples are duplicated code, lack of unit tests or introducing security issues. None of these really break the build.",
+      "url": "https://news.ycombinator.com/item?id=49032654",
+      "engagement_metric": "parent story 394 points / 272 comments",
+      "date": "2026-07-24",
+      "context": "on why 'do not break the build' is a weak gate"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Most teams I see today have the LLM write a test along with the change, without a guarantee that the tests actually guard the feature.",
+      "url": "https://news.ycombinator.com/item?id=49032654",
+      "engagement_metric": "parent story 394 points / 272 comments",
+      "date": "2026-07-24",
+      "context": "same comment; verification gap"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "run tests without the associated code change and see them fail",
+      "url": "https://news.ycombinator.com/item?id=49036533",
+      "engagement_metric": "parent story 394 points / 272 comments",
+      "date": "2026-07-24",
+      "context": "proposing a concrete verification loop for agent output"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "After doing systems evals on review, I've stopped looking at code during review for 4 months now.",
+      "url": "https://news.ycombinator.com/item?id=49033768",
+      "engagement_metric": "parent story 394 points / 272 comments",
+      "date": "2026-07-24",
+      "context": "running a personal 'software factory'"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "treating scenarios as holdout sets—used to evaluate the software but not stored where the coding agents can see them",
+      "url": "https://news.ycombinator.com/item?id=46925496",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-07",
+      "context": "on software factories and holdout evals"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I think we're all under-indexing on how important it is going to be to be able to play-test an agent's changes before shipping it as a hedge against slop.",
+      "url": "https://news.ycombinator.com/item?id=48393055",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-04",
+      "context": "on self-hosted dev sandboxes with preview URLs"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "a review loop that forces agents to validate their diffs against our Architecture Decision Records (ADRs) before a human ever sees the PR",
+      "url": "https://news.ycombinator.com/item?id=47390397",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-15",
+      "context": "describing an ADR-based governance pipeline"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "the next 10-20% starts to require things like multi-agent judge setups, external memory, context management, and that gets you to something that's probably working but you sure shouldn't ship to production",
+      "url": "https://news.ycombinator.com/item?id=46082386",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2025-11-28",
+      "context": "on effective harnesses for long-running agents"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Gates: a standardized review layer for agent-generated changes, combining adversarial AI review with deterministic checks before code moves forward.",
+      "url": "https://news.ycombinator.com/item?id=48645029",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-23",
+      "context": "vendor launch describing gates + memory + cost"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "security, context/memory and cost are the biggest problems people seem to have",
+      "url": "https://news.ycombinator.com/item?id=48645029",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-23",
+      "context": "same launch comment; explicit problem ranking"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "let's see how two different models interact with the codebase (for the same problem), what they touched, and what they did. Or the same model, but averaged across 100 runs, so we can see how much variance there really is per task.",
+      "url": "https://news.ycombinator.com/item?id=48880207",
+      "engagement_metric": "parent story 162 points / 63 comments",
+      "date": "2026-07-12",
+      "context": "asking for cross-run variance comparison"
+    },
+    {
+      "category": "evaluation",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I can actually see this being quite useful to quickly tell if you did make an agent smarter or not",
+      "url": "https://news.ycombinator.com/item?id=48880603",
+      "engagement_metric": "parent story 162 points / 63 comments",
+      "date": "2026-07-12",
+      "context": "on measuring whether context changes improved the agent"
+    },
+    {
+      "category": "cost",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Claude is opaque as regards token usage. So you might end up using your 5hr limit in 7-10 minutes using regular Sonnet.",
+      "url": "https://news.ycombinator.com/item?id=48000679",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-05-03",
+      "context": "comparing token transparency across tools"
+    },
+    {
+      "category": "cost",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "OpenCode etc give you exact breakdown in terms of how many cached tokens used per session etc which you can use to estimate burn rate.",
+      "url": "https://news.ycombinator.com/item?id=48000679",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-05-03",
+      "context": "same comment"
+    },
+    {
+      "category": "cost",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "My local session logs have grown to about 2GB each. The existing tool (ccusage) takes 17–20s to show a usage report, so I basically never check my usage.",
+      "url": "https://news.ycombinator.com/item?id=47262507",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-05",
+      "context": "Show HN for a Rust token-usage CLI"
+    },
+    {
+      "category": "cost",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I kept getting burned by rate limits in Claude Code. I'd be deep in something and just hit auto compaction or start to get near the end of my context window without noticing.",
+      "url": "https://news.ycombinator.com/item?id=48441174",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-08",
+      "context": "Show HN: rate-limit burndown in the status line"
+    },
+    {
+      "category": "cost",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "the real problem is running wild with token burning. With parallel agents calling subagents you can burn lots of tokens per minute. Especially with thousands of engineers.",
+      "url": "https://news.ycombinator.com/item?id=48308109",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-05-28",
+      "context": "on AI sticker shock at enterprises"
+    },
+    {
+      "category": "cost",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "how do you budget-cap 100 parallel agents sharing one API key? Rate limits won't help — they're per-key, not per-agent. Spending alerts won't help — by the time the email arrives, the swarm is done.",
+      "url": "https://news.ycombinator.com/item?id=47061081",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-18",
+      "context": "Show HN for hard budget caps on MCP tool calls"
+    },
+    {
+      "category": "cost",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "if you don't put a budget cap on it, you might wake up bankrupt if you leave a task running overnight",
+      "url": "https://news.ycombinator.com/item?id=49041078",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-24",
+      "context": "on Claude Opus 5 pricing"
+    },
+    {
+      "category": "cost",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "with a Claude 5x Max subscription I get 3-5 workable parallel agents that themselves spawn subagents to complete work in a ~3 hour window before tokens are spent",
+      "url": "https://news.ycombinator.com/item?id=47294187",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-08",
+      "context": "quantifying parallel-agent budget"
+    },
+    {
+      "category": "cost",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I use Claude at work and burn tokens at a regular rate on a huge monorepo. If I'm using heavy skills, these burn up pretty quickly. I know my cost at work is something like $500-$1000+ per month",
+      "url": "https://news.ycombinator.com/item?id=48547272",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-15",
+      "context": "reporting per-dev agent spend"
+    },
+    {
+      "category": "cost",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Great callout about the prompt caching, this switch is going to burn subscription limits on Claude real real fast.",
+      "url": "https://news.ycombinator.com/item?id=47854602",
+      "engagement_metric": "parent story 72 points / 28 comments",
+      "date": "2026-04-21",
+      "context": "cost objection to cross-harness session porting"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Agent permissions layer are broken. We need better a permissions layer that doesn't get in the way but stops destructive commands. Devs get pushed into running yolo mode cause classifying allow / deny by command is not enough.",
+      "url": "https://news.ycombinator.com/item?id=47919570",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-04-27",
+      "context": "after an agent deleted a production database"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "This ensures you no longer fear --dangerously-skip-permissions and stop babysitting agents",
+      "url": "https://news.ycombinator.com/item?id=48897592",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-13",
+      "context": "pitching OS-native sandboxes plus OPA policy guardrails"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I built this because I like my agents to be local. Not in a container, not in a remote server, but running on my finely-tuned machine. This helps me run all agents on full-auto, in peace.",
+      "url": "https://news.ycombinator.com/item?id=47301472",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-08",
+      "context": "author of a macOS agent sandbox"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Permissions and sandbox limits. Many agents don't run on a dev's laptop with admin access They run in the cloud or in locked down sandboxes: no sudo, restricted filesystem, restricted network egress.",
+      "url": "https://news.ycombinator.com/item?id=46773141",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-01-26",
+      "context": "Ask HN: why is everyone rolling their own agent sandboxing"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Why are permissions for these \"agents\" on a default allow model anyway?",
+      "url": "https://news.ycombinator.com/item?id=47571356",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-30",
+      "context": "after Claude Code ran git reset --hard against a repo"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Every tool call (file ops, web search, shell commands, email, code execution) requires explicit user approval before execution. Parameters and risk level are shown, you approve or deny. Everything is logged.",
+      "url": "https://news.ycombinator.com/item?id=47062750",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-18",
+      "context": "Show HN for agent approval + audit logging"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "This is the hard part when you build an agentic system : being able to compartmentalise your agents and their permissions.",
+      "url": "https://news.ycombinator.com/item?id=48844679",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-09",
+      "context": "on GitHub's AI agent leaking private repos"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I use a custom harness in a podman container run by a non-sudoer system account. File access is limited to specific ZFS datasets.",
+      "url": "https://news.ycombinator.com/item?id=48844928",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-09",
+      "context": "Ask HN: opinionated agent setup"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Most developers I know don't seem to care about the \"right way\" to run agents. They either yolo it on their primary dev machine, or setup a separate box",
+      "url": "https://news.ycombinator.com/item?id=48844928",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-09",
+      "context": "same comment; describing the status quo"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "It's a skill issue... governance and culture skills. Doesn't matter at this point what model you use... a thoughtful harness with appropriate levels of HITL and strong security, governance, discipline.",
+      "url": "https://news.ycombinator.com/item?id=49035005",
+      "engagement_metric": "parent story 394 points / 272 comments",
+      "date": "2026-07-24",
+      "context": "claiming a working 'dark factory' depends on governance"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Combine that with global default deny permissions for read & edit on your SSH, GPG keys and other secrets. You need both otherwise Claude can run bash commands which bypass the permissions.",
+      "url": "https://news.ycombinator.com/item?id=47135835",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-02-24",
+      "context": "on hiding .env secrets from agents"
+    },
+    {
+      "category": "governance",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "The keystone of agentic work is \"allowlists vs denylists\" choice.",
+      "url": "https://news.ycombinator.com/item?id=48977297",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-20",
+      "context": "Ask HN: are you building agents, what do they need access to"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Tooling like this is why I really want to build my own harness that can replace Claude Code, because I have been building a few different custom tools that would be nice as part of one single harness so I don't have to tweak configurations across all my different environments, projects and even OS' it gets tiresome, and Claude even has separate \"memories\" on different devices, making the experience even more inconsistent.",
+      "url": "https://news.ycombinator.com/item?id=47852659",
+      "engagement_metric": "parent story 72 points / 28 comments",
+      "date": "2026-04-21",
+      "context": "on a cross-harness /resume tool"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "It's a CLI tool that sits between you and whatever agent you're using — your context lives in plain Markdown files on your machine, git-backed, portable across Claude Code, Codex, Cursor, whatever. You own it. Switch between providers and it comes with you.",
+      "url": "https://news.ycombinator.com/item?id=47783694",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-04-15",
+      "context": "pitching a portable context layer"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "So cross-agent resume carries an inherent performance penalty: you keep the (visible) transcript but lose the reasoning.",
+      "url": "https://news.ycombinator.com/item?id=47856529",
+      "engagement_metric": "parent story 72 points / 28 comments",
+      "date": "2026-04-21",
+      "context": "explaining the technical limit of cross-harness resume"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "What kind of context usage does it have when switching between the two providers? ... How does ctx \"normalize\" things across providers in the context window ( e.g. tool/mcp calls, sub-agent results)?",
+      "url": "https://news.ycombinator.com/item?id=47853770",
+      "engagement_metric": "parent story 72 points / 28 comments",
+      "date": "2026-04-21",
+      "context": "asking how cross-harness normalization works"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Vendor lock-in: Ralph was built for Claude Code. Switching to Codex or Gemini means rewriting your workflow.",
+      "url": "https://news.ycombinator.com/item?id=46530109",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-01-07",
+      "context": "listing the problems with the Ralph loop"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "The trade-off you pay for tight integration between the IDE and the coding agent is lock-in because the barrier to switching IDEs is nontrivial.",
+      "url": "https://news.ycombinator.com/item?id=48223697",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-05-21",
+      "context": "on Google's Antigravity"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "it's much easier to switch between Claude Code, Codex, Gemini CLI (now antigravity CLI), etc which means you can more easily benefit from pricing and coding performance differences which seem to change monthly",
+      "url": "https://news.ycombinator.com/item?id=48223697",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-05-21",
+      "context": "same comment; portability as economic hedge"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "When I switch between Codex and Claude Code, there is literally no difference in how I interact with them. They and a number of other competitors are drop in replacements for each other.",
+      "url": "https://news.ycombinator.com/item?id=47683778",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-04-08",
+      "context": "arguing switching costs are near zero"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I use Claude Code, Codex and OpenCode together, but I wanted a desktop workflow that wasn't tied to one of them. I kept coming back to my terminal and keep forgetting which agent had finished what.",
+      "url": "https://news.ycombinator.com/item?id=49084436",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-07-28",
+      "context": "Show HN for a multi-runtime macOS app"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "The main idea is to hook into all your coding agents (Claude Code, Codex, Cursor, etc...) and \"swallow\" their outputs after they finish tasks. This way, if you switch agents, the next one gets a richer, more complete prompt",
+      "url": "https://news.ycombinator.com/item?id=47473334",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-22",
+      "context": "describing a cross-agent context relay"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "What I really want is context \"check-ins\" so I can save and restore state between agents easily.",
+      "url": "https://news.ycombinator.com/item?id=46209250",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2025-12-09",
+      "context": "on Contextify, searchable history for Claude Code and Codex"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:story",
+      "verbatim_phrase": "If you use Claude Code with Codex or Cursor: ln -s AGENTS.md CLAUDE.md",
+      "url": "https://news.ycombinator.com/item?id=45550965",
+      "engagement_metric": "7 points",
+      "date": "2025-10-11",
+      "context": "story title; the canonical symlink workaround"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "we're currently adding the ability to switch providers mid-session. We're working on agent switching similar to Cursor's LLM switch so you can seamlessly move between Claude Code, Codex, GLM, etc. during development.",
+      "url": "https://news.ycombinator.com/item?id=45657373",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2025-10-21",
+      "context": "Show HN: Clink, bring your own CLI agents"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:story",
+      "verbatim_phrase": "3 dangers of being locked into a harness. Your context layer is true freedom",
+      "url": "https://news.ycombinator.com/item?id=48745664",
+      "engagement_metric": "1 point",
+      "date": "2026-07-01",
+      "context": "story title using explicit lock-in framing"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:story",
+      "verbatim_phrase": "Show HN: OpenTimelineEngine – Shared local memory for Claude Code and codex",
+      "url": "https://news.ycombinator.com/item?id=47187858",
+      "engagement_metric": "5 points / 2 comments",
+      "date": "2026-02-28",
+      "context": "Show HN title framing shared memory across two harnesses"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:story",
+      "verbatim_phrase": "Show HN: Ctx – a /resume that works across Claude Code and Codex",
+      "url": "https://news.ycombinator.com/item?id=47836740",
+      "engagement_metric": "72 points / 28 comments",
+      "date": "2026-04-20",
+      "context": "Show HN title; highest-engagement cross-harness session tool"
+    },
+    {
+      "category": "portability",
+      "source": "hackernews:story",
+      "verbatim_phrase": "Show HN: Open Chronicle – Local Screen Memory for Claude Code and Codex CLI",
+      "url": "https://news.ycombinator.com/item?id=47858398",
+      "engagement_metric": "5 points / 1 comment",
+      "date": "2026-04-22",
+      "context": "Show HN title"
+    },
+    {
+      "category": "crossrepo",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "they all seem to assume an agent lives in one worktree of one git repo. Maybe that is fine in a monorepo world. Outside of that, the repo boundary is often just not the task boundary. Some context lives next door, or two repos away, and the sandbox somehow has to know what to bring in.",
+      "url": "https://news.ycombinator.com/item?id=48683361",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-26",
+      "context": "Ask HN: how did you set up multi-agent orchestration for personal use"
+    },
+    {
+      "category": "crossrepo",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "I'm wondering if there is a tool in the agent orchestration space that prepares multi-repository worktrees for a subagent out of the box?",
+      "url": "https://news.ycombinator.com/item?id=48683361",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-26",
+      "context": "same comment; explicit unmet-need question"
+    },
+    {
+      "category": "crossrepo",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "The way I \"solved\" this situation was to move all the related projects into a single folder with a parent AGENTS.md file (CLAUDE.md, etc.). Then, I run Rover / Claude / Gemini on this folder. However, this is not ideal.",
+      "url": "https://news.ycombinator.com/item?id=45516165",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2025-10-08",
+      "context": "vendor founder on the multi-repo workaround"
+    },
+    {
+      "category": "crossrepo",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Another similar case we are working on is to support spawning the same task across different repositories. This would help teams to apply refactor or changes in different projects at the same time.",
+      "url": "https://news.ycombinator.com/item?id=45516165",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2025-10-08",
+      "context": "same comment; coordinated cross-repo change"
+    },
+    {
+      "category": "crossrepo",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "so i think the thing that everyone building these git alternatives is missing is a multi-repo story - unless the expectation is that everyone is going to start operating out of monorepos",
+      "url": "https://news.ycombinator.com/item?id=48493235",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-06-11",
+      "context": "on 'Software is made between commits'"
+    },
+    {
+      "category": "crossrepo",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "Working on a project connected through multiple repos I have a project level MD file to explain each repo.",
+      "url": "https://news.ycombinator.com/item?id=48626250",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "describing a homemade cross-repo context file"
+    },
+    {
+      "category": "crossrepo",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "if you need to do a major architectural project that spans 3 codebases and 2 clouds",
+      "url": "https://news.ycombinator.com/item?id=48623996",
+      "engagement_metric": "parent story 138 points / 85 comments",
+      "date": "2026-06-22",
+      "context": "naming the cross-repo scale threshold"
+    },
+    {
+      "category": "crossrepo",
+      "source": "hackernews:comment",
+      "verbatim_phrase": "orchestrating multiple coding agents across machines rather than treating AI coding as a single-agent workflow",
+      "url": "https://news.ycombinator.com/item?id=47355891",
+      "engagement_metric": "HN comment (per-comment scores not public)",
+      "date": "2026-03-12",
+      "context": "on Astro, an orchestrator of Claude Code and Codex"
+    }
+  ]
+}

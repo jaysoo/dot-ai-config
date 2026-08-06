@@ -40,6 +40,15 @@ Prior research: `dot_ai/2026-07-29/tasks/nxc-4739-remove-axios-brace-expansion-r
 - Cannot be fully removed from pnpm-lock.yaml: ~50 dev-tree transitives require minimatch (eslint, glob@6-13, verdaccio, typedoc, @types/glob...). It remains ONCE, pinned safe: brace-expansion@5.0.9 (patched). No `@isaacs/brace-expansion`.
 - The CVE-relevant surface (published `nx` runtime closure, expand-deps flattened) is now clean: -3 packages (minimatch, brace-expansion, balanced-match), +0 (picomatch already shipped via other plugins... actually nx gains picomatch, net -2).
 
+## Review round (2026-08-05, all fixed)
+
+- filterUsingGlobPatterns: `libs/a/{**/*.ts,**/*.tsx}` dropped `libs/a/index.ts` (prefixed brace, splitter can't help) -> new `expandGlobPatternBraces()` + precompiled matchers. Callers: create-package-json, find-npm-dependencies, graph (NOT task hashing - Rust owns that; splitGlobPatterns = faithful port of Rust `potential_glob_split`).
+- Mixed pos/neg pattern arrays passed to one picomatch call made EVERYTHING match ("not excluded" semantics): fixed in generators/glob.ts + jest workspaces matcher with split positive/negative matchers + tests. Real bug fix: negated workspaces entries now actually exclude.
+- repository-git-tags: try/catch swallowed non-string errors minimatch used to throw -> only guard empty string. Same at find-matching-projects.
+- Perf spec strawman: `items.filter(picomatch(p))` passes filter's index into picomatch's returnObject param -> everything matches (@types/picomatch@3.0.2 omits the param so the bug typechecks). Use arrow.
+- task-hasher './'-comment was inverted (picomatch handles ./ fine; minimatch didn't); "invalid pattern" comments wrong (only '' throws; `[`, `{a`, `!(` compile fine in both).
+- Rebased onto master (jest plugin imports moved to @nx/devkit/internal barrel; combineGlobPatterns dropped from its import list).
+
 ## Follow-ups for Jack
 
 - @nx/jest runtime closure still pulls minimatch/brace-expansion via jest's own deps (user installs resolve per jest's ranges, not our overrides). Upstream, not fixable here.

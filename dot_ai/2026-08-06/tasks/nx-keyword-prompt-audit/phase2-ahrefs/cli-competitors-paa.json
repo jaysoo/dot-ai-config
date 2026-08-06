@@ -1,0 +1,11 @@
+[
+  { "question": "What is Turborepo used for?", "source_keyword": "turborepo" },
+  { "question": "What is the difference between monorepo and Turborepo?", "source_keyword": "turborepo" },
+  { "question": "What problem does Turborepo solve?", "source_keyword": "turborepo" },
+  { "question": "Is Turborepo any good?", "source_keyword": "turborepo" },
+  { "question": "What is Lerna monorepo?", "source_keyword": "lerna monorepo" },
+  { "question": "Is Lerna still maintained?", "source_keyword": "lerna monorepo" },
+  { "question": "What does the Lerna version do?", "source_keyword": "lerna monorepo" },
+  { "question": "What is the alternative to Lerna bootstrap?", "source_keyword": "lerna monorepo" },
+  { "question": "What is meant by build system?", "source_keyword": "build systems" }
+]

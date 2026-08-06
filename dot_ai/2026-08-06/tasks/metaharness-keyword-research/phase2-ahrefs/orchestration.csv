@@ -1,0 +1,244 @@
+category,keyword,volume,global_volume,difficulty,parent_topic,intents,source_report,seed_used
+orchestration,claude agent teams,2700,7400,9,claude code agent teams,"informational,branded",matching-terms,agent teams
+orchestration,claude code agent teams,2100,7200,7,claude agent teams,"informational,branded",matching-terms,agent teams
+orchestration,claude code subagents,1800,5900,26,claude code subagents,"informational,branded",matching-terms,claude code subagents
+orchestration,claude subagents,1700,4700,0,claude code subagents,"informational,branded",search-suggestions,claude code subagents
+orchestration,subagent,1300,2800,17,codex agent,informational,related-terms,subagents
+orchestration,claude code agents,2600,9500,42,claude code teams,"informational,branded",related-terms,claude code subagents
+orchestration,claude agents,5100,19000,30,claude managed agents,"informational,commercial,branded",related-terms,claude code subagents
+orchestration,claude agent,3600,19000,12,claude managed agents,"informational,branded",related-terms,claude code subagents
+orchestration,multi-agent,3500,5100,34,multi-agent,informational,search-suggestions,multi agent
+orchestration,ai agent orchestration,1000,3200,8,ai agent orchestration,"informational,commercial",matching-terms,agent orchestration
+orchestration,agent orchestration,1000,3200,30,ai agent orchestration,"informational,commercial",matching-terms,agent orchestration
+orchestration,multi agent orchestration,800,1900,20,multi agent orchestration,informational,matching-terms,multi agent orchestration
+orchestration,agentic orchestration,800,1900,4,ai agent orchestration,no_data,related-terms,ai agent orchestration
+orchestration,claude code agent,800,5000,42,claude code agents,"informational,branded",related-terms,claude code subagents
+orchestration,awesome claude code,800,4700,30,awesome claude code,"informational,branded",related-terms,claude code subagents
+orchestration,ai agent orchestration updates 2026,800,800,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration diagram,800,800,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,multi agent systems,700,3700,40,multi-agent,informational,search-suggestions,multi agent
+orchestration,codex agent,700,2800,79,codex cli,"informational,branded",related-terms,subagents
+orchestration,claude code worktrees,600,1600,no_data,no_data,no_data,search-suggestions,claude code worktree
+orchestration,ai agent orchestration news,600,600,10,ai agent orchestration,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration frameworks vendors,600,600,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration trends 2026,600,700,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,agent orchestration platforms conformance testing,500,500,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai orchestration platform,500,1200,12,ai orchestration,"informational,commercial",related-terms,ai agent orchestration
+orchestration,what is ai orchestration,500,900,7,ai orchestration,informational,related-terms,ai agent orchestration
+orchestration,cursor background agents,450,800,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code worktree,450,2100,17,git worktree,"informational,branded",matching-terms,claude code worktree
+orchestration,claude code subagents official docs,450,1200,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,ai agent orchestration news 2026,450,450,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration updates,450,450,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,agent teams claude,450,1800,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,agent swarm,400,2200,5,swarms,"informational,commercial,branded",matching-terms,agent swarm
+orchestration,langgraph multi-agent orchestration,400,500,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,ai agent orchestration platform,400,600,13,ai orchestration,no_data,matching-terms,agent orchestration
+orchestration,multi-agent systems,400,1400,33,multi-agent,informational,search-suggestions,multi agent
+orchestration,claude code subagent,400,2700,no_data,no_data,no_data,search-suggestions,subagent
+orchestration,multi-agent orchestration,350,800,12,multi agent orchestration,no_data,matching-terms,multi agent orchestration
+orchestration,claude code subagents docs,350,700,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,ai agent orchestration platforms,350,500,0,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration architecture diagram,350,400,6,agent orchestration,no_data,matching-terms,agent orchestration
+orchestration,multi agent ai,350,1400,23,multi-agent,informational,search-suggestions,multi agent
+orchestration,multi agent,350,3000,38,multi-agent,informational,related-terms,ai agent orchestration
+orchestration,kimi agent swarm,300,700,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,openai swarm agent framework,300,400,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,langgraph multi-agent orchestration framework,300,400,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi-agent orchestration software,300,300,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,agent orchestration news,300,300,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,git worktree claude code,300,1200,no_data,no_data,no_data,search-suggestions,claude code worktree
+orchestration,agent teams,300,3600,18,claude code agents,"informational,branded",matching-terms,agent teams
+orchestration,multi agent system,300,2300,49,multi-agent,informational,search-suggestions,multi agent
+orchestration,claude code subagents official documentation,250,800,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,anthropic claude code subagents documentation,250,600,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,cursor background agents official docs,250,450,no_data,no_data,no_data,matching-terms,background agents
+orchestration,openai swarm multi-agent framework,250,500,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,multi agent orchestration platform,250,350,11,ai orchestration platform,"informational,commercial",matching-terms,multi agent orchestration
+orchestration,langgraph agent orchestration framework,250,300,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration tools,250,500,16,multi agent orchestration platform,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration workflow diagram,250,250,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,agent orchestration framework,250,450,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,claude code git worktree,250,900,no_data,no_data,no_data,search-suggestions,claude code worktree
+orchestration,conductor claude code,250,600,no_data,no_data,no_data,search-suggestions,conductor claude code
+orchestration,agent teams claude code,250,900,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,multi agent architecture,250,1200,21,agent architecture,informational,search-suggestions,multi agent
+orchestration,claude subagent,250,1700,no_data,no_data,no_data,search-suggestions,subagent
+orchestration,subagents claude code,250,900,no_data,no_data,no_data,search-suggestions,subagent
+orchestration,cursor background agents documentation,200,350,no_data,no_data,no_data,matching-terms,background agents
+orchestration,langgraph documentation multi-agent orchestration,200,200,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,openai swarm multi-agent framework github,200,300,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,langgraph agent orchestration,200,350,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,what is agent orchestration,200,350,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration frameworks,200,400,13,ai agent orchestration,no_data,matching-terms,agent orchestration
+orchestration,agent orchestration frameworks,200,700,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration framework,200,450,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,langgraph multi-agent orchestration 2025,200,250,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,agent orchestration platform,200,400,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,subagents,200,1400,17,claude code subagents,informational,related-terms,subagents
+orchestration,cloud agents,200,600,1,cloud agents,"informational,branded",related-terms,background agents
+orchestration,claude code multiple agents,200,350,no_data,no_data,no_data,matching-terms,multiple agents
+orchestration,agent workflow,200,1200,26,agentic workflows,informational,search-suggestions,agent worktree
+orchestration,openclaw multi agent,200,700,no_data,no_data,no_data,search-suggestions,multi agent
+orchestration,claude code multi agent,200,1100,no_data,no_data,no_data,search-suggestions,multi agent
+orchestration,multi agent framework,200,700,no_data,no_data,no_data,search-suggestions,multi agent
+orchestration,multi agent system in ai,200,450,no_data,no_data,no_data,search-suggestions,multi agent
+orchestration,multi agent rag,200,400,no_data,no_data,no_data,search-suggestions,multi agent
+orchestration,claude coding agent,200,700,no_data,no_data,no_data,search-suggestions,claude code agent teams
+orchestration,kimi k2.5 agent swarm,150,200,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,multi-agent orchestration platform,150,250,16,multi agent orchestration platform,no_data,matching-terms,multi agent orchestration
+orchestration,multi-agent orchestration frameworks 2026,150,200,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,claude agent swarm,150,400,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,crewai multi-agent orchestration,150,250,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,claude code agent swarm,150,400,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,multi-agent ai orchestration updates 2026,150,150,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi agent llm orchestration,150,150,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,background agents,150,250,26,no_data,informational,matching-terms,background agents
+orchestration,cursor background agents feature,150,150,no_data,no_data,no_data,matching-terms,background agents
+orchestration,cursor background agents docs,150,300,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code parallel agents,150,300,no_data,no_data,no_data,matching-terms,claude code parallel agents
+orchestration,anthropic claude code subagents official docs,150,400,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,ai agent orchestration for complex workflows,150,150,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,llm agent orchestration,150,300,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,langgraph agent orchestration diagram,150,150,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration patterns,150,250,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration architecture,150,200,12,ai agent architecture,no_data,matching-terms,agent orchestration
+orchestration,what is ai agent orchestration,150,200,37,ai agent orchestration,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration 2026 news,150,150,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration frameworks 2026,150,250,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,agent orchestration patterns,150,400,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration 2026 updates,150,150,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,ai agent orchestration security,150,150,28,ai agent architecture,no_data,matching-terms,agent orchestration
+orchestration,agent orchestration frameworks 2026,150,200,no_data,no_data,no_data,matching-terms,agent orchestration
+orchestration,what is a subagent,150,150,1,what is a sub agent in real estate,informational,related-terms,subagents
+orchestration,anthropic agent teams,150,250,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude code agent teams documentation,150,350,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude multi agent,150,1100,no_data,no_data,no_data,search-suggestions,multi agent
+orchestration,multi agent ai systems,150,400,38,multi-agent,no_data,search-suggestions,multi agent
+orchestration,multi agent llm,150,600,27,multi-agent collaboration,informational,search-suggestions,multi agent
+orchestration,anthropic multi agent,150,350,no_data,no_data,no_data,search-suggestions,multi agent
+orchestration,multi agent collaboration,150,350,no_data,no_data,no_data,search-suggestions,multi agent
+orchestration,what is multi agent system,150,250,no_data,no_data,informational,search-suggestions,multi agent
+orchestration,orchestrator ai,150,700,no_data,no_data,no_data,search-suggestions,orchestrate ai agents
+orchestration,vibe kanban,1300,6700,6,vibe kanban,"informational,navigational,commercial,branded",search-suggestions,vibe kanban
+orchestration,vibe kanban github,100,350,no_data,no_data,no_data,search-suggestions,vibe kanban
+orchestration,vibe kanban alternative,30,150,no_data,no_data,no_data,search-suggestions,vibe kanban
+orchestration,vibe kanban tool,30,40,no_data,no_data,no_data,search-suggestions,vibe kanban
+orchestration,conductor for claude code,30,50,no_data,no_data,no_data,search-suggestions,conductor claude code
+orchestration,conductor vs claude code,20,40,no_data,no_data,no_data,search-suggestions,conductor claude code
+orchestration,conductor coding,50,100,no_data,no_data,no_data,search-suggestions,conductor claude code
+orchestration,swarm agent,100,500,40,openai swarm,informational,matching-terms,agent swarm
+orchestration,multi agent ai orchestration diagram,100,150,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,openai swarm framework multi-agent,100,150,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,multi-agent orchestration frameworks,100,150,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,openai swarm github multi-agent framework,100,150,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,multi-agent ai orchestration news 2026,100,100,3,ai agents news 2026,no_data,matching-terms,multi agent orchestration
+orchestration,langgraph multi agent orchestration,100,150,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi-agent ai orchestration trends 2026,100,150,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi-agent ai orchestration news,100,100,21,multi-agent systems news,no_data,matching-terms,multi agent orchestration
+orchestration,multi-agent orchestration news,100,100,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi agent orchestration diagram,100,100,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,claude code subagents documentation,100,600,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,claude code subagents best practices,100,200,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,claude background agents,100,250,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code subagents feature,100,150,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,anthropic claude code subagents,100,150,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,claude code background agents,100,200,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code agent teams docs,100,200,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,openclaw multiple agents,100,400,no_data,no_data,no_data,matching-terms,multiple agents
+orchestration,how to use subagents in claude code,100,200,no_data,no_data,no_data,search-suggestions,claude code subagents
+orchestration,crewai multi agent orchestration,90,100,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi-agent ai orchestration,90,100,24,ai agent orchestration,no_data,matching-terms,multi agent orchestration
+orchestration,multi agent orchestration framework,90,200,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,anthropic claude code subagents docs,90,200,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,cursor multiple agents,90,300,no_data,no_data,no_data,matching-terms,multiple agents
+orchestration,orchestrate ai,90,200,no_data,no_data,no_data,search-suggestions,orchestrate ai agents
+orchestration,langgraph multi-agent orchestration langchain,80,100,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi agent orchestration architecture diagram,80,90,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi ai agent orchestration,80,100,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,langgraph framework multi-agent orchestration,80,100,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,copilot studio multi-agent orchestration,80,100,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi-agent ai orchestration api design,80,150,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,claude multiple agents,80,200,no_data,no_data,no_data,matching-terms,multiple agents
+orchestration,ai agent teams,80,200,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,copilot agent teams,80,150,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude code agent teams feature,80,150,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,single agent vs multi agent in ai,80,150,no_data,no_data,no_data,search-suggestions,multi agent
+orchestration,orchestration platform for multi-agent systems,70,150,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,claude code multi agent orchestration,70,100,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,ai agent swarm,70,200,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,openai swarm multi-agent library github,70,70,no_data,no_data,no_data,matching-terms,agent swarm
+orchestration,multi-agent orchestration patterns,70,100,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi-agent ai orchestration frameworks 2026,70,80,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,multi-agent ai orchestration diagram,70,70,no_data,no_data,no_data,matching-terms,multi agent orchestration
+orchestration,cursor docs background agents,70,150,no_data,no_data,no_data,matching-terms,background agents
+orchestration,cursor docs background agents official,70,150,no_data,no_data,no_data,matching-terms,background agents
+orchestration,sub-agent,70,200,31,claude code subagents,informational,related-terms,subagents
+orchestration,agentic orchestration layer,70,100,8,ai agent orchestration,no_data,matching-terms,agentic orchestration
+orchestration,claude code experimental agent teams,70,200,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude opus 4.6 agent teams,70,100,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,orchestrate ai agents,70,100,no_data,no_data,no_data,search-suggestions,orchestrate ai agents
+orchestration,awesome claude code subagents,60,350,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,how to run multiple claude code agents,60,80,no_data,no_data,no_data,search-suggestions,multiple claude code
+orchestration,agentic orchestration platform,60,90,no_data,no_data,no_data,matching-terms,agentic orchestration
+orchestration,opus 4.6 agent teams,60,100,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude code agent teams anthropic,60,70,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,what is agentic orchestration,60,100,no_data,no_data,no_data,matching-terms,agentic orchestration
+orchestration,parallel agents,60,150,no_data,no_data,no_data,search-suggestions,parallel ai agents
+orchestration,claude code subagents examples,50,150,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,cursor background agents official,50,80,no_data,no_data,no_data,matching-terms,background agents
+orchestration,codex agent teams,50,150,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,agentic orchestration frameworks,50,150,no_data,no_data,no_data,matching-terms,agentic orchestration
+orchestration,crewai multi-agent teams,50,60,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,agentic orchestration definition,50,50,no_data,no_data,no_data,matching-terms,agentic orchestration
+orchestration,claude code agent teams how to use,50,100,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude code enable agent teams,50,90,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude enable agent teams,50,100,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude code subagents how to use,40,70,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,background agents cursor,40,100,no_data,no_data,no_data,matching-terms,background agents
+orchestration,cursor background agents documentation 2026,40,150,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code subagents docs official,40,90,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,cursor background agents official docs 2026,40,150,no_data,no_data,no_data,matching-terms,background agents
+orchestration,cursor background agents docs official,40,90,no_data,no_data,no_data,matching-terms,background agents
+orchestration,cursor background agents how to use,40,50,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code multiple repos,40,90,no_data,no_data,no_data,search-suggestions,multiple claude code
+orchestration,claude code agent teams tmux,40,100,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,how to run multiple agents in claude code,40,60,no_data,no_data,no_data,matching-terms,run multiple agents
+orchestration,how to use claude agent teams,40,60,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,anthropic claude code agent teams documentation,40,150,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude code agent teams 2026,40,50,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,multiple agents,40,200,no_data,no_data,no_data,matching-terms,multiple agents
+orchestration,claude agent teams anthropic,40,60,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,parallel ai agents,40,70,no_data,no_data,no_data,search-suggestions,parallel ai agents
+orchestration,how to orchestrate ai agents,40,150,no_data,no_data,no_data,search-suggestions,orchestrate ai agents
+orchestration,how to use claude code subagents,30,50,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,cursor background agents documentation official,30,70,no_data,no_data,no_data,matching-terms,background agents
+orchestration,cursor background agents pricing,30,40,no_data,no_data,no_data,matching-terms,background agents
+orchestration,cursor ai background agents,30,40,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code how to run background agents,30,30,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code subagents feature documentation,30,60,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,anthropic claude code subagents feature,30,40,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,cursor background agents official documentation,30,80,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code subagents vs skills,30,50,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,cursor background agents api documentation,30,40,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code subagents documentation official,30,100,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,cursor ide background agents,30,30,no_data,no_data,no_data,matching-terms,background agents
+orchestration,claude code subagents github,30,40,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,claude code subagents tutorial,30,40,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,claude code parallel subagents,30,60,no_data,no_data,no_data,search-suggestions,claude code parallel
+orchestration,multiple claude code instances,30,70,no_data,no_data,no_data,search-suggestions,multiple claude code
+orchestration,claude code skills vs subagents,30,90,no_data,no_data,no_data,search-suggestions,claude code subagents
+orchestration,claude code git worktree workflow,30,40,no_data,no_data,no_data,search-suggestions,claude code worktree
+orchestration,enable agent teams claude,30,50,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,anthropic claude agent teams,30,40,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude opus 4.6 agent teams feature,30,40,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,openclaw multiple agents setup,30,60,no_data,no_data,no_data,matching-terms,multiple agents
+orchestration,claude code agent teams feature 2026,30,40,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,agent teams anthropic,30,60,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,building agent teams that collaborate,30,30,no_data,no_data,no_data,matching-terms,agent teams
+orchestration,claude code subagents skills,20,40,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,claude code subagents parallel,20,40,no_data,no_data,no_data,matching-terms,claude code subagents
+orchestration,ramp background agents,20,30,no_data,no_data,no_data,matching-terms,background agents
+orchestration,jj worktree,20,40,no_data,no_data,no_data,search-suggestions,agent worktree
+orchestration,subagent examples,0,0,21,claude code agents,informational,related-terms,subagents
+orchestration,subagent training,0,0,4,claude code subagents,informational,related-terms,subagents

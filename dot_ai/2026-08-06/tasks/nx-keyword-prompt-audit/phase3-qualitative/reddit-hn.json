@@ -1,0 +1,407 @@
+[
+  {
+    "cluster": "ci-flaky",
+    "verbatim_phrase": "CI takes 45 minutes, fails on a flaky test, gets re-run, passes on the second attempt (the flaky test is fine, it's always fine, until it isn't and you're debugging production at 2am)",
+    "url": "https://news.ycombinator.com/item?id=47417543",
+    "source": "Hacker News",
+    "engagement": "story 335 points / 49 top-level comments",
+    "date": "2026-03-17",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-cd",
+    "verbatim_phrase": "A 1.6GB Docker image for a Node app. Every code change rebuilds npm install from scratch. CI takes 8 minutes for a one-line fix. The team's proposal: add more CI runners.",
+    "url": "https://news.ycombinator.com/item?id=48944645",
+    "source": "Hacker News",
+    "engagement": "story 311 points / 46 top-level comments",
+    "date": "2026-07-17",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-cd",
+    "verbatim_phrase": "A 16-minute CI wait, a snapshot process living in someone's Slack history, a flaky test. None of them ever beat \"ship the dashboard redesign\" in a planning meeting. But they compound - for our 5-person team, it added up to over 26 hours of dead time per week.",
+    "url": "https://news.ycombinator.com/item?id=47223809",
+    "source": "Hacker News",
+    "engagement": "story 'No Code by Hand'",
+    "date": "2026-03-02",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-cd",
+    "verbatim_phrase": "no sound people should consider using another language because the CI takes 4 minutes to run instead of 12 seconds",
+    "url": "https://news.ycombinator.com/item?id=48841827",
+    "source": "Hacker News",
+    "engagement": "story 720 points / 37 top-level comments (TypeScript 7)",
+    "date": "2026-07-09",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-cost",
+    "verbatim_phrase": "GitHub announced a $0.002/minute fee for self-hosted runners - for us, that's close to $3.5k a month extra on our GitHub bill",
+    "url": "https://www.theregister.com/2025/12/17/github_charge_dev_own_hardware/",
+    "source": "r/devops (surfaced via WebSearch; Reddit direct access blocked - quote relayed by The Register)",
+    "engagement": "not measurable (Reddit blocked)",
+    "date": "2025-12-17",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-cost",
+    "verbatim_phrase": "We still use GitHub Actions but our monthly bill is now flat because we pay for a server. It is about 6x cheaper if not more.",
+    "url": "https://news.ycombinator.com/item?id=48476035",
+    "source": "Hacker News",
+    "engagement": "story 394 points / 57 top-level comments ('Surprise, pay $1000')",
+    "date": "2026-06-10",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-cost",
+    "verbatim_phrase": "you have to use a lot of CI minutes to incur a $1000 bill. You're well outside of hobbyist levels, and that same level of usage would have previously cost double from GitHub themselves.",
+    "url": "https://news.ycombinator.com/item?id=48475720",
+    "source": "Hacker News",
+    "engagement": "story 394 points / 57 top-level comments",
+    "date": "2026-06-10",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-cost",
+    "verbatim_phrase": "I was just looking at them earlier today since our Github actions are slow AF",
+    "url": "https://news.ycombinator.com/item?id=48471667",
+    "source": "Hacker News",
+    "engagement": "story 394 points / 57 top-level comments",
+    "date": "2026-06-10",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-cost",
+    "verbatim_phrase": "Salaries, hosting bills, CI bills... most languages do not have a significant marketing budget.",
+    "url": "https://news.ycombinator.com/item?id=48468370",
+    "source": "Hacker News",
+    "engagement": "story 394 points / 57 top-level comments",
+    "date": "2026-06-10",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-flaky",
+    "verbatim_phrase": "one team had a completely broken CI pipeline due to numerous flaky tests. They had configured the CI pipeline to rerun tests multiple times and still the master branch had like.. a 40% pass rate. Super ugly, but the suite took ~40 minutes to run and they were demoralized enough to not want to investigate it anymore.",
+    "url": "https://news.ycombinator.com/item?id=47970174",
+    "source": "Hacker News",
+    "engagement": "story 1349 points / 99 top-level comments",
+    "date": "2026-05-01",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-flaky",
+    "verbatim_phrase": "I can run flaky tests on my machine a thousand times without failure, whereas they fail in CI sometimes.",
+    "url": "https://news.ycombinator.com/item?id=47411318",
+    "source": "Hacker News",
+    "engagement": "story 56 points / 9 top-level comments (What CI looks like at a 100-person team, PostHog)",
+    "date": "2026-03-17",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-flaky",
+    "verbatim_phrase": "10 person repos regularly have flaky tests that never get addressed because \"we'll deal with it later\". The tolerance for flakiness goes up when you can attribute it to a close teammate.",
+    "url": "https://news.ycombinator.com/item?id=47414302",
+    "source": "Hacker News",
+    "engagement": "story 56 points / 9 top-level comments (PostHog CI)",
+    "date": "2026-03-17",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-flaky",
+    "verbatim_phrase": "A fairly large category of the flaky CI jobs I see is \"dodgy infrastructure\" ... it's pretty tempting to hit the big \"just retry\" button when there's all this flakiness we can't control mixed in there.",
+    "url": "https://news.ycombinator.com/item?id=47352954",
+    "source": "Hacker News",
+    "engagement": "story 49 points / 12 top-level comments",
+    "date": "2026-03-12",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-observability",
+    "verbatim_phrase": "One of the most annoying parts of working with CI isn't failures. It's uncertain failures. A test fails. You rerun it. It passes. You rerun again. It fails. ... \"Is this test actually broken, or just flaky?\"",
+    "url": "https://news.ycombinator.com/item?id=47665378",
+    "source": "Hacker News",
+    "engagement": "low (Show HN, 1 point)",
+    "date": "2026-04-06",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-observability",
+    "verbatim_phrase": "a test report can show whether a failure is new, whether a test has been flaky before, and which commit caused a test to start running 5x slower ... some repositories generate hundreds of thousands of test results per commit",
+    "url": "https://news.ycombinator.com/item?id=48468370",
+    "source": "Hacker News (Flakiness.io Show HN comment)",
+    "engagement": "moderate",
+    "date": "2026-06-10",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "monorepo",
+    "verbatim_phrase": "To me that reads more like monorepo is a central point of failure and they're scrambling to bandaid the consequence of that decision. And the bandaids aren't gonna scale to 1000 people.",
+    "url": "https://news.ycombinator.com/item?id=47411981",
+    "source": "Hacker News",
+    "engagement": "story 56 points / 9 top-level comments (PostHog CI)",
+    "date": "2026-03-17",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "monorepo",
+    "verbatim_phrase": "Problems don't go away with fractured repos. They just change shape. Many repos maybe get you more reliable CI, but you pay for it with increased cost of integrating dependencies.",
+    "url": "https://news.ycombinator.com/item?id=47414302",
+    "source": "Hacker News",
+    "engagement": "story 56 points / 9 top-level comments",
+    "date": "2026-03-17",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "monorepo",
+    "verbatim_phrase": "the part where broken CI cause everything to stop ... less chance of literally everyone sitting and waiting is greatly reduced",
+    "url": "https://news.ycombinator.com/item?id=47415264",
+    "source": "Hacker News",
+    "engagement": "story 56 points / 9 top-level comments",
+    "date": "2026-03-17",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "monorepo-organization",
+    "verbatim_phrase": "If all the world were a monorepo",
+    "url": "https://news.ycombinator.com/item?id=45259623",
+    "source": "Hacker News",
+    "engagement": "277 points / 75 comments",
+    "date": "2025-09-16",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "monorepo-organization",
+    "verbatim_phrase": "Everything as code: How we manage our company in one monorepo",
+    "url": "https://news.ycombinator.com/item?id=46437381",
+    "source": "Hacker News",
+    "engagement": "227 points / 227 comments",
+    "date": "2025-12-30",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "cli-competitors",
+    "verbatim_phrase": "Nx lost some trust with its community by retracting some open-source features and took a very long time to (partially) address the backlash.",
+    "url": "https://news.ycombinator.com/item?id=47124389",
+    "source": "Hacker News",
+    "engagement": "story 248 points / 17 top-level comments (The JavaScript Oxidation Compiler)",
+    "date": "2026-02-23",
+    "sentiment": "negative-to-nx"
+  },
+  {
+    "cluster": "cli-competitors",
+    "verbatim_phrase": "Nx and Rush are big beasts and can be somewhat unwieldy and quirky.",
+    "url": "https://news.ycombinator.com/item?id=47124389",
+    "source": "Hacker News",
+    "engagement": "story 248 points / 17 top-level comments",
+    "date": "2026-02-23",
+    "sentiment": "negative-to-nx"
+  },
+  {
+    "cluster": "nx-cloud-features",
+    "verbatim_phrase": "deprecating custom task runners, a functionality that teams relied on, felt like pulling the rug out from under users",
+    "url": "https://salvozappa.com/how-nx-pulled-the-rug-on-us.html",
+    "source": "salvozappa.com blog (the canonical 'how Nx pulled the rug on us' text; the r/node thread points here)",
+    "engagement": "not measurable",
+    "date": "2025-12-29",
+    "sentiment": "negative-to-nx"
+  },
+  {
+    "cluster": "ci-caching",
+    "verbatim_phrase": "Procurement is a time and energy consuming process that, to be honest, is not worth the hassle just to have some remote caching in CI",
+    "url": "https://salvozappa.com/how-nx-pulled-the-rug-on-us.html",
+    "source": "salvozappa.com blog",
+    "engagement": "not measurable",
+    "date": "2025-12-29",
+    "sentiment": "negative-to-nx"
+  },
+  {
+    "cluster": "cli-competitors",
+    "verbatim_phrase": "We are using NX heavily (and are not affected) in my teams in a larger insurance company. We have >10 standalone line of business apps and 25+ individual libraries in the same monorepo, managed by NX. I've toyed with other monorepo tools ... but not only did none came close",
+    "url": "https://news.ycombinator.com/item?id=45040021",
+    "source": "Hacker News",
+    "engagement": "story 443 points / 49 top-level comments (Malicious versions of Nx)",
+    "date": "2025-08-27",
+    "sentiment": "positive"
+  },
+  {
+    "cluster": "cli-competitors",
+    "verbatim_phrase": "The nx supply chain attack a couple weeks ago literally exfiltrated admin tokens from your local dev machine because the VS code extension for nx always downloaded the latest version of nx from npm.",
+    "url": "https://news.ycombinator.com/item?id=45311372",
+    "source": "Hacker News",
+    "engagement": "story 522 points / 44 top-level comments",
+    "date": "2025-09-20",
+    "sentiment": "negative-to-nx"
+  },
+  {
+    "cluster": "migration",
+    "verbatim_phrase": "Nx Release is powerful but feels heavy if you aren't already fully bought into the Nx ecosystem.",
+    "url": "https://news.ycombinator.com/item?id=46779055",
+    "source": "Hacker News (Show HN: Bumpy, alternative to Changesets/Nx Release)",
+    "engagement": "low (2 points)",
+    "date": "2026-01-27",
+    "sentiment": "negative-to-nx"
+  },
+  {
+    "cluster": "cli-competitors",
+    "verbatim_phrase": "I spent 4 hours configuring Nx for a 10-package monorepo, then had Turborepo working in 15 minutes",
+    "url": "https://dev.to/saswatapal/why-i-chose-turborepo-over-nx-monorepo-performance-without-the-complexity-1afp",
+    "source": "dev.to (surfaced via WebSearch as a top Nx-vs-Turborepo result)",
+    "engagement": "not measurable",
+    "date": "2026-01-01",
+    "sentiment": "negative-to-nx"
+  },
+  {
+    "cluster": "cli-competitors",
+    "verbatim_phrase": "Turborepo builds ran in 2.8 seconds versus Nx at 8.3 seconds on the same codebase and machine",
+    "url": "https://dev.to/saswatapal/why-i-chose-turborepo-over-nx-monorepo-performance-without-the-complexity-1afp",
+    "source": "dev.to",
+    "engagement": "not measurable",
+    "date": "2026-01-01",
+    "sentiment": "negative-to-nx"
+  },
+  {
+    "cluster": "migration",
+    "verbatim_phrase": "Migrating an existing project to Nx is more complex than adding Turborepo, as Nx wants to manage the workspace its way.",
+    "url": "https://dev.to/telco2011/nx-vs-turborepo-integrated-ecosystem-or-high-speed-task-runner-the-key-decision-for-your-monorepo-279",
+    "source": "dev.to",
+    "engagement": "not measurable",
+    "date": "2026-01-01",
+    "sentiment": "negative-to-nx"
+  },
+  {
+    "cluster": "ci-caching",
+    "verbatim_phrase": "Jest has --changedSince, Nx does affected-test detection for monorepos, Bazel/Pants track build-graph edges ... Where the gap was (for me) is CI-shareable plus honest benchmarks. If the map lives on one developer's machine, it does not help your PR pipeline.",
+    "url": "https://news.ycombinator.com/item?id=48615622",
+    "source": "Hacker News (Show HN: pytest-tia)",
+    "engagement": "moderate",
+    "date": "2026-06-21",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ai-tooling",
+    "verbatim_phrase": "When loading a big monorepo with several hundred AGENTS.md files, Cursor often loads all rules files across the entire repo, loading 600k tokens worth of rules and immediately blasting past a 300k context window",
+    "url": "https://forum.cursor.com/t/cursor-loads-all-rules-from-all-folders-in-monorepo-and-blows-past-context-limits/165337",
+    "source": "Cursor community forum (r/cursor proxy; Reddit blocked)",
+    "engagement": "bug report thread",
+    "date": "2026-01-01",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ai-tooling",
+    "verbatim_phrase": "Ask HN: How are you LLM-coding in an established code base?",
+    "url": "https://news.ycombinator.com/item?id=46292682",
+    "source": "Hacker News",
+    "engagement": "70 points / 66 comments",
+    "date": "2025-12-16",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ai-tooling",
+    "verbatim_phrase": "MCP server that reduces Claude Code context consumption by 98%",
+    "url": "https://news.ycombinator.com/item?id=47193064",
+    "source": "Hacker News",
+    "engagement": "570 points / 107 comments",
+    "date": "2026-02-28",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ai-tooling",
+    "verbatim_phrase": "It's coding at 10-20x speed, but tangibly this is at 1.5-2x the overall productivity. ... (This is in a Rust/Actix/Sqlx/Typescript/nx monorepo, fwiw.)",
+    "url": "https://news.ycombinator.com/item?id=46940452",
+    "source": "Hacker News",
+    "engagement": "story 532 points / 50 top-level comments",
+    "date": "2026-02-09",
+    "sentiment": "positive"
+  },
+  {
+    "cluster": "ai-tooling",
+    "verbatim_phrase": "Made our CI faster, and repeatedly found and fixed flaky tests (with /loop)",
+    "url": "https://news.ycombinator.com/item?id=47970174",
+    "source": "Hacker News",
+    "engagement": "story 1349 points / 99 top-level comments",
+    "date": "2026-05-01",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-observability",
+    "verbatim_phrase": "The pain was never \"writing code.\" It was the random hour lost debugging why CI broke overnight because some dependency shipped a breaking change.",
+    "url": "https://news.ycombinator.com/item?id=46936383",
+    "source": "Hacker News",
+    "engagement": "story 386 points / 48 top-level comments",
+    "date": "2026-02-08",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-flaky",
+    "verbatim_phrase": "sadly yes people often take flaky test way less serious then they should. I had multiple bigger production issues which had been caught by tests >1 month before they happened in production, but where written off as flaky tests",
+    "url": "https://news.ycombinator.com/item?id=47837206",
+    "source": "Hacker News",
+    "engagement": "story 228 points / 15 top-level comments",
+    "date": "2026-04-20",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-cd",
+    "verbatim_phrase": "AI has made writing code 10x faster, but shipping is still painfully slow. The bottleneck has shifted downstream - to merge conflicts, flaky tests, inconsistent code quality",
+    "url": "https://news.ycombinator.com/item?id=48468370",
+    "source": "Hacker News (Trunk.io hiring comment)",
+    "engagement": "moderate",
+    "date": "2026-06-10",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-competitors",
+    "verbatim_phrase": "Having been a happy customer of Blacksmith, Depot, and Ubicloud at various points (all three of which offer GitHub Actions runners at cheaper prices than GitHub themselves)",
+    "url": "https://news.ycombinator.com/item?id=48468370",
+    "source": "Hacker News",
+    "engagement": "story 394 points / 57 top-level comments",
+    "date": "2026-06-10",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-competitors",
+    "verbatim_phrase": "there are other drop-in GHA runner services ... Namespace.so are one and my experience with their support has been incredibly positive. Honourable mention to WarpBuild as well",
+    "url": "https://news.ycombinator.com/item?id=48468370",
+    "source": "Hacker News",
+    "engagement": "story 394 points / 57 top-level comments",
+    "date": "2026-06-10",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-observability",
+    "verbatim_phrase": "Initially they come to us to make their CI pipelines faster. But as the agent dives in, the urgency becomes keeping all pipelines reliable.",
+    "url": "https://news.ycombinator.com/item?id=47413892",
+    "source": "Hacker News",
+    "engagement": "story 56 points / 9 top-level comments (PostHog CI)",
+    "date": "2026-03-17",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "monorepo",
+    "verbatim_phrase": "Cleaning house in Nx monorepo, how i removed unused deps safely",
+    "url": "https://news.ycombinator.com/item?id=45409526",
+    "source": "Hacker News",
+    "engagement": "88 points / 29 comments",
+    "date": "2025-09-29",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "monorepo-organization",
+    "verbatim_phrase": "Workspaces and Monorepos in Package Managers",
+    "url": "https://news.ycombinator.com/item?id=46689834",
+    "source": "Hacker News",
+    "engagement": "27 points / 3 comments",
+    "date": "2026-01-20",
+    "sentiment": "neutral"
+  },
+  {
+    "cluster": "ci-cost",
+    "verbatim_phrase": "For my test suite, it already take 20 minutes. If you want a larger matrix and have more pages, you'll be looking at a 64Gb with a dozen or so vpcus. That's hundreds of dollars a month...",
+    "url": "https://news.ycombinator.com/item?id=46573463",
+    "source": "Hacker News",
+    "engagement": "moderate",
+    "date": "2026-01-11",
+    "sentiment": "neutral"
+  }
+]

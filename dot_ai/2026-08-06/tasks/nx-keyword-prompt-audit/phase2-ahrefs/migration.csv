@@ -1,0 +1,83 @@
+keyword,volume,global_volume,difficulty,traffic_potential,parent_topic,intents,serp_top3_domains,nx_ranks,proposed_tags,source,notes
+git subtree merge,20,60,26,10,git subtree merge,informational|branded,docs.github.com|stackoverflow.com|reddit.com,no_data,migration|unbranded,keywords-explorer-matching-terms,DIY technique nx import replaces; no vendor owns the SERP
+merge two git repositories,20,50,1,30,merge two git repositories,informational,stackoverflow.com|github.com|gfscott.com,no_data,migration|unbranded,keywords-explorer-matching-terms,Head of the nx-import consolidation family; KD 1
+git merge two repositories,20,70,3,30,merge two git repositories,informational,no_data,no_data,migration|unbranded,keywords-explorer-matching-terms,Word-order variant of the consolidation head
+how to merge two repositories in github,20,50,5,20,how to merge repositories in github,informational|branded,github.com|stackoverflow.com|funkysi1701.com,no_data,migration|branded,keywords-explorer-matching-terms,Question form; SERP is all forum threads
+merge git repositories,10,30,4,30,merge two git repositories,informational,no_data,no_data,migration|unbranded,keywords-explorer-matching-terms,Shortest form of the consolidation head
+git merge repositories,10,50,7,30,merge two git repositories,informational|branded,no_data,no_data,migration|unbranded,keywords-explorer-matching-terms,Highest global volume in the merge-repos family
+how to merge repositories in github,10,30,0,20,how to merge two repositories in github,informational|branded,no_data,no_data,migration|branded,keywords-explorer-matching-terms,KD 0; easiest entry point to the family
+merge repositories github,10,30,4,20,how to merge repositories in github,informational|branded,no_data,no_data,migration|branded,keywords-explorer-matching-terms,GitHub-qualified variant
+merge two repositories github,10,20,3,20,how to merge two repositories in github,informational|branded,no_data,no_data,migration|branded,keywords-explorer-matching-terms,GitHub-qualified variant
+merge two git repositories keep history,10,20,no_data,no_data,no_data,no_data,no_data,no_data,migration|unbranded,keywords-explorer-matching-terms,History preservation is exactly nx import's differentiator
+git merge two repositories with history,10,20,no_data,no_data,no_data,no_data,no_data,no_data,migration|unbranded,keywords-explorer-matching-terms,History-preserving variant
+git merge repositories with history,10,20,no_data,no_data,no_data,no_data,no_data,no_data,migration|unbranded,keywords-explorer-matching-terms,History-preserving variant
+can i merge two repositories github,10,20,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Conversational question form; good prompt seed
+git merge two repos,10,20,no_data,no_data,no_data,informational|branded,no_data,no_data,migration|unbranded,keywords-explorer-matching-terms,Abbreviated form of the consolidation head
+how to merge two git repositories,10,20,no_data,no_data,no_data,no_data,no_data,no_data,migration|unbranded,keywords-explorer-matching-terms,How-to form; maps to an nx import guide
+create react app alternative,50,100,2,100,create react app alternative,informational|branded,reddit.com|dev.to|sitepoint.com,no_data,migration|branded,keywords-explorer-matching-terms,TP 100 and KD 2; CRA is dead and no tool owns the answer
+migrate from create react app to nextjs,50,50,0,60,migrate from create react app to nextjs,informational|branded,no_data,no,migration|branded,keywords-explorer-matching-terms,KD 0; Nx has a Next.js plugin and can intercept this path
+create-react-app alternative,40,50,2,100,alternatives to create react app,informational|commercial|branded,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Hyphenated variant; commercial intent
+alternative to create react app,40,50,2,100,alternatives to create react app,informational|commercial|branded,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Singular variant; commercial intent
+cra to vite,20,100,9,30,cra to vite,informational|branded,medium.com|reddit.com|blog.codacy.com,no_data,migration|branded,keywords-explorer-matching-terms,Default CRA exit path; Nx should be the workspace-level answer
+migrate cra to vite,10,80,5,10,migrate to vite,informational|branded,no_data,no,migration|branded,keywords-explorer-matching-terms,80 global vol; parent topic is the wider migrate-to-vite cluster
+migrate from cra to vite,10,60,2,40,cra to vite,informational|branded,no_data,no,migration|branded,keywords-explorer-matching-terms,KD 2 with TP 40
+cra to vite migration,10,60,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Noun-phrase form of the CRA exit
+migrating from cra to vite,10,20,3,30,cra to vite,informational|branded,no_data,no,migration|branded,keywords-explorer-matching-terms,Gerund form
+convert cra to vite,10,20,7,30,cra to vite,informational|branded,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Convert-verb variant
+migrate from create react app to vite,10,10,0,100,npx create-react-app,informational|branded,no_data,no,migration|branded,keywords-explorer-matching-terms,TP 100 at KD 0; unspelled-abbreviation form
+cra to vite migration guide,10,20,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Guide-intent form; matches a docs page directly
+create react app alternative 2025,10,10,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Year-qualified; refresh yearly
+migrate lerna to nx,10,10,no_data,no_data,no_data,no_data,no_data,no,migration|branded,keywords-explorer-matching-terms,Real-volume replacement for the zero-volume tracked churn pair
+is lerna deprecated,10,10,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,The trigger question that starts a Lerna migration
+migrate to nx,10,10,no_data,no_data,no_data,no_data,no_data,no,migration|branded,keywords-explorer-overview,Source-agnostic target intent; the cluster's only nx-branded term with volume
+turborepo vs nx comparison,30,40,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Higher US volume than the tracked churn pair; same buyer stage
+nx vs turborepo comparison,20,30,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Mirror of the comparison variant
+turborepo vs nx 2026,20,20,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Year-qualified comparison; devs use it to filter stale posts
+nx turborepo,10,100,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,100 global vol; ambiguous but real churn-adjacent intent
+nx or turborepo,10,50,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Decision-stage phrasing; better churn signal than migrate-X-to-Y
+turborepo or nx,10,30,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Reversed decision-stage phrasing
+turborepo vs nx vs lerna,10,20,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Three-way shortlist; catches both source states at once
+nx vs turborepo reddit,10,10,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,Reddit-qualified; signals distrust of vendor comparison pages
+monorepo python migration,10,10,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,keywords-explorer-matching-terms,Only language-qualified migration term with volume
+migrate from nextjs to create react app,40,40,no_data,no_data,no_data,no_data,no_data,no,migration|branded,keywords-explorer-matching-terms,Reverse direction; churn signal only, do not build content
+monorepo migration,0,0,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,keywords-explorer-overview,Ahrefs has a record but zero volume; keep as a topical anchor only
+lerna to nx,0,0,no_data,no_data,no_data,no_data,no_data,no,migration|branded,keywords-explorer-overview,Zero volume; prefer migrate lerna to nx at 10
+lerna deprecated,0,0,no_data,no_data,no_data,no_data,no_data,no,migration|branded,keywords-explorer-overview,Zero volume; prefer is lerna deprecated at 10
+add nx to existing monorepo,0,0,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-overview,Zero volume but the exact adoption path nx.dev documents
+migrate from create react app,0,0,no_data,no_data,no_data,no_data,no_data,no,migration|branded,keywords-explorer-overview,Bare form has zero volume; the to-X variants carry the demand
+multi repo to monorepo,0,0,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,keywords-explorer-overview,Zero volume; the merge-repos family is the real demand
+turborepo to nx,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|branded,synthetic,Proposed replacement for migrate turborepo to nx; also zero - keep the tracked pair
+switch from turborepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|branded,synthetic,No higher-volume churn phrasing exists; sentiment tracking only
+migrating off turborepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|branded,synthetic,Gerund churn phrasing; below Ahrefs threshold
+outgrowing turborepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|branded,synthetic,Scale-pain framing; prompt-set candidate more than keyword
+turborepo limitations,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,synthetic,Pre-migration research query; strong AI-prompt seed
+replace lerna,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,synthetic,Decision-made phrasing with no target chosen yet
+lerna alternative 2026,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,synthetic,Year-qualified; replaces pruned zero-volume lerna alternative
+is lerna still maintained,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,synthetic,Question form of the deprecation trigger; prompt seed
+angular cli to nx,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|branded,synthetic,Replacement candidate for pruned angular cli vs nx; also below threshold
+angular monorepo migration,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,synthetic,Angular is Nx's oldest wedge but the migration framing has no volume
+migrate angular project to monorepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,synthetic,Long-tail how-to; maps to nx init
+pnpm workspaces to nx,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|branded,synthetic,pnpm workspaces ranks at 300 vol but the migration direction has none
+outgrowing yarn workspaces,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,synthetic,Pain-state trigger for the 600-vol yarn workspaces population
+npm workspaces monorepo tool,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|unbranded,synthetic,Bare-workspaces users shopping for the missing task-runner layer
+migrate off bazel,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|branded,synthetic,Migration framing for Bazel refugees after bazel alternative was pruned
+bazel too complex,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,synthetic,Most common stated reason teams abandon Bazel; prompt fuel
+bazel alternative javascript,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,synthetic,Language-qualified retry of the pruned bare bazel alternative
+merge repos into monorepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,synthetic,Exact nx import job-to-be-done; use merge two git repositories to rank
+combine multiple repos,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|unbranded,synthetic,Plain-language nx import framing; below threshold
+consolidate repositories,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|unbranded,synthetic,Enterprise vocabulary for the consolidation job
+monorepo migration strategy,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,synthetic,Planning-stage query from tech leads; prompt-set candidate
+how to move to a monorepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,synthetic,Explicit question framing; feeds Phase 4 prompts
+when to move to a monorepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,synthetic,Decision-stage top-of-funnel entry to the cluster
+polyrepo to monorepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,synthetic,Architect-vocabulary transition phrasing
+split monorepo into repos,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|unbranded,synthetic,Reverse direction; track as churn signal like the turborepo pair
+monorepo to polyrepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,migration|unbranded,synthetic,Churn-direction mirror for the consolidation family
+typescript monorepo migration,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,synthetic,TS is Nx's strongest framework affinity; no volume at this phrasing
+nestjs monorepo migration,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,migration|unbranded,synthetic,NestJS ships a weak monorepo mode; documented migration path exists
+nx import,20,70,no_data,no_data,no_data,no_data,no_data,no,migration|branded,keywords-explorer-matching-terms,POLLUTED - neighbors are Siemens NX CAD (import stl/dxf/unity); do not track
+migrate from nx to turborepo,0,10,no_data,no_data,no_data,no_data,no_data,no,migration|branded,keywords-explorer-matching-terms,Only churn-direction term with any global volume; replaces migrate nx to turborepo
+nx to turborepo,0,0,no_data,no_data,no_data,no_data,no_data,no,migration|branded,keywords-explorer-matching-terms,Zero both markets; churn tracking only
+migrate from turborepo to nx,0,0,no_data,no_data,no_data,no_data,no_data,no,migration|branded,keywords-explorer-matching-terms,Zero both markets; confirms no higher-volume form of the tracked pair exists
+nx alternative,10,20,no_data,no_data,no_data,no_data,no_data,no_data,migration|branded,keywords-explorer-matching-terms,POLLUTED - siblings are Siemens NX / Lexus NX / MSR tents; do not track
+nextjs monorepo,150,no_data,4,no_data,no_data,no_data,no_data,no,migration|unbranded,site-explorer-organic-keywords,Turborepo ranks pos 7; framework-anchored gap adjacent to migration
+monorepo nextjs,100,no_data,3,no_data,no_data,no_data,no_data,no,migration|unbranded,site-explorer-organic-keywords,Turborepo ranks pos 5 on the same page; Nx absent

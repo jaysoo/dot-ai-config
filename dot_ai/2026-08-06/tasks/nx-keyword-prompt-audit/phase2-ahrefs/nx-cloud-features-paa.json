@@ -1,0 +1,74 @@
+[
+  {
+    "question": "How does test impact analysis speed up CI?",
+    "source_keyword": "test impact analysis",
+    "source": "keywords-explorer-matching-terms",
+    "note": "Returned as a real question-form keyword at 50 US volume."
+  },
+  {
+    "question": "How do I run tests in parallel in CI/CD?",
+    "source_keyword": "parallel ci",
+    "source": "keywords-explorer-matching-terms",
+    "note": "Returned as a real question-form keyword at 50 US volume."
+  },
+  {
+    "question": "What are the best solutions for flaky test detection in PRs?",
+    "source_keyword": "flaky test",
+    "source": "keywords-explorer-matching-terms",
+    "note": "Returned as a real question-form keyword at 50 US volume."
+  },
+  {
+    "question": "How do top tools manage flaky iOS test results?",
+    "source_keyword": "flaky test",
+    "source": "keywords-explorer-matching-terms",
+    "note": "Real question-form keyword at 20 US volume; mobile-CI angle."
+  },
+  {
+    "question": "What is a flaky test?",
+    "source_keyword": "flaky test",
+    "source": "keywords-explorer-matching-terms",
+    "note": "200 US volume; definitional entry point to retries/quarantine."
+  },
+  {
+    "question": "What is the best way to handle a flaky test?",
+    "source_keyword": "flaky test",
+    "source": "keywords-explorer-matching-terms",
+    "note": "Real question-form keyword at 30 US volume."
+  },
+  {
+    "question": "What is a distributed build system?",
+    "source_keyword": "distributed build system",
+    "source": "synthetic",
+    "note": "Ahrefs shows commercial intent but zero volume; prompt-only surface."
+  },
+  {
+    "question": "How do I share a build cache across CI machines?",
+    "source_keyword": "shared build cache",
+    "source": "synthetic",
+    "note": "No Ahrefs record; core Nx Cloud value prop as a prompt."
+  },
+  {
+    "question": "How do I split tests across CI machines?",
+    "source_keyword": "test sharding",
+    "source": "synthetic",
+    "note": "No PAA returned for test sharding; question written from the seed."
+  },
+  {
+    "question": "What is self-healing CI and which tools do it?",
+    "source_keyword": "self healing ci",
+    "source": "synthetic",
+    "note": "Zero search volume; only reachable via AI-assistant prompts."
+  },
+  {
+    "question": "Can I self-host a remote build cache on premise?",
+    "source_keyword": "self hosted remote cache",
+    "source": "synthetic",
+    "note": "Enterprise gating question; no Ahrefs record."
+  },
+  {
+    "question": "What is the best alternative to Gradle Develocity for JavaScript monorepos?",
+    "source_keyword": "gradle enterprise alternative",
+    "source": "synthetic",
+    "note": "Competitor displacement prompt; Develocity owns the organic SERP."
+  }
+]

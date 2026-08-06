@@ -1,0 +1,99 @@
+angular micro frontends
+angular module federation
+circular dependency
+eslint flat config
+gradle monorepo
+micro frontend
+module federation
+monorepo
+nx
+nx github
+pnpm workspaces
+poly repo
+turbo monorepo
+turborepo vs nx
+typescript monorepo
+what is a monorepo
+yarn workspaces
+build cache
+ci caching
+ci compute cost
+flaky tests ci
+monorepo ci
+monorepo ci/cd
+reduce ci costs
+remote cache
+speed up ci
+build observability platform
+ci analytics
+ci build time trends
+ci metrics dashboard
+ci observability
+circleci build insights alternative
+develocity build scan alternative
+flaky test detection
+github actions build time analytics
+github actions job duration metrics
+github actions runner out of memory
+github actions slow workflow
+monorepo ci metrics
+why is my ci slow
+ci cpu profile
+ci cpu profiling
+ci memory profile
+ci memory profiling
+.net monorepo
+best monorepo tools
+bun workspace
+dotnet monorepo
+gradle monoreop
+java monorepo
+javascript monorepo
+js monorepo
+maven monorepo
+monorepo structure
+monorepo tutorial
+monorepo vs
+monorepo vs polyrepo
+npm workspace
+pnpm workspace
+python monorepo
+ts monorepo
+turborepo alternatives
+yarn workspace
+nestjs monorepo
+react monorepo
+vite monorepo
+angular cli vs nx
+bazel alternative
+bazel vs nx
+bun workspace vs nx
+google build system alternative
+lerna
+lerna alternative
+lerna vs nx
+migrate nx to turborepo
+migrate turborepo to nx
+npm workspace vs nx
+nx vs bazel
+nx vs lerna
+nx vs turbo
+nx vs turborepo
+pnpm workspace vs nx
+rush stack
+rush stack vs nx
+turbo vs nx
+turborepo
+turborepo alternative
+yarn workspace vs nx
+bazel vs
+rush stack alternative
+rush stack vs
+turborepo vs
+ci pipeline bottleneck
+flaky tests
+github actions cost
+ci cd best practices
+ci cd pipeline
+ci cd pipeline best practices
+monorepo best practices

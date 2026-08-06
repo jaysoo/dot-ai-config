@@ -1,0 +1,1447 @@
+{
+  "source": "blogs-x",
+  "collected": "2026-08-06",
+  "notes_on_provenance": "X/Twitter search returned HTTP 402 and was abandoned per instructions. All rows below are verbatim text pulled from blog posts, GitHub awesome-list headings, GitHub issue bodies, and a Cursor community forum thread. Rows where the origin is an awesome-list CATEGORY HEADING are marked category_name=true, because the research brief flags organic category vocabulary as higher value than problem prose.",
+  "phrases": [
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "Engineers spend the first 5 minutes of every Claude Code session re-explaining their stack.",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a (vendor blog, no public counter)",
+      "date": "2026-05-14",
+      "context": "opening framing of why agent memory is a recurring tax"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "You open a fresh session. You type the same six lines.",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "describing the repeated re-priming ritual at session start"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "This isn't laziness. It's a recurring cost the r/mcp community has been pricing into token bills for over a year",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "framing memory loss as a measurable token cost, not a user error"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "session memory does not persist across `/clear` or new sessions, by design.",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "stating the mechanism behind context loss"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "Every session starts with the same blank slate plus whatever lives in `CLAUDE.md`",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "explaining the limits of rules-file-as-memory"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "Everything you told the agent yesterday about your stack is gone.",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "day-over-day continuity loss"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "Codebases mutate. The `auth.ts` you wrote about last week may have moved.",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "arguing that static memory files go stale"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "Static memory is a poor fit for a dynamic artifact, and a codebase is the most dynamic artifact most engineers touch.",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "core thesis sentence of the post"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "The agent doesn't know that `apps/web/lib/auth.ts` exists.",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "concrete example of missing repo knowledge"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "memory stores treat context as write-once, read-many. Codebases are write-many, read-many, with the write side moving faster",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "critique of existing memory-MCP products"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "memory stores require users to declare facts in advance",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "critique of manual memory curation burden"
+    },
+    {
+      "category": "memory",
+      "source": "blog:getunblocked.com",
+      "verbatim_phrase": "Shape changes with every PR.",
+      "url": "https://getunblocked.com/blog/claude-code-forgets-codebase/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-14",
+      "context": "why repo-shape knowledge decays continuously"
+    },
+    {
+      "category": "memory",
+      "source": "awesome-list:jqueryscript/awesome-claude-code (tool description)",
+      "verbatim_phrase": "automatically captures everything Claude does during your coding sessions...injects relevant context back into future sessions",
+      "url": "https://github.com/jqueryscript/awesome-claude-code/blob/main/README.md",
+      "engagement_metric": "listed in awesome-list (claude-mem entry)",
+      "date": "2026-08-06",
+      "context": "how the community describes what a session-memory tool does"
+    },
+    {
+      "category": "memory",
+      "source": "awesome-list:jqueryscript/awesome-claude-code (tool description)",
+      "verbatim_phrase": "Offline durable memory for Claude Code that reduces repeated project explanation",
+      "url": "https://github.com/jqueryscript/awesome-claude-code/blob/main/README.md",
+      "engagement_metric": "listed in awesome-list (recall entry)",
+      "date": "2026-08-06",
+      "context": "tool one-liner naming 'repeated project explanation' as the pain"
+    },
+    {
+      "category": "memory",
+      "source": "awesome-list:jqueryscript/awesome-claude-code (tool description)",
+      "verbatim_phrase": "Context management for Claude Code...MCP execution without context pollution",
+      "url": "https://github.com/jqueryscript/awesome-claude-code/blob/main/README.md",
+      "engagement_metric": "listed in awesome-list (Continuous-Claude-v2 entry)",
+      "date": "2026-08-06",
+      "context": "'context pollution' as an organic term"
+    },
+    {
+      "category": "memory",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Context Delivery & Compaction",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community-generated category name under Design Primitives; category_name=true"
+    },
+    {
+      "category": "memory",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Memory & State",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community-generated category name; category_name=true"
+    },
+    {
+      "category": "memory",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering",
+      "verbatim_phrase": "context rot",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "recurring term across linked resources",
+      "date": "2026-08-06",
+      "context": "term used for degradation of a long-lived context window"
+    },
+    {
+      "category": "memory",
+      "source": "blog:faros.ai",
+      "verbatim_phrase": "As the context window fills up, models 'panic' and rush to finish, cutting corners to avoid running out of space.",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "describing behavioral failure caused by context exhaustion"
+    },
+    {
+      "category": "memory",
+      "source": "forum:forum.cursor.com",
+      "verbatim_phrase": "slightly different ways of handling project context, rules, memories, notes, and session history",
+      "url": "https://forum.cursor.com/t/how-are-people-handling-context-across-different-ai-coding-tools/159891",
+      "engagement_metric": "multi-reply thread (May-Jun 2026)",
+      "date": "2026-05-06",
+      "context": "OP describing why cross-tool memory is a mess"
+    },
+    {
+      "category": "memory",
+      "source": "forum:forum.cursor.com",
+      "verbatim_phrase": "Stale memories poisoning recommendations",
+      "url": "https://forum.cursor.com/t/how-are-people-handling-context-across-different-ai-coding-tools/159891",
+      "engagement_metric": "listed as a top breaking point in thread",
+      "date": "2026-05-06",
+      "context": "enumerated failure mode of memory systems"
+    },
+    {
+      "category": "memory",
+      "source": "forum:forum.cursor.com",
+      "verbatim_phrase": "`AGENTS.md` becoming outdated",
+      "url": "https://forum.cursor.com/t/how-are-people-handling-context-across-different-ai-coding-tools/159891",
+      "engagement_metric": "listed as a top breaking point in thread",
+      "date": "2026-05-06",
+      "context": "rules-file drift named as a recurring failure"
+    },
+    {
+      "category": "memory",
+      "source": "forum:forum.cursor.com",
+      "verbatim_phrase": "Write \"handoff docs\" between agent sessions",
+      "url": "https://forum.cursor.com/t/how-are-people-handling-context-across-different-ai-coding-tools/159891",
+      "engagement_metric": "reply, Jun 7 2026",
+      "date": "2026-06-07",
+      "context": "user's manual workaround for session memory loss"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:riftmap.dev",
+      "verbatim_phrase": "agents shipping locally-correct code that breaks consumers the agent didn't know existed",
+      "url": "https://riftmap.dev/blog/ai-coding-agents-need-cross-repo-context/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-10",
+      "context": "author's one-line statement of the cross-repo failure mode"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:riftmap.dev",
+      "verbatim_phrase": "the dependency graph that determines whether a change is safe lives outside any single repository's boundary",
+      "url": "https://riftmap.dev/blog/ai-coding-agents-need-cross-repo-context/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-10",
+      "context": "why per-repo context is structurally insufficient"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:riftmap.dev",
+      "verbatim_phrase": "the agent shipped a change that broke a consumer it didn't know existed",
+      "url": "https://riftmap.dev/blog/ai-coding-agents-need-cross-repo-context/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-10",
+      "context": "incident narrative"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:riftmap.dev (quoting Neilos)",
+      "verbatim_phrase": "copy-pasting context between sessions, manually tracking which PR depends on which, and babysitting agents that can't see the full picture",
+      "url": "https://riftmap.dev/blog/ai-coding-agents-need-cross-repo-context/",
+      "engagement_metric": "quoted case study",
+      "date": "2026-03-27",
+      "context": "team describing their manual cross-repo coordination overhead"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:riftmap.dev (quoting Mabl)",
+      "verbatim_phrase": "every agent invocation required a human to provide context",
+      "url": "https://riftmap.dev/blog/ai-coding-agents-need-cross-repo-context/",
+      "engagement_metric": "quoted case study",
+      "date": "2026-04-08",
+      "context": "manual context routing as a scaling blocker"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:riftmap.dev (quoting Mabl)",
+      "verbatim_phrase": "context drift dropped from ~40% of our failures to <5%",
+      "url": "https://riftmap.dev/blog/ai-coding-agents-need-cross-repo-context/",
+      "engagement_metric": "quoted case study",
+      "date": "2026-04-08",
+      "context": "'context drift' used as the named failure category"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:riftmap.dev (quoting Meta)",
+      "verbatim_phrase": "\"What depends on X?\" from a multi-file exploration (~6000 tokens) into a single graph lookup (~200 tokens)",
+      "url": "https://riftmap.dev/blog/ai-coding-agents-need-cross-repo-context/",
+      "engagement_metric": "quoted case study",
+      "date": "2026-04-06",
+      "context": "framing cross-repo dependency lookup as a token-cost problem"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:riftmap.dev",
+      "verbatim_phrase": "models trained today do not know about repositories your team created last week",
+      "url": "https://riftmap.dev/blog/ai-coding-agents-need-cross-repo-context/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-10",
+      "context": "why org-private repo knowledge has to be supplied"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:raffertyuy.com",
+      "verbatim_phrase": "Most enterprise applications I work with live in more than one repo.",
+      "url": "https://raffertyuy.com/raztype/repo-of-repos-pattern/",
+      "engagement_metric": "n/a (personal blog)",
+      "date": "2026-05-02",
+      "context": "opening premise of the 'repo-of-repos' pattern post"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:raffertyuy.com",
+      "verbatim_phrase": "But for an agent, that compartmentalization is a barrier.",
+      "url": "https://raffertyuy.com/raztype/repo-of-repos-pattern/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-02",
+      "context": "contrasting human team boundaries with agent needs"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:raffertyuy.com",
+      "verbatim_phrase": "An agent can only work with the context it has access to, and if the relevant code is spread across multiple repos, the agent can't see it all at once.",
+      "url": "https://raffertyuy.com/raztype/repo-of-repos-pattern/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-02",
+      "context": "plain-language statement of the multi-repo context ceiling"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:raffertyuy.com",
+      "verbatim_phrase": "That means more back-and-forth, more re-explaining, and more friction in getting things done.",
+      "url": "https://raffertyuy.com/raztype/repo-of-repos-pattern/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-02",
+      "context": "cost of multi-repo context gaps"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:raffertyuy.com",
+      "verbatim_phrase": "An outer 'agent' repo pulls in all related repos under a `repos/` folder as workspace folders, while commits still flow back to each underlying repo's own origin.",
+      "url": "https://raffertyuy.com/raztype/repo-of-repos-pattern/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-02",
+      "context": "the DIY workaround people build in absence of a product"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:raffertyuy.com",
+      "verbatim_phrase": "reads the entire workspace before answering, so he can grep, read, and cross-reference across the frontend, backend, shared libs, and infrastructure as if they were one codebase",
+      "url": "https://raffertyuy.com/raztype/repo-of-repos-pattern/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-02",
+      "context": "describing the desired end state; note the frontend/backend/shared-libs phrasing"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:raffertyuy.com",
+      "verbatim_phrase": "Repo-of-Repos",
+      "url": "https://raffertyuy.com/raztype/repo-of-repos-pattern/",
+      "engagement_metric": "post title / named pattern",
+      "date": "2026-05-02",
+      "context": "an organically coined pattern name for multi-repo agent workspaces; category_name=true"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:medium.com/@sunghyunroh",
+      "verbatim_phrase": "Multi-Repo Workspace Strategy: The Structure Where AI Coding Agents Actually Shine",
+      "url": "https://medium.com/@sunghyunroh/multi-repo-workspace-strategy-the-structure-where-ai-coding-agents-actually-shine-4ed6b87fb11d",
+      "engagement_metric": "Medium post title",
+      "date": "2026-06-01",
+      "context": "title phrasing showing 'multi-repo workspace' as the organic term"
+    },
+    {
+      "category": "crossrepo",
+      "source": "blog:kayraberktuncer.medium.com",
+      "verbatim_phrase": "Frontend Architecture for AI Coding Agents: Monorepos, Micro Frontends, and Rule Management",
+      "url": "https://kayraberktuncer.medium.com/frontend-architecture-for-ai-coding-agents-monorepos-micro-frontends-and-rule-management-1f64b1fb9d88",
+      "engagement_metric": "Medium post title",
+      "date": "2026-07-01",
+      "context": "'rule management' as an organic term for rules-file sprawl across repos"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:addyosmani.com",
+      "verbatim_phrase": "Context overload. One agent can only hold so much information.",
+      "url": "https://addyosmani.com/blog/code-agent-orchestra/",
+      "engagement_metric": "high-readership personal blog (Addy Osmani)",
+      "date": "2026-03-26",
+      "context": "enumerating why single-agent setups break down"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:addyosmani.com",
+      "verbatim_phrase": "No coordination. Even if you spawn helpers, they can't communicate.",
+      "url": "https://addyosmani.com/blog/code-agent-orchestra/",
+      "engagement_metric": "high-readership personal blog",
+      "date": "2026-03-26",
+      "context": "the multi-agent coordination gap"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:addyosmani.com",
+      "verbatim_phrase": "No specialization. One agent doing everything...is a jack of all trades.",
+      "url": "https://addyosmani.com/blog/code-agent-orchestra/",
+      "engagement_metric": "high-readership personal blog",
+      "date": "2026-03-26",
+      "context": "argument for role-specialized subagents"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:addyosmani.com",
+      "verbatim_phrase": "Flaky environments...become systemic blockers when forty agents hit the same flaky test simultaneously.",
+      "url": "https://addyosmani.com/blog/code-agent-orchestra/",
+      "engagement_metric": "high-readership personal blog",
+      "date": "2026-03-26",
+      "context": "scale problems that only appear with agent fleets"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:addyosmani.com",
+      "verbatim_phrase": "You have removed yourself from the loop, so you don't feel the pain until it's too late.",
+      "url": "https://addyosmani.com/blog/code-agent-orchestra/",
+      "engagement_metric": "high-readership personal blog",
+      "date": "2026-03-26",
+      "context": "loss of situational awareness when running many agents"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:addyosmani.com",
+      "verbatim_phrase": "The Code Agent Orchestra",
+      "url": "https://addyosmani.com/blog/code-agent-orchestra/",
+      "engagement_metric": "post title",
+      "date": "2026-03-26",
+      "context": "metaphor-based naming for the multi-agent layer; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (category heading)",
+      "verbatim_phrase": "Parallel Coding Agents — Terminal (TUI/CLI)",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "1.2k stars",
+      "date": "2026-08-06",
+      "context": "top-level community category name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (category heading)",
+      "verbatim_phrase": "Parallel Coding Agents — Desktop & Web",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "1.2k stars",
+      "date": "2026-08-06",
+      "context": "top-level community category name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (category heading)",
+      "verbatim_phrase": "Multi-Agent Swarms",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "1.2k stars",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (category heading)",
+      "verbatim_phrase": "Autonomous Loop Runners",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "1.2k stars",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (category heading)",
+      "verbatim_phrase": "Autonomous Task Runners",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "1.2k stars",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (category heading)",
+      "verbatim_phrase": "Agent Infrastructure & Primitives",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "1.2k stars",
+      "date": "2026-08-06",
+      "context": "closest community heading to the 'meta-harness' concept; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (intro prose)",
+      "verbatim_phrase": "A curated list of tools and frameworks for orchestrating agents.",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "1.2k stars",
+      "date": "2026-08-06",
+      "context": "the list's own scope statement; 'orchestrating agents' is the umbrella term used"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (intro prose)",
+      "verbatim_phrase": "Everything here decides what an agent works on, when it runs, where it runs, or what happens to its output, and takes whatever task you point it at.",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "1.2k stars",
+      "date": "2026-08-06",
+      "context": "an organic, product-neutral definition of the layer above the harness"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (tool description)",
+      "verbatim_phrase": "Minimal TUI for spawning parallel coding agents in git worktrees",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "amux entry",
+      "date": "2026-08-06",
+      "context": "worktree-per-agent is the dominant described mechanism"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:jqueryscript/awesome-claude-code (tool description)",
+      "verbatim_phrase": "Run multiple Claude Code AI sessions in parallel git worktrees",
+      "url": "https://github.com/jqueryscript/awesome-claude-code/blob/main/README.md",
+      "engagement_metric": "crystal entry",
+      "date": "2026-08-06",
+      "context": "same worktree phrasing recurring across lists"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:jqueryscript/awesome-claude-code (category heading)",
+      "verbatim_phrase": "🤖 Agents & Orchestration",
+      "url": "https://github.com/jqueryscript/awesome-claude-code/blob/main/README.md",
+      "engagement_metric": "awesome-list section heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Task Runners & Orchestration",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Planning & Task Decomposition",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Generators & Meta-Harnesses",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "RARE organic use of 'meta-harness' in the wild; note it means harness GENERATORS here, not the orchestration layer; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering",
+      "verbatim_phrase": "typed schemas, constrained action schemas, and explicit boundary validation",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "linked resource summary",
+      "date": "2026-08-06",
+      "context": "describing multi-agent systems as distributed systems"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:munderdiffl.in (section heading)",
+      "verbatim_phrase": "Shared memory is the real divider",
+      "url": "https://munderdiffl.in/blog/claude-code-orchestration-tools-compared/",
+      "engagement_metric": "n/a",
+      "date": "2026-06-04",
+      "context": "the author's chosen top differentiator when comparing orchestration tools"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:munderdiffl.in (section heading)",
+      "verbatim_phrase": "Messaging vs. you-as-the-bus",
+      "url": "https://munderdiffl.in/blog/claude-code-orchestration-tools-compared/",
+      "engagement_metric": "n/a",
+      "date": "2026-06-04",
+      "context": "naming the human-as-router problem in multi-agent setups"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:munderdiffl.in (section heading)",
+      "verbatim_phrase": "Local-first is increasingly a deciding factor",
+      "url": "https://munderdiffl.in/blog/claude-code-orchestration-tools-compared/",
+      "engagement_metric": "n/a",
+      "date": "2026-06-04",
+      "context": "buyer criterion in the orchestration-tool category"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:munderdiffl.in",
+      "verbatim_phrase": "To compare tools meaningfully, you need criteria that map to real outcomes — not feature checklists.",
+      "url": "https://munderdiffl.in/blog/claude-code-orchestration-tools-compared/",
+      "engagement_metric": "n/a",
+      "date": "2026-06-04",
+      "context": "framing of a category comparison post; 'orchestration tools' is the category label used"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:mindstudio.ai",
+      "verbatim_phrase": "Claude Code Agent Teams: How to Run Multiple AI Agents in Parallel on the Same Project",
+      "url": "https://www.mindstudio.ai/blog/claude-code-agent-teams-parallel-workflows",
+      "engagement_metric": "post title",
+      "date": "2026-04-15",
+      "context": "'agent teams' emerging as vendor-adjacent vocabulary"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:claudedirectory.org",
+      "verbatim_phrase": "Claude Code Worktrees Guide (2026): Parallel Agents Without Conflicts",
+      "url": "https://www.claudedirectory.org/blog/claude-code-worktrees-guide",
+      "engagement_metric": "post title",
+      "date": "2026-04-30",
+      "context": "'parallel agents without conflicts' as the promised outcome"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:tembo.io",
+      "verbatim_phrase": "Coding Agent Orchestration: Multi-Agent Dev Workflows",
+      "url": "https://www.tembo.io/blog/coding-agent-orchestration",
+      "engagement_metric": "post title",
+      "date": "2026-06-03",
+      "context": "'coding agent orchestration' used as the standalone category name"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #40981",
+      "verbatim_phrase": "[FEATURE] Share Claude Code chat sessions with team members",
+      "url": "https://github.com/anthropics/claude-code/issues/40981",
+      "engagement_metric": "feature request (closed as duplicate - i.e. multiple people filed it)",
+      "date": "2026-04-01",
+      "context": "issue title; the duplicate-close is itself evidence of demand volume"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #40981",
+      "verbatim_phrase": "useful context from Claude Code sessions — debugging sessions, architectural decisions, code explanations — stays locked to the individual who had the conversation",
+      "url": "https://github.com/anthropics/claude-code/issues/40981",
+      "engagement_metric": "feature request body",
+      "date": "2026-04-01",
+      "context": "the organizational-invisibility problem in a user's own words"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #40981",
+      "verbatim_phrase": "This leads to duplicated effort, lost context during handoffs, and slower onboarding.",
+      "url": "https://github.com/anthropics/claude-code/issues/40981",
+      "engagement_metric": "feature request body",
+      "date": "2026-04-01",
+      "context": "stated business impact of unshared sessions"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #40981",
+      "verbatim_phrase": "Read-only sharing — so others can review the conversation",
+      "url": "https://github.com/anthropics/claude-code/issues/40981",
+      "engagement_metric": "feature request body",
+      "date": "2026-04-01",
+      "context": "requested capability tier"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #40981",
+      "verbatim_phrase": "Optional continuation — so a teammate can pick up where the conversation left off",
+      "url": "https://github.com/anthropics/claude-code/issues/40981",
+      "engagement_metric": "feature request body",
+      "date": "2026-04-01",
+      "context": "requested capability tier; maps to session resumability"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #40981",
+      "verbatim_phrase": "Being able to hand off or review each other's sessions would improve collaboration — especially when someone is out or when onboarding new team members.",
+      "url": "https://github.com/anthropics/claude-code/issues/40981",
+      "engagement_metric": "feature request body",
+      "date": "2026-04-01",
+      "context": "use case stated by the filer"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #60082",
+      "verbatim_phrase": "Feature request: real-time multi-user collaboration on a single Claude Code session",
+      "url": "https://github.com/anthropics/claude-code/issues/60082",
+      "engagement_metric": "feature request title",
+      "date": "2026-06-01",
+      "context": "the multiplayer-on-one-session ask, verbatim"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #60082",
+      "verbatim_phrase": "\"Share\" links from claude.ai are read-only views, not collaborative.",
+      "url": "https://github.com/anthropics/claude-code/issues/60082",
+      "engagement_metric": "feature request body",
+      "date": "2026-06-01",
+      "context": "user rejecting the existing partial solution"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #60082",
+      "verbatim_phrase": "\"Teammates\" and \"peer sessions\" all belong to the same account — different devices/processes, not different humans.",
+      "url": "https://github.com/anthropics/claude-code/issues/60082",
+      "engagement_metric": "feature request body",
+      "date": "2026-06-01",
+      "context": "precise articulation of the gap between multi-process and multi-human"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #60082",
+      "verbatim_phrase": "The only workarounds are screen sharing (one person types) or tmux session sharing (not officially supported).",
+      "url": "https://github.com/anthropics/claude-code/issues/60082",
+      "engagement_metric": "feature request body",
+      "date": "2026-06-01",
+      "context": "enumerating the hacky status quo"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #60082",
+      "verbatim_phrase": "Claude Code is increasingly used inside teams, but the paradigm is still 'single user + agentic delegation.'",
+      "url": "https://github.com/anthropics/claude-code/issues/60082",
+      "engagement_metric": "feature request body",
+      "date": "2026-06-01",
+      "context": "the clearest user-voice statement of the team-scale gap found in this source"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #60082",
+      "verbatim_phrase": "For software work that is fundamentally collaborative, this is a gap that pushes teams to clunkier workarounds (screen sharing, copy-pasting transcripts).",
+      "url": "https://github.com/anthropics/claude-code/issues/60082",
+      "engagement_metric": "feature request body",
+      "date": "2026-06-01",
+      "context": "why-it-matters section"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #60082",
+      "verbatim_phrase": "Async handoff where a teammate picks up exactly where you left off (richer than a shared transcript).",
+      "url": "https://github.com/anthropics/claude-code/issues/60082",
+      "engagement_metric": "feature request body",
+      "date": "2026-06-01",
+      "context": "use case; 'async handoff' is the organic term"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #60082",
+      "verbatim_phrase": "Live code review where reviewer and author both interact with Claude in the same context.",
+      "url": "https://github.com/anthropics/claude-code/issues/60082",
+      "engagement_metric": "feature request body",
+      "date": "2026-06-01",
+      "context": "use case for multiplayer sessions"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #60082",
+      "verbatim_phrase": "Read-write share links with expiry, similar to Figma/Notion.",
+      "url": "https://github.com/anthropics/claude-code/issues/60082",
+      "engagement_metric": "feature request body",
+      "date": "2026-06-01",
+      "context": "the mental model users reach for when describing what they want"
+    },
+    {
+      "category": "sharing",
+      "source": "github:anthropics/claude-code issue #48828",
+      "verbatim_phrase": "[FEATURE] I'd like to have a group chat with Claude, myself, and another coworker.",
+      "url": "https://github.com/anthropics/claude-code/issues/48828",
+      "engagement_metric": "feature request title",
+      "date": "2026-05-01",
+      "context": "third independent filing of the multiplayer-session ask"
+    },
+    {
+      "category": "sharing",
+      "source": "blog:lore.link",
+      "verbatim_phrase": "The best ways to share a Claude Code session (2026)",
+      "url": "https://lore.link/blog/best-ways-to-share-a-claude-code-session",
+      "engagement_metric": "post title",
+      "date": "2026-06-02",
+      "context": "'share a Claude Code session' is the searchable phrasing a vendor optimized for"
+    },
+    {
+      "category": "sharing",
+      "source": "blog:lore.link",
+      "verbatim_phrase": "they see the complete session in order, including prompts, assistant turns, tool calls, results, images, and diffs, rendered as a readable browser document",
+      "url": "https://lore.link/blog/best-ways-to-share-a-claude-code-session",
+      "engagement_metric": "n/a",
+      "date": "2026-06-02",
+      "context": "what a shared session artifact is expected to contain"
+    },
+    {
+      "category": "sharing",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (tool description)",
+      "verbatim_phrase": "Agents are first-class members of shared channels...with their own keys and audit trails",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "buzz entry, 1.2k-star list",
+      "date": "2026-08-06",
+      "context": "multiplayer + governance framed together"
+    },
+    {
+      "category": "portability",
+      "source": "github:himanshuskukla/ai-context-bridge",
+      "verbatim_phrase": "Cross-AI-tool context portability CLI. Switch between Claude Code, Cursor, Copilot, Codex, Windsurf, Cline, and more without losing context.",
+      "url": "https://github.com/himanshuskukla/ai-context-bridge",
+      "engagement_metric": "repo tagline",
+      "date": "2026-08-06",
+      "context": "'context portability' as the organic category name; category_name=true"
+    },
+    {
+      "category": "portability",
+      "source": "forum:forum.cursor.com",
+      "verbatim_phrase": "every tool's built-in memory is its own little walled garden. A plain text file is the one language all of them speak.",
+      "url": "https://forum.cursor.com/t/how-are-people-handling-context-across-different-ai-coding-tools/159891",
+      "engagement_metric": "thread consensus reply",
+      "date": "2026-05-06",
+      "context": "the single sharpest user-voice line on cross-tool lock-in found in this source"
+    },
+    {
+      "category": "portability",
+      "source": "forum:forum.cursor.com",
+      "verbatim_phrase": "Tool-specific rules diverging",
+      "url": "https://forum.cursor.com/t/how-are-people-handling-context-across-different-ai-coding-tools/159891",
+      "engagement_metric": "listed breaking point",
+      "date": "2026-05-06",
+      "context": "named failure mode when maintaining CLAUDE.md + .cursor/rules + AGENTS.md"
+    },
+    {
+      "category": "portability",
+      "source": "forum:forum.cursor.com",
+      "verbatim_phrase": "right now it's mostly experimental or one off setups",
+      "url": "https://forum.cursor.com/t/how-are-people-handling-context-across-different-ai-coding-tools/159891",
+      "engagement_metric": "top reply",
+      "date": "2026-05-06",
+      "context": "assessment of cross-tool reliability via MCP; indicates an unserved need"
+    },
+    {
+      "category": "portability",
+      "source": "forum:forum.cursor.com",
+      "verbatim_phrase": "It inventories existing instruction files from Codex, Claude Code, Gemini, Windsurf, and others—then asks before overwriting anything.",
+      "url": "https://forum.cursor.com/t/how-are-people-handling-context-across-different-ai-coding-tools/159891",
+      "engagement_metric": "reply, May 27 2026",
+      "date": "2026-05-27",
+      "context": "a user-built tool for reconciling rules files across harnesses"
+    },
+    {
+      "category": "portability",
+      "source": "blog:memorylake.ai",
+      "verbatim_phrase": "Migrate From Cursor to Claude Code, Keep Context (2026)",
+      "url": "https://www.memorylake.ai/en/blogs/migrate-cursor-to-claude-code",
+      "engagement_metric": "post title",
+      "date": "2026-04-01",
+      "context": "the 'keep context when switching harnesses' search intent, made explicit in a title"
+    },
+    {
+      "category": "portability",
+      "source": "blog:memorylake.ai",
+      "verbatim_phrase": "the dynamic context — what Cursor learned about your project across sessions — has no export, so the migration is manual",
+      "url": "https://www.memorylake.ai/en/blogs/migrate-cursor-to-claude-code",
+      "engagement_metric": "n/a",
+      "date": "2026-04-01",
+      "context": "why harness switching is costly today"
+    },
+    {
+      "category": "portability",
+      "source": "awesome-list:jqueryscript/awesome-claude-code (tool description)",
+      "verbatim_phrase": "Local search for coding-agent history across Claude Code, Codex, Cursor",
+      "url": "https://github.com/jqueryscript/awesome-claude-code/blob/main/README.md",
+      "engagement_metric": "ctx entry",
+      "date": "2026-08-06",
+      "context": "cross-harness session history as a named need"
+    },
+    {
+      "category": "portability",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (tool description)",
+      "verbatim_phrase": "running Claude Code, Codex, Cursor, Gemini, and shells in parallel across git worktrees",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "diri entry, 1.2k-star list",
+      "date": "2026-08-06",
+      "context": "multi-harness parallelism described as a single product's job"
+    },
+    {
+      "category": "portability",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (tool description)",
+      "verbatim_phrase": "Rust TUI that finds Codex and Claude Code sessions from the providers' own transcripts, including ones started elsewhere, and resumes their native UI",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "agent-console entry, 1.2k-star list",
+      "date": "2026-08-06",
+      "context": "cross-harness session discovery + resumption"
+    },
+    {
+      "category": "portability",
+      "source": "blog:dev.to (comment on AGENTS.md standardization)",
+      "verbatim_phrase": "AGENTS.md has become the de facto standard for providing project context and instructions to agents",
+      "url": "https://dev.to/anmolbaranwal/open-source-toolkit-for-building-ai-agents-in-2026-55h1",
+      "engagement_metric": "DEV Community post",
+      "date": "2026-05-01",
+      "context": "the emerging portable-context file format"
+    },
+    {
+      "category": "cost",
+      "source": "blog:cloudzero.com",
+      "verbatim_phrase": "rate limits apply: background sessions draw down your subscription usage the same as interactive sessions, so running ten agents in parallel uses quota ten times faster.",
+      "url": "https://www.cloudzero.com/blog/claude-code-agents/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-18",
+      "context": "the parallel-agents cost multiplier"
+    },
+    {
+      "category": "cost",
+      "source": "blog:cloudzero.com",
+      "verbatim_phrase": "No separate billing. No agent discount. No volume pricing. Every Claude Code agent session eats from the same plan",
+      "url": "https://www.cloudzero.com/blog/claude-code-agents/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-18",
+      "context": "why fleet economics break subscription plans"
+    },
+    {
+      "category": "cost",
+      "source": "blog:cloudzero.com",
+      "verbatim_phrase": "the five-hour window drains in under an hour",
+      "url": "https://www.cloudzero.com/blog/claude-code-agents/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-18",
+      "context": "concrete rate-limit exhaustion when running parallel agents"
+    },
+    {
+      "category": "cost",
+      "source": "blog:cloudzero.com",
+      "verbatim_phrase": "AI cost visibility remains the top challenge across the 1,192 organizations surveyed.",
+      "url": "https://www.cloudzero.com/blog/claude-code-agents/",
+      "engagement_metric": "cites n=1192 survey",
+      "date": "2026-05-18",
+      "context": "quantified evidence that cost attribution is the top org pain"
+    },
+    {
+      "category": "cost",
+      "source": "blog:cloudzero.com",
+      "verbatim_phrase": "the question 'which team, which project, which agent pattern is driving spend?' is the one most organizations cannot yet answer.",
+      "url": "https://www.cloudzero.com/blog/claude-code-agents/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-18",
+      "context": "the exact question buyers phrase; strong keyword candidate"
+    },
+    {
+      "category": "cost",
+      "source": "blog:cloudzero.com",
+      "verbatim_phrase": "When 50 developers each manage their own agent fleets",
+      "url": "https://www.cloudzero.com/blog/claude-code-agents/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-18",
+      "context": "'agent fleets' as organic vocabulary for the org-scale problem"
+    },
+    {
+      "category": "cost",
+      "source": "blog:cloudzero.com",
+      "verbatim_phrase": "Claude Code Agents In 2026: Agent View, Subagents, Teams, And What Parallel Sessions Actually Cost",
+      "url": "https://www.cloudzero.com/blog/claude-code-agents/",
+      "engagement_metric": "post title",
+      "date": "2026-05-18",
+      "context": "title phrasing showing 'what parallel sessions actually cost' as search intent"
+    },
+    {
+      "category": "cost",
+      "source": "blog:faros.ai",
+      "verbatim_phrase": "Claude Code Token Limits and How to Manage AI Coding Spend",
+      "url": "https://www.faros.ai/blog/claude-code-token-limits",
+      "engagement_metric": "post title",
+      "date": "2026-06-01",
+      "context": "'manage AI coding spend' as the vendor-chosen phrasing"
+    },
+    {
+      "category": "cost",
+      "source": "awesome-list:jqueryscript/awesome-claude-code (tool description)",
+      "verbatim_phrase": "Compresses tool outputs, logs, files, and retrieval chunks before they reach the language model",
+      "url": "https://github.com/jqueryscript/awesome-claude-code/blob/main/README.md",
+      "engagement_metric": "headroom entry",
+      "date": "2026-08-06",
+      "context": "token-cost reduction as a tool category"
+    },
+    {
+      "category": "cost",
+      "source": "blog:exceeds.ai",
+      "verbatim_phrase": "6 Strategies for Managing AI Coding Token Costs in 2026",
+      "url": "https://blog.exceeds.ai/ai-coding-token-costs-2026/",
+      "engagement_metric": "post title",
+      "date": "2026-05-01",
+      "context": "'AI coding token costs' as the organic keyphrase"
+    },
+    {
+      "category": "observability",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Observability & Tracing",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "observability",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Debugging & Developer Experience",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "observability",
+      "source": "awesome-list:jqueryscript/awesome-claude-code (category heading)",
+      "verbatim_phrase": "📊 Usage & Observability",
+      "url": "https://github.com/jqueryscript/awesome-claude-code/blob/main/README.md",
+      "engagement_metric": "awesome-list section heading",
+      "date": "2026-08-06",
+      "context": "note that usage/cost and observability are merged into ONE community category; category_name=true"
+    },
+    {
+      "category": "observability",
+      "source": "blog:munderdiffl.in (section heading)",
+      "verbatim_phrase": "Visibility takes different forms",
+      "url": "https://munderdiffl.in/blog/claude-code-orchestration-tools-compared/",
+      "engagement_metric": "n/a",
+      "date": "2026-06-04",
+      "context": "'visibility' used instead of 'observability' in a practitioner comparison"
+    },
+    {
+      "category": "observability",
+      "source": "blog:braintrust.dev",
+      "verbatim_phrase": "Traditional APM can show that a request returned a 200, but it cannot show that the agent looped twice, called the wrong tool, or hallucinated a billing policy.",
+      "url": "https://www.braintrust.dev/articles/agent-observability-complete-guide-2026",
+      "engagement_metric": "n/a",
+      "date": "2026-04-01",
+      "context": "why existing monitoring does not cover agents"
+    },
+    {
+      "category": "observability",
+      "source": "blog:augmentcode.com",
+      "verbatim_phrase": "which tool call triggered the wrong behavior, whether the agent misread a file, hallucinated a function signature, or looped on a test it couldn't resolve",
+      "url": "https://www.augmentcode.com/tools/best-ai-agent-observability-tools",
+      "engagement_metric": "n/a",
+      "date": "2026-05-01",
+      "context": "the trace-level questions coding teams say they need answered"
+    },
+    {
+      "category": "observability",
+      "source": "blog:faros.ai",
+      "verbatim_phrase": "The hardest piece of infrastructure to build, and it's also the most valuable",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "said about linking agent sessions to pull requests - i.e. session-to-artifact traceability"
+    },
+    {
+      "category": "governance",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Security, Sandbox & Permissions",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list top-level heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "governance",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Permissions & Authorization",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "governance",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Human-in-the-Loop",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "governance",
+      "source": "awesome-list:andyrewlee/awesome-agent-orchestrators (tool description)",
+      "verbatim_phrase": "seals each agent in its own repo clone under Seatbelt or Docker...with diff viewer",
+      "url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+      "engagement_metric": "Fletch entry, 1.2k-star list",
+      "date": "2026-08-06",
+      "context": "per-agent sandboxing described as a product feature"
+    },
+    {
+      "category": "governance",
+      "source": "awesome-list:jqueryscript/awesome-claude-code (tool description)",
+      "verbatim_phrase": "AI-first security scanner for repositories, secrets, hooks, permissions, and agent skills",
+      "url": "https://github.com/jqueryscript/awesome-claude-code/blob/main/README.md",
+      "engagement_metric": "medusa entry",
+      "date": "2026-08-06",
+      "context": "governance surface expanded to include agent skills/hooks"
+    },
+    {
+      "category": "governance",
+      "source": "blog:faros.ai",
+      "verbatim_phrase": "Engineering teams must build custom scaffolding to ensure organization-specific compliance, safety, and accountability.",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "org policy enforcement described as DIY work today"
+    },
+    {
+      "category": "governance",
+      "source": "blog:developersdigest.tech",
+      "verbatim_phrase": "Permissions, Logs, and Rollback for AI Coding Agents",
+      "url": "https://www.developersdigest.tech/blog/permissions-logs-rollback-ai-coding-agents",
+      "engagement_metric": "post title",
+      "date": "2026-04-01",
+      "context": "practitioner triad naming for the governance category; category_name=true"
+    },
+    {
+      "category": "governance",
+      "source": "blog:developersdigest.tech",
+      "verbatim_phrase": "record every requested, approved, denied, executed, and rolled-back action",
+      "url": "https://www.developersdigest.tech/blog/permissions-logs-rollback-ai-coding-agents",
+      "engagement_metric": "n/a",
+      "date": "2026-04-01",
+      "context": "spec for an agent audit layer"
+    },
+    {
+      "category": "governance",
+      "source": "blog:northflank.com",
+      "verbatim_phrase": "Every sandbox should emit an immutable audit log: every network request, every shell command, every file write.",
+      "url": "https://northflank.com/blog/how-to-sandbox-ai-agents",
+      "engagement_metric": "n/a",
+      "date": "2026-03-01",
+      "context": "audit requirements for agent sandboxes"
+    },
+    {
+      "category": "governance",
+      "source": "blog:docker.com",
+      "verbatim_phrase": "AI Coding Agent Horror Stories: Security Risks Explained",
+      "url": "https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/",
+      "engagement_metric": "post title, Docker corporate blog",
+      "date": "2026-04-01",
+      "context": "'horror stories' framing indicates the emotional register of this category"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:addyosmani.com",
+      "verbatim_phrase": "The bottleneck is no longer generation. It's verification.",
+      "url": "https://addyosmani.com/blog/code-agent-orchestra/",
+      "engagement_metric": "high-readership personal blog",
+      "date": "2026-03-26",
+      "context": "the single most-quotable framing of the evaluation problem found"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:addyosmani.com",
+      "verbatim_phrase": "Agents can produce impressive output at incredible speed. Knowing...whether that output is correct is the hard part.",
+      "url": "https://addyosmani.com/blog/code-agent-orchestra/",
+      "engagement_metric": "high-readership personal blog",
+      "date": "2026-03-26",
+      "context": "verification burden"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:addyosmani.com",
+      "verbatim_phrase": "Agents can write tests that are technically valid but miss the cases that matter.",
+      "url": "https://addyosmani.com/blog/code-agent-orchestra/",
+      "engagement_metric": "high-readership personal blog",
+      "date": "2026-03-26",
+      "context": "why agent-authored tests are not a sufficient feedback loop"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:addyosmani.com",
+      "verbatim_phrase": "Small harmless mistakes...compound at a rate that's unsustainable.",
+      "url": "https://addyosmani.com/blog/code-agent-orchestra/",
+      "engagement_metric": "high-readership personal blog",
+      "date": "2026-03-26",
+      "context": "compounding error at fleet scale"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:faros.ai",
+      "verbatim_phrase": "Agents frequently mark a task complete without verifying the outcome.",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "named failure mode motivating verification loops"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:faros.ai",
+      "verbatim_phrase": "Review fatigue sets in, mistakes slip through, and unvetted code enters production at a higher rate just as the stakes of failure have grown.",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "'review fatigue' as organic vocabulary"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:faros.ai",
+      "verbatim_phrase": "The convincing surface quality of AI-generated code makes it cognitively taxing to review.",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "why human review does not scale as a verification loop"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:faros.ai",
+      "verbatim_phrase": "75% of engineers use AI tools—yet most organizations see no measurable performance gains.",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "the ROI-measurement gap"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:faros.ai",
+      "verbatim_phrase": "More code doesn't mean better code or better outcomes.",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "throughput-vs-quality framing"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:dikrana.dev",
+      "verbatim_phrase": "The 37-point adoption gap is where silent regressions live",
+      "url": "https://dikrana.dev/blog/claude-code-agent-evals/",
+      "engagement_metric": "n/a",
+      "date": "2026-05-19",
+      "context": "89% ship observability but only ~52% run offline evals; 'silent regressions' is the organic term"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:dikrana.dev",
+      "verbatim_phrase": "Agent Evals: A Test Suite for Your Claude Code Setup",
+      "url": "https://dikrana.dev/blog/claude-code-agent-evals/",
+      "engagement_metric": "post title",
+      "date": "2026-05-19",
+      "context": "'a test suite for your Claude Code setup' - framing evals as regression testing of the harness config itself"
+    },
+    {
+      "category": "evaluation",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Evals & Verification",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list top-level heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "evaluation",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Verification & CI Integration",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:developersdigest.tech",
+      "verbatim_phrase": "AGENTS.md Files Don't Move Coding Agent Correctness: A 288-Run Ablation",
+      "url": "https://www.developersdigest.tech/blog/context-files-coding-agents-ablation-2026",
+      "engagement_metric": "post title, cites 288 runs",
+      "date": "2026-06-01",
+      "context": "empirical pushback on rules-file efficacy; relevant to memory + evaluation both"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:buildthisnow.com",
+      "verbatim_phrase": "three independent harness-level changes",
+      "url": "https://www.buildthisnow.com/blog/models/claude-code-quality-regression-2026",
+      "engagement_metric": "n/a",
+      "date": "2026-04-01",
+      "context": "attributing an agent quality regression to the harness rather than the model - 'harness-level' as organic vocabulary"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:martinfowler.com",
+      "verbatim_phrase": "A well-built outer harness serves two goals: it increases the probability that the agent gets it right in the first place, and it provides a feedback loop that self-corrects as many issues as possible before they even reach human eyes.",
+      "url": "https://martinfowler.com/articles/harness-engineering.html",
+      "engagement_metric": "martinfowler.com (highest-authority source in this set)",
+      "date": "2026-04-02",
+      "context": "Birgitta Boeckeler defining what the layer is for; 'outer harness' + 'feedback loop'"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:martinfowler.com",
+      "verbatim_phrase": "Misdiagnosis of issues, overengineering and unnecessary features, misunderstood instructions. They'll sometimes catch them, but not reliably enough to reduce supervision.",
+      "url": "https://martinfowler.com/articles/harness-engineering.html",
+      "engagement_metric": "martinfowler.com",
+      "date": "2026-04-02",
+      "context": "why self-verification by the agent is insufficient"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:martinfowler.com",
+      "verbatim_phrase": "How do we keep a harness coherent as it grows, with guides and sensors in sync, not contradicting each other?",
+      "url": "https://martinfowler.com/articles/harness-engineering.html",
+      "engagement_metric": "martinfowler.com",
+      "date": "2026-04-02",
+      "context": "open question about harness maintainability at scale"
+    },
+    {
+      "category": "evaluation",
+      "source": "blog:martinfowler.com",
+      "verbatim_phrase": "How far can we trust agents to make sensible trade-offs when instructions and feedback signals point in different directions?",
+      "url": "https://martinfowler.com/articles/harness-engineering.html",
+      "engagement_metric": "martinfowler.com",
+      "date": "2026-04-02",
+      "context": "open question on policy vs feedback conflict"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:martinfowler.com",
+      "verbatim_phrase": "The term harness has emerged as a shorthand to mean everything in an AI agent except the model itself - Agent = Model + Harness.",
+      "url": "https://martinfowler.com/articles/harness-engineering.html",
+      "engagement_metric": "martinfowler.com",
+      "date": "2026-04-02",
+      "context": "THE definitional sentence for the category; note it defines 'harness', not 'meta-harness'"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:faros.ai (section heading)",
+      "verbatim_phrase": "Is harness engineering the key to making AI coding agents actually work?",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "'harness engineering' used as the discipline name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:faros.ai (section heading)",
+      "verbatim_phrase": "From prompt to context to harness: The three phases of AI engineering maturity",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "the vocabulary migration path: prompt engineering -> context engineering -> harness engineering"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:faros.ai (section heading)",
+      "verbatim_phrase": "Prebuilt harnesses vs. custom harnesses: What teams actually build",
+      "url": "https://www.faros.ai/blog/harness-engineering",
+      "engagement_metric": "n/a",
+      "date": "2026-05-22",
+      "context": "buy-vs-build framing inside the category"
+    },
+    {
+      "category": "governance",
+      "source": "blog:medium.com/@adnanmasood",
+      "verbatim_phrase": "Agent Harness Engineering — The Rise of the AI Control Plane",
+      "url": "https://medium.com/@adnanmasood/agent-harness-engineering-the-rise-of-the-ai-control-plane-938ead884b1d",
+      "engagement_metric": "Medium post title",
+      "date": "2026-05-01",
+      "context": "'AI control plane' is the second competing category name; category_name=true"
+    },
+    {
+      "category": "governance",
+      "source": "blog:exemplar.dev",
+      "verbatim_phrase": "Best AI Agent Control Plane & Harness Tools in 2026",
+      "url": "https://www.exemplar.dev/blog/best-ai-agent-control-plane-tools",
+      "engagement_metric": "roundup post title",
+      "date": "2026-06-01",
+      "context": "a roundup treating 'control plane' and 'harness tools' as one buyable category; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (repo tagline)",
+      "verbatim_phrase": "Awesome list for AI agent harness engineering: tools, patterns, evals, memory, MCP, permissions, observability, and orchestration.",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "repo tagline",
+      "date": "2026-08-06",
+      "context": "a community-authored enumeration that maps almost 1:1 onto this project's taxonomy; strongest single piece of category-vocabulary evidence"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Design Primitives",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list top-level heading",
+      "date": "2026-08-06",
+      "context": "top-level organizing concept; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Agent Loop",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "awesome-list:ai-boost/awesome-harness-engineering (category heading)",
+      "verbatim_phrase": "Skills & MCP",
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "engagement_metric": "awesome-list subsection heading",
+      "date": "2026-08-06",
+      "context": "community category name; category_name=true"
+    },
+    {
+      "category": "orchestration",
+      "source": "blog:scriptbyai.com",
+      "verbatim_phrase": "The Ultimate Claude Code Resource List 2026: Agents, Skills, Plugins & More",
+      "url": "https://www.scriptbyai.com/claude-code-resource-list/",
+      "engagement_metric": "roundup post title",
+      "date": "2026-05-01",
+      "context": "how a general-audience roundup segments the ecosystem"
+    },
+    {
+      "category": "orchestration",
+      "source": "github:rohitg00/awesome-claude-code-toolkit",
+      "verbatim_phrase": "135 agents, 35 curated skills, 42 commands, 176+ plugins, 20 hooks, 15 rules, 7 templates, 14 MCP configs, 26 companion apps, 52 ecosystem entries",
+      "url": "https://github.com/rohitg00/awesome-claude-code-toolkit",
+      "engagement_metric": "repo description",
+      "date": "2026-08-06",
+      "context": "the community's own unit-of-organization vocabulary: agents/skills/commands/plugins/hooks/rules"
+    },
+    {
+      "category": "memory",
+      "source": "blog:milkeyai.com",
+      "verbatim_phrase": "Why Your AI Coding Agent Keeps Forgetting (And How to Fix It)",
+      "url": "https://milkeyai.com/blog/why-ai-coding-agent-keeps-forgetting-and-how-skills-fix-it",
+      "engagement_metric": "post title",
+      "date": "2026-04-01",
+      "context": "the plainest symptom phrasing: 'keeps forgetting'"
+    },
+    {
+      "category": "memory",
+      "source": "blog:dev.to/whoffagents",
+      "verbatim_phrase": "Why Your Claude Code Sessions Keep Losing Context (And How to Fix It)",
+      "url": "https://dev.to/whoffagents/why-your-claude-code-sessions-keep-losing-context-and-how-to-fix-it-nia",
+      "engagement_metric": "DEV Community post title",
+      "date": "2026-04-01",
+      "context": "'sessions keep losing context' as the searchable symptom phrasing"
+    },
+    {
+      "category": "memory",
+      "source": "blog:artemxtech.substack.com",
+      "verbatim_phrase": "Never lose your work between Claude Code sessions",
+      "url": "https://artemxtech.substack.com/p/never-lose-your-work-between-claude",
+      "engagement_metric": "Substack post title",
+      "date": "2026-03-01",
+      "context": "newsletter framing of session durability"
+    },
+    {
+      "category": "memory",
+      "source": "blog:felo.ai",
+      "verbatim_phrase": "Claude Code Context Window: How to Stop Losing Context Mid-Session",
+      "url": "https://felo.ai/blog/claude-code-context-window/",
+      "engagement_metric": "post title",
+      "date": "2026-04-01",
+      "context": "compaction / mid-session context loss as a distinct sub-symptom from cross-session loss"
+    }
+  ]
+}

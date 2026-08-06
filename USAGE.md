@@ -6,29 +6,31 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 
 | Name                   | Type    | Last Invoked | Count |
 | ---------------------- | ------- | ------------ | ----- |
-| dot-claude-guard       | skill   | 2026-07-31   | 20    |
+| plannotator-review     | command | 2026-08-05   | 1     |
+| plan-task              | command | 2026-08-05   | 1     |
+| dot-claude-guard       | skill   | 2026-08-06   | 22    |
 | ga-traffic             | skill   | 2026-07-30   | 0     |
-| nx-workspace           | skill   | 2026-07-29   | 1     |
+| nx-workspace           | skill   | 2026-08-05   | 2     |
 | ocean-trivy-verify     | skill   | 2026-07-29   | 0     |
 | openai-docs            | skill   | 2026-07-27   | 2     |
 | cnw-update-templates   | skill   | 2026-07-15   | 3     |
-| code-comment-style     | skill   | 2026-07-23   | 0     |
+| code-comment-style     | skill   | 2026-08-06   | 1     |
 | github:yeet            | skill   | 2026-07-13   | 1     |
 | github:github          | skill   | 2026-07-13   | 1     |
-| use-plannotator-for-review | skill | 2026-07-13 | 1     |
+| use-plannotator-for-review | skill | 2026-08-05 | 2     |
 | remotion-best-practices | skill   | 2026-07-13   | 3     |
-| caveman                | skill   | 2026-08-04   | 35    |
+| caveman                | skill   | 2026-08-06   | 36    |
 | 1-on-1-prep            | skill   | 2026-07-23   | 2     |
-| polygraph:polygraph    | skill   | 2026-08-04   | 9     |
+| polygraph:polygraph    | skill   | 2026-08-06   | 10     |
 | op-request-reason      | skill   | 2026-07-28   | 1     |
 | freeze-capture         | skill   | 2026-07-06   | 1     |
 | blog-writing           | skill   | 2026-07-24   | 6     |
 | nx-workspace-expert    | skill   | 2026-07-09   | 1     |
 | nx-docs-writer         | skill   | 2026-07-08   | 1     |
 | nx-docs-style-check    | skill   | 2026-07-23   | 3     |
-| reflect                | command | 2026-07-29   | 13     |
+| reflect                | command | 2026-08-06   | 14     |
 | polygraph:await-polygraph-ci | skill | 2026-07-21 | 1 |
-| summarize              | command | 2026-07-30   | 10    |
+| summarize              | command | 2026-08-06   | 11    |
 | update-config          | skill   | 2026-06-24   | 1     |
 | nx-scorecard           | skill   | 2026-06-09   | 0     |
 | audit-project-health   | skill   | 2026-05-25   | 12    |
@@ -91,3 +93,4 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-08-04: invoked caveman skill (DOC-542 Pylon KB sync investigation, plan + Linear comment)
 2026-08-05: invoked polygraph:polygraph, caveman skills (DOC-542 Pylon KB sync session)
 2026-08-05: invoked summarize, reflect skills (NXC-4687 merged #36508 wrap-up; CLAUDE.md updates + cnw-dist-smoke skill created)
+2026-08-06: invoked caveman skill (Nx keyword & prompt audit session)

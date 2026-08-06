@@ -9,7 +9,7 @@ Phoenix 1.8 internal application for tenant management and engineering metrics (
 | Framework | Phoenix 1.8 / LiveView |
 | Elixir | See `.tool-versions` |
 | Database | PostgreSQL (binary UUIDs) |
-| Auth | None (internal app) |
+| Auth | Google OAuth via Ueberauth (`user_session_controller.ex`, `LighthouseWeb.UserAuth`) |
 | Mailer | Mandrill (prod) / Local (dev) |
 | HTTP Client | Req |
 | GraphQL Client | Neuron (Linear API) |
@@ -34,6 +34,25 @@ Transactional email with domain allowlist (nrwl.io, nx.dev).
 - Tracks sent/blocked emails
 - Mandrill adapter for production
 
+### Credit Usage & Billing (`lib/lighthouse/billing_records.ex`, `lib/lighthouse/credit_usage.ex`)
+Enterprise credit consumption pulled from each tenant's Mongo instance. Two collections,
+two tables, two purposes - do not mix them up:
+
+- **`Lighthouse.BillingRecords`** reads Mongo `billing.billingRecords` into
+  `billing_record_snapshots`. Per org, per billing period. **Source of truth for
+  consumption**; what `/dpe-tools/credit-usage-report` reads for invoicing. Each record
+  embeds its own `planLimits`, so a month keeps the allowance it had at the time.
+- **`Lighthouse.CreditUsage`** reads Mongo `billing.workspaceCreditUsage` into
+  `credit_usage_snapshots`. Per workspace, per ISO week. Serves the customer portal's
+  recent-weeks and workspace-breakdown views only - billing records have no workspace or
+  week dimension.
+
+### Customer Portal (`lib/lighthouse/customer_portal.ex`)
+Per-org enterprise views at `/dpe-tools/portal/:instance_slug/:org_id`. Org snapshots carry
+the license window and `base_included_credits` + `additional_credits` (the licensed
+allowance, summed by `licensed_credits/1`). Collection is gated on an **org allowlist**
+(`CustomerPortal.AllowedOrgs`).
+
 ## Key Schemas
 
 ```
@@ -49,6 +68,23 @@ features
   id (binary_id PK)
   name (unique)
   description
+
+billing_record_snapshots            # source of truth for invoicing
+  unique (tenant_id, org_id, period_start)
+  period_start/period_end, billing_year, billing_month
+  execution_credits, compute_credits, ai_credits (bigint)
+  resource_usage_credits, sandbox_credits, docker_*, npm_* (collected, unused)
+  execution_count
+  base_included_credits, additional_credits   # allowance as of that period
+
+credit_usage_snapshots              # portal weekly/workspace views only
+  unique (tenant_id, workspace_id, billing_year, billing_month, iso_week, year)
+  week_start/week_end = raw slice dates, NOT the ISO week range
+
+customer_portal_org_snapshots
+  unique (tenant_id, org_id)
+  license_start_date, license_end_date
+  base_included_credits, additional_credits
 
 space_metrics_* (11 tables)
   - github_prs: PR metadata, reviewers, merged_at
@@ -115,6 +151,13 @@ SECRET_KEY_BASE     # Phoenix secret (prod)
 2. `Lighthouse.PubSub` - Phoenix PubSub
 3. `Lighthouse.SpaceMetrics.FetchRunner` - Background fetcher
 4. `Lighthouse.SpaceMetrics.DailyFetchWorker` - Scheduled fetch (02:00 UTC)
+
+**Oban crons** (`config/config.exs`, `Oban.Plugins.Cron`):
+- `CreditUsageWorker` - Mon 03:00. **Rejects shared instances by design** (unscoped, it
+  would enumerate every customer we host).
+- `CustomerPortalRefreshWorker` - daily 04:00. Phases: organizations, credit_usage
+  (`customer_portal: true`), billing_records, metrics, alerts. This is the **only** path
+  that collects shared-instance (ProdNA/ProdEU) orgs, and it is allowlist-scoped.
 
 ## Configuration
 
@@ -218,6 +261,60 @@ priv/
 └── static/                     # Compiled assets
 ```
 
+## Design Decisions & Gotchas
+
+### Credit usage
+- **`billing.workspaceCreditUsage` docs are cumulative month-to-date, not deltas.** Keyed
+  `(workspaceId, date at UTC midnight)`, upserted with `$set` not `$inc`, over
+  `[periodStart, dataAsOf)` where `periodStart` is the 1st of the **calendar** month. Never
+  sum across dates - sum across workspaces at one date. Reset is the calendar month, not the
+  license anniversary.
+- **It is not the source of truth.** It can miss the tail of a month (last aggregator run
+  before midnight), so a whole-month figure is unreliable. Use `billing.billingRecords`.
+- **A shared-instance customer is an org, not a tenant.** PayFit is org `PayFit` on tenant
+  `ProdNA`. Searching by tenant will not find them; that is why the report searches by org.
+- **Execution credits DO count against the allowance** per ocean (invoice discount math,
+  invoice eligibility, enterprise cap, license audit, notifications - five sites), and are
+  nonzero on 53.7% of prod NA usage docs. Both the report and the portal nonetheless
+  **exclude** them, deliberately, so the two agree.
+  `BillingRecords.credits_against_allowance/1` is the single flip point. Unresolved as of
+  2026-08-06.
+- **Two unequal denominators in ocean.** Invoicing uses `baseIncludedCredits +
+  additionalCredits`; enforcement uses a `CreditPool` of base + active modifiers and ignores
+  `additionalCredits`. The report's Total is the invoicing allowance, not an enforcement cap.
+- `runCount` is cache-enabled Nx runs, CI **and local** - not CIPEs, not task executions.
+- No `executionCount` on `workspaceCreditUsage` (verified by prod key census); it lives on
+  `MBillingRecord`.
+- Lighthouse collects 4 of 9 charged credit fields. The add-on types are gated to
+  PRO/TEAM/OSS so they rarely touch enterprise figures.
+
+### Seeds
+`priv/repo/seeds/` scripts are **local dev only and guarded** - they delete rows keyed on
+real production org ids, and `priv/` ships inside releases. `priv/repo/seeds.exs` (the
+`ecto.setup` one) is unrelated.
+
+## Personal Work History
+
+### 2026-08-06 - Credit usage report to billing records (lighthouse PR #83, `00e7369`)
+Switched `/dpe-tools/credit-usage-report` off `workspaceCreditUsage`. Added
+`billing_record_snapshots`, `Lighthouse.BillingRecords`, `BillingRecords.Collector` (daily
+portal refresh, rolling 3-month window - invoicing starts 2026-08-15), and
+`Queries.CreditUsageBillingRecords`. Report became one row per org per billing month with
+allowance and remaining balance; granularity/grouping toggles and the workspace dimension
+removed. Fixed a portal bug double-counting boundary ISO weeks in
+`recent_customer_weekly_usage/3`, `customer_workspace_usage/4`,
+`latest_weekly_usage_summaries/1`. Removed 537 lines left dead by the switch.
+Plan: `dot_ai/2026-08-06/tasks/credit-usage-report-billing-records.md`.
+
+### 2026-07-30 - CLOUD-4878 credit usage report for invoicing (lighthouse PR #77)
+ISO week range display, Org ID + workspace_id columns, tenant->org sort, and the
+`planLimits.additionalCredits` map-read fix (was stored as 0, understating allowances).
+Plan: `dot_ai/2026-07-21/tasks/tenant-usage-charges-invoice-report.md`.
+
+### 2026-04 - Original credit usage report (pmariglia)
+Report page with workspace/org selection + CSV export, and the Oban weekly cron. Also the
+shared-instance allowlist scoping (2026-07-24). Worth their review on changes to this area.
+
 ## Notable Patterns
 
 1. **Contexts** separate business logic from web
@@ -225,6 +322,5 @@ priv/
 3. **Calculators** perform metrics computation
 4. **Binary UUIDs** for all primary keys
 5. **UTC timestamps** throughout
-6. **No auth** - internal employee app
 7. **Req** for HTTP (not HTTPoison/Tesla)
 8. **Rustler** for native secrets (NIF)

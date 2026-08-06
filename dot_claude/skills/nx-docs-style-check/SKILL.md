@@ -46,6 +46,19 @@ Common checks:
 - **Tone** — direct, second person ("you"), active voice
 - **Leftover Markdoc** — no `{% %}` tags remaining after migration
 
+### 3a. Structural Anti-AI Pass (MANDATORY for new prose)
+
+vale only covers the mechanical tier. Prose can be 0 errors / 0 warnings / 0 suggestions and still get bounced as "too AI-sounding". Read every added paragraph against these tells, which are the ones Jack has actually flagged:
+
+- **`claim because abstraction: list, list`** — a reason clause that explains nothing on its own ("because the work they support isn't tied to a single repository"), then a colon dumping the real content as an afterthought. Put the concrete reason IN the clause and drop the colon.
+- **Adjacent sentences carrying the same information**, the second re-framing the first. Merge them.
+- **Leading with the enumerated subject** ("Two are scoped to the organization...") instead of the actor ("GitHub scopes your role..."). Lead with who does the thing.
+- **A claim stated in both an intro and a detail section.** One canonical home; the other links or drops it.
+- **A `When it's used:` / second field that restates the first** instead of adding a fact.
+- **Same-page pointer links** to a section that immediately follows ("see [X](#x) below").
+
+Also apply the STYLE_GUIDE items vale misses: no semicolons, no em dashes, balanced-contrast constructions rationed to one per section, bold only for UI labels.
+
 ### 3b. Redirect Check for Moved/Deleted Pages (MANDATORY)
 
 Any page moved, renamed, or deleted under `astro-docs/src/content/docs/` needs a redirect

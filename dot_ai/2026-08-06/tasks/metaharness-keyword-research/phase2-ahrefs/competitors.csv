@@ -1,0 +1,97 @@
+target,tier,keyword,volume,difficulty,position,traffic,url,mapped_category
+omnigent.ai,1,no_data,no_data,no_data,no_data,no_data,no_data,no_data
+metaharness.tools,1,no_data,no_data,no_data,no_data,no_data,no_data,no_data
+mem0.ai,2,claude pricing,49000,67,5,1869,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude code pricing,14000,0,10,429,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude subscription,14000,49,5,821,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude api pricing,11000,41,13,180,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude teams,6400,22,5,0,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,how much does claude cost,6000,40,1,229,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude enterprise pricing,5800,36,13,91,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude cost,5500,68,9,210,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,anthropic pricing,3700,14,2,72,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude team pricing,3700,39,2,46,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude billing,3000,0,4,0,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude code plans,2700,0,8,104,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude mem,2700,18,14,27,https://mem0.ai/blog/claude-code-memory,memory
+mem0.ai,2,claude code subscription,2600,57,2,51,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,agentic rag,2600,26,29,1,https://mem0.ai/blog/what-is-agentic-rag,landscape
+mem0.ai,2,claude token cost,2400,46,1,75,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,anthropic billing,2300,19,5,28,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,claude memory,2200,34,15,22,https://mem0.ai/blog/how-memory-works-in-claude-code,memory
+mem0.ai,2,claude team plan pricing,2100,49,1,0,https://mem0.ai/blog/anthropic-claude-pricing,cost
+mem0.ai,2,agent memory,1100,60,1,68,https://mem0.ai/blog/memory-in-agents-what-why-and-how,memory
+mem0.ai,2,agentic ai frameworks,1000,19,20,3,https://mem0.ai/blog/agentic-frameworks-ai-agents,landscape
+mem0.ai,2,what is agentic rag,1000,18,1,0,https://mem0.ai/blog/what-is-agentic-rag,landscape
+mem0.ai,2,agent sdk,800,69,18,4,https://mem0.ai/blog/openai-agents-sdk-review,landscape
+mem0.ai,2,claude code memory,800,9,11,16,https://mem0.ai/blog/how-memory-works-in-claude-code,memory
+mem0.ai,2,agentic ai framework,700,24,48,0,https://mem0.ai/blog/agentic-frameworks-ai-agents,landscape
+mem0.ai,2,openai agent sdk,700,73,20,2,https://mem0.ai/blog/openai-agents-sdk-review,landscape
+mem0.ai,2,mcp memory,500,34,4,16,https://mem0.ai/blog/introducing-openmemory-mcp,memory
+mem0.ai,2,ai memory,250,55,4,27,https://mem0.ai/,memory
+mem0.ai,2,memory ai,100,55,3,16,https://mem0.ai/,memory
+mem0.ai,2,memory erase,70,0,1,0,https://docs.mem0.ai/core-concepts/memory-operations/delete,memory
+mem0.ai,2,delete memory,60,0,4,2,https://docs.mem0.ai/core-concepts/memory-operations/delete,memory
+mem0.ai,2,memory tool,30,67,5,1,https://mem0.ai/,memory
+https://mem0.ai/blog/claude-code-memory,2,claude mem,2700,18,14,27,https://mem0.ai/blog/claude-code-memory,memory
+https://mem0.ai/blog/claude-code-memory,2,claude-mem,1700,18,20,0,https://mem0.ai/blog/claude-code-memory,memory
+https://mem0.ai/blog/how-memory-works-in-claude-code,2,claude memory,2200,34,15,22,https://mem0.ai/blog/how-memory-works-in-claude-code,memory
+https://mem0.ai/blog/how-memory-works-in-claude-code,2,claude code memory,800,9,11,16,https://mem0.ai/blog/how-memory-works-in-claude-code,memory
+getzep.com,2,graphiti,1000,24,2,9,https://www.getzep.com/platform/graphiti/,memory
+getzep.com,2,gpt-4o context window,250,6,12,5,https://blog.getzep.com/gpt-4-1-and-o4-mini-is-openai-overselling-long-context/,memory
+getzep.com,2,temporal knowledge graph,100,2,1,39,https://www.getzep.com/ai-agents/temporal-knowledge-graph/,memory
+getzep.com,2,gpt-4o context window size,40,7,10,1,https://blog.getzep.com/gpt-4-1-and-o4-mini-is-openai-overselling-long-context/,memory
+letta.com,2,agent memory,1100,60,5,106,https://www.letta.com/blog/agent-memory/,memory
+letta.com,2,memgpt,70,8,3,0,https://www.letta.com/blog/memgpt-and-letta,memory
+letta.com,2,mem gpt,50,8,4,5,https://www.letta.com/blog/memgpt-and-letta,memory
+letta.com,2,terminal agent,50,3,9,2,https://www.letta.com/blog/terminal-bench,orchestration
+letta.com,2,what is memgpt,20,2,10,0,https://www.letta.com/blog/memgpt-and-letta/,memory
+https://openai.com/index/harness-engineering/,3,harness engineering,3700,51,2,1334,https://openai.com/index/harness-engineering/,landscape
+https://openai.com/index/harness-engineering/,3,agent harness,3300,16,19,13,https://openai.com/index/harness-engineering/,landscape
+https://openai.com/index/harness-engineering/,3,harness ai,2800,76,10,104,https://openai.com/index/harness-engineering/,landscape
+https://openai.com/index/harness-engineering/,3,what is an ai harness,2400,23,22,5,https://openai.com/index/harness-engineering/,landscape
+https://openai.com/index/harness-engineering/,3,what is harness engineering,1000,47,6,73,https://openai.com/index/harness-engineering/,landscape
+https://openai.com/index/harness-engineering/,3,codex agent,500,79,8,28,https://openai.com/index/harness-engineering/,landscape
+https://openai.com/index/harness-engineering/,3,harness open source,150,40,9,6,https://openai.com/index/harness-engineering/,landscape
+https://openai.com/index/harness-engineering/,3,harness engineer,150,31,1,29,https://openai.com/index/harness-engineering/,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,harness,47000,53,1,65,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,harness engineering,3700,51,1,544,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,ai harness,3200,48,10,99,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,harness ai,2800,76,6,254,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,what is an ai harness,2400,23,9,92,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,what is harness engineering,1000,47,1,115,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,harness software,450,56,4,54,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,what is harness,350,61,5,5,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,llm harness,300,60,4,37,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,harness engineer,150,31,3,19,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,what is harness software,70,17,8,3,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,harness code,40,42,1,0,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://martinfowler.com/articles/harness-engineering.html,3,harness software engineering insights,30,0,3,3,https://martinfowler.com/articles/harness-engineering.html,landscape
+https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,3,harness,47000,53,14,0,https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,landscape
+https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,3,agent harness,3300,16,1,1180,https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,landscape
+https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,3,ai harness,3200,48,11,74,https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,landscape
+https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,3,what is an ai harness,2400,23,7,143,https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,landscape
+https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,3,what is harness engineering,1000,47,1,0,https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,landscape
+https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,3,what is agent harness,700,11,1,248,https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,landscape
+https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,3,what is a harness,450,12,4,9,https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,landscape
+https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,3,what is harness,350,61,9,2,https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,landscape
+https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,3,llm harness,300,60,9,12,https://www.langchain.com/blog/the-anatomy-of-an-agent-harness,landscape
+https://www.databricks.com/blog/ai-harness,3,harness,47000,53,13,0,https://www.databricks.com/blog/ai-harness,landscape
+https://www.databricks.com/blog/ai-harness,3,harness engineering,3700,51,5,0,https://www.databricks.com/blog/ai-harness,landscape
+https://www.databricks.com/blog/ai-harness,3,agent harness,3300,16,1,382,https://www.databricks.com/blog/ai-harness,landscape
+https://www.databricks.com/blog/ai-harness,3,ai harness,3200,48,1,1168,https://www.databricks.com/blog/ai-harness,landscape
+https://www.databricks.com/blog/ai-harness,3,harness ai,2800,76,2,318,https://www.databricks.com/blog/ai-harness,landscape
+https://www.databricks.com/blog/ai-harness,3,what is an ai harness,2400,23,3,349,https://www.databricks.com/blog/ai-harness,landscape
+https://www.databricks.com/blog/ai-harness,3,what is harness engineering,1000,47,1,92,https://www.databricks.com/blog/ai-harness,landscape
+https://www.databricks.com/blog/ai-harness,3,what is agent harness,700,11,1,51,https://www.databricks.com/blog/ai-harness,landscape
+https://www.databricks.com/blog/ai-harness,3,what is harness,350,61,7,3,https://www.databricks.com/blog/ai-harness,landscape
+https://www.databricks.com/blog/ai-harness,3,llm harness,300,60,7,19,https://www.databricks.com/blog/ai-harness,landscape
+https://addyosmani.com/blog/agent-harness-engineering/,3,harness engineering,3700,51,1,274,https://addyosmani.com/blog/agent-harness-engineering/,landscape
+https://addyosmani.com/blog/agent-harness-engineering/,3,agent harness,3300,16,9,125,https://addyosmani.com/blog/agent-harness-engineering/,landscape
+https://addyosmani.com/blog/agent-harness-engineering/,3,what is harness engineering,1000,47,1,28,https://addyosmani.com/blog/agent-harness-engineering/,landscape
+https://addyosmani.com/blog/agent-harness-engineering/,3,what is agent harness,700,11,9,24,https://addyosmani.com/blog/agent-harness-engineering/,landscape
+https://addyosmani.com/blog/agent-harness-engineering/,3,harness engineer,150,31,4,15,https://addyosmani.com/blog/agent-harness-engineering/,landscape
+https://developers.redhat.com/articles/2026/04/07/harness-engineering-structured-workflows-ai-assisted-development,3,harness engineering,3700,51,8,176,https://developers.redhat.com/articles/2026/04/07/harness-engineering-structured-workflows-ai-assisted-development,landscape
+https://developers.redhat.com/articles/2026/04/07/harness-engineering-structured-workflows-ai-assisted-development,3,harness ai,2800,76,7,204,https://developers.redhat.com/articles/2026/04/07/harness-engineering-structured-workflows-ai-assisted-development,landscape
+https://developers.redhat.com/articles/2026/04/07/harness-engineering-structured-workflows-ai-assisted-development,3,what is harness engineering,1000,47,16,8,https://developers.redhat.com/articles/2026/04/07/harness-engineering-structured-workflows-ai-assisted-development,landscape
+github.com/walkinglabs/awesome-harness-engineering,3,harness engineering,3700,51,9,140,https://github.com/walkinglabs/awesome-harness-engineering,landscape

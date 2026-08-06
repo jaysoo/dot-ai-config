@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What is monorepo used for?",
+    "source_keyword": "monorepo"
+  },
+  {
+    "question": "Does Google still use monorepo?",
+    "source_keyword": "monorepo"
+  },
+  {
+    "question": "Is monorepo better for AI?",
+    "source_keyword": "monorepo"
+  },
+  {
+    "question": "Is it mono repo or monorepo?",
+    "source_keyword": "monorepo"
+  },
+  {
+    "question": "How do I run CI/CD pipelines in a monorepo?",
+    "source_keyword": "monorepo ci/cd"
+  },
+  {
+    "question": "What is the best CI/CD setup for a monorepo?",
+    "source_keyword": "monorepo ci/cd"
+  },
+  {
+    "question": "What are the top AI code reviewers for monorepo projects?",
+    "source_keyword": "monorepo ai tooling"
+  },
+  {
+    "question": "What is the best AI for refactoring a TypeScript monorepo?",
+    "source_keyword": "typescript monorepo"
+  },
+  {
+    "question": "How do I read the root env file in a monorepo?",
+    "source_keyword": "monorepo folder structure"
+  },
+  {
+    "question": "Which host should I use for a monorepo deployment?",
+    "source_keyword": "best monorepo deployment platforms"
+  },
+  {
+    "question": "How do I create a micro frontend in React?",
+    "source_keyword": "micro frontend react"
+  },
+  {
+    "question": "How do I implement micro-frontend architecture with React?",
+    "source_keyword": "micro frontend architecture react"
+  },
+  {
+    "question": "What is micro frontend architecture?",
+    "source_keyword": "micro frontend architecture"
+  },
+  {
+    "question": "What is module federation?",
+    "source_keyword": "module federation"
+  },
+  {
+    "question": "What is the difference between native federation and module federation?",
+    "source_keyword": "native federation vs module federation"
+  }
+]

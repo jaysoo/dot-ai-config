@@ -1,0 +1,92 @@
+keyword,volume,global_volume,difficulty,traffic_potential,parent_topic,intents,serp_top3_domains,nx_ranks,proposed_tags,source,notes
+github actions pricing,1200,5500,45,1200,github actions pricing,informational|commercial|branded,docs.github.com|github.com|reddit.com,no,ci-cost|branded,keywords-explorer-overview,"Category head. Depot pos14, Blacksmith pos7, WarpBuild pos16. Nx absent."
+github actions cost,450,1000,42,1200,github actions pricing,informational|commercial|branded,docs.github.com|reddit.com|github.com,no,ci-cost|branded,keywords-explorer-overview,Already tracked but re-verified: Depot ranks 1. Nx absent.
+github actions free tier,250,600,58,1100,github actions pricing,informational|commercial|branded,no_data,no,ci-cost|branded,site-explorer-organic-keywords,Blacksmith pos1 off one pricing post. Top-of-funnel cost entry.
+github actions limitations,150,150,7,150,github actions free limits,informational|branded,no_data,no,ci-cost|branded,keywords-explorer-overview,KD 7. WarpBuild pos9. Frames the case for caching over runners.
+github actions billing,80,200,53,1100,github actions pricing,informational|branded,no_data,no,ci-cost|branded,keywords-explorer-overview,"Blacksmith pos8. Cost-pain entry point, no Nx page."
+github actions minutes,50,150,45,1200,github actions pricing,informational|branded,no_data,no,ci-cost|branded,keywords-explorer-overview,Minute-spend intent maps directly to cache-hit savings story.
+how much does github actions cost,30,50,45,1200,github actions pricing,informational|commercial|branded,no_data,no,ci-cost|branded,keywords-explorer-overview,Question form of the head term. Feeds Phase 4 prompts.
+github actions slow,60,200,1,65000,github status,informational|branded,no_data,no,ci-cost|unbranded,keywords-explorer-overview,KD 1. Namespace pos6. Purest symptom term in the cluster.
+github actions alternatives,200,500,3,90,github actions alternatives,informational|commercial|branded,blacksmith.sh|reddit.com|dev.to,no,ci-competitors|branded,keywords-explorer-overview,"KD 3, open SERP: Blacksmith pos2 then Reddit/dev.to. Best wedge."
+github runners,800,3000,59,700,github runners,informational|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,WarpBuild pos1. High KD but largest runner-category volume.
+github actions runner,600,1800,63,250,github actions runner,informational|branded,no_data,no,ci-competitors|branded,keywords-explorer-overview,WarpBuild pos1. KD 63; treat as awareness not a target.
+github actions runners,450,1300,37,800,github runner,informational|branded,no_data,no,ci-competitors|branded,keywords-explorer-overview,"Depot pos9, WarpBuild pos3. Nx has no runner-category page."
+github self hosted runners,250,700,12,600,github self hosted runners,informational|branded,no_data,no_data,ci-competitors|unbranded,keywords-explorer-overview,KD 12. WarpBuild pos4. Self-hosting is the DIY cost fix Nx can reframe.
+github actions self hosted runner,150,700,14,700,github self hosted runners,informational|branded,no_data,no,ci-competitors|branded,keywords-explorer-overview,"KD 14. Same buyer as above, longer form."
+action runner controller,30,100,2,250,actions runner controller,informational|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 2. ARC users self-manage runners; prime Nx Agents audience.
+ci runners,20,30,7,1400,gitlab runner,informational|unbranded,no_data,no_data,ci-competitors|unbranded,keywords-explorer-overview,Low volume but TP 1400 via parent topic. WarpBuild pos1.
+github actions runner alternative,10,20,no_data,no_data,no_data,no_data,no_data,no,ci-competitors|unbranded,keywords-explorer-overview,Seeded term. Only 10 US vol - category alternative intent is thin.
+faster github actions runners,10,20,no_data,no_data,no_data,no_data,no_data,no,ci-competitors|unbranded,keywords-explorer-overview,"Vendor marketing phrase, near-zero real search volume."
+github actions cache,500,1700,22,1100,actions/cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-overview,"Depot, Blacksmith, WarpBuild and Namespace all rank. Nx absent."
+docker build cache,150,1100,5,200,docker build cache,informational|branded,no_data,no,ci-caching|unbranded,keywords-explorer-overview,"KD 5. Depot pos6, Blacksmith pos4. Biggest uncontested caching gap."
+docker layer caching,100,300,10,200,docker build cache,informational|branded,no_data,no,ci-caching|unbranded,keywords-explorer-overview,Blacksmith pos3. Nx Cloud caching story never framed for Docker.
+github actions docker layer caching,50,60,3,90,github actions docker cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-overview,"KD 3. Depot pos6, Blacksmith pos3. Cheap entry."
+speed up docker build,70,90,1,40,speed up docker build,informational|unbranded,no_data,no_data,ci-caching|unbranded,keywords-explorer-overview,"KD 1. Depot pos4, Blacksmith pos9. Pure solution intent."
+docker build cache github actions,40,60,no_data,no_data,no_data,no_data,no_data,no,ci-caching|branded,keywords-explorer-overview,Seeded; Ahrefs has volume but no difficulty record.
+best ci for docker,40,50,5,50,container ci cd,informational|commercial|branded,no_data,no_data,ci-competitors|unbranded,keywords-explorer-overview,"Depot wrote the ranking page. Commercial intent, KD 5."
+docker build server,30,40,22,0,docker build server,informational|branded,no_data,no_data,ci-competitors|unbranded,keywords-explorer-overview,"Depot product page ranks pos9. Low value, listed for completeness."
+gradle remote build cache,90,150,3,200,gradle build cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-overview,"KD 3. Depot pos3. Develocity-adjacent buyer, no Nx page."
+gradle remote cache,80,150,4,200,gradle build cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-overview,KD 4. Depot pos3. JVM remote-cache demand Nx never addresses.
+bazel remote cache,80,200,7,70,bazel remote cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-overview,KD 7. BuildBuddy pos7. Direct Nx Cloud remote-cache analog.
+bazel cache,60,100,13,70,bazel remote cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-overview,"BuildBuddy pos9, Buildkite pos8. Same buyer as above."
+remote execution,50,90,12,10,remote execution,informational|unbranded,no_data,no_data,ci-competitors|unbranded,keywords-explorer-overview,BuildBuddy pos10. Category term for Nx Agents / DTE.
+bazel disk cache,40,50,21,70,bazel remote cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-overview,BuildBuddy pos8. Long-tail of the bazel-cache parent topic.
+remote cache,20,30,25,no_data,no_data,informational|unbranded,no_data,9,ci-caching|unbranded,site-explorer-organic-keywords,Already tracked. Nx pos9 - the ONLY cluster term Nx ranks for.
+build farm,30,50,no_data,no_data,no_data,informational|unbranded,no_data,no_data,ci-competitors|unbranded,keywords-explorer-overview,"Seeded. Only 30 vol; legacy enterprise term, not worth content."
+bazel remote execution service,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|unbranded,synthetic,"No Ahrefs record. Real concept, below keyword-DB threshold."
+jenkins vs github actions,450,1500,3,300,jenkins vs github actions,informational|commercial|branded,no_data,no,ci-competitors|branded,keywords-explorer-overview,KD 3. Buildkite owns pos1. Largest CI comparison term in cluster.
+alternatives to jenkins,350,6500,1,400,alternatives to jenkins,informational|commercial|branded,reddit.com|northflank.com|octopus.com,no_data,ci-competitors|branded,keywords-explorer-overview,"KD 1, global 6500. Reddit/Northflank/Octopus top3 - very open SERP."
+jenkins alternatives,250,1000,3,300,jenkins alternatives,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 3. Buildkite pos1. Enterprise migration audience for Nx Cloud.
+is jenkins free,200,600,52,22000,jenkins,informational|branded,no_data,no_data,ci-cost|branded,keywords-explorer-overview,TP 22000 via jenkins parent topic. Buildkite pos1. High KD.
+circleci vs jenkins,150,450,1,40,jenkins vs circleci,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 1. Buildkite pos1 off its jenkins-alternatives page.
+circleci vs github actions,150,400,1,60,circleci vs github actions,informational|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 1. Nx has no CI-platform comparison content at all.
+circleci alternative,150,150,0,20,circleci alternative,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 0. Replaces zero-data tracked circleci build insights alternative.
+jenkins pricing,100,350,2,22000,jenkins,informational|commercial|branded,no_data,no_data,ci-cost|branded,keywords-explorer-overview,"KD 2, TP 22000. Buildkite pos1. Cost-of-Jenkins angle."
+jenkins replacement,90,150,3,300,jenkins alternatives,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 3. Buildkite pos1. Same intent cluster as jenkins alternatives.
+buildkite vs github actions,60,150,1,30,buildkite vs github actions,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 1. Blacksmith pos3 without owning either product.
+ci cd tools comparison,50,80,4,2200,continuous integration tools,informational|commercial|unbranded,no_data,no_data,ci-competitors|unbranded,keywords-explorer-overview,"KD 4, TP 2200. Comparison-table intent with huge parent topic."
+best ci cd tools,250,450,12,2500,continuous integration tools,informational|commercial|unbranded,reddit.com|blog.jetbrains.com|atlassian.com,no_data,ci-competitors|unbranded,keywords-explorer-overview,"TP 2500, KD 12. Reddit pos2 - listicle SERP, no vendor lock."
+azure devops vs github actions,40,200,0,60,github actions vs azure devops,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 0. Pairs with existing dotnet-monorepo keywords.
+gitlab ci vs github actions,40,250,0,200,gitlab vs github actions,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,"KD 0, TP 200. Cheap comparison capture."
+buildkite,3200,8000,9,2400,buildkite,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,Biggest clean vendor term. Navigational - low conversion for Nx.
+develocity,200,600,3,50,gradle pricing,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 3. Closest Nx Cloud analog in JVM. Replaces zero-data develocity build scan alternative.
+buck2,200,300,24,200,buck2,informational|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,"BuildBuddy pos7. Meta build system, adjacent to bazel audience."
+buildkite pricing,100,250,0,60,buildkite pricing,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 0. Per-seat pricing contrast vs Nx Cloud compute model.
+buildbuddy,100,300,12,60,buildbuddy,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,Only 100 US vol. Whole domain ranks for 16 keywords total.
+blacksmith software,90,150,7,250,github actions alternatives,informational|commercial|branded,no_data,no,ci-competitors|branded,keywords-explorer-overview,Best disambiguated Blacksmith term. Parent topic is github actions alternatives.
+warpbuild,90,400,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,No difficulty record. Vendor too small to justify a comparison page.
+namespace labs,80,150,3,300,namespace,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,Disambiguates the polluted bare namespace term. Low volume.
+ubicloud,80,600,10,200,ubicloud,informational|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,Cheap-runner vendor. Global 600 vs US 80 - mostly non-US demand.
+gradle build scan,70,100,6,60,gradle build scan,informational|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,Develocity flagship feature. JVM analog of Nx Cloud run details.
+cirrus ci,60,150,14,10,cirrus ci,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,TP 10. Effectively dead for acquisition purposes.
+buildjet,50,150,2,20,buildjet,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,Shut down. WarpBuild pos2 farming the shutdown. Displaced-user pool.
+depot vs blacksmith,20,50,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,20 US vol. The category head-to-head barely gets searched.
+depot pricing,20,50,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,20 vol despite Depot being the category leader. Telling.
+develocity pricing,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,10 vol. Enterprise deals do not start with a Google search.
+earthly alternative,10,10,0,10,the earthly alternative,informational|commercial|transactional|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,KD 0 but TP 10. Earthly sunset; displaced pool is tiny in search.
+garnix,200,800,4,100,garnix,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,Nix CI. 200 vol but wrong audience for Nx (name collision risk).
+earthly,8500,13000,9,8100,earthley,informational|commercial|transactional|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,"8500 vol is name pollution (Earthly Education/apparel), not the build tool."
+depot alternative,0,10,no_data,no_data,no_data,no_data,no_data,no,ci-competitors|branded,keywords-explorer-overview,ZERO US volume. Direct evidence against a depot comparison page.
+blacksmith alternative,0,10,no_data,no_data,no_data,no_data,no_data,no,ci-competitors|branded,keywords-explorer-overview,ZERO US volume. Existing nx-vs-blacksmith page targets nothing.
+blacksmith ci,250,700,no_data,no_data,no_data,no_data,no_data,no,ci-competitors|branded,keywords-explorer-overview,"250 vol, no difficulty record. Best repoint target for the existing nx-vs-blacksmith page."
+travis ci alternative,0,0,no_data,no_data,no_data,informational|commercial|branded,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,Zero volume. Do not build.
+develocity alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,synthetic,No Ahrefs record. Replaces zero-data develocity build scan alternative.
+gradle enterprise alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,synthetic,No Ahrefs record. Legacy Develocity name.
+buildkite alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,synthetic,No Ahrefs record despite buildkite at 3200 vol.
+buildbuddy alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,synthetic,No Ahrefs record. Confirms vendor-alternative intent is absent.
+github merge queue,1000,2800,4,600,github merge queue,informational|branded,no_data,no_data,ci-cd|branded,keywords-explorer-overview,"KD 4, 1000 vol. Buildkite pos1/13. Nx Cloud has a merge-queue story."
+jest maxworkers,70,250,4,600,jest coverage,informational|branded,no_data,no_data,ci-cd|branded,keywords-explorer-overview,Blacksmith pos3. Test-parallelism pain that Nx Agents solves properly.
+matrix build,20,80,1,10,matrix build,informational|unbranded,no_data,no_data,ci-cd|unbranded,keywords-explorer-overview,Hand-rolled sharding. Blacksmith pos2. Low volume.
+test sharding github actions,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,synthetic,No Ahrefs record. Nx Agents differentiator has no search demand.
+managed github actions runners,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-competitors|unbranded,synthetic,"No Ahrefs record. Vendor category label, not a user phrase."
+self hosted github actions runners,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-competitors|unbranded,synthetic,No record for this exact form; use github self hosted runners instead.
+ci build cache,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|unbranded,synthetic,No Ahrefs record. Vendor-neutral phrasing nobody searches.
+ci runner performance,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|unbranded,synthetic,"No Ahrefs record. Analyst framing, not buyer language."
+docker build cache ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|unbranded,synthetic,No record; docker build cache (150 vol) is the real term.
+why are my github actions so slow,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-cost|unbranded,synthetic,No Ahrefs record but strong AI-answer-engine prompt. Phase 4 candidate.
+reduce github actions minutes,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-cost|unbranded,synthetic,"No Ahrefs record. Keep as a prompt, not an SEO target."
+github actions expensive,0,0,no_data,no_data,no_data,no_data,no_data,no,ci-cost|unbranded,keywords-explorer-overview,"Zero volume. Pain is real, the phrasing is not searched."
+github actions faster builds,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-cost|unbranded,synthetic,"No record; github actions slow (60 vol, KD 1) is the real term."
+how to speed up github actions,60,60,no_data,no_data,no_data,no_data,no_data,no,ci-cost|unbranded,keywords-explorer-overview,"60 vol, no difficulty record. Doubles as a Phase 4 prompt."
+parallel jobs github actions,0,0,no_data,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,keywords-explorer-overview,Zero volume. Drop.
+semaphore ci alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,synthetic,No Ahrefs record. Do not build.

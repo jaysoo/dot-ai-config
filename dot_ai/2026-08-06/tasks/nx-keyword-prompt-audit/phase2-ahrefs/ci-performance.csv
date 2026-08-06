@@ -1,0 +1,123 @@
+keyword,volume,global_volume,difficulty,traffic_potential,parent_topic,intents,serp_top3_domains,nx_ranks,proposed_tags,source,notes
+github actions cache,500,1700,22,1100,actions/cache,informational|branded,github.com|docs.github.com|docs.docker.com,no,ci-caching|branded,keywords-explorer-matching-terms,"500 vol TP 1100; depot ranks 15, nx.dev absent"
+github actions/cache,70,100,12,800,actions/cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-matching-terms,TP 800 slash variant of the cache anchor
+github actions docker cache,60,150,9,100,github actions cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-matching-terms,docker layer cache intent inside GHA
+gitlab ci cache,70,500,0,70,gitlab cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-matching-terms,KD 0; second CI provider cache surface
+gradle build cache,80,200,6,200,gradle build cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-matching-terms,Nx ships a gradle plugin; KD 6
+gradle remote build cache,90,150,3,200,gradle build cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-matching-terms,"KD 3; depot pos 3, circleci pos 6 - open"
+gradle remote cache,80,150,4,200,gradle build cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-matching-terms,duplicate-intent sibling of gradle remote build cache
+bazel remote cache,80,200,7,70,bazel remote cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-matching-terms,buildbuddy pos 7; Nx Cloud remote cache comparison target
+maven build cache,100,150,2,70,maven cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-matching-terms,KD 2; Java audience
+cache hit rate,150,500,4,150,cache hit ratio,informational,no_data,no,ci-caching|unbranded,keywords-explorer-matching-terms,Nx Cloud dashboard metric; KD 4
+docker build cache,150,1100,5,200,docker build cache,informational|branded,no_data,no,ci-caching|branded,keywords-explorer-matching-terms,depot owns this; docker cache adjacency to Nx docker plugin
+bazel cache,100,no_data,13,no_data,no_data,no_data,no_data,no,ci-caching|branded,site-explorer-organic-keywords,buildbuddy pos 9 via remote-caching explainer
+bazel disk cache,70,no_data,21,no_data,no_data,no_data,no_data,no,ci-caching|branded,site-explorer-organic-keywords,local vs remote cache framing buildbuddy owns
+remote execution,20,no_data,12,no_data,no_data,no_data,no_data,no,ci-caching|unbranded,site-explorer-organic-keywords,buildbuddy pos 10; category term for Nx Agents
+docker cache from,150,no_data,6,no_data,no_data,no_data,no_data,no,ci-caching|branded,site-explorer-organic-keywords,circleci pos 8 on a docker-layer-caching blog post
+what is a cache miss,700,77000,3,300,what is a cache miss,informational,no_data,43,ci-caching|unbranded,keywords-explorer-overview,"orchestrator-corrected: agent reported 62k (that is global-ish); real US vol 700 KD 3. nx.dev pos 43 on troubleshoot-cache-misses - cheap lift, mid-size term"
+reduce ci build time,50,50,1,no_data,no_data,no_data,no_data,no,ci-caching|unbranded,keywords-explorer-matching-terms,KD 1; direct symptom-to-solution match
+speed up ci builds,30,30,no_data,no_data,no_data,no_data,no_data,no,ci-caching|unbranded,keywords-explorer-matching-terms,replaces tracked no_data `speed up ci` with a term Ahrefs records
+slow ci builds,30,30,no_data,no_data,no_data,no_data,no_data,no,ci-caching|unbranded,keywords-explorer-matching-terms,symptom framing with a real volume record
+how to speed up ci pipelines,30,100,no_data,no_data,no_data,no_data,no_data,no,ci-caching|unbranded,keywords-explorer-matching-terms,question shape; feeds Phase 4 prompts
+ci pipeline optimization techniques,30,30,no_data,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,keywords-explorer-matching-terms,solution framing for the speed cluster
+ci/cd pipeline optimization,20,80,no_data,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,keywords-explorer-matching-terms,head-ish optimization framing
+why is my ci/cd pipeline so slow?,30,30,no_data,no_data,no_data,no_data,no_data,no,ci-caching|unbranded,keywords-explorer-matching-terms,replaces tracked no_data `why is my ci slow`
+how do i reduce my ci build time?,40,40,no_data,no_data,no_data,no_data,no_data,no,ci-caching|unbranded,keywords-explorer-matching-terms,LLM-shaped query with a recorded volume
+how do i parallelize ci builds to speed them up?,40,40,no_data,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,keywords-explorer-matching-terms,maps to Nx Agents distribution pitch
+how does test impact analysis speed up ci?,50,50,no_data,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,keywords-explorer-matching-terms,Launchable category term in question form
+how to speed up gitlab ci,20,20,no_data,no_data,no_data,no_data,no_data,no,ci-caching|unbranded,keywords-explorer-matching-terms,GitLab-anchored speed question
+maven incremental build,60,80,no_data,no_data,no_data,informational|branded,no_data,no_data,ci-caching|branded,keywords-explorer-matching-terms,incremental build framing for the Java audience
+msbuild incremental build,20,20,0,10,msbuild incremental build,informational|branded,no_data,no_data,ci-caching|branded,keywords-explorer-matching-terms,KD 0; .NET audience
+circleci parallelism,90,no_data,2,no_data,no_data,no_data,no_data,no,ci-cd|branded,site-explorer-organic-keywords,circleci pos 1 KD 2; DIY distribution Nx Agents replaces
+circleci parallel,80,no_data,2,no_data,no_data,no_data,no_data,no,ci-cd|branded,site-explorer-organic-keywords,sibling of circleci parallelism
+github actions pricing,1200,5500,45,1200,github actions pricing,informational|commercial|branded,no_data,no_data,ci-cost|branded,keywords-explorer-matching-terms,"1.2k vol, commercial intent, TP 1200 - bigger than tracked `github actions cost`"
+github self-hosted actions runners cost,150,200,no_data,no_data,no_data,no_data,no_data,no_data,ci-cost|branded,keywords-explorer-matching-terms,150 vol; self-hosted vs managed cost decision
+github actions pricing 2026,150,250,no_data,no_data,no_data,no_data,no_data,no_data,ci-cost|branded,keywords-explorer-matching-terms,2026 GHA repricing is live news demand
+github actions free tier minutes,100,150,no_data,no_data,no_data,no_data,no_data,no_data,ci-cost|branded,keywords-explorer-matching-terms,billing-unit query feeding the cost cluster
+github actions free minutes,80,250,63,1100,github actions pricing,informational|branded,no_data,no_data,ci-cost|branded,keywords-explorer-matching-terms,TP 1100 despite KD 63
+github actions minutes,50,150,45,1200,github actions pricing,informational|branded,no_data,no_data,ci-cost|branded,keywords-explorer-matching-terms,TP 1200; the billing unit itself
+github self hosted runner cost,50,150,no_data,no_data,no_data,no_data,no_data,no_data,ci-cost|branded,keywords-explorer-matching-terms,runner cost comparison intent
+github actions minutes cost,40,100,no_data,no_data,no_data,no_data,no_data,no_data,ci-cost|branded,keywords-explorer-matching-terms,exact cost-per-minute intent
+do github actions cost money,40,70,46,1100,github actions pricing,informational|branded,no_data,no_data,ci-cost|branded,keywords-explorer-matching-terms,TP 1100 question shape
+how do i reduce the cost of my github actions,40,40,no_data,no_data,no_data,no_data,no_data,no_data,ci-cost|branded,keywords-explorer-matching-terms,direct Nx Cloud answer; feeds prompt set
+ci/cd pipeline cost optimization,20,20,no_data,no_data,no_data,no_data,no_data,no,ci-cost|unbranded,keywords-explorer-matching-terms,generic cost-optimization framing
+ci pipeline minutes,100,no_data,1,no_data,no_data,no_data,no_data,no,ci-cost|unbranded,site-explorer-organic-keywords,KD 1; circleci pos 9 - wide open
+flaky test,400,no_data,4,no_data,no_data,no_data,no_data,no,ci-flaky|unbranded,site-explorer-organic-keywords,"singular form, KD 4; trunk.io pos 1 owns it"
+flaky tests meaning,150,500,6,500,flaky test,informational,no_data,no,ci-flaky|unbranded,keywords-explorer-matching-terms,TP 500 definitional shoulder of the $14-CPC anchor
+what are flaky tests,100,250,3,350,flaky tests meaning,informational,no_data,no,ci-flaky|unbranded,keywords-explorer-matching-terms,KD 3 question shape
+what is a flaky test,100,no_data,5,no_data,no_data,no_data,no_data,no,ci-flaky|unbranded,site-explorer-organic-keywords,trunk pos 7; definitional entry point
+how to fix flaky tests,70,80,2,no_data,no_data,no_data,no_data,no,ci-flaky|unbranded,keywords-explorer-matching-terms,KD 2; highest-intent flaky how-to
+test flakiness,30,no_data,9,no_data,no_data,no_data,no_data,no,ci-flaky|unbranded,site-explorer-organic-keywords,metric framing Nx Cloud reports
+flakey test,30,no_data,6,no_data,no_data,no_data,no_data,no,ci-flaky|unbranded,site-explorer-organic-keywords,misspelling variant trunk ranks for
+playwright flaky tests,80,250,2,40,playwright flaky tests,informational|branded,no_data,no,ci-flaky|branded,keywords-explorer-matching-terms,KD 2; Nx ships the playwright plugin
+cypress flaky tests,40,no_data,0,no_data,no_data,no_data,no_data,no,ci-flaky|branded,site-explorer-organic-keywords,KD 0; Nx ships the cypress plugin
+circleci flaky tests,80,90,3,30,circleci flaky tests,informational|branded,no_data,no,ci-flaky|branded,keywords-explorer-matching-terms,competitor-anchored; circleci pos 1
+predictive test selection,150,no_data,3,no_data,no_data,no_data,no_data,no_data,ci-flaky|unbranded,site-explorer-organic-keywords,KD 3; Launchable's category - overlaps nx affected
+buildpulse,60,no_data,0,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,site-explorer-organic-keywords,flaky-detection competitor; trunk runs a compare page
+github merge queue,1000,no_data,4,no_data,no_data,no_data,no_data,no_data,ci-cd|branded,site-explorer-organic-keywords,"1k vol KD 4; trunk pos 2 - largest cheap CI-flow SERP found"
+merge queue,300,no_data,9,no_data,no_data,no_data,no_data,no_data,ci-cd|unbranded,site-explorer-organic-keywords,trunk pos 1; adjacent CI-throughput surface
+github merge queues,200,no_data,5,no_data,no_data,no_data,no_data,no_data,ci-cd|branded,site-explorer-organic-keywords,plural variant; KD 5
+merge queues,100,no_data,5,no_data,no_data,no_data,no_data,no_data,ci-cd|unbranded,site-explorer-organic-keywords,plural variant of merge queue
+ci/cd pipeline,9500,no_data,49,no_data,no_data,no_data,redhat.com|reddit.com|geeksforgeeks.org,no,ci-cd|unbranded,site-explorer-organic-keywords,"slash form is a SEPARATE 9.5k keyword from tracked `ci cd pipeline` (4.8k)"
+cicd pipeline,7200,no_data,47,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,7.2k no-space variant; circleci pos 15
+ci cd,8900,no_data,70,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,head term; KD 70 so brand-authority play only
+continuous integration,7900,no_data,59,no_data,no_data,no_data,no_data,no_data,ci-cd|unbranded,site-explorer-organic-keywords,category head; circleci pos 1
+continuous deployment,3700,no_data,56,no_data,no_data,no_data,no_data,no_data,ci-cd|unbranded,site-explorer-organic-keywords,category head
+what is continuous integration,2500,no_data,60,no_data,no_data,no_data,no_data,no_data,ci-cd|unbranded,site-explorer-organic-keywords,definitional head
+ci/cd pipelines,2200,no_data,49,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,plural of the 9.5k slash form
+what is continuous delivery,2100,no_data,66,no_data,no_data,no_data,no_data,no_data,ci-cd|unbranded,site-explorer-organic-keywords,definitional head; circleci pos 1
+what is ci cd,1700,no_data,50,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,1.7k definitional; circleci pos 11
+what is ci/cd pipeline,1100,no_data,48,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,1.1k definitional
+ci/cd pipeline meaning,1100,no_data,48,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,1.1k definitional variant
+what is ci cd pipeline,800,no_data,38,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,KD 38 - cheapest of the definitional set
+ci pipeline,700,no_data,48,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,CI-only head term
+continuous delivery pipeline,600,no_data,13,no_data,no_data,no_data,no_data,no_data,ci-cd|unbranded,site-explorer-organic-keywords,KD 13 at 600 vol - underpriced
+what is a ci/cd pipeline,400,no_data,50,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,definitional variant
+cicd pipeline meaning,400,no_data,50,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,no-space definitional variant
+ci cd automation,350,no_data,55,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,circleci pos 1 on a product page
+cicd pipelines,350,no_data,54,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,plural no-space variant
+continuous integration pipeline,250,no_data,68,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,circleci pos 1
+github ci cd,250,no_data,46,no_data,no_data,no_data,no_data,no,ci-cd|branded,site-explorer-organic-keywords,tool-anchored head; circleci pos 1 with a generic page
+ci cd tutorial,200,no_data,6,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,KD 6 at 200 vol; trunk pos 5 - best value/difficulty in ci-cd
+what is a cicd pipeline,200,no_data,50,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,definitional variant
+cd pipelines,200,no_data,52,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,circleci pos 1
+ci cd development,200,no_data,69,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,role-shaped head
+what is a ci pipeline,150,no_data,35,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,KD 35 definitional
+ci-cd pipeline,150,no_data,48,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,hyphen variant of the head term
+cd ci pipeline,150,no_data,42,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,reversed-order variant
+flutter ci cd,100,no_data,14,no_data,no_data,no_data,no_data,no,ci-cd|branded,site-explorer-organic-keywords,KD 14 framework-anchored
+ci cd services,100,no_data,15,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,KD 15 commercial-shaped
+ci pipeline meaning,100,no_data,62,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,definitional variant
+ci cd pipeline tutorial,80,no_data,14,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,KD 14; trunk pos 1
+mobile ci cd,80,no_data,2,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,KD 2; Nx supports expo/react-native
+docker ci cd pipeline,70,no_data,5,no_data,no_data,no_data,no_data,no,ci-cd|branded,site-explorer-organic-keywords,KD 5; @nx/docker angle
+ios ci cd,70,no_data,1,no_data,no_data,no_data,no_data,no,ci-cd|branded,site-explorer-organic-keywords,KD 1
+rails continuous integration,70,no_data,1,no_data,no_data,no_data,no_data,no_data,ci-cd|branded,site-explorer-organic-keywords,KD 1 framework-anchored pattern to copy
+ci/cd pipelines explained,70,no_data,37,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,explainer framing
+unity ci cd,60,no_data,3,no_data,no_data,no_data,no_data,no,ci-cd|branded,site-explorer-organic-keywords,KD 3
+ci/cd pipeline stages,60,no_data,8,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,KD 8; structural explainer
+monorepo ci/cd pipeline templates,60,70,no_data,no_data,no_data,no_data,no_data,no,ci-cd|monorepo,keywords-explorer-matching-terms,template intent - maps to Nx generators
+mobile continuous integration,60,no_data,1,no_data,no_data,no_data,no_data,no_data,ci-cd|unbranded,site-explorer-organic-keywords,KD 1
+how do i run ci/cd pipelines in a monorepo?,50,50,no_data,no_data,no_data,no_data,no_data,no,ci-cd|monorepo,keywords-explorer-matching-terms,LLM-shaped monorepo CI question
+ci cd process flow,50,no_data,6,no_data,no_data,no_data,no_data,no,ci-cd|unbranded,site-explorer-organic-keywords,KD 6
+react native continuous integration,50,no_data,3,no_data,no_data,no_data,no_data,no_data,ci-cd|branded,site-explorer-organic-keywords,KD 3 framework-anchored
+hosted continuous integration,50,no_data,42,no_data,no_data,no_data,no_data,no_data,ci-cd|unbranded,site-explorer-organic-keywords,self-hosted vs hosted decision query
+ruby continuous integration,50,no_data,0,no_data,no_data,no_data,no_data,no_data,ci-cd|branded,site-explorer-organic-keywords,KD 0
+what is the best ci/cd setup for a monorepo?,40,40,no_data,no_data,no_data,no_data,no_data,no,ci-cd|monorepo,keywords-explorer-matching-terms,direct Nx Cloud recommendation query
+quarantine flaky tests,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-flaky|unbranded,synthetic,Nx Cloud flaky-task feature name; no Ahrefs record
+automatic test retry ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-flaky|unbranded,synthetic,retry framing; Trunk/Launchable compete here
+detect flaky tests in ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-flaky|unbranded,synthetic,expands tracked `flaky test detection` with CI qualifier
+rerun failed tests github actions,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-flaky|branded,synthetic,tool-anchored flaky mitigation
+tests pass locally fail in ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-flaky|unbranded,synthetic,classic flaky symptom; strong prompt candidate
+test impact analysis,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|unbranded,synthetic,category term behind predictive test selection
+distributed task execution ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-cd|nx-cloud-features,synthetic,Nx Agents/DTE category naming
+nx cloud vs turborepo remote cache,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-competitors|branded,synthetic,head-to-head comparison; no Ahrefs record
+turborepo remote cache alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-competitors|branded,synthetic,switch intent from the nearest competitor
+buildbuddy alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,synthetic,bazel-cache competitor switch intent
+angular monorepo ci cd,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-cd|monorepo,synthetic,Nx's strongest framework audience
+react monorepo ci cd,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-cd|monorepo,synthetic,largest framework audience for Nx adoption
+typescript monorepo build time,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no,ci-caching|monorepo,synthetic,TS incremental build intent
+self hosted runner cost calculator,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-cost|unbranded,synthetic,depot ranks a calculator page; tool-shaped cost asset
+turborepo cache,30,no_data,7,no_data,no_data,no_data,no_data,no,ci-caching|branded,site-explorer-organic-keywords,"turborepo.dev pos 1 via remote-caching doc; KD 7 competitor-anchored cache term"
+turbo cache,30,no_data,12,no_data,no_data,no_data,no_data,no,ci-caching|branded,site-explorer-organic-keywords,turborepo.dev pos 1; short-form variant of turborepo cache
+turbo clear cache,20,no_data,9,no_data,no_data,no_data,no_data,no,ci-caching|branded,site-explorer-organic-keywords,"nx.dev already ranks pos 1 for `nx clear cache` - same page shape wins here"

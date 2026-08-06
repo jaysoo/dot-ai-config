@@ -1,0 +1,109 @@
+keyword,volume,global_volume,difficulty,traffic_potential,parent_topic,intents,serp_top3_domains,nx_ranks,proposed_tags,source,notes
+mcp server,38000,no_data,77,no_data,no_data,no_data,modelcontextprotocol.io|reddit.com|k2view.com,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Cluster head. Nx ships an MCP server and tracks zero MCP terms
+mcp,60000,no_data,89,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Acronym head. Too broad and polluted but sets ceiling
+what is an mcp server,5900,no_data,24,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,KD 24 at 5900 vol. Cheapest high-volume explainer in cluster
+model context protocol,5700,no_data,84,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Formal name. Owned by spec site
+mcp servers,5000,no_data,75,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Plural head. Listicle intent
+claude mcp,4400,no_data,25,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,site-explorer-organic-keywords,KD 25 at 4400 vol. Vendor-anchored and weakly defended
+mcp protocol,4200,no_data,86,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Definitional head
+what is mcp in ai,4100,no_data,53,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Explainer intent
+mcp ai,3100,no_data,81,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Broad head
+mcp inspector,2700,no_data,5,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,KD 5. Tool-shaped term with almost no defence
+mcp client,1100,no_data,48,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Nx editor integrations are MCP clients
+mcp tools,1000,no_data,67,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Adjacent concept term
+build mcp server,800,no_data,12,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,KD 12. Spec site only ranks 4th here - open SERP
+mcp security,800,no_data,42,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Enterprise objection to MCP adoption
+mcp registry,700,no_data,56,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Distribution surface for the Nx MCP server
+mcp architecture,700,no_data,44,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Explainer intent
+how to build an mcp server,600,1400,10,450,build mcp server,informational,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,KD 10 with 450 TP. Best effort-to-return ratio in cluster
+mcp server list,450,no_data,76,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Listicle intent. Nx MCP server should appear on these
+mcp clients,250,no_data,18,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,KD 18
+how to build an mcp server tutorial,200,250,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Tutorial modifier on the KD-10 head
+mcp server architecture,200,no_data,24,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,KD 24
+how to build an mcp server example,150,150,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Example modifier
+build an mcp server,100,250,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Verb-first variant
+how to build an mcp server python,100,150,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Python variant. Tests Nx polyglot reach
+mcp server template typescript,90,90,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Generator-shaped. Nx could ship the template that ranks
+mcp integration,70,no_data,71,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Generic integration framing
+mcp server typescript,60,150,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,TS is Nx core audience and MCP SDK is TS-first
+typescript mcp server,60,200,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Word-order variant of the above
+claude mcp server,450,1400,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,keywords-explorer-overview,Vendor-anchored. 450 US vol and untracked
+best mcp servers for developers,100,350,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-overview,Listicle placement target for the Nx MCP server
+mcp server github actions,30,40,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|ci-cd,keywords-explorer-overview,Bridges MCP to CI. Small but the only recorded CI-MCP term
+figma mcp,7600,no_data,59,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,site-explorer-organic-keywords,Proof that vendor-anchored MCP terms carry real volume
+mcp marketplace,700,no_data,51,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,site-explorer-organic-keywords,Cursor owns this listing surface. Nx should be listed
+nx mcp,100,700,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,keywords-explorer-overview,Branded cluster owns this row. Listed here for cluster completeness only
+nx mcp server,80,250,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,keywords-explorer-overview,Branded cluster owns this row. Listed here for cluster completeness only
+nx ai,50,450,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,keywords-explorer-overview,Branded cluster owns this row. Listed here for cluster completeness only
+llms.txt,2800,15000,53,4200,llms.txt,informational,llmstxt.org|developer.chrome.com|reddit.com,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,nx.dev ships llms.txt and tracks nothing. TP 4200
+what is llms.txt,1900,2700,48,4500,llms.txt,informational,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Highest traffic potential in the whole cluster at 4500
+llms.txt file,500,1300,51,no_data,llms.txt,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,File-form variant
+llms.txt standard,500,700,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Spec framing
+llms.txt generator,400,2500,17,no_data,llms.txt,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,KD 17 tool intent. Nx docs tooling could serve it
+llms.txt what is it,400,700,43,no_data,llms.txt,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Question variant
+llms.txt best practices,250,300,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Docs-authoring intent
+llms.txt examples,250,300,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Example intent. nx.dev is a live example
+llms.txt format,250,300,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Format intent
+what is llms.txt file,250,450,43,no_data,llms.txt,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Question variant
+llms.txt example,200,450,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Singular example variant
+what is an llms.txt,200,200,39,no_data,llms.txt,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,KD 39 question form
+llms.txt specification,100,400,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Spec intent
+llms.txt seo,90,250,24,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,KD 24. Marketing-side framing
+generate llms.txt,70,250,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Verb form of generator intent
+llms.txt vs robots.txt,60,100,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Comparison explainer. Cheap page
+agents.md,900,4100,39,1800,agents.md,informational|branded,no_data,no_data,ai-tooling|branded,keywords-explorer-overview,Agent config-file standard. KD 39 TP 1800 and untracked
+llm friendly documentation,10,20,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-overview,Category nx.dev LLM-optimized docs sit in
+best ai coding tool for large codebase,50,50,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,serp-overview returned no SERP - term is below SERP-index threshold
+top ai code reviewers for monorepo projects?,50,50,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Question-form listicle at the exact intersection
+best ai for refactoring typescript monorepo,40,40,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,TS plus monorepo plus AI is the exact Nx ICP
+ai monorepo,30,40,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Shortest form of the intersection that has a record
+ai devtools monorepo,30,30,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Tooling-shaped variant
+best ai for safe large-scale codebase cleanup?,30,30,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|migration,keywords-explorer-matching-terms,Migration and codemod adjacency
+claude code monorepo,20,70,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Named agent x monorepo. serp-overview returned no SERP
+how well does ai handle a large messy codebase,20,20,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Strong Phase 4 prompt candidate
+cursor monorepo,10,30,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Named agent x monorepo
+ai agent for monorepo navigation,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Names the exact Nx MCP server capability
+ai code indexing monorepo capabilities,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Indexing framing. Competes with Sourcegraph positioning
+best ai code review tools for monorepo,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Listicle at the intersection
+ai assistants monorepo support,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Support framing of the same intent
+ai tools large codebase management,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Management framing of the large-codebase pain
+ai reviewer setup monorepo multiple services,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Maps to project-graph-scoped review
+ai code reviewer flaky unit tests large monorepo,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|ci-flaky,keywords-explorer-matching-terms,Joins ci-flaky to ai-tooling. Nx Cloud flaky detection
+ai safe refactoring large python codebase,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|migration,keywords-explorer-matching-terms,Non-JS variant. Tests polyglot demand
+cursor ai business cost per prompt large codebase,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|ci-cost,keywords-explorer-matching-terms,AI token cost at scale. Adjacent to ci-cost framing
+faang monorepo refactoring for ai agents 2026,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Structure-your-repo-for-agents intent
+what's the best ai agent for a github codebase?,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,keywords-explorer-matching-terms,Question form. Phase 4 prompt candidate
+how do i deploy a monorepo app built with cursor?,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-matching-terms,Agent-generated-code meets monorepo deploy
+sourcegraph cody large codebase ai assistant,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,keywords-explorer-matching-terms,Named competitor in the large-codebase-AI space
+leading ci plugins with ai code review support,90,100,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|ci-cd,keywords-explorer-matching-terms,CI-plugin framing Nx Cloud can occupy. Overlaps nx-cloud-features
+agentic ci,10,20,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|ci-cd,keywords-explorer-overview,Category term for Nx Cloud self-healing. Overlaps nx-cloud-features
+self healing ci,0,0,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|ci-cd,keywords-explorer-overview,0 vol but it is Nx Cloud's own product name. Overlaps nx-cloud-features
+cursor rules monorepo,0,10,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-overview,Config-file framing. Recorded at 0 US vol
+codex monorepo,0,0,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,keywords-explorer-overview,Recorded at 0 vol. Track as dark demand not junk
+cursor vs claude code,3600,no_data,14,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,site-explorer-organic-keywords,KD 14 at 3600 vol. Best-ranked page is a Cursor forum thread at pos 16
+claude code vs cursor,1600,no_data,9,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,site-explorer-organic-keywords,KD 9. Mirror of the above and equally undefended
+ai code editor,1500,no_data,79,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Category head Cursor holds at pos 1
+llm coding benchmarks,800,no_data,60,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Best-ranked result is a Cursor forum thread at pos 7
+bugbot,700,no_data,14,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,site-explorer-organic-keywords,Cursor's AI code review product. Competitive signal for Nx Cloud
+cursor vs copilot,600,no_data,7,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,site-explorer-organic-keywords,KD 7. Comparison SERP is wide open
+ai code tools,600,no_data,46,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,site-explorer-organic-keywords,Category listicle term
+mcp server monorepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,Exact Nx intersection. No Ahrefs record - dark demand
+mcp server for ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|ci-cd,synthetic,No Ahrefs record. Overlaps nx-cloud-features
+ai agents monorepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,Core cluster thesis. No Ahrefs record
+ai coding assistant large codebase,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,synthetic,The pain Nx solves via the project graph. No record
+llm large codebase context,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,synthetic,Context-window framing. Technical root of the pain
+copilot monorepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,Completes the agent x monorepo set. No record
+windsurf monorepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,Completes the agent x monorepo set. No record
+ai code review ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|ci-cd,synthetic,No record. Overlaps nx-cloud-features
+ai fix failing tests,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|ci-flaky,synthetic,Literal Nx Cloud self-healing capability. Overlaps nx-cloud-features
+ai readable docs,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,synthetic,Plain-language sibling of llm friendly documentation
+repo context for ai,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,synthetic,What Nx MCP plus llms.txt deliver together
+cursor slow large repo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,Performance complaint Nx affected and graph address
+claude code context limit large repo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,Context-limit complaint. Direct MCP server value prop
+ai agent cant find files in monorepo,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,Raw pain phrasing. Feeds Phase 4 prompts
+ai monorepo tooling,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,Synthetic sibling of ai devtools monorepo
+monorepo ai context,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,What the Nx MCP server actually provides
+ai agent monorepo context,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,Agent-first phrasing of monorepo ai context
+ai build system,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|unbranded,synthetic,Category term Nx could define. No record
+nx mcp server setup,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|branded,synthetic,Install intent for a product Nx already ships
+monorepo context for ai agents,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ai-tooling|monorepo,synthetic,Long-form of the cluster thesis. No record

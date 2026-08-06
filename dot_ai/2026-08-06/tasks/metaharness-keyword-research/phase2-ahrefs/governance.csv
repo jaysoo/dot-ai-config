@@ -1,0 +1,174 @@
+category,keyword,volume,global_volume,difficulty,parent_topic,intents,source_report,seed_used
+governance,claude code security,2600,16000,40,claude code security,informational|commercial|branded,matching-terms,claude code security
+governance,anthropic claude code security,1000,5800,42,claude code security,informational|commercial|branded,matching-terms,claude code security
+governance,claude code security cve 2026,700,700,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code sandbox,700,2900,9,claude code sandbox,informational|branded,matching-terms,claude code sandbox
+governance,claude code permissions,500,1800,no_data,no_data,no_data,matching-terms,claude code permissions
+governance,claude code security review,300,1100,26,claude code github,no_data,matching-terms,claude code security
+governance,claude code security anthropic,250,500,43,code security review,no_data,matching-terms,claude code security
+governance,claude code permissions confirmation tool use,150,150,no_data,no_data,no_data,matching-terms,claude code permissions
+governance,claude code security best practices,100,200,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code sandbox mode,100,250,no_data,no_data,no_data,matching-terms,claude code sandbox
+governance,claude code permissions allow all,90,400,no_data,no_data,no_data,matching-terms,claude code permissions
+governance,anthropic claude code security announcement,80,100,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code security concerns,60,200,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code permissions settings,50,90,no_data,no_data,no_data,matching-terms,claude code permissions
+governance,claude code security features,50,100,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code security plugin,50,150,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code security tool,40,100,no_data,no_data,no_data,matching-terms,claude code security
+governance,what is claude code security,40,150,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code security risks,40,80,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code permissions allow,30,150,no_data,no_data,no_data,matching-terms,claude code permissions
+governance,claude code security review skill,30,80,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code security vulnerabilities,30,40,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code permissions settings.json,20,20,no_data,no_data,no_data,matching-terms,claude code permissions
+governance,claude code security vulnerability,20,30,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code security agent,20,100,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code permissions documentation,20,20,no_data,no_data,no_data,matching-terms,claude code permissions
+governance,claude code sandbox settings,20,30,no_data,no_data,no_data,matching-terms,claude code sandbox
+governance,claude code security issues,20,40,no_data,no_data,no_data,matching-terms,claude code security
+governance,how to use claude code security,20,60,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code permissions docs,20,30,no_data,no_data,no_data,matching-terms,claude code permissions
+governance,claude code security scan,20,100,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code sandbox docker,20,70,no_data,no_data,no_data,matching-terms,claude code sandbox
+governance,claude code security audit,20,70,no_data,no_data,no_data,matching-terms,claude code audit
+governance,claude code security skills,20,40,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code permissions configuration,20,30,no_data,no_data,no_data,matching-terms,claude code permissions
+governance,claude code security privacy data retention,10,30,no_data,no_data,no_data,matching-terms,claude code security
+governance,claude code security review agent,10,30,no_data,no_data,no_data,matching-terms,claude code security
+governance,ai agent security,1100,2400,30,ai agent security,informational|commercial,matching-terms,ai agent security
+governance,ai agent governance,400,700,12,ai governance challenges,no_data,matching-terms,ai agent governance
+governance,ai agent security news,350,350,no_data,no_data,no_data,matching-terms,ai agent security
+governance,okta ai agent security enterprise survey 2026,350,350,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent guardrails,250,400,12,llm guardrails,no_data,matching-terms,ai agent guardrails
+governance,agent sandbox,250,900,no_data,no_data,no_data,matching-terms,agent sandbox
+governance,ai agent security vulnerabilities,250,250,17,agent security,no_data,matching-terms,ai agent security
+governance,ai agent security risks,250,300,14,no_data,no_data,matching-terms,ai agent security
+governance,ai agent governance frameworks,250,350,19,agent oversight routinely monitors,no_data,matching-terms,ai agent governance
+governance,ai agent security tools,200,200,18,ai agent security,no_data,matching-terms,ai agent security
+governance,ai agent security platform,200,200,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent security challenges,200,200,21,no_data,no_data,matching-terms,ai agent security
+governance,ai agent security solutions,200,200,24,ai security solutions,no_data,matching-terms,ai agent security
+governance,ai agent security risk,150,200,6,ai agent security,no_data,matching-terms,ai agent security
+governance,ai agent sandbox,150,350,no_data,no_data,no_data,matching-terms,ai agent sandbox
+governance,enterprise ai agent security best practices,150,200,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent governance best practices,150,250,15,agent oversight routinely monitors,no_data,matching-terms,ai agent governance
+governance,ai agent security considerations,150,150,13,no_data,no_data,matching-terms,ai agent security
+governance,enterprise ai agent security solutions,150,150,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent security tool,150,150,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent security frameworks,150,150,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent security tools for enterprise,150,150,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent security measures,150,150,no_data,no_data,no_data,matching-terms,ai agent security
+governance,enterprise ai agent security,150,200,5,ai agent security,no_data,matching-terms,ai agent security
+governance,ai agent security platforms,150,150,13,ai security solutions,no_data,matching-terms,ai agent security
+governance,prevent ai agent security breach,150,150,7,no_data,no_data,matching-terms,ai agent security
+governance,solutions for ai agent security,100,100,no_data,no_data,no_data,matching-terms,ai agent security
+governance,enterprise ai agent governance,100,150,1,no_data,no_data,matching-terms,ai agent governance
+governance,ai agent security software,100,150,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent security and compliance features,100,100,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent governance framework,100,200,no_data,no_data,no_data,matching-terms,ai agent governance
+governance,multi-ai agent security technology,100,200,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent security threats,100,150,43,ai security threats,no_data,matching-terms,ai agent security
+governance,ai agent governance platform,80,150,12,security platform,no_data,matching-terms,ai agent governance
+governance,ai agent governance news,80,80,no_data,no_data,no_data,matching-terms,ai agent governance
+governance,ai agent security architecture diagram,80,90,no_data,no_data,no_data,matching-terms,ai agent security
+governance,ai agent security solution,80,90,13,agent security,no_data,matching-terms,ai agent security
+governance,ai agent security best practices,70,150,7,no_data,no_data,matching-terms,ai agent security
+governance,checkmarx ai agent security,70,70,no_data,no_data,no_data,matching-terms,ai agent security
+governance,enterprise ai agent governance dashboard,60,60,6,no_data,no_data,matching-terms,ai agent governance
+governance,agent guardrails,60,150,28,guardrails ai,no_data,matching-terms,agent guardrails
+governance,ai agent governance diagram,60,60,no_data,no_data,no_data,matching-terms,ai agent governance
+governance,prompt injection,3700,21000,67,what is prompt injection,informational,matching-terms,prompt injection
+governance,mcp security considerations,1900,2000,34,mcp security best practices,no_data,matching-terms,mcp security
+governance,owasp top 10 for large language model applications prompt injection,1300,1300,68,owasp top 10 for large language model applications prompt injection,informational|branded,matching-terms,prompt injection
+governance,what is prompt injection,1300,2600,61,what is prompt injection,informational,matching-terms,prompt injection
+governance,prompt injection attack,1200,2700,64,what is prompt injection,informational,matching-terms,prompt injection
+governance,mcp security,1100,2200,42,mcp security best practices,informational|branded,matching-terms,mcp security
+governance,openai prompt injection tool output untrusted,800,800,no_data,no_data,no_data,matching-terms,prompt injection
+governance,mcp security best practices,700,900,31,mcp security best practices,informational|branded,matching-terms,mcp security
+governance,owasp prompt injection tool output untrusted,500,500,no_data,no_data,no_data,matching-terms,prompt injection
+governance,prompt injection examples,500,2700,26,prompt injection examples,informational,matching-terms,prompt injection
+governance,ai prompt injection,500,1100,70,owasp top 10 for large language model applications prompt injection,informational,matching-terms,prompt injection
+governance,mcp security news,450,450,17,mcp security,no_data,matching-terms,mcp security
+governance,owasp llm top 10 prompt injection,450,600,no_data,no_data,no_data,matching-terms,prompt injection
+governance,mitre atlas prompt injection technique,400,500,no_data,no_data,no_data,matching-terms,prompt injection
+governance,mcp security model secure integration patterns,400,450,no_data,no_data,no_data,matching-terms,mcp security
+governance,prompt injection attacks,400,1100,57,prompt injection,informational,matching-terms,prompt injection
+governance,indirect prompt injection,350,1000,52,prompt injection,informational,matching-terms,prompt injection
+governance,prompt injection news today,350,350,no_data,no_data,no_data,matching-terms,prompt injection
+governance,prompt injection example,300,700,25,prompt injection,informational,matching-terms,prompt injection
+governance,openclaw mcp security controls policy enforcement,300,300,no_data,no_data,no_data,matching-terms,mcp security
+governance,prompt injection techniques,250,600,33,gandalf prompt injection,informational,matching-terms,prompt injection
+governance,mitre atlas prompt injection,250,300,no_data,no_data,no_data,matching-terms,prompt injection
+governance,prompt injection protection,200,300,35,llm prompt,no_data,matching-terms,prompt injection
+governance,prevent prompt injection,200,300,no_data,no_data,no_data,matching-terms,prompt injection
+governance,microsoft prompt injection guidance llm,200,200,no_data,no_data,no_data,matching-terms,prompt injection
+governance,how does prompt injection work in generative ai,200,200,no_data,no_data,no_data,matching-terms,prompt injection
+governance,how to prevent prompt injection,200,400,18,how to prevent prompt injection,informational,matching-terms,prompt injection
+governance,mcp server security,200,500,19,no_data,no_data,matching-terms,mcp server security
+governance,ai prompt injection attack,200,250,63,what is prompt injection,no_data,matching-terms,prompt injection
+governance,ai prompt injection examples,200,350,no_data,no_data,no_data,matching-terms,prompt injection
+governance,prompt injection definition,200,300,no_data,no_data,no_data,matching-terms,prompt injection
+governance,what is prompt injection in ai,200,300,no_data,no_data,no_data,matching-terms,prompt injection
+governance,owasp llm01 prompt injection,200,200,no_data,no_data,no_data,matching-terms,prompt injection
+governance,what is a prompt injection attack,200,250,63,what is prompt injection,informational,matching-terms,prompt injection
+governance,llm prompt injection,200,400,54,owasp top 10 for large language model applications prompt injection,informational,matching-terms,prompt injection
+governance,mcp security issues,150,300,no_data,no_data,no_data,matching-terms,mcp security
+governance,prompt injection detection,150,300,no_data,no_data,no_data,matching-terms,prompt injection
+governance,prompt injection attack examples,150,350,no_data,no_data,no_data,matching-terms,prompt injection
+governance,open policy agent,1500,5600,6,open policy agent,informational|branded,matching-terms,agent policy
+governance,lasso security ai agent guardrails dashboard,700,700,no_data,no_data,no_data,matching-terms,ai agent guardrails
+governance,aws bedrock agent permission control iam policy,700,800,no_data,no_data,no_data,matching-terms,agent permissions
+governance,ai agent policy management,300,350,no_data,no_data,no_data,matching-terms,agent policy
+governance,open policy agent alternatives,150,200,1,open policy agent alternatives,informational|commercial|branded,matching-terms,agent policy
+governance,e2b code execution sandbox ai agent,100,100,no_data,no_data,no_data,matching-terms,ai agent sandbox
+governance,open policy agent alternative,90,100,no_data,no_data,informational|commercial|branded,matching-terms,agent policy
+governance,open policy agent vs rbac,70,70,no_data,no_data,no_data,matching-terms,agent policy
+governance,ai security,8200,18000,44,ai security,informational,related-terms,ai agent security
+governance,claude security,2100,11000,41,claude security,no_data,related-terms,claude code security
+governance,security posture,1700,3800,11,security posture,informational,related-terms,claude code security
+governance,attack surface,1700,5300,36,what is an attack surface,informational,related-terms,prompt injection
+governance,sast tools,1500,4300,13,sast tools,informational|commercial,related-terms,claude code security
+governance,data exfiltration,1300,3900,24,data exfiltration meaning,informational,related-terms,prompt injection
+governance,ai security risks,1200,1900,58,ai security risks,informational,related-terms,mcp security
+governance,agentic ai security,1000,2100,39,agentic ai security,informational,related-terms,ai agent security
+governance,remote code execution,900,3000,13,remote code execution,informational,related-terms,mcp security
+governance,mcp authorization,800,1400,28,no_data,informational|branded,related-terms,mcp security
+governance,code security,700,2000,3,code security,informational|commercial,related-terms,claude code security
+governance,security agent,300,1700,10,security agents,informational|commercial|local,related-terms,ai agent security
+governance,secure ai solutions,250,350,50,secure ai,informational,related-terms,ai agent security
+governance,anthropic trust center,250,300,no_data,no_data,no_data,related-terms,claude code security
+governance,mcp servers,9600,35000,74,mcp servers,informational|branded,related-terms,mcp security
+governance,mcp client,1200,6300,48,mcp client,informational|commercial|branded,related-terms,mcp security
+governance,docker mcp,1000,4300,42,docker mcp,informational|branded,related-terms,mcp security
+governance,claude sandbox,600,2100,no_data,no_data,no_data,search-suggestions,claude code sandbox
+governance,sandbox ai,450,1700,72,harvard ai sandbox,informational|commercial,search-suggestions,ai agent sandbox
+governance,claude code bypass permissions,250,1100,no_data,no_data,no_data,search-suggestions,claude code permissions
+governance,what is audit logging,200,300,7,audit logs,informational,search-suggestions,agent audit log
+governance,claude code dangerously skip permissions,150,400,no_data,no_data,no_data,search-suggestions,claude code permissions
+governance,claude code skip permissions,150,600,no_data,no_data,no_data,search-suggestions,claude code permissions
+governance,ai agent red teaming,60,80,10,automated red teaming,no_data,search-suggestions,ai agent sandbox
+governance,claude code bypass permissions mode,50,150,no_data,no_data,no_data,search-suggestions,claude code permissions
+governance,code execution sandbox,20,50,no_data,no_data,no_data,search-suggestions,ai agent sandbox
+governance,ai coding agent,700,2200,22,best ai coding assistants 2026,informational|commercial,search-suggestions,ai coding agent security
+governance,ai security companies,250,500,52,ai cybersecurity companies,informational,search-suggestions,ai coding agent security
+governance,cursor byok,150,450,no_data,no_data,no_data,search-suggestions,cursor security
+governance,ai coding security,150,200,17,ai code security,no_data,search-suggestions,ai coding agent security
+governance,codex sandbox,150,800,no_data,no_data,no_data,search-suggestions,codex sandbox
+governance,cursor security,150,400,no_data,no_data,no_data,search-suggestions,cursor security
+governance,cursor ai security,50,80,no_data,no_data,no_data,search-suggestions,cursor security
+governance,codex javascript sandbox,50,70,0,openai sandbox,informational|branded,search-suggestions,codex sandbox
+governance,ai coding assistant security,50,100,no_data,no_data,no_data,search-suggestions,ai coding agent security
+governance,cursor security review,50,100,no_data,no_data,no_data,search-suggestions,cursor security
+governance,cursor ide security,40,60,no_data,no_data,no_data,search-suggestions,cursor security
+governance,cursor enterprise security,40,100,no_data,no_data,no_data,search-suggestions,cursor security
+governance,cursor security risks,40,100,no_data,no_data,no_data,search-suggestions,cursor security
+governance,codex disable sandbox,40,150,no_data,no_data,no_data,search-suggestions,codex sandbox
+governance,ai code security audit,40,40,4,code security audit,no_data,search-suggestions,ai coding agent security
+governance,codex sandbox mode,30,150,no_data,no_data,no_data,search-suggestions,codex sandbox
+governance,openai codex sandbox,30,60,28,sandbox mode,no_data,search-suggestions,codex sandbox
+governance,codex cli sandbox,30,100,no_data,no_data,no_data,search-suggestions,codex sandbox
+governance,github copilot audit logs,20,50,no_data,no_data,no_data,search-suggestions,copilot audit log
+governance,copilot audit logs,20,20,no_data,no_data,no_data,search-suggestions,copilot audit log
+governance,cursor ai security concerns,20,30,no_data,no_data,no_data,search-suggestions,cursor security
+governance,cursor security concerns,20,20,no_data,no_data,no_data,search-suggestions,cursor security

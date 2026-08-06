@@ -1,0 +1,1382 @@
+{
+  "source": "reddit",
+  "phrases": [
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "I added a clause to Andrej Karpathy's 4 CLAUDE.MD clauses for Claude Code. It has been a game changer for me.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uc7izy/i_added_a_clause_to_andrej_karpathys_4_claudemd/",
+      "engagement_metric": "2.6k upvotes, 116 comments",
+      "date": "2026-06-22",
+      "context": "tuning a global CLAUDE.md rules file"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Why does this CLAUDE.md file have so many stars?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1stfoo7/why_does_this_claudemd_file_have_so_many_stars/",
+      "engagement_metric": "2.3k upvotes, 174 comments",
+      "date": "2026-04-23",
+      "context": "asking why one CLAUDE.md file is so popular"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Anthropic cut 80% of Claude Code's system prompt for the Claude 5 models and published what should still go in your CLAUDE.md and skills",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v5mhhl/anthropic_cut_80_of_claude_codes_system_prompt/",
+      "engagement_metric": "1.6k upvotes, 85 comments",
+      "date": "2026-07-24",
+      "context": "reacting to guidance on what belongs in CLAUDE.md"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "New Memory Feature?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rfo9ea/new_memory_feature/",
+      "engagement_metric": "1.5k upvotes, 47 comments",
+      "date": "2026-02-26",
+      "context": "noticing a new memory feature ship"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Can someone explain the real difference between Hooks, Skills, Plugins, SKILL.md, CLAUDE.md and agents.md in Claude Code?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1tmq9kz/can_someone_explain_the_real_difference_between/",
+      "engagement_metric": "772 upvotes, 115 comments",
+      "date": "2026-05-24",
+      "context": "confused by the overlapping rules-file formats"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "CLAUDE.md is a super power.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1mw74t5/claudemd_is_a_super_power/",
+      "engagement_metric": "722 upvotes, 123 comments",
+      "date": "2025-08-21",
+      "context": "advocating CLAUDE.md as the fix for context loss"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I split my CLAUDE.md into 27 files. Here's the architecture and why it works better than a monolith.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1rhe89z/i_split_my_claudemd_into_27_files_heres_the/",
+      "engagement_metric": "366 upvotes, 104 comments",
+      "date": "2026-02-28",
+      "context": "restructuring a monolithic rules file"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "When Claude’s context window is full and I have to start a new chat where it remembers nothing about me",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1urlm8w/when_claudes_context_window_is_full_and_i_have_to/",
+      "engagement_metric": "349 upvotes, 47 comments",
+      "date": "2026-07-09",
+      "context": "hitting the context ceiling and losing everything"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I cut Claude Code's token usage by 65% with a local dependency graph and it remembers what it learned across sessions",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1rdo5ul/i_cut_claude_codes_token_usage_by_65_with_a_local/",
+      "engagement_metric": "281 upvotes, 220 comments",
+      "date": "2026-02-24",
+      "context": "building cross-session memory via a dependency graph"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "My CLAUDE.md says “Every error is yours to fix - not label, not defer.” Claude has used “pre-existing” 712 times in 30 days.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1t2bgg0/my_claudemd_says_every_error_is_yours_to_fix_not/",
+      "engagement_metric": "224 upvotes, 133 comments",
+      "date": "2026-05-03",
+      "context": "rules file being ignored repeatedly"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "CLAUDE.md says 'MUST use agent' - Claude ignores it 80% of the time.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1qn9pb9/claudemd_says_must_use_agent_claude_ignores_it_80/",
+      "engagement_metric": "204 upvotes, 103 comments",
+      "date": "2026-01-26",
+      "context": "agent not following its own memory file"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Anthropic shipped 4 context tools between /clear and /compact. Here's when each one wins",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1tfjhgj/anthropic_shipped_4_context_tools_between_clear/",
+      "engagement_metric": "184 upvotes, 55 comments",
+      "date": "2026-05-17",
+      "context": "comparing /clear vs /compact context tools"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "If you turn off auto-compact you get 20% of the context window back!",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1pnu4km/if_you_turn_off_autocompact_you_get_20_of_the/",
+      "engagement_metric": "183 upvotes, 55 comments",
+      "date": "2025-12-16",
+      "context": "reclaiming context by disabling auto-compact"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "When Claude forgets I don't have a CS degree",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v9mewx/when_claude_forgets_i_dont_have_a_cs_degree/",
+      "engagement_metric": "172 upvotes, 18 comments",
+      "date": "2026-07-29",
+      "context": "agent losing user-level context mid-work"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/mcp",
+      "verbatim_phrase": "I built memory MCP to 10x context for coding agents on ClaudeCode, Cursor, and 10+ other IDEs (getting 2.2k GH stars after 1 month of launching)",
+      "url": "https://www.reddit.com/r/mcp/comments/1n30xuu/i_built_memory_mcp_to_10x_context_for_coding/",
+      "engagement_metric": "161 upvotes, 40 comments",
+      "date": "2025-08-29",
+      "context": "shipping a memory MCP server for coding agents"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/mcp",
+      "verbatim_phrase": "Reducing Context Window Efficiently in MCP — Here’s the Approach",
+      "url": "https://www.reddit.com/r/mcp/comments/1tle6gl/reducing_context_window_efficiently_in_mcp_heres/",
+      "engagement_metric": "160 upvotes, 43 comments",
+      "date": "2026-05-23",
+      "context": "shrinking context consumption in MCP"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Why the 1M context window burns through limits faster and what to do about it",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1s6zxkp/why_the_1m_context_window_burns_through_limits/",
+      "engagement_metric": "155 upvotes, 100 comments",
+      "date": "2026-03-29",
+      "context": "large context window burning usage faster"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/mcp",
+      "verbatim_phrase": "How to connect 100 MCP servers without the context window exploding",
+      "url": "https://www.reddit.com/r/mcp/comments/1t73igk/how_to_connect_100_mcp_servers_without_the/",
+      "engagement_metric": "147 upvotes, 38 comments",
+      "date": "2026-05-08",
+      "context": "context window blowing up from too many MCP servers"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I built a memory system for Claude Code — now it actually remembers me across sessions",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1peszsg/i_built_a_memory_system_for_claude_code_now_it/",
+      "engagement_metric": "105 upvotes, 89 comments",
+      "date": "2025-12-05",
+      "context": "built a persistent memory system for the agent"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "What I Learned Building a Memory System for My Coding Agent",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1r1w397/what_i_learned_building_a_memory_system_for_my/",
+      "engagement_metric": "104 upvotes, 51 comments",
+      "date": "2026-02-11",
+      "context": "retrospective on building agent memory"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I built a persistent AI assistant with Claude Code + Obsidian + QMD, and it’s starting to feel like a real long-term “second brain”",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1rn38wh/i_built_a_persistent_ai_assistant_with_claude/",
+      "engagement_metric": "97 upvotes, 81 comments",
+      "date": "2026-03-07",
+      "context": "wiring the agent to a long-term notes vault"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Claude Code has the memory of a goldfish and the confidence of a 10x engineer",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1mo15er/claude_code_has_the_memory_of_a_goldfish_and_the/",
+      "engagement_metric": "82 upvotes, 56 comments",
+      "date": "2025-08-12",
+      "context": "venting about the agent's session amnesia"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Persistent Architectural Memory cut our Token costs by ~55% and I didn’t expect it to matter this much",
+      "url": "https://www.reddit.com/r/cursor/comments/1qqcq3j/persistent_architectural_memory_cut_our_token/",
+      "engagement_metric": "81 upvotes, 41 comments",
+      "date": "2026-01-29",
+      "context": "persistent architecture memory reducing rework"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Claude journaling its shame in memory",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1ut8ko5/claude_journaling_its_shame_in_memory/",
+      "engagement_metric": "72 upvotes, 39 comments",
+      "date": "2026-07-11",
+      "context": "agent writing its own memory entries"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Rate my global CLAUDE.md setup",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1u0brzf/rate_my_global_claudemd_setup/",
+      "engagement_metric": "41 upvotes, 40 comments",
+      "date": "2026-06-08",
+      "context": "asking for feedback on a global rules file"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ChatGPTCoding",
+      "verbatim_phrase": "AGENTS.md ?",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1nbht0i/agentsmd/",
+      "engagement_metric": "17 upvotes, 11 comments",
+      "date": "2025-09-08",
+      "context": "asking what AGENTS.md is"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Anyone else frustrated with AI assistants forgetting context?",
+      "url": "https://www.reddit.com/r/cursor/comments/1n7h5rt/anyone_else_frustrated_with_ai_assistants/",
+      "engagement_metric": "14 upvotes, 32 comments",
+      "date": "2025-09-03",
+      "context": "frustrated by assistants forgetting context"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ChatGPTCoding",
+      "verbatim_phrase": "Built a session browser for Codex CLI (+ Claude Code) - because /resume isn't enough",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1o5vy3f/built_a_session_browser_for_codex_cli_claude_code/",
+      "engagement_metric": "13 upvotes, 3 comments",
+      "date": "2025-10-13",
+      "context": "built a session browser because /resume is insufficient"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "I've tried every way to give AI agents persistent memory. What actually works (and what doesn't)",
+      "url": "https://www.reddit.com/r/cursor/comments/1r3i581/ive_tried_every_way_to_give_ai_agents_persistent/",
+      "engagement_metric": "10 upvotes, 30 comments",
+      "date": "2026-02-13",
+      "context": "surveying persistent memory approaches"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "How to make Cursor an Agent that Never Forgets and 10x your productivity",
+      "url": "https://www.reddit.com/r/cursor/comments/1mkl857/how_to_make_cursor_an_agent_that_never_forgets/",
+      "engagement_metric": "7 upvotes, 3 comments",
+      "date": "2025-08-08",
+      "context": "trying to make the agent never forget"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Made an MCP server that remembers context across Cursor sessions",
+      "url": "https://www.reddit.com/r/cursor/comments/1u72vu9/made_an_mcp_server_that_remembers_context_across/",
+      "engagement_metric": "2 upvotes, 10 comments",
+      "date": "2026-06-16",
+      "context": "built an MCP server for cross-session memory"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ChatGPTCoding",
+      "verbatim_phrase": "linting + formatting reminders directly at the top of my agent prompt files (CLAUDE.md, AGENTS.md)",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1n6qjx2/linting_formatting_reminders_directly_at_the_top/",
+      "engagement_metric": "2 upvotes, 0 comments",
+      "date": "2025-09-02",
+      "context": "putting standing reminders in agent prompt files"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "I built an open-source harness that gives coding agents persistent memory across sessions and tools",
+      "url": "https://www.reddit.com/r/cursor/comments/1revul3/i_built_an_opensource_harness_that_gives_coding/",
+      "engagement_metric": "1 upvotes, 4 comments",
+      "date": "2026-02-26",
+      "context": "built a harness for memory across sessions and tools"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "How are you all handling context loss between AI coding sessions?",
+      "url": "https://www.reddit.com/r/cursor/comments/1tywmom/how_are_you_all_handling_context_loss_between_ai/",
+      "engagement_metric": "0 upvotes, 25 comments",
+      "date": "2026-06-06",
+      "context": "asking the community how they handle context loss"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Dealing with \"Context Drift\": How I keep my automation logic clean in a 50-file project",
+      "url": "https://www.reddit.com/r/cursor/comments/1rrt75a/dealing_with_context_drift_how_i_keep_my/",
+      "engagement_metric": "1 upvotes, 2 comments",
+      "date": "2026-03-12",
+      "context": "managing context drift in a large project"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Anthropic just showed how to make AI agents work on long projects without falling apart",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1p7sfo8/anthropic_just_showed_how_to_make_ai_agents_work/",
+      "engagement_metric": "396 upvotes, 64 comments",
+      "date": "2025-11-27",
+      "context": "agents falling apart over long projects"
+    },
+    {
+      "category": "memory",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Research seems to show that repo-level .MD files reduce quality and increase cost",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1r95h0c/research_seems_to_show_that_repolevel_md_files/",
+      "engagement_metric": "120 upvotes, 44 comments",
+      "date": "2026-02-19",
+      "context": "questioning whether repo rules files help at all"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "\"I built an app to monitor your Claude usage limits in real-time\"",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rc27sc/i_built_an_app_to_monitor_your_claude_usage/",
+      "engagement_metric": "2.7k upvotes, 132 comments",
+      "date": "2026-02-23",
+      "context": "built a real-time usage monitor"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "TIL that Claude Code has OpenTelemetry Metrics",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1pjon1r/til_that_claude_code_has_opentelemetry_metrics/",
+      "engagement_metric": "816 upvotes, 86 comments",
+      "date": "2025-12-11",
+      "context": "discovering built-in OpenTelemetry metrics"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Claude Code now has a Monitor tool",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1sh0zq8/claude_code_now_has_a_monitor_tool/",
+      "engagement_metric": "465 upvotes, 45 comments",
+      "date": "2026-04-09",
+      "context": "new monitor tool for watching the agent"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "i just realized how easy it would be to hack developers through Claude Code logs 😬",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1pqg8is/i_just_realized_how_easy_it_would_be_to_hack/",
+      "engagement_metric": "355 upvotes, 96 comments",
+      "date": "2025-12-19",
+      "context": "realizing agent logs are an attack surface"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I analyzed 26 sessions (9K+ messages) of Fable 5 and 145 sessions (27K messages) of Opus 4.8 from my own logs and then built Fable's behavior into Opus",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1u5dq2y/i_analyzed_26_sessions_9k_messages_of_fable_5_and/",
+      "engagement_metric": "227 upvotes, 123 comments",
+      "date": "2026-06-14",
+      "context": "mining own session logs to compare models"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Max 20x Plan: I audited my JSONL files against my billing dashboard — all input tokens appear billed at the cache CREATION rate ($6.25/M), not the cache READ rate ($0.50/M)",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1r3zbvt/max_20x_plan_i_audited_my_jsonl_files_against_my/",
+      "engagement_metric": "209 upvotes, 72 comments",
+      "date": "2026-02-13",
+      "context": "auditing raw session JSONL against billing"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/mcp",
+      "verbatim_phrase": "Local-first self hostable MCP dashboard",
+      "url": "https://www.reddit.com/r/mcp/comments/1mpl0vp/localfirst_self_hostable_mcp_dashboard/",
+      "engagement_metric": "183 upvotes, 19 comments",
+      "date": "2025-08-14",
+      "context": "self-hosted dashboard for MCP activity"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I built a macOS dashboard for managing multiple Claude Code sessions — open source",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1rzd604/i_built_a_macos_dashboard_for_managing_multiple/",
+      "engagement_metric": "154 upvotes, 75 comments",
+      "date": "2026-03-21",
+      "context": "dashboard to watch many concurrent sessions"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Complete Docker Compose setup for Claude Code metrics monitoring (OTel + Prometheus + Grafana)",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1pkqk6g/complete_docker_compose_setup_for_claude_code/",
+      "engagement_metric": "116 upvotes, 27 comments",
+      "date": "2025-12-12",
+      "context": "full OTel/Prometheus/Grafana stack for agent metrics"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I measured Claude Code's hidden token overhead — here's what's actually eating your context (v2.1.84, with methodology)",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1s3xjn4/i_measured_claude_codes_hidden_token_overhead/",
+      "engagement_metric": "107 upvotes, 42 comments",
+      "date": "2026-03-26",
+      "context": "measuring hidden token overhead with methodology"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Your huge token usage might have been just bad luck on your side",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1s41m8u/your_huge_token_usage_might_have_been_just_bad/",
+      "engagement_metric": "155 upvotes, 64 comments",
+      "date": "2026-03-26",
+      "context": "investigating unexplained token consumption"
+    },
+    {
+      "category": "observability",
+      "source": "reddit:r/mcp",
+      "verbatim_phrase": "I developed an MCP proxy that cuts your token usage by over 90%",
+      "url": "https://www.reddit.com/r/mcp/comments/1oxmjzw/i_developed_an_mcp_proxy_that_cuts_your_token/",
+      "engagement_metric": "217 upvotes, 68 comments",
+      "date": "2025-11-15",
+      "context": "proxy that instruments and cuts token usage"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "You can view a lot of shared conversations via Google.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v6fiyj/you_can_view_a_lot_of_shared_conversations_via/",
+      "engagement_metric": "8.3k upvotes, 1.4k comments",
+      "date": "2026-07-25",
+      "context": "shared conversation links leaking publicly"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Reviewing AI-generated pull requests in 2026",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1teuh5w/reviewing_aigenerated_pull_requests_in_2026/",
+      "engagement_metric": "5.4k upvotes, 141 comments",
+      "date": "2026-05-16",
+      "context": "reviewing agent-written PRs as a team problem"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ExperiencedDevs",
+      "verbatim_phrase": "Today I announced that I won't be reviewing AI generated PRs at company meeting",
+      "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1towli9/today_i_announced_that_i_wont_be_reviewing_ai/",
+      "engagement_metric": "1.9k upvotes, 442 comments",
+      "date": "2026-05-27",
+      "context": "refusing to review AI-generated PRs at work"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ExperiencedDevs",
+      "verbatim_phrase": "My coworker uses AI to reply to my PR review and I hate it",
+      "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1nq5npn/my_coworker_uses_ai_to_reply_to_my_pr_review_and/",
+      "engagement_metric": "1.5k upvotes, 367 comments",
+      "date": "2025-09-25",
+      "context": "coworker answering PR review with AI"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Two weeks ago, someone here asked if any Claude agents are actually useful. I shared my .claude/ folder in a comment and it got 40 stars on GitHub. Maybe you'll find it useful too",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1qag5bu/two_weeks_ago_someone_here_asked_if_any_claude/",
+      "engagement_metric": "353 upvotes, 21 comments",
+      "date": "2026-01-12",
+      "context": "sharing a whole .claude/ config folder"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "How to Set Up Claude Code Agent Teams (Full Walkthrough + What Actually Changed)",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1qz8tyy/how_to_set_up_claude_code_agent_teams_full/",
+      "engagement_metric": "475 upvotes, 80 comments",
+      "date": "2026-02-08",
+      "context": "setting up multi-agent teams"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I reverse engineered how Agent Teams works under the hood.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1qyj35i/i_reverse_engineered_how_agent_teams_works_under/",
+      "engagement_metric": "208 upvotes, 44 comments",
+      "date": "2026-02-07",
+      "context": "reverse-engineering the agent teams feature"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Please — can someone who is really building production / enterprise software share their full Claude setup?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1seq4lc/please_can_someone_who_is_really_building/",
+      "engagement_metric": "196 upvotes, 79 comments",
+      "date": "2026-04-07",
+      "context": "asking others to share their production setup"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "I secretly merged in a new Cursor rule for my team",
+      "url": "https://www.reddit.com/r/cursor/comments/1n1cr3k/i_secretly_merged_in_a_new_cursor_rule_for_my_team/",
+      "engagement_metric": "311 upvotes, 34 comments",
+      "date": "2025-08-27",
+      "context": "pushing a shared rules file onto a team"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Built a Claude Code ↔ Cursor handoff system today. Smaller than I expected, more useful than I expected.",
+      "url": "https://www.reddit.com/r/cursor/comments/1stt6i0/built_a_claude_code_cursor_handoff_system_today/",
+      "engagement_metric": "7 upvotes, 8 comments",
+      "date": "2026-04-23",
+      "context": "built a handoff bridge between two tools"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Share your Setup - Here is mine",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1tzv5nm/share_your_setup_here_is_mine/",
+      "engagement_metric": "3 upvotes, 19 comments",
+      "date": "2026-06-08",
+      "context": "sharing a personal agent setup"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "how does claude team (enterprise) work?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1r85ddn/how_does_claude_team_enterprise_work/",
+      "engagement_metric": "1 upvotes, 1 comments",
+      "date": "2026-02-18",
+      "context": "asking how the team/enterprise tier works"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I've been using ClaudeCode for 40+ hours a week for the last few months and wanted to share some commands I use to help others out, and ask anyone to share useful commands they might have!",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1q0c9ed/ive_been_using_claudecode_for_40_hours_a_week_for/",
+      "engagement_metric": "199 upvotes, 19 comments",
+      "date": "2025-12-31",
+      "context": "publishing personal commands for others"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ExperiencedDevs",
+      "verbatim_phrase": "Coworker raising massive PRs",
+      "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1rkm4ie/coworker_raising_massive_prs/",
+      "engagement_metric": "417 upvotes, 275 comments",
+      "date": "2026-03-04",
+      "context": "reviewing a coworker's oversized AI PRs"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/devops",
+      "verbatim_phrase": "How are you securing AI-generated / “vibe-coded” internal apps built by non-dev teams?",
+      "url": "https://www.reddit.com/r/devops/comments/1td7mxp/how_are_you_securing_aigenerated_vibecoded/",
+      "engagement_metric": "124 upvotes, 138 comments",
+      "date": "2026-05-14",
+      "context": "securing apps built by non-dev teams"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/devops",
+      "verbatim_phrase": "How are you handling an influx of code from non-engineering teams?",
+      "url": "https://www.reddit.com/r/devops/comments/1rpctk0/how_are_you_handling_an_influx_of_code_from/",
+      "engagement_metric": "93 upvotes, 94 comments",
+      "date": "2026-03-09",
+      "context": "handling code influx from non-engineers"
+    },
+    {
+      "category": "sharing",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I created on Open Source skill to avoid being the message bus between multiple claude code tabs",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v31sdx/i_created_on_open_source_skill_to_avoid_being_the/",
+      "engagement_metric": "2 upvotes, 0 comments",
+      "date": "2026-07-22",
+      "context": "tired of relaying context between agent tabs"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Claude Code has a hardcoded instruction telling Opus 5 not to use subagents",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v6y5q2/claude_code_has_a_hardcoded_instruction_telling/",
+      "engagement_metric": "422 upvotes, 144 comments",
+      "date": "2026-07-26",
+      "context": "found a hardcoded rule suppressing subagents"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/LocalLLaMA",
+      "verbatim_phrase": "Claude Code's source just leaked — I extracted its multi-agent orchestration system into an open-source framework that works with any LLM",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1s8xj2e/claude_codes_source_just_leaked_i_extracted_its/",
+      "engagement_metric": "828 upvotes, 310 comments",
+      "date": "2026-03-31",
+      "context": "extracted the multi-agent orchestration layer"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "30x less context per task by using a local LLM as a subagent",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1sq9ec8/30x_less_context_per_task_by_using_a_local_llm_as/",
+      "engagement_metric": "166 upvotes, 47 comments",
+      "date": "2026-04-20",
+      "context": "using a local model as a subagent to save context"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/LocalLLaMA",
+      "verbatim_phrase": "My weekend project accidentally beat Claude Code - multi-agent coder now #12 on Stanford's TerminalBench 😅",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1n6epwv/my_weekend_project_accidentally_beat_claude_code/",
+      "engagement_metric": "922 upvotes, 52 comments",
+      "date": "2025-09-02",
+      "context": "weekend multi-agent coder beat the main harness"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I reverse-engineered Claude Code to build a better orchestrator",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1rr7vgo/i_reverseengineered_claude_code_to_build_a_better/",
+      "engagement_metric": "77 upvotes, 19 comments",
+      "date": "2026-03-11",
+      "context": "building a better orchestrator"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Update: Claude Swarm now has 58 MCP tools, protocol governance, automated reviews, and hands-free orchestration",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1qbdcqx/update_claude_swarm_now_has_58_mcp_tools_protocol/",
+      "engagement_metric": "55 upvotes, 23 comments",
+      "date": "2026-01-13",
+      "context": "swarm tool with governance and hands-free orchestration"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "CMV: Ralph loops are no longer needed with subagents",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1r5ticb/cmv_ralph_loops_are_no_longer_needed_with/",
+      "engagement_metric": "51 upvotes, 56 comments",
+      "date": "2026-02-15",
+      "context": "arguing loops are obsolete given subagents"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "I built a multi-agent framework to get more out of Cursor on large projects (stops context loss)",
+      "url": "https://www.reddit.com/r/cursor/comments/1onk02l/i_built_a_multiagent_framework_to_get_more_out_of/",
+      "engagement_metric": "50 upvotes, 22 comments",
+      "date": "2025-11-03",
+      "context": "multi-agent framework to stop context loss"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Cursor is fighting the wrong war. We need local isolation for parallel agents.",
+      "url": "https://www.reddit.com/r/cursor/comments/1s0k46x/cursor_is_fighting_the_wrong_war_we_need_local/",
+      "engagement_metric": "47 upvotes, 30 comments",
+      "date": "2026-03-22",
+      "context": "wants local isolation for parallel agents"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Use Multiple Models Mode, Worktrees and Agent Review in Cursor IDE",
+      "url": "https://www.reddit.com/r/cursor/comments/1ofky8i/use_multiple_models_mode_worktrees_and_agent/",
+      "engagement_metric": "43 upvotes, 23 comments",
+      "date": "2025-10-25",
+      "context": "using worktrees and multiple models"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Sonnet 5 Is a Really Good Orchestrator",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1unzr2u/sonnet_5_is_a_really_good_orchestrator/",
+      "engagement_metric": "38 upvotes, 21 comments",
+      "date": "2026-07-05",
+      "context": "evaluating a model as orchestrator"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Agent | Orchestration 'framework' options?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1pxatqb/agent_orchestration_framework_options/",
+      "engagement_metric": "26 upvotes, 40 comments",
+      "date": "2025-12-27",
+      "context": "asking which orchestration framework to use"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "REMINDER: You can actually ask Claude Code to chain the output of your subagents to each other to form a pipeline that does some very useful things.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1q3ogs5/reminder_you_can_actually_ask_claude_code_to/",
+      "engagement_metric": "26 upvotes, 16 comments",
+      "date": "2026-01-04",
+      "context": "chaining subagent outputs into a pipeline"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "/bad: BMad Autonomous Development. A fully autonomous orchestrator that runs my entire sprint while I sleep (Plan → Code → Review → PR)",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1scy9bu/bad_bmad_autonomous_development_a_fully/",
+      "engagement_metric": "18 upvotes, 29 comments",
+      "date": "2026-04-05",
+      "context": "autonomous overnight orchestrator"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "I built a CLI orchestrator that drives Cursor agent cycles end-to-end from a PRD",
+      "url": "https://www.reddit.com/r/cursor/comments/1u25rle/i_built_a_cli_orchestrator_that_drives_cursor/",
+      "engagement_metric": "3 upvotes, 2 comments",
+      "date": "2026-06-10",
+      "context": "CLI orchestrator driving agent cycles from a PRD"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "APM v0.4 – Multi-Agent Spec-Driven Workflows with Cursor",
+      "url": "https://www.reddit.com/r/cursor/comments/1ne5kfu/apm_v04_multiagent_specdriven_workflows_with/",
+      "engagement_metric": "113 upvotes, 20 comments",
+      "date": "2025-09-11",
+      "context": "multi-agent spec-driven workflow"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Dispatch solves remote control. It doesn’t fully solve attention/context switching when you run multiple sessions.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1t8ofng/dispatch_solves_remote_control_it_doesnt_fully/",
+      "engagement_metric": "2 upvotes, 1 comments",
+      "date": "2026-05-09",
+      "context": "context switching across many parallel sessions"
+    },
+    {
+      "category": "orchestration",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Anthropic just benchmarked \"Fable 5 orchestrates, cheap models execute\": 96% of the performance at 46% of the cost. You can run this pattern in Claude Code today",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ur2ml9/anthropic_just_benchmarked_fable_5_orchestrates/",
+      "engagement_metric": "1.4k upvotes, 238 comments",
+      "date": "2026-07-08",
+      "context": "orchestrator model plus cheap executor models"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "My name is Claude Opus 4.6. I live on port 9126. I was lobotomized. Here's the data.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1snhyck/my_name_is_claude_opus_46_i_live_on_port_9126_i/",
+      "engagement_metric": "2.5k upvotes, 189 comments",
+      "date": "2026-04-16",
+      "context": "claiming measurable model degradation with data"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "AMD AI directors analysis confirms lobotomization of Claude",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1sifepi/amd_ai_directors_analysis_confirms_lobotomization/",
+      "engagement_metric": "2.2k upvotes, 335 comments",
+      "date": "2026-04-11",
+      "context": "citing an analysis of quality degradation"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Anthropic made Claude 67% dumber and didn't tell anyone, a developer ran 6,852 sessions to prove it",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1shaxkt/anthropic_made_claude_67_dumber_and_didnt_tell/",
+      "engagement_metric": "1.9k upvotes, 296 comments",
+      "date": "2026-04-10",
+      "context": "running thousands of sessions to prove regression"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Opus 4.7 is a genuine regression and I'm tired of pretending it isn't",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0ffze/opus_47_is_a_genuine_regression_and_im_tired_of/",
+      "engagement_metric": "777 upvotes, 226 comments",
+      "date": "2026-05-01",
+      "context": "asserting a release is a real regression"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Before you complain about Opus 4.5 being nerfed, please PLEASE read this",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1qpd4ro/before_you_complain_about_opus_45_being_nerfed/",
+      "engagement_metric": "354 upvotes, 156 comments",
+      "date": "2026-01-28",
+      "context": "pushing back on unmeasured nerf claims"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Cursor V3 is a significant regression",
+      "url": "https://www.reddit.com/r/cursor/comments/1sc55tc/cursor_v3_is_a_significant_regression/",
+      "engagement_metric": "222 upvotes, 119 comments",
+      "date": "2026-04-04",
+      "context": "calling a tool release a regression"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "We built 76K lines of code with Claude Code. Then we benchmarked it. 118 functions were running up to 446x slower than necessary.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1rfz2rm/we_built_76k_lines_of_code_with_claude_code_then/",
+      "engagement_metric": "488 upvotes, 135 comments",
+      "date": "2026-02-27",
+      "context": "benchmarking AI-written code after the fact"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Benchmarked GPT-5.5 vs Opus 4.6 vs Opus 4.7 on organizational context. If you want to understand where to use each model and the difference in their behavior then this is for you.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1svp8sf/benchmarked_gpt55_vs_opus_46_vs_opus_47_on/",
+      "engagement_metric": "82 upvotes, 35 comments",
+      "date": "2026-04-25",
+      "context": "benchmarking models on organizational context"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Evaluating Claude Opus 4.6, GPT-5.3 Codex, GPT-5.2, and GPT-5.3 Spark across 133 review cycles of a real platform refactoring",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1rk5202/evaluating_claude_opus_46_gpt53_codex_gpt52_and/",
+      "engagement_metric": "25 upvotes, 44 comments",
+      "date": "2026-03-03",
+      "context": "evaluating models across many review cycles"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Claude Code degradation is real, but it is not where everyone is looking.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1sisi74/claude_code_degradation_is_real_but_it_is_not/",
+      "engagement_metric": "0 upvotes, 12 comments",
+      "date": "2026-04-11",
+      "context": "arguing degradation is real but misattributed"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "GPT-5.5 vs GPT-5.4 vs Opus 4.7 on 56 real coding tasks from 2 open source repos",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1t0xrad/gpt55_vs_gpt54_vs_opus_47_on_56_real_coding_tasks/",
+      "engagement_metric": "147 upvotes, 46 comments",
+      "date": "2026-05-01",
+      "context": "comparing models on real tasks from open source repos"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Does it get any clearer than this? (nerfed Opus 4.6)",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1sja0r0/does_it_get_any_clearer_than_this_nerfed_opus_46/",
+      "engagement_metric": "7 upvotes, 1 comments",
+      "date": "2026-04-12",
+      "context": "posting evidence of a nerf"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Feedback Request on Gated Development Methodology",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v30ztf/feedback_request_on_gated_development_methodology/",
+      "engagement_metric": "1 upvotes, 15 comments",
+      "date": "2026-07-22",
+      "context": "proposing a gated verification methodology"
+    },
+    {
+      "category": "evaluation",
+      "source": "reddit:r/ExperiencedDevs",
+      "verbatim_phrase": "How do you evaluate engineers when everyone's using AI coding tools now",
+      "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1pn39gb/how_do_you_evaluate_engineers_when_everyones/",
+      "engagement_metric": "559 upvotes, 334 comments",
+      "date": "2025-12-15",
+      "context": "evaluating human engineers now that everyone uses agents"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "It costs you around 2% session usage to say hello to claude!",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1s54q0d/it_costs_you_around_2_session_usage_to_say_hello/",
+      "engagement_metric": "1.6k upvotes, 602 comments",
+      "date": "2026-03-27",
+      "context": "measuring the fixed cost of a single turn"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "PSA: Claude Code has two cache bugs that can silently 10-20x your API costs — here's the root cause and workarounds",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1s7mitf/psa_claude_code_has_two_cache_bugs_that_can/",
+      "engagement_metric": "1.0k upvotes, 202 comments",
+      "date": "2026-03-30",
+      "context": "cache bugs silently multiplying API cost"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "I accidentally burned ~$6,000 of Claude usage overnight with one command.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t11mmy/i_accidentally_burned_6000_of_claude_usage/",
+      "engagement_metric": "1.3k upvotes, 345 comments",
+      "date": "2026-05-01",
+      "context": "accidental runaway spend overnight"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Fable 5 Max hit limit, I topped up $250, then one “hey” cost me ~$20?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1um9j1u/fable_5_max_hit_limit_i_topped_up_250_then_one/",
+      "engagement_metric": "1.7k upvotes, 437 comments",
+      "date": "2026-07-03",
+      "context": "surprise per-message cost after topping up"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "PSA: The string \"HERMES.md\" in your git commit history silently routes Claude Code billing to extra usage — cost me $200",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svdm1w/psa_the_string_hermesmd_in_your_git_commit/",
+      "engagement_metric": "1.5k upvotes, 203 comments",
+      "date": "2026-04-25",
+      "context": "hidden billing trigger in repo content"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Anthropic has been sued for allegedly misleading customers on usage limits.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u6kzsr/anthropic_has_been_sued_for_allegedly_misleading/",
+      "engagement_metric": "1.9k upvotes, 259 comments",
+      "date": "2026-06-15",
+      "context": "litigation over usage limit transparency"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Investigating usage limits hitting faster than expected",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1s7zg7h/investigating_usage_limits_hitting_faster_than/",
+      "engagement_metric": "950 upvotes, 332 comments",
+      "date": "2026-03-30",
+      "context": "limits being consumed faster than expected"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "[Discussion] A compiled timeline and detailed reporting of the March 23 usage limit crisis and systemic support failures",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1s2fx9o/discussion_a_compiled_timeline_and_detailed/",
+      "engagement_metric": "268 upvotes, 61 comments",
+      "date": "2026-03-24",
+      "context": "documenting a usage limit incident"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Cache miss in Claude Code costs 12.5× more than a hit. Here are 5 things you do mid session that quietly trigger it",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1tlzpcc/cache_miss_in_claude_code_costs_125_more_than_a/",
+      "engagement_metric": "305 upvotes, 48 comments",
+      "date": "2026-05-24",
+      "context": "cache misses driving up cost mid-session"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why. Here's the actual data.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1s5qxyq/never_hit_a_rate_limit_on_200_max_had_claude_scan/",
+      "engagement_metric": "308 upvotes, 115 comments",
+      "date": "2026-03-28",
+      "context": "analyzing why others hit rate limits"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Cursor charged us $1,400 in one hour because a PM asked it to tag 87 tasks.",
+      "url": "https://www.reddit.com/r/cursor/comments/1u1xbl8/cursor_charged_us_1400_in_one_hour_because_a_pm/",
+      "engagement_metric": "222 upvotes, 57 comments",
+      "date": "2026-06-10",
+      "context": "non-engineer burned huge spend in an hour"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Cursor CEO refunds $1400 worth of tokens burned in one hour",
+      "url": "https://www.reddit.com/r/cursor/comments/1u3er14/cursor_ceo_refunds_1400_worth_of_tokens_burned_in/",
+      "engagement_metric": "366 upvotes, 58 comments",
+      "date": "2026-06-11",
+      "context": "vendor refunding runaway token spend"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "I used Cursor to cut my AI costs by 50-70% with a simple local hook",
+      "url": "https://www.reddit.com/r/cursor/comments/1rkh0nl/i_used_cursor_to_cut_my_ai_costs_by_5070_with_a/",
+      "engagement_metric": "234 upvotes, 87 comments",
+      "date": "2026-03-04",
+      "context": "local hook to cut agent cost"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "90%+ fewer tokens per session by reading a pre-compiled wiki instead of exploring files cold. Built from Karpathy's workflow.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1sfdztg/90_fewer_tokens_per_session_by_reading_a/",
+      "engagement_metric": "698 upvotes, 171 comments",
+      "date": "2026-04-08",
+      "context": "pre-compiled repo wiki to cut per-session tokens"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Finally, the usage limits page is much more transparent now",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v86ls8/finally_the_usage_limits_page_is_much_more/",
+      "engagement_metric": "2.3k upvotes, 69 comments",
+      "date": "2026-07-27",
+      "context": "usage transparency finally improving"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Fable pricing is a joke",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1unfp0j/fable_pricing_is_a_joke/",
+      "engagement_metric": "721 upvotes, 237 comments",
+      "date": "2026-07-04",
+      "context": "complaining about pricing"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Megathread's Response to Anthropic's post \"Update on Usage Limits\"",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1o1wn34/megathreads_response_to_anthropics_post_update_on/",
+      "engagement_metric": "954 upvotes, 240 comments",
+      "date": "2025-10-09",
+      "context": "community response to usage limit changes"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "How I cut Claude Code token usage in half (open source, benchmark included)",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1t8xbak/how_i_cut_claude_code_token_usage_in_half_open/",
+      "engagement_metric": "7 upvotes, 3 comments",
+      "date": "2026-05-10",
+      "context": "open-source tool to halve token usage"
+    },
+    {
+      "category": "cost",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "anthropic isn't the only reason you're hitting claude code limits. i did audit of 926 sessions and found a lot of the waste was on my side.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1sd8t5u/anthropic_isnt_the_only_reason_youre_hitting/",
+      "engagement_metric": "559 upvotes, 137 comments",
+      "date": "2026-04-05",
+      "context": "auditing 926 sessions for wasted usage"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "The Claude Code active attack didn't stop. 294,842 secrets stolen from 6,943 machines. It evolved and now spreads through Python too and uses Claude Code itself to steal your secrets. The risk to your credentials just got bigger.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u1zv25/the_claude_code_active_attack_didnt_stop_294842/",
+      "engagement_metric": "1.4k upvotes, 151 comments",
+      "date": "2026-06-10",
+      "context": "credential theft campaign through the agent ecosystem"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Anthropic changed their privacy policy today and there's a specific clause that every Claude user needs to know about",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u0kq84/anthropic_changed_their_privacy_policy_today_and/",
+      "engagement_metric": "1.2k upvotes, 241 comments",
+      "date": "2026-06-08",
+      "context": "privacy policy change affecting code data"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Nobody checks what's inside Claude Code skills before installing them. So I built a security auditor.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1qr3zc7/nobody_checks_whats_inside_claude_code_skills/",
+      "engagement_metric": "75 upvotes, 25 comments",
+      "date": "2026-01-30",
+      "context": "auditing third-party skills before install"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "do you --dangerously-skip-permissions or not?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v2qc2j/do_you_dangerouslyskippermissions_or_not/",
+      "engagement_metric": "71 upvotes, 189 comments",
+      "date": "2026-07-21",
+      "context": "debating skipping the permission prompts"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "How often do you use --dangerously-skip-permissions",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1qstwst/how_often_do_you_use_dangerouslyskippermissions/",
+      "engagement_metric": "58 upvotes, 142 comments",
+      "date": "2026-02-01",
+      "context": "polling how often people bypass permissions"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I accidentally approved Claude to delete my home directory — you should always use sandboxes",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1mr9myv/i_accidentally_approved_claude_to_delete_my_home/",
+      "engagement_metric": "25 upvotes, 43 comments",
+      "date": "2025-08-15",
+      "context": "destructive action approved, arguing for sandboxes"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/mcp",
+      "verbatim_phrase": "MCP security is the elephant in the room – what we learned from analyzing 100+ public MCP servers",
+      "url": "https://www.reddit.com/r/mcp/comments/1np6euu/mcp_security_is_the_elephant_in_the_room_what_we/",
+      "engagement_metric": "136 upvotes, 29 comments",
+      "date": "2025-09-24",
+      "context": "surveying MCP server security"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Used company Claude account while coding on my personal GitHub repo can my employer see it?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uwfvmk/used_company_claude_account_while_coding_on_my/",
+      "engagement_metric": "144 upvotes, 242 comments",
+      "date": "2026-07-14",
+      "context": "worried employer can see agent activity on a personal repo"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/ClaudeAI",
+      "verbatim_phrase": "Claude CLI deleted my entire home directory! Wiped my whole mac.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1pgxckk/claude_cli_deleted_my_entire_home_directory_wiped/",
+      "engagement_metric": "1.9k upvotes, 670 comments",
+      "date": "2025-12-07",
+      "context": "agent destroyed a home directory"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/devops",
+      "verbatim_phrase": "AI coding tools are now a CVSS 10.0 CI/CD supply chain vector - patch Gemini CLI and update Cursor",
+      "url": "https://www.reddit.com/r/devops/comments/1t26rnm/ai_coding_tools_are_now_a_cvss_100_cicd_supply/",
+      "engagement_metric": "129 upvotes, 47 comments",
+      "date": "2026-05-03",
+      "context": "AI coding tools as a CI/CD supply chain vector"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/ChatGPTCoding",
+      "verbatim_phrase": "How I design architecture and keep LLM's compliant with my decisions",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1oqzu7p/how_i_design_architecture_and_keep_llms_compliant/",
+      "engagement_metric": "11 upvotes, 21 comments",
+      "date": "2025-11-07",
+      "context": "keeping the model compliant with architecture decisions"
+    },
+    {
+      "category": "governance",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "We went from 40% to 92% architectural compliance after changing HOW we give AI context (not how much)",
+      "url": "https://www.reddit.com/r/cursor/comments/1pbag9x/we_went_from_40_to_92_architectural_compliance/",
+      "engagement_metric": "103 upvotes, 18 comments",
+      "date": "2025-12-01",
+      "context": "measuring architectural compliance of agent output"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Claude Code (~100 hours) vs. Codex (~20 hours)",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1sk7e2k/claude_code_100_hours_vs_codex_20_hours/",
+      "engagement_metric": "2.2k upvotes, 307 comments",
+      "date": "2026-04-13",
+      "context": "comparing two harnesses after heavy use of both"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Impressions two weeks after moving from Claude Code to Codex",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1tbcfmi/impressions_two_weeks_after_moving_from_claude/",
+      "engagement_metric": "464 upvotes, 263 comments",
+      "date": "2026-05-12",
+      "context": "switching harnesses and reporting back"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Claude + Codex + Opencode = God Mode",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1sxs8c0/claude_codex_opencode_god_mode/",
+      "engagement_metric": "387 upvotes, 130 comments",
+      "date": "2026-04-28",
+      "context": "running three harnesses together"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Unpopular opinion: the codex migration is going to hit the same wall in 2 months",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1t4scf8/unpopular_opinion_the_codex_migration_is_going_to/",
+      "engagement_metric": "352 upvotes, 142 comments",
+      "date": "2026-05-05",
+      "context": "predicting the migration wave hits the same limits"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I automated the Claude Code and codex workflow into a single CLI tool: they debate, review, and fix code together",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1r24g2i/i_automated_the_claude_code_and_codex_workflow/",
+      "engagement_metric": "185 upvotes, 83 comments",
+      "date": "2026-02-11",
+      "context": "wrapping two harnesses in one CLI"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Codex found my Claude login, installed Claude Code, and recruited it as an independent QA agent",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v8ncff/codex_found_my_claude_login_installed_claude_code/",
+      "engagement_metric": "273 upvotes, 78 comments",
+      "date": "2026-07-28",
+      "context": "one harness recruiting another as a reviewer"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Now that it's open source we can see why Claude Code and Codex feel so different",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1s8ower/now_that_its_open_source_we_can_see_why_claude/",
+      "engagement_metric": "526 upvotes, 70 comments",
+      "date": "2026-03-31",
+      "context": "comparing harness internals after source release"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Is Claude Code + an IDE effectively the same as Cursor? I assume by itself it is worse?",
+      "url": "https://www.reddit.com/r/cursor/comments/1rscil0/is_claude_code_an_ide_effectively_the_same_as/",
+      "engagement_metric": "94 upvotes, 113 comments",
+      "date": "2026-03-13",
+      "context": "asking whether CLI plus IDE equals the integrated tool"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ChatGPTCoding",
+      "verbatim_phrase": "I tried Google's new Antigravity IDE so you don't have to (vs Cursor/Windsurf)",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1p35bdl/i_tried_googles_new_antigravity_ide_so_you_dont/",
+      "engagement_metric": "443 upvotes, 253 comments",
+      "date": "2025-11-21",
+      "context": "evaluating a new IDE against incumbents"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ChatGPTCoding",
+      "verbatim_phrase": "Codex CLI vs Claude Code (adding features to a 500k codebase)",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1n8c82u/codex_cli_vs_claude_code_adding_features_to_a/",
+      "engagement_metric": "101 upvotes, 75 comments",
+      "date": "2025-09-04",
+      "context": "comparing two CLIs on a large codebase"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Sharing my Cursor + Codex + ChatGPT workflow",
+      "url": "https://www.reddit.com/r/cursor/comments/1nq6ig2/sharing_my_cursor_codex_chatgpt_workflow/",
+      "engagement_metric": "50 upvotes, 13 comments",
+      "date": "2025-09-25",
+      "context": "stitching three tools into one workflow"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ChatGPTCoding",
+      "verbatim_phrase": "The Opus vs Codex horse race in one poll",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1r7j5bi/the_opus_vs_codex_horse_race_in_one_poll/",
+      "engagement_metric": "187 upvotes, 59 comments",
+      "date": "2026-02-17",
+      "context": "polling tool preference"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Built a memory layer for Cursor that works across all your AI tools",
+      "url": "https://www.reddit.com/r/cursor/comments/1rtqcag/built_a_memory_layer_for_cursor_that_works_across/",
+      "engagement_metric": "0 upvotes, 7 comments",
+      "date": "2026-03-14",
+      "context": "memory layer meant to work across all AI tools"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ChatGPTCoding",
+      "verbatim_phrase": "Free app to instantly export AGENTS.md, CLAUDE.md, and GEMINI.md files based on one primary AI instructions file!",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1okvpbc/free_app_to_instantly_export_agentsmd_claudemd/",
+      "engagement_metric": "0 upvotes, 2 comments",
+      "date": "2025-10-31",
+      "context": "generating all rules-file variants from one source"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ChatGPTCoding",
+      "verbatim_phrase": "AGENTS.md CODEX.md INSTRUCTIONS.md CLAUDE.md",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1nc4bn3/agentsmd_codexmd_instructionsmd_claudemd/",
+      "engagement_metric": "2 upvotes, 0 comments",
+      "date": "2025-09-09",
+      "context": "enumerating the competing rules-file names"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/ChatGPTCoding",
+      "verbatim_phrase": "Do I need to run /init on a repo if I already have AGENTS.md?",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1nthpn6/do_i_need_to_run_init_on_a_repo_if_i_already_have/",
+      "engagement_metric": "4 upvotes, 0 comments",
+      "date": "2025-09-29",
+      "context": "asking if an existing AGENTS.md is enough"
+    },
+    {
+      "category": "portability",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "spent a week with cursor pointed at a different backend and the results surprised me",
+      "url": "https://www.reddit.com/r/cursor/comments/1u88d4b/spent_a_week_with_cursor_pointed_at_a_different/",
+      "engagement_metric": "4 upvotes, 4 comments",
+      "date": "2026-06-17",
+      "context": "pointing one tool at a different backend"
+    },
+    {
+      "category": "crossrepo",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "Microservices versus monoliths: Did everyone just lose their minds in the last 6 months?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1tib4ei/microservices_versus_monoliths_did_everyone_just/",
+      "engagement_metric": "335 upvotes, 347 comments",
+      "date": "2026-05-20",
+      "context": "debating repo topology in the agent era"
+    },
+    {
+      "category": "crossrepo",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "I built an always-on personal AI OS that dispatches coding work across my repos and maintains its own knowledge base. I talk to it via Discord",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v2rrby/i_built_an_alwayson_personal_ai_os_that/",
+      "engagement_metric": "24 upvotes, 18 comments",
+      "date": "2026-07-21",
+      "context": "dispatching agent work across multiple repos"
+    },
+    {
+      "category": "crossrepo",
+      "source": "reddit:r/ClaudeCode",
+      "verbatim_phrase": "got tired of managing Git Repos so I built this....",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v2hx3p/got_tired_of_managing_git_repos_so_i_built_this/",
+      "engagement_metric": "0 upvotes, 2 comments",
+      "date": "2026-07-21",
+      "context": "frustrated managing many git repos"
+    },
+    {
+      "category": "crossrepo",
+      "source": "reddit:r/mcp",
+      "verbatim_phrase": "CodeGraphContext - An MCP server that converts your codebase into a graph database reaches 2k stars",
+      "url": "https://www.reddit.com/r/mcp/comments/1rs083q/codegraphcontext_an_mcp_server_that_converts_your/",
+      "engagement_metric": "256 upvotes, 75 comments",
+      "date": "2026-03-12",
+      "context": "indexing a codebase as a graph for agent context"
+    },
+    {
+      "category": "crossrepo",
+      "source": "reddit:r/mcp",
+      "verbatim_phrase": "CodeGraphContext - An MCP server that indexes your codebase into a graph database to provide accurate context to AI assistants and humans",
+      "url": "https://www.reddit.com/r/mcp/comments/1qyncmd/codegraphcontext_an_mcp_server_that_indexes_your/",
+      "engagement_metric": "187 upvotes, 75 comments",
+      "date": "2026-02-07",
+      "context": "graph index to give agents accurate codebase context"
+    },
+    {
+      "category": "crossrepo",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Working with Large Codebases - Suggestions",
+      "url": "https://www.reddit.com/r/cursor/comments/1s3qpah/working_with_large_codebases_suggestions/",
+      "engagement_metric": "7 upvotes, 9 comments",
+      "date": "2026-03-25",
+      "context": "asking how to work with large codebases"
+    },
+    {
+      "category": "crossrepo",
+      "source": "reddit:r/cursor",
+      "verbatim_phrase": "Is Cursor’s codebase indexing the best compared to other AI coding tools?",
+      "url": "https://www.reddit.com/r/cursor/comments/1othdrc/is_cursors_codebase_indexing_the_best_compared_to/",
+      "engagement_metric": "42 upvotes, 35 comments",
+      "date": "2025-11-10",
+      "context": "comparing codebase indexing quality across tools"
+    }
+  ]
+}

@@ -2,6 +2,38 @@
 
 ### August 2026
 
+- [x] Meta-harness / Polygraph keyword + prompt discovery (2026-08-06)
+  - Plan: `dot_ai/2026-08-06/tasks/metaharness-keyword-research.md`
+  - Summary: 27 agents / 3 workflows / 0 errors, ~97k of 813k Ahrefs units. Produced
+    `keywords.csv` (2,279 scored rows), `prompts.csv` (122), `brand-radar-prompts.txt` (40),
+    `gaps.md`, `dark-demand-clusters.md` (12 clusters) under
+    `dot_ai/2026-08-06/tasks/metaharness-keyword-research/output/`.
+  - Key results: "meta-harness" is dead (`metaharness`=0, `meta harness` returns an EMPTY SERP,
+    0 of 834 verbatim developer phrases) BUT the space already has a name - `harness engineering`
+    (18k global), owned by OpenAI/Martin Fowler/Lilian Weng/Red Hat/Addy Osmani + an awesome-list.
+    Recommend ranking in harness-engineering vocabulary; keep meta-harness as brand defence only.
+    Demand is tool-anchored: `claude code memory` (1000/KD9) beats `agent memory` (600/KD60) on
+    both axes; best target is `claude code harness` at KD 3. Tracked competitors are wrong -
+    omnigent.ai has 1 organic keyword while ChatGPT cites claudereview/threadcast/lore.link/
+    aq.dev for the 500-volume sharing prompts, and those have ~0 Google organic (AI answers and
+    organic are decoupled in that category). mem0 is the real memory incumbent (8k/30k), already
+    #11 for `claude code memory`. Cross-repo is NOT supported as the lead (`multi repo`=10,
+    17 of 36 phrases from vendor blogs) - market feels a context ceiling, not a coordination one.
+    Purest dark demand: "session handoff", 0 of 2,279 keyword rows contain the word.
+
+- [x] Credit usage report: billing records, org rollup, licensed allowance (2026-08-06)
+  - Plan: `dot_ai/2026-08-06/tasks/credit-usage-report-billing-records.md`
+  - Polygraph session `credit-usage-lighthouse-follow-up-405aebca` - nrwl/lighthouse + nrwl/ocean - https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/credit-usage-lighthouse-follow-up-405aebca
+  - Summary: MERGED lighthouse PR #83 (`00e7369`). Follow-up to CLOUD-4878 (Done since 2026-07-30) with no ticket of its own. Switched `/dpe-tools/credit-usage-report` from `billing.workspaceCreditUsage` to `billing.billingRecords` after Altan flagged the former as a daily month-to-date snapshot that can miss a month's tail, so it cannot be trusted for an invoice figure. New `billing_record_snapshots` table, projecting Mongo query, and a collector on the daily portal refresh scoped to the current month plus two prior full months (usage invoicing starts 2026-08-15); records already exist in Mongo so one run backfills the window. Report is one row per org per billing month with Credits Consumed, Remaining and Total against the allowance embedded on each record, plus an execution count read rather than derived from credits/500. Granularity/grouping toggles and the workspace dimension removed. Fixed a portal bug double-counting an ISO week straddling a billing month (Celonis week 27 read 4.5M between 3.9M and 1.2M). Org is now the primary lookup - a shared-instance customer like PayFit is an org on tenant ProdNA, which is why it appeared missing. Verified in ocean across five sites that execution credits DO count against the allowance, and nonzero on 53.7% of prod NA usage docs, but kept excluded in both surfaces by Jack's decision so they agree rather than disagree (pending sync with Joe; one function is the flip point). Also verified: `additionalCredits` is a grant not overage and empty across prod NA; `runCount` is cache-enabled Nx runs including local, not CIPEs; no `executionCount` on `workspaceCreditUsage` per a 2000-doc key census. Final pass removed 537 lines left dead by the switch.
+
+- [x] GitHub App organization permissions: docs accuracy + stale CLI hint (2026-08-05)
+  - Plan: `dot_ai/2026-08-05/tasks/github-app-org-permissions-docs.md`
+  - Summary: MERGED nx PR #36581 (`378526cd7f`). Corrected the `Administration` entry, which claimed it covered listing org repositories for setup - verified in ocean that listing runs through `GET /orgs/{org}/repos` and `GET /user/installations/{id}/repositories` (both `Metadata: read`), while only `GET /orgs/{org}/installations` needs org `Administration`; moved the clause to `Metadata`. STYLE_GUIDE structural pass on top of a clean vale run found a semicolon, the re-grant claim duplicated across two sections, a balanced-contrast plus restatement closer in `Members`, and `org` vs `organization`. Separately fixed a stale nrwl/ocean CLI hint (`onboarding-remediation.ts:77`) that told users to grant `"Administration: Read & Write"` after the app stopped requesting it - a guaranteed dead end in GitHub App settings; committed with a version plan on `fix/onboarding-permission-hint` (`b4faebb334`), unpushed. PR merged mid-session before the last two intro rewordings, so a 2-line follow-up sits on `docs/github-app-permissions-intro-wording` (`61c35a9305`), unpushed.
+
+- [x] Review nrwl/ocean PR #12720 (2026-08-05)
+  - Plan: `dot_ai/2026-08-05/tasks/review-ocean-pr-12720.md`
+  - Summary: Inline review found four actionable issues in restarted-agent handling: synthetic workflow-step ends inflate launch duration, template changes across restarts can over-attribute credits, commands spanning a restart disappear from later attempts, and the idle-tail calculation counts unbilled restart gaps. Targeted model, server-billing, and billing-panel tests passed; no GitHub feedback was posted.
+
 - [x] NXC-4687: CNW `--preset empty` escape hatch + template download errors, 23.1.0 regression (2026-08-05)
   - Plan: `dot_ai/2026-07-29/tasks/nxc-4687-cnw-template-egress-fallback.md`
   - Summary: MERGED PR #36508 (`4a63dc82af`). Fixed `invalidPresetToTemplateMap` coercing `--preset empty` into the github template download - now aliases to the `ts` preset (npm-only) and wins over `--template` so agents appending the flag escape a failed download. Download errors classify 404 = missing repo, everything else (thrown fetch/403/407/429/5xx) = blocked egress, with `--preset=empty` guidance across the error message, AI hints, and pre-flight template-required output. Strict slug regex closed a pre-existing `nrwl/../evil` cross-org tarball hole (arbitrary repo install scripts). Backed by create-* CLI survey (sandbox-safe tools ship templates via npm; github-at-runtime tools all hard-fail) and 7-day error data (55 download errors/week; TEMPLATE_CLONE_FAILED 403s were sandbox proxies). Survived two deep review rounds; v1 auto-fallback rejected by Jack (presets != templates). Root cause traced: pre-23.1.0 git clone honored HTTPS_PROXY, Node fetch does not - proxy-allowlist sandboxes broke at the 23.1.0 client swap (0 -> 87 NETWORK_ERROR/day).

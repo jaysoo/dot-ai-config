@@ -1,0 +1,161 @@
+category,keyword,volume,global_volume,difficulty,parent_topic,intents,source_report,seed_used
+sharing,claude code resume session,200,700,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code save session,200,600,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code session limit,150,500,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code fork session,100,250,no_data,no_data,no_data,matching-terms,claude code session
+sharing,how to resume claude code session,100,250,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code session management,100,150,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code resume previous session,90,200,no_data,no_data,no_data,matching-terms,claude code session
+sharing,resume claude code session,80,200,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code continue last session,70,300,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code session manager,70,150,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code remote session,60,150,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code new session,60,200,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code start new session,60,150,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code session,60,300,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code session history,60,200,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code failed to load session,50,100,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code delete session,50,150,no_data,no_data,no_data,matching-terms,claude code session
+sharing,how to save claude code session,50,150,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code session id,50,150,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code session limit reached,50,150,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code restore session,50,200,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code terminal session history,50,100,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code name session,50,100,no_data,no_data,no_data,matching-terms,claude code session
+sharing,save claude code session,50,150,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code session limits,50,100,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code share session,40,100,no_data,no_data,no_data,matching-terms,share claude code session
+sharing,claude code export session,40,100,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code resume session command,40,60,no_data,no_data,no_data,matching-terms,claude code session
+sharing,how to resume a claude code session,40,80,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code cli resume session,30,50,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code restart session,30,70,no_data,no_data,no_data,matching-terms,claude code session
+sharing,share claude code session,30,70,no_data,no_data,no_data,matching-terms,share claude code session
+sharing,claude code continue previous session,30,70,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code get session id,30,70,no_data,no_data,no_data,matching-terms,claude code session
+sharing,how to restart claude code session,30,40,no_data,no_data,no_data,matching-terms,claude code session
+sharing,how to start a new session in claude code,30,60,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code how to save session,30,70,no_data,no_data,no_data,matching-terms,claude code session
+sharing,how to save a claude code session,30,60,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code resume last session,30,100,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code continue session,30,150,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code how to resume session,30,90,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code terminal session,20,20,no_data,no_data,no_data,matching-terms,claude code session
+sharing,export claude code session,20,50,no_data,no_data,no_data,matching-terms,claude code session
+sharing,how to share claude code session,20,40,no_data,no_data,no_data,matching-terms,share claude code session
+sharing,how do i resume a claude code session,20,20,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code how to start a new session,20,30,no_data,no_data,no_data,matching-terms,claude code session
+sharing,claude code share,20,90,no_data,no_data,no_data,matching-terms,claude code share
+sharing,claude code save session for later,20,50,no_data,no_data,no_data,matching-terms,claude code session
+sharing,how to resume previous claude code session,20,40,no_data,no_data,no_data,matching-terms,claude code session
+sharing,google colab collaborative ai coding features,10,10,no_data,no_data,no_data,matching-terms,collaborative ai coding
+sharing,best collaborative ai coding tools 2026,0,0,no_data,no_data,no_data,matching-terms,collaborative ai coding
+sharing,collaborative ai coding tools,0,0,no_data,no_data,no_data,matching-terms,collaborative ai coding
+sharing,opencode share session,10,50,no_data,no_data,no_data,matching-terms,opencode share session
+sharing,cursor ide share chat conversation link 2025 2026,10,10,no_data,no_data,no_data,matching-terms,cursor share chat
+sharing,share codex session,0,0,no_data,no_data,no_data,matching-terms,codex share session
+sharing,share cursor chat,0,0,no_data,no_data,no_data,matching-terms,cursor share chat
+sharing,opencode session share,0,0,no_data,no_data,no_data,matching-terms,opencode share session
+sharing,copilot cli share session,0,0,no_data,no_data,no_data,matching-terms,copilot share session
+sharing,codex share session,0,0,no_data,no_data,no_data,matching-terms,codex share session
+sharing,cursor share chat,0,0,no_data,no_data,no_data,matching-terms,cursor share chat
+sharing,ai pair programming,450,900,3,ai pair programmer,informational,matching-terms,ai pair programming
+sharing,ai pair programming tools,350,450,11,ai pair programmer,"informational,commercial",matching-terms,ai pair programming
+sharing,pair programming with ai,150,300,2,ai pair programmer,informational,matching-terms,ai pair programming
+sharing,ai pair programming with github copilot,100,200,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,how to share chatgpt conversation,100,300,3,chatgpt share,"informational,branded",matching-terms,share chatgpt conversation
+sharing,how to share a chatgpt conversation,90,150,1,chatgpt share,"informational,branded",matching-terms,share chatgpt conversation
+sharing,ai pair programming with github copilot free,90,150,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,share chatgpt conversation,90,150,1,chatgpt share,"informational,branded",matching-terms,share chatgpt conversation
+sharing,pair programming with ai free,90,150,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,aider ai pair programming terminal,90,150,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,how to share chatgpt conversation link,80,150,no_data,no_data,no_data,matching-terms,share chatgpt conversation
+sharing,ai pair programming with github copilot videos,80,100,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,github ai pair programming,70,70,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,how to export chatgpt chat history,70,100,no_data,no_data,no_data,matching-terms,export chat history
+sharing,export chat history from chatgpt,60,70,no_data,no_data,no_data,matching-terms,export chat history
+sharing,pair programming with ai videos,60,150,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,watch pair programming with ai videos,60,100,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,chatgpt export chat history,60,90,no_data,no_data,no_data,matching-terms,export chat history
+sharing,chatgpt share conversation link,60,90,no_data,no_data,no_data,matching-terms,share chatgpt conversation
+sharing,linkedin pair programming with ai,50,100,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,how to export chat history from chatgpt,50,200,no_data,no_data,no_data,matching-terms,export chat history
+sharing,perplexity ai export chat history,50,60,no_data,no_data,no_data,matching-terms,export chat history
+sharing,linkedin ai pair programming with github copilot,50,80,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,chatgpt share conversation link feature,50,70,no_data,no_data,no_data,matching-terms,share chatgpt conversation
+sharing,export chatgpt chat history,50,70,no_data,no_data,no_data,matching-terms,export chat history
+sharing,ai tools for pair programming and refactoring,40,40,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,aider ai pair programming terminal tool,40,80,no_data,no_data,no_data,matching-terms,ai pair programming
+sharing,how to export chat history from chatgpt openai,40,50,no_data,no_data,no_data,matching-terms,export chat history
+sharing,pair programming,3500,11000,35,pair programming,informational,related-terms,ai pair programming
+sharing,ai coding agents,700,1900,30,best ai coding assistants 2026,"informational,commercial",related-terms,ai pair programming
+sharing,agentic coding,1300,6100,9,agentic coding,informational,related-terms,claude code session
+sharing,ai coding assistants,800,1300,56,ai coding,"informational,commercial",related-terms,ai pair programming
+sharing,ai coding tools,2800,6600,46,ai for coding,"informational,commercial",related-terms,ai pair programming
+sharing,how much does claude cost,2900,4700,40,how much does claude cost,no_data,search-suggestions,claude code share
+sharing,claude code review,2300,8300,0,claude review,no_data,search-suggestions,claude code share
+sharing,claude exporter,250,800,no_data,no_data,no_data,search-suggestions,claude code export
+sharing,claude code prompts,200,700,no_data,no_data,no_data,search-suggestions,claude code share
+sharing,claude code sessions,200,400,no_data,no_data,no_data,search-suggestions,claude code session
+sharing,claude code export conversation,100,300,no_data,no_data,no_data,search-suggestions,claude code export
+sharing,how to share a claude chat,90,200,no_data,no_data,no_data,search-suggestions,claude code share
+sharing,share claude chat,80,200,no_data,no_data,no_data,search-suggestions,claude code share
+sharing,how to share a claude project,60,90,no_data,no_data,no_data,search-suggestions,claude code share
+sharing,claude export data,60,150,no_data,no_data,no_data,search-suggestions,claude code export
+sharing,claude code export,50,200,no_data,no_data,no_data,search-suggestions,claude code export
+sharing,claude session,40,200,no_data,no_data,no_data,search-suggestions,claude code session
+sharing,claude code team,450,3300,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code agent team,400,2700,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team plan,300,1900,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team pricing,150,500,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team agents,90,400,no_data,no_data,no_data,matching-terms,claude code team
+sharing,agent team claude code,80,400,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code enterprise team,70,90,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team mode,60,150,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team plan pricing,60,200,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team of agents,50,150,no_data,no_data,no_data,matching-terms,claude code team
+sharing,anthropic claude code team,50,70,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code agents team,50,400,no_data,no_data,no_data,matching-terms,claude code team
+sharing,anthropic claude code enterprise team,40,40,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team plans,30,50,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team subscription,30,70,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team agent,30,300,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code pricing team,20,80,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team account,20,30,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code agent team feature,20,50,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code session transcript analysis,20,40,no_data,no_data,no_data,matching-terms,claude code transcript
+sharing,does claude team standard include claude code,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,is claude code included in team plan,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code pricing pro max team enterprise,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team plan cost,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code pricing team plan,10,30,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team collaboration features,10,10,no_data,no_data,no_data,matching-terms,claude code collaboration
+sharing,claude code jsonl,10,30,no_data,no_data,no_data,matching-terms,claude code jsonl
+sharing,claude code team cost,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code export transcript,10,10,no_data,no_data,no_data,matching-terms,claude code transcript
+sharing,anthropic claude code team pricing,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code agent team how to use,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,team of agents claude code,10,20,no_data,no_data,no_data,matching-terms,claude code team
+sharing,anthropic claude code team plan,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,team agents claude code,10,40,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code tmux agent team,10,20,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code agent team anthropic,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,where does claude code store logs jsonl,10,10,no_data,no_data,no_data,matching-terms,claude code jsonl
+sharing,team plan claude code,10,80,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code collaboration features,10,10,no_data,no_data,no_data,matching-terms,claude code collaboration
+sharing,team claude code,10,60,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code agent team tmux,10,40,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team premium seat,10,40,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team plan features,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code transcript jsonl schema,10,10,no_data,no_data,no_data,matching-terms,claude code transcript
+sharing,does claude team plan include claude code,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,agents team claude code,10,40,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team vs individual,10,10,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code team license,10,30,no_data,no_data,no_data,matching-terms,claude code team
+sharing,claude code transcript,10,30,no_data,no_data,no_data,matching-terms,claude code transcript
+sharing,best ai coding tools for team collaboration 2025,60,60,no_data,no_data,no_data,matching-terms,ai coding team collaboration
+sharing,share linux terminal session,60,60,no_data,no_data,no_data,matching-terms,share terminal session
+sharing,perplexity ai team collaboration coding,10,10,no_data,no_data,no_data,matching-terms,ai coding team collaboration
+sharing,amplitude session replay agent,10,10,no_data,no_data,no_data,matching-terms,agent session replay
+sharing,ttyd gotty web terminal share container session,10,10,no_data,no_data,no_data,matching-terms,share terminal session
+sharing,ai coding team collaboration,0,0,no_data,no_data,no_data,matching-terms,ai coding team collaboration

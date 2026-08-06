@@ -1,0 +1,22 @@
+[
+  { "question": "What does CI CD pipeline mean?", "source_keyword": "ci cd pipeline" },
+  { "question": "What are the four steps in a CI/CD pipeline?", "source_keyword": "ci cd pipeline" },
+  { "question": "What's the difference between DevOps and CI CD?", "source_keyword": "ci cd pipeline" },
+  { "question": "Is it easy to learn CI CD pipeline?", "source_keyword": "ci cd pipeline" },
+  { "question": "How do I reduce my CI build time?", "source_keyword": "how do i reduce my ci build time?" },
+  { "question": "Why is my CI/CD pipeline so slow?", "source_keyword": "why is my ci/cd pipeline so slow?" },
+  { "question": "How do I parallelize CI builds to speed them up?", "source_keyword": "how do i parallelize ci builds to speed them up?" },
+  { "question": "How does test impact analysis speed up CI?", "source_keyword": "how does test impact analysis speed up ci?" },
+  { "question": "How do I run CI/CD pipelines in a monorepo?", "source_keyword": "how do i run ci/cd pipelines in a monorepo?" },
+  { "question": "What is the best CI/CD setup for a monorepo?", "source_keyword": "what is the best ci/cd setup for a monorepo?" },
+  { "question": "How do I reduce the cost of my GitHub Actions?", "source_keyword": "how do i reduce the cost of my github actions" },
+  { "question": "Do GitHub Actions cost money?", "source_keyword": "do github actions cost money" },
+  { "question": "How much does Depot CI cost?", "source_keyword": "how much does depot ci cost?" },
+  { "question": "How much does Blacksmith CI cost?", "source_keyword": "how much does blacksmith ci cost?" },
+  { "question": "How does Depot speed up Docker builds in CI?", "source_keyword": "how does depot speed up docker builds in ci?" },
+  { "question": "How to fix flaky tests?", "source_keyword": "how to fix flaky tests" },
+  { "question": "What are flaky tests?", "source_keyword": "what are flaky tests" },
+  { "question": "What is a flaky test?", "source_keyword": "what is a flaky test" },
+  { "question": "How to speed up CI pipelines?", "source_keyword": "how to speed up ci pipelines" },
+  { "question": "How to speed up GitLab CI?", "source_keyword": "how to speed up gitlab ci" }
+]

@@ -1,0 +1,87 @@
+keyword,volume,global_volume,difficulty,traffic_potential,parent_topic,intents,serp_top3_domains,nx_ranks,proposed_tags,source,notes
+flaky test management,200,250,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|nx-cloud-features,keywords-explorer-overview,Commercial framing of flaky tests; distinct from tracked flaky test detection
+test impact analysis,150,300,3,30,test impact analysis,informational,martinfowler.com|learn.microsoft.com|docs.datadoghq.com,no,nx-cloud-features|unbranded,keywords-explorer-overview,Established vendor vocabulary for nx affected; highest-volume unbranded term in cluster
+github actions self hosted runner,150,700,14,700,github self hosted runners,informational|branded,no_data,no_data,nx-cloud-features|ci-cd,keywords-explorer-overview,Self-hosted runner demand is the entry point for Nx Agents
+predictive test selection,100,150,3,20,predictive test selection,informational|commercial,gradle.com|research.facebook.com|docs.cloudbees.com,no,nx-cloud-features|unbranded,keywords-explorer-overview,Develocity/Launchable term; Nx absent from a SERP owned by direct competitors
+flaky test automation,100,150,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|nx-cloud-features,keywords-explorer-matching-terms,Automation framing of flaky handling; feeds retry/quarantine feature pages
+flaky test case,100,200,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|unbranded,keywords-explorer-matching-terms,Longtail flaky demand; low-cost supporting content
+gradle remote build cache,90,150,3,200,gradle build cache,informational|branded,docs.gradle.org|depot.dev|medium.com,no,ci-caching|nx-cloud-features,keywords-explorer-matching-terms,Depot ranks 3 with a vendor blog; Nx could take the same slot
+flaky test best practices,90,150,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|unbranded,keywords-explorer-matching-terms,Top-of-funnel guide slot for flaky retries product
+bazel remote cache,80,200,7,70,bazel remote cache,informational|branded,no_data,no_data,ci-caching|branded,keywords-explorer-overview,Bazel cache demand; migration bridge to Nx remote cache
+gradle build cache,80,200,6,200,gradle build cache,informational|branded,no_data,no_data,ci-caching|branded,keywords-explorer-overview,High traffic potential; competitor-owned cache vocabulary
+gradle remote cache,80,150,4,200,gradle build cache,informational|branded,no_data,no_data,ci-caching|branded,keywords-explorer-overview,Same topic cluster as gradle build cache; low difficulty
+test impact analysis ci,80,80,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-matching-terms,CI-qualified variant; closest match to Nx affected in CI
+test impact analysis tools,60,90,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-matching-terms,Commercial-intent listicle slot Nx Cloud should appear in
+azure devops test impact analysis documentation,60,70,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|branded,keywords-explorer-matching-terms,Azure DevOps users seeking impact analysis; comparison content opportunity
+gitlab ci parallel matrix documentation,60,60,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|ci-cd,keywords-explorer-matching-terms,Hand-rolled matrix parallelism is the DIY alternative to Nx Agents
+parallel ci builds,50,50,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-matching-terms,Generic distribution demand; maps to distributed task execution
+launchable test impact analysis,50,60,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|branded,keywords-explorer-matching-terms,Launchable wound down; capturable displacement demand
+how does test impact analysis speed up ci?,50,50,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-matching-terms,Question-form query; also a Phase 4 prompt candidate
+how do i run tests in parallel in ci/cd?,50,50,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-matching-terms,Question-form query; also a Phase 4 prompt candidate
+best solutions for flaky test detection in prs?,50,50,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|nx-cloud-features,keywords-explorer-matching-terms,Question-form commercial query; feeds Phase 4 prompts
+nx cloud pricing,50,200,4,40,nx cloud,informational|commercial|branded,no_data,no_data,nx-cloud-features|branded,keywords-explorer-overview,Direct revenue surface; $4.50 CPC and commercial intent
+playwright parallel tests,40,100,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|branded,keywords-explorer-overview,Playwright is the top Atomizer use case
+cypress parallelization,30,70,1,90,cypress parallel,informational|branded,no_data,no_data,nx-cloud-features|branded,keywords-explorer-overview,Cypress Cloud parallelization is a paid competitor to Nx Agents
+turborepo remote cache,30,150,10,30,turborepo remote cache,informational|branded,no_data,no_data,ci-caching|branded,keywords-explorer-overview,Direct feature-level competitor comparison surface
+automated test impact analysis,30,30,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-matching-terms,Variant of the head term; supports a single hub page
+circle ci parallel,30,30,no_data,no_data,no_data,informational|branded,no_data,no_data,nx-cloud-features|ci-cd,keywords-explorer-matching-terms,CircleCI parallelism users are Nx Agents prospects
+jest shard,20,70,0,10,jest shard,informational|branded,no_data,no_data,nx-cloud-features|branded,keywords-explorer-overview,Zero difficulty; concrete Atomizer entry point
+test sharding,20,60,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-overview,Industry term for Atomizer; SERP has no Ahrefs record
+datadog test impact analysis,20,30,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|branded,keywords-explorer-matching-terms,Datadog CI Visibility competitor term
+test impact analysis azure devops documentation,20,20,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|branded,keywords-explorer-matching-terms,Second Azure-anchored variant; merge with the first
+flaky test tools,20,30,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|nx-cloud-features,keywords-explorer-matching-terms,Commercial listicle intent for flaky retries
+flaky test cypress,20,60,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|branded,keywords-explorer-matching-terms,Framework-anchored flaky demand
+jenkins distributed builds agents documentation,20,20,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|branded,keywords-explorer-matching-terms,Jenkins agents demand maps to Nx Agents enterprise story
+gitlab ci parallel,20,30,0,800,gitlab ci variables,informational|branded,no_data,no_data,nx-cloud-features|ci-cd,keywords-explorer-matching-terms,800 traffic potential at zero difficulty; strong DTE bridge
+parallel ci,20,100,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-matching-terms,Short head term for the parallelism topic
+remote build cache,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|nx-cloud-features,keywords-explorer-overview,Unbranded phrasing; turborepo.dev holds pos 1 on tracked remote cache
+playwright shard,10,40,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|branded,keywords-explorer-overview,Low US volume but rising; pairs with playwright parallel tests
+vitest shard,10,10,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|branded,keywords-explorer-overview,Emerging; cheap to cover alongside jest shard
+develocity pricing,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,keywords-explorer-overview,Enterprise price-anchor comparison for Nx Cloud
+jest parallel tests,10,20,0,700,jest coverage,informational|branded,no_data,no_data,nx-cloud-features|branded,keywords-explorer-overview,700 traffic potential at zero difficulty
+test selection,10,70,0,0,test selection,informational,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-overview,Short-form parent of predictive test selection
+flaky test detection tool,10,10,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|nx-cloud-features,keywords-explorer-overview,Tool-intent variant of tracked flaky test detection
+remote build execution,0,10,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-overview,Bazel RBE vocabulary; zero US volume but strong AI-answer term
+distributed build system,0,0,no_data,no_data,no_data,informational|commercial,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-overview,Commercial intent flagged despite zero volume; category-defining term
+distributed task execution,0,0,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-overview,Nx Cloud product category term with no measurable search demand
+self healing ci,0,0,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|ai-tooling,keywords-explorer-overview,Nx flagship feature has zero keyword demand; prompt surface not SEO
+github actions cache between jobs,0,0,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|nx-cloud-features,keywords-explorer-overview,Symptom framing of cache scope limits
+test parallelization,0,0,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-overview,Zero volume; prefer parallel ci builds as the tracked variant
+distributed builds,0,0,no_data,no_data,no_data,informational,no_data,no_data,nx-cloud-features|unbranded,keywords-explorer-overview,Zero volume category term; keep only for prompt coverage
+github actions cache,600,no_data,22,no_data,no_data,no_data,no_data,no,ci-caching|nx-cloud-features,site-explorer-organic-keywords,Depot ranks 17 with a blog; largest cache-demand term found
+github actions runners,500,no_data,37,no_data,no_data,no_data,no_data,no,nx-cloud-features|ci-cd,site-explorer-organic-keywords,Depot ranks 9 via docs; runner demand feeds Nx Agents
+bazel cache,100,no_data,13,no_data,no_data,no_data,no_data,no,ci-caching|branded,site-explorer-organic-keywords,bazel.build pos 1 and BuildBuddy pos 9; migration content gap
+build systems,100,no_data,4,no_data,no_data,no_data,no_data,no,nx-cloud-features|unbranded,site-explorer-organic-keywords,bazel.build owns pos 1 with a basics page; low difficulty
+remote execution,20,no_data,12,no_data,no_data,no_data,no_data,no,nx-cloud-features|unbranded,site-explorer-organic-keywords,BuildBuddy ranks 10; DTE-adjacent category term
+shared build cache,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|nx-cloud-features,synthetic,Team framing; rushjs.io holds pos 5 on tracked build cache
+distributed cache ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|nx-cloud-features,synthetic,Cache-across-machines demand; no Ahrefs record
+cache ci across machines,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|nx-cloud-features,synthetic,Longtail symptom phrasing; prompt-set candidate
+monorepo build cache,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|monorepo,synthetic,Bridges tracked monorepo terms to the cache product
+incremental builds ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|nx-cloud-features,synthetic,Value framing of caching; no Ahrefs record
+parallel ci agents,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,Nx Agents generic phrasing; no Ahrefs record
+ci parallelization,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,Category framing above per-tool parallel flags
+scale ci runners,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|ci-cost,synthetic,Capacity symptom leading to managed agents
+test splitting ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,Atomizer category term; no Ahrefs record
+split tests across ci machines,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,Plain-language sharding demand; prompt candidate
+e2e test parallelization,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,E2E is the highest-pain Atomizer use case
+automatic test retries,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|nx-cloud-features,synthetic,Feature-demand term around tracked flaky tests
+retry failed tests ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|nx-cloud-features,synthetic,Action framing of flaky retries
+quarantine flaky tests,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-flaky|nx-cloud-features,synthetic,Established vendor vocabulary; Nx has no page for it
+auto fix failing ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|ai-tooling,synthetic,Plain-language self-healing CI demand
+ai fix ci failures,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|ai-tooling,synthetic,AI-era framing; overlaps ai-tooling cluster
+run only affected tests,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,Plain-language nx affected; no Ahrefs record
+affected tests,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,Nx-native term with no measurable generic demand
+on premise build cache,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,Enterprise self-hosting gate; no Ahrefs record
+self hosted remote cache,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|nx-cloud-features,synthetic,DIY searchers Nx Cloud can convert
+self hosted turborepo remote cache,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-caching|branded,synthetic,High-intent DIY displacement from Turborepo
+soc2 build system,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,Compliance gate for enterprise CI purchase
+air gapped ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,Regulated-industry requirement for on-prem Nx Cloud
+buildbuddy alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,synthetic,RBE competitor displacement; no Ahrefs record
+launchable alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,synthetic,Launchable wound down; displacement demand
+gradle enterprise alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,synthetic,Legacy Develocity name still searched
+develocity alternative,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,ci-competitors|branded,synthetic,Current name of the enterprise substitute
+how to speed up monorepo ci,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|monorepo,synthetic,Top-of-funnel question; Phase 4 prompt candidate
+why are my ci tests so slow,no_data,no_data,no_data,no_data,no_data,no_data,no_data,no_data,nx-cloud-features|unbranded,synthetic,Symptom question mapping to DTE plus Atomizer
+turborepo cache,30,no_data,7,no_data,no_data,no_data,no_data,no,ci-caching|branded,site-explorer-organic-keywords,turborepo.dev pos 1 via its remote-caching doc; KD 7 and contestable
+turbo cache,30,no_data,12,no_data,no_data,no_data,no_data,no,ci-caching|branded,site-explorer-organic-keywords,Second turborepo.dev pos-1 cache term; migration-intercept surface
+turborepo clear cache,20,no_data,0,no_data,no_data,no_data,no_data,no,ci-caching|branded,site-explorer-organic-keywords,KD 0 troubleshooting intercept for Turborepo users evaluating Nx

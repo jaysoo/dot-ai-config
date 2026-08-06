@@ -1,0 +1,594 @@
+[
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci metrics dashboard",
+    "verbatim_phrase": "[RFC]: CI metrics dashboard improvements",
+    "url": "https://github.com/vllm-project/vllm/issues/26110",
+    "engagement": "2 comments",
+    "date": "2025-10-02"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions job duration metrics",
+    "verbatim_phrase": "Add native performance metrics for GitHub Actions (e.g., average job duration, percentiles, trends)",
+    "url": "https://github.com/orgs/community/discussions/191140",
+    "engagement": "12 upvotes / 6 comments",
+    "date": "2026-03-30"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions job duration metrics",
+    "verbatim_phrase": "Actions Metric API",
+    "url": "https://github.com/orgs/community/discussions/181231",
+    "engagement": "2 upvotes / 5 comments",
+    "date": "2025-12-05"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions job duration metrics",
+    "verbatim_phrase": "Is there an API that can automatically retrieve workflow data from the action backend?",
+    "url": "https://github.com/orgs/community/discussions/188189",
+    "engagement": "2 upvotes / 4 comments",
+    "date": "2026-02-27"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci build time trends",
+    "verbatim_phrase": "[Xcode 26] Build time regression in Azure pipeline: 15 mins -> 40+ mins with xcode@5",
+    "url": "https://github.com/actions/runner-images/issues/13096",
+    "engagement": "26 comments",
+    "date": "2025-09-29"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci build time trends",
+    "verbatim_phrase": "feat(web): run-duration trend chart in the pipeline overview sheet",
+    "url": "https://github.com/klinux/gocdnext/issues/102",
+    "engagement": "1 comment",
+    "date": "2026-06-27"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci build time trends",
+    "verbatim_phrase": "[plan] ci: add automated per-stage build time reporting to GitHub Actions workflow summary",
+    "url": "https://github.com/grahame-org/gnu-tools-for-stm32/issues/287",
+    "engagement": "1 comment",
+    "date": "2026-03-12"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "build observability platform",
+    "verbatim_phrase": "OpenTelemetry support for Buck2 build observability",
+    "url": "https://github.com/facebook/buck2/issues/1316",
+    "engagement": "1 comment",
+    "date": "2026-05-09"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "build observability platform",
+    "verbatim_phrase": "Build Observability and Reporting",
+    "url": "https://github.com/support-and-care/maven-support-and-care/issues/214",
+    "engagement": "0 comments",
+    "date": "2026-04-08"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "build observability platform",
+    "verbatim_phrase": "Surface build insights in the API",
+    "url": "https://github.com/tuist/tuist/issues/8729",
+    "engagement": "1 comment",
+    "date": "2025-11-24"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "build observability platform",
+    "verbatim_phrase": "Adopt build-cache observability and validation once the codebase has real build load",
+    "url": "https://github.com/AhmetSIRIM/FlyingWhale-E-Commerce-KMP/issues/26",
+    "engagement": "0 comments",
+    "date": "2026-08-01"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions slow workflow",
+    "verbatim_phrase": "How can I speed up my GitHub Actions CI pipeline?",
+    "url": "https://github.com/orgs/community/discussions/204070",
+    "engagement": "1 upvote / 2 comments",
+    "date": "2026-08-05"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions slow workflow",
+    "verbatim_phrase": "Continuously increasing drift in scheduled workflow, more than 4 hours now",
+    "url": "https://github.com/orgs/community/discussions/196910",
+    "engagement": "8 upvotes / 15 comments",
+    "date": "2026-05-25"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions slow workflow",
+    "verbatim_phrase": "Schedule-triggered workflow runs consistently delayed 2-3 hours with a self-hosted runner (workflow_dispatch runs fine)",
+    "url": "https://github.com/orgs/community/discussions/202066",
+    "engagement": "2 upvotes / 2 comments",
+    "date": "2026-07-16"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions slow workflow",
+    "verbatim_phrase": "Why are cache uploads slow?",
+    "url": "https://github.com/orgs/community/discussions/185958",
+    "engagement": "3 upvotes / 5 comments",
+    "date": "2026-01-30"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions slow workflow",
+    "verbatim_phrase": "ubuntu-latest: builds hanging in 20260302.42.1 runner image",
+    "url": "https://github.com/actions/runner-images/issues/13770",
+    "engagement": "21 comments",
+    "date": "2026-03-06"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions runner out of memory",
+    "verbatim_phrase": "Runner pod hangs indefinitely on memory limit instead of OOMKilling (cgroup v2 file-backed page thrashing)",
+    "url": "https://github.com/actions/actions-runner-controller/issues/4436",
+    "engagement": "2 comments",
+    "date": "2026-04-07"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions runner out of memory",
+    "verbatim_phrase": "Show CPU and Memory utilization for Jobs",
+    "url": "https://github.com/orgs/community/discussions/198986",
+    "engagement": "4 upvotes / 3 comments",
+    "date": "2026-06-14"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions runner out of memory",
+    "verbatim_phrase": "Action archive downloads buffer the entire tarball in memory before writing to disk",
+    "url": "https://github.com/actions/runner/issues/4587",
+    "engagement": "1 comment",
+    "date": "2026-07-29"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "github actions runner out of memory",
+    "verbatim_phrase": "Github Actions workflow fails with exit code 139 on Dependabot PR",
+    "url": "https://github.com/orgs/community/discussions/185822",
+    "engagement": "14 upvotes / 6 comments",
+    "date": "2026-01-28"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "why is my ci slow",
+    "verbatim_phrase": "will Develocity speed up CI?",
+    "url": "https://github.com/apache/iceberg/issues/16358",
+    "engagement": "0 comments",
+    "date": "2026-05-15"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "why is my ci slow",
+    "verbatim_phrase": "[bug] [Performance Regression] Command execution time increased from 20s to 7min after v2 migration (1500+ projects)",
+    "url": "https://github.com/moonrepo/moon/issues/2426",
+    "engagement": "21 comments",
+    "date": "2026-03-19"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "why is my ci slow",
+    "verbatim_phrase": "macos-latest hangs 1 in 10 times and cannot figure out why",
+    "url": "https://github.com/actions/runner-images/issues/13452",
+    "engagement": "3 comments",
+    "date": "2025-12-17"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci caching",
+    "verbatim_phrase": "Best way to cache dependencies in GitHub Actions?",
+    "url": "https://github.com/orgs/community/discussions/204068",
+    "engagement": "1 upvote / 3 comments",
+    "date": "2026-08-05"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci caching",
+    "verbatim_phrase": "How does github actions decide when to reuse or invalidate cached dependencies?",
+    "url": "https://github.com/orgs/community/discussions/203760",
+    "engagement": "1 upvote / 1 comment",
+    "date": "2026-08-02"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci caching",
+    "verbatim_phrase": "Help Us Improve GitHub Actions Cache Isolation",
+    "url": "https://github.com/orgs/community/discussions/194493",
+    "engagement": "22 upvotes / 18 comments",
+    "date": "2026-05-01"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci caching",
+    "verbatim_phrase": "Increase GitHub Actions Cache rate limits for granular build caches",
+    "url": "https://github.com/orgs/community/discussions/198210",
+    "engagement": "3 upvotes / 1 comment",
+    "date": "2026-06-06"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci caching",
+    "verbatim_phrase": "GitHub Actions cache not working consistently",
+    "url": "https://github.com/orgs/community/discussions/200314",
+    "engagement": "1 upvote / 3 comments",
+    "date": "2026-06-27"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci caching",
+    "verbatim_phrase": "Cache archives containing followed-symlink contents can never be restored - silent permanent cache miss (pnpm + Next.js standalone)",
+    "url": "https://github.com/vercel/turborepo/issues/13430",
+    "engagement": "3 comments",
+    "date": "2026-07-22"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "speed up ci",
+    "verbatim_phrase": "How can I speed up my GitHub Actions CI pipeline?",
+    "url": "https://github.com/orgs/community/discussions/204070",
+    "engagement": "1 upvote / 2 comments",
+    "date": "2026-08-05"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "speed up ci",
+    "verbatim_phrase": "[RFC]: Automatic test target determination for CI",
+    "url": "https://github.com/vllm-project/vllm/issues/39884",
+    "engagement": "9 comments",
+    "date": "2026-04-15"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "speed up ci",
+    "verbatim_phrase": "On-demand CI: gate expensive SHR jobs behind a PR label (including UX focus)",
+    "url": "https://github.com/camunda/camunda/issues/52879",
+    "engagement": "1 comment",
+    "date": "2026-05-12"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "speed up ci",
+    "verbatim_phrase": "will Develocity speed up CI?",
+    "url": "https://github.com/apache/iceberg/issues/16358",
+    "engagement": "0 comments",
+    "date": "2026-05-15"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci compute cost",
+    "verbatim_phrase": "Updates to GitHub Actions pricing",
+    "url": "https://github.com/orgs/community/discussions/182186",
+    "engagement": "101 upvotes / 64 comments",
+    "date": "2025-12-17"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci compute cost",
+    "verbatim_phrase": "Per minute charges for self hosted runners? Wtf?",
+    "url": "https://github.com/orgs/community/discussions/182089",
+    "engagement": "71 upvotes / 18 comments",
+    "date": "2025-12-16"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci compute cost",
+    "verbatim_phrase": "Unreasonable quota deduction under new usage-based pricing",
+    "url": "https://github.com/orgs/community/discussions/197609",
+    "engagement": "2 upvotes / 5 comments",
+    "date": "2026-06-01"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci compute cost",
+    "verbatim_phrase": "Does using a CodeBuild self-hosted runner (runs-on: codebuild-...) incur any GitHub Actions minutes cost?",
+    "url": "https://github.com/orgs/community/discussions/199635",
+    "engagement": "3 upvotes / 3 comments",
+    "date": "2026-06-20"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci compute cost",
+    "verbatim_phrase": "GitHub Actions disabled after heavy CI/CD usage  has anyone experienced this?",
+    "url": "https://github.com/orgs/community/discussions/184661",
+    "engagement": "1 upvote / 2 comments",
+    "date": "2026-01-19"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci compute cost",
+    "verbatim_phrase": "[ci-cost-analysis] Weekly CI Cost Impact Analysis",
+    "url": "https://github.com/camunda/camunda/issues/54448",
+    "engagement": "0 comments",
+    "date": "2026-06-02"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci compute cost",
+    "verbatim_phrase": "[RFC]: Reduce CI Cost by Pruning Low-Value Unit Tests",
+    "url": "https://github.com/vllm-project/vllm/issues/39829",
+    "engagement": "1 comment",
+    "date": "2026-04-14"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci compute cost",
+    "verbatim_phrase": "CI: Tune Renovate rebasing in monorepo to reduce CI cost (rebaseSchedule)",
+    "url": "https://github.com/camunda/camunda/issues/52802",
+    "engagement": "1 comment",
+    "date": "2026-05-11"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "develocity build scan alternative",
+    "verbatim_phrase": "Evaluate Develocity Build Scans for the Python client",
+    "url": "https://github.com/meshtastic/python/issues/966",
+    "engagement": "0 comments",
+    "date": "2026-08-02"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "develocity build scan alternative",
+    "verbatim_phrase": "Research Develocity test-distribution",
+    "url": "https://github.com/apache/grails-core/issues/15356",
+    "engagement": "0 comments",
+    "date": "2026-01-27"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "develocity build scan alternative",
+    "verbatim_phrase": "inject develocity scans in common action",
+    "url": "https://github.com/kestra-io/actions/issues/57",
+    "engagement": "0 comments",
+    "date": "2026-02-18"
+  },
+  {
+    "cluster": "ci-observability",
+    "term_tested": "ci pipeline bottleneck",
+    "verbatim_phrase": "[infra] Review release/deploy process timing - 2026-07-12 run took ~93min, 33% wasted on flaky external ingest",
+    "url": "https://github.com/dhelweg/gentriduck/issues/248",
+    "engagement": "6 comments",
+    "date": "2026-07-12"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[BUG] Glob tool hardcodes `--no-ignore --hidden --sort=modified`: un-prunable single-threaded walk guarantees 20s timeouts on large monorepos",
+    "url": "https://github.com/anthropics/claude-code/issues/77488",
+    "engagement": "0 comments",
+    "date": "2026-07-14"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "sandbox.enabled: true triggers a synchronous full-tree directory walk on startup -> multi-minute hang in large workspaces",
+    "url": "https://github.com/anthropics/claude-code/issues/68587",
+    "engagement": "2 comments",
+    "date": "2026-06-15"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[FEATURE] Settings.json parent directory traversal for monorepos",
+    "url": "https://github.com/anthropics/claude-code/issues/12962",
+    "engagement": "20 comments",
+    "date": "2025-12-03"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[FEATURE] skills/, agents/, commands/ should traverse parent directories like CLAUDE.md does",
+    "url": "https://github.com/anthropics/claude-code/issues/26489",
+    "engagement": "15 comments",
+    "date": "2026-02-18"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[FEATURE] Provide way to exclude parent CLAUDE.md files from auto-loading in subdirectories",
+    "url": "https://github.com/anthropics/claude-code/issues/20880",
+    "engagement": "9 comments",
+    "date": "2026-01-26"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[Bug] Poor code understanding and slow performance on large codebases",
+    "url": "https://github.com/anthropics/claude-code/issues/32965",
+    "engagement": "2 comments",
+    "date": "2026-03-10"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[Bug] CLI performance degradation with large codebases",
+    "url": "https://github.com/anthropics/claude-code/issues/62549",
+    "engagement": "3 comments",
+    "date": "2026-05-26"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[BUG] Automatic Context Compaction Fails After Large Codebase Analysis, Causing Excessive Token Usage",
+    "url": "https://github.com/anthropics/claude-code/issues/64619",
+    "engagement": "3 comments",
+    "date": "2026-06-02"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[Feature Request] Add token usage analysis and navigation for large codebases",
+    "url": "https://github.com/anthropics/claude-code/issues/31857",
+    "engagement": "2 comments",
+    "date": "2026-03-07"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[FEATURE] LSP file-watch scope / exclusion for large and worktree-containing repos",
+    "url": "https://github.com/anthropics/claude-code/issues/75779",
+    "engagement": "0 comments",
+    "date": "2026-07-08"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[FEATURE] Multi-repository support for remote/web sessions",
+    "url": "https://github.com/anthropics/claude-code/issues/23627",
+    "engagement": "15 comments",
+    "date": "2026-02-06"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[IDEA] Deeper AI integration",
+    "url": "https://github.com/moonrepo/moon/issues/2367",
+    "engagement": "5 comments",
+    "date": "2026-02-20"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[feature] Publish an official Moon Agent Skill for AI coding assistants",
+    "url": "https://github.com/moonrepo/moon/issues/2433",
+    "engagement": "5 comments",
+    "date": "2026-03-21"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[feature] Add MCP tools for template discovery and introspection",
+    "url": "https://github.com/moonrepo/moon/issues/2437",
+    "engagement": "0 comments",
+    "date": "2026-03-23"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[feature] Generate code thru MCP",
+    "url": "https://github.com/moonrepo/moon/issues/2308",
+    "engagement": "2 comments",
+    "date": "2026-01-17"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[bug] MPC fails to start in \"opencode\"",
+    "url": "https://github.com/moonrepo/moon/issues/2321",
+    "engagement": "6 comments",
+    "date": "2026-01-22"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "[docs] Proposal: adopt `llms.txt`",
+    "url": "https://github.com/bazelbuild/bazel/issues/27654",
+    "engagement": "5 comments",
+    "date": "2025-11-12"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "NX MCP server not working in vscode copilot",
+    "url": "https://github.com/nrwl/nx-console/issues/2710",
+    "engagement": "10 comments",
+    "date": "2025-08-21"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "Missing Option for NX Configure MCP Server in vscode",
+    "url": "https://github.com/nrwl/nx-console/issues/2695",
+    "engagement": "7 comments",
+    "date": "2025-08-14"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "Allow disabling minimal mode when running MCP via VS Code extension",
+    "url": "https://github.com/nrwl/nx-console/issues/3150",
+    "engagement": "5 comments",
+    "date": "2026-05-23"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "Nx MCP server in OpenAI Codex cause RAM usage spike",
+    "url": "https://github.com/nrwl/nx-console/issues/3070",
+    "engagement": "3 comments",
+    "date": "2026-01-24"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "Lack of ability to set port in MCP Server from Nx Console prevents \"allow list\" addition in Cursor Team Configration Admin settings",
+    "url": "https://github.com/nrwl/nx-console/issues/2785",
+    "engagement": "2 comments",
+    "date": "2025-09-24"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "Feature Request: Support nx_current_running_tasks_details / nx_current_running_task_output in standalone `npx nx mcp`",
+    "url": "https://github.com/nrwl/nx-console/issues/3097",
+    "engagement": "2 comments",
+    "date": "2026-03-17"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "configure-ai-agents should skip irrelevant Nx Cloud skills and allow skill selection",
+    "url": "https://github.com/nrwl/nx/issues/35740",
+    "engagement": "0 comments",
+    "date": "2026-05-19"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "configure-ai-agents: Codex config generated by Nx is not recognized by Codex detector",
+    "url": "https://github.com/nrwl/nx/issues/35597",
+    "engagement": "0 comments",
+    "date": "2026-05-06"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "Agentic migrations fail on Windows with \"The command line is too long\"",
+    "url": "https://github.com/nrwl/nx/issues/36551",
+    "engagement": "0 comments",
+    "date": "2026-08-03"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "context-manager: Adaptive size targets for monorepos and project types",
+    "url": "https://github.com/jezweb/claude-skills/issues/32",
+    "engagement": "1 comment",
+    "date": "2026-02-20"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "Model Context Protocol (MCP): Revolutionizing Developer Workflows with AI Integration",
+    "url": "https://github.com/orgs/community/discussions/174921",
+    "engagement": "11 upvotes / 13 comments",
+    "date": "2025-09-26"
+  },
+  {
+    "cluster": "ai-tooling",
+    "term_tested": null,
+    "verbatim_phrase": "Enable LSP tool to connect to installed language servers",
+    "url": "https://github.com/anthropics/claude-code/issues/15619",
+    "engagement": "17 comments",
+    "date": "2025-12-28"
+  }
+]

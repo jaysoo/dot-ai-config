@@ -1,0 +1,192 @@
+category,keyword,volume,global_volume,difficulty,parent_topic,intents,source_report,seed_used
+portability,claude code vs cursor,6300,20000,12,claude vs cursor,"informational,commercial,branded",matching-terms,cursor vs claude code
+portability,cursor vs claude code,4800,16000,15,cursor vs claude code,"informational,commercial,branded",matching-terms,cursor vs claude code
+portability,agents.md,900,4100,39,agents.md,"informational,branded",matching-terms,agents.md
+portability,openai codex agents.md official docs,800,2000,no_data,no_data,no_data,matching-terms,agents.md
+portability,cursorrules,500,1500,32,cursorrules,"informational,branded",matching-terms,cursorrules
+portability,codex agents.md,500,3300,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md official documentation,500,1800,no_data,no_data,no_data,matching-terms,agents.md
+portability,codex cli agents.md,500,700,no_data,no_data,no_data,matching-terms,agents.md
+portability,claude code agents.md,450,1700,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex cli agents.md,400,500,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md documentation,400,1000,no_data,no_data,no_data,matching-terms,agents.md
+portability,agents.md file,400,1200,no_data,no_data,no_data,matching-terms,agents.md
+portability,agents.md codex cli,350,400,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex cli agents.md documentation,350,800,no_data,no_data,no_data,matching-terms,agents.md
+portability,how to use claude code in cursor,350,900,no_data,no_data,no_data,matching-terms,cursor vs claude code
+portability,cursor ai vs claude code,300,900,no_data,no_data,no_data,matching-terms,cursor vs claude code
+portability,claude agents.md,300,1100,no_data,no_data,no_data,matching-terms,agents.md
+portability,agents.md codex,300,900,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md instructions official docs,300,1100,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md,300,600,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md guide,300,1000,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md instructions official,300,1100,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md repository instructions,300,700,no_data,no_data,no_data,matching-terms,agents.md
+portability,agents.md vs claude.md,250,700,no_data,no_data,no_data,matching-terms,agents.md
+portability,claude.md vs agents.md,250,700,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md instructions repository,250,700,no_data,no_data,no_data,matching-terms,agents.md
+portability,cursor vs claude code comparison 2026,250,500,no_data,no_data,no_data,matching-terms,cursor vs claude code
+portability,openai codex cli agents.md official documentation,250,1000,no_data,no_data,no_data,matching-terms,agents.md
+portability,cursor .cursorrules file documentation,250,300,no_data,no_data,no_data,matching-terms,cursorrules
+portability,openai codex agents.md docs,250,400,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md guide official,250,800,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md instructions,200,500,no_data,no_data,no_data,matching-terms,agents.md
+portability,agents.md specification,200,250,no_data,no_data,no_data,matching-terms,agents.md
+portability,cursor cli vs claude code,200,600,no_data,no_data,no_data,matching-terms,cursor vs claude code
+portability,claude code vs cursor comparison 2026,200,350,no_data,no_data,no_data,matching-terms,cursor vs claude code
+portability,codex vs claude code vs cursor,200,600,no_data,no_data,no_data,matching-terms,cursor vs claude code
+portability,openai codex cli agents.md official docs,200,900,no_data,no_data,no_data,matching-terms,agents.md
+portability,claude code vs cursor ai,200,450,no_data,no_data,no_data,matching-terms,cursor vs claude code
+portability,cursor rules file .cursorrules,200,200,no_data,no_data,no_data,matching-terms,cursorrules
+portability,.cursorrules,200,1000,no_data,no_data,no_data,matching-terms,cursorrules
+portability,what is agents.md,200,600,no_data,no_data,no_data,matching-terms,agents.md
+portability,cursor vs claude code 2026,200,400,no_data,no_data,no_data,matching-terms,cursor vs claude code
+portability,cursor vs claude code vs codex,200,450,no_data,no_data,no_data,matching-terms,cursor vs claude code
+portability,openai codex agents.md instructions documentation,200,600,no_data,no_data,no_data,matching-terms,agents.md
+portability,github copilot agents.md,200,1000,no_data,no_data,no_data,matching-terms,agents.md
+portability,openai codex agents.md instructions file,200,450,no_data,no_data,no_data,matching-terms,agents.md
+portability,javascript cursorrules,150,150,no_data,no_data,no_data,matching-terms,cursorrules
+portability,cursor rules file .cursorrules documentation,150,150,no_data,no_data,no_data,matching-terms,cursorrules
+portability,python cursorrules,150,150,no_data,no_data,no_data,matching-terms,cursorrules
+portability,claude code vs cursor ai comparison,150,250,no_data,no_data,no_data,matching-terms,cursor vs claude code
+portability,opencode,45000,295000,40,opencode,"informational,navigational,transactional,branded",matching-terms,opencode
+portability,opencode github,4100,18000,51,opencode,"informational,navigational,branded",matching-terms,opencode
+portability,cursor rules,2700,12000,6,cursorrules,"informational,branded",matching-terms,cursor rules
+portability,oh my opencode,2600,23000,6,oh-my-opencode,"informational,branded",matching-terms,opencode
+portability,opencode zen,2300,16000,41,opencode zen,"informational,commercial,branded",matching-terms,opencode
+portability,opencode vs claude code,1900,9300,9,opencode vs claude code,"informational,commercial,branded",matching-terms,opencode
+portability,oh-my-opencode,1900,9400,12,oh-my-opencode,"informational,branded",matching-terms,opencode
+portability,claude.md file,1300,3500,20,claude md file,no_data,matching-terms,claude.md
+portability,claude.md,1100,6300,43,claude.md,"informational,branded",matching-terms,claude.md
+portability,opencode skills,1000,6500,9,opencode skills,"informational,branded",matching-terms,opencode
+portability,what is opencode,900,2300,58,opencode,"informational,branded",matching-terms,opencode
+portability,what is opencode ai coding assistant,800,800,no_data,no_data,no_data,matching-terms,opencode
+portability,claude code vs opencode features,800,900,no_data,no_data,no_data,matching-terms,opencode
+portability,github opencode,700,3000,74,opencode,"informational,transactional,branded",matching-terms,opencode
+portability,claude.md best practices,700,2100,no_data,no_data,no_data,matching-terms,claude.md
+portability,opencode plugins,600,4500,39,opencode plugins,"informational,commercial,branded",matching-terms,opencode
+portability,claude code claude.md,600,1900,no_data,no_data,no_data,matching-terms,claude.md
+portability,karpathy claude.md,600,2300,13,claude.md,"informational,navigational",matching-terms,claude.md
+portability,what is claude.md,500,1300,no_data,no_data,no_data,matching-terms,claude.md
+portability,opencode mcp,500,5200,4,opencode,"informational,branded",matching-terms,opencode
+portability,opencode desktop,500,4300,no_data,no_data,no_data,matching-terms,opencode
+portability,claude code vs opencode,450,2800,no_data,no_data,no_data,matching-terms,opencode
+portability,opencode ollama,400,1900,no_data,no_data,no_data,matching-terms,opencode
+portability,claude code memory claude.md official docs,400,1200,no_data,no_data,no_data,matching-terms,claude.md
+portability,opencode ai,400,1900,no_data,no_data,no_data,matching-terms,opencode
+portability,opencode vs codex,350,1600,no_data,no_data,no_data,matching-terms,opencode
+portability,opencode cli,350,2700,no_data,no_data,no_data,matching-terms,opencode
+portability,install opencode,350,800,no_data,no_data,no_data,matching-terms,opencode
+portability,cursor rules .cursor/rules documentation,300,350,no_data,no_data,no_data,matching-terms,cursor rules
+portability,opencode zen pricing,300,1400,no_data,no_data,no_data,matching-terms,opencode
+portability,claude md,1200,8400,15,claude md,"informational,branded",related-terms,cursor vs claude code
+portability,mcp servers,9600,35000,74,mcp servers,"informational,branded",related-terms,cursor vs claude code
+portability,ai coding tools,2800,6600,46,ai for coding,"informational,commercial",related-terms,cursor vs claude code
+portability,ai ide,2100,10000,57,ai ide,"informational,commercial",related-terms,cursor vs claude code
+portability,ai code assistant,2000,3300,32,coding ai,"informational,commercial",related-terms,cursor vs claude code
+portability,cursor agent,1600,4700,35,cursor agent,"informational,commercial,branded",related-terms,cursor vs claude code
+portability,claude vs cursor,1300,4800,10,claude code vs cursor,"informational,commercial,branded",related-terms,cursor vs claude code
+portability,cursor vs claude,800,4000,7,cursor vs claude code,"informational,commercial,branded",related-terms,cursor vs claude code
+portability,codex vs cursor,800,3700,3,cursor vs codex,"informational,commercial,branded",related-terms,cursor vs claude code
+portability,claude md file,700,2300,6,claude.md,"informational,branded",related-terms,cursor vs claude code
+portability,claude code in cursor,600,2300,6,no_data,"informational,branded",related-terms,cursor vs claude code
+portability,cursor vs codex,600,2800,4,cursor vs codex,"informational,commercial,branded",related-terms,cursor vs claude code
+portability,agents md,700,5000,36,agents.md,"informational,branded",related-terms,agents.md
+portability,ai coding agents,700,1900,30,best ai coding assistants 2026,"informational,commercial",related-terms,agents.md
+portability,coding agents,350,2200,23,best ai coding assistants 2026,"informational,commercial",related-terms,agents.md
+portability,agent md,200,2000,no_data,no_data,no_data,related-terms,agents.md
+portability,agents md file,150,350,no_data,no_data,no_data,related-terms,agents.md
+portability,agent guidance,100,150,12,principles of building ai agents,informational,related-terms,agents.md
+portability,cursor agents,700,3200,no_data,no_data,no_data,search-suggestions,agents.md
+portability,claude sub agents,500,1800,no_data,no_data,no_data,search-suggestions,agents.md
+portability,agents.md best practices,150,500,no_data,no_data,no_data,search-suggestions,agents.md
+portability,agents.md github,150,250,no_data,no_data,no_data,search-suggestions,agents.md
+portability,agents.md openai,150,200,no_data,no_data,no_data,search-suggestions,agents.md
+portability,cursor rules examples,150,500,no_data,no_data,no_data,search-suggestions,cursor rules to agents.md
+portability,agents.md standard,150,200,no_data,no_data,no_data,search-suggestions,agents.md
+portability,cursor with claude,100,250,no_data,no_data,no_data,search-suggestions,switch from cursor to claude code
+portability,agents.md examples,100,300,no_data,no_data,no_data,search-suggestions,agents.md
+portability,claude in cursor,100,350,no_data,no_data,no_data,search-suggestions,switch from cursor to claude code
+portability,codex agents md,100,400,no_data,no_data,no_data,search-suggestions,agents.md
+portability,cursor and claude,90,250,no_data,no_data,no_data,search-suggestions,switch from cursor to claude code
+portability,agents.md claude code,90,300,no_data,no_data,no_data,search-suggestions,agents.md
+portability,agents.md github copilot,70,250,no_data,no_data,no_data,search-suggestions,agents.md
+portability,cursor rules directory,70,400,no_data,no_data,no_data,search-suggestions,cursor rules to agents.md
+portability,agents.md spec,60,90,no_data,no_data,no_data,search-suggestions,agents.md
+portability,agents.md claude,60,200,no_data,no_data,no_data,search-suggestions,agents.md
+portability,.cursor rules,60,150,no_data,no_data,no_data,search-suggestions,cursor rules to agents.md
+portability,agents.md template,60,100,no_data,no_data,no_data,search-suggestions,agents.md
+portability,cursor rules files,60,100,no_data,no_data,no_data,search-suggestions,cursor rules to agents.md
+portability,cline vs cursor,600,2000,2,cline vs cursor,"informational,commercial,branded",matching-terms,cline vs
+portability,cline vs claude code,350,1100,no_data,no_data,no_data,matching-terms,cline vs
+portability,copilot instructions file,300,700,no_data,no_data,no_data,matching-terms,copilot instructions file
+portability,roo code vs cline,250,1100,no_data,no_data,no_data,matching-terms,cline vs
+portability,best ai coding tools 2026 comparison,200,300,no_data,no_data,no_data,matching-terms,ai coding tools comparison
+portability,cline vs roo code,200,800,no_data,no_data,no_data,matching-terms,cline vs
+portability,claude code vs cline,200,600,no_data,no_data,no_data,matching-terms,cline vs
+portability,cursor vs cline,200,600,no_data,no_data,no_data,matching-terms,cline vs
+portability,github copilot instructions file,200,600,no_data,no_data,no_data,matching-terms,copilot instructions file
+portability,cline vs opencode,150,700,no_data,no_data,no_data,matching-terms,cline vs
+portability,ai coding tools comparison,150,300,no_data,no_data,no_data,matching-terms,ai coding tools comparison
+portability,cline vs copilot,150,450,no_data,no_data,no_data,matching-terms,cline vs
+portability,ai coding tools comparison 2025,150,200,no_data,no_data,no_data,matching-terms,ai coding tools comparison
+portability,roo vs cline,150,300,no_data,no_data,no_data,matching-terms,cline vs
+portability,kilo code vs cline,100,600,no_data,no_data,no_data,matching-terms,cline vs
+portability,ai coding tools comparison 2026,100,150,no_data,no_data,no_data,matching-terms,ai coding tools comparison
+portability,opencode vs cline,100,500,no_data,no_data,no_data,matching-terms,cline vs
+portability,cline vs roo,100,250,no_data,no_data,no_data,matching-terms,cline vs
+portability,cline vs continue,100,600,no_data,no_data,no_data,matching-terms,cline vs
+portability,cline vs codex,90,250,no_data,no_data,no_data,matching-terms,cline vs
+portability,codex vs cline,80,200,no_data,no_data,no_data,matching-terms,cline vs
+portability,cline vs code mcp,80,90,no_data,no_data,no_data,matching-terms,cline vs
+portability,cline vs code mcp support,80,90,no_data,no_data,no_data,matching-terms,cline vs
+portability,roocode vs cline,80,250,no_data,no_data,no_data,matching-terms,cline vs
+portability,aider vs cline,80,250,no_data,no_data,no_data,matching-terms,cline vs
+portability,continue vs cline,70,300,no_data,no_data,no_data,matching-terms,cline vs
+portability,cline vs windsurf,70,150,no_data,no_data,no_data,matching-terms,cline vs
+portability,cline vs github copilot,70,200,no_data,no_data,no_data,matching-terms,cline vs
+portability,cline vs kilo code,70,400,no_data,no_data,no_data,matching-terms,cline vs
+portability,cline vs claude,60,150,no_data,no_data,no_data,matching-terms,cline vs
+portability,how to use claude code with cursor,90,200,no_data,no_data,no_data,matching-terms,use claude code with cursor
+portability,use claude code with cursor,40,100,no_data,no_data,no_data,matching-terms,use claude code with cursor
+portability,can i use claude code with cursor,30,60,no_data,no_data,no_data,matching-terms,use claude code with cursor
+portability,can you use claude code with cursor,20,30,no_data,no_data,no_data,matching-terms,use claude code with cursor
+portability,how to use claude code with cursor ide,10,10,no_data,no_data,no_data,matching-terms,use claude code with cursor
+portability,use claude code with cursor ide,10,10,no_data,no_data,no_data,matching-terms,use claude code with cursor
+portability,migrate from cursor to claude code,0,20,no_data,no_data,no_data,matching-terms,migrate from cursor
+portability,switch from cursor to claude code,0,10,no_data,no_data,no_data,matching-terms,switch from cursor to claude code
+portability,how to migrate from cursor to claude code,0,0,no_data,no_data,no_data,matching-terms,migrate from cursor
+portability,how to switch from cursor to claude code,0,0,no_data,no_data,no_data,matching-terms,switch from cursor to claude code
+portability,should i switch from cursor to claude code,0,0,no_data,no_data,no_data,matching-terms,switch from cursor to claude code
+portability,how to sync cursor rules across all projects,0,0,no_data,no_data,no_data,matching-terms,sync cursor rules
+portability,ai agent interoperability,150,200,no_data,no_data,no_data,matching-terms,agent interoperability
+portability,model agnostic,150,500,0,model agnostic,informational,matching-terms,model agnostic
+portability,model agnostic meaning,100,500,0,model agnostic meaning,informational,matching-terms,model agnostic
+portability,model-agnostic,70,350,0,model agnostic,informational,matching-terms,model agnostic
+portability,model agnostic ai platform,50,50,no_data,no_data,no_data,matching-terms,model agnostic
+portability,avoid vendor lock-in ai agent workflows,40,40,3,vendor lock-in vs lock-out,no_data,matching-terms,vendor lock in ai
+portability,ai agent interoperability diagram,30,30,no_data,no_data,no_data,matching-terms,agent interoperability
+portability,agent interoperability news,30,30,no_data,no_data,no_data,matching-terms,agent interoperability
+portability,ai model gateways vendor lock-in prevention,30,30,no_data,no_data,no_data,matching-terms,vendor lock in ai
+portability,ai agent interoperability standards,30,40,no_data,no_data,no_data,matching-terms,agent interoperability
+portability,agent interoperability standards,30,40,no_data,no_data,no_data,matching-terms,agent interoperability
+portability,ai agent interoperability standards 2026,20,30,no_data,no_data,no_data,matching-terms,agent interoperability
+portability,avoid vendor lock-in ai platforms,20,20,no_data,no_data,no_data,matching-terms,vendor lock in ai
+portability,agent interoperability,20,60,no_data,no_data,no_data,matching-terms,agent interoperability
+portability,ai agent interoperability news,20,20,no_data,no_data,no_data,matching-terms,agent interoperability
+portability,monitoring ai models without vendor lock-in,20,20,no_data,no_data,no_data,matching-terms,vendor lock in ai
+portability,how to avoid vendor lock-in with ai platforms,20,20,no_data,no_data,no_data,matching-terms,vendor lock in ai
+portability,model agnostic agents,20,20,no_data,no_data,no_data,matching-terms,model agnostic
+portability,ai vendor lock-in,10,10,no_data,no_data,no_data,matching-terms,vendor lock in ai
+portability,what is model agnostic,10,40,no_data,no_data,no_data,matching-terms,model agnostic
+portability,a2a agent interoperability google blog,10,10,no_data,no_data,no_data,matching-terms,agent interoperability
+portability,model agnostic ai automation,10,10,no_data,no_data,no_data,matching-terms,model agnostic
+portability,ai agent interoperability standards 2025,10,10,no_data,no_data,no_data,matching-terms,agent interoperability
+portability,what is agents.md for?,no_data,no_data,no_data,no_data,question,serp-overview,agents.md
+portability,is agents md the same as claude md?,no_data,no_data,no_data,no_data,question,serp-overview,agents.md
+portability,should agents md be committed?,no_data,no_data,no_data,no_data,question,serp-overview,agents.md
+portability,where should i put agent md?,no_data,no_data,no_data,no_data,question,serp-overview,agents.md
+portability,is cursor better than claude code in 2026?,no_data,no_data,no_data,no_data,question,serp-overview,cursor vs claude code
+portability,is the claude code just cursor?,no_data,no_data,no_data,no_data,question,serp-overview,cursor vs claude code
+portability,do you need claude if you have cursor?,no_data,no_data,no_data,no_data,question,serp-overview,cursor vs claude code
+portability,what is better than the claude code?,no_data,no_data,no_data,no_data,question,serp-overview,cursor vs claude code

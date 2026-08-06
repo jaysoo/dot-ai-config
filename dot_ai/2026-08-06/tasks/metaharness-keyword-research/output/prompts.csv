@@ -1,0 +1,123 @@
+category,funnel_stage,prompt,source,measured_volume,likely_incumbents,winnability,rationale
+memory,problem-aware,Why does Claude Code lose my context between sessions?,verbatim:https://dev.to/whoffagents/why-your-claude-code-sessions-keep-losing-context-and-how-to-fix-it-nia,no_data,Anthropic docs; mem0; dev.to posts,medium,Exact symptom phrasing already used as a blog title
+memory,problem-aware,Why does my Claude Code agent forget everything after compaction?,verbatim:https://news.ycombinator.com/item?id=47110366,no_data,Anthropic docs; HN threads; mem0,medium,Compaction amnesia is the most-cited memory complaint
+memory,problem-aware,How are people handling context loss between AI coding sessions?,verbatim:https://www.reddit.com/r/cursor/comments/1tywmom/,no_data,Reddit threads; mem0; Cursor docs,medium,"Community-sourced phrasing, no vendor owns the answer"
+memory,problem-aware,Why does Claude Code keep forgetting my project conventions?,verbatim:https://milkeyai.com/blog/why-ai-coding-agent-keeps-forgetting-and-how-skills-fix-it,no_data,Anthropic docs; skills blogs,medium,Conventions framing maps to distilled org memory
+memory,problem-aware,How long is too long for a CLAUDE.md file?,paa,no_data,Anthropic docs; Reddit; Karpathy-derived posts,medium,Live PAA; pain of manual rules-file upkeep
+memory,problem-aware,Why should I not use CLAUDE.md?,paa,no_data,Anthropic docs; Reddit,low,Live PAA but answer space is opinion blogs
+memory,problem-aware,Why does my Claude Code context window fill up so fast?,verbatim:https://www.reddit.com/r/ClaudeCode/comments/1urlm8w/,no_data,Anthropic docs; Reddit,low,High volume but Anthropic first-party owns it
+memory,solution-aware,What is a CLAUDE.md file for?,paa,no_data,Anthropic docs (first-party),low,First-party docs near-impossible to displace
+memory,solution-aware,Is CLAUDE.md really useful?,paa,no_data,Reddit; blogs; Anthropic docs,medium,"Opinion-shaped, quotable third-party answer possible"
+memory,solution-aware,"What is the difference between hooks, skills, plugins, SKILL.md, CLAUDE.md and AGENTS.md in Claude Code?",verbatim:https://www.reddit.com/r/ClaudeCode/comments/1tmq9kz/,no_data,Anthropic docs; Reddit explainers,medium,Confusion is real and no clean canonical page exists
+memory,solution-aware,How do I make Claude Code memory persist across sessions?,synthetic,no_data,mem0; Anthropic docs; claude-mem plugins,medium,Direct product fit; mem0 already ranks nearby
+memory,solution-aware,How do I keep the same agent memory across machines?,synthetic,no_data,mem0; Zep; small session tools,high,Durability angle is under-served in current answers
+memory,solution-aware,How do I share a memory store across my team's Claude Code sessions?,verbatim:https://news.ycombinator.com/item?id=48626427,no_data,mem0; Zep; Letta,high,"Team memory explicitly asked for, nobody clearly answers"
+memory,solution-aware,How do I stop agent memory from going stale when the code changes?,verbatim:https://news.ycombinator.com/item?id=48626427,no_data,mem0; Zep,high,Staleness question raised on HN with no cited answer
+memory,solution-aware,What are tools that distil memory from past Claude Code sessions?,synthetic,no_data,mem0; claude-mem; Contextify,medium,Distillation is the product's own framing
+memory,product-aware,Is mem0 good for Claude Code memory?,synthetic,no_data,mem0 (incumbent),medium,"Rides mem0's 8000 US volume, comparison intent"
+memory,product-aware,What are the alternatives to mem0 for coding agent memory?,synthetic,no_data,mem0; Zep; Letta,medium,Alternatives keyword already measures 70 US volume
+memory,product-aware,Polygraph vs mem0 for team memory across agent sessions,synthetic,no_data,mem0,low,Zero brand awareness for Polygraph today
+observability,problem-aware,What did my Claude Code agent actually do last night?,synthetic,no_data,Anthropic docs; session viewers,high,Plain-language framing nobody has claimed
+observability,problem-aware,How do I audit and reproduce what a coding agent did?,verbatim:https://news.ycombinator.com/item?id=46969371,no_data,Langfuse; LangSmith; Braintrust,medium,HN names this as the actual pain point
+observability,problem-aware,Why is my coding agent a black box when it goes wrong?,verbatim:https://news.ycombinator.com/item?id=45346655,no_data,Langfuse; LangSmith; Helicone,medium,Generic LLM-obs vendors answer this loosely
+observability,problem-aware,How do I see what my team's Claude Code agents are doing?,synthetic,no_data,None clear; Anthropic Console,high,"Organizational invisibility, no incumbent answer"
+observability,problem-aware,Where are Claude Code logs stored?,verbatim:output/keywords.csv,no_data,Anthropic docs; sessionviewer.cc,medium,Measured keyword exists; log-location is entry point
+observability,solution-aware,What is agent observability?,paa,no_data,Langfuse; LangSmith; Datadog; AgentOps,low,Crowded definitional space with big incumbents
+observability,solution-aware,What is LLM observability?,paa,no_data,Langfuse; Datadog; Arize,low,Enterprise APM vendors own this definition
+observability,solution-aware,How do I check Claude Code usage for my whole team?,synthetic,no_data,Anthropic Console; ccusage,high,"Tool-named, org-scoped, thin existing answers"
+observability,solution-aware,What are the best tools for tracing Claude Code and Codex sessions?,synthetic,no_data,sessionviewer.cc; Langfuse; Contextify,high,"Tool-named listicle intent, small incumbents"
+observability,solution-aware,How do I get a dashboard of every Claude Code session in my organisation?,synthetic,no_data,None clear,high,"Directly on product thesis, unclaimed"
+observability,product-aware,Polygraph vs Langfuse for coding agent observability,synthetic,no_data,Langfuse,low,Langfuse has strong brand; Polygraph unknown
+observability,product-aware,What is a Langfuse alternative for Claude Code sessions?,synthetic,no_data,Langfuse; Helicone; LangSmith,medium,Alternative keywords measure real volume
+observability,product-aware,LangSmith vs Langfuse vs Polygraph for agent tracing,synthetic,no_data,Langfuse; LangSmith,low,Piggybacks a 450-volume comparison pair
+sharing,solution-aware,How do I share my Codex session with Claude Code?,brand-radar,500,claudereview.com; threadcast.dev; lore.link; aq.dev; Anthropic docs,medium,Measured 500; crowded but no entrenched winner
+sharing,solution-aware,How do I share my Claude Code session with Codex?,brand-radar,500,claudereview.com; threadcast.dev; lore.link; unabyss.com,medium,Measured 500; same cluster of small tools
+sharing,solution-aware,Can I share my Claude Code session with someone else?,brand-radar,300,aq.dev; custardseed.com; lore.link; Anthropic docs,medium,Measured 300; Anthropic docs cap the answer
+sharing,solution-aware,How do I share sessions between different AI agents?,brand-radar,0,opencontextprotocol.ai,medium,Zero volume but sole incumbent is a protocol site
+sharing,solution-aware,Can I resume a session I started on one machine on another machine?,brand-radar,0,Anthropic docs; sessionviewer.cc,medium,"Zero volume; durability thesis, cheap option"
+sharing,problem-aware,Why can't my teammate see the Claude Code session I just ran?,synthetic,no_data,Anthropic docs,high,"Tool-named problem framing, unclaimed"
+sharing,problem-aware,How do I review a teammate's AI-generated PR without seeing the agent session?,verbatim:https://news.ycombinator.com/item?id=47217963,no_data,None clear; Graphite; GitHub docs,high,Review-context gap named verbatim on HN
+sharing,problem-aware,How do I hand off a Claude Code session to another developer?,synthetic,no_data,lore.link; aq.dev; claudereview.com,medium,Handoff phrasing adjacent to 500-volume prompts
+sharing,problem-aware,How do you get two Claude Code sessions to talk to each other?,verbatim:https://www.reddit.com/r/ClaudeCode/,no_data,Reddit; Anthropic docs,medium,Verbatim Reddit title cited in AI answers already
+sharing,solution-aware,How to share a Claude Code session with my team,verbatim:https://suggestqueries.google.com/complete/search?q=how+to+claude+code+session,no_data,aq.dev; lore.link; threadcast.dev,medium,Confirmed Google autocomplete plus team qualifier
+sharing,solution-aware,How to export a Claude Code session,verbatim:https://suggestqueries.google.com/complete/search?q=how+to+claude+code+session,no_data,sessionviewer.cc; Anthropic docs,medium,Confirmed autocomplete; export is an entry step
+sharing,solution-aware,How do I publish a Claude Code session as a shareable link?,synthetic,no_data,custardseed.com; claudereview.com; lore.link,medium,Publish framing matches cited competitor titles
+sharing,solution-aware,Can I resume another person's Codex session?,synthetic,no_data,openai/codex issues; sessionviewer.cc,high,Open unresolved feature request in Codex repo
+sharing,solution-aware,Is there a tool to export and import agent session context between machines?,verbatim:https://news.ycombinator.com/item?id=47851434,no_data,Contextify; sessionviewer.cc,high,Verbatim unmet-need request on HN
+sharing,product-aware,claudereview vs threadcast for sharing Claude Code sessions,synthetic,no_data,claudereview.com; threadcast.dev,high,"Both have zero Google footprint, easy to out-document"
+sharing,product-aware,What is an alternative to lore.link for sharing Claude Code sessions?,synthetic,no_data,lore.link; aq.dev,high,Incumbent has 1 organic keyword total
+sharing,product-aware,Polygraph vs claudereview for team session sharing,synthetic,no_data,claudereview.com,medium,Competitor is small and undefended
+sharing,product-aware,aq.dev vs custardseed for publishing Claude Code sessions,synthetic,no_data,aq.dev; custardseed.com,high,Comparison page nobody has written yet
+orchestration,problem-aware,How do I run multiple Claude Code agents in parallel without them conflicting?,verbatim:https://news.ycombinator.com/item?id=46524130,no_data,Anthropic docs; Conductor; vibe-kanban,medium,"Worktree-per-agent advice is folklore, not documented"
+orchestration,problem-aware,Why do I have to set up a git worktree for every Claude Code agent?,verbatim:https://news.ycombinator.com/item?id=46524130,no_data,Blogs; Anthropic docs,high,Manual workflow overhead named directly
+orchestration,problem-aware,How do I manage Claude Code agents running on multiple machines?,verbatim:https://news.ycombinator.com/item?id=48479574,no_data,None clear; Conductor,high,Explicit buying-intent question with no cited answer
+orchestration,problem-aware,Why do my parallel agents keep redoing each other's work?,synthetic,no_data,None clear,high,Unclaimed framing of coordination failure
+orchestration,solution-aware,What is a subagent in Claude Code?,verbatim:output/keywords.csv,no_data,Anthropic docs,low,First-party docs own the definition
+orchestration,solution-aware,How do I use subagents in Claude Code?,verbatim:output/keywords.csv,no_data,Anthropic docs; blogs,low,Measured keyword but Anthropic-owned
+orchestration,solution-aware,What is the best agent orchestration framework for coding agents?,verbatim:https://suggestqueries.google.com/complete/search?q=best+agent+orchestration,no_data,LangGraph; CrewAI; Conductor,medium,Autocomplete-confirmed; framework incumbents are LLM-side
+orchestration,solution-aware,Is there a self-hostable tool to launch and monitor Codex and Claude Code agents?,verbatim:https://news.ycombinator.com/item?id=48479574,no_data,None clear; open-source runners,high,"Verbatim unmet request, tool-named"
+orchestration,solution-aware,How do I automate git worktree setup for parallel Claude Code agents?,synthetic,no_data,Blogs; vibe-kanban; Conductor,high,Directly matches provisioning feature
+orchestration,solution-aware,Claude Code subagents vs skills - which should I use?,verbatim:output/keywords.csv,no_data,Anthropic docs; Reddit,medium,"Measured 30 volume, live confusion"
+orchestration,product-aware,Conductor vs Claude Code for orchestrating agents,synthetic,no_data,Conductor,medium,Measured keyword exists at 20 volume
+orchestration,product-aware,Polygraph vs Conductor for parallel agent orchestration,synthetic,no_data,Conductor,low,Polygraph brand unknown in this category
+orchestration,product-aware,What is the best tool to orchestrate Claude Code and Codex agents across repos?,synthetic,no_data,None clear,high,Cross-repo plus orchestration has no incumbent
+evaluation,problem-aware,How do I know if my Claude Code agent's output is actually correct?,synthetic,no_data,Braintrust; LangSmith; blogs,medium,Verification loop is a stated product feature
+evaluation,problem-aware,How do I stop Claude Code from regressing things it already fixed?,synthetic,no_data,None clear,high,"Concrete symptom, no vendor owns it"
+evaluation,problem-aware,How do we keep an agent harness coherent as it grows?,verbatim:https://martinfowler.com/articles/harness-engineering.html,no_data,martinfowler.com,medium,"Fowler's own open question, high-authority hook"
+evaluation,problem-aware,Why do my agent instructions and my CI feedback contradict each other?,verbatim:https://martinfowler.com/articles/harness-engineering.html,no_data,martinfowler.com,medium,Derived from Fowler's second open question
+evaluation,solution-aware,How do I benchmark coding agents?,verbatim:https://suggestqueries.google.com/complete/search?q=how+to+coding+agent,no_data,SWE-bench; Terminal-Bench; academic sites,low,Benchmark space is academic and saturated
+evaluation,solution-aware,How do I evaluate AI coding agents in my own repo?,verbatim:output/keywords.csv,no_data,Braintrust; LangSmith; Inspect AI,medium,Own-repo qualifier narrows a crowded term
+evaluation,solution-aware,How do I build a feedback loop that verifies what Claude Code changed?,synthetic,no_data,None clear,high,Feedback-loop framing is core product language
+evaluation,solution-aware,What is LLM as a judge?,verbatim:output/keywords.csv,no_data,LangSmith; Braintrust; Confident AI,low,"Definitional, owned by eval vendors"
+evaluation,product-aware,What are LangSmith alternatives for evaluating coding agents?,synthetic,no_data,LangSmith; Langfuse; Braintrust,medium,Alternatives intent measures 200 volume
+evaluation,product-aware,Braintrust vs Langfuse for coding agent evals,synthetic,no_data,Braintrust; Langfuse,low,"Both entrenched, Polygraph absent"
+cost,problem-aware,Why does Claude Code burn through my usage limit so fast?,verbatim:https://www.reddit.com/r/ClaudeCode/comments/1s6zxkp/,no_data,Anthropic docs; Reddit,medium,High-frustration phrasing with real Reddit volume
+cost,problem-aware,How do I budget-cap 100 parallel agents sharing one API key?,verbatim:https://news.ycombinator.com/item?id=47061081,no_data,LiteLLM; Helicone,high,"Verbatim HN framing, org-scale, no clean answer"
+cost,problem-aware,Which team and which project is driving our Claude Code spend?,verbatim:https://www.cloudzero.com/blog/claude-code-agents/,no_data,CloudZero; Helicone; ccusage,high,Blog states most orgs cannot answer this
+cost,problem-aware,Why did one message cost me twenty dollars in Claude Code?,verbatim:https://www.reddit.com/r/ClaudeAI/comments/1um9j1u/,no_data,Reddit; Anthropic docs,low,Emotive but Anthropic pricing docs answer it
+cost,solution-aware,How do I check token usage in Claude Code?,verbatim:output/keywords.csv,no_data,ccusage; Anthropic docs,medium,"Measured 90 volume, tool-named"
+cost,solution-aware,How do I reduce token usage in Claude Code?,verbatim:output/keywords.csv,no_data,ccusage; blogs; Reddit,medium,Measured 60 volume; context distillation angle
+cost,solution-aware,How do I track Claude Code spend across my whole engineering org?,synthetic,no_data,CloudZero; Helicone; LiteLLM,high,Org-scope framing has no dominant answer
+cost,solution-aware,What tools track token spend across both Claude Code and Codex?,synthetic,no_data,ccusage; LiteLLM; OpenRouter,high,Cross-tool qualifier is genuinely unserved
+cost,solution-aware,Is there a cost dashboard for Claude Code teams?,synthetic,no_data,ccusage; Anthropic Console,high,Team qualifier unclaimed by ccusage
+cost,product-aware,What is a ccusage alternative for org-wide Claude Code cost tracking?,synthetic,no_data,ccusage,high,"ccusage is single-user only, easy wedge"
+cost,product-aware,LiteLLM vs Polygraph for tracking agent spend,synthetic,no_data,LiteLLM,low,LiteLLM strong; different layer of the stack
+cost,product-aware,Helicone vs Langfuse for coding agent cost tracking,synthetic,no_data,Helicone; Langfuse,low,Both entrenched proxy-layer incumbents
+governance,problem-aware,Should I use --dangerously-skip-permissions in Claude Code?,verbatim:https://www.reddit.com/r/ClaudeCode/comments/1v2qc2j/,no_data,Reddit; Anthropic docs,medium,"Two high-engagement Reddit threads, no vendor answer"
+governance,problem-aware,Why are AI coding agent permissions default-allow?,verbatim:https://news.ycombinator.com/item?id=47571356,no_data,HN; Anthropic docs,medium,"Post-incident framing, strong opinion hook"
+governance,problem-aware,Can my employer see what I did in Claude Code?,verbatim:https://www.reddit.com/r/ClaudeCode/comments/1uwfvmk/,no_data,Anthropic docs; Reddit,medium,"High-anxiety query, Anthropic docs partly answer"
+governance,problem-aware,How do I stop Claude Code from running destructive git commands?,verbatim:https://news.ycombinator.com/item?id=47571356,no_data,Anthropic docs; blogs,high,"Concrete incident-driven phrasing, thin answers"
+governance,problem-aware,How do I keep my agents compliant with our architecture decisions?,verbatim:https://www.reddit.com/r/ChatGPTCoding/comments/1oqzu7p/,no_data,Reddit; blogs,high,Policy-enforcement thesis in the user's own words
+governance,solution-aware,What is Claude Code security and how do I configure it?,verbatim:output/keywords.csv,no_data,Anthropic docs,low,First-party security docs dominate
+governance,solution-aware,How do I enforce coding standards across every Claude Code session in my company?,synthetic,no_data,None clear,high,Org policy enforcement is unclaimed vocabulary
+governance,solution-aware,How do I sandbox Claude Code safely?,synthetic,no_data,Anthropic docs; devcontainer blogs,medium,Sandboxing has partial first-party coverage
+governance,solution-aware,How do I get an audit log of every AI agent action in my org?,synthetic,no_data,Anthropic Enterprise; Datadog,high,Audit at org scope is on-thesis and unserved
+governance,solution-aware,Allowlist vs denylist for AI coding agent permissions,verbatim:output/keywords.csv,no_data,Anthropic docs; blogs,medium,Community-named as the keystone decision
+governance,product-aware,What are Open Policy Agent alternatives for AI coding agents?,verbatim:output/keywords.csv,no_data,Open Policy Agent,medium,"Measured 150 volume, wrong-layer incumbent"
+governance,product-aware,Polygraph vs Open Policy Agent for agent guardrails,synthetic,no_data,Open Policy Agent,low,"OPA is infra-layer, mismatched comparison"
+portability,problem-aware,Why do I have to rewrite my rules file for every AI coding tool?,synthetic,no_data,agents.md; Anthropic docs,high,Real pain behind the agents.md-vs-claude.md cluster
+portability,problem-aware,Do I need to run /init if I already have AGENTS.md?,verbatim:https://www.reddit.com/r/ChatGPTCoding/comments/1nthpn6/,no_data,Reddit; OpenAI docs,medium,"Verbatim question, thin existing answers"
+portability,problem-aware,Is AGENTS.md the same as CLAUDE.md?,paa,no_data,agents.md; Anthropic docs; blogs,medium,Live PAA plus 250-volume keyword pair
+portability,problem-aware,Should AGENTS.md be committed to the repo?,paa,no_data,agents.md; Reddit,medium,"Live PAA, short factual answer wins"
+portability,problem-aware,Where should I put AGENTS.md in a multi-repo setup?,paa,no_data,agents.md; blogs,high,PAA plus crossrepo twist nobody covers
+portability,solution-aware,AGENTS.md vs CLAUDE.md - which should I use?,verbatim:output/keywords.csv,no_data,agents.md; Anthropic docs,medium,"250-volume measured pair, comparison intent"
+portability,solution-aware,How do I keep the same context when I switch from Claude Code to Codex?,synthetic,no_data,unabyss.com; codex.danielvaughan.com,high,"Tool-named cross-harness, adjacent to 500-volume prompts"
+portability,solution-aware,How do I migrate from Cursor to Claude Code without losing my rules?,verbatim:output/keywords.csv,no_data,Cursor docs; blogs,medium,Measured keyword base plus a distinct qualifier
+portability,solution-aware,How do I sync Cursor rules across all my projects?,verbatim:output/keywords.csv,no_data,Cursor docs; blogs,medium,Zero measured volume but clean product fit
+portability,solution-aware,How does context get normalised across providers when switching harnesses?,verbatim:https://news.ycombinator.com/item?id=47853770,no_data,ctx; unabyss.com,high,"Sophisticated buyer question, almost no answers"
+portability,solution-aware,How do I save and restore agent state between Claude Code and Codex?,verbatim:https://news.ycombinator.com/item?id=46209250,no_data,Contextify; unabyss.com,high,Verbatim 'context check-ins' request
+portability,solution-aware,Which AI coding harness should I pick if I want to swap later?,synthetic,no_data,Comparison blogs; agents.md,medium,Frames swappability as the buying criterion
+portability,product-aware,Open Context Protocol vs Polygraph for cross-tool agent context,synthetic,no_data,opencontextprotocol.ai,medium,Sole incumbent on the cross-agent sharing prompt
+portability,product-aware,unabyss vs Polygraph for sharing context between Codex and Claude Code,synthetic,no_data,unabyss.com,high,Incumbent is a single blog page
+crossrepo,problem-aware,Why does Claude Code only see one repo when my change spans three?,synthetic,no_data,None clear,high,Flagship problem with zero competing content
+crossrepo,problem-aware,How do I tell a coding agent what depends on this API in other repos?,verbatim:https://riftmap.dev/blog/ai-coding-agents-need-cross-repo-context/,no_data,riftmap.dev,high,One small blog is the entire incumbent set
+crossrepo,problem-aware,How do I coordinate a PR across multiple repositories with Claude Code?,synthetic,no_data,Graphite; GitHub docs,high,"Manual PR coordination overhead, tool-named"
+crossrepo,problem-aware,Why does my agent hallucinate APIs that live in another repository?,synthetic,no_data,None clear,high,Concrete failure mode nobody has written up
+crossrepo,solution-aware,Is there a tool that prepares multi-repository worktrees for a subagent?,verbatim:https://news.ycombinator.com/item?id=48683361,no_data,None clear,high,Verbatim explicit unmet-need question on HN
+crossrepo,solution-aware,How do I search across multiple repositories from a coding agent?,verbatim:output/keywords.csv,no_data,Sourcegraph; GitHub code search,medium,"Sourcegraph is entrenched for humans, not agents"
+crossrepo,solution-aware,Are monorepos better for AI coding agents?,verbatim:output/keywords.csv,no_data,Blogs; Reddit,high,Question is live and unresolved in the community
+crossrepo,solution-aware,Monorepo vs polyrepo for AI coding agents,synthetic,no_data,martinfowler.com; monorepo blogs,medium,Rides a 400-volume term with an agent qualifier
+crossrepo,solution-aware,How do I give Claude Code cross-repo context without moving to a monorepo?,synthetic,no_data,riftmap.dev; Sourcegraph,high,"Precise product fit, no competing page"
+crossrepo,solution-aware,What is the best way to run Claude Code across multiple repos at once?,synthetic,no_data,None clear,high,"Tool-named, on-thesis, unclaimed"
+crossrepo,product-aware,riftmap vs Polygraph for cross-repo agent context,synthetic,no_data,riftmap.dev,high,"Only named player, tiny footprint"
+crossrepo,product-aware,What is the best tool for cross-repo AI agent coordination?,synthetic,no_data,None clear,high,Category-defining query with no incumbent

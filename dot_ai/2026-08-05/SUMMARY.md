@@ -14,6 +14,16 @@ Polygraph session `zesty-eagle-2a40a186`, single repo nrwl/nx - https://snapshot
 
 Removed from Active Claude Sessions: `/Users/jack/projects/nx-worktrees/NXC-4687` (merged today).
 
+## GitHub App organization permissions: docs accuracy + stale CLI hint - MERGED #36581
+
+PR https://github.com/nrwl/nx/pull/36581 merged as `378526cd7f`. Plan: `dot_ai/2026-08-05/tasks/github-app-org-permissions-docs.md`. No Polygraph session.
+
+- Accuracy fix: the `Administration` entry claimed it covered "listing every repository in the organization" for setup. Verified in ocean that repo listing goes through `GET /orgs/{org}/repos` and `GET /user/installations/{id}/repositories` - both `Metadata: read`. Only `GET /orgs/{org}/installations` needs org `Administration`. Moved the clause to the `Metadata` entry.
+- Stale CLI hint (nrwl/ocean): `onboarding-remediation.ts:77` told users to grant `"Administration: Read & Write"`, which the GitHub App stopped requesting - dead end in app settings, then a support ticket. Now names `Contents: Read & Write` only. Fires on any 403 containing "permission" plus the 502 create-repository branch. Version plan added (remediation shipped 2026-04-01 #10587, so it's a fix against released prod code).
+- STYLE_GUIDE pass caught four things vale can't see: a semicolon, the re-grant claim duplicated in two sections, a balanced-contrast + restatement closer in `Members`, and `org` vs `organization`. Each `When it's used:` line rewritten to add a fact rather than restate `Used for:`.
+- Jack rejected two intro drafts. The AI tell he flagged: `claim because abstraction: list, list` - the reason clause says nothing alone and the colon dumps the real content after it. Final version leads with GitHub as the actor and ends on "organization permissions" so it hands off to the list below.
+- PR merged mid-session, so master carries the v1 intro wording. Remaining 2-line delta committed on a fresh branch off `origin/master`: `docs/github-app-permissions-intro-wording` `61c35a9305`, unpushed. Ocean fix on `fix/onboarding-permission-hint` `b4faebb334`, unpushed, no PR.
+
 ## Other sessions today (see their task files)
 
 - **Review PR #36567** (minimatch -> picomatch, `dot_ai/2026-08-05/tasks/review-pr-36567.md`): two merge-blocking negative-glob regressions found (tree-aware glob includes created files outside positive patterns; Jest plugin infers projects outside PM workspaces).
