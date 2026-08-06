@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-08-06 | [cve-audit-2026-08-06.md](./cve-audit-2026-08-06.md) | Full re-audit (24-day gap since 07-13). 8 findings resolved (ocean `tar`/`@modelcontextprotocol/sdk`/`undici`/OTel pipeline; nx-labs `storybook`; nx `axios`/`@nx/key`). **New:** published `nx@latest`/`nx@next` both pin a vulnerable `brace-expansion` (CVE-2026-69152) — fix already in mainline source, just unreleased. **New:** nx-dev's Next.js (16.2.7, 4 CVEs) and `sharp` now flagged (public site). nx `rollup`/`vite` P0 items now **57 days stale**, Vite's fix target moved up mid-audit as a new CVE landed on the still-unpatched version |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
