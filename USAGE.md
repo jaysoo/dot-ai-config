@@ -19,7 +19,7 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 | github:github          | skill   | 2026-07-13   | 1     |
 | use-plannotator-for-review | skill | 2026-08-05 | 2     |
 | remotion-best-practices | skill   | 2026-07-13   | 3     |
-| caveman                | skill   | 2026-08-07   | 38    |
+| caveman                | skill   | 2026-08-07   | 39    |
 | 1-on-1-prep            | skill   | 2026-07-23   | 2     |
 | polygraph:polygraph    | skill   | 2026-08-06   | 11    |
 | op-request-reason      | skill   | 2026-07-28   | 1     |
@@ -95,3 +95,4 @@ cnw-stats-analyzer (2026-04-29): 1
 2026-08-05: invoked summarize, reflect skills (NXC-4687 merged #36508 wrap-up; CLAUDE.md updates + cnw-dist-smoke skill created)
 2026-08-06: invoked caveman skill (Nx keyword & prompt audit session)
 2026-08-07: invoked caveman skill (nvim csvview.nvim plugin add)
+2026-08-07: invoked caveman skill (TODO done-check session)

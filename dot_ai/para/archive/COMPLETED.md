@@ -2,6 +2,23 @@
 
 ### August 2026
 
+- [x] NXC-4612: Nightly E2E matrix ("golden") failures - CLOSED UNMERGED, dropped (2026-08-07)
+  - Plan: `dot_ai/2026-07-28/tasks/nxc-4612-golden-e2e-matrix-failures.md`
+  - Summary: Triaged 45/139 red jobs, 302 distinct failures -> 5 root causes. The test-only fix (e2e harness no longer appends `--verbose` under `NX_E2E_VERBOSE_LOGGING`, clearing 114 snapshot failures) shipped as draft PR #36506, which was closed unmerged 2026-07-29 with no comment. Commit `0c7462479f` is NOT on master, so those failures stand. Dropped from TODO by Jack's call 2026-08-07; Linear NXC-4612 still open if this gets revived.
+  - Live field bug found along the way, still unfiled: typescript@7.0.2 went npm `latest` 2026-07-08 and its entry exports no compiler API, so npm hoisting breaks `create-nx-workspace --preset=react-monorepo --package-manager=npm` on released nx (reproduced on 23.1.0). Candidate fix parked on local branch `nxc-4612-typescript-7-preset-pin` (`461e15b3e5`); scoping never settled.
+  - Polygraph session `tidy-condor-02183c70`
+
+- [x] NXC-2793: Intermittent lockfile graph errors - CLOSED UNMERGED, dropped (2026-08-07)
+  - Plan: `dot_ai/2026-07-05/tasks/nxc-2793-lockfile-intermittent-errors.md`
+  - Summary: Landscape scan, code trace, repro, and a fix for stale/corrupted cache producing "Source project does not exist: npm:x". Draft PR #36229 closed unmerged. Linear NXC-2793 still sits In Review. Dropped from TODO by Jack's call 2026-08-07.
+  - Polygraph session `nxc-2793-bc2a19f2`
+
+- [x] CLOUD-4891: Cookie-based env overrides for cloud e2e tests (ocean) - MERGED #12652 (2026-08-04)
+  - Plan: `dot_ai/2026-07-27/tasks/cloud-4891-cookie-env-overrides.md`
+  - Summary: Per-request `e2e-env-override` cookie merged into `context.serverEnvironment` in `createDataArgs`, gated on `E2E_TEST_MODE`, so a Playwright test permutes env flags with no server restart. Teardown is automatic since each test gets a fresh browser context. One spec proves the previously uncatchable demo-tab regression permutation.
+  - Follow-up to file: retire `serveDistTaskAnalyticsRolloutDisabled` via `envOverride.set()`.
+  - Polygraph session `fresh-wombat-25345f30`
+
 - [x] Sync Claude Code allow-list to Codex (2026-08-07)
   - Plan: `dot_ai/2026-08-07/tasks/sync-claude-permissions-to-codex.md`
   - Summary: Added a version-controlled Codex permission profile matching Claude Code's
@@ -31,6 +48,11 @@
     apply: only 5 open PRs predate 2026 and none are low-effort; of 44 first-time-contributor
     PRs across all 155 open, only 2 have a thin description and both explain their purpose.
     Nothing was posted to GitHub - all `gh` calls read-only.
+  - Outcome (same day): Jack closed 24, **24/24 matching a `close` recommendation**, nothing
+    marked keep or unsure was closed and nothing reopened. Everything backed by a verified repro
+    or fix commit is cleared. The 13 remaining close recs are almost entirely the
+    platform-blocked set (11 of 13 never executed). Follow-through tracked under "GitHub issue
+    closure triage follow-through" in TODO.md.
 
 - [x] DOC-579: Getting-started cleanup - intro, Start a New Project, Add to Existing (2026-08-06)
   - Plan: `dot_ai/2026-08-06/tasks/doc-579-getting-started-cleanup.md`
@@ -129,6 +151,23 @@
   - Polygraph session `humble-beaver-3540ffdd`, single repo nrwl/nx - https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/humble-beaver-3540ffdd
 
 ### July 2026
+
+- [x] CLOUD-4927: Frontend/Polygraph HIGH vulnerabilities (ocean) - MERGED #12656 (2026-07-30)
+  - Plan: `dot_ai/2026-07-30/tasks/cloud-4927-frontend-polygraph-high-vulns.md`
+  - Summary: Cleared the 20 high-severity trivy CVEs on nx-cloud-frontend / polygraph-frontend via pnpm overrides mirrored across root + both apps (brace-expansion, js-yaml@4, undici, lodash-es, path-to-regexp, @grpc/grpc-js) plus the polygraph tar drift. Caught that the ticket's undici "fixed in 6.26.0" was wrong (advisory says 6.27.0) before shipping a still-vulnerable bump. Rebased onto Nicole's merged OTel #12631. 20 sub-issues triaged: 8 shipped here, 2 duplicates, 9 already-patched. CLOUD-5066 filed for the 4 RR7-blocked CVEs.
+  - Open follow-ups: npm vendors brace-expansion 5.0.7 with no fixed release (CLOUD-4932 rescans will still report); `validate-pnpm-overrides.mjs` does not cover `apps/polygraph`, which is how its tar override drifted.
+  - Polygraph session `sharp-puma-7f09fb0e`
+
+- [x] NXC-4649: Investigate CNW acquisition decrease + error trends (2026-07-20)
+  - Summary: Closed in Linear as Done.
+
+- [x] Review PR #34890 - vite ts paths custom targets (nx) - MERGED (2026-07-04)
+  - Plan: `dot_ai/2026-07-03/tasks/pr-34890-rebase-vite-ts-paths.md`
+  - Summary: Rebased shairez's fork PR and got CI green; merged 2026-07-04. Tracked as NXC-4360, closed Done.
+
+- [x] CNW: `create-nx-workspace .` into the current directory - MERGED #36134 (2026-07-02)
+  - Plan: `dot_ai/2026-06-27/tasks/cnw-current-directory.md`
+  - Summary: Scaffold into a "functionally empty" cwd plus tarball template download (no git). The feature already existed but demanded a strictly-empty directory; the real gap was fresh GitHub repos carrying a README, which github.com/new + Copilot flows always produce.
 
 - [x] NXC-4688: Optional webpack/MF deps for @nx/react + @nx/next - MERGED #36492 (2026-07-30)
   - Plan: `dot_ai/2026-07-27/tasks/nxc-4688-react-next-webpack-mf-optional-deps.md`
@@ -351,6 +390,13 @@
 
 ### June 2026
 
+- [x] PR #35682: rspack/rsbuild v2 multi-version compliance (nx) - MERGED (2026-06-17)
+  - Summary: Picked up from Jason (PTO) and landed. `@nx/rspack` + `@nx/rsbuild` + `@nx/angular-rspack` + `@nx/module-federation` support `@rspack/core@2` / `@rsbuild/core@2`; v1 stays in the support window; `packageJsonUpdates` migrations cover workspaces still on v1.
+
+- [x] Review CNW init enhancements spec - NXC-4311 + DOC-492 + NXC-4367 - all CANCELED (2026-06-15)
+  - Plan: `dot_ai/2026-05-12/specs/cnw-init-enhancements.md`
+  - Summary: Never green-lit. All three tickets canceled 2026-06-15, so the spec review is moot. NXC-4367's finding still holds if anyone revisits: init hardcodes `nxCloud = false` whenever an AI agent is detected, which is why AI init sat at a 0% Cloud yes-rate against CNW's 85%.
+
 - [x] NXC-4324: Deprecate webpack/rspack config compose helpers (nx) - PR #35867 MERGED (2026-06-04)
   - Summary: Warn-once-per-package + `@deprecated` JSDoc on composePlugins/withNx/withWeb/withReact, plus a suppression counter wrapping the 3 internal composers (rspack executor, storybook, next CT), 3 docs asides, 3 specs. Removal targeted for v24. Declined the review's DRY-factory ask. Polygraph session `nxc-4324-2bacd010`. Follow-up left open: rspack React generator emits compose configs unconditionally even with the inferred plugin.
 
@@ -448,6 +494,13 @@
 
 ### May 2026
 
+- [x] NXC-4401: E2E agentic Cloud onboarding - CANCELED (2026-05-12)
+  - Plan: `dot_ai/2026-04-29/tasks/doc-490-agentic-cloud-onboarding.md`
+  - Summary: Routing `nx connect` / `nx init` / CNW through `nx-cloud onboard connect-workspace --json` so Cloud setup stays in the terminal. PR #35520 hinted agents at the onboard command; ticket canceled 2026-05-12 without landing the full flow.
+
+- [x] Publish remote cache packages to address CVEs - OBSOLETE (2026-05-21)
+  - Summary: No longer possible or wanted. `@nx/s3-cache`, `@nx/shared-fs-cache`, `@nx/gcs-cache`, and `@nx/azure-cache` were all deprecated on npm 2026-05-21 over CVE-2025-36852, which is unfixable by design. npm now points at `/docs/reference/deprecated/self-hosted-cache-packages` for each. Verified 2026-08-07.
+
 - [x] Fix nx:run-script shell escaping (issue #34717) (2026-05-27) ✓ 2026-05-27
   - Summary: Two-commit PR [#35812](https://github.com/nrwl/nx/pull/35812) on branch `fix/34717-run-script-shell-quoting`. Root cause: `__unparsed__` joined with space and passed to `spawn(..., { shell: true })`, so shell metachars (`{}`, commas, quotes) in JSON values get re-interpreted by brace expansion. Fix reuses the existing `wrapArgIntoQuotesIfNeeded` helper from `run-commands.impl.ts` — moved it to `utils/shell-quoting.ts` in commit 1 (no-op extract), then mapped `__unparsed__` through it before joining in commit 2. Added 4-case spec for run-script. Verified end-to-end against nbarnett/nx-bug-repro: broken baseline reproduced, then patched in-tree installed nx and confirmed JSON survives intact through the spawn path. Polygraph session `triage-b9b40728` tracks repos (nrwl/nx + nbarnett/nx-bug-repro) and the PR.
   - Files: PR #35812, commits `b0b89c4018` (cleanup) + `92004a1cc4` (fix), Polygraph session https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/triage-b9b40728
@@ -491,6 +544,9 @@
   - Files: `dot_ai/2026-05-06/SUMMARY.md`, commits `89fae8e8e9` + `8a49d3611a`
 
 ### April 2026
+
+- [x] Review Ben's 3 Ocean structural PRs - all MERGED (2026-04-20)
+  - Summary: #10265 (`op-secrets` env loading for e2e dev with a fallback when the 1Password CLI is absent) and #10264 (ToS redirect flake from DB/env drift) merged 2026-04-10; #10635 (module boundary enforcement, `feature-*` -> `util-*` renames + `nx_tags` on 5 untagged libs) merged 2026-04-20. Carried on the TODO long after the fact.
 
 - [x] DOC-498: Edge function rewrite-framer-urls 500s on bot probes with leading // (2026-04-30) ✓ 2026-04-30
   - Summary: WordPress vuln scanners send `GET //wp/wp-includes/wlwmanifest.xml`. `new URL(pathname, framerUrl)` at `rewrite-framer-urls.ts:205` parses `//wp/...` as a protocol-relative URL — `wp` promoted to host, fetch DNS-fails, function 500s. Fix collapses leading `/+` to `/` and short-circuits common probes (`wp-(includes|admin|content)`, `xmlrpc.php`, `wlwmanifest`, `.env`, `.git/`) with a 404. Reproduced on prod with `curl --path-as-is` (without that flag curl normalizes `//` → `/` and you can't repro). Linear DOC-498, branch `doc-498-edge-function-bot-probe-fix`, commit `62a48ca6e7`, [PR #35527](https://github.com/nrwl/nx/pull/35527).
@@ -637,18 +693,14 @@
 
 - [x] Check on this disabled test e2e/nx-init/src/nx-init-nest.test.ts (https://github.com/nestjs/nest-cli/issues/3110) ✓ 2026-03-25
 
-
 - [x] Look through all TODO(v23) comments and add tasks for them ✓ 2026-03-25
 
-
 - [x] Help Nicole with onboarding to hit 600 per week ✓ 2026-03-25
-
 
 - [x] Take cloud stats script and build into lighthouse (2026-02-28 09:09) ✓ 2026-03-25
 
 - [x] Ask Alexis about Colum sending hardware back (2026-03-03 13:52) ✓ 2026-03-25
   - For offboarding
-
 
 - [x] Ask Alexis to update levels in Wagepoint and TriNet (2026-03-03 13:53) ✓ 2026-03-25
 
