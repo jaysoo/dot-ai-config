@@ -1023,6 +1023,29 @@ require("lazy").setup({
 			{ "<leader>z", "<cmd>ZenMode<cr>", desc = "Toggle [Z]en Mode" },
 		},
 	},
+
+	-- CSV/TSV as aligned table (virtual text, buffer untouched)
+	{
+		"hat0uma/csvview.nvim",
+		ft = { "csv", "tsv" },
+		cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
+		opts = {
+			parser = { comments = { "#", "//" } },
+			view = {
+				display_mode = "border",
+				header_lnum = 1,
+			},
+			keymaps = {
+				textobject_field_inner = { "if", mode = { "o", "x" } },
+				textobject_field_outer = { "af", mode = { "o", "x" } },
+				jump_next_field_end = { "<Tab>", mode = { "n", "v" } },
+				jump_prev_field_end = { "<S-Tab>", mode = { "n", "v" } },
+			},
+		},
+		keys = {
+			{ "<leader>cv", "<cmd>CsvViewToggle<cr>", desc = "Toggle [C]SV [V]iew" },
+		},
+	},
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {

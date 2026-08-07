@@ -13,15 +13,19 @@ Ranked by size of the opening, not by ease. Every figure is US volume from Ahref
 turborepo.dev holds position 1 on `remote cache` - the exact term nx.dev sits at position 9
 on. rushjs.io holds position 5 on `build cache`. gradle.com owns the Gradle cache terms.
 depot.dev ranks on `github actions cache` (500) and position 3 on `gradle remote build cache`
-with nothing but blog posts about *other tools'* caches. Nx ships the product and ranks on
+with nothing but blog posts about _other tools'_ caches. Nx ships the product and ranks on
 one 20-volume term. The competitor pattern is cheap and consistent: a docs page named after
 the generic concept, plus vendor-blog content aimed at other tools' cache pain.
 
+JACK: 100% we need good SERP for `remote cache` and `build cache`.
+
 **2. The definitional CI/CD corpus is entirely CircleCI's.**
-`ci/cd pipeline` (9,000, and a *separate keyword* from the tracked `ci cd pipeline` at
+`ci/cd pipeline` (9,000, and a _separate keyword_ from the tracked `ci cd pipeline` at
 4,800/KD 0), `continuous integration` (7,900), `what is ci cd` (1,700). CircleCI holds them
 off two evergreen pages. Filtering nx.dev's US organic set to CI vocabulary returns 13 rows,
 all `nx `-branded.
+
+JACK: I think these are too general to be useful to us. Skip.
 
 **3. Monorepo definition and synonym surface.**
 monorepo.tools ranks 1-5 across ~20 spelling and definitional variants (`mono repo`,
@@ -29,23 +33,31 @@ monorepo.tools ranks 1-5 across ~20 spelling and definitional variants (`mono re
 absent. Nx owns monorepo.tools, so this is an internal-cannibalisation question as much as a
 gap. One glossary page covers most of it.
 
+JACK: Okay since we own monorepo.tools. Perhaps `monorepo benefits` and `monorepository` should match nx.dev though.
+
 **4. The flaky-test explainer corpus is a clean shutout.**
 Trunk.io and Datadog own the whole neighbourhood - definition, meaning, and per-framework
 (`playwright flaky`, `cypress flaky`, `vitest flaky`) at KD 0-2. Nx Cloud ships flaky-task
-detection *and owns the Playwright/Cypress/Jest plugins*, and ranks for none of it. The blind
+detection _and owns the Playwright/Cypress/Jest plugins_, and ranks for none of it. The blind
 prompt screen confirms this at the AI layer: three separate flaky-test prompts named
 competitors and **no monorepo build system at all**.
+
+JACK: We should add KB articles for playwright, cypress, vitest, jest flakiness. Trunk.io owns `vitest flaky` searches with `How to avoid and detect flaky tests in Vitset`.
 
 **5. Test-selection vocabulary belongs to Gradle and Launchable.**
 `test impact analysis` (150, KD 3) and `predictive test selection` (100, KD 3) are the
 established names for what `nx affected` does. gradle.com holds position 1 with a dedicated
 product page. Nx has no page using either phrase.
 
+JACK: Both `test impact analysis` and `predictive test selection` are known terms, we should target the former at least since that's what affected is and it has high volume.
+
 **6. Cost and pricing calculator assets.**
 depot.dev ranks position 1 for `github actions cost` off a **price-calculator tool page**,
 not a blog post, and Blacksmith holds position 1 on `github actions free tier` from one post.
 `github actions pricing` is 1,200/KD 45, `github actions cost` 450. Nx Cloud has the stronger
 cost story and no comparable asset.
+
+JACK: 100% we need KB articles about GHA costs and how we're cheaper, but we are blocked cheapening.
 
 **7. Repo consolidation is unowned by anyone.**
 ~180 volume across the merge-repos family (`merge two git repositories`, `how to merge two
@@ -54,10 +66,14 @@ Discussions, personal blogs and a Bitbucket KB page. No build tool ranks. `nx im
 direct answer. The blind screen scored the head term a **gap** - the generic phrasing pulls a
 pure-git answer, while the same intent phrased with "monorepo" names four build tools.
 
+JACK: Not convinced, but maybe `nx import` should at least mentino merging git repos. Majority of people will not be able to use it unless they happen to be Nx users.
+
 **8. Package-manager comparison content.**
 `pnpm vs npm` (1,500, KD 3), `npm vs pnpm` (300, KD 2), `pnpm vs yarn` (250), `npm workspaces`
 (500, KD 5). rushjs.io ranks top-10 across ~10 of these off one docs page. This is where teams
 stand immediately before they need a task runner.
+
+JACK: Low-effort so should do. Rush cannot be the one to own this search (https://rushjs.io/pages/maintainer/package_managers).
 
 **9. MCP and llms.txt.**
 `mcp server` 38,000, `what is an mcp server` 5,900/KD 24, `build mcp server` 800/KD 12,
@@ -66,11 +82,15 @@ llms.txt, and tracks none of it. turborepo.dev has **zero** AI footprint - all 5
 ranking keywords contain no ai/mcp/agent/llm term. This is an uncontested differentiator
 against the main competitor that neither side is currently ranking for.
 
+JACK: Not relevant. Skip.
+
 **10. Error-string and support-deflection terms.**
 `command not found: nx` (150), `nx cannot find configuration for task` (150), `nx missing
 platform dependency` (150), `nx not found` (150), `nx command not found` (100) - roughly 750
 combined volume at KD 0-1 where nx.dev already ranks 2-4. Cheap to defend, high support-cost
 relief, entirely untracked.
+
+JACK: A lot of user errors here, if needed we could add to troubleshooting reference page. Skip for now, doesn't help with SEO we want.
 
 ---
 
@@ -114,7 +134,7 @@ explicit question, and the evidence is one-sided:
   `develocity alternative` have no Ahrefs record at all - despite `buildkite` itself
   at 3,200 volume. **Vendor-alternative intent in this category effectively does not exist.**
 - The Develocity evidence points the wrong way for an "alternative" page: teams in the
-  qualitative set are *adopting* Develocity, not looking to leave it.
+  qualitative set are _adopting_ Develocity, not looking to leave it.
 
 Where the demand actually is, in the same cluster: the problem/cost/incumbent tier.
 `github actions pricing` 1,200, `github actions cache` 500, `jenkins vs github actions` 450,
@@ -146,7 +166,7 @@ These came out of the Brand Radar citation data and are not fixable by tracking 
 Detail in `../phase4-prompts/00-brand-radar-baseline.md`.
 
 1. **nx.dev splits its own AI citations across three URLs for nx-vs-turborepo** (8 + 7 + 4
-   responses), and a *fourth* path is what actually ranks organically. The URL dedupe flagged
+   responses), and a _fourth_ path is what actually ranks organically. The URL dedupe flagged
    as action H1 in the July tracker is still open and is now measurably costing citations.
 2. **Versioned doc subdomains are training the answers.**
    `22.nx.dev/docs/guides/adopting-nx/nx-vs-turborepo` is the **second-most-cited page in the
@@ -173,12 +193,12 @@ and I have no visibility into Brand Radar per-run pricing. Options: import Tier 
 (120 runs), import Tier 1 on ChatGPT + Claude only (71 runs), or import everything on ChatGPT
 only (41 runs) and lose the multi-model signal that motivated the expansion.
 
-**b. Keyword cut line.** `keywords-add.csv` has 844 scored rank targets, tiered 100 / 150 /
-594. The Ahrefs plan is nowhere near its cap (147 tracked across both projects today), so the
+**b. Keyword cut line.** `keywords-add.csv` has 844 scored rank targets, tiered 100 / 150 / 594. The Ahrefs plan is nowhere near its cap (147 tracked across both projects today), so the
 real constraint is attention, not licence. Tier 1 = 100 adds against 40 freed slots takes the
 Nx project from 99 to 159 keywords. Say if you want that smaller.
 
 **c. Two things to raise outside this project.**
+
 - **The Rank Tracker positions for project `Nx` are wrong.** Desktop, mobile and Site Explorer
   disagree on head terms (`monorepo`: not-ranking / 1 / 8). Same `serp_updated` on both
   devices, so it is not staleness. Everything here uses Site Explorer instead, but the

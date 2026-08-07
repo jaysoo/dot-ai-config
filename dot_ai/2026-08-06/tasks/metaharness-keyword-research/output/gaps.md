@@ -18,25 +18,25 @@ led us to nearly miss the most important fact in this research.**
 
 Confirmed dead:
 
-| Term | US vol | Notes |
-|---|---|---|
-| `metaharness` | **0** | The brand term |
-| `meta harness ai` | **0** | |
-| `meta harness` | 300 | **Returns an EMPTY SERP in Ahrefs** - no result set exists |
-| `meta-harness` | 40 | |
-| every `meta harness <x>` long-tail | `no_data` | 24 of 41 tracked keywords returned nothing |
+| Term                               | US vol    | Notes                                                      |
+| ---------------------------------- | --------- | ---------------------------------------------------------- |
+| `metaharness`                      | **0**     | The brand term                                             |
+| `meta harness ai`                  | **0**     |                                                            |
+| `meta harness`                     | 300       | **Returns an EMPTY SERP in Ahrefs** - no result set exists |
+| `meta-harness`                     | 40        |                                                            |
+| every `meta harness <x>` long-tail | `no_data` | 24 of 41 tracked keywords returned nothing                 |
 
 "meta-harness" appears **zero times** across 834 verbatim phrases from real developers.
 
-But the space is *not* unnamed. It already has a name, and it is not ours:
+But the space is _not_ unnamed. It already has a name, and it is not ours:
 
-| Term | US | Global | KD |
-|---|---|---|---|
-| `harness` | 47,000 | - | - |
-| `harness engineering` | **1,100** (3,700 per competitor data) | **18,000** | 51 |
-| `agent harness` | 1,300 | 5,200 | 16 |
-| `claude code harness` | 400 | 1,300 | **3** |
-| `what is harness engineering` | 1,000 | - | 47 |
+| Term                          | US                                    | Global     | KD    |
+| ----------------------------- | ------------------------------------- | ---------- | ----- |
+| `harness`                     | 47,000                                | -          | -     |
+| `harness engineering`         | **1,100** (3,700 per competitor data) | **18,000** | 51    |
+| `agent harness`               | 1,300                                 | 5,200      | 16    |
+| `claude code harness`         | 400                                   | 1,300      | **3** |
+| `what is harness engineering` | 1,000                                 | -          | 47    |
 
 `harness engineering` is real, it is the correct sense (verified by SERP, not assumed), and
 it is already owned by heavyweight publishers: **OpenAI** (`openai.com/index/harness-engineering/`,
@@ -77,14 +77,14 @@ keywords are `meta harness` / `metaharness` variants that measure zero.
 This is the most consistent finding in the entire corpus, and it holds on both the keyword and
 the prompt side.
 
-| Category-language term | Vol | KD | | Tool-anchored equivalent | Vol | KD |
-|---|---|---|---|---|---|---|
-| `agent memory` | 600 | **60** | vs | `claude code memory` | 1,000 | **9** |
-| `agent memory` | 600 | 60 | vs | `cursor rules` | 2,700 | **6** |
-| `agent memory` | 600 | 60 | vs | `claude rules` | 900 | **4** |
-| `multi repo` | 10 | 5 | vs | (no tool-anchored equivalent exists) | - | - |
+| Category-language term | Vol | KD     |     | Tool-anchored equivalent             | Vol   | KD    |
+| ---------------------- | --- | ------ | --- | ------------------------------------ | ----- | ----- |
+| `agent memory`         | 600 | **60** | vs  | `claude code memory`                 | 1,000 | **9** |
+| `agent memory`         | 600 | 60     | vs  | `cursor rules`                       | 2,700 | **6** |
+| `agent memory`         | 600 | 60     | vs  | `claude rules`                       | 900   | **4** |
+| `multi repo`           | 10  | 5      | vs  | (no tool-anchored equivalent exists) | -     | -     |
 
-The tool-anchored term wins on volume *and* difficulty simultaneously. Same effect on prompts:
+The tool-anchored term wins on volume _and_ difficulty simultaneously. Same effect on prompts:
 the Brand Radar prompts naming a tool measure 500, 500 and 300; the generic "AI session" and
 "AI agent" phrasings all measure **0**.
 
@@ -104,18 +104,18 @@ Real problems, strong verbatim evidence, no keyword-database footprint. Full evi
 quotes and URLs in `dark-demand-clusters.md`. Ranked by evidence strength x product fit x
 absence of competitor content.
 
-| # | Cluster | Cat | Evidence | Why it matters |
-|---|---|---|---|---|
-| 1 | **Compaction is experienced as data loss** | memory | 34 phrases, 5 sources, 117 GH comments, 871 upvotes | Loudest pain in the corpus vs `context compaction`=100 and every `/compact` variant=0. Maps straight onto session durability. |
-| 2 | **Session handoff wants to be a primitive, nobody named it** | memory/sharing | 16 | Purest dark demand found: **zero of 2,279 keyword rows contain "handoff"**, yet autocomplete returns 5 handoff queries and everyone hand-rolls the same `/handoff` skill. This is the product's seam. |
-| 3 | **Organizational invisibility** | sharing | 32 | 3 independent Claude Code filings + a 30-comment session-sync request. Fowler independently names "organisational memory". Perfect fit, zero day-one search. |
-| 4 | **Rules-file sprawl and drift** | memory/portability | 30 | Best conversion structure in the set: the artifact has volume (`claude.md best practices`), the rot has none. Rank on the artifact, convert on the problem. |
-| 5 | **Cross-harness context portability / lock-in** | portability | 32 | Validates the "swappable harnesses" claim while every migration query is 0 volume. Organic name already exists: **"context portability"**. |
-| 6 | **Guardrails that are silently off** | governance | 16 | All existing content is "how to sandbox your agent"; nobody writes "your policy is probably not running right now". 12 bug reports share one shape: policy fails open by cwd/nesting/subagent. |
-| 7 | **Fleet blindness** - no lineage, liveness or identity across spawned agents | observability/orchestration | 21 | Vendors sell LLM tracing; none covers "which of my forty agents is alive, in which repo, spawned by whom". Risk: Anthropic could ship lineage natively. |
-| 8 | **Paid for the tokens, lost the work** | cost/orchestration | 11 | Subagents die silently on quota with no partial-result handoff. No keyword row exists for this at all. |
-| 9 | **The human is the message bus** | sharing/orchestration | - | People manually copy context between sessions. Names the manual-workflow-overhead pitch in users' own words. |
-| 10 | **Cross-repo context ceiling** | crossrepo | 36 (but see below) | Real, but **thinner than the positioning assumes**. See section 5. |
+| #   | Cluster                                                                      | Cat                         | Evidence                                            | Why it matters                                                                                                                                                                                        |
+| --- | ---------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Compaction is experienced as data loss**                                   | memory                      | 34 phrases, 5 sources, 117 GH comments, 871 upvotes | Loudest pain in the corpus vs `context compaction`=100 and every `/compact` variant=0. Maps straight onto session durability.                                                                         |
+| 2   | **Session handoff wants to be a primitive, nobody named it**                 | memory/sharing              | 16                                                  | Purest dark demand found: **zero of 2,279 keyword rows contain "handoff"**, yet autocomplete returns 5 handoff queries and everyone hand-rolls the same `/handoff` skill. This is the product's seam. |
+| 3   | **Organizational invisibility**                                              | sharing                     | 32                                                  | 3 independent Claude Code filings + a 30-comment session-sync request. Fowler independently names "organisational memory". Perfect fit, zero day-one search.                                          |
+| 4   | **Rules-file sprawl and drift**                                              | memory/portability          | 30                                                  | Best conversion structure in the set: the artifact has volume (`claude.md best practices`), the rot has none. Rank on the artifact, convert on the problem.                                           |
+| 5   | **Cross-harness context portability / lock-in**                              | portability                 | 32                                                  | Validates the "swappable harnesses" claim while every migration query is 0 volume. Organic name already exists: **"context portability"**.                                                            |
+| 6   | **Guardrails that are silently off**                                         | governance                  | 16                                                  | All existing content is "how to sandbox your agent"; nobody writes "your policy is probably not running right now". 12 bug reports share one shape: policy fails open by cwd/nesting/subagent.        |
+| 7   | **Fleet blindness** - no lineage, liveness or identity across spawned agents | observability/orchestration | 21                                                  | Vendors sell LLM tracing; none covers "which of my forty agents is alive, in which repo, spawned by whom". Risk: Anthropic could ship lineage natively.                                               |
+| 8   | **Paid for the tokens, lost the work**                                       | cost/orchestration          | 11                                                  | Subagents die silently on quota with no partial-result handoff. No keyword row exists for this at all.                                                                                                |
+| 9   | **The human is the message bus**                                             | sharing/orchestration       | -                                                   | People manually copy context between sessions. Names the manual-workflow-overhead pitch in users' own words.                                                                                          |
+| 10  | **Cross-repo context ceiling**                                               | crossrepo                   | 36 (but see below)                                  | Real, but **thinner than the positioning assumes**. See section 5.                                                                                                                                    |
 
 Explicitly excluded as **loud but not opportunity** - do not mistake engagement for demand:
 model-degradation/"nerf" discourse (2.5k+ upvote posts, but a meta-harness cannot fix a model
@@ -160,7 +160,7 @@ new small sites is itself unreliable. The direction is well supported; the magni
 
 - `mem0` = **8,000 US / 30,000 global**, by far the largest single term in the space.
 - mem0 already ranks **#11 for `claude code memory`**, our best low-KD memory target.
-- mem0.ai ranks for a wall of Claude *subscription pricing* terms it has no product claim to:
+- mem0.ai ranks for a wall of Claude _subscription pricing_ terms it has no product claim to:
   `claude pricing` (49,000, pos 5), `how much does claude cost` (6,000, **pos 1**),
   `claude code pricing` (14,000), `claude subscription` (14,000), `claude teams` (6,400).
 
@@ -198,8 +198,8 @@ leading with it.**
   not one used cross-repo vocabulary in a title.
 - Of the 36 crossrepo phrases collected, **17 came from two vendor blogs that exist to sell the
   fix**. Strip those and the remaining evidence is mostly feature requests phrased as
-  *workspace* problems ("multi-folder workspace", "parent workspaces containing multiple Git
-  repositories") rather than *coordination* problems.
+  _workspace_ problems ("multi-folder workspace", "parent workspaces containing multiple Git
+  repositories") rather than _coordination_ problems.
 
 The honest read: **the market feels a context ceiling, not yet a coordination ceiling.** Users
 are asking for a bigger folder, not for cross-repo orchestration.
@@ -208,10 +208,12 @@ That said, the real evidence is genuinely strong where it exists, and it is wort
 
 > "they all seem to assume an agent lives in one worktree of one git repo... the repo boundary
 > is often just not the task boundary. Some context lives next door, or two repos away."
+>
 > - news.ycombinator.com/item?id=48683361
 
 > "I'm wondering if there is a tool in the agent orchestration space that prepares
 > multi-repository worktrees for a subagent out of the box?"
+>
 > - same thread
 
 > "Multi-repo support" - 19 comments, github.com/openai/codex/issues/11956
@@ -220,8 +222,8 @@ That said, the real evidence is genuinely strong where it exists, and it is wort
 **Recommendation:** lead with clusters 1-4 (compaction/memory loss, session handoff,
 organizational invisibility, rules-file drift), which have both loud evidence and adjacent
 keyword volume. Let cross-repo be the payoff you earn, not the hook you open with. If you do
-write here, borrow the community's own words: *"repo-of-repos"*, *"context drift"*, *"the repo
-boundary is not the task boundary"*.
+write here, borrow the community's own words: _"repo-of-repos"_, _"context drift"_, _"the repo
+boundary is not the task boundary"_.
 
 Second, smaller disagreement: the community awesome-list taxonomy has **no slot** for `sharing`,
 `crossrepo`, or `cost`, and merges `evals` with `observability`. Whitespace and risk at once -
@@ -247,7 +249,7 @@ Ordered by expected return, not by category.
 5. **`claude code memory` (1,000, KD 9)** - but expect a fight with mem0, which already ranks
    #11 there.
 6. **`claude code usage` (2,900) / `ccusage` (2,100, KD 8)** - real spend-visibility intent,
-   and `claude code logs` has volume with a *literally empty SERP*. Do not chase
+   and `claude code logs` has volume with a _literally empty SERP_. Do not chase
    `claude pricing`-family terms: 30,000 volume, wrong intent, subscription shoppers.
 
 ---
@@ -267,7 +269,7 @@ Ordered by expected return, not by category.
 - **Phase 4 prompt testing is observed, not self-tested.** We used Brand Radar's real ChatGPT
   responses instead of prompting ChatGPT/Claude/Perplexity by hand. Stronger evidence, but it
   only covers the 5 prompts already configured. The other 117 prompts in `prompts.csv` carry
-  `no_data` for volume and a *judged* winnability. No volume was invented anywhere.
+  `no_data` for volume and a _judged_ winnability. No volume was invented anywhere.
 - **`harness engineering` volume is reported inconsistently by Ahrefs** - 1,100 US via
   keywords-explorer, 3,700 via the competitor organic report. Both are recorded as returned.
   The direction is unambiguous; the exact figure should be re-checked before it goes in a deck.

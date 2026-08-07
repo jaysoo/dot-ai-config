@@ -2,6 +2,10 @@
 
 ## In Progress
 
+- [ ] DOC-569: Refresh "Extending Nx" pages, one feature page (2026-08-07)
+  - Plan: `dot_ai/2026-08-07/tasks/doc-569-extending-nx-feature-page.md`
+  - Goal: new `Platform features > Multi-language support` feature page (plugin anatomy: glob, createNodesV2 projects+tasks, createDependencies, testing); absorb + redirect `kb/project-graph-plugins`; link KB deep-dives. Target: AI/reader produces a usable plugin in under an hour.
+
 - [ ] Nx keyword & prompt audit + expansion (Ahrefs) (2026-08-06)
   - Plan: `dot_ai/2026-08-06/tasks/nx-keyword-prompt-audit.md`
   - Goal: audit the 99 Rank Tracker keywords + 13 Brand Radar prompts, prune what is not earning its slot, expand both to cover untracked demand. Phase 0 done: nx.dev ranks for only 26 of 99; Ahrefs has no record at all for 26 of 99; 28 keyword slots and 2 prompt slots freed. Two blockers found - Rank Tracker positions are unreliable for this project (desktop/mobile/Site Explorer disagree on head terms), and the Brand Radar global prompt corpus needs an addon we do not have.
@@ -214,6 +218,8 @@
 
 ## Active Claude Sessions
 
+- /Users/jack/projects/nx-worktrees/NXC-4772 (branch: NXC-4772) — NXC-4772 Vite 8 `configLoader: 'native'` warnings: reproduced both in a fresh workspace, fixed `@nx/vitest` `__dirname` -> `import.meta.dirname`, root aggregator -> `vitest.config.mts`, nuxt `.ts` fallback gated on legacy eslintrc, plus a `23.2.0-beta.6` backfill migration. Awaiting `nx affected` + commit/push. Plan: `dot_ai/2026-08-07/tasks/nxc-4772-vite-native-config-loader-warning.md`, Polygraph `tidy-otter-932779b6` (2026-08-07)
+- /Users/jack/projects/nx-worktrees/DOC-569 (branch: DOC-569) — DOC-569 Extending Nx feature page: draft PR https://github.com/nrwl/nx/pull/36601 awaiting Jack review + CI. Plan: `dot_ai/2026-08-07/tasks/doc-569-extending-nx-feature-page.md`, Polygraph `brisk-penguin-af6d8609` (2026-08-07)
 - /Users/jack/projects/dot-ai-config (branch: main) — Nx keyword & prompt audit + expansion. Phase 0 audit complete against live Ahrefs (project 8558520, Brand Radar report `Nx`); Phases 1-3 running across 11 agents. Working dir `dot_ai/2026-08-06/tasks/nx-keyword-prompt-audit/`. Plan: `dot_ai/2026-08-06/tasks/nx-keyword-prompt-audit.md` (2026-08-06)
 - /Users/jack/projects/nx (branch: docs/github-app-permissions-intro-wording) — GitHub App org permissions. Main change MERGED as nx #36581, but the PR merged before the last two intro rewordings, so a 2-line follow-up sits at `61c35a9305` off `origin/master`, unpushed, no PR. Paired ocean fix (stale `"Administration: Read & Write"` CLI hint + version plan) on `/Users/jack/projects/ocean` branch `fix/onboarding-permission-hint` `b4faebb334`, unpushed, no PR — ocean PRs target `main`. JACK: push both. Plan: `dot_ai/2026-08-05/tasks/github-app-org-permissions-docs.md` (2026-08-05)
 - /Users/jack/projects/nx-worktrees/DOC-571 (branch: DOC-571) — DOC-571 Turborepo migration guide rewrite + move to `/docs/kb/from-turborepo`: committed `641b43e7d0`, prettier/vale/validate-links green, live-tested against a real create-turbo + nx init workspace. Awaiting go-ahead to push + open a draft PR. Plan: `dot_ai/2026-08-05/tasks/doc-571-update-migration-from-turbo.md`, Polygraph `shiny-finch-d0837b3c` (2026-08-05)
