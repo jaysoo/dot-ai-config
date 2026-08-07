@@ -27,6 +27,8 @@ Run `./sync.sh` manually if you want to push config out without a git push.
 | `dot_claude/commands/` | Claude Code slash commands (synced to `~/.claude/commands/`) |
 | `dot_claude/skills/` | Skills (synced to `~/.claude/skills/` and `~/.codex/skills/`) |
 | `dot_claude/settings.json` | Claude Code settings (synced to `~/.claude/settings.json`) |
+| `dot_codex/permissions.toml` | Codex permission profile and tool approval defaults (merged into `~/.codex/config.toml`) |
+| `dot_codex/rules/` | Codex command allow rules (synced to `~/.codex/rules/`) |
 | `dot_ai/` | Knowledge base — dictations, daily work, PARA (projects/areas/resources/archive). Symlinked as `.ai/` in work repos |
 | `mcp-server/` | MyNotes MCP server — indexes `dot_ai/` for search/resume |
 | `mcp-gemini/` | Gemini MCP integration |

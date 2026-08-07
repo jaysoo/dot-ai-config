@@ -10,6 +10,8 @@ For Jack's personal preferences, workflow conventions, and tech-specific guidanc
 |------|----------|---------|
 | `dot_claude/AGENTS.md` | `~/.codex/AGENTS.md` | User-scope Codex instructions (preferences, workflow) |
 | `dot_claude/skills/` | `~/.codex/skills/` | Skills |
+| `dot_codex/permissions.toml` | managed sections in `~/.codex/config.toml` | Codex permission profile and tool approval defaults |
+| `dot_codex/rules/` | `~/.codex/rules/` | Codex command allow rules |
 | `dot_ai/` | symlinked as `.ai/` in every work repo | Dictations, daily notes, tasks, PARA knowledge base |
 | `fish/` | `~/.config/fish/` | Fish shell config (excludes `fish_variables`, `nxcloud.fish`) |
 | `nvim/` | `~/.config/nvim/` | Neovim config |
@@ -56,7 +58,7 @@ ln -s $HOME/projects/dot-ai-config/dot_ai .ai
 Run `./sync.sh` manually if you want to sync without pushing.
 
 **Never edit these destinations directly** — they'll be overwritten on the next push:
-- `~/.codex/` (AGENTS.md, skills/)
+- `~/.codex/` (AGENTS.md, skills/, managed permissions, rules/)
 - `~/.config/fish|nvim|kitty|mise|gh-dash/`
 - `~/.tmux.conf`, `~/.bashrc`, `~/.gitconfig`, `~/.gitignore_global`
 

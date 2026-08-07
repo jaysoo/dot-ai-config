@@ -1,0 +1,101 @@
+category,cluster,keyword,volume,global_volume,difficulty,tier,source,why_track
+memory,memory-file,claude memory.md,150,600,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Biggest clean memory-file term. Exactly the artifact Polygraph distills into.
+memory,memory-file,openclaw memory.md,100,350,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),openclaw is a harness we were not tracking; its memory file already out-searches ours.
+memory,memory-file,claude code memory.md,80,300,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Tool-anchored form of the core artifact.
+memory,memory-file,claude memory skill,70,300,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Community is shipping memory as a *skill*. Live vocabulary.
+memory,memory-file,memory.md,40,200,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Head term for the file convention.
+memory,memory-file,memory.md claude,40,150,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),"Word-order variant, separate SERP."
+memory,memory-file,memory md,20,90,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Explicitly requested. Unpunctuated form people actually type.
+memory,memory-file,claude.md vs memory.md,20,50,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Comparison intent: which file holds what. Direct product wedge.
+memory,memory-file,claude code memory skill,20,100,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Tool-anchored skill form.
+memory,memory-file,claude memory file,30,90,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Generic-file phrasing of the same intent.
+memory,memory-file,openclaw memory skill,30,90,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Cross-harness proof the skill pattern is spreading.
+memory,memory-file,what is memory.md,10,30,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Definitional. Cheap to own while the convention is forming.
+memory,memory-file,codex memory.md,10,20,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Cross-harness variant; supports the swappable-harness claim.
+memory,compaction,context compaction,100,250,no_data,measured,ahrefs:matching-terms,Head term of the loudest pain found. 100 vol but near-zero competition.
+memory,compaction,claude code context compaction,20,30,no_data,measured,ahrefs:matching-terms,Tool-anchored form.
+memory,compaction,claude context compaction,10,20,no_data,measured,ahrefs:matching-terms,Variant.
+memory,compaction,what is context compaction,10,10,no_data,measured,ahrefs:matching-terms,Definitional; term is spreading faster than its definition.
+memory,compaction,claude code automatic context compaction,0,0,no_data,no-signal,ahrefs:matching-terms,"Zero volume, precise intent. Cheap option."
+memory,compaction,claude code /compact command context compaction,0,0,no_data,no-signal,ahrefs:matching-terms,The literal command people run before they lose work.
+memory,compaction,codex context compaction,0,0,no_data,no-signal,ahrefs:matching-terms,Cross-harness.
+memory,compaction,llm context compaction,10,10,no_data,measured,ahrefs:matching-terms,Harness-agnostic.
+memory,compaction,claude code context window,350,1400,6,measured,ahrefs:matching-terms,KD 6. The symptom people search before they know the word compaction.
+memory,compaction,claude code context window size,350,600,no_data,measured,ahrefs:matching-terms,"Same intent, sizing phrasing."
+memory,persistence,claude code memory,1000,3900,9,measured,ahrefs:matching-terms; competitor:mem0.ai; competitor:https://mem0.ai/blog/how-memory-works-in-claude-code,"KD 9 with 3,900 global. Best memory target in the set. mem0 ranks #11 - contested."
+memory,persistence,claude mem,2700,no_data,18,measured,ahrefs:competitor-organic:mem0.ai; competitor:https://mem0.ai/blog/claude-code-memory,"2,700 / KD 18. Tool-name intent."
+memory,persistence,claude-mem,1700,no_data,18,measured,ahrefs:competitor-organic:https://mem0.ai/blog/claude-code-memory,"Hyphenated variant, separate SERP."
+memory,persistence,claude memory,2200,8000,34,measured,ahrefs:related-terms; competitor:mem0.ai; competitor:https://mem0.ai/blog/how-memory-works-in-claude-code,"2,200 / KD 34. Category head, tool-anchored."
+memory,rules-file,claude.md best practices,700,2100,no_data,measured,ahrefs:matching-terms,One of the two claude.md slots Jack allowed. Best-practice intent converts.
+memory,rules-file,claude code rules,500,3400,8,measured,ahrefs:related-terms,KD 8. Second allowed slot; rules-drift is dark cluster #4.
+memory,rules-file,cursor rules,2700,12000,6,measured,ahrefs:related-terms,"2,700 / KD 6. Cheapest real volume anywhere in the corpus."
+memory,rules-file,claude rules,900,4400,4,measured,ahrefs:related-terms,900 / KD 4.
+sharing,handoff,handoff skill,200,700,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),200 / 700 global. Cleanest head term in our sense of handoff.
+sharing,handoff,claude handoff skill,90,200,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),The community named this pattern. We should own the page.
+sharing,handoff,handoff skill claude,70,350,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),350 global on the reversed form - separate SERP.
+sharing,handoff,claude handoff,90,200,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Head tool-anchored form.
+sharing,handoff,claude code handoff,60,100,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),CPC $9.00 - the highest commercial signal on any handoff term.
+sharing,handoff,handoff md,10,30,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Explicitly requested. Unpunctuated file convention.
+sharing,handoff,handoff.md,10,30,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Punctuated form; the file people hand-roll.
+sharing,handoff,claude code handoff skill,20,60,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Most precise tool+pattern combination.
+sharing,handoff,claude handoff prompt,20,30,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Prompt-shaped; people paste a handoff prompt today.
+sharing,handoff,claude code handoff between machines,20,20,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Cross-machine resume. Exact Polygraph capability.
+sharing,handoff,matt pocock handoff skill,40,40,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Influencer-driven demand; proves the pattern is spreading.
+sharing,handoff,session handoff,0,10,no_data,dark-demand,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),0/10 - pure dark demand. Cheap to hold the term.
+sharing,handoff,claude code session handoff,0,10,no_data,dark-demand,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),"Zero volume, perfect intent."
+sharing,handoff,context handoff,0,10,no_data,dark-demand,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),The other name for the same primitive.
+sharing,handoff,agent handoff,40,150,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),"Harness-agnostic. NOTE: mixed intent, see disambiguation in notes."
+sharing,handoff,ai agent handoff,20,30,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Same caveat as above; track to watch intent shift.
+sharing,handoff,warp agent handoff,20,20,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Another harness shipping it - competitive watch.
+sharing,handoff,openai agent handoff,10,10,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Codex/Agents-SDK sense.
+sharing,session,claude code resume session,200,700,no_data,measured,ahrefs:matching-terms,200. Largest session-lifecycle term.
+sharing,session,how to resume claude code session,100,250,no_data,measured,ahrefs:matching-terms,Question form.
+sharing,session,claude code share session,40,100,no_data,measured,ahrefs:matching-terms,Core sharing intent.
+sharing,session,share claude code session,30,70,no_data,measured,ahrefs:matching-terms,Word-order variant; Brand Radar shows 300-vol prompt behind it.
+sharing,session,claude code export conversation,100,300,no_data,measured,ahrefs:search-suggestions,Export precedes sharing in the funnel.
+sharing,session,claude code export session,40,100,no_data,measured,ahrefs:matching-terms,Variant.
+sharing,session,claude code session viewer,10,20,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),sessionviewer.cc already competes here.
+sharing,session,claude code where are sessions stored,10,10,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),"""Where are my sessions"" - the query that precedes sharing intent."
+orchestration,multi-agent,claude agent teams,2700,7400,9,measured,ahrefs:matching-terms,"2,700 / KD 9. Best orchestration ratio found."
+orchestration,multi-agent,claude code agent teams,2100,7200,7,measured,ahrefs:matching-terms,"2,100 / KD 7. Tool-anchored, very low difficulty."
+orchestration,multi-agent,claude code subagents,1800,5900,26,measured,ahrefs:matching-terms,"1,800 / 5,900 global. Head term of the category."
+orchestration,multi-agent,claude subagents,1700,4700,0,measured,ahrefs:search-suggestions,"1,700 / KD 0."
+orchestration,multi-agent,subagent,1300,2800,17,measured,ahrefs:related-terms,"1,300 / KD 17. Singular form, distinct SERP."
+orchestration,multi-agent,agent teams,300,3600,18,measured,ahrefs:matching-terms,300 / KD 18. Harness-agnostic.
+orchestration,multi-agent,agent teams claude,450,1800,no_data,measured,ahrefs:matching-terms,450. Reversed form.
+orchestration,multi-agent,claude code subagent,400,2700,no_data,measured,ahrefs:search-suggestions,Singular tool-anchored.
+orchestration,multi-agent,multi agent,350,3100,38,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),350 / KD 38. Requested head term.
+orchestration,multi-agent,multi-agent,3500,5100,34,measured,ahrefs:search-suggestions,"3,500 / KD 34. Hyphenated form carries most volume."
+orchestration,multi-agent,multi-agent orchestration,350,800,12,measured,ahrefs:matching-terms,350 / KD 12. Hyphenated variant - the unhyphenated form is already tracked.
+orchestration,worktree,claude code worktrees,600,1600,no_data,measured,ahrefs:search-suggestions,600. Worktrees are how people fake parallel agents today.
+orchestration,worktree,claude code worktree,450,2100,17,measured,ahrefs:matching-terms,450 / KD 17. Singular.
+orchestration,worktree,git worktree claude code,300,1200,no_data,measured,ahrefs:search-suggestions,300. DIY signal - already hit the conflict pain.
+orchestration,background,cursor background agents,450,800,no_data,measured,ahrefs:matching-terms,450. Competitor capability watch.
+orchestration,background,background agents,150,250,26,measured,ahrefs:matching-terms,150 / KD 26. Category term.
+orchestration,multi-agent,claude code parallel agents,150,300,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Direct statement of the parallel-work capability.
+portability,agent-file,agents.md,900,4100,39,measured,ahrefs:matching-terms,"900 / 4,100 global. The cross-harness standard."
+portability,agent-file,codex agents.md,500,3300,no_data,measured,ahrefs:matching-terms,Cross-harness form.
+portability,agent-file,codex cli agents.md,500,700,no_data,measured,ahrefs:matching-terms,CLI-specific.
+portability,agent-file,agents.md vs claude.md,250,700,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),The canonical portability question. Autocomplete-confirmed.
+portability,agent-file,claude.md vs agents.md,250,700,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),"Reversed form, separate SERP."
+portability,cross-tool,opencode vs claude code,1900,9300,9,measured,ahrefs:matching-terms,"1,900 / KD 9. Harness-swap comparison."
+portability,cross-tool,claude code vs codex,3300,13000,13,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Direct swap intent between the two harnesses we support.
+portability,cross-tool,codex vs cursor,800,3700,3,measured,ahrefs:related-terms,800 / KD 3.
+portability,cross-tool,context portability,0,0,no_data,dark-demand,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),"The organic name for the category, per HN."
+crossrepo,multi-repo,claude code multi repo,20,60,no_data,measured,ahrefs:matching-terms,Tool-anchored form of the stated #1 problem.
+crossrepo,multi-repo,cursor multi repo,20,40,no_data,measured,ahrefs:matching-terms,Competitor-anchored form.
+crossrepo,multi-repo,multi repo claude code,0,0,no_data,no-signal,ahrefs:matching-terms,"Reversed; zero volume, precise intent."
+crossrepo,multi-repo,claude code monorepo,20,70,no_data,measured,ahrefs:matching-terms,Monorepo is the parent topic that multi-repo lacks.
+crossrepo,multi-repo,best ai code agent for multi-repo microservices,10,10,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Long-tail buyer intent.
+observability,session-visibility,claude code logs,100,350,no_data,measured,ahrefs:matching-terms,Has volume with a LITERALLY EMPTY SERP. Zero indexed competition.
+observability,session-visibility,agent observability,500,900,23,measured,ahrefs:matching-terms,500 / KD 23. Category term.
+observability,session-visibility,ai agent observability,400,800,14,measured,ahrefs:matching-terms,400 / KD 14.
+observability,session-visibility,agent observability platform,200,300,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Commercial intent.
+landscape,harness-eng,harness engineering,3700,no_data,51,measured,ahrefs:competitor-organic:https://openai.com/index/harness-engineering/; competitor:https://martinfowler.com/articles/harness-engineering.html; competitor:https://www.databricks.com/blog/ai-harness; competitor:https://addyosmani.com/blog/agent-harness-engineering/; competitor:https://developers.redhat.com/articles/2026/04/07/harness-engineering-structured-workflows-ai-assisted-development; competitor:github.com/walkinglabs/awesome-harness-engineering,The term the market converged on. OpenAI + Fowler own it today.
+landscape,harness-eng,what is harness engineering,1000,no_data,47,measured,ahrefs:competitor-organic:https://openai.com/index/harness-engineering/; competitor:https://martinfowler.com/articles/harness-engineering.html; competitor:https://www.langchain.com/blog/the-anatomy-of-an-agent-harness; competitor:https://www.databricks.com/blog/ai-harness; competitor:https://addyosmani.com/blog/agent-harness-engineering/; competitor:https://developers.redhat.com/articles/2026/04/07/harness-engineering-structured-workflows-ai-assisted-development,"1,000 / KD 47. Definitional slot."
+landscape,harness-eng,what is agent harness,700,no_data,11,measured,ahrefs:competitor-organic:https://www.langchain.com/blog/the-anatomy-of-an-agent-harness; competitor:https://www.databricks.com/blog/ai-harness; competitor:https://addyosmani.com/blog/agent-harness-engineering/,700 / KD 11. Cheapest entry to the category conversation.
+governance,policy,ai agent policy management,300,350,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Maps to allow_agent / deny_agent and org policy enforcement.
+governance,policy,claude code permissions,500,1800,no_data,measured,ahrefs:matching-terms,500. The per-repo config that Polygraph centralises.
+governance,policy,ai agent governance,400,700,12,measured,ahrefs:matching-terms,400 / KD 12. Enterprise buyer term.
+evaluation,verification,agent reliability,70,80,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Maps to the feedback-loop and verification capability.
+evaluation,verification,claude code evals,40,100,no_data,measured,ahrefs:keywords-explorer-overview+matching-terms+search-suggestions (2026-08-07),Tool-anchored; users hand-build failure inventories today.

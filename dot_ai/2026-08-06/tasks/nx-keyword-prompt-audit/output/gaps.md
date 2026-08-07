@@ -3,6 +3,11 @@
 Companion to `keywords-add.csv`, `keywords-monitor.csv`, `prompts-add.csv`,
 `brand-radar-import.txt`, and `../phase0-audit/audit-final.csv`.
 
+> **2026-08-07 - final cut applied.** Jack's inline decisions below are now reflected in
+> **`keywords-add-100.csv`** (100 rows, 9% branded) and **`prompts-add.csv`** (30 rows).
+> `keywords-add.csv` (844 rows) stays as the full evidence pool and bench.
+> Dropped prompts and why: `prompts-dropped.csv`. See section 7 for what changed.
+
 ---
 
 ## 1. Top 10 content gaps (competitor organic diff)
@@ -228,3 +233,86 @@ Nx project from 99 to 159 keywords. Say if you want that smaller.
   and holds organic 3 and 6.
 - 109 of the 844 rank-target rows are `synthetic` - phrasings with no Ahrefs record. They are
   labeled, and they are hypotheses, not demand.
+
+---
+
+## 7. Final cut (2026-08-07)
+
+Applying the inline decisions above plus: trim to 100 keywords, mostly unbranded, skip
+micro-frontend/module-federation, drop error and debugging strings, and keep only what maps
+to a real Nx CLI or Nx Cloud capability.
+
+### Keywords: 844 -> 100 (`keywords-add-100.csv`)
+
+Every row carries a `feature` column naming the Nx capability it maps to, so the set can be
+re-cut later without re-deriving the reasoning.
+
+| Group | N | Nx capability |
+|---|---|---|
+| Caching | 15 | Nx CLI cache + Nx Replay |
+| Monorepo concepts | 15 | positioning / definitional |
+| Flaky tests | 12 | Nx Cloud flaky task detection + retries |
+| Language & framework surfaces | 12 | the Nx plugin roster |
+| CI cost | 9 | the Nx Cloud cost story |
+| CI speed in a monorepo | 9 | task graph + distribution |
+| Affected / test distribution | 13 | `nx affected`, Atomizer, Nx Agents |
+| Migration into Nx | 5 | `nx init` / `nx import` |
+| Package-manager comparison | 4 | pre-task-runner audience |
+| Workspace structure | 3 | `nx sync`, TS project references |
+| Project graph | 1 | the Nx CLI primitive |
+| Branded feature terms | 3 | `nx affected`, `nx release`, `nx generators` |
+
+**Branded: 9 of 100.** Only where the term names a capability (`nx affected`, `nx release`,
+`nx generators`, `nx cloud pricing`) or an adoption path (`migrate to nx`, `turborepo to nx`,
+`angular cli to nx`, `add nx to existing monorepo`, `is lerna deprecated`). No definitional
+or navigational branded terms, no error strings.
+
+**Excluded wholesale:** micro-frontend / module-federation (your call), MCP and llms.txt
+(#9), generic CI/CD definitional terms (#2), error and debugging strings (#10), the
+DORA/engineering-productivity vocabulary (LinearB and Swarmia's category, not a capability
+Nx ships), and CI-platform replacement intent (`alternatives to jenkins` and friends - Nx
+Cloud plugs into a CI platform, it does not replace one).
+
+### One correction to the flaky-KB plan
+
+You asked for KB articles on Playwright, Cypress, Vitest and Jest flakiness. Only two of the
+four have search demand in the `<framework> flaky tests` form:
+
+| Term | US volume | KD |
+|---|---|---|
+| `playwright flaky tests` | 80 | 2 |
+| `circleci flaky tests` | 80 | 3 |
+| `cypress flaky tests` | 40 | 0 |
+| `vitest flaky tests` | **0** | no record |
+| `jest flaky tests` | **0** | no record |
+| `playwright flaky` | 10 | no record |
+| `cypress flaky` | **0** | no record |
+
+Trunk.io's Vitest post ranks, but on the generic flaky-test terms rather than on a
+Vitest-specific query - there is no `vitest flaky` demand to capture. Playwright and Cypress
+are in the 100; Vitest and Jest are not. Worth writing the Vitest and Jest pages anyway if
+the goal is answer-engine coverage rather than clicks, since the generic terms
+(`flaky test` 400, `how to fix flaky tests` 70) are where those answers get pulled from -
+but they should not take tracker slots.
+
+### Prompts: 41 -> 30 (`prompts-add.csv`)
+
+4 gap / 6 defend / 9 branded-sentiment / 11 contested.
+
+Dropped 11, recorded with reasons in `prompts-dropped.csv`: the four MCP/AI prompts (#9),
+the two repo-consolidation prompts (#7), four near-duplicates, and the weakest framework
+prompt.
+
+**Two of the seven gap prompts died in that trim** - "Why can't my AI agent find files in my
+monorepo?" and "How do I merge one repository into another without losing history?" Both
+were cases where the blind screen showed competitors named and no build tool at all, which
+is the strongest signal in the whole prompt set. Flagging in case you want either back;
+they are the two cheapest wins that were on the table.
+
+**Run cost: 75 daily runs** (Tier 1 = 15 prompts x 4 models, Tier 2 = 15 x ChatGPT), against
+13 today. Cheaper: Tier 1 on ChatGPT + Claude only = 45; everything on ChatGPT only = 30.
+
+Tier 1 is picked by hand, not by winnability score. Sorting by score alone pushed the
+tool-selection listicles (`Top monorepo tools for 2026`, `Best monorepo tool for small
+teams`) into the ChatGPT-only tier - and those are precisely the prompts Turborepo wins
+today, so they are the ones that most need cross-model coverage.

@@ -8,7 +8,10 @@
 
 - [ ] Nx keyword & prompt audit + expansion (Ahrefs) (2026-08-06)
   - Plan: `dot_ai/2026-08-06/tasks/nx-keyword-prompt-audit.md`
-  - Goal: audit the 99 Rank Tracker keywords + 13 Brand Radar prompts, prune what is not earning its slot, expand both to cover untracked demand. Phase 0 done: nx.dev ranks for only 26 of 99; Ahrefs has no record at all for 26 of 99; 28 keyword slots and 2 prompt slots freed. Two blockers found - Rank Tracker positions are unreliable for this project (desktop/mobile/Site Explorer disagree on head terms), and the Brand Radar global prompt corpus needs an addon we do not have.
+  - Goal: audit the 99 Rank Tracker keywords + 13 Brand Radar prompts, prune what is not earning its slot, expand both to cover untracked demand.
+  - Done: all 5 phases. 40 of 99 keywords leave, 59 survive. Shipping set = `output/keywords-add-100.csv` (100 kw, 9% branded, each mapped to an Nx CLI/Cloud capability) + `output/prompts-add.csv` (30 prompts, 75 daily Brand Radar runs vs 13 today). 844-row evidence pool kept as the bench. Read `output/gaps.md`.
+  - Two blockers to raise with Jeff: Rank Tracker positions for project `Nx` are wrong (desktop/mobile/Site Explorer disagree on head terms), and the Brand Radar global prompt corpus needs an addon this subscription lacks.
+  - Open: confirm Brand Radar run cost before importing; two of the seven highest-value "gap" prompts were dropped by the MCP/repo-merge exclusions and could come back.
 
 - [ ] DOC-571: Update migration from Turborepo (2026-08-05)
   - Plan: `dot_ai/2026-08-05/tasks/doc-571-update-migration-from-turbo.md`
@@ -56,45 +59,45 @@
 
 <!-- Ordered from most recent to least recent. Used for quick context rebuilding. -->
 
-1. **DOC-579: Getting-started cleanup — intro, Start a New Project, Add to Existing (nx) — MERGED #36595** (2026-08-06)
+1. **GitHub issue + PR closure triage (nx)** (2026-08-07)
+   - Summary: Screened all 332 open issues; 72 of the 184 older than 6 months met the closure criteria and were investigated one at a time against nx 23.1.1, plus the 11 low-activity issues with a linked PR. 37 to close / 12 unsure / 39 keep, each with a full trace + draft closing comment. The decisive step was a second adversarial pass — the first pass had the same agent both run and grade each repro, so the 17 uncorroborated "I ran it and it worked" closures went to independent agents told to refute them: **13 of 17 refuted** (8 reproduced outright on 23.1.1), dropping close 45 → 32. Repeat failure modes: `CLAUDECODE=1` disables the nx TUI so an agent-run TUI test proves nothing; stale cached graphs report success without `nx reset --skip-nx-cache`; wrong preset yields a layout where the bug is structurally impossible. Cleanest category came from searching the whole issue set, not the aging pool: the four self-hosted cache packages were deprecated on npm 2026-05-21 over CVE-2025-36852 and will never be patched (5 closes). PR half of the ask does not apply — no drive-by-PR backlog exists. Nothing posted to GitHub.
+   - Files: `dot_ai/2026-08-07/tasks/github-issue-pr-closure-triage.md`, report https://claude.ai/code/artifact/f2348ede-848e-43f7-91ee-b5367366e531
+
+2. **DOC-579: Getting-started cleanup — intro, Start a New Project, Add to Existing (nx) — MERGED #36595** (2026-08-06)
    - Summary: Merged as `130727796c`. De-emphasized Nx Cloud onboarding across the three getting-started entry points: "Start a New Project" is create-nx-workspace only (the "Option 2: Create via Nx Cloud" section and its screenshot are gone), and the template section points at the gallery instead of listing the four prompt starters. Both onboarding pages now share a shape — copyable agent prompt, one terminal block with the command plus its sample run, then matching Next steps and Keep learning (editor setup swapped for AI integrations + CI setup). Timings and both agent prompts were lifted off the live cloud.nx.app/get-started page before it goes away. A new `astro-docs/ec.config.mjs` Expressive Code plugin backs the terminal blocks: `{% meta="prompt=true" %}` strips `$ ` before shiki so the command highlights normally, mutes the prompt and output lines, and makes Copy hand over the commands alone.
    - Files: `dot_ai/2026-08-06/tasks/doc-579-getting-started-cleanup.md`, PR https://github.com/nrwl/nx/pull/36595, Polygraph `noble-osprey-dd3ebfa3`
 
-2. **DOC-573: KB Monorepo CI best practices (nx) — MERGED #36593** (2026-08-06)
+3. **DOC-573: KB Monorepo CI best practices (nx) — MERGED #36593** (2026-08-06)
    - Summary: Merged as `7dd949e953`. New `/docs/kb/monorepo-ci-best-practices` (~3000 words) aimed at Buildkite's #1 SERP result, ordered by payoff rather than by feature. Path-based filtering and graph-based affected each get a full GitHub Actions workflow so the contrast lands on one page. Also documented `projectsAffectedByDependencyUpdates` in the `nx.json` reference. The agent audit prompt was live-tested twice against a throwaway 10-package pnpm monorepo: v1 asked for wall-clock and queue time that no repository can supply, so it was rebuilt around `Present`/`Absent`/`Needs CI access` with the run-history metrics handed back to the user. Caleb's five nits addressed, including an invalid GitHub Actions snippet. Same merge shipped three new STYLE_GUIDE anti-AI rules. Split-out fix #36588 (KB index threw on any uncommitted article) merged separately.
    - Files: `dot_ai/2026-08-05/tasks/doc-573-monorepo-ci-best-practices.md`, PRs https://github.com/nrwl/nx/pull/36593 + https://github.com/nrwl/nx/pull/36588, Polygraph `vivid-moose-c9937bd5`
 
-3. **Credit usage report: billing records + org rollup + licensed allowance (lighthouse) — MERGED #83** (2026-08-06)
+4. **Credit usage report: billing records + org rollup + licensed allowance (lighthouse) — MERGED #83** (2026-08-06)
    - Summary: Merged as `00e7369`. Report now reads `billing.billingRecords` instead of `workspaceCreditUsage`, which Altan flagged as a daily month-to-date snapshot that can miss a month's tail - one row per org per billing month with the licensed allowance, remaining balance, and a real execution count. New table + collector on the daily portal refresh, scoped to a rolling 3 months (invoicing starts 2026-08-15). Fixed a portal bug double-counting boundary ISO weeks. Verified in ocean that execution credits DO count against the allowance (5 sites, 53.7% of prod NA docs) but kept them excluded by Jack's call so report and portal agree - pending Joe. Org is now the primary lookup, since a shared-instance customer like PayFit is an org on ProdNA, not a tenant.
    - Files: `dot_ai/2026-08-06/tasks/credit-usage-report-billing-records.md`, PR https://github.com/nrwl/lighthouse/pull/83, Polygraph `credit-usage-lighthouse-follow-up-405aebca`
 
-4. **GitHub App organization permissions: docs accuracy + stale CLI hint (nx + ocean) — MERGED #36581** (2026-08-05)
+5. **GitHub App organization permissions: docs accuracy + stale CLI hint (nx + ocean) — MERGED #36581** (2026-08-05)
    - Summary: Fixed the `Administration` entry claiming it covered listing org repositories for setup — verified in ocean that listing runs through `GET /orgs/{org}/repos` and `GET /user/installations/{id}/repositories` (both `Metadata: read`), while only `GET /orgs/{org}/installations` needs org `Administration`. STYLE_GUIDE structural pass on a vale-clean page found a semicolon, a claim duplicated across two sections, and a balanced-contrast closer. Separately killed a stale ocean CLI hint telling users to grant `"Administration: Read & Write"` after the app stopped requesting it (guaranteed dead end, then a ticket). PR merged mid-session before the last two intro rewordings, so a 2-line follow-up branch is unpushed.
    - Files: `dot_ai/2026-08-05/tasks/github-app-org-permissions-docs.md`, PR https://github.com/nrwl/nx/pull/36581
 
-5. **NXC-4687: CNW --preset empty escape hatch + template download errors (nx) — MERGED #36508** (2026-08-05)
+6. **NXC-4687: CNW --preset empty escape hatch + template download errors (nx) — MERGED #36508** (2026-08-05)
    - Summary: Merged as `4a63dc82af`. Fixed `invalidPresetToTemplateMap` coercing `--preset empty` into the github template download (now aliases to the `ts` preset, npm-only, wins over --template so agents appending the flag escape); download errors classify 404 = missing repo, everything else = blocked egress with --preset=empty hints across message/AI hints/pre-flight; strict slug regex closed the `nrwl/../evil` cross-org tarball hole. Survived two deep review rounds (all required findings fixed). Jack rejected v1 auto-fallback (presets != templates).
    - Files: `dot_ai/2026-07-29/tasks/nxc-4687-cnw-template-egress-fallback.md`, PR https://github.com/nrwl/nx/pull/36508, Polygraph `zesty-eagle-2a40a186`
 
-6. **DOC-542: Pylon KB sync investigation (nx)** (2026-08-04)
+7. **DOC-542: Pylon KB sync investigation (nx)** (2026-08-04)
    - Summary: Found Caleb's closed PR #36277 was a *move* (delete 143 docs pages, 301 to help.nx.app) plus a reverse Pylon->Pagefind search federation — superseded by DOC-552. But its API writes were never reverted: 182 articles are live in Pylon (173 unlisted, stale pre-DOC-552 copies). Also found Pylon has crawled nx.dev since Feb 2026, and `POST /training-data/upload-content` takes raw markdown — but per Caleb neither feeds "suggest KB answer", which only uses real KB articles. So the HTML converter is required after all. Drift measured: 157 slug matches / 27 to create / 16 orphans to delete.
    - Files: `dot_ai/2026-08-04/tasks/doc-542-pylon-kb-sync.md`
 
-7. **CLOUD-4927: Frontend/Polygraph HIGH vulnerabilities (ocean) — draft PR #12656** (2026-07-30)
+8. **CLOUD-4927: Frontend/Polygraph HIGH vulnerabilities (ocean) — draft PR #12656** (2026-07-30)
    - Summary: Triaged all 20 CVE sub-issues; shipped the fixable set as pnpm overrides mirrored across root + both apps (brace-expansion, js-yaml@4, undici, + new lodash-es / path-to-regexp / @grpc/grpc-js). Caught that the ticket's undici "fixed in 6.26.0" is wrong — the advisory says 6.27.0, so we'd have shipped still-vulnerable. Rebased onto Nicole's merged OTel #12631. Filed CLOUD-5066 in the Remix V2 Migration project for the 4 RR7-blocked CVEs.
    - Files: `dot_ai/2026-07-30/tasks/cloud-4927-frontend-polygraph-high-vulns.md`, Polygraph `sharp-puma-7f09fb0e`
 
-8. **NXC-4688: Optional webpack/MF deps for @nx/react + @nx/next (nx) - MERGED #36492** (2026-07-30)
+9. **NXC-4688: Optional webpack/MF deps for @nx/react + @nx/next (nx) - MERGED #36492** (2026-07-30)
    - Summary: MF packages -> optional peers with lazy loading + backfill migrations (Leo's #36310 pattern); @svgr/webpack + @nx/rollup dropped; found + fixed field bug where @nx/module-federation's exact webpack pin duplicated against @nx/webpack's ^5.101.3 range, breaking all webpack MF builds once webpack 5.109 shipped. Squash `820a3a6aaa`.
    - Files: `dot_ai/2026-07-27/tasks/nxc-4688-react-next-webpack-mf-optional-deps.md`, Polygraph `react-mf-cleanup-04580e9b`
 
-9. **ga-traffic refresh: nx.dev GA4+GSC data through 2026-07-29 (dot-ai-config)** (2026-07-30)
+10. **ga-traffic refresh: nx.dev GA4+GSC data through 2026-07-29 (dot-ai-config)** (2026-07-30)
    - Summary: Refreshed ALL raw series in the ga-traffic pipeline (8 GA4 dailies, gsc-daily, monthly-segments Jun-final+Jul-partial, channels-by-month) via a new in-page GA4 internal-RPC replay method (XSRF header + secondary-dimension gotcha documented). Reran process.mjs (455 days, 14/14 integrity). Jul: GSC organic still falling ~-11%/mo (49.3K clicks thru Jul 29 vs Jun 59K); server_page_view flat ~5.1-5.4M/mo; AI crawlers shifted into /blog (now ~30% of server events).
    - Files: `dot_ai/2026-07-30/tasks/ga-traffic-refresh/` (scrapes + merge.mjs + README), pipeline at `dot_ai/2026-06-19/tasks/ga-traffic/`
-
-10. **NXC-4701: Add connect flow to the TUI (nx)** (2026-07-24)
-   - Summary: Revived the two canceled NXC-4606 prototypes onto current master (which had moved the footer into a props-driven StatusBar + focus stack, making both branches unmergeable). Shared `connect_flow.rs` powers a standalone ConnectPopup (`<shift>+c`) AND an inline "enable remote cache" CTA + URL under the perf report. Footer shows `○ not connected: <shift>+c`; help menu lists it. 349 Rust TUI tests green; live tmux e2e vs staging.
-   - Files: `dot_ai/2026-07-24/tasks/nxc-4701-tui-connect-flow.md`, draft PR #36460, Polygraph `ready-jackal-5efe8ef1`
 
 ## TODO
 

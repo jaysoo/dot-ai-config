@@ -2,6 +2,36 @@
 
 ### August 2026
 
+- [x] Sync Claude Code allow-list to Codex (2026-08-07)
+  - Plan: `dot_ai/2026-08-07/tasks/sync-claude-permissions-to-codex.md`
+  - Summary: Added a version-controlled Codex permission profile matching Claude Code's
+    writable roots, network allow-list, local binding, Unix sockets, package caches, and Notion
+    approval behavior. Added exec-policy rules for Claude-preapproved Git operations and the
+    logged 1Password wrapper. `sync.sh` now merges the managed profile into the existing Codex
+    config without replacing dynamic settings and syncs the rules separately. Git push/reset/
+    clean and GitHub mutations remain gated. Verified the temporary and active profiles with the
+    Codex macOS sandbox and checked allow/non-match cases with `codex execpolicy check`.
+
+- [x] GitHub issue + PR closure triage (nrwl/nx) (2026-08-07)
+  - Plan: `dot_ai/2026-08-07/tasks/github-issue-pr-closure-triage.md`
+  - Report: https://claude.ai/code/artifact/f2348ede-848e-43f7-91ee-b5367366e531
+  - Summary: Screened all 332 open issues; 184 older than 6 months, 72 met Jack's closure
+    criteria (no repro, <=2 reactions, <=2 non-bot comments, no attached PR) and were
+    investigated one at a time against nx 23.1.1, plus the 11 low-activity issues with a
+    linked PR. Landed 37 to close / 12 unsure / 39 keep, each with a full trace and a draft
+    closing comment. The decisive step was a second adversarial pass: because the same agent
+    had both run and graded each repro, the 17 closures resting on an uncorroborated "I ran
+    it and it worked" were handed to independent agents told to refute them - **13 of 17
+    were refuted** (8 reproduced outright on 23.1.1, 5 had a repro unfaithful to the report),
+    dropping the close list 45 -> 32. Separately found the cleanest category by searching the
+    full issue set rather than the aging pool: the four self-hosted cache packages
+    (`@nx/s3-cache`, `@nx/shared-fs-cache`, `@nx/gcs-cache`, `@nx/azure-cache`) were
+    deprecated on npm 2026-05-21 over CVE-2025-36852, will never be patched, and have no
+    source in this repo - 5 issues close on that alone. The PR half of the ask does not
+    apply: only 5 open PRs predate 2026 and none are low-effort; of 44 first-time-contributor
+    PRs across all 155 open, only 2 have a thin description and both explain their purpose.
+    Nothing was posted to GitHub - all `gh` calls read-only.
+
 - [x] DOC-579: Getting-started cleanup - intro, Start a New Project, Add to Existing (2026-08-06)
   - Plan: `dot_ai/2026-08-06/tasks/doc-579-getting-started-cleanup.md`
   - Summary: De-emphasized Nx Cloud onboarding across the three getting-started entry points.
