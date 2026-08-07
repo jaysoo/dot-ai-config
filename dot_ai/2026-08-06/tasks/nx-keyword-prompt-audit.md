@@ -80,14 +80,23 @@ ci-observability, branded, ai-tooling, nx-cloud-features, migration) + 2 qualita
 Final audit: `phase0-audit/audit-final.csv`. **40 of 99 tracked keywords leave** (29 prune,
 7 merge, 4 replace-with-better-phrasing); 59 survive.
 
-Expansion: `output/keywords-add.csv` - 844 scored rank targets from 968 raw rows, tiered
-100 / 150 / 594. Plus `output/keywords-monitor.csv` - 29 competitor brand terms worth
-watching but not worth targeting.
+**Shipping set (Jack's cut, 2026-08-07):**
+- `output/keywords-add-100.csv` - 100 keywords, 9% branded, each mapped to an Nx CLI or
+  Nx Cloud capability via a `feature` column.
+- `output/prompts-add.csv` - 30 prompts + `output/brand-radar-import.txt`.
+  75 daily runs (Tier 1 = 15 x 4 models, Tier 2 = 15 x ChatGPT) against 13 today.
+- `output/prompts-dropped.csv` - the 11 cut, with reasons.
 
-Prompts: `output/prompts-add.csv` (41) + `output/brand-radar-import.txt`, with winnability
-from a blind Claude baseline: 7 gap / 8+11 contested / 6 defend / 9 unscreened-branded.
+**Evidence pool kept behind it:** `output/keywords-add.csv` (844 scored rank targets from
+968 raw rows) and `output/keywords-monitor.csv` (29 competitor brand terms to watch, not
+target). These are the bench for the next rotation.
 
-Everything decision-relevant is in `output/gaps.md`.
+Everything decision-relevant is in `output/gaps.md`; section 7 records the final cut.
+
+Excluded by Jack: micro-frontend / module-federation, MCP + llms.txt, generic CI/CD
+definitional terms, error and debugging strings. Excluded on evidence: the
+DORA/engineering-productivity vocabulary (a different product category) and CI-platform
+replacement intent (Nx Cloud plugs into a CI platform rather than replacing one).
 
 ## Corrections made to agent output
 

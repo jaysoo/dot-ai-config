@@ -15,6 +15,9 @@ mkdir -p "$CLAUDE_TARGET_DIR/commands"
 cp -r "$GIT_ROOT/dot_claude/commands/"* "$CLAUDE_TARGET_DIR/commands/"
 
 cp "$GIT_ROOT/dot_claude/AGENTS.md" "$CODEX_TARGET_DIR/AGENTS.md"
+mkdir -p "$CODEX_TARGET_DIR/rules"
+cp "$GIT_ROOT/dot_codex/rules/"* "$CODEX_TARGET_DIR/rules/"
+node "$GIT_ROOT/scripts/sync-codex-permissions.mjs" "$CODEX_TARGET_DIR/config.toml"
 
 # Sync skills if the directory exists
 if [ -d "$GIT_ROOT/dot_claude/skills" ]; then

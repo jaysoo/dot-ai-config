@@ -1,0 +1,101 @@
+keyword,feature,proposed_tags,volume,global_volume,difficulty,traffic_potential,parent_topic,nx_ranks,source,why
+what is a cache miss,cache,ci-caching|unbranded,700,77000,3,300,what is a cache miss,43,keywords-explorer-overview,nx.dev already pos 43 on troubleshoot-cache-misses
+cache hit rate,cache,ci-caching|unbranded,150,500,4,150,cache hit ratio,no,keywords-explorer-matching-terms,Nx Cloud reports this metric directly
+github actions cache,cache,ci-caching|unbranded,500,1700,22,1100,actions/cache,no,keywords-explorer-matching-terms,largest cache-demand term; Depot ranks off a blog post
+docker build cache,cache,ci-caching|unbranded,150,1100,5,200,docker build cache,no,keywords-explorer-overview,biggest uncontested caching gap in ci-competitors
+docker layer caching,cache,ci-caching|unbranded,100,300,10,200,docker build cache,no,keywords-explorer-overview,Blacksmith/Depot own it
+gradle build cache,cache,ci-caching|unbranded,80,200,6,200,gradle build cache,no,keywords-explorer-matching-terms,Nx has a Gradle plugin and no page
+gradle remote build cache,cache,ci-caching|unbranded,90,150,3,200,gradle build cache,no,keywords-explorer-matching-terms,Depot ranks pos 3 off a blog post
+gradle remote cache,cache,ci-caching|unbranded,80,150,4,200,gradle build cache,no,keywords-explorer-overview,"same slot, second phrasing"
+maven build cache,cache,ci-caching|unbranded,100,150,2,70,maven cache,no,keywords-explorer-matching-terms,Nx has a Maven plugin
+bazel remote cache,cache,ci-caching|unbranded,80,200,7,70,bazel remote cache,no,keywords-explorer-overview,migration bridge from Bazel
+bazel cache,cache,ci-caching|unbranded,60,100,13,70,bazel remote cache,no,keywords-explorer-overview,migration bridge from Bazel
+gitlab ci cache,cache,ci-caching|unbranded,70,500,0,70,gitlab cache,no,keywords-explorer-matching-terms,"KD 0, tool-anchored"
+remote build cache,cache,ci-caching|unbranded,10,10,no_data,no_data,no_data,no_data,keywords-explorer-overview,generic category term Nx should own
+shared build cache,cache,ci-caching|unbranded,no_data,no_data,no_data,no_data,no_data,no_data,synthetic,"generic category term; synthetic, no Ahrefs record"
+monorepo build cache,cache,ci-caching|unbranded,no_data,no_data,no_data,no_data,no_data,no_data,synthetic,the Nx-shaped form of the category term
+flaky test,flaky,ci-flaky|unbranded,400,no_data,4,no_data,no_data,no,site-explorer-organic-keywords,singular is KD 4 vs KD 6 for the tracked plural
+what is a flaky test,flaky,ci-flaky|unbranded,100,no_data,5,no_data,no_data,no,site-explorer-organic-keywords,definitional entry point
+what are flaky tests,flaky,ci-flaky|unbranded,100,250,3,350,flaky tests meaning,no,keywords-explorer-matching-terms,definitional entry point
+how to fix flaky tests,flaky,ci-flaky|unbranded,70,80,2,no_data,no_data,no,keywords-explorer-matching-terms,solution intent
+flaky tests meaning,flaky,ci-flaky|unbranded,150,500,6,500,flaky test,no,keywords-explorer-matching-terms,parent topic of the tracked head term
+flaky test management,flaky,ci-flaky|unbranded,200,250,no_data,no_data,no_data,no_data,keywords-explorer-overview,commercial framing above the tracked detection term
+flaky test best practices,flaky,ci-flaky|unbranded,90,150,no_data,no_data,no_data,no_data,keywords-explorer-matching-terms,guide intent
+flaky test detection tool,flaky,ci-flaky|unbranded,10,10,no_data,no_data,no_data,no_data,keywords-explorer-overview,product intent
+flaky test tools,flaky,ci-flaky|unbranded,20,30,no_data,no_data,no_data,no_data,keywords-explorer-matching-terms,"product intent, listicle"
+playwright flaky tests,flaky,ci-flaky|unbranded,80,250,2,40,playwright flaky tests,no,keywords-explorer-matching-terms,Nx owns the Playwright plugin - JACK: KB article
+cypress flaky tests,flaky,ci-flaky|unbranded,40,no_data,0,no_data,no_data,no,site-explorer-organic-keywords,Nx owns the Cypress plugin - JACK: KB article
+circleci flaky tests,flaky,ci-flaky|unbranded,80,90,3,30,circleci flaky tests,no,keywords-explorer-matching-terms,"tool-anchored, KD 3"
+test impact analysis,affected,nx-cloud-features|unbranded,150,300,3,30,test impact analysis,no,keywords-explorer-overview,JACK: target this - it is what nx affected does
+test impact analysis ci,affected,nx-cloud-features|unbranded,80,80,no_data,no_data,no_data,no_data,keywords-explorer-matching-terms,CI-qualified form
+test impact analysis tools,affected,nx-cloud-features|unbranded,60,90,no_data,no_data,no_data,no_data,keywords-explorer-matching-terms,product intent
+predictive test selection,affected,nx-cloud-features|unbranded,100,150,3,20,predictive test selection,no,keywords-explorer-overview,"Gradle/Launchable category term, KD 3"
+test sharding,atomizer,nx-cloud-features|unbranded,20,60,no_data,no_data,no_data,no_data,keywords-explorer-overview,Atomizer splits at file level
+jest shard,atomizer,nx-cloud-features|unbranded,20,70,0,10,jest shard,no_data,keywords-explorer-overview,Nx owns the Jest plugin
+cypress parallelization,atomizer,nx-cloud-features|unbranded,30,70,1,90,cypress parallel,no_data,keywords-explorer-overview,Nx owns the Cypress plugin
+jest parallel tests,atomizer,nx-cloud-features|unbranded,10,20,0,700,jest coverage,no_data,keywords-explorer-overview,Nx owns the Jest plugin
+parallel ci builds,agents,nx-cloud-features|unbranded,50,50,no_data,no_data,no_data,no_data,keywords-explorer-matching-terms,Nx Agents demand vocabulary
+test splitting ci,atomizer,nx-cloud-features|unbranded,no_data,no_data,no_data,no_data,no_data,no_data,synthetic,synthetic; the literal Atomizer description
+distributed task execution,agents,nx-cloud-features|unbranded,0,0,no_data,no_data,no_data,no_data,keywords-explorer-overview,"Nx name for the capability; 0 vol, tracked as a category bet"
+ci parallelization,agents,nx-cloud-features|unbranded,no_data,no_data,no_data,no_data,no_data,no_data,synthetic,synthetic; generic form of the Agents pitch
+github actions pricing,ci-cost,ci-cost|unbranded,1200,5500,45,1200,github actions pricing,no,keywords-explorer-overview,JACK: KB article on GHA costs
+github actions billing,ci-cost,ci-cost|unbranded,80,200,53,1100,github actions pricing,no,keywords-explorer-overview,JACK: KB article on GHA costs
+github actions minutes,ci-cost,ci-cost|unbranded,50,150,45,1200,github actions pricing,no,keywords-explorer-overview,the unit customers actually count
+github actions free tier,ci-cost,ci-cost|unbranded,250,600,58,1100,github actions pricing,no,site-explorer-organic-keywords,Blacksmith holds pos 1 off one post
+github actions free limits,ci-cost,ci-cost|unbranded,80,no_data,7,no_data,no_data,no_data,site-explorer-organic-keywords,"KD 7, cheapest term in the cost cluster"
+github actions limitations,ci-cost,ci-cost|unbranded,150,150,7,150,github actions free limits,no,keywords-explorer-overview,problem-first framing
+ci pipeline minutes,ci-cost,ci-cost|unbranded,100,no_data,1,no_data,no_data,no,site-explorer-organic-keywords,KD 1
+github actions self hosted runner,ci-cost,ci-cost|unbranded,150,700,14,700,github self hosted runners,no,keywords-explorer-overview,the DIY cost fix Nx can reframe
+reduce ci build time,ci-speed,ci-cd|unbranded,50,50,1,no_data,no_data,no,keywords-explorer-matching-terms,replaces the pruned `ci build time trends`
+github actions slow,ci-speed,ci-cd|unbranded,60,200,1,65000,github status,no,keywords-explorer-overview,replaces the pruned `github actions slow workflow`
+how to speed up github actions,ci-speed,ci-cd|unbranded,60,60,no_data,no_data,no_data,no,keywords-explorer-overview,question framing
+monorepo continuous integration,ci-speed,ci-cd|unbranded,90,90,no_data,no_data,no_data,no,keywords-explorer-matching-terms,"the core Nx Cloud surface, unqualified"
+monorepo ci pipeline,ci-speed,ci-cd|unbranded,60,60,no_data,no_data,no_data,no,keywords-explorer-matching-terms,"same intent, pipeline framing"
+gitlab ci monorepo,ci-speed,ci-cd|unbranded,40,70,0,20,gitlab ci monorepo,no,keywords-explorer-matching-terms,"KD 0, tool-anchored"
+github monorepo,ci-speed,ci-cd|unbranded,70,100,9,10,what is a monorepo,no,keywords-explorer-matching-terms,KD 9
+incremental builds ci,ci-speed,ci-cd|unbranded,no_data,no_data,no_data,no_data,no_data,no_data,synthetic,synthetic; what the task graph actually delivers
+github merge queue,ci-speed,ci-cd|unbranded,1000,2800,4,600,github merge queue,no_data,keywords-explorer-overview,"KD 4, 1000 vol; Nx affected feeds merge-queue efficiency"
+monorepo architecture,monorepo,monorepo|unbranded,150,1100,2,600,what is a monorepo,no,keywords-explorer-matching-terms,KD 2
+what is monorepo architecture,monorepo,monorepo|unbranded,100,no_data,4,9600,what is a monorepo,no,keywords-explorer-overview (2026-08-07),TP 9600 - highest of any term in this cut
+monorepo tools,monorepo,monorepo|unbranded,100,500,18,6000,what is a monorepo,3,keywords-explorer-search-suggestions,"TP 6000, nx.dev pos 3, monorepo.tools also ours"
+monorepo build tools,monorepo,monorepo|unbranded,20,50,16,20,monorepo tools,no_data,keywords-explorer-overview,commercial variant
+monorepo vs multi repo,monorepo,monorepo|unbranded,70,450,4,20,mono repo vs multi repo,no,keywords-explorer-matching-terms,decision-stage
+monorepo pros and cons,monorepo,monorepo|unbranded,70,100,3,150,monorepos,no,keywords-explorer-matching-terms,decision-stage
+monorepo vs microservices,monorepo,monorepo|unbranded,40,150,0,20,monorepo vs microservices,no,keywords-explorer-matching-terms,"KD 0, common confusion"
+monorepo vs monolith,monorepo,monorepo|unbranded,30,no_data,0,20,monorepo vs monolith,no_data,keywords-explorer-overview (2026-08-07),"KD 0, common confusion"
+benefits of monorepo,monorepo,monorepo|unbranded,30,50,9,150,monorepos,1,keywords-explorer-overview (2026-08-07),JACK: should match nx.dev
+monorepo benefits,monorepo,monorepo|unbranded,20,50,7,150,monorepos,no,keywords-explorer-overview (2026-08-07),JACK: should match nx.dev
+monorepository,monorepo,monorepo|unbranded,20,150,30,900,what is a monorepo,no,keywords-explorer-overview (2026-08-07),JACK: should match nx.dev; TP 900
+mono repo,monorepo,monorepo|unbranded,500,no_data,41,no_data,no_data,1,site-explorer-organic-keywords,"nx.dev pos 1, spelling variant, 500 vol"
+monorepos,monorepo,monorepo|unbranded,250,no_data,40,no_data,no_data,1,site-explorer-organic-keywords,"nx.dev pos 1, plural head"
+what is monorepo,monorepo,monorepo|unbranded,250,1300,24,1700,what is a monorepo,1,keywords-explorer-matching-terms,"nx.dev pos 1, article-less variant of the 4.1k head"
+monorepo meaning,monorepo,monorepo|unbranded,150,800,29,9600,what is a monorepo,no,keywords-explorer-matching-terms,definitional
+project graph,graph,monorepo-organization|unbranded,100,no_data,12,no_data,no_data,no_data,site-explorer-organic-keywords,the Nx CLI primitive; Lerna and moonrepo currently rank
+pnpm monorepo,plugins,monorepo|unbranded,150,1000,3,200,pnpm workspaces,no,keywords-explorer-matching-terms,"the phrasing the tracked set misses (tracks ""workspace"" only)"
+npm monorepo,plugins,monorepo|unbranded,60,150,1,200,npm workspaces,no,keywords-explorer-matching-terms,same
+bun monorepo,plugins,monorepo|unbranded,150,1000,5,60,bun monorepo,no,keywords-explorer-matching-terms,same
+nextjs monorepo,plugins,monorepo|unbranded,150,350,4,150,turbo repo,no,keywords-explorer-matching-terms,"turborepo.dev pos 7, nx.dev absent"
+angular monorepo,plugins,monorepo|unbranded,40,250,0,150,angular project structure,no,keywords-explorer-matching-terms,KD 0; replaces the pruned zero-volume `angular cli vs nx`
+expo monorepo,plugins,monorepo|unbranded,80,450,1,60,expo monorepo,7,keywords-explorer-matching-terms,nx.dev already pos 7
+storybook monorepo,plugins,monorepo|unbranded,20,no_data,1,no_data,no_data,8,site-explorer-organic-keywords,nx.dev already pos 8
+eslint monorepo,plugins,monorepo|unbranded,20,no_data,1,10,eslint monorepo,no_data,keywords-explorer-overview (2026-08-07),Nx owns the ESLint plugin
+terraform monorepo,plugins,monorepo|unbranded,60,90,0,20,terraform monorepo,no,keywords-explorer-matching-terms,"KD 0, non-JS signal"
+bazel monorepo,plugins,monorepo|unbranded,80,300,5,3200,bazel,no,keywords-explorer-matching-terms,TP 3200 at KD 5
+go monorepo,plugins,monorepo|unbranded,10,10,1,0,golang monorepo,no,keywords-explorer-overview,non-JS signal
+git monorepo,plugins,monorepo|unbranded,100,200,9,20,monorepo git,no,keywords-explorer-matching-terms,infrastructure-side monorepo intent
+typescript project references,ts-sync,monorepo-organization|unbranded,70,200,no_data,no_data,no_data,no,keywords-explorer-overview,moonrepo owns it; nx sync manages exactly this
+tsconfig composite,ts-sync,monorepo-organization|unbranded,30,no_data,9,no_data,no_data,5,site-explorer-organic-keywords,nx.dev already pos 5
+npm workspaces,ts-sync,monorepo-organization|unbranded,500,2400,5,50,npm workspace,no,keywords-explorer-search-suggestions,500 vol KD 5; where teams stand before a task runner
+pnpm vs npm,pkg-mgr,cli-competitors|unbranded,1600,no_data,3,no_data,no_data,no_data,site-explorer-organic-keywords,JACK: Rush cannot be the one to own this
+npm vs pnpm,pkg-mgr,cli-competitors|unbranded,300,no_data,2,no_data,no_data,no_data,site-explorer-organic-keywords,"reversed form, separate SERP"
+pnpm vs yarn,pkg-mgr,cli-competitors|unbranded,250,no_data,8,no_data,no_data,no_data,site-explorer-organic-keywords,third leg of the comparison set
+npm workspaces monorepo,pkg-mgr,cli-competitors|unbranded,40,150,1,60,npm workspaces,no,keywords-explorer-matching-terms,the bridge term into a task runner
+migrate to nx,migration,migration|branded,10,10,no_data,no_data,no_data,no,keywords-explorer-overview,generic adoption intent
+add nx to existing monorepo,migration,migration|branded,0,0,no_data,no_data,no_data,no_data,keywords-explorer-overview,the nx init path
+turborepo to nx,migration,migration|branded,no_data,no_data,no_data,no_data,no_data,no,synthetic,higher-volume phrasing than the tracked churn pair
+angular cli to nx,migration,migration|branded,no_data,no_data,no_data,no_data,no_data,no,synthetic,the Angular acquisition path
+is lerna deprecated,migration,migration|branded,10,10,no_data,no_data,no_data,no_data,keywords-explorer-matching-terms,Lerna is 1.8k vol and nx.dev does not rank
+nx affected,affected,nx-cloud-features|branded,150,800,1,250,nx affected,1,keywords-explorer-overview (2026-08-07),the CLI feature behind test impact analysis
+nx release,release,branded|cli-misc,100,600,2,20,nx release,1,keywords-explorer-overview (2026-08-07),nx release versioning/publishing
+nx generators,generators,branded|cli-misc,80,250,0,60,nx generators,1,keywords-explorer-overview (2026-08-07),code-generation surface
+nx cloud pricing,ci-cost,ci-cost|branded,50,200,4,40,nx cloud,no_data,keywords-explorer-overview (2026-08-07),only bottom-funnel Nx Cloud commercial term worth tracking

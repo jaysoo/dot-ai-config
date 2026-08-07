@@ -1,0 +1,48 @@
+# These commands are explicitly pre-approved in dot_claude/settings.json and
+# need to cross Codex's protected Git or credential boundary. Other Claude
+# allow-list entries run inside the claude-compatible permission profile.
+
+prefix_rule(
+    pattern = [
+        "git",
+        [
+            "status",
+            "diff",
+            "log",
+            "show",
+            "branch",
+            "stash",
+            "add",
+            "commit",
+            "fetch",
+            "remote",
+            "rev-parse",
+            "merge-base",
+            "blame",
+            "cherry-pick",
+            "ls-remote",
+        ],
+    ],
+    decision = "allow",
+    justification = "Matches the Git commands pre-approved in Claude Code.",
+    match = [
+        "git status --short",
+        "git add src/index.ts",
+        "git commit -m test",
+        "git fetch origin",
+        "git cherry-pick abc123",
+    ],
+    not_match = [
+        "git push origin main",
+        "git reset --hard",
+        "git clean -fd",
+    ],
+)
+
+prefix_rule(
+    pattern = ["op"],
+    decision = "allow",
+    justification = "The auth-proxy logs every 1Password CLI invocation.",
+    match = ["op item get example"],
+)
+

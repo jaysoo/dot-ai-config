@@ -135,3 +135,60 @@ All under `dot_ai/2026-08-06/tasks/metaharness-keyword-research/output/`:
   "loud but noise" and "could not substantiate" sections
 
 Validated: 0 malformed rows, 0 rows missing a source, 0 invented volume figures.
+
+## Filtered pass (2026-08-07, Jack's brief)
+
+Brief: focus memory + handoff; drop cost entirely (no good answer, cannot prove savings);
+drop governance unless it maps to a shipped Polygraph feature; keep multi-agent; cut generic
+head terms and the claude.md-file long tail to a couple; `memory md` and `handoff md` must be in.
+
+- `output/keywords-filtered.csv` - 100 rows. Built by `filter.mjs`.
+- `output/prompts-filtered.csv` - 50 rows. Built by `filter-prompts.mjs`.
+- `output/brand-radar-prompts.txt` - REGENERATED to 46 lines from the trimmed 50, so the
+  import list no longer contains the cost/governance prompts that were cut.
+
+**Handoff and memory.md required fresh Ahrefs work, not filtering.** Zero of the 2,279 corpus
+rows contained "handoff", and the memory.md cluster was absent too. Ran new
+overview/matching-terms/search-suggestions pulls on 2026-08-07 (~4.6k units). Both clusters
+are real:
+
+| Keyword | US | Global |
+|---|---|---|
+| `handoff skill` | 200 | 700 |
+| `claude memory.md` | 150 | 600 |
+| `openclaw memory.md` | 100 | 350 |
+| `claude handoff skill` / `claude handoff` | 90 | 200 |
+| `claude code memory.md` | 80 | 300 |
+| `handoff skill claude` | 70 | 350 |
+| `claude memory skill` | 70 | 300 |
+| `claude code handoff` | 60 | 100 (CPC $9.00) |
+| `claude.md vs memory.md` | 20 | 50 |
+| `memory md` | 20 | 90 |
+| `handoff md` / `handoff.md` | 10 | 30 |
+
+### Decisions and caveats on the filtered set
+
+1. **Excluded the 48 already-tracked keywords**, so `keywords-filtered.csv` is purely additive
+   to the Rank Tracker project. This means `claude code harness` (KD 3) and `agent harness` are
+   absent - they are already tracked, not dropped.
+2. **`agent handoff` / `ai agent handoff` carry MIXED intent.** Most "handoff" search volume is
+   customer-service AI-to-human escalation, and `handoff ai` (1,400/KD 9) is a construction-
+   estimating company. Kept both generic rows flagged in `why_track`; drop them if the noise
+   is not worth watching. The `claude`/`codex`-anchored handoff terms are clean.
+3. **`md` collides with Maryland and medical doctors** (`memory care towson md`, `ram trehan md`).
+   Filtered out, but any future `*.md` expansion needs the same guard.
+4. **NEW COMPETITOR: openclaw.** `openclaw memory.md` (100/350) and `openclaw memory skill`
+   (30/90) surfaced during the handoff pull. A harness with a memory-file convention already
+   out-searching several of ours, and it was not in any competitor list. Worth a proper look.
+5. **Cut a wrong-sense pick:** `claude design handoff to claude code` (40/100) is Figma-style
+   design handoff, not session handoff.
+6. **`claude code vs codex` verified at 3,300 / 13,000 / KD 13** - the largest low-difficulty
+   term in the filtered set, and squarely on the swappable-harness pitch.
+7. **Observability kept only session-visibility terms.** Anything usage/token/spend-shaped went
+   out with cost, including `claude code usage` (2,900) - flagging it since it is large.
+8. Filtered keyword mix: memory 31, sharing 26, orchestration 17, portability 9, crossrepo 5,
+   observability 4, landscape 3, governance 3, evaluation 2. 92 of 100 have real measured volume.
+9. Filtered prompt mix: memory 12, sharing 14, orchestration 7, portability 5, crossrepo 4,
+   observability 4, evaluation 2, governance 2. 33 of 50 rated high winnability.
+   3 prompts are new, written for the memory.md and HANDOFF.md clusters and labelled synthetic
+   with the keyword that grounds them.

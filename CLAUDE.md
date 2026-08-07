@@ -12,6 +12,8 @@ For Jack's personal preferences, workflow conventions, and tech-specific guidanc
 | `dot_claude/settings.json` | `~/.claude/settings.json` | Claude Code settings |
 | `dot_claude/commands/` | `~/.claude/commands/` | Slash commands |
 | `dot_claude/skills/` | `~/.claude/skills/` | Skills |
+| `dot_codex/permissions.toml` | managed sections in `~/.codex/config.toml` | Codex permission profile and tool approval defaults |
+| `dot_codex/rules/` | `~/.codex/rules/` | Codex command allow rules |
 | `dot_ai/` | symlinked as `.ai/` in every work repo | Dictations, daily notes, tasks, PARA knowledge base |
 | `fish/` | `~/.config/fish/` | Fish shell config (excludes `fish_variables`, `nxcloud.fish`) |
 | `nvim/` | `~/.config/nvim/` | Neovim config |
@@ -59,6 +61,7 @@ Run `./sync.sh` manually if you want to sync without pushing.
 
 **Never edit these destinations directly** — they'll be overwritten on the next push:
 - `~/.claude/` (CLAUDE.md, commands/, skills/, settings.json)
+- `~/.codex/` (AGENTS.md, skills/, managed permissions, rules/)
 - `~/.config/fish|nvim|kitty|mise|gh-dash/`
 - `~/.tmux.conf`, `~/.bashrc`, `~/.gitconfig`, `~/.gitignore_global`
 

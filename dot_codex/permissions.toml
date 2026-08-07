@@ -1,0 +1,54 @@
+default_permissions = "claude-compatible"
+
+[permissions.claude-compatible]
+description = "Workspace access aligned with dot_claude/settings.json."
+extends = ":workspace"
+
+[permissions.claude-compatible.workspace_roots]
+"~/projects" = true
+
+[permissions.claude-compatible.filesystem]
+"~/.gradle" = "write"
+"~/.m2" = "write"
+"~/.npm" = "write"
+"~/.yarn" = "write"
+"~/.bun" = "write"
+"~/.config" = "write"
+"~/.mongodb" = "write"
+"~/Library/Preferences/netlify" = "write"
+"~/.claude" = "write"
+
+[permissions.claude-compatible.network]
+enabled = true
+allow_local_binding = true
+dangerously_allow_all_unix_sockets = true
+
+[permissions.claude-compatible.network.domains]
+"*.netlify.com" = "allow"
+"*.netlify.app" = "allow"
+"nx.dev" = "allow"
+"*.nx.dev" = "allow"
+"*.nx.app" = "allow"
+"*.mongodb.net" = "allow"
+"secretmanager.googleapis.com" = "allow"
+"ifconfig.me" = "allow"
+"*.googleapis.com" = "allow"
+"*.google-analytics.com" = "allow"
+"*.google.com" = "allow"
+"api.github.com" = "allow"
+"*.github.com" = "allow"
+"github.com" = "allow"
+"*.githubusercontent.com" = "allow"
+"registry.npmjs.org" = "allow"
+"registry.yarnpkg.com" = "allow"
+"nodejs.org" = "allow"
+"*.nodejs.org" = "allow"
+"services.gradle.org" = "allow"
+"plugins.gradle.org" = "allow"
+"repo.maven.apache.org" = "allow"
+"repo1.maven.org" = "allow"
+"localhost" = "allow"
+"127.0.0.1" = "allow"
+
+[plugins."notion@openai-curated".mcp_servers.notion]
+default_tools_approval_mode = "approve"

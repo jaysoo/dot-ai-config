@@ -6,13 +6,13 @@ Tracks when skills and commands were last invoked. Use this to identify unused i
 
 | Name                   | Type    | Last Invoked | Count |
 | ---------------------- | ------- | ------------ | ----- |
+| dot-claude-guard       | skill   | 2026-08-07   | 23    |
+| openai-docs            | skill   | 2026-08-07   | 3     |
+| plan-task              | command | 2026-08-07   | 2     |
 | plannotator-review     | command | 2026-08-05   | 1     |
-| plan-task              | command | 2026-08-05   | 1     |
-| dot-claude-guard       | skill   | 2026-08-06   | 22    |
 | ga-traffic             | skill   | 2026-07-30   | 0     |
 | nx-workspace           | skill   | 2026-08-05   | 2     |
 | ocean-trivy-verify     | skill   | 2026-07-29   | 0     |
-| openai-docs            | skill   | 2026-07-27   | 2     |
 | cnw-update-templates   | skill   | 2026-07-15   | 3     |
 | code-comment-style     | skill   | 2026-08-06   | 1     |
 | github:yeet            | skill   | 2026-07-13   | 1     |
