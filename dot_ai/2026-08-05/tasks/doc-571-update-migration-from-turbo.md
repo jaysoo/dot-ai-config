@@ -52,6 +52,44 @@ llm_copy_prompt -> intro -> 8 numbered steps (init, read nx.json, package-specif
 continuous, env inputs, verify, CI, remove turbo) -> "Additional considerations"
 (inferred tasks, config mapping tables, command equivalents).
 
+## Prompt validation (3 guide-blind subagents, 2026-08-06)
+
+Ran the page's own copy-prompt end to end in three generated turborepo fixtures.
+All three reached a working Nx workspace (8/8 cache hits on the second run), but each
+found real gaps. Fixtures under `scratchpad/verify/fx{A,B,C}`, git repos with committed
+baselines.
+
+- fxA: untouched create-turbo starter.
+- fxB: `web#build` fragment + `apps/docs/turbo.json` (extends `//`) + task-level `env`
+  + `globalEnv` + `globalDependencies`.
+- fxC: identical override on two packages (`web#build` + `docs#build`).
+
+Findings folded into the page and prompt:
+
+1. **sharedGlobals bypass (cache correctness, worst one).** `nx init` writes
+   `sharedGlobals` into `namedInputs` and references it from `default`. Any turbo task
+   that had its own `inputs` becomes a targetDefault with an explicit `inputs` array,
+   which does not use `default`, so `globalEnv`/`globalDependencies` stop invalidating
+   it. Turborepo hashes those into every task. Confirmed in the converter source and
+   empirically (edit `.env.shared` -> builds still cache-hit). Fix prescribed on the page
+   and re-verified: with `"sharedGlobals"` added to `build.inputs`, editing `.env.shared`
+   gives 0/2 and `NODE_ENV=production` gives 0/2, unchanged runs give 2/2.
+2. Filtered `targetDefaults` entries override per key and replace arrays wholesale.
+   A filtered entry setting `inputs` silently drops the baseline inputs, which is exactly
+   what step 5 tells you to build.
+3. Page named both `<package>#<task>` and per-package `turbo.json` as unconverted, then
+   only explained the first, while the prompt told you to delete the second.
+4. Tags were the headline `filter.projects` example, but nothing said where tags are
+   defined. Also name globs do not work for `web` + `docs` (no shared prefix); directory
+   patterns do. Page now leads with `apps/*` and links project-configuration#tags.
+5. `"ui": "tui"` is a fifth thing that drops. Prompt said "four things", so agents stopped
+   looking.
+6. Cleanup was scoped to root scripts. `packages/ui`'s `turbo gen react-component` breaks
+   outright once the dep is removed, and `eslint-plugin-turbo` survives pointing at a
+   deleted file. Page now has a grep sweep.
+7. Prompt was 7 steps against the page's 8, dropped the CI step entirely, and weakened the
+   removal gate from "CI is green" to "local verification passed". Prompt is now 8 steps.
+
 ## Not done / out of scope
 
 - `packages/nx/src/command-line/init/init-v2.ts:291` still prints the legacy

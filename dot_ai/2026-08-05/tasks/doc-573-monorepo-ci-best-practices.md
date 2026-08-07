@@ -56,17 +56,34 @@ Plus an `llm_copy_prompt` block at the top: agent audits the reader's pipeline a
 - Commands in shell blocks, not inline prose.
 - ASCII punctuation, no em dashes.
 
-## Status
+## Status — MERGED 2026-08-06
 
-- Draft written. prettier clean, vale 0/0/0.
-- `nx run astro-docs:validate-links` run.
-- Not committed, not pushed, no PR.
+- PR https://github.com/nrwl/nx/pull/36593 merged as `7dd949e953`. Three files: the new page, the
+  `nx.json` reference `pluginsConfig` section, and the STYLE_GUIDE additions.
+- Split-out fix https://github.com/nrwl/nx/pull/36588 merged as `e056ef6320`.
 
-## Open questions for Jack
+## Resolved during review
 
-- Nx is woven through each section rather than confined to one closing section (the DOC-549 "capture
-  page" pattern). The ticket asks for Nx features applied throughout, so this is the deliberate
-  split. Say if you want it pushed further toward vendor-neutral.
-- Overlap check: `kb/ci-caching.mdoc` owns caching depth, `concepts/CI Concepts/*` own the
-  parallelization/distribution tradeoff tables. This page links out rather than re-explaining, but
-  section 4 and section 6 are the closest calls.
+- Nx placement: woven through each section rather than confined to a closing one. Superseded by a
+  bigger call, that Nx CLI and Nx Cloud may now be named separately and features requiring Nx Cloud
+  should say so. Replaces the DOC-549 "one platform Nx" rule.
+- Overlap with `kb/ci-caching.mdoc` and `concepts/CI Concepts/*` handled by linking, not restating.
+- Headings shortened throughout; "Dimension" table header became "Concern" with bold row labels.
+- Dynamic agent allocation (changeset sizing) cut entirely, along with the word "fleet".
+- Trunk-based development became its own section, placed before the main-branch section.
+- The measurement/metrics section was cut; its content moved into the agent prompt's hand-off list.
+
+## Agent prompt, live-tested
+
+v1 asked for wall-clock time, queue time and serial-wait share. None are derivable from a
+repository, and nothing in the prompt told the agent to decline, so it invited invented numbers.
+Rewritten around `Present` / `Absent` / `Needs CI access`, keyed to the page's sections, with the
+run-history metrics moved to an explicit list the agent asks the user for.
+
+Both runs used a throwaway 10-package pnpm monorepo at `/tmp/test`. The first test was contaminated
+(harness told the agent to decline unanswerable steps); the second was clean and still declined.
+
+## Follow-up worth filing
+
+The page has no contextual inbound links from other docs pages. `setup-ci`, `ci-caching`, the
+affected feature page, and the CI features landing page are the natural candidates.

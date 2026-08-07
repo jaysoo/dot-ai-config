@@ -2,6 +2,52 @@
 
 ### August 2026
 
+- [x] DOC-579: Getting-started cleanup - intro, Start a New Project, Add to Existing (2026-08-06)
+  - Plan: `dot_ai/2026-08-06/tasks/doc-579-getting-started-cleanup.md`
+  - Summary: De-emphasized Nx Cloud onboarding across the three getting-started entry points.
+    "Start a New Project" is create-nx-workspace only - the "Option 2: Create via Nx Cloud"
+    section and its screenshot are gone, and the template section points at the gallery instead
+    of listing the four prompt starters. Both onboarding pages now share a shape: copyable agent
+    prompt at the top, one terminal block holding the command plus its sample run, then matching
+    Next steps and Keep learning (editor setup swapped for AI integrations + CI setup). The
+    timings and both agent prompts were lifted off the live cloud.nx.app/get-started page before
+    it goes away; its `nx connect` steps were dropped. Intro lost both deep-dive callouts. A new
+    `astro-docs/ec.config.mjs` Expressive Code plugin backs the terminal blocks: a fence marked
+    `{% meta="prompt=true" %}` gets `$ ` stripped before shiki so the command is highlighted
+    normally, the prompt and output lines are muted, and the copy button hands over the commands
+    alone. Opt-in, since `kb/root-level-scripts.mdoc` has a transcript whose `$ ` line is yarn
+    output. Also fixed two pre-existing dangling intro anchors in `kb/nx-and-angular.mdoc`.
+    Merged as `130727796c`.
+  - Polygraph session `noble-osprey-dd3ebfa3`, single repo nrwl/nx
+  - PR: https://github.com/nrwl/nx/pull/36595
+
+- [x] DOC-573: KB Monorepo CI best practices (2026-08-06)
+  - Plan: `dot_ai/2026-08-05/tasks/doc-573-monorepo-ci-best-practices.md`
+  - Summary: New page `/docs/kb/monorepo-ci-best-practices` (~3000 words) targeting Buildkite's
+    #1 SERP result, ordered by payoff: CI waste, selective runs, base commit, task caching,
+    cores per machine, distribution, task splitting, flaky handling, trunk-based development,
+    main-branch health, ownership and boundaries. Path-based filtering and graph-based affected
+    each get a full GitHub Actions workflow so the contrast is visible without leaving the page.
+    Also added a `pluginsConfig` section to the `nx.json` reference for
+    `projectsAffectedByDependencyUpdates`. The agent audit prompt was live-tested twice against
+    a throwaway 10-package pnpm monorepo; v1 asked for run-history data a repository cannot
+    supply, so it was rewritten around `Present` / `Absent` / `Needs CI access` with the metrics
+    handed back to the user. Caleb's five inline nits addressed, including a base-commit snippet
+    that was not valid GitHub Actions syntax. The same merge carried three new STYLE_GUIDE
+    anti-AI rules (rhetorical-question setups, significance clauses, invented specifics) plus
+    three sharpened ones. Merged as `7dd949e953`.
+  - PR: https://github.com/nrwl/nx/pull/36593
+  - Polygraph session `vivid-moose-c9937bd5`, single repo nrwl/nx -
+    https://snapshot.app.trypolygraph.com/orgs/69cdc268b6aa527e4129c2b4/sessions/vivid-moose-c9937bd5
+
+- [x] KB index broke on uncommitted articles (2026-08-06)
+  - Summary: Split out of DOC-573. `getKnowledgeBaseArticles` dates every article, but the
+    batched `git log` from #36461 returns nothing for an uncommitted file and the starlight
+    fallback `getNewestCommitDate` throws instead of returning a date, so one untracked draft
+    500s `/docs/kb` and fails `astro-docs:validate-links`. Falls back to the current date;
+    committed pages keep their real commit date. Merged as `e056ef6320`.
+  - PR: https://github.com/nrwl/nx/pull/36588
+
 - [x] Meta-harness / Polygraph keyword + prompt discovery (2026-08-06)
   - Plan: `dot_ai/2026-08-06/tasks/metaharness-keyword-research.md`
   - Summary: 27 agents / 3 workflows / 0 errors, ~97k of 813k Ahrefs units. Produced

@@ -398,6 +398,8 @@ Breadcrumbs and `sidebar_group_cards` slugify/match sidebar group LABELS (exact,
 
 vale catches the mechanical tier only. Also run the STYLE_GUIDE structural pass on every paragraph added: claim calibration (no unsupportable absolutes - "less chance of issues", not "will not introduce issues"), terminology table ("workspace" not "monorepo"), bold only for UI labels/term definitions, no semicolons, no duplicate links, and an anchor sweep after restructures (`grep -rhoE "<page>#[a-z0-9-]+" src/content/docs/` vs the page's headings). Use the `nx-docs-iterate` skill for the full loop.
 
+**Never report a docs page as style-checked when only vale has run.** vale is the mechanical tier; the STYLE_GUIDE structural pass is manual and produces most of the findings. Re-run the structural greps after EACH edit round, not once at the end - fixing one tell often introduces another (DOC-573: removed a colon-expansion by turning it into a rhetorical question, which is a worse tell).
+
 ### Testing
 
 ```bash
@@ -686,9 +688,12 @@ console.log("Close:", (content.match(/\{% \/tabs %\}/g) || []).length);
 
 Fix source files rather than making regex handle edge cases.
 
+**Markdown transform scripts must skip frontmatter, fenced code, tables, lists, AND blank lines.** A blank line that falls through the skip check produces no output, silently deleting every blank line in the file and breaking Markdoc parsing. Treating frontmatter body lines as prose joins the YAML keys into a paragraph (vale reports `E201 ... yaml: did not find expected key`). Verify by diffing blank-line count, word count, heading list, and link list before/after - not by eyeballing the diff. (DOC-573 - two consecutive versions of one rewrap script corrupted the file in different ways.)
+
 ### Investigation Best Practices
 
 - **Verify actual code path FIRST** - add logging to node_modules. Watch for multiple impls (PTY vs spawn vs exec, native vs JS).
+- **When live-testing a prompt or feature, don't add harness instructions that guard the behavior under test.** Telling a subagent "say so plainly if you can't answer" pre-empts exactly the fabrication you were trying to observe, and the result proves nothing. Give it the artifact verbatim plus operational notes only (where to read, where to write), then grade against known ground truth. (DOC-573 - the first `llm_copy_prompt` test was invalid for this reason and had to be re-run clean.)
 - **Multi-agent Workflow sizing/prompts**: long-running max-effort agents (30-40+ min, unbounded reads/web searches) die with "API Error: Connection closed mid-response" and retry from scratch - cap effort (medium for review/judgment), cap file reads + searches, target <15 min per agent. Pass large payloads (findings JSON) to agents via files, and build prompts with plain string concatenation - a `${'...'}`+replace placeholder trick in a workflow script shipped the literal placeholder to 8 fixers (DOC-549).
 - **Don't document theories as facts** - mark as "HYPOTHESIS: needs verification"
 - **Don't stall on an external answer you can get locally.** Before asking another repo/agent/human for a schema, field list, or config, check whether the current repo already reads it - an existing query module, migration, fixture, or type. Ask only for what is genuinely unreachable. If the answer doesn't arrive, build against what IS known with tolerant handling plus a loud mismatch signal (log fields that came back empty), rather than pausing and re-asking.
