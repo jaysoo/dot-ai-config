@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-08-07 | [cve-audit-2026-08-07.md](./cve-audit-2026-08-07.md) | **New: CVE-2026-69152 (HIGH) — `brace-expansion@5.0.8` still pinned in published `nx@23.1.1`**, open issue [#36553](https://github.com/nrwl/nx/issues/36553). 5 items resolved (ocean `tar`/`undici`/protobufjs, nx-labs `storybook`, nx-console `minimatch`/`express` chain). nx `rollup`/`vite` P0s now **58 days stale**. `simple-git` in ocean re-rated CRITICAL (was HIGH). 3 new dev-tooling-only findings (`tar-fs` in nx+ocean, `ip` in nx-labs w/ no upstream fix, MCP Inspector SDK + vendored `tar` in nx-console) |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
