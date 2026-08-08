@@ -13,6 +13,7 @@ Ad-hoc/periodic HIGH+CRITICAL CVE audits across nrwl/nx, nrwl/ocean, nrwl/nx-lab
 
 | Date | File | Notable findings |
 |------|------|-------------------|
+| 2026-08-08 | [cve-audit-2026-08-08.md](./cve-audit-2026-08-08.md) | Full re-verification after a 26-day gap. 6 findings resolved (ocean: `tar`, OTel/gRPC/protobufjs bundle, `undici`; nx-labs: `storybook`; nx: `axios`/`@nx/key`). **Regression**: nx-console `@modelcontextprotocol/sdk` dropped from 1.25.2 to 1.20.2, reopening 2 CVEs. **New**: live nx.dev site running Next.js 14.2.35 with 2 HIGH CVEs (major bump required, no 14.x patch) — highest-priority new finding. nx `rollup`/`vite` now **59 days stale** — escalated again |
 | 2026-07-13 | [cve-audit-2026-07-13.md](./cve-audit-2026-07-13.md) | Delta audit (nx-labs/nx-console unchanged since 07-10). 2 findings resolved (`@xhmikosr/decompress` in nx, `@xmldom/xmldom` in ocean). nx `rollup`/`vite` and nx-labs `storybook` now **33 days stale** — escalated, no known blocker |
 | 2026-07-10 | [cve-audit-2026-07-10.md](./cve-audit-2026-07-10.md) | CVE-2025-36852 (CREEP, CRITICAL, unpatchable-by-design in `@nx/*-cache` packages); nx `rollup`/`vite` and nx-labs `storybook` now 30 days stale; new ocean findings incl. `tar` inside the CLI client bundle |
 | 2026-06-10 | [cve-audit-2026-06-10.md](./cve-audit-2026-06-10.md) | New rollup CVE-2026-27606; carried forward vitest/next.js/undici/storybook |
